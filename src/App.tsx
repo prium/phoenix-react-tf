@@ -1,21 +1,27 @@
+import Starter from 'pages/Starter';
 import { AppContext } from 'providers/AppProvider';
 import React, { useContext } from 'react';
-import { Button } from 'react-bootstrap';
+
+import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (
+      <div>
+        <h1>Hello World</h1>
+        <Link to="starter">Starter</Link>
+      </div>
+    )
+  },
+  {
+    path: 'starter',
+    element: <Starter />
+  }
+]);
 
 const App = () => {
-  const { setConfig } = useContext(AppContext);
-  return (
-    <div>
-      <Button
-        variant="phoenix-primary"
-        onClick={() => {
-          setConfig({ isRTL: true, navbarTopStyle: '' });
-        }}
-      >
-        Click
-      </Button>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
