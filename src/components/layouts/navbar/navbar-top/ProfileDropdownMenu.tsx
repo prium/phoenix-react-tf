@@ -36,7 +36,7 @@ const ProfileDropdownMenu = () => {
   return (
     <Dropdown.Menu
       align="end"
-      className="navbar-dropdown-caret py-0 dropdown-profile shadow border border-300"
+      className="navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border border-300"
     >
       <Card className="position-relative border-0">
         <Card.Body className="p-0">

@@ -7,6 +7,7 @@ import NineDotMenu from './NineDotMenu';
 import { AppContext } from 'providers/AppProvider';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
+import NotificationDropdownMenu from './NotificationDropdownMenu';
 
 const NavItems = () => {
   const {
@@ -38,7 +39,7 @@ const NavItems = () => {
           <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
             <FeatherIcon icon="bell" size={20} />
           </Dropdown.Toggle>
-          <ProfileDropdownMenu />
+          <NotificationDropdownMenu />
         </Dropdown>
       </Nav.Item>
       <Nav.Item>
