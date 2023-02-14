@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import React from 'react';
+import { HTMLAttributes } from 'react';
 import { Form } from 'react-bootstrap';
 
 interface SearchBoxProps {
@@ -10,9 +10,15 @@ interface SearchBoxProps {
   size?: 'sm' | 'lg';
 }
 
-const SearchBox = ({ placeholder = 'Search', size, className, inputClassName }: SearchBoxProps) => {
+const SearchBox = ({
+  placeholder = 'Search',
+  size,
+  className,
+  inputClassName,
+  ...rest
+}: SearchBoxProps & HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={classNames('search-box', className)}>
+    <div className={classNames('search-box', className)} {...rest}>
       <form className="position-relative">
         <Form.Control
           type="search"

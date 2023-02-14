@@ -1,6 +1,6 @@
 export interface Config {
   isNavbarVerticalCollapsed: boolean;
-  theme: string;
+  theme: 'light' | 'dark';
   navbarTopStyle: string;
   navbarVerticalStyle: string;
   navbarPosition: string;

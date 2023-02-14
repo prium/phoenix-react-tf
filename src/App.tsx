@@ -1,6 +1,4 @@
 import Starter from 'pages/Starter';
-import { AppContext } from 'providers/AppProvider';
-import React, { useContext } from 'react';
 
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 

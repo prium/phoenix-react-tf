@@ -4,6 +4,7 @@ import { Card, Dropdown, Form, Nav } from 'react-bootstrap';
 import avatar from 'assets/img/team/72x72/57.webp';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
+import Scrollbar from 'components/base/Scrollbar';
 
 const ProfileDropdownMenu = () => {
   const [navItems] = useState([
@@ -46,16 +47,20 @@ const ProfileDropdownMenu = () => {
           <div className="mb-3 mx-3">
             <Form.Control type="text" placeholder="Update your status" size="sm" />
           </div>
-          <Nav className="nav flex-column mb-2 pb-1">
-            {navItems.map(item => (
-              <Nav.Item key={item.label}>
-                <Nav.Link href="#!" className="px-3">
-                  <FeatherIcon icon={item.icon} size={16} className="me-2 text-900" />
-                  <span>{item.label}</span>
-                </Nav.Link>
-              </Nav.Item>
-            ))}
-          </Nav>
+          <div style={{ height: '10rem' }}>
+            <Scrollbar>
+              <Nav className="nav flex-column mb-2 pb-1">
+                {navItems.map(item => (
+                  <Nav.Item key={item.label}>
+                    <Nav.Link href="#!" className="px-3">
+                      <FeatherIcon icon={item.icon} size={16} className="me-2 text-900" />
+                      <span>{item.label}</span>
+                    </Nav.Link>
+                  </Nav.Item>
+                ))}
+              </Nav>
+            </Scrollbar>
+          </div>
         </Card.Body>
         <Card.Footer className="p-0 border-top">
           <Nav className="nav flex-column my-3">

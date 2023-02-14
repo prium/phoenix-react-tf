@@ -6,6 +6,7 @@ import { ACTIONTYPE, configReducer } from 'reducers/ConfigReducer';
 interface AppContextInterFace {
   config: Config;
   configDispatch: Dispatch<ACTIONTYPE>;
+  toggleTheme: () => void;
   setConfig: (payload: Partial<Config>) => void;
 }
 
@@ -34,8 +35,17 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
+  const toggleTheme = () => {
+    configDispatch({
+      type: 'SET_CONFIG',
+      payload: {
+        theme: config.theme === 'dark' ? 'light' : 'dark'
+      }
+    });
+  };
+
   return (
-    <AppContext.Provider value={{ config, setConfig, configDispatch }}>
+    <AppContext.Provider value={{ config, setConfig, toggleTheme, configDispatch }}>
       {children}
     </AppContext.Provider>
   );
