@@ -2,6 +2,7 @@ import React, { createContext, Dispatch, PropsWithChildren, useReducer } from 'r
 import { getItemFromStore } from 'helpers/utils';
 import { Config, initialConfig } from 'config';
 import { ACTIONTYPE, configReducer } from 'reducers/ConfigReducer';
+import useToggleStyle from 'hooks/useToggleStyle';
 
 interface AppContextInterFace {
   config: Config;

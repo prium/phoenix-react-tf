@@ -1,3 +1,4 @@
+import useToggleStyle from 'hooks/useToggleStyle';
 import Starter from 'pages/Starter';
 
 import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
+  useToggleStyle();
   return <RouterProvider router={router} />;
 };
 
