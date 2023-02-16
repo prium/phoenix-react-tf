@@ -12,5 +12,8 @@ export const getItemFromStore = (
   }
 };
 
+export const cleanText = (string: string) =>
+  (string.charAt(0).toUpperCase() + string.slice(1)).replace(/-/g, ' ').replace('_and_', '&');
+
 export const setItemToStore = (key: string, payload: string, store = localStorage) =>
   store.setItem(key, payload);
