@@ -109,8 +109,7 @@ html:not(.navbar-vertical-collapsed) {
         flex-flow: column nowrap;
         font-size: $navbar-vertical-dropdown-font-size;
         .nav-link {
-          padding: $navbar-vertical-dropdown-link-padding-y
-            $navbar-vertical-dropdown-link-padding-x;
+          padding: $navbar-vertical-dropdown-link-padding-y $navbar-vertical-dropdown-link-padding-x;
           padding-left: 3.125rem;
         }
         .nav {
@@ -223,10 +222,10 @@ html:not(.navbar-vertical-collapsed) {
         }
         .navbar-vertical-footer {
           display: flex;
-          .uil-arrow-from-right {
+          .navbar-vertical-collapsed-icon {
             display: none;
           }
-          .uil-left-arrow-to-left {
+          .navbar-vertical-collapse-icon {
             display: inline;
           }
         }

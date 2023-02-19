@@ -1,13 +1,12 @@
 import NavbarTop from 'components/layouts/navbar/navbar-top/NavbarTop';
-import NavbarVerical from 'components/layouts/navbar/navbar-vertical/NavbarVerical';
-import React, { PropsWithChildren } from 'react';
+import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
 import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 
 const DeafultLayout = () => {
   return (
     <Container fluid className="px-0">
-      <NavbarVerical />
+      <NavbarVertical />
       <NavbarTop />
       <div className="content">
         <Outlet />

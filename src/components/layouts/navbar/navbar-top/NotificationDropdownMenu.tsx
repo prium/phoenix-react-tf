@@ -1,23 +1,20 @@
 import Avatar from 'components/base/Avatar';
 import { useState } from 'react';
-import { Card, Dropdown, Form, Nav } from 'react-bootstrap';
-
-import FeatherIcon from 'feather-icons-react';
+import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Scrollbar from 'components/base/Scrollbar';
 import Button from 'components/base/Button';
 import team30 from 'assets/img/team/40x40/30.webp';
-import avatar from 'assets/img/team/40x40/avatar.webp';
 import team57 from 'assets/img/team/40x40/57.webp';
 import team59 from 'assets/img/team/40x40/59.webp';
 import team58 from 'assets/img/team/40x40/58.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import RevealButton from 'components/base/RevealButton';
 
 const NotificationDropdownMenu = () => {
   const [notifications] = useState([
     {
+      id: '1',
       avatar: team30,
       name: 'Jessie Samson',
       textIcon: '💬',
@@ -29,6 +26,7 @@ const NotificationDropdownMenu = () => {
       read: true
     },
     {
+      id: '2',
       name: 'Jane Foster',
       textIcon: '📅',
       text: 'Created an event.',
@@ -39,6 +37,7 @@ const NotificationDropdownMenu = () => {
       read: false
     },
     {
+      id: '3',
       placeholder: true,
       name: 'Jessie Samson',
       textIcon: '👍',
@@ -50,6 +49,7 @@ const NotificationDropdownMenu = () => {
       read: false
     },
     {
+      id: '4',
       avatar: team57,
       name: 'Kiera Anderson',
       textIcon: '💬',
@@ -61,6 +61,7 @@ const NotificationDropdownMenu = () => {
       read: false
     },
     {
+      id: '5',
       avatar: team59,
       name: 'Herman Carter',
       textIcon: '👤',
@@ -72,6 +73,7 @@ const NotificationDropdownMenu = () => {
       read: false
     },
     {
+      id: '6',
       avatar: team58,
       name: 'Benjamin Button',
       textIcon: '👍',
@@ -101,6 +103,7 @@ const NotificationDropdownMenu = () => {
           <Scrollbar>
             {notifications.map((notification, index) => (
               <div
+                key={notification.id}
                 className={classNames('p-3 border-300 notification-card position-relative', {
                   'border-bottom': index !== notifications.length - 1,
                   unread: !notification.read

@@ -1,241 +1,269 @@
-export interface Page {
+export interface Route {
   name: string;
   icon?: string;
-  pages?: Page[];
+  pages?: Route[];
   path?: string;
   pathName?: string;
 }
 
-export interface Item {
+export interface RouteItems {
   label: string;
-  pages: Page[];
+  labelDisabled?: boolean;
+  pages: Route[];
 }
 
-export interface NavItem {
-  name: string;
-  path: string;
-  pathName: string;
-}
-
-export interface RootObject {
-  items: Item[];
-}
-
-export const routes: Item[] = [
+export const routes: RouteItems[] = [
+  {
+    label: 'dashboard',
+    labelDisabled: true,
+    pages: [
+      {
+        name: 'home',
+        icon: 'pie-chart',
+        // flat: true,
+        pages: [
+          {
+            name: 'e-commerce',
+            path: '/',
+            pathName: 'default-dashboard'
+            // topNavIcon: 'shopping-cart' // works for navbar top
+          },
+          {
+            name: 'project-management',
+            path: 'dashboard/project-management',
+            pathName: 'project-management-dashbaord'
+            // topNavIcon: 'clipboard'
+          },
+          {
+            name: 'CRM',
+            path: 'dashboard/crm',
+            pathName: 'crm'
+            // topNavIcon: 'phone',
+          },
+          {
+            name: 'social-feed',
+            path: 'apps/social/feed',
+            pathName: 'social-feed'
+            // topNavIcon: 'share-2'
+          }
+        ]
+      }
+    ]
+  },
   {
     label: 'apps',
     pages: [
-      // {
-      //   name: 'e-commerce',
-      //   icon: 'shopping-cart',
-      //   pages: [
-      //     {
-      //       name: 'admin',
-      //       pages: [
-      //         {
-      //           name: 'add-product',
-      //           path: 'apps/e-commerce/admin/add-product',
-      //           pathName: 'e-commerce-add-product'
-      //         },
-      //         {
-      //           name: 'products',
-      //           path: 'apps/e-commerce/admin/products',
-      //           pathName: 'e-commerce-products'
-      //         },
-      //         {
-      //           name: 'customers',
-      //           path: 'apps/e-commerce/admin/customers',
-      //           pathName: 'e-commerce-customers'
-      //         },
-      //         {
-      //           name: 'customer-details',
-      //           path: 'apps/e-commerce/admin/customer-details',
-      //           pathName: 'e-commerce-customer-details'
-      //         },
-      //         {
-      //           name: 'orders',
-      //           path: 'apps/e-commerce/admin/orders',
-      //           pathName: 'e-commerce-orders'
-      //         },
-      //         {
-      //           name: 'order-details',
-      //           path: 'apps/e-commerce/admin/order-details',
-      //           pathName: 'e-commerce-order-details'
-      //         },
-      //         {
-      //           name: 'refund',
-      //           path: 'apps/e-commerce/admin/refund',
-      //           pathName: 'e-commerce-refund'
-      //         }
-      //       ]
-      //     },
-      //     {
-      //       name: 'customer',
-      //       pages: [
-      //         {
-      //           name: 'homepage',
-      //           path: 'apps/e-commerce/landing/homepage',
-      //           pathName: 'e-commerce-fe-home'
-      //         },
-      //         {
-      //           name: 'product-details',
-      //           path: 'apps/e-commerce/landing/product-details',
-      //           pathName: 'e-commerce-fe-product-details'
-      //         },
-      //         {
-      //           name: 'products-filter',
-      //           path: 'apps/e-commerce/landing/products-filter',
-      //           pathName: 'e-commerce-fe-product-filter'
-      //         },
-      //         {
-      //           name: 'cart',
-      //           path: 'apps/e-commerce/landing/cart',
-      //           pathName: 'e-commerce-fe-cart'
-      //         },
-      //         {
-      //           name: 'checkout',
-      //           path: 'apps/e-commerce/landing/checkout',
-      //           pathName: 'e-commerce-fe-checkout'
-      //         },
-      //         {
-      //           name: 'shipping-info',
-      //           path: 'apps/e-commerce/landing/shipping-info',
-      //           pathName: 'e-commerce-fe-shipping-info'
-      //         },
-      //         {
-      //           name: 'profile',
-      //           path: 'apps/e-commerce/landing/profile',
-      //           pathName: 'e-commerce-fe-profile'
-      //         },
-      //         {
-      //           name: 'favourite-stores',
-      //           path: 'apps/e-commerce/landing/favourite-stores',
-      //           pathName: 'e-commerce-fe-favourite-stores'
-      //         },
-      //         {
-      //           name: 'wishlist',
-      //           path: 'apps/e-commerce/landing/wishlist',
-      //           pathName: 'e-commerce-fe-wishlist'
-      //         },
-      //         {
-      //           name: 'order-tracking',
-      //           path: 'apps/e-commerce/landing/order-tracking',
-      //           pathName: 'e-commerce-fe-order-tracking'
-      //         },
-      //         {
-      //           name: 'invoice',
-      //           path: 'apps/e-commerce/landing/invoice',
-      //           pathName: 'e-commerce-fe-invoice'
-      //         }
-      //       ]
-      //     }
-      //   ]
-      // },
-      // {
-      //   name: 'CRM',
-      //   icon: 'phone',
-      //   pages: [
-      //     {
-      //       name: 'leads',
-      //       path: 'apps/crm/leads',
-      //       pathName: 'crm-leads'
-      //     },
-      //     {
-      //       name: 'lead details',
-      //       path: 'apps/crm/lead-details',
-      //       pathName: 'crm-lead-details'
-      //     },
-      //     {
-      //       name: 'reports',
-      //       path: 'apps/crm/reports',
-      //       pathName: 'crm-reports'
-      //     },
-      //     {
-      //       name: 'add-contact',
-      //       path: 'apps/crm/add-contact',
-      //       pathName: 'crm-add-contact'
-      //     }
-      //   ]
-      // },
-      // {
-      //   name: 'project-management',
-      //   icon: 'clipboard',
-      //   pages: [
-      //     {
-      //       name: 'create new',
-      //       path: 'apps/project-management/create-new',
-      //       pathName: 'project-management-create-new'
-      //     },
-      //     {
-      //       name: 'project-list-view',
-      //       path: 'apps/project-management/project-list-view',
-      //       pathName: 'project-management-project-list-view'
-      //     },
-      //     {
-      //       name: 'project-card-view',
-      //       path: 'apps/project-management/project-card-view',
-      //       pathName: 'project-management-project-card-view'
-      //     },
-      //     {
-      //       name: 'project-board-view',
-      //       path: 'apps/project-management/project-board-view',
-      //       pathName: 'project-management-project-board-view'
-      //     },
-      //     {
-      //       name: 'todo-list',
-      //       path: 'apps/project-management/todo-list',
-      //       pathName: 'project-management-todo-list'
-      //     },
-      //     {
-      //       name: 'project-details',
-      //       path: 'apps/project-management/project-details',
-      //       pathName: 'project-management-project-details'
-      //     }
-      //   ]
-      // },
-      // {
-      //   name: 'chat',
-      //   icon: 'message-square',
-      //   path: 'apps/chat',
-      //   pathName: 'app-chat'
-      // },
-      // {
-      //   name: 'email',
-      //   icon: 'mail',
-      //   pages: [
-      //     {
-      //       name: 'inbox',
-      //       path: 'apps/email/inbox',
-      //       pathName: 'email-inbox'
-      //     },
-      //     {
-      //       name: 'email-detail',
-      //       path: 'apps/email/email-detail',
-      //       pathName: 'email-detail'
-      //     },
-      //     {
-      //       name: 'compose',
-      //       path: 'apps/email/compose',
-      //       pathName: 'email-compose'
-      //     }
-      //   ]
-      // },
-      // {
-      //   name: 'events',
-      //   icon: 'bookmark',
-      //   pages: [
-      //     {
-      //       name: 'create an event',
-      //       path: 'apps/events/create-an-event',
-      //       pathName: 'create-an-event'
-      //     },
-      //     {
-      //       name: 'Event detail',
-      //       path: 'apps/events/event-detail',
-      //       pathName: 'event-detail'
-      //     }
-      //   ]
-      // },
+      {
+        name: 'e-commerce',
+        icon: 'shopping-cart',
+        pages: [
+          {
+            name: 'admin',
+            pages: [
+              {
+                name: 'add-product',
+                path: 'apps/e-commerce/admin/add-product',
+                pathName: 'e-commerce-add-product'
+              },
+              {
+                name: 'products',
+                path: 'apps/e-commerce/admin/products',
+                pathName: 'e-commerce-products'
+              },
+              {
+                name: 'customers',
+                path: 'apps/e-commerce/admin/customers',
+                pathName: 'e-commerce-customers'
+              },
+              {
+                name: 'customer-details',
+                path: 'apps/e-commerce/admin/customer-details',
+                pathName: 'e-commerce-customer-details'
+              },
+              {
+                name: 'orders',
+                path: 'apps/e-commerce/admin/orders',
+                pathName: 'e-commerce-orders'
+              },
+              {
+                name: 'order-details',
+                path: 'apps/e-commerce/admin/order-details',
+                pathName: 'e-commerce-order-details'
+              },
+              {
+                name: 'refund',
+                path: 'apps/e-commerce/admin/refund',
+                pathName: 'e-commerce-refund'
+              }
+            ]
+          },
+          {
+            name: 'customer',
+            pages: [
+              {
+                name: 'homepage',
+                path: 'apps/e-commerce/landing/homepage',
+                pathName: 'e-commerce-fe-home'
+              },
+              {
+                name: 'product-details',
+                path: 'apps/e-commerce/landing/product-details',
+                pathName: 'e-commerce-fe-product-details'
+              },
+              {
+                name: 'products-filter',
+                path: 'apps/e-commerce/landing/products-filter',
+                pathName: 'e-commerce-fe-product-filter'
+              },
+              {
+                name: 'cart',
+                path: 'apps/e-commerce/landing/cart',
+                pathName: 'e-commerce-fe-cart'
+              },
+              {
+                name: 'checkout',
+                path: 'apps/e-commerce/landing/checkout',
+                pathName: 'e-commerce-fe-checkout'
+              },
+              {
+                name: 'shipping-info',
+                path: 'apps/e-commerce/landing/shipping-info',
+                pathName: 'e-commerce-fe-shipping-info'
+              },
+              {
+                name: 'profile',
+                path: 'apps/e-commerce/landing/profile',
+                pathName: 'e-commerce-fe-profile'
+              },
+              {
+                name: 'favourite-stores',
+                path: 'apps/e-commerce/landing/favourite-stores',
+                pathName: 'e-commerce-fe-favourite-stores'
+              },
+              {
+                name: 'wishlist',
+                path: 'apps/e-commerce/landing/wishlist',
+                pathName: 'e-commerce-fe-wishlist'
+              },
+              {
+                name: 'order-tracking',
+                path: 'apps/e-commerce/landing/order-tracking',
+                pathName: 'e-commerce-fe-order-tracking'
+              },
+              {
+                name: 'invoice',
+                path: 'apps/e-commerce/landing/invoice',
+                pathName: 'e-commerce-fe-invoice'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        name: 'CRM',
+        icon: 'phone',
+        pages: [
+          {
+            name: 'leads',
+            path: '/crm/leads',
+            pathName: 'crm-leads'
+          },
+          {
+            name: 'lead details',
+            path: 'apps/crm/lead-details',
+            pathName: 'crm-lead-details'
+          },
+          {
+            name: 'reports',
+            path: 'apps/crm/reports',
+            pathName: 'crm-reports'
+          },
+          {
+            name: 'add-contact',
+            path: 'apps/crm/add-contact',
+            pathName: 'crm-add-contact'
+          }
+        ]
+      },
+      {
+        name: 'project-management',
+        icon: 'clipboard',
+        pages: [
+          {
+            name: 'create new',
+            path: 'apps/project-management/create-new',
+            pathName: 'project-management-create-new'
+          },
+          {
+            name: 'project-list-view',
+            path: 'apps/project-management/project-list-view',
+            pathName: 'project-management-project-list-view'
+          },
+          {
+            name: 'project-card-view',
+            path: 'apps/project-management/project-card-view',
+            pathName: 'project-management-project-card-view'
+          },
+          {
+            name: 'project-board-view',
+            path: 'apps/project-management/project-board-view',
+            pathName: 'project-management-project-board-view'
+          },
+          {
+            name: 'todo-list',
+            path: 'apps/project-management/todo-list',
+            pathName: 'project-management-todo-list'
+          },
+          {
+            name: 'project-details',
+            path: 'apps/project-management/project-details',
+            pathName: 'project-management-project-details'
+          }
+        ]
+      },
+      {
+        name: 'chat',
+        icon: 'message-square',
+        path: 'apps/chat',
+        pathName: 'app-chat'
+      },
+      {
+        name: 'email',
+        icon: 'mail',
+        pages: [
+          {
+            name: 'inbox',
+            path: 'apps/email/inbox',
+            pathName: 'email-inbox'
+          },
+          {
+            name: 'email-detail',
+            path: 'apps/email/email-detail',
+            pathName: 'email-detail'
+          },
+          {
+            name: 'compose',
+            path: 'apps/email/compose',
+            pathName: 'email-compose'
+          }
+        ]
+      },
+      {
+        name: 'events',
+        icon: 'bookmark',
+        pages: [
+          {
+            name: 'create an event',
+            path: 'apps/events/create-an-event',
+            pathName: 'create-an-event'
+          },
+          {
+            name: 'Event detail',
+            path: 'apps/events/event-detail',
+            pathName: 'event-detail'
+          }
+        ]
+      },
       {
         name: 'social',
         icon: 'share-2',

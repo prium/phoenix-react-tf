@@ -2,15 +2,12 @@ import useToggleStyle from 'hooks/useToggleStyle';
 import DeafultLayout from 'layouts/DeafultLayout';
 import HomePage from 'pages/HomePage';
 import Starter from 'pages/Starter';
-
-import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import Leads from 'pages/apps/crm/Leads';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 export const routes = [
   {
     path: '/',
-    label: 'dashboard',
-    labelDisabled: true,
-    icon: 'pie-chart',
     element: <DeafultLayout />,
     children: [
       {
@@ -20,6 +17,16 @@ export const routes = [
       {
         path: 'starter',
         element: <Starter />
+      }
+    ]
+  },
+  {
+    path: 'crm',
+    element: <DeafultLayout />,
+    children: [
+      {
+        path: 'leads',
+        element: <Leads />
       }
     ]
   }
