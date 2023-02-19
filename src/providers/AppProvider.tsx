@@ -1,4 +1,4 @@
-import React, { createContext, Dispatch, PropsWithChildren, useReducer } from 'react';
+import React, { createContext, Dispatch, PropsWithChildren, useEffect, useReducer } from 'react';
 import { getItemFromStore } from 'helpers/utils';
 import { Config, initialConfig } from 'config';
 import { ACTIONTYPE, configReducer } from 'reducers/ConfigReducer';
@@ -43,6 +43,12 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       }
     });
   };
+
+  useEffect(() => {
+    if (!!config.bodyClass) {
+      document.body.classList.add(config.bodyClass);
+    }
+  }, [config]);
 
   return (
     <AppContext.Provider value={{ config, setConfig, toggleTheme, configDispatch }}>

@@ -5,7 +5,7 @@ import logo from 'assets/img/icons/logo.png';
 
 const NavbarTop = () => {
   return (
-    <Navbar className="navbar-top" id="navbar-fe" expand="lg">
+    <Navbar className="navbar-top" id="navbar-fe" expand="lg" variant="">
       <div className="navbar-collapse justify-content-between">
         <div className="navbar-logo">
           <Navbar.Toggle className="hover-bg-transparent navbar-toggler-humburger-icon">

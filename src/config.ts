@@ -6,6 +6,7 @@ export interface Config {
   navbarPosition: string;
   navbarTopShape: string;
   isRTL: boolean;
+  bodyClass?: string;
 }
 
 export const initialConfig: Config = {

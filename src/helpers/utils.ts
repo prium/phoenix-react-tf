@@ -5,7 +5,7 @@ export const getItemFromStore = (
 ) => {
   try {
     if (store.getItem(key)) {
-      return JSON.parse(store.getItem('key') as string);
+      return JSON.parse(store.getItem(key) as string);
     }
   } catch {
     return store.getItem(key) || defaultValue;

@@ -1,3 +1,4 @@
+import NavbarSlim from 'components/layouts/navbar/navbar-slim/NavbarSlim';
 import NavbarTop from 'components/layouts/navbar/navbar-top/NavbarTop';
 import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
 import { Container } from 'react-bootstrap';
@@ -7,7 +8,8 @@ const DeafultLayout = () => {
   return (
     <Container fluid className="px-0">
       <NavbarVertical />
-      <NavbarTop />
+      {/* <NavbarTop /> */}
+      <NavbarSlim />
       <div className="content">
         <Outlet />
       </div>

@@ -15,7 +15,7 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
           [
             'isFluid',
             'isRTL',
-            'isDark',
+            'theme',
             'navbarPosition',
             'isNavbarVerticalCollapsed',
             'navbarStyle'
