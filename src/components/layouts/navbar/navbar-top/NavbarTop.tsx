@@ -2,13 +2,29 @@ import SearchBox from 'components/common/SearchBox';
 import { Navbar } from 'react-bootstrap';
 import NavItems from './NavItems';
 import logo from 'assets/img/icons/logo.png';
+import { useContext } from 'react';
+import { AppContext } from 'providers/AppProvider';
 
 const NavbarTop = () => {
+  const {
+    config: { openNavbarVertical },
+    setConfig
+  } = useContext(AppContext);
+
+  const toggleOpenNavbarVertical = () => {
+    setConfig({
+      openNavbarVertical: !openNavbarVertical
+    });
+  };
+
   return (
-    <Navbar className="navbar-top" id="navbar-fe" expand="lg" variant="">
+    <Navbar className="navbar-top" id="navbar-fe" expand variant="">
       <div className="navbar-collapse justify-content-between">
         <div className="navbar-logo">
-          <Navbar.Toggle className="hover-bg-transparent navbar-toggler-humburger-icon">
+          <Navbar.Toggle
+            className="hover-bg-transparent navbar-toggler-humburger-icon"
+            onClick={toggleOpenNavbarVertical}
+          >
             <span className="navbar-toggle-icon">
               <span className="toggle-line"></span>
             </span>

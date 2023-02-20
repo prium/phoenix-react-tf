@@ -16,10 +16,10 @@ const NavItemsSlim = () => {
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>
-        <Nav.Link onClick={() => toggleTheme()}>
+        <Nav.Link className="p-0" onClick={() => toggleTheme()}>
           <div className="theme-control-toggle">
             <OverlayTrigger
-              placement="left"
+              placement="bottom"
               overlay={<Tooltip id="ThemeColor">Swith theme</Tooltip>}
             >
               <div className="theme-control-toggle theme-control-toggle-slim pe-2">
@@ -37,8 +37,18 @@ const NavItemsSlim = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
+        <Nav.Link>
+          <FeatherIcon icon="search" size={12} />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
         <Dropdown autoClose="outside">
-          <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
+          <Dropdown.Toggle
+            as={Link}
+            to="#!"
+            className="dropdown-caret-none nav-link py-0"
+            variant=""
+          >
             <FeatherIcon icon="bell" size={12} />
           </Dropdown.Toggle>
           <NotificationDropdownMenu />
@@ -46,7 +56,12 @@ const NavItemsSlim = () => {
       </Nav.Item>
       <Nav.Item>
         <Dropdown autoClose="outside">
-          <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
+          <Dropdown.Toggle
+            as={Link}
+            to="#!"
+            className="dropdown-caret-none nav-link py-0"
+            variant=""
+          >
             <svg
               width="10"
               height="10"
@@ -73,7 +88,7 @@ const NavItemsSlim = () => {
           <Dropdown.Toggle
             as={Link}
             to="#!"
-            className="dropdown-caret-none nav-link pe-0"
+            className="dropdown-caret-none nav-link pe-0 py-0"
             variant=""
           >
             Olivia <FontAwesomeIcon icon="chevron-down" className="fs--2" />

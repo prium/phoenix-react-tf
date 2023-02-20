@@ -18,6 +18,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       'isNavbarVerticalCollapsed',
       initialConfig.isNavbarVerticalCollapsed
     ),
+    openNavbarVertical: initialConfig.openNavbarVertical,
     theme: getItemFromStore('theme', initialConfig.theme),
     navbarTopStyle: getItemFromStore('navbarTopStyle', initialConfig.navbarTopStyle),
     navbarVerticalStyle: getItemFromStore('navbarVerticalStyle', initialConfig.navbarVerticalStyle),
@@ -45,9 +46,9 @@ const AppProvider = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    if (!!config.bodyClass) {
-      document.body.classList.add(config.bodyClass);
-    }
+    // if (!!config.bodyClass) {
+    //   document.body.classList.add(config.bodyClass);
+    // }
   }, [config]);
 
   return (

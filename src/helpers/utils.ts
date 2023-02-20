@@ -4,9 +4,7 @@ export const getItemFromStore = (
   store = localStorage
 ) => {
   try {
-    if (store.getItem(key)) {
-      return JSON.parse(store.getItem(key) as string);
-    }
+    return store.getItem(key) === null ? defaultValue : JSON.parse(store.getItem(key) as string);
   } catch {
     return store.getItem(key) || defaultValue;
   }

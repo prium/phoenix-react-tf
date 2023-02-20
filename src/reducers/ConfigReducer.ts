@@ -11,16 +11,7 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
     case 'SET_CONFIG':
       const { payload } = action;
       Object.keys(payload).forEach((key: string) => {
-        if (
-          [
-            'isFluid',
-            'isRTL',
-            'theme',
-            'navbarPosition',
-            'isNavbarVerticalCollapsed',
-            'navbarStyle'
-          ].includes(key)
-        ) {
+        if (['theme', 'navbarTopShape'].includes(key)) {
           setItemToStore(key, String(payload[key as keyof Config]));
         }
       });

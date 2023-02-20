@@ -3,11 +3,17 @@ import { routes } from 'sitemap';
 import { cleanText } from 'helpers/utils';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import { UilArrowFromRight, UilLeftArrowToLeft } from '@iconscout/react-unicons';
+import { useContext } from 'react';
+import { AppContext } from 'providers/AppProvider';
 
 const NavbarVerical = () => {
+  const {
+    config: { openNavbarVertical }
+  } = useContext(AppContext);
+
   return (
     <Navbar className="navbar-vertical" expand="lg" variant="">
-      <Navbar.Collapse id="navbarVerticalCollapse">
+      <Navbar.Collapse id="navbarVerticalCollapse" in={openNavbarVertical}>
         <div className="navbar-vertical-content">
           <Nav className="flex-column" as="ul" id="navbarVerticalNav">
             {routes.map(route => (
