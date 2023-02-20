@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Collapse, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { Route } from 'sitemap';
-import { cleanText } from 'helpers/utils';
+import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -33,14 +33,19 @@ const NavItem = ({ route, level }: NavItemProps) => {
           {route.icon ? (
             <>
               <span className="nav-link-icon">
-                <FeatherIcon icon={route.icon} size={16} />
+                {route.iconSet === 'font-awesome' ? (
+                  // @ts-ignore
+                  <FontAwesomeIcon icon={route.icon} className="fs-0 mx-1" />
+                ) : (
+                  <FeatherIcon icon={route.icon} size={16} />
+                )}
               </span>
               <span className="nav-link-text-wrapper">
-                <span className="nav-link-text">{cleanText(route.name)}</span>
+                <span className="nav-link-text">{capitalize(route.name)}</span>
               </span>
             </>
           ) : (
-            <span className="nav-link-text">{cleanText(route.name)}</span>
+            <span className="nav-link-text">{capitalize(route.name)}</span>
           )}
         </div>
       </NavLink>
@@ -81,7 +86,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
               <FeatherIcon icon={route.icon} size={16} />
             </span>
           )}
-          <span className="nav-link-text">{cleanText(route.name)}</span>
+          <span className="nav-link-text">{capitalize(route.name)}</span>
         </div>
       </Nav.Link>
       <div

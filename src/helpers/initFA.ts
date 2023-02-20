@@ -6,5 +6,6 @@ import {
   faEllipsis,
   faSearch
 } from '@fortawesome/free-solid-svg-icons';
+import { faGulp } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faSearch, faClock, faEllipsis, faCaretRight, faChevronDown);
+library.add(faSearch, faClock, faEllipsis, faCaretRight, faChevronDown, faGulp);

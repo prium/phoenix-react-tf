@@ -4,7 +4,7 @@ export interface Config {
   theme: 'light' | 'dark';
   navbarTopStyle: string;
   navbarVerticalStyle: string;
-  navbarPosition: string;
+  navbarPosition: 'horizontal' | 'vertical';
   navbarTopShape: 'default' | 'slim';
   isRTL: boolean;
   bodyClass?: string;

@@ -15,3 +15,6 @@ export const cleanText = (string: string) =>
 
 export const setItemToStore = (key: string, payload: string, store = localStorage) =>
   store.setItem(key, payload);
+
+export const capitalize = (string: string) =>
+  (string.charAt(0).toUpperCase() + string.slice(1)).replace(/-/g, ' ').replace('_and_', '&');

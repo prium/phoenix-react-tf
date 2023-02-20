@@ -1,3 +1,4 @@
+import NavbarHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarHorizontal';
 import NavbarSlim from 'components/layouts/navbar/navbar-slim/NavbarSlim';
 import NavbarTop from 'components/layouts/navbar/navbar-top/NavbarTop';
 import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
@@ -14,25 +15,44 @@ const DeafultLayout = () => {
   return (
     <Container fluid className="px-0">
       <NavbarVertical />
-      {config.navbarTopShape === 'default' && <NavbarTop />}
-      {config.navbarTopShape === 'slim' && <NavbarSlim />}
+      {config.navbarPosition === 'horizontal' ? (
+        <NavbarHorizontal />
+      ) : (
+        <>
+          {config.navbarTopShape === 'default' && <NavbarTop />}
+          {config.navbarTopShape === 'slim' && <NavbarSlim />}
+        </>
+      )}
 
       <div className="content">
         <Button
           onClick={() => {
-            if (config.navbarTopShape === 'default') {
-              setConfig({
-                navbarTopShape: 'slim'
-              });
-            } else {
-              setConfig({
-                navbarTopShape: 'default'
-              });
-            }
+            setConfig({
+              navbarTopShape: 'default',
+              navbarPosition: 'vertical'
+            });
           }}
         >
-          {' '}
-          Toggle topnav
+          Default Topnav
+        </Button>
+        <Button
+          onClick={() => {
+            setConfig({
+              navbarTopShape: 'slim',
+              navbarPosition: 'vertical'
+            });
+          }}
+        >
+          Slim Topnav
+        </Button>
+        <Button
+          onClick={() => {
+            setConfig({
+              navbarPosition: 'horizontal'
+            });
+          }}
+        >
+          Horizontal Nav
         </Button>
         <Outlet />
       </div>

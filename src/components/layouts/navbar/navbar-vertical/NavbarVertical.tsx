@@ -1,6 +1,6 @@
 import { Button, Nav, Navbar } from 'react-bootstrap';
 import { routes } from 'sitemap';
-import { cleanText } from 'helpers/utils';
+import { capitalize } from 'helpers/utils';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import { UilArrowFromRight, UilLeftArrowToLeft } from '@iconscout/react-unicons';
 import { useContext } from 'react';
@@ -19,7 +19,7 @@ const NavbarVerical = () => {
             {routes.map(route => (
               <Nav.Item key={route.label}>
                 {!route.labelDisabled && (
-                  <p className="navbar-vertical-label">{cleanText(route.label)}</p>
+                  <p className="navbar-vertical-label">{capitalize(route.label)}</p>
                 )}
                 <NavbarVerticalMenu level={1} routes={route.pages} />
               </Nav.Item>

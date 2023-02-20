@@ -1,6 +1,17 @@
+import { faGulp } from '@fortawesome/free-brands-svg-icons';
+import {
+  Icon,
+  UilChartPie,
+  UilCube,
+  UilDocumentLayoutRight,
+  UilFileLandscapeAlt,
+  UilPuzzlePiece
+} from '@iconscout/react-unicons';
+
 export interface Route {
   name: string;
-  icon?: string;
+  icon?: string | string[];
+  iconSet?: 'font-awesome' | 'feather' | 'unicons';
   pages?: Route[];
   path?: string;
   pathName?: string;
@@ -8,6 +19,8 @@ export interface Route {
 
 export interface RouteItems {
   label: string;
+  horizontalNavLabel?: string;
+  icon: Icon;
   labelDisabled?: boolean;
   pages: Route[];
 }
@@ -15,6 +28,8 @@ export interface RouteItems {
 export const routes: RouteItems[] = [
   {
     label: 'dashboard',
+    horizontalNavLabel: 'home',
+    icon: UilChartPie,
     labelDisabled: true,
     pages: [
       {
@@ -52,6 +67,7 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'apps',
+    icon: UilCube,
     pages: [
       {
         name: 'e-commerce',
@@ -290,6 +306,7 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'pages',
+    icon: UilFileLandscapeAlt,
     pages: [
       {
         name: 'starter',
@@ -541,6 +558,7 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'modules',
+    icon: UilPuzzlePiece,
     pages: [
       {
         name: 'forms',
@@ -980,6 +998,7 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'documentation',
+    icon: UilDocumentLayoutRight,
     pages: [
       {
         name: 'getting-started',
@@ -1026,7 +1045,8 @@ export const routes: RouteItems[] = [
       },
       {
         name: 'gulp',
-        icon: 'fa-brands fa-gulp fs-0 ms-1 me-1',
+        icon: ['fab', 'gulp'],
+        iconSet: 'font-awesome',
         path: 'documentation/gulp',
         pathName: 'doc-gulp'
       },
