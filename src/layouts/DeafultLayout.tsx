@@ -10,11 +10,9 @@ import { Outlet } from 'react-router-dom';
 const DeafultLayout = () => {
   const { config, setConfig } = useContext(AppContext);
 
-  console.log({ config });
-
   return (
     <Container fluid className="px-0">
-      <NavbarVertical />
+      {config.navbarPosition !== 'horizontal' && <NavbarVertical />}
       {config.navbarPosition === 'horizontal' ? (
         <NavbarHorizontal />
       ) : (

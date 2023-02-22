@@ -35,6 +35,11 @@ const NavItems = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item>
+        <Nav.Link>
+          <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />
+        </Nav.Link>
+      </Nav.Item>
+      <Nav.Item>
         <Dropdown autoClose="outside">
           <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
             <FeatherIcon icon="bell" size={20} />

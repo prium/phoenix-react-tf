@@ -11,9 +11,10 @@ const Scrollbar = ({
       renderThumbHorizontal={props => <div {...props} className="bg-gray-800 rounded" />}
       renderTrackVertical={props => <div {...props} className="bg-gray-800 rounded" />}
       autoHide={autoHide}
-      // autoHeight
-      // autoHeightMin="100%"
-      // style={{ height: 1 }}
+      autoHeight
+      autoHeightMin="100%"
+      autoHeightMax="100%"
+      style={{ height: 1 }}
       {...rest}
     >
       {children}

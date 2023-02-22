@@ -1,10 +1,9 @@
-import { faGulp } from '@fortawesome/free-brands-svg-icons';
 import {
   Icon,
   UilChartPie,
   UilCube,
   UilDocumentLayoutRight,
-  UilFileLandscapeAlt,
+  UilFilesLandscapesAlt,
   UilPuzzlePiece
 } from '@iconscout/react-unicons';
 
@@ -15,6 +14,9 @@ export interface Route {
   pages?: Route[];
   path?: string;
   pathName?: string;
+  flat?: boolean;
+  topNavIcon?: string;
+  dropdownInside?: boolean;
 }
 
 export interface RouteItems {
@@ -23,6 +25,7 @@ export interface RouteItems {
   icon: Icon;
   labelDisabled?: boolean;
   pages: Route[];
+  megaMenu?: boolean;
 }
 
 export const routes: RouteItems[] = [
@@ -35,31 +38,31 @@ export const routes: RouteItems[] = [
       {
         name: 'home',
         icon: 'pie-chart',
-        // flat: true,
+        flat: true,
         pages: [
           {
             name: 'e-commerce',
             path: '/',
-            pathName: 'default-dashboard'
-            // topNavIcon: 'shopping-cart' // works for navbar top
+            pathName: 'default-dashboard',
+            topNavIcon: 'shopping-cart'
           },
           {
             name: 'project-management',
             path: 'dashboard/project-management',
-            pathName: 'project-management-dashbaord'
-            // topNavIcon: 'clipboard'
+            pathName: 'project-management-dashbaord',
+            topNavIcon: 'clipboard'
           },
           {
             name: 'CRM',
             path: 'dashboard/crm',
-            pathName: 'crm'
-            // topNavIcon: 'phone',
+            pathName: 'crm',
+            topNavIcon: 'phone'
           },
           {
             name: 'social-feed',
             path: 'apps/social/feed',
-            pathName: 'social-feed'
-            // topNavIcon: 'share-2'
+            pathName: 'social-feed',
+            topNavIcon: 'share-2'
           }
         ]
       }
@@ -306,7 +309,7 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'pages',
-    icon: UilFileLandscapeAlt,
+    icon: UilFilesLandscapesAlt,
     pages: [
       {
         name: 'starter',
@@ -559,6 +562,7 @@ export const routes: RouteItems[] = [
   {
     label: 'modules',
     icon: UilPuzzlePiece,
+    megaMenu: true, // works for navbar top
     pages: [
       {
         name: 'forms',
@@ -1009,6 +1013,7 @@ export const routes: RouteItems[] = [
       {
         name: 'customization',
         icon: 'settings',
+        dropdownInside: true,
         pages: [
           {
             name: 'styling',
@@ -1025,6 +1030,7 @@ export const routes: RouteItems[] = [
       {
         name: 'layouts-doc',
         icon: 'table',
+        dropdownInside: true,
         pages: [
           {
             name: 'vertical navbar',
