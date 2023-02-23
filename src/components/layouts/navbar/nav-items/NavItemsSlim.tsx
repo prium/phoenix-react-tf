@@ -3,9 +3,9 @@ import { Dropdown, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { AppContext } from 'providers/AppProvider';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
-import NineDotMenu from 'components/layouts/navbar/navbar-top/NineDotMenu';
-import ProfileDropdownMenu from 'components/layouts/navbar/navbar-top/ProfileDropdownMenu';
-import NotificationDropdownMenu from 'components/layouts/navbar/navbar-top/NotificationDropdownMenu';
+import NineDotMenu from 'components/layouts/navbar/nav-items/NineDotMenu';
+import ProfileDropdownMenu from 'components/layouts/navbar/nav-items/ProfileDropdownMenu';
+import NotificationDropdownMenu from 'components/layouts/navbar/nav-items/NotificationDropdownMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const NavItemsSlim = () => {

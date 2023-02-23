@@ -1,6 +1,5 @@
-import NavbarHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarHorizontal';
-import NavbarSlim from 'components/layouts/navbar/navbar-slim/NavbarSlim';
-import NavbarTop from 'components/layouts/navbar/navbar-top/NavbarTop';
+import NavbarTopHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarTopHorizontal';
+import NavbarTopDefault from 'components/layouts/navbar/navbar-top/NavbarTopDefault';
 import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
 import { AppContext } from 'providers/AppProvider';
 import { useContext } from 'react';
@@ -12,15 +11,13 @@ const DeafultLayout = () => {
 
   return (
     <Container fluid className="px-0">
-      {config.navbarPosition !== 'horizontal' && <NavbarVertical />}
       {config.navbarPosition === 'horizontal' ? (
-        <NavbarHorizontal />
+        <NavbarTopHorizontal />
       ) : (
-        <NavbarTop />
-        // <>
-        //   {config.navbarTopShape === 'default' && <NavbarTop />}
-        //   {/* {config.navbarTopShape === 'slim' && <NavbarSlim />} */}
-        // </>
+        <>
+          <NavbarVertical />
+          <NavbarTopDefault />
+        </>
       )}
 
       <div className="content">
@@ -37,7 +34,7 @@ const DeafultLayout = () => {
         <Button
           onClick={() => {
             setConfig({
-              navbarTopShape: 'slim'
+              navbarTopShape: config.navbarTopShape === 'slim' ? 'default' : 'slim'
               // navbarPosition: 'vertical'
             });
           }}

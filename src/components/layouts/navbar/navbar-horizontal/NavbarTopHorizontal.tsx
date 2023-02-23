@@ -1,8 +1,7 @@
 import { Col, Dropdown, Navbar, Row } from 'react-bootstrap';
-import logo from 'assets/img/icons/logo.png';
 import { useContext, useEffect, useState } from 'react';
 import { AppContext } from 'providers/AppProvider';
-import NavItems from '../navbar-top/NavItems';
+import NavItems from '../nav-items/NavItems';
 import { Route, RouteItems, routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import { Link } from 'react-router-dom';
@@ -12,6 +11,8 @@ import { UilAngleRight } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Scrollbar from 'components/base/Scrollbar';
 import logoBg from 'assets/img/icons/logo-bg.png';
+import NavbarBrand from '../nav-items/NavbarBrand';
+import NavItemsSlim from '../nav-items/NavItemsSlim';
 
 const DropdownToggle = ({ route }: { route: RouteItems }) => {
   const Icon = route.icon;
@@ -197,17 +198,10 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
   );
 };
 
-const NavbarHorizontal = () => {
+const NavbarTopHorizontal = () => {
   const {
-    config: { openNavbarVertical },
-    setConfig
+    config: { openNavbarVertical, navbarTopShape }
   } = useContext(AppContext);
-
-  const toggleOpenNavbarVertical = () => {
-    setConfig({
-      openNavbarVertical: !openNavbarVertical
-    });
-  };
 
   useEffect(() => {
     document.documentElement.classList.add('navbar-horizontal');
@@ -217,23 +211,14 @@ const NavbarHorizontal = () => {
   }, []);
 
   return (
-    <Navbar className="navbar-top" expand="lg" variant="">
-      <div className="navbar-logo">
-        <Navbar.Toggle
-          className="hover-bg-transparent navbar-toggler-humburger-icon"
-          onClick={toggleOpenNavbarVertical}
-        >
-          <span className="navbar-toggle-icon">
-            <span className="toggle-line"></span>
-          </span>
-        </Navbar.Toggle>
-        <Navbar.Brand href="#!" className="me-1 me-sm-3">
-          <div className="d-flex align-items-center">
-            <img src={logo} alt="phoenix" width={27} />
-            <p className="logo-text ms-2 d-none d-sm-block">phoenix</p>
-          </div>
-        </Navbar.Brand>
-      </div>
+    <Navbar
+      className={classNames('navbar-top', {
+        'navbar-slim': navbarTopShape === 'slim'
+      })}
+      expand="lg"
+      variant=""
+    >
+      <NavbarBrand />
       <Navbar.Collapse
         className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
         in={openNavbarVertical}
@@ -244,9 +229,9 @@ const NavbarHorizontal = () => {
           ))}
         </ul>
       </Navbar.Collapse>
-      <NavItems />
+      {navbarTopShape === 'default' ? <NavItems /> : <NavItemsSlim />}
     </Navbar>
   );
 };
 
-export default NavbarHorizontal;
+export default NavbarTopHorizontal;
