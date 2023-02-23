@@ -46,9 +46,11 @@ const AppProvider = ({ children }: PropsWithChildren) => {
   };
 
   useEffect(() => {
-    // if (!!config.bodyClass) {
-    //   document.body.classList.add(config.bodyClass);
-    // }
+    if (config.navbarTopShape === 'slim') {
+      document.body.classList.add('nav-slim');
+    } else {
+      document.body.classList.remove('nav-slim');
+    }
   }, [config]);
 
   return (

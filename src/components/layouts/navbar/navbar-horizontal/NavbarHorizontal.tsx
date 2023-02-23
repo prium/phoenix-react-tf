@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Col, Dropdown, Navbar, Row } from 'react-bootstrap';
 import logo from 'assets/img/icons/logo.png';
 import { useContext, useEffect, useState } from 'react';
@@ -12,6 +11,7 @@ import FeatherIcon from 'feather-icons-react';
 import { UilAngleRight } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Scrollbar from 'components/base/Scrollbar';
+import logoBg from 'assets/img/icons/logo-bg.png';
 
 const DropdownToggle = ({ route }: { route: RouteItems }) => {
   const Icon = route.icon;
@@ -41,7 +41,7 @@ const DropdownToggle = ({ route }: { route: RouteItems }) => {
 };
 
 const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
-  const columns = [[], [], []];
+  const columns: Route[][] = [[], [], []];
 
   route.pages.forEach((page, index) => {
     if ([0, 1, 2].includes(index)) {
@@ -57,9 +57,14 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
 
   return (
     <Dropdown.Menu as="ul" className=" navbar-dropdown-caret dropdown-menu-card py-0">
-      <div className="border-0" style={{ maxHeight: '60vh' }}>
+      <div className="border-0" style={{ height: '60vh' }}>
         <Scrollbar>
-          <div className="px-3 pt-4 pb-3 img-dropdown">
+          <div
+            className="px-3 pt-4 pb-3 img-dropdown"
+            style={{
+              backgroundImage: `url(${logoBg})`
+            }}
+          >
             <Row className="gx-4 gy-5">
               {columns.map(column => (
                 <Col xs={12} sm={6} md={4}>
@@ -86,13 +91,21 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
   );
 };
 
-const TopNavMegaMenuIitemsLooper = ({ page }) => {
-  return page.pages.map(page =>
-    page.pages ? (
-      <TopNavMegaMenuIitemsLooper page={page} />
-    ) : (
-      <Link className="dropdown-link">{capitalize(page.name)}</Link>
-    )
+const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
+  return (
+    <>
+      {page.pages!.map(page => (
+        <>
+          {page.pages ? (
+            <TopNavMegaMenuIitemsLooper page={page!} />
+          ) : (
+            <Link to="#!" className="dropdown-link">
+              {capitalize(page.name)}
+            </Link>
+          )}
+        </>
+      ))}
+    </>
   );
 };
 
@@ -204,38 +217,34 @@ const NavbarHorizontal = () => {
   }, []);
 
   return (
-    <Navbar className="navbar-top" id="navbar-fe" expand="lg" variant="">
-      <div className="navbar-collapse justify-content-between">
-        <div className="navbar-logo">
-          <Navbar.Toggle
-            className="hover-bg-transparent navbar-toggler-humburger-icon"
-            onClick={toggleOpenNavbarVertical}
-          >
-            <span className="navbar-toggle-icon">
-              <span className="toggle-line"></span>
-            </span>
-          </Navbar.Toggle>
-          <Navbar.Brand href="#!" className="me-1 me-sm-3">
-            <div className="d-flex align-items-center">
-              <img src={logo} alt="phoenix" width={27} />
-              <p className="logo-text ms-2 d-none d-sm-block">phoenix</p>
-            </div>
-          </Navbar.Brand>
-        </div>
-
-        <Navbar.Collapse
-          className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
-          in={openNavbarVertical}
+    <Navbar className="navbar-top" expand="lg" variant="">
+      <div className="navbar-logo">
+        <Navbar.Toggle
+          className="hover-bg-transparent navbar-toggler-humburger-icon"
+          onClick={toggleOpenNavbarVertical}
         >
-          <ul className="navbar-nav navbar-nav-top">
-            {routes.map(route => (
-              <DropdownToggle route={route} key={route.label} />
-            ))}
-          </ul>
-        </Navbar.Collapse>
-
-        <NavItems />
+          <span className="navbar-toggle-icon">
+            <span className="toggle-line"></span>
+          </span>
+        </Navbar.Toggle>
+        <Navbar.Brand href="#!" className="me-1 me-sm-3">
+          <div className="d-flex align-items-center">
+            <img src={logo} alt="phoenix" width={27} />
+            <p className="logo-text ms-2 d-none d-sm-block">phoenix</p>
+          </div>
+        </Navbar.Brand>
       </div>
+      <Navbar.Collapse
+        className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
+        in={openNavbarVertical}
+      >
+        <ul className="navbar-nav navbar-nav-top">
+          {routes.map(route => (
+            <DropdownToggle route={route} key={route.label} />
+          ))}
+        </ul>
+      </Navbar.Collapse>
+      <NavItems />
     </Navbar>
   );
 };

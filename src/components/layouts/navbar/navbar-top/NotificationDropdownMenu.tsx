@@ -131,7 +131,7 @@ const NotificationDropdownMenu = () => {
                       </p>
                     </div>
                   </div>
-                  <Dropdown className="btn-reveal-trig]ger">
+                  <Dropdown className="btn-reveal-trigger position-static" align="end">
                     <Dropdown.Toggle
                       variant=""
                       size="sm"
@@ -139,10 +139,8 @@ const NotificationDropdownMenu = () => {
                     >
                       <FontAwesomeIcon icon="ellipsis" className="fs--2" />
                     </Dropdown.Toggle>
-                    <Dropdown.Menu align="end">
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Menu align="end" className="py-0">
+                      <Dropdown.Item>Mark as {notification.read ? 'unread' : 'read'}</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                 </div>

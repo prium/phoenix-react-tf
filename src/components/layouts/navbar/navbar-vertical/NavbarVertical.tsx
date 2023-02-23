@@ -29,7 +29,7 @@ const NavbarVerical = () => {
       </Navbar.Collapse>
       <div className="navbar-vertical-footer">
         <Button
-          variant=""
+          variant="kjkjkj"
           className="navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center"
         >
           <UilLeftArrowToLeft size={16} className="navbar-vertical-collapse-icon mb-1" />

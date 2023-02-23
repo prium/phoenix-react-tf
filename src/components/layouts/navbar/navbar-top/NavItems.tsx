@@ -11,7 +11,7 @@ import NotificationDropdownMenu from './NotificationDropdownMenu';
 
 const NavItems = () => {
   const {
-    config: { theme },
+    config: { theme, navbarPosition },
     toggleTheme
   } = useContext(AppContext);
   return (
@@ -34,11 +34,13 @@ const NavItems = () => {
           </div>
         </Nav.Link>
       </Nav.Item>
-      <Nav.Item>
-        <Nav.Link>
-          <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />
-        </Nav.Link>
-      </Nav.Item>
+      {navbarPosition === 'horizontal' && (
+        <Nav.Item>
+          <Nav.Link>
+            <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />
+          </Nav.Link>
+        </Nav.Item>
+      )}
       <Nav.Item>
         <Dropdown autoClose="outside">
           <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">

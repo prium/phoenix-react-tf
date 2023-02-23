@@ -16,10 +16,11 @@ const DeafultLayout = () => {
       {config.navbarPosition === 'horizontal' ? (
         <NavbarHorizontal />
       ) : (
-        <>
-          {config.navbarTopShape === 'default' && <NavbarTop />}
-          {config.navbarTopShape === 'slim' && <NavbarSlim />}
-        </>
+        <NavbarTop />
+        // <>
+        //   {config.navbarTopShape === 'default' && <NavbarTop />}
+        //   {/* {config.navbarTopShape === 'slim' && <NavbarSlim />} */}
+        // </>
       )}
 
       <div className="content">
@@ -36,8 +37,8 @@ const DeafultLayout = () => {
         <Button
           onClick={() => {
             setConfig({
-              navbarTopShape: 'slim',
-              navbarPosition: 'vertical'
+              navbarTopShape: 'slim'
+              // navbarPosition: 'vertical'
             });
           }}
         >
