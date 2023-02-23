@@ -24,7 +24,8 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     navbarVerticalStyle: getItemFromStore('navbarVerticalStyle', initialConfig.navbarVerticalStyle),
     navbarPosition: getItemFromStore('navbarPosition', initialConfig.navbarPosition),
     navbarTopShape: getItemFromStore('navbarTopShape', initialConfig.navbarTopShape),
-    isRTL: getItemFromStore('isRTL', initialConfig.isRTL)
+    isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
+    showSettingPanel: initialConfig.showSettingPanel
   };
 
   const [config, configDispatch] = useReducer(configReducer, configState);

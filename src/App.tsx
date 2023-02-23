@@ -1,3 +1,5 @@
+import SettingsPanel from 'components/settings-panel/SettingsPanel';
+import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import useToggleStyle from 'hooks/useToggleStyle';
 import DeafultLayout from 'layouts/DeafultLayout';
 import HomePage from 'pages/HomePage';
@@ -36,7 +38,13 @@ const router = createBrowserRouter(routes);
 
 const App = () => {
   useToggleStyle();
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <SettingsToggle />
+      <SettingsPanel />
+    </>
+  );
 };
 
 export default App;
