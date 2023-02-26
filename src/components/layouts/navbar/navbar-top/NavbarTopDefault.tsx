@@ -9,13 +9,14 @@ import NavItemsSlim from '../nav-items/NavItemsSlim';
 
 const NavbarTopDefault = () => {
   const {
-    config: { navbarTopShape }
+    config: { navbarTopShape, navbarTopAppearance }
   } = useContext(AppContext);
 
   return (
     <Navbar
       className={classNames('navbar-top', {
-        'navbar-slim': navbarTopShape === 'slim'
+        'navbar-slim': navbarTopShape === 'slim',
+        'navbar-darker': navbarTopAppearance === 'darker'
       })}
       expand
       variant=""

@@ -7,18 +7,18 @@ import { Button, Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 
 const DeafultLayout = () => {
-  const { config, setConfig } = useContext(AppContext);
+  const {
+    config: { navbarPosition, navbarTopShape },
+    setConfig
+  } = useContext(AppContext);
+
+  console.log({});
 
   return (
     <Container fluid className="px-0">
-      {config.navbarPosition === 'horizontal' ? (
-        <NavbarTopHorizontal />
-      ) : (
-        <>
-          <NavbarVertical />
-          <NavbarTopDefault />
-        </>
-      )}
+      {(navbarPosition === 'vertical' || navbarPosition === 'combo') && <NavbarVertical />}
+      {navbarPosition === 'vertical' && <NavbarTopDefault />}
+      {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && <NavbarTopHorizontal />}
 
       <div className="content">
         <Button
@@ -34,7 +34,7 @@ const DeafultLayout = () => {
         <Button
           onClick={() => {
             setConfig({
-              navbarTopShape: config.navbarTopShape === 'slim' ? 'default' : 'slim'
+              navbarTopShape: navbarTopShape === 'slim' ? 'default' : 'slim'
               // navbarPosition: 'vertical'
             });
           }}

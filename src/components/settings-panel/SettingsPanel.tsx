@@ -1,16 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { AppContext } from 'providers/AppProvider';
-import React, { ChangeEvent, FormEvent, useContext } from 'react';
-import { Col, Form, Offcanvas, Row } from 'react-bootstrap';
-import defaultLight from 'assets/img/generic/default-light.png';
-import defaultDark from 'assets/img/generic/default-dark.png';
-import RadioItem from './RadioItem';
+import React, { useContext } from 'react';
+import { Offcanvas } from 'react-bootstrap';
+import NavigationType from './NavigationType';
+import HorizontalNavbarShape from './HorizontalNavbarShape';
+import ColorScheme from './ColorScheme';
+import VerticalNavbarAppearance from './VerticalNavbarAppearance';
+import TopNavbarAppearance from './TopNavbarAppearance';
+import RTLMode from './RTLMode';
 
 const SettingsPanel = () => {
   const {
-    config: { theme, showSettingPanel },
-    setConfig
+    config: { showSettingPanel },
+    setConfig,
+    configDispatch
   } = useContext(AppContext);
 
   const handleClose = () => {
@@ -18,11 +22,9 @@ const SettingsPanel = () => {
       showSettingPanel: !showSettingPanel
     });
   };
-
-  const handleThemeChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value }: { value: 'dark' | 'light' } = e.target;
-    setConfig({
-      theme: value
+  const handleResetToDefault = () => {
+    configDispatch({
+      type: 'RESET'
     });
   };
 
@@ -46,37 +48,25 @@ const SettingsPanel = () => {
             <FontAwesomeIcon icon="times" className="fs-0" />
           </button>
         </div>
-        <Button variant="phoenix-secondary" className="w-100">
+        <Button variant="phoenix-secondary" className="w-100" onClick={handleResetToDefault}>
           <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs--2" />
           Reset to default
         </Button>
       </Offcanvas.Header>
       <Offcanvas.Body className="px-card">
-        <div className="setting-panel-item mt-0">
-          <h5 className="setting-panel-item-title">Color Scheme</h5>
-          <Row className="gx-2">
-            <Col xs={6}>
-              <RadioItem
-                label="Light"
-                name="theme"
-                value="light"
-                thumb={defaultLight}
-                defaultChecked={theme === 'light'}
-                handleChange={handleThemeChange}
-              />
-            </Col>
-            <Col xs={6}>
-              <RadioItem
-                label="Dark"
-                name="theme"
-                value="dark"
-                thumb={defaultDark}
-                defaultChecked={theme === 'dark'}
-                handleChange={handleThemeChange}
-              />
-            </Col>
-          </Row>
-        </div>
+        <ColorScheme />
+        <RTLMode />
+        <NavigationType />
+        <VerticalNavbarAppearance />
+        <HorizontalNavbarShape />
+        <TopNavbarAppearance className="mb-5" />
+        <Button
+          as="a"
+          href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
+          className="w-100 mb-3"
+        >
+          Purchase template
+        </Button>
       </Offcanvas.Body>
     </Offcanvas>
   );

@@ -1,5 +1,5 @@
 import { Col, Dropdown, Navbar, Row } from 'react-bootstrap';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from 'providers/AppProvider';
 import NavItems from '../nav-items/NavItems';
 import { Route, RouteItems, routes } from 'sitemap';
@@ -200,20 +200,21 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
 
 const NavbarTopHorizontal = () => {
   const {
-    config: { openNavbarVertical, navbarTopShape }
+    config: { openNavbarVertical, navbarTopShape, navbarTopAppearance }
   } = useContext(AppContext);
 
-  useEffect(() => {
-    document.documentElement.classList.add('navbar-horizontal');
-    return () => {
-      document.documentElement.classList.remove('navbar-horizontal');
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.documentElement.classList.add('navbar-horizontal');
+  //   return () => {
+  //     document.documentElement.classList.remove('navbar-horizontal');
+  //   };
+  // }, []);
 
   return (
     <Navbar
       className={classNames('navbar-top', {
-        'navbar-slim': navbarTopShape === 'slim'
+        'navbar-slim': navbarTopShape === 'slim',
+        'navbar-darker': navbarTopAppearance === 'darker'
       })}
       expand="lg"
       variant=""

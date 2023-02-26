@@ -1,4 +1,4 @@
-import { Config } from 'config';
+import { Config, initialConfig } from 'config';
 import { setItemToStore } from 'helpers/utils';
 
 export type ACTIONTYPE =
@@ -11,7 +11,15 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
     case 'SET_CONFIG':
       const { payload } = action;
       Object.keys(payload).forEach((key: string) => {
-        if (['theme', 'navbarTopShape', 'navbarPosition'].includes(key)) {
+        if (
+          [
+            'theme',
+            'navbarTopShape',
+            'navbarPosition',
+            'navbarTopAppearance',
+            'navbarVerticalAppearance'
+          ].includes(key)
+        ) {
           setItemToStore(key, String(payload[key as keyof Config]));
         }
       });
@@ -26,8 +34,7 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
     case 'RESET':
       localStorage.clear();
       return {
-        ...state
-        // ...settings
+        ...initialConfig
       };
     default:
       return state;

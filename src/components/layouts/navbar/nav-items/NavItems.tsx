@@ -34,7 +34,7 @@ const NavItems = () => {
           </div>
         </Nav.Link>
       </Nav.Item>
-      {navbarPosition === 'horizontal' && (
+      {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
         <Nav.Item>
           <Nav.Link>
             <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />

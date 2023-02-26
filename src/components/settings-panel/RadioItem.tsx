@@ -1,23 +1,16 @@
 import React, { ChangeEvent } from 'react';
 import { Form } from 'react-bootstrap';
 
-interface RadioItemProps<T> {
+interface RadioItemProps {
   name: string;
   value: string;
   thumb: string;
   label: string;
   defaultChecked?: boolean;
-  handleChange?: (e: ChangeEvent<HTMLInputElement> & { target: { value: T } }) => void;
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const RadioItem = <T extends string>({
-  name,
-  value,
-  thumb,
-  label,
-  defaultChecked,
-  handleChange
-}: RadioItemProps<T>) => {
+const RadioItem = ({ name, value, thumb, label, defaultChecked, handleChange }: RadioItemProps) => {
   return (
     <>
       <Form.Check.Input

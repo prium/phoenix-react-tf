@@ -20,8 +20,11 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     ),
     openNavbarVertical: initialConfig.openNavbarVertical,
     theme: getItemFromStore('theme', initialConfig.theme),
-    navbarTopStyle: getItemFromStore('navbarTopStyle', initialConfig.navbarTopStyle),
-    navbarVerticalStyle: getItemFromStore('navbarVerticalStyle', initialConfig.navbarVerticalStyle),
+    navbarTopAppearance: getItemFromStore('navbarTopAppearance', initialConfig.navbarTopAppearance),
+    navbarVerticalAppearance: getItemFromStore(
+      'navbarVerticalAppearance',
+      initialConfig.navbarVerticalAppearance
+    ),
     navbarPosition: getItemFromStore('navbarPosition', initialConfig.navbarPosition),
     navbarTopShape: getItemFromStore('navbarTopShape', initialConfig.navbarTopShape),
     isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
@@ -51,6 +54,12 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       document.body.classList.add('nav-slim');
     } else {
       document.body.classList.remove('nav-slim');
+    }
+
+    if (config.navbarPosition === 'combo') {
+      document.documentElement.classList.add('navbar-combo');
+    } else {
+      document.documentElement.classList.remove('navbar-combo');
     }
   }, [config]);
 
