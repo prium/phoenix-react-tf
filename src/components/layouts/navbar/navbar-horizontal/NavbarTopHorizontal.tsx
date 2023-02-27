@@ -1,201 +1,14 @@
-import { Col, Dropdown, Navbar, Row } from 'react-bootstrap';
+import { Dropdown, Navbar } from 'react-bootstrap';
 import { useContext, useState } from 'react';
 import { AppContext } from 'providers/AppProvider';
 import NavItems from '../nav-items/NavItems';
-import { Route, RouteItems, routes } from 'sitemap';
+import { RouteItems, routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FeatherIcon from 'feather-icons-react';
-import { UilAngleRight } from '@iconscout/react-unicons';
 import classNames from 'classnames';
-import Scrollbar from 'components/base/Scrollbar';
-import logoBg from 'assets/img/icons/logo-bg.png';
 import NavbarBrand from '../nav-items/NavbarBrand';
 import NavItemsSlim from '../nav-items/NavItemsSlim';
-
-const DropdownToggle = ({ route }: { route: RouteItems }) => {
-  const Icon = route.icon;
-  const [show, setShow] = useState(false);
-
-  return (
-    <Dropdown
-      as="li"
-      show={show}
-      className="nav-item"
-      key={route.label}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-    >
-      <Dropdown.Toggle
-        as="a"
-        variant=""
-        className="nav-link dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
-      >
-        <Icon className="me-2" size={16} />
-        <span>{capitalize(route.horizontalNavLabel ? route.horizontalNavLabel : route.label)}</span>
-      </Dropdown.Toggle>
-      {route.megaMenu ? <TopNavMegaMenu route={route} /> : <TopNavItem route={route} />}
-    </Dropdown>
-  );
-};
-
-const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
-  const columns: Route[][] = [[], [], []];
-
-  route.pages.forEach((page, index) => {
-    if ([0, 1, 2].includes(index)) {
-      columns[1].push(page);
-    }
-    if (index === 3) {
-      columns[0].push(page);
-    }
-    if (index === 4) {
-      columns[2].push(page);
-    }
-  });
-
-  return (
-    <Dropdown.Menu as="ul" className=" navbar-dropdown-caret dropdown-menu-card py-0">
-      <div className="border-0" style={{ height: '60vh' }}>
-        <Scrollbar>
-          <div
-            className="px-3 pt-4 pb-3 img-dropdown"
-            style={{
-              backgroundImage: `url(${logoBg})`
-            }}
-          >
-            <Row className="gx-4 gy-5">
-              {columns.map(column => (
-                <Col xs={12} sm={6} md={4}>
-                  {column.map((page, index) => (
-                    <>
-                      <div
-                        className={classNames('dropdown-item-group', {
-                          'mt-5': index > 0
-                        })}
-                      >
-                        <FeatherIcon icon={page.icon} size={16} className="me-2" />
-                        <h6 className="dropdown-item-title">{capitalize(page.name)}</h6>
-                      </div>
-                      <TopNavMegaMenuIitemsLooper page={page} />
-                    </>
-                  ))}
-                </Col>
-              ))}
-            </Row>
-          </div>
-        </Scrollbar>
-      </div>
-    </Dropdown.Menu>
-  );
-};
-
-const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
-  return (
-    <>
-      {page.pages!.map(page => (
-        <>
-          {page.pages ? (
-            <TopNavMegaMenuIitemsLooper page={page!} />
-          ) : (
-            <Link to="#!" className="dropdown-link">
-              {capitalize(page.name)}
-            </Link>
-          )}
-        </>
-      ))}
-    </>
-  );
-};
-
-const TopNavItem = ({ route }: { route: RouteItems }) => {
-  return (
-    <Dropdown.Menu as="ul" className="navbar-dropdown-caret">
-      {route.pages.map(page =>
-        page.pages ? (
-          // <div key={page.name}>
-          <>
-            {page.flat ? (
-              page.pages?.map(page => <TopNavDropdownItem page={page} key={page.pathName} />)
-            ) : (
-              <TopNavLooper page={page} />
-            )}
-          </>
-        ) : (
-          <TopNavDropdownItem page={page} />
-        )
-      )}
-    </Dropdown.Menu>
-  );
-};
-
-const TopNavLooper = ({ page }: { page: Route }) => {
-  const [show, setShow] = useState(false);
-  return (
-    <Dropdown
-      as="li"
-      show={show}
-      className={classNames({
-        'dropdown-inside': page.dropdownInside
-      })}
-      // onMouseEnter={() => {
-      //   if (!page.dropdownInside) {
-      //     setShow(true);
-      //   }
-      // }}
-      // onMouseLeave={() => {
-      //   if (!page.dropdownInside) {
-      //     setShow(false);
-      //   }
-      // }}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-    >
-      <Dropdown.Toggle
-        as="a"
-        variant=""
-        className="dropdown-item dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
-      >
-        <div className="dropdown-item-wrapper">
-          <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
-          <span>
-            <FeatherIcon icon={page.icon} size={16} className="me-2" />
-            {capitalize(page.name)}
-          </span>
-        </div>
-      </Dropdown.Toggle>
-      <Dropdown.Menu as="ul">
-        {page.pages?.map(page =>
-          page.pages ? <TopNavLooper page={page} /> : <TopNavDropdownItem page={page} />
-        )}
-      </Dropdown.Menu>
-    </Dropdown>
-  );
-};
-
-const TopNavDropdownItem = ({ page }: { page: Route }) => {
-  return (
-    <li>
-      <Dropdown.Item as={Link} to="#!">
-        <div className="dropdown-item-wrapper">
-          {page.icon && (
-            <>
-              {page.iconSet === 'font-awesome' ? (
-                // @ts-ignore
-                <FontAwesomeIcon icon={page.icon} className="fs-0 ms-1 me-2" />
-              ) : (
-                <FeatherIcon icon={page.icon} size={14} className="me-2" />
-              )}
-            </>
-          )}
-          {page.topNavIcon && <FeatherIcon icon={page.topNavIcon} size={14} className="me-2" />}
-          {capitalize(page.name)}
-        </div>
-      </Dropdown.Item>
-    </li>
-  );
-};
+import TopNavMegaMenu from './TopMavMegaMenu';
+import TopNavItem from './TopNavItem';
 
 const NavbarTopHorizontal = () => {
   const {
@@ -218,12 +31,38 @@ const NavbarTopHorizontal = () => {
       >
         <ul className="navbar-nav navbar-nav-top">
           {routes.map(route => (
-            <DropdownToggle route={route} key={route.label} />
+            <DropdownItem route={route} key={route.label} />
           ))}
         </ul>
       </Navbar.Collapse>
       {navbarTopShape === 'default' ? <NavItems /> : <NavItemsSlim />}
     </Navbar>
+  );
+};
+
+const DropdownItem = ({ route }: { route: RouteItems }) => {
+  const Icon = route.icon;
+  const [show, setShow] = useState(false);
+
+  return (
+    <Dropdown
+      as="li"
+      show={show}
+      className="nav-item"
+      key={route.label}
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+    >
+      <Dropdown.Toggle
+        as="a"
+        variant=""
+        className="nav-link dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
+      >
+        <Icon className="me-2" size={16} />
+        <span>{capitalize(route.horizontalNavLabel ? route.horizontalNavLabel : route.label)}</span>
+      </Dropdown.Toggle>
+      {route.megaMenu ? <TopNavMegaMenu route={route} /> : <TopNavItem route={route} />}
+    </Dropdown>
   );
 };
 
