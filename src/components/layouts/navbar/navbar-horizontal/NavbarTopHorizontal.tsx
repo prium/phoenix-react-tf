@@ -22,7 +22,6 @@ const DropdownToggle = ({ route }: { route: RouteItems }) => {
     <Dropdown
       as="li"
       show={show}
-      // show
       className="nav-item"
       key={route.label}
       onMouseEnter={() => setShow(true)}
@@ -202,13 +201,6 @@ const NavbarTopHorizontal = () => {
   const {
     config: { openNavbarVertical, navbarTopShape, navbarTopAppearance }
   } = useContext(AppContext);
-
-  // useEffect(() => {
-  //   document.documentElement.classList.add('navbar-horizontal');
-  //   return () => {
-  //     document.documentElement.classList.remove('navbar-horizontal');
-  //   };
-  // }, []);
 
   return (
     <Navbar

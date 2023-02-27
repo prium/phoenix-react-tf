@@ -1,16 +1,18 @@
 import SettingsPanel from 'components/settings-panel/SettingsPanel';
 import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import useToggleStyle from 'hooks/useToggleStyle';
-import DeafultLayout from 'layouts/DeafultLayout';
+import MainLayout from 'layouts/MainLayout';
 import HomePage from 'pages/HomePage';
 import Starter from 'pages/Starter';
 import Leads from 'pages/apps/crm/Leads';
+import { AppContext } from 'providers/AppProvider';
+import { useContext } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 export const routes = [
   {
     path: '/',
-    element: <DeafultLayout />,
+    element: <MainLayout />,
     children: [
       {
         index: true,
@@ -24,7 +26,7 @@ export const routes = [
   },
   {
     path: 'crm',
-    element: <DeafultLayout />,
+    element: <MainLayout />,
     children: [
       {
         path: 'leads',
@@ -37,7 +39,27 @@ export const routes = [
 const router = createBrowserRouter(routes);
 
 const App = () => {
-  useToggleStyle();
+  const { isStylesheetLoaded } = useToggleStyle();
+
+  const {
+    config: { theme }
+  } = useContext(AppContext);
+
+  if (!isStylesheetLoaded) {
+    return (
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          backgroundColor: theme === 'dark' ? '#000' : '#fff'
+        }}
+      />
+    );
+  }
+
   return (
     <>
       <RouterProvider router={router} />

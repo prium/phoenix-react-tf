@@ -44,7 +44,7 @@ const SettingsPanel = () => {
             </h5>
             <p className="mb-0 fs--1">Explore different styles according to your preferences</p>
           </div>
-          <button className="btn p-1 fw-bolder">
+          <button className="btn p-1 fw-bolder" onClick={handleClose}>
             <FontAwesomeIcon icon="times" className="fs-0" />
           </button>
         </div>

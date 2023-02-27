@@ -5,8 +5,7 @@ import { Card } from 'react-bootstrap';
 const SettingsToggle = () => {
   const {
     config: { showSettingPanel },
-    setConfig,
-    toggleTheme
+    setConfig
   } = useContext(AppContext);
 
   const handleClick = () => {

@@ -23,8 +23,6 @@ const NavigationType = () => {
     });
   };
 
-  console.log({ navbarPosition });
-
   return (
     <div className="setting-panel-item">
       <h5 className="setting-panel-item-title">Navigation Type</h5>

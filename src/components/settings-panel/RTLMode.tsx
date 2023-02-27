@@ -1,15 +1,30 @@
-import React from 'react';
+import { AppContext } from 'providers/AppProvider';
+import { ChangeEvent, useContext } from 'react';
 import { Form } from 'react-bootstrap';
 
 const RTLMode = () => {
+  const {
+    config: { isRTL },
+    setConfig
+  } = useContext(AppContext);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { checked } = e.target;
+    setConfig({
+      isRTL: checked
+    });
+  };
+
   return (
     <div className="border rounded-3 p-4 setting-panel-item bg-white">
       <div className="d-flex justify-content-between align-items-center">
         <h5 className="setting-panel-item-title mb-1">RTL </h5>
-        {/* <div className="form-check form-switch mb-0">
-          <input className="form-check-input" type="checkbox" data-theme-control="phoenixIsRTL" />
-        </div> */}
-        <Form.Check type="switch" id="custom-switch" />
+        <Form.Check
+          type="switch"
+          id="custom-switch"
+          onChange={handleChange}
+          defaultChecked={isRTL}
+        />
       </div>
       <p className="mb-0 text-700">Change text direction</p>
     </div>
