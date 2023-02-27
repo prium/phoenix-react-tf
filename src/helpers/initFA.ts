@@ -4,6 +4,7 @@ import {
   faCaretRight,
   faChevronDown,
   faClock,
+  faCopy,
   faEllipsis,
   faPalette,
   faSearch,
@@ -20,5 +21,6 @@ library.add(
   faGulp,
   faPalette,
   faTimes,
-  faArrowsRotate
+  faArrowsRotate,
+  faCopy
 );

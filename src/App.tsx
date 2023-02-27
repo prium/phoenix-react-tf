@@ -3,7 +3,7 @@ import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import useToggleStyle from 'hooks/useToggleStyle';
 import MainLayout from 'layouts/MainLayout';
 import HomePage from 'pages/HomePage';
-import Starter from 'pages/Starter';
+import Starter from 'pages/pages/Starter';
 import Leads from 'pages/apps/crm/Leads';
 import { AppContext } from 'providers/AppProvider';
 import { useContext } from 'react';
@@ -19,7 +19,7 @@ export const routes = [
         element: <HomePage />
       },
       {
-        path: 'starter',
+        path: '/pages/starter',
         element: <Starter />
       }
     ]
