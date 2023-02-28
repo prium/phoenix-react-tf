@@ -26,7 +26,15 @@ type ButtonVariant =
   | 'phoenix-warning'
   | 'phoenix-info'
   | 'phoenix-dark'
-  | 'phoenix-light';
+  | 'phoenix-light'
+  | 'soft-primary'
+  | 'soft-secondary'
+  | 'soft-success'
+  | 'soft-danger'
+  | 'soft-warning'
+  | 'soft-info'
+  | 'soft-dark'
+  | 'soft-light';
 
 export interface ButtonProps extends BsButtonProps {
   variant?: ButtonVariant;

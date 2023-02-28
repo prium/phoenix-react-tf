@@ -8,6 +8,7 @@ import Leads from 'pages/apps/crm/Leads';
 import { AppContext } from 'providers/AppProvider';
 import { useContext } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ButtonExample from 'pages/modules/components/ButtonExample';
 
 export const routes = [
   {
@@ -21,6 +22,20 @@ export const routes = [
       {
         path: '/pages/starter',
         element: <Starter />
+      },
+      {
+        path: '/modules',
+        children: [
+          {
+            path: 'components',
+            children: [
+              {
+                path: 'button',
+                element: <ButtonExample />
+              }
+            ]
+          }
+        ]
       }
     ]
   },

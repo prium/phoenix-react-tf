@@ -18,3 +18,11 @@ export const setItemToStore = (key: string, payload: string, store = localStorag
 
 export const capitalize = (string: string) =>
   (string.charAt(0).toUpperCase() + string.slice(1)).replace(/-/g, ' ').replace('_and_', '&');
+
+export const snakeCase = (string: string) => {
+  return string
+    .replace(/\W+/g, ' ')
+    .split(/ |\B(?=[A-Z])/)
+    .map(word => word.toLowerCase())
+    .join('_');
+};

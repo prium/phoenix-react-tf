@@ -64,6 +64,10 @@ a[href] {
     .hover-hide {
       opacity: 0;
     }
+
+    .hover-show {
+      opacity: 1 !important;
+    }
     @each $breakpoint, $value in $grid-breakpoints {
       .hover-#{$breakpoint}-hide {
         @include media-breakpoint-up($breakpoint) {
