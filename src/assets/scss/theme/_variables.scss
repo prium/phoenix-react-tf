@@ -151,11 +151,10 @@ $border-radius-lg: 0.5rem !default;
 //*-----------------------------------------------
 //|   Fonts Families
 //-----------------------------------------------*/
-$font-family-sans-serif: 'Nunito Sans', -apple-system, BlinkMacSystemFont,
-  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-  'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-$font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas,
-  'Liberation Mono', 'Courier New', monospace !default;
+$font-family-sans-serif: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$font-family-monospace: 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+  monospace !default;
 $font-family-base: $font-family-sans-serif;
 
 //*-----------------------------------------------
@@ -281,7 +280,7 @@ $table-hover-color: var(--#{$prefix}black);
 //|   Buttons
 //-----------------------------------------------*/
 $btn-link-disabled-color: $gray-400 !default;
-$btn-disabled-opacity: 1 !default;
+$btn-disabled-opacity: 0.3 !default;
 $btn-box-shadow: inset 0 1px 0 rgba($white, 0), 0 1px 1px rgba($black, 0) !default;
 $btn-font-weight: $font-weight-bold !default;
 $btn-line-height: 1.2 !default;
@@ -327,9 +326,8 @@ $input-btn-padding-y-lg: 0.875rem !default;
 $input-btn-padding-x-lg: 1.5rem !default;
 
 $input-box-shadow: inset 0 1px 2px transparent !default;
-$btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1),
-  0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba($black, 0.07),
-  0 1px 2px 0 rgba($black, 0.08) !default;
+$btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.08),
+  0 1px 1.5px 0 rgba($black, 0.07), 0 1px 2px 0 rgba($black, 0.08) !default;
 $btn-font-weight: $font-weight-medium !default;
 $input-btn-focus-blur: 0 !default;
 $btn-focus-width: 0 !default;
@@ -359,8 +357,7 @@ $input-border-radius-lg: 0.375rem !default;
 // $form-floating-padding-y: 0.645rem;
 $form-floating-input-padding-t: 22.5px !default;
 $form-floating-input-padding-b: 9.5px !default;
-$form-floating-label-transform: scale(0.85) translateY(-0.4rem)
-  translateX(0.15rem);
+$form-floating-label-transform: scale(0.85) translateY(-0.4rem) translateX(0.15rem);
 $form-floating-height: add(2.875rem, 2px) !default;
 
 $form-check-margin-bottom: 0.34375rem !default;
@@ -412,21 +409,13 @@ $form-switch-padding-start-lg: $form-switch-width-lg + 0.5rem !default;
 $navbar-dark-color: var(--#{$prefix}navbar-dark-color) !default;
 $navbar-dark-hover-color: var(--#{$prefix}navbar-dark-hover-color) !default;
 $navbar-dark-active-color: var(--#{$prefix}navbar-dark-active-color) !default;
-$navbar-dark-disabled-color: var(
-  --#{$prefix}navbar-dark-disabled-color
-) !default;
-$navbar-dark-toggler-border-color: var(
-  --#{$prefix}navbar-dark-toggler-border-color
-) !default;
+$navbar-dark-disabled-color: var(--#{$prefix}navbar-dark-disabled-color) !default;
+$navbar-dark-toggler-border-color: var(--#{$prefix}navbar-dark-toggler-border-color) !default;
 $navbar-light-color: var(--#{$prefix}navbar-light-color) !default;
 $navbar-light-hover-color: var(--#{$prefix}navbar-light-hover-color) !default;
 $navbar-light-active-color: var(--#{$prefix}navbar-light-active-color) !default;
-$navbar-light-disabled-color: var(
-  --#{$prefix}navbar-light-disabled-color
-) !default;
-$navbar-light-toggler-border-color: var(
-  --#{$prefix}navbar-light-toggler-border-color
-) !default;
+$navbar-light-disabled-color: var(--#{$prefix}navbar-light-disabled-color) !default;
+$navbar-light-toggler-border-color: var(--#{$prefix}navbar-light-toggler-border-color) !default;
 
 $navbar-font-size: $font-size-base * 0.8 !default;
 
@@ -443,7 +432,6 @@ $navbar-padding-x: map_get($spacers, 4) !default;
 $navbar-top-slim-height: 1.7rem !default;
 $navbar-top-height: var(--#{$prefix}navbar-top-height) !default;
 $standard-nav-height: 3.5625rem !default;
-
 
 $navbar-light-toggler-icon-bg: str-replace(
   url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#9da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E"),
@@ -562,9 +550,7 @@ $modal-content-border-color: transparent;
 $list-group-color: var(--#{$prefix}800);
 $list-group-bg: var(--#{$prefix}list-group-bg) !default;
 $list-group-border-color: var(--#{$prefix}border-color) !default;
-$list-group-action-hover-color: var(
-  --#{$prefix}list-group-action-hover-color
-) !default;
+$list-group-action-hover-color: var(--#{$prefix}list-group-action-hover-color) !default;
 $list-group-hover-bg: var(--#{$prefix}list-group-hover-bg) !default;
 $list-group-action-active-bg: var(--#{$prefix}200);
 
@@ -821,28 +807,18 @@ $navbar-vertical-border-color: var(--#{$prefix}navbar-vertical-border-color);
 $navbar-vertical-bg-color: var(--#{$prefix}navbar-vertical-bg-color);
 $navbar-vertical-label-color: var(--#{$prefix}navbar-vertical-label-color);
 $navbar-vertical-link-color: var(--#{$prefix}navbar-vertical-link-color);
-$navbar-vertical-link-hover-color: var(
-  --#{$prefix}navbar-vertical-link-hover-color
-);
+$navbar-vertical-link-hover-color: var(--#{$prefix}navbar-vertical-link-hover-color);
 $navbar-vertical-link-hover-bg: var(--#{$prefix}navbar-vertical-link-hover-bg);
-$navbar-vertical-link-active-color: var(
-  --#{$prefix}navbar-vertical-link-active-color
-);
+$navbar-vertical-link-active-color: var(--#{$prefix}navbar-vertical-link-active-color);
 $navbar-vertical-link-disable-color: var(
   --#{$prefix}navbar-vertical-link-disable-color
 ); // need to check
 // $navbar-vertical-link-text-active-color: var(--#{$prefix}navbar-vertical-link-text-active-color);
 
-$navbar-vertical-collapsed-menu-color: var(
-  --#{$prefix}navbar-vertical-collapsed-menu-color
-);
-$navbar-vertical-collapsed-menu-bg: var(
-  --#{$prefix}navbar-vertical-collapsed-menu-bg
-);
+$navbar-vertical-collapsed-menu-color: var(--#{$prefix}navbar-vertical-collapsed-menu-color);
+$navbar-vertical-collapsed-menu-bg: var(--#{$prefix}navbar-vertical-collapsed-menu-bg);
 $navbar-vertical-hr-color: var(--#{$prefix}navbar-vertical-hr-color);
-$navbar-vertical-link-icon-color: var(
-  --#{$prefix}navbar-vertical-link-icon-color
-);
+$navbar-vertical-link-icon-color: var(--#{$prefix}navbar-vertical-link-icon-color);
 $navbar-vertical-dropdown-indicator-color: var(
   --#{$prefix}navbar-vertical-dropdown-indicator-color
 );

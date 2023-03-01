@@ -7,8 +7,11 @@ import {
   faCopy,
   faEllipsis,
   faPalette,
+  faPlus,
   faSearch,
-  faTimes
+  faTimes,
+  faTrash,
+  faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { faGulp } from '@fortawesome/free-brands-svg-icons';
 
@@ -22,5 +25,8 @@ library.add(
   faPalette,
   faTimes,
   faArrowsRotate,
-  faCopy
+  faCopy,
+  faPlus,
+  faTrash,
+  faTrashAlt
 );

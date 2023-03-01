@@ -33,7 +33,8 @@ interface PhoenixDocCardHeaderProps {
 }
 interface PhoenixDocCardBodyProps {
   code: string;
-  scope?: ReactElement;
+  // scope?: ReactElement;
+  scope?: { [key: string]: any };
   noInline?: boolean;
 }
 
@@ -82,13 +83,14 @@ const PhoenixDocCardHeader = ({
         </Col>
         <Col md="auto">
           <Nav className="nav-underline justify-content-end doc-tab-nav align-items-center">
-            <Button variant="link" className="px-2 text-900 copy-code-btn me-2">
+            <Button variant="link" size="sm" className="px-2 text-900 copy-code-btn me-2">
               <FontAwesomeIcon icon="copy" className="me-1" />
               Copy Code
             </Button>
             <Button
               variant="phoenix-primary"
               className="text-nowrap"
+              size="sm"
               style={{ width: 135 }}
               onClick={() => setOpen(!open)}
             >

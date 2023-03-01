@@ -4,7 +4,7 @@ const WebpackRTLPlugin = require('@automattic/webpack-rtl-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     theme: './src/assets/scss/theme.scss',
     user: './src/assets/scss/user.scss'

@@ -17,10 +17,10 @@ const DocPagesLayout = ({ children }: PropsWithChildren<DocPagesLayoutProps>) =>
     const items: any = [];
     const recursiveMap = (children: any) => {
       React.Children.forEach(children, child => {
-        if (child.props?.children) {
+        if (child.props?.children && child.type?.name !== 'PhoenixDocCardHeader') {
           recursiveMap(child.props.children);
         } else {
-          if (child.type.name === 'PhoenixDocCardHeader') {
+          if (child.type?.name === 'PhoenixDocCardHeader') {
             items.push({
               to: snakeCase(child.props.title),
               label: child.props.title
