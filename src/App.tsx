@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
+import AvatarExample from 'pages/modules/components/AvatarExample';
 
 export const routes = [
   {
@@ -33,6 +34,10 @@ export const routes = [
               {
                 path: 'accordion',
                 element: <AccordionExample />
+              },
+              {
+                path: 'avatar',
+                element: <AvatarExample />
               },
               {
                 path: 'button',
