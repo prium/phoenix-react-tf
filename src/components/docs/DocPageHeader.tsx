@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from 'react';
 import FeatherIcon from 'feather-icons-react';
-import { capitalize } from 'helpers/utils';
 
 interface DocPageHeaderProps {
   title: string;
   description?: string;
+  id?: string;
   link?: {
     url: string;
     text: string;
@@ -15,10 +15,11 @@ const DocPageHeader = ({
   title,
   description,
   children,
-  link
+  link,
+  id
 }: PropsWithChildren<DocPageHeaderProps>) => {
   return (
-    <div className="mb-7">
+    <div className="mb-7" id={id}>
       <h2 className="mb-2 lh-sm">{title}</h2>
       {description && <p className="text-700 lead mb-2">{description}</p>}
       {children}

@@ -2,10 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout, { SideNavItem } from 'components/layouts/DocPagesLayout';
 import FeatherIcon from 'feather-icons-react';
-import { useState } from 'react';
-import { Form, Spinner } from 'react-bootstrap';
 
 const phoenixButtonsCode = `
 import Button from 'components/base/Button';
@@ -395,6 +393,83 @@ const sizingCode = `
 </>
 `;
 
+const sideNavItems: SideNavItem[] = [
+  {
+    to: 'phoenix_buttons',
+    label: 'Phoenix Buttons'
+  },
+  {
+    to: 'solid_buttons',
+    label: 'Solid Buttons'
+  },
+  {
+    to: 'soft_buttons',
+    label: 'Soft Buttons'
+  },
+  {
+    to: 'outline_buttons',
+    label: 'Outline Buttons'
+  },
+  {
+    to: 'button_sizes',
+    label: 'Button Sizes'
+  },
+  {
+    to: 'buttons_with_icons_and_label',
+    label: 'Buttons with icons and label'
+  },
+  {
+    to: 'disabled_state',
+    label: 'Disabled state'
+  },
+  {
+    to: 'button_loading_state',
+    label: 'Button loading state'
+  },
+  {
+    to: 'checkbox_radio',
+    label: 'Checkbox / Radio'
+  },
+  {
+    to: 'uncontrolled',
+    label: 'Uncontrolled'
+  },
+  {
+    to: 'controlled',
+    label: 'Controlled'
+  },
+  {
+    to: 'button_group',
+    label: 'Button Group',
+    subItem: [
+      {
+        to: 'basic_example',
+        label: 'Basic example'
+      },
+      {
+        to: 'button_toolbar',
+        label: 'Button toolbar'
+      },
+      {
+        to: 'button_toolbar_with_input_group',
+        label: 'Button toolbar with input group'
+      },
+      {
+        to: 'sizing',
+        label: 'Sizing'
+      },
+      {
+        to: 'nesting',
+        label: 'Nesting'
+      },
+      {
+        to: 'vertical_variation',
+        label: 'Vertical variation'
+      }
+    ]
+  }
+];
+
 const ButtonExample = () => {
   return (
     <div>
@@ -407,7 +482,7 @@ const ButtonExample = () => {
         }}
       />
 
-      <DocPagesLayout>
+      <DocPagesLayout sideNavItems={sideNavItems}>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Phoenix Buttons" />
           <PhoenixDocCard.Body code={phoenixButtonsCode} />
@@ -506,6 +581,7 @@ const ButtonExample = () => {
 
         <DocPageHeader
           title="Button Group"
+          id="button_group"
           description="Group a series of buttons together on a single line or stack them in a vertical column."
           link={{
             text: 'Buttons on react-bootstrap',
