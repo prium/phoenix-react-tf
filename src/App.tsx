@@ -12,6 +12,7 @@ import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
 import AvatarExample from 'pages/modules/components/AvatarExample';
 import BadgeExample from 'pages/modules/components/BadgeExample';
+import BreadcrumbExample from 'pages/modules/components/BreadcrumbExample';
 
 export const routes = [
   {
@@ -47,6 +48,10 @@ export const routes = [
               {
                 path: 'badge',
                 element: <BadgeExample />
+              },
+              {
+                path: 'breadcrumb',
+                element: <BreadcrumbExample />
               }
             ]
           }
