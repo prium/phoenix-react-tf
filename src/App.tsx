@@ -13,6 +13,7 @@ import AccordionExample from 'pages/modules/components/AccordionExample';
 import AvatarExample from 'pages/modules/components/AvatarExample';
 import BadgeExample from 'pages/modules/components/BadgeExample';
 import BreadcrumbExample from 'pages/modules/components/BreadcrumbExample';
+import CardExample from 'pages/modules/components/CardExample';
 
 export const routes = [
   {
@@ -52,6 +53,10 @@ export const routes = [
               {
                 path: 'breadcrumb',
                 element: <BreadcrumbExample />
+              },
+              {
+                path: 'card',
+                element: <CardExample />
               }
             ]
           }
