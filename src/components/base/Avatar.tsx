@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import avatar from 'assets/img/team/40x40/avatar.webp';
 import { PropsWithChildren } from 'react';
 
-type Size = '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'l' | 'm' | 's';
-type Variant = 'image' | 'name' | 'emoji';
-type Rounded = 'circle' | 'square' | 'soft';
-type Status = 'online' | 'offline' | 'away' | 'do-not-disturb';
+export type Size = '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'l' | 'm' | 's';
+export type Variant = 'image' | 'name' | 'emoji';
+export type Rounded = 'circle' | 'square' | 'soft';
+export type Status = 'online' | 'offline' | 'away' | 'do-not-disturb';
 interface AvatarProps {
   size: Size;
   src?: string;
@@ -13,6 +13,9 @@ interface AvatarProps {
   rounded?: Rounded;
   status?: Status;
   placeholder?: boolean;
+  className?: string;
+}
+interface AvatarGroupProps {
   className?: string;
 }
 
@@ -69,5 +72,11 @@ const Avatar = ({
     </div>
   );
 };
+
+export const AvatarGroup = ({ children, className }: PropsWithChildren<AvatarGroupProps>) => {
+  return <div className={classNames(className, 'avatar-group')}>{children}</div>;
+};
+
+Avatar.Gropup = AvatarGroup;
 
 export default Avatar;
