@@ -11,6 +11,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
 import AvatarExample from 'pages/modules/components/AvatarExample';
+import BadgeExample from 'pages/modules/components/BadgeExample';
 
 export const routes = [
   {
@@ -42,6 +43,10 @@ export const routes = [
               {
                 path: 'button',
                 element: <ButtonExample />
+              },
+              {
+                path: 'badge',
+                element: <BadgeExample />
               }
             ]
           }
