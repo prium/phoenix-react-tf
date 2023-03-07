@@ -21,6 +21,7 @@ import ListGroupExample from 'pages/modules/components/ListGroupExample';
 import ModalExample from 'pages/modules/components/ModalExample';
 import OffcanvasExample from 'pages/modules/components/OffcanvasExample';
 import ProgressbarExample from 'pages/modules/components/ProgressbarExample';
+import PlaceholderExample from 'pages/modules/components/PlaceholderExample';
 
 export const routes = [
   {
@@ -92,6 +93,10 @@ export const routes = [
               {
                 path: 'progress-bar',
                 element: <ProgressbarExample />
+              },
+              {
+                path: 'placeholder',
+                element: <PlaceholderExample />
               }
             ]
           }
