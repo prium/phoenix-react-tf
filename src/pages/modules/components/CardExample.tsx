@@ -1,7 +1,7 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
-import { Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import generic66 from 'assets/img/generic/66.jpg';
 import generic44 from 'assets/img/generic/44.png';
 import generic45 from 'assets/img/generic/45.png';
@@ -127,6 +127,38 @@ const backgroundStylesCode = `
 };
 `;
 
+const borderCode = `
+() => {
+  const [variants] = useState([
+    'Primary',
+    'Secondary',
+    'Success',
+    'Danger',
+    'Warning',
+    'Info',
+    'Light',
+    'Dark'
+  ]);
+  return (
+    <Row className="g-4">
+      {variants.map(variant => (
+        <Col sm={6} md={4} lg={3}>
+          <Card key={variant} className={'border border-' + variant.toLowerCase()}>
+            <Card.Body>
+              <Card.Title as="h4">{variant} Border Card</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of the
+                card's content.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  );
+};
+`;
+
 const CardExample = () => {
   return (
     <div>
@@ -135,7 +167,7 @@ const CardExample = () => {
         description="Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options."
         link={{
           text: 'Cards on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/card/'
+          url: 'https://react-bootstrap.github.io/components/cards/'
         }}
       />
 
@@ -171,7 +203,11 @@ const CardExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Card Background Styles" />
           <PhoenixDocCard.Body code={backgroundStylesCode} />
-          <Test />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Card Border Styles" />
+          <PhoenixDocCard.Body code={borderCode} />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>
@@ -195,7 +231,7 @@ const Test = () => {
     <Row className="g-4">
       {variants.map(variant => (
         <Col sm={6} md={4} lg={3}>
-          <Card key={variant} className={'border border-' + '{variant.toLowerCase()'}>
+          <Card key={variant} className={'border border-' + variant.toLowerCase()}>
             <Card.Body>
               <Card.Title as="h4">{variant} Border Card</Card.Title>
               <Card.Text>
