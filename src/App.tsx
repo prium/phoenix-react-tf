@@ -20,6 +20,7 @@ import DropdownExample from 'pages/modules/components/DropdownExample';
 import ListGroupExample from 'pages/modules/components/ListGroupExample';
 import ModalExample from 'pages/modules/components/ModalExample';
 import OffcanvasExample from 'pages/modules/components/OffcanvasExample';
+import ProgressbarExample from 'pages/modules/components/ProgressbarExample';
 
 export const routes = [
   {
@@ -87,6 +88,10 @@ export const routes = [
               {
                 path: 'offcanvas',
                 element: <OffcanvasExample />
+              },
+              {
+                path: 'progress-bar',
+                element: <ProgressbarExample />
               }
             ]
           }
