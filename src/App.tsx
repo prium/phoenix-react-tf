@@ -15,6 +15,7 @@ import BadgeExample from 'pages/modules/components/BadgeExample';
 import BreadcrumbExample from 'pages/modules/components/BreadcrumbExample';
 import CardExample from 'pages/modules/components/CardExample';
 import BootstrapCarousel from 'pages/modules/components/BootstrapCarousel';
+import CollapseExample from 'pages/modules/components/CollapseExample';
 
 export const routes = [
   {
@@ -62,6 +63,10 @@ export const routes = [
               {
                 path: 'carousel/bootstrap',
                 element: <BootstrapCarousel />
+              },
+              {
+                path: 'collapse',
+                element: <CollapseExample />
               }
             ]
           }
