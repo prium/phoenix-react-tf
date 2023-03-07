@@ -16,6 +16,7 @@ import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import classNames from 'classnames';
 import { snakeCase } from 'helpers/utils';
 import { Link } from 'react-router-dom';
+import { defaultProps } from 'prism-react-renderer';
 
 interface CollapseContextInterface {
   open: boolean;
@@ -123,6 +124,8 @@ const PhoenixDocCardBody = ({ code, scope, noInline }: PhoenixDocCardBodyProps) 
         scope={{ ...ReactBootstrap, ...React, ...scope }}
         noInline={noInline}
         transformCode={code => code.replace(/^import.*$/gm, '')}
+        language="jsx"
+        {...defaultProps}
       >
         <Collapse in={open}>
           <div>

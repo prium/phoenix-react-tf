@@ -19,6 +19,7 @@ import CollapseExample from 'pages/modules/components/CollapseExample';
 import DropdownExample from 'pages/modules/components/DropdownExample';
 import ListGroupExample from 'pages/modules/components/ListGroupExample';
 import ModalExample from 'pages/modules/components/ModalExample';
+import OffcanvasExample from 'pages/modules/components/OffcanvasExample';
 
 export const routes = [
   {
@@ -82,6 +83,10 @@ export const routes = [
               {
                 path: 'modal',
                 element: <ModalExample />
+              },
+              {
+                path: 'offcanvas',
+                element: <OffcanvasExample />
               }
             ]
           }
