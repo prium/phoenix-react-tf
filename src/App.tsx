@@ -18,6 +18,7 @@ import BootstrapCarousel from 'pages/modules/components/BootstrapCarousel';
 import CollapseExample from 'pages/modules/components/CollapseExample';
 import DropdownExample from 'pages/modules/components/DropdownExample';
 import ListGroupExample from 'pages/modules/components/ListGroupExample';
+import ModalExample from 'pages/modules/components/ModalExample';
 
 export const routes = [
   {
@@ -77,6 +78,10 @@ export const routes = [
               {
                 path: 'list-group',
                 element: <ListGroupExample />
+              },
+              {
+                path: 'modal',
+                element: <ModalExample />
               }
             ]
           }
