@@ -14,6 +14,7 @@ import AvatarExample from 'pages/modules/components/AvatarExample';
 import BadgeExample from 'pages/modules/components/BadgeExample';
 import BreadcrumbExample from 'pages/modules/components/BreadcrumbExample';
 import CardExample from 'pages/modules/components/CardExample';
+import BootstrapCarousel from 'pages/modules/components/BootstrapCarousel';
 
 export const routes = [
   {
@@ -57,6 +58,10 @@ export const routes = [
               {
                 path: 'card',
                 element: <CardExample />
+              },
+              {
+                path: 'carousel/bootstrap',
+                element: <BootstrapCarousel />
               }
             ]
           }
