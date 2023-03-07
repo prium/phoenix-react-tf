@@ -17,6 +17,7 @@ import CardExample from 'pages/modules/components/CardExample';
 import BootstrapCarousel from 'pages/modules/components/BootstrapCarousel';
 import CollapseExample from 'pages/modules/components/CollapseExample';
 import DropdownExample from 'pages/modules/components/DropdownExample';
+import ListGroupExample from 'pages/modules/components/ListGroupExample';
 
 export const routes = [
   {
@@ -72,6 +73,10 @@ export const routes = [
               {
                 path: 'dropdown',
                 element: <DropdownExample />
+              },
+              {
+                path: 'list-group',
+                element: <ListGroupExample />
               }
             ]
           }
