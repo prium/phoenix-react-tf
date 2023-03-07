@@ -16,6 +16,7 @@ import BreadcrumbExample from 'pages/modules/components/BreadcrumbExample';
 import CardExample from 'pages/modules/components/CardExample';
 import BootstrapCarousel from 'pages/modules/components/BootstrapCarousel';
 import CollapseExample from 'pages/modules/components/CollapseExample';
+import DropdownExample from 'pages/modules/components/DropdownExample';
 
 export const routes = [
   {
@@ -67,6 +68,10 @@ export const routes = [
               {
                 path: 'collapse',
                 element: <CollapseExample />
+              },
+              {
+                path: 'dropdown',
+                element: <DropdownExample />
               }
             ]
           }
