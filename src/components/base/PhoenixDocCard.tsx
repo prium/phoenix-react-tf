@@ -31,6 +31,7 @@ interface PhoenixDocCardHeaderProps {
   title: string;
   id?: string;
   description?: string;
+  noPreview?: boolean;
 }
 interface PhoenixDocCardBodyProps {
   code: string;
@@ -55,6 +56,7 @@ const PhoenixDocCardHeader = ({
   title,
   description,
   id,
+  noPreview,
   children
 }: PropsWithChildren<PhoenixDocCardHeaderProps>) => {
   const { open, setOpen } = useContext(CollapseContext);
@@ -82,33 +84,35 @@ const PhoenixDocCardHeader = ({
           {description && <p className="mb-0 text-800">{description}</p>}
           {children}
         </Col>
-        <Col md="auto">
-          <Nav className="nav-underline justify-content-end doc-tab-nav align-items-center">
-            <Button variant="link" size="sm" className="px-2 text-900 copy-code-btn me-2">
-              <FontAwesomeIcon icon="copy" className="me-1" />
-              Copy Code
-            </Button>
-            <Button
-              variant="phoenix-primary"
-              className="text-nowrap"
-              size="sm"
-              style={{ width: 135 }}
-              onClick={() => setOpen(!open)}
-            >
-              {open ? (
-                <>
-                  <FeatherIcon icon="eye" className="me-2" size={16} />
-                  Preview
-                </>
-              ) : (
-                <>
-                  <FeatherIcon icon="code" className="me-2" size={16} />
-                  View Code
-                </>
-              )}
-            </Button>
-          </Nav>
-        </Col>
+        {!noPreview && (
+          <Col md="auto">
+            <Nav className="nav-underline justify-content-end doc-tab-nav align-items-center">
+              <Button variant="link" size="sm" className="px-2 text-900 copy-code-btn me-2">
+                <FontAwesomeIcon icon="copy" className="me-1" />
+                Copy Code
+              </Button>
+              <Button
+                variant="phoenix-primary"
+                className="text-nowrap"
+                size="sm"
+                style={{ width: 135 }}
+                onClick={() => setOpen(!open)}
+              >
+                {open ? (
+                  <>
+                    <FeatherIcon icon="eye" className="me-2" size={16} />
+                    Preview
+                  </>
+                ) : (
+                  <>
+                    <FeatherIcon icon="code" className="me-2" size={16} />
+                    View Code
+                  </>
+                )}
+              </Button>
+            </Nav>
+          </Col>
+        )}
       </Row>
     </Card.Header>
   );

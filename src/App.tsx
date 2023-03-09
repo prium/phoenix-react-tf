@@ -23,6 +23,7 @@ import OffcanvasExample from 'pages/modules/components/OffcanvasExample';
 import ProgressbarExample from 'pages/modules/components/ProgressbarExample';
 import PlaceholderExample from 'pages/modules/components/PlaceholderExample';
 import PaginationExample from 'pages/modules/components/PaginationExample';
+import PopoversExample from 'pages/modules/components/PopoversExample';
 
 export const routes = [
   {
@@ -102,6 +103,10 @@ export const routes = [
               {
                 path: 'pagination',
                 element: <PaginationExample />
+              },
+              {
+                path: 'popovers',
+                element: <PopoversExample />
               }
             ]
           }
