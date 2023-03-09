@@ -24,6 +24,7 @@ import ProgressbarExample from 'pages/modules/components/ProgressbarExample';
 import PlaceholderExample from 'pages/modules/components/PlaceholderExample';
 import PaginationExample from 'pages/modules/components/PaginationExample';
 import PopoversExample from 'pages/modules/components/PopoversExample';
+import SpinnerExample from 'pages/modules/components/SpinnerExample';
 
 export const routes = [
   {
@@ -107,6 +108,10 @@ export const routes = [
               {
                 path: 'popovers',
                 element: <PopoversExample />
+              },
+              {
+                path: 'spinners',
+                element: <SpinnerExample />
               }
             ]
           }
