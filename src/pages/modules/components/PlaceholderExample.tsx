@@ -78,11 +78,11 @@ const PlaceholderExample = () => {
   return (
     <div>
       <DocPageHeader
-        title="Accordion"
-        description="Build vertically collapsing accordions in combination with the Collapse component"
+        title="Placeholders"
+        description="Use loading placeholders for your components or pages to indicate something may still be loading."
         link={{
-          text: 'Accordion on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/accordion/'
+          text: 'Placeholder on react-bootstrap',
+          url: 'https://react-bootstrap.github.io/components/placeholder/'
         }}
       />
 

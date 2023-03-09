@@ -2,9 +2,13 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faAngleLeft,
   faAngleRight,
+  faAnglesLeft,
+  faAnglesRight,
   faArrowsRotate,
   faCaretRight,
   faChevronDown,
+  faChevronLeft,
+  faChevronRight,
   faClock,
   faCopy,
   faEllipsis,
@@ -32,5 +36,9 @@ library.add(
   faTrash,
   faTrashAlt,
   faAngleLeft,
-  faAngleRight
+  faAngleRight,
+  faChevronLeft,
+  faChevronRight,
+  faAnglesLeft,
+  faAnglesRight
 );

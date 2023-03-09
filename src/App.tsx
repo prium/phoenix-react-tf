@@ -22,6 +22,7 @@ import ModalExample from 'pages/modules/components/ModalExample';
 import OffcanvasExample from 'pages/modules/components/OffcanvasExample';
 import ProgressbarExample from 'pages/modules/components/ProgressbarExample';
 import PlaceholderExample from 'pages/modules/components/PlaceholderExample';
+import PaginationExample from 'pages/modules/components/PaginationExample';
 
 export const routes = [
   {
@@ -97,6 +98,10 @@ export const routes = [
               {
                 path: 'placeholder',
                 element: <PlaceholderExample />
+              },
+              {
+                path: 'pagination',
+                element: <PaginationExample />
               }
             ]
           }
