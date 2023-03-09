@@ -26,6 +26,7 @@ import PaginationExample from 'pages/modules/components/PaginationExample';
 import PopoversExample from 'pages/modules/components/PopoversExample';
 import SpinnerExample from 'pages/modules/components/SpinnerExample';
 import ToastsExample from 'pages/modules/components/ToastsExample';
+import TooltipExample from 'pages/modules/components/TooltipExample';
 
 export const routes = [
   {
@@ -117,6 +118,10 @@ export const routes = [
               {
                 path: 'toast',
                 element: <ToastsExample />
+              },
+              {
+                path: 'tooltips',
+                element: <TooltipExample />
               }
             ]
           }
