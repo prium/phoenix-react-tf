@@ -25,6 +25,7 @@ import PlaceholderExample from 'pages/modules/components/PlaceholderExample';
 import PaginationExample from 'pages/modules/components/PaginationExample';
 import PopoversExample from 'pages/modules/components/PopoversExample';
 import SpinnerExample from 'pages/modules/components/SpinnerExample';
+import ToastsExample from 'pages/modules/components/ToastsExample';
 
 export const routes = [
   {
@@ -112,6 +113,10 @@ export const routes = [
               {
                 path: 'spinners',
                 element: <SpinnerExample />
+              },
+              {
+                path: 'toast',
+                element: <ToastsExample />
               }
             ]
           }

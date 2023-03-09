@@ -118,7 +118,7 @@ const SpinnerExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Buttons">
-            <p>
+            <p className="mb-0">
               Like the original Bootstrap spinners, these can also be used with buttons. To use this
               component out-of-the-box it is recommended you change the element type to{' '}
               <code>span</code> by configuring the <code>as</code> property when using spinners
