@@ -573,7 +573,7 @@ export const routes: RouteItems[] = [
             pages: [
               {
                 name: 'form-control',
-                path: 'modules/forms/basic/form-control',
+                path: 'modules/forms/form-control',
                 pathName: 'form-control'
               },
               {

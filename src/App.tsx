@@ -28,6 +28,7 @@ import SpinnerExample from 'pages/modules/components/SpinnerExample';
 import ToastsExample from 'pages/modules/components/ToastsExample';
 import TooltipExample from 'pages/modules/components/TooltipExample';
 import AlertsExample from 'pages/modules/components/AlertsExample';
+import FormControlExample from 'pages/modules/forms/basic/FormControlExample';
 
 export const routes = [
   {
@@ -127,6 +128,15 @@ export const routes = [
               {
                 path: 'tooltips',
                 element: <TooltipExample />
+              }
+            ]
+          },
+          {
+            path: 'forms',
+            children: [
+              {
+                path: 'form-control',
+                element: <FormControlExample />
               }
             ]
           }
