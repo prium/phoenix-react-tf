@@ -27,6 +27,7 @@ import PopoversExample from 'pages/modules/components/PopoversExample';
 import SpinnerExample from 'pages/modules/components/SpinnerExample';
 import ToastsExample from 'pages/modules/components/ToastsExample';
 import TooltipExample from 'pages/modules/components/TooltipExample';
+import AlertsExample from 'pages/modules/components/AlertsExample';
 
 export const routes = [
   {
@@ -54,6 +55,10 @@ export const routes = [
               {
                 path: 'avatar',
                 element: <AvatarExample />
+              },
+              {
+                path: 'alerts',
+                element: <AlertsExample />
               },
               {
                 path: 'button',

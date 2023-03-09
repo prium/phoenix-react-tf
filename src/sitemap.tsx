@@ -728,11 +728,6 @@ export const routes: RouteItems[] = [
             path: 'modules/components/button'
           },
           {
-            name: 'calendar',
-            pathName: 'components-calendar',
-            path: 'modules/components/calendar'
-          },
-          {
             name: 'card',
             pathName: 'components-card',
             path: 'modules/components/card'
@@ -744,11 +739,6 @@ export const routes: RouteItems[] = [
                 name: 'bootstrap',
                 path: 'modules/components/carousel/bootstrap',
                 pathName: 'components-bs-carousel'
-              },
-              {
-                name: 'swiper',
-                path: 'modules/components/carousel/swiper',
-                pathName: 'components-swiper-carousel'
               }
             ]
           },
@@ -816,11 +806,6 @@ export const routes: RouteItems[] = [
             name: 'popovers',
             path: 'modules/components/popovers',
             pathName: 'components-popovers'
-          },
-          {
-            name: 'scrollspy',
-            path: 'modules/components/scrollspy',
-            pathName: 'components-scrollspy'
           },
           {
             name: 'spinners',
