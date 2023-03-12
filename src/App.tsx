@@ -30,6 +30,7 @@ import TooltipExample from 'pages/modules/components/TooltipExample';
 import AlertsExample from 'pages/modules/components/AlertsExample';
 import FormControlExample from 'pages/modules/forms/basic/FormControlExample';
 import InputGroupExample from 'pages/modules/forms/basic/InputGroupExample';
+import SelectExample from 'pages/modules/components/SelectExample';
 
 export const routes = [
   {
@@ -142,6 +143,10 @@ export const routes = [
               {
                 path: 'input-group',
                 element: <InputGroupExample />
+              },
+              {
+                path: 'select',
+                element: <SelectExample />
               }
             ]
           }
