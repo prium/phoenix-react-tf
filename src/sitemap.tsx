@@ -608,36 +608,36 @@ export const routes: RouteItems[] = [
               }
             ]
           },
-          {
-            name: 'advance',
-            pages: [
-              {
-                name: 'advance-select',
-                path: 'modules/forms/advance/advance-select',
-                pathName: 'advance-select'
-              },
-              {
-                name: 'date-picker',
-                path: 'modules/forms/advance/date-picker',
-                pathName: 'date-picker'
-              },
-              {
-                name: 'editor',
-                path: 'modules/forms/advance/editor',
-                pathName: 'text-editor'
-              },
-              {
-                name: 'file-uploader',
-                path: 'modules/forms/advance/file-uploader',
-                pathName: 'file-uploader'
-              },
-              {
-                name: 'rating',
-                path: 'modules/forms/advance/rating',
-                pathName: 'advance-rating'
-              }
-            ]
-          },
+          // {
+          //   name: 'advance',
+          //   pages: [
+          //     {
+          //       name: 'advance-select',
+          //       path: 'modules/forms/advance/advance-select',
+          //       pathName: 'advance-select'
+          //     },
+          //     {
+          //       name: 'date-picker',
+          //       path: 'modules/forms/advance/date-picker',
+          //       pathName: 'date-picker'
+          //     },
+          //     {
+          //       name: 'editor',
+          //       path: 'modules/forms/advance/editor',
+          //       pathName: 'text-editor'
+          //     },
+          //     {
+          //       name: 'file-uploader',
+          //       path: 'modules/forms/advance/file-uploader',
+          //       pathName: 'file-uploader'
+          //     },
+          //     {
+          //       name: 'rating',
+          //       path: 'modules/forms/advance/rating',
+          //       pathName: 'advance-rating'
+          //     }
+          //   ]
+          // },
           {
             name: 'validation',
             path: 'modules/forms/validation',

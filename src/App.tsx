@@ -34,6 +34,7 @@ import SelectExample from 'pages/modules/components/SelectExample';
 import ChecksExample from 'pages/modules/components/ChecksExample';
 import RangeExample from 'pages/modules/components/RangeExample';
 import FloatingLabelExample from 'pages/modules/components/FloatingLabelExample';
+import FormLayoutExample from 'pages/modules/components/FormLayoutExample';
 
 export const routes = [
   {
@@ -162,6 +163,10 @@ export const routes = [
               {
                 path: 'floating-labels',
                 element: <FloatingLabelExample />
+              },
+              {
+                path: 'layout',
+                element: <FormLayoutExample />
               }
             ]
           }
