@@ -26,3 +26,8 @@ export const snakeCase = (string: string) => {
     .map(word => word.toLowerCase())
     .join('_');
 };
+
+export const getColor = (name: string) => {
+  const dom = document.documentElement;
+  return getComputedStyle(dom).getPropertyValue(`--phoenix-${name}`).trim();
+};

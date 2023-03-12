@@ -36,6 +36,7 @@ import RangeExample from 'pages/modules/components/RangeExample';
 import FloatingLabelExample from 'pages/modules/components/FloatingLabelExample';
 import FormLayoutExample from 'pages/modules/components/FormLayoutExample';
 import FormValidationExample from 'pages/modules/components/FormValidationExample';
+import BackgroundExample from 'pages/modules/utilities/BackgroundExample';
 
 export const routes = [
   {
@@ -172,6 +173,15 @@ export const routes = [
               {
                 path: 'validation',
                 element: <FormValidationExample />
+              }
+            ]
+          },
+          {
+            path: 'utilities',
+            children: [
+              {
+                path: 'background',
+                element: <BackgroundExample />
               }
             ]
           }

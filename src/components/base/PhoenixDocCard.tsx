@@ -34,7 +34,7 @@ interface PhoenixDocCardHeaderProps {
   noPreview?: boolean;
 }
 interface PhoenixDocCardBodyProps {
-  code: string;
+  code?: string;
   // scope?: ReactElement;
   scope?: { [key: string]: any };
   noInline?: boolean;
@@ -118,7 +118,12 @@ const PhoenixDocCardHeader = ({
   );
 };
 
-const PhoenixDocCardBody = ({ code, scope, noInline }: PhoenixDocCardBodyProps) => {
+const PhoenixDocCardBody = ({
+  code,
+  scope,
+  noInline,
+  children
+}: PropsWithChildren<PhoenixDocCardBodyProps>) => {
   const { open } = useContext(CollapseContext);
 
   return (
