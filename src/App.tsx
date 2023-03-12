@@ -29,6 +29,7 @@ import ToastsExample from 'pages/modules/components/ToastsExample';
 import TooltipExample from 'pages/modules/components/TooltipExample';
 import AlertsExample from 'pages/modules/components/AlertsExample';
 import FormControlExample from 'pages/modules/forms/basic/FormControlExample';
+import InputGroupExample from 'pages/modules/forms/basic/InputGroupExample';
 
 export const routes = [
   {
@@ -137,6 +138,10 @@ export const routes = [
               {
                 path: 'form-control',
                 element: <FormControlExample />
+              },
+              {
+                path: 'input-group',
+                element: <InputGroupExample />
               }
             ]
           }

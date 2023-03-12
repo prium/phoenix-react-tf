@@ -578,32 +578,32 @@ export const routes: RouteItems[] = [
               },
               {
                 name: 'input-group',
-                path: 'modules/forms/basic/input-group',
+                path: 'modules/forms/input-group',
                 pathName: 'form-input-group'
               },
               {
                 name: 'select',
-                path: 'modules/forms/basic/select',
+                path: 'modules/forms/select',
                 pathName: 'form-select'
               },
               {
                 name: 'checks',
-                path: 'modules/forms/basic/checks',
+                path: 'modules/forms/checks',
                 pathName: 'form-checks'
               },
               {
                 name: 'range',
-                path: 'modules/forms/basic/range',
+                path: 'modules/forms/range',
                 pathName: 'form-range'
               },
               {
                 name: 'floating-labels',
-                path: 'modules/forms/basic/floating-labels',
+                path: 'modules/forms/floating-labels',
                 pathName: 'floating-labels'
               },
               {
                 name: 'layout',
-                path: 'modules/forms/basic/layout',
+                path: 'modules/forms/layout',
                 pathName: 'form-layout'
               }
             ]
