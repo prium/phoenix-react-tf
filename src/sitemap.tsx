@@ -642,11 +642,6 @@ export const routes: RouteItems[] = [
             name: 'validation',
             path: 'modules/forms/validation',
             pathName: 'forms-validation'
-          },
-          {
-            name: 'wizard',
-            path: 'modules/forms/wizard',
-            pathName: 'forms-wizard'
           }
         ]
       },
