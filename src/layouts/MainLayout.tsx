@@ -1,3 +1,4 @@
+import Footer from 'components/layouts/Footer';
 import NavbarTopHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarTopHorizontal';
 import NavbarTopDefault from 'components/layouts/navbar/navbar-top/NavbarTopDefault';
 import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
@@ -19,6 +20,7 @@ const MainLayout = () => {
 
       <div className="content">
         <Outlet />
+        <Footer className="position-absolute" />
       </div>
     </Container>
   );
