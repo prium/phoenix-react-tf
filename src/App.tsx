@@ -33,6 +33,7 @@ import InputGroupExample from 'pages/modules/forms/basic/InputGroupExample';
 import SelectExample from 'pages/modules/components/SelectExample';
 import ChecksExample from 'pages/modules/components/ChecksExample';
 import RangeExample from 'pages/modules/components/RangeExample';
+import FloatingLabelExample from 'pages/modules/components/FloatingLabelExample';
 
 export const routes = [
   {
@@ -157,6 +158,10 @@ export const routes = [
               {
                 path: 'range',
                 element: <RangeExample />
+              },
+              {
+                path: 'floating-labels',
+                element: <FloatingLabelExample />
               }
             ]
           }
