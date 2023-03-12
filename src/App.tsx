@@ -31,6 +31,8 @@ import AlertsExample from 'pages/modules/components/AlertsExample';
 import FormControlExample from 'pages/modules/forms/basic/FormControlExample';
 import InputGroupExample from 'pages/modules/forms/basic/InputGroupExample';
 import SelectExample from 'pages/modules/components/SelectExample';
+import ChecksExample from 'pages/modules/components/ChecksExample';
+import RangeExample from 'pages/modules/components/RangeExample';
 
 export const routes = [
   {
@@ -147,6 +149,14 @@ export const routes = [
               {
                 path: 'select',
                 element: <SelectExample />
+              },
+              {
+                path: 'checks',
+                element: <ChecksExample />
+              },
+              {
+                path: 'range',
+                element: <RangeExample />
               }
             ]
           }
