@@ -32,6 +32,7 @@ import FloatingLabelExample from 'pages/modules/components/FloatingLabelExample'
 import FormLayoutExample from 'pages/modules/components/FormLayoutExample';
 import FormValidationExample from 'pages/modules/components/FormValidationExample';
 import BackgroundExample from 'pages/modules/utilities/BackgroundExample';
+import BorderExample from 'pages/modules/utilities/BorderExample';
 
 const routes = [
   {
@@ -177,6 +178,10 @@ const routes = [
               {
                 path: 'background',
                 element: <BackgroundExample />
+              },
+              {
+                path: 'borders',
+                element: <BorderExample />
               }
             ]
           }
