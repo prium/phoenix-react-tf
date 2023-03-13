@@ -1,5 +1,5 @@
-import { AppContext } from 'providers/AppProvider';
-import { ChangeEvent, useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
+import { ChangeEvent } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import defaultLight from 'assets/img/generic/default-light.png';
 import defaultDark from 'assets/img/generic/default-dark.png';
@@ -14,7 +14,7 @@ const NavigationType = () => {
   const {
     config: { theme, navbarPosition },
     setConfig
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

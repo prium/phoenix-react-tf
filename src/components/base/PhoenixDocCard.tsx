@@ -1,7 +1,6 @@
 import React, {
   Dispatch,
   PropsWithChildren,
-  ReactElement,
   SetStateAction,
   createContext,
   useContext,
@@ -65,7 +64,9 @@ const PhoenixDocCardHeader = ({
 
   return (
     <Card.Header
-      className="p-4 border-bottom border-300 bg-soft hover-actions-trigger"
+      className={classNames('p-4 border-bottom border-300 bg-soft hover-actions-trigger', {
+        'py-5': noPreview
+      })}
       id={headerId}
     >
       <Row className="g-3 justify-content-between align-items-center">
@@ -128,24 +129,28 @@ const PhoenixDocCardBody = ({
 
   return (
     <Card.Body className="p-0">
-      <LiveProvider
-        code={code}
-        scope={{ ...ReactBootstrap, ...React, ...scope }}
-        noInline={noInline}
-        transformCode={code => code.replace(/^import.*$/gm, '')}
-        language="jsx"
-        {...defaultProps}
-      >
-        <Collapse in={open}>
-          <div>
-            <LiveEditor />
-            <LiveError />
+      {code && (
+        <LiveProvider
+          code={code}
+          scope={{ ...ReactBootstrap, ...React, ...scope }}
+          noInline={noInline}
+          transformCode={code => code.replace(/^import.*$/gm, '')}
+          language="jsx"
+          {...defaultProps}
+        >
+          <Collapse in={open}>
+            <div>
+              <LiveEditor />
+              <LiveError />
+            </div>
+          </Collapse>
+          <div className="p-4">
+            <LivePreview />
           </div>
-        </Collapse>
-        <div className="p-4">
-          <LivePreview />
-        </div>
-      </LiveProvider>
+        </LiveProvider>
+      )}
+
+      {children && <div className="p-4">{children}</div>}
     </Card.Body>
   );
 };

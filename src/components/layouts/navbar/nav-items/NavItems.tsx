@@ -1,10 +1,9 @@
 import Avatar from 'components/base/Avatar';
-import { useContext } from 'react';
 import { Dropdown, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import avatar57 from 'assets/img/team/40x40/57.webp';
 import ProfileDropdownMenu from './ProfileDropdownMenu';
 import NineDotMenu from './NineDotMenu';
-import { AppContext } from 'providers/AppProvider';
+import { useAppContext } from 'providers/AppProvider';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
 import NotificationDropdownMenu from './NotificationDropdownMenu';
@@ -13,7 +12,7 @@ const NavItems = () => {
   const {
     config: { theme, navbarPosition },
     toggleTheme
-  } = useContext(AppContext);
+  } = useAppContext();
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>

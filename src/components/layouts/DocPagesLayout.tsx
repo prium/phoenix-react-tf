@@ -40,7 +40,7 @@ const DocPagesLayout = ({ children, sideNavItems }: PropsWithChildren<DocPagesLa
     }
   }, []);
 
-  console.log({ navItems });
+  // console.log({ navItems });
 
   return (
     <Row className="g-3">

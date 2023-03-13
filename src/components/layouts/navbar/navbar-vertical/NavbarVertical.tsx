@@ -3,14 +3,13 @@ import { routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import { UilArrowFromRight, UilLeftArrowToLeft } from '@iconscout/react-unicons';
-import { useContext } from 'react';
-import { AppContext } from 'providers/AppProvider';
+import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
 
 const NavbarVerical = () => {
   const {
     config: { openNavbarVertical, navbarVerticalAppearance }
-  } = useContext(AppContext);
+  } = useAppContext();
 
   return (
     <Navbar

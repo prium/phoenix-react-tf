@@ -1,6 +1,5 @@
 import classNames from 'classnames';
-import { AppContext } from 'providers/AppProvider';
-import { useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
 import { Navbar } from 'react-bootstrap';
 import logo from 'assets/img/icons/logo.png';
 
@@ -8,7 +7,7 @@ const NavbarBrand = () => {
   const {
     config: { openNavbarVertical, navbarTopShape, navbarPosition },
     setConfig
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const toggleOpenNavbarVertical = () => {
     setConfig({

@@ -1,5 +1,5 @@
-import { AppContext } from 'providers/AppProvider';
-import { ChangeEvent, useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
+import { ChangeEvent } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import topDefault from 'assets/img/generic/top-default.png';
 import topDefaultDarker from 'assets/img/generic/top-default-dark.png';
@@ -17,7 +17,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
   const {
     config: { theme, navbarTopAppearance },
     setConfig
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

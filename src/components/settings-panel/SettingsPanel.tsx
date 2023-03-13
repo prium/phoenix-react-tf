@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { AppContext } from 'providers/AppProvider';
-import React, { useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
 import { Offcanvas } from 'react-bootstrap';
 import NavigationType from './NavigationType';
 import HorizontalNavbarShape from './HorizontalNavbarShape';
@@ -15,7 +14,7 @@ const SettingsPanel = () => {
     config: { showSettingPanel },
     setConfig,
     configDispatch
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleClose = () => {
     setConfig({
