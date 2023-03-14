@@ -30,6 +30,7 @@ interface PhoenixDocCardHeaderProps {
   title: string;
   id?: string;
   description?: string;
+  alignItems?: string;
   noPreview?: boolean;
 }
 interface PhoenixDocCardBodyProps {
@@ -56,6 +57,7 @@ const PhoenixDocCardHeader = ({
   description,
   id,
   noPreview,
+  alignItems = 'center',
   children
 }: PropsWithChildren<PhoenixDocCardHeaderProps>) => {
   const { open, setOpen } = useContext(CollapseContext);
@@ -69,7 +71,7 @@ const PhoenixDocCardHeader = ({
       })}
       id={headerId}
     >
-      <Row className="g-3 justify-content-between align-items-center">
+      <Row className={`g-3 justify-content-between align-items-${alignItems}`}>
         <Col xs={12} md>
           <h4
             className={classNames('text-900', {

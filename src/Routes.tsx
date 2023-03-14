@@ -34,6 +34,7 @@ import FormValidationExample from 'pages/modules/components/FormValidationExampl
 import BackgroundExample from 'pages/modules/utilities/BackgroundExample';
 import BorderExample from 'pages/modules/utilities/BorderExample';
 import ColorsExample from 'pages/modules/utilities/ColorsExample';
+import DisplayExample from 'pages/modules/utilities/DisplayExample';
 
 const routes = [
   {
@@ -187,6 +188,10 @@ const routes = [
               {
                 path: 'colors',
                 element: <ColorsExample />
+              },
+              {
+                path: 'display',
+                element: <DisplayExample />
               }
             ]
           }
