@@ -1,39 +1,33 @@
-import classNames from 'classnames';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
-import { useAppContext } from 'providers/AppProvider';
-import { Col, Row } from 'react-bootstrap';
 
 const additiveBorderCode = `
-<>
+<div className='border-component'>
   <span className="border" />
   <span className="border-top" />
   <span className="border-end" />
   <span className="border-bottom" />
   <span className="border-start" />
-</>`;
+</div>`;
 
 const subtrativeBorderCode = `
-<>
+<div className='border-component'>
   <span className="border border-0" />
   <span className="border border-top-0" />
   <span className="border border-right-0" />
   <span className="border border-bottom-0" />
   <span className="border border-left-0" />
-</>`;
+</div>`;
 
 const borderColorCode = `
-<>
+<div className='border-component'>
+  <span className="border border-primary"></span>
+  <span className="border border-secondary"></span>
   <span className="border border-info"></span>
   <span className="border border-success"></span>
   <span className="border border-warning"></span>
   <span className="border border-danger"></span>
-  <span className="border border-cake"></span>
-  <span className="border border-facebook"></span>
-  <span className="border border-twitter"></span>
-  <span className="border border-google-plus"></span>
-  <span className="border border-github"></span>
   <div className="w-100"></div>
   <span className="border border-black"></span>
   <span className="border border-dark"></span>
@@ -50,15 +44,10 @@ const borderColorCode = `
   <span className="border border-100"></span>
   <span className="border border-light"></span>
   <span className="border border-white"></span>
-  <span className="border border-2"></span>
-  <span className="border-top border-top-2"></span>
-  <span className="border-end border-end-2"></span>
-  <span className="border-bottom border-bottom-2"></span>
-  <span className="border-start border-start-2"></span>
-</>`;
+</div>`;
 
 const borderSizesCode = `
-<>
+<div className='border-component'>
   <span className="rounded-top"></span>
   <span className="rounded-top-lg"></span>
   <span className="rounded-end"></span>
@@ -67,51 +56,44 @@ const borderSizesCode = `
   <span className="rounded-bottom-lg"></span>
   <span className="rounded-start"></span>
   <span className="rounded-start-lg"></span>
-</>
+</div>
 `;
 
 const borderRadiusCode = `
-<>
+<div className='border-component'>
   <span className="rounded-0"></span>
   <span className="rounded-1"></span>
   <span className="rounded-2"></span>
   <span className="rounded-3"></span>
   <span className="rounded-circle"></span>
   <span className="rounded-pill" style={{ height:'75px',width:'150px' }}></span>
-</>`;
+</div>`;
 
 const borderStyleCode = `
-<>
+<div className='border-component'>
   <span className="border border-dashed"></span>
   <span className="border-dashed border-top"></span>
   <span className="border-dashed border-end"></span>
   <span className="border-dashed border-bottom"></span>
   <span className="border-dashed border-left"></span>
-</>
+</div>
 `;
 
 const borderWidthCode = `
-<>
+<div className='border-component'>
   <span className="border border-1"></span>
   <span className="border border-2"></span>
   <span className="border border-3"></span>
   <span className="border border-4"></span>
   <span className="border border-5"></span>
-  <hr />
-  <span className="border border-top-2"></span>
-  <span className="border border-end-2"></span>
-  <span className="border border-bottom-2"></span>
-  <span className="border border-start-2"></span>
-</>
+</div>
 `;
 
 const BorderExample = () => {
-  const { getThemeColor } = useAppContext();
-
   return (
     <div>
       <DocPageHeader
-        title="Border"
+        title="Borders"
         description="Use border utilities to quickly style the border and border-radius of an element. Great for images, buttons, or any other element."
       />
 
@@ -165,8 +147,47 @@ const BorderExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Breadcrumb Example" />
+          <PhoenixDocCard.Header title="Additive" />
           <PhoenixDocCard.Body code={additiveBorderCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Subtractive" />
+          <PhoenixDocCard.Body code={subtrativeBorderCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header
+            title="Border Color"
+            description="Change the border color using utilities built on our theme colors."
+          />
+          <PhoenixDocCard.Body code={borderColorCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Border Width" />
+          <PhoenixDocCard.Body code={borderWidthCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header
+            title="Border Radius"
+            description="Add classes to an element to easily round its corners."
+          />
+          <PhoenixDocCard.Body code={borderRadiusCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header
+            title="Border Sizes"
+            description="Use the scaling classes for larger or smaller rounded corners. Sizes range from 0 to 3, and can be configured by modifying the utilities API."
+          />
+          <PhoenixDocCard.Body code={borderSizesCode} />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Border Dashed" />
+          <PhoenixDocCard.Body code={borderStyleCode} />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>
