@@ -33,6 +33,7 @@ import FormLayoutExample from 'pages/modules/components/FormLayoutExample';
 import FormValidationExample from 'pages/modules/components/FormValidationExample';
 import BackgroundExample from 'pages/modules/utilities/BackgroundExample';
 import BorderExample from 'pages/modules/utilities/BorderExample';
+import ColorsExample from 'pages/modules/utilities/ColorsExample';
 
 const routes = [
   {
@@ -182,6 +183,10 @@ const routes = [
               {
                 path: 'borders',
                 element: <BorderExample />
+              },
+              {
+                path: 'colors',
+                element: <ColorsExample />
               }
             ]
           }

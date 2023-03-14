@@ -34,9 +34,9 @@ interface PhoenixDocCardHeaderProps {
 }
 interface PhoenixDocCardBodyProps {
   code?: string;
-  // scope?: ReactElement;
   scope?: { [key: string]: any };
   noInline?: boolean;
+  hidePreview?: boolean;
 }
 
 export const CollapseContext = createContext({} as CollapseContextInterface);
@@ -45,7 +45,7 @@ const PhoenixDocCard = ({ children, className }: PropsWithChildren<PhoenixDocCar
   const [open, setOpen] = useState(false);
 
   return (
-    <Card className={classNames(className, 'shadow-none border border-300')}>
+    <Card className={classNames(className, 'shadow-none border border-300 overflow-hidden')}>
       <CollapseContext.Provider value={{ open, setOpen }}>{children}</CollapseContext.Provider>
     </Card>
   );
@@ -123,6 +123,7 @@ const PhoenixDocCardBody = ({
   code,
   scope,
   noInline,
+  hidePreview,
   children
 }: PropsWithChildren<PhoenixDocCardBodyProps>) => {
   const { open } = useContext(CollapseContext);
@@ -138,15 +139,21 @@ const PhoenixDocCardBody = ({
           language="jsx"
           {...defaultProps}
         >
-          <Collapse in={open}>
-            <div>
-              <LiveEditor />
-              <LiveError />
-            </div>
-          </Collapse>
-          <div className="p-4">
-            <LivePreview />
-          </div>
+          {hidePreview ? (
+            <LiveEditor />
+          ) : (
+            <>
+              <Collapse in={open}>
+                <div>
+                  <LiveEditor />
+                  <LiveError />
+                </div>
+              </Collapse>
+              <div className="p-4">
+                <LivePreview />
+              </div>
+            </>
+          )}
         </LiveProvider>
       )}
 
