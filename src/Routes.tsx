@@ -35,6 +35,7 @@ import BackgroundExample from 'pages/modules/utilities/BackgroundExample';
 import BorderExample from 'pages/modules/utilities/BorderExample';
 import ColorsExample from 'pages/modules/utilities/ColorsExample';
 import DisplayExample from 'pages/modules/utilities/DisplayExample';
+import FlexExample from 'pages/modules/utilities/FlexExample';
 
 const routes = [
   {
@@ -192,6 +193,10 @@ const routes = [
               {
                 path: 'display',
                 element: <DisplayExample />
+              },
+              {
+                path: 'flex',
+                element: <FlexExample />
               }
             ]
           }
