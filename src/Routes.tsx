@@ -37,6 +37,7 @@ import ColorsExample from 'pages/modules/utilities/ColorsExample';
 import DisplayExample from 'pages/modules/utilities/DisplayExample';
 import FlexExample from 'pages/modules/utilities/FlexExample';
 import StackExample from 'pages/modules/utilities/StackExample';
+import FloatExample from 'pages/modules/utilities/FloatExample';
 
 const routes = [
   {
@@ -202,6 +203,10 @@ const routes = [
               {
                 path: 'stack',
                 element: <StackExample />
+              },
+              {
+                path: 'float',
+                element: <FloatExample />
               }
             ]
           }
