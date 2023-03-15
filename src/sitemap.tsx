@@ -849,6 +849,11 @@ export const routes: RouteItems[] = [
             pathName: 'utilities-flex'
           },
           {
+            name: 'stack',
+            path: 'modules/utilities/stack',
+            pathName: 'utilities-stack'
+          },
+          {
             name: 'float',
             path: 'modules/utilities/float',
             pathName: 'utilities-float'
