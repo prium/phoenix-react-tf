@@ -38,6 +38,7 @@ import DisplayExample from 'pages/modules/utilities/DisplayExample';
 import FlexExample from 'pages/modules/utilities/FlexExample';
 import StackExample from 'pages/modules/utilities/StackExample';
 import FloatExample from 'pages/modules/utilities/FloatExample';
+import InteractionsExample from 'pages/modules/utilities/InteractionsExample';
 
 const routes = [
   {
@@ -207,6 +208,10 @@ const routes = [
               {
                 path: 'float',
                 element: <FloatExample />
+              },
+              {
+                path: 'Interactions',
+                element: <InteractionsExample />
               }
             ]
           }
