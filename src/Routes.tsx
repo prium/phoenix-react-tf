@@ -43,6 +43,7 @@ import OpacityExample from 'pages/modules/utilities/OpacityExample';
 import OverflowExample from 'pages/modules/utilities/OverflowExample';
 import PositionExample from 'pages/modules/utilities/PositionExample';
 import ShadowsExample from 'pages/modules/utilities/ShadowsExample';
+import SizingExample from 'pages/modules/utilities/SizingExample';
 
 const routes = [
   {
@@ -232,6 +233,10 @@ const routes = [
               {
                 path: 'shadows',
                 element: <ShadowsExample />
+              },
+              {
+                path: 'sizing',
+                element: <SizingExample />
               }
             ]
           }
