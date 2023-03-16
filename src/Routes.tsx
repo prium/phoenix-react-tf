@@ -42,6 +42,7 @@ import InteractionsExample from 'pages/modules/utilities/InteractionsExample';
 import OpacityExample from 'pages/modules/utilities/OpacityExample';
 import OverflowExample from 'pages/modules/utilities/OverflowExample';
 import PositionExample from 'pages/modules/utilities/PositionExample';
+import ShadowsExample from 'pages/modules/utilities/ShadowsExample';
 
 const routes = [
   {
@@ -227,6 +228,10 @@ const routes = [
               {
                 path: 'position',
                 element: <PositionExample />
+              },
+              {
+                path: 'shadows',
+                element: <ShadowsExample />
               }
             ]
           }
