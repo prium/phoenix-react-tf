@@ -45,6 +45,7 @@ import PositionExample from 'pages/modules/utilities/PositionExample';
 import ShadowsExample from 'pages/modules/utilities/ShadowsExample';
 import SizingExample from 'pages/modules/utilities/SizingExample';
 import SpacingExample from 'pages/modules/utilities/SpacingExample';
+import VerticalAlignExample from 'pages/modules/utilities/VerticalAlignExample';
 
 const routes = [
   {
@@ -242,6 +243,10 @@ const routes = [
               {
                 path: 'spacing',
                 element: <SpacingExample />
+              },
+              {
+                path: 'vertical-align',
+                element: <VerticalAlignExample />
               }
             ]
           }
