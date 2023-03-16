@@ -25,7 +25,7 @@ const BreadcrumbExample = () => {
       />
 
       <DocPagesLayout>
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4"
           <PhoenixDocCard.Header title="Breadcrumb Example" />
           <PhoenixDocCard.Body code={exampleCode} />
         </PhoenixDocCard>

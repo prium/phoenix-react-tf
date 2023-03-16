@@ -47,6 +47,7 @@ import SizingExample from 'pages/modules/utilities/SizingExample';
 import SpacingExample from 'pages/modules/utilities/SpacingExample';
 import VerticalAlignExample from 'pages/modules/utilities/VerticalAlignExample';
 import VisibilityExample from 'pages/modules/utilities/VisibilityExample';
+import BasicTableExample from 'pages/modules/tables/BasicTableExample';
 
 const routes = [
   {
@@ -64,6 +65,15 @@ const routes = [
       {
         path: '/modules',
         children: [
+          {
+            path: 'tables',
+            children: [
+              {
+                path: 'basic-tables',
+                element: <BasicTableExample />
+              }
+            ]
+          },
           {
             path: 'components',
             children: [
