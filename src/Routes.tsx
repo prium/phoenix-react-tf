@@ -44,6 +44,7 @@ import OverflowExample from 'pages/modules/utilities/OverflowExample';
 import PositionExample from 'pages/modules/utilities/PositionExample';
 import ShadowsExample from 'pages/modules/utilities/ShadowsExample';
 import SizingExample from 'pages/modules/utilities/SizingExample';
+import SpacingExample from 'pages/modules/utilities/SpacingExample';
 
 const routes = [
   {
@@ -237,6 +238,10 @@ const routes = [
               {
                 path: 'sizing',
                 element: <SizingExample />
+              },
+              {
+                path: 'spacing',
+                element: <SpacingExample />
               }
             ]
           }
