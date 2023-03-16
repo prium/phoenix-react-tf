@@ -39,6 +39,7 @@ import FlexExample from 'pages/modules/utilities/FlexExample';
 import StackExample from 'pages/modules/utilities/StackExample';
 import FloatExample from 'pages/modules/utilities/FloatExample';
 import InteractionsExample from 'pages/modules/utilities/InteractionsExample';
+import OpacityExample from 'pages/modules/utilities/OpacityExample';
 
 const routes = [
   {
@@ -210,8 +211,12 @@ const routes = [
                 element: <FloatExample />
               },
               {
-                path: 'Interactions',
+                path: 'interactions',
                 element: <InteractionsExample />
+              },
+              {
+                path: 'opacity',
+                element: <OpacityExample />
               }
             ]
           }
