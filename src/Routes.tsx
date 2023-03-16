@@ -41,6 +41,7 @@ import FloatExample from 'pages/modules/utilities/FloatExample';
 import InteractionsExample from 'pages/modules/utilities/InteractionsExample';
 import OpacityExample from 'pages/modules/utilities/OpacityExample';
 import OverflowExample from 'pages/modules/utilities/OverflowExample';
+import PositionExample from 'pages/modules/utilities/PositionExample';
 
 const routes = [
   {
@@ -222,6 +223,10 @@ const routes = [
               {
                 path: 'overflow',
                 element: <OverflowExample />
+              },
+              {
+                path: 'position',
+                element: <PositionExample />
               }
             ]
           }
