@@ -40,6 +40,7 @@ import StackExample from 'pages/modules/utilities/StackExample';
 import FloatExample from 'pages/modules/utilities/FloatExample';
 import InteractionsExample from 'pages/modules/utilities/InteractionsExample';
 import OpacityExample from 'pages/modules/utilities/OpacityExample';
+import OverflowExample from 'pages/modules/utilities/OverflowExample';
 
 const routes = [
   {
@@ -217,6 +218,10 @@ const routes = [
               {
                 path: 'opacity',
                 element: <OpacityExample />
+              },
+              {
+                path: 'overflow',
+                element: <OverflowExample />
               }
             ]
           }
