@@ -1,6 +1,7 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import { Link } from 'react-router-dom';
 
 const textSelectionCode = `
 <>
@@ -10,16 +11,24 @@ const textSelectionCode = `
 </>
 `;
 
-const responsiveCode = `
+const pointerEventsCode = `
 <>
-  <div className="float-sm-start">Float start on viewports sized SM (small) or wider</div>
-  <br />
-  <div className="float-md-start">Float start on viewports sized MD (medium) or wider</div>
-  <br />
-  <div className="float-lg-start">Float start on viewports sized LG (large) or wider</div>
-  <br />
-  <div className="float-xl-start">Float start on viewports sized XL (extra-large) or wider</div>
-  <br />
+  <p>
+    <Link className="pe-none" to="#!"> This link </Link>
+    can not be clicked.
+  </p>
+  <p>
+    <Link className="pe-auto" to="#!"> This link </Link>{' '}
+    can be clicked (this is default behavior).
+  </p>
+  <p className="pe-none">
+    <Link to="#!">This link</Link> can not be clicked because the{' '}
+    <code>pointer-events</code> property is inherited from its parent. However,{' '}
+    <Link className="pe-auto" to="#!">
+      this link
+    </Link>{' '}
+    has a <code>pe-auto</code> class and can be clicked.
+  </p>
 </>
 `;
 
@@ -41,16 +50,13 @@ const InteractionsExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header
-            title="Pointer events"
-            description="Change the way in which the content is selected when the user interacts with it."
-          >
+          <PhoenixDocCard.Header title="Pointer events">
             <p className="mb-0 text-800">
               Bootstrap provides <code>.pe-none</code> and <code>.pe-auto</code> classes to prevent
               or add element interactions.
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={textSelectionCode} />
+          <PhoenixDocCard.Body code={pointerEventsCode} scope={{ Link }} />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>
