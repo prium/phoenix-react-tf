@@ -49,6 +49,7 @@ import VerticalAlignExample from 'pages/modules/utilities/VerticalAlignExample';
 import VisibilityExample from 'pages/modules/utilities/VisibilityExample';
 import BasicTableExample from 'pages/modules/tables/BasicTableExample';
 import GridExample from 'pages/modules/utilities/GridExample';
+import TypographyExample from 'pages/modules/utilities/TypographyExample';
 
 const routes = [
   {
@@ -259,6 +260,10 @@ const routes = [
               {
                 path: 'spacing',
                 element: <SpacingExample />
+              },
+              {
+                path: 'typography',
+                element: <TypographyExample />
               },
               {
                 path: 'vertical-align',
