@@ -44,6 +44,7 @@ export interface ButtonProps extends BsButtonProps {
   endIcon?: ReactElement;
   loading?: boolean;
   loadingPosition?: 'start' | 'end';
+  className?: string;
 }
 
 const Button = ({
@@ -52,12 +53,13 @@ const Button = ({
   endIcon,
   loading,
   loadingPosition,
+  className,
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <BsButton
       {...rest}
-      className={classNames({
+      className={classNames(className, {
         'btn-loading lh-1 d-flex align-items-center position-relative': loading
       })}
       disabled={loading}

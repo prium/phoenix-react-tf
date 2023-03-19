@@ -23,7 +23,7 @@ const RevealDropdown = () => {
         size="sm"
         className="dropdown-caret-none btn-reveal notification-dropdown-toggle"
       >
-        <FontAwesomeIcon icon="ellipsis" className="fs--2" />
+        <FontAwesomeIcon icon="ellipsis" className="fs-10" />
       </Dropdown.Toggle>
       <Dropdown.Menu>
         <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

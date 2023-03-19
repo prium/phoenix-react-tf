@@ -92,9 +92,9 @@ const NotificationDropdownMenu = () => {
     >
       <Card className="position-relative border-0">
         <Card.Header className="p-2">
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center">
             <h5 className="text-black mb-0">Notifications</h5>
-            <Button variant="link" className="p-0 fs--1 fw-normal">
+            <Button variant="link" className="p-0 fs-9 fw-normal">
               Mark all as read
             </Button>
           </div>
@@ -118,13 +118,13 @@ const NotificationDropdownMenu = () => {
                       className="me-3"
                     />
                     <div className="me-3 flex-1">
-                      <h4 className="fs--1 text-black">{notification.name}</h4>
-                      <p className="fs--1 text-1000 mb-2 mb-sm-3 fw-normal">
-                        <span className="me-1 fs--2">{notification.textIcon}</span>
+                      <h4 className="fs-9 text-black">{notification.name}</h4>
+                      <p className="fs-9 text-1000 mb-2 mb-sm-3 fw-normal">
+                        <span className="me-1 fs-10">{notification.textIcon}</span>
                         {notification.text}
-                        <span className="ms-2 text-400 fw-bold fs--2">{notification.ago}</span>
+                        <span className="ms-2 text-400 fw-bold fs-10">{notification.ago}</span>
                       </p>
-                      <p className="text-800 fs--1 mb-0">
+                      <p className="text-800 fs-9 mb-0">
                         <FontAwesomeIcon icon="clock" className="me-1" />
                         <span className="fw-bold">{notification.time}</span>
                         {notification.date}
@@ -135,9 +135,9 @@ const NotificationDropdownMenu = () => {
                     <Dropdown.Toggle
                       variant=""
                       size="sm"
-                      className="dropdown-caret-none notification-dropdown-toggle fs--2"
+                      className="dropdown-caret-none notification-dropdown-toggle fs-10"
                     >
-                      <FontAwesomeIcon icon="ellipsis" className="fs--2" />
+                      <FontAwesomeIcon icon="ellipsis" className="fs-10" />
                     </Dropdown.Toggle>
                     <Dropdown.Menu align="end" className="py-0">
                       <Dropdown.Item>Mark as {notification.read ? 'unread' : 'read'}</Dropdown.Item>
@@ -149,7 +149,7 @@ const NotificationDropdownMenu = () => {
           </Scrollbar>
         </Card.Body>
         <Card.Footer className="p-0 border-top">
-          <div className="my-2 text-center fw-bold fs--2 text-600">
+          <div className="my-2 text-center fw-bold fs-10 text-600">
             <Link to="#!" className="fw-bolder">
               Notification history
             </Link>

@@ -78,7 +78,7 @@ const ProfileDropdownMenu = () => {
               Sign out
             </Link>
           </div>
-          <div className="my-2 text-center fw-bold fs--2 text-600">
+          <div className="my-2 text-center fw-bold fs-10 text-600">
             <Link className="text-600 me-1" to="#!">
               Privacy policy
             </Link>

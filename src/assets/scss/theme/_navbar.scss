@@ -162,7 +162,7 @@
     white-space: nowrap;
     .nav-link {
       color: var(--#{$prefix}gray-700);
-      font-size: map-get($font-sizes, '-1');
+      font-size: map-get($font-sizes, '9');
       font-weight: $font-weight-semi-bold;
       padding: 0 15px;
       &.active,

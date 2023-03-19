@@ -76,7 +76,7 @@
   background-color: var(--#{$prefix}gray-200);
   color: var(--#{$prefix}gray-1000);
   font-weight: $font-weight-bold;
-  font-size: map-get($font-sizes, '-2');
+  font-size: map-get($font-sizes, '10');
   padding: map-get($spacers, 1) map-get($spacers, 2);
   text-transform: uppercase;
   @include hover-focus {

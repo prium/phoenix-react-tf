@@ -24,9 +24,7 @@
   }
   &:disabled {
     &::file-selector-button {
-      background-color: var(
-        --#{$prefix}input-disabled-group-addon-bg
-      ) !important;
+      background-color: var(--#{$prefix}input-disabled-group-addon-bg) !important;
       color: var(--#{$prefix}input-disabled-group-addon-color);
     }
   }
@@ -42,7 +40,7 @@
   > label {
     color: var(--#{$prefix}gray-800);
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '-2');
+    font-size: map-get($font-sizes, '10');
     text-transform: uppercase;
   }
   .form-control {
@@ -57,7 +55,7 @@
 
 .form-check-label {
   font-weight: $font-weight-semi-bold;
-  font-size: map-get($font-sizes, '-1');
+  font-size: map-get($font-sizes, '9');
 }
 
 .form-check-light {
@@ -71,9 +69,7 @@
           background-image: escape-svg($form-check-light-input-checked-bg-image),
             var(--#{$prefix}gradient);
         } @else {
-          background-image: escape-svg(
-            $form-check-light-input-checked-bg-image
-          );
+          background-image: escape-svg($form-check-light-input-checked-bg-image);
         }
       }
     }
@@ -98,7 +94,6 @@
     &:checked {
       background-color: $primary;
     }
-
   }
 }
 
@@ -219,14 +214,13 @@ select:-webkit-autofill:focus {
     }
   }
 }
-.dark{
-  .navbar-dark{
-    &.light{
-      .form-control{
-        background-color: #{map-get($grays, '1100')};;
-        border-color: #{map-get($dark-grays, '300')};;
+.dark {
+  .navbar-dark {
+    &.light {
+      .form-control {
+        background-color: #{map-get($grays, '1100')};
+        border-color: #{map-get($dark-grays, '300')};
       }
     }
-
   }
 }

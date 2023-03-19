@@ -35,7 +35,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
               <span className="nav-link-icon">
                 {route.iconSet === 'font-awesome' ? (
                   // @ts-ignore
-                  <FontAwesomeIcon icon={route.icon} className="fs-0 mx-1" />
+                  <FontAwesomeIcon icon={route.icon} className="fs-8 mx-1" />
                 ) : (
                   <FeatherIcon icon={route.icon} size={16} />
                 )}

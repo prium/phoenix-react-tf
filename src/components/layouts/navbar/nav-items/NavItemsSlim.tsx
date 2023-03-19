@@ -28,7 +28,7 @@ const NavItemsSlim = () => {
                     icon={theme === 'dark' ? 'moon' : 'sun'}
                     size={10}
                   />
-                  <span className="fs--1 fw-bold">{theme === 'dark' ? 'Dark' : 'Light'}</span>
+                  <span className="fs-9 fw-bold">{theme === 'dark' ? 'Dark' : 'Light'}</span>
                 </div>
               </div>
             </OverlayTrigger>
@@ -90,7 +90,7 @@ const NavItemsSlim = () => {
             className="dropdown-caret-none nav-link pe-0 py-0"
             variant=""
           >
-            Olivia <FontAwesomeIcon icon="chevron-down" className="fs--2" />
+            Olivia <FontAwesomeIcon icon="chevron-down" className="fs-10" />
           </Dropdown.Toggle>
           <ProfileDropdownMenu />
         </Dropdown>

@@ -215,7 +215,7 @@ span.flatpickr-weekday,
       color: var(--#{$prefix}flatpickr-current-month-color);
       padding: 0 map-get($spacers, 5);
       background-color: var(--#{$prefix}flatpickr-calendar-bg) !important;
-      font-size: map-get($font-sizes, 2);
+      font-size: map-get($font-sizes, 6);
       .flatpickr-monthDropdown-months {
         font-weight: $font-weight-bold;
         color: $gray-1100;

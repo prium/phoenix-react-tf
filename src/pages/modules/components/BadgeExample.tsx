@@ -37,7 +37,7 @@ import Badge from 'components/base/Badge';
         bg="primary"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="package" size={12} className="ms-1" />}
     >
       Primary
@@ -46,7 +46,7 @@ import Badge from 'components/base/Badge';
         bg="secondary"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="plus" size={12} className="ms-1" />}
     >
       secondary
@@ -55,7 +55,7 @@ import Badge from 'components/base/Badge';
         bg="success"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="check" size={12} className="ms-1" />}
     >
       success
@@ -64,7 +64,7 @@ import Badge from 'components/base/Badge';
         bg="info"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="info" size={12} className="ms-1" />}
     >
       info
@@ -73,7 +73,7 @@ import Badge from 'components/base/Badge';
         bg="warning"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="alert-octagon" size={12} className="ms-1" />}
     >
       warning
@@ -82,7 +82,7 @@ import Badge from 'components/base/Badge';
         bg="danger"
         variant="phoenix"
         iconPosition="end"
-        className="fs--2"
+        className="fs-10"
         icon={<FeatherIcon icon="x" size={12} className="ms-1" />}
     >
       danger

@@ -4,7 +4,7 @@
     padding: 0.5rem;
     margin-bottom: -$nav-tabs-border-width;
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '-1');
+    font-size: map-get($font-sizes, '9');
     @include border-top-radius($nav-tabs-border-radius);
     &.disabled {
       color: var(--#{$prefix}black);
@@ -116,7 +116,7 @@
 .nav-links {
   .nav-link {
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '-1');
+    font-size: map-get($font-sizes, '9');
     &.active {
       color: var(--#{$prefix}gray-1100);
     }
