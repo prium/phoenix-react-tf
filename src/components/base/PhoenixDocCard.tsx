@@ -1,11 +1,4 @@
-import React, {
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState
-} from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Card, Col, Nav, Row, Collapse } from 'react-bootstrap';
 import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,19 +9,17 @@ import classNames from 'classnames';
 import { snakeCase } from 'helpers/utils';
 import { Link } from 'react-router-dom';
 import { defaultProps } from 'prism-react-renderer';
-
-interface CollapseContextInterface {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-}
+import PhoenixDocProvider, { usePhoenixDocContext } from 'providers/PhoenixDocProvider';
 
 interface PhoenixDocCardProps {
   className?: string;
+  noProvider?: boolean;
 }
 
 interface PhoenixDocCardHeaderProps {
-  title: string;
+  title?: string;
   id?: string;
+  className?: string;
   description?: string;
   alignItems?: string;
   noPreview?: boolean;
@@ -40,14 +31,14 @@ interface PhoenixDocCardBodyProps {
   hidePreview?: boolean;
 }
 
-export const CollapseContext = createContext({} as CollapseContextInterface);
-
-const PhoenixDocCard = ({ children, className }: PropsWithChildren<PhoenixDocCardProps>) => {
-  const [open, setOpen] = useState(false);
-
+const PhoenixDocCard = ({
+  children,
+  className,
+  noProvider
+}: PropsWithChildren<PhoenixDocCardProps>) => {
   return (
     <Card className={classNames(className, 'shadow-none border border-300 overflow-hidden')}>
-      <CollapseContext.Provider value={{ open, setOpen }}>{children}</CollapseContext.Provider>
+      {noProvider ? children : <PhoenixDocProvider>{children}</PhoenixDocProvider>}
     </Card>
   );
 };
@@ -58,32 +49,39 @@ const PhoenixDocCardHeader = ({
   id,
   noPreview,
   alignItems = 'center',
-  children
+  children,
+  className
 }: PropsWithChildren<PhoenixDocCardHeaderProps>) => {
-  const { open, setOpen } = useContext(CollapseContext);
+  const { open, setOpen } = usePhoenixDocContext();
 
-  const headerId = id ? id : snakeCase(title);
+  const headerId = id ? id : title && snakeCase(title);
 
   return (
     <Card.Header
-      className={classNames('p-4 border-bottom border-300 bg-soft hover-actions-trigger', {
-        'py-5': noPreview
-      })}
+      className={classNames(
+        className,
+        'p-4 border-bottom border-300 bg-soft hover-actions-trigger',
+        {
+          'py-5': noPreview
+        }
+      )}
       id={headerId}
     >
       <Row className={`g-3 justify-content-between align-items-${alignItems}`}>
         <Col xs={12} md>
-          <h4
-            className={classNames('text-900', {
-              'mb-0': !children && !description,
-              'mb-2': children || description
-            })}
-          >
-            {title}
-            <Link to={`#${headerId}`} className="opacity-0 hover-show ps-2">
-              #
-            </Link>
-          </h4>
+          {title && (
+            <h4
+              className={classNames('text-900', {
+                'mb-0': !children && !description,
+                'mb-2': children || description
+              })}
+            >
+              {title}
+              <Link to={`#${headerId}`} className="opacity-0 hover-show ps-2">
+                #
+              </Link>
+            </h4>
+          )}
           {description && <p className="mb-0 text-800">{description}</p>}
           {children}
         </Col>
@@ -128,7 +126,7 @@ const PhoenixDocCardBody = ({
   hidePreview,
   children
 }: PropsWithChildren<PhoenixDocCardBodyProps>) => {
-  const { open } = useContext(CollapseContext);
+  const { open } = usePhoenixDocContext();
 
   return (
     <Card.Body className="p-0">

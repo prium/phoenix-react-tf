@@ -26,7 +26,7 @@ const DocPagesLayout = ({ children, sideNavItems }: PropsWithChildren<DocPagesLa
           if (child.props?.children && child.type?.name !== 'PhoenixDocCardHeader') {
             recursiveMap(child.props.children);
           } else {
-            if (child.type?.name === 'PhoenixDocCardHeader') {
+            if (child.type?.name === 'PhoenixDocCardHeader' && child.props.title) {
               items.push({
                 to: snakeCase(child.props.title),
                 label: child.props.title
