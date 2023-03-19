@@ -834,6 +834,11 @@ export const routes: RouteItems[] = [
             pathName: 'utilities-display'
           },
           {
+            name: 'grid',
+            path: 'modules/utilities/grid',
+            pathName: 'utilities-grid'
+          },
+          {
             name: 'flex',
             path: 'modules/utilities/flex',
             pathName: 'utilities-flex'

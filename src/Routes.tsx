@@ -48,6 +48,7 @@ import SpacingExample from 'pages/modules/utilities/SpacingExample';
 import VerticalAlignExample from 'pages/modules/utilities/VerticalAlignExample';
 import VisibilityExample from 'pages/modules/utilities/VisibilityExample';
 import BasicTableExample from 'pages/modules/tables/BasicTableExample';
+import GridExample from 'pages/modules/utilities/GridExample';
 
 const routes = [
   {
@@ -214,6 +215,10 @@ const routes = [
               {
                 path: 'display',
                 element: <DisplayExample />
+              },
+              {
+                path: 'grid',
+                element: <GridExample />
               },
               {
                 path: 'flex',
