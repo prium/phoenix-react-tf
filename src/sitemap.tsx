@@ -675,16 +675,6 @@ export const routes: RouteItems[] = [
             name: 'Basic tables',
             path: 'modules/tables/basic-tables',
             pathName: 'basic-tables'
-          },
-          {
-            name: 'Advance tables',
-            path: 'modules/tables/advance-tables',
-            pathName: 'advance-tables'
-          },
-          {
-            name: 'Bulk Select',
-            path: 'modules/tables/bulk-select',
-            pathName: 'bulk-select'
           }
         ]
       },
