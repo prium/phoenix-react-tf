@@ -50,6 +50,7 @@ import VisibilityExample from 'pages/modules/utilities/VisibilityExample';
 import BasicTableExample from 'pages/modules/tables/BasicTableExample';
 import GridExample from 'pages/modules/utilities/GridExample';
 import TypographyExample from 'pages/modules/utilities/TypographyExample';
+import Configuration from 'pages/documentation/customization/Configuration';
 
 const routes = [
   {
@@ -272,6 +273,20 @@ const routes = [
               {
                 path: 'visibility',
                 element: <VisibilityExample />
+              }
+            ]
+          }
+        ]
+      },
+      {
+        path: '/documentation',
+        children: [
+          {
+            path: 'customization',
+            children: [
+              {
+                path: 'configuration',
+                element: <Configuration />
               }
             ]
           }

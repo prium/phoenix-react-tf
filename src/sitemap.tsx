@@ -996,6 +996,11 @@ export const routes: RouteItems[] = [
         dropdownInside: true,
         pages: [
           {
+            name: 'configuration',
+            path: 'documentation/customization/configuration',
+            pathName: 'doc-styling'
+          },
+          {
             name: 'styling',
             path: 'documentation/customization/styling',
             pathName: 'doc-styling'
