@@ -18,7 +18,6 @@ $gray-1100: #141824 !default; //(20, 24, 36)
 $black: #000000 !default;
 
 $dark-gray-soft: #0f111a !default;
-// $grays: () !default;
 $grays: (
   'soft': $gray-soft,
   '100': $gray-100,
@@ -290,6 +289,10 @@ $brand-colors: map-merge(
 
 $button-colors: map-remove($theme-colors, 'light', 'dark');
 
+//*-----------------------------------------------
+//|   Dark theme colors
+//-----------------------------------------------*/
+
 $dark-theme-colors: (
   'primary': $blue-300,
   'secondary': $secondary,
@@ -301,6 +304,7 @@ $dark-theme-colors: (
   'dark': $light
 ) !default;
 
+// Theme used colors
 $theme-used-colors: (
   'primary-soft': $blue-soft,
   'primary-100': $blue-100,
@@ -333,6 +337,7 @@ $theme-used-colors: (
 
 $dark-info-100: #1a2532;
 
+// Dark theme used color
 $dark-theme-used-colors: (
   'primary-soft': $blue-soft,
   'primary-100': #1d2332,

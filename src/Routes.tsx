@@ -51,6 +51,7 @@ import BasicTableExample from 'pages/modules/tables/BasicTableExample';
 import GridExample from 'pages/modules/utilities/GridExample';
 import TypographyExample from 'pages/modules/utilities/TypographyExample';
 import Configuration from 'pages/documentation/customization/Configuration';
+import Styling from 'pages/documentation/customization/Styling';
 
 const routes = [
   {
@@ -287,6 +288,10 @@ const routes = [
               {
                 path: 'configuration',
                 element: <Configuration />
+              },
+              {
+                path: 'styling',
+                element: <Styling />
               }
             ]
           }
