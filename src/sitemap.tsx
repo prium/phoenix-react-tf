@@ -998,11 +998,16 @@ export const routes: RouteItems[] = [
           {
             name: 'configuration',
             path: 'documentation/customization/configuration',
-            pathName: 'doc-styling'
+            pathName: 'doc-configuration'
           },
           {
             name: 'styling',
             path: 'documentation/customization/styling',
+            pathName: 'doc-styling'
+          },
+          {
+            name: 'dark-mode',
+            path: 'documentation/customization/dark-mode',
             pathName: 'doc-styling'
           },
           {

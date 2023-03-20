@@ -189,9 +189,9 @@ const Styling = () => {
               We recommend to follow this approach.
             </p>
             <p>
-              Light mode is default theme style in {capitalize(process.env.REACT_APP_NAME!)}. So, if
-              you update any bootstrap’s SCSS variables, it will effect in Light mode. If you want
-              to update any color, find the corresponding variable for the color and place theme to
+              Light mode is default theme style in {process.env.REACT_APP_TITLE}. So, if you update
+              any bootstrap’s SCSS variables, it will effect in Light mode. If you want to update
+              any color, find the corresponding variable for the color and place theme to
               _user-variables.scss file.
             </p>
             <PhoenixLiveEditor code={themeColorCode} />
@@ -205,16 +205,16 @@ const Styling = () => {
 
             <h6 className="mt-4 fs-7 mb-2 fw-semi-bold">All Colors</h6>
             <p className="mb-1">
-              All <strong>{capitalize(process.env.REACT_APP_NAME!)}</strong> colors are available as
-              Sass variables and Sass map in <code>src/scss/theme/_colors.scss </code>file. To avoid
+              All <strong>{process.env.REACT_APP_TITLE}</strong> colors are available as Sass
+              variables and Sass map in <code>src/scss/theme/_colors.scss </code>file. To avoid
               increased file sizes, we don’t create text or background color classes for each of
               these variables. Instead, we choose a subset of these colors for a theme palette.
             </p>
             <p>
               You'll find all the colors used in the theme in a sass map name{' '}
               <code>$theme-used-colors </code>in <code>src/scss/theme/_colors.scss </code>file. If
-              you want to use any <strong>{capitalize(process.env.REACT_APP_NAME!)} </strong>color
-              to generate <code>text/bg </code>
+              you want to use any <strong>{process.env.REACT_APP_TITLE} </strong>color to generate{' '}
+              <code>text/bg </code>
               utility class, Add the color variable in <code>$theme-used-colors </code>map. If you
               want to add/change color for dark mode, update the{' '}
               <code>$dark-theme-used-colors </code>map.{' '}

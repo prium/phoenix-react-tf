@@ -52,6 +52,7 @@ import GridExample from 'pages/modules/utilities/GridExample';
 import TypographyExample from 'pages/modules/utilities/TypographyExample';
 import Configuration from 'pages/documentation/customization/Configuration';
 import Styling from 'pages/documentation/customization/Styling';
+import DarkMode from 'pages/documentation/customization/DarkMode';
 
 const routes = [
   {
@@ -292,6 +293,10 @@ const routes = [
               {
                 path: 'styling',
                 element: <Styling />
+              },
+              {
+                path: 'dark-mode',
+                element: <DarkMode />
               }
             ]
           }
