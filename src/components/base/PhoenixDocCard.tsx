@@ -3,13 +3,12 @@ import { Card, Col, Nav, Row, Collapse } from 'react-bootstrap';
 import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FeatherIcon from 'feather-icons-react';
-import * as ReactBootstrap from 'react-bootstrap';
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
+import { LiveEditor, LiveError, LivePreview } from 'react-live';
 import classNames from 'classnames';
 import { snakeCase } from 'helpers/utils';
 import { Link } from 'react-router-dom';
-import { defaultProps } from 'prism-react-renderer';
 import PhoenixDocProvider, { usePhoenixDocContext } from 'providers/PhoenixDocProvider';
+import PhoenixLiveProvider, { PhoenixLiveProviderProps } from 'components/docs/PhoenixLiveProvider';
 
 interface PhoenixDocCardProps {
   className?: string;
@@ -24,10 +23,7 @@ interface PhoenixDocCardHeaderProps {
   alignItems?: string;
   noPreview?: boolean;
 }
-interface PhoenixDocCardBodyProps {
-  code?: string;
-  scope?: { [key: string]: any };
-  noInline?: boolean;
+interface PhoenixDocCardBodyProps extends PhoenixLiveProviderProps {
   hidePreview?: boolean;
 }
 
@@ -131,14 +127,7 @@ const PhoenixDocCardBody = ({
   return (
     <Card.Body className="p-0">
       {code && (
-        <LiveProvider
-          code={code}
-          scope={{ ...ReactBootstrap, ...React, ...scope }}
-          noInline={noInline}
-          transformCode={code => code.replace(/^import.*$/gm, '')}
-          language="jsx"
-          {...defaultProps}
-        >
+        <PhoenixLiveProvider code={code} scope={scope} noInline={noInline}>
           {hidePreview ? (
             <LiveEditor />
           ) : (
@@ -154,7 +143,7 @@ const PhoenixDocCardBody = ({
               </div>
             </>
           )}
-        </LiveProvider>
+        </PhoenixLiveProvider>
       )}
 
       {children && <div className="p-4">{children}</div>}
