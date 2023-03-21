@@ -5,6 +5,7 @@
     margin-bottom: -$nav-tabs-border-width;
     font-weight: $font-weight-bold;
     font-size: map-get($font-sizes, '9');
+    background-color: transparent;
     @include border-top-radius($nav-tabs-border-radius);
     &.disabled {
       color: var(--#{$prefix}black);

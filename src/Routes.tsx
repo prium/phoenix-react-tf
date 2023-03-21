@@ -56,6 +56,9 @@ import DarkMode from 'pages/documentation/customization/DarkMode';
 import GettingStarted from 'pages/documentation/GettingStarted';
 import DesignFile from 'pages/documentation/DesignFile';
 import ChangeLog from 'pages/documentation/ChangeLog';
+import NavsExample from 'pages/modules/components/NavsExample';
+import TabsExample from 'pages/modules/components/TabsExample';
+import NavbarExample from 'pages/modules/components/NavbarExample';
 
 const routes = [
   {
@@ -164,6 +167,18 @@ const routes = [
               {
                 path: 'tooltips',
                 element: <TooltipExample />
+              },
+              {
+                path: 'navs-and-tabs/navs',
+                element: <NavsExample />
+              },
+              {
+                path: 'navs-and-tabs/tabs',
+                element: <TabsExample />
+              },
+              {
+                path: 'navs-and-tabs/navbar',
+                element: <NavbarExample />
               }
             ]
           },

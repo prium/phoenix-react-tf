@@ -25,7 +25,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
         className={({ isActive }) =>
           classNames('nav-link', {
             'label-1': level === 1,
-            active: isActive
+            active: isActive && route.path !== '#!'
           })
         }
       >
@@ -58,15 +58,16 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
 
   const openCollapse = (childrens: any) => {
     const checkLink = (children: any) => {
-      if (children.path === pathname) {
+      if (`/${children.path}` === pathname) {
         return true;
       }
-      return Object.prototype.hasOwnProperty('pages') && route.pages!.some(checkLink);
+      return children.hasOwnProperty('pages') && children.pages!.some(checkLink);
     };
     return childrens.some(checkLink);
   };
 
   const [open, setOpen] = useState(openCollapse(route.pages));
+
   return (
     <>
       <Nav.Link
