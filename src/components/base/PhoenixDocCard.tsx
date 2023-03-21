@@ -59,7 +59,7 @@ const PhoenixDocCardHeader = ({
         className,
         'p-4 border-bottom border-300 bg-soft hover-actions-trigger',
         {
-          'py-5': noPreview
+          // 'py-5': noPreview
         }
       )}
       id={headerId}

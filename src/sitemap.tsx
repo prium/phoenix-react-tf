@@ -1009,12 +1009,12 @@ export const routes: RouteItems[] = [
             name: 'dark-mode',
             path: 'documentation/customization/dark-mode',
             pathName: 'doc-styling'
-          },
-          {
-            name: 'plugin',
-            path: 'documentation/customization/plugin',
-            pathName: 'doc-plugin'
           }
+          // {
+          //   name: 'plugin',
+          //   path: 'documentation/customization/plugin',
+          //   pathName: 'doc-plugin'
+          // }
         ]
       },
       {
@@ -1038,13 +1038,6 @@ export const routes: RouteItems[] = [
             pathName: 'doc-layout-combo-navbar'
           }
         ]
-      },
-      {
-        name: 'gulp',
-        icon: ['fab', 'gulp'],
-        iconSet: 'font-awesome',
-        path: 'documentation/gulp',
-        pathName: 'doc-gulp'
       },
       {
         name: 'design-file',

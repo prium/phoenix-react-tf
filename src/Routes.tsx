@@ -53,6 +53,9 @@ import TypographyExample from 'pages/modules/utilities/TypographyExample';
 import Configuration from 'pages/documentation/customization/Configuration';
 import Styling from 'pages/documentation/customization/Styling';
 import DarkMode from 'pages/documentation/customization/DarkMode';
+import GettingStarted from 'pages/documentation/GettingStarted';
+import DesignFile from 'pages/documentation/DesignFile';
+import ChangeLog from 'pages/documentation/ChangeLog';
 
 const routes = [
   {
@@ -284,6 +287,14 @@ const routes = [
         path: '/documentation',
         children: [
           {
+            path: 'getting-started',
+            element: <GettingStarted />
+          },
+          {
+            path: 'design-file',
+            element: <DesignFile />
+          },
+          {
             path: 'customization',
             children: [
               {
@@ -301,6 +312,10 @@ const routes = [
             ]
           }
         ]
+      },
+      {
+        path: 'changelog',
+        element: <ChangeLog />
       }
     ]
   },
