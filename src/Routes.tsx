@@ -60,6 +60,7 @@ import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
 import ComingSoon from 'pages/ComingSoon';
+import Ecommerce from 'pages/dashboard/ecommerce';
 
 const routes = [
   {
@@ -68,7 +69,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <Ecommerce />
       },
       {
         path: '/pages/starter',

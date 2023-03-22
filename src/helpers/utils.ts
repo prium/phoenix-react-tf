@@ -31,3 +31,14 @@ export const getColor = (name: string) => {
   const dom = document.documentElement;
   return getComputedStyle(dom).getPropertyValue(`--phoenix-${name}`).trim();
 };
+
+/* get Dates between */
+export const getDates = (
+  startDate: Date,
+  endDate: Date,
+  interval: number = 1000 * 60 * 60 * 24
+) => {
+  const duration = +endDate - +startDate;
+  const steps = duration / interval;
+  return Array.from({ length: steps + 1 }, (v, i) => new Date(startDate.valueOf() + interval * i));
+};
