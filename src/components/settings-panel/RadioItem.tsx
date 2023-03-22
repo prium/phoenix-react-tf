@@ -24,7 +24,7 @@ const RadioItem = ({ name, value, thumb, label, defaultChecked, handleChange }: 
       />
       <Form.Check.Label
         htmlFor={`${name}-${value}`}
-        className="btn btn-navbar-style d-inline-block fs--1"
+        className="btn btn-navbar-style d-inline-block fs-9"
       >
         <span className="mb-2 rounded d-block">
           <img className="img-fluid img-prototype mb-0" src={thumb} alt="" />

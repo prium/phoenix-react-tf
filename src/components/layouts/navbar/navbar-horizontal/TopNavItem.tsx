@@ -85,7 +85,7 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
             <>
               {page.iconSet === 'font-awesome' ? (
                 // @ts-ignore
-                <FontAwesomeIcon icon={page.icon} className="fs-0 ms-1 me-2" />
+                <FontAwesomeIcon icon={page.icon} className="fs-8 ms-1 me-2" />
               ) : (
                 <FeatherIcon icon={page.icon} size={14} className="me-2" />
               )}

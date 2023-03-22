@@ -83,8 +83,7 @@
   vertical-align: middle;
   cursor: if($enable-button-pointers, pointer, null);
   user-select: none;
-  border: var(--#{$prefix}btn-border-width) solid
-    var(--#{$prefix}btn-border-color);
+  border: var(--#{$prefix}btn-border-width) solid var(--#{$prefix}btn-border-color);
   @include border-radius(var(--#{$prefix}btn-border-radius));
   @include gradient-bg(var(--#{$prefix}btn-bg));
   @include box-shadow(var(--#{$prefix}btn-box-shadow));
@@ -105,8 +104,7 @@
     outline: 0;
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
-      box-shadow: var(--#{$prefix}btn-box-shadow),
-        var(--#{$prefix}btn-focus-box-shadow);
+      box-shadow: var(--#{$prefix}btn-box-shadow), var(--#{$prefix}btn-focus-box-shadow);
     } @else {
       box-shadow: var(--#{$prefix}btn-focus-box-shadow);
     }
@@ -127,8 +125,7 @@
     &:focus {
       // Avoid using mixin so we can pass custom focus shadow properly
       @if $enable-shadows {
-        box-shadow: var(--#{$prefix}btn-active-shadow),
-          var(--#{$prefix}btn-focus-box-shadow);
+        box-shadow: var(--#{$prefix}btn-active-shadow), var(--#{$prefix}btn-focus-box-shadow);
       } @else {
         box-shadow: var(--#{$prefix}btn-focus-box-shadow);
       }
@@ -164,10 +161,7 @@
 @each $color, $value in $button-colors {
   $hover-color: map-get($theme-hover-colors, $color);
   .btn-outline-#{$color} {
-    @include button-outline-variant(
-      $color: $value,
-      $active-border: $hover-color
-    );
+    @include button-outline-variant($color: $value, $active-border: $hover-color);
   }
 }
 
@@ -291,5 +285,26 @@
   &.btn-icon-xl {
     height: 3rem;
     width: 3rem;
+  }
+}
+
+.btn-loading {
+  line-height: 1;
+  .spinner-border {
+    --#{$prefix}spinner-width: 1rem;
+    --#{$prefix}spinner-height: 1rem;
+    --#{$prefix}spinner-border-width: 2px;
+  }
+  &.btn-lg {
+    .spinner-border {
+      --#{$prefix}spinner-width: 1.35rem;
+      --#{$prefix}spinner-height: 1.35rem;
+    }
+  }
+  &.btn-sm {
+    .spinner-border {
+      --#{$prefix}spinner-width: 0.8rem;
+      --#{$prefix}spinner-height: 0.8rem;
+    }
   }
 }

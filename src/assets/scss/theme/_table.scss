@@ -33,37 +33,27 @@
       }
     }
   }
-  > tbody {
-    > tr {
-      > td {
-        &:first-child {
-          padding-left: 0;
-        }
-        &:last-child {
-          padding-right: 0;
+  &.phoenix-table {
+    > tbody {
+      > tr {
+        > td {
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
         }
       }
     }
   }
-  // &.table-dark{
-  //   color: $gray-400 !important;
-  //   thead{
-  //     tr{
-  //       th{
-  //         color: $gray-400 !important;
-  //       }
-  //     }
-  //   }
-  // }
+
   // table varient
   @each $color, $value in $theme-colors {
     @if $color == 'dark' {
       .table-#{$color},
       &.table-#{$color} {
-        --#{$prefix}table-hover-bg: rgba(
-          var(--#{$prefix}primary-600-rgb),
-          0.07
-        );
+        --#{$prefix}table-hover-bg: rgba(var(--#{$prefix}primary-600-rgb), 0.07);
         color: $gray-400;
       }
     } @else {

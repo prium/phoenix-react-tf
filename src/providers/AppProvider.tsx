@@ -1,5 +1,12 @@
-import React, { createContext, Dispatch, PropsWithChildren, useEffect, useReducer } from 'react';
-import { getItemFromStore } from 'helpers/utils';
+import React, {
+  createContext,
+  Dispatch,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useReducer
+} from 'react';
+import { getColor, getItemFromStore } from 'helpers/utils';
 import { Config, initialConfig } from 'config';
 import { ACTIONTYPE, configReducer } from 'reducers/ConfigReducer';
 
@@ -8,6 +15,7 @@ interface AppContextInterFace {
   configDispatch: Dispatch<ACTIONTYPE>;
   toggleTheme: () => void;
   setConfig: (payload: Partial<Config>) => void;
+  getThemeColor: (name: string) => string;
 }
 
 export const AppContext = createContext({} as AppContextInterFace);
@@ -49,6 +57,10 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     });
   };
 
+  const getThemeColor = (name: string) => {
+    return getColor(name);
+  };
+
   useEffect(() => {
     if (config.navbarTopShape === 'slim') {
       document.body.classList.add('nav-slim');
@@ -64,10 +76,12 @@ const AppProvider = ({ children }: PropsWithChildren) => {
   }, [config]);
 
   return (
-    <AppContext.Provider value={{ config, setConfig, toggleTheme, configDispatch }}>
+    <AppContext.Provider value={{ config, setConfig, toggleTheme, getThemeColor, configDispatch }}>
       {children}
     </AppContext.Provider>
   );
 };
+
+export const useAppContext = () => useContext(AppContext);
 
 export default AppProvider;

@@ -27,7 +27,7 @@
     }
     .gantt_tree_content {
       color: var(--#{$prefix}gray-900);
-      font-size: map-get($font-sizes, '-1');
+      font-size: map-get($font-sizes, '9');
       font-weight: 600;
       font-family: $font-family-sans-serif;
     }

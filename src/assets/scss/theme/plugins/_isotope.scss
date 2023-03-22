@@ -32,7 +32,7 @@
     color: $black;
     text-decoration: none;
     font-weight: $font-weight-normal;
-    font-size: map_get($font-sizes, '-1');
+    font-size: map_get($font-sizes, '9');
     letter-spacing: 0.13rem;
     .isotope-nav {
       cursor: pointer;

@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { AppContext } from 'providers/AppProvider';
-import React, { useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
 import { Offcanvas } from 'react-bootstrap';
 import NavigationType from './NavigationType';
 import HorizontalNavbarShape from './HorizontalNavbarShape';
@@ -15,7 +14,7 @@ const SettingsPanel = () => {
     config: { showSettingPanel },
     setConfig,
     configDispatch
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleClose = () => {
     setConfig({
@@ -39,17 +38,17 @@ const SettingsPanel = () => {
         <div className="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
           <div>
             <h5 className="mb-2 me-2 lh-sm">
-              <FontAwesomeIcon icon="palette" className="me-2 fs-0" />
+              <FontAwesomeIcon icon="palette" className="me-2 fs-8" />
               Theme Customizer
             </h5>
-            <p className="mb-0 fs--1">Explore different styles according to your preferences</p>
+            <p className="mb-0 fs-9">Explore different styles according to your preferences</p>
           </div>
           <button className="btn p-1 fw-bolder" onClick={handleClose}>
-            <FontAwesomeIcon icon="times" className="fs-0" />
+            <FontAwesomeIcon icon="times" className="fs-8" />
           </button>
         </div>
         <Button variant="phoenix-secondary" className="w-100" onClick={handleResetToDefault}>
-          <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs--2" />
+          <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           Reset to default
         </Button>
       </Offcanvas.Header>

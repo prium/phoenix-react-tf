@@ -573,80 +573,75 @@ export const routes: RouteItems[] = [
             pages: [
               {
                 name: 'form-control',
-                path: 'modules/forms/basic/form-control',
+                path: 'modules/forms/form-control',
                 pathName: 'form-control'
               },
               {
                 name: 'input-group',
-                path: 'modules/forms/basic/input-group',
+                path: 'modules/forms/input-group',
                 pathName: 'form-input-group'
               },
               {
                 name: 'select',
-                path: 'modules/forms/basic/select',
+                path: 'modules/forms/select',
                 pathName: 'form-select'
               },
               {
                 name: 'checks',
-                path: 'modules/forms/basic/checks',
+                path: 'modules/forms/checks',
                 pathName: 'form-checks'
               },
               {
                 name: 'range',
-                path: 'modules/forms/basic/range',
+                path: 'modules/forms/range',
                 pathName: 'form-range'
               },
               {
                 name: 'floating-labels',
-                path: 'modules/forms/basic/floating-labels',
+                path: 'modules/forms/floating-labels',
                 pathName: 'floating-labels'
               },
               {
                 name: 'layout',
-                path: 'modules/forms/basic/layout',
+                path: 'modules/forms/layout',
                 pathName: 'form-layout'
               }
             ]
           },
-          {
-            name: 'advance',
-            pages: [
-              {
-                name: 'advance-select',
-                path: 'modules/forms/advance/advance-select',
-                pathName: 'advance-select'
-              },
-              {
-                name: 'date-picker',
-                path: 'modules/forms/advance/date-picker',
-                pathName: 'date-picker'
-              },
-              {
-                name: 'editor',
-                path: 'modules/forms/advance/editor',
-                pathName: 'text-editor'
-              },
-              {
-                name: 'file-uploader',
-                path: 'modules/forms/advance/file-uploader',
-                pathName: 'file-uploader'
-              },
-              {
-                name: 'rating',
-                path: 'modules/forms/advance/rating',
-                pathName: 'advance-rating'
-              }
-            ]
-          },
+          // {
+          //   name: 'advance',
+          //   pages: [
+          //     {
+          //       name: 'advance-select',
+          //       path: 'modules/forms/advance/advance-select',
+          //       pathName: 'advance-select'
+          //     },
+          //     {
+          //       name: 'date-picker',
+          //       path: 'modules/forms/advance/date-picker',
+          //       pathName: 'date-picker'
+          //     },
+          //     {
+          //       name: 'editor',
+          //       path: 'modules/forms/advance/editor',
+          //       pathName: 'text-editor'
+          //     },
+          //     {
+          //       name: 'file-uploader',
+          //       path: 'modules/forms/advance/file-uploader',
+          //       pathName: 'file-uploader'
+          //     },
+          //     {
+          //       name: 'rating',
+          //       path: 'modules/forms/advance/rating',
+          //       pathName: 'advance-rating'
+          //     }
+          //   ]
+          // },
           {
             name: 'validation',
             path: 'modules/forms/validation',
             pathName: 'forms-validation'
-          },
-          {
-            name: 'wizard',
-            path: 'modules/forms/wizard',
-            pathName: 'forms-wizard'
           }
         ]
       },
@@ -680,16 +675,6 @@ export const routes: RouteItems[] = [
             name: 'Basic tables',
             path: 'modules/tables/basic-tables',
             pathName: 'basic-tables'
-          },
-          {
-            name: 'Advance tables',
-            path: 'modules/tables/advance-tables',
-            pathName: 'advance-tables'
-          },
-          {
-            name: 'Bulk Select',
-            path: 'modules/tables/bulk-select',
-            pathName: 'bulk-select'
           }
         ]
       },
@@ -728,11 +713,6 @@ export const routes: RouteItems[] = [
             path: 'modules/components/button'
           },
           {
-            name: 'calendar',
-            pathName: 'components-calendar',
-            path: 'modules/components/calendar'
-          },
-          {
             name: 'card',
             pathName: 'components-card',
             path: 'modules/components/card'
@@ -744,11 +724,6 @@ export const routes: RouteItems[] = [
                 name: 'bootstrap',
                 path: 'modules/components/carousel/bootstrap',
                 pathName: 'components-bs-carousel'
-              },
-              {
-                name: 'swiper',
-                path: 'modules/components/carousel/swiper',
-                pathName: 'components-swiper-carousel'
               }
             ]
           },
@@ -818,11 +793,6 @@ export const routes: RouteItems[] = [
             pathName: 'components-popovers'
           },
           {
-            name: 'scrollspy',
-            path: 'modules/components/scrollspy',
-            pathName: 'components-scrollspy'
-          },
-          {
             name: 'spinners',
             path: 'modules/components/spinners',
             pathName: 'components-spinners'
@@ -864,9 +834,19 @@ export const routes: RouteItems[] = [
             pathName: 'utilities-display'
           },
           {
+            name: 'grid',
+            path: 'modules/utilities/grid',
+            pathName: 'utilities-grid'
+          },
+          {
             name: 'flex',
             path: 'modules/utilities/flex',
             pathName: 'utilities-flex'
+          },
+          {
+            name: 'stack',
+            path: 'modules/utilities/stack',
+            pathName: 'utilities-stack'
           },
           {
             name: 'float',
@@ -1016,15 +996,25 @@ export const routes: RouteItems[] = [
         dropdownInside: true,
         pages: [
           {
+            name: 'configuration',
+            path: 'documentation/customization/configuration',
+            pathName: 'doc-configuration'
+          },
+          {
             name: 'styling',
             path: 'documentation/customization/styling',
             pathName: 'doc-styling'
           },
           {
-            name: 'plugin',
-            path: 'documentation/customization/plugin',
-            pathName: 'doc-plugin'
+            name: 'dark-mode',
+            path: 'documentation/customization/dark-mode',
+            pathName: 'doc-styling'
           }
+          // {
+          //   name: 'plugin',
+          //   path: 'documentation/customization/plugin',
+          //   pathName: 'doc-plugin'
+          // }
         ]
       },
       {
@@ -1048,13 +1038,6 @@ export const routes: RouteItems[] = [
             pathName: 'doc-layout-combo-navbar'
           }
         ]
-      },
-      {
-        name: 'gulp',
-        icon: ['fab', 'gulp'],
-        iconSet: 'font-awesome',
-        path: 'documentation/gulp',
-        pathName: 'doc-gulp'
       },
       {
         name: 'design-file',

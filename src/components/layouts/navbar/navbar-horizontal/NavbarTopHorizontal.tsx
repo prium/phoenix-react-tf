@@ -1,6 +1,6 @@
 import { Dropdown, Navbar } from 'react-bootstrap';
-import { useContext, useState } from 'react';
-import { AppContext } from 'providers/AppProvider';
+import { useState } from 'react';
+import { useAppContext } from 'providers/AppProvider';
 import NavItems from '../nav-items/NavItems';
 import { RouteItems, routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
@@ -13,7 +13,7 @@ import TopNavItem from './TopNavItem';
 const NavbarTopHorizontal = () => {
   const {
     config: { openNavbarVertical, navbarTopShape, navbarTopAppearance }
-  } = useContext(AppContext);
+  } = useAppContext();
 
   return (
     <Navbar

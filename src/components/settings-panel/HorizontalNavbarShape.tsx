@@ -1,5 +1,5 @@
-import { AppContext } from 'providers/AppProvider';
-import { ChangeEvent, useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
+import { ChangeEvent } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import topDefault from 'assets/img/generic/top-default.png';
 import topDefaultDark from 'assets/img/generic/top-default-dark.png';
@@ -12,7 +12,7 @@ const HorizontalNavbarShape = () => {
   const {
     config: { theme, navbarTopShape },
     setConfig
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

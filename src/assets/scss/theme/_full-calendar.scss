@@ -125,7 +125,7 @@
     margin-top: 0;
     margin-bottom: 0.25rem !important;
     padding: 0.25rem 0.5rem !important;
-    font-size: map-get($font-sizes, '-2');
+    font-size: map-get($font-sizes, '10');
     border: 1px solid var(--#{$prefix}gray-300) !important;
   }
   .fc-h-event,
@@ -154,10 +154,10 @@
       font-weight: $font-weight-semi-bold !important;
     }
   }
-  .fc-event{
-    &:focus{
+  .fc-event {
+    &:focus {
       box-shadow: none;
-      &::after{
+      &::after {
         border-radius: 0.375rem;
       }
     }
@@ -222,7 +222,7 @@
     display: block;
     text-align: center;
     color: var(--#{$prefix}gray-500) !important;
-    font-size: map-get($font-sizes, '-2');
+    font-size: map-get($font-sizes, '10');
     @include hover-focus {
       text-decoration: none;
       color: var(--#{$prefix}gray-600) !important;
@@ -400,12 +400,11 @@
 
 .firefox {
   .fc {
-    table{
+    table {
       border-collapse: unset;
     }
   }
 }
-
 
 @include media-breakpoint-up(md) {
   .fc {
@@ -415,10 +414,10 @@
     .fc-daygrid-more-link {
       margin-left: 0.625rem;
       text-align: left;
-      font-size: map-get($font-sizes, '-1');
+      font-size: map-get($font-sizes, '9');
     }
     .fc-daygrid-event {
-      font-size: map-get($font-sizes, '-1');
+      font-size: map-get($font-sizes, '9');
     }
   }
 }

@@ -31,7 +31,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: map_get($font-sizes, '-1');
+  font-size: map_get($font-sizes, '9');
   font-weight: $font-weight-semi-bold;
   padding: 0;
   z-index: $zindex-sticky;
@@ -171,7 +171,7 @@
   .theme-control-toggle-label {
     height: 2rem;
     width: 2rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--#{$prefix}theme-control-toggle-bg);

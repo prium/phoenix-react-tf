@@ -50,7 +50,7 @@ const NineDotMenu = () => {
                     className="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3"
                   >
                     <img src={item.img} alt="behance" width={item.width || 30} />
-                    <p className="mb-0 text-black text-truncate fs--2 mt-1 pt-1">{item.title}</p>
+                    <p className="mb-0 text-black text-truncate fs-10 mt-1 pt-1">{item.title}</p>
                   </Link>
                 </Col>
               ))}

@@ -1,12 +1,12 @@
-import { AppContext } from 'providers/AppProvider';
-import { ChangeEvent, useContext } from 'react';
+import { useAppContext } from 'providers/AppProvider';
+import { ChangeEvent } from 'react';
 import { Form } from 'react-bootstrap';
 
 const RTLMode = () => {
   const {
     config: { isRTL },
     setConfig
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { checked } = e.target;

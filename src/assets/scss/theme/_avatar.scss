@@ -6,24 +6,19 @@
 .avatar {
   position: relative;
   display: inline-block;
-  vertical-align: middle;
 
   .avatar-placeholder {
     background: $avatars-placeholder-bg;
   }
   .avatar-name {
-    position: absolute;
-    text-align: center;
     color: var(--#{$prefix}avatar-name-color);
     background-color: var(--#{$prefix}primary-100);
     font-weight: bold;
     text-transform: uppercase;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     > span {
-      position: absolute;
-      top: 53%;
-      left: 51%;
-      transform: translate3d(-50%, -50%, 0);
       font-weight: $font-weight-black !important;
     }
   }

@@ -1,7 +1,6 @@
 import SearchBox from 'components/common/SearchBox';
 import { Navbar } from 'react-bootstrap';
-import { useContext } from 'react';
-import { AppContext } from 'providers/AppProvider';
+import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
 import NavbarBrand from '../nav-items/NavbarBrand';
 import NavItems from '../nav-items/NavItems';
@@ -10,7 +9,7 @@ import NavItemsSlim from '../nav-items/NavItemsSlim';
 const NavbarTopDefault = () => {
   const {
     config: { navbarTopShape, navbarTopAppearance }
-  } = useContext(AppContext);
+  } = useAppContext();
 
   return (
     <Navbar

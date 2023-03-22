@@ -1,49 +1,16 @@
+import { router } from 'Routes';
 import SettingsPanel from 'components/settings-panel/SettingsPanel';
 import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import useToggleStyle from 'hooks/useToggleStyle';
-import MainLayout from 'layouts/MainLayout';
-import HomePage from 'pages/HomePage';
-import Starter from 'pages/Starter';
-import Leads from 'pages/apps/crm/Leads';
-import { AppContext } from 'providers/AppProvider';
-import { useContext } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-export const routes = [
-  {
-    path: '/',
-    element: <MainLayout />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />
-      },
-      {
-        path: 'starter',
-        element: <Starter />
-      }
-    ]
-  },
-  {
-    path: 'crm',
-    element: <MainLayout />,
-    children: [
-      {
-        path: 'leads',
-        element: <Leads />
-      }
-    ]
-  }
-];
-
-const router = createBrowserRouter(routes);
+import { useAppContext } from 'providers/AppProvider';
+import { RouterProvider } from 'react-router-dom';
 
 const App = () => {
   const { isStylesheetLoaded } = useToggleStyle();
 
   const {
     config: { theme }
-  } = useContext(AppContext);
+  } = useAppContext();
 
   if (!isStylesheetLoaded) {
     return (

@@ -1,11 +1,12 @@
-import { AppContext } from 'providers/AppProvider';
-import { useContext, useEffect, useState } from 'react';
+import { useAppContext } from 'providers/AppProvider';
+import { useEffect, useState } from 'react';
 
 const useToggleStyle = () => {
   const [isStylesheetLoaded, setIsStylesheetLoaded] = useState(false);
   const {
-    config: { theme, isRTL }
-  } = useContext(AppContext);
+    config: { theme, isRTL },
+    configDispatch
+  } = useAppContext();
 
   useEffect(() => {
     setIsStylesheetLoaded(false);
@@ -33,6 +34,9 @@ const useToggleStyle = () => {
 
   useEffect(() => {
     document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+    configDispatch({
+      type: 'REFRESH'
+    });
   }, [theme]);
 
   return { isStylesheetLoaded };
