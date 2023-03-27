@@ -59,6 +59,7 @@ import ChangeLog from 'pages/documentation/ChangeLog';
 import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
+import ComingSoon from 'pages/ComingSoon';
 
 const routes = [
   {
@@ -331,6 +332,10 @@ const routes = [
       {
         path: 'changelog',
         element: <ChangeLog />
+      },
+      {
+        path: '*',
+        element: <ComingSoon />
       }
     ]
   },
