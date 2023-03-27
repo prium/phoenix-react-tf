@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
-import { getColor, getDates } from 'helpers/utils';
+import { getDates } from 'helpers/utils';
 import dayjs from 'dayjs';
 import { useAppContext } from 'providers/AppProvider';
 import {
@@ -61,14 +61,14 @@ const tooltipFormatter = (params: CallbackDataParams[]) => {
           </div>`;
 };
 
-const getDefaultOptions = (theme: ThemeVariant) => ({
-  color: [getColor('primary'), getColor('info')],
+const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) => string) => ({
+  color: [getThemeColor('primary'), getThemeColor('info')],
   tooltip: {
     trigger: 'axis',
     padding: 10,
-    backgroundColor: getColor('gray-100'),
-    borderColor: getColor('gray-300'),
-    textStyle: { color: getColor('dark') },
+    backgroundColor: getThemeColor('gray-100'),
+    borderColor: getThemeColor('gray-300'),
+    textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -85,7 +85,7 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
         interval: 13,
         showMinLabel: true,
         showMaxLabel: false,
-        color: getColor('gray-800'),
+        color: getThemeColor('gray-800'),
         align: 'left',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,
@@ -94,7 +94,7 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
       axisLine: {
         show: true,
         lineStyle: {
-          color: getColor('gray-200')
+          color: getThemeColor('gray-200')
         }
       },
       axisTick: {
@@ -104,7 +104,7 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
         show: true,
         interval: 0,
         lineStyle: {
-          color: theme === 'dark' ? getColor('gray-100') : getColor('gray-200')
+          color: theme === 'dark' ? getThemeColor('gray-100') : getThemeColor('gray-200')
         }
       },
       boundaryGap: false
@@ -118,7 +118,7 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
-        color: getColor('gray-800'),
+        color: getThemeColor('gray-800'),
         align: 'right',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,
@@ -159,7 +159,7 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
       lineStyle: {
         type: 'dashed',
         width: 1,
-        color: getColor('info')
+        color: getThemeColor('info')
       },
       showSymbol: false,
       symbol: 'circle'
@@ -177,10 +177,11 @@ const getDefaultOptions = (theme: ThemeVariant) => ({
 
 const TotalSellsChart = () => {
   const {
-    config: { theme }
+    config: { theme },
+    getThemeColor
   } = useAppContext();
 
-  return <ReactEChartsCore echarts={echarts} option={getDefaultOptions(theme)} />;
+  return <ReactEChartsCore echarts={echarts} option={getDefaultOptions(theme, getThemeColor)} />;
 };
 
 export default TotalSellsChart;

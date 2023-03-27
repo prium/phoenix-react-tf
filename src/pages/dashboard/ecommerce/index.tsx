@@ -1,7 +1,11 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Stats from './Stats';
-import TotalSells from '../total-sells/TotalSells';
+import TotalSells from './total-sells/TotalSells';
+import EcomTotalOrdersCard from 'components/cards/EcomTotalOrdersCard';
+import EcomNewCustomersCard from 'components/cards/EcomNewCustomersCard';
+import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
+import EcomPayingVsNonPayingCard from 'components/cards/EcomPayingVsNonPayingCard';
 
 const Ecommerce = () => {
   return (
@@ -16,6 +20,22 @@ const Ecommerce = () => {
           </div>
           <Stats />
           <TotalSells />
+        </Col>
+        <Col xs={12} xxl={6}>
+          <Row className="g-3">
+            <Col xs={12} md={6}>
+              <EcomTotalOrdersCard />
+            </Col>
+            <Col xs={12} md={6}>
+              <EcomNewCustomersCard />
+            </Col>
+            <Col xs={12} md={6}>
+              <EcomTopCouponsCard />
+            </Col>
+            <Col xs={12} md={6}>
+              <EcomPayingVsNonPayingCard />
+            </Col>
+          </Row>
         </Col>
       </Row>
     </div>
