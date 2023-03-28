@@ -339,16 +339,6 @@ const routes = [
         element: <ComingSoon />
       }
     ]
-  },
-  {
-    path: 'crm',
-    element: <MainLayout />,
-    children: [
-      {
-        path: 'leads',
-        element: <Leads />
-      }
-    ]
   }
 ];
 

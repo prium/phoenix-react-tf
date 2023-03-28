@@ -62,7 +62,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
 
   const openCollapse = (childrens: any) => {
     const checkLink = (children: any) => {
-      if (`/${children.path}` === pathname) {
+      if (`${children.path}` === pathname) {
         return true;
       }
       return children.hasOwnProperty('pages') && children.pages!.some(checkLink);
