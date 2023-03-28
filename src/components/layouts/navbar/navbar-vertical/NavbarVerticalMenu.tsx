@@ -29,10 +29,14 @@ const NavItem = ({ route, level }: NavItemProps) => {
           })
         }
       >
-        <div className="d-flex align-items-center">
+        <div
+          className={classNames('d-flex align-items-center', {
+            'text-300': !route.active
+          })}
+        >
           {route.icon ? (
             <>
-              <span className="nav-link-icon">
+              <span className="nav-link-icon ">
                 {route.iconSet === 'font-awesome' ? (
                   // @ts-ignore
                   <FontAwesomeIcon icon={route.icon} className="fs-8 mx-1" />
@@ -45,7 +49,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
               </span>
             </>
           ) : (
-            <span className="nav-link-text">{capitalize(route.name)}</span>
+            <span className="nav-link-text ">{capitalize(route.name)}</span>
           )}
         </div>
       </NavLink>
@@ -74,13 +78,19 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
         onClick={() => setOpen(!open)}
         className={classNames('dropdown-indicator', {
           'label-1': level === 1,
-          collapsed: !open
+          collapsed: !open,
+          'text-300': !route.active
         })}
         aria-expanded={open}
       >
         <div className="d-flex align-items-center">
           <div className="dropdown-indicator-icon">
-            <FontAwesomeIcon icon="caret-right" />
+            <FontAwesomeIcon
+              icon="caret-right"
+              className={classNames({
+                'text-300': !route.active
+              })}
+            />
           </div>
           {level === 1 && (
             <span className="nav-link-icon">
