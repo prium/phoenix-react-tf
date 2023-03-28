@@ -4,6 +4,7 @@ import {
   faAngleRight,
   faAnglesLeft,
   faAnglesRight,
+  faArrowUpRightFromSquare,
   faArrowsRotate,
   faCaretRight,
   faChevronDown,
@@ -40,5 +41,6 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faAnglesLeft,
-  faAnglesRight
+  faAnglesRight,
+  faArrowUpRightFromSquare
 );

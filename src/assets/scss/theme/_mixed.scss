@@ -329,3 +329,21 @@
     top: calc(var(--phoenix-navbar-top-height) + 3.725rem);
   }
 }
+
+/* ---------------------------- coming soon page ---------------------------- */
+.coming-soon {
+  .text-container {
+    max-width: 618px;
+  }
+  @include media-breakpoint-up(xl) {
+    height: calc(100vh - 10rem);
+    max-width: 920px;
+  }
+  @include media-breakpoint-up(xxl) {
+    max-width: 100%;
+    .text-container {
+      max-width: 100%;
+    }
+  }
+}
+/* --------------------------------------------------------------------------- */

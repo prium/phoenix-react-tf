@@ -1,8 +1,7 @@
-import { getColor } from 'helpers/utils';
-import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 const HomePage = () => {
-  return <div style={{ color: getColor('black') }}>Test</div>;
+  return <Navigate to="/pages/starter" replace={true} />;
 };
 
 export default HomePage;

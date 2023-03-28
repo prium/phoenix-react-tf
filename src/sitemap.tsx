@@ -17,6 +17,7 @@ export interface Route {
   flat?: boolean;
   topNavIcon?: string;
   dropdownInside?: boolean;
+  active?: boolean;
 }
 
 export interface RouteItems {
@@ -26,6 +27,7 @@ export interface RouteItems {
   labelDisabled?: boolean;
   pages: Route[];
   megaMenu?: boolean;
+  active?: boolean;
 }
 
 export const routes: RouteItems[] = [
@@ -315,7 +317,8 @@ export const routes: RouteItems[] = [
         name: 'starter',
         icon: 'compass',
         path: 'pages/starter',
-        pathName: 'starter-page'
+        pathName: 'starter-page',
+        active: true
       },
       {
         name: 'faq',
@@ -561,87 +564,68 @@ export const routes: RouteItems[] = [
   },
   {
     label: 'modules',
+    active: true,
     icon: UilPuzzlePiece,
     megaMenu: true, // works for navbar top
     pages: [
       {
         name: 'forms',
         icon: 'file-text',
+        active: true,
         pages: [
           {
             name: 'basic',
+            active: true,
             pages: [
               {
                 name: 'form-control',
                 path: 'modules/forms/form-control',
-                pathName: 'form-control'
+                pathName: 'form-control',
+                active: true
               },
               {
                 name: 'input-group',
                 path: 'modules/forms/input-group',
-                pathName: 'form-input-group'
+                pathName: 'form-input-group',
+                active: true
               },
               {
                 name: 'select',
                 path: 'modules/forms/select',
-                pathName: 'form-select'
+                pathName: 'form-select',
+                active: true
               },
               {
                 name: 'checks',
                 path: 'modules/forms/checks',
-                pathName: 'form-checks'
+                pathName: 'form-checks',
+                active: true
               },
               {
                 name: 'range',
                 path: 'modules/forms/range',
-                pathName: 'form-range'
+                pathName: 'form-range',
+                active: true
               },
               {
                 name: 'floating-labels',
                 path: 'modules/forms/floating-labels',
-                pathName: 'floating-labels'
+                pathName: 'floating-labels',
+                active: true
               },
               {
                 name: 'layout',
                 path: 'modules/forms/layout',
-                pathName: 'form-layout'
+                pathName: 'form-layout',
+                active: true
               }
             ]
           },
-          // {
-          //   name: 'advance',
-          //   pages: [
-          //     {
-          //       name: 'advance-select',
-          //       path: 'modules/forms/advance/advance-select',
-          //       pathName: 'advance-select'
-          //     },
-          //     {
-          //       name: 'date-picker',
-          //       path: 'modules/forms/advance/date-picker',
-          //       pathName: 'date-picker'
-          //     },
-          //     {
-          //       name: 'editor',
-          //       path: 'modules/forms/advance/editor',
-          //       pathName: 'text-editor'
-          //     },
-          //     {
-          //       name: 'file-uploader',
-          //       path: 'modules/forms/advance/file-uploader',
-          //       pathName: 'file-uploader'
-          //     },
-          //     {
-          //       name: 'rating',
-          //       path: 'modules/forms/advance/rating',
-          //       pathName: 'advance-rating'
-          //     }
-          //   ]
-          // },
           {
             name: 'validation',
             path: 'modules/forms/validation',
-            pathName: 'forms-validation'
+            pathName: 'forms-validation',
+            active: true
           }
         ]
       },
@@ -670,276 +654,332 @@ export const routes: RouteItems[] = [
       {
         name: 'tables',
         icon: 'columns',
+        active: true,
         pages: [
           {
             name: 'Basic tables',
             path: 'modules/tables/basic-tables',
-            pathName: 'basic-tables'
+            pathName: 'basic-tables',
+            active: true
           }
         ]
       },
       {
         name: 'components',
         icon: 'package',
+        active: true,
         pages: [
           {
             name: 'accordion',
             pathName: 'components-accordion',
-            path: 'modules/components/accordion'
+            path: 'modules/components/accordion',
+            active: true
           },
           {
             name: 'avatar',
             pathName: 'components-avatar',
-            path: 'modules/components/avatar'
+            path: 'modules/components/avatar',
+            active: true
           },
           {
             name: 'alerts',
             pathName: 'components-alerts',
-            path: 'modules/components/alerts'
+            path: 'modules/components/alerts',
+            active: true
           },
           {
             name: 'badge',
             pathName: 'components-badge',
-            path: 'modules/components/badge'
+            path: 'modules/components/badge',
+            active: true
           },
           {
             name: 'breadcrumb',
             pathName: 'components-breadcrumb',
-            path: 'modules/components/breadcrumb'
+            path: 'modules/components/breadcrumb',
+            active: true
           },
           {
             name: 'buttons',
             pathName: 'components-buttons',
-            path: 'modules/components/button'
+            path: 'modules/components/button',
+            active: true
           },
           {
             name: 'card',
             pathName: 'components-card',
-            path: 'modules/components/card'
+            path: 'modules/components/card',
+            active: true
           },
           {
             name: 'carousel',
+            active: true,
             pages: [
               {
                 name: 'bootstrap',
                 path: 'modules/components/carousel/bootstrap',
-                pathName: 'components-bs-carousel'
+                pathName: 'components-bs-carousel',
+                active: true
               }
             ]
           },
           {
             name: 'collapse',
             pathName: 'components-bs-collapse',
-            path: 'modules/components/collapse'
+            path: 'modules/components/collapse',
+            active: true
           },
           {
             name: 'dropdown',
             pathName: 'components-bs-dropdown',
-            path: 'modules/components/dropdown'
+            path: 'modules/components/dropdown',
+            active: true
           },
           {
             name: 'list-group',
             pathName: 'components-bs-list-group',
-            path: 'modules/components/list-group'
+            path: 'modules/components/list-group',
+            active: true
           },
           {
             name: 'modals',
             pathName: 'components-modal',
-            path: 'modules/components/modal'
+            path: 'modules/components/modal',
+            active: true
           },
           {
             name: 'navs-_and_-Tabs',
+            active: true,
             pages: [
               {
                 name: 'navs',
                 pathName: 'components-navs',
-                path: 'modules/components/navs-and-tabs/navs'
+                path: 'modules/components/navs-and-tabs/navs',
+                active: true
               },
               {
                 name: 'navbar',
                 pathName: 'navbar',
-                path: 'modules/components/navs-and-tabs/navbar'
+                path: 'modules/components/navs-and-tabs/navbar',
+                active: true
               },
               {
                 name: 'tabs',
                 pathName: 'components-tabs',
-                path: 'modules/components/navs-and-tabs/tabs'
+                path: 'modules/components/navs-and-tabs/tabs',
+                active: true
               }
             ]
           },
           {
             name: 'offcanvas',
             pathName: 'components-offcanvas',
-            path: 'modules/components/offcanvas'
+            path: 'modules/components/offcanvas',
+            active: true
           },
           {
             name: 'progress-bar',
             pathName: 'basic-progress-bar',
-            path: 'modules/components/progress-bar'
+            path: 'modules/components/progress-bar',
+            active: true
           },
           {
             name: 'placeholder',
             pathName: 'components-placeholder',
-            path: 'modules/components/placeholder'
+            path: 'modules/components/placeholder',
+            active: true
           },
           {
             name: 'pagination',
             path: 'modules/components/pagination',
-            pathName: 'components-pagination'
+            pathName: 'components-pagination',
+            active: true
           },
           {
             name: 'popovers',
             path: 'modules/components/popovers',
-            pathName: 'components-popovers'
+            pathName: 'components-popovers',
+            active: true
           },
           {
             name: 'spinners',
             path: 'modules/components/spinners',
-            pathName: 'components-spinners'
+            pathName: 'components-spinners',
+            active: true
           },
           {
             name: 'toast',
             path: 'modules/components/toast',
-            pathName: 'components-toast'
+            pathName: 'components-toast',
+            active: true
           },
           {
             name: 'tooltips',
             path: 'modules/components/tooltips',
-            pathName: 'components-bs-tooltips'
+            pathName: 'components-bs-tooltips',
+            active: true
           }
         ]
       },
       {
         name: 'utilities',
         icon: 'tool',
+        active: true,
         pages: [
           {
             name: 'background',
             path: 'modules/utilities/background',
-            pathName: 'utilities-background'
+            pathName: 'utilities-background',
+            active: true
           },
           {
             name: 'borders',
             path: 'modules/utilities/borders',
-            pathName: 'utilities-borders'
+            pathName: 'utilities-borders',
+            active: true
           },
           {
             name: 'colors',
             path: 'modules/utilities/colors',
-            pathName: 'utilities-colors'
+            pathName: 'utilities-colors',
+            active: true
           },
           {
             name: 'display',
             path: 'modules/utilities/display',
-            pathName: 'utilities-display'
+            pathName: 'utilities-display',
+            active: true
           },
           {
             name: 'grid',
             path: 'modules/utilities/grid',
-            pathName: 'utilities-grid'
+            pathName: 'utilities-grid',
+            active: true
           },
           {
             name: 'flex',
             path: 'modules/utilities/flex',
-            pathName: 'utilities-flex'
+            pathName: 'utilities-flex',
+            active: true
           },
           {
             name: 'stack',
             path: 'modules/utilities/stack',
-            pathName: 'utilities-stack'
+            pathName: 'utilities-stack',
+            active: true
           },
           {
             name: 'float',
             path: 'modules/utilities/float',
-            pathName: 'utilities-float'
+            pathName: 'utilities-float',
+            active: true
           },
           {
             name: 'interactions',
             path: 'modules/utilities/interactions',
-            pathName: 'utilities-interactions'
+            pathName: 'utilities-interactions',
+            active: true
           },
           {
             name: 'opacity',
             path: 'modules/utilities/opacity',
-            pathName: 'utilities-opacity'
+            pathName: 'utilities-opacity',
+            active: true
           },
           {
             name: 'overflow',
             path: 'modules/utilities/overflow',
-            pathName: 'utilities-overflow'
+            pathName: 'utilities-overflow',
+            active: true
           },
           {
             name: 'position',
             path: 'modules/utilities/position',
-            pathName: 'utilities-position'
+            pathName: 'utilities-position',
+            active: true
           },
           {
             name: 'shadows',
             path: 'modules/utilities/shadows',
-            pathName: 'utilities-shadows'
+            pathName: 'utilities-shadows',
+            active: true
           },
           {
             name: 'sizing',
             path: 'modules/utilities/sizing',
-            pathName: 'utilities-sizing'
+            pathName: 'utilities-sizing',
+            active: true
           },
           {
             name: 'spacing',
             path: 'modules/utilities/spacing',
-            pathName: 'utilities-spacing'
+            pathName: 'utilities-spacing',
+            active: true
           },
           {
             name: 'Typography',
             path: 'modules/utilities/typography',
-            pathName: 'utilities-typography'
+            pathName: 'utilities-typography',
+            active: true
           },
           {
             name: 'vertical-align',
             path: 'modules/utilities/vertical-align',
-            pathName: 'utilities-vertical-align'
+            pathName: 'utilities-vertical-align',
+            active: true
           },
           {
             name: 'visibility',
             path: 'modules/utilities/visibility',
-            pathName: 'utilities-visibility'
+            pathName: 'utilities-visibility',
+            active: true
           }
         ]
       },
       {
         name: 'multi-level',
         icon: 'layers',
+        active: true,
         pages: [
           {
             name: 'level-two',
+            active: true,
             pages: [
               {
                 name: 'item-1',
-                path: '#!'
+                path: '#!',
+                active: true
               },
               {
                 name: 'item-2',
-                path: '#!'
+                path: '#!',
+                active: true
               }
             ]
           },
           {
             name: 'level-three',
+            active: true,
             pages: [
               {
                 name: 'item-3',
-                path: '#!'
+                path: '#!',
+                active: true
               },
               {
                 name: 'item-4',
                 path: '#!',
+                active: true,
                 pages: [
                   {
                     name: 'item-5',
-                    path: '#!'
+                    path: '#!',
+                    active: true
                   },
                   {
                     name: 'item-6',
-                    path: '#!'
+                    path: '#!',
+                    active: true
                   }
                 ]
               }
@@ -947,28 +987,35 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'level-four',
+            active: true,
             pages: [
               {
                 name: 'item-6',
-                path: '#!'
+                path: '#!',
+                active: true
               },
               {
                 name: 'item-7',
+                active: true,
                 pages: [
                   {
                     name: 'item-8',
-                    path: '#!'
+                    path: '#!',
+                    active: true
                   },
                   {
                     name: 'item-9',
+                    active: true,
                     pages: [
                       {
                         name: 'item-10',
-                        path: '#!'
+                        path: '#!',
+                        active: true
                       },
                       {
                         name: 'item-11',
-                        path: '#!'
+                        path: '#!',
+                        active: true
                       }
                     ]
                   }
@@ -983,32 +1030,38 @@ export const routes: RouteItems[] = [
   {
     label: 'documentation',
     icon: UilDocumentLayoutRight,
+    active: true,
     pages: [
       {
         name: 'getting-started',
         icon: 'life-buoy',
         path: 'documentation/getting-started',
-        pathName: 'getting-started'
+        pathName: 'getting-started',
+        active: true
       },
       {
         name: 'customization',
         icon: 'settings',
         dropdownInside: true,
+        active: true,
         pages: [
           {
             name: 'configuration',
             path: 'documentation/customization/configuration',
-            pathName: 'doc-configuration'
+            pathName: 'doc-configuration',
+            active: true
           },
           {
             name: 'styling',
             path: 'documentation/customization/styling',
-            pathName: 'doc-styling'
+            pathName: 'doc-styling',
+            active: true
           },
           {
             name: 'dark-mode',
             path: 'documentation/customization/dark-mode',
-            pathName: 'doc-styling'
+            pathName: 'doc-styling',
+            active: true
           }
           // {
           //   name: 'plugin',
@@ -1018,38 +1071,18 @@ export const routes: RouteItems[] = [
         ]
       },
       {
-        name: 'layouts-doc',
-        icon: 'table',
-        dropdownInside: true,
-        pages: [
-          {
-            name: 'vertical navbar',
-            path: 'documentation/layouts/vertical-navbar',
-            pathName: 'doc-layout-vertical-navbar'
-          },
-          {
-            name: 'horizontal navbar',
-            path: 'documentation/layouts/horizontal-navbar',
-            pathName: 'doc-layout-horizontal-navbar'
-          },
-          {
-            name: 'combo navbar',
-            path: 'documentation/layouts/combo-navbar',
-            pathName: 'doc-layout-combo-navbar'
-          }
-        ]
-      },
-      {
         name: 'design-file',
         icon: 'figma',
         path: 'documentation/design-file',
-        pathName: 'doc-design-file'
+        pathName: 'doc-design-file',
+        active: true
       },
       {
         name: 'changelog',
         icon: 'git-merge',
         path: 'changelog',
-        pathName: 'changelog'
+        pathName: 'changelog',
+        active: true
       },
       {
         name: 'showcase',

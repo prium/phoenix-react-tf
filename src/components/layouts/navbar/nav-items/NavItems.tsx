@@ -77,7 +77,7 @@ const NavItems = () => {
           <Dropdown.Toggle
             as={Link}
             to="#!"
-            className="dropdown-caret-none nav-link pe-0"
+            className="dropdown-caret-none nav-link pe-0 lh-1"
             variant=""
           >
             <Avatar src={avatar57} size="l" />
