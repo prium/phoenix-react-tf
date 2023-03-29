@@ -7,6 +7,7 @@ import EcomNewCustomersCard from 'components/cards/EcomNewCustomersCard';
 import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
 import EcomPayingVsNonPayingCard from 'components/cards/EcomPayingVsNonPayingCard';
 import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
+import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
 
 const Ecommerce = () => {
   return (
@@ -43,6 +44,25 @@ const Ecommerce = () => {
       </div>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-7 border-y border-300">
         <EcomLatestReviewsTable />
+      </div>
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">
+        <Row className="g-6">
+          <Col xs={12} xl={6}>
+            <div className="me-xl-4">
+              <div>
+                <h3>Projection vs actual</h3>
+                <p className="mb-1 text-700">Actual earnings vs projected earnings</p>
+              </div>
+              <EcomProjectionVsActualChart height="300px" width="100%" />
+            </div>
+          </Col>
+          <Col xs={12} xl={6}>
+            <div>
+              <h3>Returning customer rate</h3>
+              <p className="mb-1 text-700">Rate of customers returning to your shop over time</p>
+            </div>
+          </Col>
+        </Row>
       </div>
     </>
   );
