@@ -1,32 +1,14 @@
-import React, { PropsWithChildren, createContext, useContext } from 'react';
-import { useTable } from 'react-table';
+import { PropsWithChildren, createContext, useContext } from 'react';
+import { TableInstance } from 'react-table';
 
-interface AdvanceTableContextInterface {
-  methods: any;
-}
+export const AdvanceTableContext = createContext({} as TableInstance);
 
-interface AdvanceTableProviderProps {
-  columns: any[];
-  data: any[];
-}
-
-export const AdvanceTableContext = createContext({} as AdvanceTableContextInterface);
-
-const AdvanceTableProvider = ({
-  children,
-  columns,
-  data
-}: PropsWithChildren<AdvanceTableProviderProps>) => {
-  const methods = useTable({
-    columns,
-    data
-  });
-
+const AdvanceTableProvider = ({ children, ...rest }: PropsWithChildren<TableInstance>) => {
   return (
-    <AdvanceTableContext.Provider value={{ methods }}>{children}</AdvanceTableContext.Provider>
+    <AdvanceTableContext.Provider value={{ ...rest }}>{children}</AdvanceTableContext.Provider>
   );
 };
 
-export const usePhoenixDocContext = () => useContext(AdvanceTableContext);
+export const useAdvanceTableContext = () => useContext(AdvanceTableContext);
 
 export default AdvanceTableProvider;

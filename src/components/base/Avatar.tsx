@@ -40,7 +40,8 @@ const Avatar = ({
           src={src ? src : avatar}
           alt="avatar"
           className={classNames({
-            'avatar-placeholder': placeholder,
+            // 'avatar-placeholder': placeholder,
+            'avatar-placeholder': !src,
             'rounded-circle': rounded === 'circle',
             'rounded-soft': rounded === 'soft'
           })}
