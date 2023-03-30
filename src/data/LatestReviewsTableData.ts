@@ -22,6 +22,7 @@ import team29 from 'assets/img/team/40x40/29.webp';
 import team8 from 'assets/img/team/40x40/8.webp';
 import team9 from 'assets/img/team/40x40/9.webp';
 import team24 from 'assets/img/team/40x40/24.webp';
+import { Bg } from 'components/base/Badge';
 
 export type LatestReviewsTableDataType = {
   product: string;
@@ -36,7 +37,7 @@ export type LatestReviewsTableDataType = {
   review: string;
   status: {
     title: string;
-    badgeBg: string;
+    badgeBg: Bg;
     icon: string;
   };
   time: string;

@@ -11,38 +11,47 @@ import React from 'react';
 import { Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import { Column } from 'react-table';
+import Rating from 'react-rating';
 
-const columns = [
+const columns: Column<LatestReviewsTableDataType>[] = [
   {
     accessor: 'productImage',
     Header: '',
-    Cell: (rowData: any) => {
+    Cell: rowData => {
       const { productImage } = rowData.row.original;
       return (
         <div className="rounded-2 border">
           <img src={productImage} alt="" width={53} />
         </div>
       );
-    }
+    },
+    cellProps: { className: 'py-0' },
+    disableSortBy: true
   },
   {
     accessor: 'product',
     Header: 'Product',
-    Cell: (rowData: any) => {
+    Cell: rowData => {
       const { product } = rowData.row.original;
-      return <Link to="#!">{`${product.slice(0, 46)}${product.length > 46 ? '...' : ''}`}</Link>;
-    }
+      return (
+        <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
+          product.length > 46 ? '...' : ''
+        }`}</Link>
+      );
+    },
+    headerProps: { style: { minWidth: 360 } }
   },
   {
     accessor: 'customer',
     Header: 'CUSTOMER',
-    Cell: (rowData: any) => {
+    Cell: rowData => {
       const { customer } = rowData.row.original;
       return (
         <Link to="#!" className="d-flex align-items-center">
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
-              {customer.name.charAt(0)}
+              {customer.name.charAt(0).toUpperCase()}
             </Avatar>
           ) : (
             <Avatar src={customer.avatar} size="l" variant={customer.variant} />
@@ -50,17 +59,46 @@ const columns = [
           <h6 className="mb-0 ms-3 text-900">{customer.name}</h6>
         </Link>
       );
-    }
+    },
+    headerProps: { style: { minWidth: 200 } }
   },
   {
     accessor: 'rating',
-    Header: 'RATING'
+    Header: 'RATING',
+    headerProps: { style: { minWidth: 110 } },
+    Cell: rowData => {
+      const { rating } = rowData.row.original;
+      return (
+        <>
+          {/* @ts-ignore */}
+          <Rating
+            readonly
+            className="fs-10"
+            initialRating={rating}
+            fullSymbol={<FontAwesomeIcon icon="star" className="text-warning" />}
+            emptySymbol={<FontAwesomeIcon icon={['far', 'star']} className="text-300" />}
+          />
+        </>
+      );
+    }
   },
   {
     accessor: 'review',
-    Header: 'REVIEW'
+    Header: 'REVIEW',
+    Cell: rowData => {
+      const { review } = rowData.row.original;
+      return (
+        <p className="fs--1 fw-semi-bold text-1000 mb-0">
+          {`${review.slice(0, 134)}${
+            review.length > 134 ? `...<Link href='#!'>See more</Link>` : ''
+          }`}
+        </p>
+      );
+    },
+    headerProps: { style: { minWidth: 350 } }
   },
   {
+    // @ts-ignore
     accessor: 'status.title',
     Header: 'STATUS',
     Cell: (rowData: any) => {
@@ -78,19 +116,63 @@ const columns = [
           {title}
         </Badge>
       );
-    }
+    },
+    headerProps: { className: 'ps-5' },
+    cellProps: { className: 'ps-5' }
   },
   {
     accessor: 'time',
     Header: 'TIME',
-    Cell: (rowData: any) => {
+    Cell: rowData => {
       const { time } = rowData.row.original;
       return (
         <div className="hover-hide">
           <h6 className="text-1000 mb-0">{time}</h6>
         </div>
       );
-    }
+    },
+    headerProps: { className: 'text-end' },
+    cellProps: { className: 'text-end white-space-nowrap' }
+  },
+  {
+    // @ts-ignore
+    accessor: 'action',
+    Header: '',
+    Cell: () => {
+      return (
+        <>
+          <div className="position-relative">
+            <div className="hover-actions">
+              <Button variant="phoenix-secondary" className="me-1 fs-10" size="sm">
+                <FontAwesomeIcon icon="check" />
+              </Button>
+              <Button variant="phoenix-secondary" className="fs-10" size="sm">
+                <FontAwesomeIcon icon="trash" />
+              </Button>
+            </div>
+          </div>
+
+          <Dropdown className="btn-reveal-trigger position-static" align="end">
+            <Dropdown.Toggle
+              variant="phoenix-secondary"
+              size="sm"
+              className="dropdown-caret-none notification-dropdown-toggle fs-10"
+            >
+              <FontAwesomeIcon icon="ellipsis" className="fs-10" />
+            </Dropdown.Toggle>
+            <Dropdown.Menu align="end" className="py-2">
+              <Dropdown.Item eventKey="1">View</Dropdown.Item>
+              <Dropdown.Item eventKey="2">Export</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="4" className="text-danger">
+                Remove
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </>
+      );
+    },
+    cellProps: { className: 'text-end' }
   }
 ];
 
@@ -140,8 +222,14 @@ const EcomLatestReviewsTable = () => {
           </Row>
         </Col>
       </Row>
+
       <AdvanceTableProvider {...advanceTableProps}>
-        <AdvanceTable />
+        <div className="mx-n1 px-1">
+          <AdvanceTable
+            tableProps={{ className: 'phoenix-table fs-9' }}
+            rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+          />
+        </div>
       </AdvanceTableProvider>
     </>
   );

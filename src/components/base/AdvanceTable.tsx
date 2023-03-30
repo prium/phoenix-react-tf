@@ -1,6 +1,6 @@
+import classNames from 'classnames';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { Table } from 'react-bootstrap';
-import { ColumnInstance } from 'react-table';
 
 interface AdvanceTableProps {
   headerClassName?: string;
@@ -15,55 +15,56 @@ const AdvanceTable = ({
   rowClassName,
   tableProps
 }: AdvanceTableProps) => {
-  const { getTableProps, headers, page, prepareRow } = useAdvanceTableContext();
+  const { getTableProps, headers, page, prepareRow, sortable } = useAdvanceTableContext();
 
   return (
-    <div className="table-responsive">
-      <Table {...getTableProps(tableProps)}>
-        <thead className={headerClassName}>
-          <tr>
-            {headers.map((column, index) => {
-              // console.log({ column: column.headerProps });
-              // console.log({ d: column.getHeaderProps({ style: { d: 'as' } }) });
+    <Table {...getTableProps(tableProps)}>
+      <thead className={headerClassName}>
+        <tr>
+          {headers.map((column, index) => {
+            console.log({ column });
 
-              return (
-                <th
-                  {...column.getHeaderProps(column.getSortByToggleProps())}
-                  // style={{ ...column.getHeaderProps.style, ...getColumnStyle(column) }}
-                >
-                  {column.render('Header')}
-                  {column.canSort ? (
-                    column.isSorted ? (
-                      column.isSortedDesc ? (
-                        <span className="sort desc" />
-                      ) : (
-                        <span className="sort asc" />
-                      )
+            return (
+              <th
+                {...column.getHeaderProps(column.getSortByToggleProps(column.headerProps))}
+                className={classNames({
+                  sort: column.canSort,
+                  desc: column.isSortedDesc,
+                  asc: column.isSorted && !column.isSortedDesc
+                })}
+              >
+                {column.render('Header')}
+                {/* {column.canSort ? (
+                  column.isSorted ? (
+                    column.isSortedDesc ? (
+                      <span className="sort desc" />
                     ) : (
-                      <span className="sort" />
+                      <span className="sort asc" />
                     )
                   ) : (
-                    ''
-                  )}
-                </th>
-              );
-            })}
-          </tr>
-        </thead>
-        <tbody className={bodyClassName}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr className={rowClassName} {...row.getRowProps()}>
-                {row.cells.map((cell, index) => {
-                  return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
-                })}
-              </tr>
+                    <span className="sort" />
+                  )
+                ) : (
+                  ''
+                )} */}
+              </th>
             );
           })}
-        </tbody>
-      </Table>
-    </div>
+        </tr>
+      </thead>
+      <tbody className={bodyClassName}>
+        {page.map((row, i) => {
+          prepareRow(row);
+          return (
+            <tr className={rowClassName} {...row.getRowProps()}>
+              {row.cells.map((cell, index) => {
+                return <td {...cell.getCellProps(cell.column.cellProps)}>{cell.render('Cell')}</td>;
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </Table>
   );
 };
 

@@ -22,7 +22,7 @@ const IndeterminateCheckbox = React.forwardRef<HTMLInputElement, IndeterminateCh
     }, [resolvedRef, indeterminate]);
 
     return (
-      <Form.Check type="checkbox" className={classNames('form-check fs-0 mb-0', className)}>
+      <Form.Check type="checkbox" className={classNames('form-check fs-8 mb-0', className)}>
         <Form.Check.Input type="checkbox" ref={resolvedRef} {...rest} />
       </Form.Check>
     );

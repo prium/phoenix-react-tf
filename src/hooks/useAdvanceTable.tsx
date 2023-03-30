@@ -1,14 +1,7 @@
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
+import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
 import React, { PropsWithChildren } from 'react';
-import {
-  ColumnInstance,
-  TableInstance,
-  useGlobalFilter,
-  usePagination,
-  useRowSelect,
-  useSortBy,
-  useTable
-} from 'react-table';
+import { useGlobalFilter, usePagination, useRowSelect, useSortBy, useTable } from 'react-table';
 
 interface UseAdvanceTableProps {
   columns: any[];
@@ -20,13 +13,6 @@ interface UseAdvanceTableProps {
   selectionColumnWidth?: number | string;
 }
 
-interface AdnavceTableInstance extends TableInstance {
-  headers: {
-    headerProps: any;
-  }[] &
-    ColumnInstance[];
-}
-
 const useAdvanceTable = ({
   columns,
   data,
@@ -36,9 +22,7 @@ const useAdvanceTable = ({
   perPage,
   selectionColumnWidth
 }: PropsWithChildren<UseAdvanceTableProps>) => {
-  console.log({ selectionColumnWidth });
-
-  const advanceTableProps = useTable(
+  const advanceTableProps = useTable<LatestReviewsTableDataType>(
     {
       columns,
       data,
@@ -70,6 +54,7 @@ const useAdvanceTable = ({
             maxWidth: 500,
             minWidth: 140,
             width: 200,
+            // @ts-ignore
             Cell: ({ row }) => (
               // <div>
               <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
