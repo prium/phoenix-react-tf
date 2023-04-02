@@ -3,15 +3,24 @@ import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import React, { PropsWithChildren, useState } from 'react';
 import {
-  useAsyncDebounce,
-  useFilters,
-  useGlobalFilter,
-  usePagination,
-  useRowSelect,
-  useSortBy,
-  useTable
-} from 'react-table';
-
+  Column,
+  Table,
+  useReactTable,
+  ColumnFiltersState,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
+  getFacetedMinMaxValues,
+  getPaginationRowModel,
+  sortingFns,
+  getSortedRowModel,
+  FilterFn,
+  SortingFn,
+  ColumnDef,
+  flexRender,
+  FilterFns
+} from '@tanstack/react-table';
 interface UseAdvanceTableProps {
   columns: any[];
   data: any[];
@@ -31,64 +40,13 @@ const useAdvanceTable = ({
   pageSize,
   selectionColumnWidth
 }: PropsWithChildren<UseAdvanceTableProps>) => {
-  const advanceTableProps = useTable<LatestReviewsTableDataType>(
-    {
-      columns,
-      data,
-      disableSortBy: !sortable,
-      initialState: { pageSize: pagination ? pageSize : data.length }
-    },
-    useFilters,
-    useGlobalFilter,
-    useSortBy,
-    usePagination,
-    useRowSelect,
-    hooks => {
-      if (selection) {
-        hooks.visibleColumns.push(columns => [
-          {
-            id: 'selection',
-            Header: ({ getToggleAllRowsSelectedProps }) => (
-              <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-            ),
-            // headerProps: {
-            //   style: {
-            //     width: selectionColumnWidth
-            //   }
-            // },
-            // cellProps: {
-            //   style: {
-            //     width: selectionColumnWidth
-            //   }
-            // },
-            maxWidth: 500,
-            minWidth: 140,
-            width: 200,
-            // @ts-ignore
-            Cell: ({ row }) => (
-              // <div>
-              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
-              // </div>
-            )
-          },
-          ...columns
-        ]);
-      }
-    }
-  );
-
-  return advanceTableProps;
-};
-
-export const useAdvanceTablSearch = (globalFilter: any, setGlobalFilter: any) => {
-  const [value, setValue] = useState(globalFilter);
-
-  const onChange = useAsyncDebounce(e => {
-    // setValue(e.target.value);
-    setGlobalFilter(e.target.value || undefined);
-  }, 200);
-
-  return { onChange };
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel()
+  });
+  return table;
 };
 
 export default useAdvanceTable;
