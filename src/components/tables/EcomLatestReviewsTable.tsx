@@ -5,14 +5,15 @@ import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
 import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
-import useAdvanceTable from 'hooks/useAdvanceTable';
+import useAdvanceTable, { useAdvanceTablSearch } from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import React from 'react';
 import { Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
-import { Column } from 'react-table';
+import { Column, useAsyncDebounce } from 'react-table';
 import Rating from 'react-rating';
+import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 
 const columns: Column<LatestReviewsTableDataType>[] = [
   {
@@ -180,55 +181,64 @@ const EcomLatestReviewsTable = () => {
   const advanceTableProps = useAdvanceTable({
     data: latestReviewsTableData,
     columns,
-    // pagination: true,
-    // perPage: 10,
+    pageSize: 6,
+    pagination: true,
     selection: true,
     selectionColumnWidth: '30px',
     sortable: true
   });
 
+  const handleSearchInputChange = useAsyncDebounce(e => {
+    advanceTableProps.setGlobalFilter(e.target.value || undefined);
+  }, 200);
+
   return (
     <>
-      <Row className="align-items-end justify-content-between pb-5 g-3">
-        <Col xs="auto">
-          <h3>Latest reviews</h3>
-          <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
-        </Col>
-        <Col xs={12} md="auto">
-          <Row className="g-2 gy-3">
-            <Col xs="auto" className="flex-1">
-              <SearchBox placeholder="Search..." size="sm" />
-            </Col>
-            <Col xs="auto">
-              <Button variant="phoenix-secondary" size="sm" className="bg-white hover-bg-100 me-2">
-                All products
-              </Button>
-              <Dropdown className="d-inline">
-                <Dropdown.Toggle
+      <AdvanceTableProvider {...advanceTableProps}>
+        <Row className="align-items-end justify-content-between pb-5 g-3">
+          <Col xs="auto">
+            <h3>Latest reviews</h3>
+            <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+          </Col>
+          <Col xs={12} md="auto">
+            <Row className="g-2 gy-3">
+              <Col xs="auto" className="flex-1">
+                <SearchBox placeholder="Search..." size="sm" onChange={handleSearchInputChange} />
+              </Col>
+              <Col xs="auto">
+                <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100 dropdown-caret-none"
+                  className="bg-white hover-bg-100 me-2"
                 >
-                  <FontAwesomeIcon icon="ellipsis-h" className="10" />
-                </Dropdown.Toggle>
+                  All products
+                </Button>
+                <Dropdown className="d-inline">
+                  <Dropdown.Toggle
+                    variant="phoenix-secondary"
+                    size="sm"
+                    className="bg-white hover-bg-100 dropdown-caret-none"
+                  >
+                    <FontAwesomeIcon icon="ellipsis-h" className="10" />
+                  </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
 
-      <AdvanceTableProvider {...advanceTableProps}>
         <div className="mx-n1 px-1">
           <AdvanceTable
-            tableProps={{ className: 'phoenix-table fs-9' }}
+            tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
             rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
           />
+          <AdvanceTableFooter />
         </div>
       </AdvanceTableProvider>
     </>

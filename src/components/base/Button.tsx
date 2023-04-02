@@ -71,14 +71,14 @@ const Button = ({
       )}
       {startIcon &&
         React.cloneElement(startIcon as ReactElement, {
-          className: classNames(startIcon.props.className, 'me-2')
+          className: classNames(startIcon.props.className, 'me-1')
         })}
 
       {children}
 
       {endIcon &&
         React.cloneElement(endIcon as ReactElement, {
-          className: classNames(endIcon.props.className, 'ms-2')
+          className: classNames(endIcon.props.className, 'ms-1')
         })}
       {loading && loadingPosition === 'end' && (
         <Spinner animation="border" role="status" className="ms-2">

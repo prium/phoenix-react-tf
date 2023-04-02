@@ -1,7 +1,16 @@
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
-import React, { PropsWithChildren } from 'react';
-import { useGlobalFilter, usePagination, useRowSelect, useSortBy, useTable } from 'react-table';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import React, { PropsWithChildren, useState } from 'react';
+import {
+  useAsyncDebounce,
+  useFilters,
+  useGlobalFilter,
+  usePagination,
+  useRowSelect,
+  useSortBy,
+  useTable
+} from 'react-table';
 
 interface UseAdvanceTableProps {
   columns: any[];
@@ -9,7 +18,7 @@ interface UseAdvanceTableProps {
   selection?: boolean;
   sortable?: boolean;
   pagination?: boolean;
-  perPage?: number;
+  pageSize?: number;
   selectionColumnWidth?: number | string;
 }
 
@@ -19,7 +28,7 @@ const useAdvanceTable = ({
   selection,
   sortable,
   pagination,
-  perPage,
+  pageSize,
   selectionColumnWidth
 }: PropsWithChildren<UseAdvanceTableProps>) => {
   const advanceTableProps = useTable<LatestReviewsTableDataType>(
@@ -27,8 +36,9 @@ const useAdvanceTable = ({
       columns,
       data,
       disableSortBy: !sortable,
-      initialState: { pageSize: pagination ? perPage : data.length }
+      initialState: { pageSize: pagination ? pageSize : data.length }
     },
+    useFilters,
     useGlobalFilter,
     useSortBy,
     usePagination,
@@ -68,6 +78,17 @@ const useAdvanceTable = ({
   );
 
   return advanceTableProps;
+};
+
+export const useAdvanceTablSearch = (globalFilter: any, setGlobalFilter: any) => {
+  const [value, setValue] = useState(globalFilter);
+
+  const onChange = useAsyncDebounce(e => {
+    // setValue(e.target.value);
+    setGlobalFilter(e.target.value || undefined);
+  }, 200);
+
+  return { onChange };
 };
 
 export default useAdvanceTable;
