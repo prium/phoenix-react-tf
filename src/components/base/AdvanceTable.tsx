@@ -24,7 +24,7 @@ const AdvanceTable = ({
 
   return (
     <Scrollbar style={{ height: '100%' }}>
-      <Table>
+      <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>
             {getFlatHeaders().map((header, index) => {
@@ -33,7 +33,8 @@ const AdvanceTable = ({
               return (
                 <th
                   key={header.id}
-                  className={classNames({
+                  {...header.column.columnDef.meta?.headerProps}
+                  className={classNames(header.column.columnDef.meta?.headerProps?.className, {
                     sort: header.column.getCanSort(),
                     desc: header.column.getIsSorted() === 'desc',
                     asc: header.column.getIsSorted() === 'asc'
@@ -50,9 +51,11 @@ const AdvanceTable = ({
         </thead>
         <tbody className={bodyClassName}>
           {getRowModel().rows.map(row => (
-            <tr key={row.id}>
+            <tr key={row.id} className={rowClassName}>
               {row.getVisibleCells().map(cell => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                <td key={cell.id} {...cell.column.columnDef.meta?.cellProps}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
               ))}
             </tr>
           ))}
