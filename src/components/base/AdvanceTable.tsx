@@ -28,6 +28,8 @@ const AdvanceTable = ({
         <thead className={headerClassName}>
           <tr>
             {getFlatHeaders().map((header, index) => {
+              console.log({ header });
+
               return (
                 <th
                   key={header.id}

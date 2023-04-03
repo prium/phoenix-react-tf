@@ -14,39 +14,40 @@ import FeatherIcon from 'feather-icons-react';
 import { Column, useAsyncDebounce } from 'react-table';
 import Rating from 'react-rating';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { createColumnHelper } from '@tanstack/react-table';
+import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
 
-const columns = [
+const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
     id: 'sd',
-    accessor: 'productImage',
-    Header: '',
-    cell: rowData => {
-      console.log({ rowData });
-
-      const { productImage } = rowData.row.original;
+    accessorKey: '',
+    cell: ({ row: { original } }) => {
+      const { productImage } = original;
       return (
         <div className="rounded-2 border">
           <img src={productImage} alt="" width={53} />
         </div>
       );
     },
-    cellProps: { className: 'py-0' },
-    disableSortBy: true
+    meta: { className: 'py-0' },
+    enableSorting: false
+    // disableSortBy: true
+  },
+  {
+    accessorKey: 'product',
+    header: () => 'Product',
+
+    cell: ({ row: { original } }) => {
+      const { product } = original;
+      return (
+        <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
+          product.length > 46 ? '...' : ''
+        }`}</Link>
+      );
+    },
+    enableSorting: true,
+
+    headerProps: { style: { minWidth: 360 } }
   }
-  // {
-  //   accessor: 'product',
-  //   Header: 'Product',
-  //   Cell: rowData => {
-  //     const { product } = rowData.row.original;
-  //     return (
-  //       <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
-  //         product.length > 46 ? '...' : ''
-  //       }`}</Link>
-  //     );
-  //   },
-  //   headerProps: { style: { minWidth: 360 } }
-  // },
   // {
   //   accessor: 'customer',
   //   Header: 'CUSTOMER',
