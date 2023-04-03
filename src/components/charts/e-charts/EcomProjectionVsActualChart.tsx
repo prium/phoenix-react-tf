@@ -7,6 +7,7 @@ import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
+import { tooltipFormatter } from 'helpers/echart-utils';
 
 echarts.use([TooltipComponent, BarChart]);
 
@@ -16,30 +17,30 @@ const data1 = [44485, 20428, 47302, 45180, 31034, 46358, 26581, 36628, 38219, 43
 
 const data2 = [38911, 29452, 31894, 47876, 31302, 27731, 25490, 30355, 27176, 30393];
 
-const tooltipFormatter = (params: CallbackDataParams[]) => {
-  const currentDate = dayjs(params[0].name);
-  const prevDate = dayjs(params[0].name).subtract(1, 'month');
+// const tooltipFormatter = (params: CallbackDataParams[]) => {
+//   const currentDate = dayjs(params[0].name);
+//   const prevDate = dayjs(params[0].name).subtract(1, 'month');
 
-  const result = params.map((param, index) => ({
-    value: param.value,
-    date: index > 0 ? prevDate : currentDate,
-    color: param.color
-  }));
+//   const result = params.map((param, index) => ({
+//     value: param.value,
+//     date: index > 0 ? prevDate : currentDate,
+//     color: param.color
+//   }));
 
-  let tooltipItem = ``;
-  result.forEach((el: any, index: number) => {
-    tooltipItem += `<h6 class="fs--1 text-700 ${
-      index > 0 && 'mb-0'
-    }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
-      el.color
-    }"></span>
-    ${el.date.format('MMM DD')} : ${el.value}
-  </h6>`;
-  });
-  return `<div class='ms-1'>
-            ${tooltipItem}
-          </div>`;
-};
+//   let tooltipItem = ``;
+//   result.forEach((el: any, index: number) => {
+//     tooltipItem += `<h6 class="fs--1 text-700 ${
+//       index > 0 && 'mb-0'
+//     }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
+//       el.color
+//     }"></span>
+//     ${el.date.format('MMM DD')} : ${el.value}
+//   </h6>`;
+//   });
+//   return `<div class='ms-1'>
+//             ${tooltipItem}
+//           </div>`;
+// };
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   color: [getThemeColor('primary'), getThemeColor('gray-300')],
@@ -53,8 +54,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     transitionDuration: 0,
     axisPointer: {
       type: 'none'
-    }
-    // formatter: params => tooltipFormatter(params)
+    },
+    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
   },
   legend: {
     data: ['Projected revenue', 'Actual revenue'],

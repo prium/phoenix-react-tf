@@ -8,6 +8,8 @@ import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
 import EcomPayingVsNonPayingCard from 'components/cards/EcomPayingVsNonPayingCard';
 import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
 import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
+import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
+import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 
 const Ecommerce = () => {
   return (
@@ -45,6 +47,15 @@ const Ecommerce = () => {
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-7 border-y border-300">
         <EcomLatestReviewsTable />
       </div>
+      <Row className="gx-6">
+        <Col xs={12} xl={6}>
+          <div className="mb-5 mt-7">
+            <h3> Top regions by revenue</h3>
+            <p className="text-700"> Where you generated most of the revenue</p>
+          </div>
+          <EcomTopRegionsTable />
+        </Col>
+      </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">
         <Row className="g-6">
           <Col xs={12} xl={6}>
@@ -61,6 +72,7 @@ const Ecommerce = () => {
               <h3>Returning customer rate</h3>
               <p className="mb-1 text-700">Rate of customers returning to your shop over time</p>
             </div>
+            <EomReturningCustomerRateChart />
           </Col>
         </Row>
       </div>
