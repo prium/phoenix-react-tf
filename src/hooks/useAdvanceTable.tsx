@@ -1,25 +1,11 @@
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
-import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
-import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
-import React, { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren } from 'react';
 import {
-  Column,
-  Table,
   useReactTable,
-  ColumnFiltersState,
   getCoreRowModel,
   getFilteredRowModel,
-  getFacetedRowModel,
-  getFacetedUniqueValues,
-  getFacetedMinMaxValues,
   getPaginationRowModel,
-  sortingFns,
-  getSortedRowModel,
-  FilterFn,
-  SortingFn,
-  ColumnDef,
-  flexRender,
-  FilterFns
+  getSortedRowModel
 } from '@tanstack/react-table';
 interface UseAdvanceTableProps {
   columns: any[];
@@ -31,23 +17,48 @@ interface UseAdvanceTableProps {
   selectionColumnWidth?: number | string;
 }
 
+const selectionColumn = {
+  id: 'select',
+  header: ({ table }) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: table.getIsAllRowsSelected(),
+        indeterminate: table.getIsSomeRowsSelected(),
+        onChange: table.getToggleAllRowsSelectedHandler()
+      }}
+    />
+  ),
+  cell: ({ row }) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: row.getIsSelected(),
+        disabled: !row.getCanSelect(),
+        indeterminate: row.getIsSomeSelected(),
+        onChange: row.getToggleSelectedHandler()
+      }}
+    />
+  )
+};
+
 const useAdvanceTable = ({
   columns,
   data,
   selection,
   sortable,
   pagination,
-  pageSize,
-  selectionColumnWidth
+  pageSize
 }: PropsWithChildren<UseAdvanceTableProps>) => {
   const table = useReactTable({
     data,
-    columns,
+    columns: selection ? [selectionColumn, ...columns] : columns,
+    enableSorting: sortable,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel()
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: { pagination: { pageSize: pagination ? pageSize : data.length } }
   });
+
   return table;
 };
 

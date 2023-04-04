@@ -17,19 +17,16 @@ const AdvanceTable = ({
   rowClassName,
   tableProps
 }: AdvanceTableProps) => {
-  const data = useAdvanceTableContext();
-  console.log({ data });
-
-  const { getRowModel, getFlatHeaders } = data;
+  const table = useAdvanceTableContext();
+  const { getRowModel, getFlatHeaders } = table;
 
   return (
     <Scrollbar style={{ height: '100%' }}>
       <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>
-            {getFlatHeaders().map((header, index) => {
-              console.log({ header });
-
+            {getFlatHeaders().map(header => {
+              // console.log({ header });
               return (
                 <th
                   key={header.id}

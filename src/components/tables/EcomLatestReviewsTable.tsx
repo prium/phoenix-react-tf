@@ -7,16 +7,14 @@ import SearchBox from 'components/common/SearchBox';
 import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import React from 'react';
-import { Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
-import { Column, useAsyncDebounce } from 'react-table';
 import Rating from 'react-rating';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { ColumnDef, createColumnHelper } from '@tanstack/react-table';
+import { ColumnDef } from '@tanstack/react-table';
 
-const columns: ColumnDef<LatestReviewsTableDataType, { cellProps: any }>[] = [
+const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
     id: 'sd',
     accessorKey: '',
@@ -48,7 +46,7 @@ const columns: ColumnDef<LatestReviewsTableDataType, { cellProps: any }>[] = [
     }
   },
   {
-    accessorKey: 'customer',
+    accessorFn: ({ customer: { name } }) => name,
     header: 'CUSTOMER',
     cell: ({ row: { original } }) => {
       const { customer } = original;
@@ -72,7 +70,6 @@ const columns: ColumnDef<LatestReviewsTableDataType, { cellProps: any }>[] = [
   {
     accessorKey: 'rating',
     header: 'RATING',
-
     cell: ({ row: { original } }) => {
       const { rating } = original;
       return (
@@ -110,7 +107,7 @@ const columns: ColumnDef<LatestReviewsTableDataType, { cellProps: any }>[] = [
     }
   },
   {
-    accessorKey: 'status',
+    accessorFn: ({ status: { title } }) => title,
     header: 'STATUS',
     cell: ({ row: { original } }) => {
       const {
@@ -192,38 +189,8 @@ const columns: ColumnDef<LatestReviewsTableDataType, { cellProps: any }>[] = [
   }
 ];
 
-const defaultData = [
-  {
-    firstName: 'tanner',
-    lastName: 'linsley',
-    age: 24,
-    visits: 100,
-    status: 'In Relationship',
-    progress: 80
-  },
-  {
-    firstName: 'tandy',
-    lastName: 'miller',
-    age: 40,
-    visits: 40,
-    status: 'Single',
-    progress: 50
-  },
-  {
-    firstName: 'joe',
-    lastName: 'dirte',
-    age: 45,
-    visits: 20,
-    status: 'Complicated',
-    progress: 90
-  }
-];
-
-const columnHelper = createColumnHelper();
-// const columns = [{ accessorKey: 'firstName' }];
-
 const EcomLatestReviewsTable = () => {
-  const advanceTableProps = useAdvanceTable({
+  const table = useAdvanceTable({
     data: latestReviewsTableData,
     columns,
     pageSize: 6,
@@ -233,13 +200,13 @@ const EcomLatestReviewsTable = () => {
     sortable: true
   });
 
-  const handleSearchInputChange = useAsyncDebounce(e => {
-    advanceTableProps.setGlobalFilter(e.target.value || undefined);
-  }, 200);
+  const handleSearchInputChange = e => {
+    table.setGlobalFilter(e.target.value || undefined);
+  };
 
   return (
     <>
-      <AdvanceTableProvider {...advanceTableProps}>
+      <AdvanceTableProvider {...table}>
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
@@ -278,13 +245,11 @@ const EcomLatestReviewsTable = () => {
           </Col>
         </Row>
 
-        <div className="mx-n1 px-1">
-          <AdvanceTable
-            tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
-            rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-          />
-          {/* <AdvanceTableFooter /> */}
-        </div>
+        <AdvanceTable
+          tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
+          rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+        />
+        <AdvanceTableFooter />
       </AdvanceTableProvider>
     </>
   );
