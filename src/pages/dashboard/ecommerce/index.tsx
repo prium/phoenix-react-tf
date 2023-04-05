@@ -57,7 +57,9 @@ const Ecommerce = () => {
           <EcomTopRegionsTable />
         </Col>
         <Col xs={12} xl={6}>
-          <EcomTopRegionsMap />
+          <div className="h-100 w-100 py-5" style={{ minHeight: 300 }}>
+            <EcomTopRegionsMap />
+          </div>
         </Col>
       </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">

@@ -5,7 +5,7 @@ import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
-const AdvanceTableFooter = () => {
+const AdvanceTableFooter = ({ className }: { className?: string }) => {
   const {
     setPageSize,
     previousPage,
@@ -26,7 +26,7 @@ const AdvanceTableFooter = () => {
   const [isAllVisible, setIsAllVisible] = useState(false);
 
   return (
-    <Row className="align-items-center py-1">
+    <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex fs-9">
         <p className="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900">
           {pageSize * pageIndex + 1} to {pageSize * pageIndex + getPaginationRowModel().rows.length}

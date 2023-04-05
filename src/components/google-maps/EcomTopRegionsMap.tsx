@@ -1,8 +1,9 @@
 import React from 'react';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { snazzyCustomLight } from 'data/googleMapStyles';
+import { snazzyCustomDark, snazzyCustomLight } from 'data/googleMapStyles';
 import { gMapMarkerPoints } from 'data/googleMapMarkerPoints';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
+import { useAppContext } from 'providers/AppProvider';
 
 const containerStyle = {
   width: '100%',
@@ -10,6 +11,9 @@ const containerStyle = {
 };
 
 const EcomTopRegionsMap = () => {
+  const {
+    config: { theme }
+  } = useAppContext();
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY!
@@ -20,21 +24,19 @@ const EcomTopRegionsMap = () => {
   }, []);
 
   return isLoaded ? (
-    <div className="h-100 w-100">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        onLoad={onLoad}
-        options={{
-          zoom: 1.4,
-          minZoom: 1.4,
-          zoomControl: false,
-          scrollwheel: true,
-          disableDefaultUI: true,
-          center: new window.google.maps.LatLng(25.659195, 30.182691),
-          styles: snazzyCustomLight
-        }}
-      />
-    </div>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      onLoad={onLoad}
+      options={{
+        zoom: 1.4,
+        minZoom: 1.4,
+        zoomControl: false,
+        scrollwheel: true,
+        disableDefaultUI: true,
+        center: new window.google.maps.LatLng(25.659195, 30.182691),
+        styles: theme === 'light' ? snazzyCustomLight : snazzyCustomDark
+      }}
+    />
   ) : (
     <></>
   );

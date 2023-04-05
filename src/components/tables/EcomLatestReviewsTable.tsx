@@ -155,7 +155,9 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     accessorKey: 'action',
     enableSorting: false,
     header: '',
-    cell: () => {
+    cell: row => {
+      console.log({ row });
+
       return (
         <>
           <div className="position-relative">
@@ -169,11 +171,11 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
             </div>
           </div>
 
-          <Dropdown className="btn-reveal-trigger position-static" align="end">
+          <Dropdown className="position-static" align="end">
             <Dropdown.Toggle
-              variant="phoenix-secondary"
+              variant=""
               size="sm"
-              className="dropdown-caret-none notification-dropdown-toggle fs-10"
+              className="btn-reveal dropdown-caret-none transition-none fs-10 "
             >
               <FontAwesomeIcon icon="ellipsis" className="fs-10" />
             </Dropdown.Toggle>
