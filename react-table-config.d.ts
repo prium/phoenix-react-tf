@@ -1,3 +1,5 @@
+import { RowData } from '@tanstack/react-table';
+import { TdHTMLAttributes, ThHTMLAttributes } from 'react';
 import {
   UseColumnOrderInstanceProps,
   UseColumnOrderState,
@@ -120,4 +122,11 @@ declare module 'react-table' {
       UseGroupByRowProps<D>,
       UseRowSelectRowProps<D>,
       UseRowStateRowProps<D> {}
+}
+
+declare module '@tanstack/react-table' {
+  export interface ColumnMeta<TData extends RowData, TValue> {
+    cellProps?: TdHTMLAttributes<HTMLTableDataCellElement>;
+    headerProps?: ThHTMLAttributes<HTMLTableHeaderCellElement>;
+  }
 }

@@ -1,13 +1,10 @@
-import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
+// @ts-nocheck
+import { Table } from '@tanstack/react-table';
 import { PropsWithChildren, createContext, useContext } from 'react';
-import { TableInstance } from 'react-table';
 
-export const AdvanceTableContext = createContext({} as TableInstance<LatestReviewsTableDataType>);
+export const AdvanceTableContext = createContext({} as Table<{}>);
 
-const AdvanceTableProvider = ({
-  children,
-  ...rest
-}: PropsWithChildren<TableInstance<LatestReviewsTableDataType>>) => {
+const AdvanceTableProvider = ({ children, ...rest }: PropsWithChildren) => {
   return (
     <AdvanceTableContext.Provider value={{ ...rest }}>{children}</AdvanceTableContext.Provider>
   );

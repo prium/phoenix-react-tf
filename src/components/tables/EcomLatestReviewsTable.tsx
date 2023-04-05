@@ -5,49 +5,52 @@ import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
 import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
-import useAdvanceTable, { useAdvanceTablSearch } from 'hooks/useAdvanceTable';
+import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import React from 'react';
-import { Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
-import { Column, useAsyncDebounce } from 'react-table';
 import Rating from 'react-rating';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
+import { ColumnDef } from '@tanstack/react-table';
+import { ChangeEvent } from 'react';
 
-const columns: Column<LatestReviewsTableDataType>[] = [
+const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
-    accessor: 'productImage',
-    Header: '',
-    Cell: rowData => {
-      const { productImage } = rowData.row.original;
+    id: 'productImage',
+    accessorKey: '',
+    cell: ({ row: { original } }) => {
+      const { productImage } = original;
       return (
         <div className="rounded-2 border">
           <img src={productImage} alt="" width={53} />
         </div>
       );
     },
-    cellProps: { className: 'py-0' },
-    disableSortBy: true
+    meta: { cellProps: { className: 'py-0' } },
+    enableSorting: false
   },
   {
-    accessor: 'product',
-    Header: 'Product',
-    Cell: rowData => {
-      const { product } = rowData.row.original;
+    accessorKey: 'product',
+    header: () => 'Product',
+    cell: ({ row: { original } }) => {
+      const { product } = original;
       return (
         <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
           product.length > 46 ? '...' : ''
         }`}</Link>
       );
     },
-    headerProps: { style: { minWidth: 360 } }
+    enableSorting: true,
+    meta: {
+      headerProps: { style: { minWidth: 360 }, className: 'py-2' }
+    }
   },
   {
-    accessor: 'customer',
-    Header: 'CUSTOMER',
-    Cell: rowData => {
-      const { customer } = rowData.row.original;
+    accessorFn: ({ customer: { name } }) => name,
+    header: 'CUSTOMER',
+    cell: ({ row: { original } }) => {
+      const { customer } = original;
       return (
         <Link to="#!" className="d-flex align-items-center">
           {customer.variant === 'name' ? (
@@ -61,14 +64,15 @@ const columns: Column<LatestReviewsTableDataType>[] = [
         </Link>
       );
     },
-    headerProps: { style: { minWidth: 200 } }
+    meta: {
+      headerProps: { style: { minWidth: 200 } }
+    }
   },
   {
-    accessor: 'rating',
-    Header: 'RATING',
-    headerProps: { style: { minWidth: 110 } },
-    Cell: rowData => {
-      const { rating } = rowData.row.original;
+    accessorKey: 'rating',
+    header: 'RATING',
+    cell: ({ row: { original } }) => {
+      const { rating } = original;
       return (
         <>
           {/* @ts-ignore */}
@@ -81,31 +85,39 @@ const columns: Column<LatestReviewsTableDataType>[] = [
           />
         </>
       );
+    },
+    meta: {
+      headerProps: { style: { minWidth: 110 } }
     }
   },
   {
-    accessor: 'review',
-    Header: 'REVIEW',
-    Cell: rowData => {
-      const { review } = rowData.row.original;
+    accessorKey: 'review',
+    header: 'REVIEW',
+    cell: ({ row: { original } }) => {
+      const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0">
-          {`${review.slice(0, 134)}${
-            review.length > 134 ? `...<Link href='#!'>See more</Link>` : ''
-          }`}
+        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+          {review.slice(0, 134)}
+          {review.length > 134 && (
+            <>
+              {`...`}
+              <Link to="#!">See more</Link>
+            </>
+          )}
         </p>
       );
     },
-    headerProps: { style: { minWidth: 350 } }
+    meta: {
+      headerProps: { style: { minWidth: 350 } }
+    }
   },
   {
-    // @ts-ignore
-    accessor: 'status.title',
-    Header: 'STATUS',
-    Cell: (rowData: any) => {
+    accessorFn: ({ status: { title } }) => title,
+    header: 'STATUS',
+    cell: ({ row: { original } }) => {
       const {
         status: { title, badgeBg, icon }
-      } = rowData.row.original;
+      } = original;
       return (
         <Badge
           bg={badgeBg}
@@ -118,28 +130,32 @@ const columns: Column<LatestReviewsTableDataType>[] = [
         </Badge>
       );
     },
-    headerProps: { className: 'ps-5' },
-    cellProps: { className: 'ps-5' }
+    meta: {
+      headerProps: { className: 'ps-5' },
+      cellProps: { className: 'ps-5' }
+    }
   },
   {
-    accessor: 'time',
-    Header: 'TIME',
-    Cell: rowData => {
-      const { time } = rowData.row.original;
+    accessorKey: 'time',
+    header: 'TIME',
+    cell: ({ row: { original } }) => {
+      const { time } = original;
       return (
         <div className="hover-hide">
           <h6 className="text-1000 mb-0">{time}</h6>
         </div>
       );
     },
-    headerProps: { className: 'text-end' },
-    cellProps: { className: 'text-end white-space-nowrap' }
+    meta: {
+      headerProps: { className: 'text-end' },
+      cellProps: { className: 'text-end white-space-nowrap' }
+    }
   },
   {
-    // @ts-ignore
-    accessor: 'action',
-    Header: '',
-    Cell: () => {
+    accessorKey: 'action',
+    enableSorting: false,
+    header: '',
+    cell: () => {
       return (
         <>
           <div className="position-relative">
@@ -173,12 +189,14 @@ const columns: Column<LatestReviewsTableDataType>[] = [
         </>
       );
     },
-    cellProps: { className: 'text-end' }
+    meta: {
+      cellProps: { className: 'text-end' }
+    }
   }
 ];
 
 const EcomLatestReviewsTable = () => {
-  const advanceTableProps = useAdvanceTable({
+  const table = useAdvanceTable({
     data: latestReviewsTableData,
     columns,
     pageSize: 6,
@@ -188,13 +206,13 @@ const EcomLatestReviewsTable = () => {
     sortable: true
   });
 
-  const handleSearchInputChange = useAsyncDebounce(e => {
-    advanceTableProps.setGlobalFilter(e.target.value || undefined);
-  }, 200);
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    table.setGlobalFilter(e.target.value || undefined);
+  };
 
   return (
     <>
-      <AdvanceTableProvider {...advanceTableProps}>
+      <AdvanceTableProvider {...table}>
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
@@ -233,13 +251,11 @@ const EcomLatestReviewsTable = () => {
           </Col>
         </Row>
 
-        <div className="mx-n1 px-1">
-          <AdvanceTable
-            tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
-            rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-          />
-          <AdvanceTableFooter />
-        </div>
+        <AdvanceTable
+          tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
+          rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+        />
+        <AdvanceTableFooter />
       </AdvanceTableProvider>
     </>
   );

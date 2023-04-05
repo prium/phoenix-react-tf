@@ -1,31 +1,31 @@
+// @ts-nocheck
 import classNames from 'classnames';
-import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
-import React, { MutableRefObject, useRef } from 'react';
+import React, { HTMLProps } from 'react';
 import { Form } from 'react-bootstrap';
 
 interface IndeterminateCheckboxProps {
   indeterminate?: boolean;
-  className?: string;
 }
 
-const IndeterminateCheckbox = React.forwardRef<HTMLInputElement, IndeterminateCheckboxProps>(
-  ({ indeterminate, className, ...rest }, ref) => {
-    // console.log({ ...rest });
-    useAdvanceTableContext();
+const IndeterminateCheckbox = ({
+  indeterminate,
+  className,
+  ...rest
+}: IndeterminateCheckboxProps & HTMLProps<HTMLInputElement>) => {
+  // console.log({ ...rest });
 
-    const defaultRef = useRef<HTMLInputElement>(null);
+  const ref = React.useRef<HTMLInputElement>(null!);
 
-    const resolvedRef = ref || defaultRef;
+  React.useEffect(() => {
+    if (typeof indeterminate === 'boolean') {
+      ref.current.indeterminate = !rest.checked && indeterminate;
+    }
+  }, [ref, indeterminate]);
 
-    React.useEffect(() => {
-      (resolvedRef as MutableRefObject<HTMLInputElement>).current.indeterminate = !!indeterminate;
-    }, [resolvedRef, indeterminate]);
-
-    return (
-      <Form.Check type="checkbox" className={classNames('form-check fs-8 mb-0', className)}>
-        <Form.Check.Input type="checkbox" ref={resolvedRef} {...rest} />
-      </Form.Check>
-    );
-  }
-);
+  return (
+    <Form.Check type="checkbox" className={classNames('form-check fs-8 mb-0', className)}>
+      <Form.Check.Input type="checkbox" ref={ref} {...rest} />
+    </Form.Check>
+  );
+};
 export default IndeterminateCheckbox;

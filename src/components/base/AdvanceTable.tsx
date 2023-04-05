@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { Table } from 'react-bootstrap';
 import Scrollbar from './Scrollbar';
+import { flexRender } from '@tanstack/react-table';
 
 interface AdvanceTableProps {
   headerClassName?: string;
@@ -16,42 +17,45 @@ const AdvanceTable = ({
   rowClassName,
   tableProps
 }: AdvanceTableProps) => {
-  const { getTableProps, headers, page, prepareRow } = useAdvanceTableContext();
+  const table = useAdvanceTableContext();
+  const { getRowModel, getFlatHeaders } = table;
 
   return (
     <Scrollbar style={{ height: '100%' }}>
-      <Table {...getTableProps(tableProps)}>
+      <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>
-            {headers.map((column, index) => {
+            {getFlatHeaders().map(header => {
+              // console.log({ header });
               return (
                 <th
-                  {...column.getHeaderProps(column.getSortByToggleProps(column.headerProps))}
-                  className={classNames({
-                    sort: column.canSort,
-                    desc: column.isSortedDesc,
-                    asc: column.isSorted && !column.isSortedDesc
+                  key={header.id}
+                  {...header.column.columnDef.meta?.headerProps}
+                  className={classNames(header.column.columnDef.meta?.headerProps?.className, {
+                    sort: header.column.getCanSort(),
+                    desc: header.column.getIsSorted() === 'desc',
+                    asc: header.column.getIsSorted() === 'asc'
                   })}
+                  onClick={header.column.getToggleSortingHandler()}
                 >
-                  {column.render('Header')}
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(header.column.columnDef.header, header.getContext())}
                 </th>
               );
             })}
           </tr>
         </thead>
         <tbody className={bodyClassName}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr className={rowClassName} {...row.getRowProps()}>
-                {row.cells.map((cell, index) => {
-                  return (
-                    <td {...cell.getCellProps(cell.column.cellProps)}>{cell.render('Cell')}</td>
-                  );
-                })}
-              </tr>
-            );
-          })}
+          {getRowModel().rows.map(row => (
+            <tr key={row.id} className={rowClassName}>
+              {row.getVisibleCells().map(cell => (
+                <td key={cell.id} {...cell.column.columnDef.meta?.cellProps}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </Table>
     </Scrollbar>

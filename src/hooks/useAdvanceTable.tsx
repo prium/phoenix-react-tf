@@ -1,17 +1,14 @@
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
-import { LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
-import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
-import React, { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren } from 'react';
 import {
-  useAsyncDebounce,
-  useFilters,
-  useGlobalFilter,
-  usePagination,
-  useRowSelect,
-  useSortBy,
-  useTable
-} from 'react-table';
-
+  useReactTable,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  Table,
+  Row
+} from '@tanstack/react-table';
 interface UseAdvanceTableProps {
   columns: any[];
   data: any[];
@@ -22,73 +19,49 @@ interface UseAdvanceTableProps {
   selectionColumnWidth?: number | string;
 }
 
+const selectionColumn = {
+  id: 'select',
+  header: ({ table }: { table: Table<{}> }) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: table.getIsAllRowsSelected(),
+        indeterminate: table.getIsSomeRowsSelected(),
+        onChange: table.getToggleAllRowsSelectedHandler()
+      }}
+    />
+  ),
+  cell: ({ row }: { row: Row<{}> }) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: row.getIsSelected(),
+        disabled: !row.getCanSelect(),
+        indeterminate: row.getIsSomeSelected(),
+        onChange: row.getToggleSelectedHandler()
+      }}
+    />
+  )
+};
+
 const useAdvanceTable = ({
   columns,
   data,
   selection,
   sortable,
   pagination,
-  pageSize,
-  selectionColumnWidth
+  pageSize
 }: PropsWithChildren<UseAdvanceTableProps>) => {
-  const advanceTableProps = useTable<LatestReviewsTableDataType>(
-    {
-      columns,
-      data,
-      disableSortBy: !sortable,
-      initialState: { pageSize: pagination ? pageSize : data.length }
-    },
-    useFilters,
-    useGlobalFilter,
-    useSortBy,
-    usePagination,
-    useRowSelect,
-    hooks => {
-      if (selection) {
-        hooks.visibleColumns.push(columns => [
-          {
-            id: 'selection',
-            Header: ({ getToggleAllRowsSelectedProps }) => (
-              <IndeterminateCheckbox {...getToggleAllRowsSelectedProps()} />
-            ),
-            // headerProps: {
-            //   style: {
-            //     width: selectionColumnWidth
-            //   }
-            // },
-            // cellProps: {
-            //   style: {
-            //     width: selectionColumnWidth
-            //   }
-            // },
-            maxWidth: 500,
-            minWidth: 140,
-            width: 200,
-            // @ts-ignore
-            Cell: ({ row }) => (
-              // <div>
-              <IndeterminateCheckbox {...row.getToggleRowSelectedProps()} />
-              // </div>
-            )
-          },
-          ...columns
-        ]);
-      }
-    }
-  );
+  const table = useReactTable({
+    data,
+    columns: selection ? [selectionColumn, ...columns] : columns,
+    enableSorting: sortable,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: { pagination: { pageSize: pagination ? pageSize : data.length } }
+  });
 
-  return advanceTableProps;
-};
-
-export const useAdvanceTablSearch = (globalFilter: any, setGlobalFilter: any) => {
-  const [value, setValue] = useState(globalFilter);
-
-  const onChange = useAsyncDebounce(e => {
-    // setValue(e.target.value);
-    setGlobalFilter(e.target.value || undefined);
-  }, 200);
-
-  return { onChange };
+  return table;
 };
 
 export default useAdvanceTable;
