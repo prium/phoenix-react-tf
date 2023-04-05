@@ -13,10 +13,11 @@ import FeatherIcon from 'feather-icons-react';
 import Rating from 'react-rating';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
+import { ChangeEvent } from 'react';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
-    id: 'sd',
+    id: 'productImage',
     accessorKey: '',
     cell: ({ row: { original } }) => {
       const { productImage } = original;
@@ -95,10 +96,14 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0">
-          {`${review.slice(0, 134)}${
-            review.length > 134 ? `...<Link href='#!'>See more</Link>` : ''
-          }`}
+        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+          {review.slice(0, 134)}
+          {review.length > 134 && (
+            <>
+              {`...`}
+              <Link to="#!">See more</Link>
+            </>
+          )}
         </p>
       );
     },
@@ -148,8 +153,9 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   },
   {
     accessorKey: 'action',
+    enableSorting: false,
     header: '',
-    cell: ({ row: { original } }) => {
+    cell: () => {
       return (
         <>
           <div className="position-relative">
@@ -200,7 +206,7 @@ const EcomLatestReviewsTable = () => {
     sortable: true
   });
 
-  const handleSearchInputChange = e => {
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     table.setGlobalFilter(e.target.value || undefined);
   };
 

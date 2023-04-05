@@ -5,7 +5,9 @@ import {
   getCoreRowModel,
   getFilteredRowModel,
   getPaginationRowModel,
-  getSortedRowModel
+  getSortedRowModel,
+  Table,
+  Row
 } from '@tanstack/react-table';
 interface UseAdvanceTableProps {
   columns: any[];
@@ -19,7 +21,7 @@ interface UseAdvanceTableProps {
 
 const selectionColumn = {
   id: 'select',
-  header: ({ table }) => (
+  header: ({ table }: { table: Table<{}> }) => (
     <IndeterminateCheckbox
       {...{
         checked: table.getIsAllRowsSelected(),
@@ -28,7 +30,7 @@ const selectionColumn = {
       }}
     />
   ),
-  cell: ({ row }) => (
+  cell: ({ row }: { row: Row<{}> }) => (
     <IndeterminateCheckbox
       {...{
         checked: row.getIsSelected(),
