@@ -10,6 +10,7 @@ import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
 import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
 import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
 import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
+import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
 
 const Ecommerce = () => {
   return (
@@ -54,6 +55,9 @@ const Ecommerce = () => {
             <p className="text-700"> Where you generated most of the revenue</p>
           </div>
           <EcomTopRegionsTable />
+        </Col>
+        <Col xs={12} xl={6}>
+          <EcomTopRegionsMap />
         </Col>
       </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">
