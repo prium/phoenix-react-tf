@@ -1,7 +1,5 @@
 import Badge from 'components/base/Badge';
 import EcomNewCustomersChart from 'components/charts/e-charts/EcomNewCustomersChart';
-import EcomTotalOrdersChart from 'components/charts/e-charts/EcomTotalOrdersChart';
-import React from 'react';
 import { Card } from 'react-bootstrap';
 
 const EcomNewCustomersCard = () => {

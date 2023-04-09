@@ -32,7 +32,7 @@ const stats: StatType[] = [
   }
 ];
 
-const Stats = () => {
+const EcomStats = () => {
   return (
     <Row className="align-items-center g-4 border-bottom pb-4 mb-6">
       {stats.map(stat => (
@@ -56,4 +56,4 @@ const Stat = ({ stat }: { stat: StatType }) => {
   );
 };
 
-export default Stats;
+export default EcomStats;

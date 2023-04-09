@@ -1,7 +1,4 @@
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
-import Stats from './Stats';
-import TotalSells from './total-sells/TotalSells';
+import { Col, Form, Row } from 'react-bootstrap';
 import EcomTotalOrdersCard from 'components/cards/EcomTotalOrdersCard';
 import EcomNewCustomersCard from 'components/cards/EcomNewCustomersCard';
 import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
@@ -11,6 +8,8 @@ import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjecti
 import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
 import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
+import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
+import EcomStats from 'components/stats/EcomStats';
 
 const Ecommerce = () => {
   return (
@@ -24,8 +23,21 @@ const Ecommerce = () => {
                 Here’s what’s going on at your business right now
               </h5>
             </div>
-            <Stats />
-            <TotalSells />
+            <EcomStats />
+            <Row className="justify-content-between align-items-end mb-4 g-3">
+              <Col xs="auto">
+                <h3>Total sells</h3>
+                <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+              </Col>
+              <Col xs={8} sm={4}>
+                <Form.Select size="sm">
+                  <option value="mar">Mar 1 - 31, 2023</option>
+                  <option value="apr">April 1 - 30, 2023</option>
+                  <option value="may">May 1 - 31, 2023</option>
+                </Form.Select>
+              </Col>
+            </Row>
+            <EcomTotalSellsChart />
           </Col>
           <Col xs={12} xxl={6}>
             <Row className="g-3">

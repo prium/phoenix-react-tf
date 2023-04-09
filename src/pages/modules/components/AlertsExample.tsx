@@ -1,7 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
-import { Alert } from 'react-bootstrap';
 
 const exampleCode = `
 () => {

@@ -175,7 +175,7 @@ const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) =>
   animation: false
 });
 
-const TotalSellsChart = () => {
+const EcomTotalSellsChart = () => {
   const {
     config: { theme },
     getThemeColor
@@ -184,4 +184,4 @@ const TotalSellsChart = () => {
   return <ReactEChartsCore echarts={echarts} option={getDefaultOptions(theme, getThemeColor)} />;
 };
 
-export default TotalSellsChart;
+export default EcomTotalSellsChart;

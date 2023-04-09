@@ -1,7 +1,5 @@
 import MainLayout from 'layouts/MainLayout';
-import HomePage from 'pages/HomePage';
 import Starter from 'pages/pages/Starter';
-import Leads from 'pages/apps/crm/Leads';
 import { createBrowserRouter } from 'react-router-dom';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';

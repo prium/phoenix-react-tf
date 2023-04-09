@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
-import { getDates, getPastDates } from 'helpers/utils';
+import { getPastDates } from 'helpers/utils';
 import dayjs from 'dayjs';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';

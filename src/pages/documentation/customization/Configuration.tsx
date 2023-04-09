@@ -1,7 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
-import { capitalize } from 'helpers/utils';
 
 const exampleCode = `
 export const initialConfig = {

@@ -2,8 +2,6 @@ import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
-import { capitalize } from 'helpers/utils';
-import { LiveEditor } from 'react-live';
 
 const themeColorCode = `
     //*-----------------------------------------------
