@@ -79,6 +79,7 @@ export const routes: RouteItems[] = [
     pages: [
       {
         name: 'e-commerce',
+        active: true,
         icon: 'shopping-cart',
         pages: [
           {
@@ -123,11 +124,13 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'customer',
+            active: true,
             pages: [
               {
                 name: 'homepage',
                 path: 'apps/e-commerce/landing/homepage',
-                pathName: 'e-commerce-fe-home'
+                pathName: 'e-commerce-fe-home',
+                active: true
               },
               {
                 name: 'product-details',

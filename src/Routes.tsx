@@ -59,6 +59,8 @@ import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
 import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
+import EcommerceLayout from 'layouts/EcommerceLayout';
+import Homepage from 'pages/apps/e-commerce/customer/Homepage';
 
 const routes = [
   {
@@ -335,6 +337,15 @@ const routes = [
       {
         path: '*',
         element: <ComingSoon />
+      }
+    ]
+  },
+  {
+    element: <EcommerceLayout />,
+    children: [
+      {
+        path: '/apps/e-commerce/landing/homepage',
+        element: <Homepage />
       }
     ]
   }

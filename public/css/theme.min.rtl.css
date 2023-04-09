@@ -26956,8 +26956,8 @@ pre[class*=language-] {
   font-size: 0.8rem;
 }
 
-.dropdown-caret-none:after, .dropdown-caret-none:before {
-  display: none !important;
+.dropdown-caret-none:after {
+  display: none;
 }
 
 .dropdown-md {

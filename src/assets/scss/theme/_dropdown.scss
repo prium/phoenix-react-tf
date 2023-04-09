@@ -7,9 +7,8 @@
 }
 
 .dropdown-caret-none {
-  &:after,
-  &:before {
-    display: none !important;
+  &:after {
+    display: none;
   }
 }
 
