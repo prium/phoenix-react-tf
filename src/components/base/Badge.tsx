@@ -3,7 +3,7 @@ import { PropsWithChildren, ReactElement } from 'react';
 import { Badge as BsBadge, BadgeProps as BsBadgeProps } from 'react-bootstrap';
 
 type Variant = 'phoenix' | 'default';
-type Bg = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
+export type Bg = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info';
 
 interface BadgeProps extends BsBadgeProps {
   variant?: Variant;

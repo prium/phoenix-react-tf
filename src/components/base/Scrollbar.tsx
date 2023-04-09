@@ -1,11 +1,11 @@
 import { PropsWithChildren } from 'react';
-import Scrollbars from 'react-custom-scrollbars-2';
+import Scrollbars, { ScrollbarProps as ScrollbarsProps } from 'react-custom-scrollbars-2';
 
-const Scrollbar = ({
-  children,
-  autoHide = true,
-  ...rest
-}: PropsWithChildren<{ autoHide?: boolean }>) => {
+interface ScrollbarProps extends ScrollbarsProps {
+  autoHide?: boolean;
+}
+
+const Scrollbar = ({ children, autoHide = true, ...rest }: PropsWithChildren<ScrollbarProps>) => {
   return (
     <Scrollbars
       renderThumbHorizontal={props => <div {...props} className="bg-gray-800 rounded" />}

@@ -17,5 +17,5 @@
     "jsx": "react-jsx",
     "baseUrl": "src"
   },
-  "include": ["src", "index.d.ts"]
+  "include": ["src", "index.d.ts", "react-table-config.d.ts"]
 }

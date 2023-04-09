@@ -1,7 +1,5 @@
 import MainLayout from 'layouts/MainLayout';
-import HomePage from 'pages/HomePage';
 import Starter from 'pages/pages/Starter';
-import Leads from 'pages/apps/crm/Leads';
 import { createBrowserRouter } from 'react-router-dom';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
@@ -60,6 +58,7 @@ import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
 import ComingSoon from 'pages/ComingSoon';
+import Ecommerce from 'pages/dashboard/ecommerce';
 
 const routes = [
   {
@@ -68,7 +67,7 @@ const routes = [
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: <Ecommerce />
       },
       {
         path: '/pages/starter',
@@ -336,16 +335,6 @@ const routes = [
       {
         path: '*',
         element: <ComingSoon />
-      }
-    ]
-  },
-  {
-    path: 'crm',
-    element: <MainLayout />,
-    children: [
-      {
-        path: 'leads',
-        element: <Leads />
       }
     ]
   }

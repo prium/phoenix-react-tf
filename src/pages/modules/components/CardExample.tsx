@@ -1,14 +1,13 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'components/layouts/DocPagesLayout';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import generic66 from 'assets/img/generic/66.jpg';
 import generic44 from 'assets/img/generic/44.png';
 import generic45 from 'assets/img/generic/45.png';
 import generic46 from 'assets/img/generic/46.png';
 import generic54 from 'assets/img/generic/54.png';
 import generic36 from 'assets/img/generic/36.png';
-import { useState } from 'react';
 
 const exampleCode = `
   <Card style={{ width: '20rem' }}>
@@ -215,33 +214,3 @@ const CardExample = () => {
 };
 
 export default CardExample;
-
-const Test = () => {
-  const [variants] = useState([
-    'Primary',
-    'Secondary',
-    'Success',
-    'Danger',
-    'Warning',
-    'Info',
-    'Light',
-    'Dark'
-  ]);
-  return (
-    <Row className="g-4">
-      {variants.map(variant => (
-        <Col sm={6} md={4} lg={3}>
-          <Card key={variant} className={'border border-' + variant.toLowerCase()}>
-            <Card.Body>
-              <Card.Title as="h4">{variant} Border Card</Card.Title>
-              <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  );
-};

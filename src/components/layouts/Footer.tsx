@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { capitalize } from 'helpers/utils';
 import { Col, Row } from 'react-bootstrap';
 
 const Footer = ({ className }: { className?: string }) => {

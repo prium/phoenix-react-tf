@@ -7,6 +7,7 @@ import {
   faArrowUpRightFromSquare,
   faArrowsRotate,
   faCaretRight,
+  faCheck,
   faChevronDown,
   faChevronLeft,
   faChevronRight,
@@ -16,11 +17,13 @@ import {
   faPalette,
   faPlus,
   faSearch,
+  faStar,
   faTimes,
   faTrash,
   faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { faGulp } from '@fortawesome/free-brands-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faSearch,
@@ -42,5 +45,9 @@ library.add(
   faChevronRight,
   faAnglesLeft,
   faAnglesRight,
-  faArrowUpRightFromSquare
+  faArrowUpRightFromSquare,
+  faCheck,
+  faStar,
+  //@ts-ignore
+  farStar
 );
