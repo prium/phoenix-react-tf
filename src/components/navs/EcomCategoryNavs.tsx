@@ -1,75 +1,84 @@
-import { icon } from '@fortawesome/fontawesome-svg-core';
 import {
-  Icon,
   UilEstate,
+  UilGift,
+  UilLamp,
   UilMobileAndroid,
   UilMonitor,
+  UilPalette,
+  UilPlaneDeparture,
   UilShoppingBag,
   UilStar,
-  UilWatchAlt
+  UilWatchAlt,
+  UilWrench
 } from '@iconscout/react-unicons';
+import classNames from 'classnames';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 type Category = {
   label: string;
-  bgClass?: string;
   icon: JSX.Element;
-  iconClass?: string;
-  selected?: boolean;
+  url: string;
+  bgClass?: string;
 };
 
 const categories: Category[] = [
   {
     label: 'Deals',
     bgClass: 'bg-warning-100 light',
-    icon: <UilStar className="text-warning" size={40} />
+    url: '#!',
+    icon: <UilStar className="text-warning" size={39} />
   },
   {
     label: 'Grocery',
-    icon: <UilShoppingBag size={40} />
+    url: '#!',
+    icon: <UilShoppingBag size={39} />
   },
   {
     label: 'Fashion',
-    icon: <UilWatchAlt size={40} />
+    url: '#!',
+    icon: <UilWatchAlt size={39} />
   },
   {
     label: 'Mobile',
-    icon: <UilMobileAndroid size={40} />
+    url: '#!',
+    icon: <UilMobileAndroid size={39} />
   },
   {
     label: 'Electronics',
-    icon: <UilMonitor size={40} />
+    url: '#!',
+    icon: <UilMonitor size={39} />
   },
   {
     label: 'Home',
-    icon: <UilEstate size={40} />
+    url: '#!',
+    icon: <UilEstate size={39} />
+  },
+  {
+    label: 'Dining',
+    url: '#!',
+    icon: <UilLamp size={39} />
+  },
+  {
+    label: 'Gifts',
+    url: '#!',
+    icon: <UilGift size={39} />
+  },
+  {
+    label: 'Tools',
+    url: '#!',
+    icon: <UilWrench size={39} />
+  },
+  {
+    label: 'Travel',
+    url: '#!',
+    icon: <UilPlaneDeparture size={39} />
+  },
+  {
+    label: 'Others',
+    url: '#!',
+    icon: <UilPalette size={39} />
   }
-  // {
-  //   label: 'Dining',
-  //   icon: 'uil uil-lamp',
-  //   iconClass: 'text-900'
-  // },
-  // {
-  //   label: 'Gifts',
-  //   icon: 'uil uil-gift',
-  //   iconClass: 'text-900'
-  // },
-  // {
-  //   label: 'Tools',
-  //   icon: 'uil uil-wrench',
-  //   iconClass: 'text-900'
-  // },
-  // {
-  //   label: 'Travel',
-  //   icon: 'uil uil-plane-departure',
-  //   iconClass: 'text-900'
-  // },
-  // {
-  //   label: 'Others',
-  //   icon: 'uil uil-palette',
-  //   iconClass: 'text-900'
-  // }
 ];
 
 const EcomCategoryNavs = () => {
@@ -84,8 +93,8 @@ const EcomCategoryNavs = () => {
 
 const EcomCategoryNavItem = ({ category }: { category: Category }) => {
   return (
-    <Link to="#!" className="icon-nav-item">
-      <div className="icon-container mb-2">{category.icon}</div>
+    <Link to={category.url} className="icon-nav-item">
+      <div className={classNames(category.bgClass, 'icon-container mb-2')}>{category.icon}</div>
       <p className="nav-label">{category.label}</p>
     </Link>
   );

@@ -7,6 +7,7 @@ import {
   faArrowUpRightFromSquare,
   faArrowsRotate,
   faBars,
+  faBolt,
   faCaretRight,
   faCheck,
   faChevronDown,
@@ -15,6 +16,7 @@ import {
   faClock,
   faCopy,
   faEllipsis,
+  faHeart,
   faPalette,
   faPlus,
   faSearch,
@@ -24,7 +26,7 @@ import {
   faTrashAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faGulp, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as farStar, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faSearch,
@@ -53,5 +55,8 @@ library.add(
   farStar,
   faBars,
   faFacebookSquare,
-  faTwitterSquare
+  faTwitterSquare,
+  faBolt,
+  faHeart,
+  farHeart
 );
