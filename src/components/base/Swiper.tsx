@@ -1,32 +1,37 @@
-import { Navigation, Pagination, Scrollbar, A11y, SwiperOptions } from 'swiper';
-import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
-
+import { Navigation, SwiperOptions } from 'swiper';
+import { Swiper as ReactSwiper } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface SwiperProps {
-  options: SwiperOptions;
-}
-
-const Swiper = ({ children, options }: PropsWithChildren<SwiperProps>) => {
+const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
   return (
     <div className="swiper-theme-container">
-      <button className="swiper-button-next">
+      <button className="swiper-button-next" ref={navigationNextRef}>
         <FontAwesomeIcon icon="chevron-right" />
       </button>
-      <button className="swiper-button-prev">
+      <button className="swiper-button-prev" ref={navigationPrevRef}>
         <FontAwesomeIcon icon="chevron-left" />
       </button>
       <ReactSwiper
         modules={[Navigation]}
         navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
           disabledClass: 'swiper-button-disabled'
         }}
-        {...options}
+        onBeforeInit={swiper => {
+          if (swiper.params.navigation) {
+            //@ts-ignore
+            swiper.params.navigation.prevEl = navigationPrevRef.current;
+            //@ts-ignore
+            swiper.params.navigation.nextEl = navigationNextRef.current;
+          }
+        }}
+        {...rest}
       >
         {children}
       </ReactSwiper>

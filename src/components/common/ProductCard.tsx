@@ -2,21 +2,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
+import Rating from 'components/base/Rating';
 import { Product as ProductType } from 'data/ecommerce';
+import { currencyFormat } from 'helpers/utils';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Product = ({ product, wishListed }: { product: ProductType; wishListed?: boolean }) => {
+const ProductCard = ({ product }: { product: ProductType }) => {
   return (
     <div className="position-relative text-decoration-none product-card h-100">
       <div className="d-flex flex-column justify-content-between h-100">
         <div>
           <div className="border border-1 rounded-3 position-relative mb-3">
             <Button
-              variant={wishListed ? 'primary' : 'outline-primary'}
+              variant={product.wishListed ? 'primary' : 'outline-primary'}
               className="rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container"
             >
-              {wishListed ? (
+              {product.wishListed ? (
                 <FontAwesomeIcon icon="heart" />
               ) : (
                 <>
@@ -36,8 +38,9 @@ const Product = ({ product, wishListed }: { product: ProductType; wishListed?: b
           <Link to="#!" className="stretched-link text-decoration-none">
             <h6 className="mb-2 lh-sm line-clamp-3 product-name">{product.name}</h6>
           </Link>
-          {product.star && (
+          {product.rating && (
             <p className="fs-9">
+              <Rating readonly initialValue={product.rating} />
               {product.rated && (
                 <span className="text-500 fw-semi-bold ms-1">({product.rated} people rated)</span>
               )}
@@ -51,13 +54,20 @@ const Product = ({ product, wishListed }: { product: ProductType; wishListed?: b
           {product.extra2 && (
             <p className={classNames(product.extra2Class, 'fs-9')}>{product.extra2}</p>
           )}
-          {product.salePrice && product.price ? (
-            <div className="d-flex align-items-center mb-1">
-              <p className="me-2 text-900 text-decoration-line-through mb-0">{product.price}</p>
-              <h3 className="text-1100 mb-0">${product.salePrice}</h3>
-            </div>
-          ) : (
-            <h3 className="text-1100">${product.salePrice}</h3>
+
+          {product.salePrice && (
+            <>
+              {product.price ? (
+                <div className="d-flex align-items-center mb-1">
+                  <p className="me-2 text-900 text-decoration-line-through mb-0">
+                    {currencyFormat(product.price)}
+                  </p>
+                  <h3 className="text-1100 mb-0">{currencyFormat(product.salePrice)}</h3>
+                </div>
+              ) : (
+                <h3 className="text-1100">{currencyFormat(product.salePrice)}</h3>
+              )}
+            </>
           )}
 
           {product.colors && (
@@ -83,4 +93,4 @@ const Product = ({ product, wishListed }: { product: ProductType; wishListed?: b
   );
 };
 
-export default Product;
+export default ProductCard;

@@ -8,8 +8,7 @@ const EcomGiftItemsBanner = () => {
       <div
         className="bg-holder banner-bg"
         style={{
-          backgroundImage: `url(${giftItemsBannerBg})`,
-          backgroundPosition: 'bottom right'
+          backgroundImage: `url(${giftItemsBannerBg})`
         }}
       />
       <div className="position-relative banner-text text-md-center light">

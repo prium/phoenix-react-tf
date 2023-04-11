@@ -4,6 +4,17 @@ import product3 from 'assets/img/products/3.png';
 import product4 from 'assets/img/products/4.png';
 import product5 from 'assets/img/products/5.png';
 import product6 from 'assets/img/products/6.png';
+import product7 from 'assets/img/products/7.png';
+import product8 from 'assets/img/products/8.png';
+import product10 from 'assets/img/products/10.png';
+import product12 from 'assets/img/products/12.png';
+import product16 from 'assets/img/products/16.png';
+import product17 from 'assets/img/products/17.png';
+import product18 from 'assets/img/products/18.png';
+import product24 from 'assets/img/products/24.png';
+import product25 from 'assets/img/products/25.png';
+import product26 from 'assets/img/products/26.png';
+import product27 from 'assets/img/products/27.png';
 
 type Category = {
   title: string;
@@ -18,16 +29,17 @@ export type Product = {
   id: number;
   image: string;
   name: string;
-  star: number;
-  rated: number;
-  price: string;
-  salePrice: string;
+  rating: number;
+  rated?: number;
+  price?: number;
+  salePrice?: number;
   colors?: number;
   extra?: string;
   extraClass?: string;
   extra2?: string;
   extra2Class?: string;
   verified?: boolean;
+  wishListed?: boolean;
   offer?: string;
   dealEndTime?: string;
 };
@@ -233,15 +245,15 @@ export const categories: Category[] = [
   }
 ];
 
-export const products: Product[] = [
+export const topDealsProducts: Product[] = [
   {
     id: 1,
     image: product6,
     name: 'PlayStation 5 DualSense Wireless Controller',
-    star: 5,
+    rating: 5,
     rated: 67,
-    price: '125.00',
-    salePrice: '89.00',
+    price: 125,
+    salePrice: 89.0,
     colors: 2,
     extra: 'dbrand skin available',
     extraClass: 'text-1000 fw-bold mb-2'
@@ -251,21 +263,20 @@ export const products: Product[] = [
     image: product1,
     name: 'Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management & Skin Temperature Trends, Carbon/Graphite, One Size (S & L Bands)',
     verified: true,
-    star: 5,
+    rating: 5,
     rated: 74,
-    price: '49.99',
-    salePrice: '34.99',
-    offer: '16%',
+    price: 49.99,
+    salePrice: 34.99,
     dealEndTime: 'days'
   },
   {
     id: 3,
     image: product2,
     name: 'iPhone 13 pro max-Pacific Blue, 128GB storage',
-    star: 5,
+    rating: 5,
     rated: 33,
-    price: '899.99',
-    salePrice: '850.99',
+    price: 899.99,
+    salePrice: 850.99,
     colors: 5,
     extra: 'Stock limited',
     extraClass: 'text-1000 fw-bold mb-2'
@@ -274,10 +285,10 @@ export const products: Product[] = [
     id: 4,
     image: product3,
     name: 'Apple MacBook Pro 13 inch-M1-8/256GB-Space Gray',
-    star: 5,
+    rating: 5,
     rated: 97,
-    price: '1299.00',
-    salePrice: '1149.00',
+    price: 1299.0,
+    salePrice: 1149.0,
     colors: 2,
     extra: 'Apple care included',
     extraClass: 'text-1000 fw-bold mb-2'
@@ -286,10 +297,10 @@ export const products: Product[] = [
     id: 5,
     image: product4,
     name: 'Apple iMac 24" 4K Retina Display M1 8 Core CPU, 7 Core GPU, 256GB SSD, Green (MJV83ZP/A) 2021',
-    star: 5,
+    rating: 5,
     rated: 134,
-    price: '1499.00',
-    salePrice: '1399.00',
+    price: 1499,
+    salePrice: 1399,
     colors: 7,
     extra: 'Exchange with kidney',
     extraClass: 'text-1000 fw-bold mb-2'
@@ -298,10 +309,141 @@ export const products: Product[] = [
     id: 6,
     image: product5,
     name: 'Razer Kraken v3 x Wired 7.1 Surroung Sound Gaming headset',
-    star: 5,
+    rating: 5,
     rated: 59,
-    price: '59.00',
-    salePrice: '59.00',
+    salePrice: 59,
     colors: 2
+  }
+];
+
+export const topElectronicProducts: Product[] = [
+  {
+    id: 7,
+    image: product5,
+    name: 'Razer Kraken v3 x Wired 7.1 Surroung Sound Gaming headset',
+    rating: 5,
+    rated: 59,
+    salePrice: 59,
+    colors: 2
+  },
+  {
+    id: 8,
+    image: product7,
+    name: '2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray',
+    rating: 5,
+    rated: 13,
+    salePrice: 799,
+    colors: 2
+  },
+  {
+    id: 9,
+    image: product12,
+    name: 'HORI Racing Wheel Apex for PlayStation 4/3, and PC',
+    rating: 5,
+    rated: 64,
+    salePrice: 299,
+    colors: 1,
+    extra: 'Leather cover add-on available',
+    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extra2: 'supports Windows 11',
+    extra2Class: 'text-700 fs--1 mb-2'
+  },
+  {
+    id: 10,
+    image: product1,
+    name: 'Amazfit T-Rex Pro Smart Watch with GPS, Outdoor Fitness Watch for Men, Military Standard Certified',
+    verified: true,
+    wishListed: true,
+    rating: 5,
+    rated: 32,
+    salePrice: 20,
+    dealEndTime: '24 hours'
+  },
+  {
+    id: 11,
+    image: product16,
+    name: 'Apple AirPods Pro',
+    rating: 5,
+    rated: 39,
+    salePrice: 59,
+    colors: 3,
+    extra: 'Free with iPhone 5s',
+    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extra2: 'Ships to Canada',
+    extra2Class: 'text-700 fs--1 mb-2'
+  },
+  {
+    id: 12,
+    image: product10,
+    name: 'Apple Magic Mouse (Wireless, Rechargable) - Silver',
+    rating: 1,
+    rated: 6,
+    salePrice: 89,
+    colors: 2,
+    extra: 'Bundle available',
+    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extra2: 'Charger not included',
+    extra2Class: 'text-700 fs--1 mb-2'
+  },
+  {
+    id: 13,
+    name: 'Amazon Basics Matte Black Wired Keyboard - US Layout (QWERTY)',
+    image: product8,
+    salePrice: 98,
+    rating: 3,
+    rated: 7,
+    colors: 1
+  }
+];
+
+export const bestOfferProducts: Product[] = [
+  {
+    id: 14,
+    image: product25,
+    name: 'RESPAWN 200 Racing Style Gaming Chair, in Gray RSP 200 GRY',
+    offer: '35%',
+    rating: 5
+  },
+  {
+    id: 15,
+    image: product27,
+    name: 'LEVOIT Humidifiers for Bedroom Large Room 6L Warm and Cool Mist for...',
+    offer: '18%',
+    rating: 4
+  },
+  {
+    id: 16,
+    image: product26,
+    name: 'NETGEAR Nighthawk Pro Gaming XR500 Wi-Fi Router with 4 Ethernet Ports...',
+    offer: '15%',
+    rating: 5
+  },
+  {
+    id: 17,
+    image: product18,
+    name: 'Rachael Ray Cucina Bakeware Set Includes Nonstick Bread Baking Cookie Sheet...',
+    offer: '20%',
+    rating: 3.5
+  },
+  {
+    id: 18,
+    image: product17,
+    name: 'Xbox Series S',
+    offer: '12%',
+    rating: 5
+  },
+  {
+    id: 19,
+    image: product24,
+    name: 'FURINNO Computer Writing Desk, Walnut',
+    offer: '16%',
+    rating: 5
+  },
+  {
+    id: 20,
+    name: 'Seagate Portable 2TB External Hard Drive Portable HDD',
+    image: product18,
+    offer: '15%',
+    rating: 4
   }
 ];

@@ -85,7 +85,7 @@ const EcomCategoryNavs = () => {
   return (
     <div className="d-flex justify-content-between">
       {categories.map(category => (
-        <EcomCategoryNavItem category={category} />
+        <EcomCategoryNavItem key={category.label} category={category} />
       ))}
     </div>
   );

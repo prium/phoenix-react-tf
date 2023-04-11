@@ -66,3 +66,16 @@ export const getPastDates = (duration: 'week' | 'month' | 'year' | number): Date
   const startDate = new Date(new Date().setDate(date.getDate() - (days - 1)));
   return getDates(startDate, endDate);
 };
+
+export const currencyFormat = (
+  amount: number,
+  currency: string = 'usd',
+  maximumFractionDigits: number = 2,
+  notation?: 'standard' | 'compact'
+) =>
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency,
+    notation,
+    maximumFractionDigits
+  }).format(amount);

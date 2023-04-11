@@ -1,16 +1,14 @@
 import EcomCategoryNavs from 'components/navs/EcomCategoryNavs';
-import React from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-
-import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
 import EcomWhopingBanner from 'components/banners/EcomWhopingBanner';
 import EcomGiftItemsBanner from 'components/banners/EcomGiftItemsBanner';
 import EcomBestInMarketBanner from 'components/banners/EcomBestInMarketBanner';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { products } from 'data/ecommerce';
-import Product from 'components/common/Product';
-import Swiper from 'components/base/Swiper';
-import { SwiperSlide } from 'swiper/react';
+import { bestOfferProducts, topDealsProducts, topElectronicProducts } from 'data/ecommerce';
+import ecom4 from 'assets/img/e-commerce/4.png';
+import EcomTopDeals from 'components/sliders/EcomTopDeals';
+import EcomTopElectronics from 'components/sliders/EcomTopElectronics';
+import EcomBestOffers from 'components/sliders/EcomBestOffers';
+import EcomBecomeMember from 'components/cta/EcomBecomeMember';
 
 const Homepage = () => {
   return (
@@ -35,49 +33,26 @@ const Homepage = () => {
           </Row>
           <Row className="g-4 mb-6">
             <Col xs={12} lg={9} xxl={10}>
-              <div className="d-flex flex-between-center mb-3">
-                <div className="d-flex">
-                  <FontAwesomeIcon icon="bolt" className="text-warning fs-6" />
-                  <h3 className="mx-2">Top Deals today</h3>
-                  <FontAwesomeIcon icon="bolt" className="text-warning fs-6" />
-                </div>
-                <Link to="#!" className="btn btn-link btn-lg p-0 d-none d-md-block">
-                  Explore more
-                  <FontAwesomeIcon icon="chevron-right" className="fs-9 ms-1" />
-                </Link>
+              <EcomTopDeals products={topDealsProducts} />
+            </Col>
+            <Col lg={3} xxl={2} className="d-none d-lg-block">
+              <div className="h-100 position-relative rounded-3 overflow-hidden">
+                <div
+                  className="bg-holder product-bg"
+                  style={{
+                    backgroundImage: `url(${ecom4})`
+                  }}
+                />
               </div>
-              <Swiper
-                options={{
-                  slidesPerView: 1,
-                  spaceBetween: 16,
-                  breakpoints: {
-                    450: {
-                      slidesPerView: 2,
-                      spaceBetween: 16
-                    },
-                    768: {
-                      slidesPerView: 3,
-                      spaceBetween: 20
-                    },
-                    1200: {
-                      slidesPerView: 4,
-                      spaceBetween: 16
-                    },
-                    1540: {
-                      slidesPerView: 5,
-                      spaceBetween: 16
-                    }
-                  }
-                }}
-              >
-                {products.map(product => (
-                  <SwiperSlide key={product.id}>
-                    <Product product={product} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
             </Col>
           </Row>
+          <div className="mb-6">
+            <EcomTopElectronics products={topElectronicProducts} />
+          </div>
+          <div className="mb-6">
+            <EcomBestOffers products={bestOfferProducts} />
+          </div>
+          <EcomBecomeMember />
         </Container>
       </section>
     </div>
