@@ -135,7 +135,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'product-details',
                 path: 'apps/e-commerce/landing/product-details',
-                pathName: 'e-commerce-fe-product-details'
+                pathName: 'e-commerce-fe-product-details',
+                active: true
               },
               {
                 name: 'products-filter',

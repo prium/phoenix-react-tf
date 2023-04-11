@@ -61,6 +61,7 @@ import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
 import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
+import ProductDetails from 'pages/apps/e-commerce/customer/ProductDetails';
 
 const routes = [
   {
@@ -342,10 +343,15 @@ const routes = [
   },
   {
     element: <EcommerceLayout />,
+    path: '/apps/e-commerce/landing/',
     children: [
       {
-        path: '/apps/e-commerce/landing/homepage',
+        path: 'homepage',
         element: <Homepage />
+      },
+      {
+        path: 'product-details',
+        element: <ProductDetails />
       }
     ]
   }
