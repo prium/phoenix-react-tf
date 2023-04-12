@@ -1,5 +1,13 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from 'components/base/Button';
+import Rating from 'components/base/Rating';
+import ProductColorNav from 'components/navs/ProductColorNav';
+import { currencyFormat } from 'helpers/utils';
 import React from 'react';
-import { Breadcrumb } from 'react-bootstrap';
+import { Breadcrumb, Col, Row, Stack } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ProductGallery from './ProductGallery';
+import ProductDescription from 'components/modules/e-commerce/ProductDescription';
 
 const ProductDetails = () => {
   return (
@@ -14,6 +22,7 @@ const ProductDetails = () => {
               Hills
             </Breadcrumb.Item>
           </Breadcrumb>
+          <ProductDescription />
         </div>
       </section>
     </div>

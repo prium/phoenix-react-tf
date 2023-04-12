@@ -17,9 +17,13 @@ import {
   faCopy,
   faEllipsis,
   faHeart,
+  faMinus,
   faPalette,
   faPlus,
   faSearch,
+  faShare,
+  faShareAlt,
+  faShoppingCart,
   faStar,
   faTimes,
   faTrash,
@@ -39,6 +43,7 @@ library.add(
   faTimes,
   faArrowsRotate,
   faCopy,
+  faMinus,
   faPlus,
   faTrash,
   faTrashAlt,
@@ -58,5 +63,8 @@ library.add(
   faTwitterSquare,
   faBolt,
   faHeart,
-  farHeart
+  farHeart,
+  faShare,
+  faShareAlt,
+  faShoppingCart
 );
