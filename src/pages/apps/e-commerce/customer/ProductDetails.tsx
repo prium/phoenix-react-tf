@@ -8,6 +8,9 @@ import { Breadcrumb, Col, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ProductGallery from './ProductGallery';
 import ProductDescription from 'components/modules/e-commerce/ProductDescription';
+import ProductDetailsTab from 'components/modules/e-commerce/ProductDetailsTab';
+import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCard';
+import { suggestedProducts } from 'data/ecommerce';
 
 const ProductDetails = () => {
   return (
@@ -23,6 +26,19 @@ const ProductDetails = () => {
             </Breadcrumb.Item>
           </Breadcrumb>
           <ProductDescription />
+        </div>
+      </section>
+
+      <section className="py-0">
+        <div className="container-small">
+          <Row className="row gx-3 gy-7 ">
+            <Col xs={12} lg={7} xl={8}>
+              <ProductDetailsTab />
+            </Col>
+            <Col xs={12} lg={5} xl={4}>
+              <UsuallyBoughtTogetherCard products={suggestedProducts} className="mt-9" />
+            </Col>
+          </Row>
         </div>
       </section>
     </div>

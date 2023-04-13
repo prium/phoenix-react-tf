@@ -44,6 +44,13 @@ import orangeFront from 'assets/img/products/details/orange_front.png';
 import orangeBack from 'assets/img/products/details/orange_back.png';
 import orangeSide from 'assets/img/products/details/orange_side.png';
 
+import review11 from 'assets/img/e-commerce/review-11.jpg';
+import review12 from 'assets/img/e-commerce/review-12.jpg';
+import review13 from 'assets/img/e-commerce/review-13.jpg';
+import review14 from 'assets/img/e-commerce/review-14.jpg';
+import review15 from 'assets/img/e-commerce/review-15.jpg';
+import review16 from 'assets/img/e-commerce/review-16.jpg';
+
 type Category = {
   title: string;
   icon: string;
@@ -70,6 +77,27 @@ export type Product = {
   wishListed?: boolean;
   offer?: string;
   dealEndTime?: string;
+};
+
+export type SuggestedProductType = {
+  id: number;
+  checked: boolean;
+  img: string;
+  name: string;
+  price: number;
+};
+
+export type ProductReviewType = {
+  star: number;
+  customer: string;
+  date: string;
+  review: string;
+  images?: string[];
+  reply?: {
+    text: string;
+    from: string;
+    time: string;
+  };
 };
 
 export const categories: Category[] = [
@@ -424,6 +452,8 @@ export const topElectronicProducts: Product[] = [
   }
 ];
 
+export const similarProducts: Product[] = [];
+
 export const bestOfferProducts: Product[] = [
   {
     id: 14,
@@ -525,5 +555,65 @@ export const colorVariants: Variant[] = [
     variant: 'Orange',
     thumb: orangeFront,
     images: [orangeFront, orangeBack, orangeSide]
+  }
+];
+
+export const suggestedProducts: SuggestedProductType[] = [
+  {
+    id: 1,
+    checked: true,
+    img: product2,
+    name: 'iPhone 13 pro max-Pacific Blue- 128GB',
+    price: 899.99
+  },
+  {
+    id: 2,
+    checked: true,
+    img: product16,
+    name: 'Apple AirPods Pro',
+    price: 59.0
+  },
+  {
+    id: 3,
+    checked: false,
+    img: product10,
+    name: 'Apple Magic Mouse (Wireless, Rechargable) - Silver, Worst mouse ever',
+    price: 89.0
+  }
+];
+
+export const productReviews: ProductReviewType[] = [
+  {
+    star: 5,
+    customer: 'Zingko Kudobum',
+    date: '35 mins ago',
+    review: '100% satisfied',
+    images: [review11, review12, review13],
+    reply: {
+      text: 'Thank you for your valuable feedback',
+      from: 'store',
+      time: '5 mins ago'
+    }
+  },
+  {
+    star: 4,
+    customer: 'Piere Auguste Renoir',
+    date: '23 Oct, 12:09 PM',
+    review:
+      "Since the spring loaded event, I've been wanting an iMac, and it's exceeded my expectations. The screen is clear, the colors are vibrant (I got the blue one! ), and the performance is more than adequate for my needs as a college student. That's how good it is."
+  },
+  {
+    star: 3.5,
+    customer: 'Abel Kablmann ',
+    date: '21 Oct, 12:00 PM',
+    review:
+      "Over the years, I've preferred Apple products. My job has allowed me to use Windows products on laptops and PCs. I've owned Windows laptops and desktops for home use in the past and will never use them again."
+  },
+  {
+    star: 5,
+    customer: 'Pennywise Alfred',
+    date: '35 mins ago',
+    review: 'Nice and beautiful product.',
+    images: [review14, review15, review16]
   }
 ];

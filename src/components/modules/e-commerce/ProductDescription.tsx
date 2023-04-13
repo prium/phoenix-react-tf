@@ -34,7 +34,7 @@ const ProductDescription = () => {
           <Button
             variant="warning"
             size="lg"
-            className="rounded-pill w-100 me-3 px-2 px-sm-4 fs--1 fs-sm-0"
+            className="rounded-pill w-100 px-2 px-sm-4 fs--1 fs-sm-0"
           >
             <FontAwesomeIcon icon="shopping-cart" className="me-2" />
             Add to cart

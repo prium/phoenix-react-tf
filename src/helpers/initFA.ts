@@ -20,11 +20,14 @@ import {
   faMinus,
   faPalette,
   faPlus,
+  faReply,
   faSearch,
   faShare,
   faShareAlt,
   faShoppingCart,
   faStar,
+  faThumbsDown,
+  faThumbsUp,
   faTimes,
   faTrash,
   faTrashAlt
@@ -66,5 +69,8 @@ library.add(
   farHeart,
   faShare,
   faShareAlt,
-  faShoppingCart
+  faShoppingCart,
+  faReply,
+  faThumbsUp,
+  faThumbsDown
 );
