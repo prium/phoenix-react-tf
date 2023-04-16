@@ -146,7 +146,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'cart',
                 path: 'apps/e-commerce/landing/cart',
-                pathName: 'e-commerce-fe-cart'
+                pathName: 'e-commerce-fe-cart',
+                active: true
               },
               {
                 name: 'checkout',

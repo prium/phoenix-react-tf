@@ -622,3 +622,47 @@ export const productReviews: ProductReviewType[] = [
     images: [review14, review15, review16]
   }
 ];
+
+export interface CartItemType {
+  id: number | string;
+  name: string;
+  image: string;
+  color: string;
+  price: number;
+  size: string;
+  quantity: number;
+  total: number;
+}
+
+export const cartItems: CartItemType[] = [
+  {
+    id: 1,
+    name: 'Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management & Skin Temperature Trends, Carbon/Graphite, One Size (S & L Bands)',
+    image: product1,
+    color: 'Glossy black',
+    price: 199,
+    size: 'XL',
+    quantity: 2,
+    total: 398
+  },
+  {
+    id: 2,
+    name: 'iPhone 13 pro max-Pacific Blue-128GB storage',
+    image: product2,
+    color: 'Glossy black',
+    price: 150,
+    size: 'XL',
+    quantity: 2,
+    total: 300
+  },
+  {
+    id: 3,
+    name: 'Apple MacBook Pro 13 inch-M1-8/256GB-space',
+    image: product3,
+    color: 'Glossy Golden',
+    price: 65,
+    size: '34mm',
+    quantity: 2,
+    total: 130
+  }
+];

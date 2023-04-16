@@ -9,32 +9,28 @@ import Section from 'components/base/Section';
 const ProductDetails = () => {
   return (
     <div className="pt-5 mb-9">
-      <section className="py-0">
-        <div className="container-small">
-          <Breadcrumb className="mb-0">
-            <Breadcrumb.Item href="#!">Fashion</Breadcrumb.Item>
-            <Breadcrumb.Item href="#!">Womens fashion</Breadcrumb.Item>
-            <Breadcrumb.Item href="#!">Footwear</Breadcrumb.Item>
-            <Breadcrumb.Item href="#!" active>
-              Hills
-            </Breadcrumb.Item>
-          </Breadcrumb>
-          <ProductDescription />
-        </div>
-      </section>
+      <Section small className="py-0">
+        <Breadcrumb className="mb-0">
+          <Breadcrumb.Item href="#!">Fashion</Breadcrumb.Item>
+          <Breadcrumb.Item href="#!">Womens fashion</Breadcrumb.Item>
+          <Breadcrumb.Item href="#!">Footwear</Breadcrumb.Item>
+          <Breadcrumb.Item href="#!" active>
+            Hills
+          </Breadcrumb.Item>
+        </Breadcrumb>
+        <ProductDescription />
+      </Section>
 
-      <section className="py-0">
-        <div className="container-small">
-          <Row className="gx-3 gy-7 mb-9">
-            <Col xs={12} lg={7} xl={8}>
-              <ProductDetailsTab />
-            </Col>
-            <Col xs={12} lg={5} xl={4}>
-              <UsuallyBoughtTogetherCard products={suggestedProducts} className="mt-9" />
-            </Col>
-          </Row>
-        </div>
-      </section>
+      <Section small className="py-0">
+        <Row className="gx-3 gy-7 mb-9">
+          <Col xs={12} lg={7} xl={8}>
+            <ProductDetailsTab />
+          </Col>
+          <Col xs={12} lg={5} xl={4}>
+            <UsuallyBoughtTogetherCard products={suggestedProducts} className="mt-9" />
+          </Col>
+        </Row>
+      </Section>
 
       <Section className="py-0">
         <SimilarProducts products={topElectronicProducts} />

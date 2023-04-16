@@ -62,6 +62,7 @@ import Ecommerce from 'pages/dashboard/ecommerce';
 import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
 import ProductDetails from 'pages/apps/e-commerce/customer/ProductDetails';
+import Cart from 'pages/apps/e-commerce/customer/Cart';
 
 const routes = [
   {
@@ -352,6 +353,10 @@ const routes = [
       {
         path: 'product-details',
         element: <ProductDetails />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
       }
     ]
   }
