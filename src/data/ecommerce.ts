@@ -88,6 +88,7 @@ export type SuggestedProductType = {
 };
 
 export type ProductReviewType = {
+  id: number;
   star: number;
   customer: string;
   date: string;
@@ -508,51 +509,51 @@ export const bestOfferProducts: Product[] = [
 
 type Variant = {
   id: string;
-  variant: string;
+  name: string;
   thumb: string;
   images: string[];
 };
 
-export const colorVariants: Variant[] = [
+export const productColorVariants: Variant[] = [
   {
     id: 'blue',
-    variant: 'Blue',
+    name: 'Blue',
     thumb: blueFront,
     images: [blueFront, blueBack, blueSide]
   },
   {
     id: 'red',
-    variant: 'Red',
+    name: 'Red',
     thumb: redFront,
     images: [redFront, redBack, redSide]
   },
   {
     id: 'green',
-    variant: 'Green',
+    name: 'Green',
     thumb: greenFront,
     images: [greenFront, greenBack, greenSide]
   },
   {
     id: 'purple',
-    variant: 'Purple',
+    name: 'Purple',
     thumb: purpleFront,
     images: [purpleFront, purpleBack, purpleSide]
   },
   {
     id: 'silver',
-    variant: 'Silver',
+    name: 'Silver',
     thumb: silverFront,
     images: [silverFront, silverBack, silverSide]
   },
   {
     id: 'yellow',
-    variant: 'Yellow',
+    name: 'Yellow',
     thumb: yellowFront,
     images: [yellowFront, yellowBack, yellowSide]
   },
   {
     id: 'orange',
-    variant: 'Orange',
+    name: 'Orange',
     thumb: orangeFront,
     images: [orangeFront, orangeBack, orangeSide]
   }
@@ -584,6 +585,7 @@ export const suggestedProducts: SuggestedProductType[] = [
 
 export const productReviews: ProductReviewType[] = [
   {
+    id: 1,
     star: 5,
     customer: 'Zingko Kudobum',
     date: '35 mins ago',
@@ -596,6 +598,7 @@ export const productReviews: ProductReviewType[] = [
     }
   },
   {
+    id: 2,
     star: 4,
     customer: 'Piere Auguste Renoir',
     date: '23 Oct, 12:09 PM',
@@ -603,6 +606,7 @@ export const productReviews: ProductReviewType[] = [
       "Since the spring loaded event, I've been wanting an iMac, and it's exceeded my expectations. The screen is clear, the colors are vibrant (I got the blue one! ), and the performance is more than adequate for my needs as a college student. That's how good it is."
   },
   {
+    id: 3,
     star: 3.5,
     customer: 'Abel Kablmann ',
     date: '21 Oct, 12:00 PM',
@@ -610,6 +614,7 @@ export const productReviews: ProductReviewType[] = [
       "Over the years, I've preferred Apple products. My job has allowed me to use Windows products on laptops and PCs. I've owned Windows laptops and desktops for home use in the past and will never use them again."
   },
   {
+    id: 4,
     star: 5,
     customer: 'Pennywise Alfred',
     date: '35 mins ago',

@@ -4,11 +4,11 @@ import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
 import { ProductReviewType } from 'data/ecommerce';
 import React from 'react';
-import { Stack } from 'react-bootstrap';
+import { Col, Dropdown, Row } from 'react-bootstrap';
 
 const ProductReview = ({ review }: { review: ProductReviewType }) => {
   return (
-    <div className="mb-4 hover-actions-trigger btn-reveal-triggerr">
+    <div className="mb-4 hover-actions-trigger btn-reveal-trigger">
       <div className="d-flex justify-content-between mb-2">
         <div className="d-flex align-items-center">
           <Rating readonly initialValue={review.star} />
@@ -17,6 +17,23 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
             {review.customer}
           </h5>
         </div>
+        <Dropdown className="position-static" align="end">
+          <Dropdown.Toggle
+            variant=""
+            size="sm"
+            className="btn-reveal dropdown-caret-none transition-none"
+          >
+            <FontAwesomeIcon icon="ellipsis" className="fs-10" />
+          </Dropdown.Toggle>
+          <Dropdown.Menu align="end" className="py-2">
+            <Dropdown.Item eventKey="1">View</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Export</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item eventKey="4" className="text-danger">
+              Remove
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
       <p className="text-700 fs-9 mb-1">{review.date}</p>
       <p
@@ -28,11 +45,13 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
         {review.review}
       </p>
       {review.images && (
-        <Stack gap={2} direction="horizontal" className="mb-2">
+        <Row className="g-2 mb-2">
           {review.images.map(image => (
-            <img src={image} key={image} alt="" className="w-100" height={164} />
+            <Col xs="auto" key={image}>
+              <img src={image} key={image} alt="" className="w-100" height={164} />
+            </Col>
           ))}
-        </Stack>
+        </Row>
       )}
 
       {review.reply && (

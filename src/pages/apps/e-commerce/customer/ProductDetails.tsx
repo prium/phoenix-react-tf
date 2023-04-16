@@ -1,16 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from 'components/base/Button';
-import Rating from 'components/base/Rating';
-import ProductColorNav from 'components/navs/ProductColorNav';
-import { currencyFormat } from 'helpers/utils';
-import React from 'react';
-import { Breadcrumb, Col, Row, Stack } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import ProductGallery from './ProductGallery';
+import { Breadcrumb, Col, Row } from 'react-bootstrap';
 import ProductDescription from 'components/modules/e-commerce/ProductDescription';
 import ProductDetailsTab from 'components/modules/e-commerce/ProductDetailsTab';
 import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCard';
-import { suggestedProducts } from 'data/ecommerce';
+import { suggestedProducts, topElectronicProducts } from 'data/ecommerce';
+import SimilarProducts from 'components/sliders/SimilarProducts';
+import Section from 'components/base/Section';
 
 const ProductDetails = () => {
   return (
@@ -31,7 +25,7 @@ const ProductDetails = () => {
 
       <section className="py-0">
         <div className="container-small">
-          <Row className="row gx-3 gy-7 ">
+          <Row className="gx-3 gy-7 mb-9">
             <Col xs={12} lg={7} xl={8}>
               <ProductDetailsTab />
             </Col>
@@ -41,6 +35,10 @@ const ProductDetails = () => {
           </Row>
         </div>
       </section>
+
+      <Section className="py-0">
+        <SimilarProducts products={topElectronicProducts} />
+      </Section>
     </div>
   );
 };

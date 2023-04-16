@@ -1,15 +1,12 @@
-//@ts-nocheck
-
-// import Swiper from 'components/base/Swiper';
+// @ts-nocheck
 import { useBreakpoints } from 'providers/BreakpointsProvider';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   const { breakpoints } = useBreakpoints();
 
   return (

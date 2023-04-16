@@ -1,27 +1,26 @@
-// @ts-nocheck
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
 import ProductColorNav from 'components/navs/ProductColorNav';
-import { colorVariants } from 'data/ecommerce';
+import { productColorVariants } from 'data/ecommerce';
 import { currencyFormat } from 'helpers/utils';
-import ProductGallery from 'pages/apps/e-commerce/customer/ProductGallery';
-import React, { useMemo, useState } from 'react';
-import { Breadcrumb, Col, Row, Stack } from 'react-bootstrap';
+import ProductGallery from 'components/modules/e-commerce/ProductGallery';
+import { useMemo, useState } from 'react';
+import { Col, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import QuantityButton from 'components/common/QuantityButton';
 
 const ProductDescription = () => {
   const [selectedVariantKey, setSelectedVariantKey] = useState('blue');
 
   const selectedVariant = useMemo(() => {
-    return colorVariants.find(variant => variant.id === selectedVariantKey);
+    return productColorVariants.find(variant => variant.id === selectedVariantKey);
   }, [selectedVariantKey]);
 
   return (
-    // <div className="btn btn-lg btn-outline-warning "></div>
     <Row className="g-5 mb-5 mb-lg-8">
       <Col xs={12} lg={6}>
-        <ProductGallery images={selectedVariant?.images} />
+        {selectedVariant && <ProductGallery images={selectedVariant.images} />}
         <div className="d-flex">
           <Button
             variant="outline-warning"
@@ -87,7 +86,7 @@ const ProductDescription = () => {
           <div>
             <div className="mb-3">
               <p className="fw-semi-bold mb-2 text-900">
-                Color :<span className="text-1100">Blue</span>
+                Color : <span className="text-1100">{selectedVariant?.name}</span>
               </p>
               <ProductColorNav
                 selectedVariantKey={selectedVariantKey}
@@ -111,21 +110,7 @@ const ProductDescription = () => {
               <div className="col-12 col-sm">
                 <p className="fw-semi-bold mb-2 text-900">Quantity : </p>
                 <div className="d-flex justify-content-between align-items-end">
-                  <div className="d-flex flex-between-center">
-                    <Button variant="phoenix-primary" className="px-3">
-                      <FontAwesomeIcon icon="minus" />
-                    </Button>
-                    <input
-                      type="number"
-                      className="form-control text-center input-spin-none bg-transparent border-0 outline-none"
-                      style={{ width: 50 }}
-                      min="1"
-                      defaultValue={2}
-                    />
-                    <Button variant="phoenix-primary" className="px-3">
-                      <FontAwesomeIcon icon="plus" />
-                    </Button>
-                  </div>
+                  <QuantityButton defaultValue={2} />
                   <Button variant="phoenix-primary" className="px-3 border-0">
                     <FontAwesomeIcon icon="share-alt" className="fs-7" />
                   </Button>

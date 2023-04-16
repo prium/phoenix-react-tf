@@ -1,13 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SuggestedProductType } from 'data/ecommerce';
 import { currencyFormat } from 'helpers/utils';
+import { useState } from 'react';
 import { Button, Card, Form, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ProdutListItem = ({ product }: { product: SuggestedProductType }) => {
+const ProductListItem = ({ product }: { product: SuggestedProductType }) => {
+  const [checked, setChecked] = useState(product.checked);
   return (
     <div className="d-flex align-items-center">
-      <Form.Check checked={product.checked} className="me-2" />
+      <Form.Check
+        checked={checked}
+        className="me-2"
+        onChange={e => {
+          setChecked(e.target.checked);
+        }}
+      />
       <img className="border rounded" src={product.img} width="53" alt="" />
       <div className="ms-2">
         <Link className="fs-9 fw-bold line-clamp-2 mb-2" to="#!">
@@ -38,7 +46,7 @@ const UsuallyBoughtTogetherCard = ({
         </div>
         <Stack className="border-dashed border-y py-4 gap-5 mb-3">
           {products.map(product => (
-            <ProdutListItem product={product} key={product.id} />
+            <ProductListItem product={product} key={product.id} />
           ))}
         </Stack>
         <div className="d-flex align-items-end justify-content-between">

@@ -30,7 +30,8 @@ import {
   faThumbsUp,
   faTimes,
   faTrash,
-  faTrashAlt
+  faTrashAlt,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faGulp, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faStar as farStar, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
@@ -72,5 +73,6 @@ library.add(
   faShoppingCart,
   faReply,
   faThumbsUp,
-  faThumbsDown
+  faThumbsDown,
+  faXmark
 );

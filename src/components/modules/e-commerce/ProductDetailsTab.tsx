@@ -76,7 +76,7 @@ const ProductDetailsTab = () => {
             </Card.Header>
             <Card.Body>
               {productReviews.map(review => (
-                <ProductReview review={review} />
+                <ProductReview key={review.id} review={review} />
               ))}
 
               <Pagination className="mb-0 justify-content-center">
