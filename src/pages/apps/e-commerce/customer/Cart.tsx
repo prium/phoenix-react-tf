@@ -1,4 +1,5 @@
 import Section from 'components/base/Section';
+import EcomCardSummaryCard from 'components/cards/EcomCardSummaryCard';
 import EcomCartTable from 'components/tables/EcomCartTable';
 import { cartItems } from 'data/ecommerce';
 import React from 'react';
@@ -8,7 +9,7 @@ const Cart = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-0">
+        <Breadcrumb className="mb-2">
           <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
           <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
           <Breadcrumb.Item href="#!" active>
@@ -19,6 +20,9 @@ const Cart = () => {
         <Row className="g-5">
           <Col xs={12} lg={8}>
             <EcomCartTable products={cartItems} />
+          </Col>
+          <Col xs={12} lg={4}>
+            <EcomCardSummaryCard />
           </Col>
         </Row>
       </Section>

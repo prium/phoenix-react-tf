@@ -8,10 +8,11 @@ import ProductGallery from 'components/modules/e-commerce/ProductGallery';
 import { useMemo, useState } from 'react';
 import { Col, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import QuantityButton from 'components/common/QuantityButton';
+import QuantityButtons from 'components/common/QuantityButtons';
 
 const ProductDescription = () => {
   const [selectedVariantKey, setSelectedVariantKey] = useState('blue');
+  const [quantity, setQuantity] = useState(1);
 
   const selectedVariant = useMemo(() => {
     return productColorVariants.find(variant => variant.id === selectedVariantKey);
@@ -110,7 +111,7 @@ const ProductDescription = () => {
               <div className="col-12 col-sm">
                 <p className="fw-semi-bold mb-2 text-900">Quantity : </p>
                 <div className="d-flex justify-content-between align-items-end">
-                  <QuantityButton defaultValue={2} />
+                  <QuantityButtons quantity={quantity} setQuantity={setQuantity} />
                   <Button variant="phoenix-primary" className="px-3 border-0">
                     <FontAwesomeIcon icon="share-alt" className="fs-7" />
                   </Button>

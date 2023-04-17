@@ -67,15 +67,12 @@ export const getPastDates = (duration: 'week' | 'month' | 'year' | number): Date
   return getDates(startDate, endDate);
 };
 
-export const currencyFormat = (
-  amount: number,
-  currency: string = 'usd',
-  maximumFractionDigits: number = 2,
-  notation?: 'standard' | 'compact'
-) =>
-  new Intl.NumberFormat('en-US', {
+export const currencyFormat = (amount: number, options: Intl.NumberFormatOptions = {}) => {
+  return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency,
-    notation,
-    maximumFractionDigits
+    currency: 'usd',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+    ...options
   }).format(amount);
+};

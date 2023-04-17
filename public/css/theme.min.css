@@ -26726,6 +26726,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 
 .breadcrumb {
+  margin-bottom: 0;
   font-weight: 700;
 }
 
