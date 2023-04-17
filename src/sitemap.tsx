@@ -152,7 +152,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'checkout',
                 path: 'apps/e-commerce/landing/checkout',
-                pathName: 'e-commerce-fe-checkout'
+                pathName: 'e-commerce-fe-checkout',
+                active: true
               },
               {
                 name: 'shipping-info',

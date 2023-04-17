@@ -666,3 +666,27 @@ export const cartItems: CartItemType[] = [
     total: 130
   }
 ];
+
+export interface AddressTableDataType {
+  labelIcon: string;
+  label: string;
+  value: string;
+}
+
+export const shippingDetailsAddress: AddressTableDataType[] = [
+  {
+    labelIcon: 'user',
+    label: 'Name',
+    value: 'Shatinon Mekalan'
+  },
+  {
+    labelIcon: 'home',
+    label: 'Address',
+    value: 'Apt: 6/B, 192 Edsel Road, Van Nuys California, USA 96580'
+  },
+  {
+    labelIcon: 'phone',
+    label: 'Phone',
+    value: '818-414-4092'
+  }
+];
