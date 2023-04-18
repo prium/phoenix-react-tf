@@ -27908,7 +27908,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   color: var(--phoenix-navbar-vertical-caret-color);
   margin-left: -4px;
 }
-.collapse-indicator[aria-expanded=true] .toggle-icon {
+.collapse-indicator.collapsed .toggle-icon {
   transform: rotate(180deg);
 }
 
@@ -28529,7 +28529,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   top: 0;
   bottom: 0;
   transition: transform 0.3s ease-in-out;
-  z-index: 10;
+  z-index: 1045;
 }
 .phoenix-offcanvas.phoenix-offcanvas-fixed {
   position: fixed;

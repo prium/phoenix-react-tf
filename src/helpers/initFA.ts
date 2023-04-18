@@ -1,7 +1,9 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faAngleDown,
   faAngleLeft,
   faAngleRight,
+  faAngleUp,
   faAnglesLeft,
   faAnglesRight,
   faArrowUpRightFromSquare,
@@ -74,5 +76,7 @@ library.add(
   faReply,
   faThumbsUp,
   faThumbsDown,
-  faXmark
+  faXmark,
+  faAngleDown,
+  faAngleUp
 );

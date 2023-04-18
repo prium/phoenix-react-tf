@@ -64,6 +64,7 @@ import Homepage from 'pages/apps/e-commerce/customer/Homepage';
 import ProductDetails from 'pages/apps/e-commerce/customer/ProductDetails';
 import Cart from 'pages/apps/e-commerce/customer/Cart';
 import Checkout from 'pages/apps/e-commerce/customer/Checkout';
+import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
 
 const routes = [
   {
@@ -362,6 +363,10 @@ const routes = [
       {
         path: 'checkout',
         element: <Checkout />
+      },
+      {
+        path: 'products-filter',
+        element: <ProductsFilter />
       }
     ]
   }
