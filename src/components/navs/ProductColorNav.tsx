@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { Nav } from 'react-bootstrap';
 import blueFront from 'assets/img/products/details/blue_front.png';
 import blueBack from 'assets/img/products/details/blue_back.png';

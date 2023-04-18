@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import QuantityButtons from 'components/common/QuantityButtons';
-import { log } from 'console';
 import { CartItemType } from 'data/ecommerce';
 import { currencyFormat } from 'helpers/utils';
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

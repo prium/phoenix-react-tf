@@ -1,10 +1,12 @@
 import Button from 'components/base/Button';
 import Section from 'components/base/Section';
-import React from 'react';
-import { Breadcrumb, Col, Form, Row, Table } from 'react-bootstrap';
-import FeatherIcon from 'feather-icons-react';
+import { Breadcrumb, Col, Form, Row } from 'react-bootstrap';
 import EcomAddressTable from 'components/tables/EcomAddressTable';
 import { shippingDetailsAddress } from 'data/ecommerce';
+import DeliveryType from 'components/modules/e-commerce/checkout/DeliveryType';
+import { PaymentMethod } from 'components/modules/e-commerce/checkout/PaymentMethod';
+import { currencyFormat } from 'helpers/utils';
+import CheckoutSummaryCard from 'components/modules/e-commerce/checkout/CheckoutSummaryCard';
 
 const Checkout = () => {
   return (
@@ -38,47 +40,25 @@ const Checkout = () => {
               </Form.Check>
               <EcomAddressTable data={shippingDetailsAddress} />
               <hr className="my-6" />
-              <h3 className="mb-5">Delivery Type</h3>
-              <Row className="gy-6">
-                <Col xs={12} md={6}>
-                  <div>
-                    <div className="d-flex flex-wrap align-items-center mb-3">
-                      <Form.Check type="radio" id="free_shipping" className="mb-0">
-                        <Form.Check.Input type="radio" />
-                        <Form.Check.Label className="fs-8 text-900">Free Shipping</Form.Check.Label>
-                      </Form.Check>
-                      <span className="d-inline-block text-1100 fw-bold ms-2">$0.00</span>
-                    </div>
-                    <div className="ps-4">
-                      <h6 className="text-700 mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 className="text-info lh-base mb-0">Get Free Shipped products in Time!</h6>
-                    </div>
-                  </div>
+              <DeliveryType />
+              <hr className="my-6" />
+              <PaymentMethod />
+              <Row className="g-2 mb-5 mb-lg-0">
+                <Col md={8} lg={9}>
+                  <Button variant="primary" type="submit" className="w-100">
+                    Pay {currencyFormat(695.2)}
+                  </Button>
                 </Col>
-                <Col xs={12} md={6}>
-                  <div>
-                    <div className="d-flex flex-wrap align-items-center mb-3">
-                      <Form.Check type="radio" id="free_shipping" className="mb-0">
-                        <Form.Check.Input type="radio" />
-                        <Form.Check.Label className="fs-8 text-900">
-                          Two days Shipping
-                        </Form.Check.Label>
-                      </Form.Check>
-                      <span className="d-inline-block text-1100 fw-bold ms-2">$20.00</span>
-                    </div>
-                    <div className="ps-4">
-                      <h6 className="text-700 mb-2">Est. delivery:Jun 21 – Jul 20</h6>
-                      <h6 className="text-info lh-base mb-0">
-                        Everything faster with minimum shipping fee.
-                      </h6>
-                    </div>
-                  </div>
+                <Col md={4} lg={3}>
+                  <Button variant="phoenix-secondary" type="submit" className="w-100 text-nowrap">
+                    Save Order and Exit
+                  </Button>
                 </Col>
               </Row>
             </form>
           </Col>
           <Col xs={5} xl={4}>
-            <h1>jhhj</h1>
+            <CheckoutSummaryCard />
           </Col>
         </Row>
       </Section>
