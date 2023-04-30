@@ -165,7 +165,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'profile',
                 path: 'apps/e-commerce/landing/profile',
-                pathName: 'e-commerce-fe-profile'
+                pathName: 'e-commerce-fe-profile',
+                active: true
               },
               {
                 name: 'favourite-stores',

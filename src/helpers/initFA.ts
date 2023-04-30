@@ -10,6 +10,7 @@ import {
   faArrowsRotate,
   faBars,
   faBolt,
+  faCamera,
   faCaretRight,
   faCheck,
   faChevronDown,
@@ -17,8 +18,11 @@ import {
   faChevronRight,
   faClock,
   faCopy,
+  faEdit,
   faEllipsis,
   faHeart,
+  faHome,
+  faKey,
   faMinus,
   faPalette,
   faPlus,
@@ -33,9 +37,17 @@ import {
   faTimes,
   faTrash,
   faTrashAlt,
+  faUser,
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookSquare, faGulp, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebookSquare,
+  faGulp,
+  faTwitterSquare,
+  faFacebook,
+  faTwitter,
+  faLinkedinIn
+} from '@fortawesome/free-brands-svg-icons';
 import { faStar as farStar, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -78,5 +90,14 @@ library.add(
   faThumbsDown,
   faXmark,
   faAngleDown,
-  faAngleUp
+  faAngleUp,
+  faKey,
+  faFacebook,
+  faTwitter,
+  faLinkedinIn,
+  faCamera,
+  faEdit,
+  faShoppingCart,
+  faHome,
+  faUser
 );

@@ -66,6 +66,7 @@ import Cart from 'pages/apps/e-commerce/customer/Cart';
 import Checkout from 'pages/apps/e-commerce/customer/checkout/Checkout';
 import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
 import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
+import Profile from 'pages/apps/e-commerce/customer/Profile';
 
 const routes = [
   {
@@ -368,6 +369,10 @@ const routes = [
       {
         path: 'shipping-info',
         element: <ShippingInfo />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
       },
       {
         path: 'products-filter',
