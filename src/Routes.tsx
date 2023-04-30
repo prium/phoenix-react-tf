@@ -63,8 +63,9 @@ import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
 import ProductDetails from 'pages/apps/e-commerce/customer/ProductDetails';
 import Cart from 'pages/apps/e-commerce/customer/Cart';
-import Checkout from 'pages/apps/e-commerce/customer/Checkout';
+import Checkout from 'pages/apps/e-commerce/customer/checkout/Checkout';
 import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
+import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
 
 const routes = [
   {
@@ -363,6 +364,10 @@ const routes = [
       {
         path: 'checkout',
         element: <Checkout />
+      },
+      {
+        path: 'shipping-info',
+        element: <ShippingInfo />
       },
       {
         path: 'products-filter',

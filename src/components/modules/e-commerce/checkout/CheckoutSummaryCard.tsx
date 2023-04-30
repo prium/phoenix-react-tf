@@ -17,7 +17,7 @@ const CheckoutSummaryCard = () => {
         <div className="border-dashed border-bottom mb-4">
           <div className="mx-n2 d-flex flex-column gap-2 mb-5">
             {cartItems.map(item => (
-              <Row className="align-items-center g-3">
+              <Row className="align-items-center g-3" key={item.id}>
                 <Col xs={8} md={7} lg={8}>
                   <div className="d-flex align-items-center">
                     <img className="me-2 ms-1" src={item.image} width={40} alt={item.name} />

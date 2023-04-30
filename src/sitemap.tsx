@@ -159,7 +159,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'shipping-info',
                 path: 'apps/e-commerce/landing/shipping-info',
-                pathName: 'e-commerce-fe-shipping-info'
+                pathName: 'e-commerce-fe-shipping-info',
+                active: true
               },
               {
                 name: 'profile',
