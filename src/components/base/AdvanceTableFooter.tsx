@@ -1,21 +1,28 @@
 import { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Pagination, Row } from 'react-bootstrap';
 import Button from './Button';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
-const AdvanceTableFooter = ({ className }: { className?: string }) => {
+interface AdvanceTableFooterProps {
+  className?: string;
+  pagination?: boolean;
+  navBtn?: boolean;
+}
+
+const AdvanceTableFooter = ({ className, pagination, navBtn }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
     previousPage,
     nextPage,
     getCanNextPage,
     getCanPreviousPage,
-
     getState,
     getPrePaginationRowModel,
-    getPaginationRowModel
+    getPaginationRowModel,
+    getPageCount,
+    setPageIndex
   } = useAdvanceTableContext();
 
   const {
@@ -45,32 +52,55 @@ const AdvanceTableFooter = ({ className }: { className?: string }) => {
           View {isAllVisible ? 'less' : 'all'}
         </Button>
       </Col>
-      <Col xs="auto" className="d-flex gap-2">
-        <Button
-          variant="link"
-          startIcon={<FontAwesomeIcon icon="chevron-left" className="me-2" />}
-          className={classNames('px-1', {
-            disabled: !getCanPreviousPage()
-          })}
-          onClick={() => {
-            previousPage();
-          }}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="link"
-          endIcon={<FontAwesomeIcon icon="chevron-right" className="ms-2" />}
-          className={classNames('px-1', {
-            disabled: !getCanNextPage()
-          })}
-          onClick={() => {
-            nextPage();
-          }}
-        >
-          Next
-        </Button>
-      </Col>
+      {navBtn && (
+        <Col xs="auto" className="d-flex gap-2">
+          <Button
+            variant="link"
+            startIcon={<FontAwesomeIcon icon="chevron-left" className="me-2" />}
+            className={classNames('px-1', {
+              disabled: !getCanPreviousPage()
+            })}
+            onClick={() => {
+              previousPage();
+            }}
+          >
+            Previous
+          </Button>
+          <Button
+            variant="link"
+            endIcon={<FontAwesomeIcon icon="chevron-right" className="ms-2" />}
+            className={classNames('px-1', {
+              disabled: !getCanNextPage()
+            })}
+            onClick={() => {
+              nextPage();
+            }}
+          >
+            Next
+          </Button>
+        </Col>
+      )}
+      {pagination && (
+        <Col xs="auto">
+          <Pagination className="mb-0 justify-content-center">
+            <Pagination.Prev disabled={!getCanPreviousPage()}>
+              <FontAwesomeIcon icon="chevron-left" />
+            </Pagination.Prev>
+            {Array.from(Array(getPageCount()).keys()).map(page => (
+              <Pagination.Item
+                key={page}
+                active={pageIndex === page}
+                onClick={() => setPageIndex(page)}
+              >
+                {page + 1}
+              </Pagination.Item>
+            ))}
+            <Pagination.Next disabled={!getCanNextPage()}>
+              <FontAwesomeIcon icon="chevron-right" />
+            </Pagination.Next>
+          </Pagination>
+        </Col>
+      )}
     </Row>
   );
 };

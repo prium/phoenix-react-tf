@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
@@ -14,7 +15,7 @@ const tabLinks = [
   },
   {
     id: 'review',
-    label: 'Review',
+    label: 'Reviews',
     number: 24,
     icon: 'star',
     content: <Content />
@@ -47,10 +48,11 @@ const ProfileDetailsTab = () => {
       id="controlled-tab-example"
       activeKey={key}
       onSelect={k => setKey(k as string)}
-      className="mb-3 nav-underline"
+      className="mb-3 pb-1 gap-3 nav-underline"
     >
       {tabLinks.map(item => (
         <Tab
+          key={item.id}
           eventKey={item.id}
           title={
             <>
@@ -60,7 +62,7 @@ const ProfileDetailsTab = () => {
             </>
           }
         >
-          {item.content}
+          <EcomProfileOrdersTable />
         </Tab>
       ))}
     </Tabs>

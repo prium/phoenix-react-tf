@@ -626,6 +626,7 @@
   --phoenix-theme-control-toggle-hover-color: #f5f8ff;
   /* -------------------------------- Scrollbar ------------------------------- */
   --bs-scrollbar-bg: rgba(49, 55, 74, 0.6);
+  /* ------------------------------- Pagination ------------------------------- */
 }
 .dark .card, .dark .popupContainer.light .card {
   --phoenix-card-bg: var(--phoenix-white);
@@ -641,10 +642,7 @@
 .dark .badge-phoenix-primary:not(.light) {
   --phoenix-badge-bg: rgba(var(--phoenix-primary-rgb), 0.08);
   --phoenix-badge-color: #85a9ff;
-  --phoenix-badge-border-color: rgba(
-    var(--phoenix-primary-rgb),
-    0.2
-  );
+  --phoenix-badge-border-color: rgba(var(--phoenix-primary-rgb), 0.2);
 }
 .dark .badge-phoenix-primary:not(.light)[href]:hover, .dark .badge-phoenix-primary:not(.light)[href]:focus {
   color: #003cc7;
@@ -652,10 +650,7 @@
 .dark .badge-phoenix-success:not(.light) {
   --phoenix-badge-bg: rgba(var(--phoenix-success-rgb), 0.08);
   --phoenix-badge-color: #90d67f;
-  --phoenix-badge-border-color: rgba(
-    var(--phoenix-success-rgb),
-    0.2
-  );
+  --phoenix-badge-border-color: rgba(var(--phoenix-success-rgb), 0.2);
 }
 .dark .badge-phoenix-success:not(.light)[href]:hover, .dark .badge-phoenix-success:not(.light)[href]:focus {
   color: #1c6c09;
@@ -663,10 +658,7 @@
 .dark .badge-phoenix-info:not(.light) {
   --phoenix-badge-bg: rgba(var(--phoenix-info-rgb), 0.08);
   --phoenix-badge-color: #60c6ff;
-  --phoenix-badge-border-color: rgba(
-    var(--phoenix-info-rgb),
-    0.2
-  );
+  --phoenix-badge-border-color: rgba(var(--phoenix-info-rgb), 0.2);
 }
 .dark .badge-phoenix-info:not(.light)[href]:hover, .dark .badge-phoenix-info:not(.light)[href]:focus {
   color: #005585;
@@ -674,10 +666,7 @@
 .dark .badge-phoenix-warning:not(.light) {
   --phoenix-badge-bg: rgba(var(--phoenix-warning-rgb), 0.08);
   --phoenix-badge-color: #ffcc85;
-  --phoenix-badge-border-color: rgba(
-    var(--phoenix-warning-rgb),
-    0.2
-  );
+  --phoenix-badge-border-color: rgba(var(--phoenix-warning-rgb), 0.2);
 }
 .dark .badge-phoenix-warning:not(.light)[href]:hover, .dark .badge-phoenix-warning:not(.light)[href]:focus {
   color: #bc3803;
@@ -685,10 +674,7 @@
 .dark .badge-phoenix-danger:not(.light) {
   --phoenix-badge-bg: rgba(var(--phoenix-danger-rgb), 0.08);
   --phoenix-badge-color: #f48270;
-  --phoenix-badge-border-color: rgba(
-    var(--phoenix-danger-rgb),
-    0.2
-  );
+  --phoenix-badge-border-color: rgba(var(--phoenix-danger-rgb), 0.2);
 }
 .dark .badge-phoenix-danger:not(.light)[href]:hover, .dark .badge-phoenix-danger:not(.light)[href]:focus {
   color: #b81800;
@@ -952,6 +938,9 @@
 }
 .dark .navbar-darker .search-box .search-box-icon {
   color: #525b75;
+}
+.dark .pagination, .dark .popupContainer.light .pagination {
+  --phoenix-pagination-disabled-color: #3e465b;
 }
 
 /*-----------------------------------------------
@@ -3206,7 +3195,7 @@ progress {
 }
 
 .table-sm > :not(caption) > * > * {
-  padding: 0.25rem 0.25rem;
+  padding: 0.5rem 0.25rem;
 }
 
 .table-bordered > :not(caption) > * {
@@ -5725,8 +5714,8 @@ textarea.form-control-lg {
   --phoenix-pagination-active-color: #fff;
   --phoenix-pagination-active-bg: #3874ff;
   --phoenix-pagination-active-border-color: #3874ff;
-  --phoenix-pagination-disabled-color: #6e7891;
-  --phoenix-pagination-disabled-bg: #fff;
+  --phoenix-pagination-disabled-color: #9fa6bc;
+  --phoenix-pagination-disabled-bg: transparent;
   --phoenix-pagination-disabled-border-color: #cbd0dd;
   display: flex;
   padding-left: 0;
@@ -27201,6 +27190,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .table > thead > tr > th.desc::after {
   content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNyIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgNyA5IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMy4xNDkgMC42NDY3NjhDMy4zNDM2NiAwLjQ1NDg4NSAzLjY1NjM0IDAuNDU0ODg1IDMuODUxIDAuNjQ2NzY4TDYuMTMxNTEgMi44OTQ2OUM2LjQ0OTk4IDMuMjA4NjIgNi4yMjc2OSAzLjc1MDc4IDUuNzgwNSAzLjc1MDc4SDEuMjE5NUMwLjc3MjMwNyAzLjc1MDc4IDAuNTUwMDE4IDMuMjA4NjIgMC44Njg0OTUgMi44OTQ2OUwzLjE0OSAwLjY0Njc2OFoiIGZpbGw9IiM2RTc4OTEiLz4KPC9zdmc+Cg==") !important;
+}
+.table.phoenix-table {
+  margin-bottom: 0 !important;
 }
 .table.phoenix-table > thead > tr > th {
   vertical-align: middle !important;

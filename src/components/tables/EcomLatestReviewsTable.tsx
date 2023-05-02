@@ -246,7 +246,7 @@ const EcomLatestReviewsTable = () => {
           tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
-        <AdvanceTableFooter />
+        <AdvanceTableFooter navBtn />
       </AdvanceTableProvider>
     </>
   );

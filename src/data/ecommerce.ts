@@ -50,6 +50,7 @@ import review13 from 'assets/img/e-commerce/review-13.jpg';
 import review14 from 'assets/img/e-commerce/review-14.jpg';
 import review15 from 'assets/img/e-commerce/review-15.jpg';
 import review16 from 'assets/img/e-commerce/review-16.jpg';
+import { Bg } from 'components/base/Badge';
 
 type Category = {
   title: string;
@@ -688,5 +689,119 @@ export const shippingDetailsAddress: AddressTableDataType[] = [
     labelIcon: 'phone',
     label: 'Phone',
     value: '818-414-4092'
+  }
+];
+
+export interface CustomerOrder {
+  orderId: string;
+  totalPrice: number;
+  payment_status: {
+    status: string;
+    type: Bg;
+    icon: string;
+  };
+  delivery_method: string;
+  date: string;
+}
+
+export const customerOrders: CustomerOrder[] = [
+  {
+    orderId: '#2453',
+    totalPrice: 87,
+    payment_status: {
+      status: 'Shipped',
+      type: 'success',
+      icon: 'check'
+    },
+    delivery_method: 'Cash on delivery',
+    date: 'Dec 12, 12:56 PM'
+  },
+  {
+    orderId: '#2452',
+    totalPrice: 7264,
+    payment_status: {
+      status: 'Ready to pickup',
+      type: 'info',
+      icon: 'info'
+    },
+    delivery_method: 'Free shipping',
+    date: 'Dec 9, 2:28PM'
+  },
+  {
+    orderId: '#2451',
+    totalPrice: 375,
+    payment_status: {
+      status: 'Partially fulfilled',
+      type: 'warning',
+      icon: 'clock'
+    },
+    delivery_method: 'Local pickup',
+    date: 'Dec 4, 12:56 PM'
+  },
+  {
+    orderId: '#2450',
+    totalPrice: 657,
+    payment_status: {
+      status: 'Canceled',
+      type: 'secondary',
+      icon: 'x'
+    },
+    delivery_method: 'Standard shipping',
+    date: 'Dec 1, 4:07 AM'
+  },
+  {
+    orderId: '#2449',
+    totalPrice: 9562,
+    payment_status: {
+      status: 'fulfilled',
+      type: 'success',
+      icon: 'check'
+    },
+    delivery_method: 'Express',
+    date: 'Nov 28, 7:28 PM'
+  },
+  {
+    orderId: '#2448',
+    totalPrice: 256,
+    payment_status: {
+      status: 'Unfulfilled',
+      type: 'danger',
+      icon: 'check'
+    },
+    delivery_method: 'Local delivery',
+    date: 'Nov 24, 10:16 AM'
+  },
+  {
+    orderId: '#2447',
+    totalPrice: 898,
+    payment_status: {
+      status: 'Cancelled',
+      type: 'secondary',
+      icon: 'x'
+    },
+    delivery_method: 'Standard shipping',
+    date: 'Nov 10, 12:00 PM'
+  },
+  {
+    orderId: '#2446',
+    totalPrice: 4116,
+    payment_status: {
+      status: 'shipped',
+      type: 'success',
+      icon: 'check'
+    },
+    delivery_method: 'Express',
+    date: 'Nov 12, 12:20 PM'
+  },
+  {
+    orderId: '#2445',
+    totalPrice: 4116,
+    payment_status: {
+      status: 'fulfilled',
+      type: 'success',
+      icon: 'check'
+    },
+    delivery_method: 'Free shipping',
+    date: 'Oct 19, 1:20 PM'
   }
 ];

@@ -154,7 +154,7 @@ const EcomTopRegionsTable = () => {
           </tbody>
         </Table>
 
-        <AdvanceTableFooter className="gx-0" />
+        <AdvanceTableFooter className="gx-0" navBtn />
       </Scrollbar>
     </AdvanceTableProvider>
   );
