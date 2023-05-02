@@ -2,6 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
+import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
 import EcomProfileWishlistTable from 'components/tables/EcomProfileWishlistTable';
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
@@ -32,7 +33,7 @@ const tabLinks = [
     id: 'stores',
     label: 'Stores',
     icon: 'home',
-    content: <Content />
+    content: <EcomProfileStoresTable />
   },
   {
     id: 'personal-info',

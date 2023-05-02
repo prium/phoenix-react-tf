@@ -16,6 +16,12 @@ import product25 from 'assets/img/products/25.png';
 import product26 from 'assets/img/products/26.png';
 import product27 from 'assets/img/products/27.png';
 
+import dell from 'assets/img/brands/dell.png';
+import honda from 'assets/img/brands/honda.png';
+import xiaomi from 'assets/img/brands/xiaomi.png';
+import huawei from 'assets/img/brands/huawei.png';
+import intel from 'assets/img/brands/intel.png';
+
 export type Product = {
   id: number;
   image: string;
@@ -75,6 +81,15 @@ export type WishlistProductType = {
   price: number;
   size: number | string;
   total: number;
+};
+
+export type StoreProductType = {
+  product: string;
+  productImage: string;
+  orders: number;
+  rating: number;
+  totalSpent: number;
+  lastOrderDate: string;
 };
 
 export const topDealsProducts: Product[] = [
@@ -411,5 +426,48 @@ export const wishlistProducts: WishlistProductType[] = [
     price: 99,
     size: 'sm',
     total: 99
+  }
+];
+
+export const storeProducts: StoreProductType[] = [
+  {
+    product: 'Dell Technologies',
+    productImage: dell,
+    rating: 5,
+    orders: 3,
+    totalSpent: 1250,
+    lastOrderDate: 'Dec 12, 12:56 PM'
+  },
+  {
+    product: 'Honda',
+    productImage: honda,
+    rating: 3,
+    orders: 5,
+    totalSpent: 1499,
+    lastOrderDate: 'Dec 09, 10:48 AM'
+  },
+  {
+    product: 'Xiaomi',
+    productImage: xiaomi,
+    rating: 3,
+    orders: 6,
+    lastOrderDate: 'Dec 03, 05:45 PM',
+    totalSpent: 360
+  },
+  {
+    product: 'Huawei Shop BD',
+    productImage: huawei,
+    rating: 3,
+    orders: 1,
+    lastOrderDate: 'Nov 27, 06:20 PM',
+    totalSpent: 1799
+  },
+  {
+    product: 'Intel',
+    productImage: intel,
+    rating: 4,
+    orders: 2,
+    lastOrderDate: 'Nov 21, 10:25 AM',
+    totalSpent: 65
   }
 ];
