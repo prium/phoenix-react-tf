@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
+import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
@@ -11,14 +12,14 @@ const tabLinks = [
     label: 'Orders',
     number: 35,
     icon: 'shopping-cart',
-    content: <Content />
+    content: <EcomProfileOrdersTable />
   },
   {
     id: 'review',
     label: 'Reviews',
     number: 24,
     icon: 'star',
-    content: <Content />
+    content: <EcomProfileReviewsTable />
   },
   {
     id: 'wishlist',
@@ -62,7 +63,7 @@ const ProfileDetailsTab = () => {
             </>
           }
         >
-          <EcomProfileOrdersTable />
+          {item.content}
         </Tab>
       ))}
     </Tabs>
