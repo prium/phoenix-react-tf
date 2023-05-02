@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SuggestedProductType } from 'data/ecommerce';
+import { SuggestedProductType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
 import { useState } from 'react';
 import { Button, Card, Form, Stack } from 'react-bootstrap';

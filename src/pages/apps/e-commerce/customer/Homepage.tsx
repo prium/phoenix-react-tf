@@ -3,7 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import EcomWhopingBanner from 'components/banners/EcomWhopingBanner';
 import EcomGiftItemsBanner from 'components/banners/EcomGiftItemsBanner';
 import EcomBestInMarketBanner from 'components/banners/EcomBestInMarketBanner';
-import { bestOfferProducts, topDealsProducts, topElectronicProducts } from 'data/ecommerce';
+import {
+  bestOfferProducts,
+  topDealsProducts,
+  topElectronicProducts
+} from 'data/e-commerce/products';
 import ecom4 from 'assets/img/e-commerce/4.png';
 import EcomTopDeals from 'components/sliders/EcomTopDeals';
 import EcomTopElectronics from 'components/sliders/EcomTopElectronics';

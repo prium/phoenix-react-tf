@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
 import ProductColorNav from 'components/navs/ProductColorNav';
-import { productColorVariants } from 'data/ecommerce';
+import { productColorVariants } from 'data/e-commerce';
 import { currencyFormat } from 'helpers/utils';
 import ProductGallery from 'components/modules/e-commerce/ProductGallery';
 import { useMemo, useState } from 'react';

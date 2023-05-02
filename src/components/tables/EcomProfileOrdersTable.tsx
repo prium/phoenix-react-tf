@@ -1,7 +1,7 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import Badge from 'components/base/Badge';
-import { CustomerOrder, customerOrders } from 'data/ecommerce';
+import { CustomerOrder, customerOrders } from 'data/e-commerce';
 import { currencyFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';

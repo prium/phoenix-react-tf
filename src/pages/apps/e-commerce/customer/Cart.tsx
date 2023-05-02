@@ -1,7 +1,7 @@
 import Section from 'components/base/Section';
 import EcomCardSummaryCard from 'components/cards/EcomCardSummaryCard';
 import EcomCartTable from 'components/tables/EcomCartTable';
-import { cartItems } from 'data/ecommerce';
+import { cartItems } from 'data/e-commerce/products';
 import React from 'react';
 import { Breadcrumb, Col, Row } from 'react-bootstrap';
 

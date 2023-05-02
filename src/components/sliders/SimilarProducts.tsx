@@ -1,4 +1,4 @@
-import { Product } from 'data/ecommerce';
+import { Product } from 'data/e-commerce/products';
 import ProductCard from 'components/common/ProductCard';
 import Swiper from 'components/base/Swiper';
 import { SwiperSlide } from 'swiper/react';

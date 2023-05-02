@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
-import { Product as ProductType } from 'data/ecommerce';
+import { Product as ProductType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
 import React from 'react';
 import { Link } from 'react-router-dom';

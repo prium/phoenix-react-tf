@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { categories } from 'data/ecommerce';
+import { categories } from 'data/e-commerce';
 import React from 'react';
 import { Card, Col, Dropdown, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

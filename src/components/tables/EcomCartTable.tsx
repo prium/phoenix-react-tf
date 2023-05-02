@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import QuantityButtons from 'components/common/QuantityButtons';
-import { CartItemType } from 'data/ecommerce';
+import { CartItemType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
 import { useMemo, useState } from 'react';
 import { Table } from 'react-bootstrap';

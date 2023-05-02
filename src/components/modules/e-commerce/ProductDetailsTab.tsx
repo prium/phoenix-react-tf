@@ -5,7 +5,7 @@ import product23 from 'assets/img/products/23.png';
 import ProductSpecificationTables from './ProductSpecificationTables';
 import Rating from 'components/base/Rating';
 import Button from 'components/base/Button';
-import { productReviews } from 'data/ecommerce';
+import { productReviews } from 'data/e-commerce';
 import ProductReview from 'components/list-items/ProductReview';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReviewModal from 'components/modals/ReviewModal';
