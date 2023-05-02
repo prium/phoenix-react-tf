@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import EcomProfilePersonalInfo from 'components/forms/EcomProfilePersonalInfo';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
@@ -39,7 +40,7 @@ const tabLinks = [
     id: 'personal-info',
     label: 'Personal info',
     icon: 'user',
-    content: <Content />
+    content: <EcomProfilePersonalInfo />
   }
 ];
 
