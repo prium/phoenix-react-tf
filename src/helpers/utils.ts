@@ -76,3 +76,7 @@ export const currencyFormat = (amount: number, options: Intl.NumberFormatOptions
     ...options
   }).format(amount);
 };
+
+export const getNumbersInRange = (startAt: number, endAt: number) => {
+  return [...Array(endAt + 1 - startAt).keys()].map(i => i + startAt);
+};

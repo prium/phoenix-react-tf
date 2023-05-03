@@ -12,7 +12,7 @@ export const RevealButtonTrigger = ({
 
 const RevealDropdown = () => {
   return (
-    <Dropdown className="position-static" align="end">
+    <Dropdown className="position-static hover-actions" align="end">
       <Dropdown.Toggle
         variant=""
         size="sm"

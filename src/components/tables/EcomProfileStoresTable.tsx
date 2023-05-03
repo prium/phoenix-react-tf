@@ -8,6 +8,7 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { StoreProductType, storeProducts } from 'data/e-commerce/products';
 import Rating from 'components/base/Rating';
 import RevealDropdown from 'components/base/RevealDropdown';
+import MyFavoriteStores from 'components/modules/e-commerce/profile/MyFavoriteStores';
 
 const columns: ColumnDef<StoreProductType>[] = [
   {
@@ -98,11 +99,12 @@ const EcomProfileStoresTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y mb-6">
           <AdvanceTable tableProps={{ className: 'phoenix-table table-sm fs-9' }} />
           <AdvanceTableFooter pagination />
         </div>
       </AdvanceTableProvider>
+      <MyFavoriteStores />
     </div>
   );
 };
