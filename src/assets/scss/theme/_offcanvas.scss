@@ -28,6 +28,7 @@
   bottom: 0;
   transition: transform 0.3s ease-in-out;
   z-index: 1045;
+  transform: translateX(-100%);
 
   &.phoenix-offcanvas-fixed {
     position: fixed;

@@ -23024,7 +23024,6 @@ h3,
 .form-check .form-label {
   padding-right: 0 !important;
 }
-
 .form-control.form-control-underlined {
   border: none;
   border-bottom: 1px solid;
@@ -28487,6 +28486,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   bottom: 0;
   transition: transform 0.3s ease-in-out;
   z-index: 1045;
+  transform: translateX(100%);
 }
 .phoenix-offcanvas.phoenix-offcanvas-fixed {
   position: fixed;

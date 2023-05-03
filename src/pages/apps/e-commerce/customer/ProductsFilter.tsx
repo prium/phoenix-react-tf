@@ -21,30 +21,32 @@ const ProductsFilter = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Section className="pt-5 pb-9">
-      <Col lg={3} xxl={2} id="asd">
-        <Button variant="primary" onClick={handleShow}>
-          Launch
-        </Button>
-        <PhoenixOffcanvas
-          open={show}
-          onHide={handleClose}
-          style={{ width: 300, top: 92 }}
-          className="p-5"
-          // backdrop={false}
-          // className="phoenix-offcanvas phoenix-offcanvas-fixed"
-        >
-          <div className="d-flex justify-content-between align-items-center mb-3">
-            <h3 className="mb-0">Filters</h3>
-            <button className="btn p-0">
-              <UilTimes size={16} />
-            </button>
-          </div>
-          <FilterItemsCollapse />
-        </PhoenixOffcanvas>
-      </Col>
-      <Col lg={9} xxl={10}></Col>
-    </Section>
+    <div className="position-relative">
+      <PhoenixOffcanvas
+        open={show}
+        onHide={handleClose}
+        style={{ width: 300 }}
+        className="p-5"
+        // backdrop={false}
+        // className="phoenix-offcanvas phoenix-offcanvas-fixed"
+      >
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <h3 className="mb-0">Filters</h3>
+          <button className="btn p-0">
+            <UilTimes size={16} />
+          </button>
+        </div>
+        <FilterItemsCollapse />
+      </PhoenixOffcanvas>
+      <Section className="pt-5 pb-9">
+        <Col lg={3} xxl={2} id="asd">
+          <Button variant="primary" onClick={handleShow}>
+            Launch
+          </Button>
+        </Col>
+        <Col lg={9} xxl={10}></Col>
+      </Section>
+    </div>
   );
 };
 
