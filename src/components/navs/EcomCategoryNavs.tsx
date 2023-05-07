@@ -12,8 +12,6 @@ import {
   UilWrench
 } from '@iconscout/react-unicons';
 import classNames from 'classnames';
-import Scrollbar from 'components/base/Scrollbar';
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 type Category = {

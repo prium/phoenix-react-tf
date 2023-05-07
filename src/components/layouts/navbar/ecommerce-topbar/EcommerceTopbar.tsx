@@ -18,7 +18,7 @@ const EcommerceTopbar = () => {
         <Navbar className="px-0">
           <Row className="gx-0 gy-2 w-100 flex-between-center">
             <Col xs="auto">
-              <Link to="/" className="text-dcoration-none">
+              <Link to="/" className="text-decoration-none">
                 <Logo />
               </Link>
             </Col>

@@ -3,6 +3,7 @@ import React, { CSSProperties, PropsWithChildren } from 'react';
 
 interface PhoenixOffcanvasProps {
   open: boolean;
+  fixed?: boolean;
   onHide?: () => void;
   className?: string;
   style?: CSSProperties;
@@ -11,6 +12,7 @@ interface PhoenixOffcanvasProps {
 const PhoenixOffcanvas = ({
   children,
   open,
+  fixed,
   onHide,
   className,
   style
@@ -19,13 +21,14 @@ const PhoenixOffcanvas = ({
     <>
       <div
         className={classNames(className, 'phoenix-offcanvas bg-soft', {
-          show: open
+          show: open,
+          'phoenix-offcanvas-fixed': fixed
         })}
         style={style}
       >
         {children}
       </div>
-      <div className="phoenix-offcanvas-backdrop d-lg-none"></div>
+      <div className={classNames('phoenix-offcanvas-backdrop')} onClick={onHide}></div>
     </>
   );
 };

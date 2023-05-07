@@ -145,8 +145,6 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     enableSorting: false,
     header: '',
     cell: row => {
-      console.log({ row });
-
       return (
         <>
           <div className="position-relative">

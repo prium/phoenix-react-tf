@@ -8,8 +8,10 @@ const EcommerceLayout = () => {
   return (
     <>
       <EcommerceTopbar />
-      <EcommerceNavbar />
-      <Outlet />
+      <div className="position-relative">
+        <EcommerceNavbar />
+        <Outlet />
+      </div>
       <EcommerceFooter />
       <Footer />
     </>

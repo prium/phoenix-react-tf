@@ -1,4 +1,4 @@
-// @ts-nocheck
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EcomProfilePersonalInfo from 'components/forms/EcomProfilePersonalInfo';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
@@ -8,8 +8,15 @@ import EcomProfileWishlistTable from 'components/tables/EcomProfileWishlistTable
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
-const Content = () => <p>asjhhjsahj</p>;
-const tabLinks = [
+interface TabLink {
+  id: string;
+  label: string;
+  number?: number;
+  icon: IconProp;
+  content: JSX.Element;
+}
+
+const tabLinks: TabLink[] = [
   {
     id: 'orders',
     label: 'Orders',

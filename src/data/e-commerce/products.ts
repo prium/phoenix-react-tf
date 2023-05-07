@@ -11,6 +11,7 @@ import product12 from 'assets/img/products/12.png';
 import product16 from 'assets/img/products/16.png';
 import product17 from 'assets/img/products/17.png';
 import product18 from 'assets/img/products/18.png';
+import product20 from 'assets/img/products/20.png';
 import product24 from 'assets/img/products/24.png';
 import product25 from 'assets/img/products/25.png';
 import product26 from 'assets/img/products/26.png';
@@ -469,5 +470,73 @@ export const storeProducts: StoreProductType[] = [
     orders: 2,
     lastOrderDate: 'Nov 21, 10:25 AM',
     totalSpent: 65
+  }
+];
+
+export const allProducts: Product[] = [
+  ...topDealsProducts,
+  ...topElectronicProducts.slice(1, -1),
+  {
+    id: 21,
+    image: product25,
+    name: 'RESPAWN 200 Racing Style Gaming Chair, in Gray RSP 200 GRY',
+    rating: 5,
+    rated: 8,
+    salePrice: 499,
+    colors: 2
+  },
+  {
+    id: 22,
+    image: product27,
+    name: 'LEVOIT Humidifiers for Bedroom Large Room 6L Warm and Cool Mist for...',
+    rating: 5,
+    rated: 3,
+    salePrice: 299,
+    colors: 3
+  },
+  {
+    id: 23,
+    image: product26,
+    name: 'NETGEAR Nighthawk Pro Gaming XR500 Wi-Fi Router with 4 Ethernet Ports...',
+    rating: 5,
+    rated: 8,
+    salePrice: 49,
+    colors: 4
+  },
+  {
+    id: 24,
+    image: product18,
+    name: 'Rachael Ray Cucina Bakeware Set Includes Nonstick Bread Baking Cookie Sheet...',
+    rating: 5,
+    rated: 1,
+    salePrice: 29,
+    colors: 3
+  },
+  {
+    id: 25,
+    image: product17,
+    name: 'Xbox Series S',
+    rating: 5,
+    rated: 6,
+    salePrice: 19,
+    colors: 2
+  },
+  {
+    id: 26,
+    image: product24,
+    name: 'FURINNO Computer Writing Desk, Walnut',
+    rating: 5,
+    rated: 8,
+    salePrice: 199,
+    colors: 2
+  },
+  {
+    id: 27,
+    image: product20,
+    name: 'ASUS TUF Gaming F15 Gaming Laptop',
+    rating: 4,
+    rated: 3,
+    salePrice: 150,
+    colors: 2
   }
 ];

@@ -20,6 +20,7 @@ import {
   faCopy,
   faEdit,
   faEllipsis,
+  faFilter,
   faHeart,
   faHome,
   faKey,
@@ -99,5 +100,6 @@ library.add(
   faEdit,
   faShoppingCart,
   faHome,
-  faUser
+  faUser,
+  faFilter
 );

@@ -12,7 +12,10 @@ const Rating = ({ iconClass, ...rest }: RatingProps) => {
       allowFraction
       fillIcon={<FontAwesomeIcon icon="star" className={classNames(iconClass, 'text-warning')} />}
       emptyIcon={
-        <FontAwesomeIcon icon={['far', 'star']} className={classNames(iconClass, 'text-warning')} />
+        <FontAwesomeIcon
+          icon={['far', 'star']}
+          className={classNames(iconClass, 'text-warning-300')}
+        />
       }
       {...rest}
     />
