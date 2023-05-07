@@ -40,8 +40,6 @@ const DocPagesLayout = ({ children, sideNavItems }: PropsWithChildren<DocPagesLa
     }
   }, []);
 
-  // console.log({ navItems });
-
   return (
     <Row className="g-3">
       <Col xs={12} xl={10} className="order-1 order-xl-0">

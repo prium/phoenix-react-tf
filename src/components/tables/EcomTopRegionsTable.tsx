@@ -111,7 +111,6 @@ const EcomTopRegionsTable = () => {
           <thead>
             <tr>
               {getFlatHeaders().map(header => {
-                // console.log({ header });
                 return (
                   <th
                     key={header.id}

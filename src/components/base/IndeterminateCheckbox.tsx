@@ -12,8 +12,6 @@ const IndeterminateCheckbox = ({
   className,
   ...rest
 }: IndeterminateCheckboxProps & HTMLProps<HTMLInputElement>) => {
-  // console.log({ ...rest });
-
   const ref = React.useRef<HTMLInputElement>(null!);
 
   React.useEffect(() => {
