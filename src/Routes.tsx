@@ -59,6 +59,14 @@ import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
 import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
+import EcommerceLayout from 'layouts/EcommerceLayout';
+import Homepage from 'pages/apps/e-commerce/customer/Homepage';
+import ProductDetails from 'pages/apps/e-commerce/customer/ProductDetails';
+import Cart from 'pages/apps/e-commerce/customer/Cart';
+import Checkout from 'pages/apps/e-commerce/customer/checkout/Checkout';
+import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
+import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
+import Profile from 'pages/apps/e-commerce/customer/Profile';
 
 const routes = [
   {
@@ -335,6 +343,40 @@ const routes = [
       {
         path: '*',
         element: <ComingSoon />
+      }
+    ]
+  },
+  {
+    element: <EcommerceLayout />,
+    path: '/apps/e-commerce/landing/',
+    children: [
+      {
+        path: 'homepage',
+        element: <Homepage />
+      },
+      {
+        path: 'product-details',
+        element: <ProductDetails />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
+      },
+      {
+        path: 'checkout',
+        element: <Checkout />
+      },
+      {
+        path: 'shipping-info',
+        element: <ShippingInfo />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
+        path: 'products-filter',
+        element: <ProductsFilter />
       }
     ]
   }

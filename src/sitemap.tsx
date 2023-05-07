@@ -79,6 +79,7 @@ export const routes: RouteItems[] = [
     pages: [
       {
         name: 'e-commerce',
+        active: true,
         icon: 'shopping-cart',
         pages: [
           {
@@ -123,41 +124,49 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'customer',
+            active: true,
             pages: [
               {
                 name: 'homepage',
                 path: 'apps/e-commerce/landing/homepage',
-                pathName: 'e-commerce-fe-home'
+                pathName: 'e-commerce-fe-home',
+                active: true
               },
               {
                 name: 'product-details',
                 path: 'apps/e-commerce/landing/product-details',
-                pathName: 'e-commerce-fe-product-details'
+                pathName: 'e-commerce-fe-product-details',
+                active: true
               },
               {
                 name: 'products-filter',
                 path: 'apps/e-commerce/landing/products-filter',
-                pathName: 'e-commerce-fe-product-filter'
+                pathName: 'e-commerce-fe-product-filter',
+                active: true
               },
               {
                 name: 'cart',
                 path: 'apps/e-commerce/landing/cart',
-                pathName: 'e-commerce-fe-cart'
+                pathName: 'e-commerce-fe-cart',
+                active: true
               },
               {
                 name: 'checkout',
                 path: 'apps/e-commerce/landing/checkout',
-                pathName: 'e-commerce-fe-checkout'
+                pathName: 'e-commerce-fe-checkout',
+                active: true
               },
               {
                 name: 'shipping-info',
                 path: 'apps/e-commerce/landing/shipping-info',
-                pathName: 'e-commerce-fe-shipping-info'
+                pathName: 'e-commerce-fe-shipping-info',
+                active: true
               },
               {
                 name: 'profile',
                 path: 'apps/e-commerce/landing/profile',
-                pathName: 'e-commerce-fe-profile'
+                pathName: 'e-commerce-fe-profile',
+                active: true
               },
               {
                 name: 'favourite-stores',

@@ -74,10 +74,7 @@
       &:not(.light) {
         --#{$prefix}badge-bg: rgba(var(--#{$prefix}#{$color}-rgb), 0.08);
         --#{$prefix}badge-color: #{$value};
-        --#{$prefix}badge-border-color: rgba(
-          var(--#{$prefix}#{$color}-rgb),
-          0.2
-        );
+        --#{$prefix}badge-border-color: rgba(var(--#{$prefix}#{$color}-rgb), 0.2);
         &[href] {
           @include hover-focus {
             color: map-get($theme-colors-dark, $color);
@@ -266,10 +263,8 @@
   --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-1000};
   --#{$prefix}navbar-top-dropdown-color: #{$gray-500};
 
-
-  .navbar-darker{
+  .navbar-darker {
     --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
-
   }
 
   /* ------------------------------- navbar-vertical inverted ------------------------------- */
@@ -321,11 +316,13 @@
   --#{$prefix}theme-control-toggle-bg: #{rgba($primary, 0.24)};
   --#{$prefix}theme-control-toggle-hover-bg: #{rgba($primary, 0.7)};
   --#{$prefix}theme-control-toggle-color: #{$blue-300};
-  --#{$prefix}theme-control-toggle-hover-color: #{map-get(
-      $theme-colors-soft,
-      'primary'
-    )};
+  --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'primary')};
 
   /* -------------------------------- Scrollbar ------------------------------- */
   --#{$variable-prefix}scrollbar-bg: #{rgba($gray-900, 0.6)};
+
+  /* ------------------------------- Pagination ------------------------------- */
+  .pagination {
+    --#{$prefix}pagination-disabled-color: #{map-get($dark-grays, '400')};
+  }
 }

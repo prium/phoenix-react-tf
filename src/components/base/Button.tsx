@@ -3,6 +3,7 @@ import React, { PropsWithChildren, ReactElement } from 'react';
 import { Button as BsButton, ButtonProps as BsButtonProps, Spinner } from 'react-bootstrap';
 
 type ButtonVariant =
+  | ''
   | 'primary'
   | 'secondary'
   | 'success'

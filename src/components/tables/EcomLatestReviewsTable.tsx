@@ -10,10 +10,10 @@ import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
-import Rating from 'react-rating';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import { ChangeEvent } from 'react';
+import Rating from 'components/base/Rating';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
@@ -73,18 +73,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     header: 'RATING',
     cell: ({ row: { original } }) => {
       const { rating } = original;
-      return (
-        <>
-          {/* @ts-ignore */}
-          <Rating
-            readonly
-            className="fs-10"
-            initialRating={rating}
-            fullSymbol={<FontAwesomeIcon icon="star" className="text-warning" />}
-            emptySymbol={<FontAwesomeIcon icon={['far', 'star']} className="text-300" />}
-          />
-        </>
-      );
+      return <Rating readonly initialValue={rating} />;
     },
     meta: {
       headerProps: { style: { minWidth: 110 } }
@@ -156,8 +145,6 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     enableSorting: false,
     header: '',
     cell: row => {
-      console.log({ row });
-
       return (
         <>
           <div className="position-relative">
@@ -257,7 +244,7 @@ const EcomLatestReviewsTable = () => {
           tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
-        <AdvanceTableFooter />
+        <AdvanceTableFooter navBtn />
       </AdvanceTableProvider>
     </>
   );

@@ -1,11 +1,16 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+  faAngleDown,
   faAngleLeft,
   faAngleRight,
+  faAngleUp,
   faAnglesLeft,
   faAnglesRight,
   faArrowUpRightFromSquare,
   faArrowsRotate,
+  faBars,
+  faBolt,
+  faCamera,
   faCaretRight,
   faCheck,
   faChevronDown,
@@ -13,17 +18,38 @@ import {
   faChevronRight,
   faClock,
   faCopy,
+  faEdit,
   faEllipsis,
+  faFilter,
+  faHeart,
+  faHome,
+  faKey,
+  faMinus,
   faPalette,
   faPlus,
+  faReply,
   faSearch,
+  faShare,
+  faShareAlt,
+  faShoppingCart,
   faStar,
+  faThumbsDown,
+  faThumbsUp,
   faTimes,
   faTrash,
-  faTrashAlt
+  faTrashAlt,
+  faUser,
+  faXmark
 } from '@fortawesome/free-solid-svg-icons';
-import { faGulp } from '@fortawesome/free-brands-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import {
+  faFacebookSquare,
+  faGulp,
+  faTwitterSquare,
+  faFacebook,
+  faTwitter,
+  faLinkedinIn
+} from '@fortawesome/free-brands-svg-icons';
+import { faStar as farStar, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faSearch,
@@ -36,6 +62,7 @@ library.add(
   faTimes,
   faArrowsRotate,
   faCopy,
+  faMinus,
   faPlus,
   faTrash,
   faTrashAlt,
@@ -49,5 +76,30 @@ library.add(
   faCheck,
   faStar,
   //@ts-ignore
-  farStar
+  farStar,
+  faBars,
+  faFacebookSquare,
+  faTwitterSquare,
+  faBolt,
+  faHeart,
+  farHeart,
+  faShare,
+  faShareAlt,
+  faShoppingCart,
+  faReply,
+  faThumbsUp,
+  faThumbsDown,
+  faXmark,
+  faAngleDown,
+  faAngleUp,
+  faKey,
+  faFacebook,
+  faTwitter,
+  faLinkedinIn,
+  faCamera,
+  faEdit,
+  faShoppingCart,
+  faHome,
+  faUser,
+  faFilter
 );
