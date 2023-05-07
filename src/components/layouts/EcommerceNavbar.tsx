@@ -1,18 +1,17 @@
-// @ts-nocheck
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { categories } from 'data/e-commerce';
-import React, { useEffect, useRef, useState } from 'react';
-import { Card, Col, Dropdown, Nav, Navbar, Row } from 'react-bootstrap';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Card, Col, Dropdown, Nav, NavItem, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 
-type NavItem = {
+type NavItemType = {
   id: number;
   label: string;
   url: string;
 };
 
-const initNavItems: NavItem[] = [
+const initNavItems: NavItemType[] = [
   {
     id: 1,
     label: 'Home',
@@ -57,39 +56,35 @@ const initNavItems: NavItem[] = [
 
 const EcommerceNavbar = () => {
   const [navItems, setNavItems] = useState(initNavItems);
-  const [dropdownItems, setDropdownItems] = useState([]);
+  const [dropdownItems, setDropdownItems] = useState<NavItemType[]>([]);
 
-  const containerRef = useRef(null);
-  const otherElsRef = useRef(null);
-  const navbarRef = useRef(null);
-  const dropdownBtnRef = useRef(null);
-  const navItemsRef = useRef([]);
-  console.log(dropdownItems[0]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const otherElsRef = useRef<HTMLDivElement | null>(null);
+  const navbarRef = useRef<HTMLUListElement | null>(null);
 
-  console.log({ navItems, dropdownItems });
-
-  useEffect(() => {
-    window.addEventListener('resize', (e: any) => {
-      // const navItemsTotalWidth = navItemsRef.current.reduce((acc, val) => val.clientWidth + acc, 0);
-      const otherElsWidth = otherElsRef.current.clientWidth;
-      const dropdownWidth = dropdownBtnRef.current.clientWidth;
-      const containerWidth = containerRef.current.clientWidth;
-      const navbarWidth = navbarRef.current.clientWidth;
-
-      if (navbarWidth + otherElsWidth > containerWidth) {
-        setNavItems(items => items.filter((item, index) => index !== items.length - 1));
-      } else {
-        console.log('sadas');
-
-        if (dropdownItems.length > 0) {
-          console.log(dropdownItems.length);
-
-          setNavItems(items => [...items, dropdownItems[0]]);
-        }
+  const updateItems = useCallback(() => {
+    const otherElsWidth = otherElsRef.current?.clientWidth || 0;
+    const containerWidth = containerRef.current?.clientWidth || 0;
+    const navbarWidth = navbarRef.current?.clientWidth || 0;
+    if (navbarWidth + otherElsWidth + 50 > containerWidth) {
+      setNavItems(items => items.filter((item, index) => index !== items.length - 1));
+    } else {
+      if (dropdownItems.length > 0) {
+        setNavItems(items => [...items, dropdownItems[0]]);
       }
-      // console.log({ navItems, dropdownItems });
-    });
+    }
+  }, [dropdownItems]);
+
+  useLayoutEffect(() => {
+    updateItems();
   }, []);
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', updateItems);
+    return () => {
+      window.removeEventListener('resize', updateItems);
+    };
+  }, [updateItems]);
 
   useEffect(() => {
     const items = initNavItems.filter(
@@ -151,21 +146,28 @@ const EcommerceNavbar = () => {
           </Dropdown>
           <Nav as="ul" className="justify-content-end align-items-center gap-5" ref={navbarRef}>
             {navItems.map((item, index) => (
-              <Nav.Item
-                className="gap-3"
-                key={item.id}
-                ref={el => (navItemsRef.current[index] = el)}
-              >
+              <Nav.Item className="gap-3" key={item.id}>
                 <Nav.Link key={item.id} as={Link} to={item.url} className="px-0">
                   {item.label}
                 </Nav.Link>
               </Nav.Item>
             ))}
-            <Nav.Item className="gap-3" ref={dropdownBtnRef}>
-              <Nav.Link as={Link} to="#!" className="px-0">
-                More
-              </Nav.Link>
-            </Nav.Item>
+            {dropdownItems.length > 0 && (
+              <Dropdown align="end" as={NavItem}>
+                <Dropdown.Toggle variant="" className="fw-bold nav-link dropdown-caret-none px-0">
+                  More
+                  <FontAwesomeIcon icon="angle-down" className="ms-2" />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  {dropdownItems.map((item, index) => (
+                    <Dropdown.Item key={item.id} as={Link} to={item.url}>
+                      {item.label}
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
           </Nav>
         </div>
       </div>

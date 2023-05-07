@@ -19,7 +19,9 @@ const Homepage = () => {
     <div className="ecommerce-homepage pt-5 mb-9">
       <section className="py-0">
         <div className="container-small">
-          <EcomCategoryNavs />
+          <div className="scrollbar">
+            <EcomCategoryNavs />
+          </div>
         </div>
       </section>
       <section className="py-0 px-xl-3">

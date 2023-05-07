@@ -12,6 +12,7 @@ import {
   UilWrench
 } from '@iconscout/react-unicons';
 import classNames from 'classnames';
+import Scrollbar from 'components/base/Scrollbar';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -95,7 +96,7 @@ const EcomCategoryNavItem = ({ category }: { category: Category }) => {
   return (
     <Link to={category.url} className="icon-nav-item">
       <div className={classNames(category.bgClass, 'icon-container mb-2')}>{category.icon}</div>
-      <p className="nav-label">{category.label}</p>
+      <p className="nav-label mb-0">{category.label}</p>
     </Link>
   );
 };
