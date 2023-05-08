@@ -68,6 +68,7 @@ import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
 import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
 import Profile from 'pages/apps/e-commerce/customer/Profile';
 import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
+import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
 
 const routes = [
   {
@@ -349,7 +350,7 @@ const routes = [
   },
   {
     element: <EcommerceLayout />,
-    path: '/apps/e-commerce/landing/',
+    path: '/apps/e-commerce/customer/',
     children: [
       {
         path: 'homepage',
@@ -382,6 +383,10 @@ const routes = [
       {
         path: 'wishlist',
         element: <Wishlist />
+      },
+      {
+        path: 'favorite-stores',
+        element: <FavoriteStores />
       }
     ]
   }

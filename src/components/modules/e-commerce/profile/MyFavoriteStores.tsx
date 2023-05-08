@@ -8,7 +8,7 @@ const MyFavoriteStores = () => {
     <div>
       <div className="d-flex flex-between-center mb-5">
         <div>
-          <h3 className="text-1100 mb-2">My Favorites Stores</h3>
+          <h3 className="text-1100 mb-2">My Favorite Stores</h3>
           <h5 className="text-700 fw-semi-bold">Essential for a better life</h5>
         </div>
         <Button variant="phoenix-primary">View all</Button>

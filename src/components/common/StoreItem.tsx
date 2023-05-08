@@ -12,8 +12,8 @@ const StoreItem = ({ store }: { store: StoreItemType }) => {
         <img className="mw-100" src={store.logo} alt={store.name} />
       </div>
       <h5 className="mb-2">{store.name}</h5>
-      <div className="mb-1">
-        <Rating initialValue={store.rating} iconClass="fs-9" />
+      <div className="mb-1 fs-9">
+        <Rating initialValue={store.rating} readonly />
       </div>
       <p className="text-500 fs-9 mb-2 fw-semi-bold">({store.rated} people rated)</p>
       <Link className="p-0 fs-9 fw-bold" to="#!">

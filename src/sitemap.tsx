@@ -128,65 +128,66 @@ export const routes: RouteItems[] = [
             pages: [
               {
                 name: 'homepage',
-                path: 'apps/e-commerce/landing/homepage',
+                path: 'apps/e-commerce/customer/homepage',
                 pathName: 'e-commerce-fe-home',
                 active: true
               },
               {
                 name: 'product-details',
-                path: 'apps/e-commerce/landing/product-details',
+                path: 'apps/e-commerce/customer/product-details',
                 pathName: 'e-commerce-fe-product-details',
                 active: true
               },
               {
                 name: 'products-filter',
-                path: 'apps/e-commerce/landing/products-filter',
+                path: 'apps/e-commerce/customer/products-filter',
                 pathName: 'e-commerce-fe-product-filter',
                 active: true
               },
               {
                 name: 'cart',
-                path: 'apps/e-commerce/landing/cart',
+                path: 'apps/e-commerce/customer/cart',
                 pathName: 'e-commerce-fe-cart',
                 active: true
               },
               {
                 name: 'checkout',
-                path: 'apps/e-commerce/landing/checkout',
+                path: 'apps/e-commerce/customer/checkout',
                 pathName: 'e-commerce-fe-checkout',
                 active: true
               },
               {
                 name: 'shipping-info',
-                path: 'apps/e-commerce/landing/shipping-info',
+                path: 'apps/e-commerce/customer/shipping-info',
                 pathName: 'e-commerce-fe-shipping-info',
                 active: true
               },
               {
                 name: 'profile',
-                path: 'apps/e-commerce/landing/profile',
+                path: 'apps/e-commerce/customer/profile',
                 pathName: 'e-commerce-fe-profile',
                 active: true
               },
               {
-                name: 'favourite-stores',
-                path: 'apps/e-commerce/landing/favourite-stores',
-                pathName: 'e-commerce-fe-favourite-stores'
+                name: 'favorite-stores',
+                path: 'apps/e-commerce/customer/favorite-stores',
+                pathName: 'e-commerce-fe-favorite-stores',
+                active: true
               },
               {
                 name: 'wishlist',
-                path: 'apps/e-commerce/landing/wishlist',
+                path: 'apps/e-commerce/customer/wishlist',
                 pathName: 'e-commerce-fe-wishlist',
                 active: true
               },
               {
                 name: 'order-tracking',
-                path: 'apps/e-commerce/landing/order-tracking',
+                path: 'apps/e-commerce/customer/order-tracking',
                 pathName: 'e-commerce-fe-order-tracking'
               },
               {
                 name: 'invoice',
-                path: 'apps/e-commerce/landing/invoice',
+                path: 'apps/e-commerce/customer/invoice',
                 pathName: 'e-commerce-fe-invoice'
               }
             ]
