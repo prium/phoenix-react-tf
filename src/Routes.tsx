@@ -71,6 +71,7 @@ import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
 import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
 import Invoice from 'pages/apps/e-commerce/customer/Invoice';
 import OrderTracking from 'pages/apps/e-commerce/customer/OrderTracking';
+import AddProduct from 'pages/apps/e-commerce/admin/AddProduct';
 
 const routes = [
   {
@@ -84,6 +85,15 @@ const routes = [
       {
         path: '/pages/starter',
         element: <Starter />
+      },
+      {
+        path: '/apps/e-commerce/admin/',
+        children: [
+          {
+            path: 'add-product',
+            element: <AddProduct />
+          }
+        ]
       },
       {
         path: '/modules',
