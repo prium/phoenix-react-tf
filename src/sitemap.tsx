@@ -176,7 +176,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'wishlist',
                 path: 'apps/e-commerce/landing/wishlist',
-                pathName: 'e-commerce-fe-wishlist'
+                pathName: 'e-commerce-fe-wishlist',
+                active: true
               },
               {
                 name: 'order-tracking',

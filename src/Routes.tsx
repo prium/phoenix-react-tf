@@ -67,6 +67,7 @@ import Checkout from 'pages/apps/e-commerce/customer/checkout/Checkout';
 import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
 import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
 import Profile from 'pages/apps/e-commerce/customer/Profile';
+import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
 
 const routes = [
   {
@@ -377,6 +378,10 @@ const routes = [
       {
         path: 'products-filter',
         element: <ProductsFilter />
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist />
       }
     ]
   }
