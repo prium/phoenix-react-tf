@@ -188,7 +188,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'invoice',
                 path: 'apps/e-commerce/customer/invoice',
-                pathName: 'e-commerce-fe-invoice'
+                pathName: 'e-commerce-fe-invoice',
+                active: true
               }
             ]
           }

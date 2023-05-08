@@ -29137,6 +29137,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .dark .dark__text-black, .dark .popupContainer.light .dark__text-black {
   color: #000000 !important;
 }
+.dark .dark__bg-1200, .dark .popupContainer.light .dark__bg-1200 {
+  background-color: #0f111a !important;
+}
 .dark ::selection, .dark .popupContainer.light ::selection {
   background-color: #e5780b;
 }

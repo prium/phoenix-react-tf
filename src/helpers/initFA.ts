@@ -18,6 +18,7 @@ import {
   faChevronRight,
   faClock,
   faCopy,
+  faDownload,
   faEdit,
   faEllipsis,
   faFilter,
@@ -27,10 +28,12 @@ import {
   faMinus,
   faPalette,
   faPlus,
+  faPrint,
   faReply,
   faSearch,
   faShare,
   faShareAlt,
+  faShoppingBag,
   faShoppingCart,
   faStar,
   faThumbsDown,
@@ -101,5 +104,8 @@ library.add(
   faShoppingCart,
   faHome,
   faUser,
-  faFilter
+  faFilter,
+  faDownload,
+  faPrint,
+  faShoppingBag
 );

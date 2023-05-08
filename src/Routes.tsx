@@ -69,6 +69,7 @@ import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
 import Profile from 'pages/apps/e-commerce/customer/Profile';
 import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
 import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
+import Invoice from 'pages/apps/e-commerce/customer/Invoice';
 
 const routes = [
   {
@@ -387,6 +388,10 @@ const routes = [
       {
         path: 'favorite-stores',
         element: <FavoriteStores />
+      },
+      {
+        path: 'invoice',
+        element: <Invoice />
       }
     ]
   }

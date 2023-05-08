@@ -10,7 +10,9 @@
       color: $value !important;
     }
   }
-
+  .dark__bg-1200 {
+    background-color: $dark-gray-soft !important;
+  }
   ::selection {
     background-color: $warning;
   }
