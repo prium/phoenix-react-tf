@@ -70,6 +70,7 @@ import Profile from 'pages/apps/e-commerce/customer/Profile';
 import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
 import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
 import Invoice from 'pages/apps/e-commerce/customer/Invoice';
+import OrderTracking from 'pages/apps/e-commerce/customer/OrderTracking';
 
 const routes = [
   {
@@ -388,6 +389,10 @@ const routes = [
       {
         path: 'favorite-stores',
         element: <FavoriteStores />
+      },
+      {
+        path: 'order-tracking',
+        element: <OrderTracking />
       },
       {
         path: 'invoice',

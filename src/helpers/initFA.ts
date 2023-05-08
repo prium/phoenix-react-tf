@@ -27,6 +27,7 @@ import {
   faKey,
   faMinus,
   faPalette,
+  faPhone,
   faPlus,
   faPrint,
   faReply,
@@ -41,6 +42,9 @@ import {
   faTimes,
   faTrash,
   faTrashAlt,
+  faTruck,
+  faTruckFast,
+  faTruckRampBox,
   faUser,
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
@@ -107,5 +111,9 @@ library.add(
   faFilter,
   faDownload,
   faPrint,
-  faShoppingBag
+  faShoppingBag,
+  faPhone,
+  faTruck,
+  faTruckFast,
+  faTruckRampBox
 );

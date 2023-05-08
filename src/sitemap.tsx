@@ -183,7 +183,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'order-tracking',
                 path: 'apps/e-commerce/customer/order-tracking',
-                pathName: 'e-commerce-fe-order-tracking'
+                pathName: 'e-commerce-fe-order-tracking',
+                active: true
               },
               {
                 name: 'invoice',

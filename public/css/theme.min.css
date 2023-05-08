@@ -26196,7 +26196,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   color: var(--phoenix-gray-700);
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 0 15px;
+  padding: 0;
 }
 .ecommerce-navbar .nav-item .nav-link.active, .ecommerce-navbar .nav-item .nav-link:hover {
   color: var(--phoenix-black);
@@ -27567,17 +27567,17 @@ a[href].bg-200:hover, a[href].bg-200:focus {
     max-width: 1216px;
   }
 }
-.timeline-vertical .timeline-item:not(:last-child) .timeline-item-bar .timeline-bar {
+.timeline-vertical .timeline-item .timeline-separator .timeline-bar {
   position: absolute;
   height: 100px;
   left: 11px;
   top: 24px;
 }
-.timeline-vertical.timeline-with-details .timeline-item:not(:last-child) .timeline-item-bar .timeline-bar {
+.timeline-vertical.timeline-with-details .timeline-item:not(:last-child) .timeline-separator .timeline-bar {
   height: calc(100% - 1rem) !important;
 }
 
-.timeline-basic .timeline-item:hover .timeline-item-bar .icon-item {
+.timeline-basic .timeline-item:hover .timeline-separator .icon-item {
   background: var(--phoenix-gray-100) !important;
   border-color: var(--phoenix-gray-300) !important;
 }
@@ -27587,10 +27587,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .timeline-basic .timeline-item:hover .timeline-time {
   color: var(--phoenix-gray-1100) !important;
 }
-.timeline-basic .timeline-item:not(:last-child) .timeline-item-bar {
+.timeline-basic .timeline-item:not(:last-child) .timeline-separator {
   height: 100%;
 }
-.timeline-basic .timeline-item:not(:last-child) .timeline-item-bar .timeline-bar {
+.timeline-basic .timeline-item:not(:last-child) .timeline-separator .timeline-bar {
   position: absolute;
   height: calc(100% - 2.5rem);
   left: 20px;
