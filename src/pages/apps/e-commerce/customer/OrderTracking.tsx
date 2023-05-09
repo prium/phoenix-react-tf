@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Section from 'components/base/Section';
+import OrderTrackingMap from 'components/maps/OrderTrackingMap';
 import OrderTrackingTimeline from 'components/timelines/OrderTrackingTimeline';
 import { orderTrackingTimelineData } from 'data/timelineData';
 import { Breadcrumb, Col, Row } from 'react-bootstrap';
@@ -34,7 +35,9 @@ const OrderTracking = () => {
           </Button>
         </div>
         <Row className="gy-9 gx-5">
-          <Col xs={12} lg={6}></Col>
+          <Col xs={12} lg={6}>
+            <OrderTrackingMap />
+          </Col>
           <Col xs={12} lg={6}>
             <OrderTrackingTimeline data={orderTrackingTimelineData} />
           </Col>

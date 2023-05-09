@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import Timeline from 'components/base/Timeline';
 import { TimelineData } from 'data/timelineData';
 import React from 'react';
@@ -6,9 +7,13 @@ import React from 'react';
 const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
   return (
     <Timeline variant="vertical">
-      {data.map(item => (
-        <Timeline.Item>
-          <div className="row g-md-3 align-items-center mb-8 mb-lg-10">
+      {data.map((item, index) => (
+        <Timeline.Item key={item.content.title}>
+          <div
+            className={classNames('row g-md-3 align-items-center', {
+              'mb-8 mb-lg-10': index !== data.length - 1
+            })}
+          >
             <div className="col-12 col-md-auto d-flex">
               <Timeline.OppositeContent>
                 <p className="fs-10 fw-semi-bold text-700 mb-0 text-end">
