@@ -84,6 +84,7 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'admin',
+            active: true,
             pages: [
               {
                 name: 'add-product',

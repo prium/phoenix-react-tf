@@ -1,5 +1,7 @@
+import Button from 'components/base/Button';
+import TinymceEditor from 'components/base/TinymceEditor';
 import React from 'react';
-import { Breadcrumb } from 'react-bootstrap';
+import { Breadcrumb, Col, Form, Row } from 'react-bootstrap';
 
 const AddProduct = () => {
   return (
@@ -11,6 +13,36 @@ const AddProduct = () => {
           Default
         </Breadcrumb.Item>
       </Breadcrumb>
+      <form className="mb-9">
+        <div className="d-flex flex-wrap gap-3 flex-between-end mb-5">
+          <div>
+            <h2 className="mb-2">Add a product</h2>
+            <h5 className="text-700 fw-semi-bold">Orders placed across your store</h5>
+          </div>
+          <div className="d-flex flex-wrap gap-2">
+            <Button variant="phoenix-secondary" type="button">
+              Discard
+            </Button>
+            <Button variant="phoenix-primary" type="button">
+              Save draft
+            </Button>
+            <Button variant="primary" type="submit">
+              Publish product
+            </Button>
+          </div>
+        </div>
+        <h4 className="mb-3">Product Title</h4>
+        <Row className="g-5">
+          <Col xs={12} xl={8}>
+            <Form.Control placeholder="Write title here..." className="mb-5" />
+            <h4 className="mb-3">Product Description</h4>
+            <TinymceEditor
+              options={{ height: '15rem', placeholder: 'Write a description here...' }}
+            />
+          </Col>
+          <Col xs={12} xl={4}></Col>
+        </Row>
+      </form>
     </div>
   );
 };
