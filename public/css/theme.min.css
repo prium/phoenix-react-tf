@@ -21060,7 +21060,7 @@ pre[class*=language-] {
 /* -------------------------------------------------------------------------- */
 .dropzone {
   border: 1px dashed var(--phoenix-gray-400);
-  padding: 1.5rem;
+  padding: 3rem 2rem;
   border-radius: 0.375rem;
   height: 100%;
   display: flex;
@@ -21068,6 +21068,9 @@ pre[class*=language-] {
   justify-content: center;
   cursor: pointer;
   text-align: center;
+}
+.dropzone.dropzone-sm {
+  padding: 1.5rem;
 }
 
 .dropzone-file-preview {
@@ -21753,6 +21756,85 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 .picmo-picker.picker .categoryButtons .categoryTab.categoryTabActive .categoryButton:hover {
   background: var(--phoenix-gray-200);
+}
+
+.react-select__control {
+  min-height: unset !important;
+  padding-left: 1rem;
+  border-radius: 0.375rem !important;
+  background-color: var(--phoenix-input-bg) !important;
+  border: 1px solid var(--phoenix-input-border-color) !important;
+  box-shadow: inset 0 1px 2px transparent;
+}
+.react-select__control.react-select__control--is-focused {
+  border-color: #3874ff !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(56, 116, 255, 0.25) !important;
+}
+.react-select__control .react-select__value-container {
+  padding: 0;
+}
+.react-select__control .react-select__placeholder {
+  color: var(--phoenix-900);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+.react-select__control:hover, .react-select__control:focus {
+  outline: none !important;
+}
+.react-select__control .react-select__input-container {
+  margin: 0;
+}
+.react-select__control .react-select__value-container.react-select__value-container--has-value {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.react-select__control .react-select__multi-value {
+  border-radius: 0.375rem;
+  background-color: var(--phoenix-gray-200) !important;
+}
+.react-select__control .react-select__multi-value .react-select__multi-value__remove {
+  border-radius: 0 2px 2px 0 !important;
+}
+.react-select__control .react-select__multi-value .react-select__multi-value__remove:hover {
+  background-color: unset !important;
+  color: var(--phoenix-gray-900) !important;
+}
+.react-select__control .react-select__multi-value__label {
+  color: var(--phoenix-body-color) !important;
+  font-size: 12px;
+}
+.react-select__control .react-select__single-value {
+  color: var(--phoenix-body-color) !important;
+}
+
+.react-select__menu {
+  background-color: var(--phoenix-input-bg) !important;
+  z-index: 1055 !important;
+}
+.react-select__menu .react-select__option {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  color: var(--phoenix-gray-900) !important;
+  margin-bottom: 5px;
+}
+
+.react-select__indicator-separator {
+  background-color: var(--phoenix-react-select-indicator-bg) !important;
+}
+
+.react-select__indicator svg {
+  color: var(--phoenix-react-select-indicator-bg) !important;
+}
+
+.react-select__option--is-focused {
+  background-color: var(--phoenix-soft-primary) !important;
+}
+
+.react-select__option--is-selected {
+  background-color: var(--phoenix-primary) !important;
+  color: var(--phoenix-black) !important;
 }
 
 #appCalendar {

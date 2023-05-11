@@ -31,6 +31,7 @@ import {
   faPlus,
   faPrint,
   faReply,
+  faRotate,
   faSearch,
   faShare,
   faShareAlt,
@@ -115,5 +116,6 @@ library.add(
   faPhone,
   faTruck,
   faTruckFast,
-  faTruckRampBox
+  faTruckRampBox,
+  faRotate
 );

@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
+  size?: 'sm';
   onDrop?: <T extends File>(
     acceptedFiles: T[],
     fileRejections: FileRejection[],
@@ -19,7 +20,7 @@ interface DropzoneProps extends ReactDropZoneProps {
   ) => void;
 }
 
-const Dropzone = ({ className, onDrop, ...rest }: DropzoneProps) => {
+const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
   const [files, setFiles] = useState<File[]>([]);
 
   const handleRemoveFile = (index: number) => {
@@ -50,7 +51,12 @@ const Dropzone = ({ className, onDrop, ...rest }: DropzoneProps) => {
           ))}
         </div>
       )}
-      <div {...getRootProps()} className={classNames(className, 'dropzone')}>
+      <div
+        {...getRootProps()}
+        className={classNames(className, 'dropzone', {
+          'dropzone-sm': size === 'sm'
+        })}
+      >
         <input {...getInputProps()} />
         <div className="text-600 fw-bold fs-9">
           Drag your photo here <span className="text-800">or </span>
@@ -58,7 +64,12 @@ const Dropzone = ({ className, onDrop, ...rest }: DropzoneProps) => {
             Browse from device
           </Button>
           <br />
-          <img className="mt-3" src={imageIcon} width={24} alt="" />
+          <img
+            className="mt-3"
+            src={imageIcon}
+            width={classNames({ 24: size === 'sm', 40: size !== 'sm' })}
+            alt=""
+          />
         </div>
       </div>
     </>
