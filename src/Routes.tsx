@@ -72,6 +72,7 @@ import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
 import Invoice from 'pages/apps/e-commerce/customer/Invoice';
 import OrderTracking from 'pages/apps/e-commerce/customer/OrderTracking';
 import AddProduct from 'pages/apps/e-commerce/admin/AddProduct';
+import Products from 'pages/apps/e-commerce/admin/Products';
 
 const routes = [
   {
@@ -92,6 +93,10 @@ const routes = [
           {
             path: 'add-product',
             element: <AddProduct />
+          },
+          {
+            path: 'products',
+            element: <Products />
           }
         ]
       },
