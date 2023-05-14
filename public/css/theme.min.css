@@ -21760,7 +21760,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 
 .react-select__control {
   min-height: unset !important;
-  padding-left: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.375rem !important;
   background-color: var(--phoenix-input-bg) !important;
   border: 1px solid var(--phoenix-input-border-color) !important;
@@ -21785,17 +21785,45 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 .react-select__control .react-select__input-container {
   margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 0.64rem;
 }
 .react-select__control .react-select__value-container.react-select__value-container--has-value {
   padding-top: 4px;
   padding-bottom: 4px;
+  padding: 0;
 }
 .react-select__control .react-select__multi-value {
-  border-radius: 0.375rem;
-  background-color: var(--phoenix-gray-200) !important;
+  text-transform: uppercase;
+  padding: 2.5px 8px !important;
+  align-items: center;
+  border: 0;
+  background-color: var(--phoenix-choices-item-bg) !important;
+  border-radius: 4px;
+  margin-bottom: 0 !important;
+  color: var(--phoenix-choices-item-color);
+  font-weight: 700;
+  line-height: 1;
 }
 .react-select__control .react-select__multi-value .react-select__multi-value__remove {
+  height: 9px;
+  width: 0.5rem;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2ZTc4OTEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLXgiPjxsaW5lIHgxPSIxOCIgeTE9IjYiIHgyPSI2IiB5Mj0iMTgiPjwvbGluZT48bGluZSB4MT0iNiIgeTE9IjYiIHgyPSIxOCIgeTI9IjE4Ij48L2xpbmU+PC9zdmc+);
+  background-color: transparent !important;
+  padding: 0px !important;
+  background-size: 11px !important;
+  margin: 0;
+  margin-left: 6px;
+  border: none;
+  background-position: -2px -1px;
   border-radius: 0 2px 2px 0 !important;
+}
+.react-select__control .react-select__multi-value .react-select__multi-value__remove svg {
+  display: none;
+}
+.firefox .react-select__control .react-select__multi-value .react-select__multi-value__remove {
+  background-position: -2px 0px;
 }
 .react-select__control .react-select__multi-value .react-select__multi-value__remove:hover {
   background-color: unset !important;
@@ -21803,7 +21831,8 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 .react-select__control .react-select__multi-value__label {
   color: var(--phoenix-body-color) !important;
-  font-size: 12px;
+  font-size: 0.64rem !important;
+  padding: 0 !important;
 }
 .react-select__control .react-select__single-value {
   color: var(--phoenix-body-color) !important;
@@ -21814,18 +21843,21 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   z-index: 1055 !important;
 }
 .react-select__menu .react-select__option {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   color: var(--phoenix-gray-900) !important;
-  margin-bottom: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+.react-select__menu .react-select__option:hover {
+  background-color: var(--phoenix-primary) !important;
+  color: var(--phoenix-white) !important;
 }
 
 .react-select__indicator-separator {
   background-color: var(--phoenix-react-select-indicator-bg) !important;
 }
 
-.react-select__indicator svg {
-  color: var(--phoenix-react-select-indicator-bg) !important;
+.react-select__dropdown-indicator {
+  padding: 0 !important;
 }
 
 .react-select__option--is-focused {

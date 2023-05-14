@@ -1,12 +1,12 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 import { Col, Form, Nav, Row, Tab } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import { Link } from 'react-router-dom';
-import Select from 'react-select';
-import MultiSelect from 'components/base/MultiSelect';
+import ReactSelect from 'components/base/ReactSelect';
+import classNames from 'classnames';
 
 type NavItemType = {
   label: string;
@@ -14,17 +14,29 @@ type NavItemType = {
   eventKey: string;
 };
 
-const NavItem = ({ item }: { item: NavItemType }) => {
+const options = [
+  { value: 'option1', label: 'Option 1' },
+  { value: 'option2', label: 'Option 2' },
+  { value: 'option3', label: 'Option 3' },
+  { value: 'option4', label: 'Option 4' },
+  { value: 'option5', label: 'Option 5' },
+  { value: 'option6', label: 'Option 6' }
+];
+
+const NavItem = ({ item, isLast }: { item: NavItemType; isLast?: boolean }) => {
   return (
-    // <Nav.Item>
     <Nav.Link
       eventKey={item.eventKey}
-      className="border-end border-end-sm-0 border-bottom-sm border-300 text-center text-sm-start cursor-pointer outline-none d-sm-flex align-items-sm-center"
+      className={classNames(
+        'border-end border-end-sm-0 border-300 text-center text-sm-start cursor-pointer outline-none d-sm-flex align-items-sm-center',
+        {
+          'border-bottom-sm': !isLast
+        }
+      )}
     >
       <FeatherIcon icon={item.icon} size={16} className="me-sm-2 nav-icons" />
       <span className="d-none d-sm-inline">{item.label}</span>
     </Nav.Link>
-    // </Nav.Item>
   );
 };
 
@@ -63,12 +75,12 @@ const navItems: NavItemType[] = [
 
 const InventoryTab = () => {
   return (
-    <Tab.Container id="left-tabs-example" defaultActiveKey="global-delivery">
+    <Tab.Container id="left-tabs-example" defaultActiveKey="pricing">
       <Row className="g-0 border-top border-bottom border-300">
         <Col xs={12} sm={4}>
           <Nav className="flex-sm-column border-bottom border-bottom-sm-0 border-end-sm border-300 fs-9 vertical-tab h-100 justify-content-between">
-            {navItems.map(item => (
-              <NavItem key={item.label} item={item} />
+            {navItems.map((item, index) => (
+              <NavItem key={item.label} item={item} isLast={index === navItems.length - 1} />
             ))}
           </Nav>
         </Col>
@@ -192,8 +204,8 @@ const InventoryTab = () => {
             <Tab.Pane eventKey="global-delivery" className="h-100">
               <h5 className="mb-3 text-1000">Global Delivery</h5>
               <div className="mb-3">
-                <Form.Check type="radio" id="fullfilledBySeller">
-                  <Form.Check.Input type="radio" name="shipping" />
+                <Form.Check type="radio" id="globalDelivery">
+                  <Form.Check.Input type="radio" name="delivery" />
                   <Form.Check.Label className="text-900 fs-8">Worldwide delivery</Form.Check.Label>
                 </Form.Check>
                 <div className="ps-4">
@@ -203,23 +215,72 @@ const InventoryTab = () => {
                 </div>
               </div>
               <div className="mb-3">
-                <Form.Check type="radio" id="fullfilledBySeller">
-                  <Form.Check.Input type="radio" name="shipping" />
+                <Form.Check type="radio" id="selectedCountries">
+                  <Form.Check.Input type="radio" name="delivery" />
                   <Form.Check.Label className="text-900 fs-8">Selected Countries</Form.Check.Label>
                 </Form.Check>
                 <div className="ps-4">
-                  <MultiSelect />
+                  <ReactSelect options={options} isMulti placeholder="Type country name" />
                 </div>
               </div>
               <div className="mb-3">
-                <Form.Check type="radio" id="fullfilledBySeller">
-                  <Form.Check.Input type="radio" name="shipping" />
+                <Form.Check type="radio" id="localDelivery">
+                  <Form.Check.Input type="radio" name="delivery" />
                   <Form.Check.Label className="text-900 fs-8">Local delivery</Form.Check.Label>
                 </Form.Check>
                 <div className="ps-4">
                   <p className="fs-9 mb-0 text-800">
                     Deliver to your country of residence <Link to="#!">Change profile address</Link>
                   </p>
+                </div>
+              </div>
+            </Tab.Pane>
+
+            <Tab.Pane eventKey="attributes" className="h-100">
+              <h5 className="mb-3 text-1000">Attributes</h5>
+              <Form.Check type="checkbox" id="fragileCheck">
+                <Form.Check.Input type="checkbox" name="attributes" />
+                <Form.Check.Label className="text-900 fs-8">Fragile Product</Form.Check.Label>
+              </Form.Check>
+              <Form.Check type="checkbox" id="biodegradableCheck">
+                <Form.Check.Input type="checkbox" name="attributes" />
+                <Form.Check.Label className="text-900 fs-8">Biodegradable</Form.Check.Label>
+              </Form.Check>
+              <Form.Check type="checkbox" id="frozenProduct" className="mb-3">
+                <Form.Check.Input type="checkbox" name="attributes" />
+                <Form.Check.Label className="text-900 fs-8">Frozen Product</Form.Check.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Max. allowed Temperature"
+                  style={{ maxWidth: 350 }}
+                />
+              </Form.Check>
+              <Form.Check type="checkbox" id="expDate">
+                <Form.Check.Input type="checkbox" name="attributes" />
+                <Form.Check.Label className="text-900 fs-8">
+                  Expiry Date of Product
+                </Form.Check.Label>
+                <Form.Control type="date" style={{ maxWidth: 350 }} />
+              </Form.Check>
+            </Tab.Pane>
+
+            <Tab.Pane eventKey="advanced" className="h-100">
+              <h5 className="mb-3 text-1000">Advanced</h5>
+              <div className="row g-3">
+                <div className="col-12 col-lg-6">
+                  <h5 className="mb-2 text-1000">Product ID Type</h5>
+                  <Form.Select>
+                    <option selected value="isbn">
+                      ISBN
+                    </option>
+                    <option value="upc">UPC</option>
+                    <option value="ean">EAN</option>
+                    <option value="jan">JAN</option>
+                  </Form.Select>
+                </div>
+                <div className="col-12 col-lg-6">
+                  <h5 className="mb-2 text-1000">Product ID</h5>
+                  <Form.Control type="text" placeholder="ISBN Number" />
                 </div>
               </div>
             </Tab.Pane>
