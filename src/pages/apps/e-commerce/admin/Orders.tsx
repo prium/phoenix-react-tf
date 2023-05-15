@@ -11,36 +11,36 @@ import { Breadcrumb, ButtonGroup, Col, Dropdown, Nav, Row } from 'react-bootstra
 
 const filterMenus: FilterMenu[] = [
   {
-    label: 'Country',
+    label: 'Payment status',
     items: [
       {
-        label: 'USA'
+        label: 'Action'
       },
       {
-        label: 'UK'
+        label: 'Another Action'
       },
       {
-        label: 'Australia'
+        label: 'Something else here'
       }
     ]
   },
   {
-    label: 'VIP',
+    label: 'Fulfilment status',
     items: [
       {
-        label: 'VIP 1'
+        label: 'Action'
       },
       {
-        label: 'VIP 2'
+        label: 'Another Action'
       },
       {
-        label: 'VIP 3'
+        label: 'Something else here'
       }
     ]
   }
 ];
 
-const Customers = () => {
+const Orders = () => {
   const table = useAdvanceTable({
     data: customers,
     columns: customersTablecolumns,
@@ -64,7 +64,7 @@ const Customers = () => {
         </Breadcrumb.Item>
       </Breadcrumb>
       <div className="mb-9">
-        <h2 className="mb-4">Customers</h2>
+        <h2 className="mb-4">Orders</h2>
         <Nav className="mb-3 mb-lg-2 mx-n3 nav nav-links">
           <Nav.Item>
             <Nav.Link href="#!" className="active">
@@ -73,27 +73,27 @@ const Customers = () => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              New <span className="text-700 fw-semi-bold">(6)</span>
+              Pending payment <span className="text-700 fw-semi-bold">(6)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Abandoned checkouts <span className="text-700 fw-semi-bold">(17)</span>
+              Unfulfilled <span className="text-700 fw-semi-bold">(17)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Locals <span className="text-700 fw-semi-bold">(6,810)</span>
+              Completed <span className="text-700 fw-semi-bold">(6,810)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Email subscribers <span className="text-700 fw-semi-bold">(8)</span>
+              Refunded <span className="text-700 fw-semi-bold">(8)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Top reviews <span className="text-700 fw-semi-bold">(2)</span>
+              Failed <span className="text-700 fw-semi-bold">(2)</span>
             </Nav.Link>
           </Nav.Item>
         </Nav>
@@ -113,7 +113,7 @@ const Customers = () => {
                 </Button>
                 <Button variant="primary">
                   <FontAwesomeIcon icon="plus" className="me-2" />
-                  Add customer
+                  Add order
                 </Button>
               </Col>
             </Row>
@@ -128,4 +128,4 @@ const Customers = () => {
   );
 };
 
-export default Customers;
+export default Orders;
