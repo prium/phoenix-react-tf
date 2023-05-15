@@ -21,6 +21,7 @@ import {
   faDownload,
   faEdit,
   faEllipsis,
+  faFileExport,
   faFilter,
   faHeart,
   faHome,
@@ -117,5 +118,6 @@ library.add(
   faTruck,
   faTruckFast,
   faTruckRampBox,
-  faRotate
+  faRotate,
+  faFileExport
 );

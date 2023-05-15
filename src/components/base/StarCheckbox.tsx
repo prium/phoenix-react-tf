@@ -1,6 +1,5 @@
 import React, { InputHTMLAttributes, useState } from 'react';
 import Rating from './Rating';
-import classNames from 'classnames';
 
 interface StarCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -22,10 +21,10 @@ const StarCheckbox = ({ className, defaultChecked, ...rest }: StarCheckboxProps)
     <>
       <Rating
         initialValue={rating}
-        // initialValue={checked ? 1 : 0}
         iconsCount={1}
         allowFraction={false}
         onClick={handleRating}
+        iconClass="fs-8"
       />
     </>
   );

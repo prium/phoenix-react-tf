@@ -1,18 +1,15 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import { currencyFormat } from 'helpers/utils';
-import useAdvanceTable from 'hooks/useAdvanceTable';
-import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { ProductsTableProductType, productsTableData } from 'data/e-commerce/products';
-import Button from 'components/base/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ProductsTableProductType } from 'data/e-commerce/products';
 import Badge from 'components/base/Badge';
-import Rating from 'components/base/Rating';
 import StarCheckbox from 'components/base/StarCheckbox';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
-const columns: ColumnDef<ProductsTableProductType>[] = [
+export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
   {
     id: 'productImage',
     accessorKey: '',
@@ -24,7 +21,7 @@ const columns: ColumnDef<ProductsTableProductType>[] = [
         </div>
       );
     },
-    meta: { cellProps: { className: 'py-0' } },
+    meta: { headerProps: { style: { width: 70 } }, cellProps: { className: 'py-0' } },
     enableSorting: false
   },
   {
@@ -39,7 +36,8 @@ const columns: ColumnDef<ProductsTableProductType>[] = [
       );
     },
     meta: {
-      headerProps: { style: { minWidth: 360 }, className: 'py-2' }
+      headerProps: { style: { width: 350 }, className: 'ps-4' },
+      cellProps: { className: 'ps-4' }
     }
   },
   {
@@ -61,7 +59,7 @@ const columns: ColumnDef<ProductsTableProductType>[] = [
     accessorKey: 'category',
     header: 'Category',
     meta: {
-      headerProps: { style: { width: 350 }, className: 'ps-4' },
+      headerProps: { style: { width: 150 }, className: 'ps-4' },
       cellProps: { className: 'fs-9 fw-semi-bold ps-4 text-600' }
     }
   },
@@ -71,15 +69,18 @@ const columns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Tags',
     cell: ({ row: { original } }) => {
       const { tags } = original;
-      return tags.map(tag => (
-        <Link key={tag} to="#!" className="text-decoration-none">
-          <Badge variant="tag">{tag}</Badge>
-        </Link>
-      ));
+      return (
+        <div className="d-flex flex-wrap gap-2">
+          {tags.map(tag => (
+            <Link key={tag} to="#!" className="text-decoration-none">
+              <Badge variant="tag">{tag}</Badge>
+            </Link>
+          ))}
+        </div>
+      );
     },
     meta: {
-      headerProps: { style: { width: 250 }, className: 'ps-3' },
-      cellProps: { className: 'd-flex flex-wrap gap-2' }
+      headerProps: { style: { width: 250 }, className: 'ps-3' }
     }
   },
   {
@@ -113,43 +114,28 @@ const columns: ColumnDef<ProductsTableProductType>[] = [
       headerProps: { style: { width: 50 }, className: 'ps-4' },
       cellProps: { className: 'text-600 ps-4' }
     }
+  },
+  {
+    id: 'action',
+    cell: () => (
+      <RevealDropdownTrigger>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
+      </RevealDropdownTrigger>
+    ),
+    meta: {
+      headerProps: { style: { width: '7%' } },
+      cellProps: { className: 'text-end' }
+    }
   }
-  // {
-  //   id: 'action',
-  //   cell: () => (
-  //     <div className="d-flex gap-2 justify-content-end">
-  //       <Button size="sm" variant="" className="text-500 hover-text-600">
-  //         <FontAwesomeIcon icon="trash" />
-  //       </Button>
-  //       <Button className="fs-10 text-nowrap" startIcon={<FontAwesomeIcon icon="shopping-cart" />}>
-  //         Add to cart
-  //       </Button>
-  //     </div>
-  //   ),
-  //   meta: {
-  //     headerProps: { style: { width: '35%' } }
-  //   }
-  // }
 ];
 
 const ProductsTable = () => {
-  const table = useAdvanceTable({
-    data: productsTableData,
-    columns,
-    pageSize: 10,
-    pagination: true,
-    sortable: true,
-    selection: true
-  });
-
   return (
     <div>
-      <AdvanceTableProvider {...table}>
-        <div className="border-y">
-          <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
-          <AdvanceTableFooter pagination />
-        </div>
-      </AdvanceTableProvider>
+      <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
+      <AdvanceTableFooter pagination />
     </div>
   );
 };
