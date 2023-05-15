@@ -15,14 +15,7 @@ const MyFavoriteStores = () => {
       </div>
       <Row className="gx-3 gy-5">
         {stores.slice(0, 12).map(store => (
-          <Col
-            key={store.name}
-            xs={6}
-            sm={4}
-            md={3}
-            lg={2}
-            className="hover-actions-trigger btn-reveal-trigger"
-          >
+          <Col key={store.name} xs={6} sm={4} md={3} lg={2}>
             <StoreItem store={store} />
           </Col>
         ))}

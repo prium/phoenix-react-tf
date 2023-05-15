@@ -14,6 +14,8 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import { ChangeEvent } from 'react';
 import Rating from 'components/base/Rating';
+import RevealDropdown from 'components/base/RevealDropdown';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
@@ -157,24 +159,9 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
               </Button>
             </div>
           </div>
-
-          <Dropdown className="position-static" align="end">
-            <Dropdown.Toggle
-              variant=""
-              size="sm"
-              className="btn-reveal dropdown-caret-none transition-none fs-10 "
-            >
-              <FontAwesomeIcon icon="ellipsis" className="fs-10" />
-            </Dropdown.Toggle>
-            <Dropdown.Menu align="end" className="py-2">
-              <Dropdown.Item eventKey="1">View</Dropdown.Item>
-              <Dropdown.Item eventKey="2">Export</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="4" className="text-danger">
-                Remove
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <RevealDropdown btnClassName="fs-10">
+            <ActionDropdownItems />
+          </RevealDropdown>
         </>
       );
     },

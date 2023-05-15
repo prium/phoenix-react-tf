@@ -2,13 +2,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { ProductReviewType } from 'data/e-commerce';
 import React from 'react';
-import { Col, Dropdown, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const ProductReview = ({ review }: { review: ProductReviewType }) => {
   return (
-    <div className="mb-4 hover-actions-trigger btn-reveal-trigger">
+    <RevealDropdownTrigger className="mb-4 hover-actions-trigger">
       <div className="d-flex justify-content-between mb-2">
         <div className="d-flex align-items-center">
           <Rating readonly initialValue={review.star} />
@@ -17,23 +19,9 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
             {review.customer}
           </h5>
         </div>
-        <Dropdown className="position-static" align="end">
-          <Dropdown.Toggle
-            variant=""
-            size="sm"
-            className="btn-reveal dropdown-caret-none transition-none"
-          >
-            <FontAwesomeIcon icon="ellipsis" className="fs-10" />
-          </Dropdown.Toggle>
-          <Dropdown.Menu align="end" className="py-2">
-            <Dropdown.Item eventKey="1">View</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Export</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item eventKey="4" className="text-danger">
-              Remove
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
       </div>
       <p className="text-700 fs-9 mb-1">{review.date}</p>
       <p
@@ -74,7 +62,7 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
           <FontAwesomeIcon icon="thumbs-down" />
         </Button>
       </div>
-    </div>
+    </RevealDropdownTrigger>
   );
 };
 
