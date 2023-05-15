@@ -63,3 +63,18 @@
     height: 0;
   }
 }
+
+.table-scrollbar {
+  margin-left: -4px !important;
+  margin-right: -4px !important;
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+  > {
+    div {
+      margin-left: -4px !important;
+      margin-right: -4px !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+    }
+  }
+}

@@ -80,7 +80,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: 250 }, className: 'ps-3' }
+      headerProps: { style: { minWidth: 250 }, className: 'ps-3' }
     }
   },
   {

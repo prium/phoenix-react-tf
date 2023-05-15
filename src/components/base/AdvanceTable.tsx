@@ -21,7 +21,7 @@ const AdvanceTable = ({
   const { getRowModel, getFlatHeaders } = table;
 
   return (
-    <Scrollbar style={{ height: '100%' }}>
+    <Scrollbar style={{ height: '100%' }} className="table-scrollbar">
       <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>

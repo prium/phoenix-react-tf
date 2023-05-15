@@ -27569,6 +27569,19 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   height: 0;
 }
 
+.table-scrollbar {
+  margin-right: -4px !important;
+  margin-left: -4px !important;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+.table-scrollbar > div {
+  margin-right: -4px !important;
+  margin-left: -4px !important;
+  padding-right: 4px !important;
+  padding-left: 4px !important;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                             Bootstrap Carousel                             */
 /* -------------------------------------------------------------------------- */

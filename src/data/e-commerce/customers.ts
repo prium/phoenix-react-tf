@@ -1,0 +1,176 @@
+import team32 from 'assets/img/team/32.webp';
+import avatar from 'assets/img/team/avatar.webp';
+import team35 from 'assets/img/team/35.webp';
+import team57 from 'assets/img/team/57.webp';
+import team58 from 'assets/img/team/58.webp';
+import team59 from 'assets/img/team/59.webp';
+import team31 from 'assets/img/team/31.webp';
+import team33 from 'assets/img/team/33.webp';
+import team34 from 'assets/img/team/34.webp';
+import team29 from 'assets/img/team/29.webp';
+import team3 from 'assets/img/team/3.webp';
+import team25 from 'assets/img/team/25.webp';
+
+export type Customer = {
+  avatar?: string;
+  name: string;
+  email: string;
+  city: string;
+  totalOrders: number;
+  totalSpent: number;
+  lastSeen: string;
+  lastOrder: string;
+  placeholder?: boolean;
+};
+
+export const customers: Customer[] = [
+  {
+    avatar: team32,
+    name: 'Carry Anna',
+    email: 'annac34@gmail.com',
+    city: 'Budapest',
+    totalOrders: 89,
+    totalSpent: 23987,
+    lastSeen: '34 min ago',
+    lastOrder: 'Dec 12, 12:56 PM'
+  },
+  {
+    name: 'Milind Mikuja',
+    placeholder: true,
+    email: 'mimiku@yahoo.com',
+    city: 'Manchester',
+    totalOrders: 76,
+    totalSpent: 21567,
+    lastSeen: '6 hours ago',
+    lastOrder: 'Dec 9, 2:28 PM'
+  },
+  {
+    avatar: team35,
+    name: 'Stanly Drinkwater',
+    email: 'stnlwasser@hotmail.com',
+    city: 'Smallville',
+    totalOrders: 69,
+    totalSpent: 19872,
+    lastSeen: '43 min ago',
+    lastOrder: 'Dec 4, 12:56 PM'
+  },
+  {
+    avatar: team57,
+    name: 'Josef Stravinsky',
+    email: 'Josefsky@sni.it',
+    city: 'Metropolis',
+    totalOrders: 67,
+    totalSpent: 17996,
+    lastSeen: '2 hours ago',
+    lastOrder: 'Dec 1,  4:07 AM'
+  },
+  {
+    avatar: team58,
+    name: 'Igor Borvibson',
+    email: 'vibigorr@technext.it',
+    city: 'Central city',
+    totalOrders: 61,
+    totalSpent: 16785,
+    lastSeen: '5 days ago',
+    lastOrder: 'Nov 28, 7:28 PM'
+  },
+  {
+    avatar: team59,
+    name: 'Katerina Karenin',
+    email: 'karkat99@gmail.com',
+    city: 'Gotham',
+    totalOrders: 58,
+    totalSpent: 14956,
+    lastSeen: '2 weeks ago',
+    lastOrder: 'Nov 24, 10:16 AM'
+  },
+  {
+    name: 'Roy Anderson',
+    email: 'andersonroy@netflix.chill',
+    city: 'Vancouver',
+    totalOrders: 52,
+    totalSpent: 12509,
+    lastSeen: '4 days ago',
+    lastOrder: 'Nov 18, 5:43 PM'
+  },
+  {
+    avatar: team31,
+    name: 'Martina scorcese',
+    email: 'cesetina1@gmail.com',
+    city: 'Viena',
+    totalOrders: 49,
+    totalSpent: 11003,
+    lastSeen: '6 min ago',
+    lastOrder: 'Nov 18, 2:09 AM'
+  },
+  {
+    avatar: team33,
+    name: 'Luis Bunuel',
+    email: 'luisuel@live.com',
+    city: 'Bangalore',
+    totalOrders: 44,
+    totalSpent: 7897,
+    lastSeen: '56 min ago',
+    lastOrder: 'Nov 16, 3:22 PM'
+  },
+  {
+    avatar: team34,
+    name: 'Jean Renoir',
+    email: 'renoirjean1836@gmail.com',
+    city: 'Chittagong',
+    totalOrders: 37,
+    totalSpent: 7781,
+    lastSeen: 'Yesterday',
+    lastOrder: 'Nov 09, 8:49 AM'
+  },
+  {
+    avatar: team29,
+    name: 'Ricky Antony',
+    email: 'ricky@example.com',
+    city: 'New Jersey',
+    totalOrders: 33,
+    totalSpent: 7825,
+    lastSeen: '1 hour ago',
+    lastOrder: 'Oct 19, 8:00 AM'
+  },
+  {
+    avatar: team3,
+    name: 'Emma Watson',
+    email: 'emma@example.com',
+    city: 'New York',
+    totalOrders: 45,
+    totalSpent: 18975,
+    lastSeen: '6 hours ago',
+    lastOrder: 'Oct 15, 12:00 PM'
+  },
+  {
+    name: 'Jennifer Schramm',
+    placeholder: true,
+    email: 'jennifer@example.com',
+    city: 'Charlotte',
+    totalOrders: 39,
+    totalSpent: 8967,
+    lastSeen: '12 hours ago',
+    lastOrder: 'Oct 12, 11:00 AM'
+  },
+  {
+    avatar: team32,
+    name: 'Raymond Mims',
+    email: 'raymond@example.com',
+    city: 'Artesia',
+    totalOrders: 30,
+    totalSpent: 14587,
+    lastSeen: '2 day ago',
+    lastOrder: 'Oct 10, 8:30 AM'
+  },
+  {
+    avatar: team25,
+    name: 'Michael Jenkins',
+    email: 'jenkins@example.com',
+    city: 'Philadelphia',
+    totalOrders: 43,
+    totalSpent: 45697,
+    lastSeen: '12 hours ago',
+    lastOrder: 'Oct 3, 8:30 AM'
+  }
+];

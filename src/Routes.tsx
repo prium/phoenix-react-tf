@@ -73,6 +73,7 @@ import Invoice from 'pages/apps/e-commerce/customer/Invoice';
 import OrderTracking from 'pages/apps/e-commerce/customer/OrderTracking';
 import AddProduct from 'pages/apps/e-commerce/admin/AddProduct';
 import Products from 'pages/apps/e-commerce/admin/Products';
+import Customers from 'pages/apps/e-commerce/admin/Customers';
 
 const routes = [
   {
@@ -97,6 +98,10 @@ const routes = [
           {
             path: 'products',
             element: <Products />
+          },
+          {
+            path: 'customers',
+            element: <Customers />
           }
         ]
       },
