@@ -2,12 +2,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import FilterButtonGroup, { FilterMenu } from 'components/common/FilterButtonGroup';
 import SearchBox from 'components/common/SearchBox';
-import CustomersTable, { customersTablecolumns } from 'components/tables/CustomersTable';
-import { customers } from 'data/e-commerce/customers';
+import OrdersTable, { ordersTableColumns } from 'components/tables/OrdersTable';
+import { ordersTableData } from 'data/e-commerce/orders';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import { Breadcrumb, ButtonGroup, Col, Dropdown, Nav, Row } from 'react-bootstrap';
+import { Breadcrumb, Col, Nav, Row } from 'react-bootstrap';
 
 const filterMenus: FilterMenu[] = [
   {
@@ -42,8 +42,8 @@ const filterMenus: FilterMenu[] = [
 
 const Orders = () => {
   const table = useAdvanceTable({
-    data: customers,
-    columns: customersTablecolumns,
+    data: ordersTableData,
+    columns: ordersTableColumns,
     pageSize: 10,
     pagination: true,
     sortable: true,
@@ -120,7 +120,7 @@ const Orders = () => {
           </div>
 
           <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
-            <CustomersTable />
+            <OrdersTable />
           </div>
         </AdvanceTableProvider>
       </div>

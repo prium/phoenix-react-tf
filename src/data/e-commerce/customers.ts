@@ -1,5 +1,4 @@
 import team32 from 'assets/img/team/32.webp';
-import avatar from 'assets/img/team/avatar.webp';
 import team35 from 'assets/img/team/35.webp';
 import team57 from 'assets/img/team/57.webp';
 import team58 from 'assets/img/team/58.webp';
