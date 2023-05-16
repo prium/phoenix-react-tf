@@ -88,41 +88,42 @@ export const routes: RouteItems[] = [
             pages: [
               {
                 name: 'add-product',
-                path: 'apps/e-commerce/admin/add-product',
+                path: '/apps/e-commerce/admin/add-product',
                 pathName: 'e-commerce-add-product',
                 active: true
               },
               {
                 name: 'products',
-                path: 'apps/e-commerce/admin/products',
+                path: '/apps/e-commerce/admin/products',
                 pathName: 'e-commerce-products',
                 active: true
               },
               {
                 name: 'customers',
-                path: 'apps/e-commerce/admin/customers',
+                path: '/apps/e-commerce/admin/customers',
                 pathName: 'e-commerce-customers',
                 active: true
               },
               {
                 name: 'customer-details',
-                path: 'apps/e-commerce/admin/customer-details',
+                path: '/apps/e-commerce/admin/customer-details',
                 pathName: 'e-commerce-customer-details'
               },
               {
                 name: 'orders',
-                path: 'apps/e-commerce/admin/orders',
+                path: '/apps/e-commerce/admin/orders',
                 pathName: 'e-commerce-orders',
                 active: true
               },
               {
                 name: 'order-details',
-                path: 'apps/e-commerce/admin/order-details',
-                pathName: 'e-commerce-order-details'
+                path: '/apps/e-commerce/admin/order-details',
+                pathName: 'e-commerce-order-details',
+                active: true
               },
               {
                 name: 'refund',
-                path: 'apps/e-commerce/admin/refund',
+                path: '/apps/e-commerce/admin/refund',
                 pathName: 'e-commerce-refund'
               }
             ]

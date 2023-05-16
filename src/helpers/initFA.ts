@@ -47,6 +47,7 @@ import {
   faTruck,
   faTruckFast,
   faTruckRampBox,
+  faUndo,
   faUser,
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
@@ -119,5 +120,6 @@ library.add(
   faTruckFast,
   faTruckRampBox,
   faRotate,
-  faFileExport
+  faFileExport,
+  faUndo
 );

@@ -5,7 +5,7 @@ import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { WishlistProductType } from 'data/e-commerce/products';
+import { WishlistProductType, wishlistProducts } from 'data/e-commerce/products';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -82,9 +82,9 @@ const columns: ColumnDef<WishlistProductType>[] = [
   }
 ];
 
-const EcomWishlistTable = ({ data }: { data: WishlistProductType[] }) => {
+const EcomWishlistTable = () => {
   const table = useAdvanceTable({
-    data: data,
+    data: wishlistProducts,
     columns,
     pageSize: 6,
     pagination: true,

@@ -75,6 +75,7 @@ import AddProduct from 'pages/apps/e-commerce/admin/AddProduct';
 import Products from 'pages/apps/e-commerce/admin/Products';
 import Customers from 'pages/apps/e-commerce/admin/Customers';
 import Orders from 'pages/apps/e-commerce/admin/Orders';
+import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
 
 const routes = [
   {
@@ -107,6 +108,10 @@ const routes = [
           {
             path: 'orders',
             element: <Orders />
+          },
+          {
+            path: 'order-details',
+            element: <OrderDetails />
           }
         ]
       },

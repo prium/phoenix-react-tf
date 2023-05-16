@@ -18,8 +18,8 @@ interface FilterButtonGroupProps {
 const FilterButtonGroup = ({ menus }: FilterButtonGroupProps) => {
   return (
     <ButtonGroup className="position-static">
-      {menus.map((menu, index) => (
-        <Dropdown as={ButtonGroup} className="position-static">
+      {menus.map(menu => (
+        <Dropdown key={menu.label} as={ButtonGroup} className="position-static">
           <Dropdown.Toggle
             variant="phoenix-secondary"
             className="px-7 flex-shrink-0 dropdown-caret-none"

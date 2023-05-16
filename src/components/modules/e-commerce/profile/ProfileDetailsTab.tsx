@@ -5,7 +5,6 @@ import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
 import EcomWishlistTable from 'components/tables/EcomWishlistTable';
-import { wishlistProducts } from 'data/e-commerce/products';
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
@@ -36,7 +35,7 @@ const tabLinks: TabLink[] = [
     id: 'wishlist',
     label: 'Wishlist',
     icon: 'heart',
-    content: <EcomWishlistTable data={wishlistProducts} />
+    content: <EcomWishlistTable />
   },
   {
     id: 'stores',

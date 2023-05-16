@@ -83,7 +83,7 @@ export type WishlistProductType = {
   color: string;
   price: number;
   size: number | string;
-  total: number;
+  quantity: number;
 };
 
 export type StoreProductType = {
@@ -376,7 +376,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Pure matte black',
     price: 57,
     size: 42,
-    total: 57
+    quantity: 4
   },
   {
     product: '2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray',
@@ -384,7 +384,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Black',
     price: 1499,
     size: 'Pro',
-    total: 1499
+    quantity: 2
   },
   {
     product: 'PlayStation 5 DualSense Wireless Controller',
@@ -392,7 +392,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'White',
     price: 299,
     size: 'Regular',
-    total: 359
+    quantity: 2
   },
   {
     product: 'Apple MacBook Pro 13 inch-M1-8/256GB-space',
@@ -400,7 +400,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Space Gray',
     price: 1699,
     size: 'Pro',
-    total: 1799
+    quantity: 2
   },
   {
     product:
@@ -409,7 +409,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Ocean Blue',
     price: 65,
     size: '21"',
-    total: 65
+    quantity: 1
   },
   {
     product: 'Apple Magic Mouse (Wireless, Rechargable) - Silver',
@@ -417,7 +417,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'White',
     price: 30,
     size: 'Regular',
-    total: 60
+    quantity: 3
   },
   {
     product: 'Amazon Basics Matte Black Wired Keyboard - US Layout (QWERTY)',
@@ -425,7 +425,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Black',
     price: 40,
     size: 'MD',
-    total: 40
+    quantity: 2
   },
   {
     product: 'HORI Racing Wheel Apex for PlayStation 4_3, and PC',
@@ -433,7 +433,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Black',
     price: 130,
     size: '45',
-    total: 130
+    quantity: 1
   },
   {
     product: 'Xbox Series S',
@@ -441,7 +441,7 @@ export const wishlistProducts: WishlistProductType[] = [
     color: 'Space Gray',
     price: 99,
     size: 'sm',
-    total: 99
+    quantity: 1
   }
 ];
 

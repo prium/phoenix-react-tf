@@ -1,6 +1,5 @@
 import Section from 'components/base/Section';
 import EcomWishlistTable from 'components/tables/EcomWishlistTable';
-import { wishlistProducts } from 'data/e-commerce/products';
 import { Breadcrumb } from 'react-bootstrap';
 
 const Wishlist = () => {
@@ -18,7 +17,7 @@ const Wishlist = () => {
           Wishlist
           <span className="text-700 fw-normal ms-2">(43)</span>
         </h2>
-        <EcomWishlistTable data={wishlistProducts} />
+        <EcomWishlistTable />
       </Section>
     </div>
   );
