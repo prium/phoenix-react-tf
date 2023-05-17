@@ -28,6 +28,7 @@ import {
   faKey,
   faMinus,
   faPalette,
+  faPen,
   faPhone,
   faPlus,
   faPrint,
@@ -121,5 +122,6 @@ library.add(
   faTruckRampBox,
   faRotate,
   faFileExport,
-  faUndo
+  faUndo,
+  faPen
 );

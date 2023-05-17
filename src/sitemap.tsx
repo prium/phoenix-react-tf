@@ -107,7 +107,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'customer-details',
                 path: '/apps/e-commerce/admin/customer-details',
-                pathName: 'e-commerce-customer-details'
+                pathName: 'e-commerce-customer-details',
+                active: true
               },
               {
                 name: 'orders',

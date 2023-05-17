@@ -173,3 +173,22 @@ export const customers: Customer[] = [
     lastOrder: 'Oct 3, 8:30 AM'
   }
 ];
+
+export const customerNotes = [
+  {
+    note: 'Gave us a nice feedback',
+    date: '12 Nov, 2020'
+  },
+  {
+    note: 'Customer added product to cart and then forgot to checkout. Later knocked the customer support to ask about update on shipping. Later, settled on “One day Shipping” though “Free delivery” was preferred. Overall good behavior.',
+    date: '23 Dec, 2019'
+  },
+  {
+    note: 'User of this support ticket won a 100% off coupon and received top-notch service from the technical support engineer. Along with providing a good review, user highly appreciated the team.',
+    date: '2 Oct, 2020'
+  },
+  {
+    note: 'Customer returned and bought 2 related items, which is currently being shipped. Customer chose “One day Shipping”. Additional notes were added regarding customised wrapping. Customer submitted positive review.',
+    date: '26 Apr, 2019'
+  }
+];
