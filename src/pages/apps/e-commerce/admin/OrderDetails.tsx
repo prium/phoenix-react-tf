@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import OrderDetailsTable from 'components/tables/OrderDetailsTable';
-import React from 'react';
-import { Breadcrumb, Col, Dropdown, Row } from 'react-bootstrap';
+import { Breadcrumb, Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import FeatherIcon from 'feather-icons-react';
-import DetailsLabel from 'components/common/DetailsLabel';
+import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
+import {
+  BillingDetails,
+  OtherDetails,
+  ShippingDetails
+} from 'components/modules/e-commerce/OrderDeliveryDetails';
 
 const OrderDetails = () => {
   return (
@@ -18,10 +21,10 @@ const OrderDetails = () => {
         </Breadcrumb.Item>
       </Breadcrumb>
       <div className="mb-9">
-        <h2>
+        <h2 className="mb-2">
           Order <span>#349</span>
         </h2>
-        <div className="d-flex flex-wrap flex-between-center mb-1 gap-2">
+        <div className="d-flex flex-wrap flex-between-center mb-3 gap-2">
           <p className="text-800 lh-sm mb-0">
             Customer ID :{' '}
             <Link className="fw-bold" to="#!">
@@ -64,106 +67,40 @@ const OrderDetails = () => {
             </div>
             <Row className="gx-4 gy-6 g-xl-7 justify-content-sm-center justify-content-xl-start">
               <Col xs={12} sm="auto">
-                <h4 className="mb-5">Billing details</h4>
-                <Row className="g-4 flex-sm-column">
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="user" label="Customer" />
-                    <Link className="fs-9 ms-4" to="#!">
-                      Shatinon Mekalan
-                    </Link>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="mail" label="Email" />
-                    <Link className="fs-9 ms-4" to="mailto:shatinon@jeemail.com">
-                      shatinon@jeemail.com
-                    </Link>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="phone" label="Phone" />
-                    <Link className="fs-9 ms-4" to="tel:+1234567890">
-                      +1234567890
-                    </Link>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="home" label="Address" />
-                    <div className="ms-4">
-                      <p className="text-800 mb-0 fs-9">Shatinon Mekalan</p>
-                      <p className="text-800 mb-0 fs-9">
-                        Vancouver, British Columbia,
-                        <br className="d-none d-sm-block" />
-                        Canada
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
+                <BillingDetails />
               </Col>
 
               <Col xs={12} sm="auto">
-                <h4 className="mb-5">Shipping details</h4>
-                <Row className="g-4 flex-sm-column">
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="mail" label="Email" />
-                    <Link className="fs-9 ms-4" to="mailto:shatinon@jeemail.com">
-                      shatinon@jeemail.com
-                    </Link>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="phone" label="Phone" />
-                    <Link className="fs-9 ms-4" to="tel:+1234567890">
-                      +1234567890
-                    </Link>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="calendar" label="Shipping Date" />
-                    <p className="mb-0 text-800 fs-9 ms-4">12 Nov, 2021</p>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="home" label="Address" />
-                    <div className="ms-4">
-                      <p className="text-800 mb-0 fs-9">Shatinon Mekalan</p>
-                      <p className="text-800 mb-0 fs-9">
-                        Vancouver, British Columbia,
-                        <br className="d-none d-sm-block" />
-                        Canada
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
+                <ShippingDetails />
               </Col>
 
               <Col xs={12} sm="auto">
-                <h4 className="mb-5">Other details</h4>
-                <Row className="g-4 flex-sm-column">
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="shopping-bag" label="Gift order" />
-                    <p className="mb-0 text-800 fs-9 ms-4">Yes</p>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="package" label="Wraping" />
-                    <p className="mb-0 text-800 fs-9 ms-4">Magic wrapper</p>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="file-text" label="Recipient" />
-                    <p className="mb-0 text-800 fs-9 ms-4">Recipient</p>
-                  </Col>
-                  <Col xs={6} sm={12}>
-                    <DetailsLabel icon="mail" label="Gift Meassge" />
-                    <div className="ms-4">
-                      <p className="text-800 fs-9 mb-0">
-                        Happy Birthday Shiniga <br />
-                        Lots of Love Buga Buga!!
-                      </p>
-                      <p className="mb-0 text-800 fs-9">
-                        Yours, <br />
-                        Mekalan
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
+                <OtherDetails />
               </Col>
             </Row>
           </Col>
-          <Col xs={12} xl={4} xxl={3}></Col>
+          <Col xs={12} xl={4} xxl={3}>
+            <OrderDetailsSummaryCard className="mb-4" />
+            <Card>
+              <Card.Body>
+                <Card.Title as="h3" className="mb-4">
+                  Order Status
+                </Card.Title>
+                <h6 className="mb-2">Payment status</h6>
+                <Form.Select className="mb-4">
+                  <option value="processing">Processing</option>
+                  <option value="canceled">Canceled</option>
+                  <option value="completed">Completed</option>
+                </Form.Select>
+                <h6 className="mb-2">Fulfillment status</h6>
+                <Form.Select>
+                  <option value="unfulfilled">Unfulfilled</option>
+                  <option value="fulfilled">Fulfilled</option>
+                  <option value="Pending">Pending</option>
+                </Form.Select>
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </div>
     </div>
