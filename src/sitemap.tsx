@@ -124,7 +124,8 @@ export const routes: RouteItems[] = [
               {
                 name: 'refund',
                 path: '/apps/e-commerce/admin/refund',
-                pathName: 'e-commerce-refund'
+                pathName: 'e-commerce-refund',
+                active: true
               }
             ]
           },

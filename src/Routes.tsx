@@ -76,6 +76,7 @@ import Products from 'pages/apps/e-commerce/admin/Products';
 import Customers from 'pages/apps/e-commerce/admin/Customers';
 import Orders from 'pages/apps/e-commerce/admin/Orders';
 import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
+import Refund from 'pages/apps/e-commerce/admin/Refund';
 
 const routes = [
   {
@@ -112,6 +113,10 @@ const routes = [
           {
             path: 'order-details',
             element: <OrderDetails />
+          },
+          {
+            path: 'refund',
+            element: <Refund />
           }
         ]
       },
