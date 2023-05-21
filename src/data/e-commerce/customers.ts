@@ -9,6 +9,7 @@ import team34 from 'assets/img/team/34.webp';
 import team29 from 'assets/img/team/29.webp';
 import team3 from 'assets/img/team/3.webp';
 import team25 from 'assets/img/team/25.webp';
+import { BadgeBg } from 'components/base/Badge';
 
 export type Customer = {
   avatar?: string;
@@ -20,6 +21,17 @@ export type Customer = {
   lastSeen: string;
   lastOrder: string;
   placeholder?: boolean;
+};
+export type CustomerReview = {
+  product: string;
+  rating: number;
+  review: string;
+  status: {
+    title: string;
+    badgeBg: BadgeBg;
+    icon: string;
+  };
+  time: string;
 };
 
 export const customers: Customer[] = [
@@ -190,5 +202,126 @@ export const customerNotes = [
   {
     note: 'Customer returned and bought 2 related items, which is currently being shipped. Customer chose “One day Shipping”. Additional notes were added regarding customised wrapping. Customer submitted positive review.',
     date: '26 Apr, 2019'
+  }
+];
+
+export const customerRatingsTableData: CustomerReview[] = [
+  {
+    product: 'Apple Magic Mouse (Wireless, Rechargable) - Silver',
+    rating: 4,
+    review:
+      "It's lovely, works right out of the box (as you'd expect from an Apple device), and has a number of useful functions.",
+    status: {
+      title: 'Success',
+      badgeBg: 'success',
+      icon: 'check'
+    },
+    time: 'Just now'
+  },
+  {
+    product: 'Fitbit Sense Advanced Smartwatch with Tools',
+    rating: 5,
+    review:
+      'This is an exceptional smartwatch, featuring a wealth of useful functions at an affordable price. The watch is small tool',
+    status: {
+      title: 'Success',
+      badgeBg: 'success',
+      icon: 'check'
+    },
+    time: 'Dec 9, 2:28PM'
+  },
+  {
+    product: 'HORI Racing Wheel Apex for PlayStation 4_3, and PC',
+    rating: 4,
+    review:
+      'This steering wheel is a great buy! It works well and feels good, however I wish it had a wider diameter like a real steering wheel.',
+    status: {
+      title: 'Pending',
+      badgeBg: 'warning',
+      icon: 'alert-octagon'
+    },
+    time: 'Dec 4, 12:56 PM'
+  },
+  {
+    product: 'Razer Kraken v3 x Wired 7.1 Surroung Sound Gaming headset',
+    rating: 3,
+    review: "My son says these are the greatest he's ever tasted.",
+    status: {
+      title: 'Cancelled',
+      badgeBg: 'secondary',
+      icon: 'x'
+    },
+    time: 'Nov 28, 7:28 PM'
+  },
+  {
+    product: 'iPhone 13 pro max-Pacific Blue-128GB storage',
+    rating: 3,
+    review:
+      'I chose wisely. The phone is in excellent condition, with no scratches or dents, excellent battery life, and flawless operation.',
+    status: {
+      title: 'Success',
+      badgeBg: 'success',
+      icon: 'check'
+    },
+    time: 'Nov 24, 10:16 AM'
+  },
+  {
+    product: 'Apple MacBook Pro 13 inch-M1-8/256GB-space',
+    rating: 4.5,
+    review:
+      "It's lovely, works right out of the box (as you'd expect from an Apple device), and has a number of useful functions.",
+    status: {
+      title: 'Pending',
+      badgeBg: 'warning',
+      icon: 'alert-octagon'
+    },
+    time: 'Just now'
+  },
+  {
+    product: 'Apple iMac 24" 4K Retina Display M1 8 Core CPU...',
+    rating: 3,
+    review:
+      'The best experience we could hope for. Customer service team is amazing and the quality of their products is unsurpassed.',
+    status: {
+      title: 'Pending',
+      badgeBg: 'warning',
+      icon: 'alert-octagon'
+    },
+    time: 'Nov 09, 3:23 AM'
+  },
+  {
+    product: 'PlayStation 5 DualSense Wireless Controller',
+    rating: 4,
+    review: "My son says these are the greatest he's ever tasted.",
+    status: {
+      title: 'Success',
+      badgeBg: 'success',
+      icon: 'check'
+    },
+    time: 'Nov 08, 8:53 AM'
+  },
+  {
+    product: '2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray',
+    rating: 4.5,
+    review:
+      'The response time and service I received when contacted the designers were Phenomenal!',
+    status: {
+      title: 'Pending',
+      badgeBg: 'warning',
+      icon: 'alert-octagon'
+    },
+    time: 'Nov 07, 9:00 PM'
+  },
+  {
+    product: 'Amazon Basics Matte Black Wired Keyboard - US Layout (QWERTY)',
+    rating: 3,
+    review:
+      'I chose wisely. The phone is in excellent condition, with no scratches or dents, excellent battery life, and flawless operation.',
+    status: {
+      title: 'Pending',
+      badgeBg: 'warning',
+      icon: 'alert-octagon'
+    },
+    time: 'Nov 07, 11:20 AM'
   }
 ];

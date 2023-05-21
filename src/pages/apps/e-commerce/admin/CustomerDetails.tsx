@@ -1,9 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import CustomerNotesCard from 'components/cards/CustomerNotesCard';
+import CustomerProfileCard from 'components/cards/CustomerProfileCard';
 import EcomProfileCard from 'components/cards/EcomProfileCard';
 import CustomerOrdersTable from 'components/tables/CustomerOrdersTable';
 import CustomerRatingsTable from 'components/tables/CustomerRatingsTable';
+import CustomerWishlistTable from 'components/tables/CustomerWishlistTable';
 import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 
@@ -41,7 +43,7 @@ const CustomerDetails = () => {
           <Col xs={12} xxl={4}>
             <Row className="g-3 xxl-0 h-100">
               <Col xs={12} md={7} xxl={12}>
-                <EcomProfileCard />
+                <CustomerProfileCard />
               </Col>
               <Col xs={12} md={5} xxl={12}>
                 <Card className="h-100">
@@ -90,7 +92,7 @@ const CustomerDetails = () => {
                 <h3 className="mb-4">
                   Wishlist <span className="text-700 fw-normal">(43)</span>
                 </h3>
-                <CustomerOrdersTable />
+                <CustomerWishlistTable />
               </div>
               <div>
                 <h3 className="mb-4">

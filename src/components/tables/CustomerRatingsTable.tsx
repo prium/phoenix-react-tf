@@ -14,71 +14,37 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import { ChangeEvent } from 'react';
 import Rating from 'components/base/Rating';
-import RevealDropdown from 'components/base/RevealDropdown';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
+import { customerRatingsTableData, CustomerReview } from 'data/e-commerce/customers';
 
-const columns: ColumnDef<LatestReviewsTableDataType>[] = [
-  {
-    id: 'productImage',
-    accessorKey: '',
-    cell: ({ row: { original } }) => {
-      const { productImage } = original;
-      return (
-        <div className="rounded-2 border">
-          <img src={productImage} alt="" width={53} />
-        </div>
-      );
-    },
-    meta: { cellProps: { className: 'py-0' } },
-    enableSorting: false
-  },
+const columns: ColumnDef<CustomerReview>[] = [
   {
     accessorKey: 'product',
     header: () => 'Product',
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
-          product.length > 46 ? '...' : ''
-        }`}</Link>
+        <Link to="#!" className="fw-semi-bold line-clamp-1">
+          {product}
+        </Link>
       );
     },
     enableSorting: true,
     meta: {
-      headerProps: { style: { minWidth: 360 }, className: 'py-2' }
+      headerProps: { style: { width: '20%' }, className: 'py-2' }
     }
   },
-  {
-    accessorFn: ({ customer: { name } }) => name,
-    header: 'CUSTOMER',
-    cell: ({ row: { original } }) => {
-      const { customer } = original;
-      return (
-        <Link to="#!" className="d-flex align-items-center">
-          {customer.variant === 'name' ? (
-            <Avatar src={customer.avatar} size="l" variant={customer.variant}>
-              {customer.name.charAt(0).toUpperCase()}
-            </Avatar>
-          ) : (
-            <Avatar src={customer.avatar} size="l" variant={customer.variant} />
-          )}
-          <h6 className="mb-0 ms-3 text-900">{customer.name}</h6>
-        </Link>
-      );
-    },
-    meta: {
-      headerProps: { style: { minWidth: 200 } }
-    }
-  },
+
   {
     accessorKey: 'rating',
     header: 'RATING',
     cell: ({ row: { original } }) => {
       const { rating } = original;
-      return <Rating readonly initialValue={rating} />;
+      return <Rating readonly initialValue={rating} iconClass="fs-10" />;
     },
     meta: {
-      headerProps: { style: { minWidth: 110 } }
+      headerProps: { style: { width: '10%' } }
     }
   },
   {
@@ -87,7 +53,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+        <p className="fw-semi-bold text-1000 mb-0 line-clamp-2">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>
@@ -99,7 +65,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       );
     },
     meta: {
-      headerProps: { style: { minWidth: 350 } }
+      headerProps: { style: { width: '50%' } }
     }
   },
   {
@@ -122,50 +88,33 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       );
     },
     meta: {
-      headerProps: { className: 'ps-5' },
-      cellProps: { className: 'ps-5' }
+      headerProps: { style: { width: '10%' }, className: 'text-end' },
+      cellProps: { className: 'text-end' }
     }
   },
   {
     accessorKey: 'time',
-    header: 'TIME',
+    header: 'Date',
     cell: ({ row: { original } }) => {
       const { time } = original;
-      return (
-        <div className="hover-hide">
-          <h6 className="text-1000 mb-0">{time}</h6>
-        </div>
-      );
+      return <p className="text-1000 mb-0">{time}</p>;
     },
     meta: {
-      headerProps: { className: 'text-end' },
+      headerProps: { className: 'text-end', style: { width: '10%' } },
       cellProps: { className: 'text-end white-space-nowrap' }
     }
   },
   {
-    accessorKey: 'action',
-    enableSorting: false,
-    header: '',
-    cell: row => {
-      return (
-        <>
-          <div className="position-relative">
-            <div className="hover-actions">
-              <Button variant="phoenix-secondary" className="me-1 fs-10" size="sm">
-                <FontAwesomeIcon icon="check" />
-              </Button>
-              <Button variant="phoenix-secondary" className="fs-10" size="sm">
-                <FontAwesomeIcon icon="trash" />
-              </Button>
-            </div>
-          </div>
-          <RevealDropdown btnClassName="fs-10">
-            <ActionDropdownItems />
-          </RevealDropdown>
-        </>
-      );
-    },
+    id: 'action',
+    cell: () => (
+      <RevealDropdownTrigger>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
+      </RevealDropdownTrigger>
+    ),
     meta: {
+      headerProps: { style: { width: '7%' } },
       cellProps: { className: 'text-end' }
     }
   }
@@ -173,11 +122,11 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
 
 const CustomerRatingsTable = () => {
   const table = useAdvanceTable({
-    data: latestReviewsTableData,
+    data: customerRatingsTableData,
     columns,
     pageSize: 6,
     pagination: true,
-    selection: true,
+    selection: false,
     selectionColumnWidth: '30px',
     sortable: true
   });
@@ -185,11 +134,13 @@ const CustomerRatingsTable = () => {
   return (
     <>
       <AdvanceTableProvider {...table}>
-        <AdvanceTable
-          tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
-          rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-        />
-        <AdvanceTableFooter navBtn />
+        <div className="border-y">
+          <AdvanceTable
+            tableProps={{ className: 'phoenix-table fs-9 mb-0' }}
+            rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+          />
+          <AdvanceTableFooter navBtn />
+        </div>
       </AdvanceTableProvider>
     </>
   );
