@@ -9,7 +9,7 @@ import team34 from 'assets/img/team/34.webp';
 import team29 from 'assets/img/team/29.webp';
 import team3 from 'assets/img/team/3.webp';
 import team25 from 'assets/img/team/25.webp';
-import { BadgeBg, BadgeVariant } from 'components/base/Badge';
+import { BadgeBg } from 'components/base/Badge';
 
 export interface Order {
   orderId: number;
