@@ -16,7 +16,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border">
+        <div className="rounded-2 border d-inline-block">
           <img src={productImage} alt="" width={53} />
         </div>
       );
@@ -71,7 +71,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
         <Button size="sm" variant="" className="text-500 hover-text-600">
           <FontAwesomeIcon icon="trash" />
         </Button>
-        <Button className="fs-10" startIcon={<FontAwesomeIcon icon="shopping-cart" />}>
+        <Button className="fs-10 text-nowrap" startIcon={<FontAwesomeIcon icon="shopping-cart" />}>
           Add to cart
         </Button>
       </div>
@@ -82,7 +82,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
   }
 ];
 
-const EcomProfileWishlistTable = () => {
+const EcomWishlistTable = () => {
   const table = useAdvanceTable({
     data: wishlistProducts,
     columns,
@@ -103,4 +103,4 @@ const EcomProfileWishlistTable = () => {
   );
 };
 
-export default EcomProfileWishlistTable;
+export default EcomWishlistTable;

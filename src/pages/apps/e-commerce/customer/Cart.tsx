@@ -1,5 +1,5 @@
 import Section from 'components/base/Section';
-import EcomCardSummaryCard from 'components/cards/EcomCardSummaryCard';
+import EcomCartSummaryCard from 'components/cards/EcomCartSummaryCard';
 import EcomCartTable from 'components/tables/EcomCartTable';
 import { cartItems } from 'data/e-commerce/products';
 import React from 'react';
@@ -22,7 +22,7 @@ const Cart = () => {
             <EcomCartTable products={cartItems} />
           </Col>
           <Col xs={12} lg={4}>
-            <EcomCardSummaryCard />
+            <EcomCartSummaryCard />
           </Col>
         </Row>
       </Section>

@@ -8,7 +8,8 @@ import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import Rating from 'components/base/Rating';
-import RevealDropdown from 'components/base/RevealDropdown';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
@@ -94,10 +95,16 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   },
   {
     id: 'action',
-    cell: () => <RevealDropdown />,
+    cell: () => (
+      <RevealDropdownTrigger>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
+      </RevealDropdownTrigger>
+    ),
     meta: {
       headerProps: { style: { width: '7%' } },
-      cellProps: { className: 'btn-reveal-trigger text-end' }
+      cellProps: { className: 'text-end' }
     }
   }
 ];

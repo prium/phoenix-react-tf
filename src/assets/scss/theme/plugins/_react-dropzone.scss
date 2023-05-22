@@ -4,7 +4,7 @@
 
 .dropzone {
   border: 1px dashed var(--#{$prefix}gray-400);
-  padding: map-get($spacers, 4);
+  padding: map-get($spacers, 7) map-get($spacers, 5);
   border-radius: $border-radius;
   height: 100%;
   display: flex;
@@ -12,6 +12,9 @@
   justify-content: center;
   cursor: pointer;
   text-align: center;
+  &.dropzone-sm {
+    padding: map-get($spacers, 4);
+  }
 }
 
 .dropzone-file-preview {

@@ -20,7 +20,7 @@ const AvatarUpload = ({ size, src, onChange }: AvatarUploadProps) => {
     }
   };
   return (
-    <div>
+    <div className="d-inline-block">
       <input
         className="d-none"
         id="avatarFile"

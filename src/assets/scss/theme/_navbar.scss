@@ -164,7 +164,7 @@
       color: var(--#{$prefix}gray-700);
       font-size: map-get($font-sizes, '9');
       font-weight: $font-weight-semi-bold;
-      padding: 0 15px;
+      padding: 0;
       &.active,
       &:hover {
         color: var(--#{$prefix}black);

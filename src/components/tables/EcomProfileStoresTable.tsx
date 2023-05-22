@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { StoreProductType, storeProducts } from 'data/e-commerce/products';
 import Rating from 'components/base/Rating';
-import RevealDropdown from 'components/base/RevealDropdown';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import MyFavoriteStores from 'components/modules/e-commerce/profile/MyFavoriteStores';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<StoreProductType>[] = [
   {
@@ -77,11 +78,17 @@ const columns: ColumnDef<StoreProductType>[] = [
   },
   {
     id: 'action',
-    cell: () => <RevealDropdown />,
+    cell: () => (
+      <RevealDropdownTrigger>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
+      </RevealDropdownTrigger>
+    ),
     meta: {
       headerProps: { style: { width: '30%' } },
       cellProps: {
-        className: 'btn-reveal-trigger text-end'
+        className: 'text-end'
       }
     }
   }

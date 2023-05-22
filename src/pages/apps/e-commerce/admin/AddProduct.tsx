@@ -1,0 +1,67 @@
+import Button from 'components/base/Button';
+import Dropzone from 'components/base/Dropzone';
+import TinymceEditor from 'components/base/TinymceEditor';
+import OrganizeFormCard from 'components/cards/OrganizeFormCard';
+import VariantFormCard from 'components/cards/VariantFormCard';
+import InventoryTab from 'components/tabs/InventoryTab';
+import React from 'react';
+import { Breadcrumb, Col, Form, Row } from 'react-bootstrap';
+
+const AddProduct = () => {
+  return (
+    <div>
+      <Breadcrumb className="mb-2">
+        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
+        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
+        <Breadcrumb.Item href="#!" active>
+          Default
+        </Breadcrumb.Item>
+      </Breadcrumb>
+      <form className="mb-9">
+        <div className="d-flex flex-wrap gap-3 flex-between-end mb-5">
+          <div>
+            <h2 className="mb-2">Add a product</h2>
+            <h5 className="text-700 fw-semi-bold">Orders placed across your store</h5>
+          </div>
+          <div className="d-flex flex-wrap gap-2">
+            <Button variant="phoenix-secondary" type="button">
+              Discard
+            </Button>
+            <Button variant="phoenix-primary" type="button">
+              Save draft
+            </Button>
+            <Button variant="primary" type="submit">
+              Publish product
+            </Button>
+          </div>
+        </div>
+        <h4 className="mb-3">Product Title</h4>
+        <Row className="g-5">
+          <Col xs={12} xl={8}>
+            <Form.Control placeholder="Write title here..." className="mb-5" />
+            <div className="mb-6">
+              <h4 className="mb-3">Product Description</h4>
+              <TinymceEditor
+                options={{ height: '15rem', placeholder: 'Write a description here...' }}
+              />
+            </div>
+            <div className="mb-5">
+              <h4 className="mb-3">Display images</h4>
+              <Dropzone className="mb-3" />
+            </div>
+            <div className="mb-5">
+              <h4 className="mb-3">Inventory</h4>
+              <InventoryTab />
+            </div>
+          </Col>
+          <Col xs={12} xl={4}>
+            <OrganizeFormCard className="mb-4" />
+            <VariantFormCard />
+          </Col>
+        </Row>
+      </form>
+    </div>
+  );
+};
+
+export default AddProduct;

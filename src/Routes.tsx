@@ -67,6 +67,17 @@ import Checkout from 'pages/apps/e-commerce/customer/checkout/Checkout';
 import ProductsFilter from 'pages/apps/e-commerce/customer/ProductsFilter';
 import ShippingInfo from 'pages/apps/e-commerce/customer/checkout/ShippingInfo';
 import Profile from 'pages/apps/e-commerce/customer/Profile';
+import Wishlist from 'pages/apps/e-commerce/customer/Wishlist';
+import FavoriteStores from 'pages/apps/e-commerce/customer/FavoriteStores';
+import Invoice from 'pages/apps/e-commerce/customer/Invoice';
+import OrderTracking from 'pages/apps/e-commerce/customer/OrderTracking';
+import AddProduct from 'pages/apps/e-commerce/admin/AddProduct';
+import Products from 'pages/apps/e-commerce/admin/Products';
+import Customers from 'pages/apps/e-commerce/admin/Customers';
+import Orders from 'pages/apps/e-commerce/admin/Orders';
+import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
+import Refund from 'pages/apps/e-commerce/admin/Refund';
+import CustomerDetails from 'pages/apps/e-commerce/admin/CustomerDetails';
 
 const routes = [
   {
@@ -80,6 +91,39 @@ const routes = [
       {
         path: '/pages/starter',
         element: <Starter />
+      },
+      {
+        path: '/apps/e-commerce/admin/',
+        children: [
+          {
+            path: 'add-product',
+            element: <AddProduct />
+          },
+          {
+            path: 'products',
+            element: <Products />
+          },
+          {
+            path: 'customers',
+            element: <Customers />
+          },
+          {
+            path: 'orders',
+            element: <Orders />
+          },
+          {
+            path: 'order-details',
+            element: <OrderDetails />
+          },
+          {
+            path: 'refund',
+            element: <Refund />
+          },
+          {
+            path: 'customer-details',
+            element: <CustomerDetails />
+          }
+        ]
       },
       {
         path: '/modules',
@@ -348,7 +392,7 @@ const routes = [
   },
   {
     element: <EcommerceLayout />,
-    path: '/apps/e-commerce/landing/',
+    path: '/apps/e-commerce/customer/',
     children: [
       {
         path: 'homepage',
@@ -377,6 +421,22 @@ const routes = [
       {
         path: 'products-filter',
         element: <ProductsFilter />
+      },
+      {
+        path: 'wishlist',
+        element: <Wishlist />
+      },
+      {
+        path: 'favorite-stores',
+        element: <FavoriteStores />
+      },
+      {
+        path: 'order-tracking',
+        element: <OrderTracking />
+      },
+      {
+        path: 'invoice',
+        element: <Invoice />
       }
     ]
   }
