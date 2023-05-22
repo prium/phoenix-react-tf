@@ -53,9 +53,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'project-management',
-            path: 'dashboard/project-management',
+            path: '/dashboard/project-management',
             pathName: 'project-management-dashbaord',
-            topNavIcon: 'clipboard'
+            topNavIcon: 'clipboard',
+            active: true
           },
           {
             name: 'CRM',

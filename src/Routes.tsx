@@ -78,6 +78,7 @@ import Orders from 'pages/apps/e-commerce/admin/Orders';
 import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
 import Refund from 'pages/apps/e-commerce/admin/Refund';
 import CustomerDetails from 'pages/apps/e-commerce/admin/CustomerDetails';
+import ProjectManagement from 'pages/dashboard/ProjectManagement';
 
 const routes = [
   {
@@ -87,6 +88,10 @@ const routes = [
       {
         index: true,
         element: <Ecommerce />
+      },
+      {
+        path: '/dashboard/project-management',
+        element: <ProjectManagement />
       },
       {
         path: '/pages/starter',

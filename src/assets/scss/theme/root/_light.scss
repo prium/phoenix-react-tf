@@ -99,16 +99,15 @@
   --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-100};
 
   --#{$prefix}navbar-top-menu-margin: 1.5rem;
-  .navbar-slim{
-    --#{$prefix}navbar-top-menu-margin: .8rem;
+  .navbar-slim {
+    --#{$prefix}navbar-top-menu-margin: 0.8rem;
   }
 
-  &:not(.dark){
+  &:not(.dark) {
     .navbar-darker {
       --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
       --#{$prefix}navbar-top-dropdown-color: #{$gray-400};
       // --#{$prefix}navbar-top-link-active-color: var(--#{$prefix}gray-200);
-
 
       // --#{$prefix}navbar-top-link-color: #{$gray-400};
       // --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
@@ -122,14 +121,11 @@
           --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
           --#{$prefix}navbar-top-link-hover-bg: #{$gray-1000};
 
-  
           --#{$prefix}navbar-top-link-active-color: #{$gray-300};
         }
       }
     }
   }
-
-
 
   /* ------------------------------- navbar-vertical light ------------------------------- */
   --#{$prefix}navbar-vertical-border-color: #{$gray-300};
@@ -183,15 +179,16 @@
   --#{$prefix}choices-inner-min-height: auto;
   --#{$prefix}choices-item-has-no-choices-bg: #{$white};
 
-  /* -------------------------------- Flatpickr ------------------------------- */
-  --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
-  --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
-  --#{$prefix}flatpickr-current-month-color: #{$gray-900};
-  --#{$prefix}flatpickr-weekday-color: #{$gray-900};
-  --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba($gray-300, 0.5)};
-  --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
-  --#{$prefix}flatpickr-today-color: #{$white};
-  --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
+  /* -------------------------------- React Datepicker ------------------------------- */
+  // --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
+  // --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
+  // --#{$prefix}flatpickr-current-month-color: #{$gray-900};
+  // --#{$prefix}flatpickr-weekday-color: #{$gray-900};
+  // --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba($gray-300, 0.5)};
+  // --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
+  // --#{$prefix}flatpickr-today-color: #{$white};
+  // --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
+  --#{$prefix}react-datepicker-bg: #{$gray-200};
 
   /* -------------------------------- Fullcalendar ------------------------------- */
   --#{$prefix}calendar-bg: #{$gray-200};
@@ -227,16 +224,10 @@
   --#{$prefix}logo-text: #{$gray-600};
 
   /* -------------------------- theme-control-toggle -------------------------- */
-  --#{$prefix}theme-control-toggle-bg: #{rgba(
-      map-get($theme-colors-300, 'warning'),
-      0.24
-    )};
+  --#{$prefix}theme-control-toggle-bg: #{rgba(map-get($theme-colors-300, 'warning'), 0.24)};
   --#{$prefix}theme-control-toggle-hover-bg: #{$warning};
   --#{$prefix}theme-control-toggle-color: #{$warning};
-  --#{$prefix}theme-control-toggle-hover-color: #{map-get(
-      $theme-colors-soft,
-      'warning'
-    )};
+  --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'warning')};
 
   /* ---------------------------------- Badge --------------------------------- */
 
@@ -286,22 +277,10 @@
         }
       }
       ///-------------
-      --#{$prefix}theme-control-toggle-bg: #{rgba(
-          map-get($theme-colors-300, 'warning'),
-          0.18
-        )};
-      --#{$prefix}theme-control-toggle-hover-bg: #{rgba(
-          map-get($theme-colors, 'warning'),
-          0.7
-        )};
-      --#{$prefix}theme-control-toggle-color: #{map-get(
-          $theme-colors-300,
-          'warning'
-        )};
-      --#{$prefix}theme-control-toggle-hover-color: #{map-get(
-          $theme-colors-soft,
-          'warning'
-        )};
+      --#{$prefix}theme-control-toggle-bg: #{rgba(map-get($theme-colors-300, 'warning'), 0.18)};
+      --#{$prefix}theme-control-toggle-hover-bg: #{rgba(map-get($theme-colors, 'warning'), 0.7)};
+      --#{$prefix}theme-control-toggle-color: #{map-get($theme-colors-300, 'warning')};
+      --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'warning')};
       &.navbar-slim {
         .navbar-brand span {
           color: #{map-get($dark-grays, '1000')} !important;

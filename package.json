@@ -33,6 +33,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.1",
     "react-custom-scrollbars-2": "^4.5.0",
+    "react-datepicker": "^4.11.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-live": "^3.1.2",
@@ -79,6 +80,7 @@
   "devDependencies": {
     "@automattic/webpack-rtl-plugin": "^6.0.0",
     "@types/mapbox-gl": "^2.7.11",
+    "@types/react-datepicker": "^4.11.2",
     "@types/react-slick": "^0.23.10",
     "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.58.3",
