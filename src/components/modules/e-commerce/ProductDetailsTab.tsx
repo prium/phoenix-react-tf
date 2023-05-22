@@ -14,7 +14,7 @@ const ProductDetailsTab = () => {
   const [openReviewModal, setOpenReviewModal] = useState(false);
   return (
     <>
-      <Tabs defaultActiveKey="reviews" className="mb-4 nav-underline">
+      <Tabs defaultActiveKey="description" className="mb-4 nav-underline">
         <Tab eventKey="description" title="Description" className="text-1100 pe-lg-6 pe-xl-12">
           <p className="mb-5">
             CUPERTINO, CA , The M1 CPU allows Apple to deliver an all-new iMac with a lot more

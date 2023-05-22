@@ -18,7 +18,8 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
             'navbarPosition',
             'navbarTopAppearance',
             'navbarVerticalAppearance',
-            'isRTL'
+            'isRTL',
+            'isNavbarVerticalCollapsed'
           ].includes(key)
         ) {
           setItemToStore(key, String(payload[key as keyof Config]));
