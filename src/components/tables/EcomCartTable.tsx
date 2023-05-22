@@ -63,7 +63,7 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
   }, [quantity]);
 
   return (
-    <tr className="cart-table-row btn-reveal-trigger" key={product.id}>
+    <tr className="cart-table-row" key={product.id}>
       <td className="py-0">
         <div className="border rounded-2">
           <img src={product.image} alt={product.name} width={53} />

@@ -107,6 +107,9 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
       >
         <Collapse in={open} className="nav parent">
           <div>
+            {level === 1 && (
+              <div className="collapsed-nav-item-title d-none">{capitalize(route.name)}</div>
+            )}
             <NavbarVerticalMenu routes={route.pages || []} level={level + 1} />
           </div>
         </Collapse>

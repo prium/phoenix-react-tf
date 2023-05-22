@@ -32,7 +32,7 @@ import review13 from 'assets/img/e-commerce/review-13.jpg';
 import review14 from 'assets/img/e-commerce/review-14.jpg';
 import review15 from 'assets/img/e-commerce/review-15.jpg';
 import review16 from 'assets/img/e-commerce/review-16.jpg';
-import { Bg } from 'components/base/Badge';
+import { BadgeBg } from 'components/base/Badge';
 
 type Category = {
   title: string;
@@ -75,7 +75,7 @@ export interface CustomerOrder {
   totalPrice: number;
   payment_status: {
     status: string;
-    type: Bg;
+    type: BadgeBg;
     icon: string;
   };
   delivery_method: string;

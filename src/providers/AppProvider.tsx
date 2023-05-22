@@ -73,6 +73,12 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     } else {
       document.documentElement.classList.remove('navbar-combo');
     }
+
+    if (config.isNavbarVerticalCollapsed) {
+      document.documentElement.classList.add('navbar-vertical-collapsed');
+    } else {
+      document.documentElement.classList.remove('navbar-vertical-collapsed');
+    }
   }, [config]);
 
   return (

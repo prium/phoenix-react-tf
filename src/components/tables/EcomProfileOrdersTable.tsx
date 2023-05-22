@@ -8,7 +8,8 @@ import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import RevealDropdown from 'components/base/RevealDropdown';
+import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<CustomerOrder>[] = [
   {
@@ -67,10 +68,16 @@ const columns: ColumnDef<CustomerOrder>[] = [
   },
   {
     id: 'action',
-    cell: () => <RevealDropdown />,
+    cell: () => (
+      <RevealDropdownTrigger>
+        <RevealDropdown>
+          <ActionDropdownItems />
+        </RevealDropdown>
+      </RevealDropdownTrigger>
+    ),
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'btn-reveal-trigger text-end' }
+      cellProps: { className: 'text-end' }
     }
   }
 ];

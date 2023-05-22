@@ -272,7 +272,7 @@ $table-dark-border-color: lighten($gray-1000, 7.5%) !default;
 $table-striped-order: even !default;
 // $table-accent-bg: $gray-100 !default;
 $table-cell-padding-y: 1rem !default;
-$table-cell-padding-y-sm: 0.5rem !default;
+// $table-cell-padding-y-sm: 0.5rem !default;
 $table-group-separator-color: inherit !default;
 
 $table-striped-color: var(--#{$prefix}gray-1000);

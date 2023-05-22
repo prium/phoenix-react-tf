@@ -4,7 +4,7 @@ import EcomProfilePersonalInfo from 'components/forms/EcomProfilePersonalInfo';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
-import EcomProfileWishlistTable from 'components/tables/EcomProfileWishlistTable';
+import EcomWishlistTable from 'components/tables/EcomWishlistTable';
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 
@@ -35,7 +35,7 @@ const tabLinks: TabLink[] = [
     id: 'wishlist',
     label: 'Wishlist',
     icon: 'heart',
-    content: <EcomProfileWishlistTable />
+    content: <EcomWishlistTable />
   },
   {
     id: 'stores',

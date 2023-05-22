@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import OrderSummaryDetails from 'components/common/OrderSummaryDetails';
 import { currencyFormat } from 'helpers/utils';
 import React from 'react';
 import { Card, Form, FormControl, InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const EcomCardSummaryCard = () => {
+const EcomCartSummaryCard = () => {
   return (
     <Card>
       <Card.Body>
@@ -20,28 +21,7 @@ const EcomCardSummaryCard = () => {
           <option value="card">Card</option>
           <option value="paypal">Paypal</option>
         </Form.Select>
-        <div>
-          <div className="d-flex justify-content-between">
-            <p className="text-900 fw-semi-bold">Items subtotal :</p>
-            <p className="text-1100 fw-semi-bold">{currencyFormat(691)}</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p className="text-900 fw-semi-bold">Discount :</p>
-            <p className="text-danger fw-semi-bold">-{currencyFormat(59)}</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p className="text-900 fw-semi-bold">Tax :</p>
-            <p className="text-1100 fw-semi-bold">{currencyFormat(126.2)}</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p className="text-900 fw-semi-bold">Subtotal :</p>
-            <p className="text-1100 fw-semi-bold">{currencyFormat(665)}</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p className="text-900 fw-semi-bold">Shipping Cost :</p>
-            <p className="text-1100 fw-semi-bold">{currencyFormat(30)}</p>
-          </div>
-        </div>
+        <OrderSummaryDetails />
         <InputGroup className="mb-3">
           <FormControl placeholder="Voucher" aria-label="voucher" />
           <Button variant="phoenix-primary" className="px-5">
@@ -64,4 +44,4 @@ const EcomCardSummaryCard = () => {
   );
 };
 
-export default EcomCardSummaryCard;
+export default EcomCartSummaryCard;

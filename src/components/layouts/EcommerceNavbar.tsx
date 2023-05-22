@@ -147,14 +147,14 @@ const EcommerceNavbar = () => {
           <Nav as="ul" className="justify-content-end align-items-center gap-5" ref={navbarRef}>
             {navItems.map((item, index) => (
               <Nav.Item className="gap-3" key={item.id}>
-                <Nav.Link key={item.id} as={Link} to={item.url} className="px-0">
+                <Nav.Link key={item.id} as={Link} to={item.url}>
                   {item.label}
                 </Nav.Link>
               </Nav.Item>
             ))}
             {dropdownItems.length > 0 && (
               <Dropdown align="end" as={NavItem}>
-                <Dropdown.Toggle variant="" className="fw-bold nav-link dropdown-caret-none px-0">
+                <Dropdown.Toggle variant="" className="fw-bold nav-link dropdown-caret-none">
                   More
                   <FontAwesomeIcon icon="angle-down" className="ms-2" />
                 </Dropdown.Toggle>

@@ -10,6 +10,7 @@ import team59 from 'assets/img/team/40x40/59.webp';
 import team58 from 'assets/img/team/40x40/58.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import RevealDropdown from 'components/base/RevealDropdown';
 
 const NotificationDropdownMenu = () => {
   const [notifications] = useState([
@@ -131,18 +132,12 @@ const NotificationDropdownMenu = () => {
                       </p>
                     </div>
                   </div>
-                  <Dropdown className="btn-reveal-trigger position-static" align="end">
-                    <Dropdown.Toggle
-                      variant=""
-                      size="sm"
-                      className="dropdown-caret-none notification-dropdown-toggle fs-10"
-                    >
-                      <FontAwesomeIcon icon="ellipsis" className="fs-10" />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu align="end" className="py-0">
-                      <Dropdown.Item>Mark as {notification.read ? 'unread' : 'read'}</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <RevealDropdown
+                    className="position-static"
+                    btnClassName="notification-dropdown-toggle"
+                  >
+                    <Dropdown.Item>Mark as {notification.read ? 'unread' : 'read'}</Dropdown.Item>
+                  </RevealDropdown>
                 </div>
               </div>
             ))}

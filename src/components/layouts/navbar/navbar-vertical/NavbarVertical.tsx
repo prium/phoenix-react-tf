@@ -8,7 +8,8 @@ import classNames from 'classnames';
 
 const NavbarVerical = () => {
   const {
-    config: { openNavbarVertical, navbarVerticalAppearance }
+    config: { openNavbarVertical, navbarVerticalAppearance, isNavbarVerticalCollapsed },
+    setConfig
   } = useAppContext();
 
   return (
@@ -25,7 +26,10 @@ const NavbarVerical = () => {
             {routes.map(route => (
               <Nav.Item key={route.label}>
                 {!route.labelDisabled && (
-                  <p className="navbar-vertical-label">{capitalize(route.label)}</p>
+                  <>
+                    <p className="navbar-vertical-label">{capitalize(route.label)}</p>
+                    <hr className="navbar-vertical-line" />
+                  </>
                 )}
                 <NavbarVerticalMenu level={1} routes={route.pages} />
               </Nav.Item>
@@ -37,10 +41,18 @@ const NavbarVerical = () => {
         <Button
           variant=""
           className="navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center"
+          onClick={() => {
+            setConfig({ isNavbarVerticalCollapsed: !isNavbarVerticalCollapsed });
+          }}
         >
-          <UilLeftArrowToLeft size={16} className="navbar-vertical-collapse-icon mb-1" />
-          <UilArrowFromRight size={16} className="navbar-vertical-collapsed-icon mb-1" />
-          <span className="navbar-vertical-footer-text ms-2">Collapsed View</span>
+          {isNavbarVerticalCollapsed ? (
+            <UilArrowFromRight size={16} className="mb-1" />
+          ) : (
+            <>
+              <UilLeftArrowToLeft size={16} className="mb-1" />
+              <span className="ms-2">Collapsed View</span>
+            </>
+          )}
         </Button>
       </div>
     </Navbar>
