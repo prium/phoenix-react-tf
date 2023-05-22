@@ -1,18 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AdvanceTable from 'components/base/AdvanceTable';
-import Avatar from 'components/base/Avatar';
 import Badge from 'components/base/Badge';
-import Button from 'components/base/Button';
-import SearchBox from 'components/common/SearchBox';
-import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
-import { ChangeEvent } from 'react';
 import Rating from 'components/base/Rating';
 import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';

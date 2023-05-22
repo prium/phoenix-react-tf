@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import CustomerNotesCard from 'components/cards/CustomerNotesCard';
 import CustomerProfileCard from 'components/cards/CustomerProfileCard';
-import EcomProfileCard from 'components/cards/EcomProfileCard';
 import CustomerOrdersTable from 'components/tables/CustomerOrdersTable';
 import CustomerRatingsTable from 'components/tables/CustomerRatingsTable';
 import CustomerWishlistTable from 'components/tables/CustomerWishlistTable';

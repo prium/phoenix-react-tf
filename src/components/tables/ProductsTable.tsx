@@ -86,8 +86,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
   {
     id: 'starred',
     accessorKey: '',
-    cell: ({ row: { original } }) => {
-      const { starred } = original;
+    cell: () => {
       return <StarCheckbox />;
     },
     meta: {
