@@ -1,6 +1,6 @@
 {
   "name": "phoenix-react",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -50,7 +50,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build && cp ./build/index.html ./build/404.html",
+    "deploy": "echo https://phoenix-react.prium.me > ./build/CNAME && gh-pages -d build",
     "build:css": "webpack --config webpack.config.js",
     "watch:css": "webpack --config webpack.config.js --watch"
   },
