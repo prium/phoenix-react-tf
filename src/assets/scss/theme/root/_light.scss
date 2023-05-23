@@ -179,16 +179,26 @@
   --#{$prefix}choices-inner-min-height: auto;
   --#{$prefix}choices-item-has-no-choices-bg: #{$white};
 
+  /* -------------------------------- Flatpickr ------------------------------- */
+  --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
+  --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
+  --#{$prefix}flatpickr-current-month-color: #{$gray-900};
+  --#{$prefix}flatpickr-weekday-color: #{$gray-900};
+  --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba($gray-300, 0.5)};
+  --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
+  --#{$prefix}flatpickr-today-color: #{$white};
+  --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
+
   /* -------------------------------- React Datepicker ------------------------------- */
   // --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
   // --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
-  // --#{$prefix}flatpickr-current-month-color: #{$gray-900};
   // --#{$prefix}flatpickr-weekday-color: #{$gray-900};
-  // --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba($gray-300, 0.5)};
   // --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
-  // --#{$prefix}flatpickr-today-color: #{$white};
   // --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
+  --#{$prefix}react-datepicker-current-month-color: #{$gray-900};
   --#{$prefix}react-datepicker-bg: #{$gray-200};
+  --#{$prefix}react-datepicker-today-color: #{$white};
+  --#{$prefix}react-datepicker-day-hover-bg: #{rgba($gray-300, 0.5)};
 
   /* -------------------------------- Fullcalendar ------------------------------- */
   --#{$prefix}calendar-bg: #{$gray-200};
