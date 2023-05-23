@@ -27722,15 +27722,20 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 
 .table-scrollbar {
   margin-right: -4px !important;
-  margin-left: -4px !important;
   padding-right: 4px !important;
-  padding-left: 4px !important;
+}
+[dir=rtl] .table-scrollbar {
+  margin-right: -4px !important;
+  padding-right: 4px !important;
 }
 .table-scrollbar > div {
   margin-right: -4px !important;
-  margin-left: -4px !important;
   padding-right: 4px !important;
-  padding-left: 4px !important;
+}
+[dir=rtl] .table-scrollbar > div {
+  margin-right: -4px !important;
+  padding-right: -4px !important;
+  margin-left: -15px !important;
 }
 
 /* -------------------------------------------------------------------------- */
