@@ -8,6 +8,7 @@ import {
   faAnglesRight,
   faArrowUpRightFromSquare,
   faArrowsRotate,
+  faAward,
   faBars,
   faBolt,
   faCamera,
@@ -123,5 +124,6 @@ library.add(
   faRotate,
   faFileExport,
   faUndo,
-  faPen
+  faPen,
+  faAward
 );
