@@ -1,10 +1,10 @@
-import Flatpickr from 'react-flatpickr';
+import Flatpickr, { DateTimePickerProps } from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
 import { UilCalendarAlt } from '@iconscout/react-unicons';
 
-c;
+interface DatePickerProps extends DateTimePickerProps {}
 
-const DatePicker = () => {
+const DatePicker = ({ options, ...rest }: DatePickerProps) => {
   return (
     <div className="flatpickr-input-container">
       <Flatpickr
@@ -20,8 +20,12 @@ const DatePicker = () => {
             if (dayElem.dateObj.getDay() === 5 || dayElem.dateObj.getDay() === 6) {
               dayElem.className += ' weekend-days';
             }
-          }
+          },
+          dateFormat: 'M j, Y',
+          disableMobile: true,
+          ...options
         }}
+        {...rest}
       />
       <UilCalendarAlt className="flatpickr-icon text-700" size={16} />
     </div>
