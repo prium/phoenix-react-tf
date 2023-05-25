@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import avatar from 'assets/img/team/40x40/avatar.webp';
-import { PropsWithChildren } from 'react';
+import { Children, PropsWithChildren } from 'react';
 
 export type Size = '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'l' | 'm' | 's';
 export type Variant = 'image' | 'name' | 'emoji';
@@ -17,6 +17,8 @@ interface AvatarProps {
 }
 interface AvatarGroupProps {
   className?: string;
+  total?: number;
+  size?: Size;
 }
 
 const Avatar = ({
@@ -74,10 +76,24 @@ const Avatar = ({
   );
 };
 
-export const AvatarGroup = ({ children, className }: PropsWithChildren<AvatarGroupProps>) => {
-  return <div className={classNames(className, 'avatar-group')}>{children}</div>;
+export const AvatarGroup = ({
+  children,
+  className,
+  total,
+  size
+}: PropsWithChildren<AvatarGroupProps>) => {
+  return (
+    <div className={classNames(className, 'avatar-group')}>
+      {children}
+      {total && total > Children.count(children) && (
+        <Avatar size={size!} variant="name">
+          +{total - Children.count(children)}
+        </Avatar>
+      )}
+    </div>
+  );
 };
 
-Avatar.Gropup = AvatarGroup;
+Avatar.Group = AvatarGroup;
 
 export default Avatar;

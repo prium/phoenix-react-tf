@@ -77,7 +77,7 @@ import Avatar from 'components/base/Avatar';
   return (
     <div className="d-flex flex-column gap-4">
       {sizes.map(size => (
-        <Avatar.Gropup key={size}>
+        <Avatar.Group key={size}>
           <Avatar src={team30} size={size} />
           <Avatar src={team57} size={size} />
           <Avatar src={team25} size={size} />
@@ -86,7 +86,7 @@ import Avatar from 'components/base/Avatar';
           <Avatar size={size} variant="name">
             +3
           </Avatar>
-        </Avatar.Gropup>
+        </Avatar.Group>
       ))}
     </div>
   );

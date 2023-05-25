@@ -4,6 +4,7 @@ import EarlyBirdCard from 'components/cards/EarlyBirdCard';
 import ProjectElevenProgressChart from 'components/charts/e-charts/ProjectElevenProgressChart';
 import ZeroRoadMap from 'components/modules/project-management/dashboard/ZeroRoadMap';
 import IssuesDiscovered from 'components/modules/project-management/issues-discovered/IssuesDiscovered';
+import ProjectDashboardTable from 'components/tables/ProjectDashboardTable';
 import ActivityTimeline from 'components/timelines/ActivityTimeline';
 import { activityTimelineData } from 'data/project-management/activityTimelineData';
 import { Card, Col, Row } from 'react-bootstrap';
@@ -119,6 +120,12 @@ const ProjectManagement = () => {
             </Card.Body>
           </Card>
         </Col>
+      </div>
+
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 border-top border-300">
+        <h3>Projects</h3>
+        <p className="text-700 lh-sm mb-4">Brief summary of all projects</p>
+        <ProjectDashboardTable />
       </div>
     </>
   );
