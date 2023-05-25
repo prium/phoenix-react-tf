@@ -1,0 +1,42 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from 'components/base/Button';
+import SearchBox from 'components/common/SearchBox';
+import React from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
+
+const TodoList = () => {
+  return (
+    <Card className="h-100">
+      <Card.Header className="border-bottom-0 pb-0">
+        <Row className="justify-content-between align-items-center mb-4 gy-2">
+          <Col xs="auto">
+            <h3 className="text-1100">To do</h3>
+            <p className="mb-0 text-700">Task assigned to me</p>
+          </Col>
+          <Col xs="auto" className="w-100 w-md-auto">
+            <div className="row align-items-center g-0 justify-content-between">
+              <div className="col-12 col-sm-auto">
+                <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
+              </div>
+              <div className="col-auto d-flex">
+                <p className="mb-0 ms-sm-3 fs-9 text-700 fw-bold">
+                  <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                  23 tasks
+                </p>
+                <Button
+                  variant="link"
+                  className="p-0 ms-3 fs-9 text-primary fw-bold text-decoration-none"
+                  startIcon={<FontAwesomeIcon icon="sort" className="fs-10" />}
+                >
+                  Sorting
+                </Button>
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Card.Header>
+    </Card>
+  );
+};
+
+export default TodoList;

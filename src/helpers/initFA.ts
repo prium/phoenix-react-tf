@@ -43,6 +43,7 @@ import {
   faShareAlt,
   faShoppingBag,
   faShoppingCart,
+  faSort,
   faStar,
   faThumbsDown,
   faThumbsUp,
@@ -131,5 +132,6 @@ library.add(
   faAward,
   faChess,
   faDove,
-  faDungeon
+  faDungeon,
+  faSort
 );

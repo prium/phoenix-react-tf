@@ -3,11 +3,12 @@ import DatePicker from 'components/base/DatePicker';
 import EarlyBirdCard from 'components/cards/EarlyBirdCard';
 import ProjectElevenProgressChart from 'components/charts/e-charts/ProjectElevenProgressChart';
 import ZeroRoadMap from 'components/modules/project-management/dashboard/ZeroRoadMap';
-import IssuesDiscovered from 'components/modules/project-management/issues-discovered/IssuesDiscovered';
+import IssuesDiscovered from 'components/modules/project-management/dashboard/IssuesDiscovered';
 import ProjectDashboardTable from 'components/tables/ProjectDashboardTable';
 import ActivityTimeline from 'components/timelines/ActivityTimeline';
 import { activityTimelineData } from 'data/project-management/activityTimelineData';
 import { Card, Col, Row } from 'react-bootstrap';
+import TodoList from 'components/modules/project-management/dashboard/TodoList';
 
 interface ProjectManagementStat {
   title: string;
@@ -108,18 +109,22 @@ const ProjectManagement = () => {
         </Row>
       </div>
       <div className="mt-3 mx-lg-n4">
-        <Col xs={12} xl={6} xxl={7}></Col>
-        <Col xs={12} xl={6} xxl={5}>
-          <Card className="h-100">
-            <Card.Body>
-              <Card.Title className="mb-1">
-                <h3 className="text-1100">Activity</h3>
-              </Card.Title>
-              <p className="text-700 mb-4">Recent activity across all projects</p>
-              <ActivityTimeline data={activityTimelineData} />
-            </Card.Body>
-          </Card>
-        </Col>
+        <Row className="g-3">
+          <Col xs={12} xl={6} xxl={7}>
+            <TodoList />
+          </Col>
+          <Col xs={12} xl={6} xxl={5}>
+            <Card className="h-100">
+              <Card.Body>
+                <Card.Title className="mb-1">
+                  <h3 className="text-1100">Activity</h3>
+                </Card.Title>
+                <p className="text-700 mb-4">Recent activity across all projects</p>
+                <ActivityTimeline data={activityTimelineData} />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </div>
 
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 border-top border-300">
