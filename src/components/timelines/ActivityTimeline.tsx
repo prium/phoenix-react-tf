@@ -1,43 +1,55 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Timeline from 'components/base/Timeline';
-import { TimelineData } from 'data/timelineData';
-import React from 'react';
+import { ActivityTimelineData } from 'data/project-management/activityTimelineData';
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-const ActivityTimeline = ({ data }: { data: TimelineData[] }) => {
+const ActivityTimeline = ({ data }: { data: ActivityTimelineData[] }) => {
   return (
     <Timeline variant="vertical">
       {data.map((item, index) => (
-        <Timeline.Item key={item.content.title}>
-          <div
-            className={classNames('row g-md-3 align-items-center', {
-              'mb-8 mb-lg-10': index !== data.length - 1
-            })}
-          >
-            <div className="col-12 col-md-auto d-flex">
+        <Timeline.Item className="position-relative" key={item.content.title}>
+          <Row className="g-md-3">
+            <Col xs={12} md="auto" className="d-flex">
               <Timeline.OppositeContent>
-                <p className="fs-10 fw-semi-bold text-700 mb-0 text-end">
+                <p className="fs-10 fw-semi-bold text-600 text-end">
                   {item.oppositeContent.date}
                   <br className="d-none d-md-block" /> {item.oppositeContent.time}
                 </p>
               </Timeline.OppositeContent>
-              <Timeline.Separator>
-                <Timeline.Dot className={item.separator.dotClass}>
+              <Timeline.Separator className="position-md-relative">
+                <Timeline.Dot className="bg-primary-100">
                   <FontAwesomeIcon
                     icon={item.separator.icon}
-                    className="text-white dark__text-white fs-10"
+                    className="text-primary-600 fs-10 dark__text-primary-300"
                   />
                 </Timeline.Dot>
-                {item.separator.barClass && <Timeline.Bar className={item.separator.barClass} />}
+                {index !== data.length - 1 && (
+                  <Timeline.Bar className="h-100 border-dashed border-400" />
+                )}
               </Timeline.Separator>
-            </div>
-            <div className="col">
+            </Col>
+            <Col>
               <Timeline.Content>
-                <h4>{item.content.title}</h4>
-                <p className="fs-9 text-800 mb-0">{item.content.subtitle}</p>
+                <h5 className="fs-9 lh-sm">{item.content.title}</h5>
+                <p className="fs-9">
+                  by{' '}
+                  <Link className="fw-semi-bold" to="#!">
+                    {item.content.user}
+                  </Link>
+                </p>
+                <p
+                  className={classNames('fs-9 text-800', {
+                    'mb-5': index !== data.length - 1,
+                    'mb-0': index === data.length - 1
+                  })}
+                >
+                  {item.content.details}
+                </p>
               </Timeline.Content>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Timeline.Item>
       ))}
     </Timeline>

@@ -28158,7 +28158,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .timeline-vertical .timeline-item .timeline-separator .timeline-bar {
   position: absolute;
-  height: 100px;
   right: 11px;
   top: 24px;
 }

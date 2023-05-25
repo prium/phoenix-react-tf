@@ -14,12 +14,15 @@ import {
   faCamera,
   faCaretRight,
   faCheck,
+  faChess,
   faChevronDown,
   faChevronLeft,
   faChevronRight,
   faClock,
   faCopy,
+  faDove,
   faDownload,
+  faDungeon,
   faEdit,
   faEllipsis,
   faFileExport,
@@ -125,5 +128,8 @@ library.add(
   faFileExport,
   faUndo,
   faPen,
-  faAward
+  faAward,
+  faChess,
+  faDove,
+  faDungeon
 );
