@@ -3,7 +3,7 @@ import React from 'react';
 
 const EcomInvoiceTable = () => {
   return (
-    <Scrollbar style={{ height: '100%' }}>
+    <Scrollbar autoHeight autoHeightMax="100%">
       <table className="table fs-9 text-900 mb-0">
         <thead className="bg-200">
           <tr>

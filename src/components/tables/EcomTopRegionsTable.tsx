@@ -106,7 +106,7 @@ const EcomTopRegionsTable = () => {
 
   return (
     <AdvanceTableProvider {...table}>
-      <Scrollbar style={{ height: '100%' }}>
+      <Scrollbar autoHeight autoHeightMax="100%">
         <Table className="fs-10 mb-0 border-top">
           <thead>
             <tr>
