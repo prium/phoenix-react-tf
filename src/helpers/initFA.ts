@@ -32,6 +32,7 @@ import {
   faKey,
   faMinus,
   faPalette,
+  faPaperclip,
   faPen,
   faPhone,
   faPlus,
@@ -133,5 +134,6 @@ library.add(
   faChess,
   faDove,
   faDungeon,
-  faSort
+  faSort,
+  faPaperclip
 );

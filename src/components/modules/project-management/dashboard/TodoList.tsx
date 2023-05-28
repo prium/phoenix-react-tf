@@ -3,6 +3,10 @@ import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
+import TodoListItem from './TodoListItem';
+import { todoList } from 'data/project-management/todoListData';
+import classNames from 'classnames';
+import Scrollbar from 'components/base/Scrollbar';
 
 const TodoList = () => {
   return (
@@ -35,6 +39,27 @@ const TodoList = () => {
           </Col>
         </Row>
       </Card.Header>
+      <Scrollbar style={{ minHeight: 300 }}>
+        <Card.Body className="py-0">
+          {todoList.map((todo, index) => (
+            <TodoListItem
+              todo={todo}
+              className={classNames({
+                'border-top': index === 0
+              })}
+            />
+          ))}
+        </Card.Body>
+      </Scrollbar>
+      <Card.Footer className="border-0">
+        <Button
+          startIcon={<FontAwesomeIcon icon="plus" />}
+          variant="link"
+          className="text-decoration-none p-0"
+        >
+          Add new task
+        </Button>
+      </Card.Footer>
     </Card>
   );
 };

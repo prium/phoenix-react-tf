@@ -96,7 +96,7 @@ const ProjectManagement = () => {
           <EarlyBirdCard />
         </Col>
       </Row>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-7 pb-3 border-y border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-7 pb-3 border-y border-300 mb-3">
         <Row>
           <Col xs={12} xl={7} xxl={6}>
             <IssuesDiscovered />
@@ -108,7 +108,7 @@ const ProjectManagement = () => {
           </Col>
         </Row>
       </div>
-      <div className="mt-3 mx-lg-n4">
+      <div className="mx-lg-n4 mb-3">
         <Row className="g-3">
           <Col xs={12} xl={6} xxl={7}>
             <TodoList />
