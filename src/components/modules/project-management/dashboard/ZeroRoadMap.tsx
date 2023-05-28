@@ -1,14 +1,12 @@
-import { UilBooks, UilInvoice, UilRefresh, UilUsersAlt } from '@iconscout/react-unicons';
 import CheckButton from 'components/base/CheckButton';
-import DatePicker from 'components/base/DatePicker';
 import ZeroRoadMapChart from 'components/charts/dhtmlx/ZeroRoadMapChart';
 import React, { ChangeEvent, useState } from 'react';
-import { Button, ButtonGroup, Col, Form, Row } from 'react-bootstrap';
+import { ButtonGroup, Col, Form, Row } from 'react-bootstrap';
 
 const ZeroRoadMap = () => {
   const [scaleView, setScaleView] = useState('week');
-
-  console.log({ scaleView });
+  const [showLinks, setShowLinks] = useState(true);
+  const [showProgress, setShowProgress] = useState(true);
 
   return (
     <div className="gantt-zero-roadmap">
@@ -17,11 +15,25 @@ const ZeroRoadMap = () => {
           <div className="d-flex gap-3">
             <Form.Check className="d-flex align-items-end ps-0" id="progress">
               <Form.Check.Label className="mb-0 me-2 lh-1 text-900">Progress</Form.Check.Label>
-              <Form.Check type="switch" className="min-h-auto mb-0" />
+              <Form.Check
+                type="switch"
+                checked={showProgress}
+                className="min-h-auto mb-0"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  setShowProgress(e.target.checked);
+                }}
+              />
             </Form.Check>
             <Form.Check className="d-flex align-items-end ps-0" id="links">
               <Form.Check.Label className="mb-0 me-2 lh-1 text-900">Links</Form.Check.Label>
-              <Form.Check type="switch" className="min-h-auto mb-0" />
+              <Form.Check
+                type="switch"
+                checked={showLinks}
+                className="min-h-auto mb-0"
+                onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  setShowLinks(e.target.checked);
+                }}
+              />
             </Form.Check>
           </div>
         </Col>
@@ -33,11 +45,11 @@ const ZeroRoadMap = () => {
               inputProps={{
                 name: 'scaleView',
                 value: 'week',
-                defaultChecked: true
-                // checked: scaleView === 'week',
-                // onChange(e: ChangeEvent<HTMLInputElement>) {
-                //   setScaleView(e.target.value);
-                // }
+                defaultChecked: true,
+                checked: scaleView === 'week',
+                onChange(e: ChangeEvent<HTMLInputElement>) {
+                  setScaleView(e.target.value);
+                }
               }}
             />
             <CheckButton
@@ -45,11 +57,11 @@ const ZeroRoadMap = () => {
               id="month"
               inputProps={{
                 name: 'scaleView',
-                value: 'month'
-                // checked: scaleView === 'month',
-                // onChange(e: ChangeEvent<HTMLInputElement>) {
-                //   setScaleView(e.target.value);
-                // }
+                value: 'month',
+                checked: scaleView === 'month',
+                onChange(e: ChangeEvent<HTMLInputElement>) {
+                  setScaleView(e.target.value);
+                }
               }}
             />
             <CheckButton
@@ -57,16 +69,16 @@ const ZeroRoadMap = () => {
               id="year"
               inputProps={{
                 name: 'scaleView',
-                value: 'year'
-                // checked: scaleView === 'year',
-                // onChange(e: ChangeEvent<HTMLInputElement>) {
-                //   setScaleView(e.target.value);
-                // }
+                value: 'year',
+                checked: scaleView === 'year',
+                onChange(e: ChangeEvent<HTMLInputElement>) {
+                  setScaleView(e.target.value);
+                }
               }}
             />
           </ButtonGroup>
         </Col>
-        <ZeroRoadMapChart />
+        <ZeroRoadMapChart scaleView={scaleView} showProgress={showProgress} showLinks={showLinks} />
       </Row>
     </div>
   );

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import TodoItemDetailsModal from './TodoItemDetailsModal';
 import { ToDoItem } from 'data/project-management/todoListData';
@@ -9,6 +9,7 @@ import classNames from 'classnames';
 
 const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
+  const [selected, setSelected] = useState(false);
   return (
     <>
       <div
@@ -20,6 +21,9 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
         <Form.Check.Input
           type="checkbox"
           className="form-check-input-todolist flex-shrink-0 me-2 mt-0"
+          onChange={(e: ChangeEvent<HTMLInputElement>) => {
+            setSelected(e.target.checked);
+          }}
         />
         <Row
           className="justify-content-between align-items-md-center btn-reveal-trigger border-200 gx-0 flex-1 my-1 py-3"
@@ -27,7 +31,14 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
         >
           <Col xs={12} md="auto" xl={12} xxl="auto">
             <div className="mb-1 mb-md-0 d-flex align-items-center lh-1 gap-2">
-              <h5 className="mb-1 mb-md-0 mb-xl-1 mb-xxl-0 line-clamp-1 fw-semi-bold text-900">
+              <h5
+                className={classNames(
+                  'mb-1 mb-md-0 mb-xl-1 mb-xxl-0 line-clamp-1 fw-semi-bold text-900',
+                  {
+                    'text-decoration-line-through': selected
+                  }
+                )}
+              >
                 {todo.task}
               </h5>
               {todo.badge && (
@@ -77,7 +88,7 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
       <TodoItemDetailsModal
         show={openDetailsModal}
         handleClose={() => setOpenDetailsModal(false)}
-        item={{}}
+        item={todo}
       />
     </>
   );

@@ -13,6 +13,9 @@ export interface ToDoItem {
   badge?: Badge;
   listitems?: number;
 }
+export interface SubTaskItem {
+  task: string;
+}
 
 export const todoList: ToDoItem[] = [
   {
@@ -87,5 +90,17 @@ export const todoList: ToDoItem[] = [
     date: '2o Nov, 2021',
     time: '1:00 AM',
     attachment: 2
+  }
+];
+
+export const subTasks: SubTaskItem[] = [
+  {
+    task: 'Study Dragons'
+  },
+  {
+    task: 'Procrastinate a bit'
+  },
+  {
+    task: 'Staring at the notebook for 5 mins'
   }
 ];

@@ -34,6 +34,7 @@ import {
   faPalette,
   faPaperclip,
   faPen,
+  faPencil,
   faPhone,
   faPlus,
   faPrint,
@@ -135,5 +136,6 @@ library.add(
   faDove,
   faDungeon,
   faSort,
-  faPaperclip
+  faPaperclip,
+  faPencil
 );

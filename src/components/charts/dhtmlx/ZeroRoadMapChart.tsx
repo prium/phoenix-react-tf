@@ -68,11 +68,18 @@ const tasks = {
   ]
 };
 
-const ZeroRoadMapChart = () => {
+const ZeroRoadMapChart = ({
+  scaleView,
+  showLinks,
+  showProgress
+}: {
+  scaleView: string;
+  showLinks: boolean;
+  showProgress: boolean;
+}) => {
   const containerRef = useRef(null);
   const {
-    config: { isRTL },
-    setConfig
+    config: { isRTL }
   } = useAppContext();
 
   useEffect(() => {
@@ -135,7 +142,7 @@ const ZeroRoadMapChart = () => {
 
       gantt.templates.task_class = (start, end, task) => task.task_class;
 
-      gantt.templates.task_cell_class = function () {
+      gantt.templates.timeline_cell_class = function () {
         return 'weekend';
       };
 
@@ -149,6 +156,24 @@ const ZeroRoadMapChart = () => {
   useEffect(() => {
     gantt.config.rtl = isRTL;
   }, [isRTL]);
+
+  useEffect(() => {
+    gantt.ext.zoom.setLevel(scaleView);
+  }, [scaleView]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      gantt.config.show_progress = showProgress;
+      gantt.init(containerRef.current);
+    }
+  }, [showProgress]);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      gantt.config.show_links = showLinks;
+      gantt.init(containerRef.current);
+    }
+  }, [showLinks]);
 
   return <div ref={containerRef} className="gantt-zero-roadmap-chart" />;
 };
