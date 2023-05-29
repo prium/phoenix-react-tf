@@ -1,4 +1,3 @@
-import { UilBooks, UilInvoice, UilRefresh, UilUsersAlt } from '@iconscout/react-unicons';
 import DatePicker from 'components/base/DatePicker';
 import EarlyBirdCard from 'components/cards/EarlyBirdCard';
 import ProjectElevenProgressChart from 'components/charts/e-charts/ProjectElevenProgressChart';
@@ -8,56 +7,9 @@ import ProjectDashboardTable from 'components/tables/ProjectDashboardTable';
 import ActivityTimeline from 'components/timelines/ActivityTimeline';
 import { activityTimelineData } from 'data/project-management/activityTimelineData';
 import { Card, Col, Row } from 'react-bootstrap';
-import TodoList from 'components/modules/project-management/dashboard/TodoList';
-
-interface ProjectManagementStat {
-  title: string;
-  count: string;
-  icon: JSX.Element;
-  subtitle: string;
-}
-
-const stats: ProjectManagementStat[] = [
-  {
-    title: 'Projects',
-    count: '32',
-    icon: <UilBooks className="text-primary-500" size={40} />,
-    subtitle: 'Awating processing'
-  },
-  {
-    title: 'Members',
-    icon: <UilUsersAlt className="text-success-500" size={40} />,
-    count: '94',
-    subtitle: 'Working hard'
-  },
-  {
-    title: 'Invoices',
-    icon: <UilInvoice className="text-warning-500" size={40} />,
-    count: '23',
-    subtitle: 'Soon to be cleared'
-  },
-  {
-    title: 'Refunds',
-    icon: <UilRefresh className="text-danger-500" size={40} />,
-    count: '3',
-    subtitle: 'Fresh start'
-  }
-];
-
-const Stat = ({ stat }: { stat: ProjectManagementStat }) => {
-  return (
-    <div className="d-flex align-items-center">
-      {stat.icon}
-      <div className="ms-2">
-        <div className="d-flex align-items-end">
-          <h2 className="mb-0 me-2">{stat.count}</h2>
-          <span className="fs-7 fw-semi-bold text-900">{stat.title}</span>
-        </div>
-        <p className="text-800 fs-9 mb-0">{stat.subtitle}</p>
-      </div>
-    </div>
-  );
-};
+import TodoList from 'components/modules/project-management/todo-list/TodoList';
+import { stats } from 'data/project-management/stats';
+import Stat from 'components/modules/project-management/dashboard/Stat';
 
 const ProjectManagement = () => {
   return (

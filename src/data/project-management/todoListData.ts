@@ -117,7 +117,7 @@ export const subTasks: SubTaskItem[] = [
 export const attachments: Attachment[] = [
   {
     name: 'Silly_sight_1.png',
-    mimeType: 'png',
+    mimeType: 'image',
     size: '768kb',
     user: 'Shantinan Mekalan',
     date: '21st Dec, 12:56 PM',

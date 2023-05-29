@@ -3,7 +3,6 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { PieChart } from 'echarts/charts';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
 import dayjs from 'dayjs';
 import { getPastDates } from 'helpers/utils';
 import { tooltipFormatter } from 'helpers/echart-utils';

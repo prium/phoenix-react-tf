@@ -3,6 +3,7 @@ import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDro
 import { Dropdown } from 'react-bootstrap';
 import { Attachment } from 'data/project-management/todoListData';
 import classNames from 'classnames';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface FileListItemProps {
   attachment: Attachment;
@@ -16,7 +17,16 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
         <div className="d-flex justify-content-between align-items-start">
           <div>
             <div className="d-flex align-items-center mb-1">
-              <FontAwesomeIcon icon="image" className="me-2 fs-8 text-700" />
+              <FontAwesomeIcon
+                icon={
+                  classNames({
+                    image: attachment.mimeType === 'image',
+                    'file-zipper': attachment.mimeType === 'zip',
+                    'file-lines': attachment.mimeType === 'txt'
+                  }) as IconProp
+                }
+                className="me-2 fs-9 text-700"
+              />
               <p className="text-1000 mb-0 lh-1">{attachment.name}</p>
             </div>
             <div

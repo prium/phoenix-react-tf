@@ -26,6 +26,8 @@ import {
   faEdit,
   faEllipsis,
   faFileExport,
+  faFileLines,
+  faFileZipper,
   faFilter,
   faHeart,
   faHome,
@@ -139,5 +141,7 @@ library.add(
   faSort,
   faPaperclip,
   faPencil,
-  faImage
+  faImage,
+  faFileZipper,
+  faFileLines
 );
