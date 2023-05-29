@@ -1,3 +1,5 @@
+import { PageBreadcrumbItem } from 'components/common/PageBreadcrumb';
+
 export const months = [
   'January',
   'February',
@@ -26,4 +28,19 @@ export const monthsShort = [
   'Oct',
   'Nov',
   'Dec'
+];
+
+export const defaultBreadcrumbItems: PageBreadcrumbItem[] = [
+  {
+    label: 'Page 1',
+    url: '#!'
+  },
+  {
+    label: 'Page 2',
+    url: '#!'
+  },
+  {
+    label: 'Default',
+    active: true
+  }
 ];

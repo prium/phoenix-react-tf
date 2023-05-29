@@ -79,6 +79,7 @@ import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
 import Refund from 'pages/apps/e-commerce/admin/Refund';
 import CustomerDetails from 'pages/apps/e-commerce/admin/CustomerDetails';
 import ProjectManagement from 'pages/dashboard/ProjectManagement';
+import CreateNew from 'pages/apps/project-management/CreateNew';
 
 const routes = [
   {
@@ -127,6 +128,15 @@ const routes = [
           {
             path: 'customer-details',
             element: <CustomerDetails />
+          }
+        ]
+      },
+      {
+        path: '/apps/project-management/',
+        children: [
+          {
+            path: 'create-new',
+            element: <CreateNew />
           }
         ]
       },

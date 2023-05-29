@@ -234,11 +234,13 @@ export const routes: RouteItems[] = [
       {
         name: 'project-management',
         icon: 'clipboard',
+        active: true,
         pages: [
           {
             name: 'create new',
-            path: 'apps/project-management/create-new',
-            pathName: 'project-management-create-new'
+            path: '/apps/project-management/create-new',
+            pathName: 'project-management-create-new',
+            active: true
           },
           {
             name: 'project-list-view',
