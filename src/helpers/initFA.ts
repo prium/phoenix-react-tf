@@ -29,6 +29,7 @@ import {
   faFilter,
   faHeart,
   faHome,
+  faImage,
   faKey,
   faMinus,
   faPalette,
@@ -137,5 +138,6 @@ library.add(
   faDungeon,
   faSort,
   faPaperclip,
-  faPencil
+  faPencil,
+  faImage
 );

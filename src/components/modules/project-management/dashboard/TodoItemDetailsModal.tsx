@@ -1,10 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { UilBellSchool, UilTagAlt } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
-import { SubTaskItem, ToDoItem, subTasks } from 'data/project-management/todoListData';
+import DatePicker from 'components/base/DatePicker';
+import ReactSelect from 'components/base/ReactSelect';
+import { SubTaskItem, ToDoItem, attachments, subTasks } from 'data/project-management/todoListData';
 import { snakeCase } from 'helpers/utils';
 import React from 'react';
 import { Col, Form, Modal, Row } from 'react-bootstrap';
+import FileListItem from './FileListItem';
 
 interface TodoItemDetailsModalProps {
   show: boolean;
@@ -54,7 +58,7 @@ const TodoItemDetailsModal = ({ show, handleClose, item }: TodoItemDetailsModalP
           <FontAwesomeIcon icon="xmark" />
         </Button>
       </Modal.Header>
-      <Modal.Body className="bg-100 px-6 py-0">
+      <Modal.Body className="bg-100 px-6 py-0 rounded-bottom">
         <Row className="gx-14">
           <Col xs={12} lg={7} className="border-end-lg border-300">
             <div className="py-6">
@@ -91,6 +95,19 @@ const TodoItemDetailsModal = ({ show, handleClose, item }: TodoItemDetailsModalP
                   Add subtask
                 </Button>
               </div>
+
+              <div className="mb-3">
+                <h4 className="mb-3">Files</h4>
+                {attachments.map((attachment, index) => (
+                  <FileListItem
+                    key={attachment.name}
+                    attachment={attachment}
+                    className={classNames({
+                      'border-top': index === 0
+                    })}
+                  />
+                ))}
+              </div>
             </div>
           </Col>
           <Col xs={12} lg={5}>
@@ -99,176 +116,49 @@ const TodoItemDetailsModal = ({ show, handleClose, item }: TodoItemDetailsModalP
               <h5 className="text-1000 mb-2">Status</h5>
               <Form.Select className="mb-4">
                 <option selected>Select</option>
-                <option value={1}>One</option>
-                <option value={2}>Two</option>
-                <option value={3}>Three</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="closed">Closed</option>
               </Form.Select>
               <h5 className="text-1000 mb-2">Due Date</h5>
-              <div className="flatpickr-input-container mb-4">
-                <input
-                  className="form-control datetimepicker ps-6 flatpickr-input"
-                  type="text"
-                  placeholder="Set the due date"
-                  data-options='{"disableMobile":true}'
-                />
-                <span className="uil uil-calendar-alt flatpickr-icon text-700" />
+              <div className="mb-4">
+                <DatePicker placeholder="Set the due date" />
               </div>
               <h5 className="text-1000 mb-2">Reminder</h5>
-              <div className="flatpickr-input-container mb-4">
-                <div className="flatpickr-wrapper">
-                  <input
-                    className="form-control datetimepicker ps-6 flatpickr-input"
-                    type="text"
-                    placeholder="Reminder"
-                    data-options='{"enableTime":true,"noCalendar":true,"dateFormat":"H:i","disableMobile":true,"static":true}'
-                  />
-                  <div
-                    className="flatpickr-calendar hasTime noCalendar animate static"
-                    tabIndex={-1}
-                  >
-                    <div className="flatpickr-time" tabIndex={-1}>
-                      <div className="numInputWrapper">
-                        <input
-                          className="numInput flatpickr-hour"
-                          type="number"
-                          aria-label="Hour"
-                          tabIndex={-1}
-                          step={1}
-                          min={1}
-                          max={12}
-                          maxLength={2}
-                        />
-                        <span className="arrowUp" />
-                        <span className="arrowDown" />
-                      </div>
-                      <span className="flatpickr-time-separator">:</span>
-                      <div className="numInputWrapper">
-                        <input
-                          className="numInput flatpickr-minute"
-                          type="number"
-                          aria-label="Minute"
-                          tabIndex={-1}
-                          step={5}
-                          min={0}
-                          max={59}
-                          maxLength={2}
-                        />
-                        <span className="arrowUp" />
-                        <span className="arrowDown" />
-                      </div>
-                      <span className="flatpickr-am-pm" title="Click to toggle" tabIndex={-1}>
-                        PM
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <span className="uil uil-bell-school flatpickr-icon text-700" />
+              <div className="mb-4">
+                <DatePicker
+                  placeholder="Set the due date"
+                  options={{ noCalendar: true, enableTime: true, dateFormat: 'H:i' }}
+                  icon={<UilBellSchool className="flatpickr-icon text-700" size={16} />}
+                />
               </div>
               <h5 className="text-1000 mb-2">Tag</h5>
-              <div className="choices-select-container mb-6">
-                <div
-                  className="choices"
-                  data-type="select-multiple"
-                  role="combobox"
-                  aria-autocomplete="list"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <div className="choices__inner">
-                    <select
-                      className="form-select choices__input"
-                      data-choices="data-choices"
-                      // multiple="multiple"
-                      data-options='{"removeItemButton":true,"placeholder":true}'
-                      hidden
-                      tabIndex={-1}
-                      data-choice="active"
-                    />
-                    <div className="choices__list choices__list--multiple" />
-                    {/* <input
-                      type="text"
-                      className="choices__input choices__input--cloned"
-                      autoComplete="off"
-                      autoCapitalize="off"
-                      spellCheck="false"
-                      role="textbox"
-                      aria-autocomplete="list"
-                      aria-label="Select organizer..."
-                      placeholder="Select organizer..."
-                      style={{ minWidth: '20ch', width: '1ch' }}
-                    /> */}
-                  </div>
-                  <div className="choices__list choices__list--dropdown" aria-expanded="false">
-                    <div className="choices__list" aria-multiselectable="true" role="listbox">
-                      <div
-                        id="choices--qtpz-item-choice-1"
-                        className="choices__item choices__item--choice choices__item--selectable is-highlighted"
-                        role="option"
-                        data-choice
-                        data-id={1}
-                        data-value="California Institute of Technology"
-                        data-select-text
-                        data-choice-selectable
-                        aria-selected="true"
-                      >
-                        California Institute of Technology
-                      </div>
-                      <div
-                        id="choices--qtpz-item-choice-2"
-                        className="choices__item choices__item--choice choices__item--selectable"
-                        role="option"
-                        data-choice
-                        data-id={2}
-                        data-value="GSAS Open Labs At Harvard"
-                        data-select-text
-                        data-choice-selectable
-                      >
-                        GSAS Open Labs At Harvard
-                      </div>
-                      <div
-                        id="choices--qtpz-item-choice-3"
-                        className="choices__item choices__item--choice choices__item--selectable"
-                        role="option"
-                        data-choice
-                        data-id={3}
-                        data-value="Massachusetts Institute of Technology"
-                        data-select-text
-                        data-choice-selectable
-                      >
-                        Massachusetts Institute of Technology
-                      </div>
-                      <div
-                        id="choices--qtpz-item-choice-5"
-                        className="choices__item choices__item--choice choices__item--selectable"
-                        role="option"
-                        data-choice
-                        data-id={5}
-                        data-value="University of Chicago"
-                        data-select-text
-                        data-choice-selectable
-                      >
-                        University of Chicago
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span className="uil uil-tag-alt choices-icon text-700" style={{ top: '26%' }} />
-              </div>
+              <ReactSelect
+                options={[
+                  {
+                    value: 'massachusetts_institute_of_technology',
+                    label: 'Massachusetts Institute of Technology'
+                  },
+                  { value: 'university_of_chicago', label: 'University of Chicago' },
+                  { value: 'gsas_open_labs_at_harvard', label: 'GSAS Open Labs At Harvard' },
+                  {
+                    value: 'california_institute_of_technology',
+                    label: 'California Institute of Technology'
+                  }
+                ]}
+                className="mb-6"
+                isMulti
+                placeholder="Select organizer"
+                icon={<UilTagAlt className="react-select-icon text-700" size={16} />}
+              />
+
               <div className="text-end mb-9">
-                <button className="btn btn-phoenix-danger">Delete Task</button>
+                <Button variant="phoenix-danger">Delete Task</Button>
               </div>
             </div>
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
-        </Button>
-        <Button variant="primary" onClick={handleClose}>
-          Save Changes
-        </Button>
-      </Modal.Footer>
     </Modal>
   );
 };

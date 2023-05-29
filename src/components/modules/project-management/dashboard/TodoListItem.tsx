@@ -10,6 +10,11 @@ import classNames from 'classnames';
 const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
   const [selected, setSelected] = useState(false);
+
+  const handleSelectionChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSelected(e.target.checked);
+  };
+
   return (
     <>
       <div
@@ -21,9 +26,7 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
         <Form.Check.Input
           type="checkbox"
           className="form-check-input-todolist flex-shrink-0 me-2 mt-0"
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            setSelected(e.target.checked);
-          }}
+          onChange={handleSelectionChange}
         />
         <Row
           className="justify-content-between align-items-md-center btn-reveal-trigger border-200 gx-0 flex-1 my-1 py-3"

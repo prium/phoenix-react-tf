@@ -21733,6 +21733,16 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   background: var(--phoenix-gray-200);
 }
 
+.react-select-container {
+  position: relative;
+}
+.react-select-container .react-select-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .react-select__control {
   min-height: unset !important;
   padding: 0.5rem 1rem;
@@ -21750,7 +21760,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   padding: 0;
 }
 .react-select__control .react-select__placeholder {
-  color: var(--phoenix-900);
+  color: #9fa6bc;
   font-size: 0.8rem;
   font-weight: 600;
   margin: 0;
@@ -27171,11 +27181,6 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     --phoenix-modal-width: 768px;
   }
 }
-.modal-open {
-  overflow: auto !important;
-  padding-left: 0 !important;
-}
-
 .accordion {
   --phoenix-accordion-color: #222834;
 }

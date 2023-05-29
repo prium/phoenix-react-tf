@@ -23,10 +23,13 @@ const TodoList = () => {
                 <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
               </div>
               <div className="col-auto d-flex">
-                <p className="mb-0 ms-sm-3 fs-9 text-700 fw-bold">
-                  <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                <Button
+                  variant="link"
+                  className="p-0 ms-3 fs-9 text-700 fw-bold text-decoration-none"
+                  startIcon={<FontAwesomeIcon icon="filter" className="fs-10 me-1" />}
+                >
                   23 tasks
-                </p>
+                </Button>
                 <Button
                   variant="link"
                   className="p-0 ms-3 fs-9 text-primary fw-bold text-decoration-none"

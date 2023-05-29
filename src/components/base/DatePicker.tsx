@@ -1,10 +1,13 @@
 import Flatpickr, { DateTimePickerProps } from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
-import { UilCalendarAlt } from '@iconscout/react-unicons';
+import { Icon, UilCalendarAlt } from '@iconscout/react-unicons';
+import { ReactElement } from 'react';
 
-interface DatePickerProps extends DateTimePickerProps {}
+interface DatePickerProps extends DateTimePickerProps {
+  icon?: ReactElement;
+}
 
-const DatePicker = ({ options, ...rest }: DatePickerProps) => {
+const DatePicker = ({ icon, options, ...rest }: DatePickerProps) => {
   return (
     <div className="flatpickr-input-container">
       <Flatpickr
@@ -27,7 +30,7 @@ const DatePicker = ({ options, ...rest }: DatePickerProps) => {
         }}
         {...rest}
       />
-      <UilCalendarAlt className="flatpickr-icon text-700" size={16} />
+      {icon ? <>{icon}</> : <UilCalendarAlt className="flatpickr-icon text-700" size={16} />}
     </div>
   );
 };

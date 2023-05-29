@@ -1,5 +1,5 @@
 import { BadgeBg } from 'components/base/Badge';
-
+import generic40 from 'assets/img/generic/40.png';
 interface Badge {
   label: string;
   bg: BadgeBg;
@@ -15,6 +15,15 @@ export interface ToDoItem {
 }
 export interface SubTaskItem {
   task: string;
+}
+
+export interface Attachment {
+  name: string;
+  mimeType: string;
+  size: string;
+  user: string;
+  date: string;
+  thumbnail?: string;
 }
 
 export const todoList: ToDoItem[] = [
@@ -102,5 +111,30 @@ export const subTasks: SubTaskItem[] = [
   },
   {
     task: 'Staring at the notebook for 5 mins'
+  }
+];
+
+export const attachments: Attachment[] = [
+  {
+    name: 'Silly_sight_1.png',
+    mimeType: 'png',
+    size: '768kb',
+    user: 'Shantinan Mekalan',
+    date: '21st Dec, 12:56 PM',
+    thumbnail: generic40
+  },
+  {
+    name: 'All_images.zip',
+    mimeType: 'zip',
+    size: '12.8 mb',
+    user: 'Yves Tanguy',
+    date: '19th Dec, 08:56 PM'
+  },
+  {
+    name: 'Project.txt',
+    mimeType: 'txt',
+    size: '123 kb',
+    user: 'Shantinan Mekalan',
+    date: '12th Dec, 12:56 PM'
   }
 ];
