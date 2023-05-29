@@ -33,6 +33,7 @@ import {
   faHome,
   faImage,
   faKey,
+  faList,
   faMinus,
   faPalette,
   faPaperclip,
@@ -143,5 +144,6 @@ library.add(
   faPencil,
   faImage,
   faFileZipper,
-  faFileLines
+  faFileLines,
+  faList
 );

@@ -244,8 +244,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'project-list-view',
-            path: 'apps/project-management/project-list-view',
-            pathName: 'project-management-project-list-view'
+            path: '/apps/project-management/project-list-view',
+            pathName: 'project-management-project-list-view',
+            active: true
           },
           {
             name: 'project-card-view',
