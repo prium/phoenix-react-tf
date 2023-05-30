@@ -2,6 +2,8 @@ import team1 from 'assets/img/team/24x24/1.webp';
 import team5 from 'assets/img/team/24x24/5.webp';
 import team9 from 'assets/img/team/24x24/9.webp';
 import team11 from 'assets/img/team/24x24/11.webp';
+import team12 from 'assets/img/team/24x24/12.webp';
+import team13 from 'assets/img/team/24x24/13.webp';
 import team25 from 'assets/img/team/24x24/25.webp';
 import team32 from 'assets/img/team/24x24/32.webp';
 import team21 from 'assets/img/team/24x24/21.webp';
@@ -12,6 +14,7 @@ import team34 from 'assets/img/team/24x24/34.webp';
 import team59 from 'assets/img/team/24x24/59.webp';
 import team30 from 'assets/img/team/24x24/30.webp';
 import team31 from 'assets/img/team/24x24/31.webp';
+import { BadgeBg } from 'components/base/Badge';
 
 export interface Status {
   ongoing: number;
@@ -33,7 +36,12 @@ export interface ProjectSummaryTableData {
     min: number;
     max: number;
   };
-  status: Status;
+  task: number;
+  statusProgress: Status;
+  status: {
+    label: string;
+    type: BadgeBg;
+  };
 }
 
 export const projectSummaryTableData: ProjectSummaryTableData[] = [
@@ -50,11 +58,16 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 145,
       max: 145
     },
-    status: {
+    statusProgress: {
       ongoing: 30,
       critical: 5,
       inactive: 45,
       completed: 15
+    },
+    task: 287,
+    status: {
+      label: 'completed',
+      type: 'success'
     }
   },
   {
@@ -66,11 +79,16 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 148,
       max: 223
     },
-    status: {
+    statusProgress: {
       ongoing: 20,
       critical: 15,
       inactive: 45,
       completed: 30
+    },
+    task: 125,
+    status: {
+      label: 'inactive',
+      type: 'success'
     }
   },
   {
@@ -86,11 +104,16 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 277,
       max: 539
     },
-    status: {
+    statusProgress: {
       ongoing: 10,
       critical: 10,
       inactive: 35,
       completed: 45
+    },
+    task: 72,
+    status: {
+      label: 'ongoing',
+      type: 'primary'
     }
   },
   {
@@ -102,11 +125,16 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 16,
       max: 56
     },
-    status: {
+    statusProgress: {
       ongoing: 45,
       critical: 15,
       inactive: 20,
       completed: 20
+    },
+    task: 91,
+    status: {
+      label: 'critical',
+      type: 'danger'
     }
   },
 
@@ -119,11 +147,16 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 169,
       max: 394
     },
-    status: {
+    statusProgress: {
       ongoing: 25,
       critical: 35,
       inactive: 20,
       completed: 15
+    },
+    task: 134,
+    status: {
+      label: 'ongoing',
+      type: 'primary'
     }
   },
   {
@@ -139,11 +172,41 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
       min: 600,
       max: 600
     },
-    status: {
+    statusProgress: {
       ongoing: 24,
       critical: 5,
       inactive: 35,
       completed: 35
+    },
+    task: 24,
+    status: {
+      label: 'cancelled',
+      type: 'secondary'
+    }
+  },
+  {
+    name: 'Olga Dies Dreaming by Xóchitl González',
+    assigness: [team11, team12, team13],
+    start: 'Feb 24, 2020',
+    deadline: 'Nov 24, 2021',
+    calculation: {
+      amount: '$55k',
+      label: 'Budget'
+    },
+    progress: {
+      min: 600,
+      max: 600
+    },
+    statusProgress: {
+      ongoing: 24,
+      critical: 5,
+      inactive: 35,
+      completed: 35
+    },
+    task: 24,
+    status: {
+      label: 'cancelled',
+      type: 'secondary'
     }
   }
 ];

@@ -9,7 +9,7 @@ const ActivityTimeline = ({ data }: { data: ActivityTimelineData[] }) => {
   return (
     <Timeline variant="vertical">
       {data.map((item, index) => (
-        <Timeline.Item className="position-relative" key={item.content.title}>
+        <Timeline.Item className="position-relative" key={item.id}>
           <Row className="g-md-3">
             <Col xs={12} md="auto" className="d-flex">
               <Timeline.OppositeContent>

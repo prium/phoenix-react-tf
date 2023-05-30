@@ -83,6 +83,7 @@ const TodoItemDetailsModal = ({ show, handleClose, item }: TodoItemDetailsModalP
                 <div className="mb-3">
                   {subTasks.map((subTask, index) => (
                     <SubTask
+                      key={subTask.task}
                       task={subTask}
                       className={classNames({
                         'border-top': index === 0

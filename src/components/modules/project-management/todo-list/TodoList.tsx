@@ -46,6 +46,7 @@ const TodoList = () => {
         <Card.Body className="py-0">
           {todoList.map((todo, index) => (
             <TodoListItem
+              key={todo.task}
               todo={todo}
               className={classNames({
                 'border-top': index === 0

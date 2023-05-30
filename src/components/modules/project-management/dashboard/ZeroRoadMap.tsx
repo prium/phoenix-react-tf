@@ -45,7 +45,6 @@ const ZeroRoadMap = () => {
               inputProps={{
                 name: 'scaleView',
                 value: 'week',
-                defaultChecked: true,
                 checked: scaleView === 'week',
                 onChange(e: ChangeEvent<HTMLInputElement>) {
                   setScaleView(e.target.value);

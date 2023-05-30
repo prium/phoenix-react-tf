@@ -10,7 +10,7 @@ const PageBreadcrumb = ({ items }: { items: PageBreadcrumbItem[] }) => {
   return (
     <Breadcrumb className="mb-2">
       {items.map(item => (
-        <Breadcrumb.Item href={item.url} active={item.active}>
+        <Breadcrumb.Item href={item.url} active={item.active} key={item.label}>
           {item.label}
         </Breadcrumb.Item>
       ))}

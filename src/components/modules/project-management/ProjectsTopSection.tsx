@@ -1,48 +1,55 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import classNames from 'classnames';
 import FilterTab from 'components/common/FilterTab';
-import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
+import ToggleViewButton from 'components/common/ToggleViewbutton';
 import FourGrid from 'components/icons/FourGrid';
 import NineGrid from 'components/icons/NineGrid';
-import { defaultBreadcrumbItems } from 'data/commonData';
-import { capitalize } from 'helpers/utils';
-import React from 'react';
-import { Button, Col, Nav, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-
-const tabItems = [
-  { label: 'All', count: 32, active: true },
-  { label: 'Ongoing', count: 14 },
-  { label: 'Cancelled', count: 2 },
-  { label: 'Finished', count: 14 },
-  { label: 'Postponed', count: 2 }
-];
-
-const ToggleViewButton = ({
-  active,
-  view
-}: {
-  active?: boolean;
-  view: 'list' | 'card' | 'board';
-}) => {
-  return (
-    <OverlayTrigger placement="top" overlay={<Tooltip>{capitalize(view)} view</Tooltip>}>
-      <Button
-        variant="phoenix-primary"
-        className={classNames('px-3', {
-          'text-900 border-0': active
-        })}
-      >
-        {view === 'list' && <FontAwesomeIcon icon="list" className="fs-10" />}
-        {view === 'board' && <NineGrid />}
-        {view === 'card' && <FourGrid />}
-      </Button>
-    </OverlayTrigger>
-  );
-};
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { ChangeEvent, useMemo } from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const ProjectsTopSection = () => {
+  const { setGlobalFilter, getPrePaginationRowModel } = useAdvanceTableContext();
+
+  const tabItems = useMemo(() => {
+    const getDataCount = (label: string) =>
+      getPrePaginationRowModel().rows.filter(
+        ({ original: { status } }: any) => status.label === label
+      ).length;
+
+    return [
+      {
+        label: 'All',
+        value: 'all',
+        columnId: 'status',
+        count: getPrePaginationRowModel().rows.length
+      },
+      {
+        label: 'Ongoing',
+        value: 'ongoing',
+        columnId: 'status',
+        count: getDataCount('ongoing')
+      },
+      {
+        label: 'Cancelled',
+        value: 'cancelled',
+        columnId: 'status',
+        count: getDataCount('cancelled')
+      },
+      {
+        label: 'Completed',
+        value: 'completed',
+        columnId: 'status',
+        count: getDataCount('completed')
+      },
+      { label: 'Critical', value: 'critical', columnId: 'status', count: getDataCount('critical') }
+    ];
+  }, [getPrePaginationRowModel]);
+
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setGlobalFilter(e.target.value || undefined);
+  };
+
   return (
     <Row className="g-3 justify-content-between align-items-end mb-4">
       <Col xs={12} sm="auto">
@@ -50,10 +57,21 @@ const ProjectsTopSection = () => {
       </Col>
       <Col xs={12} sm="auto">
         <div className="d-flex align-items-center gap-1">
-          <SearchBox placeholder="Search projects" style={{ maxWidth: '30rem' }} className="me-3" />
-          <ToggleViewButton view="list" active />
-          <ToggleViewButton view="board" />
-          <ToggleViewButton view="card" />
+          <SearchBox
+            onChange={handleSearchInputChange}
+            placeholder="Search projects"
+            style={{ maxWidth: '30rem' }}
+            className="me-3"
+          />
+          <ToggleViewButton tooltip="List view" active>
+            <FontAwesomeIcon icon="list" className="fs-10" />
+          </ToggleViewButton>
+          <ToggleViewButton tooltip="Board view">
+            <NineGrid />
+          </ToggleViewButton>
+          <ToggleViewButton tooltip="Card view">
+            <FourGrid />
+          </ToggleViewButton>
         </div>
       </Col>
     </Row>

@@ -1,6 +1,7 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface ActivityTimelineData {
+  id: number;
   oppositeContent: {
     date: string;
     time: string;
@@ -17,6 +18,7 @@ export interface ActivityTimelineData {
 
 export const activityTimelineData: ActivityTimelineData[] = [
   {
+    id: 1,
     oppositeContent: {
       date: '01 DEC, 2023',
       time: '10:30 AM'
@@ -32,6 +34,7 @@ export const activityTimelineData: ActivityTimelineData[] = [
     }
   },
   {
+    id: 2,
     oppositeContent: {
       date: '05 DEC, 2023',
       time: '12:30 AM'
@@ -47,6 +50,7 @@ export const activityTimelineData: ActivityTimelineData[] = [
     }
   },
   {
+    id: 3,
     oppositeContent: {
       date: '05 DEC, 2023',
       time: '2:30 PM'

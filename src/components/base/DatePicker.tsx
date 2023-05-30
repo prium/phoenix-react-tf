@@ -1,6 +1,6 @@
 import Flatpickr, { DateTimePickerProps } from 'react-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
-import { Icon, UilCalendarAlt } from '@iconscout/react-unicons';
+import { UilCalendarAlt } from '@iconscout/react-unicons';
 import { ReactElement } from 'react';
 
 interface DatePickerProps extends DateTimePickerProps {

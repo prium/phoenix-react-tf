@@ -1,23 +1,15 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
-import useAdvanceTable from 'hooks/useAdvanceTable';
-import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import Button from 'components/base/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  ProjectSummaryTableData,
-  Status,
-  projectSummaryTableData
-} from 'data/project-management/projectSummaryTableData';
+import { ProjectSummaryTableData } from 'data/project-management/projectSummaryTableData';
 import Avatar from 'components/base/Avatar';
 import { ProgressBar } from 'react-bootstrap';
-import classNames from 'classnames';
 import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
+import Badge from 'components/base/Badge';
 
-const columns: ColumnDef<ProjectSummaryTableData>[] = [
+export const projectListTableColumns: ColumnDef<ProjectSummaryTableData>[] = [
   {
     accessorKey: 'name',
     header: 'Project Name',
@@ -30,7 +22,7 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
       );
     },
     meta: {
-      cellProps: { className: 'white-space-nowrap' },
+      cellProps: { className: 'white-space-nowrap py-4' },
       headerProps: { style: { width: '30%' } }
     }
   },
@@ -43,10 +35,10 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
         <Avatar.Group total={assigness.length} size="s">
           {assigness.slice(0, 4).map(assigne => (
             <Avatar
-              key={assigne}
               src={assigne ? assigne : undefined}
               variant={assigne ? 'image' : 'name'}
               size="s"
+              key={assigne}
             >
               {!assigne && 'R'}
             </Avatar>
@@ -55,7 +47,7 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
       );
     },
     meta: {
-      cellProps: { className: 'ps-3' },
+      cellProps: { className: 'ps-3 py-4' },
       headerProps: { style: { width: '10%' }, className: 'ps-3' }
     }
   },
@@ -63,7 +55,7 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
     header: 'Start date',
     accessorKey: 'start',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap py-4' },
       headerProps: { style: { width: '10%' }, className: 'ps-3' }
     }
   },
@@ -71,31 +63,15 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
     header: 'Deadline',
     accessorKey: 'deadline',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap py-4' },
       headerProps: { style: { width: '15%' }, className: 'ps-3' }
     }
   },
   {
-    id: 'calculation',
-    header: 'Calculation',
-    cell: ({ row: { original } }) => {
-      const { calculation } = original;
-      if (calculation) {
-        return (
-          <>
-            <p className="fw-bold text-1100 fs-9 mb-0">{calculation?.amount}</p>
-            <p className="fw-semi-bold fs-10 text-700 mb-0">{calculation?.label}</p>
-          </>
-        );
-      }
-      return (
-        <Button variant="phoenix-secondary" className="btn-icon">
-          <FontAwesomeIcon icon="plus" />
-        </Button>
-      );
-    },
+    accessorKey: 'task',
+    header: 'Task',
     meta: {
-      cellProps: { className: 'ps-3' },
+      cellProps: { className: 'ps-3 text-900 py-4' },
       headerProps: { style: { width: '12%' }, className: 'ps-3' }
     }
   },
@@ -119,35 +95,24 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
       );
     },
     meta: {
-      cellProps: { className: 'ps-3' },
+      cellProps: { className: 'ps-3 py-4' },
       headerProps: { style: { width: '5%' }, className: 'ps-3' }
     }
   },
   {
-    header: 'Status',
     id: 'status',
+    header: 'Status',
+    accessorFn: ({ status }) => status.label,
     cell: ({ row: { original } }) => {
-      const { statusProgress } = original;
-
+      const { status } = original;
       return (
-        <ProgressBar style={{ height: 3 }} className="progress-stack">
-          {Object.keys(statusProgress).map(item => (
-            <ProgressBar
-              variant={classNames({
-                success: item === 'completed',
-                info: item === 'ongoing',
-                danger: item === 'inactive',
-                warning: item === 'critical'
-              })}
-              now={statusProgress[item as keyof Status]}
-              key={item}
-            />
-          ))}
-        </ProgressBar>
+        <Badge variant="phoenix" bg={status.type}>
+          {status.label}
+        </Badge>
       );
     },
     meta: {
-      cellProps: { className: 'ps-8' },
+      cellProps: { className: 'ps-8 py-4' },
       headerProps: { style: { width: '10%' }, className: 'ps-8' }
     }
   },
@@ -167,23 +132,13 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
   }
 ];
 
-const ProjectDashboardTable = () => {
-  const table = useAdvanceTable({
-    data: projectSummaryTableData,
-    columns,
-    pageSize: 6,
-    pagination: true,
-    sortable: true
-  });
-
+const ProjectListTable = () => {
   return (
-    <div>
-      <AdvanceTableProvider {...table}>
-        <AdvanceTable tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }} />
-        <AdvanceTableFooter pagination />
-      </AdvanceTableProvider>
+    <div className="border-bottom">
+      <AdvanceTable tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }} />
+      <AdvanceTableFooter pagination className="py-3" />
     </div>
   );
 };
 
-export default ProjectDashboardTable;
+export default ProjectListTable;
