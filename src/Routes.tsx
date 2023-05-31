@@ -81,11 +81,17 @@ import CustomerDetails from 'pages/apps/e-commerce/admin/CustomerDetails';
 import ProjectManagement from 'pages/dashboard/ProjectManagement';
 import CreateNew from 'pages/apps/project-management/CreateNew';
 import ProjectListView from 'pages/apps/project-management/ProjectListView';
+import ProjectDetails from 'pages/apps/project-management/ProjectDetails';
+import MainLayoutProvider from 'providers/MainLayoutProvider';
 
 const routes = [
   {
     path: '/',
-    element: <MainLayout />,
+    element: (
+      <MainLayoutProvider>
+        <MainLayout />
+      </MainLayoutProvider>
+    ),
     children: [
       {
         index: true,
@@ -142,6 +148,10 @@ const routes = [
           {
             path: 'project-list-view',
             element: <ProjectListView />
+          },
+          {
+            path: 'project-details',
+            element: <ProjectDetails />
           }
         ]
       },

@@ -18,13 +18,17 @@ import {
   faChevronDown,
   faChevronLeft,
   faChevronRight,
+  faCircle,
   faClock,
   faCopy,
+  faCreditCard,
   faDove,
   faDownload,
   faDungeon,
+  faEarthAmericas,
   faEdit,
   faEllipsis,
+  faEnvelope,
   faFileExport,
   faFileLines,
   faFileZipper,
@@ -34,6 +38,8 @@ import {
   faImage,
   faKey,
   faList,
+  faListCheck,
+  faMessage,
   faMinus,
   faPalette,
   faPaperclip,
@@ -61,6 +67,8 @@ import {
   faTruckRampBox,
   faUndo,
   faUser,
+  faUserPlus,
+  faVideo,
   faXmark
 } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -71,7 +79,11 @@ import {
   faTwitter,
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
-import { faStar as farStar, faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+  faStar as farStar,
+  faHeart as farHeart,
+  faCreditCard as farCreditCard
+} from '@fortawesome/free-regular-svg-icons';
 
 library.add(
   faSearch,
@@ -145,5 +157,14 @@ library.add(
   faImage,
   faFileZipper,
   faFileLines,
-  faList
+  faList,
+  faEarthAmericas,
+  faCreditCard,
+  faListCheck,
+  faUserPlus,
+  faCircle,
+  faMessage,
+  faVideo,
+  faEnvelope,
+  farCreditCard
 );

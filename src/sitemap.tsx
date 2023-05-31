@@ -266,7 +266,8 @@ export const routes: RouteItems[] = [
           {
             name: 'project-details',
             path: 'apps/project-management/project-details',
-            pathName: 'project-management-project-details'
+            pathName: 'project-management-project-details',
+            active: true
           }
         ]
       },
