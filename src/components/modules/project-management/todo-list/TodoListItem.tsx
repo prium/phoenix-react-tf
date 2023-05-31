@@ -1,19 +1,42 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useCallback, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import TodoItemDetailsModal from './TodoItemDetailsModal';
 import { ToDoItem } from 'data/project-management/todoListData';
 import classNames from 'classnames';
 
-const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string }) => {
+type Breakpoints = 'md' | 'lg' | 'xl' | 'xxl';
+
+interface TodoListItemInterface {
+  todo: ToDoItem;
+  className?: string;
+  halfLayoutBreakpoints?: Breakpoints[];
+  fullLayoutBreakpoints?: Breakpoints[];
+}
+
+const TodoListItem = ({
+  todo,
+  className,
+  halfLayoutBreakpoints,
+  fullLayoutBreakpoints
+}: TodoListItemInterface) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
   const [selected, setSelected] = useState(false);
 
   const handleSelectionChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSelected(e.target.checked);
   };
+
+  const getBreakpointClasses = useCallback(
+    (className: string, values: (number | string)[]) =>
+      [
+        ...halfLayoutBreakpoints!.map(breakpoint => `${className}-${breakpoint}-${values[0]}`),
+        ...fullLayoutBreakpoints!.map(breakpoint => `${className}-${breakpoint}-${values[1]}`)
+      ].join(' '),
+    [halfLayoutBreakpoints, fullLayoutBreakpoints]
+  );
 
   return (
     <>
@@ -25,22 +48,31 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
       >
         <Form.Check.Input
           type="checkbox"
-          className="form-check-input-todolist flex-shrink-0 me-2 mt-0"
+          className={classNames(
+            'form-check-input-todolist flex-shrink-0 me-2 mb-0 mt-3 align-self-start'
+          )}
           onChange={handleSelectionChange}
         />
         <Row
-          className="justify-content-between align-items-md-center btn-reveal-trigger border-200 gx-0 flex-1 my-1 py-3"
+          className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 py-3 gy-1"
           onClick={() => setOpenDetailsModal(true)}
         >
-          <Col xs={12} md="auto" xl={12} xxl="auto">
-            <div className="mb-1 mb-md-0 d-flex align-items-center lh-1 gap-2">
+          <Col
+            xs={12}
+            {...fullLayoutBreakpoints?.reduce((acc: any, val: any) => {
+              acc[val] = 'auto';
+              return acc;
+            }, {})}
+            {...halfLayoutBreakpoints?.reduce((acc: any, val: any) => {
+              acc[val] = 12;
+              return acc;
+            }, {})}
+          >
+            <div className="d-flex align-items-center lh-1 gap-2">
               <h5
-                className={classNames(
-                  'mb-1 mb-md-0 mb-xl-1 mb-xxl-0 line-clamp-1 fw-semi-bold text-900',
-                  {
-                    'text-decoration-line-through': selected
-                  }
-                )}
+                className={classNames('mb-0 line-clamp-1 fw-semi-bold text-900', {
+                  'text-decoration-line-through': selected
+                })}
               >
                 {todo.task}
               </h5>
@@ -51,7 +83,17 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
               )}
             </div>
           </Col>
-          <div className="col-12 col-md-auto col-xl-12 col-xxl-auto">
+          <Col
+            xs={12}
+            {...fullLayoutBreakpoints?.reduce((acc: any, val: any) => {
+              acc[val] = 'auto';
+              return acc;
+            }, {})}
+            {...halfLayoutBreakpoints?.reduce((acc: any, val: any) => {
+              acc[val] = 12;
+              return acc;
+            }, {})}
+          >
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
                 <Button variant="" className="p-0 text-700 fs-10 me-2">
@@ -59,26 +101,35 @@ const TodoListItem = ({ todo, className }: { todo: ToDoItem; className?: string 
                   {todo.attachment}
                 </Button>
               )}
-              <p className="text-700 fs-10 mb-md-0 me-2 me-md-3 me-xl-2 me-xxl-3 mb-0">
+              <p
+                className={classNames(
+                  getBreakpointClasses('me', [2, 3]),
+                  'text-700 fs-10 me-2 mb-0'
+                )}
+              >
                 {todo.date}
               </p>
-              <div className="hover-md-hide hover-xl-show hover-xxl-hide">
-                <p className="text-700 fs-10 fw-bold mb-md-0 mb-0 ps-md-3 ps-xl-0 ps-xxl-3 border-start-md border-xl-0 border-start-xxl border-300">
+              <div className={classNames(getBreakpointClasses('hover', ['show', 'hide']))}>
+                <p
+                  className={classNames(
+                    getBreakpointClasses('ps', [0, 3]),
+                    'text-700 fs-10 fw-bold mb-0 border-start-md border-xl-0 border-start-xxl border-300'
+                  )}
+                >
                   {todo.time}
                 </p>
               </div>
             </div>
-          </div>
+          </Col>
         </Row>
         <div
-          className="d-none d-md-block d-xl-none d-xxl-block end-0 position-absolute"
+          className={classNames(
+            getBreakpointClasses('d', ['none', 'block']),
+            'd-none end-0 position-absolute'
+          )}
           style={{ top: '23%' }}
-          data-event-propagation-prevent="data-event-propagation-prevent"
         >
-          <div
-            className="hover-actions end-0"
-            data-event-propagation-prevent="data-event-propagation-prevent"
-          >
+          <div className="hover-actions end-0">
             <Button variant="phoenix-secondary" className="btn-icon fs-10 me-1">
               <FontAwesomeIcon icon="edit" />
             </Button>

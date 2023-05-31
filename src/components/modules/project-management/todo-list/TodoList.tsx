@@ -18,11 +18,11 @@ const TodoList = () => {
             <p className="mb-0 text-700">Task assigned to me</p>
           </Col>
           <Col xs="auto" className="w-100 w-md-auto">
-            <div className="row align-items-center g-0 justify-content-between">
-              <div className="col-12 col-sm-auto">
+            <Row className="row align-items-center g-0 justify-content-between">
+              <Col xs={12} sm="auto">
                 <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
-              </div>
-              <div className="col-auto d-flex">
+              </Col>
+              <Col xs="auto" className="d-flex">
                 <Button
                   variant="link"
                   className="p-0 ms-3 fs-9 text-700 fw-bold text-decoration-none"
@@ -37,8 +37,8 @@ const TodoList = () => {
                 >
                   Sorting
                 </Button>
-              </div>
-            </div>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Card.Header>
@@ -51,6 +51,8 @@ const TodoList = () => {
               className={classNames({
                 'border-top': index === 0
               })}
+              fullLayoutBreakpoints={['md', 'xxl']}
+              halfLayoutBreakpoints={['xl']}
             />
           ))}
         </Card.Body>

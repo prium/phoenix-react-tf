@@ -83,6 +83,8 @@ import CreateNew from 'pages/apps/project-management/CreateNew';
 import ProjectListView from 'pages/apps/project-management/ProjectListView';
 import ProjectDetails from 'pages/apps/project-management/ProjectDetails';
 import MainLayoutProvider from 'providers/MainLayoutProvider';
+import TodoList from 'pages/apps/project-management/ProjectTodoList';
+import ProjectTodoList from 'pages/apps/project-management/ProjectTodoList';
 
 const routes = [
   {
@@ -148,6 +150,10 @@ const routes = [
           {
             path: 'project-list-view',
             element: <ProjectListView />
+          },
+          {
+            path: 'todo-list',
+            element: <ProjectTodoList />
           },
           {
             path: 'project-details',
