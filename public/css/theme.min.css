@@ -20856,6 +20856,30 @@ fieldset:disabled .google-map-control-btn .zoomOut,
   transform: translateY(0);
 }
 
+/* -------------------------------- Todo List ------------------------------- */
+@media (min-width: 576px) {
+  .todolist-container {
+    height: calc(100vh - 332px);
+  }
+}
+
+.todolist-item {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.todolist-offcanvas {
+  width: 35rem;
+  top: 4rem !important;
+  border-left: 1px solid var(--phoenix-gray-300);
+  background: 1px solid var(--phoenix-gray-100);
+}
+@media (min-width: 576px) {
+  .todolist-offcanvas {
+    bottom: 4rem !important;
+  }
+}
+
 .star-rating {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjc4MTMgNC4xNzkzTDcuODcyNjYgMy43NjA5NEw2LjU1NzgxIDEuMTExMzNDNi4zMzg2NyAwLjY1MzEyNSA1LjY2MTMzIDAuNjMzMjAzIDUuNDIyMjcgMS4xMTEzM0w0LjEyNzM0IDMuNzYwOTRMMS4xOTg4MyA0LjE3OTNDMC42ODA4NiA0LjI1ODk4IDAuNDgxNjQxIDQuODk2NDggMC44NjAxNTcgNS4yNzVMMi45NTE5NSA3LjMyNjk1TDIuNDUzOTEgMTAuMjE1NkMyLjM3NDIyIDEwLjczMzYgMi45MzIwMyAxMS4xMzIgMy4zOTAyMyAxMC44OTNMNiA5LjUxODM2TDguNTg5ODQgMTAuODkzQzkuMDQ4MDUgMTEuMTMyIDkuNjA1ODYgMTAuNzMzNiA5LjUyNjE3IDEwLjIxNTZMOS4wMjgxMyA3LjMyNjk1TDExLjExOTkgNS4yNzVDMTEuNDk4NCA0Ljg5NjQ4IDExLjI5OTIgNC4yNTg5OCAxMC43ODEzIDQuMTc5M1pNNy45OTIxOSA2Ljk4ODI4TDguNDcwMzEgOS43Mzc1TDYgOC40NDI1OEwzLjUwOTc3IDkuNzM3NUwzLjk4Nzg5IDYuOTg4MjhMMS45NzU3OCA1LjAzNTk0TDQuNzQ0OTIgNC42Mzc1TDYgMi4xMjczNEw3LjIzNTE2IDQuNjM3NUwxMC4wMDQzIDUuMDM1OTRMNy45OTIxOSA2Ljk4ODI4WiIgZmlsbD0iI0U1NzgwQiIvPgo8L3N2Zz4K") !important;
 }
@@ -29812,10 +29836,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   transition: transform 0.3s ease-in-out;
   z-index: 1045;
   transform: translateX(-100%);
+  max-width: 100%;
 }
 .phoenix-offcanvas.phoenix-offcanvas-fixed {
   position: fixed;
-  left: 0;
   transform: translateX(-100%);
 }
 .phoenix-offcanvas.phoenix-offcanvas-start {
@@ -29824,6 +29848,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .phoenix-offcanvas.phoenix-offcanvas-end {
   transform: translateX(100%);
+  right: 0;
 }
 .phoenix-offcanvas.phoenix-offcanvas-top {
   transform: translateY(-100%);

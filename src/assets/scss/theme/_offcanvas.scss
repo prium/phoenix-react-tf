@@ -29,10 +29,10 @@
   transition: transform 0.3s ease-in-out;
   z-index: 1045;
   transform: translateX(-100%);
-
+  max-width: 100%;
   &.phoenix-offcanvas-fixed {
     position: fixed;
-    left: 0;
+    // left: 0;
     transform: translateX(-100%);
   }
   &.phoenix-offcanvas-start {
@@ -41,6 +41,7 @@
   }
   &.phoenix-offcanvas-end {
     transform: translateX(100%);
+    right: 0;
   }
   &.phoenix-offcanvas-top {
     transform: translateY(-100%);

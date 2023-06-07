@@ -3,7 +3,6 @@ import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import React, { ChangeEvent, useCallback, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
-import TodoItemDetailsModal from './TodoItemDetailsModal';
 import { ToDoItem } from 'data/project-management/todoListData';
 import classNames from 'classnames';
 
@@ -14,15 +13,16 @@ interface TodoListItemInterface {
   className?: string;
   halfLayoutBreakpoints?: Breakpoints[];
   fullLayoutBreakpoints?: Breakpoints[];
+  onClick?: (item: ToDoItem) => void;
 }
 
 const TodoListItem = ({
   todo,
   className,
-  halfLayoutBreakpoints,
-  fullLayoutBreakpoints
+  halfLayoutBreakpoints = [],
+  fullLayoutBreakpoints = [],
+  onClick
 }: TodoListItemInterface) => {
-  const [openDetailsModal, setOpenDetailsModal] = useState(false);
   const [selected, setSelected] = useState(false);
 
   const handleSelectionChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -43,20 +43,15 @@ const TodoListItem = ({
       <div
         className={classNames(
           className,
-          'd-flex align-items-center hover-actions-trigger border-bottom'
+          'd-flex align-items-center hover-actions-trigger border-bottom gap-2 todolist-item'
         )}
       >
         <Form.Check.Input
           type="checkbox"
-          className={classNames(
-            'form-check-input-todolist flex-shrink-0 me-2 mb-0 mt-3 align-self-start'
-          )}
+          className={classNames('flex-shrink-0 my-0 align-self-start')}
           onChange={handleSelectionChange}
         />
-        <Row
-          className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 py-3 gy-1"
-          onClick={() => setOpenDetailsModal(true)}
-        >
+        <Row className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
           <Col
             xs={12}
             {...fullLayoutBreakpoints?.reduce((acc: any, val: any) => {
@@ -70,9 +65,10 @@ const TodoListItem = ({
           >
             <div className="d-flex align-items-center lh-1 gap-2">
               <h5
-                className={classNames('mb-0 line-clamp-1 fw-semi-bold text-900', {
+                className={classNames('mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer', {
                   'text-decoration-line-through': selected
                 })}
+                onClick={() => onClick!(todo)}
               >
                 {todo.task}
               </h5>
@@ -99,6 +95,12 @@ const TodoListItem = ({
                 <Button variant="" className="p-0 text-700 fs-10 me-2">
                   <FontAwesomeIcon icon="paperclip" className="me-1" />
                   {todo.attachment}
+                </Button>
+              )}
+              {todo.listitems && (
+                <Button variant="" className="p-0 text-warning fs-10 me-2">
+                  <FontAwesomeIcon icon="tasks" className="me-1" />
+                  {todo.listitems}
                 </Button>
               )}
               <p
@@ -139,11 +141,6 @@ const TodoListItem = ({
           </div>
         </div>
       </div>
-      <TodoItemDetailsModal
-        show={openDetailsModal}
-        handleClose={() => setOpenDetailsModal(false)}
-        item={todo}
-      />
     </>
   );
 };

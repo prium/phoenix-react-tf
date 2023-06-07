@@ -2,11 +2,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
+import TodoItemDetailsOffcanvas from 'components/modules/project-management/todo-list/TodoItemDetailsOffcanvas';
 import TodoListItem from 'components/modules/project-management/todo-list/TodoListItem';
-import { todoList } from 'data/project-management/todoListData';
-import React from 'react';
+import { ToDoItem, todoList } from 'data/project-management/todoListData';
+import React, { useEffect, useState } from 'react';
 
 const ProjectTodoList = () => {
+  const [selectedItem, setSelectedItem] = useState<ToDoItem | null>(null);
+
+  useEffect(() => {
+    if (selectedItem) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [selectedItem]);
+
   return (
     <div className="mb-9">
       <h2 className="mb-4">
@@ -31,15 +42,20 @@ const ProjectTodoList = () => {
           </Button>
         </div>
       </div>
-      {todoList.map((todo, index) => (
-        <TodoListItem
-          key={todo.task}
-          todo={todo}
-          className={classNames({
-            'border-top': index === 0
-          })}
-        />
-      ))}
+      <div className="todolist-container scrollbar">
+        {todoList.map((todo, index) => (
+          <TodoListItem
+            key={todo.task}
+            todo={todo}
+            className={classNames({
+              'border-top': index === 0
+            })}
+            fullLayoutBreakpoints={['md']}
+            onClick={item => setSelectedItem(item)}
+          />
+        ))}
+      </div>
+      <TodoItemDetailsOffcanvas handleClose={() => setSelectedItem(null)} item={selectedItem} />
     </div>
   );
 };

@@ -352,3 +352,28 @@
 .translate-y-0 {
   transform: translateY(0);
 }
+
+/* -------------------------------- Todo List ------------------------------- */
+
+.todolist-container {
+  @include media-breakpoint-up(sm) {
+    height: calc(100vh - 332px);
+  }
+}
+
+// .todolist-form-check {
+//   margin-top: 1.25rem;
+// }
+.todolist-item {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.todolist-offcanvas {
+  width: 35rem;
+  top: 4rem !important;
+  border-left: 1px solid var(--#{$prefix}gray-300);
+  background: 1px solid var(--#{$prefix}gray-100);
+  @include media-breakpoint-up(sm) {
+    bottom: 4rem !important;
+  }
+}
