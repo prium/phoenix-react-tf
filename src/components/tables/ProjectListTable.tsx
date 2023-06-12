@@ -2,14 +2,14 @@ import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { ProjectSummaryTableData } from 'data/project-management/projectSummaryTableData';
+import { Project } from 'data/project-management/projects';
 import Avatar from 'components/base/Avatar';
 import { ProgressBar } from 'react-bootstrap';
 import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import Badge from 'components/base/Badge';
 
-export const projectListTableColumns: ColumnDef<ProjectSummaryTableData>[] = [
+export const projectListTableColumns: ColumnDef<Project>[] = [
   {
     accessorKey: 'name',
     header: 'Project Name',

@@ -14,6 +14,14 @@ import team34 from 'assets/img/team/24x24/34.webp';
 import team59 from 'assets/img/team/24x24/59.webp';
 import team30 from 'assets/img/team/24x24/30.webp';
 import team31 from 'assets/img/team/24x24/31.webp';
+import bg51 from 'assets/img/generic/51.png';
+import bg52 from 'assets/img/generic/52.png';
+import bg53 from 'assets/img/generic/53.png';
+import bg54 from 'assets/img/generic/54.png';
+import bg55 from 'assets/img/generic/55.png';
+import bg56 from 'assets/img/generic/56.png';
+import bg57 from 'assets/img/generic/57.png';
+
 import { BadgeBg } from 'components/base/Badge';
 
 export interface Status {
@@ -23,7 +31,7 @@ export interface Status {
   completed: number;
 }
 
-export interface ProjectSummaryTableData {
+export interface Project {
   name: string;
   start: string;
   deadline: string;
@@ -42,9 +50,10 @@ export interface ProjectSummaryTableData {
     label: string;
     type: BadgeBg;
   };
+  bg: string;
 }
 
-export const projectSummaryTableData: ProjectSummaryTableData[] = [
+export const projects: Project[] = [
   {
     name: 'Making the Butterflies shoot each other dead',
     start: 'Dec 12, 2018',
@@ -68,7 +77,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'completed',
       type: 'success'
-    }
+    },
+    bg: bg51
   },
   {
     name: 'Project Doughnut Dungeon',
@@ -89,7 +99,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'inactive',
       type: 'success'
-    }
+    },
+    bg: bg52
   },
   {
     name: 'The Chewing Gum Attack',
@@ -114,7 +125,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'ongoing',
       type: 'primary'
-    }
+    },
+    bg: bg53
   },
   {
     name: 'Execution of Micky the foul mouse',
@@ -135,7 +147,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'critical',
       type: 'danger'
-    }
+    },
+    bg: bg54
   },
 
   {
@@ -157,7 +170,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'ongoing',
       type: 'primary'
-    }
+    },
+    bg: bg55
   },
   {
     name: 'Water resistant mosquito killer gun',
@@ -182,7 +196,8 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'cancelled',
       type: 'secondary'
-    }
+    },
+    bg: bg56
   },
   {
     name: 'Olga Dies Dreaming by Xóchitl González',
@@ -207,6 +222,7 @@ export const projectSummaryTableData: ProjectSummaryTableData[] = [
     status: {
       label: 'cancelled',
       type: 'secondary'
-    }
+    },
+    bg: bg57
   }
 ];

@@ -1,17 +1,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ColumnDef } from '@tanstack/react-table';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import ProjectsTopSection from 'components/modules/project-management/ProjectsTopSection';
-import ProjectListTable, { projectListTableColumns } from 'components/tables/ProjectListTable';
+import BoardViewItem from 'components/modules/project-management/board-view/BoardViewItem';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import { projects } from 'data/project-management/projects';
+import { Project, projects } from 'data/project-management/projects';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
+import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ProjectListView = () => {
+export const columns: ColumnDef<Project>[] = [
+  {
+    id: 'status',
+    accessorFn: ({ status }) => status.label
+  }
+];
+
+const ProjectBoardView = () => {
   const table = useAdvanceTable({
     data: projects,
-    columns: projectListTableColumns,
+    columns,
     pageSize: 10,
     pagination: true,
     sortable: true
@@ -32,10 +41,19 @@ const ProjectListView = () => {
           </Link>
         </div>
         <ProjectsTopSection />
-        <ProjectListTable />
+        <Row className="g-3 mb-9">
+          {table
+            .getRowModel()
+            .rows.map(row => row.original)
+            .map(project => (
+              <Col xs={12} sm={6} md={4} xxl={3}>
+                <BoardViewItem project={project} />
+              </Col>
+            ))}
+        </Row>
       </AdvanceTableProvider>
     </div>
   );
 };
 
-export default ProjectListView;
+export default ProjectBoardView;

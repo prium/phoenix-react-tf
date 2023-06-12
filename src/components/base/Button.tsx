@@ -13,6 +13,7 @@ export type ButtonVariant =
   | 'dark'
   | 'light'
   | 'link'
+  | 'circle'
   | 'outline-primary'
   | 'outline-secondary'
   | 'outline-success'

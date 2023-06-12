@@ -6,18 +6,14 @@ import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  ProjectSummaryTableData,
-  Status,
-  projectSummaryTableData
-} from 'data/project-management/projectSummaryTableData';
+import { Project, Status, projects } from 'data/project-management/projects';
 import Avatar from 'components/base/Avatar';
 import { ProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
 import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
-const columns: ColumnDef<ProjectSummaryTableData>[] = [
+const columns: ColumnDef<Project>[] = [
   {
     accessorKey: 'name',
     header: 'Project Name',
@@ -169,7 +165,7 @@ const columns: ColumnDef<ProjectSummaryTableData>[] = [
 
 const ProjectDashboardTable = () => {
   const table = useAdvanceTable({
-    data: projectSummaryTableData,
+    data: projects,
     columns,
     pageSize: 6,
     pagination: true,

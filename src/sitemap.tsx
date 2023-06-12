@@ -256,7 +256,8 @@ export const routes: RouteItems[] = [
           {
             name: 'project-board-view',
             path: '/apps/project-management/project-board-view',
-            pathName: 'project-management-project-board-view'
+            pathName: 'project-management-project-board-view',
+            active: true
           },
           {
             name: 'todo-list',
