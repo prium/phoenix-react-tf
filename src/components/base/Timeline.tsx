@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 
 interface TimelineProps {
   variant: 'vertical' | 'basic';
@@ -9,6 +9,7 @@ interface TimelineProps {
 interface TimelineItemProps {
   className?: string;
 }
+interface TimelineBarProps extends TimelineItemProps, HTMLAttributes<HTMLSpanElement> {}
 
 const Timeline = ({ children, variant, className }: PropsWithChildren<TimelineProps>) => {
   return (
@@ -42,19 +43,15 @@ export const TimelineSeparator = ({
   children,
   className
 }: PropsWithChildren<TimelineItemProps>) => {
-  return (
-    <div className={classNames(className, 'timeline-separator position-relative me-3 me-md-0')}>
-      {children}
-    </div>
-  );
+  return <div className={classNames(className, 'timeline-separator me-3 me-md-0')}>{children}</div>;
 };
 
 export const TimelineDot = ({ children, className }: PropsWithChildren<TimelineItemProps>) => {
   return <div className={classNames(className, 'icon-item icon-item-sm')}>{children}</div>;
 };
 
-export const TimelineBar = ({ className }: TimelineItemProps) => {
-  return <span className={classNames(className, 'timeline-bar border-end')} />;
+export const TimelineBar = ({ className, ...rest }: TimelineBarProps) => {
+  return <span className={classNames(className, 'timeline-bar border-end')} {...rest} />;
 };
 
 Timeline.Item = TimelineItem;

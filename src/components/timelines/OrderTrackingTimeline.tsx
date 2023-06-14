@@ -21,14 +21,16 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
                   <br className="d-none d-md-block" /> {item.oppositeContent.time}
                 </p>
               </Timeline.OppositeContent>
-              <Timeline.Separator>
+              <Timeline.Separator className="position-relative">
                 <Timeline.Dot className={item.separator.dotClass}>
                   <FontAwesomeIcon
                     icon={item.separator.icon}
                     className="text-white dark__text-white fs-10"
                   />
                 </Timeline.Dot>
-                {item.separator.barClass && <Timeline.Bar className={item.separator.barClass} />}
+                {item.separator.barClass && (
+                  <Timeline.Bar style={{ height: 100 }} className={item.separator.barClass} />
+                )}
               </Timeline.Separator>
             </div>
             <div className="col">

@@ -8,13 +8,13 @@ interface ScrollbarProps extends ScrollbarsProps {
 const Scrollbar = ({ children, autoHide = true, ...rest }: PropsWithChildren<ScrollbarProps>) => {
   return (
     <Scrollbars
-      renderThumbHorizontal={props => <div {...props} className="bg-gray-800 rounded" />}
-      renderTrackVertical={props => <div {...props} className="bg-gray-800 rounded" />}
+      renderThumbHorizontal={props => <div {...props} className="bg-400 rounded" />}
+      renderTrackVertical={props => <div {...props} className="bg-400 rounded" />}
       autoHide={autoHide}
-      autoHeight
-      autoHeightMin="100%"
-      autoHeightMax="100%"
-      style={{ height: 1 }}
+      // autoHeight
+      // autoHeightMin="100%"
+      // autoHeightMax="100%"
+      // style={{ height: 1 }}
       {...rest}
     >
       {children}

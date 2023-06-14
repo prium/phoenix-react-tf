@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React, { PropsWithChildren, ReactElement } from 'react';
 import { Button as BsButton, ButtonProps as BsButtonProps, Spinner } from 'react-bootstrap';
 
-type ButtonVariant =
+export type ButtonVariant =
   | ''
   | 'primary'
   | 'secondary'
@@ -13,6 +13,7 @@ type ButtonVariant =
   | 'dark'
   | 'light'
   | 'link'
+  | 'circle'
   | 'outline-primary'
   | 'outline-secondary'
   | 'outline-success'

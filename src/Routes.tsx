@@ -78,15 +78,32 @@ import Orders from 'pages/apps/e-commerce/admin/Orders';
 import OrderDetails from 'pages/apps/e-commerce/admin/OrderDetails';
 import Refund from 'pages/apps/e-commerce/admin/Refund';
 import CustomerDetails from 'pages/apps/e-commerce/admin/CustomerDetails';
+import ProjectManagement from 'pages/dashboard/ProjectManagement';
+import CreateNew from 'pages/apps/project-management/CreateNew';
+import ProjectListView from 'pages/apps/project-management/ProjectListView';
+import ProjectDetails from 'pages/apps/project-management/ProjectDetails';
+import MainLayoutProvider from 'providers/MainLayoutProvider';
+import TodoList from 'pages/apps/project-management/ProjectTodoList';
+import ProjectTodoList from 'pages/apps/project-management/ProjectTodoList';
+import ProjectBoardView from 'pages/apps/project-management/ProjectBoardView';
+import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
 
 const routes = [
   {
     path: '/',
-    element: <MainLayout />,
+    element: (
+      <MainLayoutProvider>
+        <MainLayout />
+      </MainLayoutProvider>
+    ),
     children: [
       {
         index: true,
         element: <Ecommerce />
+      },
+      {
+        path: '/dashboard/project-management',
+        element: <ProjectManagement />
       },
       {
         path: '/pages/starter',
@@ -122,6 +139,35 @@ const routes = [
           {
             path: 'customer-details',
             element: <CustomerDetails />
+          }
+        ]
+      },
+      {
+        path: '/apps/project-management/',
+        children: [
+          {
+            path: 'create-new',
+            element: <CreateNew />
+          },
+          {
+            path: 'project-list-view',
+            element: <ProjectListView />
+          },
+          {
+            path: 'project-card-view',
+            element: <ProjectCardView />
+          },
+          {
+            path: 'project-board-view',
+            element: <ProjectBoardView />
+          },
+          {
+            path: 'todo-list',
+            element: <ProjectTodoList />
+          },
+          {
+            path: 'project-details',
+            element: <ProjectDetails />
           }
         ]
       },

@@ -1,26 +1,35 @@
 import classNames from 'classnames';
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-interface RevealDropdownTriggerProps {
+interface RevealDropdownTriggerProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
-interface RevealDropdownProps extends RevealDropdownTriggerProps {
+interface RevealDropdownProps {
+  className?: string;
   btnClassName?: string;
+  icon?: IconProp;
 }
 
 export const RevealDropdownTrigger = ({
   children,
-  className
+  className,
+  ...rest
 }: PropsWithChildren<RevealDropdownTriggerProps>) => {
-  return <div className={classNames('btn-reveal-trigger', className)}>{children}</div>;
+  return (
+    <div className={classNames('btn-reveal-trigger', className)} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 const RevealDropdown = ({
   children,
   className,
-  btnClassName
+  btnClassName,
+  icon = 'ellipsis'
 }: PropsWithChildren<RevealDropdownProps>) => {
   return (
     <Dropdown className={classNames(className)} align="end">
@@ -29,7 +38,7 @@ const RevealDropdown = ({
         size="sm"
         className={classNames(btnClassName, 'btn-reveal dropdown-caret-none transition-none')}
       >
-        <FontAwesomeIcon icon="ellipsis" className="fs-10" />
+        <FontAwesomeIcon icon={icon} className="fs-10" />
       </Dropdown.Toggle>
       <Dropdown.Menu align="end" className="py-2">
         {children}

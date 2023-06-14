@@ -53,9 +53,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'project-management',
-            path: 'dashboard/project-management',
+            path: '/dashboard/project-management',
             pathName: 'project-management-dashbaord',
-            topNavIcon: 'clipboard'
+            topNavIcon: 'clipboard',
+            active: true
           },
           {
             name: 'CRM',
@@ -233,36 +234,43 @@ export const routes: RouteItems[] = [
       {
         name: 'project-management',
         icon: 'clipboard',
+        active: true,
         pages: [
           {
             name: 'create new',
-            path: 'apps/project-management/create-new',
-            pathName: 'project-management-create-new'
+            path: '/apps/project-management/create-new',
+            pathName: 'project-management-create-new',
+            active: true
           },
           {
             name: 'project-list-view',
-            path: 'apps/project-management/project-list-view',
-            pathName: 'project-management-project-list-view'
+            path: '/apps/project-management/project-list-view',
+            pathName: 'project-management-project-list-view',
+            active: true
           },
           {
             name: 'project-card-view',
-            path: 'apps/project-management/project-card-view',
-            pathName: 'project-management-project-card-view'
+            path: '/apps/project-management/project-card-view',
+            pathName: 'project-management-project-card-view',
+            active: true
           },
           {
             name: 'project-board-view',
-            path: 'apps/project-management/project-board-view',
-            pathName: 'project-management-project-board-view'
+            path: '/apps/project-management/project-board-view',
+            pathName: 'project-management-project-board-view',
+            active: true
           },
           {
             name: 'todo-list',
-            path: 'apps/project-management/todo-list',
-            pathName: 'project-management-todo-list'
+            path: '/apps/project-management/todo-list',
+            pathName: 'project-management-todo-list',
+            active: true
           },
           {
             name: 'project-details',
-            path: 'apps/project-management/project-details',
-            pathName: 'project-management-project-details'
+            path: '/apps/project-management/project-details',
+            pathName: 'project-management-project-details',
+            active: true
           }
         ]
       },

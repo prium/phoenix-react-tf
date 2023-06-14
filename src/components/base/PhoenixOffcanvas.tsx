@@ -6,6 +6,7 @@ interface PhoenixOffcanvasProps {
   fixed?: boolean;
   onHide?: () => void;
   className?: string;
+  backdropClassName?: string;
   style?: CSSProperties;
 }
 
@@ -15,12 +16,13 @@ const PhoenixOffcanvas = ({
   fixed,
   onHide,
   className,
+  backdropClassName,
   style
 }: PropsWithChildren<PhoenixOffcanvasProps>) => {
   return (
     <>
       <div
-        className={classNames(className, 'phoenix-offcanvas bg-soft', {
+        className={classNames(className, 'phoenix-offcanvas phoenix-offcanvas-end bg-soft', {
           show: open,
           'phoenix-offcanvas-fixed': fixed
         })}
@@ -28,7 +30,10 @@ const PhoenixOffcanvas = ({
       >
         {children}
       </div>
-      <div className={classNames('phoenix-offcanvas-backdrop')} onClick={onHide}></div>
+      <div
+        className={classNames(backdropClassName, 'phoenix-offcanvas-backdrop')}
+        onClick={onHide}
+      ></div>
     </>
   );
 };
