@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
 import { actionItems, addToCardItems } from 'data/project-management/actions';
-import React from 'react';
 import { Col, Dropdown, Row } from 'react-bootstrap';
 
 const ActionSection = () => {
@@ -17,7 +16,12 @@ const ActionSection = () => {
             </div>
           </Col>
           <Col xs={7} lg={6}>
-            <DatePicker placeholder="Set the due date" />
+            <DatePicker
+              placeholder="Set the due date"
+              options={{
+                defaultDate: 'May 1, 2023'
+              }}
+            />
           </Col>
         </Row>
       </Col>
@@ -34,6 +38,7 @@ const ActionSection = () => {
                   <div className="px-2 d-flex flex-column gap-2">
                     {addToCardItems.map(item => (
                       <Dropdown.Item
+                        key={item.label}
                         as={Button}
                         variant="soft-secondary"
                         startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
@@ -62,6 +67,7 @@ const ActionSection = () => {
                         startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
                         className="w-100 text-start"
                         size="sm"
+                        key={item.label}
                       >
                         {item.label}
                       </Dropdown.Item>

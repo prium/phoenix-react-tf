@@ -27814,7 +27814,8 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .avatar-group .avatar-m:not(:first-child),
 .avatar-group .avatar-l:not(:first-child),
 .avatar-group .avatar-xl:not(:first-child),
-.avatar-group .avatar-2xl:not(:first-child) {
+.avatar-group .avatar-2xl:not(:first-child),
+.avatar-group .dropdown:not(:first-child) {
   margin-right: -0.5rem;
 }
 .avatar-group .avatar-3xl:not(:first-child) {

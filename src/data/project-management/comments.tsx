@@ -29,7 +29,7 @@ export const comments: Comment[] = [
     details: <p className="text-1000 fw-semi-bold fs-9 mb-0">Fruit blast</p>
   },
   {
-    id: 3,
+    id: 2,
     text: 'added a subtask',
     user: {
       name: 'Kazimir Malevich',
@@ -38,7 +38,7 @@ export const comments: Comment[] = [
     date: 'Oct 4 at 12:16 pm'
   },
   {
-    id: 2,
+    id: 3,
     text: 'created this task',
     user: {
       name: 'Kazimir Malevich',
@@ -48,7 +48,7 @@ export const comments: Comment[] = [
     date: 'Oct 4 at 12:18 pm'
   },
   {
-    id: 3,
+    id: 4,
     text: 'changed status from ',
     user: {
       name: 'Henri Rousseau',
@@ -70,7 +70,7 @@ export const comments: Comment[] = [
     )
   },
   {
-    id: 4,
+    id: 5,
     text: 'commented',
     user: {
       name: 'Peter Paul Rubens',

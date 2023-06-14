@@ -1,19 +1,3 @@
-import team1 from 'assets/img/team/24x24/1.webp';
-import team5 from 'assets/img/team/24x24/5.webp';
-import team9 from 'assets/img/team/24x24/9.webp';
-import team11 from 'assets/img/team/24x24/11.webp';
-import team12 from 'assets/img/team/24x24/12.webp';
-import team13 from 'assets/img/team/24x24/13.webp';
-import team25 from 'assets/img/team/24x24/25.webp';
-import team32 from 'assets/img/team/24x24/32.webp';
-import team21 from 'assets/img/team/24x24/21.webp';
-import team22 from 'assets/img/team/24x24/22.webp';
-import team23 from 'assets/img/team/24x24/23.webp';
-import team28 from 'assets/img/team/24x24/28.webp';
-import team34 from 'assets/img/team/24x24/34.webp';
-import team59 from 'assets/img/team/24x24/59.webp';
-import team30 from 'assets/img/team/24x24/30.webp';
-import team31 from 'assets/img/team/24x24/31.webp';
 import bg51 from 'assets/img/generic/51.png';
 import bg52 from 'assets/img/generic/52.png';
 import bg53 from 'assets/img/generic/53.png';
@@ -23,6 +7,7 @@ import bg56 from 'assets/img/generic/56.png';
 import bg57 from 'assets/img/generic/57.png';
 
 import { BadgeBg } from 'components/base/Badge';
+import { Member, members } from 'data/users';
 
 export interface Status {
   ongoing: number;
@@ -32,6 +17,7 @@ export interface Status {
 }
 
 export interface Project {
+  id: number;
   name: string;
   start: string;
   deadline: string;
@@ -39,7 +25,7 @@ export interface Project {
     amount: string;
     label: string;
   };
-  assigness: (string | null)[];
+  assigness: Member[];
   progress: {
     min: number;
     max: number;
@@ -51,10 +37,12 @@ export interface Project {
     type: BadgeBg;
   };
   bg: string;
+  budget: number;
 }
 
 export const projects: Project[] = [
   {
+    id: 1,
     name: 'Making the Butterflies shoot each other dead',
     start: 'Dec 12, 2018',
     deadline: 'Dec 12, 2026',
@@ -62,7 +50,7 @@ export const projects: Project[] = [
       amount: '$4',
       label: 'Cost'
     },
-    assigness: [team9, team25, null, team32, team22, team28, null],
+    assigness: [17, 16, 11, 5, 18, 19].map(index => members[index]),
     progress: {
       min: 145,
       max: 145
@@ -78,11 +66,13 @@ export const projects: Project[] = [
       label: 'completed',
       type: 'success'
     },
-    bg: bg51
+    bg: bg51,
+    budget: 3991
   },
   {
+    id: 2,
     name: 'Project Doughnut Dungeon',
-    assigness: [team22, team28],
+    assigness: [18, 19].map(index => members[index]),
     start: 'Jan 9, 2019',
     deadline: 'Dec 9, 2022',
     progress: {
@@ -98,13 +88,15 @@ export const projects: Project[] = [
     task: 125,
     status: {
       label: 'inactive',
-      type: 'success'
+      type: 'warning'
     },
-    bg: bg52
+    bg: bg52,
+    budget: 5832
   },
   {
+    id: 3,
     name: 'The Chewing Gum Attack',
-    assigness: [team34, team59],
+    assigness: [12, 10].map(index => members[index]),
     start: 'Sep 4, 2019',
     deadline: 'Dec 4, 2021',
     calculation: {
@@ -126,11 +118,13 @@ export const projects: Project[] = [
       label: 'ongoing',
       type: 'primary'
     },
-    bg: bg53
+    bg: bg53,
+    budget: 8305
   },
   {
+    id: 4,
     name: 'Execution of Micky the foul mouse',
-    assigness: [team1, null, team5, team11],
+    assigness: [11, 18, 17, 5, 19].map(index => members[index]),
     start: 'Nov 1, 2019',
     deadline: 'Dec 1, 2024',
     progress: {
@@ -148,12 +142,13 @@ export const projects: Project[] = [
       label: 'critical',
       type: 'danger'
     },
-    bg: bg54
+    bg: bg54,
+    budget: 8888
   },
-
   {
+    id: 5,
     name: 'Harnessing stupidity from Jerry',
-    assigness: [team21, team23, team25],
+    assigness: [17, 16, 15].map(index => members[index]),
     start: 'Dec 28, 2019',
     deadline: 'Nov 28, 2021',
     progress: {
@@ -171,11 +166,13 @@ export const projects: Project[] = [
       label: 'ongoing',
       type: 'primary'
     },
-    bg: bg55
+    bg: bg55,
+    budget: 7324
   },
   {
+    id: 6,
     name: 'Water resistant mosquito killer gun',
-    assigness: [team30, null, team59, team31],
+    assigness: [1, 11, 10, 2].map(index => members[index]),
     start: 'Feb 24, 2020',
     deadline: 'Nov 24, 2021',
     calculation: {
@@ -183,7 +180,7 @@ export const projects: Project[] = [
       label: 'Budget'
     },
     progress: {
-      min: 600,
+      min: 400,
       max: 600
     },
     statusProgress: {
@@ -197,11 +194,13 @@ export const projects: Project[] = [
       label: 'cancelled',
       type: 'secondary'
     },
-    bg: bg56
+    bg: bg56,
+    budget: 1219
   },
   {
+    id: 7,
     name: 'Olga Dies Dreaming by Xóchitl González',
-    assigness: [team11, team12, team13],
+    assigness: [16, 18, 19].map(index => members[index]),
     start: 'Feb 24, 2020',
     deadline: 'Nov 24, 2021',
     calculation: {
@@ -209,8 +208,8 @@ export const projects: Project[] = [
       label: 'Budget'
     },
     progress: {
-      min: 600,
-      max: 600
+      min: 500,
+      max: 800
     },
     statusProgress: {
       ongoing: 24,
@@ -223,6 +222,7 @@ export const projects: Project[] = [
       label: 'cancelled',
       type: 'secondary'
     },
-    bg: bg57
+    bg: bg57,
+    budget: 6067
   }
 ];

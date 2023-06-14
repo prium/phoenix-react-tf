@@ -29,6 +29,14 @@ const TodoListItem = ({
     setSelected(e.target.checked);
   };
 
+  const handleClick = (item: ToDoItem) => {
+    if (onClick) {
+      onClick(item);
+    } else {
+      setSelected(!selected);
+    }
+  };
+
   const getBreakpointClasses = useCallback(
     (className: string, values: (number | string)[]) =>
       [
@@ -48,6 +56,7 @@ const TodoListItem = ({
       >
         <Form.Check.Input
           type="checkbox"
+          checked={selected}
           className={classNames('flex-shrink-0 my-0 align-self-start')}
           onChange={handleSelectionChange}
         />
@@ -68,7 +77,7 @@ const TodoListItem = ({
                 className={classNames('mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer', {
                   'text-decoration-line-through': selected
                 })}
-                onClick={() => onClick!(todo)}
+                onClick={() => handleClick(todo)}
               >
                 {todo.task}
               </h5>

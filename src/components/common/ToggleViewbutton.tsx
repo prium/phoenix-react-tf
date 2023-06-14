@@ -6,10 +6,12 @@ import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 const ToggleViewButton = ({
   active,
   tooltip,
+  onClick,
   children
 }: PropsWithChildren<{
   active?: boolean;
   tooltip: string;
+  onClick: () => void;
 }>) => {
   return (
     <OverlayTrigger placement="top" overlay={<Tooltip>{tooltip}</Tooltip>}>
@@ -19,6 +21,7 @@ const ToggleViewButton = ({
           className={classNames('px-3', {
             'text-900 border-0': active
           })}
+          onClick={onClick}
         >
           {children}
         </Button>

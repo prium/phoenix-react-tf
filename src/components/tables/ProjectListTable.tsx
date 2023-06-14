@@ -35,12 +35,12 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
         <Avatar.Group total={assigness.length} size="s">
           {assigness.slice(0, 4).map(assigne => (
             <Avatar
-              src={assigne ? assigne : undefined}
-              variant={assigne ? 'image' : 'name'}
+              key={assigne.id}
+              src={assigne.avatar ? assigne.avatar : undefined}
+              variant={assigne.avatar ? 'image' : 'name'}
               size="s"
-              key={assigne}
             >
-              {!assigne && 'R'}
+              {!assigne.avatar && assigne.name[0]}
             </Avatar>
           ))}
         </Avatar.Group>

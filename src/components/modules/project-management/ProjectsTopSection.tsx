@@ -7,8 +7,14 @@ import NineGrid from 'components/icons/NineGrid';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { ChangeEvent, useMemo } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-const ProjectsTopSection = () => {
+interface ProjectsTopSectionInterface {
+  activeView: 'list' | 'board' | 'card';
+}
+
+const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
+  const navigate = useNavigate();
   const { setGlobalFilter, getPrePaginationRowModel } = useAdvanceTableContext();
 
   const tabItems = useMemo(() => {
@@ -63,13 +69,31 @@ const ProjectsTopSection = () => {
             style={{ maxWidth: '30rem' }}
             className="me-3"
           />
-          <ToggleViewButton tooltip="List view" active>
+          <ToggleViewButton
+            tooltip="List view"
+            active={activeView === 'list'}
+            onClick={() => {
+              navigate('/apps/project-management/project-list-view');
+            }}
+          >
             <FontAwesomeIcon icon="list" className="fs-10" />
           </ToggleViewButton>
-          <ToggleViewButton tooltip="Board view">
+          <ToggleViewButton
+            tooltip="Board view"
+            active={activeView === 'board'}
+            onClick={() => {
+              navigate('/apps/project-management/project-board-view');
+            }}
+          >
             <NineGrid />
           </ToggleViewButton>
-          <ToggleViewButton tooltip="Card view">
+          <ToggleViewButton
+            tooltip="Card view"
+            active={activeView === 'card'}
+            onClick={() => {
+              navigate('/apps/project-management/project-card-view');
+            }}
+          >
             <FourGrid />
           </ToggleViewButton>
         </div>

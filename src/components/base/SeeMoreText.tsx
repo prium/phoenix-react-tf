@@ -1,27 +1,22 @@
-import React, { ElementType, PropsWithChildren } from 'react';
+import React, { ElementType } from 'react';
 import { Link } from 'react-router-dom';
 
 interface SeeMoreTextProps {
   as?: ElementType;
   className?: string;
   maxChars: number;
+  link: string;
+  children: string;
 }
 
-const SeeMoreText = ({
-  children,
-  as: Tag = 'p',
-  className,
-  maxChars
-}: PropsWithChildren<SeeMoreTextProps>) => {
-  console.log({ children: (children as string)?.length });
-
+const SeeMoreText = ({ children, as: Tag = 'p', className, maxChars, link }: SeeMoreTextProps) => {
   return (
     <Tag className={className}>
-      {children}
-      {(children as string)?.length > maxChars && (
+      {children.slice(0, maxChars)}
+      {children.length > maxChars && (
         <>
           <>...</>
-          <Link to="#!" className="fw-semi-bold">
+          <Link to={link} className="fw-semi-bold">
             see more
           </Link>
         </>

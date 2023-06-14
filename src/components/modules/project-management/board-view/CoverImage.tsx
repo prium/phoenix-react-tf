@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { CSSProperties, ChangeEvent, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import generic43 from 'assets/img/generic/43.png';
+import generic43 from 'assets/img/generic/43.webp';
 
 const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
   const [image, setImage] = useState<File | null>(null);
@@ -12,7 +12,7 @@ const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
     }
   };
   return (
-    <div>
+    <>
       <input type="file" id="projectCoverInput" className="d-none" onChange={handleChange} />
       <label className="position-absolute top-0 start-0" htmlFor="projectCoverInput">
         <span
@@ -38,7 +38,7 @@ const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
         className="w-100"
         style={{ minHeight: 150, maxHeight: 280 }}
       />
-    </div>
+    </>
   );
 };
 

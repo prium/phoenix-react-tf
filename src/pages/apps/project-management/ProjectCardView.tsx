@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import ProjectsTopSection from 'components/modules/project-management/ProjectsTopSection';
-import BoardViewItem from 'components/modules/project-management/board-view/BoardViewItem';
+import CardViewItem from 'components/modules/project-management/card-view/CardViewItem';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Project, projects } from 'data/project-management/projects';
 import useAdvanceTable from 'hooks/useAdvanceTable';
@@ -22,7 +22,7 @@ export const columns: ColumnDef<Project>[] = [
   }
 ];
 
-const ProjectBoardView = () => {
+const ProjectCardView = () => {
   const table = useAdvanceTable({
     data: projects,
     columns,
@@ -45,14 +45,14 @@ const ProjectBoardView = () => {
             Add new project
           </Link>
         </div>
-        <ProjectsTopSection activeView="board" />
+        <ProjectsTopSection activeView="card" />
         <Row className="g-3 mb-9">
           {table
             .getRowModel()
             .rows.map(row => row.original)
             .map(project => (
               <Col xs={12} sm={6} md={4} xxl={3} key={project.id}>
-                <BoardViewItem project={project} />
+                <CardViewItem project={project} />
               </Col>
             ))}
         </Row>
@@ -61,4 +61,4 @@ const ProjectBoardView = () => {
   );
 };
 
-export default ProjectBoardView;
+export default ProjectCardView;

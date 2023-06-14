@@ -31,7 +31,7 @@ const ProjectListView = () => {
             Add new project
           </Link>
         </div>
-        <ProjectsTopSection />
+        <ProjectsTopSection activeView="list" />
         <ProjectListTable />
       </AdvanceTableProvider>
     </div>

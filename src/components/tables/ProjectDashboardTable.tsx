@@ -39,12 +39,12 @@ const columns: ColumnDef<Project>[] = [
         <Avatar.Group total={assigness.length} size="s">
           {assigness.slice(0, 4).map(assigne => (
             <Avatar
-              key={assigne}
-              src={assigne ? assigne : undefined}
-              variant={assigne ? 'image' : 'name'}
+              key={assigne.username}
+              src={assigne.avatar ? assigne.avatar : undefined}
+              variant={assigne.avatar ? 'image' : 'name'}
               size="s"
             >
-              {!assigne && 'R'}
+              {!assigne.avatar && assigne.name[0]}
             </Avatar>
           ))}
         </Avatar.Group>

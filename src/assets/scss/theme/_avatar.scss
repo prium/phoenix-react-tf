@@ -202,12 +202,12 @@
 .avatar-group {
   display: flex;
   flex-wrap: nowrap;
-
   .avatar-s,
   .avatar-m,
   .avatar-l,
   .avatar-xl,
-  .avatar-2xl {
+  .avatar-2xl,
+  .dropdown {
     &:not(:first-child) {
       margin-left: -(map-get($spacers, 2));
     }
