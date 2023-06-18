@@ -361,11 +361,13 @@ export const routes: RouteItems[] = [
       {
         name: 'landing',
         icon: 'globe',
+        active: true,
         pages: [
           {
             name: 'default',
-            path: 'pages/landing/default',
-            pathName: 'landing-default'
+            path: '/landing/default',
+            pathName: 'landing-default',
+            active: true
           },
           {
             name: 'alternate',

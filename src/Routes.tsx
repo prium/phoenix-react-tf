@@ -83,10 +83,10 @@ import CreateNew from 'pages/apps/project-management/CreateNew';
 import ProjectListView from 'pages/apps/project-management/ProjectListView';
 import ProjectDetails from 'pages/apps/project-management/ProjectDetails';
 import MainLayoutProvider from 'providers/MainLayoutProvider';
-import TodoList from 'pages/apps/project-management/ProjectTodoList';
 import ProjectTodoList from 'pages/apps/project-management/ProjectTodoList';
 import ProjectBoardView from 'pages/apps/project-management/ProjectBoardView';
 import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
+import Default from 'pages/pages/landing/Default';
 
 const routes = [
   {
@@ -485,6 +485,10 @@ const routes = [
         element: <Invoice />
       }
     ]
+  },
+  {
+    path: '/landing/default',
+    element: <Default />
   }
 ];
 
