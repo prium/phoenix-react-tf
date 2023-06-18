@@ -5,6 +5,7 @@ import { useAppContext } from 'providers/AppProvider';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import ThemeToggler from 'components/common/ThemeToggler';
 
 const darkModeExampleCode = `
 import { useAppContext } from 'providers/AppProvider';
@@ -66,23 +67,7 @@ const DarkModeExample = () => {
 
       <Col sm={6} lg={3}>
         <h5 className="fs-0 mb-2">Custom Icon</h5>
-        <div
-          className="theme-control-toggle"
-          onClick={() => setConfig({ theme: theme === 'light' ? 'dark' : 'light' })}
-        >
-          <OverlayTrigger
-            placement="left"
-            overlay={
-              <Tooltip id="ThemeColor">
-                {theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-              </Tooltip>
-            }
-          >
-            <div className="theme-control-toggle-label">
-              <FeatherIcon icon={theme === 'dark' ? 'moon' : 'sun'} size={16} />
-            </div>
-          </OverlayTrigger>
-        </div>
+        <ThemeToggler />
       </Col>
     </Row>
   );
@@ -142,7 +127,7 @@ const DarkMode = () => {
           <PhoenixDocCard.Body
             code={darkModeExampleCode}
             noInline
-            scope={{ FeatherIcon, useAppContext }}
+            scope={{ FeatherIcon, useAppContext, ThemeToggler }}
           />
         </PhoenixDocCard>
 
