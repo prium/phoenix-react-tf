@@ -6,15 +6,21 @@ import classNames from 'classnames';
 
 interface ThemeTogglerProps extends ButtonProps {
   slim?: boolean;
+  className?: string;
 }
 
-const ThemeToggler = ({ slim, ...rest }: ThemeTogglerProps) => {
+const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
   const {
     config: { theme },
     toggleTheme
   } = useAppContext();
   return (
-    <Button variant="" className="p-0" onClick={() => toggleTheme()} {...rest}>
+    <Button
+      variant=""
+      className={classNames(className, 'p-0')}
+      onClick={() => toggleTheme()}
+      {...rest}
+    >
       <div
         className={classNames('theme-control-toggle', {
           'theme-control-toggle-slim pe-2': slim
