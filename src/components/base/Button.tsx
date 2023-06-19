@@ -56,10 +56,12 @@ const Button = ({
   loading,
   loadingPosition,
   className,
+  variant = '',
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <BsButton
+      variant={variant}
       {...rest}
       className={classNames(className, {
         'btn-loading lh-1 d-flex align-items-center position-relative': loading

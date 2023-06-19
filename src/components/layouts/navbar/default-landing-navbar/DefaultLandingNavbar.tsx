@@ -38,7 +38,7 @@ const DefaultLandingNavbar = () => {
 
           <div className="d-grid d-lg-flex gap-4 align-items-center">
             <ThemeToggler className="d-none d-lg-block" />
-            <Button variant="" className="p-0 text-700 hover-text-1100 d-none d-lg-inline lh-sm">
+            <Button className="p-0 text-700 hover-text-1100 d-none d-lg-inline lh-sm">
               <FeatherIcon icon="search" size={20} />
             </Button>
             <Link to="#!" className="btn btn-link p-0 text-900 order-1 order-lg-0">

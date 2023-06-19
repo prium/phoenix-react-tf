@@ -68,7 +68,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     id: 'action',
     cell: () => (
       <div className="d-flex gap-2 justify-content-end">
-        <Button size="sm" variant="" className="text-500 hover-text-600">
+        <Button size="sm" className="text-500 hover-text-600">
           <FontAwesomeIcon icon="trash" />
         </Button>
         <Button className="fs-10 text-nowrap" startIcon={<FontAwesomeIcon icon="shopping-cart" />}>

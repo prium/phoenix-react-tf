@@ -39,7 +39,6 @@ const NavbarVerical = () => {
       </Navbar.Collapse>
       <div className="navbar-vertical-footer">
         <Button
-          variant=""
           className="navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center"
           onClick={() => {
             setConfig({ isNavbarVerticalCollapsed: !isNavbarVerticalCollapsed });

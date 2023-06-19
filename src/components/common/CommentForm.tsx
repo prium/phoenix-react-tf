@@ -10,16 +10,16 @@ const CommentForm = () => {
         <Form.Control as="textarea" rows={3} />
       </Form.Group>
       <div className="d-flex align-items-center gap-3">
-        <Button variant="" size="sm" className="p-0">
+        <Button size="sm" className="p-0">
           <FontAwesomeIcon icon="image" className="fs-8 text-600" />
         </Button>
-        <Button variant="" size="sm" className="p-0">
+        <Button size="sm" className="p-0">
           <FontAwesomeIcon icon="calendar-days" className="fs-8 text-600" />
         </Button>
-        <Button variant="" size="sm" className="p-0">
+        <Button size="sm" className="p-0">
           <FontAwesomeIcon icon="location-dot" className="fs-8 text-600" />
         </Button>
-        <Button variant="" size="sm" className="p-0">
+        <Button size="sm" className="p-0">
           <FontAwesomeIcon icon="tag" className="fs-8 text-600" />
         </Button>
         <Button variant="primary" className="px-6 ms-auto">

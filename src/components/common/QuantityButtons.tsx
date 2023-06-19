@@ -45,7 +45,7 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
   }
   return (
     <div className="input-group input-group-sm flex-nowrap">
-      <Button size="sm" variant="" className="px-2" onClick={handleDecrease}>
+      <Button size="sm" className="px-2" onClick={handleDecrease}>
         -
       </Button>
       <input
@@ -55,7 +55,7 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
         value={quantity}
         onChange={handleChange}
       />
-      <Button size="sm" variant="" className="px-2" onClick={handleIncrease}>
+      <Button size="sm" className="px-2" onClick={handleIncrease}>
         +
       </Button>
     </div>
