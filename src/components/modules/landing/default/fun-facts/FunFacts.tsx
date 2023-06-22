@@ -8,7 +8,7 @@ import CountUp from 'react-countup';
 
 const FunFacts = () => {
   return (
-    <div className="position-relative">
+    <div className="position-relative py-15">
       <div>
         <div
           className="bg-holder world-map-bg"
