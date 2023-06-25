@@ -1,4 +1,5 @@
 import DefaultLandingNavbar from 'components/layouts/navbar/default-landing-navbar/DefaultLandingNavbar';
+import Blog from 'components/modules/landing/default/blog/Blog';
 import Brands from 'components/modules/landing/default/Brands';
 import Features from 'components/modules/landing/default/features/Features';
 import FunFacts from 'components/modules/landing/default/fun-facts/FunFacts';
@@ -19,6 +20,7 @@ const Default = () => {
       <FunFacts />
       <Gallery />
       <Pricing />
+      <Blog />
     </div>
   );
 };

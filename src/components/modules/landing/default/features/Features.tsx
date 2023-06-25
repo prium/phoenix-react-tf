@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import boltIlls from 'assets/img/icons/illustrations/bolt.png';
 import pie from 'assets/img/icons/illustrations/pie.png';
-import { defaultFeatures } from 'data/landing/features';
+import { defaultFeatures } from 'data/landing/default-landing-data';
 import FeatureSection from './FeatureSection';
 
 const Features = () => {

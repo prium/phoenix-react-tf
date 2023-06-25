@@ -23,6 +23,7 @@ import {
   faChevronRight,
   faCircle,
   faClock,
+  faComment,
   faCopy,
   faCreditCard,
   faDove,
@@ -33,6 +34,7 @@ import {
   faEllipsis,
   faEllipsisV,
   faEnvelope,
+  faEye,
   faFileExport,
   faFileLines,
   faFileZipper,
@@ -180,5 +182,7 @@ library.add(
   faCalendarDays,
   faArrowRight,
   faBoxArchive,
-  faLocationDot
+  faLocationDot,
+  faEye,
+  faComment
 );

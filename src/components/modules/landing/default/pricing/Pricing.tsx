@@ -29,7 +29,7 @@ const Pricing = () => {
             </p>
           </Col>
         </Row>
-        <Row className="pt-9 g-3 g-xl-0">
+        <Row className="pt-9 g-3 g-xl-0 mb-8">
           {pricingItems.slice(0, 3).map((item, index) => (
             <Col key={index} md={6} xl={3}>
               <>
@@ -63,6 +63,12 @@ const Pricing = () => {
             </Card>
           </Col>
         </Row>
+        <div className="text-center">
+          <p>
+            For Enterprise Solution with Managed SMTP, Custom API setup, Dedicated Support, and more
+            - <a href="#!">Contact us</a>
+          </p>
+        </div>
       </div>
     </section>
   );
