@@ -1,5 +1,7 @@
+import { pricingItems } from 'data/landing/pricingData';
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
+import PricingItem from './PricingItem';
 
 const Pricing = () => {
   return (
@@ -25,6 +27,22 @@ const Pricing = () => {
               get. Show offer details here and entice them to buy.
             </p>
           </Col>
+        </Row>
+        <Row className="pt-9 g-3 g-xl-0">
+          {pricingItems.slice(0, 3).map((item, index) => (
+            <Col key={index} md={6} xl={3}>
+              <Card className={`h-100`}>
+                {index === 1 && (
+                  <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
+                    <p className="text-primary-600 mb-0 dark__text-primary-200">Most popular</p>
+                  </div>
+                )}
+                <Card.Body className="px-6">
+                  <PricingItem pricing={item} />
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </div>
     </section>
