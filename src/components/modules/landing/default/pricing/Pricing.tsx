@@ -2,6 +2,7 @@ import { pricingItems } from 'data/landing/pricingData';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import PricingItem from './PricingItem';
+import classNames from 'classnames';
 
 const Pricing = () => {
   return (
@@ -31,18 +32,36 @@ const Pricing = () => {
         <Row className="pt-9 g-3 g-xl-0">
           {pricingItems.slice(0, 3).map((item, index) => (
             <Col key={index} md={6} xl={3}>
-              <Card className={`h-100`}>
-                {index === 1 && (
-                  <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
-                    <p className="text-primary-600 mb-0 dark__text-primary-200">Most popular</p>
-                  </div>
-                )}
-                <Card.Body className="px-6">
-                  <PricingItem pricing={item} />
-                </Card.Body>
-              </Card>
+              <>
+                <Card
+                  className={classNames('h-100', {
+                    'border border-2 border-primary dark__border-primary mt-5 mt-md-0':
+                      item.popular,
+                    'rounded-xl-end-0 rounded-start': index === 0,
+                    'rounded-top-0 rounded-xl-0': index === 1,
+                    'rounded-start rounded-xl-start-0 mt-5 mt-md-0': index === 2
+                  })}
+                >
+                  {item.popular && (
+                    <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
+                      <p className="text-primary-600 mb-0 dark__text-primary-200">Most popular</p>
+                    </div>
+                  )}
+                  <Card.Body className="px-6">
+                    <PricingItem pricing={item} />
+                  </Card.Body>
+                </Card>
+              </>
             </Col>
           ))}
+
+          <Col xs={12} md={6} xl={3} className="ps-xl-3">
+            <Card className="mt-5 mt-md-0">
+              <Card.Body className="px-6">
+                <PricingItem pricing={pricingItems[3]} />
+              </Card.Body>
+            </Card>
+          </Col>
         </Row>
       </div>
     </section>
