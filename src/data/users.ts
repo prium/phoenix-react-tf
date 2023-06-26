@@ -2,7 +2,6 @@ import team33 from 'assets/img/team/33.webp';
 import team30 from 'assets/img/team/30.webp';
 import team31 from 'assets/img/team/31.webp';
 import team60 from 'assets/img/team/60.webp';
-import team65 from 'assets/img/team/65.webp';
 import team32 from 'assets/img/team/32.webp';
 import team35 from 'assets/img/team/35.webp';
 import team57 from 'assets/img/team/57.webp';
@@ -15,6 +14,14 @@ import team9 from 'assets/img/team/9.webp';
 import team25 from 'assets/img/team/25.webp';
 import team22 from 'assets/img/team/22.webp';
 import team28 from 'assets/img/team/28.webp';
+import team62 from 'assets/img/team/62.webp';
+import team63 from 'assets/img/team/63.webp';
+import team64 from 'assets/img/team/64.webp';
+import team65 from 'assets/img/team/65.webp';
+import team66 from 'assets/img/team/66.webp';
+import team67 from 'assets/img/team/67.webp';
+import team68 from 'assets/img/team/68.webp';
+import team69 from 'assets/img/team/69.webp';
 
 export interface Member {
   id: number;
@@ -182,5 +189,81 @@ export const members: Member[] = [
     username: 'mizan_rifat',
     connections: 89,
     mutual: 6
+  }
+];
+
+export type TeamMember = {
+  image: string;
+  name: string;
+  designation: string;
+  facebookHandle: string;
+  twitterHandle: string;
+  linkedinHandle: string;
+};
+
+export const defaultTeamMembers: TeamMember[] = [
+  {
+    image: team62,
+    name: 'John Smith',
+    designation: 'CEO, Global Cheat',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team63,
+    name: 'Marc Chiasson',
+    designation: 'Vice President',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team64,
+    name: 'Lilah Lola',
+    designation: 'Marketing Manager',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team65,
+    name: 'Thomas Doe',
+    designation: 'UX Designer',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team66,
+    name: 'Alan Casey',
+    designation: 'Front End Developer',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team67,
+    name: 'Narokin Hijita',
+    designation: 'CEO, Global Cheat',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team68,
+    name: 'Narokin Hijita',
+    designation: 'CEO, Global Cheat',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
+  },
+  {
+    image: team69,
+    name: 'Narokin Hijita',
+    designation: 'CEO, Global Cheat',
+    facebookHandle: '#!',
+    twitterHandle: '#!',
+    linkedinHandle: '#!'
   }
 ];
