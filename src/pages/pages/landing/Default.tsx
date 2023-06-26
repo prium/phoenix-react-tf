@@ -1,4 +1,5 @@
 import DefaultLandingNavbar from 'components/layouts/navbar/default-landing-navbar/DefaultLandingNavbar';
+import AddressSection from 'components/modules/landing/default/address/AddressSection';
 import Blog from 'components/modules/landing/default/blog/Blog';
 import Brands from 'components/modules/landing/default/Brands';
 import Features from 'components/modules/landing/default/features/Features';
@@ -21,6 +22,7 @@ const Default = () => {
       <Gallery />
       <Pricing />
       <Blog />
+      <AddressSection />
     </div>
   );
 };

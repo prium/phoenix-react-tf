@@ -32,8 +32,8 @@ const Blog = () => {
         </Row>
         <Row className="h-100 g-3 justify-content-center">
           {blogs.map(blog => (
-            <Col sm={6} lg={3}>
-              <BlogItem key={blog.id} blog={blog} />
+            <Col sm={6} lg={3} key={blog.id}>
+              <BlogItem blog={blog} />
             </Col>
           ))}
         </Row>

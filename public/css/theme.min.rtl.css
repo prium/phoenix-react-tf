@@ -29357,7 +29357,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   width: 1.625rem;
   border-radius: 0.363rem;
   transform: rotate(-7.45deg);
-  top: 1.7rem;
+  top: 1.25rem;
   right: calc(50% - 1.4rem);
 }
 @media (min-width: 768px) {
@@ -29368,7 +29368,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
     width: 1.625rem;
     border-radius: 0.363rem;
     transform: rotate(-7.45deg);
-    top: 1.7rem;
     right: 0.1rem;
   }
 }

@@ -46,6 +46,7 @@ import {
   faList,
   faListCheck,
   faLocationDot,
+  faMapMarker,
   faMessage,
   faMinus,
   faPalette,
@@ -184,5 +185,6 @@ library.add(
   faBoxArchive,
   faLocationDot,
   faEye,
-  faComment
+  faComment,
+  faMapMarker
 );
