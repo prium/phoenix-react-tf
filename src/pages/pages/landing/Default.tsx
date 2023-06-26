@@ -2,6 +2,7 @@ import DefaultLandingNavbar from 'components/layouts/navbar/default-landing-navb
 import AddressSection from 'components/modules/landing/default/address/AddressSection';
 import Blog from 'components/modules/landing/default/blog/Blog';
 import Brands from 'components/modules/landing/default/Brands';
+import Cta from 'components/modules/landing/default/Cta';
 import Features from 'components/modules/landing/default/features/Features';
 import FunFacts from 'components/modules/landing/default/fun-facts/FunFacts';
 import Gallery from 'components/modules/landing/default/Gallery';
@@ -25,6 +26,7 @@ const Default = () => {
       <Blog />
       <AddressSection />
       <TeamSection />
+      <Cta />
     </div>
   );
 };
