@@ -4,6 +4,7 @@ import { Row } from 'react-bootstrap';
 import bg18 from 'assets/img/bg/bg-18.png';
 import illustrations27 from 'assets/img/spot-illustrations/27.png';
 import illustrations27dark from 'assets/img/spot-illustrations/dark_27.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Cta = () => {
   return (
@@ -36,14 +37,11 @@ const Cta = () => {
                 />
                 <div className="d-flex align-items-center fw-bold justify-content-center mb-3">
                   <p className="mb-0">2008 Premium Icons</p>
-                  <span
-                    className="text-primary fa-solid fa-circle"
-                    data-fa-transform="shrink-12"
-                  ></span>
+                  <FontAwesomeIcon icon="circle" className="text-primary" transform="shrink-12" />
                   <p className="mb-0">Included FREE with it</p>
                 </div>
                 <h1 className="fs-6 fs-sm-4 fs-lg-2 fw-bolder lh-sm mb-3">
-                  Join <span className="gradient-text-primary mx-2">Phoenix</span> Today
+                  Join<span className="gradient-text-primary mx-2">Phoenix</span>Today
                 </h1>
                 <Form className="d-flex gap-3 justify-content-center mb-3 px-xxl-12">
                   <Form.Control type="email" placeholder="Email" id="ctaEmail1" />

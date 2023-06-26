@@ -4,6 +4,7 @@ import Blog from 'components/modules/landing/default/blog/Blog';
 import Brands from 'components/modules/landing/default/Brands';
 import Cta from 'components/modules/landing/default/Cta';
 import Features from 'components/modules/landing/default/features/Features';
+import Footer from 'components/modules/landing/default/Footer';
 import FunFacts from 'components/modules/landing/default/fun-facts/FunFacts';
 import Gallery from 'components/modules/landing/default/Gallery';
 import HeroHeader from 'components/modules/landing/default/HeroHeader';
@@ -27,6 +28,7 @@ const Default = () => {
       <AddressSection />
       <TeamSection />
       <Cta />
+      <Footer />
     </div>
   );
 };
