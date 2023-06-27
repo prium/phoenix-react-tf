@@ -27,35 +27,30 @@ const Brands = () => {
     <section className="py-5 pt-xl-13 bg-white">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="g-0">
-          <Row>
-            <Col xs={6} md={3}>
-              <Brand image={netflix} className="border-bottom border-end" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={blender} className="border-bottom border-end-md" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={upwork} className="border-bottom border-end border-end-md" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={facebook} className="border-bottom border-end-lg-0" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={pocket} className="border-end border-bottom border-bottom-md-0" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand
-                image={mailBluster}
-                className="border-end-md border-bottom border-bottom-md-0"
-              />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={discord} className="border-end" />
-            </Col>
-            <Col xs={6} md={3}>
-              <Brand image={google} className=" border-end-lg-0" />
-            </Col>
-          </Row>
+          <Col xs={6} md={3}>
+            <Brand image={netflix} className="border-bottom border-end" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={blender} className="border-bottom border-end-md" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={upwork} className="border-bottom border-end border-end-md" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={facebook} className="border-bottom border-end-lg-0" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={pocket} className="border-end border-bottom border-bottom-md-0" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={mailBluster} className="border-end-md border-bottom border-bottom-md-0" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={discord} className="border-end" />
+          </Col>
+          <Col xs={6} md={3}>
+            <Brand image={google} className=" border-end-lg-0" />
+          </Col>
         </Row>
       </div>
     </section>

@@ -11,7 +11,6 @@ import HeroHeader from 'components/modules/landing/default/HeroHeader';
 import Pricing from 'components/modules/landing/default/pricing/Pricing';
 import TeamSection from 'components/modules/landing/default/team/TeamSection';
 import Testimonial from 'components/modules/landing/default/testimonial/Testimonial';
-import React from 'react';
 
 const Default = () => {
   return (

@@ -7,6 +7,7 @@ import bg31 from 'assets/img/bg/bg-31.png';
 import bg23 from 'assets/img/bg/bg-23.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from 'components/base/Button';
 
 const HeroHeader = () => {
   return (
@@ -73,10 +74,15 @@ const HeroHeader = () => {
               <Link to="#!" className="btn btn-lg btn-primary rounded-pill me-3">
                 Sign up
               </Link>
-              <Link to="#!" className="btn btn-link me-2 fs-0 p-0 text-decoration-none">
+              <Button
+                as={Link}
+                variant="link"
+                to="#!"
+                className="me-2 fs-8 p-0 text-decoration-none"
+              >
                 Check Demo
                 <FontAwesomeIcon icon="angle-right" className="ms-2 fs-9" />
-              </Link>
+              </Button>
             </div>
           </Col>
         </Row>
