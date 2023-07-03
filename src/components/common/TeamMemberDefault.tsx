@@ -23,7 +23,7 @@ const TeamMemberDefault = ({ member }: { member: TeamMember }) => {
       <h4>{member.name}</h4>
       <h6 className="mb-3 fw-semi-bold">{member.designation}</h6>
       <div>
-        <a href="#!" className="text-primary me-3">
+        {/* <a href="#!" className="text-primary me-3">
           <FontAwesomeIcon icon="facebook" />
         </a>
         <a href="#!" className="text-primary me-3">
@@ -31,7 +31,7 @@ const TeamMemberDefault = ({ member }: { member: TeamMember }) => {
         </a>
         <a href="#!" className="text-primary">
           <FontAwesomeIcon icon="linkedin-in" />
-        </a>
+        </a> */}
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ const Mapbox = ({ options }: MapboxProps) => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current!,
       style: 'mapbox://styles/mapbox/light-v11',
+      // style: 'mapbox://styles/themewagon/clje68m1f004401pi6zin9yed',
       scrollZoom: false,
       ...options
     });
