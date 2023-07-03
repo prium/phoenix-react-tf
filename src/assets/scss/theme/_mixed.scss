@@ -230,54 +230,6 @@
   align-items: center;
 }
 
-.pricing-column-title-box {
-  height: 105px;
-}
-
-// Pricing Grid
-.pricing--hover {
-  @include hover-focus {
-    .warning-boxshadow {
-      box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
-      border-radius: 0.5rem;
-      outline: 0;
-    }
-    .border-warning-300 {
-      --#{$prefix}border-color: #{$orange-300};
-    }
-  }
-}
-.pricing-plan-radio {
-  + {
-    label {
-      border: 1px solid transparent;
-      border-radius: 0.5rem;
-    }
-  }
-  &:checked {
-    + {
-      div {
-        .card {
-          border: 1px solid $primary;
-          box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
-        }
-      }
-    }
-  }
-  &.pricing-plan-recommended {
-    &:checked {
-      + {
-        div {
-          .card {
-            border: 1px solid $warning;
-            box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
-          }
-        }
-      }
-    }
-  }
-}
-
 .dark {
   .footer-bg {
     opacity: 0.6;

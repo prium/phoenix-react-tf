@@ -1,17 +1,13 @@
 import Logo from 'components/common/Logo';
-import { Col, Dropdown, Nav, Navbar, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
+import { Col, Dropdown, Nav, Navbar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import NotificationDropdownMenu from '../nav-items/NotificationDropdownMenu';
-import { useAppContext } from 'providers/AppProvider';
 import ProfileDropdownMenu from '../nav-items/ProfileDropdownMenu';
 import SearchBox from 'components/common/SearchBox';
+import ThemeToggler from 'components/common/ThemeToggler';
 
 const EcommerceTopbar = () => {
-  const {
-    config: { theme },
-    toggleTheme
-  } = useAppContext();
   return (
     <div className="container-small">
       <div className="ecommerce-topbar">
@@ -25,22 +21,7 @@ const EcommerceTopbar = () => {
             <Col xs="auto" className="order-md-1">
               <Nav as="ul" className="navbar-nav-icons flex-row me-n2">
                 <Nav.Item as="li" className="d-flex align-items-center">
-                  <Nav.Link onClick={() => toggleTheme()} className="py-0">
-                    <div className="theme-control-toggle">
-                      <OverlayTrigger
-                        placement="left"
-                        overlay={
-                          <Tooltip id="ThemeColor">
-                            {theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-                          </Tooltip>
-                        }
-                      >
-                        <div className="theme-control-toggle-label">
-                          <FeatherIcon icon={theme === 'dark' ? 'moon' : 'sun'} size={16} />
-                        </div>
-                      </OverlayTrigger>
-                    </div>
-                  </Nav.Link>
+                  <ThemeToggler />
                 </Nav.Item>
 
                 <Nav.Item as="li">

@@ -1,10 +1,11 @@
-import { Button, Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
 import { UilArrowFromRight, UilLeftArrowToLeft } from '@iconscout/react-unicons';
 import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
+import Button from 'components/base/Button';
 
 const NavbarVerical = () => {
   const {
@@ -39,7 +40,6 @@ const NavbarVerical = () => {
       </Navbar.Collapse>
       <div className="navbar-vertical-footer">
         <Button
-          variant=""
           className="navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center"
           onClick={() => {
             setConfig({ isNavbarVerticalCollapsed: !isNavbarVerticalCollapsed });

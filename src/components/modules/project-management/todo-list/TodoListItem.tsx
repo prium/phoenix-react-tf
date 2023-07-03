@@ -101,13 +101,13 @@ const TodoListItem = ({
           >
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
-                <Button variant="" className="p-0 text-700 fs-10 me-2">
+                <Button className="p-0 text-700 fs-10 me-2">
                   <FontAwesomeIcon icon="paperclip" className="me-1" />
                   {todo.attachment}
                 </Button>
               )}
               {todo.listitems && (
-                <Button variant="" className="p-0 text-warning fs-10 me-2">
+                <Button className="p-0 text-warning fs-10 me-2">
                   <FontAwesomeIcon icon="tasks" className="me-1" />
                   {todo.listitems}
                 </Button>

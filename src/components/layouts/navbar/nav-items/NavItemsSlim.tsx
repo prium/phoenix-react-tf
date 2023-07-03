@@ -1,39 +1,17 @@
-import { Dropdown, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { useAppContext } from 'providers/AppProvider';
+import { Dropdown, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
 import NineDotMenu from 'components/layouts/navbar/nav-items/NineDotMenu';
 import ProfileDropdownMenu from 'components/layouts/navbar/nav-items/ProfileDropdownMenu';
 import NotificationDropdownMenu from 'components/layouts/navbar/nav-items/NotificationDropdownMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ThemeToggler from 'components/common/ThemeToggler';
 
 const NavItemsSlim = () => {
-  const {
-    config: { theme },
-    toggleTheme
-  } = useAppContext();
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>
-        <Nav.Link className="p-0" onClick={() => toggleTheme()}>
-          <div className="theme-control-toggle">
-            <OverlayTrigger
-              placement="bottom"
-              overlay={<Tooltip id="ThemeColor">Swith theme</Tooltip>}
-            >
-              <div className="theme-control-toggle theme-control-toggle-slim pe-2">
-                <div className="theme-control-toggle-label">
-                  <FeatherIcon
-                    className="me-1"
-                    icon={theme === 'dark' ? 'moon' : 'sun'}
-                    size={10}
-                  />
-                  <span className="fs-9 fw-bold">{theme === 'dark' ? 'Dark' : 'Light'}</span>
-                </div>
-              </div>
-            </OverlayTrigger>
-          </div>
-        </Nav.Link>
+        <ThemeToggler slim />
       </Nav.Item>
       <Nav.Item>
         <Nav.Link>

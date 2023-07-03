@@ -1,5 +1,5 @@
 import Avatar from 'components/base/Avatar';
-import { Dropdown, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Dropdown, Nav } from 'react-bootstrap';
 import avatar57 from 'assets/img/team/40x40/57.webp';
 import ProfileDropdownMenu from './ProfileDropdownMenu';
 import NineDotMenu from './NineDotMenu';
@@ -7,31 +7,16 @@ import { useAppContext } from 'providers/AppProvider';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
 import NotificationDropdownMenu from './NotificationDropdownMenu';
+import ThemeToggler from 'components/common/ThemeToggler';
 
 const NavItems = () => {
   const {
-    config: { theme, navbarPosition },
-    toggleTheme
+    config: { navbarPosition }
   } = useAppContext();
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>
-        <Nav.Link onClick={() => toggleTheme()}>
-          <div className="theme-control-toggle">
-            <OverlayTrigger
-              placement="left"
-              overlay={
-                <Tooltip id="ThemeColor">
-                  {theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'}
-                </Tooltip>
-              }
-            >
-              <div className="theme-control-toggle-label">
-                <FeatherIcon icon={theme === 'dark' ? 'moon' : 'sun'} size={16} />
-              </div>
-            </OverlayTrigger>
-          </div>
-        </Nav.Link>
+        <ThemeToggler />
       </Nav.Item>
       {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
         <Nav.Item>

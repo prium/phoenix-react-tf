@@ -1,5 +1,3 @@
-declare module 'feather-icons-react';
-
 declare module '@iconscout/react-unicons' {
   import { SVGProps } from 'react';
 

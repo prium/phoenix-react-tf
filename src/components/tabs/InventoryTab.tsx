@@ -128,7 +128,7 @@ const InventoryTab = () => {
                       <td className="text-1000 fw-bold py-1">Product in stock now:</td>
                       <td className="text-700 fw-semi-bold py-1">
                         $1,090
-                        <Button variant="" className="p-0 ms-1" type="button">
+                        <Button className="p-0 ms-1" type="button">
                           <FontAwesomeIcon
                             icon="rotate"
                             className="text-900"
