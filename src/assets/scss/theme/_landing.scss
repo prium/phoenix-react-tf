@@ -5,6 +5,19 @@
   }
 }
 
+// <div
+// className="bg-white position-absolute h-100 w-100 top-0"
+// style={{ transform: 'skew(0,-10deg)' }}
+// />
+.skew-section {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: var(--#{$prefix}white);
+  transform: skew(0, -10deg);
+}
+
 .gradient-text-primary {
   background: linear-gradient(144.36deg, #598bff 4.5%, #094be7 94.38%);
   -webkit-background-clip: text;

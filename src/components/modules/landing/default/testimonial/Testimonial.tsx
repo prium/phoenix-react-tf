@@ -6,10 +6,10 @@ import bg13 from 'assets/img/bg/13.png';
 
 const Testimonial = () => {
   return (
-    <div className="position-relative">
+    <div className="bg-soft position-relative py-18">
       <div
-        className="bg-white position-absolute h-100 w-100 top-0"
-        style={{ transform: 'skew(0,-8deg)' }}
+        className="position-absolute h-100 w-100 top-0 bg-white"
+        style={{ transform: 'skew(0,-10deg)' }}
       />
       <div
         className="bg-holder z-index-2 d-none d-md-block"
@@ -28,10 +28,10 @@ const Testimonial = () => {
         }}
       />
 
-      <section className="py-12 overflow-hidden position-static">
+      <section className="overflow-hidden position-static">
         <div className="container-small px-lg-7 px-xxl-3">
           <Row>
-            <Col lg={6} className="mb-6 text-center text-lg-start z-index-2">
+            <Col lg={6} className="text-center text-lg-start z-index-2">
               <div>
                 <h4 className="text-primary fw-bolder mb-3">Testimonial</h4>
                 <h2 className="mb-3 text-black">
@@ -43,8 +43,8 @@ const Testimonial = () => {
                   You may now concentrate on the functionality and other{' '}
                   <br className="d-none d-sm-block" />
                   aspects of your web products thanks to Phoenix's strength
-                  <br className="d-none d-sm-block" />
-                  before leaving the UI design to us. It is simple to complete
+                  <br className="d-none d-sm-block" />0 before leaving the UI design to us. It is
+                  simple to complete
                   <br className="d-none d-sm-block" />
                   the work after checking and double-checking.
                 </p>

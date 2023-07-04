@@ -24,7 +24,7 @@ const Brand = ({ image, className }: { image: string; className?: string }) => {
 
 const Brands = () => {
   return (
-    <section className="py-5 pt-xl-13 bg-white">
+    <section className="py-5 pt-xl-13">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="g-0">
           <Col xs={6} md={3}>

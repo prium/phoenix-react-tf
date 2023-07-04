@@ -14,7 +14,7 @@ import Testimonial from 'components/modules/landing/default/testimonial/Testimon
 
 const Default = () => {
   return (
-    <div>
+    <div className="bg-white">
       <DefaultLandingNavbar />
       <HeroHeader />
       <Brands />

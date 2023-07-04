@@ -11,7 +11,7 @@ import Button from 'components/base/Button';
 
 const HeroHeader = () => {
   return (
-    <section className="bg-white pb-8" id="home">
+    <section className="pb-8" id="home">
       <div className="container-small hero-header-container px-lg-7 px-xxl-3">
         <Row className="align-items-center">
           <Col xs={12} className="text-end">

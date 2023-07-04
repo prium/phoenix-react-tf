@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import Mapbox from 'components/base/MapBox';
 import Section from 'components/base/Section';
-import OrderTrackingMap from 'components/maps/OrderTrackingMap';
 import OrderTrackingTimeline from 'components/timelines/OrderTrackingTimeline';
 import { orderTrackingTimelineData } from 'data/timelineData';
 import { Breadcrumb, Col, Row } from 'react-bootstrap';
@@ -36,7 +36,16 @@ const OrderTracking = () => {
         </div>
         <Row className="gy-9 gx-5">
           <Col xs={12} lg={6}>
-            <OrderTrackingMap />
+            {/* <OrderTrackingMap /> */}
+
+            <Mapbox
+              className="border border-300 rounded-3 min-vh-50"
+              options={{
+                center: [-74.0020158, 40.7228022],
+                zoom: 15,
+                scrollZoom: false
+              }}
+            />
           </Col>
           <Col xs={12} lg={6}>
             <OrderTrackingTimeline data={orderTrackingTimelineData} />
