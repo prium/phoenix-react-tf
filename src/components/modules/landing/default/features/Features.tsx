@@ -9,7 +9,7 @@ import FeatureSection from './FeatureSection';
 
 const Features = () => {
   return (
-    <section className="pt-15 pb-0">
+    <section className="bg-soft pt-15 pb-18">
       <div className="container-small px-lg-7 px-xxl-3">
         <div className="position-relative z-index-2">
           <Row className="mb-12">

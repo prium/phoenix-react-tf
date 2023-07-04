@@ -9,6 +9,10 @@ const TeamSection = () => {
   return (
     <section>
       <div
+        className="position-absolute h-70 w-100 bg-soft"
+        style={{ transform: 'skew(0,-10deg)', top: '10%' }}
+      />
+      <div
         className="bg-holder z-index-2"
         style={{
           backgroundImage: `url(${bgLeft17})`,

@@ -3,10 +3,31 @@ import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import PricingItem from './PricingItem';
 import classNames from 'classnames';
+import bgLeft15 from 'assets/img/bg/bg-left-15.png';
+import bgRight15 from 'assets/img/bg/bg-right-15.png';
 
 const Pricing = () => {
   return (
-    <section className="bg-white pt-lg-0 pt-xl-8">
+    <section className="pt-lg-0 pt-xl-8">
+      <div>
+        <div
+          className="bg-holder d-none d-md-block"
+          style={{
+            backgroundImage: `url(${bgLeft15})`,
+            backgroundPosition: 'left',
+            backgroundSize: 'auto'
+          }}
+        />
+        <div
+          className="bg-holder d-none d-md-block"
+          style={{
+            backgroundImage: `url(${bgRight15})`,
+            backgroundPosition: 'right',
+            backgroundSize: 'auto'
+          }}
+        />
+      </div>
+
       <div className="container-small position-relative px-lg-7 px-xxl-3">
         <Row>
           <Col xs={12} className="mb-4 text-center text-sm-start">

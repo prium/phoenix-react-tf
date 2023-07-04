@@ -43,7 +43,7 @@ const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItemType }) => {
 
 const Gallery = () => {
   return (
-    <section className="bg-white pb-lg-6 pb-xl-8">
+    <section className="pt-15">
       <div className="container-small position-relative px-lg-7 px-xxl-3">
         <Row className=" mb-8 text-center text-sm-start">
           <Col xs={12} className="mb-4">

@@ -1,10 +1,11 @@
 import { Col, Row } from 'react-bootstrap';
 import HelpCenter from './HelpCenter';
 import QueryForm from './QueryForm';
+import Mapbox from 'components/base/MapBox';
 
 const AddressSection = () => {
   return (
-    <section className="bg-white">
+    <section>
       <div className="container-small px-lg-7 px-xxl-3">
         <div className="mb-4">
           <h4 className="text-primary fw-bolder mb-3">Address</h4>
@@ -26,7 +27,17 @@ const AddressSection = () => {
             </p>
           </Col>
         </Row>
-
+        <div className="mb-15">
+          <Mapbox
+            className="rounded-4"
+            style={{ height: 380 }}
+            options={{
+              center: [-74.0020158, 40.7228022],
+              zoom: 14,
+              scrollZoom: false
+            }}
+          />
+        </div>
         <Row className="g-5 g-lg-5">
           <Col xs={12} md={6} className="mb-5 mb-md-0 text-center text-md-start">
             <HelpCenter />

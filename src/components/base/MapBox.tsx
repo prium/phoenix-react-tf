@@ -1,16 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { HTMLAttributes, useEffect, useRef } from 'react';
 import mapboxgl, { Map, MapboxOptions } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN!;
 
-interface MapboxProps {
+interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
+  className?: string;
   options: Omit<MapboxOptions, 'container'>;
 }
 
-const Mapbox = ({ options }: MapboxProps) => {
+const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
 
@@ -35,8 +37,8 @@ const Mapbox = ({ options }: MapboxProps) => {
 
   return (
     <>
-      <div className="mapbox-container">
-        <div ref={mapContainer} className="map-container h-100 min-vh-50" />
+      <div className={classNames(className, 'mapbox-container')} {...rest}>
+        <div ref={mapContainer} className="map-container" />
         <div className="mapbox-control-btn">
           <Button onClick={() => map.current?.zoomIn()} className="zoomIn">
             <FontAwesomeIcon icon="plus" />

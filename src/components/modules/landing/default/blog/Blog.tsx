@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Blog = () => {
   return (
-    <section className="bg-white">
+    <section>
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="row">
           <Col xs={12} className="mb-4 text-center text-sm-start">

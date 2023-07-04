@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Cta = () => {
   return (
-    <section className="bg-white pb-0">
+    <section className="pb-0">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="justify-content-center">
           <Col xs={12} className="text-center">
