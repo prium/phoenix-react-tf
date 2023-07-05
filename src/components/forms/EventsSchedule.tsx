@@ -70,7 +70,7 @@ const EventsSchedule = () => {
       </Col>
       <Col sm={6}>
         <DatePicker
-          render={({ defaultValue }, ref) => {
+          render={(_, ref) => {
             return (
               <Form.Floating>
                 <Form.Control

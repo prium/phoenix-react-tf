@@ -42,7 +42,7 @@ const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
       {files.length > 0 && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
-            <div className="dropzone-file-preview">
+            <div className="dropzone-file-preview" key={file.name}>
               <img src={URL.createObjectURL(file)} alt="" />
               <button
                 className="btn close-btn"

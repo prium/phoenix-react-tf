@@ -23,10 +23,10 @@ const CreateAnEvent = () => {
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <Form className="mb-9">
         <Row className="justify-content-between align-items-end g-3 mb-5">
-          <Col sx={12} sm="auto" xl={8}>
+          <Col xs={12} sm="auto" xl={8}>
             <h2 className="mb-0">Create an Event</h2>
           </Col>
-          <Col sx={12} sm="auto" xl={4}>
+          <Col xs={12} sm="auto" xl={4}>
             <div className="d-flex">
               <Button
                 className="px-5 me-2"
@@ -35,12 +35,14 @@ const CreateAnEvent = () => {
               >
                 Save
               </Button>
-              <Link
-                className="btn btn-primary px-5 w-100 text-nowrap"
+              <Button
+                variant="primary"
+                as={Link}
                 to="/apps/events/event-details"
+                className="px-5 w-100 text-nowrap"
               >
-                Publish event
-              </Link>
+                Publish Event
+              </Button>
             </div>
           </Col>
         </Row>
@@ -86,7 +88,7 @@ const CreateAnEvent = () => {
                   isMulti
                   placeholder="Add tags"
                   styles={{
-                    control: (baseStyles, state) => ({
+                    control: baseStyles => ({
                       ...baseStyles,
                       height: '128px',
                       alignItems: 'start'
