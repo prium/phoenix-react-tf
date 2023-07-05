@@ -51,7 +51,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   xAxis: [
     {
       type: 'category',
-      data: getDates(new Date('5/1/2022'), new Date('5/7/2022'), 1000 * 60 * 60 * 24),
+      data: getDates(
+        new Date('5/1/2022'),
+        new Date('5/7/2022'),
+        1000 * 60 * 60 * 24
+      ),
       show: true,
       boundaryGap: false,
       axisLine: {
@@ -77,7 +81,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       type: 'category',
       position: 'bottom',
       show: true,
-      data: getDates(new Date('5/1/2022'), new Date('5/7/2022'), 1000 * 60 * 60 * 24),
+      data: getDates(
+        new Date('5/1/2022'),
+        new Date('5/7/2022'),
+        1000 * 60 * 60 * 24
+      ),
       axisLabel: {
         formatter: (value: Date) => dayjs(value).format('DD MMM'),
         interval: 130,

@@ -6,7 +6,9 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ProductsTableProductType } from 'data/e-commerce/products';
 import Badge from 'components/base/Badge';
 import StarCheckbox from 'components/base/StarCheckbox';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
@@ -21,7 +23,10 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
         </div>
       );
     },
-    meta: { headerProps: { style: { width: 70 } }, cellProps: { className: 'py-0' } },
+    meta: {
+      headerProps: { style: { width: 70 } },
+      cellProps: { className: 'py-0' }
+    },
     enableSorting: false
   },
   {
@@ -42,7 +47,8 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
   },
   {
     id: 'price',
-    accessorFn: ({ price, priceMax, priceMin }) => `${price} ${priceMax} ${priceMin}`,
+    accessorFn: ({ price, priceMax, priceMin }) =>
+      `${price} ${priceMax} ${priceMin}`,
     header: 'Price',
     cell: ({ row: { original } }) => {
       const { price, priceMax, priceMin } = original;

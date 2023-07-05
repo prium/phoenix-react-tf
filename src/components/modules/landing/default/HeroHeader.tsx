@@ -39,7 +39,11 @@ const HeroHeader = () => {
             <div className="hero-image-container position-absolute top-0 bottom-0 end-0 d-none d-lg-block">
               <div className="position-relative h-100 w-100">
                 <div className="position-absolute h-100 top-0 d-flex align-items-center end-0 hero-image-container-bg">
-                  <img className="pt-7 pt-md-0 w-100" src={bg12} alt="hero-header" />
+                  <img
+                    className="pt-7 pt-md-0 w-100"
+                    src={bg12}
+                    alt="hero-header"
+                  />
                 </div>
                 <div className="position-absolute h-100 top-0 d-flex align-items-center end-0">
                   <img
@@ -68,10 +72,13 @@ const HeroHeader = () => {
                 your web app
               </h1>
               <p className="mb-5">
-                Standard, modern and Elegant solution for your next web app so you don’t have to
-                look further. Sign up or check the demo below.
+                Standard, modern and Elegant solution for your next web app so
+                you don’t have to look further. Sign up or check the demo below.
               </p>
-              <Link to="#!" className="btn btn-lg btn-primary rounded-pill me-3">
+              <Link
+                to="#!"
+                className="btn btn-lg btn-primary rounded-pill me-3"
+              >
                 Sign up
               </Link>
               <Button

@@ -13,7 +13,10 @@ interface DocPagesLayoutProps {
   sideNavItems?: SideNavItem[];
 }
 
-const DocPagesLayout = ({ children, sideNavItems }: PropsWithChildren<DocPagesLayoutProps>) => {
+const DocPagesLayout = ({
+  children,
+  sideNavItems
+}: PropsWithChildren<DocPagesLayoutProps>) => {
   const [navItems, setNavItems] = useState<SideNavItem[]>([]);
 
   useEffect(() => {
@@ -23,10 +26,16 @@ const DocPagesLayout = ({ children, sideNavItems }: PropsWithChildren<DocPagesLa
       const items: any = [];
       const recursiveMap = (children: any) => {
         React.Children.forEach(children, child => {
-          if (child.props?.children && child.type?.name !== 'PhoenixDocCardHeader') {
+          if (
+            child.props?.children &&
+            child.type?.name !== 'PhoenixDocCardHeader'
+          ) {
             recursiveMap(child.props.children);
           } else {
-            if (child.type?.name === 'PhoenixDocCardHeader' && child.props.title) {
+            if (
+              child.type?.name === 'PhoenixDocCardHeader' &&
+              child.props.title
+            ) {
               items.push({
                 to: snakeCase(child.props.title),
                 label: child.props.title

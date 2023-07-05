@@ -38,7 +38,10 @@ const ProductsFilter = () => {
         </Button>
         <Row>
           <Col lg={3} xxl={2} className="d-none d-lg-block">
-            <div className="position-sticky" style={{ top: '1rem', height: 'calc(100vh - 2rem) ' }}>
+            <div
+              className="position-sticky"
+              style={{ top: '1rem', height: 'calc(100vh - 2rem) ' }}
+            >
               <Scrollbar>
                 <ProductFilterItems handleClose={handleClose} />
               </Scrollbar>

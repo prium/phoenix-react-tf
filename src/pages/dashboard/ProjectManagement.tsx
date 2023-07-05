@@ -33,7 +33,15 @@ const ProjectManagement = () => {
         <Col xs={12} xxl={2}>
           <Row className="align-items-center g-3 g-xxl-0 h-100 align-content-between">
             {stats.map(stat => (
-              <Col xs={12} sm={6} md={3} lg={6} xl={3} xxl={12} key={stat.title}>
+              <Col
+                xs={12}
+                sm={6}
+                md={3}
+                lg={6}
+                xl={3}
+                xxl={12}
+                key={stat.title}
+              >
                 <Stat stat={stat} key={stat.title} />
               </Col>
             ))}
@@ -71,7 +79,9 @@ const ProjectManagement = () => {
                 <Card.Title className="mb-1">
                   <h3 className="text-1100">Activity</h3>
                 </Card.Title>
-                <p className="text-700 mb-4">Recent activity across all projects</p>
+                <p className="text-700 mb-4">
+                  Recent activity across all projects
+                </p>
                 <ActivityTimeline data={activityTimelineData} />
               </Card.Body>
             </Card>

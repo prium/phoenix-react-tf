@@ -123,7 +123,14 @@ const ZeroRoadMapChart = ({
                   const dateToStr = gantt.date.date_to_str('%d %M');
                   const endDate = gantt.date.add(date, -6, 'day');
                   const weekNum = gantt.date.date_to_str('%W')(date);
-                  return '#' + weekNum + ', ' + dateToStr(date) + ' - ' + dateToStr(endDate);
+                  return (
+                    '#' +
+                    weekNum +
+                    ', ' +
+                    dateToStr(date) +
+                    ' - ' +
+                    dateToStr(endDate)
+                  );
                 }
               },
               { unit: 'day', step: 1, format: '%j %D' }

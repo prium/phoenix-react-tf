@@ -6,7 +6,9 @@ export const AdvanceTableContext = createContext({} as Table<{}>);
 
 const AdvanceTableProvider = ({ children, ...rest }: PropsWithChildren) => {
   return (
-    <AdvanceTableContext.Provider value={{ ...rest }}>{children}</AdvanceTableContext.Provider>
+    <AdvanceTableContext.Provider value={{ ...rest }}>
+      {children}
+    </AdvanceTableContext.Provider>
   );
 };
 

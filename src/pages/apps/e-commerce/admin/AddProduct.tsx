@@ -21,7 +21,9 @@ const AddProduct = () => {
         <div className="d-flex flex-wrap gap-3 flex-between-end mb-5">
           <div>
             <h2 className="mb-2">Add a product</h2>
-            <h5 className="text-700 fw-semi-bold">Orders placed across your store</h5>
+            <h5 className="text-700 fw-semi-bold">
+              Orders placed across your store
+            </h5>
           </div>
           <div className="d-flex flex-wrap gap-2">
             <Button variant="phoenix-secondary" type="button">
@@ -42,7 +44,10 @@ const AddProduct = () => {
             <div className="mb-6">
               <h4 className="mb-3">Product Description</h4>
               <TinymceEditor
-                options={{ height: '15rem', placeholder: 'Write a description here...' }}
+                options={{
+                  height: '15rem',
+                  placeholder: 'Write a description here...'
+                }}
               />
             </div>
             <div className="mb-5">

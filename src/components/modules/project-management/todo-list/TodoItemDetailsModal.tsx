@@ -4,7 +4,11 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
 import ReactSelect from 'components/base/ReactSelect';
-import { ToDoItem, attachments, subTasks } from 'data/project-management/todoListData';
+import {
+  ToDoItem,
+  attachments,
+  subTasks
+} from 'data/project-management/todoListData';
 import { Col, Form, Modal, Row } from 'react-bootstrap';
 import FileListItem from './FileListItem';
 import SubTask from './SubTask';
@@ -14,7 +18,10 @@ interface TodoItemDetailsModalProps {
   item: ToDoItem | null;
 }
 
-const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) => {
+const TodoItemDetailsModal = ({
+  handleClose,
+  item
+}: TodoItemDetailsModalProps) => {
   return (
     <Modal show={!!item} onHide={handleClose} size="xl">
       {item && (
@@ -36,17 +43,22 @@ const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) 
                   <div className="mb-7">
                     <div className="d-flex align-items-center mb-3">
                       <h4 className="text-900 me-3">Description</h4>
-                      <Button variant="link" className="text-decoration-none p-0">
+                      <Button
+                        variant="link"
+                        className="text-decoration-none p-0"
+                      >
                         <FontAwesomeIcon icon="pen" />
                       </Button>
                     </div>
                     <p className="text-1000 mb-0">
-                      The female circus horse-rider is a recurring subject in Chagall’s work. In
-                      1926 the art dealer Ambroise Vollard invited Chagall to make a project based
-                      on the circus. They visited Paris’s historic Cirque d’Hiver Bouglione
-                      together; Vollard lent Chagall his private box seats. Chagall completed 19
-                      gouaches Chagall’s work. In 1926 the art dealer Ambroise Vollard invited
-                      Chagall to make a project based on the circus.
+                      The female circus horse-rider is a recurring subject in
+                      Chagall’s work. In 1926 the art dealer Ambroise Vollard
+                      invited Chagall to make a project based on the circus.
+                      They visited Paris’s historic Cirque d’Hiver Bouglione
+                      together; Vollard lent Chagall his private box seats.
+                      Chagall completed 19 gouaches Chagall’s work. In 1926 the
+                      art dealer Ambroise Vollard invited Chagall to make a
+                      project based on the circus.
                     </p>
                   </div>
                   <div className="mb-7">
@@ -62,7 +74,10 @@ const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) 
                         />
                       ))}
                     </div>
-                    <Button variant="link" className="fw-bold fs-9 text-decoration-none p-0">
+                    <Button
+                      variant="link"
+                      className="fw-bold fs-9 text-decoration-none p-0"
+                    >
                       <FontAwesomeIcon icon="plus" className="me-1" />
                       Add subtask
                     </Button>
@@ -100,8 +115,17 @@ const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) 
                   <div className="mb-4">
                     <DatePicker
                       placeholder="Set the due date"
-                      options={{ noCalendar: true, enableTime: true, dateFormat: 'H:i' }}
-                      icon={<UilBellSchool className="flatpickr-icon text-700" size={16} />}
+                      options={{
+                        noCalendar: true,
+                        enableTime: true,
+                        dateFormat: 'H:i'
+                      }}
+                      icon={
+                        <UilBellSchool
+                          className="flatpickr-icon text-700"
+                          size={16}
+                        />
+                      }
                     />
                   </div>
                   <h5 className="text-1000 mb-2">Tag</h5>
@@ -111,8 +135,14 @@ const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) 
                         value: 'massachusetts_institute_of_technology',
                         label: 'Massachusetts Institute of Technology'
                       },
-                      { value: 'university_of_chicago', label: 'University of Chicago' },
-                      { value: 'gsas_open_labs_at_harvard', label: 'GSAS Open Labs At Harvard' },
+                      {
+                        value: 'university_of_chicago',
+                        label: 'University of Chicago'
+                      },
+                      {
+                        value: 'gsas_open_labs_at_harvard',
+                        label: 'GSAS Open Labs At Harvard'
+                      },
                       {
                         value: 'california_institute_of_technology',
                         label: 'California Institute of Technology'
@@ -121,7 +151,12 @@ const TodoItemDetailsModal = ({ handleClose, item }: TodoItemDetailsModalProps) 
                     className="mb-6"
                     isMulti
                     placeholder="Select organizer"
-                    icon={<UilTagAlt className="react-select-icon text-700" size={16} />}
+                    icon={
+                      <UilTagAlt
+                        className="react-select-icon text-700"
+                        size={16}
+                      />
+                    }
                   />
 
                   <div className="text-end mb-9">

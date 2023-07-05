@@ -11,7 +11,11 @@ interface AdvanceTableFooterProps {
   navBtn?: boolean;
 }
 
-const AdvanceTableFooter = ({ className, pagination, navBtn }: AdvanceTableFooterProps) => {
+const AdvanceTableFooter = ({
+  className,
+  pagination,
+  navBtn
+}: AdvanceTableFooterProps) => {
   const {
     setPageSize,
     previousPage,
@@ -36,7 +40,8 @@ const AdvanceTableFooter = ({ className, pagination, navBtn }: AdvanceTableFoote
     <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex fs-9">
         <p className="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900">
-          {pageSize * pageIndex + 1} to {pageSize * pageIndex + getPaginationRowModel().rows.length}
+          {pageSize * pageIndex + 1} to{' '}
+          {pageSize * pageIndex + getPaginationRowModel().rows.length}
           <span className="text-600"> items of </span>
           {getPrePaginationRowModel().rows.length}
         </p>
@@ -46,7 +51,9 @@ const AdvanceTableFooter = ({ className, pagination, navBtn }: AdvanceTableFoote
           endIcon={<FontAwesomeIcon icon="angle-right" className="ms-1 fs-9" />}
           onClick={() => {
             setIsAllVisible(!isAllVisible);
-            setPageSize(isAllVisible ? perPage : getPrePaginationRowModel().rows.length);
+            setPageSize(
+              isAllVisible ? perPage : getPrePaginationRowModel().rows.length
+            );
           }}
         >
           View {isAllVisible ? 'less' : 'all'}

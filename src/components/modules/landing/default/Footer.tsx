@@ -18,7 +18,10 @@ const FooterList = ({
 }) => {
   return (
     <div
-      className={classNames(className, 'border-dashed border-start border-primary-300 ps-3')}
+      className={classNames(
+        className,
+        'border-dashed border-start border-primary-300 ps-3'
+      )}
       style={{ '--phoenix-border-opacity': '.2' } as CSSProperties}
     >
       <h5 className="lh-lg fw-bolder mb-2 text-light light">{label}</h5>
@@ -38,7 +41,10 @@ const FooterList = ({
 const Footer = () => {
   return (
     <div className="position-relative">
-      <div className="bg-holder footer-bg" style={{ backgroundImage: `url(${bg19})` }} />
+      <div
+        className="bg-holder footer-bg"
+        style={{ backgroundImage: `url(${bg19})` }}
+      />
       <div
         className="bg-holder"
         style={{
@@ -88,18 +94,35 @@ const Footer = () => {
                       className="mb-4"
                       items={['About', 'Contact', 'Developers']}
                     />
-                    <FooterList label="Follow" items={['Facebook', 'Twitter', 'Linkedin']} />
+                    <FooterList
+                      label="Follow"
+                      items={['Facebook', 'Twitter', 'Linkedin']}
+                    />
                   </Col>
                   <Col xs={6} md={4} lg={3}>
                     <FooterList
                       label="Support"
-                      items={['Privacy', 'Community', 'Contact', 'Blog', 'FAQ', 'Project', 'Team']}
+                      items={[
+                        'Privacy',
+                        'Community',
+                        'Contact',
+                        'Blog',
+                        'FAQ',
+                        'Project',
+                        'Team'
+                      ]}
                     />
                   </Col>
                   <Col xs={6} md={4} lg={3}>
                     <FooterList
                       label="Info"
-                      items={['Personal', 'NFT System', 'Agency', 'Contact', 'About']}
+                      items={[
+                        'Personal',
+                        'NFT System',
+                        'Agency',
+                        'Contact',
+                        'About'
+                      ]}
                     />
                   </Col>
                 </Row>

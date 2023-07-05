@@ -58,7 +58,9 @@ const useAdvanceTable = ({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    initialState: { pagination: { pageSize: pagination ? pageSize : data.length } }
+    initialState: {
+      pagination: { pageSize: pagination ? pageSize : data.length }
+    }
   });
 
   return table;

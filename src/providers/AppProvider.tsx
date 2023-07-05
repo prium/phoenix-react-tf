@@ -28,13 +28,22 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     ),
     openNavbarVertical: initialConfig.openNavbarVertical,
     theme: getItemFromStore('theme', initialConfig.theme),
-    navbarTopAppearance: getItemFromStore('navbarTopAppearance', initialConfig.navbarTopAppearance),
+    navbarTopAppearance: getItemFromStore(
+      'navbarTopAppearance',
+      initialConfig.navbarTopAppearance
+    ),
     navbarVerticalAppearance: getItemFromStore(
       'navbarVerticalAppearance',
       initialConfig.navbarVerticalAppearance
     ),
-    navbarPosition: getItemFromStore('navbarPosition', initialConfig.navbarPosition),
-    navbarTopShape: getItemFromStore('navbarTopShape', initialConfig.navbarTopShape),
+    navbarPosition: getItemFromStore(
+      'navbarPosition',
+      initialConfig.navbarPosition
+    ),
+    navbarTopShape: getItemFromStore(
+      'navbarTopShape',
+      initialConfig.navbarTopShape
+    ),
     isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
     showSettingPanel: initialConfig.showSettingPanel
   };
@@ -82,7 +91,9 @@ const AppProvider = ({ children }: PropsWithChildren) => {
   }, [config]);
 
   return (
-    <AppContext.Provider value={{ config, setConfig, toggleTheme, getThemeColor, configDispatch }}>
+    <AppContext.Provider
+      value={{ config, setConfig, toggleTheme, getThemeColor, configDispatch }}
+    >
       {children}
     </AppContext.Provider>
   );

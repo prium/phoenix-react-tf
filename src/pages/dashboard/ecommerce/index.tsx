@@ -27,7 +27,9 @@ const Ecommerce = () => {
             <Row className="justify-content-between align-items-end mb-4 g-3">
               <Col xs="auto">
                 <h3>Total sells</h3>
-                <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+                <p className="text-700 lh-sm mb-0">
+                  Payment received across all channels
+                </p>
               </Col>
               <Col xs={8} sm={4}>
                 <Form.Select size="sm">
@@ -80,7 +82,9 @@ const Ecommerce = () => {
             <div className="me-xl-4">
               <div>
                 <h3>Projection vs actual</h3>
-                <p className="mb-1 text-700">Actual earnings vs projected earnings</p>
+                <p className="mb-1 text-700">
+                  Actual earnings vs projected earnings
+                </p>
               </div>
               <EcomProjectionVsActualChart height="300px" width="100%" />
             </div>
@@ -88,7 +92,9 @@ const Ecommerce = () => {
           <Col xs={12} xl={6}>
             <div>
               <h3>Returning customer rate</h3>
-              <p className="mb-1 text-700">Rate of customers returning to your shop over time</p>
+              <p className="mb-1 text-700">
+                Rate of customers returning to your shop over time
+              </p>
             </div>
             <EomReturningCustomerRateChart />
           </Col>

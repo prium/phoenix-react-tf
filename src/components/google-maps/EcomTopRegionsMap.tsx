@@ -73,7 +73,13 @@ const addMarkers = (map: google.maps.Map) => {
 };
 
 const renderer = {
-  render: ({ count, position }: { count: number; position: google.maps.LatLng }) => {
+  render: ({
+    count,
+    position
+  }: {
+    count: number;
+    position: google.maps.LatLng;
+  }) => {
     let color = '#3874ff';
     if (count > 10) {
       color = '#e5780b';

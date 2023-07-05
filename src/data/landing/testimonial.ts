@@ -16,7 +16,8 @@ export const testimonials: Testimonial[] = [
     id: 1,
     avatar: team61,
     rating: 5,
-    comment: 'Brilliant app! Will definitely be my first choice starting from today',
+    comment:
+      'Brilliant app! Will definitely be my first choice starting from today',
     name: 'Monica Gomez',
     occupation: 'UX designer, Google'
   },

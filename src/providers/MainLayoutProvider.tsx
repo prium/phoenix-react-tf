@@ -12,7 +12,9 @@ interface MainLayoutContextInterface {
   setContentClass: Dispatch<SetStateAction<string>>;
 }
 
-export const MainLayoutContext = createContext({} as MainLayoutContextInterface);
+export const MainLayoutContext = createContext(
+  {} as MainLayoutContextInterface
+);
 
 const MainLayoutProvider = ({ children }: PropsWithChildren) => {
   const [contentClass, setContentClass] = useState('');

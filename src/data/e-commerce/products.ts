@@ -700,7 +700,8 @@ export const productsTableData: ProductsTableProductType[] = [
     publishedOn: 'Sep 20, 1:00 PM'
   },
   {
-    product: 'Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked',
+    product:
+      'Intel Core i9-11900K Desktop Processor 8 Cores up to 5.3 GHz Unlocked',
     productImage: product19,
     price: 80,
     category: 'Accessories',

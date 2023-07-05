@@ -71,9 +71,10 @@ const TooltipExample = () => {
           <PhoenixDocCard.Header title="Overview" noPreview />
           <Card.Body>
             <p>
-              The <code>&lt;Tooltip&gt;</code> component do not position themselves. Instead the{' '}
-              <code>&lt;Overlay&gt;</code> (or <code>&lt;OverlayTrigger&gt;</code>) components,
-              inject <code>ref</code> and <code>style</code> props.
+              The <code>&lt;Tooltip&gt;</code> component do not position
+              themselves. Instead the <code>&lt;Overlay&gt;</code> (or{' '}
+              <code>&lt;OverlayTrigger&gt;</code>) components, inject{' '}
+              <code>ref</code> and <code>style</code> props.
             </p>
           </Card.Body>
         </PhoenixDocCard>
@@ -81,8 +82,8 @@ const TooltipExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0">
-              You can pass the <code>Overlay</code> injected props directly to the Tooltip
-              component.
+              You can pass the <code>Overlay</code> injected props directly to
+              the Tooltip component.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={exampleCode} />
@@ -100,7 +101,8 @@ const TooltipExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Placement">
             <p className="mb-0">
-              Use <code>placement</code> prop to set your <code>Tooltip</code>'s position.
+              Use <code>placement</code> prop to set your <code>Tooltip</code>'s
+              position.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={placementCode} />

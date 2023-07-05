@@ -4,20 +4,29 @@ export const getItemFromStore = (
   store = localStorage
 ) => {
   try {
-    return store.getItem(key) === null ? defaultValue : JSON.parse(store.getItem(key) as string);
+    return store.getItem(key) === null
+      ? defaultValue
+      : JSON.parse(store.getItem(key) as string);
   } catch {
     return store.getItem(key) || defaultValue;
   }
 };
 
 export const cleanText = (string: string) =>
-  (string.charAt(0).toUpperCase() + string.slice(1)).replace(/-/g, ' ').replace('_and_', '&');
+  (string.charAt(0).toUpperCase() + string.slice(1))
+    .replace(/-/g, ' ')
+    .replace('_and_', '&');
 
-export const setItemToStore = (key: string, payload: string, store = localStorage) =>
-  store.setItem(key, payload);
+export const setItemToStore = (
+  key: string,
+  payload: string,
+  store = localStorage
+) => store.setItem(key, payload);
 
 export const capitalize = (string: string) =>
-  (string.charAt(0).toUpperCase() + string.slice(1)).replace(/-/g, ' ').replace('_and_', '&');
+  (string.charAt(0).toUpperCase() + string.slice(1))
+    .replace(/-/g, ' ')
+    .replace('_and_', '&');
 
 export const snakeCase = (string: string) => {
   return string
@@ -40,10 +49,15 @@ export const getDates = (
 ): Date[] => {
   const duration = +endDate - +startDate;
   const steps = duration / interval;
-  return Array.from({ length: steps + 1 }, (v, i) => new Date(startDate.valueOf() + interval * i));
+  return Array.from(
+    { length: steps + 1 },
+    (v, i) => new Date(startDate.valueOf() + interval * i)
+  );
 };
 
-export const getPastDates = (duration: 'week' | 'month' | 'year' | number): Date[] => {
+export const getPastDates = (
+  duration: 'week' | 'month' | 'year' | number
+): Date[] => {
   let days;
 
   switch (duration) {
@@ -67,7 +81,10 @@ export const getPastDates = (duration: 'week' | 'month' | 'year' | number): Date
   return getDates(startDate, endDate);
 };
 
-export const currencyFormat = (amount: number, options: Intl.NumberFormatOptions = {}) => {
+export const currencyFormat = (
+  amount: number,
+  options: Intl.NumberFormatOptions = {}
+) => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'usd',
@@ -81,7 +98,10 @@ export const getNumbersInRange = (startAt: number, endAt: number) => {
   return [...Array(endAt + 1 - startAt).keys()].map(i => i + startAt);
 };
 
-export const numberFormat = (number: number, notation: 'standard' | 'compact' = 'standard') =>
+export const numberFormat = (
+  number: number,
+  notation: 'standard' | 'compact' = 'standard'
+) =>
   new Intl.NumberFormat('en-US', {
     notation
   }).format(number);

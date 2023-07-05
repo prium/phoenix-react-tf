@@ -39,16 +39,19 @@ const FunFacts = () => {
             <div className="position-relative">
               <Row className="row mb-6">
                 <div className="col-xl-6 text-center text-md-start">
-                  <h2 className="text-white mb-2">Being used by millions of users</h2>
+                  <h2 className="text-white mb-2">
+                    Being used by millions of users
+                  </h2>
                   <h1 className="fs-md-3 fs-xl-2 fw-black text-gradient-info text-uppercase mb-4 mb-md-0">
                     WORLDWIDE
                   </h1>
                 </div>
                 <div className="col-xl-6 text-center text-md-start">
                   <p className="text-white">
-                    You can get all the reports, data analysis, and growth maps you need with the
-                    help of Phoenix's power, and you may review and modify them whenever you want.
-                    These features make this dashboard outstanding.
+                    You can get all the reports, data analysis, and growth maps
+                    you need with the help of Phoenix's power, and you may
+                    review and modify them whenever you want. These features
+                    make this dashboard outstanding.
                   </p>
                 </div>
               </Row>
@@ -57,7 +60,12 @@ const FunFacts = () => {
                 <Col xl={8} className="text-center text-md-start mb-6 mb-xl-0">
                   <div className="d-md-flex justify-content-md-between">
                     <div className="mb-6 mb-md-0 me-4">
-                      <CountUp end={125} duration={5} suffix="+" enableScrollSpy>
+                      <CountUp
+                        end={125}
+                        duration={5}
+                        suffix="+"
+                        enableScrollSpy
+                      >
                         {({ countUpRef, start }) => (
                           <div>
                             {/*  eslint-disable-next-line jsx-a11y/heading-has-content */}
@@ -75,7 +83,12 @@ const FunFacts = () => {
                       </p>
                     </div>
                     <div className="mb-6 mb-md-0 me-4">
-                      <CountUp end={308} duration={5} suffix="k" enableScrollSpy>
+                      <CountUp
+                        end={308}
+                        duration={5}
+                        suffix="k"
+                        enableScrollSpy
+                      >
                         {({ countUpRef, start }) => (
                           <div>
                             {/*  eslint-disable-next-line jsx-a11y/heading-has-content */}

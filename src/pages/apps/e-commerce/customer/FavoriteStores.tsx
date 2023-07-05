@@ -17,7 +17,9 @@ const FavoriteStores = () => {
         </Breadcrumb>
         <div className="mb-5">
           <h2>My Favorite Stores</h2>
-          <p className="mb-0 text-700 fw-semi-bold">Essential for a better life</p>
+          <p className="mb-0 text-700 fw-semi-bold">
+            Essential for a better life
+          </p>
         </div>
         <Row className="gx-3 gy-5">
           {stores.map(store => (

@@ -23,7 +23,10 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               ) : (
                 <>
                   <FontAwesomeIcon icon="heart" className="d-block-hover" />
-                  <FontAwesomeIcon icon={['far', 'heart']} className="d-none-hover" />
+                  <FontAwesomeIcon
+                    icon={['far', 'heart']}
+                    className="d-none-hover"
+                  />
                 </>
               )}
             </Button>
@@ -36,23 +39,31 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             )}
           </div>
           <Link to="#!" className="stretched-link text-decoration-none">
-            <h6 className="mb-2 lh-sm line-clamp-3 product-name">{product.name}</h6>
+            <h6 className="mb-2 lh-sm line-clamp-3 product-name">
+              {product.name}
+            </h6>
           </Link>
           {product.rating && (
             <p className="fs-9">
               <Rating readonly initialValue={product.rating} />
               {product.rated && (
-                <span className="text-500 fw-semi-bold ms-1">({product.rated} people rated)</span>
+                <span className="text-500 fw-semi-bold ms-1">
+                  ({product.rated} people rated)
+                </span>
               )}
             </p>
           )}
         </div>
         <div>
           {product.extra && (
-            <p className={classNames(product.extraClass, 'fs-9')}>{product.extra}</p>
+            <p className={classNames(product.extraClass, 'fs-9')}>
+              {product.extra}
+            </p>
           )}
           {product.extra2 && (
-            <p className={classNames(product.extra2Class, 'fs-9')}>{product.extra2}</p>
+            <p className={classNames(product.extra2Class, 'fs-9')}>
+              {product.extra2}
+            </p>
           )}
 
           {product.salePrice && (
@@ -62,10 +73,14 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                   <p className="me-2 text-900 text-decoration-line-through mb-0">
                     {currencyFormat(product.price)}
                   </p>
-                  <h3 className="text-1100 mb-0">{currencyFormat(product.salePrice)}</h3>
+                  <h3 className="text-1100 mb-0">
+                    {currencyFormat(product.salePrice)}
+                  </h3>
                 </div>
               ) : (
-                <h3 className="text-1100">{currencyFormat(product.salePrice)}</h3>
+                <h3 className="text-1100">
+                  {currencyFormat(product.salePrice)}
+                </h3>
               )}
             </>
           )}
@@ -86,7 +101,9 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             </p>
           )}
 
-          {product.offer && <h6 className="text-success lh-1 mb-0">{product.offer} off</h6>}
+          {product.offer && (
+            <h6 className="text-success lh-1 mb-0">{product.offer} off</h6>
+          )}
         </div>
       </div>
     </div>

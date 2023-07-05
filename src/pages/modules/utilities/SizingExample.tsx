@@ -136,7 +136,10 @@ const SizingExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Special classes (relative to viewport)" noPreview />
+          <PhoenixDocCard.Header
+            title="Special classes (relative to viewport)"
+            noPreview
+          />
           <div className="p-4">
             <PhoenixDocCard.Body code={specialClassesCode} hidePreview />
           </div>

@@ -1,7 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { categories } from 'data/e-commerce';
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Card, Col, Dropdown, Nav, NavItem, Navbar, Row } from 'react-bootstrap';
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState
+} from 'react';
+import {
+  Card,
+  Col,
+  Dropdown,
+  Nav,
+  NavItem,
+  Navbar,
+  Row
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 
@@ -67,7 +81,9 @@ const EcommerceNavbar = () => {
     const containerWidth = containerRef.current?.clientWidth || 0;
     const navbarWidth = navbarRef.current?.clientWidth || 0;
     if (navbarWidth + otherElsWidth + 50 > containerWidth) {
-      setNavItems(items => items.filter((item, index) => index !== items.length - 1));
+      setNavItems(items =>
+        items.filter((item, index) => index !== items.length - 1)
+      );
     } else {
       if (dropdownItems.length > 0) {
         setNavItems(items => [...items, dropdownItems[0]]);
@@ -95,7 +111,10 @@ const EcommerceNavbar = () => {
   return (
     <Navbar className="ecommerce-navbar bg-white justify-content-between py-0">
       <div className="container-small">
-        <div className="d-flex flex-between-center flex-nowrap w-100" ref={containerRef}>
+        <div
+          className="d-flex flex-between-center flex-nowrap w-100"
+          ref={containerRef}
+        >
           <Dropdown ref={otherElsRef}>
             <Dropdown.Toggle
               variant=""
@@ -118,7 +137,9 @@ const EcommerceNavbar = () => {
                             style={{ strokeWidth: 3 }}
                             size={16}
                           />
-                          <h6 className="text-1000 mb-0 text-nowrap">{category.title}</h6>
+                          <h6 className="text-1000 mb-0 text-nowrap">
+                            {category.title}
+                          </h6>
                         </div>
                         <div className="ms-n2">
                           {category.sections.map(section => (
@@ -144,7 +165,11 @@ const EcommerceNavbar = () => {
               </Card>
             </Dropdown.Menu>
           </Dropdown>
-          <Nav as="ul" className="justify-content-end align-items-center gap-5" ref={navbarRef}>
+          <Nav
+            as="ul"
+            className="justify-content-end align-items-center gap-5"
+            ref={navbarRef}
+          >
             {navItems.map((item, index) => (
               <Nav.Item className="gap-3" key={item.id}>
                 <Nav.Link key={item.id} as={Link} to={item.url}>
@@ -154,7 +179,10 @@ const EcommerceNavbar = () => {
             ))}
             {dropdownItems.length > 0 && (
               <Dropdown align="end" as={NavItem}>
-                <Dropdown.Toggle variant="" className="fw-bold nav-link dropdown-caret-none">
+                <Dropdown.Toggle
+                  variant=""
+                  className="fw-bold nav-link dropdown-caret-none"
+                >
                   More
                   <FontAwesomeIcon icon="angle-down" className="ms-2" />
                 </Dropdown.Toggle>

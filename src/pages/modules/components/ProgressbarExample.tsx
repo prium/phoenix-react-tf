@@ -114,7 +114,8 @@ const ProgressbarExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Animated">
             <p className="mb-0">
-              Add <code>animated</code> prop to animate the stripes right to left.
+              Add <code>animated</code> prop to animate the stripes right to
+              left.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={animatedCode} />

@@ -49,8 +49,10 @@ const EarlyBirdCard = () => {
         </Badge>
         <h3 className="mb-5">Early bird gets the warm leads!</h3>
         <p className="text-700 fw-semi-bold">
-          Phoenix CRM Dashboard is coming to <br className="d-none d-sm-block" />
-          market soon for fulfilling your every <br className="d-none d-sm-block" />
+          Phoenix CRM Dashboard is coming to{' '}
+          <br className="d-none d-sm-block" />
+          market soon for fulfilling your every{' '}
+          <br className="d-none d-sm-block" />
           CRM related needs.{' '}
         </p>
       </Card.Body>

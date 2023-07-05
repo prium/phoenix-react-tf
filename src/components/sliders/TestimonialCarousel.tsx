@@ -35,7 +35,9 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
             emptyIconColor="primary-300"
           />
         </div>
-        <h3 className="fs-7 fs-xl-6 mb-5 lh-sm me-md-7 me-lg-0">{testimonial.comment}</h3>
+        <h3 className="fs-7 fs-xl-6 mb-5 lh-sm me-md-7 me-lg-0">
+          {testimonial.comment}
+        </h3>
         <h6>{testimonial.name}</h6>
         <h6 className="fw-normal">{testimonial.occupation}</h6>
       </Col>

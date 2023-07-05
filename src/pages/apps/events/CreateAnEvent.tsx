@@ -1,20 +1,20 @@
-import Button from "components/base/Button";
-import Dropzone from "components/base/Dropzone";
-import ReactSelect from "components/base/ReactSelect";
-import PageBreadcrumb from "components/common/PageBreadcrumb";
-import EventCustomFields from "components/forms/EventCustomFields";
-import EventDetailsForm from "components/forms/EventDetailsForm";
-import EventTicketPricing from "components/forms/EventTicketPricing";
-import EventsSchedule from "components/forms/EventsSchedule";
-import { defaultBreadcrumbItems } from "data/commonData";
-import React from "react";
-import { Col, FloatingLabel, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import Button from 'components/base/Button';
+import Dropzone from 'components/base/Dropzone';
+import ReactSelect from 'components/base/ReactSelect';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import EventCustomFields from 'components/forms/EventCustomFields';
+import EventDetailsForm from 'components/forms/EventDetailsForm';
+import EventTicketPricing from 'components/forms/EventTicketPricing';
+import EventsSchedule from 'components/forms/EventsSchedule';
+import { defaultBreadcrumbItems } from 'data/commonData';
+import React from 'react';
+import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const options = [
-  { value: "MUSIC", label: "music" },
-  { value: "CONCEERT", label: "conceert" },
-  { value: "GREATEST SHOW ON EARTH", label: "greatest-show-on-earth" },
+  { value: 'MUSIC', label: 'music' },
+  { value: 'CONCEERT', label: 'conceert' },
+  { value: 'GREATEST SHOW ON EARTH', label: 'greatest-show-on-earth' }
 ];
 
 const CreateAnEvent = () => {
@@ -57,7 +57,7 @@ const CreateAnEvent = () => {
                   <Form.Control
                     as="textarea"
                     placeholder="Description"
-                    style={{ height: "128px" }}
+                    style={{ height: '128px' }}
                   />
                 </FloatingLabel>
               </Col>
@@ -88,13 +88,13 @@ const CreateAnEvent = () => {
                   styles={{
                     control: (baseStyles, state) => ({
                       ...baseStyles,
-                      height: "128px",
-                      alignItems: "start",
+                      height: '128px',
+                      alignItems: 'start'
                     }),
-                    dropdownIndicator: (baseStyles) => ({
+                    dropdownIndicator: baseStyles => ({
                       ...baseStyles,
-                      display: "none",
-                    }),
+                      display: 'none'
+                    })
                   }}
                 />
               </Col>
@@ -113,7 +113,7 @@ const CreateAnEvent = () => {
                   className="fw-normal"
                   htmlFor="exampleRadios1"
                 >
-                  On Phoenix, our distribution partners, and search engines,{" "}
+                  On Phoenix, our distribution partners, and search engines,{' '}
                   <br />
                   anybody can find the event
                 </Form.Check.Label>

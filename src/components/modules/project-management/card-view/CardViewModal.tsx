@@ -25,7 +25,11 @@ interface BoardViewModalModalProps {
   show: boolean;
 }
 
-const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps) => {
+const CardViewModal = ({
+  handleClose,
+  show,
+  project
+}: BoardViewModalModalProps) => {
   const { progress, bgClassName, variant } = useProjectProgress(project);
   return (
     <Modal show={show} onHide={handleClose} size="lg">
@@ -73,7 +77,11 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
                 {project.assigness.slice(0, 5).map(member => (
                   <AvatarDropdown user={member} size="m" key={member.id} />
                 ))}
-                <Button variant="phoenix-secondary" className="btn-circle" size="sm">
+                <Button
+                  variant="phoenix-secondary"
+                  className="btn-circle"
+                  size="sm"
+                >
                   <FontAwesomeIcon icon="plus" />
                 </Button>
               </div>
@@ -102,10 +110,11 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
             </div>
 
             <EditableDetailsField className="mb-6">
-              The female circus horse-rider is a recurring subject in Chagall’s work. In 1926 the
-              art dealer Ambroise Vollard invited Chagall to make a project based on the circus.
-              They visited Paris’s historic Cirque d’Hiver Bouglione together; Vollard lent Chagall
-              his private box seats. Chagall completed 19 gouaches
+              The female circus horse-rider is a recurring subject in Chagall’s
+              work. In 1926 the art dealer Ambroise Vollard invited Chagall to
+              make a project based on the circus. They visited Paris’s historic
+              Cirque d’Hiver Bouglione together; Vollard lent Chagall his
+              private box seats. Chagall completed 19 gouaches
             </EditableDetailsField>
 
             <div className="bg-100 rounded-2 px-4 mb-3">
@@ -113,7 +122,11 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
                 {comments.map((comment, index) => (
                   <Comment
                     comment={comment}
-                    className={index !== comments.length - 1 ? 'border-bottom' : undefined}
+                    className={
+                      index !== comments.length - 1
+                        ? 'border-bottom'
+                        : undefined
+                    }
                     key={comment.id}
                   />
                 ))}
@@ -128,19 +141,26 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
                 To do list <span className="text-700 fw-normal fs-6">(23)</span>
               </h4>
               <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
-                <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
+                <SearchBox
+                  placeholder="Search tasks"
+                  style={{ maxWidth: '30rem' }}
+                />
                 <div>
                   <Button
                     variant="link"
                     className="p-0 fs-9 text-700 text-decoration-none me-3"
-                    startIcon={<FontAwesomeIcon icon="filter" className="fs-10 me-1" />}
+                    startIcon={
+                      <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                    }
                   >
                     23 tasks
                   </Button>
                   <Button
                     variant="link"
                     className="p-0 fs-9 text-primary text-decoration-none"
-                    startIcon={<FontAwesomeIcon icon="sort" className="fs-10" />}
+                    startIcon={
+                      <FontAwesomeIcon icon="sort" className="fs-10" />
+                    }
                   >
                     Sorting
                   </Button>
@@ -200,7 +220,9 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
                 <Button
                   key={item.label}
                   variant="soft-secondary"
-                  startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
+                  startIcon={
+                    <FontAwesomeIcon icon={item.icon} className="me-2" />
+                  }
                   className="w-100 text-start"
                   size="sm"
                 >
@@ -213,7 +235,9 @@ const CardViewModal = ({ handleClose, show, project }: BoardViewModalModalProps)
               {actionItems.map(item => (
                 <Button
                   variant="soft-secondary"
-                  startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
+                  startIcon={
+                    <FontAwesomeIcon icon={item.icon} className="me-2" />
+                  }
                   className="w-100 text-start"
                   size="sm"
                   key={item.label}

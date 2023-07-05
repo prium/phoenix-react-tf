@@ -16,7 +16,9 @@ const TopNavItem = ({ route }: { route: RouteItems }) => {
           {page.pages ? (
             <Fragment key={page.name}>
               {page.flat ? (
-                page.pages?.map(page => <TopNavDropdownItem page={page} key={page.name} />)
+                page.pages?.map(page => (
+                  <TopNavDropdownItem page={page} key={page.name} />
+                ))
               ) : (
                 <TopNavLooper page={page} />
               )}
@@ -68,7 +70,11 @@ const TopNavLooper = ({ page }: { page: Route }) => {
       <Dropdown.Menu as="ul">
         {page.pages?.map(page => (
           <Fragment key={page.name}>
-            {page.pages ? <TopNavLooper page={page} /> : <TopNavDropdownItem page={page} />}
+            {page.pages ? (
+              <TopNavLooper page={page} />
+            ) : (
+              <TopNavDropdownItem page={page} />
+            )}
           </Fragment>
         ))}
       </Dropdown.Menu>
@@ -91,7 +97,9 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
               )}
             </>
           )}
-          {page.topNavIcon && <FeatherIcon icon={page.topNavIcon} size={14} className="me-2" />}
+          {page.topNavIcon && (
+            <FeatherIcon icon={page.topNavIcon} size={14} className="me-2" />
+          )}
           {capitalize(page.name)}
         </div>
       </Dropdown.Item>

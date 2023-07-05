@@ -50,7 +50,10 @@ const CustomerDetails = () => {
                     <div className="d-flex align-items-center mb-3">
                       <h3 className="me-1">Default Address</h3>
                       <Button variant="link" className="p-0">
-                        <FontAwesomeIcon icon="pen" className="fs-8 ms-3 text-500" />
+                        <FontAwesomeIcon
+                          icon="pen"
+                          className="fs-8 ms-3 text-500"
+                        />
                       </Button>
                     </div>
                     <h5 className="text-800">Address</h5>
@@ -63,7 +66,9 @@ const CustomerDetails = () => {
                     </p>
                     <div className="mb-3">
                       <h5 className="text-800">Email</h5>
-                      <a href="mailto:shatinon@jeemail.com">shatinon@jeemail.com</a>
+                      <a href="mailto:shatinon@jeemail.com">
+                        shatinon@jeemail.com
+                      </a>
                     </div>
                     <div>
                       <h5 className="text-800">Phone</h5>
@@ -95,7 +100,8 @@ const CustomerDetails = () => {
               </div>
               <div>
                 <h3 className="mb-4">
-                  Ratings & reviews <span className="text-700 fw-normal">(43)</span>
+                  Ratings & reviews{' '}
+                  <span className="text-700 fw-normal">(43)</span>
                 </h3>
                 <CustomerRatingsTable />
               </div>

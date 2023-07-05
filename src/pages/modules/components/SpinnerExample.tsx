@@ -98,9 +98,10 @@ const SpinnerExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Variants">
             <p className="mb-0">
-              All standard visual variants are available for both animation styles by setting the{' '}
-              <code>variant</code> property. Alternatively spinners can be custom sized with the{' '}
-              <code>style</code> property, or custom CSS classes.
+              All standard visual variants are available for both animation
+              styles by setting the <code>variant</code> property. Alternatively
+              spinners can be custom sized with the <code>style</code> property,
+              or custom CSS classes.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={variantsCode} />
@@ -109,8 +110,9 @@ const SpinnerExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              In addition to the standard size, a smaller additional preconfigured size is available
-              by configuring the <code>size</code> property to <code>sm</code>.
+              In addition to the standard size, a smaller additional
+              preconfigured size is available by configuring the{' '}
+              <code>size</code> property to <code>sm</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={SizingCode} />
@@ -119,10 +121,10 @@ const SpinnerExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Buttons">
             <p className="mb-0">
-              Like the original Bootstrap spinners, these can also be used with buttons. To use this
-              component out-of-the-box it is recommended you change the element type to{' '}
-              <code>span</code> by configuring the <code>as</code> property when using spinners
-              inside buttons.
+              Like the original Bootstrap spinners, these can also be used with
+              buttons. To use this component out-of-the-box it is recommended
+              you change the element type to <code>span</code> by configuring
+              the <code>as</code> property when using spinners inside buttons.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={buttonsCode} />

@@ -56,8 +56,8 @@ const ColorsExample = () => {
 
         <DocPageHeader title="Opacity" className="mb-5">
           <p className="mb-0">
-            Color opacity allows for real-time color changes without compilation and dynamic alpha
-            transparency changes.
+            Color opacity allows for real-time color changes without compilation
+            and dynamic alpha transparency changes.
           </p>
         </DocPageHeader>
 

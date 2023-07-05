@@ -18,15 +18,17 @@ const Blog = () => {
           </Col>
           <Col lg={6} className="text-center text-sm-start">
             <p>
-              See the latest articles we published with this dashboard. Your customers will be happy
-              to find all the latest posts in one place. This menu efficiently shows all related
-              topics from search filters and provides the customers with what they need.
+              See the latest articles we published with this dashboard. Your
+              customers will be happy to find all the latest posts in one place.
+              This menu efficiently shows all related topics from search filters
+              and provides the customers with what they need.
             </p>
           </Col>
           <Col lg={6} className="text-center text-sm-start">
             <p>
-              Also, you can just educate your customers about everything they need to know and
-              follow to avail a service with you. This menu is the one to show them that.
+              Also, you can just educate your customers about everything they
+              need to know and follow to avail a service with you. This menu is
+              the one to show them that.
             </p>
           </Col>
         </Row>

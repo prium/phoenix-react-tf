@@ -16,7 +16,10 @@ const EcomGiftItemsBanner = () => {
           Get <span className="gradient-text">10% Off</span>
           <br className="d-md-none" /> on gift items
         </h2>
-        <Link className="btn btn-lg btn-primary rounded-pill banner-button" to="#!">
+        <Link
+          className="btn btn-lg btn-primary rounded-pill banner-button"
+          to="#!"
+        >
           Buy Now
         </Link>
       </div>

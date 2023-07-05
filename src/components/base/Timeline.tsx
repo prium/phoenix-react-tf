@@ -9,9 +9,15 @@ interface TimelineProps {
 interface TimelineItemProps {
   className?: string;
 }
-interface TimelineBarProps extends TimelineItemProps, HTMLAttributes<HTMLSpanElement> {}
+interface TimelineBarProps
+  extends TimelineItemProps,
+    HTMLAttributes<HTMLSpanElement> {}
 
-const Timeline = ({ children, variant, className }: PropsWithChildren<TimelineProps>) => {
+const Timeline = ({
+  children,
+  variant,
+  className
+}: PropsWithChildren<TimelineProps>) => {
   return (
     <div
       className={classNames(className, {
@@ -24,34 +30,64 @@ const Timeline = ({ children, variant, className }: PropsWithChildren<TimelinePr
   );
 };
 
-export const TimelineItem = ({ children, className }: PropsWithChildren<TimelineItemProps>) => {
-  return <div className={classNames(className, 'timeline-item')}>{children}</div>;
+export const TimelineItem = ({
+  children,
+  className
+}: PropsWithChildren<TimelineItemProps>) => {
+  return (
+    <div className={classNames(className, 'timeline-item')}>{children}</div>
+  );
 };
 
 export const TimelineOppositeContent = ({
   children,
   className
 }: PropsWithChildren<TimelineItemProps>) => {
-  return <div className={classNames(className, 'order-1 order-md-0 me-md-4')}>{children}</div>;
+  return (
+    <div className={classNames(className, 'order-1 order-md-0 me-md-4')}>
+      {children}
+    </div>
+  );
 };
 
-export const TimelineContent = ({ children, className }: PropsWithChildren<TimelineItemProps>) => {
-  return <div className={classNames(className, 'ps-6 ps-md-3')}>{children}</div>;
+export const TimelineContent = ({
+  children,
+  className
+}: PropsWithChildren<TimelineItemProps>) => {
+  return (
+    <div className={classNames(className, 'ps-6 ps-md-3')}>{children}</div>
+  );
 };
 
 export const TimelineSeparator = ({
   children,
   className
 }: PropsWithChildren<TimelineItemProps>) => {
-  return <div className={classNames(className, 'timeline-separator me-3 me-md-0')}>{children}</div>;
+  return (
+    <div className={classNames(className, 'timeline-separator me-3 me-md-0')}>
+      {children}
+    </div>
+  );
 };
 
-export const TimelineDot = ({ children, className }: PropsWithChildren<TimelineItemProps>) => {
-  return <div className={classNames(className, 'icon-item icon-item-sm')}>{children}</div>;
+export const TimelineDot = ({
+  children,
+  className
+}: PropsWithChildren<TimelineItemProps>) => {
+  return (
+    <div className={classNames(className, 'icon-item icon-item-sm')}>
+      {children}
+    </div>
+  );
 };
 
 export const TimelineBar = ({ className, ...rest }: TimelineBarProps) => {
-  return <span className={classNames(className, 'timeline-bar border-end')} {...rest} />;
+  return (
+    <span
+      className={classNames(className, 'timeline-bar border-end')}
+      {...rest}
+    />
+  );
 };
 
 Timeline.Item = TimelineItem;

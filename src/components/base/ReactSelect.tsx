@@ -1,6 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ReactElement } from 'react';
-import Select, { ClearIndicatorProps, DropdownIndicatorProps, components } from 'react-select';
+import Select, {
+  ClearIndicatorProps,
+  DropdownIndicatorProps,
+  components
+} from 'react-select';
 import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager';
 
 interface ReactSelectProps extends StateManagerProps {

@@ -4,7 +4,10 @@ import Avatar from 'components/base/Avatar';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
-import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
+import {
+  latestReviewsTableData,
+  LatestReviewsTableDataType
+} from 'data/LatestReviewsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Col, Dropdown, Row } from 'react-bootstrap';
@@ -151,7 +154,11 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
         <>
           <div className="position-relative">
             <div className="hover-actions">
-              <Button variant="phoenix-secondary" className="me-1 fs-10" size="sm">
+              <Button
+                variant="phoenix-secondary"
+                className="me-1 fs-10"
+                size="sm"
+              >
                 <FontAwesomeIcon icon="check" />
               </Button>
               <Button variant="phoenix-secondary" className="fs-10" size="sm">
@@ -192,12 +199,18 @@ const EcomLatestReviewsTable = () => {
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
-            <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+            <p className="text-700 lh-sm mb-0">
+              Payment received across all channels
+            </p>
           </Col>
           <Col xs={12} md="auto">
             <Row className="g-2 gy-3">
               <Col xs="auto" className="flex-1">
-                <SearchBox placeholder="Search..." size="sm" onChange={handleSearchInputChange} />
+                <SearchBox
+                  placeholder="Search..."
+                  size="sm"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
               <Col xs="auto">
                 <Button
@@ -218,8 +231,12 @@ const EcomLatestReviewsTable = () => {
 
                   <Dropdown.Menu>
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                      Another action
+                    </Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">
+                      Something else
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -228,7 +245,9 @@ const EcomLatestReviewsTable = () => {
         </Row>
 
         <AdvanceTable
-          tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
+          tableProps={{
+            className: 'phoenix-table fs-9 mb-0 border-top border-200'
+          }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
         <AdvanceTableFooter navBtn />

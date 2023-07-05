@@ -18,7 +18,8 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
               <Timeline.OppositeContent>
                 <p className="fs-10 fw-semi-bold text-700 mb-0 text-end">
                   {item.oppositeContent.date}
-                  <br className="d-none d-md-block" /> {item.oppositeContent.time}
+                  <br className="d-none d-md-block" />{' '}
+                  {item.oppositeContent.time}
                 </p>
               </Timeline.OppositeContent>
               <Timeline.Separator className="position-relative">
@@ -29,7 +30,10 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
                   />
                 </Timeline.Dot>
                 {item.separator.barClass && (
-                  <Timeline.Bar style={{ height: 100 }} className={item.separator.barClass} />
+                  <Timeline.Bar
+                    style={{ height: 100 }}
+                    className={item.separator.barClass}
+                  />
                 )}
               </Timeline.Separator>
             </div>

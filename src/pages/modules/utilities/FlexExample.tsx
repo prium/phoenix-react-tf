@@ -350,9 +350,10 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Behaviors">
             <p className="mb-0">
-              Apply <code> display </code> utilities to create a flexbox container and transform
-              direct children elements into flex items. Flex containers and items are able to be
-              modified further with additional flex properties.
+              Apply <code> display </code> utilities to create a flexbox
+              container and transform direct children elements into flex items.
+              Flex containers and items are able to be modified further with
+              additional flex properties.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={flexCode} />
@@ -361,8 +362,9 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
             <p className="mb-0 text-800">
-              Use <code> .flex-row </code> to set a horizontal direction (the browser default), or
-              .flex-row-reverse to start the horizontal direction from the opposite side.
+              Use <code> .flex-row </code> to set a horizontal direction (the
+              browser default), or .flex-row-reverse to start the horizontal
+              direction from the opposite side.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={flexDirectionRowCode} />
@@ -371,8 +373,9 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
             <p className="mb-0 text-800">
-              Use <code> .flex-row </code> to set a horizontal direction (the browser default), or
-              .flex-row-reverse to start the horizontal direction from the opposite side.
+              Use <code> .flex-row </code> to set a horizontal direction (the
+              browser default), or .flex-row-reverse to start the horizontal
+              direction from the opposite side.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={flexDirectionRowCode} />
@@ -394,11 +397,13 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Justify Content">
             <p className="mb-0">
-              Use <code>justifyContent</code> prop to change the alignment of flex items on the main
-              axis (the x-axis to start, y-axis if <code>flex-direction: column</code>). Choose from{' '}
-              <code>start</code> (browser default), <code>end</code>, <code>center</code>,{' '}
-              <code>between</code>, <code>around</code>, or <code>evenly</code>. Set{' '}
-              <code>justifyContent</code> with <code>{`{xxl | xl | lg | md | sm}`}</code> prefix for
+              Use <code>justifyContent</code> prop to change the alignment of
+              flex items on the main axis (the x-axis to start, y-axis if{' '}
+              <code>flex-direction: column</code>). Choose from{' '}
+              <code>start</code> (browser default), <code>end</code>,{' '}
+              <code>center</code>, <code>between</code>, <code>around</code>, or{' '}
+              <code>evenly</code>. Set <code>justifyContent</code> with{' '}
+              <code>{`{xxl | xl | lg | md | sm}`}</code> prefix for
               responsiveness.
             </p>
           </PhoenixDocCard.Header>
@@ -408,10 +413,11 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align items">
             <p className="mb-0 text-800">
-              Use <code>align-items </code>utilities on flexbox containers to change the alignment
-              of flex items on the cross axis (the y-axis to start, x-axis if{' '}
-              <code>flex-direction: column </code>). Choose from <code>start </code>,
-              <code>end </code>,<code>center </code>,<code>baseline </code>, or{' '}
+              Use <code>align-items </code>utilities on flexbox containers to
+              change the alignment of flex items on the cross axis (the y-axis
+              to start, x-axis if <code>flex-direction: column </code>). Choose
+              from <code>start </code>,<code>end </code>,<code>center </code>,
+              <code>baseline </code>, or{' '}
               <code>stretch (browser default). </code>
             </p>
           </PhoenixDocCard.Header>
@@ -421,10 +427,10 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align self">
             <p className="mb-0 text-800">
-              Use <code>align-self </code>utilities on flexbox items to individually change their
-              alignment on the cross axis (the y-axis to start, x-axis if{' '}
-              <code>flex-direction: column </code>). Choose from the same options as{' '}
-              <code>align-items: start, </code>
+              Use <code>align-self </code>utilities on flexbox items to
+              individually change their alignment on the cross axis (the y-axis
+              to start, x-axis if <code>flex-direction: column </code>). Choose
+              from the same options as <code>align-items: start, </code>
               <code>end </code>,<code>center </code>,<code>baseline </code>, or{' '}
               <code>stretch (browser default).</code>
             </p>
@@ -435,9 +441,10 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Fill">
             <p className="mb-0 text-800">
-              Use the <code>.flex-fill</code> class on a series of sibling elements to force them
-              into widths equal to their content (or equal widths if their content does not surpass
-              their border-boxes) while taking up all available horizontal space.
+              Use the <code>.flex-fill</code> class on a series of sibling
+              elements to force them into widths equal to their content (or
+              equal widths if their content does not surpass their border-boxes)
+              while taking up all available horizontal space.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={fillCode} />
@@ -446,10 +453,11 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Grow">
             <p className="mb-0 text-800">
-              Use <code>.flex-grow-* </code>utilities to toggle a flex item’s ability to grow to
-              fill available space. In the example below, the<code>.flex-grow-1 </code>elements uses
-              all available space it can, while allowing the remaining two flex items their
-              necessary space.
+              Use <code>.flex-grow-* </code>utilities to toggle a flex item’s
+              ability to grow to fill available space. In the example below, the
+              <code>.flex-grow-1 </code>elements uses all available space it
+              can, while allowing the remaining two flex items their necessary
+              space.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={growCode} />
@@ -458,9 +466,10 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Shrink">
             <p className="mb-0 text-800">
-              Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s ability to shrink if
-              necessary. In the example below, the second flex item with <code>.flex-shrink-1</code>{' '}
-              is forced to wrap its contents to a new line, “shrinking” to allow more space for the
+              Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s
+              ability to shrink if necessary. In the example below, the second
+              flex item with <code>.flex-shrink-1</code> is forced to wrap its
+              contents to a new line, “shrinking” to allow more space for the
               previous flex item with <code>.w-100</code>.
             </p>
           </PhoenixDocCard.Header>
@@ -471,20 +480,26 @@ const FlexExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Auto margins">
               <p className="mb-0 text-800">
-                Flexbox can do some pretty awesome things when you mix flex alignments with auto
-                margins. Shown below are three examples of controlling flex items via auto margins:
-                default (no auto margin), pushing two items to the right ( <code>.me-auto </code>),
-                and pushing two items to the left (<code>.ms-auto </code>).
+                Flexbox can do some pretty awesome things when you mix flex
+                alignments with auto margins. Shown below are three examples of
+                controlling flex items via auto margins: default (no auto
+                margin), pushing two items to the right ( <code>.me-auto </code>
+                ), and pushing two items to the left (<code>.ms-auto </code>).
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={autoMarginCode} />
           </PhoenixDocProvider>
           <PhoenixDocProvider>
-            <PhoenixDocCard.Header title="With align-items" className="border-bottom-0">
+            <PhoenixDocCard.Header
+              title="With align-items"
+              className="border-bottom-0"
+            >
               <p className="mb-0 text-800">
-                Vertically move one flex item to the top or bottom of a container by mixing{' '}
-                <code>align-items</code>, <code>flex-direction: column</code>, and{' '}
-                <code>margin-top: auto</code> or <code>margin-bottom: auto</code>.
+                Vertically move one flex item to the top or bottom of a
+                container by mixing <code>align-items</code>,{' '}
+                <code>flex-direction: column</code>, and{' '}
+                <code>margin-top: auto</code> or{' '}
+                <code>margin-bottom: auto</code>.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={autoMarginWithAlignItemsCode} />
@@ -494,9 +509,11 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Wrap">
             <p className="mb-0 text-800">
-              Change how flex items wrap in a flex container. Choose from no wrapping at all (the
-              browser default) with <code>.flex-nowrap </code>, wrapping with
-              <code>.flex-wrap </code>, or reverse wrapping with<code>.flex-wrap-reverse </code>.
+              Change how flex items wrap in a flex container. Choose from no
+              wrapping at all (the browser default) with{' '}
+              <code>.flex-nowrap </code>, wrapping with
+              <code>.flex-wrap </code>, or reverse wrapping with
+              <code>.flex-wrap-reverse </code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={wrapCode} />
@@ -506,10 +523,11 @@ const FlexExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Order">
               <p className="mb-0 text-800">
-                Change the <em>visual</em> order of specific flex items with a handful of{' '}
-                <code>order</code> utilities. We only provide options for making an item first or
-                last, as well as a reset to use the DOM order. As <code>order</code> takes any
-                integer value from 0 to 5, add custom CSS for any additional values needed.
+                Change the <em>visual</em> order of specific flex items with a
+                handful of <code>order</code> utilities. We only provide options
+                for making an item first or last, as well as a reset to use the
+                DOM order. As <code>order</code> takes any integer value from 0
+                to 5, add custom CSS for any additional values needed.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={orderCode} />
@@ -530,13 +548,18 @@ const FlexExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard>
-          <PhoenixDocCard.Header title="Align content" className="border-bottom-0">
+          <PhoenixDocCard.Header
+            title="Align content"
+            className="border-bottom-0"
+          >
             <p className="mb-0 text-800">
-              Use <code>align-content</code> utilities on flexbox containers to align flex items{' '}
-              <em>together</em> on the cross axis. Choose from <code>start</code> (browser default),{' '}
-              <code>end</code>, <code>center</code>, <code>between</code>, <code>around</code>, or{' '}
-              <code>stretch</code>. To demonstrate these utilities, we’ve enforced{' '}
-              <code>flex-wrap: wrap</code> and increased the number of flex items.
+              Use <code>align-content</code> utilities on flexbox containers to
+              align flex items <em>together</em> on the cross axis. Choose from{' '}
+              <code>start</code> (browser default), <code>end</code>,{' '}
+              <code>center</code>, <code>between</code>, <code>around</code>, or{' '}
+              <code>stretch</code>. To demonstrate these utilities, we’ve
+              enforced <code>flex-wrap: wrap</code> and increased the number of
+              flex items.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={alignContentCode} />

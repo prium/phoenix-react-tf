@@ -58,12 +58,20 @@ export const comments: Comment[] = [
     details: (
       <div className="d-flex text-800 fs-9">
         <p className="mb-0 fw-semi-bold text-1000">
-          <FontAwesomeIcon icon="circle" className="text-primary" transform="shrink-8" />
+          <FontAwesomeIcon
+            icon="circle"
+            className="text-primary"
+            transform="shrink-8"
+          />
           Doing
         </p>
         <span className="mx-2">to</span>
         <p className="mb-0 fw-semi-bold text-1000">
-          <FontAwesomeIcon icon="circle" className="text-primary" transform="shrink-8" />
+          <FontAwesomeIcon
+            icon="circle"
+            className="text-primary"
+            transform="shrink-8"
+          />
           Review
         </p>
       </div>
@@ -79,8 +87,8 @@ export const comments: Comment[] = [
     date: 'Oct 5 at 11:09 pm',
     details: (
       <p className="text-900 fs-9 mb-0">
-        There are many variations of passages of Lorem Ipsum available, but the majority have
-        suffered alteration in some form
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form
       </p>
     )
   }

@@ -50,7 +50,11 @@ const Checkout = () => {
                   </Button>
                 </Col>
                 <Col md={4} lg={3}>
-                  <Button variant="phoenix-secondary" type="submit" className="w-100 text-nowrap">
+                  <Button
+                    variant="phoenix-secondary"
+                    type="submit"
+                    className="w-100 text-nowrap"
+                  >
                     Save Order and Exit
                   </Button>
                 </Col>

@@ -5,7 +5,9 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { Project } from 'data/project-management/projects';
 import Avatar from 'components/base/Avatar';
 import { ProgressBar } from 'react-bootstrap';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import Badge from 'components/base/Badge';
 
@@ -135,7 +137,9 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
 const ProjectListTable = () => {
   return (
     <div className="border-bottom">
-      <AdvanceTable tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }} />
+      <AdvanceTable
+        tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }}
+      />
       <AdvanceTableFooter pagination className="py-3" />
     </div>
   );

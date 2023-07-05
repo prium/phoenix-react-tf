@@ -52,15 +52,17 @@ const Gallery = () => {
           </Col>
           <Col lg={6}>
             <p>
-              Rise like Phoenix focusing only on functionalities for your digital products leaving
-              the design for us. Show what you do, with our latest admin dashboard. Check our best
-              works and let us know what you want to find.
+              Rise like Phoenix focusing only on functionalities for your
+              digital products leaving the design for us. Show what you do, with
+              our latest admin dashboard. Check our best works and let us know
+              what you want to find.
             </p>
           </Col>
           <Col lg={6}>
             <p>
-              Want to tell your customers about the details of how and what? Tell them with all the
-              posts at one place without them ridirecting to another page or site.
+              Want to tell your customers about the details of how and what?
+              Tell them with all the posts at one place without them ridirecting
+              to another page or site.
             </p>
           </Col>
         </Row>

@@ -150,9 +150,10 @@ const PopoversExample = () => {
           <PhoenixDocCard.Header title="Overview" noPreview />
           <Card.Body>
             <p>
-              The <code>&lt;Popover&gt;</code> component do not position themselves. Instead the{' '}
-              <code>&lt;Overlay&gt;</code> (or <code>&lt;OverlayTrigger&gt;</code>) components,
-              inject <code>ref</code> and <code>style</code> props.
+              The <code>&lt;Popover&gt;</code> component do not position
+              themselves. Instead the <code>&lt;Overlay&gt;</code> (or{' '}
+              <code>&lt;OverlayTrigger&gt;</code>) components, inject{' '}
+              <code>ref</code> and <code>style</code> props.
             </p>
           </Card.Body>
         </PhoenixDocCard>
@@ -165,7 +166,8 @@ const PopoversExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Placement">
             <p className="mb-0">
-              As with <code>&lt;Tooltip&gt;</code>s, you can control the placement of the Popover.
+              As with <code>&lt;Tooltip&gt;</code>s, you can control the
+              placement of the Popover.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={placementCode} />
@@ -174,11 +176,12 @@ const PopoversExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Disabled elements">
             <p className="mb-0">
-              Elements with the <code>disabled</code> attribute aren’t interactive, meaning users
-              cannot hover or click them to trigger a popover (or tooltip). As a workaround, you’ll
-              want to trigger the overlay from a wrapper <code>&lt;div&gt;</code> or{' '}
-              <code>&lt;span&gt;</code> and override the <code>pointer-events</code> on the disabled
-              element.
+              Elements with the <code>disabled</code> attribute aren’t
+              interactive, meaning users cannot hover or click them to trigger a
+              popover (or tooltip). As a workaround, you’ll want to trigger the
+              overlay from a wrapper <code>&lt;div&gt;</code> or{' '}
+              <code>&lt;span&gt;</code> and override the{' '}
+              <code>pointer-events</code> on the disabled element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={disableElCode} />
@@ -187,8 +190,9 @@ const PopoversExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Changing containers">
             <p className="mb-0">
-              You can specify a <code>container</code> to control the DOM element the overlay is
-              appended to. This is especially useful when styles conflict with your Overlays.
+              You can specify a <code>container</code> to control the DOM
+              element the overlay is appended to. This is especially useful when
+              styles conflict with your Overlays.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={changingContainersCode} />
@@ -197,14 +201,15 @@ const PopoversExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Updating position dynamically">
             <p>
-              Since we can't know every time your overlay changes size, to reposition it, you need
-              to take manual action if you want to update the position of an Overlay in response to
-              a change.
+              Since we can't know every time your overlay changes size, to
+              reposition it, you need to take manual action if you want to
+              update the position of an Overlay in response to a change.
             </p>
             <p className="mb-0">
-              For this, the Overlay component also injects a a <code>popper</code>
-              prop with a <code>scheduleUpdate()</code> method that an overlay component can use to
-              reposition itself.
+              For this, the Overlay component also injects a a{' '}
+              <code>popper</code>
+              prop with a <code>scheduleUpdate()</code> method that an overlay
+              component can use to reposition itself.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={dynamicPositionCode} noInline />

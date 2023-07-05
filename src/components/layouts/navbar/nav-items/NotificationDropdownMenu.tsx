@@ -105,10 +105,13 @@ const NotificationDropdownMenu = () => {
             {notifications.map((notification, index) => (
               <div
                 key={notification.id}
-                className={classNames('p-3 border-300 notification-card position-relative', {
-                  'border-bottom': index !== notifications.length - 1,
-                  unread: !notification.read
-                })}
+                className={classNames(
+                  'p-3 border-300 notification-card position-relative',
+                  {
+                    'border-bottom': index !== notifications.length - 1,
+                    unread: !notification.read
+                  }
+                )}
               >
                 <div className="d-flex align-items-center justify-content-between position-relative">
                   <div className="d-flex">
@@ -121,9 +124,13 @@ const NotificationDropdownMenu = () => {
                     <div className="me-3 flex-1">
                       <h4 className="fs-9 text-black">{notification.name}</h4>
                       <p className="fs-9 text-1000 mb-2 mb-sm-3 fw-normal">
-                        <span className="me-1 fs-10">{notification.textIcon}</span>
+                        <span className="me-1 fs-10">
+                          {notification.textIcon}
+                        </span>
                         {notification.text}
-                        <span className="ms-2 text-400 fw-bold fs-10">{notification.ago}</span>
+                        <span className="ms-2 text-400 fw-bold fs-10">
+                          {notification.ago}
+                        </span>
                       </p>
                       <p className="text-800 fs-9 mb-0">
                         <FontAwesomeIcon icon="clock" className="me-1" />
@@ -136,7 +143,9 @@ const NotificationDropdownMenu = () => {
                     className="position-static"
                     btnClassName="notification-dropdown-toggle"
                   >
-                    <Dropdown.Item>Mark as {notification.read ? 'unread' : 'read'}</Dropdown.Item>
+                    <Dropdown.Item>
+                      Mark as {notification.read ? 'unread' : 'read'}
+                    </Dropdown.Item>
                   </RevealDropdown>
                 </div>
               </div>

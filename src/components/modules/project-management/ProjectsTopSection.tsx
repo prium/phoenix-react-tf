@@ -15,7 +15,8 @@ interface ProjectsTopSectionInterface {
 
 const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
   const navigate = useNavigate();
-  const { setGlobalFilter, getPrePaginationRowModel } = useAdvanceTableContext();
+  const { setGlobalFilter, getPrePaginationRowModel } =
+    useAdvanceTableContext();
 
   const tabItems = useMemo(() => {
     const getDataCount = (label: string) =>
@@ -48,7 +49,12 @@ const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
         columnId: 'status',
         count: getDataCount('completed')
       },
-      { label: 'Critical', value: 'critical', columnId: 'status', count: getDataCount('critical') }
+      {
+        label: 'Critical',
+        value: 'critical',
+        columnId: 'status',
+        count: getDataCount('critical')
+      }
     ];
   }, [getPrePaginationRowModel]);
 

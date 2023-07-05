@@ -15,7 +15,11 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
     toggleTheme
   } = useAppContext();
   return (
-    <Button className={classNames(className, 'p-0')} onClick={() => toggleTheme()} {...rest}>
+    <Button
+      className={classNames(className, 'p-0')}
+      onClick={() => toggleTheme()}
+      {...rest}
+    >
       <div
         className={classNames('theme-control-toggle', {
           'theme-control-toggle-slim pe-2': slim
@@ -41,7 +45,11 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
               icon={theme === 'dark' ? 'moon' : 'sun'}
               size={slim ? 10 : 16}
             />
-            {slim && <span className="fs-9 fw-bold">{theme === 'dark' ? 'Dark' : 'Light'}</span>}
+            {slim && (
+              <span className="fs-9 fw-bold">
+                {theme === 'dark' ? 'Dark' : 'Light'}
+              </span>
+            )}
           </div>
         </OverlayTrigger>
       </div>

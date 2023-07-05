@@ -8,7 +8,9 @@ import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<CustomerOrder>[] = [
@@ -33,7 +35,13 @@ const columns: ColumnDef<CustomerOrder>[] = [
         variant="phoenix"
         iconPosition="end"
         className="fs-10"
-        icon={<FeatherIcon icon={original.payment_status.icon} size={12} className="ms-1" />}
+        icon={
+          <FeatherIcon
+            icon={original.payment_status.icon}
+            size={12}
+            className="ms-1"
+          />
+        }
       >
         {original.payment_status.status}
       </Badge>
@@ -53,7 +61,10 @@ const columns: ColumnDef<CustomerOrder>[] = [
     accessorKey: 'date',
     header: 'Date',
     meta: {
-      headerProps: { style: { width: '15%', minWidth: 160 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '15%', minWidth: 160 },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-700 text-end' }
     }
   },
@@ -62,7 +73,10 @@ const columns: ColumnDef<CustomerOrder>[] = [
     header: 'Total',
     cell: ({ row: { original } }) => currencyFormat(original.totalPrice),
     meta: {
-      headerProps: { style: { width: '15%', minWidth: 160 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '15%', minWidth: 160 },
+        className: 'text-end'
+      },
       cellProps: { className: 'fw-semi-bold text-end text-1000' }
     }
   },
@@ -95,7 +109,9 @@ const EcomProfileOrdersTable = () => {
     <div>
       <AdvanceTableProvider {...table}>
         <div className="border-y">
-          <AdvanceTable tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }} />
+          <AdvanceTable
+            tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
+          />
           <AdvanceTableFooter pagination />
         </div>
       </AdvanceTableProvider>

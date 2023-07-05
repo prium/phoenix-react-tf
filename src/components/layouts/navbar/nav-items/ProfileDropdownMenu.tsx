@@ -45,7 +45,11 @@ const ProfileDropdownMenu = () => {
             <h6 className="text-black">Jerry Seinfield</h6>
           </div>
           <div className="mb-3 mx-3">
-            <Form.Control type="text" placeholder="Update your status" size="sm" />
+            <Form.Control
+              type="text"
+              placeholder="Update your status"
+              size="sm"
+            />
           </div>
           <div style={{ height: '10rem' }}>
             <Scrollbar>
@@ -53,7 +57,11 @@ const ProfileDropdownMenu = () => {
                 {navItems.map(item => (
                   <Nav.Item key={item.label}>
                     <Nav.Link href="#!" className="px-3">
-                      <FeatherIcon icon={item.icon} size={16} className="me-2 text-900" />
+                      <FeatherIcon
+                        icon={item.icon}
+                        size={16}
+                        className="me-2 text-900"
+                      />
                       <span>{item.label}</span>
                     </Nav.Link>
                   </Nav.Item>
@@ -66,14 +74,21 @@ const ProfileDropdownMenu = () => {
           <Nav className="nav flex-column my-3">
             <Nav.Item>
               <Nav.Link href="#!" className="px-3">
-                <FeatherIcon icon="user-plus" size={16} className="me-2 text-900" />
+                <FeatherIcon
+                  icon="user-plus"
+                  size={16}
+                  className="me-2 text-900"
+                />
                 <span>Add another account</span>
               </Nav.Link>
             </Nav.Item>
           </Nav>
           <hr />
           <div className="px-3">
-            <Link to="#!" className="btn btn-phoenix-secondary d-flex flex-center w-100">
+            <Link
+              to="#!"
+              className="btn btn-phoenix-secondary d-flex flex-center w-100"
+            >
               <FeatherIcon icon="log-out" className="me-2" size={16} />
               Sign out
             </Link>

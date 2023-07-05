@@ -11,7 +11,10 @@ interface PortalProps {
   containerSelector?: string;
 }
 
-const Portal = ({ children, containerSelector = 'body' }: PropsWithChildren<PortalProps>) => {
+const Portal = ({
+  children,
+  containerSelector = 'body'
+}: PropsWithChildren<PortalProps>) => {
   if (!canUseDOM) return null;
 
   const portalContainer = document.querySelector(containerSelector);

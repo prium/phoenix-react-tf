@@ -34,7 +34,10 @@ const Refund = () => {
               </Link>
             </p>
             <Dropdown>
-              <Dropdown.Toggle variant="" className="p-0 dropdown-caret-none text-decoration-none">
+              <Dropdown.Toggle
+                variant=""
+                className="p-0 dropdown-caret-none text-decoration-none"
+              >
                 More action
                 <FontAwesomeIcon icon="chevron-down" className="ms-2" />
               </Dropdown.Toggle>
@@ -57,7 +60,11 @@ const Refund = () => {
                 <Card.Title as="h4" className="mb-4">
                   Refund Amount
                 </Card.Title>
-                <Form.Control type="number" placeholder="Amount" className="mb-4" />
+                <Form.Control
+                  type="number"
+                  placeholder="Amount"
+                  className="mb-4"
+                />
                 <Button className="w-100">Refund $500</Button>
               </Card.Body>
             </Card>

@@ -2,7 +2,10 @@ import { Breadcrumb, Col, Row } from 'react-bootstrap';
 import ProductDescription from 'components/modules/e-commerce/ProductDescription';
 import ProductDetailsTab from 'components/modules/e-commerce/ProductDetailsTab';
 import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCard';
-import { suggestedProducts, topElectronicProducts } from 'data/e-commerce/products';
+import {
+  suggestedProducts,
+  topElectronicProducts
+} from 'data/e-commerce/products';
 import SimilarProducts from 'components/sliders/SimilarProducts';
 import Section from 'components/base/Section';
 
@@ -27,7 +30,10 @@ const ProductDetails = () => {
             <ProductDetailsTab />
           </Col>
           <Col xs={12} lg={5} xl={4}>
-            <UsuallyBoughtTogetherCard products={suggestedProducts} className="mt-9" />
+            <UsuallyBoughtTogetherCard
+              products={suggestedProducts}
+              className="mt-9"
+            />
           </Col>
         </Row>
       </Section>

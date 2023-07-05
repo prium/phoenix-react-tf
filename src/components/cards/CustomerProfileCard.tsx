@@ -16,13 +16,22 @@ const CustomerProfileCard = () => {
             <p className="text-800">Joined 3 months ago</p>
             <div className="d-inline-flex gap-2">
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'linkedin-in']}
+                  className="text-400 hover-primary"
+                />
               </a>
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'facebook']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'facebook']}
+                  className="text-400 hover-primary"
+                />
               </a>
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'twitter']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'twitter']}
+                  className="text-400 hover-primary"
+                />
               </a>
             </div>
           </Col>

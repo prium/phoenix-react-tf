@@ -106,7 +106,13 @@ const ProductColorNav = ({
   );
 };
 
-const ProductColorNavItem = ({ item, isActive }: { item: Variant; isActive: boolean }) => {
+const ProductColorNavItem = ({
+  item,
+  isActive
+}: {
+  item: Variant;
+  isActive: boolean;
+}) => {
   return (
     <Nav.Item className="">
       <Nav.Link

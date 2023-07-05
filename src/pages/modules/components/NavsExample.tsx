@@ -156,7 +156,8 @@ const NavsExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
               <p className="mb-0">
-                If you want each NavItem to be the same size use <code>justify</code>.
+                If you want each NavItem to be the same size use{' '}
+                <code>justify</code>.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={justifyCode} />

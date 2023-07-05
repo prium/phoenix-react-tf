@@ -11,7 +11,10 @@ const ProjectDetailsSummary = () => {
             <tr>
               <td className="py-1" colSpan={2}>
                 <div className="d-flex">
-                  <FontAwesomeIcon icon="earth-americas" className="me-2 text-700 fs-9" />
+                  <FontAwesomeIcon
+                    icon="earth-americas"
+                    className="me-2 text-700 fs-9"
+                  />
                   <h5 className="text-900">Public project</h5>
                 </div>
               </td>
@@ -32,7 +35,10 @@ const ProjectDetailsSummary = () => {
             <tr>
               <td className="align-top py-1">
                 <div className="d-flex">
-                  <FontAwesomeIcon icon={['far', 'credit-card']} className="me-2 text-700 fs-9" />
+                  <FontAwesomeIcon
+                    icon={['far', 'credit-card']}
+                    className="me-2 text-700 fs-9"
+                  />
                   <h5 className="text-900 mb-0 text-nowrap">Budget : </h5>
                 </div>
               </td>
@@ -43,15 +49,21 @@ const ProjectDetailsSummary = () => {
         <table className="lh-sm">
           <tbody>
             <tr>
-              <td className="align-top py-1 text-900 text-nowrap fw-bold">Started : </td>
+              <td className="align-top py-1 text-900 text-nowrap fw-bold">
+                Started :{' '}
+              </td>
               <td className="text-600 fw-semi-bold ps-3">17th Nov, 2020</td>
             </tr>
             <tr>
-              <td className="align-top py-1 text-900 text-nowrap fw-bold">Deadline :</td>
+              <td className="align-top py-1 text-900 text-nowrap fw-bold">
+                Deadline :
+              </td>
               <td className="text-600 fw-semi-bold ps-3">21st May, 2028</td>
             </tr>
             <tr>
-              <td className="align-top py-1 text-900 text-nowrap fw-bold">Progress :</td>
+              <td className="align-top py-1 text-900 text-nowrap fw-bold">
+                Progress :
+              </td>
               <td className="text-warning fw-semi-bold ps-3">80%</td>
             </tr>
           </tbody>
@@ -64,7 +76,8 @@ const ProjectDetailsSummary = () => {
             91<span className="text-900 fw-normal ms-2">tasks</span>
           </h5>
           <Link className="fw-bold fs-9 mt-1" to="#!">
-            See tasks <FontAwesomeIcon icon="chevron-right" className="me-2 fs-10" />
+            See tasks{' '}
+            <FontAwesomeIcon icon="chevron-right" className="me-2 fs-10" />
           </Link>
         </div>
       </div>

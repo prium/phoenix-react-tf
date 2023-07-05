@@ -20,7 +20,9 @@ const CardViewItem = ({ project }: { project: Project }) => {
       <Card className="h-100 hover-actions-trigger">
         <Card.Body>
           <div className="d-flex align-items-center">
-            <h4 className="mb-2 line-clamp-1 lh-sm flex-1 me-5">{project.name}</h4>
+            <h4 className="mb-2 line-clamp-1 lh-sm flex-1 me-5">
+              {project.name}
+            </h4>
             <div className="hover-actions top-0 end-0 mt-4 me-4">
               <Button
                 variant="primary"
@@ -31,19 +33,36 @@ const CardViewItem = ({ project }: { project: Project }) => {
               </Button>
             </div>
           </div>
-          <Badge variant="phoenix" bg={project.status.type} className="fs-10 mb-4">
+          <Badge
+            variant="phoenix"
+            bg={project.status.type}
+            className="fs-10 mb-4"
+          >
             {project.status.label}
           </Badge>
           <div className="d-flex align-items-center mb-2">
-            <FontAwesomeIcon icon="user" className="me-2 text-700 fs-9 fw-extra-bold" />
+            <FontAwesomeIcon
+              icon="user"
+              className="me-2 text-700 fs-9 fw-extra-bold"
+            />
             <p className="fw-bold mb-0 text-truncate lh-1">
-              Client : <span className="fw-semi-bold text-primary ms-1"> Gusteau’s Restaurant</span>
+              Client :{' '}
+              <span className="fw-semi-bold text-primary ms-1">
+                {' '}
+                Gusteau’s Restaurant
+              </span>
             </p>
           </div>
           <div className="d-flex align-items-center mb-4">
-            <FontAwesomeIcon icon="credit-card" className="me-2 text-700 fs-9 fw-extra-bold" />
+            <FontAwesomeIcon
+              icon="credit-card"
+              className="me-2 text-700 fs-9 fw-extra-bold"
+            />
             <p className="fw-bold mb-0 text-truncate lh-1">
-              Budget : <span className="text-1100 ms-1">{currencyFormat(project.budget)}</span>
+              Budget :{' '}
+              <span className="text-1100 ms-1">
+                {currencyFormat(project.budget)}
+              </span>
             </p>
           </div>
           <div className="d-flex justify-content-between text-700 fw-semi-bold">
@@ -59,12 +78,18 @@ const CardViewItem = ({ project }: { project: Project }) => {
           <div>
             <div className="d-flex align-items-center mt-4">
               <p className="mb-0 fw-bold fs-9">
-                Started :<span className="fw-semi-bold text-600 ms-1">{project.start}</span>
+                Started :
+                <span className="fw-semi-bold text-600 ms-1">
+                  {project.start}
+                </span>
               </p>
             </div>
             <div className="d-flex align-items-center mt-2">
               <p className="mb-0 fw-bold fs-9">
-                Deadline : <span className="fw-semi-bold text-600 ms-1">{project.deadline}</span>
+                Deadline :{' '}
+                <span className="fw-semi-bold text-600 ms-1">
+                  {project.deadline}
+                </span>
               </p>
             </div>
 

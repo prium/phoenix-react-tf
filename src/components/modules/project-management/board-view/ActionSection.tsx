@@ -30,7 +30,10 @@ const ActionSection = () => {
           <div className="d-flex gap-2 justify-content-between align-items-center">
             <div className="d-flex gap-2">
               <Dropdown align="end">
-                <Dropdown.Toggle className="dropdown-caret-none" variant="soft-secondary">
+                <Dropdown.Toggle
+                  className="dropdown-caret-none"
+                  variant="soft-secondary"
+                >
                   Add to card
                   <FontAwesomeIcon icon="plus" className="ms-2" />
                 </Dropdown.Toggle>
@@ -41,7 +44,9 @@ const ActionSection = () => {
                         key={item.label}
                         as={Button}
                         variant="soft-secondary"
-                        startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
+                        startIcon={
+                          <FontAwesomeIcon icon={item.icon} className="me-2" />
+                        }
                         className="w-100 text-start"
                         size="sm"
                       >
@@ -64,7 +69,9 @@ const ActionSection = () => {
                       <Dropdown.Item
                         as={Button}
                         variant="soft-secondary"
-                        startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
+                        startIcon={
+                          <FontAwesomeIcon icon={item.icon} className="me-2" />
+                        }
                         className="w-100 text-start"
                         size="sm"
                         key={item.label}

@@ -112,10 +112,13 @@ const DarkMode = () => {
     <div>
       <DocPageHeader title="Dark Mode">
         <p className="lead text-700">
-          It’s effortless to switch Dark Mode in {process.env.REACT_APP_TITLE}-React. You can enable
-          Dark Mode by default or create a Dark/Light switch if you want. To set the default mode
-          "Dark", please see the
-          <Link to="/documentation/customization/configuration"> configuration page</Link>
+          It’s effortless to switch Dark Mode in {process.env.REACT_APP_TITLE}
+          -React. You can enable Dark Mode by default or create a Dark/Light
+          switch if you want. To set the default mode "Dark", please see the
+          <Link to="/documentation/customization/configuration">
+            {' '}
+            configuration page
+          </Link>
         </p>
       </DocPageHeader>
       <DocPagesLayout>
@@ -136,9 +139,11 @@ const DarkMode = () => {
           <PhoenixDocCard.Body>
             <p className="mb-0 text-800">
               You can find all the variables used to create the dark mode in
-              <code> src/assets/scss/theme/root/_dark.scss </code> file. If you want to override a
-              variable, copy that variable to <code> src/assets/scss/_user-variables.scss </code>{' '}
-              file and update it as you see fit. After changing the variable build your scss again.
+              <code> src/assets/scss/theme/root/_dark.scss </code> file. If you
+              want to override a variable, copy that variable to{' '}
+              <code> src/assets/scss/_user-variables.scss </code> file and
+              update it as you see fit. After changing the variable build your
+              scss again.
             </p>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
@@ -147,17 +152,21 @@ const DarkMode = () => {
           <PhoenixDocCard.Header title="Using the Dark className" noPreview />
           <PhoenixDocCard.Body>
             <h6 className="fs-8 mb-3">
-              You can keep a style constant regardless of current (light or dark) mode
+              You can keep a style constant regardless of current (light or
+              dark) mode
             </h6>
             <p className="mb-2">
-              If you want a component to retain it’s color (light or dark) as it is regardless of
-              the current mode, you can use the following classeNames -
+              If you want a component to retain it’s color (light or dark) as it
+              is regardless of the current mode, you can use the following
+              classeNames -
             </p>
             <p className="mb-2">
-              <code> .light </code> - It will keep the color light even if the current mode is dark
+              <code> .light </code> - It will keep the color light even if the
+              current mode is dark
             </p>
             <p>
-              <code> .dark </code> - It will keep the color dark even if the current mode is light
+              <code> .dark </code> - It will keep the color dark even if the
+              current mode is light
             </p>
 
             <Row className="mb-5">
@@ -175,10 +184,13 @@ const DarkMode = () => {
               </Col>
             </Row>
 
-            <h6 className="fs-8 mb-3">Override Background and Text color only for dark mode</h6>
+            <h6 className="fs-8 mb-3">
+              Override Background and Text color only for dark mode
+            </h6>
             <p className="mb-2">
-              If you want to use a different text color or background color rather than the default
-              dark theme color for any element, you can use the special "dark" classeNames:
+              If you want to use a different text color or background color
+              rather than the default dark theme color for any element, you can
+              use the special "dark" classeNames:
             </p>
             <ul className="mb-2">
               <li>

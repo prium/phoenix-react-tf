@@ -24,7 +24,10 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
   });
 
   return (
-    <Dropdown.Menu as="ul" className=" navbar-dropdown-caret dropdown-menu-card py-0">
+    <Dropdown.Menu
+      as="ul"
+      className=" navbar-dropdown-caret dropdown-menu-card py-0"
+    >
       <div className="border-0" style={{ height: '60vh' }}>
         <Scrollbar>
           <div
@@ -43,8 +46,14 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
                           'mt-5': index > 0
                         })}
                       >
-                        <FeatherIcon icon={page.icon} size={16} className="me-2" />
-                        <h6 className="dropdown-item-title">{capitalize(page.name)}</h6>
+                        <FeatherIcon
+                          icon={page.icon}
+                          size={16}
+                          className="me-2"
+                        />
+                        <h6 className="dropdown-item-title">
+                          {capitalize(page.name)}
+                        </h6>
                       </div>
                       <TopNavMegaMenuIitemsLooper page={page} />
                     </Fragment>

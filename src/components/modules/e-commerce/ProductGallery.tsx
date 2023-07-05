@@ -14,7 +14,8 @@ const ProductGallery = ({ images }: { images: string[] }) => {
       <Col xs={12} md={2} lg={12} xl={2}>
         <Swiper
           direction={
-            breakpoints.down('md') || (breakpoints.up('lg') && breakpoints.down('xl'))
+            breakpoints.down('md') ||
+            (breakpoints.up('lg') && breakpoints.down('xl'))
               ? 'horizontal'
               : 'vertical'
           }
@@ -42,7 +43,10 @@ const ProductGallery = ({ images }: { images: string[] }) => {
             loop={true}
             spaceBetween={10}
             navigation={true}
-            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+            thumbs={{
+              swiper:
+                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+            }}
             modules={[FreeMode, Navigation, Thumbs]}
           >
             {images.map((image, index) => (

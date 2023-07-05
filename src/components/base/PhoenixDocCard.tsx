@@ -7,8 +7,12 @@ import { LiveEditor, LiveError, LivePreview } from 'react-live';
 import classNames from 'classnames';
 import { snakeCase } from 'helpers/utils';
 import { Link } from 'react-router-dom';
-import PhoenixDocProvider, { usePhoenixDocContext } from 'providers/PhoenixDocProvider';
-import PhoenixLiveProvider, { PhoenixLiveProviderProps } from 'components/docs/PhoenixLiveProvider';
+import PhoenixDocProvider, {
+  usePhoenixDocContext
+} from 'providers/PhoenixDocProvider';
+import PhoenixLiveProvider, {
+  PhoenixLiveProviderProps
+} from 'components/docs/PhoenixLiveProvider';
 
 interface PhoenixDocCardProps {
   className?: string;
@@ -34,8 +38,17 @@ const PhoenixDocCard = ({
   noProvider
 }: PropsWithChildren<PhoenixDocCardProps>) => {
   return (
-    <Card className={classNames(className, 'shadow-none border border-300 overflow-hidden')}>
-      {noProvider ? children : <PhoenixDocProvider>{children}</PhoenixDocProvider>}
+    <Card
+      className={classNames(
+        className,
+        'shadow-none border border-300 overflow-hidden'
+      )}
+    >
+      {noProvider ? (
+        children
+      ) : (
+        <PhoenixDocProvider>{children}</PhoenixDocProvider>
+      )}
     </Card>
   );
 };
@@ -85,7 +98,11 @@ const PhoenixDocCardHeader = ({
         {!noPreview && (
           <Col md="auto">
             <Nav className="nav-underline justify-content-end doc-tab-nav align-items-center">
-              <Button variant="link" size="sm" className="px-2 text-900 copy-code-btn me-2">
+              <Button
+                variant="link"
+                size="sm"
+                className="px-2 text-900 copy-code-btn me-2"
+              >
                 <FontAwesomeIcon icon="copy" className="me-1" />
                 Copy Code
               </Button>

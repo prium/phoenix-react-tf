@@ -39,7 +39,10 @@ const NineDotMenu = () => {
       align="end"
       className="navbar-dropdown-caret py-0 dropdown-nine-dots shadow border border-300"
     >
-      <Card className="position-relative border-0" style={{ height: '20rem', minWidth: 244 }}>
+      <Card
+        className="position-relative border-0"
+        style={{ height: '20rem', minWidth: 244 }}
+      >
         <Scrollbar>
           <Card.Body className="pt-3 px-3 pb-0">
             <Row className="text-center align-items-center g-0">
@@ -49,8 +52,14 @@ const NineDotMenu = () => {
                     to="#!"
                     className="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3"
                   >
-                    <img src={item.img} alt="behance" width={item.width || 30} />
-                    <p className="mb-0 text-black text-truncate fs-10 mt-1 pt-1">{item.title}</p>
+                    <img
+                      src={item.img}
+                      alt="behance"
+                      width={item.width || 30}
+                    />
+                    <p className="mb-0 text-black text-truncate fs-10 mt-1 pt-1">
+                      {item.title}
+                    </p>
                   </Link>
                 </Col>
               ))}

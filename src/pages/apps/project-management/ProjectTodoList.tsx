@@ -55,7 +55,10 @@ const ProjectTodoList = () => {
           />
         ))}
       </div>
-      <TodoItemDetailsOffcanvas handleClose={() => setSelectedItem(null)} item={selectedItem} />
+      <TodoItemDetailsOffcanvas
+        handleClose={() => setSelectedItem(null)}
+        item={selectedItem}
+      />
     </div>
   );
 };

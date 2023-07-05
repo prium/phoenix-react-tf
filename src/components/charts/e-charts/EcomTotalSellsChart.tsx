@@ -24,16 +24,20 @@ echarts.use([
   LegendComponent
 ]);
 
-const dates = getDates(new Date('5/1/2022'), new Date('5/30/2022'), 1000 * 60 * 60 * 24);
+const dates = getDates(
+  new Date('5/1/2022'),
+  new Date('5/30/2022'),
+  1000 * 60 * 60 * 24
+);
 
 const currentMonthData = [
-  100, 200, 300, 300, 300, 250, 200, 200, 200, 200, 200, 500, 500, 500, 600, 700, 800, 900, 1000,
-  1100, 850, 600, 600, 600, 400, 200, 200, 300, 300, 300
+  100, 200, 300, 300, 300, 250, 200, 200, 200, 200, 200, 500, 500, 500, 600,
+  700, 800, 900, 1000, 1100, 850, 600, 600, 600, 400, 200, 200, 300, 300, 300
 ];
 
 const prevMonthData = [
-  200, 200, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 200, 400, 600, 600, 600, 800, 1000,
-  700, 400, 450, 500, 600, 700, 650, 600, 550
+  200, 200, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 200, 400, 600, 600,
+  600, 800, 1000, 700, 400, 450, 500, 600, 700, 650, 600, 550
 ];
 
 const tooltipFormatter = (params: CallbackDataParams[]) => {
@@ -61,7 +65,10 @@ const tooltipFormatter = (params: CallbackDataParams[]) => {
           </div>`;
 };
 
-const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  theme: ThemeVariant,
+  getThemeColor: (name: string) => string
+) => ({
   color: [getThemeColor('primary'), getThemeColor('info')],
   tooltip: {
     trigger: 'axis',
@@ -104,7 +111,10 @@ const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) =>
         show: true,
         interval: 0,
         lineStyle: {
-          color: theme === 'dark' ? getThemeColor('gray-100') : getThemeColor('gray-200')
+          color:
+            theme === 'dark'
+              ? getThemeColor('gray-100')
+              : getThemeColor('gray-200')
         }
       },
       boundaryGap: false
@@ -181,7 +191,12 @@ const EcomTotalSellsChart = () => {
     getThemeColor
   } = useAppContext();
 
-  return <ReactEChartsCore echarts={echarts} option={getDefaultOptions(theme, getThemeColor)} />;
+  return (
+    <ReactEChartsCore
+      echarts={echarts}
+      option={getDefaultOptions(theme, getThemeColor)}
+    />
+  );
 };
 
 export default EcomTotalSellsChart;

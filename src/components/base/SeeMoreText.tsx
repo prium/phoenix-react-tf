@@ -9,7 +9,13 @@ interface SeeMoreTextProps {
   children: string;
 }
 
-const SeeMoreText = ({ children, as: Tag = 'p', className, maxChars, link }: SeeMoreTextProps) => {
+const SeeMoreText = ({
+  children,
+  as: Tag = 'p',
+  className,
+  maxChars,
+  link
+}: SeeMoreTextProps) => {
   return (
     <Tag className={className}>
       {children.slice(0, maxChars)}

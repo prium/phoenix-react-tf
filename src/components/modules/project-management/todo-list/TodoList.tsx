@@ -22,19 +22,26 @@ const TodoList = () => {
             </Col>
             <Col xs="auto" className="w-100 w-md-auto">
               <div className="d-flex align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
-                <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
+                <SearchBox
+                  placeholder="Search tasks"
+                  style={{ maxWidth: '30rem' }}
+                />
                 <div>
                   <Button
                     variant="link"
                     className="p-0 fs-9 text-700 text-decoration-none me-3"
-                    startIcon={<FontAwesomeIcon icon="filter" className="fs-10 me-1" />}
+                    startIcon={
+                      <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                    }
                   >
                     23 tasks
                   </Button>
                   <Button
                     variant="link"
                     className="p-0 fs-9 text-primary text-decoration-none"
-                    startIcon={<FontAwesomeIcon icon="sort" className="fs-10" />}
+                    startIcon={
+                      <FontAwesomeIcon icon="sort" className="fs-10" />
+                    }
                   >
                     Sorting
                   </Button>
@@ -70,7 +77,10 @@ const TodoList = () => {
         </Card.Footer>
       </Card>
 
-      <TodoItemDetailsModal handleClose={() => setSelectedItem(null)} item={selectedItem} />
+      <TodoItemDetailsModal
+        handleClose={() => setSelectedItem(null)}
+        item={selectedItem}
+      />
     </>
   );
 };

@@ -153,8 +153,8 @@ const TypographyExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Text wrapping and overflow">
             <p className="mb-0 text-800">
-              Wrap text with a <code>.text-wrap</code> class. Prevent text from wrapping with a{' '}
-              <code>.text-nowrap</code> class.
+              Wrap text with a <code>.text-wrap</code> class. Prevent text from
+              wrapping with a <code>.text-nowrap</code> class.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={textWrappingCode} scope={{ Badge }} />
@@ -163,11 +163,14 @@ const TypographyExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Word break">
             <p className="mb-0 text-800">
-              Prevent long strings of text from breaking your component's layout by using{' '}
-              <code>.text-break</code> to set <code>word-wrap: break-word</code> and{' '}
-              <code>word-break: break-word</code>. We use <code>word-wrap</code> instead of the more
-              common <code>overflow-wrap</code> for wider browser support, and add the deprecated{' '}
-              <code>word-break: break-word</code> to avoid issues with flex containers.
+              Prevent long strings of text from breaking your component's layout
+              by using <code>.text-break</code> to set{' '}
+              <code>word-wrap: break-word</code> and{' '}
+              <code>word-break: break-word</code>. We use <code>word-wrap</code>{' '}
+              instead of the more common <code>overflow-wrap</code> for wider
+              browser support, and add the deprecated{' '}
+              <code>word-break: break-word</code> to avoid issues with flex
+              containers.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={textBreakCode} />
@@ -185,11 +188,13 @@ const TypographyExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Font size">
               <p className="mb-0 text-800">
-                Quickly change the <code>font-size</code> of text. While our heading classes (e.g.,{' '}
-                <code>.h1</code>–<code>.h6</code>) apply <code>font-size</code>,{' '}
-                <code>font-weight</code>, and <code>line-height</code>, these utilities{' '}
-                <em>only</em> apply <code>font-size</code>. Sizing for these utilities matches
-                HTML’s heading elements, so as the number increases, their size decreases.
+                Quickly change the <code>font-size</code> of text. While our
+                heading classes (e.g., <code>.h1</code>–<code>.h6</code>) apply{' '}
+                <code>font-size</code>, <code>font-weight</code>, and{' '}
+                <code>line-height</code>, these utilities <em>only</em> apply{' '}
+                <code>font-size</code>. Sizing for these utilities matches
+                HTML’s heading elements, so as the number increases, their size
+                decreases.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={fontSizeCode} />
@@ -211,10 +216,11 @@ const TypographyExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Font weight">
             <p className="mb-0 text-800">
-              Quickly change the <code>font-weight</code> or <code>font-style</code> of text with
-              these utilities. <code>font-style</code> utilities are abbreviated as{' '}
-              <code>.fst-*</code> and <code>font-weight</code> utilities are abbreviated as{' '}
-              <code>.fw-*</code>.
+              Quickly change the <code>font-weight</code> or{' '}
+              <code>font-style</code> of text with these utilities.{' '}
+              <code>font-style</code> utilities are abbreviated as{' '}
+              <code>.fst-*</code> and <code>font-weight</code> utilities are
+              abbreviated as <code>.fw-*</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={fontWeightCode} />
@@ -255,8 +261,8 @@ const TypographyExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Reset color">
             <p className="mb-0 text-800">
-              Reset a text or link's color with <code>.text-reset</code>, so that it inherits the
-              color from its parent.
+              Reset a text or link's color with <code>.text-reset</code>, so
+              that it inherits the color from its parent.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={resetCode} />

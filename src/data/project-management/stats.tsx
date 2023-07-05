@@ -1,4 +1,9 @@
-import { UilBooks, UilInvoice, UilRefresh, UilUsersAlt } from '@iconscout/react-unicons';
+import {
+  UilBooks,
+  UilInvoice,
+  UilRefresh,
+  UilUsersAlt
+} from '@iconscout/react-unicons';
 
 export interface ProjectManagementStat {
   title: string;

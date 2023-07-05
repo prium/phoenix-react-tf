@@ -30,16 +30,22 @@ const AdvanceTable = ({
                 <th
                   key={header.id}
                   {...header.column.columnDef.meta?.headerProps}
-                  className={classNames(header.column.columnDef.meta?.headerProps?.className, {
-                    sort: header.column.getCanSort(),
-                    desc: header.column.getIsSorted() === 'desc',
-                    asc: header.column.getIsSorted() === 'asc'
-                  })}
+                  className={classNames(
+                    header.column.columnDef.meta?.headerProps?.className,
+                    {
+                      sort: header.column.getCanSort(),
+                      desc: header.column.getIsSorted() === 'desc',
+                      asc: header.column.getIsSorted() === 'asc'
+                    }
+                  )}
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder
                     ? null
-                    : flexRender(header.column.columnDef.header, header.getContext())}
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                 </th>
               );
             })}

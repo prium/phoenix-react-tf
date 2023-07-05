@@ -34,16 +34,25 @@ const Brands = () => {
             <Brand image={blender} className="border-bottom border-end-md" />
           </Col>
           <Col xs={6} md={3}>
-            <Brand image={upwork} className="border-bottom border-end border-end-md" />
+            <Brand
+              image={upwork}
+              className="border-bottom border-end border-end-md"
+            />
           </Col>
           <Col xs={6} md={3}>
             <Brand image={facebook} className="border-bottom border-end-lg-0" />
           </Col>
           <Col xs={6} md={3}>
-            <Brand image={pocket} className="border-end border-bottom border-bottom-md-0" />
+            <Brand
+              image={pocket}
+              className="border-end border-bottom border-bottom-md-0"
+            />
           </Col>
           <Col xs={6} md={3}>
-            <Brand image={mailBluster} className="border-end-md border-bottom border-bottom-md-0" />
+            <Brand
+              image={mailBluster}
+              className="border-end-md border-bottom border-bottom-md-0"
+            />
           </Col>
           <Col xs={6} md={3}>
             <Brand image={discord} className="border-end" />

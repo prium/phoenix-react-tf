@@ -4,9 +4,20 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Comment = ({ comment, className }: { comment: CommentType; className?: string }) => {
+const Comment = ({
+  comment,
+  className
+}: {
+  comment: CommentType;
+  className?: string;
+}) => {
   return (
-    <Row className={classNames(className, 'justify-contnet-between gy-1 py-3 align-items-start')}>
+    <Row
+      className={classNames(
+        className,
+        'justify-contnet-between gy-1 py-3 align-items-start'
+      )}
+    >
       <Col xs={12} sm>
         <p
           className={classNames('fs-9 text-800 mb-0', {
@@ -25,7 +36,12 @@ const Comment = ({ comment, className }: { comment: CommentType; className?: str
         </p>
 
         {comment.attachment && (
-          <img src={comment.attachment} alt="" width={220} className="rounded-2 mb-2" />
+          <img
+            src={comment.attachment}
+            alt=""
+            width={220}
+            className="rounded-2 mb-2"
+          />
         )}
       </Col>
       <Col xs={{ span: 12, order: 1 }} sm={{ span: 'auto', order: 0 }}>

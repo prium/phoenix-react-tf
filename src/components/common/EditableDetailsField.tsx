@@ -57,7 +57,11 @@ const EditableDetailsField = ({
             >
               Save
             </Button>
-            <Button variant="phoenix-secondary" size="sm" onClick={() => setEditMode(false)}>
+            <Button
+              variant="phoenix-secondary"
+              size="sm"
+              onClick={() => setEditMode(false)}
+            >
               Cancel
             </Button>
           </div>

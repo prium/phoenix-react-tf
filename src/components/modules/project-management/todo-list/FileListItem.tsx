@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import { Dropdown } from 'react-bootstrap';
 import { Attachment } from 'data/project-management/todoListData';
 import classNames from 'classnames';
@@ -41,7 +43,11 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
               <span className="text-nowrap">{attachment.date}</span>
             </div>
             {attachment.thumbnail && (
-              <img src={attachment.thumbnail} alt={attachment.name} className="rounded-2" />
+              <img
+                src={attachment.thumbnail}
+                alt={attachment.name}
+                className="rounded-2"
+              />
             )}
           </div>
           <RevealDropdownTrigger>

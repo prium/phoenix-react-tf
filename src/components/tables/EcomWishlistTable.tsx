@@ -5,7 +5,10 @@ import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import { WishlistProductType, wishlistProducts } from 'data/e-commerce/products';
+import {
+  WishlistProductType,
+  wishlistProducts
+} from 'data/e-commerce/products';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,7 +24,10 @@ const columns: ColumnDef<WishlistProductType>[] = [
         </div>
       );
     },
-    meta: { cellProps: { className: 'py-0' }, headerProps: { style: { width: '7%' } } }
+    meta: {
+      cellProps: { className: 'py-0' },
+      headerProps: { style: { width: '7%' } }
+    }
   },
   {
     accessorKey: 'product',
@@ -71,7 +77,10 @@ const columns: ColumnDef<WishlistProductType>[] = [
         <Button size="sm" className="text-500 hover-text-600">
           <FontAwesomeIcon icon="trash" />
         </Button>
-        <Button className="fs-10 text-nowrap" startIcon={<FontAwesomeIcon icon="shopping-cart" />}>
+        <Button
+          className="fs-10 text-nowrap"
+          startIcon={<FontAwesomeIcon icon="shopping-cart" />}
+        >
           Add to cart
         </Button>
       </div>

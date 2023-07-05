@@ -13,15 +13,20 @@ const exampleCode = `
 const OpacityExample = () => {
   return (
     <div>
-      <DocPageHeader title="Opacity" description="Control the opacity of elements." />
+      <DocPageHeader
+        title="Opacity"
+        description="Control the opacity of elements."
+      />
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0 text-800">
-              The opacity property sets the opacity level for an element. The opacity level
-              describes the transparency level, where 1 is not transparent at all, .5 is 50%
-              visible, and 0 is completely transparent. <br />
-              Set the opacity of an element using .opacity-{`{value}`} utilities.
+              The opacity property sets the opacity level for an element. The
+              opacity level describes the transparency level, where 1 is not
+              transparent at all, .5 is 50% visible, and 0 is completely
+              transparent. <br />
+              Set the opacity of an element using .opacity-{`{value}`}{' '}
+              utilities.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={exampleCode} />

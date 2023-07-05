@@ -8,7 +8,11 @@ interface QuantityButtonsProps {
   setQuantity: Dispatch<SetStateAction<number>>;
 }
 
-const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityButtonsProps) => {
+const QuantityButtons = ({
+  type = 'default',
+  quantity,
+  setQuantity
+}: QuantityButtonsProps) => {
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
@@ -26,7 +30,11 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
   if (type === 'default') {
     return (
       <div className="d-flex flex-between-center">
-        <Button variant="phoenix-primary" className="px-3" onClick={handleDecrease}>
+        <Button
+          variant="phoenix-primary"
+          className="px-3"
+          onClick={handleDecrease}
+        >
           <FontAwesomeIcon icon="minus" />
         </Button>
         <input
@@ -37,7 +45,11 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
           value={quantity}
           onChange={handleChange}
         />
-        <Button variant="phoenix-primary" className="px-3" onClick={handleIncrease}>
+        <Button
+          variant="phoenix-primary"
+          className="px-3"
+          onClick={handleIncrease}
+        >
           <FontAwesomeIcon icon="plus" />
         </Button>
       </div>

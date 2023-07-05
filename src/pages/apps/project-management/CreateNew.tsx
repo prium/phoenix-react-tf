@@ -14,12 +14,18 @@ const CreateNew = () => {
         <Col xs={12} xl={9}>
           <Row as="form" className="g-3 mb-6">
             <Col sm={6} md={8}>
-              <FloatingLabel controlId="floatingInputGrid" label="Project title">
+              <FloatingLabel
+                controlId="floatingInputGrid"
+                label="Project title"
+              >
                 <Form.Control type="text" placeholder="Project title" />
               </FloatingLabel>
             </Col>
             <Col sm={6} md={4}>
-              <FloatingLabel controlId="floatingSelectTask" label="Defult task view">
+              <FloatingLabel
+                controlId="floatingSelectTask"
+                label="Defult task view"
+              >
                 <Form.Select>
                   <option>Select task view</option>
                   <option value="1">technical</option>
@@ -29,7 +35,10 @@ const CreateNew = () => {
               </FloatingLabel>
             </Col>
             <Col sm={6} md={4}>
-              <FloatingLabel controlId="floatingSelectPrivacy" label="Project privacy">
+              <FloatingLabel
+                controlId="floatingSelectPrivacy"
+                label="Project privacy"
+              >
                 <Form.Select>
                   <option>Select privacy</option>
                   <option value="1">Data Privacy One</option>
@@ -59,7 +68,10 @@ const CreateNew = () => {
               </FloatingLabel>
             </Col>
             <Col sm={6} md={4}>
-              <FloatingLabel controlId="floatingSelectAdmin" label="Project Lead">
+              <FloatingLabel
+                controlId="floatingSelectAdmin"
+                label="Project Lead"
+              >
                 <Form.Select>
                   <option>Select admin</option>
                   <option value="1">Data Privacy One</option>
@@ -92,7 +104,12 @@ const CreateNew = () => {
                 render={({ defaultValue }, ref) => {
                   return (
                     <Form.Floating>
-                      <Form.Control type="date" placeholder="Deadline" ref={ref} id="deadline" />
+                      <Form.Control
+                        type="date"
+                        placeholder="Deadline"
+                        ref={ref}
+                        id="deadline"
+                      />
                       <label htmlFor="deadline" className="ps-6">
                         Deadline
                       </label>
@@ -102,7 +119,10 @@ const CreateNew = () => {
               />
             </Col>
             <Col xs={12} className="gy-6">
-              <FloatingLabel controlId="floatingProjectOverview" label="Project overview">
+              <FloatingLabel
+                controlId="floatingProjectOverview"
+                label="Project overview"
+              >
                 <Form.Control
                   as="textarea"
                   placeholder="Leave a comment here"

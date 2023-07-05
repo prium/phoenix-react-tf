@@ -40,7 +40,10 @@ const ProjectBoardView = () => {
             Projects
             <span className="fw-normal text-700 ms-3">({projects.length})</span>
           </h2>
-          <Link className="btn btn-primary px-5" to="/apps/project-management/create-new">
+          <Link
+            className="btn btn-primary px-5"
+            to="/apps/project-management/create-new"
+          >
             <FontAwesomeIcon icon="plus" className="me-2" />
             Add new project
           </Link>

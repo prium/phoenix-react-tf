@@ -18,9 +18,13 @@ const EcomBestInMarketBanner = () => {
         <Col xs={8}>
           <div className="banner-text light">
             <h2 className="text-white fw-bolder fs-sm-4 mb-5">
-              MI 11 Pro <br /> <span className="fs-7 fs-sm-6">Best in the market</span>
+              MI 11 Pro <br />{' '}
+              <span className="fs-7 fs-sm-6">Best in the market</span>
             </h2>
-            <Link to="#!" className="btn btn-lg btn-warning rounded-pill banner-button">
+            <Link
+              to="#!"
+              className="btn btn-lg btn-warning rounded-pill banner-button"
+            >
               Buy Now
             </Link>
           </div>

@@ -1,8 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import FilterButtonGroup, { FilterMenu } from 'components/common/FilterButtonGroup';
+import FilterButtonGroup, {
+  FilterMenu
+} from 'components/common/FilterButtonGroup';
 import SearchBox from 'components/common/SearchBox';
-import CustomersTable, { customersTablecolumns } from 'components/tables/CustomersTable';
+import CustomersTable, {
+  customersTablecolumns
+} from 'components/tables/CustomersTable';
 import { customers } from 'data/e-commerce/customers';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
@@ -78,7 +82,8 @@ const Customers = () => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Abandoned checkouts <span className="text-700 fw-semi-bold">(17)</span>
+              Abandoned checkouts{' '}
+              <span className="text-700 fw-semi-bold">(17)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -88,7 +93,8 @@ const Customers = () => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="#!">
-              Email subscribers <span className="text-700 fw-semi-bold">(8)</span>
+              Email subscribers{' '}
+              <span className="text-700 fw-semi-bold">(8)</span>
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
@@ -101,9 +107,15 @@ const Customers = () => {
           <div className="mb-4">
             <Row className="g-3">
               <Col xs="auto">
-                <SearchBox placeholder="Search customers" onChange={handleSearchInputChange} />
+                <SearchBox
+                  placeholder="Search customers"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
-              <Col xs="auto" className="scrollbar overflow-hidden-y flex-grow-1">
+              <Col
+                xs="auto"
+                className="scrollbar overflow-hidden-y flex-grow-1"
+              >
                 <FilterButtonGroup menus={filterMenus} />
               </Col>
               <Col xs="auto">

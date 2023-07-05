@@ -5,7 +5,13 @@ import { snakeCase } from 'helpers/utils';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-const SubTask = ({ task, className }: { task: SubTaskItem; className?: string }) => {
+const SubTask = ({
+  task,
+  className
+}: {
+  task: SubTaskItem;
+  className?: string;
+}) => {
   return (
     <div
       className={classNames(
@@ -18,7 +24,10 @@ const SubTask = ({ task, className }: { task: SubTaskItem; className?: string })
         id={snakeCase(task.task)}
         className="mb-1 mb-md-0 d-flex align-items-center lh-1 min-h-auto"
       >
-        <Form.Check.Input type="checkbox" className="form-check-line-through mt-0 me-3" />
+        <Form.Check.Input
+          type="checkbox"
+          className="form-check-line-through mt-0 me-3"
+        />
         <Form.Check.Label className="mb-0 fs-8"> {task.task}</Form.Check.Label>
       </Form.Check>
 

@@ -27,7 +27,12 @@ const DocPageHeader = ({
       {description && <p className="text-700 lead mb-2">{description}</p>}
       {children}
       {link && (
-        <a href={link.url} className="btn btn-link p-0" rel="noreferrer" target="_blank">
+        <a
+          href={link.url}
+          className="btn btn-link p-0"
+          rel="noreferrer"
+          target="_blank"
+        >
           {link.text}
           <FeatherIcon icon="chevron-right" size={16} />
         </a>

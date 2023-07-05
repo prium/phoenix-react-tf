@@ -1,6 +1,10 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Button as BsButton, ButtonProps as BsButtonProps, Spinner } from 'react-bootstrap';
+import {
+  Button as BsButton,
+  ButtonProps as BsButtonProps,
+  Spinner
+} from 'react-bootstrap';
 
 export type ButtonVariant =
   | ''
