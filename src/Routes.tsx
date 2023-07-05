@@ -88,6 +88,7 @@ import ProjectBoardView from 'pages/apps/project-management/ProjectBoardView';
 import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
 import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
+import Chat from 'pages/apps/Chat';
 
 const routes = [
   {
@@ -180,6 +181,10 @@ const routes = [
             element: <CreateAnEvent />
           }
         ]
+      },
+      {
+        path: '/apps/chat',
+        element: <Chat />
       },
       {
         path: '/modules',
