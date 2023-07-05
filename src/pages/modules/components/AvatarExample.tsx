@@ -106,13 +106,19 @@ const AvatarExample = () => {
           <Col md={4} sm={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Circular" />
-              <PhoenixDocCard.Body code={circularCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={circularCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col md={4} sm={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Square" />
-              <PhoenixDocCard.Body code={squareCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={squareCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col md={4} sm={6}>
@@ -142,13 +148,19 @@ const AvatarExample = () => {
           <Col lg={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Status" />
-              <PhoenixDocCard.Body code={statusCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={statusCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col lg={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Sizes" />
-              <PhoenixDocCard.Body code={sizesCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={sizesCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col xs={12}>

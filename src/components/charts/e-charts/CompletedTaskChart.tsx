@@ -23,16 +23,20 @@ echarts.use([
   CanvasRenderer,
   LegendComponent
 ]);
-const dates = getDates(new Date('5/1/2022'), new Date('5/30/2022'), 1000 * 60 * 60 * 24);
+const dates = getDates(
+  new Date('5/1/2022'),
+  new Date('5/30/2022'),
+  1000 * 60 * 60 * 24
+);
 
 const currentMonthData = [
-  50, 115, 180, 180, 180, 150, 120, 120, 120, 120, 120, 240, 240, 240, 240, 270, 300, 330, 360, 390,
-  340, 290, 310, 330, 350, 320, 290, 330, 370, 350
+  50, 115, 180, 180, 180, 150, 120, 120, 120, 120, 120, 240, 240, 240, 240, 270,
+  300, 330, 360, 390, 340, 290, 310, 330, 350, 320, 290, 330, 370, 350
 ];
 
 const prevMonthData = [
-  130, 130, 130, 90, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 110, 170, 230, 230, 230, 270, 310,
-  270, 230, 260, 290, 320, 280, 280, 280
+  130, 130, 130, 90, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 110, 170, 230,
+  230, 230, 270, 310, 270, 230, 260, 290, 320, 280, 280, 280
 ];
 
 const tooltipFormatter = (params: CallbackDataParams[]) => {
@@ -60,7 +64,10 @@ const tooltipFormatter = (params: CallbackDataParams[]) => {
           </div>`;
 };
 
-const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  theme: ThemeVariant,
+  getThemeColor: (name: string) => string
+) => ({
   color: [getThemeColor('primary'), getThemeColor('info')],
   tooltip: {
     trigger: 'axis',

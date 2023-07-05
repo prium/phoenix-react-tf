@@ -6,7 +6,9 @@ const SectionHeader = () => {
     <Row className="justify-content-between align-items-end mb-4 g-3">
       <Col xs="auto">
         <h3>Total sells</h3>
-        <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+        <p className="text-700 lh-sm mb-0">
+          Payment received across all channels
+        </p>
       </Col>
       <Col xs={8} sm={4}>
         <Form.Select size="sm">

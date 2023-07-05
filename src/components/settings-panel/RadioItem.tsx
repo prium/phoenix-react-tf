@@ -10,7 +10,14 @@ interface RadioItemProps {
   handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const RadioItem = ({ name, value, thumb, label, defaultChecked, handleChange }: RadioItemProps) => {
+const RadioItem = ({
+  name,
+  value,
+  thumb,
+  label,
+  defaultChecked,
+  handleChange
+}: RadioItemProps) => {
   return (
     <>
       <Form.Check.Input

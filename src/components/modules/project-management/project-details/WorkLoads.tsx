@@ -15,8 +15,16 @@ const WorkLoads = () => {
       <Row className="justify-content-center">
         <Col xs="auto" sm={12}>
           <div className="d-flex flex-column gap-2">
-            <ChartLegend bulletBg="primary" label="Shantinan Mekalan" value="72%" />
-            <ChartLegend bulletBg="primary-200" label="Makena Zikonn" value="18%" />
+            <ChartLegend
+              bulletBg="primary"
+              label="Shantinan Mekalan"
+              value="72%"
+            />
+            <ChartLegend
+              bulletBg="primary-200"
+              label="Makena Zikonn"
+              value="18%"
+            />
             <ChartLegend bulletBg="info" label="Meena Kumari" value="70%" />
           </div>
         </Col>

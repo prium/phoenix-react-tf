@@ -91,7 +91,11 @@ const ShippingInfo = () => {
                 <Button className="px-8 px-sm-11 me-2" type="submit">
                   Save
                 </Button>
-                <Button variant="phoenix-secondary" className="text-nowrap" type="button">
+                <Button
+                  variant="phoenix-secondary"
+                  className="text-nowrap"
+                  type="button"
+                >
                   Exit Without Saving
                 </Button>
               </Col>

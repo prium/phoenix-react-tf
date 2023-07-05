@@ -115,10 +115,12 @@ const FormControlExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0">
-              The <code>&lt;FormControl&gt;</code> component renders a form control with Bootstrap
-              styling. The <code>&lt;FormGroup&gt;</code> component wraps a form control with proper
-              spacing, along with support for a label, help text, and validation state. To ensure
-              accessibility, set <code>controlId</code> on <code>&lt;FormGroup&gt;</code>, and use{' '}
+              The <code>&lt;FormControl&gt;</code> component renders a form
+              control with Bootstrap styling. The <code>&lt;FormGroup&gt;</code>{' '}
+              component wraps a form control with proper spacing, along with
+              support for a label, help text, and validation state. To ensure
+              accessibility, set <code>controlId</code> on{' '}
+              <code>&lt;FormGroup&gt;</code>, and use{' '}
               <code>&lt;FormLabel&gt;</code> for the label.
             </p>
           </PhoenixDocCard.Header>
@@ -128,8 +130,8 @@ const FormControlExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              Use <code>size</code> on <code>&lt;FormControl&gt;</code> to change the size of the
-              input.
+              Use <code>size</code> on <code>&lt;FormControl&gt;</code> to
+              change the size of the input.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={sizingCode} />
@@ -138,9 +140,9 @@ const FormControlExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Readonly">
             <p className="mb-0">
-              Add the <code>readOnly</code> prop on an input to prevent modification of the input's
-              value. Read-only inputs appear lighter (just like disabled inputs), but retain the
-              standard cursor.
+              Add the <code>readOnly</code> prop on an input to prevent
+              modification of the input's value. Read-only inputs appear lighter
+              (just like disabled inputs), but retain the standard cursor.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={readOnlyCode} />
@@ -149,8 +151,8 @@ const FormControlExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Readonly plain text">
             <p className="mb-0">
-              Use <code>size</code> on <code>&lt;FormControl&gt;</code> to change the size of the
-              input.
+              Use <code>size</code> on <code>&lt;FormControl&gt;</code> to
+              change the size of the input.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={readOnlyTextCode} />

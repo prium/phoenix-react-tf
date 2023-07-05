@@ -15,15 +15,15 @@ const AddressSection = () => {
         <Row className="mb-3 text-center text-sm-start">
           <Col md={6}>
             <p>
-              Do not lose your potential customers to others. Tell them exactly where you are with
-              Geolocation enabled Phoenix admin dashboard. No need to take the burden of
-              communicating directly.
+              Do not lose your potential customers to others. Tell them exactly
+              where you are with Geolocation enabled Phoenix admin dashboard. No
+              need to take the burden of communicating directly.
             </p>
           </Col>
           <Col md={6}>
             <p>
-              You can easily tell your customers where to find you with a precise location map.
-              Getting closer was never easier!
+              You can easily tell your customers where to find you with a
+              precise location map. Getting closer was never easier!
             </p>
           </Col>
         </Row>
@@ -39,7 +39,11 @@ const AddressSection = () => {
           />
         </div>
         <Row className="g-5 g-lg-5">
-          <Col xs={12} md={6} className="mb-5 mb-md-0 text-center text-md-start">
+          <Col
+            xs={12}
+            md={6}
+            className="mb-5 mb-md-0 text-center text-md-start"
+          >
             <HelpCenter />
           </Col>
           <Col xs={12} md={6} className="text-center text-md-start">

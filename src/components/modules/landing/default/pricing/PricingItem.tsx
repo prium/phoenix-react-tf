@@ -35,7 +35,10 @@ const PricingItem = ({ pricing }: PricingItemProps) => {
           <li key={feature.id} className="mb-4 d-flex align-items-center">
             {pricing.features.includes(feature.id) && (
               <span className="fa-li">
-                <FontAwesomeIcon icon={feature.icon as IconProp} className="text-primary" />
+                <FontAwesomeIcon
+                  icon={feature.icon as IconProp}
+                  className="text-primary"
+                />
               </span>
             )}
             <span

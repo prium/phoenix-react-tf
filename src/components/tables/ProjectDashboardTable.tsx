@@ -10,7 +10,9 @@ import { Project, Status, projects } from 'data/project-management/projects';
 import Avatar from 'components/base/Avatar';
 import { ProgressBar } from 'react-bootstrap';
 import classNames from 'classnames';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<Project>[] = [
@@ -80,7 +82,9 @@ const columns: ColumnDef<Project>[] = [
         return (
           <>
             <p className="fw-bold text-1100 fs-9 mb-0">{calculation?.amount}</p>
-            <p className="fw-semi-bold fs-10 text-700 mb-0">{calculation?.label}</p>
+            <p className="fw-semi-bold fs-10 text-700 mb-0">
+              {calculation?.label}
+            </p>
           </>
         );
       }
@@ -175,7 +179,9 @@ const ProjectDashboardTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <AdvanceTable tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }} />
+        <AdvanceTable
+          tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }}
+        />
         <AdvanceTableFooter pagination />
       </AdvanceTableProvider>
     </div>

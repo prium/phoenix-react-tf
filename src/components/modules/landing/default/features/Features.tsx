@@ -21,10 +21,11 @@ const Features = () => {
                 of payments products
               </h2>
               <p className="mb-5">
-                With the power of Phoenix, you can now focus only on functionaries for your digital
-                products, while leaving the UI design on us!With the power of Phoenix, you can now
-                focus only on functionaries for your digital products, while leaving the UI design
-                on us!
+                With the power of Phoenix, you can now focus only on
+                functionaries for your digital products, while leaving the UI
+                design on us!With the power of Phoenix, you can now focus only
+                on functionaries for your digital products, while leaving the UI
+                design on us!
               </p>
               <Button
                 as={Link}
@@ -32,7 +33,9 @@ const Features = () => {
                 size="lg"
                 variant="outline-primary"
                 className="rounded-pill me-2"
-                endIcon={<FontAwesomeIcon icon="angle-right" className="ms-2" />}
+                endIcon={
+                  <FontAwesomeIcon icon="angle-right" className="ms-2" />
+                }
               >
                 Find out more
               </Button>
@@ -40,11 +43,18 @@ const Features = () => {
             <Col sm={6} lg={3} className="mt-7 text-center text-lg-start">
               <div className="h-100 d-flex flex-column justify-content-between">
                 <div className="border-start-lg border-dashed ps-4">
-                  <img className="mb-4" src={boltIlls} width={48} height={48} alt="" />
+                  <img
+                    className="mb-4"
+                    src={boltIlls}
+                    width={48}
+                    height={48}
+                    alt=""
+                  />
                   <div>
                     <h5 className="fw-bolder mb-2">Lightning Speed</h5>
                     <p className="fw-semi-bold lh-sm">
-                      Present everything you need in one place within minutes! Grow with Phoenix!
+                      Present everything you need in one place within minutes!
+                      Grow with Phoenix!
                     </p>
                   </div>
                   <Link to="#!" className="me-2 p-0 fs-9 fw-bold">
@@ -57,11 +67,18 @@ const Features = () => {
             <Col sm={6} lg={3} className="mt-7 text-center text-lg-start">
               <div className="h-100 d-flex flex-column">
                 <div className="border-start-lg border-dashed ps-4">
-                  <img className="mb-4" src={pie} width={48} height={48} alt="" />
+                  <img
+                    className="mb-4"
+                    src={pie}
+                    width={48}
+                    height={48}
+                    alt=""
+                  />
                   <div>
                     <h5 className="fw-bolder mb-2">All-in-one solution</h5>
                     <p className="fw-semi-bold lh-sm">
-                      Show your production and growth graph in one place with Phoenix!
+                      Show your production and growth graph in one place with
+                      Phoenix!
                     </p>
                   </div>
                   <Link to="#!" className="me-2 p-0 fs-9 fw-bold">
@@ -74,7 +91,11 @@ const Features = () => {
           </Row>
 
           {defaultFeatures.map((feature, index) => (
-            <FeatureSection key={feature.label} feature={feature} orderReverse={index === 1} />
+            <FeatureSection
+              key={feature.label}
+              feature={feature}
+              orderReverse={index === 1}
+            />
           ))}
         </div>
       </div>

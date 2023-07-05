@@ -1,5 +1,7 @@
 import Badge from 'components/base/Badge';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import React, { useState } from 'react';
 import BoardViewModal from './BoardViewModal';
@@ -31,7 +33,9 @@ const BoardViewItem = ({ project }: { project: Project }) => {
               </RevealDropdown>
             </div>
           </div>
-          <h3 className="text-white light fw-bold line-clamp-2">{project.name}</h3>
+          <h3 className="text-white light fw-bold line-clamp-2">
+            {project.name}
+          </h3>
         </div>
       </RevealDropdownTrigger>
 

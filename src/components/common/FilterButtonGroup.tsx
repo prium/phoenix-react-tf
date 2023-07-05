@@ -25,7 +25,11 @@ const FilterButtonGroup = ({ menus }: FilterButtonGroupProps) => {
             className="px-7 flex-shrink-0 dropdown-caret-none"
           >
             {menu.label}
-            <FontAwesomeIcon icon="angle-down" className="ms-2" transform="down-2" />
+            <FontAwesomeIcon
+              icon="angle-down"
+              className="ms-2"
+              transform="down-2"
+            />
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {menu.items.map((item, subIndex) => (

@@ -3,7 +3,9 @@ import { UilStopwatch } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ProjectDetailsSummary from 'components/modules/project-management/project-details/ProjectDetailsSummary';
 import TaskCompleted from 'components/modules/project-management/project-details/TaskCompleted';
 import TeamMembers from 'components/modules/project-management/project-details/TeamMembers';
@@ -72,18 +74,20 @@ const ProjectDetails = () => {
           <div>
             <h3 className="text-1100 mb-4">Project overview</h3>
             <p className="text-800 mb-4">
-              The new redirection team is happy to announce that we’ve fixed all our unresponsive
-              URLs and redirected them to new URLs. The tremendous assistance from our support team
-              and the dev team, as well as that of the team lead’s, this team has made an impossible
-              possible within a week. They didn’t stop for a moment, and we got our pages working
-              again for all the valuable users.{' '}
+              The new redirection team is happy to announce that we’ve fixed all
+              our unresponsive URLs and redirected them to new URLs. The
+              tremendous assistance from our support team and the dev team, as
+              well as that of the team lead’s, this team has made an impossible
+              possible within a week. They didn’t stop for a moment, and we got
+              our pages working again for all the valuable users.{' '}
             </p>
             <p className="text-800 mb-0">
-              Join us in celebrating the massive success of data transferring and getting us a huge
-              revenue by eating out. Free public viewing and a buffet is offered for the great team
-              as well as for the other teams working with us. We’ll be checking out places for the
-              best option available at hands and we’ll let you know the schedule once we decide on
-              one...
+              Join us in celebrating the massive success of data transferring
+              and getting us a huge revenue by eating out. Free public viewing
+              and a buffet is offered for the great team as well as for the
+              other teams working with us. We’ll be checking out places for the
+              best option available at hands and we’ll let you know the schedule
+              once we decide on one...
               <Link className="fw-semi-bold" to="#!">
                 read more
               </Link>
@@ -91,7 +95,11 @@ const ProjectDetails = () => {
           </div>
         </div>
       </Col>
-      <Col xs={12} xxl={4} className="px-0 border-start-xxl border-300 border-top-sm">
+      <Col
+        xs={12}
+        xxl={4}
+        className="px-0 border-start-xxl border-300 border-top-sm"
+      >
         <div className="h-100">
           <div className="bg-light dark__bg-1100 h-100">
             <div className="p-4 p-lg-6">

@@ -98,8 +98,8 @@ const PlaceholderExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Width">
             <p className="mb-0">
-              You can change the <code>width</code> through grid column classes, width utilities, or
-              inline styles.
+              You can change the <code>width</code> through grid column classes,
+              width utilities, or inline styles.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={widthCode} />
@@ -108,8 +108,9 @@ const PlaceholderExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Color">
             <p className="mb-0">
-              By default, the <code>Placeholder</code> uses <code>currentColor</code>. This can be
-              overridden with a custom color or utility class.
+              By default, the <code>Placeholder</code> uses{' '}
+              <code>currentColor</code>. This can be overridden with a custom
+              color or utility class.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={colorCode} />
@@ -118,9 +119,9 @@ const PlaceholderExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              The size of <code>Placeholder</code>s are based on the typographic style of the parent
-              element. Customize them with sizing props: <code>lg</code>, <code>sm</code>, or{' '}
-              <code>xs</code>.
+              The size of <code>Placeholder</code>s are based on the typographic
+              style of the parent element. Customize them with sizing props:{' '}
+              <code>lg</code>, <code>sm</code>, or <code>xs</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={sizingCode} />
@@ -129,9 +130,9 @@ const PlaceholderExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Animation">
             <p className="mb-0">
-              Animate placeholders by setting the prop <code>animation</code> to <code>glow</code>{' '}
-              or <code>wave</code> to better convey the perception of something being{' '}
-              <em>actively</em> loaded.
+              Animate placeholders by setting the prop <code>animation</code> to{' '}
+              <code>glow</code> or <code>wave</code> to better convey the
+              perception of something being <em>actively</em> loaded.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={animationCode} />

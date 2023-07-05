@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import FilterButtonGroup, { FilterMenu } from 'components/common/FilterButtonGroup';
+import FilterButtonGroup, {
+  FilterMenu
+} from 'components/common/FilterButtonGroup';
 import SearchBox from 'components/common/SearchBox';
 import OrdersTable, { ordersTableColumns } from 'components/tables/OrdersTable';
 import { ordersTableData } from 'data/e-commerce/orders';
@@ -101,9 +103,15 @@ const Orders = () => {
           <div className="mb-4">
             <Row className="g-3">
               <Col xs="auto">
-                <SearchBox placeholder="Search customers" onChange={handleSearchInputChange} />
+                <SearchBox
+                  placeholder="Search customers"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
-              <Col xs="auto" className="scrollbar overflow-hidden-y flex-grow-1">
+              <Col
+                xs="auto"
+                className="scrollbar overflow-hidden-y flex-grow-1"
+              >
                 <FilterButtonGroup menus={filterMenus} />
               </Col>
               <Col xs="auto">

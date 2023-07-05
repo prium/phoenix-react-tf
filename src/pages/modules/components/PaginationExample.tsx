@@ -72,7 +72,10 @@ const PaginationExample = () => {
             title="More options"
             description='For building more complex pagination UI, there are few convenient sub-components for adding "First", "Previous", "Next", and "Last" buttons, as well as an "Ellipsis" item for indicating previous or continuing results.'
           />
-          <PhoenixDocCard.Body code={moreOptionsCode} scope={{ FontAwesomeIcon }} />
+          <PhoenixDocCard.Body
+            code={moreOptionsCode}
+            scope={{ FontAwesomeIcon }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

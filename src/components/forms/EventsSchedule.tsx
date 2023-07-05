@@ -1,6 +1,6 @@
-import DatePicker from "components/base/DatePicker";
-import React from "react";
-import { Col, FloatingLabel, Form } from "react-bootstrap";
+import DatePicker from 'components/base/DatePicker';
+import React from 'react';
+import { Col, FloatingLabel, Form } from 'react-bootstrap';
 
 const EventsSchedule = () => {
   return (
@@ -45,7 +45,7 @@ const EventsSchedule = () => {
           options={{
             enableTime: true,
             noCalendar: true,
-            dateFormat: "H:i",
+            dateFormat: 'H:i'
           }}
         />
       </Col>
@@ -88,7 +88,7 @@ const EventsSchedule = () => {
           options={{
             enableTime: true,
             noCalendar: true,
-            dateFormat: "H:i",
+            dateFormat: 'H:i'
           }}
         />
       </Col>

@@ -20,8 +20,16 @@ const FeatureSection = ({ feature, orderReverse }: FeatureSectionProps) => {
           'order-lg-1': orderReverse
         })}
       >
-        <img className="feature-image mb-9 mb-lg-0 d-dark-none" src={lightImage} alt="" />
-        <img className="feature-image mb-9 mb-lg-0 d-light-none" src={darkImage} alt="" />
+        <img
+          className="feature-image mb-9 mb-lg-0 d-dark-none"
+          src={lightImage}
+          alt=""
+        />
+        <img
+          className="feature-image mb-9 mb-lg-0 d-light-none"
+          src={darkImage}
+          alt=""
+        />
       </Col>
       <Col lg={6}>
         <h6 className="text-primary mb-2 ls-2">{label}</h6>

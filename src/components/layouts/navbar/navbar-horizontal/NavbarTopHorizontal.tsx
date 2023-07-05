@@ -59,9 +59,17 @@ const DropdownItem = ({ route }: { route: RouteItems }) => {
         className="nav-link dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
       >
         <Icon className="me-2" size={16} />
-        <span>{capitalize(route.horizontalNavLabel ? route.horizontalNavLabel : route.label)}</span>
+        <span>
+          {capitalize(
+            route.horizontalNavLabel ? route.horizontalNavLabel : route.label
+          )}
+        </span>
       </Dropdown.Toggle>
-      {route.megaMenu ? <TopNavMegaMenu route={route} /> : <TopNavItem route={route} />}
+      {route.megaMenu ? (
+        <TopNavMegaMenu route={route} />
+      ) : (
+        <TopNavItem route={route} />
+      )}
     </Dropdown>
   );
 };

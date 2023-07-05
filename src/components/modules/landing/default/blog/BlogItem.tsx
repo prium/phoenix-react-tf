@@ -9,23 +9,37 @@ import { Link } from 'react-router-dom';
 const BlogItem = ({ blog }: { blog: Blog }) => {
   return (
     <Card className="text-white h-100">
-      <Card.Img variant="top" src={blog.image} alt="..." className="rounded-top h-100 fit-cover" />
+      <Card.Img
+        variant="top"
+        src={blog.image}
+        alt="..."
+        className="rounded-top h-100 fit-cover"
+      />
       <Card.Body className="rounded-top">
         <div className="d-flex align-items-center mb-3">
           <div className="d-flex align-items-center me-3">
-            <Link to="#!" className="btn-link text-decoration-none d-flex align-items-center">
+            <Link
+              to="#!"
+              className="btn-link text-decoration-none d-flex align-items-center"
+            >
               <FontAwesomeIcon icon="eye" className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.views}</span>
             </Link>
           </div>
           <div className="d-flex align-items-center me-3">
-            <Link to="#!" className="btn-link text-decoration-none d-flex align-items-center">
+            <Link
+              to="#!"
+              className="btn-link text-decoration-none d-flex align-items-center"
+            >
               <FontAwesomeIcon icon="heart" className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.likes}</span>
             </Link>
           </div>
           <div className="d-flex align-items-center">
-            <Link to="#!" className="btn-link text-decoration-none d-flex align-items-center">
+            <Link
+              to="#!"
+              className="btn-link text-decoration-none d-flex align-items-center"
+            >
               <FontAwesomeIcon icon="comment" className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.comments}</span>
             </Link>

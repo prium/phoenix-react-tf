@@ -36,17 +36,19 @@ const Pricing = () => {
           </Col>
           <Col md={6} className="text-center text-sm-start">
             <p>
-              Entice your customers with {process.env.REACT_APP_TITLE} admin dashboard. Show your
-              best deal in this section to help customers choose from your best offers and place
-              them all in one place with this efficient template. If you are availing more than one
-              offer to your customers, let them compare among them and search for what they need to
-              get. Show offer details here and entice them to buy.
+              Entice your customers with {process.env.REACT_APP_TITLE} admin
+              dashboard. Show your best deal in this section to help customers
+              choose from your best offers and place them all in one place with
+              this efficient template. If you are availing more than one offer
+              to your customers, let them compare among them and search for what
+              they need to get. Show offer details here and entice them to buy.
             </p>
           </Col>
           <Col md={6} className="text-center text-sm-start">
             <p>
-              offer to your customers, let them compare among them and search for what they need to
-              get. Show offer details here and entice them to buy.
+              offer to your customers, let them compare among them and search
+              for what they need to get. Show offer details here and entice them
+              to buy.
             </p>
           </Col>
         </Row>
@@ -65,7 +67,9 @@ const Pricing = () => {
                 >
                   {item.popular && (
                     <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
-                      <p className="text-primary-600 mb-0 dark__text-primary-200">Most popular</p>
+                      <p className="text-primary-600 mb-0 dark__text-primary-200">
+                        Most popular
+                      </p>
                     </div>
                   )}
                   <Card.Body className="px-6">
@@ -86,8 +90,8 @@ const Pricing = () => {
         </Row>
         <div className="text-center">
           <p>
-            For Enterprise Solution with Managed SMTP, Custom API setup, Dedicated Support, and more
-            - <a href="#!">Contact us</a>
+            For Enterprise Solution with Managed SMTP, Custom API setup,
+            Dedicated Support, and more - <a href="#!">Contact us</a>
           </p>
         </div>
       </div>

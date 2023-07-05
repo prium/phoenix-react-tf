@@ -17,12 +17,30 @@ export const PaymentMethod = () => {
             <Col xs={12} md="auto">
               <div className="d-flex">
                 <Form.Check type="radio" id="creditCard" className="me-3">
-                  <Form.Check.Input value="credit_card" type="radio" name="paymentMethod" />
-                  <Form.Check.Label className="fs-8 text-900">Credit card</Form.Check.Label>
+                  <Form.Check.Input
+                    value="credit_card"
+                    type="radio"
+                    name="paymentMethod"
+                  />
+                  <Form.Check.Label className="fs-8 text-900">
+                    Credit card
+                  </Form.Check.Label>
                 </Form.Check>
-                <img className="h-100 me-2 ms-4 ms-md-0" src={visa} alt="visa" />
-                <img className="h-100 me-2 ms-4 ms-md-0" src={discover} alt="discover" />
-                <img className="h-100 me-2 ms-4 ms-md-0" src={mastercard} alt="mastercard" />
+                <img
+                  className="h-100 me-2 ms-4 ms-md-0"
+                  src={visa}
+                  alt="visa"
+                />
+                <img
+                  className="h-100 me-2 ms-4 ms-md-0"
+                  src={discover}
+                  alt="discover"
+                />
+                <img
+                  className="h-100 me-2 ms-4 ms-md-0"
+                  src={mastercard}
+                  alt="mastercard"
+                />
                 <img
                   className="h-100 me-2 ms-4 ms-md-0"
                   src={american_express}
@@ -32,14 +50,26 @@ export const PaymentMethod = () => {
             </Col>
             <Col xs={12} md="auto">
               <Form.Check type="radio" id="paypal" className="me-3">
-                <Form.Check.Input value="paypal" type="radio" name="paymentMethod" />
-                <Form.Check.Label className="fs-8 text-900">Paypal</Form.Check.Label>
+                <Form.Check.Input
+                  value="paypal"
+                  type="radio"
+                  name="paymentMethod"
+                />
+                <Form.Check.Label className="fs-8 text-900">
+                  Paypal
+                </Form.Check.Label>
               </Form.Check>
             </Col>
             <Col xs={12} md="auto">
               <Form.Check type="radio" id="coupon" className="me-3">
-                <Form.Check.Input type="radio" value="coupon" name="paymentMethod" />
-                <Form.Check.Label className="fs-8 text-900">Coupon</Form.Check.Label>
+                <Form.Check.Input
+                  type="radio"
+                  value="coupon"
+                  name="paymentMethod"
+                />
+                <Form.Check.Label className="fs-8 text-900">
+                  Coupon
+                </Form.Check.Label>
               </Form.Check>
             </Col>
           </Row>
@@ -59,13 +89,21 @@ export const PaymentMethod = () => {
         <Col md={6}>
           <Form.Group>
             <h5 className="text-1000 mb-2"> Card number</h5>
-            <Form.Control className="text-1100" type="number" placeholder="Enter card number" />
+            <Form.Control
+              className="text-1100"
+              type="number"
+              placeholder="Enter card number"
+            />
           </Form.Group>
         </Col>
         <Col xs={12}>
           <Form.Group as={Col}>
             <h5 className="text-1000 mb-2">Full name</h5>
-            <Form.Control name="full_name" type="text" placeholder="Type your fullname" />
+            <Form.Control
+              name="full_name"
+              type="text"
+              placeholder="Type your fullname"
+            />
           </Form.Group>
         </Col>
         <Col md={6}>
@@ -93,13 +131,23 @@ export const PaymentMethod = () => {
         <Col md={6}>
           <Form.Group as={Col}>
             <h5 className="text-1000 mb-2">CVC</h5>
-            <Form.Control className="text-1100" type="number" placeholder="Enter a valid CVC" />
+            <Form.Control
+              className="text-1100"
+              type="number"
+              placeholder="Enter a valid CVC"
+            />
           </Form.Group>
         </Col>
         <Col xs={12}>
           <Form.Check type="checkbox" id="gridCheck" className="me-3">
-            <Form.Check.Input type="checkbox" value="save" name="paymentMethod" />
-            <Form.Check.Label className="fs-8 text-black">Save Card Details</Form.Check.Label>
+            <Form.Check.Input
+              type="checkbox"
+              value="save"
+              name="paymentMethod"
+            />
+            <Form.Check.Label className="fs-8 text-black">
+              Save Card Details
+            </Form.Check.Label>
           </Form.Check>
         </Col>
       </Row>

@@ -15,7 +15,8 @@ const ActivityTimeline = ({ data }: { data: ActivityTimelineData[] }) => {
               <Timeline.OppositeContent>
                 <p className="fs-10 fw-semi-bold text-600 text-end">
                   {item.oppositeContent.date}
-                  <br className="d-none d-md-block" /> {item.oppositeContent.time}
+                  <br className="d-none d-md-block" />{' '}
+                  {item.oppositeContent.time}
                 </p>
               </Timeline.OppositeContent>
               <Timeline.Separator className="position-md-relative">

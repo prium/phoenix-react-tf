@@ -1,12 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
-import ProductsTable, { productsTablecolumns } from 'components/tables/ProductsTable';
+import ProductsTable, {
+  productsTablecolumns
+} from 'components/tables/ProductsTable';
 import { productsTableData } from 'data/e-commerce/products';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import { Breadcrumb, ButtonGroup, Col, Dropdown, Nav, Row } from 'react-bootstrap';
+import {
+  Breadcrumb,
+  ButtonGroup,
+  Col,
+  Dropdown,
+  Nav,
+  Row
+} from 'react-bootstrap';
 
 const Products = () => {
   const table = useAdvanceTable({
@@ -59,9 +68,15 @@ const Products = () => {
           <div className="mb-4">
             <Row className="g-3">
               <Col xs="auto">
-                <SearchBox placeholder="Search products" onChange={handleSearchInputChange} />
+                <SearchBox
+                  placeholder="Search products"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
-              <Col xs="auto" className="scrollbar overflow-hidden-y flex-grow-1">
+              <Col
+                xs="auto"
+                className="scrollbar overflow-hidden-y flex-grow-1"
+              >
                 <ButtonGroup className="position-static">
                   <Dropdown as={ButtonGroup} className="position-static">
                     <Dropdown.Toggle
@@ -69,12 +84,20 @@ const Products = () => {
                       className="px-7 flex-shrink-0 dropdown-caret-none"
                     >
                       Category
-                      <FontAwesomeIcon icon="angle-down" className="ms-2" transform="down-2" />
+                      <FontAwesomeIcon
+                        icon="angle-down"
+                        className="ms-2"
+                        transform="down-2"
+                      />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Another action
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">
+                        Something else
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                   <Dropdown as={ButtonGroup} className="position-static">
@@ -83,15 +106,26 @@ const Products = () => {
                       className="px-7 flex-shrink-0 dropdown-caret-none"
                     >
                       Vendor
-                      <FontAwesomeIcon icon="angle-down" className="ms-2" transform="down-2" />
+                      <FontAwesomeIcon
+                        icon="angle-down"
+                        className="ms-2"
+                        transform="down-2"
+                      />
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Another action
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#/action-3">
+                        Something else
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <Button variant="phoenix-secondary" className="px-7 flex-shrink-0">
+                  <Button
+                    variant="phoenix-secondary"
+                    className="px-7 flex-shrink-0"
+                  >
                     More filters
                   </Button>
                 </ButtonGroup>

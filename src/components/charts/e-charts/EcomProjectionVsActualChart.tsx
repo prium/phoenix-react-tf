@@ -13,9 +13,13 @@ echarts.use([TooltipComponent, BarChart]);
 
 const dates = getPastDates(10);
 
-const data1 = [44485, 20428, 47302, 45180, 31034, 46358, 26581, 36628, 38219, 43256];
+const data1 = [
+  44485, 20428, 47302, 45180, 31034, 46358, 26581, 36628, 38219, 43256
+];
 
-const data2 = [38911, 29452, 31894, 47876, 31302, 27731, 25490, 30355, 27176, 30393];
+const data2 = [
+  38911, 29452, 31894, 47876, 31302, 27731, 25490, 30355, 27176, 30393
+];
 
 // const tooltipFormatter = (params: CallbackDataParams[]) => {
 //   const currentDate = dayjs(params[0].name);
@@ -150,7 +154,13 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   animation: false
 });
 
-const EcomProjectionVsActualChart = ({ height, width }: { height: string; width: string }) => {
+const EcomProjectionVsActualChart = ({
+  height,
+  width
+}: {
+  height: string;
+  width: string;
+}) => {
   const { getThemeColor } = useAppContext();
 
   return (

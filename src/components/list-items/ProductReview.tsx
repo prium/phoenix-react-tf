@@ -2,7 +2,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { ProductReviewType } from 'data/e-commerce';
 import React from 'react';
@@ -36,7 +38,13 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
         <Row className="g-2 mb-2">
           {review.images.map(image => (
             <Col xs="auto" key={image}>
-              <img src={image} key={image} alt="" className="w-100" height={164} />
+              <img
+                src={image}
+                key={image}
+                alt=""
+                className="w-100"
+                height={164}
+              />
             </Col>
           ))}
         </Row>
@@ -44,7 +52,11 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
 
       {review.reply && (
         <div className="d-flex">
-          <FontAwesomeIcon icon="reply" className="me-2" transform="rotate-180" />
+          <FontAwesomeIcon
+            icon="reply"
+            className="me-2"
+            transform="rotate-180"
+          />
           <div>
             <h5>
               Respond from {review.reply.from}

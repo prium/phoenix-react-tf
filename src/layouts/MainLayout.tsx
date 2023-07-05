@@ -17,9 +17,13 @@ const MainLayout = () => {
 
   return (
     <Container fluid className="px-0">
-      {(navbarPosition === 'vertical' || navbarPosition === 'combo') && <NavbarVertical />}
+      {(navbarPosition === 'vertical' || navbarPosition === 'combo') && (
+        <NavbarVertical />
+      )}
       {navbarPosition === 'vertical' && <NavbarTopDefault />}
-      {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && <NavbarTopHorizontal />}
+      {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
+        <NavbarTopHorizontal />
+      )}
 
       <div className={classNames(contentClass, 'content')}>
         <Outlet />

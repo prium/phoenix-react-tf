@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import ProjectsTopSection from 'components/modules/project-management/ProjectsTopSection';
-import ProjectListTable, { projectListTableColumns } from 'components/tables/ProjectListTable';
+import ProjectListTable, {
+  projectListTableColumns
+} from 'components/tables/ProjectListTable';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { projects } from 'data/project-management/projects';
 import useAdvanceTable from 'hooks/useAdvanceTable';

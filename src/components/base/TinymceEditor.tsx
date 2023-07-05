@@ -11,7 +11,11 @@ interface TinymceEditorProps {
   options?: IProps['init'];
 }
 
-const TinymceEditor = ({ value, onChange, options = { height: '50vh' } }: TinymceEditorProps) => {
+const TinymceEditor = ({
+  value,
+  onChange,
+  options = { height: '50vh' }
+}: TinymceEditorProps) => {
   const {
     config: { theme }
   } = useAppContext();
@@ -23,7 +27,9 @@ const TinymceEditor = ({ value, onChange, options = { height: '50vh' } }: Tinymc
 
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
-        `body{color: ${getColor(theme === 'dark' ? 'white' : 'black')} !important;}`
+        `body{color: ${getColor(
+          theme === 'dark' ? 'white' : 'black'
+        )} !important;}`
       );
     }
   }, [theme]);

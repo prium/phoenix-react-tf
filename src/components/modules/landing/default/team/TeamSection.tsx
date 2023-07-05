@@ -40,14 +40,14 @@ const TeamSection = () => {
           </Col>
           <Col md={6} className="text-center text-sm-start">
             <p>
-              We have a small but strong development team to follow up on the development process.
-              Reach out to us for further information.
+              We have a small but strong development team to follow up on the
+              development process. Reach out to us for further information.
             </p>
           </Col>
           <Col md={6} className="text-center text-sm-start">
             <p>
-              The team is ready to answer all your questions within minutes. The efficient team is
-              always at your beck and call.
+              The team is ready to answer all your questions within minutes. The
+              efficient team is always at your beck and call.
             </p>
           </Col>
         </Row>

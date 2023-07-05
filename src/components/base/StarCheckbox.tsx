@@ -6,7 +6,11 @@ interface StarCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   defaultChecked?: boolean;
 }
 
-const StarCheckbox = ({ className, defaultChecked, ...rest }: StarCheckboxProps) => {
+const StarCheckbox = ({
+  className,
+  defaultChecked,
+  ...rest
+}: StarCheckboxProps) => {
   const [rating, setRating] = useState(0);
 
   const handleRating = () => {

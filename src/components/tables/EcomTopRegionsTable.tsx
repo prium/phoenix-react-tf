@@ -2,7 +2,10 @@ import { ColumnDef, flexRender } from '@tanstack/react-table';
 import classNames from 'classnames';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import Scrollbar from 'components/base/Scrollbar';
-import { TopRegionsTableDataType, topRegionsTableData } from 'data/TopRegionsTableData';
+import {
+  TopRegionsTableDataType,
+  topRegionsTableData
+} from 'data/TopRegionsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Table } from 'react-bootstrap';
@@ -20,7 +23,9 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
           <Link to="#!">
             <div className="d-flex justify-content-center">
               <img src={country.flag} alt="" width={24} />
-              <p className="mb-0 ps-3 text-primary fw-bold fs-9">{country.name}</p>
+              <p className="mb-0 ps-3 text-primary fw-bold fs-9">
+                {country.name}
+              </p>
             </div>
           </Link>
         </div>
@@ -38,7 +43,9 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {users.number}
-          <span className="text-700 fw-semi-bold ms-2">({users.percantage})</span>
+          <span className="text-700 fw-semi-bold ms-2">
+            ({users.percantage})
+          </span>
         </h6>
       );
     },
@@ -54,13 +61,18 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {transactions.number}
-          <span className="text-700 fw-semi-bold ms-2">({transactions.percantage})</span>
+          <span className="text-700 fw-semi-bold ms-2">
+            ({transactions.percantage})
+          </span>
         </h6>
       );
     },
     meta: {
       cellProps: { className: 'text-end' },
-      headerProps: { style: { width: '16%' }, className: 'text-end align-middle' }
+      headerProps: {
+        style: { width: '16%' },
+        className: 'text-end align-middle'
+      }
     }
   },
   {
@@ -70,13 +82,18 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {revenue.number}
-          <span className="text-700 fw-semi-bold ms-2">({revenue.percantage})</span>
+          <span className="text-700 fw-semi-bold ms-2">
+            ({revenue.percantage})
+          </span>
         </h6>
       );
     },
     meta: {
       cellProps: { className: 'text-end' },
-      headerProps: { style: { width: '20%' }, className: 'text-end align-middle' }
+      headerProps: {
+        style: { width: '20%' },
+        className: 'text-end align-middle'
+      }
     }
   },
   {
@@ -87,7 +104,10 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
     },
     meta: {
       cellProps: { className: 'text-end pe-0' },
-      headerProps: { style: { width: '17%' }, className: 'text-end align-middle pe-0' }
+      headerProps: {
+        style: { width: '17%' },
+        className: 'text-end align-middle pe-0'
+      }
     }
   }
 ];
@@ -115,11 +135,16 @@ const EcomTopRegionsTable = () => {
                   <th
                     key={header.id}
                     {...header.column.columnDef.meta?.headerProps}
-                    className={classNames(header.column.columnDef.meta?.headerProps?.className)}
+                    className={classNames(
+                      header.column.columnDef.meta?.headerProps?.className
+                    )}
                   >
                     {header.isPlaceholder
                       ? null
-                      : flexRender(header.column.columnDef.header, header.getContext())}
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                   </th>
                 );
               })}

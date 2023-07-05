@@ -1,6 +1,9 @@
 import AdvanceTable from 'components/base/AdvanceTable';
 import Badge from 'components/base/Badge';
-import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
+import {
+  latestReviewsTableData,
+  LatestReviewsTableDataType
+} from 'data/LatestReviewsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
@@ -8,7 +11,9 @@ import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import Rating from 'components/base/Rating';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
@@ -18,9 +23,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">{`${product.slice(0, 46)}${
-          product.length > 46 ? '...' : ''
-        }`}</Link>
+        <Link to="#!" className="fw-semi-bold line-clamp-1">{`${product.slice(
+          0,
+          46
+        )}${product.length > 46 ? '...' : ''}`}</Link>
       );
     },
     meta: {

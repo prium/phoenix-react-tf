@@ -7,9 +7,14 @@ import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import Rating from 'components/base/Rating';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import { customerRatingsTableData, CustomerReview } from 'data/e-commerce/customers';
+import {
+  customerRatingsTableData,
+  CustomerReview
+} from 'data/e-commerce/customers';
 
 const columns: ColumnDef<CustomerReview>[] = [
   {

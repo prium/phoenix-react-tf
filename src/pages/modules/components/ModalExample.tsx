@@ -214,8 +214,8 @@ const ModalExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Focus on specific element">
             <p className="mb-0">
-              You can focus on an element inside the modal using <code>autoFocus</code> attribute on
-              the element.
+              You can focus on an element inside the modal using{' '}
+              <code>autoFocus</code> attribute on the element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={focusCode} />
@@ -234,9 +234,9 @@ const ModalExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Fullscreen Modal">
             <p className="mb-0">
-              You can use the <code>fullscreen</code> prop to make the modal fullscreen. Specifying
-              a breakpoint will only set the modal as fullscreen <strong>below</strong> the
-              breakpoint size.
+              You can use the <code>fullscreen</code> prop to make the modal
+              fullscreen. Specifying a breakpoint will only set the modal as
+              fullscreen <strong>below</strong> the breakpoint size.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={fullscreenCode} />

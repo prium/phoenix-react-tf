@@ -40,8 +40,12 @@ const TodoListItem = ({
   const getBreakpointClasses = useCallback(
     (className: string, values: (number | string)[]) =>
       [
-        ...halfLayoutBreakpoints!.map(breakpoint => `${className}-${breakpoint}-${values[0]}`),
-        ...fullLayoutBreakpoints!.map(breakpoint => `${className}-${breakpoint}-${values[1]}`)
+        ...halfLayoutBreakpoints!.map(
+          breakpoint => `${className}-${breakpoint}-${values[0]}`
+        ),
+        ...fullLayoutBreakpoints!.map(
+          breakpoint => `${className}-${breakpoint}-${values[1]}`
+        )
       ].join(' '),
     [halfLayoutBreakpoints, fullLayoutBreakpoints]
   );
@@ -74,15 +78,22 @@ const TodoListItem = ({
           >
             <div className="d-flex align-items-center lh-1 gap-2">
               <h5
-                className={classNames('mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer', {
-                  'text-decoration-line-through': selected
-                })}
+                className={classNames(
+                  'mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer',
+                  {
+                    'text-decoration-line-through': selected
+                  }
+                )}
                 onClick={() => handleClick(todo)}
               >
                 {todo.task}
               </h5>
               {todo.badge && (
-                <Badge variant="phoenix" bg={todo.badge.bg} className="fs-10 ms-auto">
+                <Badge
+                  variant="phoenix"
+                  bg={todo.badge.bg}
+                  className="fs-10 ms-auto"
+                >
                   {todo.badge.label}
                 </Badge>
               )}
@@ -120,7 +131,11 @@ const TodoListItem = ({
               >
                 {todo.date}
               </p>
-              <div className={classNames(getBreakpointClasses('hover', ['show', 'hide']))}>
+              <div
+                className={classNames(
+                  getBreakpointClasses('hover', ['show', 'hide'])
+                )}
+              >
                 <p
                   className={classNames(
                     getBreakpointClasses('ps', [0, 3]),

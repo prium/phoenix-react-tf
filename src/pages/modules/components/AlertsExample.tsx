@@ -144,8 +144,8 @@ const AlertsExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Dismissing">
             <p className="mb-0">
-              Add the <code>dismissible</code> prop to add a functioning dismiss button to the
-              Alert.
+              Add the <code>dismissible</code> prop to add a functioning dismiss
+              button to the Alert.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={dismissCode} />

@@ -4,7 +4,10 @@ import { currencyFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
-import { WishlistProductType, wishlistProducts } from 'data/e-commerce/products';
+import {
+  WishlistProductType,
+  wishlistProducts
+} from 'data/e-commerce/products';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 
 const columns: ColumnDef<WishlistProductType>[] = [
@@ -19,7 +22,10 @@ const columns: ColumnDef<WishlistProductType>[] = [
         </div>
       );
     },
-    meta: { headerProps: { style: { width: '5%' } }, cellProps: { className: 'py-1' } }
+    meta: {
+      headerProps: { style: { width: '5%' } },
+      cellProps: { className: 'py-1' }
+    }
   },
   {
     accessorKey: 'product',
@@ -66,7 +72,8 @@ const columns: ColumnDef<WishlistProductType>[] = [
     id: 'total',
     accessorFn: ({ price, quantity }) => price * quantity,
     header: 'Total',
-    cell: ({ row: { original } }) => currencyFormat(original.price * original.quantity),
+    cell: ({ row: { original } }) =>
+      currencyFormat(original.price * original.quantity),
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end' },
       cellProps: { className: 'fw-bold text-1000 text-end' }

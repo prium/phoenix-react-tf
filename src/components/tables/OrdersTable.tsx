@@ -48,7 +48,10 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '28%', minWidth: 250 }, className: 'ps-8' },
+      headerProps: {
+        style: { width: '28%', minWidth: 250 },
+        className: 'ps-8'
+      },
       cellProps: { className: 'ps-8 py-0 white-space-nowrap' }
     }
   },
@@ -64,7 +67,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={payment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={payment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {payment_status.label}
         </Badge>
@@ -86,7 +95,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={fulfilment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={fulfilment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {fulfilment_status.label}
         </Badge>

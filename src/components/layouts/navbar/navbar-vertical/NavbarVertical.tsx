@@ -2,14 +2,21 @@ import { Nav, Navbar } from 'react-bootstrap';
 import { routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import NavbarVerticalMenu from './NavbarVerticalMenu';
-import { UilArrowFromRight, UilLeftArrowToLeft } from '@iconscout/react-unicons';
+import {
+  UilArrowFromRight,
+  UilLeftArrowToLeft
+} from '@iconscout/react-unicons';
 import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 
 const NavbarVerical = () => {
   const {
-    config: { openNavbarVertical, navbarVerticalAppearance, isNavbarVerticalCollapsed },
+    config: {
+      openNavbarVertical,
+      navbarVerticalAppearance,
+      isNavbarVerticalCollapsed
+    },
     setConfig
   } = useAppContext();
 
@@ -28,7 +35,9 @@ const NavbarVerical = () => {
               <Nav.Item key={route.label}>
                 {!route.labelDisabled && (
                   <>
-                    <p className="navbar-vertical-label">{capitalize(route.label)}</p>
+                    <p className="navbar-vertical-label">
+                      {capitalize(route.label)}
+                    </p>
                     <hr className="navbar-vertical-line" />
                   </>
                 )}
@@ -42,7 +51,9 @@ const NavbarVerical = () => {
         <Button
           className="navbar-vertical-toggle border-0 fw-semi-bold w-100 white-space-nowrap d-flex align-items-center"
           onClick={() => {
-            setConfig({ isNavbarVerticalCollapsed: !isNavbarVerticalCollapsed });
+            setConfig({
+              isNavbarVerticalCollapsed: !isNavbarVerticalCollapsed
+            });
           }}
         >
           {isNavbarVerticalCollapsed ? (

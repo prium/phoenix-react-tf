@@ -24,10 +24,16 @@ const EcomProfileCard = () => {
                   />
                 </a>
                 <a href="#!">
-                  <FontAwesomeIcon icon={['fab', 'facebook']} className="text-400 hover-primary" />
+                  <FontAwesomeIcon
+                    icon={['fab', 'facebook']}
+                    className="text-400 hover-primary"
+                  />
                 </a>
                 <a href="#!">
-                  <FontAwesomeIcon icon={['fab', 'twitter']} className="text-400 hover-primary" />
+                  <FontAwesomeIcon
+                    icon={['fab', 'twitter']}
+                    className="text-400 hover-primary"
+                  />
                 </a>
               </div>
             </Col>

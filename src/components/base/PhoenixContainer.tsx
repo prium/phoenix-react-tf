@@ -12,7 +12,10 @@ const PhoenixContainer = ({
   children
 }: PropsWithChildren<PhoenixContainerProps>) => {
   return (
-    <Container bsPrefix={small ? 'container-small' : 'container'} className={classNames(className)}>
+    <Container
+      bsPrefix={small ? 'container-small' : 'container'}
+      className={classNames(className)}
+    >
       {children}
     </Container>
   );

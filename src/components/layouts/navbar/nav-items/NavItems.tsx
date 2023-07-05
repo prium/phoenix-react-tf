@@ -27,7 +27,12 @@ const NavItems = () => {
       )}
       <Nav.Item>
         <Dropdown autoClose="outside">
-          <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
+          <Dropdown.Toggle
+            as={Link}
+            to="#!"
+            className="dropdown-caret-none nav-link"
+            variant=""
+          >
             <FeatherIcon icon="bell" size={20} />
           </Dropdown.Toggle>
           <NotificationDropdownMenu />
@@ -35,7 +40,12 @@ const NavItems = () => {
       </Nav.Item>
       <Nav.Item>
         <Dropdown autoClose="outside">
-          <Dropdown.Toggle as={Link} to="#!" className="dropdown-caret-none nav-link" variant="">
+          <Dropdown.Toggle
+            as={Link}
+            to="#!"
+            className="dropdown-caret-none nav-link"
+            variant=""
+          >
             <svg
               width="16"
               height="16"

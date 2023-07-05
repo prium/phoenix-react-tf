@@ -8,7 +8,9 @@ import Badge from 'components/base/Badge';
 import FeatherIcon from 'feather-icons-react';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import useAdvanceTable from 'hooks/useAdvanceTable';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
 export const ordersTableColumns: ColumnDef<Order>[] = [
@@ -48,7 +50,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={payment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={payment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {payment_status.label}
         </Badge>
@@ -70,7 +78,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={fulfilment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={fulfilment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {fulfilment_status.label}
         </Badge>
@@ -124,7 +138,9 @@ const CustomerOrdersTable = () => {
   return (
     <AdvanceTableProvider {...table}>
       <div className="border-y">
-        <AdvanceTable tableProps={{ className: 'phoenix-table table-sm fs-9' }} />
+        <AdvanceTable
+          tableProps={{ className: 'phoenix-table table-sm fs-9' }}
+        />
         <AdvanceTableFooter pagination />
       </div>
     </AdvanceTableProvider>

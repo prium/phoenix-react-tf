@@ -19,7 +19,9 @@ const ComingSoon = () => {
             <Col xs={12} xl={6} className="order-xl-1">
               <div className="d-flex flex-center">
                 <Lottie
-                  animationData={theme === 'light' ? comingSoonLight : comingSoonDark}
+                  animationData={
+                    theme === 'light' ? comingSoonLight : comingSoonDark
+                  }
                   loop={true}
                   className="w-xl-100 animation"
                 />
@@ -41,11 +43,13 @@ const ComingSoon = () => {
                     style={{ maxWidth: 408 }}
                   />
 
-                  <h2 className="text-gray-800 fs-xl-6 mb-3">This page is under development.</h2>
+                  <h2 className="text-gray-800 fs-xl-6 mb-3">
+                    This page is under development.
+                  </h2>
                   <p className="mb-6">
-                    This page is under development. We're making it a top priority to get all the
-                    pages from the newest HTML version of Phoenix over to the React JS version.
-                    Let's go!
+                    This page is under development. We're making it a top
+                    priority to get all the pages from the newest HTML version
+                    of Phoenix over to the React JS version. Let's go!
                   </p>
                   <Link
                     className="btn btn-primary"

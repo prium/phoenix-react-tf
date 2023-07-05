@@ -30,7 +30,9 @@ const EcomTotalOrdersCard = () => {
           </div>
           <div className="d-flex align-items-center">
             <div className="bullet-item bg-primary-100 me-2"></div>
-            <h6 className="text-900 fw-semi-bold flex-1 mb-0">Pending payment</h6>
+            <h6 className="text-900 fw-semi-bold flex-1 mb-0">
+              Pending payment
+            </h6>
             <h6 className="text-900 fw-semi-bold mb-0">48%</h6>
           </div>
         </div>

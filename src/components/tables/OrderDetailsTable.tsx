@@ -4,7 +4,10 @@ import { currencyFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
-import { WishlistProductType, wishlistProducts } from 'data/e-commerce/products';
+import {
+  WishlistProductType,
+  wishlistProducts
+} from 'data/e-commerce/products';
 import { useMemo } from 'react';
 
 const columns: ColumnDef<WishlistProductType>[] = [
@@ -74,7 +77,8 @@ const columns: ColumnDef<WishlistProductType>[] = [
     id: 'total',
     accessorFn: ({ price, quantity }) => price * quantity,
     header: 'Total',
-    cell: ({ row: { original } }) => currencyFormat(original.price * original.quantity),
+    cell: ({ row: { original } }) =>
+      currencyFormat(original.price * original.quantity),
     meta: {
       headerProps: { style: { width: 250 }, className: 'ps-4 text-end' },
       cellProps: { className: 'fw-bold text-1000 text-end ps-4' }
@@ -92,7 +96,10 @@ const OrderDetailsTable = () => {
   });
 
   const subtotal = useMemo(() => {
-    return wishlistProducts.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return wishlistProducts.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
   }, [wishlistProducts]);
 
   return (
@@ -102,8 +109,12 @@ const OrderDetailsTable = () => {
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           {/* <AdvanceTableFooter pagination /> */}
           <div className="d-flex flex-between-center py-3">
-            <p className="text-1100 fw-semi-bold lh-sm mb-0">Items subtotal :</p>
-            <p className="text-1100 fw-bold lh-sm mb-0">{currencyFormat(subtotal)}</p>
+            <p className="text-1100 fw-semi-bold lh-sm mb-0">
+              Items subtotal :
+            </p>
+            <p className="text-1100 fw-bold lh-sm mb-0">
+              {currencyFormat(subtotal)}
+            </p>
           </div>
         </div>
       </AdvanceTableProvider>

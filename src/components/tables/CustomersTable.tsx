@@ -77,7 +77,10 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     accessorKey: 'lastOrder',
     header: 'Last order',
     meta: {
-      headerProps: { style: { width: '10%', minWidth: 150 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '10%', minWidth: 150 },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-700 text-end' }
     }
   }

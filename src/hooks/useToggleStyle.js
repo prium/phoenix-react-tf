@@ -10,15 +10,21 @@ const useToggleStyle = () => {
 
   useEffect(() => {
     setIsStylesheetLoaded(false);
-    Array.from(document.getElementsByClassName('theme-stylesheet')).forEach(link => link.remove());
+    Array.from(document.getElementsByClassName('theme-stylesheet')).forEach(
+      link => link.remove()
+    );
     const link = document.createElement('link');
-    link.href = `${process.env.PUBLIC_URL}/css/theme.min${isRTL ? '.rtl' : ''}.css`;
+    link.href = `${process.env.PUBLIC_URL}/css/theme.min${
+      isRTL ? '.rtl' : ''
+    }.css`;
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.className = 'theme-stylesheet';
 
     const userLink = document.createElement('link');
-    userLink.href = `${process.env.PUBLIC_URL}/css/user${isRTL ? '.rtl' : ''}.min.css`;
+    userLink.href = `${process.env.PUBLIC_URL}/css/user${
+      isRTL ? '.rtl' : ''
+    }.min.css`;
     userLink.type = 'text/css';
     userLink.rel = 'stylesheet';
     userLink.className = 'theme-stylesheet';
@@ -33,7 +39,9 @@ const useToggleStyle = () => {
   }, [isRTL]);
 
   useEffect(() => {
-    document.documentElement.classList[theme === 'dark' ? 'add' : 'remove']('dark');
+    document.documentElement.classList[theme === 'dark' ? 'add' : 'remove'](
+      'dark'
+    );
     configDispatch({
       type: 'REFRESH'
     });

@@ -45,10 +45,13 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 className="border border-white rounded-circle"
               />
               <h6 className="text-white light">{user.name}</h6>
-              <p className="text-600 fw-semi-bold fs-10 mb-2">@{user.username}</p>
+              <p className="text-600 fw-semi-bold fs-10 mb-2">
+                @{user.username}
+              </p>
               <div className="d-flex flex-center mb-3">
                 <h6 className="text-white light mb-0">
-                  {user.connections} <span className="fw-normal text-300">connections</span>
+                  {user.connections}{' '}
+                  <span className="fw-normal text-300">connections</span>
                 </h6>
                 <FontAwesomeIcon
                   icon="circle"
@@ -56,7 +59,8 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                   transform="shrink-10 up-2"
                 />
                 <h6 className="text-white light mb-0">
-                  {user.mutual} <span className="fw-normal text-300">mutual</span>
+                  {user.mutual}{' '}
+                  <span className="fw-normal text-300">mutual</span>
                 </h6>
               </div>
             </div>
@@ -65,13 +69,22 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
         <div className="bg-white">
           <div className="p-3 border-bottom">
             <div className="d-flex gap-2">
-              <Button variant="phoenix-secondary" className="btn-icon btn-icon-lg">
+              <Button
+                variant="phoenix-secondary"
+                className="btn-icon btn-icon-lg"
+              >
                 <FontAwesomeIcon icon="phone" />
               </Button>
-              <Button variant="phoenix-secondary" className="btn-icon btn-icon-lg">
+              <Button
+                variant="phoenix-secondary"
+                className="btn-icon btn-icon-lg"
+              >
                 <FontAwesomeIcon icon="message" />
               </Button>
-              <Button variant="phoenix-secondary" className="btn-icon btn-icon-lg">
+              <Button
+                variant="phoenix-secondary"
+                className="btn-icon btn-icon-lg"
+              >
                 <FontAwesomeIcon icon="video" />
               </Button>
               <Button
@@ -85,12 +98,20 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
           </div>
           <Nav className="flex-column py-3 border-bottom">
             <Nav.Link className="">
-              <FeatherIcon icon="clipboard" size={16} className="me-2 text-900 d-inline-block" />
+              <FeatherIcon
+                icon="clipboard"
+                size={16}
+                className="me-2 text-900 d-inline-block"
+              />
               <span className="text-1000 flex-1">Assigned Projects</span>
               <FontAwesomeIcon icon="chevron-right" className="fs-11" />
             </Nav.Link>
             <Nav.Link className="">
-              <FeatherIcon icon="pie-chart" size={16} className="me-2 text-900 d-inline-block" />
+              <FeatherIcon
+                icon="pie-chart"
+                size={16}
+                className="me-2 text-900 d-inline-block"
+              />
               <span className="text-1000 flex-1">View activiy</span>
               <FontAwesomeIcon icon="chevron-right" className="fs-11" />
             </Nav.Link>
@@ -100,7 +121,10 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
             <Button variant="link" className="p-0 text-decoration-none">
               Details
             </Button>
-            <Button variant="link" className="p-0 text-decoration-none text-danger">
+            <Button
+              variant="link"
+              className="p-0 text-decoration-none text-danger"
+            >
               Unassign
             </Button>
           </div>

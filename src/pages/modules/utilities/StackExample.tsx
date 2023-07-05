@@ -51,8 +51,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Behaviors">
             <p>
-              Stacks are vertical by default and stacked items are full-width by default. Use the{' '}
-              <code>gap</code>
+              Stacks are vertical by default and stacked items are full-width by
+              default. Use the <code>gap</code>
               prop to add space between items.
             </p>
           </PhoenixDocCard.Header>
@@ -62,8 +62,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Vertical">
             <p className="mb-0">
-              Stacks are vertical by default and stacked items are full-width by default. Use the{' '}
-              <code>gap</code>
+              Stacks are vertical by default and stacked items are full-width by
+              default. Use the <code>gap</code>
               prop to add space between items.
             </p>
           </PhoenixDocCard.Header>
@@ -73,9 +73,10 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Horizontal">
             <p className="mb-0">
-              Use <code>direction="horizontal"</code> for horizontal layouts. Stacked items are
-              vertically centered by default and only take up their necessary width. Use the{' '}
-              <code>gap</code> prop to add space between items.
+              Use <code>direction="horizontal"</code> for horizontal layouts.
+              Stacked items are vertically centered by default and only take up
+              their necessary width. Use the <code>gap</code> prop to add space
+              between items.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={horizontalCode} />
@@ -84,7 +85,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Stack buttons">
             <p className="mb-0">
-              Use a vertical <code>Stack</code> to stack buttons and other elements:
+              Use a vertical <code>Stack</code> to stack buttons and other
+              elements:
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={buttonCode} />

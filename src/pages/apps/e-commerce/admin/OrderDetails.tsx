@@ -48,7 +48,10 @@ const OrderDetails = () => {
               Refund
             </Button>
             <Dropdown>
-              <Dropdown.Toggle variant="" className="p-0 dropdown-caret-none text-decoration-none">
+              <Dropdown.Toggle
+                variant=""
+                className="p-0 dropdown-caret-none text-decoration-none"
+              >
                 More action
                 <FontAwesomeIcon icon="chevron-down" className="ms-2" />
               </Dropdown.Toggle>

@@ -29,7 +29,8 @@ const NavbarBrand = () => {
         <Navbar.Brand
           href="/"
           className={classNames({
-            'me-1 me-sm-3': navbarTopShape === 'slim' || navbarPosition === 'horizontal'
+            'me-1 me-sm-3':
+              navbarTopShape === 'slim' || navbarPosition === 'horizontal'
           })}
         >
           {navbarTopShape === 'slim' ? (

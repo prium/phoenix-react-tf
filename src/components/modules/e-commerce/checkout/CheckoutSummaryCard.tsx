@@ -20,8 +20,15 @@ const CheckoutSummaryCard = () => {
               <Row className="align-items-center g-3" key={item.id}>
                 <Col xs={8} md={7} lg={8}>
                   <div className="d-flex align-items-center">
-                    <img className="me-2 ms-1" src={item.image} width={40} alt={item.name} />
-                    <h6 className="fw-semi-bold text-1000 lh-base line-clamp-2">{item.name}</h6>
+                    <img
+                      className="me-2 ms-1"
+                      src={item.image}
+                      width={40}
+                      alt={item.name}
+                    />
+                    <h6 className="fw-semi-bold text-1000 lh-base line-clamp-2">
+                      {item.name}
+                    </h6>
                   </div>
                 </Col>
                 <Col xs={2} md={3} lg={2}>

@@ -37,19 +37,31 @@ const Cta = () => {
                 />
                 <div className="d-flex align-items-center fw-bold justify-content-center mb-3">
                   <p className="mb-0">2008 Premium Icons</p>
-                  <FontAwesomeIcon icon="circle" className="text-primary" transform="shrink-12" />
+                  <FontAwesomeIcon
+                    icon="circle"
+                    className="text-primary"
+                    transform="shrink-12"
+                  />
                   <p className="mb-0">Included FREE with it</p>
                 </div>
                 <h1 className="fs-6 fs-sm-4 fs-lg-2 fw-bolder lh-sm mb-3">
-                  Join<span className="gradient-text-primary mx-2">Phoenix</span>Today
+                  Join
+                  <span className="gradient-text-primary mx-2">Phoenix</span>
+                  Today
                 </h1>
                 <Form className="d-flex gap-3 justify-content-center mb-3 px-xxl-12">
-                  <Form.Control type="email" placeholder="Email" id="ctaEmail1" />
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    id="ctaEmail1"
+                  />
                   <Button variant="primary" type="submit">
                     Subscribe
                   </Button>
                 </Form>
-                <p className="text-center">Best support in the world, Only Phoenix can ensure</p>
+                <p className="text-center">
+                  Best support in the world, Only Phoenix can ensure
+                </p>
               </Card.Body>
             </Card>
           </Col>

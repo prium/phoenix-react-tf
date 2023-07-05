@@ -38,7 +38,9 @@ const Invoice = () => {
                       <h6 className="mb-0 me-3">Invoice No :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">#FLR978282</p>
+                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                        #FLR978282
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -48,7 +50,9 @@ const Invoice = () => {
                       <h6 className="me-3">Invoice Date :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">19.06.2019</p>
+                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                        19.06.2019
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -66,7 +70,9 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> PAN No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">XVCJ963782008</p>
+                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                    XVCJ963782008
+                  </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> GST Reg No :</h6>
@@ -74,7 +80,9 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">A-8934792734</p>
+                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                    A-8934792734
+                  </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order Date :</h6>

@@ -19,8 +19,9 @@ const DesignFile = () => {
               Open the Figma link from the <code>README.md</code>
             </li>
             <li>
-              This file is <code>"read-only". </code>So, to customize the design on your own, you
-              have to duplicate the Figma file and start the editing process on the copied file.
+              This file is <code>"read-only". </code>So, to customize the design
+              on your own, you have to duplicate the Figma file and start the
+              editing process on the copied file.
             </li>
           </ul>
         </PhoenixDocCard.Body>

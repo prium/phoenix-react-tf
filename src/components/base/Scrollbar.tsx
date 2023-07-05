@@ -1,15 +1,25 @@
 import { PropsWithChildren } from 'react';
-import Scrollbars, { ScrollbarProps as ScrollbarsProps } from 'react-custom-scrollbars-2';
+import Scrollbars, {
+  ScrollbarProps as ScrollbarsProps
+} from 'react-custom-scrollbars-2';
 
 interface ScrollbarProps extends ScrollbarsProps {
   autoHide?: boolean;
 }
 
-const Scrollbar = ({ children, autoHide = true, ...rest }: PropsWithChildren<ScrollbarProps>) => {
+const Scrollbar = ({
+  children,
+  autoHide = true,
+  ...rest
+}: PropsWithChildren<ScrollbarProps>) => {
   return (
     <Scrollbars
-      renderThumbHorizontal={props => <div {...props} className="bg-400 rounded" />}
-      renderTrackVertical={props => <div {...props} className="bg-400 rounded" />}
+      renderThumbHorizontal={props => (
+        <div {...props} className="bg-400 rounded" />
+      )}
+      renderTrackVertical={props => (
+        <div {...props} className="bg-400 rounded" />
+      )}
       autoHide={autoHide}
       // autoHeight
       // autoHeightMin="100%"

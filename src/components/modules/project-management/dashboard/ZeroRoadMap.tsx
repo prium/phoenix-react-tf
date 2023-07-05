@@ -14,7 +14,9 @@ const ZeroRoadMap = () => {
         <Col xs={12} sm="auto">
           <div className="d-flex gap-3">
             <Form.Check className="d-flex align-items-end ps-0" id="progress">
-              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">Progress</Form.Check.Label>
+              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
+                Progress
+              </Form.Check.Label>
               <Form.Check
                 type="switch"
                 checked={showProgress}
@@ -25,7 +27,9 @@ const ZeroRoadMap = () => {
               />
             </Form.Check>
             <Form.Check className="d-flex align-items-end ps-0" id="links">
-              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">Links</Form.Check.Label>
+              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
+                Links
+              </Form.Check.Label>
               <Form.Check
                 type="switch"
                 checked={showLinks}
@@ -77,7 +81,11 @@ const ZeroRoadMap = () => {
             />
           </ButtonGroup>
         </Col>
-        <ZeroRoadMapChart scaleView={scaleView} showProgress={showProgress} showLinks={showLinks} />
+        <ZeroRoadMapChart
+          scaleView={scaleView}
+          showProgress={showProgress}
+          showLinks={showLinks}
+        />
       </Row>
     </div>
   );

@@ -256,9 +256,10 @@ const InputGroupExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              Add the relative form sizing classes to the <code>InputGroup</code> and contents
-              within will automatically resize—no need for repeating the form control size classes
-              on each element.
+              Add the relative form sizing classes to the{' '}
+              <code>InputGroup</code> and contents within will automatically
+              resize—no need for repeating the form control size classes on each
+              element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={sizingCode} />

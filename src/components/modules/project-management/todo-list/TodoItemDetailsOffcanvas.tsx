@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
-import { ToDoItem, attachments, subTasks } from 'data/project-management/todoListData';
+import {
+  ToDoItem,
+  attachments,
+  subTasks
+} from 'data/project-management/todoListData';
 import React from 'react';
 import SubTask from './SubTask';
 import classNames from 'classnames';
@@ -16,7 +20,10 @@ interface TodoItemDetailsOffcanvasProps {
   item: ToDoItem | null;
 }
 
-const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanvasProps) => {
+const TodoItemDetailsOffcanvas = ({
+  handleClose,
+  item
+}: TodoItemDetailsOffcanvasProps) => {
   return (
     <PhoenixOffcanvas
       open={!!item}
@@ -29,7 +36,9 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
         <>
           <div className="p-5 p-md-6">
             <div className="d-flex flex-between-center mb-4 gap-3">
-              <h2 className="fw-bold fs-6 mb-0 text-1000 line-clamp-1">{item.task}</h2>
+              <h2 className="fw-bold fs-6 mb-0 text-1000 line-clamp-1">
+                {item.task}
+              </h2>
               <Button
                 variant="phoenix-secondary"
                 onClick={handleClose}
@@ -46,12 +55,13 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
                 </Button>
               </div>
               <p className="text-1000 mb-0">
-                The female circus horse-rider is a recurring subject in Chagall’s work. In 1926 the
-                art dealer Ambroise Vollard invited Chagall to make a project based on the circus.
-                They visited Paris’s historic Cirque d’Hiver Bouglione together; Vollard lent
-                Chagall his private box seats. Chagall completed 19 gouaches Chagall’s work. In 1926
-                the art dealer Ambroise Vollard invited Chagall to make a project based on the
-                circus.
+                The female circus horse-rider is a recurring subject in
+                Chagall’s work. In 1926 the art dealer Ambroise Vollard invited
+                Chagall to make a project based on the circus. They visited
+                Paris’s historic Cirque d’Hiver Bouglione together; Vollard lent
+                Chagall his private box seats. Chagall completed 19 gouaches
+                Chagall’s work. In 1926 the art dealer Ambroise Vollard invited
+                Chagall to make a project based on the circus.
               </p>
             </div>
             <div className="mb-6">
@@ -67,7 +77,10 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
                   />
                 ))}
               </div>
-              <Button variant="link" className="fw-bold fs-9 text-decoration-none p-0">
+              <Button
+                variant="link"
+                className="fw-bold fs-9 text-decoration-none p-0"
+              >
                 <FontAwesomeIcon icon="plus" className="me-1" />
                 Add subtask
               </Button>
@@ -113,8 +126,17 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
               <div className="mb-4">
                 <DatePicker
                   placeholder="Set the due date"
-                  options={{ noCalendar: true, enableTime: true, dateFormat: 'H:i' }}
-                  icon={<UilBellSchool className="flatpickr-icon text-700" size={16} />}
+                  options={{
+                    noCalendar: true,
+                    enableTime: true,
+                    dateFormat: 'H:i'
+                  }}
+                  icon={
+                    <UilBellSchool
+                      className="flatpickr-icon text-700"
+                      size={16}
+                    />
+                  }
                 />
               </div>
               <h5 className="text-1000 mb-2">Tag</h5>
@@ -124,8 +146,14 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
                     value: 'massachusetts_institute_of_technology',
                     label: 'Massachusetts Institute of Technology'
                   },
-                  { value: 'university_of_chicago', label: 'University of Chicago' },
-                  { value: 'gsas_open_labs_at_harvard', label: 'GSAS Open Labs At Harvard' },
+                  {
+                    value: 'university_of_chicago',
+                    label: 'University of Chicago'
+                  },
+                  {
+                    value: 'gsas_open_labs_at_harvard',
+                    label: 'GSAS Open Labs At Harvard'
+                  },
                   {
                     value: 'california_institute_of_technology',
                     label: 'California Institute of Technology'
@@ -134,7 +162,9 @@ const TodoItemDetailsOffcanvas = ({ handleClose, item }: TodoItemDetailsOffcanva
                 className="mb-6"
                 isMulti
                 placeholder="Select organizer"
-                icon={<UilTagAlt className="react-select-icon text-700" size={16} />}
+                icon={
+                  <UilTagAlt className="react-select-icon text-700" size={16} />
+                }
               />
 
               <div className="text-end">

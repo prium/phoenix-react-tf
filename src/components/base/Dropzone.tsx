@@ -44,7 +44,10 @@ const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
           {files.map((file, index) => (
             <div className="dropzone-file-preview">
               <img src={URL.createObjectURL(file)} alt="" />
-              <button className="btn close-btn" onClick={() => handleRemoveFile(index)}>
+              <button
+                className="btn close-btn"
+                onClick={() => handleRemoveFile(index)}
+              >
                 <FontAwesomeIcon icon="xmark" />
               </button>
             </div>

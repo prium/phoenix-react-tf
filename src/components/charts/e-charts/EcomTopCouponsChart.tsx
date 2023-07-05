@@ -7,7 +7,11 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, PieChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary'), getThemeColor('primary-200'), getThemeColor('info-500')],
+  color: [
+    getThemeColor('primary'),
+    getThemeColor('primary-200'),
+    getThemeColor('info-500')
+  ],
 
   tooltip: {
     trigger: 'item',
@@ -17,7 +21,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
-    formatter: (params: CallbackDataParams) => `<strong>${params.name}:</strong> ${params.percent}%`
+    formatter: (params: CallbackDataParams) =>
+      `<strong>${params.name}:</strong> ${params.percent}%`
   },
   legend: { show: false },
   series: [

@@ -36,7 +36,10 @@ const RevealDropdown = ({
       <Dropdown.Toggle
         variant=""
         size="sm"
-        className={classNames(btnClassName, 'btn-reveal dropdown-caret-none transition-none')}
+        className={classNames(
+          btnClassName,
+          'btn-reveal dropdown-caret-none transition-none'
+        )}
       >
         <FontAwesomeIcon icon={icon} className="fs-10" />
       </Dropdown.Toggle>

@@ -180,8 +180,9 @@ const GridExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Container">
             <p className="mb-0 text-800">
-              Containers provide a means to center and horizontally pad your site’s contents. Use{' '}
-              <code>Container</code> for a responsive pixel width.
+              Containers provide a means to center and horizontally pad your
+              site’s contents. Use <code>Container</code> for a responsive pixel
+              width.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={containerCode} />
@@ -191,8 +192,8 @@ const GridExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Fluid Container">
               <p className="mb-0 text-800">
-                You can use <code>&lt;Container fluid /&gt;</code> for width: 100% across all
-                viewport and device sizes.
+                You can use <code>&lt;Container fluid /&gt;</code> for width:
+                100% across all viewport and device sizes.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={fluidCode} />
@@ -200,8 +201,9 @@ const GridExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
               <p className="mb-0 text-800">
-                You can set breakpoints for the <code>fluid</code> prop. Setting it to a breakpoint
-                (<code>sm, md, lg, xl, xxl</code>) will set the
+                You can set breakpoints for the <code>fluid</code> prop. Setting
+                it to a breakpoint (<code>sm, md, lg, xl, xxl</code>) will set
+                the
                 <code>Container</code> as fluid until the specified breakpoint.
               </p>
             </PhoenixDocCard.Header>
@@ -213,9 +215,10 @@ const GridExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Column Width">
               <p className="mb-0 text-800">
-                When no column widths are specified the <code>Col</code> component will render equal
-                width columns.you can set the width of columns and have the sibling columns
-                automatically resize around it.
+                When no column widths are specified the <code>Col</code>{' '}
+                component will render equal width columns.you can set the width
+                of columns and have the sibling columns automatically resize
+                around it.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={columnWidthCode} />
@@ -223,8 +226,9 @@ const GridExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
               <p className="mb-0 text-800">
-                Set the column value (for any breakpoint size) to <code>"auto"</code> to size
-                columns based on the natural width of their content.
+                Set the column value (for any breakpoint size) to{' '}
+                <code>"auto"</code> to size columns based on the natural width
+                of their content.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={widthAutoCode} />
@@ -235,10 +239,11 @@ const GridExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Responsive grids">
               <p className="mb-0 text-800">
-                The <code>Col</code> lets you specify column widths across 6 breakpoint sizes (
-                <code>xs, sm, md, lg, xl and xxl</code>). For every breakpoint, you can specify the
-                amount of columns to span, or set the prop to <code>&lt;Col lg={true} /&gt;</code>{' '}
-                for auto layout widths.
+                The <code>Col</code> lets you specify column widths across 6
+                breakpoint sizes (<code>xs, sm, md, lg, xl and xxl</code>). For
+                every breakpoint, you can specify the amount of columns to span,
+                or set the prop to <code>&lt;Col lg={true} /&gt;</code> for auto
+                layout widths.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={responsiveGridsCode} />
@@ -255,8 +260,8 @@ const GridExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Order">
             <p className="mb-0 text-800">
-              You can use the <code>order</code> property to control the visual order of your
-              content.
+              You can use the <code>order</code> property to control the visual
+              order of your content.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={orderCode} />
@@ -265,8 +270,9 @@ const GridExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Offset">
             <p className="mb-0 text-800">
-              For offsetting grid columns you can set an <code>offset</code> value or for a more
-              general layout, use the margin class utilities.
+              For offsetting grid columns you can set an <code>offset</code>{' '}
+              value or for a more general layout, use the margin class
+              utilities.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={offsetCode} />
@@ -275,10 +281,11 @@ const GridExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Setting column widths in Row">
             <p className="mb-0 text-800">
-              The <code>Row</code> lets you specify column widths across 5 breakpoint sizes (
-              <code>xs, sm, md, lg, xl and xxl</code>). For every breakpoint, you can specify the
-              amount of columns that will fit next to each other. You can also specify{' '}
-              <code>auto</code> to set the columns to their natural widths.
+              The <code>Row</code> lets you specify column widths across 5
+              breakpoint sizes (<code>xs, sm, md, lg, xl and xxl</code>). For
+              every breakpoint, you can specify the amount of columns that will
+              fit next to each other. You can also specify <code>auto</code> to
+              set the columns to their natural widths.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={columnWidthInRowCode} />

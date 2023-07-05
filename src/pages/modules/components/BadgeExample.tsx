@@ -157,7 +157,10 @@ const BadgeExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Phoenix Badge with icons" />
-          <PhoenixDocCard.Body code={phoenixBadgesWithIconCode} scope={{ Badge, FeatherIcon }} />
+          <PhoenixDocCard.Body
+            code={phoenixBadgesWithIconCode}
+            scope={{ Badge, FeatherIcon }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -165,14 +168,18 @@ const BadgeExample = () => {
             title="Contextual variations"
             description="Add any of the below mentioned modifier classes to change the appearance of a badge."
           />
-          <PhoenixDocCard.Body code={contextualVariationsCode} scope={{ Badge }} />
+          <PhoenixDocCard.Body
+            code={contextualVariationsCode}
+            scope={{ Badge }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Pill">
             <p className="mb-0">
-              badges Use the <code>pill</code> modifier class to make badges more rounded (with a
-              larger <code>border-radius</code>). Useful if you miss the badges from v3.
+              badges Use the <code>pill</code> modifier class to make badges
+              more rounded (with a larger <code>border-radius</code>). Useful if
+              you miss the badges from v3.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={pillCode} scope={{ Badge }} />

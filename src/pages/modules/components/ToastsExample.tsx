@@ -201,8 +201,9 @@ const ToastsExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Placement">
             <p className="mb-0">
-              Place toasts by setting a <code>position</code> in a <code>ToastContainer</code>. The
-              top right is often used for notifications, as is the top middle.
+              Place toasts by setting a <code>position</code> in a{' '}
+              <code>ToastContainer</code>. The top right is often used for
+              notifications, as is the top middle.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={placementCode} />
@@ -233,8 +234,9 @@ const ToastsExample = () => {
           <PhoenixDocCard.Header title="Autohide">
             <p className="mb-0">
               A Toast can also automatically hide after X milliseconds using the{' '}
-              <code>autohide</code> prop with the <code>delay</code> prop to specify the delay. To
-              open the toast, manually change the show property.
+              <code>autohide</code> prop with the <code>delay</code> prop to
+              specify the delay. To open the toast, manually change the show
+              property.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={autoHideCode} />

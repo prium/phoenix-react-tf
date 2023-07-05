@@ -3,7 +3,11 @@ import { Form } from 'react-bootstrap';
 import { DeliveryOptionsType } from './DeliveryType';
 import Badge from 'components/base/Badge';
 
-const DeliveryOptionRadioItem = ({ option }: { option: DeliveryOptionsType }) => {
+const DeliveryOptionRadioItem = ({
+  option
+}: {
+  option: DeliveryOptionsType;
+}) => {
   const { id, label, price, estDelivery, description, popular } = option;
   return (
     <div>
@@ -16,7 +20,11 @@ const DeliveryOptionRadioItem = ({ option }: { option: DeliveryOptionsType }) =>
           {currencyFormat(price, { minimumFractionDigits: 2 })}
         </span>
         {popular && (
-          <Badge bg="success" variant="phoenix" className="ms-2 ms-lg-4 ms-xl-2">
+          <Badge
+            bg="success"
+            variant="phoenix"
+            className="ms-2 ms-lg-4 ms-xl-2"
+          >
             Popular
           </Badge>
         )}

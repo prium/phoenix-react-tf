@@ -28,7 +28,8 @@ const FilterTab = ({ tabItems }: { tabItems: FilterTabItem[] }) => {
             onClick={() => handleClick(item)}
             className={classNames('p-0', { active: activeItem === item.value })}
           >
-            {item.label} <span className="text-700 fw-semi-bold">({item.count})</span>
+            {item.label}{' '}
+            <span className="text-700 fw-semi-bold">({item.count})</span>
           </Nav.Link>
         </Nav.Item>
       ))}

@@ -43,8 +43,8 @@ const Testimonial = () => {
                   You may now concentrate on the functionality and other{' '}
                   <br className="d-none d-sm-block" />
                   aspects of your web products thanks to Phoenix's strength
-                  <br className="d-none d-sm-block" />0 before leaving the UI design to us. It is
-                  simple to complete
+                  <br className="d-none d-sm-block" />0 before leaving the UI
+                  design to us. It is simple to complete
                   <br className="d-none d-sm-block" />
                   the work after checking and double-checking.
                 </p>

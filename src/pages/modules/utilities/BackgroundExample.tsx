@@ -20,26 +20,41 @@ const BackgroundExample = () => {
           <PhoenixDocCard.Header title="Solid colors" noPreview />
           <PhoenixDocCard.Body>
             <Row className="g-0">
-              {['primary', 'secondary', 'success', 'info', 'warning', 'danger'].map(
-                (variant, index) => (
-                  <Col xs={6} sm={4} lg={3} key={variant}>
-                    <div
-                      className={classNames(`d-flex flex-center p-3 bg-${variant}`)}
-                      style={{ height: '180px' }}
-                    >
-                      <div className="text-center">
-                        <code className={variant === 'secondary' ? 'text-500' : 'text-white'}>
-                          .bg-{variant}
-                        </code>
-                        <br />
-                        <code className={variant === 'secondary' ? 'text-500' : 'text-white'}>
-                          {getThemeColor(variant)}
-                        </code>
-                      </div>
+              {[
+                'primary',
+                'secondary',
+                'success',
+                'info',
+                'warning',
+                'danger'
+              ].map((variant, index) => (
+                <Col xs={6} sm={4} lg={3} key={variant}>
+                  <div
+                    className={classNames(
+                      `d-flex flex-center p-3 bg-${variant}`
+                    )}
+                    style={{ height: '180px' }}
+                  >
+                    <div className="text-center">
+                      <code
+                        className={
+                          variant === 'secondary' ? 'text-500' : 'text-white'
+                        }
+                      >
+                        .bg-{variant}
+                      </code>
+                      <br />
+                      <code
+                        className={
+                          variant === 'secondary' ? 'text-500' : 'text-white'
+                        }
+                      >
+                        {getThemeColor(variant)}
+                      </code>
                     </div>
-                  </Col>
-                )
-              )}
+                  </div>
+                </Col>
+              ))}
             </Row>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
@@ -66,13 +81,18 @@ const BackgroundExample = () => {
               ].map((variant, index) => (
                 <Col xs={6} sm={4} lg={3} key={index}>
                   <div
-                    className={classNames(`d-flex flex-center p-3 bg-${variant} `, {
-                      'border border-300': index > 7
-                    })}
+                    className={classNames(
+                      `d-flex flex-center p-3 bg-${variant} `,
+                      {
+                        'border border-300': index > 7
+                      }
+                    )}
                     style={{ height: '180px' }}
                   >
                     <div className="text-center">
-                      <code className={index > 7 ? 'text-black' : 'text-white'}>.bg-{variant}</code>
+                      <code className={index > 7 ? 'text-black' : 'text-white'}>
+                        .bg-{variant}
+                      </code>
                       <br />
                       <code className={index > 7 ? 'text-black' : 'text-white'}>
                         {getThemeColor(variant)}
@@ -89,28 +109,36 @@ const BackgroundExample = () => {
           <PhoenixDocCard.Header title="Gradients" noPreview />
           <PhoenixDocCard.Body>
             <Row className="g-0">
-              {['primary', 'secondary', 'success', 'info', 'warning', 'danger'].map(
-                (variant, index) => (
-                  <Col xs={6} sm={4} lg={3} key={index}>
-                    <div
-                      className={classNames(`d-flex flex-center p-3 bg-${variant} bg-gradient `, {
+              {[
+                'primary',
+                'secondary',
+                'success',
+                'info',
+                'warning',
+                'danger'
+              ].map((variant, index) => (
+                <Col xs={6} sm={4} lg={3} key={index}>
+                  <div
+                    className={classNames(
+                      `d-flex flex-center p-3 bg-${variant} bg-gradient `,
+                      {
                         'border border-300': index > 7
-                      })}
-                      style={{ height: '180px' }}
-                    >
-                      <div className="text-center">
-                        <code className={index > 7 ? 'text-black' : 'text-white'}>
-                          .bg-{variant}
-                        </code>
-                        <br />
-                        <code className={index > 7 ? 'text-black' : 'text-white'}>
-                          .bg-gradient
-                        </code>
-                      </div>
+                      }
+                    )}
+                    style={{ height: '180px' }}
+                  >
+                    <div className="text-center">
+                      <code className={index > 7 ? 'text-black' : 'text-white'}>
+                        .bg-{variant}
+                      </code>
+                      <br />
+                      <code className={index > 7 ? 'text-black' : 'text-white'}>
+                        .bg-gradient
+                      </code>
                     </div>
-                  </Col>
-                )
-              )}
+                  </div>
+                </Col>
+              ))}
             </Row>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>

@@ -41,13 +41,19 @@ const SettingsPanel = () => {
               <FontAwesomeIcon icon="palette" className="me-2 fs-8" />
               Theme Customizer
             </h5>
-            <p className="mb-0 fs-9">Explore different styles according to your preferences</p>
+            <p className="mb-0 fs-9">
+              Explore different styles according to your preferences
+            </p>
           </div>
           <button className="btn p-1 fw-bolder" onClick={handleClose}>
             <FontAwesomeIcon icon="times" className="fs-8" />
           </button>
         </div>
-        <Button variant="phoenix-secondary" className="w-100" onClick={handleResetToDefault}>
+        <Button
+          variant="phoenix-secondary"
+          className="w-100"
+          onClick={handleResetToDefault}
+        >
           <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           Reset to default
         </Button>

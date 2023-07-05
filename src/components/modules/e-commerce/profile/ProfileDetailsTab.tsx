@@ -69,7 +69,9 @@ const ProfileDetailsTab = () => {
             <>
               <FontAwesomeIcon icon={item.icon} className="me-2" />
               {item.label}{' '}
-              {item.number && <span className="text-700 fw-normal">({item.number})</span>}
+              {item.number && (
+                <span className="text-700 fw-normal">({item.number})</span>
+              )}
             </>
           }
         >

@@ -28,7 +28,10 @@ const AvatarUpload = ({ size, src, onChange }: AvatarUploadProps) => {
         accept="image/*"
         onChange={handleChange}
       />
-      <label className="cursor-pointer hover-actions-trigger d-flex" htmlFor="avatarFile">
+      <label
+        className="cursor-pointer hover-actions-trigger d-flex"
+        htmlFor="avatarFile"
+      >
         <Avatar size={size} src={image ? URL.createObjectURL(image) : src} />
         <div
           className="h-100 w-100 bg-black position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"

@@ -122,7 +122,8 @@ export const latestReviewsTableData: LatestReviewsTableDataType[] = [
       avatarPlaceholder: true
     },
     rating: 4,
-    review: 'It performs exactly as expected. There are three of these in the family.',
+    review:
+      'It performs exactly as expected. There are three of these in the family.',
     status: {
       title: 'Pending',
       badgeBg: 'warning',
@@ -182,7 +183,8 @@ export const latestReviewsTableData: LatestReviewsTableDataType[] = [
     time: 'Nov 07, 11:20 AM'
   },
   {
-    product: 'Amazon Basics Mesh, Mid-Back, Swivel Office Desk Chair with Armrests, Black',
+    product:
+      'Amazon Basics Mesh, Mid-Back, Swivel Office Desk Chair with Armrests, Black',
     productImage: product9,
     customer: {
       name: 'Rowen Atkinson',
@@ -250,7 +252,8 @@ export const latestReviewsTableData: LatestReviewsTableDataType[] = [
     time: 'Nov 04, 6:53 PM'
   },
   {
-    product: 'Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)',
+    product:
+      'Nintendo Switch with Neon Blue and Neon Red Joy‑Con - HAC-001(-01)',
     productImage: product13,
     customer: {
       name: 'Michael Jenkins',
@@ -273,7 +276,8 @@ export const latestReviewsTableData: LatestReviewsTableDataType[] = [
       avatarPlaceholder: true
     },
     rating: 5,
-    review: 'Excellent. All my doubts were answered by the team quickly. I highly recommend it.',
+    review:
+      'Excellent. All my doubts were answered by the team quickly. I highly recommend it.',
     status: {
       title: 'Pending',
       badgeBg: 'warning',

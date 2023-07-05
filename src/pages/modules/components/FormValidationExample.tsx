@@ -208,11 +208,12 @@ const FormValidationExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Tooltips">
             <p className="mb-0">
-              If your form layout allows it, you can use the <code>tooltip</code> prop to display
-              validation feedback in a styled tooltip. Be sure to have a parent with
-              <code>position: relative</code> on it for tooltip positioning. In the example below,
-              our column classes have this already, but your project may require an alternative
-              setup.
+              If your form layout allows it, you can use the{' '}
+              <code>tooltip</code> prop to display validation feedback in a
+              styled tooltip. Be sure to have a parent with
+              <code>position: relative</code> on it for tooltip positioning. In
+              the example below, our column classes have this already, but your
+              project may require an alternative setup.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={tooltipsCode} />
@@ -221,8 +222,9 @@ const FormValidationExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Input group validation">
             <p className="mb-0">
-              To properly show rounded corners in an <code>&lt;InputGroup&gt;</code> with
-              validation, the <code>&lt;InputGroup&gt;</code> requires the{' '}
+              To properly show rounded corners in an{' '}
+              <code>&lt;InputGroup&gt;</code> with validation, the{' '}
+              <code>&lt;InputGroup&gt;</code> requires the{' '}
               <code>hasValidation</code> prop.
             </p>
           </PhoenixDocCard.Header>

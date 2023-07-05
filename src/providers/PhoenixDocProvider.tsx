@@ -17,7 +17,11 @@ export const CollapseContext = createContext({} as CollapseContextInterface);
 const PhoenixDocProvider = ({ children }: PropsWithChildren) => {
   const [open, setOpen] = useState(false);
 
-  return <CollapseContext.Provider value={{ open, setOpen }}>{children}</CollapseContext.Provider>;
+  return (
+    <CollapseContext.Provider value={{ open, setOpen }}>
+      {children}
+    </CollapseContext.Provider>
+  );
 };
 
 export const usePhoenixDocContext = () => useContext(CollapseContext);
