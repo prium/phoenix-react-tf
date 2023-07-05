@@ -49,11 +49,8 @@ const CreateAnEvent = () => {
         <Row className="g-5">
           <Col xl={8}>
             <Row className="gx-3 gy-4">
-              {/* Event details */}
               <EventDetailsForm />
-              {/* Events schedule */}
               <EventsSchedule />
-              {/* Description */}
               <Col xs={12} className="gy-6">
                 <FloatingLabel controlId="eventDescription" label="Description">
                   <Form.Control
@@ -88,7 +85,7 @@ const CreateAnEvent = () => {
                   isMulti
                   placeholder="Add tags"
                   styles={{
-                    control: baseStyles => ({
+                    control: (baseStyles, state) => ({
                       ...baseStyles,
                       height: '128px',
                       alignItems: 'start'
@@ -149,9 +146,7 @@ const CreateAnEvent = () => {
                 </Form.Check.Label>
               </Form.Check>
             </div>
-            {/* Ticket pricing */}
             <EventTicketPricing />
-            {/* Custom fields */}
             <EventCustomFields />
           </Col>
         </Row>
