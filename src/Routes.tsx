@@ -88,6 +88,7 @@ import ProjectBoardView from 'pages/apps/project-management/ProjectBoardView';
 import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
 import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
+import EventDetail from 'pages/apps/events/EventDetail';
 
 const routes = [
   {
@@ -178,6 +179,10 @@ const routes = [
           {
             path: 'create-an-event',
             element: <CreateAnEvent />
+          },
+          {
+            path: 'event-detail',
+            element: <EventDetail />
           }
         ]
       },

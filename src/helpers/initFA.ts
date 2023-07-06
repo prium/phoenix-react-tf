@@ -61,6 +61,7 @@ import {
   faSearch,
   faShare,
   faShareAlt,
+  faShareNodes,
   faShoppingBag,
   faShoppingCart,
   faSort,
@@ -85,14 +86,16 @@ import {
   faFacebookSquare,
   faGulp,
   faTwitterSquare,
-  faFacebook,
-  faTwitter,
-  faLinkedinIn
+  faFacebook as fabFacebook,
+  faTwitter as fabTwitter,
+  faLinkedinIn as fabLinkedinIn,
+  faFacebookMessenger as fabFacebookMessenger
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faStar as farStar,
   faHeart as farHeart,
-  faCreditCard as farCreditCard
+  faCreditCard as farCreditCard,
+  faCalendarPlus as farCalendarPlus
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -137,9 +140,9 @@ library.add(
   faAngleDown,
   faAngleUp,
   faKey,
-  faFacebook,
-  faTwitter,
-  faLinkedinIn,
+  fabFacebook,
+  fabTwitter,
+  fabLinkedinIn,
   faCamera,
   faEdit,
   faShoppingCart,
@@ -186,5 +189,8 @@ library.add(
   faLocationDot,
   faEye,
   faComment,
-  faMapMarker
+  faMapMarker,
+  farCalendarPlus,
+  faShareNodes,
+  fabFacebookMessenger
 );

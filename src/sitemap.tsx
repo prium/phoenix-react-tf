@@ -315,7 +315,8 @@ export const routes: RouteItems[] = [
           {
             name: 'Event detail',
             path: 'apps/events/event-detail',
-            pathName: 'event-detail'
+            pathName: 'event-detail',
+            active: true
           }
         ]
       },
