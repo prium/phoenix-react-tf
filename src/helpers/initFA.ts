@@ -48,8 +48,10 @@ import {
   faLocationDot,
   faMapMarker,
   faMessage,
+  faMicrophone,
   faMinus,
   faPalette,
+  faPaperPlane,
   faPaperclip,
   faPen,
   faPencil,
@@ -92,7 +94,8 @@ import {
 import {
   faStar as farStar,
   faHeart as farHeart,
-  faCreditCard as farCreditCard
+  faCreditCard as farCreditCard,
+  faFaceSmile
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -186,5 +189,8 @@ library.add(
   faLocationDot,
   faEye,
   faComment,
-  faMapMarker
+  faMapMarker,
+  faFaceSmile,
+  faMicrophone,
+  faPaperPlane
 );

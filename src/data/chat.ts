@@ -22,7 +22,28 @@ import team6 from 'assets/img/team/6.webp';
 import team60 from 'assets/img/team/60.webp';
 import team57 from 'assets/img/team/57.webp';
 
-export const threads = [
+interface Message {
+  type: string;
+  message?: string;
+  time: string;
+  seen?: boolean;
+  attachments?: string[];
+}
+
+export interface ChatThread {
+  id: number;
+  avatar?: string;
+  status: string;
+  name: string;
+  message: string;
+  time: string;
+  unread?: boolean;
+  messages: Message[];
+  badge?: string;
+  placeholder?: boolean;
+}
+
+export const threads: ChatThread[] = [
   {
     id: 1,
     avatar: team20,
@@ -47,10 +68,7 @@ export const threads = [
       {
         type: 'sent',
         message: 'Yes, in an organization stature',
-        attachment: {
-          type: 'image',
-          attachment: image1
-        },
+        attachments: [image1],
         time: 'Yesterday, 10 AM'
       },
       {
@@ -66,7 +84,8 @@ export const threads = [
       },
       {
         type: 'received',
-        message: 'You know New York, you need New York, you know you need a unique New York.',
+        message:
+          'You know New York, you need New York, you know you need a unique New York.',
         time: 'Yesterday, 10 AM'
       },
       {
@@ -93,28 +112,26 @@ export const threads = [
     messages: [
       {
         type: 'received',
-        message: 'Ned Nott was shot and Sam Shott was not. So it is better to be Shott than Nott.',
+        message:
+          'Ned Nott was shot and Sam Shott was not. So it is better to be Shott than Nott.',
         time: 'Yesterday, 10 AM'
       },
       {
         type: 'sent',
-        attachment: {
-          type: 'gallery',
-          attachments: [
-            image13,
-            image2,
-            image3,
-            image4,
-            image5,
-            image6,
-            image7,
-            image8,
-            image9,
-            image10,
-            image11,
-            image12
-          ]
-        },
+        attachments: [
+          image13,
+          image2,
+          image3,
+          image4,
+          image5,
+          image6,
+          image7,
+          image8,
+          image9,
+          image10,
+          image11,
+          image12
+        ],
         time: 'Yesterday, 10 AM'
       },
       {
@@ -135,7 +152,8 @@ export const threads = [
       },
       {
         type: 'received',
-        message: 'But if the shot Shott shot shot Shott, then Shott was shot, not Nott.',
+        message:
+          'But if the shot Shott shot shot Shott, then Shott was shot, not Nott.',
         time: 'Yesterday, 10 AM'
       },
       {
@@ -252,7 +270,6 @@ export const threads = [
   },
   {
     id: 7,
-    avatar: 'team/avatar.webp',
     status: 'online',
     name: 'Misthoni Trepalnano',
     message: 'You shared an album',
@@ -295,7 +312,8 @@ export const threads = [
       },
       {
         type: 'received',
-        message: 'I slit the sheet, the sheet I slit, and on the slitted sheet I sit.',
+        message:
+          'I slit the sheet, the sheet I slit, and on the slitted sheet I sit.',
         time: 'Yesterday, 10 AM'
       },
       {
@@ -327,7 +345,8 @@ export const threads = [
     messages: [
       {
         type: 'received',
-        message: 'which book do you remember to have the longest possible sentence? ',
+        message:
+          'which book do you remember to have the longest possible sentence? ',
         time: 'Yesterday, 10 AM'
       },
       {
@@ -342,7 +361,8 @@ export const threads = [
       },
       {
         type: 'sent',
-        message: 'Well… I know a uniquely long title. Do you know which has it?',
+        message:
+          'Well… I know a uniquely long title. Do you know which has it?',
         time: 'Yesterday, 10 AM'
       },
       {
@@ -431,7 +451,8 @@ export const threads = [
       },
       {
         type: 'sent',
-        message: 'OMG! I should leave my dietitian and ask for some advice from the Sun God then!',
+        message:
+          'OMG! I should leave my dietitian and ask for some advice from the Sun God then!',
         time: 'Yesterday, 10 AM'
       }
     ]
