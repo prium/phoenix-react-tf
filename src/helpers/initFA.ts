@@ -58,6 +58,7 @@ import {
   faPrint,
   faReply,
   faRotate,
+  faRoute,
   faSearch,
   faShare,
   faShareAlt,
@@ -192,5 +193,6 @@ library.add(
   faMapMarker,
   farCalendarPlus,
   faShareNodes,
-  fabFacebookMessenger
+  fabFacebookMessenger,
+  faRoute
 );

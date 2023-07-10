@@ -1,6 +1,9 @@
-import { GoogleMap, LoadScript, useJsApiLoader } from '@react-google-maps/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
+import Button from 'components/base/Button';
 import { snazzyCustomDark, snazzyCustomLight } from 'data/googleMapStyles';
 import { useAppContext } from 'providers/AppProvider';
+import { Col, Row } from 'react-bootstrap';
 
 const containerStyle = {
   width: '100%',
@@ -30,13 +33,37 @@ const Location = () => {
             center={center}
             zoom={15}
             options={{
-              styles: theme === 'light' ? snazzyCustomLight : snazzyCustomDark
+              styles: theme === 'light' ? snazzyCustomLight : snazzyCustomDark,
+              disableDefaultUI: true,
+              zoomControl: true,
+              scrollwheel: false,
+              zoomControlOptions: {
+                position: google.maps.ControlPosition.LEFT_TOP
+              }
             }}
-          />
+          >
+            <MarkerF position={center} />
+          </GoogleMap>
         </div>
       ) : (
         <></>
       )}
+      <Row className="flex-between-center gx-0 gy-3">
+        <Col xs={12} sm="auto" className="me-1">
+          <div className="d-flex">
+            <h5 className="fw-bold text-1000 me-2 mb-0">
+              James Tiberius Auditorium
+            </h5>
+            <p className="mb-0 text-1000 fs-9">Vancouver</p>
+          </div>
+        </Col>
+        <Col xs={12} sm="auto" xl={12}>
+          <Button variant="phoenix-primary" className="w-100">
+            <FontAwesomeIcon icon="route" className="me-2" />
+            Get directions
+          </Button>
+        </Col>
+      </Row>
     </div>
   );
 };

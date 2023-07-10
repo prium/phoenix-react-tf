@@ -9,8 +9,9 @@ import ResponsesAndShare from 'components/modules/events/ResponsesAndShare';
 import brandImg from '../../../assets/img/brand2/b.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import Location from 'components/modules/events/Location';
+import Badge from 'components/base/Badge';
+import Events from 'components/modules/events/Events';
 
 const EventDetail = () => {
   return (
@@ -74,6 +75,27 @@ const EventDetail = () => {
             </Col>
           </Row>
           <Location />
+          <h3 className="mb-3">Tags</h3>
+          <div className="d-flex flex-wrap pb-8 border-bottom">
+            <Badge variant="tag" className="me-2">
+              Music
+            </Badge>
+            <Badge variant="tag" className="me-2">
+              CONCERT
+            </Badge>
+            <Badge variant="tag">Greatest show on earth</Badge>
+          </div>
+          <Row className="g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between">
+            <Col xs="auto">
+              <h3 className="flex-1 mb-0 text-nowrap me-3">Upcoming events</h3>
+            </Col>
+            <Col xs="auto">
+              <Link to="#!" className="fw-bold fs-9">
+                See more
+              </Link>
+            </Col>
+          </Row>
+          <Events />
         </Col>
       </Row>
     </div>
