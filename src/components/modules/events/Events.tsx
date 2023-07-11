@@ -2,14 +2,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
-import { eventsData } from 'data/eventsData';
+import { EventsData } from 'data/eventsData';
+import { Col, Row } from 'react-bootstrap';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Events = () => {
+const Events = ({ data, title }: { data: EventsData[]; title: string }) => {
   return (
     <>
-      {eventsData.map(event => (
+      <Row className="g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between">
+        <Col xs="auto">
+          <h3 className="flex-1 mb-0 text-nowrap me-3">{title}</h3>
+        </Col>
+        <Col xs="auto">
+          <Link to="#!" className="fw-bold fs-9">
+            See more
+          </Link>
+        </Col>
+      </Row>
+      {data.map(event => (
         <div key={event.title} className="py-3 border-bottom border-dashed">
           <div className="d-flex flex-between-center">
             <p className="text-warning fs-10 mb-0 fw-bold mb-1">{event.date}</p>

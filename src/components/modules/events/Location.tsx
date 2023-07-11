@@ -58,8 +58,11 @@ const Location = () => {
           </div>
         </Col>
         <Col xs={12} sm="auto" xl={12}>
-          <Button variant="phoenix-primary" className="w-100">
-            <FontAwesomeIcon icon="route" className="me-2" />
+          <Button
+            variant="phoenix-primary"
+            className="w-100"
+            startIcon={<FontAwesomeIcon icon="route" className="me-2" />}
+          >
             Get directions
           </Button>
         </Col>

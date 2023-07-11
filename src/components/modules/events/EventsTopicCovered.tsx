@@ -1,4 +1,4 @@
-const TopicCovered = () => {
+const EventsTopicCovered = () => {
   return (
     <>
       <h4 className="mb-3 text-1000 fs-xxl-6">Topic To Be Covered:</h4>
@@ -16,4 +16,4 @@ const TopicCovered = () => {
   );
 };
 
-export default TopicCovered;
+export default EventsTopicCovered;
