@@ -58,6 +58,8 @@
 
     .received-message-content {
       position: relative;
+      border-radius: $border-radius;
+      padding: map-get($spacers, 3);
       &:not(&.gallery) {
         &:after {
           content: ' ';
@@ -88,6 +90,10 @@
     }
     .sent-message-content {
       position: relative;
+      background: var(--#{$prefix}primary);
+      border-radius: $border-radius;
+      color: var(--#{$prefix}white);
+      padding: map-get($spacers, 3);
       &:not(&.gallery) {
         &:after {
           content: ' ';

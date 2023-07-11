@@ -187,6 +187,10 @@ const routes = [
         element: <Chat />
       },
       {
+        path: '/apps/chat/:userId/conversation',
+        element: <Chat />
+      },
+      {
         path: '/modules',
         children: [
           {
