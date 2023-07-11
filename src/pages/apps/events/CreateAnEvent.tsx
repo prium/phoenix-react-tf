@@ -1,21 +1,13 @@
 import Button from 'components/base/Button';
-import Dropzone from 'components/base/Dropzone';
-import ReactSelect from 'components/base/ReactSelect';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import EventCustomFields from 'components/forms/EventCustomFields';
+import EventDescriptionForm from 'components/forms/EventDescriptionForm';
 import EventDetailsForm from 'components/forms/EventDetailsForm';
 import EventTicketPricing from 'components/forms/EventTicketPricing';
 import EventsSchedule from 'components/forms/EventsSchedule';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
-import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-const options = [
-  { value: 'MUSIC', label: 'music' },
-  { value: 'CONCEERT', label: 'conceert' },
-  { value: 'GREATEST SHOW ON EARTH', label: 'greatest-show-on-earth' }
-];
 
 const CreateAnEvent = () => {
   return (
@@ -49,57 +41,9 @@ const CreateAnEvent = () => {
         <Row className="g-5">
           <Col xl={8}>
             <Row className="gx-3 gy-4">
-              {/* Event details */}
               <EventDetailsForm />
-              {/* Events schedule */}
               <EventsSchedule />
-              {/* Description */}
-              <Col xs={12} className="gy-6">
-                <FloatingLabel controlId="eventDescription" label="Description">
-                  <Form.Control
-                    as="textarea"
-                    placeholder="Description"
-                    style={{ height: '128px' }}
-                  />
-                </FloatingLabel>
-              </Col>
-              <Col sm={6} className="gy-6">
-                <FloatingLabel
-                  controlId="floatingOrganizersInput"
-                  label="ORGANIZERS"
-                >
-                  <Form.Control type="text" placeholder="ORGANIZERS" />
-                </FloatingLabel>
-              </Col>
-              <Col sm={6} className="gy-6">
-                <FloatingLabel
-                  controlId="floatingSponsorsInput"
-                  label="SPONSORS"
-                >
-                  <Form.Control type="text" placeholder="SPONSORS" />
-                </FloatingLabel>
-              </Col>
-              <Col xs={12} className="gy-6">
-                <Dropzone />
-              </Col>
-              <Col xs={12} className="gy-6">
-                <ReactSelect
-                  options={options}
-                  isMulti
-                  placeholder="Add tags"
-                  styles={{
-                    control: baseStyles => ({
-                      ...baseStyles,
-                      height: '128px',
-                      alignItems: 'start'
-                    }),
-                    dropdownIndicator: baseStyles => ({
-                      ...baseStyles,
-                      display: 'none'
-                    })
-                  }}
-                />
-              </Col>
+              <EventDescriptionForm />
             </Row>
           </Col>
           <Col xl={4}>
@@ -149,9 +93,7 @@ const CreateAnEvent = () => {
                 </Form.Check.Label>
               </Form.Check>
             </div>
-            {/* Ticket pricing */}
             <EventTicketPricing />
-            {/* Custom fields */}
             <EventCustomFields />
           </Col>
         </Row>

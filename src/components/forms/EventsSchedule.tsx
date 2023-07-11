@@ -1,5 +1,4 @@
 import DatePicker from 'components/base/DatePicker';
-import React from 'react';
 import { Col, FloatingLabel, Form } from 'react-bootstrap';
 
 const EventsSchedule = () => {
@@ -8,7 +7,7 @@ const EventsSchedule = () => {
       <h4 className="mt-7">Schedule</h4>
       <Col sm={6}>
         <DatePicker
-          render={({ defaultValue }, ref) => {
+          render={(_, ref) => {
             return (
               <Form.Floating>
                 <Form.Control
@@ -27,7 +26,7 @@ const EventsSchedule = () => {
       </Col>
       <Col sm={6}>
         <DatePicker
-          render={({ defaultValue }, ref) => {
+          render={(_, ref) => {
             return (
               <Form.Floating>
                 <Form.Control
@@ -51,7 +50,7 @@ const EventsSchedule = () => {
       </Col>
       <Col sm={6}>
         <DatePicker
-          render={({ defaultValue }, ref) => {
+          render={(_, ref) => {
             return (
               <Form.Floating>
                 <Form.Control
@@ -104,7 +103,7 @@ const EventsSchedule = () => {
       </Col>
       <Col sm={6}>
         <DatePicker
-          render={({ defaultValue }, ref) => {
+          render={(_, ref) => {
             return (
               <Form.Floating>
                 <Form.Control

@@ -13,12 +13,13 @@ interface AvatarProps {
   rounded?: Rounded;
   status?: Status;
   placeholder?: boolean;
+  imageClassName?: string;
   className?: string;
 }
 interface AvatarGroupProps {
   className?: string;
   total?: number;
-  size?: Size;
+  size: Size;
 }
 
 const Avatar = ({
@@ -28,7 +29,7 @@ const Avatar = ({
   rounded = 'circle',
   status,
   className,
-  placeholder,
+  imageClassName,
   children
 }: PropsWithChildren<AvatarProps>) => {
   return (
@@ -41,7 +42,7 @@ const Avatar = ({
         <img
           src={src ? src : avatar}
           alt="avatar"
-          className={classNames({
+          className={classNames(imageClassName, {
             // 'avatar-placeholder': placeholder,
             'avatar-placeholder': !src,
             'rounded-circle': rounded === 'circle',
@@ -86,7 +87,7 @@ export const AvatarGroup = ({
     <div className={classNames(className, 'avatar-group')}>
       {children}
       {total && total > Children.count(children) && (
-        <Avatar size={size!} variant="name">
+        <Avatar size={size} variant="name">
           +{total - Children.count(children)}
         </Avatar>
       )}
