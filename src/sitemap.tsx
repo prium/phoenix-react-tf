@@ -278,7 +278,8 @@ export const routes: RouteItems[] = [
         name: 'chat',
         icon: 'message-square',
         path: 'apps/chat',
-        pathName: 'app-chat'
+        pathName: 'app-chat',
+        active: true
       },
       {
         name: 'email',

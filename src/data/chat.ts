@@ -1,0 +1,460 @@
+import image1 from 'assets/img/chat/1.png';
+import image2 from 'assets/img/chat/13.png';
+import image3 from 'assets/img/chat/2.png';
+import image4 from 'assets/img/chat/3.png';
+import image5 from 'assets/img/chat/4.png';
+import image6 from 'assets/img/chat/5.png';
+import image7 from 'assets/img/chat/6.png';
+import image8 from 'assets/img/chat/7.png';
+import image9 from 'assets/img/chat/8.png';
+import image10 from 'assets/img/chat/9.png';
+import image11 from 'assets/img/chat/10.png';
+import image12 from 'assets/img/chat/11.png';
+import image13 from 'assets/img/chat/12.png';
+import team20 from 'assets/img/team/20.webp';
+import team29 from 'assets/img/team/29.webp';
+import team30 from 'assets/img/team/30.webp';
+import team25 from 'assets/img/team/25.webp';
+import team15 from 'assets/img/team/15.webp';
+import team59 from 'assets/img/team/59.webp';
+import team1 from 'assets/img/team/1.webp';
+import team6 from 'assets/img/team/6.webp';
+import team60 from 'assets/img/team/60.webp';
+import team57 from 'assets/img/team/57.webp';
+
+interface Message {
+  type: string;
+  message?: string;
+  time: string;
+  seen?: boolean;
+  attachments?: string[];
+}
+
+export interface ChatThread {
+  id: number;
+  avatar?: string;
+  status: string;
+  name: string;
+  message: string;
+  time: string;
+  unread?: boolean;
+  messages: Message[];
+  badge?: string;
+  placeholder?: boolean;
+}
+
+export const threads: ChatThread[] = [
+  {
+    id: 1,
+    avatar: team20,
+    status: 'online',
+    name: 'Sharuka Nijibum',
+    message: 'This is a message from you',
+    time: 'Just now',
+    messages: [
+      {
+        type: 'received',
+        message:
+          'Peter Piper picked a peck of pickled peppers. A peck of pickled peppers Peter Piper picked.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'If Peter Piper picked a peck of pickled peppers, where’s the peck of pickled peppers Peter Piper picked?',
+        time: 'Yesterday, 10 AM',
+        seen: true
+      },
+      {
+        type: 'sent',
+        message: 'Yes, in an organization stature',
+        attachments: [image1],
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: 'Eddie edited it.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'Willie’s really weary.',
+        time: 'Yesterday, 10 AM',
+        seen: true
+      },
+      {
+        type: 'received',
+        message:
+          'You know New York, you need New York, you know you need a unique New York.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'This is a message from you',
+        time: 'Yesterday, 10 AM',
+        seen: true
+      },
+      {
+        type: 'received',
+        message:
+          'I have got a date at a quarter to eight; I’ll see you at the gate, so don’t be late.',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 2,
+    avatar: team29,
+    status: 'offline',
+    name: 'Urito Nisemuno',
+    message: 'Say Hi to your new friend now',
+    time: 'Yesterday, 11 PM',
+    messages: [
+      {
+        type: 'received',
+        message:
+          'Ned Nott was shot and Sam Shott was not. So it is better to be Shott than Nott.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        attachments: [
+          image13,
+          image2,
+          image3,
+          image4,
+          image5,
+          image6,
+          image7,
+          image8,
+          image9,
+          image10,
+          image11,
+          image12
+        ],
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'Some say Nott was not shot. But Shott says he shot Nott.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'But Shott says he shot Nott. Either the shot Shott shot at Nott was not shot, Or Nott was shot.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'If the shot Shott shot shot Nott, Nott was shot.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'But if the shot Shott shot shot Shott, then Shott was shot, not Nott.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'However, the shot Shott shot shot not Shott, but Nott.',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 3,
+    avatar: team30,
+    status: 'online',
+    name: 'Xiang Ledepisipang',
+    message: 'We can also discuss prese....',
+    time: 'Yesterday, 10 PM',
+    messages: [
+      {
+        type: 'received',
+        message:
+          'A tree-toad loved a she-toad who lived up in a tree. He was a two-toed tree-toad, but a three-toed toad was she. The two-toed tree-toad tried to win the three-toed she-toad’s heart, for the two-toed tree-toad loved the ground that the three-toed tree-toad trod. But the two-toed tree-toad tried in vain; he couldn’t please her whim. From her tree-toad bower, with her three-toed power, the she-toad vetoed him.',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 4,
+    avatar: team25,
+    status: 'online',
+    name: 'Abshini Thipano',
+    message: 'WHAT!',
+    time: 'Yesterday, 10 PM',
+    unread: true,
+    messages: [
+      {
+        type: 'received',
+        message: 'Hello, I’m Doctor Triple A! How can I help?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'What runs, but never walks. Murmurs, but never talks. Has a bed, but never sleeps. And has a mouth, but never eats?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'A river. But I have a head and a tail that will never meet. Having too many of me is always a treat. What am I?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'A coin, or what?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'Well tell me what I am if I can never be thrown but I can be caught. Ways to lose me are always being sought.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'A cold. But what do you throw out when you want to use it but take in when you don’t want to use it?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'An anchor, right?',
+        time: 'Yesterday, 10 AM'
+      }
+    ],
+    badge: '3'
+  },
+  {
+    id: 5,
+    avatar: team15,
+    status: 'online',
+    name: 'Nenko Nimitanip',
+    message: 'Nenko sent an attachment',
+    time: 'Yesterday, 9 PM',
+    messages: [
+      {
+        type: 'sent',
+        message:
+          'When a doctor doctors a doctor, does the doctor doing the doctoring doctor as the doctor being doctored wants to be doctored or does the doctor doing the doctoring doctor as he wants to doctor?',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 6,
+    avatar: team59,
+    status: 'online',
+    name: 'Shanito Bistroglini',
+    message: 'https://youtu.be/dQw4w9WgXcQ',
+    time: 'Yesterday, 1 PM',
+    unread: true,
+    messages: [
+      {
+        type: 'sent',
+        message:
+          'When a doctor doctors a doctor, does the doctor doing the doctoring doctor as the doctor being doctored wants to be doctored or does the doctor doing the doctoring doctor as he wants to doctor?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: 'Well… check the attached file for answer, man!',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 7,
+    status: 'online',
+    name: 'Misthoni Trepalnano',
+    message: 'You shared an album',
+    time: 'Yesterday, 11 AM',
+    placeholder: true,
+    messages: [
+      {
+        type: 'received',
+        message:
+          'Mr. See owned a saw. And Mr. Soar owned a seesaw. Now, See’s saw sawed Soar’s seesaw before Soar saw See, which made Soar sore.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'Had Soar seen See’s saw before See sawed Soar’s seesaw, See’s saw would not have sawed Soar’s seesaw.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'So See’s saw sawed Soar’s seesaw. But it was sad to see Soar so sore just because See’s saw sawed Soar’s seesaw.',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 8,
+    avatar: team1,
+    status: 'online',
+    name: 'Zogidi Lishang',
+    message: 'Reacted ❤️ to your photo',
+    time: 'Yesterday, 10 AM',
+    messages: [
+      {
+        type: 'sent',
+        message:
+          'Perspicacious Polly Perkins purchased Peter’s product and peddled pickles to produce a pretty profit!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'I slit the sheet, the sheet I slit, and on the slitted sheet I sit.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'Green glass globes glow greenly.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'Ingenious iguanas improvising an intricate impromptu on impossibly-impractical instruments.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message:
+          'Brisk brave brigadiers brandished broad bright blades, blunderbusses, and bludgeons—balancing them badly.',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 9,
+    avatar: team6,
+    status: 'online',
+    name: 'Nonteporano Lepat',
+    message: 'Thanks for understanding. I will forever be in debt',
+    time: 'Yesterday, 10 AM',
+    messages: [
+      {
+        type: 'received',
+        message:
+          'which book do you remember to have the longest possible sentence? ',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: ' I dunno! Guess ‘tis not easy to read and count the words!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: `Victor Hugo’s "Les Miserables" contains an 823 word sentence, and hopefully no one elese will write longer to break the record.`,
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'Well… I know a uniquely long title. Do you know which has it?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: 'Well…no?',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'The longest book title is made up of 3,777 words. I don’t wanna write it down for you, go find it!',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 10,
+    avatar: team60,
+    status: 'online',
+    name: 'Jessica Ball',
+    message: 'Thanks for understanding. I will forever be in debt',
+    time: 'Yesterday, 10 AM',
+    messages: [
+      {
+        type: 'received',
+        message: 'Also, what?!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'But in fact, humans are more deadly to sharks than they are to humans.  Humans kill about 100 million sharks per year!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: `Hard to believe, but true.  Sharks kill an average of 5 people per year while cows kill an average of 22 people per year.`,
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'Whaat?!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: 'Cows kill more people than sharks!',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  },
+  {
+    id: 11,
+    avatar: team57,
+    status: 'online',
+    name: 'Harley Brown',
+    message: 'Thanks for understanding. I will forever be in debt',
+    time: 'Yesterday, 10 AM',
+    messages: [
+      {
+        type: 'received',
+        message:
+          'Clouds at the centre of the Milky Way smell of rum, taste of raspberries and are packed with booze!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message: 'Really?! ',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: `Oh yeah! It contains enough alcohol to supply every person on the planet with 300,000 pints of beer per day for the next billion years!`,
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'And know what I heard? Neptune has only completed one orbit around the Sun since its discovery!',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'received',
+        message: 'And the Sun loses a billion kilos per second.',
+        time: 'Yesterday, 10 AM'
+      },
+      {
+        type: 'sent',
+        message:
+          'OMG! I should leave my dietitian and ask for some advice from the Sun God then!',
+        time: 'Yesterday, 10 AM'
+      }
+    ]
+  }
+];

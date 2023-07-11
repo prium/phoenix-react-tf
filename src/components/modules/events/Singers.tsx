@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import img1 from '../../../assets/img/gallery/19.jpg';
 import img2 from '../../../assets/img/gallery/20.jpg';
 import img3 from '../../../assets/img/gallery/21.jpg';
-import LightBoxGallery from 'components/base/LightBoxGallery';
+import useLightbox from 'hooks/useLightbox';
+import Lightbox from 'components/base/LightBox';
 
 const Singers = () => {
+  const { lightboxProps, openLightbox } = useLightbox([img1, img2, img3]);
   return (
     <>
       <h4 className="mb-3 fw-bold text-1000 fs-xxl-6">Singers:</h4>
@@ -20,36 +22,33 @@ const Singers = () => {
         don’t share it with anyone. Any damage regarding a misused ID will not
         be ours to compensate or refund.Enjoy!
       </p>
-      <LightBoxGallery images={[img1, img2, img3]}>
-        {(setImgIndex: React.Dispatch<React.SetStateAction<number | null>>) => (
-          <Row className="g-1 g-sm-2 mb-7 mb-xxl-8">
-            <Col xs={3}>
-              <img
-                src={img1}
-                onClick={() => setImgIndex(0)}
-                alt=""
-                className="rounded h-100 w-100 fit-cover cursor-pointer"
-              />
-            </Col>
-            <Col xs={3}>
-              <img
-                src={img2}
-                onClick={() => setImgIndex(1)}
-                alt=""
-                className="rounded h-100 w-100 fit-cover cursor-pointer"
-              />
-            </Col>
-            <Col xs={6}>
-              <img
-                src={img3}
-                onClick={() => setImgIndex(2)}
-                alt=""
-                className="rounded h-100 w-100 fit-cover cursor-pointer"
-              />
-            </Col>
-          </Row>
-        )}
-      </LightBoxGallery>
+      <Lightbox {...lightboxProps} />
+      <Row className="g-1 g-sm-2 mb-7 mb-xxl-8">
+        <Col xs={3}>
+          <img
+            src={img1}
+            alt=""
+            onClick={() => openLightbox(1)}
+            className="rounded h-100 w-100 fit-cover cursor-pointer"
+          />
+        </Col>
+        <Col xs={3}>
+          <img
+            src={img2}
+            alt=""
+            onClick={() => openLightbox(2)}
+            className="rounded h-100 w-100 fit-cover cursor-pointer"
+          />
+        </Col>
+        <Col xs={6}>
+          <img
+            src={img3}
+            alt=""
+            onClick={() => openLightbox(3)}
+            className="rounded h-100 w-100 fit-cover cursor-pointer"
+          />
+        </Col>
+      </Row>
     </>
   );
 };

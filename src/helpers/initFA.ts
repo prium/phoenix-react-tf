@@ -48,8 +48,10 @@ import {
   faLocationDot,
   faMapMarker,
   faMessage,
+  faMicrophone,
   faMinus,
   faPalette,
+  faPaperPlane,
   faPaperclip,
   faPen,
   faPencil,
@@ -96,7 +98,8 @@ import {
   faStar as farStar,
   faHeart as farHeart,
   faCreditCard as farCreditCard,
-  faCalendarPlus as farCalendarPlus
+  faCalendarPlus as farCalendarPlus,
+  faFaceSmile
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -194,5 +197,8 @@ library.add(
   farCalendarPlus,
   faShareNodes,
   fabFacebookMessenger,
-  faRoute
+  faRoute,
+  faFaceSmile,
+  faMicrophone,
+  faPaperPlane
 );
