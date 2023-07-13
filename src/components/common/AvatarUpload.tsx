@@ -34,10 +34,10 @@ const AvatarUpload = ({ size, src, onChange }: AvatarUploadProps) => {
       >
         <Avatar size={size} src={image ? URL.createObjectURL(image) : src} />
         <div
-          className="h-100 w-100 bg-black position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
+          className="h-100 w-100 bg-black light position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
           style={{ '--phoenix-bg-opacity': 0.56 } as CSSProperties}
         >
-          <FontAwesomeIcon icon="camera" className="text-300 w-30 h-30" />
+          <FontAwesomeIcon icon="camera" className="text-300 fs-1" />
         </div>
       </label>
     </div>

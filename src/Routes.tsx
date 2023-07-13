@@ -90,6 +90,7 @@ import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
+import SocialProfile from 'pages/apps/social/SocialProfile';
 
 const routes = [
   {
@@ -184,6 +185,15 @@ const routes = [
           {
             path: 'event-detail',
             element: <EventDetail />
+          }
+        ]
+      },
+      {
+        path: '/apps/social/',
+        children: [
+          {
+            path: 'profile',
+            element: <SocialProfile />
           }
         ]
       },

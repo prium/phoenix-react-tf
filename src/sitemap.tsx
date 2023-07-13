@@ -324,11 +324,13 @@ export const routes: RouteItems[] = [
       {
         name: 'social',
         icon: 'share-2',
+        active: true,
         pages: [
           {
             name: 'profile',
             path: 'apps/social/profile',
-            pathName: 'social-profile'
+            pathName: 'social-profile',
+            active: true
           },
           {
             name: 'settings',

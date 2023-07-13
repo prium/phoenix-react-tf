@@ -1,0 +1,24 @@
+import Avatar from 'components/base/Avatar';
+import { PostsData } from 'data/social/postsData';
+import React from 'react';
+import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+const CommentField = ({
+  avatar
+}: {
+  avatar: PostsData['commentInputAvatar'];
+}) => {
+  return (
+    <div className="d-flex align-items-center">
+      <Link to="/apps/social/profile" style={{ lineHeight: 0 }}>
+        <Avatar size="m" src={avatar} className="me-2" />
+      </Link>
+      <div className="flex-1">
+        <Form.Control placeholder="Add comment" />
+      </div>
+    </div>
+  );
+};
+
+export default CommentField;
