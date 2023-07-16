@@ -4,6 +4,7 @@ import React from 'react';
 import { Accordion, Breadcrumb } from 'react-bootstrap';
 import FaqCta from './FaqCta';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 const FaqAccordion = () => {
   return (
@@ -15,7 +16,7 @@ const FaqAccordion = () => {
       <h2 className="mb-5">FAQ</h2>
       <h5 className="mb-3">How can we help?</h5>
       <p className="text-700">
-        Search for the topic you need help with or
+        Search for the topic you need help with or{' '}
         <Link to="#!">contact our support</Link>
       </p>
       <SearchBox
@@ -25,7 +26,13 @@ const FaqAccordion = () => {
       />
       <Accordion className="" defaultActiveKey="0">
         {faqs.map((faq, index) => (
-          <Accordion.Item eventKey={String(index)} key={faq.id}>
+          <Accordion.Item
+            className={classNames({
+              'border-top border-300': index === 0
+            })}
+            eventKey={String(index)}
+            key={faq.id}
+          >
             <Accordion.Header>{faq.title}</Accordion.Header>
             <Accordion.Body dangerouslySetInnerHTML={{ __html: faq.details }} />
           </Accordion.Item>
