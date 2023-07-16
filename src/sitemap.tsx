@@ -359,8 +359,20 @@ export const routes: RouteItems[] = [
       {
         name: 'faq',
         icon: 'help-circle',
-        path: 'pages/faq',
-        pathName: 'faq-accordion'
+        active: true,
+        pages: [
+          {
+            name: 'faq-accordion',
+            path: 'pages/faq/faq-accordion',
+            pathName: 'faq-accordion',
+            active: true
+          },
+          {
+            name: 'faq-tab',
+            path: 'pages/faq/faq-tab',
+            pathName: 'faq-tab'
+          }
+        ]
       },
       {
         name: 'landing',
