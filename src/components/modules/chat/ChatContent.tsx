@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { threads } from 'data/chat';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Dropdown, Form } from 'react-bootstrap';
 import EmojiPicker from 'components/base/EmojiPicker';
 import Message from './Message';
@@ -10,38 +9,64 @@ import classNames from 'classnames';
 import PhoenixOffcanvas, {
   PhoenixOffcanvasContainer
 } from 'components/base/PhoenixOffcanvas';
-import ThreadDetails from './ThreadDetails';
+import ConversationDetails from './conversation-details/ConversationDetails';
+import ChatSidebar from './ChatSidebar';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 
 const ChatContent = () => {
-  const { currentThread } = useChatContext();
+  const {
+    currentConversation,
+    chatDispatch,
+    showConversationDetails,
+    showUserListOffcanvas,
+    setShowConversationDetails,
+    setShowUserListOffcanvas
+  } = useChatContext();
   const [messageText, setMessageText] = useState('');
-  const [showDetails, setShowDetails] = useState(false);
 
-  if (currentThread) {
+  const { breakpoints } = useBreakpoints();
+
+  useEffect(() => {
+    chatDispatch({
+      type: 'SET_CHAT_STATE',
+      payload: {
+        showConversationDetails: false,
+        showUserListOffcanvas: false
+      }
+    });
+  }, [currentConversation]);
+
+  if (currentConversation) {
     return (
       <Card as={PhoenixOffcanvasContainer} className="h-100 w-100">
         <Card.Header className="p-3 p-md-4 d-flex flex-between-center">
           <div className="d-flex align-items-center">
-            <Button className="ps-0 pe-2 text-700 d-sm-none">
+            <Button
+              className="ps-0 pe-2 text-700 d-sm-none"
+              onClick={() => setShowUserListOffcanvas(true)}
+            >
               <FontAwesomeIcon icon="chevron-left" />
             </Button>
             <div className="d-flex flex-column flex-md-row align-items-md-center">
               <Button
                 className="fs-7 fw-semi-bold text-1100 d-flex align-items-center p-0 me-3 text-start"
-                onClick={() => setShowDetails(true)}
+                onClick={() => setShowConversationDetails(true)}
               >
-                <span className="line-clamp-1">{currentThread.user.name}</span>
+                <span className="line-clamp-1">
+                  {currentConversation.user.name}
+                </span>
                 <FontAwesomeIcon icon="chevron-down" className="ms-2 fs-10" />
               </Button>
               <p className="fs-9 mb-0 me-2">
                 <FontAwesomeIcon
                   icon="circle"
                   className={classNames('fs-11 me-2', {
-                    'text-success': currentThread.user.status === 'online',
-                    'text-300': currentThread.user.status === 'offline'
+                    'text-success':
+                      currentConversation.user.status === 'online',
+                    'text-300': currentConversation.user.status === 'offline'
                   })}
                 />
-                {currentThread.user.status === 'online'
+                {currentConversation.user.status === 'online'
                   ? 'Active now'
                   : 'Offline'}
               </p>
@@ -76,13 +101,13 @@ const ChatContent = () => {
             </Dropdown>
           </div>
         </Card.Header>
-        <Card.Body className="p-3 p-sm-4 scrollbar">
-          {currentThread.messages.length === 0 && (
+        <Card.Body className="p-3 p-sm-4 scrollbar d-flex flex-column gap-2">
+          {currentConversation.messages.length === 0 && (
             <div className="d-flex align-items-end justify-content-center text-center h-100">
               <div>
                 This is the beginning of your private chat with{' '}
                 <a href="#!" className="fw-semi-bold">
-                  {currentThread.user.name}
+                  {currentConversation.user.name}
                 </a>
                 . You have 237 mutual connections.
                 <br />
@@ -91,10 +116,10 @@ const ChatContent = () => {
               </div>
             </div>
           )}
-          {currentThread.messages.map(message => (
+          {currentConversation.messages.map(message => (
             <Message
               message={message}
-              user={currentThread.user}
+              user={currentConversation.user}
               key={message.id}
             />
           ))}
@@ -172,18 +197,27 @@ const ChatContent = () => {
           </div>
         </Card.Footer>
         <PhoenixOffcanvas
-          open={showDetails}
+          open={showConversationDetails}
           placement="top"
           noBackdrop
-          className="bg-white w-100"
+          className="bg-white w-100 scrollbar"
         >
-          <div className="">
-            <ThreadDetails
-              thread={currentThread}
-              handleClose={() => setShowDetails(false)}
-            />
-          </div>
+          <ConversationDetails
+            conversation={currentConversation}
+            handleClose={() => setShowConversationDetails(false)}
+          />
         </PhoenixOffcanvas>
+
+        {breakpoints.down('sm') && (
+          <PhoenixOffcanvas
+            open={showUserListOffcanvas}
+            placement="start"
+            noBackdrop
+            className="w-100"
+          >
+            <ChatSidebar className="border-0 h-100" />
+          </PhoenixOffcanvas>
+        )}
       </Card>
     );
   } else {

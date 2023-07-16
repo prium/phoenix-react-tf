@@ -20,8 +20,8 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current!,
-      style: 'mapbox://styles/mapbox/light-v11',
-      // style: 'mapbox://styles/themewagon/clje68m1f004401pi6zin9yed',
+      // style: 'mapbox://styles/mapbox/light-v11',
+      style: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew',
       scrollZoom: false,
       ...options
     });

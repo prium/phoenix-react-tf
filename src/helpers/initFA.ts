@@ -38,11 +38,14 @@ import {
   faEnvelope,
   faEye,
   faFaceSmile,
+  faFileCircleExclamation,
+  faFileCode,
   faFileExport,
   faFileLines,
   faFileZipper,
   faFilter,
   faFlag,
+  faFolder,
   faGear,
   faHandHoldingHeart,
   faHeart,
@@ -62,6 +65,7 @@ import {
   faPen,
   faPencil,
   faPhone,
+  faPhotoFilm,
   faPlus,
   faPrint,
   faReply,
@@ -102,7 +106,8 @@ import {
   faStar as farStar,
   faHeart as farHeart,
   faCreditCard as farCreditCard,
-  faFaceSmile as farFaceSmile
+  faFaceSmile as farFaceSmile,
+  faArrowAltCircleDown as farArrowAltCircleDown
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -206,5 +211,10 @@ library.add(
   faGear,
   faHandHoldingHeart,
   faFlag,
-  faBan
+  faBan,
+  faPhotoFilm,
+  faFolder,
+  farArrowAltCircleDown,
+  faFileCode,
+  faFileCircleExclamation
 );

@@ -1,3 +1,5 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 export const getItemFromStore = (
   key: string,
   defaultValue?: string | boolean,
@@ -105,3 +107,23 @@ export const numberFormat = (
   new Intl.NumberFormat('en-US', {
     notation
   }).format(number);
+
+/* Get Random Number */
+export const getRandomNumber = (min: number, max: number) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+
+export const getFileIcon = (fileFormat: string): IconProp => {
+  switch (fileFormat) {
+    case 'zip':
+      return 'file-zipper';
+    case 'bat':
+      return 'file-code';
+    case 'txt':
+      return 'file-lines';
+    case 'mad':
+      return 'file-circle-exclamation';
+    default:
+      return 'file-lines';
+  }
+};

@@ -1,13 +1,15 @@
 import ChatContent from 'components/modules/chat/ChatContent';
 import ChatSidebar from 'components/modules/chat/ChatSidebar';
-import { threads } from 'data/chat';
+import { conversations } from 'data/chat';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 import ChatProvider, { useChatContext } from 'providers/ChatProvider';
 import React, { useEffect } from 'react';
+import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const index = () => {
   return (
-    <ChatProvider threads={threads}>
+    <ChatProvider conversations={conversations}>
       <Chat />
     </ChatProvider>
   );
@@ -15,17 +17,26 @@ const index = () => {
 
 const Chat = () => {
   const { userId } = useParams();
-  console.log({ userId });
 
-  const { setCurrentThread } = useChatContext();
+  const { chatDispatch } = useChatContext();
 
+  const { breakpoints } = useBreakpoints();
   useEffect(() => {
-    setCurrentThread(userId);
+    chatDispatch({
+      type: 'SET_CURRENT_CONVERSATION',
+      payload: {
+        userId
+      }
+    });
   }, [userId]);
 
   return (
     <div className="chat d-flex gap-3">
-      <ChatSidebar />
+      {breakpoints.up('sm') && (
+        // <Card className="chat-sidebar p-3 p-xl-1">
+        <ChatSidebar />
+        // </Card>
+      )}
       <ChatContent />
     </div>
   );

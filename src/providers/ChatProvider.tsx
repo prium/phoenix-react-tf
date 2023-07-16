@@ -1,41 +1,73 @@
-import { ChatThread } from 'data/chat';
+import { Conversation } from 'data/chat';
 import React, {
   Dispatch,
   PropsWithChildren,
   SetStateAction,
   createContext,
   useContext,
+  useReducer,
   useState
 } from 'react';
+import { ACTIONTYPE, chatReducer } from 'reducers/ChatReducer';
 
+export type ConversationFilterType = 'all' | 'read' | 'unread';
 interface ChatProviderInterface {
-  threads: ChatThread[];
+  conversations: Conversation[];
 }
 
-interface ChatContextInterface {
-  currentThread: null | ChatThread;
-  setCurrentThread: (userId?: number | string) => void;
+export interface ChatState {
+  conversations: Conversation[];
+  currentConversation: null | Conversation;
+  filterBy: ConversationFilterType;
+  showConversationDetails: boolean;
+  showUserListOffcanvas: boolean;
+}
+
+interface ChatContextInterface extends ChatState {
+  // chatState: ChatState;
+  chatDispatch: Dispatch<ACTIONTYPE>;
+  setShowConversationDetails: (value: boolean) => void;
+  setShowUserListOffcanvas: (value: boolean) => void;
 }
 
 export const ChatContext = createContext({} as ChatContextInterface);
 
 const ChatProvider = ({
   children,
-  threads
+  conversations
 }: PropsWithChildren<ChatProviderInterface>) => {
-  const [currentThread, setCurrentThread] = useState<null | ChatThread>(null);
-
-  const updateCurrentThread = (userId?: number | string) => {
-    const thread = threads.find(thread => thread.user.id === Number(userId));
-    if (thread) {
-      setCurrentThread(thread);
-    } else {
-      setCurrentThread(null);
-    }
+  const initState: ChatState = {
+    conversations: conversations,
+    currentConversation: null,
+    filterBy: 'all',
+    showUserListOffcanvas: false,
+    showConversationDetails: false
   };
+
+  const [chatState, chatDispatch] = useReducer(chatReducer, initState);
+
+  const setShowConversationDetails = (value: boolean) => {
+    chatDispatch({
+      type: 'SET_CHAT_STATE',
+      payload: { showConversationDetails: value }
+    });
+  };
+
+  const setShowUserListOffcanvas = (value: boolean) => {
+    chatDispatch({
+      type: 'SET_CHAT_STATE',
+      payload: { showUserListOffcanvas: value }
+    });
+  };
+
   return (
     <ChatContext.Provider
-      value={{ currentThread, setCurrentThread: updateCurrentThread }}
+      value={{
+        ...chatState,
+        chatDispatch,
+        setShowConversationDetails,
+        setShowUserListOffcanvas
+      }}
     >
       {children}
     </ChatContext.Provider>

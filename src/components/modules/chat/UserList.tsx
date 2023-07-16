@@ -1,40 +1,51 @@
 import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
 import Badge from 'components/base/Badge';
-import { ChatThread, threads } from 'data/chat';
+import { Conversation } from 'data/chat';
 import { useChatContext } from 'providers/ChatProvider';
 import React, { useMemo } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 
-const UserListitem = ({ thread }: { thread: ChatThread }) => {
-  const { currentThread } = useChatContext();
+const UserListitem = ({ conversation }: { conversation: Conversation }) => {
+  const { currentConversation, chatDispatch } = useChatContext();
 
   const lastMessage = useMemo(
-    () => thread.messages[thread.messages.length - 1],
-    [thread]
+    () => conversation.messages[conversation.messages.length - 1],
+    [conversation]
   );
   const unseenMessageCount = useMemo(
-    () => thread.messages.filter(message => !message.seen).length,
-    [thread]
+    () => conversation.messages.filter(message => !message.readAt).length,
+    [conversation]
   );
 
+  const markedAsRead = () => {
+    chatDispatch({
+      type: 'MARKED_AS_READ',
+      payload: { conversationId: conversation.id }
+    });
+  };
+
   return (
-    <Nav.Item key={thread.id} className={lastMessage.seen ? 'read' : 'unread'}>
+    <Nav.Item
+      key={conversation.id}
+      className={lastMessage.readAt ? 'read' : 'unread'}
+    >
       <Nav.Link
         as={Link}
-        to={`/apps/chat/${thread.user.id}/conversation`}
+        to={`/apps/chat/${conversation.user.id}/conversation`}
+        onClick={markedAsRead}
         className={classNames(
           'd-flex align-items-center justify-content-center p-2',
           {
-            unread: !lastMessage.seen,
-            active: currentThread?.user.id === thread.user.id
+            unread: !lastMessage.readAt,
+            active: currentConversation?.user.id === conversation.user.id
           }
         )}
       >
         <div className="position-relative me-2 me-sm-0 me-xl-2">
           <Avatar
-            src={thread.user.avatar}
+            src={conversation.user.avatar}
             size="xl"
             // status="online"
             className="d-block"
@@ -52,7 +63,7 @@ const UserListitem = ({ thread }: { thread: ChatThread }) => {
         <div className="flex-1 d-sm-none d-xl-block">
           <div className="d-flex justify-content-between align-items-center">
             <h5 className="text-900 fw-normal name text-nowrap">
-              {thread.user.name}
+              {conversation.user.name}
             </h5>
             <p className="fs-10 text-600 mb-0 text-nowrap">
               {lastMessage.time}
@@ -78,12 +89,12 @@ const UserListitem = ({ thread }: { thread: ChatThread }) => {
   );
 };
 
-const UserList = () => {
+const UserList = ({ conversations }: { conversations: Conversation[] }) => {
   return (
     <div className="scrollbar">
-      <Nav className="chat-thread-tab flex-column">
-        {threads.map(thread => (
-          <UserListitem thread={thread} key={thread.id} />
+      <Nav className="chat-conversation-tab flex-column">
+        {conversations.map(conversation => (
+          <UserListitem conversation={conversation} key={conversation.id} />
         ))}
       </Nav>
     </div>

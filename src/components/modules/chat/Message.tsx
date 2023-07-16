@@ -5,6 +5,7 @@ import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import { Message as MessageType, User } from 'data/chat';
 import React from 'react';
+import { Col, ColProps, Row } from 'react-bootstrap';
 
 type MessageActionType = {
   icon: IconProp;
@@ -75,11 +76,57 @@ const ActionButtons = ({
   );
 };
 
+const Attachments = ({
+  attachments,
+  isSent
+}: {
+  attachments: string[];
+  isSent: boolean;
+}) => {
+  const spans = () => {
+    if (attachments.length > 3) {
+      return {
+        xs: 6,
+        md: 4,
+        xl: 3
+      };
+    }
+    if (attachments.length === 2) {
+      return {
+        xs: 6
+      };
+    }
+    if (attachments.length === 1) {
+      return {
+        xs: 'auto'
+      };
+    }
+  };
+  return (
+    <Row
+      className={classNames('g-2 mt-0', {
+        'justify-content-end': isSent
+      })}
+    >
+      {attachments.map(attachment => (
+        <Col {...(spans() as ColProps)} key={attachment}>
+          <img
+            src={attachment}
+            alt=""
+            className="rounded-2 fit-cover"
+            // style={{ maxWidth: 200 }}
+          />
+        </Col>
+      ))}
+    </Row>
+  );
+};
+
 const Message = ({ message, user }: { message: MessageType; user: User }) => {
   return (
     <div className="d-flex chat-message">
       <div
-        className={classNames('d-flex mb-2 flex-1', {
+        className={classNames('d-flex flex-1', {
           'justify-content-end': message.type === 'sent'
         })}
       >
@@ -103,28 +150,36 @@ const Message = ({ message, user }: { message: MessageType; user: User }) => {
 
             <div
               className={classNames('chat-message-content me-2', {
-                'w-min-contnet': true,
+                // 'w-min-content': message.attachments?.length,
                 received: message.type === 'received'
               })}
             >
               <div
                 className={classNames('mb-1', {
                   'sent-message-content light': message.type === 'sent',
-                  'received-message-content border': message.type === 'received'
+                  'received-message-content border':
+                    message.type === 'received',
+                  attachments: message.attachments && !message.message
                 })}
               >
-                <p className="mb-0">{message.message}</p>
+                {message.message && <p className="mb-0">{message.message}</p>}
+                {message.attachments && (
+                  <Attachments
+                    attachments={message.attachments}
+                    isSent={message.type === 'sent'}
+                  />
+                )}
                 {/* {message.attachment &&
                   message.attachment.type === 'gallery' && (
                     <Gallery
                       attachments={message.attachment.attachments}
-                      threadId={threadId}
+                      conversationId={conversationId}
                     />
                   )}
                 {message.attachment && message.attachment.type === 'image' && (
                   <a
                     href={message.attachment.attachment}
-                    data-gallery={`gallery-${threadId}`}
+                    data-gallery={`gallery-${conversationId}`}
                   >
                     <img
                       className="rounded-2 fit-cover mt-1"

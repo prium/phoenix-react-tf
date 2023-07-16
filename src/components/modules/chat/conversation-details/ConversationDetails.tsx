@@ -1,14 +1,13 @@
-// @ts-ignore
-
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
-import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import { ChatThread } from 'data/chat';
-import React, { PropsWithChildren } from 'react';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Conversation } from 'data/chat';
+import { PropsWithChildren } from 'react';
+import { Dropdown } from 'react-bootstrap';
+import SharedMedia from './SharedMedia';
+import SharedFiles from './SharedFiles';
 
 const ActionButton = ({
   icon,
@@ -22,11 +21,11 @@ const ActionButton = ({
   </div>
 );
 
-const ThreadDetails = ({
-  thread,
+const ConversationDetails = ({
+  conversation,
   handleClose
 }: {
-  thread: ChatThread;
+  conversation: Conversation;
   handleClose: () => void;
 }) => {
   return (
@@ -50,16 +49,16 @@ const ThreadDetails = ({
           </Dropdown>
         </div>
         <div className="d-flex flex-column align-items-center text-center">
-          <Avatar src={thread.user.avatar} size="4xl" className="mb-2" />
-          <h4 className="fw-semi-bold mb-3">{thread.user.name}</h4>
+          <Avatar src={conversation.user.avatar} size="4xl" className="mb-2" />
+          <h4 className="fw-semi-bold mb-3">{conversation.user.name}</h4>
           <div className="d-flex">
-            <Button className="btn-primary btn-icon fs--2 me-1">
+            <Button className="btn-primary btn-icon fs-10 me-1">
               <FontAwesomeIcon icon="phone" />
             </Button>
-            <Button className="btn-primary btn-icon fs--2 me-1">
+            <Button className="btn-primary btn-icon fs-10 me-1">
               <FontAwesomeIcon icon="video" />
             </Button>
-            <Button className="btn-phoenix-secondary btn-icon fs--2">
+            <Button className="btn-phoenix-secondary btn-icon fs-10">
               <FontAwesomeIcon icon="search" />
             </Button>
           </div>
@@ -69,6 +68,11 @@ const ThreadDetails = ({
         <ActionButton icon="user-pen">Nickname</ActionButton>
         <ActionButton icon="palette">Change Color</ActionButton>
         <ActionButton icon="user-plus">Create Group Chat</ActionButton>
+
+        <SharedMedia />
+
+        <SharedFiles />
+
         <ActionButton icon="bell-slash">Mute Conversation</ActionButton>
         <ActionButton icon="gear">Manage Settings</ActionButton>
         <ActionButton icon="hand-holding-heart">Get help</ActionButton>
@@ -80,4 +84,4 @@ const ThreadDetails = ({
   );
 };
 
-export default ThreadDetails;
+export default ConversationDetails;
