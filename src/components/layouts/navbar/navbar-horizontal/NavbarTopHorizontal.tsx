@@ -7,7 +7,7 @@ import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import NavbarBrand from '../nav-items/NavbarBrand';
 import NavItemsSlim from '../nav-items/NavItemsSlim';
-import TopNavMegaMenu from './TopMavMegaMenu';
+import TopNavMegaMenu from './TopNavMegaMenu';
 import TopNavItem from './TopNavItem';
 
 const NavbarTopHorizontal = () => {

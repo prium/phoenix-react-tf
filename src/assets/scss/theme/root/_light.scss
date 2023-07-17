@@ -189,17 +189,6 @@
   --#{$prefix}flatpickr-today-color: #{$white};
   --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
 
-  /* -------------------------------- React Datepicker ------------------------------- */
-  // --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
-  // --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
-  // --#{$prefix}flatpickr-weekday-color: #{$gray-900};
-  // --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
-  // --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
-  --#{$prefix}react-datepicker-current-month-color: #{$gray-900};
-  --#{$prefix}react-datepicker-bg: #{$gray-200};
-  --#{$prefix}react-datepicker-today-color: #{$white};
-  --#{$prefix}react-datepicker-day-hover-bg: #{rgba($gray-300, 0.5)};
-
   /* -------------------------------- Fullcalendar ------------------------------- */
   --#{$prefix}calendar-bg: #{$gray-200};
   --#{$prefix}calendar-border-color: #{$gray-soft};
@@ -234,10 +223,16 @@
   --#{$prefix}logo-text: #{$gray-600};
 
   /* -------------------------- theme-control-toggle -------------------------- */
-  --#{$prefix}theme-control-toggle-bg: #{rgba(map-get($theme-colors-300, 'warning'), 0.24)};
+  --#{$prefix}theme-control-toggle-bg: #{rgba(
+      map-get($theme-colors-300, 'warning'),
+      0.24
+    )};
   --#{$prefix}theme-control-toggle-hover-bg: #{$warning};
   --#{$prefix}theme-control-toggle-color: #{$warning};
-  --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'warning')};
+  --#{$prefix}theme-control-toggle-hover-color: #{map-get(
+      $theme-colors-soft,
+      'warning'
+    )};
 
   /* ---------------------------------- Badge --------------------------------- */
 
@@ -287,10 +282,22 @@
         }
       }
       ///-------------
-      --#{$prefix}theme-control-toggle-bg: #{rgba(map-get($theme-colors-300, 'warning'), 0.18)};
-      --#{$prefix}theme-control-toggle-hover-bg: #{rgba(map-get($theme-colors, 'warning'), 0.7)};
-      --#{$prefix}theme-control-toggle-color: #{map-get($theme-colors-300, 'warning')};
-      --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'warning')};
+      --#{$prefix}theme-control-toggle-bg: #{rgba(
+          map-get($theme-colors-300, 'warning'),
+          0.18
+        )};
+      --#{$prefix}theme-control-toggle-hover-bg: #{rgba(
+          map-get($theme-colors, 'warning'),
+          0.7
+        )};
+      --#{$prefix}theme-control-toggle-color: #{map-get(
+          $theme-colors-300,
+          'warning'
+        )};
+      --#{$prefix}theme-control-toggle-hover-color: #{map-get(
+          $theme-colors-soft,
+          'warning'
+        )};
       &.navbar-slim {
         .navbar-brand span {
           color: #{map-get($dark-grays, '1000')} !important;

@@ -71,10 +71,10 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
 const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
   return (
     <>
-      {page.pages!.map(page => (
+      {page.pages?.map(page => (
         <Fragment key={page.name}>
           {page.pages ? (
-            <TopNavMegaMenuIitemsLooper page={page!} />
+            <TopNavMegaMenuIitemsLooper page={page} />
           ) : (
             <Link to="#!" className="dropdown-link">
               {capitalize(page.name)}

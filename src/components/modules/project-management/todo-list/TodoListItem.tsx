@@ -40,10 +40,10 @@ const TodoListItem = ({
   const getBreakpointClasses = useCallback(
     (className: string, values: (number | string)[]) =>
       [
-        ...halfLayoutBreakpoints!.map(
+        ...halfLayoutBreakpoints.map(
           breakpoint => `${className}-${breakpoint}-${values[0]}`
         ),
-        ...fullLayoutBreakpoints!.map(
+        ...fullLayoutBreakpoints.map(
           breakpoint => `${className}-${breakpoint}-${values[1]}`
         )
       ].join(' '),
@@ -67,11 +67,11 @@ const TodoListItem = ({
         <Row className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
           <Col
             xs={12}
-            {...fullLayoutBreakpoints?.reduce((acc: any, val: any) => {
+            {...fullLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
               acc[val] = 'auto';
               return acc;
             }, {})}
-            {...halfLayoutBreakpoints?.reduce((acc: any, val: any) => {
+            {...halfLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
               acc[val] = 12;
               return acc;
             }, {})}
@@ -101,11 +101,11 @@ const TodoListItem = ({
           </Col>
           <Col
             xs={12}
-            {...fullLayoutBreakpoints?.reduce((acc: any, val: any) => {
+            {...fullLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
               acc[val] = 'auto';
               return acc;
             }, {})}
-            {...halfLayoutBreakpoints?.reduce((acc: any, val: any) => {
+            {...halfLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
               acc[val] = 12;
               return acc;
             }, {})}

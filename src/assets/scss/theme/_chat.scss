@@ -3,6 +3,7 @@
   .chat-sidebar {
     // position: absolute;
     // top: 0;
+    flex-shrink: 0;
     width: 100%;
     @include media-breakpoint-up(sm) {
       width: auto;
@@ -18,7 +19,7 @@
       transform: none;
     }
   }
-  .chat-thread-tab {
+  .chat-conversation-tab {
     .nav-item {
       .nav-link {
         &.active {
@@ -48,6 +49,13 @@
       &.received {
         max-width: calc(100% - 6rem);
       }
+      // .attachments {
+      img {
+        // max-width: min(100%, 200px);
+        width: 100%;
+        max-width: 200px;
+      }
+      // }
       @include media-breakpoint-up(sm) {
         max-width: calc(100% - 10rem);
         &.received {
@@ -58,7 +66,9 @@
 
     .received-message-content {
       position: relative;
-      &:not(&.gallery) {
+      border-radius: $border-radius;
+      padding: map-get($spacers, 3);
+      &:not(&.attachments) {
         &:after {
           content: ' ';
           position: absolute;
@@ -88,7 +98,11 @@
     }
     .sent-message-content {
       position: relative;
-      &:not(&.gallery) {
+      &:not(&.attachments) {
+        border-radius: $border-radius;
+        padding: map-get($spacers, 3);
+        color: var(--#{$prefix}white);
+        background: var(--#{$prefix}primary);
         &:after {
           content: ' ';
           position: absolute;

@@ -3,7 +3,7 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 
 export const tooltipFormatter = (
   params: CallbackDataParams[],
-  dateFormatter: string = 'MMM DD'
+  dateFormatter = 'MMM DD'
 ) => {
   let tooltipItem = ``;
   params.forEach(el => {

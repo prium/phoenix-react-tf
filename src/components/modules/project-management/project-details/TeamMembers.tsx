@@ -23,7 +23,7 @@ const TeamMembers = () => {
       <h4 className="text-1100 mb-4">Team members</h4>
       <div className="d-flex mb-8 gap-1">
         {members.slice(0, 5).map(member => (
-          <AvatarDropdown user={member} size="xl" />
+          <AvatarDropdown key={member.id} user={member} size="xl" />
         ))}
       </div>
       <h4 className="text-1100 mb-4">Tags</h4>

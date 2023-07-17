@@ -1,5 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { snakeCase } from 'helpers/utils';
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, {
+  PropsWithChildren,
+  ReactNode,
+  useEffect,
+  useState
+} from 'react';
 import { Col, Nav, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 
@@ -23,28 +29,33 @@ const DocPagesLayout = ({
     if (sideNavItems) {
       setNavItems(sideNavItems);
     } else {
-      const items: any = [];
-      const recursiveMap = (children: any) => {
+      const items: SideNavItem[] = [];
+      const recursiveMap = (children: ReactNode) => {
         React.Children.forEach(children, child => {
-          if (
-            child.props?.children &&
-            child.type?.name !== 'PhoenixDocCardHeader'
-          ) {
-            recursiveMap(child.props.children);
-          } else {
+          if (React.isValidElement(child)) {
             if (
-              child.type?.name === 'PhoenixDocCardHeader' &&
-              child.props.title
+              child?.props?.children &&
+              typeof child.type !== 'string' &&
+              child.type?.name !== 'PhoenixDocCardHeader'
             ) {
-              items.push({
-                to: snakeCase(child.props.title),
-                label: child.props.title
-              });
+              recursiveMap((child.props as any).children);
+            } else {
+              if (
+                typeof child.type !== 'string' &&
+                child.type?.name === 'PhoenixDocCardHeader' &&
+                (child.props as any).title
+              ) {
+                items.push({
+                  to: snakeCase((child.props as any).title),
+                  label: (child.props as any).title
+                });
+              }
             }
           }
         });
       };
       recursiveMap(children);
+
       setNavItems(items);
     }
   }, []);
@@ -80,7 +91,7 @@ const NavItem = ({ item }: { item: SideNavItem }) => {
       {item.subItem && (
         <Nav as="ul" className="flex-column">
           {item.subItem.map(subItem => (
-            <NavItem item={subItem} />
+            <NavItem item={subItem} key={subItem.to} />
           ))}
         </Nav>
       )}

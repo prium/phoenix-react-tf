@@ -6,9 +6,22 @@ interface PhoenixOffcanvasProps {
   fixed?: boolean;
   onHide?: () => void;
   className?: string;
+  noBackdrop?: boolean;
   backdropClassName?: string;
   style?: CSSProperties;
+  placement?: 'start' | 'end' | 'top' | 'bottom';
 }
+
+export const PhoenixOffcanvasContainer = ({
+  children,
+  className
+}: PropsWithChildren<{ className?: string }>) => {
+  return (
+    <div className={classNames(className, 'phoenix-offcanvas-container')}>
+      {children}
+    </div>
+  );
+};
 
 const PhoenixOffcanvas = ({
   children,
@@ -17,27 +30,31 @@ const PhoenixOffcanvas = ({
   onHide,
   className,
   backdropClassName,
-  style
+  style,
+  placement,
+  noBackdrop
 }: PropsWithChildren<PhoenixOffcanvasProps>) => {
   return (
     <>
       <div
-        className={classNames(
-          className,
-          'phoenix-offcanvas phoenix-offcanvas-end bg-soft',
-          {
-            show: open,
-            'phoenix-offcanvas-fixed': fixed
-          }
-        )}
+        className={classNames(className, 'phoenix-offcanvas bg-soft', {
+          show: open,
+          'phoenix-offcanvas-fixed': fixed,
+          [`phoenix-offcanvas-${placement}`]: placement
+        })}
         style={style}
       >
         {children}
       </div>
-      <div
-        className={classNames(backdropClassName, 'phoenix-offcanvas-backdrop')}
-        onClick={onHide}
-      ></div>
+      {!noBackdrop && (
+        <div
+          className={classNames(
+            backdropClassName,
+            'phoenix-offcanvas-backdrop'
+          )}
+          onClick={onHide}
+        />
+      )}
     </>
   );
 };

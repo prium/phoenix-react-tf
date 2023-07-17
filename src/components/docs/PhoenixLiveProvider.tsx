@@ -5,6 +5,7 @@ import { defaultProps } from 'prism-react-renderer';
 
 export interface PhoenixLiveProviderProps {
   code?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   scope?: { [key: string]: any };
   noInline?: boolean;
 }

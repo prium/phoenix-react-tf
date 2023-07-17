@@ -170,7 +170,7 @@ const EcommerceNavbar = () => {
             className="justify-content-end align-items-center gap-5"
             ref={navbarRef}
           >
-            {navItems.map((item, index) => (
+            {navItems.map(item => (
               <Nav.Item className="gap-3" key={item.id}>
                 <Nav.Link key={item.id} as={Link} to={item.url}>
                   {item.label}
@@ -188,7 +188,7 @@ const EcommerceNavbar = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  {dropdownItems.map((item, index) => (
+                  {dropdownItems.map(item => (
                     <Dropdown.Item key={item.id} as={Link} to={item.url}>
                       {item.label}
                     </Dropdown.Item>

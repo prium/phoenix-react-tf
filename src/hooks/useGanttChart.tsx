@@ -111,7 +111,7 @@ const useGanttChart = () => {
               {
                 unit: 'week',
                 step: 1,
-                format: (date: any) => {
+                format: (date: Date) => {
                   const dateToStr = gantt.date.date_to_str('%d %M');
                   const endDate = gantt.date.add(date, -6, 'day');
                   const weekNum = gantt.date.date_to_str('%W')(date);

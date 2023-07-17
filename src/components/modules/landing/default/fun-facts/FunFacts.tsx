@@ -66,9 +66,8 @@ const FunFacts = () => {
                         suffix="+"
                         enableScrollSpy
                       >
-                        {({ countUpRef, start }) => (
+                        {({ countUpRef }) => (
                           <div>
-                            {/*  eslint-disable-next-line jsx-a11y/heading-has-content */}
                             <h1
                               className="display-1 text-white fw-bolder"
                               ref={countUpRef as LegacyRef<HTMLHeadingElement>}
@@ -89,9 +88,8 @@ const FunFacts = () => {
                         suffix="k"
                         enableScrollSpy
                       >
-                        {({ countUpRef, start }) => (
+                        {({ countUpRef }) => (
                           <div>
-                            {/*  eslint-disable-next-line jsx-a11y/heading-has-content */}
                             <h1
                               className="display-1 text-white fw-bolder"
                               ref={countUpRef as LegacyRef<HTMLHeadingElement>}
@@ -107,9 +105,8 @@ const FunFacts = () => {
                     </div>
                     <div className="mb-6 mb-md-0 me-4">
                       <CountUp end={12} duration={5} enableScrollSpy>
-                        {({ countUpRef, start }) => (
+                        {({ countUpRef }) => (
                           <div>
-                            {/*  eslint-disable-next-line jsx-a11y/heading-has-content */}
                             <h1
                               className="display-1 text-white fw-bolder"
                               ref={countUpRef as LegacyRef<HTMLHeadingElement>}

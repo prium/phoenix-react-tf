@@ -10,7 +10,9 @@ import {
   faArrowUpRightFromSquare,
   faArrowsRotate,
   faAward,
+  faBan,
   faBars,
+  faBellSlash,
   faBolt,
   faBoxArchive,
   faCalendarDays,
@@ -35,10 +37,17 @@ import {
   faEllipsisV,
   faEnvelope,
   faEye,
+  faFaceSmile,
+  faFileCircleExclamation,
+  faFileCode,
   faFileExport,
   faFileLines,
   faFileZipper,
   faFilter,
+  faFlag,
+  faFolder,
+  faGear,
+  faHandHoldingHeart,
   faHeart,
   faHome,
   faImage,
@@ -56,6 +65,7 @@ import {
   faPen,
   faPencil,
   faPhone,
+  faPhotoFilm,
   faPlus,
   faPrint,
   faReply,
@@ -81,6 +91,7 @@ import {
   faTruckRampBox,
   faUndo,
   faUser,
+  faUserPen,
   faUserPlus,
   faVideo,
   faXmark
@@ -99,7 +110,8 @@ import {
   faHeart as farHeart,
   faCreditCard as farCreditCard,
   faCalendarPlus as farCalendarPlus,
-  faFaceSmile
+  faFaceSmile as farFaceSmile,
+  faArrowAltCircleDown as farArrowAltCircleDown
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -200,5 +212,17 @@ library.add(
   faRoute,
   faFaceSmile,
   faMicrophone,
-  faPaperPlane
+  farFaceSmile,
+  faPaperPlane,
+  faUserPen,
+  faBellSlash,
+  faGear,
+  faHandHoldingHeart,
+  faFlag,
+  faBan,
+  faPhotoFilm,
+  faFolder,
+  farArrowAltCircleDown,
+  faFileCode,
+  faFileCircleExclamation
 );
