@@ -20,7 +20,9 @@ const BreadcrumbExample = () => {
         description="Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
         link={{
           text: 'Breadcrumb on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/breadcrumb/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/breadcrumb/`
         }}
       />
 

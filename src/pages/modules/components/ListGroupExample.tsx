@@ -180,7 +180,9 @@ const ListGroupExample = () => {
         description="List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within."
         link={{
           text: 'List groups on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/list-group/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/list-group/`
         }}
       />
 

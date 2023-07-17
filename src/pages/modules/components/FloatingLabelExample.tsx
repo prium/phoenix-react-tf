@@ -112,7 +112,9 @@ const FloatingLabelExample = () => {
         description="Create beautifully simple form labels that float over your input fields."
         link={{
           text: 'Floating labels on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/floating-labels/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/forms/floating-labels/`
         }}
       />
 

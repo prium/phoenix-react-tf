@@ -62,7 +62,9 @@ const TooltipExample = () => {
         description="A tooltip component for a more stylish alternative to that anchor tag title attribute."
         link={{
           text: 'Tooltips on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/overlays/#tooltips'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/overlays/#tooltips`
         }}
       />
 

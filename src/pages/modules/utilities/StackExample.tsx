@@ -43,7 +43,7 @@ const StackExample = () => {
         description="Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever."
         link={{
           text: 'Stacks on react-bootstrap',
-          url: 'https://react-bootstrap.netlify.app/layout/stack/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/layout/stack`
         }}
       />
 

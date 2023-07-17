@@ -90,7 +90,9 @@ const CollapseExample = () => {
         description="Toggle the visibility of an element or component with toggle animation."
         link={{
           text: 'Collapse on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/utilities/transitions/#collapse'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/utilities/transitions/#collapse`
         }}
       />
 

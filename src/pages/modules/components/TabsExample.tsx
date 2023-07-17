@@ -78,7 +78,7 @@ const TabsExample = () => {
         description="Create dynamic tabbed interfaces.Tabs is a higher-level component for quickly creating a Nav matched with a set of TabPanes."
         link={{
           text: 'Tabs on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/tabs/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/tabs/`
         }}
       />
       <DocPagesLayout>

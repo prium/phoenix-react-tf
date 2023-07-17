@@ -216,11 +216,13 @@ const BootstrapCarousel = () => {
   return (
     <div>
       <DocPageHeader
-        title="Accordion"
+        title="Carousel"
         description="A slideshow component for cycling through elements—images or slides of text—like a carousel."
         link={{
           text: 'Carousels on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/carousel/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/carousel/`
         }}
       />
 

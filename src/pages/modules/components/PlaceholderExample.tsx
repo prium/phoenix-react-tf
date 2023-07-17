@@ -82,7 +82,9 @@ const PlaceholderExample = () => {
         description="Use loading placeholders for your components or pages to indicate something may still be loading."
         link={{
           text: 'Placeholder on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/placeholder/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/placeholder/`
         }}
       />
 

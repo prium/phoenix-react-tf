@@ -32,7 +32,7 @@ const SelectExample = () => {
         description="Customize the native <select> with custom CSS that changes the element’s initial appearance."
         link={{
           text: 'Select on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/select/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/forms/select/`
         }}
       />
 

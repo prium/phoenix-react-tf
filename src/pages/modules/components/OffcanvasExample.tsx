@@ -160,7 +160,9 @@ const OffcanvasExample = () => {
         description="Build hidden sidebars into your project for navigation, shopping carts, and more."
         link={{
           text: 'Offcanvas on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/offcanvas/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/offcanvas/`
         }}
       />
 

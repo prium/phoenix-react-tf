@@ -192,8 +192,8 @@ const ModalExample = () => {
         title="Modals"
         description="Add dialogs to your site for lightboxes, user notifications, or completely custom content."
         link={{
-          text: 'Accordion on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/accordion/'
+          text: 'Modals on react-bootstrap',
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/modal/`
         }}
       />
 

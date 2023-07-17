@@ -141,7 +141,9 @@ const PopoversExample = () => {
         description="A popover component, like those found in iOS."
         link={{
           text: 'Popovers on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/overlays/#popovers'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/overlays/#popovers`
         }}
       />
 

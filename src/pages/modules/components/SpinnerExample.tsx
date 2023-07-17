@@ -75,7 +75,9 @@ const SpinnerExample = () => {
         description="Spinners can be used to show the loading state in your projects."
         link={{
           text: 'Spinners on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/spinners/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/spinners/`
         }}
       />
 

@@ -335,7 +335,9 @@ const DropdownExample = () => {
         description="Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin"
         link={{
           text: 'Dropdowns on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/dropdowns/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/dropdowns/`
         }}
       />
 

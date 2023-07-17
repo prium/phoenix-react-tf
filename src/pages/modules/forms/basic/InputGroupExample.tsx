@@ -243,7 +243,7 @@ const InputGroupExample = () => {
         description="Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs."
         link={{
           text: 'InputGroup on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/input-group/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/forms/input-group/`
         }}
       />
 

@@ -478,7 +478,9 @@ const ButtonExample = () => {
         description={`Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.`}
         link={{
           text: 'Buttons on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/buttons/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/buttons/`
         }}
       />
 
@@ -590,7 +592,9 @@ const ButtonExample = () => {
           description="Group a series of buttons together on a single line or stack them in a vertical column."
           link={{
             text: 'Buttons on react-bootstrap',
-            url: 'https://react-bootstrap.github.io/components/button-group/'
+            url: `${
+              process.env.REACT_APP_RB_URL_PREFIX || ''
+            }/components/button-group/`
           }}
         />
 

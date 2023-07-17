@@ -57,7 +57,9 @@ const PaginationExample = () => {
         description="A set of presentational components for building pagination UI."
         link={{
           text: 'Pagination on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/pagination/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/pagination/`
         }}
       />
 

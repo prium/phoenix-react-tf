@@ -172,7 +172,9 @@ const ChecksExample = () => {
         description="Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
         link={{
           text: 'Checks and radios on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/checks-radios/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/forms/checks-radios/`
         }}
       />
 

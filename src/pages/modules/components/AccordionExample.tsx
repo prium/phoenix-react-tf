@@ -51,7 +51,9 @@ const AccordionExample = () => {
         description="Build vertically collapsing accordions in combination with the Collapse component"
         link={{
           text: 'Accordion on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/accordion/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/accordion/`
         }}
       />
 
