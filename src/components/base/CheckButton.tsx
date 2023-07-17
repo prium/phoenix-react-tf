@@ -1,13 +1,13 @@
 import classNames from 'classnames';
 import React, { InputHTMLAttributes } from 'react';
-import Button, { ButtonVariant } from './Button';
+import { Button } from 'react-bootstrap';
 
 interface CheckButtonProps {
   type?: 'checkbox' | 'radio';
   inputProps?: InputHTMLAttributes<HTMLInputElement>;
   label: string;
   id: string;
-  variant?: ButtonVariant;
+  variant?: string;
   className?: string;
 }
 
@@ -26,7 +26,6 @@ const CheckButton = ({
         as="label"
         variant={variant}
         className={classNames(className, 'hover-bg-100 fs-10 py-1 mb-0')}
-        // @ts-ignore
         htmlFor={id}
       >
         {label}

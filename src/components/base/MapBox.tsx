@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN!;
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
 
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -18,20 +18,22 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
 
   useEffect(() => {
     if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current!,
-      // style: 'mapbox://styles/mapbox/light-v11',
-      style: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew',
-      scrollZoom: false,
-      ...options
-    });
+    if (mapContainer.current) {
+      map.current = new mapboxgl.Map({
+        container: mapContainer.current,
+        // style: 'mapbox://styles/mapbox/light-v11',
+        style: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew',
+        scrollZoom: false,
+        ...options
+      });
 
-    if (options.center) {
-      new mapboxgl.Marker({
-        color: '#ed2000'
-      })
-        .setLngLat(options.center)
-        .addTo(map.current);
+      if (options.center) {
+        new mapboxgl.Marker({
+          color: '#ed2000'
+        })
+          .setLngLat(options.center)
+          .addTo(map.current);
+      }
     }
   }, []);
 

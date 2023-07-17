@@ -68,7 +68,7 @@ const Gallery = () => {
         </Row>
         <Row className="g-3">
           {galleryData.map(gallery => (
-            <GalleryItem galleryItem={gallery} />
+            <GalleryItem galleryItem={gallery} key={gallery.img} />
           ))}
         </Row>
       </div>

@@ -16,7 +16,7 @@ const EcomTopRegionsMap = () => {
   } = useAppContext();
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY!
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || ''
   });
 
   const onLoad = React.useCallback((map: google.maps.Map) => {

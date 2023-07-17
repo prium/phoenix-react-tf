@@ -2,7 +2,6 @@ import pie from 'assets/img/icons/illustrations/pie.png';
 import bolt from 'assets/img/icons/illustrations/bolt.png';
 import edit from 'assets/img/icons/illustrations/edit.png';
 import shield from 'assets/img/icons/illustrations/shield.png';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export type Feature = {
   label: string;

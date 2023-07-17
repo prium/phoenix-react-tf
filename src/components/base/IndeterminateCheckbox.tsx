@@ -12,7 +12,7 @@ const IndeterminateCheckbox = ({
   className,
   ...rest
 }: IndeterminateCheckboxProps & HTMLProps<HTMLInputElement>) => {
-  const ref = React.useRef<HTMLInputElement>(null!);
+  const ref = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     if (typeof indeterminate === 'boolean') {

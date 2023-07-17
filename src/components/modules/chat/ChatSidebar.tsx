@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Card, Dropdown, Form, Nav, Tab, Tabs } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Card, Dropdown, Form, Nav, Tab } from 'react-bootstrap';
 import UserList from './UserList';
 import { ConversationFilterType, useChatContext } from 'providers/ChatProvider';
 import { Conversation } from 'data/chat';
 import classNames from 'classnames';
 
 const ChatSidebar = ({ className }: { className?: string }) => {
-  const { chatDispatch, conversations } = useChatContext();
+  const { conversations } = useChatContext();
   const [filteredConversations, setFilteredConversations] = useState<
     Conversation[]
   >([]);

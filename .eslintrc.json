@@ -3,6 +3,9 @@
     "browser": true,
     "es2021": true
   },
+  "globals": {
+    "process": true
+  },
   "settings": {
     "react": {
       "version": "detect"
@@ -23,6 +26,8 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/no-unescaped-entities": "off",
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }

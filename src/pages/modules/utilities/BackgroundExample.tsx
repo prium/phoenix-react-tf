@@ -27,7 +27,7 @@ const BackgroundExample = () => {
                 'info',
                 'warning',
                 'danger'
-              ].map((variant, index) => (
+              ].map(variant => (
                 <Col xs={6} sm={4} lg={3} key={variant}>
                   <div
                     className={classNames(

@@ -2,11 +2,9 @@ import { Conversation } from 'data/chat';
 import React, {
   Dispatch,
   PropsWithChildren,
-  SetStateAction,
   createContext,
   useContext,
-  useReducer,
-  useState
+  useReducer
 } from 'react';
 import { ACTIONTYPE, chatReducer } from 'reducers/ChatReducer';
 

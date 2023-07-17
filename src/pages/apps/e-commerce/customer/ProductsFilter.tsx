@@ -50,7 +50,7 @@ const ProductsFilter = () => {
           <Col lg={9} xxl={10}>
             <Row className="gx-3 gy-6 mb-8">
               {allProducts.map(product => (
-                <Col xs={12} sm={6} md={4} xxl={2}>
+                <Col xs={12} sm={6} md={4} xxl={2} key={product.id}>
                   <div className="product-card-container h-100">
                     <ProductCard product={product} />
                   </div>

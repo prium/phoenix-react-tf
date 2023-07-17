@@ -5,7 +5,7 @@ import { Conversation } from 'data/chat';
 import { useChatContext } from 'providers/ChatProvider';
 import React, { useMemo } from 'react';
 import { Nav } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const UserListitem = ({ conversation }: { conversation: Conversation }) => {
   const { currentConversation, chatDispatch } = useChatContext();

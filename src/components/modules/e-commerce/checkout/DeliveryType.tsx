@@ -48,8 +48,8 @@ const DeliveryType = () => {
       <h3 className="mb-5">Delivery Type</h3>
       <Row className="gy-6">
         {deliverOptions.map(option => (
-          <Col xs={12} md={6}>
-            <DeliveryTypeRadioItem option={option} key={option.id} />
+          <Col xs={12} md={6} key={option.id}>
+            <DeliveryTypeRadioItem option={option} />
           </Col>
         ))}
       </Row>

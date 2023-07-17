@@ -149,7 +149,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     accessorKey: 'action',
     enableSorting: false,
     header: '',
-    cell: row => {
+    cell: () => {
       return (
         <>
           <div className="position-relative">
