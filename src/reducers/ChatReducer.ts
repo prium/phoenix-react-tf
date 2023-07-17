@@ -1,7 +1,20 @@
+import { Message } from 'data/chat';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { ChatState } from 'providers/ChatProvider';
+
+dayjs.extend(relativeTime);
 
 export type ACTIONTYPE =
   | { type: 'SET_CHAT_STATE'; payload: Partial<ChatState> }
+  | {
+      type: 'SENT_MESSAGE';
+      payload: {
+        conversationId: number;
+        message?: string;
+        attachments?: string[];
+      };
+    }
   | { type: 'SET_CURRENT_CONVERSATION'; payload: { userId?: number | string } }
   | { type: 'FILTER_CONVERSION_LIST'; payload: 'read' | 'unread' | 'all' }
   | { type: 'MARKED_AS_READ'; payload: { conversationId: number } }
@@ -14,6 +27,31 @@ export const chatReducer = (state: ChatState, action: ACTIONTYPE) => {
       return {
         ...state,
         ...payload
+      };
+    }
+    case 'SENT_MESSAGE': {
+      const { payload } = action;
+      const conversations = state.conversations.map(conversation =>
+        conversation.id === payload.conversationId
+          ? {
+              ...conversation,
+              messages: [
+                ...conversation.messages,
+                {
+                  id: 3,
+                  type: 'sent',
+                  time: dayjs().toNow(),
+                  readAt: null,
+                  message: payload.message,
+                  attachments: payload.attachments
+                } as Message
+              ]
+            }
+          : conversation
+      );
+      return {
+        ...state,
+        conversations
       };
     }
     case 'SET_CURRENT_CONVERSATION': {

@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
+import Lightbox from 'components/base/LightBox';
 import { Message as MessageType, User } from 'data/chat';
+import useLightbox from 'hooks/useLightbox';
 import React from 'react';
 import { Col, ColProps, Row } from 'react-bootstrap';
 
@@ -78,10 +80,10 @@ const ActionButtons = ({
 
 const Attachments = ({
   attachments,
-  isSent
+  openLightbox
 }: {
   attachments: string[];
-  isSent: boolean;
+  openLightbox: (slideIndex: number) => void;
 }) => {
   const spans = () => {
     if (attachments.length > 3) {
@@ -103,18 +105,16 @@ const Attachments = ({
     }
   };
   return (
-    <Row
-      className={classNames('g-2 mt-0', {
-        'justify-content-end': isSent
-      })}
-    >
-      {attachments.map(attachment => (
+    <Row className={classNames('g-2 mt-0')}>
+      {attachments.map((attachment, index) => (
         <Col {...(spans() as ColProps)} key={attachment}>
           <img
             src={attachment}
             alt=""
-            className="rounded-2 fit-cover"
-            // style={{ maxWidth: 200 }}
+            className="rounded-2 fit-cover cursor-pointer"
+            onClick={() => {
+              openLightbox(index + 1);
+            }}
           />
         </Col>
       ))}
@@ -123,6 +123,9 @@ const Attachments = ({
 };
 
 const Message = ({ message, user }: { message: MessageType; user: User }) => {
+  const { lightboxProps, openLightbox } = useLightbox(
+    message.attachments || []
+  );
   return (
     <div className="d-flex chat-message">
       <div
@@ -166,29 +169,9 @@ const Message = ({ message, user }: { message: MessageType; user: User }) => {
                 {message.attachments && (
                   <Attachments
                     attachments={message.attachments}
-                    isSent={message.type === 'sent'}
+                    openLightbox={openLightbox}
                   />
                 )}
-                {/* {message.attachment &&
-                  message.attachment.type === 'gallery' && (
-                    <Gallery
-                      attachments={message.attachment.attachments}
-                      conversationId={conversationId}
-                    />
-                  )}
-                {message.attachment && message.attachment.type === 'image' && (
-                  <a
-                    href={message.attachment.attachment}
-                    data-gallery={`gallery-${conversationId}`}
-                  >
-                    <img
-                      className="rounded-2 fit-cover mt-1"
-                      src={message.attachment.attachment}
-                      alt=""
-                      style={{ maxWidth: '200px' }}
-                    />
-                  </a>
-                )} */}
               </div>
             </div>
             {message.type === 'received' && (
@@ -203,6 +186,7 @@ const Message = ({ message, user }: { message: MessageType; user: User }) => {
           >
             <p className="mb-0 fs-10 text-600 fw-semi-bold">{message.time}</p>
           </div>
+          <Lightbox {...lightboxProps} />
         </div>
       </div>
     </div>

@@ -1,1 +1,0 @@
-use fontawesome icon "span.fas.fa-phone" to <FontAwesomeIcon icon='phone' /> like this.

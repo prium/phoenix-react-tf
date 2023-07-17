@@ -15,7 +15,10 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
     [conversation]
   );
   const unseenMessageCount = useMemo(
-    () => conversation.messages.filter(message => !message.readAt).length,
+    () =>
+      conversation.messages.filter(
+        message => message.type === 'received' && !message.readAt
+      ).length,
     [conversation]
   );
 

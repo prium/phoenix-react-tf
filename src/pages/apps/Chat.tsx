@@ -1,10 +1,9 @@
-import ChatContent from 'components/modules/chat/ChatContent';
+import ChatContent from 'components/modules/chat/chat-content/ChatContent';
 import ChatSidebar from 'components/modules/chat/ChatSidebar';
 import { conversations } from 'data/chat';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import ChatProvider, { useChatContext } from 'providers/ChatProvider';
 import React, { useEffect } from 'react';
-import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 const index = () => {
@@ -18,7 +17,7 @@ const index = () => {
 const Chat = () => {
   const { userId } = useParams();
 
-  const { chatDispatch } = useChatContext();
+  const { chatDispatch, conversations } = useChatContext();
 
   const { breakpoints } = useBreakpoints();
   useEffect(() => {
@@ -28,15 +27,11 @@ const Chat = () => {
         userId
       }
     });
-  }, [userId]);
+  }, [userId, conversations]);
 
   return (
     <div className="chat d-flex gap-3">
-      {breakpoints.up('sm') && (
-        // <Card className="chat-sidebar p-3 p-xl-1">
-        <ChatSidebar />
-        // </Card>
-      )}
+      {breakpoints.up('sm') && <ChatSidebar />}
       <ChatContent />
     </div>
   );

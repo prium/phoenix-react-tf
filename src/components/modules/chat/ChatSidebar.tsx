@@ -17,7 +17,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
     setFilteredConversations(
       conversations.filter(conversation => {
         const hasUnreadMessages = conversation.messages.some(
-          message => !message.readAt
+          message => message.type === 'received' && !message.readAt
         );
         return type === 'read'
           ? !hasUnreadMessages
