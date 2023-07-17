@@ -32,7 +32,10 @@ const FaqAccordion = () => {
             key={faq.id}
           >
             <Accordion.Header>{faq.title}</Accordion.Header>
-            <Accordion.Body dangerouslySetInnerHTML={{ __html: faq.details }} />
+            <Accordion.Body
+              className="pt-0"
+              dangerouslySetInnerHTML={{ __html: faq.details }}
+            />
           </Accordion.Item>
         ))}
       </Accordion>
