@@ -17,7 +17,11 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
         style={{ minHeight: '214px' }}
       >
         <CoverUpload src={coverImage} />
-        <SocialAvatarUpload size="5xl" src={profileImage} />
+        <SocialAvatarUpload
+          size="5xl"
+          src={profileImage}
+          className="feed-profile"
+        />
       </Card.Header>
       <Card.Body>
         <Row className="justify-content-xl-between">

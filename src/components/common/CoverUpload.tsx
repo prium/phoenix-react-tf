@@ -1,12 +1,13 @@
-import { ChangeEvent, useState } from 'react';
+import { CSSProperties, ChangeEvent, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface CoverUploadProps {
   src: string;
+  gradient?: CSSProperties;
   onChange?: () => void;
 }
 
-const CoverUpload = ({ src, onChange }: CoverUploadProps) => {
+const CoverUpload = ({ src, gradient, onChange }: CoverUploadProps) => {
   const [image, setImage] = useState<File | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +22,9 @@ const CoverUpload = ({ src, onChange }: CoverUploadProps) => {
     <div
       className="bg-holder rounded-top"
       style={{
-        backgroundImage: `url(${image ? URL.createObjectURL(image) : src})`
+        backgroundImage: `${gradient ? gradient + ',' : ''}url(${
+          image ? URL.createObjectURL(image) : src
+        })`
       }}
     >
       <input

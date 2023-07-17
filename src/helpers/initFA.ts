@@ -15,6 +15,7 @@ import {
   faBellSlash,
   faBolt,
   faBoxArchive,
+  faBuilding,
   faCalendarDays,
   faCamera,
   faCaretRight,
@@ -24,6 +25,7 @@ import {
   faChevronLeft,
   faChevronRight,
   faCircle,
+  faCircleInfo,
   faClock,
   faComment,
   faCopy,
@@ -44,6 +46,7 @@ import {
   faFilter,
   faFlag,
   faGear,
+  faGlobe,
   faHandHoldingHeart,
   faHeart,
   faHome,
@@ -52,6 +55,7 @@ import {
   faList,
   faListCheck,
   faLocationDot,
+  faLock,
   faMapMarker,
   faMessage,
   faMicrophone,
@@ -104,7 +108,10 @@ import {
   faFacebook as fabFacebook,
   faTwitter as fabTwitter,
   faLinkedinIn as fabLinkedinIn,
-  faFacebookMessenger as fabFacebookMessenger
+  faFacebookMessenger as fabFacebookMessenger,
+  faYoutube as fabYoutube,
+  faArtstation as fabArtstation,
+  faBehance as fabBehance
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faStar as farStar,
@@ -224,5 +231,12 @@ library.add(
   faHandHoldingHeart,
   faFlag,
   faBan,
-  faTags
+  faTags,
+  faCircleInfo,
+  faBuilding,
+  faGlobe,
+  faLock,
+  fabYoutube,
+  fabArtstation,
+  fabBehance
 );

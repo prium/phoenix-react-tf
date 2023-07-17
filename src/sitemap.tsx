@@ -335,7 +335,8 @@ export const routes: RouteItems[] = [
           {
             name: 'settings',
             path: 'apps/social/settings',
-            pathName: 'settings'
+            pathName: 'settings',
+            active: true
           }
         ]
       },

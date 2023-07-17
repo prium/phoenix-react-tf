@@ -30,41 +30,22 @@ const EventDetailsForm = () => {
         </FloatingLabel>
       </Col>
       <Col sx={12} className="mt-4">
-        <Form.Check
-          type="radio"
-          id="inlineRadio1"
-          className="form-check-inline"
-        >
+        <Form.Check type="radio" id="online" className="form-check-inline">
           <Form.Check.Input
             type="radio"
-            name="inlineRadioOptions"
+            name="statusRadio"
             value="option1"
+            defaultChecked
           />
-          <Form.Check.Label htmlFor="inlineRadio1">Online</Form.Check.Label>
+          <Form.Check.Label htmlFor="online">Online</Form.Check.Label>
         </Form.Check>
-        <Form.Check
-          type="radio"
-          id="inlineRadio2"
-          className="form-check-inline"
-        >
-          <Form.Check.Input
-            type="radio"
-            name="inlineRadioOptions"
-            value="option2"
-          />
-          <Form.Check.Label htmlFor="inlineRadio2">Offline</Form.Check.Label>
+        <Form.Check type="radio" id="offline" className="form-check-inline">
+          <Form.Check.Input type="radio" name="statusRadio" value="option2" />
+          <Form.Check.Label htmlFor="offline">Offline</Form.Check.Label>
         </Form.Check>
-        <Form.Check
-          type="radio"
-          id="inlineRadio3"
-          className="form-check-inline"
-        >
-          <Form.Check.Input
-            type="radio"
-            name="inlineRadioOptions"
-            value="option3"
-          />
-          <Form.Check.Label htmlFor="inlineRadio3">Both</Form.Check.Label>
+        <Form.Check type="radio" id="both" className="form-check-inline">
+          <Form.Check.Input type="radio" name="statusRadio" value="option3" />
+          <Form.Check.Label htmlFor="both">Both</Form.Check.Label>
         </Form.Check>
       </Col>
       <Col sm={6} md={12} className="mt-md-0 mt-lg-1">

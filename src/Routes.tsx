@@ -91,6 +91,7 @@ import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
 import SocialProfile from 'pages/apps/social/SocialProfile';
+import Settings from 'pages/apps/social/Settings';
 
 const routes = [
   {
@@ -194,6 +195,10 @@ const routes = [
           {
             path: 'profile',
             element: <SocialProfile />
+          },
+          {
+            path: 'settings',
+            element: <Settings />
           }
         ]
       },

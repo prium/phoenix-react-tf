@@ -49,31 +49,26 @@ const CreateAnEvent = () => {
           <Col xl={4}>
             <div className="border-bottom pb-6 mb-6">
               <h4 className="mb-4">Privacy</h4>
-              <Form.Check type="radio" id="exampleRadios1" className="mb-2">
+              <Form.Check type="radio" id="privacy1" className="mb-2">
                 <Form.Check.Input
                   type="radio"
-                  name="inlineRadioOptions"
+                  name="vrivacyRadio"
                   value="option1"
+                  defaultChecked
                 />
-                <Form.Check.Label
-                  className="fw-normal"
-                  htmlFor="exampleRadios1"
-                >
+                <Form.Check.Label className="fw-normal" htmlFor="privacy1">
                   On Phoenix, our distribution partners, and search engines,{' '}
                   <br />
                   anybody can find the event
                 </Form.Check.Label>
               </Form.Check>
-              <Form.Check type="radio" id="exampleRadios2" className="mb-0">
+              <Form.Check type="radio" id="privacy2" className="mb-0">
                 <Form.Check.Input
                   type="radio"
-                  name="inlineRadioOptions"
+                  name="vrivacyRadio"
                   value="option1"
                 />
-                <Form.Check.Label
-                  className="fw-normal"
-                  htmlFor="exampleRadios2"
-                >
+                <Form.Check.Label className="fw-normal" htmlFor="privacy2">
                   Only the individuals you select have access to it.
                 </Form.Check.Label>
               </Form.Check>

@@ -16,7 +16,7 @@ const PostsGallery = ({ images }: { images: PostsData['images'] }) => {
           <img
             src={image.src}
             alt=""
-            className="rounded h-100 w-100"
+            className="rounded h-100 w-100 cursor-pointer"
             onClick={() => openLightbox(index + 1)}
           />
         </Col>
