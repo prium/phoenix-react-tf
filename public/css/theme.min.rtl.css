@@ -27364,7 +27364,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 /* -------------------------------------------------------------------------- */
 .avatar {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 .avatar .avatar-placeholder {
   background: var(--phoenix-gray-200);

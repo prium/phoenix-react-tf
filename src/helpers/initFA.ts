@@ -42,6 +42,7 @@ import {
   faFileCode,
   faFileExport,
   faFileLines,
+  faFilePdf,
   faFileZipper,
   faFilter,
   faFlag,
@@ -59,6 +60,7 @@ import {
   faMessage,
   faMicrophone,
   faMinus,
+  faMusic,
   faPalette,
   faPaperPlane,
   faPaperclip,
@@ -68,6 +70,7 @@ import {
   faPhotoFilm,
   faPlus,
   faPrint,
+  faRedo,
   faReply,
   faRotate,
   faRoute,
@@ -224,5 +227,8 @@ library.add(
   faFolder,
   farArrowAltCircleDown,
   faFileCode,
-  faFileCircleExclamation
+  faFileCircleExclamation,
+  faRedo,
+  faMusic,
+  faFilePdf
 );

@@ -5,7 +5,7 @@ import {
   RatingProps as ReactRatingProps
 } from 'react-simple-star-rating';
 
-interface RatingProps extends ReactRatingProps {
+export interface RatingProps extends ReactRatingProps {
   iconClass?: string;
   fillIconColor?: string;
   emptyIconColor?: string;
