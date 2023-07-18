@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Form, Row } from 'react-bootstrap';
 
-const SettingsPersonalInformation = () => {
+const SettingsPersonalInfo = () => {
   return (
     <div className="mb-6">
       <h4 className="mb-4">Personal Information</h4>
@@ -99,4 +99,4 @@ const SettingsPersonalInformation = () => {
   );
 };
 
-export default SettingsPersonalInformation;
+export default SettingsPersonalInfo;

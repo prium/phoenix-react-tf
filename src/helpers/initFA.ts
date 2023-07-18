@@ -18,6 +18,7 @@ import {
   faBuilding,
   faCalendarDays,
   faCamera,
+  faCaretDown,
   faCaretRight,
   faCheck,
   faChess,
@@ -47,6 +48,7 @@ import {
   faFlag,
   faGear,
   faGlobe,
+  faGlobeAsia,
   faHandHoldingHeart,
   faHeart,
   faHome,
@@ -238,5 +240,7 @@ library.add(
   faLock,
   fabYoutube,
   fabArtstation,
-  fabBehance
+  fabBehance,
+  faGlobeAsia,
+  faCaretDown
 );

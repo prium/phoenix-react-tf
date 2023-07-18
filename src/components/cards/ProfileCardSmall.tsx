@@ -5,8 +5,9 @@ import profileImage from 'assets/img/team/20.webp';
 import { Card, Col, Row } from 'react-bootstrap';
 import { CSSProperties } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
-const SettingsProfileCard = () => {
+const ProfileCardSM = ({ showAbout }: { showAbout?: boolean }) => {
   return (
     <Card className="mb-5">
       <Card.Header
@@ -55,6 +56,24 @@ const SettingsProfileCard = () => {
                 </h6>
               </div>
             </div>
+            {showAbout && (
+              <div className="mt-4">
+                <p className="fw-semi-bold mb-0">
+                  About me
+                  <Link to="#!">
+                    <FontAwesomeIcon
+                      icon="pencil"
+                      className="fs-10 text-500 ms-3"
+                    />
+                  </Link>
+                </p>
+                <p className="text-700 mb-0">
+                  “Le capitalisme exploite. Et le capitalisme exploite les gens
+                  de couleur. Comme il exploite les hommes. Ou comme il exploite
+                  les femmes.”
+                </p>
+              </div>
+            )}
           </Col>
         </Row>
       </Card.Body>
@@ -62,4 +81,4 @@ const SettingsProfileCard = () => {
   );
 };
 
-export default SettingsProfileCard;
+export default ProfileCardSM;

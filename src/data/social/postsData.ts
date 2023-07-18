@@ -47,7 +47,7 @@ export interface PostsData {
   shares: string;
 }
 
-export const postData: PostsData[] = [
+export const feedPostData: PostsData[] = [
   {
     name: 'Zingko Kudobum',
     avatar: team59,

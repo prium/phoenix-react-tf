@@ -92,6 +92,7 @@ import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
 import SocialProfile from 'pages/apps/social/SocialProfile';
 import Settings from 'pages/apps/social/Settings';
+import Feed from 'pages/apps/social/Feed';
 
 const routes = [
   {
@@ -199,6 +200,10 @@ const routes = [
           {
             path: 'settings',
             element: <Settings />
+          },
+          {
+            path: 'feed',
+            element: <Feed />
           }
         ]
       },

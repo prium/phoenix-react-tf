@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
@@ -10,7 +11,14 @@ import { Link } from 'react-router-dom';
 const Events = ({ data, title }: { data: EventsData[]; title: string }) => {
   return (
     <>
-      <Row className="g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between">
+      <Row
+        className={classNames(
+          'g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between',
+          {
+            'pb-4 pt-0': title === 'Events'
+          }
+        )}
+      >
         <Col xs="auto">
           <h3 className="flex-1 mb-0 text-nowrap me-3">{title}</h3>
         </Col>

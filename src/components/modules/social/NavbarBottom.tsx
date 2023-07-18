@@ -3,9 +3,15 @@ import classNames from 'classnames';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const NavbarBottom = ({ active }: { active: string }) => {
+const NavbarBottom = ({
+  active,
+  className
+}: {
+  active: string;
+  className?: string;
+}) => {
   return (
-    <div className="navbar-bottom d-xl-none">
+    <div className={classNames(className, 'navbar-bottom')}>
       <Nav>
         <Nav.Link
           as={Link}

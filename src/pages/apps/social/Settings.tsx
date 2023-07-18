@@ -1,11 +1,10 @@
 import Button from 'components/base/Button';
-import SettingsProfileCard from 'components/cards/SettingsProfileCard';
+import ProfileCardSM from 'components/cards/ProfileCardSmall';
 import SettingsChangePassword from 'components/forms/SettingsChangePassword';
 import SettingsCompanyInfo from 'components/forms/SettingsCompanyInfo';
-import SettingsPersonalInformation from 'components/forms/SettingsPersonalInformation';
+import SettingsPersonalInfo from 'components/forms/SettingsPersonalInfo';
 import SettingsSocial from 'components/forms/SettingsSocial';
 import SettingsSideBar from 'components/modules/social/SettingsSideBar';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const Settings = () => {
@@ -13,12 +12,12 @@ const Settings = () => {
     <div className="mb-9">
       <Row className="g-6">
         <Col xs={12} xl={4}>
-          <SettingsProfileCard />
+          <ProfileCardSM />
           <SettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>
           <div className="border-bottom border-300 mb-4">
-            <SettingsPersonalInformation />
+            <SettingsPersonalInfo />
             <Row className="gx-3 mb-6 gy-6 gy-sm-3">
               <Col xs={12} sm={6}>
                 <SettingsCompanyInfo />

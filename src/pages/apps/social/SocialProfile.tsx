@@ -1,4 +1,3 @@
-import Button from 'components/base/Button';
 import SocialProfileCard from 'components/cards/SocialProfileCard';
 import NavbarBottom from 'components/modules/social/NavbarBottom';
 import ProfileNavigation from 'components/modules/social/ProfileNavigation';
@@ -25,18 +24,11 @@ const SocialProfile = () => {
             <ProfileNavigationTwo data={profileNavigationData} />
           </Col>
           <Col xl={8}>
-            <div className="mb-9">
-              <SocialPosts data={profilePostData} />
-            </div>
-            <div className="text-center">
-              <Button variant="link" className="fs-8 p-0">
-                Load more
-              </Button>
-            </div>
+            <SocialPosts data={profilePostData} />
           </Col>
         </Row>
       </div>
-      <NavbarBottom active="profile" />
+      <NavbarBottom active="profile" className="d-xl-none" />
     </>
   );
 };

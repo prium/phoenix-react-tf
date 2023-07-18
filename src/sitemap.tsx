@@ -68,7 +68,8 @@ export const routes: RouteItems[] = [
             name: 'social-feed',
             path: 'apps/social/feed',
             pathName: 'social-feed',
-            topNavIcon: 'share-2'
+            topNavIcon: 'share-2',
+            active: true
           }
         ]
       }
