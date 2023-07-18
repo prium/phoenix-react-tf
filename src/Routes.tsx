@@ -90,6 +90,7 @@ import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
+import Notification from 'pages/notification/Notification';
 
 const routes = [
   {
@@ -111,6 +112,10 @@ const routes = [
       {
         path: '/pages/starter',
         element: <Starter />
+      },
+      {
+        path: '/pages/notification',
+        element: <Notification />
       },
       {
         path: '/apps/e-commerce/admin/',
