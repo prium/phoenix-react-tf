@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { UilTimes } from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 import {
@@ -17,7 +18,7 @@ const EmailSidebarItem = ({ item }: { item: SidebarItem }) => {
       <Nav.Link
         as={Link}
         className={classNames(
-          'nav-link py-2 ps-0 pe-3 border-end border-bottom text-start outline-none',
+          'py-2 ps-0 pe-3 border-end border-bottom text-start outline-none',
           {
             active: item.active
           }
@@ -34,18 +35,20 @@ const EmailSidebarItem = ({ item }: { item: SidebarItem }) => {
   );
 };
 
-const EmailSidebar = () => {
+const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
   return (
     <div>
       <div className="email-content scrollbar">
-        <div className="d-flex mb-2">
+        <div className="d-flex flex-between-center mb-2">
           <p className="text-uppercase fs-10 text-600 mb-0 fw-bold">Mailbox</p>
-          <button
-            className="btn d-lg-none p-0 mb-2"
-            data-phoenix-dismiss="offcanvas"
-          >
-            <span className="uil uil-times fs-8"></span>
-          </button>
+          {hideSidebar && (
+            <Button
+              className="d-lg-none p-0 mb-1"
+              onClick={() => hideSidebar()}
+            >
+              <UilTimes size={16} />
+            </Button>
+          )}
         </div>
 
         <Nav className="flex-column border-top fs-9 vertical-nav mb-4">
