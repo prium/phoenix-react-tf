@@ -7,11 +7,14 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import InboxToolbar from './InboxToolbar';
+import { emails } from 'data/email';
+import EmailRow from './EmailRow';
 
 const EmailLayout = ({
   children,
-  showComposeBtn
-}: PropsWithChildren<{ showComposeBtn?: boolean }>) => {
+  page
+}: PropsWithChildren<{ page: 'inbox' | 'detail' | 'compose' }>) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const { breakpoints } = useBreakpoints();
   const { setContentClass } = useMainLayoutContext();
@@ -42,7 +45,7 @@ const EmailLayout = ({
             <FontAwesomeIcon icon="bars" />
           </Button>
         </Col>
-        {showComposeBtn && (
+        {page !== 'compose' && (
           <Col className="col-auto d-lg-none">
             <Button
               variant="primary"
@@ -79,6 +82,18 @@ const EmailLayout = ({
             </PhoenixOffcanvas>
           )}
         </Col>
+        {page !== 'inbox' && (
+          <Col xs="3" className="d-none d-xxl-block">
+            <div className="email-content scrollbar">
+              <div className="px-lg-1">
+                <InboxToolbar size="sm" />
+                {emails.map(email => (
+                  <EmailRow email={email} key={email.id} />
+                ))}
+              </div>
+            </div>
+          </Col>
+        )}
         {children}
       </Row>
     </div>

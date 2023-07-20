@@ -3,9 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import EmailLayout from 'components/modules/email/EmailLayout';
-import EmailRow from 'components/modules/email/EmailRow';
-import InboxToolbar from 'components/modules/email/InboxToolbar';
-import { emails } from 'data/email';
 import {
   Card,
   Col,
@@ -19,6 +16,7 @@ import generic41 from 'assets/img/generic/41.png';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
+import { Link } from 'react-router-dom';
 
 const OverlayButton = ({ title, icon }: { title: string; icon: IconProp }) => {
   return (
@@ -34,22 +32,17 @@ const OverlayButton = ({ title, icon }: { title: string; icon: IconProp }) => {
 
 const EmailDetail = () => {
   return (
-    <EmailLayout>
-      <Col xs="3" className="d-none d-xxl-block">
-        <div className="email-content scrollbar">
-          <div className="px-lg-1">
-            <InboxToolbar size="sm" />
-            {emails.map(email => (
-              <EmailRow email={email} key={email.id} />
-            ))}
-          </div>
-        </div>
-      </Col>
+    <EmailLayout page="detail">
       <Col>
         <Card className="email-content">
           <Card.Header className="border-0">
             <div className="d-flex flex-between-center pb-3 border-bottom">
-              <Button variant="link" className="p-0 text-800 me-3">
+              <Button
+                as={Link}
+                to="/apps/email/inbox"
+                variant="link"
+                className="p-0 text-800 me-3"
+              >
                 <FontAwesomeIcon icon="angle-left" className="fw-bolder fs-8" />
               </Button>
               <h3 className="flex-1 mb-0 lh-sm line-clamp-1">

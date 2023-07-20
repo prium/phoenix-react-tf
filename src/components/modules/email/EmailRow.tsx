@@ -81,7 +81,7 @@ const EmailRow = ({ email }: { email: Email }) => {
         </Col>
       </Row>
       <div className="ms-4 mt-n3 mt-sm-0 ms-sm-11">
-        <Link to="#!" className="d-block inbox-link">
+        <Link to="/apps/email/email-detail" className="d-block inbox-link">
           <span
             className={classNames('fs-9 line-clamp-1', {
               'text-1000': email.read_at,

@@ -23,8 +23,6 @@ const TinymceEditor = ({
   console.log(getColor('black'));
 
   useEffect(() => {
-    console.log({ theme });
-
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
         `body{color: ${getColor(

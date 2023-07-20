@@ -300,8 +300,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'compose',
-            path: 'apps/email/compose',
-            pathName: 'email-compose'
+            path: '/apps/email/compose',
+            pathName: 'email-compose',
+            active: true
           }
         ]
       },

@@ -6,7 +6,7 @@ import EmailRow from 'components/modules/email/EmailRow';
 
 const Inbox = () => {
   return (
-    <EmailLayout>
+    <EmailLayout page="inbox">
       <Col xs={12} lg>
         <div className="px-lg-1">
           <InboxToolbar className="inbox-toolbar" />

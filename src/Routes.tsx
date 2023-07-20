@@ -93,6 +93,7 @@ import Chat from 'pages/apps/Chat';
 import FaqAccordion from 'pages/faq/FaqAccordion';
 import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
+import Compose from 'pages/apps/email/Compose';
 
 const routes = [
   {
@@ -217,6 +218,10 @@ const routes = [
           {
             path: 'email-detail',
             element: <EmailDetail />
+          },
+          {
+            path: 'compose',
+            element: <Compose />
           }
         ]
       },
