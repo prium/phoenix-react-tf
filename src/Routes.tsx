@@ -91,6 +91,7 @@ import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
 import FaqAccordion from 'pages/faq/FaqAccordion';
+import PricingColumn from 'pages/pages/pricing/PricingColumn';
 
 const routes = [
   {
@@ -199,6 +200,15 @@ const routes = [
       {
         path: '/apps/chat/:userId/conversation',
         element: <Chat />
+      },
+      {
+        path: '/pages/pricing/',
+        children: [
+          {
+            path: 'pricing-column',
+            element: <PricingColumn />
+          }
+        ]
       },
       {
         path: '/modules',
