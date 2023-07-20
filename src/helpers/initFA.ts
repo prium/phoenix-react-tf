@@ -38,6 +38,7 @@ import {
   faEnvelope,
   faEye,
   faFaceSmile,
+  faFile,
   faFileCircleExclamation,
   faFileCode,
   faFileExport,
@@ -72,6 +73,7 @@ import {
   faPrint,
   faRedo,
   faReply,
+  faReplyAll,
   faRotate,
   faRoute,
   faSearch,
@@ -230,5 +232,7 @@ library.add(
   faFileCircleExclamation,
   faRedo,
   faMusic,
-  faFilePdf
+  faFilePdf,
+  faReplyAll,
+  faFile
 );

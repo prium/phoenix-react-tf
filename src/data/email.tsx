@@ -44,7 +44,7 @@ export const mailboxItems: SidebarItem[] = [
     icon: <UilInbox size={12} />,
     label: 'Inbox',
     count: 5,
-    link: 'email-inbox'
+    link: 'inbox'
   },
   {
     icon: <UilLocationArrow size={12} />,

@@ -19731,7 +19731,7 @@ samp {
 }
 
 .overflow-x-hidden {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 .stack-icon-item {
@@ -29887,10 +29887,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 
 .email-content {
   height: calc(100vh - 278px);
-  overflow-x: hidden;
-}
-.email-content .email-detail-content {
-  height: calc(100% - 74px);
 }
 
 .email-sidebar .email-content {

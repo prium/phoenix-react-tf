@@ -1,5 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import Button from 'components/base/Button';
 import React from 'react';
 import { Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
@@ -16,14 +17,20 @@ const ActionButton = ({ title, icon }: { title: string; icon: IconProp }) => {
   );
 };
 
-const InboxToolbar = () => {
-  const inbox = true;
+const InboxToolbar = ({
+  size = 'lg',
+  className
+}: {
+  size?: 'sm' | 'lg';
+  className?: string;
+}) => {
   return (
     <>
       <div
-        className={`d-flex align-items-center flex-wrap position-sticky pb-2 bg-soft z-index-2 email-toolbar ${
-          inbox ? 'inbox-toolbar' : ''
-        }`}
+        className={classNames(
+          className,
+          'd-flex align-items-center flex-wrap position-sticky pb-2 bg-soft z-index-2 email-toolbar'
+        )}
       >
         <div className="d-flex align-items-center flex-1 me-2">
           <Button className="p-0 me-2" onClick={() => location.reload()}>
@@ -35,7 +42,7 @@ const InboxToolbar = () => {
         </div>
         <div className="d-flex gap-3">
           <p className="text-600 fs-9 fw-semi-bold mb-0">
-            {inbox ? 'Showing : ' : ' '}
+            {size === 'lg' ? 'Showing : ' : ' '}
             <span className="text-900">1-7</span>
             {' of '}
             <span className="text-900">205</span>

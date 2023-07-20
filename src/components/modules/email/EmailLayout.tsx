@@ -4,7 +4,8 @@ import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import SearchBox from 'components/common/SearchBox';
 import EmailSidebar from 'components/modules/email/EmailSidebar';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
-import React, { PropsWithChildren, useState } from 'react';
+import { useMainLayoutContext } from 'providers/MainLayoutProvider';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const EmailLayout = ({
@@ -13,6 +14,15 @@ const EmailLayout = ({
 }: PropsWithChildren<{ showComposeBtn?: boolean }>) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const { breakpoints } = useBreakpoints();
+  const { setContentClass } = useMainLayoutContext();
+
+  useEffect(() => {
+    setContentClass('pt-0');
+
+    return () => {
+      setContentClass('');
+    };
+  }, []);
   return (
     <div className="email-container">
       <Row className="gx-lg-6 gx-3 py-4 z-index-2 position-sticky bg-soft email-header">

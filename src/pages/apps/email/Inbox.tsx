@@ -1,26 +1,15 @@
-import EmailLayout from 'layouts/EmailLayout';
-import React, { useEffect } from 'react';
+import EmailLayout from 'components/modules/email/EmailLayout';
 import { Col } from 'react-bootstrap';
-import InboxToolbar from './InboxToolbar';
+import InboxToolbar from 'components/modules/email/InboxToolbar';
 import { emails } from 'data/email';
-import EmailRow from './EmailRow';
-import { useMainLayoutContext } from 'providers/MainLayoutProvider';
+import EmailRow from 'components/modules/email/EmailRow';
 
 const Inbox = () => {
-  const { setContentClass } = useMainLayoutContext();
-
-  useEffect(() => {
-    setContentClass('pt-0');
-
-    return () => {
-      setContentClass('');
-    };
-  }, []);
   return (
     <EmailLayout>
       <Col xs={12} lg>
         <div className="px-lg-1">
-          <InboxToolbar />
+          <InboxToolbar className="inbox-toolbar" />
           {emails.map(email => (
             <EmailRow email={email} key={email.id} />
           ))}

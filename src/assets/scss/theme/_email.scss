@@ -39,10 +39,10 @@
 
 .email-content {
   height: calc(100vh - 278px);
-  overflow-x: hidden;
-  .email-detail-content {
-    height: calc(100% - 74px);
-  }
+  // overflow-x: hidden;
+  // .email-detail-content {
+  //   height: calc(100% - 74px);
+  // }
 }
 .email-sidebar {
   .email-content {

@@ -295,7 +295,8 @@ export const routes: RouteItems[] = [
           {
             name: 'email-detail',
             path: '/apps/email/email-detail',
-            pathName: 'email-detail'
+            pathName: 'email-detail',
+            active: true
           },
           {
             name: 'compose',
