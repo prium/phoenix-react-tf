@@ -1,21 +1,9 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import TooltipIconButton from 'components/common/TooltipIconButton';
 import React from 'react';
-import { Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
-
-const ActionButton = ({ title, icon }: { title: string; icon: IconProp }) => {
-  return (
-    <OverlayTrigger overlay={<Tooltip>{title}</Tooltip>}>
-      <div>
-        <Button className="p-0 text-500 hover-text-600">
-          <FontAwesomeIcon icon={icon} className="fs-10" />
-        </Button>
-      </div>
-    </OverlayTrigger>
-  );
-};
+import { Form } from 'react-bootstrap';
 
 const InboxToolbar = ({
   size = 'lg',
@@ -61,10 +49,10 @@ const InboxToolbar = ({
       <div className="border-y py-2 d-flex justify-content-between">
         <Form.Check type="checkbox" id="defaultCheckbox" />
         <div className="d-flex gap-2">
-          <ActionButton title="Archive" icon="archive" />
-          <ActionButton title="Delete" icon="trash" />
-          <ActionButton title="Star" icon="star" />
-          <ActionButton title="Tags" icon="tag" />
+          <TooltipIconButton iconClass="fs-10" title="Archive" icon="archive" />
+          <TooltipIconButton iconClass="fs-10" title="Delete" icon="trash" />
+          <TooltipIconButton iconClass="fs-10" title="Star" icon="star" />
+          <TooltipIconButton iconClass="fs-10" title="Tags" icon="tag" />
         </div>
       </div>
     </>

@@ -1,34 +1,16 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import EmailLayout from 'components/modules/email/EmailLayout';
-import {
-  Card,
-  Col,
-  Dropdown,
-  OverlayTrigger,
-  Row,
-  Tooltip
-} from 'react-bootstrap';
+import { Card, Col, Dropdown, Row } from 'react-bootstrap';
 import team60 from 'assets/img/team/60.webp';
 import generic41 from 'assets/img/generic/41.png';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import { Link } from 'react-router-dom';
-
-const OverlayButton = ({ title, icon }: { title: string; icon: IconProp }) => {
-  return (
-    <OverlayTrigger overlay={<Tooltip>{title}</Tooltip>} placement="top">
-      <div>
-        <Button className="p-0">
-          <FontAwesomeIcon icon={icon} className="text-500" />
-        </Button>
-      </div>
-    </OverlayTrigger>
-  );
-};
+import TooltipIconButton from 'components/common/TooltipIconButton';
+import Attachment from 'components/common/Attachment';
 
 const EmailDetail = () => {
   return (
@@ -67,11 +49,11 @@ const EmailDetail = () => {
                   sm="auto"
                   className="d-flex gap-4 gap-lg-3 gap-xl-4 order-sm-1"
                 >
-                  <OverlayButton title="Reply" icon="reply" />
-                  <OverlayButton title="Remove" icon="trash-can" />
-                  <OverlayButton title="Archive" icon="archive" />
-                  <OverlayButton title="Print" icon="print" />
-                  <OverlayButton title="Star" icon={['far', 'star']} />
+                  <TooltipIconButton title="Reply" icon="reply" />
+                  <TooltipIconButton title="Remove" icon="trash-can" />
+                  <TooltipIconButton title="Archive" icon="archive" />
+                  <TooltipIconButton title="Print" icon="print" />
+                  <TooltipIconButton title="Star" icon={['far', 'star']} />
                 </Col>
                 <Col xs="auto">
                   <Avatar src={team60} size="xl" />
@@ -132,31 +114,27 @@ const EmailDetail = () => {
               </div>
               <Row className="pb-11 border-bottom mb-4 gx-0 gy-2">
                 <Col xs="auto" className="me-3">
-                  <a
-                    href="#!"
-                    className="text-decoration-none d-flex align-items-center"
-                  >
-                    <div className="btn-icon btn-icon-xl border border-400 rounded-3 text-400 flex-column me-2">
-                      <FontAwesomeIcon icon="file" className="fs-8 mb-1" />
-                      <p className="mb-0 fs-10 fw-bold">PDF</p>
-                    </div>
-                    <div>
-                      <h6 className="text-1000">workflow-data.pdf</h6>
-                      <p className="fs-9 mb-0 text-700 lh-1">53.34 KB</p>
-                    </div>
-                  </a>
+                  <Attachment
+                    attachment={{
+                      name: 'workflow-data.pdf',
+                      size: '53.34 KB',
+                      format: 'pdf'
+                    }}
+                    size="xl"
+                    type="secondary"
+                  />
                 </Col>
-                <Col xs="auto">
-                  <a
-                    href="#!"
-                    className="text-decoration-none d-flex align-items-center"
-                  >
-                    <img src={generic41} alt="..." className="rounded" />
-                    <div className="ms-2">
-                      <h6 className="text-1000">forest.jpg</h6>
-                      <p className="fs-9 mb-0 text-700">53.34 KB</p>
-                    </div>
-                  </a>
+                <Col xs="auto" className="me-3">
+                  <Attachment
+                    attachment={{
+                      name: 'forest.jpg',
+                      size: '123.34 KB',
+                      format: 'jpg',
+                      preview: generic41
+                    }}
+                    size="xl"
+                    type="secondary"
+                  />
                 </Col>
               </Row>
               <div className="d-flex justify-content-between">

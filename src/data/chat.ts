@@ -22,6 +22,7 @@ import team1 from 'assets/img/team/1.webp';
 import team6 from 'assets/img/team/6.webp';
 import team60 from 'assets/img/team/60.webp';
 import team57 from 'assets/img/team/57.webp';
+import { FileAttachment } from 'components/common/Attachment';
 
 export interface Message {
   id: number;
@@ -611,7 +612,7 @@ export const attachments = [
   }
 ];
 
-export const files = [
+export const files: FileAttachment[] = [
   {
     name: 'Federico_salsaniuella_godarf_design.zip',
     size: '53.34 MB',
