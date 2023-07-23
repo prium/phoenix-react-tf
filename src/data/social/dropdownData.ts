@@ -1,6 +1,8 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
 export interface DropdownData {
   label: string;
-  icon: string;
+  icon: IconProp;
 }
 
 export const dropdownData: DropdownData[] = [

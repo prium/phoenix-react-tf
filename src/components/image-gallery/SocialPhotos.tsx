@@ -10,11 +10,11 @@ import useLightbox from 'hooks/useLightbox';
 import { Col, Row } from 'react-bootstrap';
 import Lightbox from 'components/base/LightBox';
 
-const SocialPhotos = () => {
+const SocialPhotos = ({ className }: { className?: string }) => {
   const [attachments] = useState([img1, img2, img3, img4, img5, img6]);
   const { lightboxProps, openLightbox } = useLightbox(attachments);
   return (
-    <>
+    <div className={className}>
       <div className="d-flex pb-4 align-items-end">
         <h3 className="flex-1 mb-0">Photos</h3>
         <Link to="#!" className="fw-bold fs-9 me-4">
@@ -37,7 +37,7 @@ const SocialPhotos = () => {
           </Col>
         ))}
       </Row>
-    </>
+    </div>
   );
 };
 

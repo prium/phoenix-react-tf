@@ -2,15 +2,15 @@ import SettingsProfileCard from 'components/cards/ProfileCardSmall';
 import Events from 'components/modules/events/Events';
 import FeedTextarea from 'components/modules/social/FeedTextarea';
 import NavbarBottom from 'components/modules/social/NavbarBottom';
-import ProfileNavigation from 'components/modules/social/ProfileNavigation';
 import SocialMessages from 'components/modules/social/SocialMessages';
-import SocialPhotos from 'components/modules/social/SocialPhotos';
+import SocialPhotos from 'components/image-gallery/SocialPhotos';
 import SocialPosts from 'components/modules/social/SocialPosts';
 import { eventsData } from 'data/eventsData';
 import { dropdownData } from 'data/social/dropdownData';
 import { messages } from 'data/social/messages';
 import { feedPostData } from 'data/social/postsData';
 import { Col, Row } from 'react-bootstrap';
+import ProfileNavigation from 'components/list-items/ProfileNavigation';
 
 const Feed = () => {
   return (

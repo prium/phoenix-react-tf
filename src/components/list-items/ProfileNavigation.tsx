@@ -1,4 +1,3 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -6,9 +5,14 @@ import { DropdownData } from 'data/social/dropdownData';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-const ProfileNavigation = ({ data }: { data: DropdownData[] }) => {
+interface ProfileNavigationProps {
+  data: DropdownData[];
+  className?: string;
+}
+
+const ProfileNavigation = ({ data, className }: ProfileNavigationProps) => {
   return (
-    <Row className="g-0">
+    <Row className={classNames(className, 'g-0')}>
       {data.slice(0, 6).map((item, index) => (
         <Col
           key={index}
@@ -29,7 +33,7 @@ const ProfileNavigation = ({ data }: { data: DropdownData[] }) => {
             )}
             startIcon={
               <FontAwesomeIcon
-                icon={item.icon as IconProp}
+                icon={item.icon}
                 className="me-2 mb-2 mb-xxl-0"
               />
             }

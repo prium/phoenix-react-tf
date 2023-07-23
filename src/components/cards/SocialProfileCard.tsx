@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { DropdownData } from 'data/social/dropdownData';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
   return (
@@ -112,7 +111,7 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
                       {data.slice(0, 6).map(item => (
                         <Dropdown.Item key={item.label} className="d-xl-none">
                           <FontAwesomeIcon
-                            icon={item.icon as IconProp}
+                            icon={item.icon}
                             className="text-800 me-2"
                           />
                           {item.label}
@@ -121,7 +120,7 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
                       {data.slice(6).map(item => (
                         <Dropdown.Item key={item.label}>
                           <FontAwesomeIcon
-                            icon={item.icon as IconProp}
+                            icon={item.icon}
                             className="text-800 me-2"
                           />
                           {item.label}

@@ -28734,7 +28734,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   transition: opacity 0.2s ease-in-out;
   margin: 0 !important;
   display: flex;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 .hoverbox .hoverbox-primary-content {
   position: absolute;
