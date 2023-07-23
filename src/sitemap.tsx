@@ -284,21 +284,25 @@ export const routes: RouteItems[] = [
       {
         name: 'email',
         icon: 'mail',
+        active: true,
         pages: [
           {
             name: 'inbox',
-            path: 'apps/email/inbox',
-            pathName: 'email-inbox'
+            path: '/apps/email/inbox',
+            pathName: 'email-inbox',
+            active: true
           },
           {
             name: 'email-detail',
-            path: 'apps/email/email-detail',
-            pathName: 'email-detail'
+            path: '/apps/email/email-detail',
+            pathName: 'email-detail',
+            active: true
           },
           {
             name: 'compose',
-            path: 'apps/email/compose',
-            pathName: 'email-compose'
+            path: '/apps/email/compose',
+            pathName: 'email-compose',
+            active: true
           }
         ]
       },

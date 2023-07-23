@@ -51,14 +51,14 @@ const ConversationDetails = ({
         <div className="d-flex flex-column align-items-center text-center">
           <Avatar src={conversation.user.avatar} size="4xl" className="mb-2" />
           <h4 className="fw-semi-bold mb-3">{conversation.user.name}</h4>
-          <div className="d-flex">
-            <Button className="btn-primary btn-icon fs-10 me-1">
+          <div className="d-flex gap-1">
+            <Button variant="primary" className="btn-icon fs-10">
               <FontAwesomeIcon icon="phone" />
             </Button>
-            <Button className="btn-primary btn-icon fs-10 me-1">
+            <Button variant="primary" className="btn-icon fs-10">
               <FontAwesomeIcon icon="video" />
             </Button>
-            <Button className="btn-phoenix-secondary btn-icon fs-10">
+            <Button variant="phoenix-primary" className="btn-icon fs-10">
               <FontAwesomeIcon icon="search" />
             </Button>
           </div>
@@ -79,7 +79,6 @@ const ConversationDetails = ({
         <ActionButton icon="flag">Report Account</ActionButton>
         <ActionButton icon="ban">Block Account</ActionButton>
       </div>
-      {/* button.btn.d-block.p-0.fw-semi-bold.mb-3 span.fa-solid.fa-user-pen.me-3 */}
     </>
   );
 };

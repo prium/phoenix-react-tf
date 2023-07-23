@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import Attachment from 'components/common/Attachment';
 import { files } from 'data/chat';
 import { getFileIcon } from 'helpers/utils';
 
@@ -21,35 +22,7 @@ const SharedFiles = () => {
                 }
               )}
             >
-              <a
-                href="#!"
-                className="text-decoration-none d-flex align-items-center py-3"
-              >
-                <div className="btn-icon btn-icon-lg border border-500 rounded-3 text-500 flex-column me-2">
-                  <FontAwesomeIcon
-                    icon={getFileIcon(file.format)}
-                    className="fs-0 mb-1"
-                  />
-                  <p className="mb-0 fs-10 fw-bold lh-1">{file.format}</p>
-                </div>
-                <div className="flex-1">
-                  <h6 className="text-900 line-clamp-1">{file.name}</h6>
-                  <div className="d-flex align-items-center lh-1">
-                    <p className="fs-10 mb-0 text-700 fw-semi-bold">
-                      {file.size}
-                    </p>
-
-                    <FontAwesomeIcon
-                      icon="circle"
-                      className="text-500 fs-10"
-                      transform="shrink-12"
-                    />
-                    <p className="fs-10 mb-0 text-700 fw-semi-bold">
-                      {file.date}
-                    </p>
-                  </div>
-                </div>
-              </a>
+              <Attachment attachment={file} />
 
               <button className="btn p-0">
                 <FontAwesomeIcon

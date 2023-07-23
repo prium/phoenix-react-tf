@@ -123,6 +123,10 @@ export const getFileIcon = (fileFormat: string): IconProp => {
       return 'file-lines';
     case 'mad':
       return 'file-circle-exclamation';
+    case 'wav':
+      return 'music';
+    case 'pdf':
+      return 'file-pdf';
     default:
       return 'file-lines';
   }

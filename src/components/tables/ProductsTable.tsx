@@ -54,7 +54,8 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       const { price, priceMax, priceMin } = original;
       return price
         ? currencyFormat(price)
-        : `${currencyFormat(priceMin!)} - ${currencyFormat(priceMax!)}`;
+        : // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          `${currencyFormat(priceMin!)} - ${currencyFormat(priceMax!)}`;
     },
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },

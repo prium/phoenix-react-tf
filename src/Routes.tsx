@@ -91,6 +91,9 @@ import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
 import Chat from 'pages/apps/Chat';
 import FaqAccordion from 'pages/faq/FaqAccordion';
+import Inbox from 'pages/apps/email/Inbox';
+import EmailDetail from 'pages/apps/email/EmailDetail';
+import Compose from 'pages/apps/email/Compose';
 
 const routes = [
   {
@@ -193,12 +196,34 @@ const routes = [
         ]
       },
       {
-        path: '/apps/chat',
-        element: <Chat />
+        path: '/apps/chat/',
+        children: [
+          {
+            index: true,
+            element: <Chat />
+          },
+          {
+            path: ':userId/conversation',
+            element: <Chat />
+          }
+        ]
       },
       {
-        path: '/apps/chat/:userId/conversation',
-        element: <Chat />
+        path: '/apps/email/',
+        children: [
+          {
+            path: 'inbox',
+            element: <Inbox />
+          },
+          {
+            path: 'email-detail',
+            element: <EmailDetail />
+          },
+          {
+            path: 'compose',
+            element: <Compose />
+          }
+        ]
       },
       {
         path: '/modules',
