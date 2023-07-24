@@ -18,29 +18,33 @@ import gallery24 from 'assets/img/gallery/24.png';
 import gallery25 from 'assets/img/gallery/25.png';
 import gallery26 from 'assets/img/gallery/26.png';
 
+export interface imageData {
+  cols: number;
+  src: string;
+}
+
+export interface commentsData {
+  name: string;
+  avatar: string;
+  time: string;
+  classes?: string;
+  comment: string;
+  reply?: {
+    name: string;
+    avatar: string;
+    time: string;
+    comment: string;
+  }[];
+}
+
 export interface PostsData {
   name: string;
   avatar: string;
   time: string;
   location?: string;
   post: string;
-  images?: {
-    cols: number;
-    src: string;
-  }[];
-  comments?: {
-    name: string;
-    avatar: string;
-    time: string;
-    classes?: string;
-    comment: string;
-    reply?: {
-      name: string;
-      avatar: string;
-      time: string;
-      comment: string;
-    }[];
-  }[];
+  images?: imageData[];
+  comments?: commentsData[];
   commentInputAvatar: string;
   likes: string;
   comment: string;

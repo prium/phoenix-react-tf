@@ -1,12 +1,12 @@
-import PostsCard from 'components/cards/PostsCard';
+import PostsCard from 'components/modules/social/PostsCard';
 import { PostsData } from 'data/social/postsData';
 import { Button } from 'react-bootstrap';
 
-const SocialPosts = ({ data }: { data: PostsData[] }) => {
+const SocialPosts = ({ posts }: { posts: PostsData[] }) => {
   return (
     <>
       <div className="mb-9">
-        {data.map((post, index) => (
+        {posts.map((post, index) => (
           <PostsCard key={index} post={post} />
         ))}
       </div>

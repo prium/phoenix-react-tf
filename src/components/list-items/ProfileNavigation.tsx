@@ -1,19 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
-import { DropdownData } from 'data/social/dropdownData';
+import { dropdownData } from 'data/social/dropdownData';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-interface ProfileNavigationProps {
-  data: DropdownData[];
-  className?: string;
-}
-
-const ProfileNavigation = ({ data, className }: ProfileNavigationProps) => {
+const ProfileNavigation = ({ className }: { className?: string }) => {
   return (
     <Row className={classNames(className, 'g-0')}>
-      {data.slice(0, 6).map((item, index) => (
+      {dropdownData.slice(0, 6).map((item, index) => (
         <Col
           key={index}
           xs={6}

@@ -1,10 +1,10 @@
 import Lightbox from 'components/base/LightBox';
-import { PostsData } from 'data/social/postsData';
+import { imageData } from 'data/social/postsData';
 import useLightbox from 'hooks/useLightbox';
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-const PostsGallery = ({ images }: { images: PostsData['images'] }) => {
+const PostsGallery = ({ images }: { images: imageData[] }) => {
   const imageArray = images?.map(image => image.src);
   const [attachments] = useState(imageArray || []);
   const { lightboxProps, openLightbox } = useLightbox(attachments);

@@ -2,13 +2,13 @@ import { Card, Col, Dropdown, Row } from 'react-bootstrap';
 import coverImage from 'assets/img/generic/cover-photo.png';
 import CoverUpload from 'components/common/CoverUpload';
 import profileImage from 'assets/img/team/9.webp';
-import SocialAvatarUpload from 'components/modules/social/SocialAvatarUpload';
+import AvatarUpload from 'components/common/AvatarUpload';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
-import { DropdownData } from 'data/social/dropdownData';
+import { dropdownData } from 'data/social/dropdownData';
 
-const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
+const SocialProfileCard = () => {
   return (
     <Card className="mb-5">
       <Card.Header
@@ -16,9 +16,10 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
         style={{ minHeight: '214px' }}
       >
         <CoverUpload src={coverImage} />
-        <SocialAvatarUpload
+        <AvatarUpload
           size="5xl"
           src={profileImage}
+          thumbnail={true}
           className="feed-profile"
         />
       </Card.Header>
@@ -108,7 +109,7 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
                       More
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="py-2">
-                      {data.slice(0, 6).map(item => (
+                      {dropdownData.slice(0, 6).map(item => (
                         <Dropdown.Item key={item.label} className="d-xl-none">
                           <FontAwesomeIcon
                             icon={item.icon}
@@ -117,7 +118,7 @@ const SocialProfileCard = ({ data }: { data: DropdownData[] }) => {
                           {item.label}
                         </Dropdown.Item>
                       ))}
-                      {data.slice(6).map(item => (
+                      {dropdownData.slice(6).map(item => (
                         <Dropdown.Item key={item.label}>
                           <FontAwesomeIcon
                             icon={item.icon}

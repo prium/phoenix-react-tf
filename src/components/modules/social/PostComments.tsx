@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
-import { PostsData } from 'data/social/postsData';
+import { commentsData } from 'data/social/postsData';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostComments = ({ comments }: { comments: PostsData['comments'] }) => {
+const PostComments = ({ comments }: { comments: commentsData[] }) => {
   return (
     <>
       {comments?.map((comment, index) => (

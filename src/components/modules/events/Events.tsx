@@ -8,7 +8,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Events = ({ data, title }: { data: EventsData[]; title: string }) => {
+const Events = ({ events, title }: { events: EventsData[]; title: string }) => {
   return (
     <>
       <Row
@@ -28,7 +28,7 @@ const Events = ({ data, title }: { data: EventsData[]; title: string }) => {
           </Link>
         </Col>
       </Row>
-      {data.map(event => (
+      {events.map(event => (
         <div key={event.title} className="py-3 border-bottom border-dashed">
           <div className="d-flex flex-between-center">
             <p className="text-warning fs-10 mb-0 fw-bold mb-1">{event.date}</p>

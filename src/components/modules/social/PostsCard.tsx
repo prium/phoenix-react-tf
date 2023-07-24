@@ -6,7 +6,7 @@ import RevealDropdown, {
 } from 'components/base/RevealDropdown';
 import CommentField from 'components/modules/social/CommentField';
 import PostComments from 'components/modules/social/PostComments';
-import PostsGallery from 'components/modules/social/PostsGallery';
+import PostsGallery from 'components/image-gallery/PostsGallery';
 import { PostsData } from 'data/social/postsData';
 import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

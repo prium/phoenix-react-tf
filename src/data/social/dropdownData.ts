@@ -52,7 +52,7 @@ export const dropdownData: DropdownData[] = [
   }
 ];
 
-export const profileNavigationData: DropdownData[] = [
+export const mutualData: DropdownData[] = [
   {
     label: '432 Common Followers',
     icon: 'user-group'
