@@ -1,7 +1,9 @@
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { notificationsBreadcrumbItems } from 'data/notifications';
 import React from 'react';
-import NotificationItem from './NotificationItem';
+import NotificationItem from 'components/common/NotificationItem';
+import { notifications } from 'data/notifications';
+import classNames from 'classnames';
 
 const Notification = () => {
   return (
@@ -9,13 +11,31 @@ const Notification = () => {
       <PageBreadcrumb items={notificationsBreadcrumbItems} />
       <h2 className="mb-5">Notifications</h2>
       <h5 className="text-black mb-3 ">Today</h5>
-      {/* <div className="mx-4 mx-lg-6 mb-5 border-bottom border-300"></div> */}
-      {/* <div className="d-flex align-items-center justify-content-between py-3 border-300 px-lg-6 px-4">
-        <div className="d-flex">
-          <div className="avatar avatar-xl me-3"></div>
-        </div>
-      </div> */}
-      <NotificationItem />
+      <div className="mx-n4 mx-lg-n6 mb-5 border-top border-300">
+        {notifications.slice(0, 3).map((notification, index) => (
+          <NotificationItem
+            notification={notification}
+            type="pageItem"
+            className={classNames({
+              'border-bottom': index !== notifications.length - 1
+            })}
+            key={notification.id}
+          />
+        ))}
+      </div>
+      <h5 className="text-black mb-3 ">Yesterday</h5>
+      <div className="mx-n4 mx-lg-n6 mb-9 border-top border-300">
+        {notifications.slice(3, 7).map((notification, index) => (
+          <NotificationItem
+            notification={notification}
+            type="pageItem"
+            className={classNames({
+              'border-bottom': index !== notifications.length - 1
+            })}
+            key={notification.id}
+          />
+        ))}
+      </div>
     </div>
   );
 };

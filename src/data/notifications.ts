@@ -1,4 +1,10 @@
 import { PageBreadcrumbItem } from 'components/common/PageBreadcrumb';
+import team30 from 'assets/img/team/40x40/30.webp';
+import team57 from 'assets/img/team/40x40/57.webp';
+import team59 from 'assets/img/team/40x40/59.webp';
+import team58 from 'assets/img/team/40x40/58.webp';
+import team60 from 'assets/img/team/40x40/60.webp';
+import team34 from 'assets/img/team/40x40/34.webp';
 export const notificationsBreadcrumbItems: PageBreadcrumbItem[] = [
   {
     label: 'Pages',
@@ -10,61 +16,66 @@ export const notificationsBreadcrumbItems: PageBreadcrumbItem[] = [
   }
 ];
 
-export interface notification {
-  // id: number;
+export interface Notification {
+  id: number | string;
   avatar?: string;
   name: string;
-  text: string;
-  textBold: string;
+  detail?: string;
+  interaction: string;
+  interactionIcon: string;
   ago: string;
   icon: string;
   time: string;
   date: string;
   read: boolean;
-  avatarPlaceholder?: boolean;
+  // avatarPlaceholder?: boolean;
 }
 
-export const todayNotifications: notification[] = [
+export const notifications: Notification[] = [
   {
-    avatar: 'team/30.webp',
+    id: '1',
+    avatar: team30,
     name: 'Jessie Samson',
-    text: "<span class='me-1'>💬</span>Mentioned you in a comment",
-    textBold: ' "Well done! Proud of you ❤️ " ',
+    interactionIcon: '💬',
+    interaction: 'Mentioned you in a comment',
+    detail: ' "Well done! Proud of you ❤️ " ',
     ago: '10m',
-    icon: 'fas fa-clock',
+    icon: 'clock',
     time: '10:41 AM ',
     date: 'August 7,2021',
     read: true
   },
   {
+    id: '2',
     name: 'Jane Foster',
-    text: "<span class='me-1'>📅</span>Created an event",
-    textBold: ' Rome holidays',
+    interactionIcon: '📅',
+    interaction: 'Created an event.',
+    detail: 'Rome holidays',
     ago: '20m',
-    icon: 'fas fa-clock',
+    icon: 'clock',
     time: '10:20 AM ',
     date: 'August 7,2021',
     read: false
   },
   {
-    avatar: 'team/avatar.webp',
-    avatarPlaceholder: true,
+    id: '3',
     name: 'Jessie Samson',
-    text: "<span class='me-1'>👍</span>Liked your comment",
-    textBold: ' "Amazing Works️"',
+    interactionIcon: '👍',
+    interaction: 'Liked your comment.',
+    detail: '"Amazing Works️"',
     ago: '1h',
-    icon: 'fas fa-clock',
+    icon: 'clock',
     time: '9:30 AM ',
     date: 'August 7,2021',
     read: false
-  }
-];
-export const yesterdayNotifications = [
+  },
   {
-    avatar: 'team/57.webp',
+    id: '4',
+    avatar: team57,
     name: 'Kiera Anderson',
-    text: "<span class='me-1'>💬</span>Mentioned you in a comment",
-    textBold: ' "This is too good to be true!"',
+    interactionIcon: '💬',
+    interaction: 'Mentioned you in a comment.',
+    detail: '"This is too good to be true!"',
     ago: '',
     icon: 'fas fa-clock',
     time: '9:11 AM ',
@@ -72,10 +83,12 @@ export const yesterdayNotifications = [
     read: false
   },
   {
-    avatar: 'team/59.webp',
+    id: '5',
+    avatar: team59,
     name: 'Herman Carter',
-    text: "<span class='me-1'>👤</span>Tagged you in a",
-    textBold: ' post',
+    interactionIcon: '👤',
+    interaction: 'Tagged you in a comment.',
+    detail: 'post',
     ago: '',
     icon: 'fas fa-clock',
     time: '10:58 PM ',
@@ -83,10 +96,12 @@ export const yesterdayNotifications = [
     read: false
   },
   {
-    avatar: 'team/58.webp',
+    id: '6',
+    avatar: team58,
     name: 'Benjamin Button',
-    text: "<span class='me-1'>👍</span>Liked your comment",
-    textBold: ' "Welcome to the team️"',
+    interactionIcon: '👍',
+    interaction: 'Liked your comment.',
+    detail: 'Welcome to the team️',
     ago: '',
     icon: 'fas fa-clock',
     time: '10:18 AM ',
@@ -94,10 +109,12 @@ export const yesterdayNotifications = [
     read: true
   },
   {
-    avatar: 'team/60.webp',
+    id: '7',
+    avatar: team60,
     name: 'Aron Paul',
-    text: "<span class='me-1'>📷</span>Tagged you in a",
-    textBold: ' photo',
+    interactionIcon: '📷',
+    interaction: ' Tagged you in a photo',
+    detail: 'photo',
     ago: '',
     icon: 'fas fa-clock',
     time: '9:53 AM ',
@@ -105,10 +122,12 @@ export const yesterdayNotifications = [
     read: true
   },
   {
-    avatar: 'team/34.webp',
+    id: 8,
+    avatar: team34,
     name: 'Rick Sanchez',
-    text: "<span class='me-1'>💬</span>Mentioned you in a comment",
-    textBold: ' "You need to see these amazing photos️"',
+    interactionIcon: '💬',
+    interaction: 'Mentioned you in a comment',
+    detail: '"You need to see these amazing photos️"',
     ago: '',
     icon: 'fas fa-clock',
     time: '9:45 AM ',
