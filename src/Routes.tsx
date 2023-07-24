@@ -95,6 +95,8 @@ import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
 import Notification from 'pages/notifications/Notifications';
+import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
+import SignIn from 'pages/pages/authentication/simple/SignIn';
 
 const routes = [
   {
@@ -549,6 +551,16 @@ const routes = [
   {
     path: '/landing/default',
     element: <Default />
+  },
+  {
+    element: <SimpleAuthLayout />,
+    path: '/pages/authentication/simple/',
+    children: [
+      {
+        path: 'sign-in',
+        element: <SignIn />
+      }
+    ]
   }
 ];
 

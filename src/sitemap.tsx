@@ -450,39 +450,53 @@ export const routes: RouteItems[] = [
       {
         name: 'authentication',
         icon: 'lock',
+        active: true,
         pages: [
           {
             name: 'simple',
+            active: true,
             pages: [
               {
                 name: 'sign-in',
                 path: 'pages/authentication/simple/sign-in',
-                pathName: 'simple-signin'
+                pathName: 'simple-signin',
+                active: true
               },
               {
                 name: 'sign-up',
                 path: 'pages/authentication/simple/sign-up',
-                pathName: 'simple-signup'
+                pathName: 'simple-signup',
+                active: true
               },
               {
                 name: 'sign-out',
                 path: 'pages/authentication/simple/sign-out',
-                pathName: 'simple-signout'
+                pathName: 'simple-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
                 path: 'pages/authentication/simple/forgot-password',
-                pathName: 'simple-forgot-password'
+                pathName: 'simple-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
                 path: 'pages/authentication/simple/reset-password',
-                pathName: 'simple-reset-password'
+                pathName: 'simple-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
                 path: 'pages/authentication/simple/lock-screen',
-                pathName: 'simple-lock-screen'
+                pathName: 'simple-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: 'pages/authentication/simple/2FA',
+                pathName: 'simple-2FA',
+                active: true
               }
             ]
           },
