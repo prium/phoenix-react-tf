@@ -415,8 +415,9 @@ export const routes: RouteItems[] = [
       {
         name: 'notifications',
         icon: 'bell',
-        path: 'pages/notifications',
-        pathName: 'notifications-page'
+        path: 'pages/notifications/notifications',
+        pathName: 'notifications-page',
+        active: true
       },
       {
         name: 'members',

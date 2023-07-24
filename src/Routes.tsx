@@ -94,6 +94,7 @@ import FaqAccordion from 'pages/faq/FaqAccordion';
 import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
+import Notification from 'pages/notifications/Notifications';
 
 const routes = [
   {
@@ -115,6 +116,11 @@ const routes = [
       {
         path: '/pages/starter',
         element: <Starter />
+      },
+
+      {
+        path: '/pages/notifications/notifications',
+        element: <Notification />
       },
       {
         path: '/pages/faq/faq-accordion',
