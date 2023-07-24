@@ -1,37 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import React, { useEffect, useState } from 'react';
-import { Card, Dropdown, Form, Nav, Tab } from 'react-bootstrap';
-import UserList from './UserList';
-import { ConversationFilterType, useChatContext } from 'providers/ChatProvider';
-import { Conversation } from 'data/chat';
+import { Card, Dropdown, Form } from 'react-bootstrap';
 import classNames from 'classnames';
+import ChatFilterTab from './ChatFilterTab';
 
 const ChatSidebar = ({ className }: { className?: string }) => {
-  const { conversations } = useChatContext();
-  const [filteredConversations, setFilteredConversations] = useState<
-    Conversation[]
-  >([]);
-
-  const filterConversations = (type: ConversationFilterType) => {
-    setFilteredConversations(
-      conversations.filter(conversation => {
-        const hasUnreadMessages = conversation.messages.some(
-          message => message.type === 'received' && !message.readAt
-        );
-        return type === 'read'
-          ? !hasUnreadMessages
-          : type === 'unread'
-          ? hasUnreadMessages
-          : true;
-      })
-    );
-  };
-
-  useEffect(() => {
-    filterConversations('all');
-  }, [conversations]);
-
   return (
     <Card className={classNames(className, 'chat-sidebar p-3 p-xl-1')}>
       <Button className="d-none d-sm-block d-xl-none mb-2">
@@ -59,42 +32,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
         />
         <FontAwesomeIcon icon="user" className="text-900 fs-9 form-icon" />
       </Form.Group>
-
-      <Tab.Container defaultActiveKey="all">
-        <Nav variant="phoenix-pills" className="mb-5 d-sm-none d-xl-flex">
-          <Nav.Item>
-            <Nav.Link
-              eventKey="all"
-              onClick={() => {
-                filterConversations('all');
-              }}
-            >
-              All
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link
-              eventKey="read"
-              onClick={() => {
-                filterConversations('read');
-              }}
-            >
-              Read
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link
-              eventKey="unread"
-              onClick={() => {
-                filterConversations('unread');
-              }}
-            >
-              Unread
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-        <UserList conversations={filteredConversations} />
-      </Tab.Container>
+      <ChatFilterTab />
     </Card>
   );
 };

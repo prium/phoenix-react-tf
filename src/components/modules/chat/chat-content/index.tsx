@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { Card } from 'react-bootstrap';
-import Message from '../Message';
 import { useChatContext } from 'providers/ChatProvider';
 import PhoenixOffcanvas, {
   PhoenixOffcanvasContainer
 } from 'components/base/PhoenixOffcanvas';
-import ConversationDetails from '../conversation-details/ConversationDetails';
+import ConversationDetails from '../conversation-details';
 import ChatSidebar from '../ChatSidebar';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import ChatContentHeader from './ChatContentHeader';
 import ConversationStarter from './ConversationStarter';
 import ChatContentFooter from './ChatContentFooter';
+import Message from '../message';
 
 const ChatContent = () => {
   const {
