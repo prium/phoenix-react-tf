@@ -5,10 +5,14 @@ import { commentsData } from 'data/social/postsData';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostComments = ({ comments }: { comments: commentsData[] }) => {
+interface PostCommentsProps {
+  comments: commentsData[];
+}
+
+const PostComments = ({ comments }: PostCommentsProps) => {
   return (
     <>
-      {comments?.map((comment, index) => (
+      {comments.map((comment, index) => (
         <div key={index} className="d-flex align-items-start">
           <Link to="/apps/social/profile">
             <Avatar size="m" src={comment.avatar} className="me-2" />

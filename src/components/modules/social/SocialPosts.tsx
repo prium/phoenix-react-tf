@@ -1,13 +1,17 @@
-import PostsCard from 'components/modules/social/PostsCard';
-import { PostsData } from 'data/social/postsData';
+import PostCard from 'components/modules/social/PostCard';
+import { Post } from 'data/social/postsData';
 import { Button } from 'react-bootstrap';
 
-const SocialPosts = ({ posts }: { posts: PostsData[] }) => {
+interface SocialPostsProps {
+  posts: Post[];
+}
+
+const SocialPosts = ({ posts }: SocialPostsProps) => {
   return (
     <>
       <div className="mb-9">
         {posts.map((post, index) => (
-          <PostsCard key={index} post={post} />
+          <PostCard key={index} post={post} />
         ))}
       </div>
       <div className="text-center">

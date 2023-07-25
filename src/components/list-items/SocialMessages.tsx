@@ -1,4 +1,4 @@
-import Avatar, { Size, Status } from 'components/base/Avatar';
+import Avatar from 'components/base/Avatar';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
@@ -33,9 +33,9 @@ const SocialMessages = ({ messages }: { messages: MessagesData[] }) => {
         >
           <div className="me-2">
             <Avatar
-              size={message.avatar.size as Size}
+              size={message.avatar.size}
               src={message.avatar.img}
-              status={message.avatar.status as Status}
+              status={message.avatar.status}
             />
           </div>
           <Link to="/apps/chat" className="text-decoration-none flex-1">

@@ -66,6 +66,7 @@ const Button = ({
   return (
     <BsButton
       variant={variant}
+      type="button"
       {...rest}
       className={classNames(className, {
         'btn-loading lh-1 d-flex align-items-center position-relative': loading

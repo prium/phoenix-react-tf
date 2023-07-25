@@ -1,13 +1,12 @@
 import Lightbox from 'components/base/LightBox';
 import { imageData } from 'data/social/postsData';
 import useLightbox from 'hooks/useLightbox';
-import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-const PostsGallery = ({ images }: { images: imageData[] }) => {
-  const imageArray = images?.map(image => image.src);
-  const [attachments] = useState(imageArray || []);
-  const { lightboxProps, openLightbox } = useLightbox(attachments);
+const PostGallery = ({ images }: { images: imageData[] }) => {
+  const imageArray = images.map(image => image.src);
+  const { lightboxProps, openLightbox } = useLightbox(imageArray);
+
   return (
     <Row className="g-1 mb-5">
       <Lightbox {...lightboxProps} />
@@ -25,4 +24,4 @@ const PostsGallery = ({ images }: { images: imageData[] }) => {
   );
 };
 
-export default PostsGallery;
+export default PostGallery;

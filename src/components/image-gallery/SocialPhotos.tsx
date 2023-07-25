@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import img1 from 'assets/img/gallery/11.png';
-import img2 from 'assets/img/gallery/12.png';
-import img3 from 'assets/img/gallery/13.png';
-import img4 from 'assets/img/gallery/14.png';
-import img5 from 'assets/img/gallery/15.png';
-import img6 from 'assets/img/gallery/16.png';
 import useLightbox from 'hooks/useLightbox';
 import { Col, Row } from 'react-bootstrap';
 import Lightbox from 'components/base/LightBox';
 
-const SocialPhotos = ({ className }: { className?: string }) => {
-  const [attachments] = useState([img1, img2, img3, img4, img5, img6]);
+interface SocialPhotosProps {
+  className?: string;
+  photos: string[];
+}
+
+const SocialPhotos = ({ className, photos }: SocialPhotosProps) => {
+  const [attachments] = useState(photos);
   const { lightboxProps, openLightbox } = useLightbox(attachments);
   return (
     <div className={className}>

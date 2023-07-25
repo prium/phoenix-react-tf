@@ -1,4 +1,5 @@
-export interface EventsData {
+export interface Event {
+  id: number;
   date: string;
   title: string;
   organization: string;
@@ -7,8 +8,9 @@ export interface EventsData {
   place: string;
 }
 
-export const eventsData: EventsData[] = [
+export const events: Event[] = [
   {
+    id: 1,
     date: 'MON, FEB 21- MARCH 23',
     title: 'Master Class on FILM Studies THESIS on Makers',
     organization: 'IAFM- International Academy of Film and Media',
@@ -17,6 +19,7 @@ export const eventsData: EventsData[] = [
     place: 'Tavern on the Greend, New York'
   },
   {
+    id: 2,
     date: 'MON, FEB 21- MARCH 23',
     title: "Master Class on FILM Studies 'ANALYSIS of Cinema'",
     organization: 'IAFM- International Academy of Film and Media',
@@ -25,6 +28,7 @@ export const eventsData: EventsData[] = [
     place: 'Tavern on the Greend, New York'
   },
   {
+    id: 3,
     date: 'MON, FEB 21- MARCH 23',
     title: 'Witnessing History in Making Photographs',
     organization: 'IAFM- International Academy of Film and Media',

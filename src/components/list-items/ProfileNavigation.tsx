@@ -4,6 +4,7 @@ import Button from 'components/base/Button';
 import { dropdownData } from 'data/social/dropdownData';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProfileNavigation = ({ className }: { className?: string }) => {
   return (
@@ -19,6 +20,8 @@ const ProfileNavigation = ({ className }: { className?: string }) => {
           })}
         >
           <Button
+            as={Link}
+            to="#!"
             variant="link"
             className={classNames(
               'fs-8 text-800 hover-primary fw-semi-bold d-flex flex-column d-xxl-inline-block w-100 align-items-center align-items-xxl-start',

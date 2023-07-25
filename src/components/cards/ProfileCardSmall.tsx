@@ -24,7 +24,7 @@ const ProfileCardSM = ({ showAbout }: { showAbout?: boolean }) => {
           size="4xl"
           src={profileImage}
           status="online"
-          thumbnail={true}
+          thumbnail
           className="feed-avatar-profile"
         />
       </Card.Header>

@@ -6,12 +6,12 @@ import RevealDropdown, {
 } from 'components/base/RevealDropdown';
 import CommentField from 'components/modules/social/CommentField';
 import PostComments from 'components/modules/social/PostComments';
-import PostsGallery from 'components/image-gallery/PostsGallery';
-import { PostsData } from 'data/social/postsData';
+import PostGallery from 'components/image-gallery/PostGallery';
+import { Post } from 'data/social/postsData';
 import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const PostsCard = ({ post }: { post: PostsData }) => {
+const PostCard = ({ post }: { post: Post }) => {
   return (
     <div className="mb-5">
       <Card className="mb-4">
@@ -63,26 +63,26 @@ const PostsCard = ({ post }: { post: PostsData }) => {
               </RevealDropdownTrigger>
             </div>
             <p className="text-800">{post.post}</p>
-            {post.images && <PostsGallery images={post.images} />}
+            {post.images && <PostGallery images={post.images} />}
           </div>
           <div className="d-flex">
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="heart" className="me-1" />}
+              startIcon={<FontAwesomeIcon icon="heart" />}
               className="p-0 me-3 fs-10 fw-bolder"
             >
               {post.likes}
             </Button>
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="comment" className="me-1" />}
+              startIcon={<FontAwesomeIcon icon="comment" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
               {post.comment}
             </Button>
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="share" className="me-1" />}
+              startIcon={<FontAwesomeIcon icon="share" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
               {post.shares}
@@ -98,4 +98,4 @@ const PostsCard = ({ post }: { post: PostsData }) => {
   );
 };
 
-export default PostsCard;
+export default PostCard;

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import React, { CSSProperties, ChangeEvent, useState } from 'react';
 import Avatar, { Size, Status } from 'components/base/Avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
@@ -12,13 +12,13 @@ interface AvatarUploadProps {
   onChange?: () => void;
 }
 
-const SocialAvatarUpload = ({
+const AvatarUpload = ({
   size,
   src,
-  className,
   status,
   thumbnail,
-  onChange
+  onChange,
+  className
 }: AvatarUploadProps) => {
   const [image, setImage] = useState<File | null>(null);
 
@@ -31,7 +31,7 @@ const SocialAvatarUpload = ({
     }
   };
   return (
-    <div className="d-inline-block">
+    <div className={classNames(className, 'd-inline-block')}>
       <input
         className="d-none"
         id="avatarFile"
@@ -39,38 +39,25 @@ const SocialAvatarUpload = ({
         accept="image/*"
         onChange={handleChange}
       />
-      <div
-        className={classNames(className, 'hoverbox')}
-        style={{
-          width: size === '5xl' ? '150px' : '96px',
-          height: size === '5xl' ? '150px' : '96px'
-        }}
+      <label
+        className="cursor-pointer hover-actions-trigger d-flex"
+        htmlFor="avatarFile"
       >
-        <div className="hoverbox-content rounded-circle d-flex flex-center z-index-1">
-          <FontAwesomeIcon
-            icon="camera"
-            className={classNames('text-300 light fs-3', {
-              'fs-1': size === '5xl'
-            })}
-          />
+        <Avatar
+          size={size}
+          status={status}
+          src={image ? URL.createObjectURL(image) : src}
+          thumbnail={thumbnail}
+        />
+        <div
+          className="h-100 w-100 bg-black position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
+          style={{ '--phoenix-bg-opacity': 0.56 } as CSSProperties}
+        >
+          <FontAwesomeIcon icon="camera" className="text-300 w-30 h-30" />
         </div>
-        <div className="position-relative bg-400 rounded-circle cursor-pointer d-flex flex-center mb-xxl-7">
-          <Avatar
-            size={size}
-            src={image ? URL.createObjectURL(image) : src}
-            status={status}
-            imageClassName={classNames('rounded-circle bg-white shadow-sm', {
-              'img-thumbnail': thumbnail
-            })}
-          />
-          <label
-            htmlFor="avatarFile"
-            className="w-100 h-100 position-absolute z-index-1 cursor-pointer"
-          ></label>
-        </div>
-      </div>
+      </label>
     </div>
   );
 };
 
-export default SocialAvatarUpload;
+export default AvatarUpload;

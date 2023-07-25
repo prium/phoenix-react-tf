@@ -17,6 +17,12 @@ import gallery23 from 'assets/img/gallery/23.png';
 import gallery24 from 'assets/img/gallery/24.png';
 import gallery25 from 'assets/img/gallery/25.png';
 import gallery26 from 'assets/img/gallery/26.png';
+import img1 from 'assets/img/gallery/11.png';
+import img2 from 'assets/img/gallery/12.png';
+import img3 from 'assets/img/gallery/13.png';
+import img4 from 'assets/img/gallery/14.png';
+import img5 from 'assets/img/gallery/15.png';
+import img6 from 'assets/img/gallery/16.png';
 
 export interface imageData {
   cols: number;
@@ -37,7 +43,7 @@ export interface commentsData {
   }[];
 }
 
-export interface PostsData {
+export interface Post {
   name: string;
   avatar: string;
   time: string;
@@ -51,7 +57,7 @@ export interface PostsData {
   shares: string;
 }
 
-export const feedPostData: PostsData[] = [
+export const feedPosts: Post[] = [
   {
     name: 'Zingko Kudobum',
     avatar: team59,
@@ -148,7 +154,7 @@ export const feedPostData: PostsData[] = [
   }
 ];
 
-export const profilePostData: PostsData[] = [
+export const profilePosts: Post[] = [
   {
     name: 'Erza Bridgest',
     avatar: team9,
@@ -246,3 +252,5 @@ export const profilePostData: PostsData[] = [
     shares: '56 shares'
   }
 ];
+
+export const socialPhotos = [img1, img2, img3, img4, img5, img6];

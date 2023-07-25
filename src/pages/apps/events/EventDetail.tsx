@@ -10,7 +10,7 @@ import Events from 'components/modules/events/Events';
 import EventsSingersSection from 'components/modules/events/EventsSingersSection';
 import EventsTopicCovered from 'components/modules/events/EventsTopicCovered';
 import EventsOrganized from 'components/modules/events/EventsOrganized';
-import { eventsData } from 'data/eventsData';
+import { events } from 'data/eventsData';
 
 const EventDetail = () => {
   return (
@@ -59,7 +59,7 @@ const EventDetail = () => {
             </Badge>
             <Badge variant="tag">Greatest show on earth</Badge>
           </div>
-          <Events events={eventsData} title="Upcoming events" />
+          <Events events={events} title="Upcoming events" />
         </Col>
       </Row>
     </div>

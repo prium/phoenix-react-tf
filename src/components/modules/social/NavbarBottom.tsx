@@ -3,13 +3,12 @@ import classNames from 'classnames';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const NavbarBottom = ({
-  active,
-  className
-}: {
+interface NavbarBottomProps {
   active: string;
   className?: string;
-}) => {
+}
+
+const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
   return (
     <div className={classNames(className, 'navbar-bottom')}>
       <Nav>

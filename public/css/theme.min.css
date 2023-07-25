@@ -27555,7 +27555,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   content: "";
   position: absolute;
   border-radius: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 .avatar.status-online:before {
   background-color: var(--phoenix-success);

@@ -2,12 +2,13 @@ import team30 from 'assets/img/team/30.webp';
 import team35 from 'assets/img/team/35.webp';
 import team57 from 'assets/img/team/57.webp';
 import team59 from 'assets/img/team/59.webp';
+import { Size, Status } from 'components/base/Avatar';
 
 export interface MessagesData {
   avatar: {
-    size: string;
+    size: Size;
     img: string;
-    status: string;
+    status: Status;
     imgClass?: string;
   };
   name: string;
