@@ -8,9 +8,9 @@ import Location from 'components/modules/events/Location';
 import Badge from 'components/base/Badge';
 import Events from 'components/modules/events/Events';
 import EventsSingersSection from 'components/modules/events/EventsSingersSection';
-import EventsTopicCovered from 'components/modules/events/EventsTopicCovered';
+import EventsTopicCovered from 'components/list-items/EventsTopicCovered';
 import EventsOrganized from 'components/modules/events/EventsOrganized';
-import { events } from 'data/eventsData';
+import { SingerPhotos, events } from 'data/eventsData';
 
 const EventDetail = () => {
   return (
@@ -37,7 +37,7 @@ const EventDetail = () => {
             dates, lineups and prospective entry requirements. We will keep you
             posted with necessary updates regarding the event.
           </p>
-          <EventsSingersSection />
+          <EventsSingersSection photos={SingerPhotos} />
           <EventsTopicCovered />
           <h4 className="mb-3 text-1000 fs-xxl-6">Refund Policy:</h4>
           <ul className="mb-6 ps-4">

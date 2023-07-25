@@ -4,7 +4,12 @@ import { Event } from 'data/eventsData';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Events = ({ events, title }: { events: Event[]; title: string }) => {
+interface EventsProps {
+  events: Event[];
+  title: string;
+}
+
+const Events = ({ events, title }: EventsProps) => {
   return (
     <>
       <Row

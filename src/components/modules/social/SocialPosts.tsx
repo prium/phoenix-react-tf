@@ -10,8 +10,8 @@ const SocialPosts = ({ posts }: SocialPostsProps) => {
   return (
     <>
       <div className="mb-9">
-        {posts.map((post, index) => (
-          <PostCard key={index} post={post} />
+        {posts.map(post => (
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
       <div className="text-center">

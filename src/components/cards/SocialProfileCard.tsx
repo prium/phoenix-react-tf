@@ -16,12 +16,12 @@ const SocialProfileCard = () => {
         style={{ minHeight: '214px' }}
       >
         <CoverUpload src={coverImage} />
-        {/* <AvatarUpload
+        <AvatarUpload
           size="5xl"
           src={profileImage}
           thumbnail={true}
           className="feed-profile"
-        /> */}
+        />
       </Card.Header>
       <Card.Body>
         <Row className="justify-content-xl-between">

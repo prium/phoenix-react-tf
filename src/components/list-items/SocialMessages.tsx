@@ -7,7 +7,11 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SocialMessages = ({ messages }: { messages: MessagesData[] }) => {
+interface SocialMessagesProps {
+  messages: MessagesData[];
+}
+
+const SocialMessages = ({ messages }: SocialMessagesProps) => {
   return (
     <>
       <div className="d-flex flex-between-center pb-3 border-bottom border-dashed border-300">

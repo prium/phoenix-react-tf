@@ -2,8 +2,9 @@ import Avatar from 'components/base/Avatar';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import avatar from 'assets/img/team/20.webp';
 
-const CommentField = ({ avatar }: { avatar: string }) => {
+const CommentField = () => {
   return (
     <div className="d-flex align-items-center">
       <Link to="/apps/social/profile" style={{ lineHeight: 0 }}>

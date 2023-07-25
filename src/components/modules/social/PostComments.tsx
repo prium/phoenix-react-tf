@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
-import { commentsData } from 'data/social/postsData';
+import { Comment } from 'data/social/postsData';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface PostCommentsProps {
-  comments: commentsData[];
+  comments: Comment[];
 }
 
 const PostComments = ({ comments }: PostCommentsProps) => {

@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import img1 from 'assets/img/gallery/19.jpg';
-import img2 from 'assets/img/gallery/20.jpg';
-import img3 from 'assets/img/gallery/21.jpg';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
 
-const EventsSingersSection = () => {
-  const [attachments] = useState([img1, img2, img3]);
+interface EventsSingersSection {
+  photos: string[];
+}
+
+const EventsSingersSection = ({ photos }: EventsSingersSection) => {
+  const [attachments] = useState(photos);
   const { lightboxProps, openLightbox } = useLightbox(attachments);
   return (
     <>

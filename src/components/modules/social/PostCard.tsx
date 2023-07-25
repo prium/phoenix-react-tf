@@ -11,7 +11,11 @@ import { Post } from 'data/social/postsData';
 import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const PostCard = ({ post }: { post: Post }) => {
+interface PostCardProps {
+  post: Post;
+}
+
+const PostCard = ({ post }: PostCardProps) => {
   return (
     <div className="mb-5">
       <Card className="mb-4">
@@ -19,14 +23,14 @@ const PostCard = ({ post }: { post: Post }) => {
           <div className="border-bottom mb-3">
             <div className="d-flex align-items-center mb-3">
               <Link to="/apps/social/profile" style={{ lineHeight: 0 }}>
-                <Avatar size="xl" src={post.avatar} className="me-2" />
+                <Avatar size="xl" src={post.author.avatar} className="me-2" />
               </Link>
               <div className="flex-1">
                 <Link
                   to="/apps/social/profile"
                   className="fw-bold mb-0 text-black"
                 >
-                  {post.name}
+                  {post.author.name}
                 </Link>
                 <p className="fs-10 mb-0 text-600 fw-semi-bold">
                   {post.time}
@@ -62,7 +66,7 @@ const PostCard = ({ post }: { post: Post }) => {
                 </RevealDropdown>
               </RevealDropdownTrigger>
             </div>
-            <p className="text-800">{post.post}</p>
+            <p className="text-800">{post.caption}</p>
             {post.images && <PostGallery images={post.images} />}
           </div>
           <div className="d-flex">
@@ -71,27 +75,30 @@ const PostCard = ({ post }: { post: Post }) => {
               startIcon={<FontAwesomeIcon icon="heart" />}
               className="p-0 me-3 fs-10 fw-bolder"
             >
-              {post.likes}
+              {post.likes + ' '}
+              Likes
             </Button>
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon="comment" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
-              {post.comment}
+              {post.comment + ' '}
+              Comments
             </Button>
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon="share" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
-              {post.shares}
+              {post.shares + ' '}
+              Shares
             </Button>
           </div>
         </Card.Body>
         <div className="bg-100 border-top p-3 p-sm-4">
           {post.comments && <PostComments comments={post.comments} />}
-          <CommentField avatar={post.commentInputAvatar} />
+          <CommentField />
         </div>
       </Card>
     </div>

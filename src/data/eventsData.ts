@@ -1,3 +1,7 @@
+import img1 from 'assets/img/gallery/19.jpg';
+import img2 from 'assets/img/gallery/20.jpg';
+import img3 from 'assets/img/gallery/21.jpg';
+
 export interface Event {
   id: number;
   date: string;
@@ -37,3 +41,5 @@ export const events: Event[] = [
     place: 'Tavern on the Greend, New York'
   }
 ];
+
+export const SingerPhotos = [img1, img2, img3];

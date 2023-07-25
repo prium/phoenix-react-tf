@@ -1,11 +1,9 @@
 import team9 from 'assets/img/team/9.webp';
 import team14 from 'assets/img/team/14.webp';
-import team20 from 'assets/img/team/20.webp';
 import team23 from 'assets/img/team/23.webp';
 import team27 from 'assets/img/team/27.webp';
 import team30 from 'assets/img/team/30.webp';
 import team59 from 'assets/img/team/59.webp';
-import team61 from 'assets/img/team/61.webp';
 import team62 from 'assets/img/team/62.webp';
 import gallery17 from 'assets/img/gallery/17.png';
 import gallery18 from 'assets/img/gallery/18.png';
@@ -24,46 +22,52 @@ import img4 from 'assets/img/gallery/14.png';
 import img5 from 'assets/img/gallery/15.png';
 import img6 from 'assets/img/gallery/16.png';
 
-export interface imageData {
+export interface Image {
   cols: number;
   src: string;
 }
-
-export interface commentsData {
+export interface Reply {
   name: string;
   avatar: string;
   time: string;
-  classes?: string;
   comment: string;
-  reply?: {
-    name: string;
-    avatar: string;
-    time: string;
-    comment: string;
-  }[];
+}
+export interface Comment {
+  name: string;
+  avatar: string;
+  time: string;
+  comment: string;
+  reply?: Reply[];
+}
+
+interface Author {
+  name: string;
+  avatar: string;
 }
 
 export interface Post {
-  name: string;
-  avatar: string;
+  id: number;
+  author: Author;
   time: string;
   location?: string;
-  post: string;
-  images?: imageData[];
-  comments?: commentsData[];
-  commentInputAvatar: string;
-  likes: string;
-  comment: string;
-  shares: string;
+  caption: string;
+  images?: Image[];
+  comments?: Comment[];
+  likes: number;
+  comment: number;
+  shares: number;
 }
 
 export const feedPosts: Post[] = [
   {
-    name: 'Zingko Kudobum',
-    avatar: team59,
+    id: 1,
+    author: {
+      name: 'Zingko Kudobum',
+      avatar: team59
+    },
     time: '35 mins ago',
     location: 'Consett, UK',
-    post: 'Some paintings I love',
+    caption: 'Some paintings I love',
     images: [
       {
         cols: 3,
@@ -83,7 +87,6 @@ export const feedPosts: Post[] = [
         name: 'Mamur Fechetti',
         avatar: team23,
         time: '35 mins ago',
-        classes: 'pt-4',
         comment:
           'How long did it take to create this? It appears that you quickly produced the second one.',
         reply: [
@@ -96,29 +99,33 @@ export const feedPosts: Post[] = [
         ]
       }
     ],
-    commentInputAvatar: team59,
-    likes: '345 Likes',
-    comment: '45 Comments',
-    shares: '56 shares'
+    likes: 345,
+    comment: 45,
+    shares: 56
   },
   {
-    name: 'Zingko Kudobum',
-    avatar: team30,
+    id: 2,
+    author: {
+      name: 'Zingko Kudobum',
+      avatar: team30
+    },
     time: '35 mins ago',
-    post: `A guy enters a bakery while carrying a 25-pound haddock.
+    caption: `A guy enters a bakery while carrying a 25-pound haddock.
       He asks the baker if he makes fish cakes. The rather perplexed baker responds in the negative.
       The guy responds "That's unfortunate.Today is his birthday"`,
-    commentInputAvatar: team61,
-    likes: '23 Likes',
-    comment: '9 Comments',
-    shares: '3 shares'
+    likes: 23,
+    comment: 9,
+    shares: 3
   },
   {
-    name: 'Zingko Kudobum',
-    avatar: team59,
+    id: 3,
+    author: {
+      name: 'Zingko Kudobum',
+      avatar: team59
+    },
     time: '35 mins ago',
     location: 'Consett, UK',
-    post: 'Some paintings I love',
+    caption: 'Some paintings I love',
     images: [
       {
         cols: 3,
@@ -134,7 +141,6 @@ export const feedPosts: Post[] = [
         name: 'Mamur Fechetti',
         avatar: team23,
         time: '35 mins ago',
-        classes: 'pt-4',
         comment:
           'Time is the best teacher; Unfortunately it kills all its students!',
         reply: [
@@ -147,20 +153,22 @@ export const feedPosts: Post[] = [
         ]
       }
     ],
-    commentInputAvatar: team59,
-    likes: '345 Likes',
-    comment: '45 Comments',
-    shares: '56 shares'
+    likes: 345,
+    comment: 45,
+    shares: 56
   }
 ];
 
 export const profilePosts: Post[] = [
   {
-    name: 'Erza Bridgest',
-    avatar: team9,
+    id: 1,
+    author: {
+      name: 'Erza Bridgest',
+      avatar: team9
+    },
     time: '35 mins ago',
     location: 'Mustafar, British Columbia',
-    post: 'Melancholy is sadness that has taken on lightness.',
+    caption: 'Melancholy is sadness that has taken on lightness.',
     images: [
       {
         cols: 3,
@@ -181,7 +189,6 @@ export const profilePosts: Post[] = [
         avatar: team30,
         time: '35 mins ago',
 
-        classes: 'pt-4',
         comment:
           'How long did it take to create this? It appears that you quickly produced the second one.',
         reply: [
@@ -194,30 +201,34 @@ export const profilePosts: Post[] = [
         ]
       }
     ],
-    commentInputAvatar: team9,
-    likes: '345 Likes',
-    comment: '45 Comments',
-    shares: '56 shares'
+    likes: 345,
+    comment: 45,
+    shares: 56
   },
   {
-    name: 'Erza Bridgest',
-    avatar: team9,
+    id: 2,
+    author: {
+      name: 'Erza Bridgest',
+      avatar: team9
+    },
     time: '3 days ago',
     location: 'Lothal, USA',
-    post: `A guy enters a bakery while carrying a 25-pound haddock.
+    caption: `A guy enters a bakery while carrying a 25-pound haddock.
       He asks the baker if he makes fish cakes. The rather perplexed baker responds in the negative.
       The guy responds "That's unfortunate.Today is his birthday"`,
-    commentInputAvatar: team20,
-    likes: '23 Likes',
-    comment: '9 Comments',
-    shares: '3 shares'
+    likes: 23,
+    comment: 9,
+    shares: 3
   },
   {
-    name: 'Zingko Kudobum',
-    avatar: team9,
+    id: 3,
+    author: {
+      name: 'Zingko Kudobum',
+      avatar: team9
+    },
     time: '35 mins ago',
     location: 'Consett, UK',
-    post: 'Fear can hold you prisoner. Hope can set you free. - King',
+    caption: 'Fear can hold you prisoner. Hope can set you free. - King',
     images: [
       {
         cols: 3,
@@ -233,7 +244,6 @@ export const profilePosts: Post[] = [
         name: 'Sutanuka Gomez',
         avatar: team14,
         time: '35 mins ago',
-        classes: 'pt-4',
         comment:
           'Time is the best teacher; Unfortunately it kills all its students!',
         reply: [
@@ -246,10 +256,9 @@ export const profilePosts: Post[] = [
         ]
       }
     ],
-    commentInputAvatar: team14,
-    likes: '345 Likes',
-    comment: '45 Comments',
-    shares: '56 shares'
+    likes: 345,
+    comment: 45,
+    shares: 56
   }
 ];
 
