@@ -7,7 +7,6 @@ import icon3 from 'assets/img/spot-illustrations/15.png';
 import icon3Dark from 'assets/img/spot-illustrations/dark_15.png';
 import icon4 from 'assets/img/spot-illustrations/16.png';
 import icon4Dark from 'assets/img/spot-illustrations/dark_16.png';
-import { ButtonVariant } from 'components/base/Button';
 
 export const pricingBreadcrumbItems: PageBreadcrumbItem[] = [
   {
@@ -21,87 +20,79 @@ export const pricingBreadcrumbItems: PageBreadcrumbItem[] = [
   }
 ];
 
-interface PricingData {
+export type Feature = {
+  id: string;
+  label: string;
+  new?: boolean;
+};
+
+export interface Pricing {
   title: string;
   icon: string;
   iconDark: string;
   description: string;
-  price: string;
-  btnVariant: ButtonVariant;
-  features: {
-    timeline: boolean;
-    advanced_search: boolean;
-    custom_fields: boolean;
-    task_dependencies: boolean;
-    private_teams: boolean;
-    newBadge: boolean;
-  };
+  price: number;
+  features: string[];
 }
 
-export const pricingColumnData: PricingData[] = [
+export const pricingColumnFeatures: Feature[] = [
+  {
+    id: 'advanced_search',
+    label: 'Advanced Search'
+  },
+  {
+    id: 'custom_fields',
+    label: 'Custom fields',
+    new: true
+  },
+  {
+    id: 'task_dependencies',
+    label: 'Task dependencies'
+  },
+  {
+    id: 'private_teams',
+    label: 'Private teams & projects'
+  }
+];
+
+export const pricingItems: Pricing[] = [
   {
     title: 'Learner',
     icon: icon1,
     iconDark: icon1Dark,
     description:
       'For individuals who are interested in giving it a shot first.',
-    price: 'Free',
-    btnVariant: 'outline-primary',
-    features: {
-      timeline: true,
-      advanced_search: false,
-      custom_fields: false,
-      task_dependencies: false,
-      private_teams: false,
-      newBadge: false
-    }
+    price: 0,
+    features: ['timeline']
   },
   {
     title: 'Starter',
     icon: icon2,
     iconDark: icon2Dark,
     description: 'For teams that need to create project plans with confidence.',
-    price: '$14.99',
-    btnVariant: 'outline-primary',
-    features: {
-      timeline: true,
-      advanced_search: true,
-      custom_fields: false,
-      task_dependencies: false,
-      private_teams: false,
-      newBadge: false
-    }
+    price: 14.99,
+    features: ['timeline', 'advanced_search']
   },
   {
     title: 'Team',
     icon: icon3,
     iconDark: icon3Dark,
     description: 'For teams that need to manage work across initiatives.',
-    price: '$49.99',
-    btnVariant: 'primary',
-    features: {
-      timeline: true,
-      advanced_search: true,
-      custom_fields: true,
-      task_dependencies: false,
-      private_teams: false,
-      newBadge: true
-    }
+    price: 49.99,
+    features: ['timeline', 'advanced_search', 'custom_fields']
   },
   {
     title: 'Industry',
     icon: icon4,
     iconDark: icon4Dark,
     description: 'For organizations that need additional security and support.',
-    price: '$149.99',
-    btnVariant: 'outline-primary',
-    features: {
-      timeline: true,
-      advanced_search: true,
-      custom_fields: true,
-      task_dependencies: true,
-      private_teams: true,
-      newBadge: true
-    }
+    price: 149.99,
+    features: [
+      'timeline',
+      'advanced_search',
+      'custom_fields',
+      'task_dependencies',
+      'private_teams'
+    ]
   }
 ];
