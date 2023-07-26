@@ -54,7 +54,7 @@ const Pricing = () => {
         </Row>
         <Row className="pt-9 g-3 g-xl-0 mb-8">
           {pricingItems.slice(0, 3).map((item, index) => (
-            <Col key={index} md={6} xl={3}>
+            <Col key={item.id} md={6} xl={3}>
               <>
                 <Card
                   className={classNames('h-100', {

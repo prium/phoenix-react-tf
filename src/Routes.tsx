@@ -95,6 +95,7 @@ import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
 import Notification from 'pages/notifications/Notifications';
+import PricingColumn from 'pages/pages/pricing/PricingColumn';
 
 const routes = [
   {
@@ -228,6 +229,15 @@ const routes = [
           {
             path: 'compose',
             element: <Compose />
+          }
+        ]
+      },
+      {
+        path: '/pages/pricing/',
+        children: [
+          {
+            path: 'pricing-column',
+            element: <PricingColumn />
           }
         ]
       },

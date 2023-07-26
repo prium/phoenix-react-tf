@@ -399,11 +399,13 @@ export const routes: RouteItems[] = [
       {
         name: 'pricing',
         icon: 'tag',
+        active: true,
         pages: [
           {
             name: 'pricing-column',
             path: 'pages/pricing/pricing-column',
-            pathName: 'pricing-column'
+            pathName: 'pricing-column',
+            active: true
           },
           {
             name: 'pricing-grid',
