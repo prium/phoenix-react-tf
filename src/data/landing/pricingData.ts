@@ -10,6 +10,7 @@ export type Feature = {
 };
 
 export type Pricing = {
+  id: number;
   icon: string;
   category: string;
   popular?: boolean;
@@ -48,12 +49,14 @@ export const pricingFeatures = [
 
 export const pricingItems: Pricing[] = [
   {
+    id: 1,
     icon: pie,
     category: 'Starter',
     price: 6,
     features: ['timeline', 'adv_search']
   },
   {
+    id: 2,
     icon: bolt,
     category: 'Team',
     popular: true,
@@ -61,12 +64,14 @@ export const pricingItems: Pricing[] = [
     features: ['timeline', 'adv_search', 'custom_fields']
   },
   {
+    id: 3,
     icon: edit,
     category: 'Business',
     price: 23,
     features: ['timeline', 'adv_search', 'custom_fields', 'task_dependencies']
   },
   {
+    id: 4,
     icon: shield,
     category: 'Enterprise',
     price: 40,
