@@ -1,21 +1,16 @@
 import Section from 'components/base/Section';
 import EcomCartSummaryCard from 'components/cards/EcomCartSummaryCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import EcomCartTable from 'components/tables/EcomCartTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { cartItems } from 'data/e-commerce/products';
-import React from 'react';
-import { Breadcrumb, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const Cart = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="mb-6">Cart</h2>
         <Row className="g-5">
           <Col xs={12} lg={8}>

@@ -3,7 +3,11 @@ import { Col, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-const Footer = ({ className }: { className?: string }) => {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer = ({ className }: FooterProps) => {
   const location = useLocation();
   const [currentPath] = useState(location.pathname);
   return (

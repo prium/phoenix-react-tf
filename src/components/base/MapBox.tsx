@@ -4,6 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { useAppContext } from 'providers/AppProvider';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
 
@@ -12,17 +13,25 @@ interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   options: Omit<MapboxOptions, 'container'>;
 }
 
+const styles = {
+  default: 'mapbox://styles/mapbox/light-v11',
+  light: 'mapbox://styles/themewagon/clj57pads001701qo25756jtw',
+  dark: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew'
+};
+
 const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
+  const {
+    config: { theme }
+  } = useAppContext();
 
   useEffect(() => {
     if (map.current) return;
     if (mapContainer.current) {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
-        // style: 'mapbox://styles/mapbox/light-v11',
-        style: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew',
+        style: styles[theme],
         scrollZoom: false,
         ...options
       });
@@ -36,6 +45,10 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
       }
     }
   }, []);
+
+  useEffect(() => {
+    map.current?.setStyle(styles[theme]);
+  }, [theme]);
 
   return (
     <>

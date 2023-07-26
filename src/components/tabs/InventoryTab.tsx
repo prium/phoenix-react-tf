@@ -310,9 +310,7 @@ const InventoryTab = () => {
                 <div className="col-12 col-lg-6">
                   <h5 className="mb-2 text-1000">Product ID Type</h5>
                   <Form.Select>
-                    <option selected value="isbn">
-                      ISBN
-                    </option>
+                    <option value="isbn">ISBN</option>
                     <option value="upc">UPC</option>
                     <option value="ean">EAN</option>
                     <option value="jan">JAN</option>

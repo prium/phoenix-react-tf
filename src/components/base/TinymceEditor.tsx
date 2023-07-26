@@ -20,7 +20,6 @@ const TinymceEditor = ({
     config: { theme }
   } = useAppContext();
   const editorRef = useRef<TinyMCEEditor | null>(null);
-  console.log(getColor('black'));
 
   useEffect(() => {
     if (editorRef.current) {

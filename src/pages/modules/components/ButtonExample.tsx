@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout, { SideNavItem } from 'components/layouts/DocPagesLayout';
+import DocPagesLayout, { SideNavItem } from 'layouts/DocPagesLayout';
 import FeatherIcon from 'feather-icons-react';
 
 const phoenixButtonsCode = `

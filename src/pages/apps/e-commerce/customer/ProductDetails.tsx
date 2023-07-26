@@ -1,4 +1,4 @@
-import { Breadcrumb, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import ProductDescription from 'components/modules/e-commerce/ProductDescription';
 import ProductDetailsTab from 'components/modules/e-commerce/ProductDetailsTab';
 import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCard';
@@ -8,19 +8,14 @@ import {
 } from 'data/e-commerce/products';
 import SimilarProducts from 'components/sliders/SimilarProducts';
 import Section from 'components/base/Section';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { ecomBreadcrumbItems } from 'data/commonData';
 
 const ProductDetails = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-0">
-          <Breadcrumb.Item href="#!">Fashion</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Womens fashion</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Footwear</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Hills
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={ecomBreadcrumbItems} className="mb-3" />
         <ProductDescription />
       </Section>
 

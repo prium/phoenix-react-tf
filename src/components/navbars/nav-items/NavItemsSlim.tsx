@@ -1,11 +1,11 @@
 import { Dropdown, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
-import NineDotMenu from 'components/layouts/navbar/nav-items/NineDotMenu';
-import ProfileDropdownMenu from 'components/layouts/navbar/nav-items/ProfileDropdownMenu';
-import NotificationDropdownMenu from 'components/layouts/navbar/nav-items/NotificationDropdownMenu';
+import NineDotMenu from './NineDotMenu';
+import ProfileDropdownMenu from './ProfileDropdownMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ThemeToggler from 'components/common/ThemeToggler';
+import NotificationDropdownMenu from './NotificationDropdownMenu';
 
 const NavItemsSlim = () => {
   return (

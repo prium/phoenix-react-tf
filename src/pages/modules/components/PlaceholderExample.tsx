@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import generic53 from 'assets/img/generic/53.png';
 
 const exampleCode = `<div className="d-flex justify-content-center">

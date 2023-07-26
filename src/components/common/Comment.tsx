@@ -4,13 +4,12 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Comment = ({
-  comment,
-  className
-}: {
+interface CommentProps {
   comment: CommentType;
   className?: string;
-}) => {
+}
+
+const Comment = ({ comment, className }: CommentProps) => {
   return (
     <Row
       className={classNames(

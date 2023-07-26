@@ -2,9 +2,9 @@ import SearchBox from 'components/common/SearchBox';
 import { Navbar } from 'react-bootstrap';
 import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
-import NavbarBrand from '../nav-items/NavbarBrand';
-import NavItems from '../nav-items/NavItems';
-import NavItemsSlim from '../nav-items/NavItemsSlim';
+import NavbarBrand from 'components/navbars/nav-items/NavbarBrand';
+import NavItems from 'components/navbars/nav-items/NavItems';
+import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
 
 const NavbarTopDefault = () => {
   const {

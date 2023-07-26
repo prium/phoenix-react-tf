@@ -107,7 +107,6 @@ const OrderDetailsTable = () => {
       <AdvanceTableProvider {...table}>
         <div className="border-y">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
-          {/* <AdvanceTableFooter pagination /> */}
           <div className="d-flex flex-between-center py-3">
             <p className="text-1100 fw-semi-bold lh-sm mb-0">
               Items subtotal :

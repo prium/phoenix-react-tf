@@ -1,4 +1,3 @@
-import DefaultLandingNavbar from 'components/layouts/navbar/default-landing-navbar/DefaultLandingNavbar';
 import AddressSection from 'components/modules/landing/default/address/AddressSection';
 import Blog from 'components/modules/landing/default/blog/Blog';
 import Brands from 'components/modules/landing/default/Brands';
@@ -11,6 +10,7 @@ import HeroHeader from 'components/modules/landing/default/HeroHeader';
 import Pricing from 'components/modules/landing/default/pricing/Pricing';
 import TeamSection from 'components/modules/landing/default/team/TeamSection';
 import Testimonial from 'components/modules/landing/default/testimonial/Testimonial';
+import DefaultLandingNavbar from 'components/navbars/default-landing-navbar/DefaultLandingNavbar';
 
 const Default = () => {
   return (

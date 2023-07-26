@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import generic5 from 'assets/img/generic/5.jpg';
 import generic6 from 'assets/img/generic/6.jpg';
 import generic7 from 'assets/img/generic/7.jpg';

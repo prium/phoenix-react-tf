@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import Footer from 'components/layouts/Footer';
-import NavbarTopHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarTopHorizontal';
-import NavbarTopDefault from 'components/layouts/navbar/navbar-top/NavbarTopDefault';
-import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
+import Footer from 'components/footers/Footer';
+import NavbarTopHorizontal from 'components/navbars/navbar-horizontal/NavbarTopHorizontal';
+import NavbarTopDefault from 'components/navbars/navbar-top/NavbarTopDefault';
+import NavbarVertical from 'components/navbars/navbar-vertical/NavbarVertical';
 import { useAppContext } from 'providers/AppProvider';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { Container } from 'react-bootstrap';

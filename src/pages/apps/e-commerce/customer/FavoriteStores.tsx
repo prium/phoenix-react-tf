@@ -1,20 +1,16 @@
 import Section from 'components/base/Section';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import StoreItem from 'components/common/StoreItem';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { stores } from 'data/e-commerce/stores';
 import React from 'react';
-import { Breadcrumb, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const FavoriteStores = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="mb-5">
           <h2>My Favorite Stores</h2>
           <p className="mb-0 text-700 fw-semi-bold">

@@ -2,22 +2,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import CustomerNotesCard from 'components/cards/CustomerNotesCard';
 import CustomerProfileCard from 'components/cards/CustomerProfileCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import CustomerOrdersTable from 'components/tables/CustomerOrdersTable';
 import CustomerRatingsTable from 'components/tables/CustomerRatingsTable';
 import CustomerWishlistTable from 'components/tables/CustomerWishlistTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import React from 'react';
-import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 
 const CustomerDetails = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <Row className="d-flex align-items-center justify-content-between g-3 mb-4">
           <Col xs="auto">

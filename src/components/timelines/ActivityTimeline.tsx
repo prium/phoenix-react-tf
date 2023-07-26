@@ -5,7 +5,11 @@ import { ActivityTimelineData } from 'data/project-management/activityTimelineDa
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ActivityTimeline = ({ data }: { data: ActivityTimelineData[] }) => {
+interface ActivityTimelineProps {
+  data: ActivityTimelineData[];
+}
+
+const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
   return (
     <Timeline variant="vertical">
       {data.map((item, index) => (

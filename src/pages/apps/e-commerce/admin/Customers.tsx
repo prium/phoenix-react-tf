@@ -3,15 +3,51 @@ import Button from 'components/base/Button';
 import FilterButtonGroup, {
   FilterMenu
 } from 'components/common/FilterButtonGroup';
+import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
 import CustomersTable, {
   customersTablecolumns
 } from 'components/tables/CustomersTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { customers } from 'data/e-commerce/customers';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import { Breadcrumb, Col, Nav, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+
+const tabItems: FilterTabItem[] = [
+  {
+    label: 'All',
+    value: 'all',
+    count: 68817
+  },
+  {
+    label: 'New',
+    value: 'new',
+    count: 6
+  },
+  {
+    label: 'Abandoned checkouts',
+    value: 'abandoned_checkouts',
+    count: 17
+  },
+  {
+    label: 'Locals',
+    value: 'locals',
+    count: 6810
+  },
+  {
+    label: 'Email subscribers',
+    value: 'email_subscribers',
+    count: 8
+  },
+  {
+    label: 'Top reviews',
+    value: 'top_reviews',
+    count: 2
+  }
+];
 
 const filterMenus: FilterMenu[] = [
   {
@@ -60,49 +96,11 @@ const Customers = () => {
 
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-4">Customers</h2>
-        <Nav className="mb-3 mb-lg-2 mx-n3 nav nav-links">
-          <Nav.Item>
-            <Nav.Link href="#!" className="active">
-              All <span className="text-700 fw-semi-bold">(68817)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              New <span className="text-700 fw-semi-bold">(6)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Abandoned checkouts{' '}
-              <span className="text-700 fw-semi-bold">(17)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Locals <span className="text-700 fw-semi-bold">(6,810)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Email subscribers{' '}
-              <span className="text-700 fw-semi-bold">(8)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Top reviews <span className="text-700 fw-semi-bold">(2)</span>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
+        <h2 className="mb-5">Customers</h2>
+        <FilterTab tabItems={tabItems} className="gap-5 mb-3" />
+
         <AdvanceTableProvider {...table}>
           <div className="mb-4">
             <Row className="g-3">

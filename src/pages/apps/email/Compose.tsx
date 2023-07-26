@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import TinymceEditor from 'components/base/TinymceEditor';
-import EmailLayout from 'components/modules/email/EmailLayout';
+import EmailLayout from 'layouts/EmailLayout';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 
 const Compose = () => {

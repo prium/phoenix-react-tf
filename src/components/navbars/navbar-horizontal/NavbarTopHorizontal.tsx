@@ -1,14 +1,14 @@
 import { Dropdown, Navbar } from 'react-bootstrap';
 import { useState } from 'react';
 import { useAppContext } from 'providers/AppProvider';
-import NavItems from '../nav-items/NavItems';
 import { RouteItems, routes } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
-import NavbarBrand from '../nav-items/NavbarBrand';
-import NavItemsSlim from '../nav-items/NavItemsSlim';
+import NavbarBrand from 'components/navbars/nav-items/NavbarBrand';
+import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
 import TopNavMegaMenu from './TopNavMegaMenu';
 import TopNavItem from './TopNavItem';
+import NavItems from 'components/navbars/nav-items/NavItems';
 
 const NavbarTopHorizontal = () => {
   const {

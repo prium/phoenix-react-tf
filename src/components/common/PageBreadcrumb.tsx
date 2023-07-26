@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { Breadcrumb } from 'react-bootstrap';
 
 export interface PageBreadcrumbItem {
@@ -6,9 +7,14 @@ export interface PageBreadcrumbItem {
   active?: boolean;
 }
 
-const PageBreadcrumb = ({ items }: { items: PageBreadcrumbItem[] }) => {
+interface PageBreadcrumbProps {
+  items: PageBreadcrumbItem[];
+  className?: string;
+}
+
+const PageBreadcrumb = ({ items, className }: PageBreadcrumbProps) => {
   return (
-    <Breadcrumb className="mb-2">
+    <Breadcrumb className={classNames(className, 'mb-2')}>
       {items.map(item => (
         <Breadcrumb.Item href={item.url} active={item.active} key={item.label}>
           {item.label}

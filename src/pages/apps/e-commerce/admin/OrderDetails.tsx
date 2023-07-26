@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import OrderDetailsTable from 'components/tables/OrderDetailsTable';
-import { Breadcrumb, Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
 import {
@@ -9,19 +9,15 @@ import {
   OtherDetails,
   ShippingDetails
 } from 'components/modules/e-commerce/OrderDeliveryDetails';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { defaultBreadcrumbItems } from 'data/commonData';
 
 const OrderDetails = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-2">
+        <h2 className="mb-3">
           Order <span>#349</span>
         </h2>
         <div className="d-flex flex-wrap flex-between-center mb-3 gap-2">

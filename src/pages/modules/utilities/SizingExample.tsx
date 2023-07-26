@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const sizingWidthCode = `<>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-100"><code>.w-100</code></div>
