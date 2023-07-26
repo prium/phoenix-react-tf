@@ -27,12 +27,14 @@ export type Feature = {
 };
 
 export interface Pricing {
+  id: number;
   title: string;
   icon: string;
   iconDark: string;
   description: string;
   price: number;
   features: string[];
+  selected?: boolean;
 }
 
 export const pricingColumnFeatures: Feature[] = [
@@ -57,6 +59,7 @@ export const pricingColumnFeatures: Feature[] = [
 
 export const pricingItems: Pricing[] = [
   {
+    id: 1,
     title: 'Learner',
     icon: icon1,
     iconDark: icon1Dark,
@@ -66,6 +69,7 @@ export const pricingItems: Pricing[] = [
     features: ['timeline']
   },
   {
+    id: 2,
     title: 'Starter',
     icon: icon2,
     iconDark: icon2Dark,
@@ -74,14 +78,17 @@ export const pricingItems: Pricing[] = [
     features: ['timeline', 'advanced_search']
   },
   {
+    id: 3,
     title: 'Team',
     icon: icon3,
     iconDark: icon3Dark,
     description: 'For teams that need to manage work across initiatives.',
     price: 49.99,
+    selected: true,
     features: ['timeline', 'advanced_search', 'custom_fields']
   },
   {
+    id: 4,
     title: 'Industry',
     icon: icon4,
     iconDark: icon4Dark,

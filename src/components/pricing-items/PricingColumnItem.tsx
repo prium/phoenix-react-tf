@@ -9,10 +9,9 @@ import { currencyFormat } from 'helpers/utils';
 
 interface PricingColumnItemProps {
   pricing: Pricing;
-  index: number;
 }
 
-const PricingColumnItem = ({ pricing, index }: PricingColumnItemProps) => {
+const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
   return (
     <Col sm={6} xxl={3} key={pricing.title}>
       <img
@@ -46,7 +45,7 @@ const PricingColumnItem = ({ pricing, index }: PricingColumnItemProps) => {
         )}
       </div>
       <Button
-        variant={index === 2 ? 'primary' : 'outline-primary'}
+        variant={pricing.selected ? 'primary' : 'outline-primary'}
         size="lg"
         className="w-100 mb-6"
       >
