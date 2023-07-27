@@ -95,8 +95,13 @@ import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
 import Notification from 'pages/notifications/Notifications';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import SignIn from 'pages/pages/authentication/simple/SignIn';
+import SignInSimple from 'pages/pages/authentication/simple/SignInSimple';
+import SignUpSimple from 'pages/pages/authentication/simple/SignUpSimple';
+import SignOutSimple from 'pages/pages/authentication/simple/SignOutSimple';
+import ForgotPasswordSimple from 'pages/pages/authentication/simple/ForgotPasswordSimple';
+import ResetPasswordSimple from 'pages/pages/authentication/simple/ResetPasswordSimple';
+import LockScreenSimple from 'pages/pages/authentication/simple/LockScreenSimple';
+import Simple2FA from 'pages/pages/authentication/simple/Simple2FA';
 
 const routes = [
   {
@@ -553,12 +558,35 @@ const routes = [
     element: <Default />
   },
   {
-    element: <SimpleAuthLayout />,
     path: '/pages/authentication/simple/',
     children: [
       {
         path: 'sign-in',
-        element: <SignIn />
+        element: <SignInSimple />
+      },
+      {
+        path: 'sign-up',
+        element: <SignUpSimple />
+      },
+      {
+        path: 'sign-out',
+        element: <SignOutSimple />
+      },
+      {
+        path: 'forgot-password',
+        element: <ForgotPasswordSimple />
+      },
+      {
+        path: 'reset-password',
+        element: <ResetPasswordSimple />
+      },
+      {
+        path: 'lock-screen',
+        element: <LockScreenSimple />
+      },
+      {
+        path: '2FA',
+        element: <Simple2FA />
       }
     ]
   }

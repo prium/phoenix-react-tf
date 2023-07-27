@@ -108,7 +108,8 @@ import {
   faFacebook as fabFacebook,
   faTwitter as fabTwitter,
   faLinkedinIn as fabLinkedinIn,
-  faFacebookMessenger as fabFacebookMessenger
+  faFacebookMessenger as fabFacebookMessenger,
+  faGoogle as fabGoogle
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faStar as farStar,
@@ -234,5 +235,6 @@ library.add(
   faMusic,
   faFilePdf,
   faReplyAll,
-  faFile
+  faFile,
+  fabGoogle
 );

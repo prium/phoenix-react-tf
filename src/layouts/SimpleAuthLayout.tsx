@@ -1,18 +1,23 @@
 import Logo from 'components/common/Logo';
+import { PropsWithChildren } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+interface SimpleAuthLayoutProps {
+  logo?: boolean;
+  className?: string;
+}
 
 const SimpleAuthLayout = ({
-  columnClass,
-  logo = true
-}: {
-  columnClass?: string;
-  logo?: boolean;
-}) => {
+  children,
+  logo = true,
+  className = 'col-xl-5 col-xxl-3'
+}: PropsWithChildren<SimpleAuthLayoutProps>) => {
+  // const { config } = useSimpleAuthLayoutContext();
   return (
     <div className="container">
       <Row className="flex-center min-vh-100 py-5">
-        <Col sm={10} md={8} lg={5} className={columnClass}>
+        <Col sm={10} md={8} lg={5} className={className}>
           {logo && (
             <Link
               to="/"
@@ -25,7 +30,7 @@ const SimpleAuthLayout = ({
               />
             </Link>
           )}
-          <Outlet />
+          {children}
         </Col>
       </Row>
     </div>
