@@ -42,7 +42,7 @@ const selectionColumn = {
   )
 };
 
-const useAdvanceTable = ({
+const useAdvanceTable = <T,>({
   columns,
   data,
   selection,
@@ -50,7 +50,7 @@ const useAdvanceTable = ({
   pagination,
   pageSize
 }: PropsWithChildren<UseAdvanceTableProps>) => {
-  const table = useReactTable({
+  const table = useReactTable<T>({
     data,
     columns: selection ? [selectionColumn, ...columns] : columns,
     enableSorting: sortable,
