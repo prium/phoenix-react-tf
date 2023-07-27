@@ -8,9 +8,9 @@ import Location from 'components/modules/events/Location';
 import Badge from 'components/base/Badge';
 import Events from 'components/modules/events/Events';
 import EventsSingersSection from 'components/modules/events/EventsSingersSection';
-import EventsTopicCovered from 'components/modules/events/EventsTopicCovered';
+import EventsTopicCovered from 'components/list-items/EventsTopicCovered';
 import EventsOrganized from 'components/modules/events/EventsOrganized';
-import { eventsData } from 'data/eventsData';
+import { SingerPhotos, events } from 'data/eventsData';
 
 const EventDetail = () => {
   return (
@@ -37,7 +37,7 @@ const EventDetail = () => {
             dates, lineups and prospective entry requirements. We will keep you
             posted with necessary updates regarding the event.
           </p>
-          <EventsSingersSection />
+          <EventsSingersSection photos={SingerPhotos} />
           <EventsTopicCovered />
           <h4 className="mb-3 text-1000 fs-xxl-6">Refund Policy:</h4>
           <ul className="mb-6 ps-4">
@@ -50,7 +50,7 @@ const EventDetail = () => {
           <EventsOrganized />
           <Location />
           <h3 className="mb-3">Tags</h3>
-          <div className="d-flex flex-wrap pb-8 border-bottom">
+          <div className="d-flex flex-wrap mb-8">
             <Badge variant="tag" className="me-2">
               Music
             </Badge>
@@ -59,7 +59,9 @@ const EventDetail = () => {
             </Badge>
             <Badge variant="tag">Greatest show on earth</Badge>
           </div>
-          <Events data={eventsData} title="Upcoming events" />
+          <div className="border-top border-200">
+            <Events events={events} title="Upcoming events" />
+          </div>
         </Col>
       </Row>
     </div>

@@ -1,9 +1,20 @@
 import classNames from 'classnames';
 import { Col, Row } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 const Footer = ({ className }: { className?: string }) => {
+  const location = useLocation();
+  const [currentPath] = useState(location.pathname);
   return (
-    <footer className={classNames(className, 'footer')}>
+    <footer
+      className={classNames(className, 'footer', {
+        'd-none d-lg-block position-absolute':
+          currentPath === '/apps/social/feed',
+        'd-none d-xl-block position-absolute':
+          currentPath === '/apps/social/profile'
+      })}
+    >
       <Row className="g-0 justify-content-between align-items-center h-100">
         <Col xs={12} sm="auto" className="text-center">
           <p className="mb-0 mt-2 mt-sm-0 text-900">

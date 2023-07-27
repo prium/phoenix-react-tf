@@ -14,7 +14,7 @@
     transition: opacity 0.2s ease-in-out;
     margin: 0 !important;
     display: flex;
-    background: rgba($black, 0.6);
+    background: rgba($black, 0.6) !important;
   }
   .hoverbox-primary-content {
     position: absolute;

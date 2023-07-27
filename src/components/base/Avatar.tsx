@@ -13,6 +13,7 @@ interface AvatarProps {
   rounded?: Rounded;
   status?: Status;
   placeholder?: boolean;
+  thumbnail?: boolean;
   imageClassName?: string;
   className?: string;
 }
@@ -30,6 +31,7 @@ const Avatar = ({
   status,
   className,
   imageClassName,
+  thumbnail,
   children
 }: PropsWithChildren<AvatarProps>) => {
   return (
@@ -43,7 +45,7 @@ const Avatar = ({
           src={src ? src : avatar}
           alt="avatar"
           className={classNames(imageClassName, {
-            // 'avatar-placeholder': placeholder,
+            'img-thumbnail bg-white': thumbnail,
             'avatar-placeholder': !src,
             'rounded-circle': rounded === 'circle',
             'rounded-soft': rounded === 'soft'

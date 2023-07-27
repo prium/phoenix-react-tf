@@ -96,6 +96,9 @@ import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
 import Notification from 'pages/notifications/Notifications';
 import PricingColumn from 'pages/pages/pricing/PricingColumn';
+import SocialProfile from 'pages/apps/social/SocialProfile';
+import Settings from 'pages/apps/social/Settings';
+import Feed from 'pages/apps/social/Feed';
 
 const routes = [
   {
@@ -212,6 +215,23 @@ const routes = [
           {
             path: ':userId/conversation',
             element: <Chat />
+          }
+        ]
+      },
+      {
+        path: '/apps/social/',
+        children: [
+          {
+            path: 'profile',
+            element: <SocialProfile />
+          },
+          {
+            path: 'settings',
+            element: <Settings />
+          },
+          {
+            path: 'feed',
+            element: <Feed />
           }
         ]
       },

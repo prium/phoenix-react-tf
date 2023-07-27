@@ -27423,7 +27423,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   content: "";
   position: absolute;
   border-radius: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 .avatar.status-online:before {
   background-color: var(--phoenix-success);
@@ -28637,7 +28637,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   transition: opacity 0.2s ease-in-out;
   margin: 0 !important;
   display: flex;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 .hoverbox .hoverbox-primary-content {
   position: absolute;
