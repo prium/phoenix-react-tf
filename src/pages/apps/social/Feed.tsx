@@ -1,4 +1,4 @@
-import ProfileCardSmall from 'components/cards/ProfileCardSmall';
+import SocialProfileCard from 'components/cards/SocialProfileCard';
 import Events from 'components/modules/events/Events';
 import NavbarBottom from 'components/modules/social/NavbarBottom';
 import SocialMessages from 'components/list-items/SocialMessages';
@@ -17,7 +17,7 @@ const Feed = () => {
       <div className="mb-9">
         <Row className="gy-3 gx-5 gx-xxl-6">
           <Col lg={5} xl={4} className="d-none d-lg-block">
-            <ProfileCardSmall showAbout={true} />
+            <SocialProfileCard showAbout={true} />
             <ProfileNavigation />
             <div className="mb-8 mt-6">
               <SocialMessages messages={messages} />

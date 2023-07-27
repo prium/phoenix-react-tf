@@ -1,5 +1,5 @@
 import Button from 'components/base/Button';
-import ProfileCardSM from 'components/cards/ProfileCardSmall';
+import SocialProfileCard from 'components/cards/SocialProfileCard';
 import SettingsChangePassword from 'components/forms/SettingsChangePassword';
 import SettingsCompanyInfo from 'components/forms/SettingsCompanyInfo';
 import SettingsPersonalInfo from 'components/forms/SettingsPersonalInfo';
@@ -12,7 +12,7 @@ const Settings = () => {
     <div className="mb-9">
       <Row className="g-6">
         <Col xs={12} xl={4}>
-          <ProfileCardSM />
+          <SocialProfileCard />
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>

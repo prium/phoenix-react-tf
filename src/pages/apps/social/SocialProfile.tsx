@@ -1,4 +1,4 @@
-import SocialProfileCard from 'components/cards/SocialProfileCard';
+import SocialCoverCard from 'components/cards/SocialCoverCard';
 import NavbarBottom from 'components/modules/social/NavbarBottom';
 import MutualNavigation from 'components/list-items/MutualNavigation';
 import SocialPhotos from 'components/image-gallery/SocialPhotos';
@@ -11,7 +11,7 @@ const SocialProfile = () => {
   return (
     <>
       <div className="mb-9">
-        <SocialProfileCard />
+        <SocialCoverCard />
         <Row className="gy-3 gx-5 gx-xxl-6">
           <Col xl={4} className="d-none d-xl-block">
             <ProfileNavigation className="mb-8" />
