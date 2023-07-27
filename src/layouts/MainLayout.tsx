@@ -13,7 +13,7 @@ const MainLayout = () => {
     config: { navbarPosition }
   } = useAppContext();
 
-  const { contentClass } = useMainLayoutContext();
+  const { contentClass, footerClass } = useMainLayoutContext();
 
   return (
     <Container fluid className="px-0">
@@ -27,7 +27,7 @@ const MainLayout = () => {
 
       <div className={classNames(contentClass, 'content')}>
         <Outlet />
-        <Footer className="position-absolute" />
+        <Footer className={classNames(footerClass, 'position-absolute')} />
       </div>
     </Container>
   );

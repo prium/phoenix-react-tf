@@ -10,8 +10,19 @@ import { feedPosts, socialPhotos } from 'data/social/postsData';
 import { Col, Row } from 'react-bootstrap';
 import ProfileNavigation from 'components/list-items/ProfileNavigation';
 import FeedTextarea from 'components/forms/FeedTextarea';
+import { useMainLayoutContext } from 'providers/MainLayoutProvider';
+import { useEffect } from 'react';
 
 const Feed = () => {
+  const { setFooterClass } = useMainLayoutContext();
+
+  useEffect(() => {
+    setFooterClass('d-none d-lg-block');
+    return () => {
+      setFooterClass('');
+    };
+  }, []);
+
   return (
     <>
       <div className="mb-9">
