@@ -1,4 +1,3 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { mutualData } from 'data/social/dropdownData';
@@ -22,7 +21,7 @@ const MutualNavigation = () => {
               className="ps-2 fs-8 text-800 hover-primary fw-semi-bold"
               startIcon={
                 <FontAwesomeIcon
-                  icon={item.icon as IconProp}
+                  icon={item.icon}
                   className="me-2 mb-2 mb-xxl-0"
                 />
               }

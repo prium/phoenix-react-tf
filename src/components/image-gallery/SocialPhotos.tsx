@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useLightbox from 'hooks/useLightbox';
 import { Col, Row } from 'react-bootstrap';
@@ -10,8 +9,7 @@ interface SocialPhotosProps {
 }
 
 const SocialPhotos = ({ className, photos }: SocialPhotosProps) => {
-  const [attachments] = useState(photos);
-  const { lightboxProps, openLightbox } = useLightbox(attachments);
+  const { lightboxProps, openLightbox } = useLightbox(photos);
   return (
     <div className={className}>
       <div className="d-flex pb-4 align-items-end">
@@ -25,8 +23,8 @@ const SocialPhotos = ({ className, photos }: SocialPhotosProps) => {
       </div>
       <Lightbox {...lightboxProps} />
       <Row className="g-3">
-        {attachments.map((img, index) => (
-          <Col key={index} xs={4}>
+        {photos.map((img, index) => (
+          <Col key={img} xs={4}>
             <img
               src={img}
               alt=""

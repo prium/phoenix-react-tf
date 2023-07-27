@@ -4,7 +4,8 @@ import team57 from 'assets/img/team/57.webp';
 import team59 from 'assets/img/team/59.webp';
 import { Size, Status } from 'components/base/Avatar';
 
-export interface MessagesData {
+export interface Message {
+  id: number;
   avatar: {
     size: Size;
     img: string;
@@ -15,8 +16,9 @@ export interface MessagesData {
   message: string;
 }
 
-export const messages: MessagesData[] = [
+export const messages: Message[] = [
   {
+    id: 1,
     avatar: {
       size: 'm',
       img: team35,
@@ -26,6 +28,7 @@ export const messages: MessagesData[] = [
     message: 'When you gonna pay me back, don’t leave me hanging'
   },
   {
+    id: 2,
     avatar: {
       size: 'm',
       img: team30,
@@ -35,6 +38,7 @@ export const messages: MessagesData[] = [
     message: 'But the mare fact that she said that makes'
   },
   {
+    id: 3,
     avatar: {
       size: 'm',
       img: '',
@@ -45,6 +49,7 @@ export const messages: MessagesData[] = [
     message: 'Oi Cult.'
   },
   {
+    id: 4,
     avatar: {
       size: 'm',
       img: team59,
@@ -54,6 +59,7 @@ export const messages: MessagesData[] = [
     message: 'Thanks for that. Sincerely.'
   },
   {
+    id: 5,
     avatar: {
       size: 'm',
       img: team57,

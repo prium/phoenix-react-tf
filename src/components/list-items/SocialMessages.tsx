@@ -2,13 +2,13 @@ import Avatar from 'components/base/Avatar';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
-import { MessagesData } from 'data/social/messages';
+import { Message } from 'data/social/messages';
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 interface SocialMessagesProps {
-  messages: MessagesData[];
+  messages: Message[];
 }
 
 const SocialMessages = ({ messages }: SocialMessagesProps) => {
@@ -30,9 +30,9 @@ const SocialMessages = ({ messages }: SocialMessagesProps) => {
           </RevealDropdown>
         </RevealDropdownTrigger>
       </div>
-      {messages.map((message, index) => (
+      {messages.map(message => (
         <div
-          key={index}
+          key={message.id}
           className="d-flex py-3 align-items-center border-bottom border-dashed"
         >
           <div className="me-2">

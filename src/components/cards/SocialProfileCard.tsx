@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { dropdownData } from 'data/social/dropdownData';
+import classNames from 'classnames';
 
 const SocialProfileCard = () => {
   return (
@@ -109,17 +110,11 @@ const SocialProfileCard = () => {
                       More
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="py-2">
-                      {dropdownData.slice(0, 6).map(item => (
-                        <Dropdown.Item key={item.label} className="d-xl-none">
-                          <FontAwesomeIcon
-                            icon={item.icon}
-                            className="text-800 me-2"
-                          />
-                          {item.label}
-                        </Dropdown.Item>
-                      ))}
-                      {dropdownData.slice(6).map(item => (
-                        <Dropdown.Item key={item.label}>
+                      {dropdownData.map((item, index) => (
+                        <Dropdown.Item
+                          key={item.label}
+                          className={classNames({ 'd-xl-none': index < 6 })}
+                        >
                           <FontAwesomeIcon
                             icon={item.icon}
                             className="text-800 me-2"

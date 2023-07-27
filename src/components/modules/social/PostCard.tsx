@@ -75,24 +75,21 @@ const PostCard = ({ post }: PostCardProps) => {
               startIcon={<FontAwesomeIcon icon="heart" />}
               className="p-0 me-3 fs-10 fw-bolder"
             >
-              {post.likes + ' '}
-              Likes
+              {post.interactions.likes} Likes
             </Button>
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon="comment" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
-              {post.comment + ' '}
-              Comments
+              {post.interactions.comments} Comments
             </Button>
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon="share" />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
-              {post.shares + ' '}
-              Shares
+              {post.interactions.shares} Shares
             </Button>
           </div>
         </Card.Body>

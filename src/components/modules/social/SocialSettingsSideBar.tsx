@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const SettingsSideBar = () => {
+const SocialSettingsSideBar = () => {
   return (
     <>
       <div className="border-bottom border-dashed pb-3 mb-4">
@@ -123,4 +123,4 @@ const SettingsSideBar = () => {
   );
 };
 
-export default SettingsSideBar;
+export default SocialSettingsSideBar;

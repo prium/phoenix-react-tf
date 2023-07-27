@@ -53,9 +53,11 @@ export interface Post {
   caption: string;
   images?: Image[];
   comments?: Comment[];
-  likes: number;
-  comment: number;
-  shares: number;
+  interactions: {
+    likes: number;
+    comments: number;
+    shares: number;
+  };
 }
 
 export const feedPosts: Post[] = [
@@ -99,9 +101,11 @@ export const feedPosts: Post[] = [
         ]
       }
     ],
-    likes: 345,
-    comment: 45,
-    shares: 56
+    interactions: {
+      likes: 345,
+      comments: 45,
+      shares: 56
+    }
   },
   {
     id: 2,
@@ -113,9 +117,11 @@ export const feedPosts: Post[] = [
     caption: `A guy enters a bakery while carrying a 25-pound haddock.
       He asks the baker if he makes fish cakes. The rather perplexed baker responds in the negative.
       The guy responds "That's unfortunate.Today is his birthday"`,
-    likes: 23,
-    comment: 9,
-    shares: 3
+    interactions: {
+      likes: 23,
+      comments: 9,
+      shares: 3
+    }
   },
   {
     id: 3,
@@ -153,9 +159,11 @@ export const feedPosts: Post[] = [
         ]
       }
     ],
-    likes: 345,
-    comment: 45,
-    shares: 56
+    interactions: {
+      likes: 345,
+      comments: 45,
+      shares: 56
+    }
   }
 ];
 
@@ -201,9 +209,11 @@ export const profilePosts: Post[] = [
         ]
       }
     ],
-    likes: 345,
-    comment: 45,
-    shares: 56
+    interactions: {
+      likes: 345,
+      comments: 45,
+      shares: 56
+    }
   },
   {
     id: 2,
@@ -216,9 +226,11 @@ export const profilePosts: Post[] = [
     caption: `A guy enters a bakery while carrying a 25-pound haddock.
       He asks the baker if he makes fish cakes. The rather perplexed baker responds in the negative.
       The guy responds "That's unfortunate.Today is his birthday"`,
-    likes: 23,
-    comment: 9,
-    shares: 3
+    interactions: {
+      likes: 23,
+      comments: 9,
+      shares: 3
+    }
   },
   {
     id: 3,
@@ -256,9 +268,11 @@ export const profilePosts: Post[] = [
         ]
       }
     ],
-    likes: 345,
-    comment: 45,
-    shares: 56
+    interactions: {
+      likes: 345,
+      comments: 45,
+      shares: 56
+    }
   }
 ];
 

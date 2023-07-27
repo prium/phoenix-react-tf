@@ -50,7 +50,7 @@ const EventDetail = () => {
           <EventsOrganized />
           <Location />
           <h3 className="mb-3">Tags</h3>
-          <div className="d-flex flex-wrap pb-8 border-bottom">
+          <div className="d-flex flex-wrap mb-8">
             <Badge variant="tag" className="me-2">
               Music
             </Badge>
@@ -59,7 +59,9 @@ const EventDetail = () => {
             </Badge>
             <Badge variant="tag">Greatest show on earth</Badge>
           </div>
-          <Events events={events} title="Upcoming events" />
+          <div className="border-top border-200">
+            <Events events={events} title="Upcoming events" />
+          </div>
         </Col>
       </Row>
     </div>

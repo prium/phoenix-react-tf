@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useLightbox from 'hooks/useLightbox';
@@ -9,8 +8,7 @@ interface EventsSingersSection {
 }
 
 const EventsSingersSection = ({ photos }: EventsSingersSection) => {
-  const [attachments] = useState(photos);
-  const { lightboxProps, openLightbox } = useLightbox(attachments);
+  const { lightboxProps, openLightbox } = useLightbox(photos);
   return (
     <>
       <h4 className="mb-3 fw-bold text-1000 fs-xxl-6">Singers:</h4>
@@ -25,12 +23,11 @@ const EventsSingersSection = ({ photos }: EventsSingersSection) => {
         don’t share it with anyone. Any damage regarding a misused ID will not
         be ours to compensate or refund.Enjoy!
       </p>
-      <Lightbox {...lightboxProps} />
       <Row className="g-1 g-sm-2 mb-7 mb-xxl-8">
-        {attachments.map((itam, index) => (
-          <Col key={index} xs={index === attachments.length - 1 ? 6 : 3}>
+        {photos.map((photo, index) => (
+          <Col key={photo} xs={index === photos.length - 1 ? 6 : 3}>
             <img
-              src={itam}
+              src={photo}
               alt=""
               onClick={() => openLightbox(index + 1)}
               className="rounded h-100 w-100 fit-cover cursor-pointer"
@@ -38,6 +35,7 @@ const EventsSingersSection = ({ photos }: EventsSingersSection) => {
           </Col>
         ))}
       </Row>
+      <Lightbox {...lightboxProps} />
     </>
   );
 };

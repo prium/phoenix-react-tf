@@ -4,7 +4,7 @@ import SettingsChangePassword from 'components/forms/SettingsChangePassword';
 import SettingsCompanyInfo from 'components/forms/SettingsCompanyInfo';
 import SettingsPersonalInfo from 'components/forms/SettingsPersonalInfo';
 import SettingsSocial from 'components/forms/SettingsSocial';
-import SettingsSideBar from 'components/modules/social/SettingsSideBar';
+import SocialSettingsSideBar from 'components/modules/social/SocialSettingsSideBar';
 import { Col, Row } from 'react-bootstrap';
 
 const Settings = () => {
@@ -13,7 +13,7 @@ const Settings = () => {
       <Row className="g-6">
         <Col xs={12} xl={4}>
           <ProfileCardSM />
-          <SettingsSideBar />
+          <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>
           <div className="border-bottom border-300 mb-4">

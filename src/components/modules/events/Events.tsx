@@ -7,17 +7,16 @@ import { Link } from 'react-router-dom';
 interface EventsProps {
   events: Event[];
   title: string;
+  className?: string;
 }
 
-const Events = ({ events, title }: EventsProps) => {
+const Events = ({ events, title, className }: EventsProps) => {
   return (
     <>
       <Row
         className={classNames(
-          'g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between',
-          {
-            'pb-4 pt-0': title === 'Events'
-          }
+          className,
+          'g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between'
         )}
       >
         <Col xs="auto">
