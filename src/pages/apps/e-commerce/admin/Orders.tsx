@@ -3,13 +3,49 @@ import Button from 'components/base/Button';
 import FilterButtonGroup, {
   FilterMenu
 } from 'components/common/FilterButtonGroup';
+import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
 import OrdersTable, { ordersTableColumns } from 'components/tables/OrdersTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { ordersTableData } from 'data/e-commerce/orders';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import { Breadcrumb, Col, Nav, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+
+const tabItems: FilterTabItem[] = [
+  {
+    label: 'All',
+    value: 'all',
+    count: 68817
+  },
+  {
+    label: 'Pending payment',
+    value: 'pending_payment',
+    count: 6
+  },
+  {
+    label: 'Unfulfilled',
+    value: 'unfulfilled',
+    count: 17
+  },
+  {
+    label: 'Completed',
+    value: 'completed',
+    count: 6810
+  },
+  {
+    label: 'Refunded',
+    value: 'refunded',
+    count: 8
+  },
+  {
+    label: 'Failed',
+    value: 'failed',
+    count: 2
+  }
+];
 
 const filterMenus: FilterMenu[] = [
   {
@@ -58,53 +94,17 @@ const Orders = () => {
 
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-4">Orders</h2>
-        <Nav className="mb-3 mb-lg-2 mx-n3 nav nav-links">
-          <Nav.Item>
-            <Nav.Link href="#!" className="active">
-              All <span className="text-700 fw-semi-bold">(68817)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Pending payment <span className="text-700 fw-semi-bold">(6)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Unfulfilled <span className="text-700 fw-semi-bold">(17)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Completed <span className="text-700 fw-semi-bold">(6,810)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Refunded <span className="text-700 fw-semi-bold">(8)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Failed <span className="text-700 fw-semi-bold">(2)</span>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
+        <h2 className="mb-5">Orders</h2>
+        <FilterTab tabItems={tabItems} className="gap-5 mb-3" />
+
         <AdvanceTableProvider {...table}>
           <div className="mb-4">
             <Row className="g-3">
               <Col xs="auto">
                 <SearchBox
-                  placeholder="Search customers"
+                  placeholder="Search orders"
                   onChange={handleSearchInputChange}
                 />
               </Col>

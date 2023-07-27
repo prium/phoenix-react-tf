@@ -66,7 +66,8 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
         return true;
       }
       return (
-        children.hasOwnProperty('pages') && children.pages!.some(checkLink)
+        Object.prototype.hasOwnProperty.call(children, 'pages') &&
+        children.pages!.some(checkLink)
       );
     };
     return childrens.some(checkLink);

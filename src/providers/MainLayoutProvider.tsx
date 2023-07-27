@@ -10,6 +10,8 @@ import React, {
 interface MainLayoutContextInterface {
   contentClass: string;
   setContentClass: Dispatch<SetStateAction<string>>;
+  footerClass: string;
+  setFooterClass: Dispatch<SetStateAction<string>>;
 }
 
 export const MainLayoutContext = createContext(
@@ -18,8 +20,11 @@ export const MainLayoutContext = createContext(
 
 const MainLayoutProvider = ({ children }: PropsWithChildren) => {
   const [contentClass, setContentClass] = useState('');
+  const [footerClass, setFooterClass] = useState('');
   return (
-    <MainLayoutContext.Provider value={{ contentClass, setContentClass }}>
+    <MainLayoutContext.Provider
+      value={{ contentClass, setContentClass, footerClass, setFooterClass }}
+    >
       {children}
     </MainLayoutContext.Provider>
   );

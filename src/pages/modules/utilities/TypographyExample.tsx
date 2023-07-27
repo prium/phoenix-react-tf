@@ -1,7 +1,7 @@
 import Badge from 'components/base/Badge';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import PhoenixDocProvider from 'providers/PhoenixDocProvider';
 import { Link } from 'react-router-dom';
 

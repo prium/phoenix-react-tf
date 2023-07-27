@@ -1,21 +1,74 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import FilterButtonGroup, {
+  FilterMenu
+} from 'components/common/FilterButtonGroup';
+import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
 import ProductsTable, {
   productsTablecolumns
 } from 'components/tables/ProductsTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { productsTableData } from 'data/e-commerce/products';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import {
-  Breadcrumb,
-  ButtonGroup,
-  Col,
-  Dropdown,
-  Nav,
-  Row
-} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
+
+const tabItems: FilterTabItem[] = [
+  {
+    label: 'All',
+    value: 'all',
+    count: 68817
+  },
+  {
+    label: 'Published',
+    value: 'published',
+    count: 70348
+  },
+  {
+    label: 'Drafts',
+    value: 'drafts',
+    count: 17
+  },
+  {
+    label: 'On discount',
+    value: 'on_discount',
+    count: 810
+  }
+];
+
+const filterMenus: FilterMenu[] = [
+  {
+    label: 'Category',
+    items: [
+      {
+        label: 'Plants'
+      },
+      {
+        label: 'Furniture'
+      },
+      {
+        label: 'Fashion'
+      }
+    ]
+  },
+  {
+    label: 'Vendor',
+    items: [
+      {
+        label: 'Blue Olive Plant sellers. Inc'
+      },
+      {
+        label: 'Beatrice Furnitures'
+      },
+      {
+        label: 'Kizzstore'
+      }
+    ]
+  }
+];
 
 const Products = () => {
   const table = useAdvanceTable({
@@ -33,37 +86,10 @@ const Products = () => {
 
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-4">Products</h2>
-        <Nav className="mb-3 mb-lg-2 mx-n3 nav nav-links">
-          <Nav.Item>
-            <Nav.Link href="#!" className="active">
-              All <span className="text-700 fw-semi-bold">(68817)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Published <span className="text-700 fw-semi-bold">(70348)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              Drafts <span className="text-700 fw-semi-bold">(17)</span>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="#!">
-              On discount <span className="text-700 fw-semi-bold">(810)</span>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
+        <h2 className="mb-5">Products</h2>
+        <FilterTab tabItems={tabItems} className="gap-5 mb-3" />
         <AdvanceTableProvider {...table}>
           <div className="mb-4">
             <Row className="g-3">
@@ -77,58 +103,7 @@ const Products = () => {
                 xs="auto"
                 className="scrollbar overflow-hidden-y flex-grow-1"
               >
-                <ButtonGroup className="position-static">
-                  <Dropdown as={ButtonGroup} className="position-static">
-                    <Dropdown.Toggle
-                      variant="phoenix-secondary"
-                      className="px-7 flex-shrink-0 dropdown-caret-none"
-                    >
-                      Category
-                      <FontAwesomeIcon
-                        icon="angle-down"
-                        className="ms-2"
-                        transform="down-2"
-                      />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Another action
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Something else
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Dropdown as={ButtonGroup} className="position-static">
-                    <Dropdown.Toggle
-                      variant="phoenix-secondary"
-                      className="px-7 flex-shrink-0 dropdown-caret-none"
-                    >
-                      Vendor
-                      <FontAwesomeIcon
-                        icon="angle-down"
-                        className="ms-2"
-                        transform="down-2"
-                      />
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Another action
-                      </Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">
-                        Something else
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                  <Button
-                    variant="phoenix-secondary"
-                    className="px-7 flex-shrink-0"
-                  >
-                    More filters
-                  </Button>
-                </ButtonGroup>
+                <FilterButtonGroup menus={filterMenus} />
               </Col>
               <Col xs="auto">
                 <Button variant="link" className="text-900 me-4 px-0">

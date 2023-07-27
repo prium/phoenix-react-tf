@@ -23,6 +23,7 @@ import team6 from 'assets/img/team/6.webp';
 import team60 from 'assets/img/team/60.webp';
 import team57 from 'assets/img/team/57.webp';
 import { FileAttachment } from 'components/common/Attachment';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface Message {
   id: number;
@@ -44,6 +45,11 @@ export interface Conversation {
   messages: Message[];
   unreadMessages?: number;
 }
+
+export type MessageActionType = {
+  icon: IconProp;
+  label: string;
+};
 
 export const conversations: Conversation[] = [
   {
@@ -636,5 +642,28 @@ export const files: FileAttachment[] = [
     size: '11.13 KB',
     date: 'Dec 2, 2011',
     format: 'mad'
+  }
+];
+
+export const actions: MessageActionType[] = [
+  {
+    icon: 'trash',
+    label: 'Delete'
+  },
+  {
+    icon: 'reply',
+    label: 'Reply'
+  },
+  {
+    icon: 'pen-to-square',
+    label: 'Edit'
+  },
+  {
+    icon: 'share',
+    label: 'Share'
+  },
+  {
+    icon: 'face-smile',
+    label: 'Emoji'
   }
 ];

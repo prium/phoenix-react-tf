@@ -1,4 +1,4 @@
-import ChatContent from 'components/modules/chat/chat-content/ChatContent';
+import ChatContent from 'components/modules/chat/chat-content';
 import ChatSidebar from 'components/modules/chat/ChatSidebar';
 import { conversations } from 'data/chat';
 import { useBreakpoints } from 'providers/BreakpointsProvider';

@@ -1,33 +1,22 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { Conversation } from 'data/chat';
-import { PropsWithChildren } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import SharedMedia from './SharedMedia';
 import SharedFiles from './SharedFiles';
+import ActionButton from './ActionButton';
 
-const ActionButton = ({
-  icon,
-  children
-}: PropsWithChildren<{ icon: IconProp }>) => (
-  <div>
-    <Button className="p-0 fw-semi-bold d-block">
-      <FontAwesomeIcon icon={icon} className="me-3" />
-      {children}
-    </Button>
-  </div>
-);
+interface ConversationDetailsProps {
+  conversation: Conversation;
+  handleClose: () => void;
+}
 
 const ConversationDetails = ({
   conversation,
   handleClose
-}: {
-  conversation: Conversation;
-  handleClose: () => void;
-}) => {
+}: ConversationDetailsProps) => {
   return (
     <>
       <div className="border-bottom p-4">

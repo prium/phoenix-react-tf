@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import Footer from 'components/layouts/Footer';
-import NavbarTopHorizontal from 'components/layouts/navbar/navbar-horizontal/NavbarTopHorizontal';
-import NavbarTopDefault from 'components/layouts/navbar/navbar-top/NavbarTopDefault';
-import NavbarVertical from 'components/layouts/navbar/navbar-vertical/NavbarVertical';
+import Footer from 'components/footers/Footer';
+import NavbarTopHorizontal from 'components/navbars/navbar-horizontal/NavbarTopHorizontal';
+import NavbarTopDefault from 'components/navbars/navbar-top/NavbarTopDefault';
+import NavbarVertical from 'components/navbars/navbar-vertical/NavbarVertical';
 import { useAppContext } from 'providers/AppProvider';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { Container } from 'react-bootstrap';
@@ -13,7 +13,7 @@ const MainLayout = () => {
     config: { navbarPosition }
   } = useAppContext();
 
-  const { contentClass } = useMainLayoutContext();
+  const { contentClass, footerClass } = useMainLayoutContext();
 
   return (
     <Container fluid className="px-0">
@@ -27,7 +27,7 @@ const MainLayout = () => {
 
       <div className={classNames(contentClass, 'content')}>
         <Outlet />
-        <Footer className="position-absolute" />
+        <Footer className={classNames(footerClass, 'position-absolute')} />
       </div>
     </Container>
   );

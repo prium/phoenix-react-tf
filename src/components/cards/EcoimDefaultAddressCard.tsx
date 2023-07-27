@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { Card } from 'react-bootstrap';
 
-const EcoimDefaultAddreddCard = () => {
+const EcoimDefaultAddressCard = () => {
   return (
     <Card className="h-100">
       <Card.Body>
@@ -43,4 +43,4 @@ const EcoimDefaultAddreddCard = () => {
   );
 };
 
-export default EcoimDefaultAddreddCard;
+export default EcoimDefaultAddressCard;

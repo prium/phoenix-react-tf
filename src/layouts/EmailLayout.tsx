@@ -7,9 +7,9 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import InboxToolbar from './InboxToolbar';
+import InboxToolbar from '../components/modules/email/InboxToolbar';
 import { emails } from 'data/email';
-import EmailRow from './EmailRow';
+import EmailRow from '../components/modules/email/EmailRow';
 
 const EmailLayout = ({
   children,

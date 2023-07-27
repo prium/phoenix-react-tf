@@ -3,20 +3,16 @@ import Dropzone from 'components/base/Dropzone';
 import TinymceEditor from 'components/base/TinymceEditor';
 import OrganizeFormCard from 'components/cards/OrganizeFormCard';
 import VariantFormCard from 'components/cards/VariantFormCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import InventoryTab from 'components/tabs/InventoryTab';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import React from 'react';
-import { Breadcrumb, Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 
 const AddProduct = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <form className="mb-9">
         <div className="d-flex flex-wrap gap-3 flex-between-end mb-5">
           <div>

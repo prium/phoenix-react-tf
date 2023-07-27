@@ -29,6 +29,7 @@ const TodoItemDetailsOffcanvas = ({
       open={!!item}
       onHide={handleClose}
       className="todolist-offcanvas"
+      placement="end"
       fixed
       backdropClassName="opacity-0"
     >

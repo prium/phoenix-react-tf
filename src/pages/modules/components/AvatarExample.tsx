@@ -1,7 +1,7 @@
 import Avatar from 'components/base/Avatar';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 import team30 from 'assets/img/team/30.webp';
 import team57 from 'assets/img/team/57.webp';

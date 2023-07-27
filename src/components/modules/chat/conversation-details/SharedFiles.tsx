@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import Attachment from 'components/common/Attachment';
 import { files } from 'data/chat';
-import { getFileIcon } from 'helpers/utils';
 
 const SharedFiles = () => {
   return (
@@ -16,7 +15,7 @@ const SharedFiles = () => {
             <div
               key={index}
               className={classNames(
-                'border-bottom d-flex align-items-center justify-content-between',
+                'border-bottom d-flex align-items-center justify-content-between py-3',
                 {
                   'border-top': index === 0
                 }

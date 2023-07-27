@@ -1,18 +1,14 @@
 import Section from 'components/base/Section';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import CheckoutSummaryCard from 'components/modules/e-commerce/checkout/CheckoutSummaryCard';
-import { Breadcrumb, Button, Col, Form, Row } from 'react-bootstrap';
+import { defaultBreadcrumbItems } from 'data/commonData';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const ShippingInfo = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="mb-5">Check out</h2>
         <Row className="justify-content-between gy-6 gx-5">
           <Col lg={7}>

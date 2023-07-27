@@ -1,4 +1,4 @@
-import EmailLayout from 'components/modules/email/EmailLayout';
+import EmailLayout from 'layouts/EmailLayout';
 import { Col } from 'react-bootstrap';
 import InboxToolbar from 'components/modules/email/InboxToolbar';
 import { emails } from 'data/email';

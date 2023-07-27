@@ -44,3 +44,22 @@ export const defaultBreadcrumbItems: PageBreadcrumbItem[] = [
     active: true
   }
 ];
+
+export const ecomBreadcrumbItems: PageBreadcrumbItem[] = [
+  {
+    label: 'Fashion',
+    url: '#!'
+  },
+  {
+    label: 'Womens Fashion',
+    url: '#!'
+  },
+  {
+    label: 'Footwear',
+    url: '#!'
+  },
+  {
+    label: 'Hills',
+    active: true
+  }
+];

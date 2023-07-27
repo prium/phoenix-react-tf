@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
-import EmailLayout from 'components/modules/email/EmailLayout';
+import EmailLayout from 'layouts/EmailLayout';
 import { Card, Col, Dropdown, Row } from 'react-bootstrap';
 import team60 from 'assets/img/team/60.webp';
 import generic41 from 'assets/img/generic/41.png';

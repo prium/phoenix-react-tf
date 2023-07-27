@@ -1,27 +1,31 @@
 import classNames from 'classnames';
-import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import React, { useState } from 'react';
 import { Nav } from 'react-bootstrap';
 
 export interface FilterTabItem {
   label: string;
   value: string;
-  columnId: string;
+  onClick?: () => void;
   count: number;
 }
 
-const FilterTab = ({ tabItems }: { tabItems: FilterTabItem[] }) => {
-  const { getColumn } = useAdvanceTableContext();
+interface FilterTabProps {
+  tabItems: FilterTabItem[];
+  className?: string;
+}
+
+const FilterTab = ({ tabItems, className }: FilterTabProps) => {
   const [activeItem, setActiveItem] = useState('all');
 
   const handleClick = (item: FilterTabItem) => {
-    const column = getColumn(item.columnId);
-    column?.setFilterValue(item.value === 'all' ? '' : item.value);
     setActiveItem(item.value);
+    if (item.onClick) {
+      item.onClick();
+    }
   };
 
   return (
-    <Nav className="nav nav-links gap-3">
+    <Nav className={classNames(className, 'nav nav-links gap-3')}>
       {tabItems.map(item => (
         <Nav.Item key={item.label}>
           <Nav.Link

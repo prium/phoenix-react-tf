@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import FilterTab from 'components/common/FilterTab';
+import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
 import SearchBox from 'components/common/SearchBox';
 import ToggleViewButton from 'components/common/ToggleViewbutton';
 import FourGrid from 'components/icons/FourGrid';
@@ -15,10 +15,15 @@ interface ProjectsTopSectionInterface {
 
 const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
   const navigate = useNavigate();
-  const { setGlobalFilter, getPrePaginationRowModel } =
+  const { setGlobalFilter, getPrePaginationRowModel, getColumn } =
     useAdvanceTableContext();
 
-  const tabItems = useMemo(() => {
+  const handleFilterItemClick = (columnId: string, value: string) => {
+    const column = getColumn(columnId);
+    column?.setFilterValue(value === 'all' ? '' : value);
+  };
+
+  const tabItems: FilterTabItem[] = useMemo(() => {
     const getDataCount = (label: string) =>
       getPrePaginationRowModel().rows.filter(
         ({ original: { status } }: any) => status.label === label
@@ -28,31 +33,31 @@ const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
       {
         label: 'All',
         value: 'all',
-        columnId: 'status',
+        onClick: () => handleFilterItemClick('status', 'all'),
         count: getPrePaginationRowModel().rows.length
       },
       {
         label: 'Ongoing',
         value: 'ongoing',
-        columnId: 'status',
+        onClick: () => handleFilterItemClick('status', 'ongoing'),
         count: getDataCount('ongoing')
       },
       {
         label: 'Cancelled',
         value: 'cancelled',
-        columnId: 'status',
+        onClick: () => handleFilterItemClick('status', 'cancelled'),
         count: getDataCount('cancelled')
       },
       {
         label: 'Completed',
         value: 'completed',
-        columnId: 'status',
+        onClick: () => handleFilterItemClick('status', 'completed'),
         count: getDataCount('completed')
       },
       {
         label: 'Critical',
         value: 'critical',
-        columnId: 'status',
+        onClick: () => handleFilterItemClick('status', 'critical'),
         count: getDataCount('critical')
       }
     ];

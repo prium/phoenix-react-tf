@@ -1,24 +1,20 @@
 import Button from 'components/base/Button';
 import Section from 'components/base/Section';
-import { Breadcrumb, Col, Form, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import EcomAddressTable from 'components/tables/EcomAddressTable';
 import { shippingDetailsAddress } from 'data/e-commerce';
 import DeliveryType from 'components/modules/e-commerce/checkout/DeliveryType';
 import { PaymentMethod } from 'components/modules/e-commerce/checkout/PaymentMethod';
 import { currencyFormat } from 'helpers/utils';
 import CheckoutSummaryCard from 'components/modules/e-commerce/checkout/CheckoutSummaryCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { defaultBreadcrumbItems } from 'data/commonData';
 
 const Checkout = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="mb-5">Check out</h2>
         <Row className="justify-content-between">
           <Col lg={7}>
