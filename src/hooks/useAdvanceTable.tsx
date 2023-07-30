@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import { PropsWithChildren } from 'react';
 import {
@@ -6,8 +7,6 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  Table,
-  Row,
   ColumnDef
 } from '@tanstack/react-table';
 interface UseAdvanceTableProps<T> {
@@ -20,68 +19,52 @@ interface UseAdvanceTableProps<T> {
   selectionColumnWidth?: number | string;
 }
 
-type Ahs<T> = {
-  id: string;
-  accessorKey: T;
-};
-
-const selectionColumn: Ahs<> = {
+const selectionColumn = {
   id: 'select',
-  accessorKey: ''
+  accessorKey: '',
+  header: ({ table }: any) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: table.getIsAllRowsSelected(),
+        indeterminate: table.getIsSomeRowsSelected(),
+        onChange: table.getToggleAllRowsSelectedHandler()
+      }}
+    />
+  ),
+  cell: ({ row }: any) => (
+    <IndeterminateCheckbox
+      {...{
+        checked: row.getIsSelected(),
+        disabled: !row.getCanSelect(),
+        indeterminate: row.getIsSomeSelected(),
+        onChange: row.getToggleSelectedHandler()
+      }}
+    />
+  )
 };
 
-const useAdvanceTable = <K,>({ title }: UseAdvanceTableProps<T>) => {
-  const asdf = selectionColumn<K>;
+const useAdvanceTable = <T,>({
+  columns,
+  data,
+  selection,
+  sortable,
+  pagination,
+  pageSize
+}: PropsWithChildren<UseAdvanceTableProps<T>>) => {
+  const table = useReactTable<T>({
+    data,
+    columns: selection ? [selectionColumn, ...columns] : columns,
+    enableSorting: sortable,
+    getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    initialState: {
+      pagination: { pageSize: pagination ? pageSize : data.length }
+    }
+  });
+
+  return table;
 };
-
-// const selectionColumn: Ahs<number> = {
-//   id: 'select',
-//   accessorKey: ''
-//   // header: ({ table }) => (
-//   //   <IndeterminateCheckbox
-//   //     {...{
-//   //       checked: table.getIsAllRowsSelected(),
-//   //       indeterminate: table.getIsSomeRowsSelected(),
-//   //       onChange: table.getToggleAllRowsSelectedHandler()
-//   //     }}
-//   //   />
-//   // ),
-//   // cell: ({ row }) => (
-//   //   <IndeterminateCheckbox
-//   //     {...{
-//   //       checked: row.getIsSelected(),
-//   //       disabled: !row.getCanSelect(),
-//   //       indeterminate: row.getIsSomeSelected(),
-//   //       onChange: row.getToggleSelectedHandler()
-//   //     }}
-//   //   />
-//   // )
-// };
-
-// const useAdvanceTable = <T,>({
-//   columns,
-//   data,
-//   selection,
-//   sortable,
-//   pagination,
-//   pageSize
-// }: PropsWithChildren<UseAdvanceTableProps<T>>) => {
-//   const table = useReactTable<T>({
-//     data,
-//     columns: selection
-//       ? [selectionColumn as ColumnDef<T>, ...columns]
-//       : columns,
-//     enableSorting: sortable,
-//     getCoreRowModel: getCoreRowModel(),
-//     getSortedRowModel: getSortedRowModel(),
-//     getFilteredRowModel: getFilteredRowModel(),
-//     getPaginationRowModel: getPaginationRowModel(),
-//     initialState: {
-//       pagination: { pageSize: pagination ? pageSize : data.length }
-//     }
-//   });
-
-//   return table;
-// };
 
 export default useAdvanceTable;
