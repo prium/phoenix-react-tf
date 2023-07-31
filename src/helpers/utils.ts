@@ -131,3 +131,6 @@ export const getFileIcon = (fileFormat: string): IconProp => {
       return 'file-lines';
   }
 };
+
+export const getIntegerArrayBetween = (start = 0, end: number): number[] =>
+  new Array(end + 1 - start).fill(1).map((_, i) => i + start);
