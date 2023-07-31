@@ -99,6 +99,7 @@ import PricingColumn from 'pages/pages/pricing/PricingColumn';
 import SocialProfile from 'pages/apps/social/SocialProfile';
 import Settings from 'pages/apps/social/Settings';
 import Feed from 'pages/apps/social/Feed';
+import Members from 'pages/Members';
 
 const routes = [
   {
@@ -125,6 +126,10 @@ const routes = [
       {
         path: '/pages/notifications/notifications',
         element: <Notification />
+      },
+      {
+        path: '/pages/members',
+        element: <Members />
       },
       {
         path: '/pages/faq/faq-accordion',
