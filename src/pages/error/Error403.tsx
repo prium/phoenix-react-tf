@@ -1,6 +1,6 @@
 import React from 'react';
-import error403Illustration from 'assets/img/spot-illustrations/22.png';
-import dark403Illustration from 'assets/img/spot-illustrations/22.png';
+import error403Illustration from 'assets/img/spot-illustrations/403-illustration.png';
+import dark403Illustration from 'assets/img/spot-illustrations/dark403-illustration.png';
 import light403Illustration from 'assets/img/spot-illustrations/403.png';
 import Button from 'components/base/Button';
 import { Col, Row } from 'react-bootstrap';

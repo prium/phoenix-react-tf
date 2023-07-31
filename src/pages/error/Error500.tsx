@@ -1,6 +1,6 @@
 import Button from 'components/base/Button';
 import error500Illustration from 'assets/img/spot-illustrations/dark_500-illustration.png';
-import dark500Illustration from 'assets/img/spot-illustrations/../../assets/img/spot-illustrations/500-illustration.png';
+import dark500Illustration from 'assets/img/spot-illustrations/500-illustration.png';
 import error500 from 'assets/img/spot-illustrations/500.png';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
@@ -20,7 +20,7 @@ const Error500 = () => {
                   className="img-fluid w-md-50 w-lg-100 d-dark-none"
                 />
                 <img
-                  src={error500Illustration}
+                  src={dark500Illustration}
                   alt=""
                   width={540}
                   className="img-fluid w-lg-100 d-light-none"
