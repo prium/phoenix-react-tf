@@ -99,6 +99,7 @@ import PricingColumn from 'pages/pages/pricing/PricingColumn';
 import SocialProfile from 'pages/apps/social/SocialProfile';
 import Settings from 'pages/apps/social/Settings';
 import Feed from 'pages/apps/social/Feed';
+import AdvanceTableExample from 'pages/modules/tables/AdvanceTableExample';
 
 const routes = [
   {
@@ -270,6 +271,10 @@ const routes = [
               {
                 path: 'basic-tables',
                 element: <BasicTableExample />
+              },
+              {
+                path: 'advance-tables',
+                element: <AdvanceTableExample />
               }
             ]
           },

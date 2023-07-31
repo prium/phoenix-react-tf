@@ -41,6 +41,7 @@ const AdvanceTableFooter = ({
       totalPage: getPageCount(),
       maxPaginationButtonCount: 5
     });
+
   const [isAllVisible, setIsAllVisible] = useState(false);
 
   return (
