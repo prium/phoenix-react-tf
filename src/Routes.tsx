@@ -99,6 +99,9 @@ import PricingColumn from 'pages/pages/pricing/PricingColumn';
 import SocialProfile from 'pages/apps/social/SocialProfile';
 import Settings from 'pages/apps/social/Settings';
 import Feed from 'pages/apps/social/Feed';
+import Error404 from 'pages/error/Error404';
+import Error403 from 'pages/error/Error403';
+import Error500 from 'pages/error/Error500';
 
 const routes = [
   {
@@ -130,6 +133,7 @@ const routes = [
         path: '/pages/faq/faq-accordion',
         element: <FaqAccordion />
       },
+
       {
         path: '/apps/e-commerce/admin/',
         children: [
@@ -579,6 +583,23 @@ const routes = [
   {
     path: '/landing/default',
     element: <Default />
+  },
+  {
+    path: '/pages/errors/',
+    children: [
+      {
+        path: 'Error404',
+        element: <Error404 />
+      },
+      {
+        path: 'Error403',
+        element: <Error403 />
+      },
+      {
+        path: 'Error500',
+        element: <Error500 />
+      }
+    ]
   }
 ];
 
