@@ -30,6 +30,7 @@ interface PhoenixDocCardHeaderProps {
 interface PhoenixDocCardBodyProps extends PhoenixLiveProviderProps {
   hidePreview?: boolean;
   className?: string;
+  transformCode?: (code: string) => string | Promise<string>;
 }
 
 const PhoenixDocCard = ({
@@ -139,14 +140,20 @@ const PhoenixDocCardBody = ({
   noInline,
   hidePreview,
   children,
-  className
+  className,
+  transformCode
 }: PropsWithChildren<PhoenixDocCardBodyProps>) => {
   const { open } = usePhoenixDocContext();
 
   return (
     <Card.Body className={classNames(className, 'p-0')}>
       {code && (
-        <PhoenixLiveProvider code={code} scope={scope} noInline={noInline}>
+        <PhoenixLiveProvider
+          transformCode={transformCode}
+          code={code}
+          scope={scope}
+          noInline={noInline}
+        >
           {hidePreview ? (
             <LiveEditor />
           ) : (
