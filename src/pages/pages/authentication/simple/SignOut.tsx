@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SignOutSimple = () => {
+const SignOut = () => {
   return (
     <SimpleAuthLayout logo={false} className="col-xl-6 col-xxl-4">
       <div className="text-center mb-6 mx-auto">
@@ -34,4 +34,4 @@ const SignOutSimple = () => {
   );
 };
 
-export default SignOutSimple;
+export default SignOut;

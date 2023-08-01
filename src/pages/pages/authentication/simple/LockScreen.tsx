@@ -6,7 +6,7 @@ import { Form } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
 
-const LockScreenSimple = () => {
+const LockScreen = () => {
   return (
     <SimpleAuthLayout logo={false}>
       <div className="text-center mb-5">
@@ -32,4 +32,4 @@ const LockScreenSimple = () => {
   );
 };
 
-export default LockScreenSimple;
+export default LockScreen;

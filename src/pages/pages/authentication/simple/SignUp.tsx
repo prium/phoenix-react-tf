@@ -5,7 +5,7 @@ import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SignUpSimple = () => {
+const SignUp = () => {
   return (
     <SimpleAuthLayout>
       <div className="text-center mb-7">
@@ -73,4 +73,4 @@ const SignUpSimple = () => {
   );
 };
 
-export default SignUpSimple;
+export default SignUp;

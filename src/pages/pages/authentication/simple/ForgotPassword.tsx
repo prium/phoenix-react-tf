@@ -5,7 +5,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const ForgotPasswordSimple = () => {
+const ForgotPassword = () => {
   return (
     <SimpleAuthLayout className="col-xxl-4">
       <div className="px-xxl-5">
@@ -41,4 +41,4 @@ const ForgotPasswordSimple = () => {
   );
 };
 
-export default ForgotPasswordSimple;
+export default ForgotPassword;

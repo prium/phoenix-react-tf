@@ -3,7 +3,7 @@ import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
-const ResetPasswordSimple = () => {
+const ResetPassword = () => {
   return (
     <SimpleAuthLayout>
       <div className="text-center mb-6">
@@ -31,4 +31,4 @@ const ResetPasswordSimple = () => {
   );
 };
 
-export default ResetPasswordSimple;
+export default ResetPassword;

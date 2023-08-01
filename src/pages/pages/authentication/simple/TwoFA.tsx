@@ -1,20 +1,47 @@
 import Button from 'components/base/Button';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import React, { ChangeEvent, useState } from 'react';
+import React, {
+  ChangeEvent,
+  KeyboardEvent,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Simple2FA = () => {
+let currentOtpIndex = 0;
+const TwoFA = () => {
   const [otp, setOtp] = useState<string[]>(new Array(6).fill(''));
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement>,
-    index: number
-  ): void => {
+  const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { value } = e.target;
     const newOtp: string[] = [...otp];
-    newOtp[index] = value.substring(value.length - 1);
+    newOtp[currentOtpIndex] = value.substring(value.length - 1);
+    if (!value) {
+      setActiveOtpIndex(currentOtpIndex - 1);
+    } else {
+      setActiveOtpIndex(currentOtpIndex + 1);
+    }
     setOtp(newOtp);
   };
+
+  const handleOnKeyDown = (
+    e: KeyboardEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    currentOtpIndex = index;
+    if (e.key === 'Backspace' && otp[currentOtpIndex] === '') {
+      setActiveOtpIndex(currentOtpIndex - 1);
+    }
+  };
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, [activeOtpIndex]);
+
   return (
     <SimpleAuthLayout className="col-xxl-4">
       <div className="px-xxl-5">
@@ -31,18 +58,19 @@ const Simple2FA = () => {
           <div className="verification-form">
             <div className="d-flex align-items-center gap-2 mb-3">
               {otp.map((_, index) => (
-                <>
+                <React.Fragment key={index}>
                   <Form.Control
-                    key={index}
+                    ref={index === activeOtpIndex ? inputRef : null}
                     className="px-2 text-center"
                     type="number"
-                    // disabled={index !== 0}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      handleChange(e, index)
+                    onChange={handleChange}
+                    onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
+                      handleOnKeyDown(e, index)
                     }
+                    value={otp[index]}
                   />
                   {index === 2 && <span>-</span>}
-                </>
+                </React.Fragment>
               ))}
             </div>
             <Form.Check type="checkbox" className="text-start mb-4">
@@ -55,7 +83,7 @@ const Simple2FA = () => {
               </Form.Check.Label>
             </Form.Check>
             <Button variant="primary" className="w-100 mb-5" type="submit">
-              Varify
+              Verify
             </Button>
             <Link to="#!" className="fs-9">
               Didn’t receive the code?
@@ -67,4 +95,4 @@ const Simple2FA = () => {
   );
 };
 
-export default Simple2FA;
+export default TwoFA;

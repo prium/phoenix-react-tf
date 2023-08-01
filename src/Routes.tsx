@@ -95,13 +95,13 @@ import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
 import Compose from 'pages/apps/email/Compose';
 import Notification from 'pages/notifications/Notifications';
-import SignInSimple from 'pages/pages/authentication/simple/SignInSimple';
-import SignUpSimple from 'pages/pages/authentication/simple/SignUpSimple';
-import SignOutSimple from 'pages/pages/authentication/simple/SignOutSimple';
-import ForgotPasswordSimple from 'pages/pages/authentication/simple/ForgotPasswordSimple';
-import ResetPasswordSimple from 'pages/pages/authentication/simple/ResetPasswordSimple';
-import LockScreenSimple from 'pages/pages/authentication/simple/LockScreenSimple';
-import Simple2FA from 'pages/pages/authentication/simple/Simple2FA';
+import { default as SimpleSignIn } from 'pages/pages/authentication/simple/SignIn';
+import { default as SimpleSignUp } from 'pages/pages/authentication/simple/SignUp';
+import { default as SimpleSignOut } from 'pages/pages/authentication/simple/SignOut';
+import { default as SimpleResetPassword } from 'pages/pages/authentication/simple/ResetPassword';
+import { default as SimpleLockScreen } from 'pages/pages/authentication/simple/LockScreen';
+import { default as SimpleTwoFA } from 'pages/pages/authentication/simple/TwoFA';
+import { default as SimpleForgotPassword } from 'pages/pages/authentication/simple/ForgotPassword';
 
 const routes = [
   {
@@ -562,31 +562,31 @@ const routes = [
     children: [
       {
         path: 'sign-in',
-        element: <SignInSimple />
+        element: <SimpleSignIn />
       },
       {
         path: 'sign-up',
-        element: <SignUpSimple />
+        element: <SimpleSignUp />
       },
       {
         path: 'sign-out',
-        element: <SignOutSimple />
+        element: <SimpleSignOut />
       },
       {
         path: 'forgot-password',
-        element: <ForgotPasswordSimple />
+        element: <SimpleForgotPassword />
       },
       {
         path: 'reset-password',
-        element: <ResetPasswordSimple />
+        element: <SimpleResetPassword />
       },
       {
         path: 'lock-screen',
-        element: <LockScreenSimple />
+        element: <SimpleLockScreen />
       },
       {
         path: '2FA',
-        element: <Simple2FA />
+        element: <SimpleTwoFA />
       }
     ]
   }

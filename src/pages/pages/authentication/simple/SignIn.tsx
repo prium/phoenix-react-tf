@@ -5,7 +5,7 @@ import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SignInSimple = () => {
+const SignIn = () => {
   return (
     <SimpleAuthLayout>
       <div className="text-center mb-7">
@@ -78,4 +78,4 @@ const SignInSimple = () => {
   );
 };
 
-export default SignInSimple;
+export default SignIn;
