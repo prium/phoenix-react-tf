@@ -706,6 +706,24 @@ export const routes: RouteItems[] = [
             ]
           },
           {
+            name: 'advance',
+            active: true,
+            pages: [
+              {
+                name: 'emoji-button',
+                path: '/modules/forms/emoji-button',
+                pathName: 'emoji-button',
+                active: true
+              },
+              {
+                name: 'rating',
+                path: '/modules/forms/rating',
+                pathName: 'rating',
+                active: true
+              }
+            ]
+          },
+          {
             name: 'validation',
             path: '/modules/forms/validation',
             pathName: 'forms-validation',
@@ -832,6 +850,12 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'countup',
+            pathName: 'components-countup',
+            path: '/modules/components/countup',
+            active: true
+          },
+          {
             name: 'modals',
             pathName: 'components-modal',
             path: '/modules/components/modal',
@@ -857,6 +881,18 @@ export const routes: RouteItems[] = [
                 name: 'tabs',
                 pathName: 'components-tabs',
                 path: '/modules/components/navs-and-tabs/tabs',
+                active: true
+              }
+            ]
+          },
+          {
+            name: 'pictures',
+            active: true,
+            pages: [
+              {
+                name: 'Lightbox',
+                pathName: 'lightbox',
+                path: '/modules/components/pictures/lightbox',
                 active: true
               }
             ]

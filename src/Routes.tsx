@@ -111,6 +111,10 @@ import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
 import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
+import LightboxExample from 'pages/modules/components/pictures/LightboxExample';
+import EmojiButtonExample from 'pages/modules/forms/basic/advance/EmojiButtonExample';
+import RatingExample from 'pages/modules/forms/basic/advance/RatingExample';
+import CountupExample from 'pages/modules/components/CountupExample';
 
 const routes = [
   {
@@ -338,6 +342,10 @@ const routes = [
                 element: <ListGroupExample />
               },
               {
+                path: 'countup',
+                element: <CountupExample />
+              },
+              {
                 path: 'modal',
                 element: <ModalExample />
               },
@@ -384,6 +392,10 @@ const routes = [
               {
                 path: 'navs-and-tabs/navbar',
                 element: <NavbarExample />
+              },
+              {
+                path: 'pictures/lightbox',
+                element: <LightboxExample />
               }
             ]
           },
@@ -417,6 +429,14 @@ const routes = [
               {
                 path: 'layout',
                 element: <FormLayoutExample />
+              },
+              {
+                path: 'emoji-button',
+                element: <EmojiButtonExample />
+              },
+              {
+                path: 'rating',
+                element: <RatingExample />
               },
               {
                 path: 'validation',
