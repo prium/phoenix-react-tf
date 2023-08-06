@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
-import { Table } from 'react-bootstrap';
+import { Table, TableProps } from 'react-bootstrap';
 import Scrollbar from './Scrollbar';
 import { flexRender } from '@tanstack/react-table';
 
@@ -8,7 +8,7 @@ interface AdvanceTableProps {
   headerClassName?: string;
   bodyClassName?: string;
   rowClassName?: string;
-  tableProps?: any;
+  tableProps?: TableProps;
 }
 
 const AdvanceTable = ({

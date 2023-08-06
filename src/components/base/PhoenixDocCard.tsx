@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useEffect } from 'react';
 import { Card, Col, Nav, Row, Collapse } from 'react-bootstrap';
 import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,6 +30,7 @@ interface PhoenixDocCardHeaderProps {
 interface PhoenixDocCardBodyProps extends PhoenixLiveProviderProps {
   hidePreview?: boolean;
   className?: string;
+  transformCode?: (code: string) => string | Promise<string>;
 }
 
 const PhoenixDocCard = ({
@@ -62,18 +63,20 @@ const PhoenixDocCardHeader = ({
   children,
   className
 }: PropsWithChildren<PhoenixDocCardHeaderProps>) => {
-  const { open, setOpen } = usePhoenixDocContext();
+  const { open, setOpen, showPreviewBtn, setShowPreviewBtn } =
+    usePhoenixDocContext();
 
   const headerId = id ? id : title && snakeCase(title);
+
+  useEffect(() => {
+    setShowPreviewBtn(!noPreview);
+  }, [noPreview]);
 
   return (
     <Card.Header
       className={classNames(
         className,
-        'p-4 border-bottom border-300 bg-soft hover-actions-trigger',
-        {
-          // 'py-5': noPreview
-        }
+        'p-4 border-bottom border-300 bg-soft hover-actions-trigger'
       )}
       id={headerId}
     >
@@ -95,7 +98,7 @@ const PhoenixDocCardHeader = ({
           {description && <p className="mb-0 text-800">{description}</p>}
           {children}
         </Col>
-        {!noPreview && (
+        {showPreviewBtn && (
           <Col md="auto">
             <Nav className="nav-underline justify-content-end doc-tab-nav align-items-center">
               <Button
@@ -139,27 +142,35 @@ const PhoenixDocCardBody = ({
   noInline,
   hidePreview,
   children,
-  className
+  className,
+  transformCode
 }: PropsWithChildren<PhoenixDocCardBodyProps>) => {
-  const { open } = usePhoenixDocContext();
+  const { open, showPreviewBtn } = usePhoenixDocContext();
 
   return (
     <Card.Body className={classNames(className, 'p-0')}>
       {code && (
-        <PhoenixLiveProvider code={code} scope={scope} noInline={noInline}>
-          {hidePreview ? (
+        <PhoenixLiveProvider
+          transformCode={transformCode}
+          code={code}
+          scope={scope}
+          noInline={noInline}
+        >
+          {code && !showPreviewBtn ? (
             <LiveEditor />
           ) : (
             <>
               <Collapse in={open}>
                 <div>
                   <LiveEditor />
-                  <LiveError />
+                  {!hidePreview && <LiveError />}
                 </div>
               </Collapse>
-              <div className="p-4">
-                <LivePreview />
-              </div>
+              {!hidePreview && (
+                <div className="p-4">
+                  <LivePreview />
+                </div>
+              )}
             </>
           )}
         </PhoenixLiveProvider>
