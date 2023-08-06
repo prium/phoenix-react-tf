@@ -1,14 +1,18 @@
 import Avatar from 'components/base/Avatar';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import React from 'react';
+import { useEffect } from 'react';
 import avatar from 'assets/img/team/30.webp';
 import { Form } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
+import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
 
 const LockScreen = () => {
+  const { setConfig } = useSimpleAuthConfig();
+  useEffect(() => {
+    setConfig({ logo: false, className: 'col-xl-5 col-xxl-3' });
+  }, []);
   return (
-    <SimpleAuthLayout logo={false}>
+    <div>
       <div className="text-center mb-5">
         <Avatar size="4xl" src={avatar} className="mb-3 d-inline-block" />
         <h2 className="text-1000">
@@ -28,7 +32,7 @@ const LockScreen = () => {
           Sign In
         </Button>
       </Form>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 

@@ -102,6 +102,7 @@ import { default as SimpleResetPassword } from 'pages/pages/authentication/simpl
 import { default as SimpleLockScreen } from 'pages/pages/authentication/simple/LockScreen';
 import { default as SimpleTwoFA } from 'pages/pages/authentication/simple/TwoFA';
 import { default as SimpleForgotPassword } from 'pages/pages/authentication/simple/ForgotPassword';
+import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 
 const routes = [
   {
@@ -558,6 +559,7 @@ const routes = [
     element: <Default />
   },
   {
+    element: <SimpleAuthLayout />,
     path: '/pages/authentication/simple/',
     children: [
       {

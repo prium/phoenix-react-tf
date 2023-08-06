@@ -1,24 +1,28 @@
+import classNames from 'classnames';
 import Logo from 'components/common/Logo';
-import { PropsWithChildren } from 'react';
+import { Dispatch, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useOutletContext } from 'react-router-dom';
 
 interface SimpleAuthLayoutProps {
   logo?: boolean;
   className?: string;
 }
 
-const SimpleAuthLayout = ({
-  children,
-  logo = true,
-  className = 'col-xl-5 col-xxl-3'
-}: PropsWithChildren<SimpleAuthLayoutProps>) => {
-  // const { config } = useSimpleAuthLayoutContext();
+interface UseSimpleAuthConfig {
+  setConfig: Dispatch<React.SetStateAction<SimpleAuthLayoutProps | null>>;
+}
+
+const SimpleAuthLayout = () => {
+  const [config, setConfig] = useState<SimpleAuthLayoutProps>({
+    logo: true,
+    className: 'col-xl-5 col-xxl-3'
+  });
   return (
     <div className="container">
       <Row className="flex-center min-vh-100 py-5">
-        <Col sm={10} md={8} lg={5} className={className}>
-          {logo && (
+        <Col sm={10} md={8} lg={5} className={classNames(config?.className)}>
+          {config?.logo && (
             <Link
               to="/"
               className="d-flex flex-center text-decoration-none mb-4"
@@ -30,11 +34,15 @@ const SimpleAuthLayout = ({
               />
             </Link>
           )}
-          {children}
+          <Outlet context={{ setConfig }} />
         </Col>
       </Row>
     </div>
   );
 };
+
+export function useSimpleAuthConfig() {
+  return useOutletContext<UseSimpleAuthConfig>();
+}
 
 export default SimpleAuthLayout;

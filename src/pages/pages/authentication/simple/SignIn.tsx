@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import AuthSocialButtons from 'components/common/AuthSocialButtons';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   return (
-    <SimpleAuthLayout>
+    <div>
       <div className="text-center mb-7">
         <h3 className="text-1000">Sign In</h3>
         <p className="text-700">Get access to your account</p>
@@ -74,7 +73,7 @@ const SignIn = () => {
           Create an account
         </Link>
       </div>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 

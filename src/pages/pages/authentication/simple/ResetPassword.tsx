@@ -1,11 +1,9 @@
 import Button from 'components/base/Button';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const ResetPassword = () => {
   return (
-    <SimpleAuthLayout>
+    <div>
       <div className="text-center mb-6">
         <h4 className="text-1000">Reset new password</h4>
         <p className="text-700">Type your new password</p>
@@ -27,7 +25,7 @@ const ResetPassword = () => {
           </Button>
         </Form>
       </div>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 

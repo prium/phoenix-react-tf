@@ -1,5 +1,5 @@
 import Button from 'components/base/Button';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
+import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
 import React, {
   ChangeEvent,
   KeyboardEvent,
@@ -15,6 +15,7 @@ const TwoFA = () => {
   const [otp, setOtp] = useState<string[]>(new Array(6).fill(''));
   const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { setConfig } = useSimpleAuthConfig();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { value } = e.target;
@@ -42,8 +43,12 @@ const TwoFA = () => {
     inputRef.current?.focus();
   }, [activeOtpIndex]);
 
+  useEffect(() => {
+    setConfig({ logo: true, className: 'col-xxl-4' });
+  }, []);
+
   return (
-    <SimpleAuthLayout className="col-xxl-4">
+    <div>
       <div className="px-xxl-5">
         <div className="text-center mb-6">
           <h4 className="text-1000">Enter the verification code</h4>
@@ -91,7 +96,7 @@ const TwoFA = () => {
           </div>
         </div>
       </div>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 

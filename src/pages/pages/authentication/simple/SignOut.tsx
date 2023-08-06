@@ -1,14 +1,18 @@
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import React from 'react';
+import { useEffect } from 'react';
 import lightImg from 'assets/img/spot-illustrations/1.png';
 import darkImg from 'assets/img/spot-illustrations/dark_1.png';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
 
 const SignOut = () => {
+  const { setConfig } = useSimpleAuthConfig();
+  useEffect(() => {
+    setConfig({ logo: false, className: 'col-xl-6 col-xxl-4' });
+  }, []);
   return (
-    <SimpleAuthLayout logo={false} className="col-xl-6 col-xxl-4">
+    <div>
       <div className="text-center mb-6 mx-auto">
         <img className="mb-7 d-dark-none" src={lightImg} alt="phoenix" />
         <img className="mb-7 d-light-none" src={darkImg} alt="phoenix" />
@@ -30,7 +34,7 @@ const SignOut = () => {
           </Button>
         </div>
       </div>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 

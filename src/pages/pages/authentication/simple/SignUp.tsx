@@ -1,13 +1,11 @@
 import Button from 'components/base/Button';
 import AuthSocialButtons from 'components/common/AuthSocialButtons';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
-import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   return (
-    <SimpleAuthLayout>
+    <div>
       <div className="text-center mb-7">
         <h3 className="text-1000">Sign Up</h3>
         <p className="text-700">Create your account today</p>
@@ -69,7 +67,7 @@ const SignUp = () => {
           </Link>
         </div>
       </Form>
-    </SimpleAuthLayout>
+    </div>
   );
 };
 
