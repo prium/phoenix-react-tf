@@ -102,6 +102,7 @@ import Feed from 'pages/apps/social/Feed';
 import Error404 from 'pages/error/Error404';
 import Error403 from 'pages/error/Error403';
 import Error500 from 'pages/error/Error500';
+import AdvanceTableExample from 'pages/modules/tables/AdvanceTableExample';
 
 const routes = [
   {
@@ -274,6 +275,10 @@ const routes = [
               {
                 path: 'basic-tables',
                 element: <BasicTableExample />
+              },
+              {
+                path: 'advance-tables',
+                element: <AdvanceTableExample />
               }
             ]
           },

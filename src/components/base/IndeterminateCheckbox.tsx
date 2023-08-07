@@ -1,9 +1,9 @@
-// @ts-nocheck
 import classNames from 'classnames';
 import React, { HTMLProps } from 'react';
 import { Form } from 'react-bootstrap';
+import { FormCheckInputProps } from 'react-bootstrap/esm/FormCheckInput';
 
-interface IndeterminateCheckboxProps {
+interface IndeterminateCheckboxProps extends FormCheckInputProps {
   indeterminate?: boolean;
 }
 
@@ -16,7 +16,9 @@ const IndeterminateCheckbox = ({
 
   React.useEffect(() => {
     if (typeof indeterminate === 'boolean') {
-      ref.current.indeterminate = !rest.checked && indeterminate;
+      if (ref.current) {
+        ref.current.indeterminate = !rest.checked && indeterminate;
+      }
     }
   }, [ref, indeterminate]);
 

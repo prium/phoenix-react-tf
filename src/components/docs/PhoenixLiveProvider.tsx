@@ -8,20 +8,24 @@ export interface PhoenixLiveProviderProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   scope?: { [key: string]: any };
   noInline?: boolean;
+  transformCode?: (code: string) => string | Promise<string>;
 }
 
 const PhoenixLiveProvider = ({
   children,
   code,
   noInline,
-  scope
+  scope,
+  transformCode
 }: PropsWithChildren<PhoenixLiveProviderProps>) => {
   return (
     <LiveProvider
       code={code}
       scope={{ ...ReactBootstrap, ...React, ...scope }}
       noInline={noInline}
-      transformCode={code => code.replace(/^import.*$/gm, '')}
+      transformCode={
+        transformCode ? transformCode : code => code.replace(/^import.*$/gm, '')
+      }
       language="jsx"
       {...defaultProps}
     >

@@ -111,7 +111,9 @@ import {
   faUserPlus,
   faUsers,
   faVideo,
-  faXmark
+  faXmark,
+  faClockRotateLeft,
+  faLink
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookSquare,
@@ -123,7 +125,9 @@ import {
   faFacebookMessenger as fabFacebookMessenger,
   faYoutube as fabYoutube,
   faArtstation as fabArtstation,
-  faBehance as fabBehance
+  faBehance as fabBehance,
+  faChrome,
+  faFirefoxBrowser
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faStar as farStar,
@@ -266,5 +270,9 @@ library.add(
   fabArtstation,
   fabBehance,
   faGlobeAsia,
-  faCaretDown
+  faCaretDown,
+  faClockRotateLeft,
+  faLink,
+  faChrome,
+  faFirefoxBrowser
 );

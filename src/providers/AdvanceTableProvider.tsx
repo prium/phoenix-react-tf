@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { Table } from '@tanstack/react-table';
 import { PropsWithChildren, createContext, useContext } from 'react';
 
-export const AdvanceTableContext = createContext({} as Table<{}>);
+export const AdvanceTableContext = createContext({});
 
 const AdvanceTableProvider = ({ children, ...rest }: PropsWithChildren) => {
   return (
@@ -12,6 +11,7 @@ const AdvanceTableProvider = ({ children, ...rest }: PropsWithChildren) => {
   );
 };
 
-export const useAdvanceTableContext = () => useContext(AdvanceTableContext);
+export const useAdvanceTableContext = <T,>() =>
+  useContext(AdvanceTableContext) as Table<T>;
 
 export default AdvanceTableProvider;

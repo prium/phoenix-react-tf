@@ -1,4 +1,4 @@
-import { Dropdown, Nav } from 'react-bootstrap';
+import { Dropdown, Modal, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
 import NineDotMenu from './NineDotMenu';
@@ -6,15 +6,19 @@ import ProfileDropdownMenu from './ProfileDropdownMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ThemeToggler from 'components/common/ThemeToggler';
 import NotificationDropdownMenu from './NotificationDropdownMenu';
+import { useState } from 'react';
+import DropdownSearchBox from 'components/common/DropdownSearchBox';
+import SearchResult from 'components/common/SearchResult';
 
 const NavItemsSlim = () => {
+  const [openSearchModal, setOpenSearchModal] = useState(false);
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>
         <ThemeToggler slim />
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link>
+        <Nav.Link onClick={() => setOpenSearchModal(!openSearchModal)}>
           <FeatherIcon icon="search" size={12} />
         </Nav.Link>
       </Nav.Item>
@@ -73,6 +77,18 @@ const NavItemsSlim = () => {
           <ProfileDropdownMenu />
         </Dropdown>
       </Nav.Item>
+
+      <Modal
+        show={openSearchModal}
+        onHide={() => setOpenSearchModal(false)}
+        className="search-box-modal mt-15"
+      >
+        <Modal.Body className="p-0 bg-transparent">
+          <DropdownSearchBox size="lg" style={{ width: 'auto' }}>
+            <SearchResult />
+          </DropdownSearchBox>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

@@ -4,6 +4,7 @@ import SearchBox from 'components/common/SearchBox';
 import ToggleViewButton from 'components/common/ToggleViewbutton';
 import FourGrid from 'components/icons/FourGrid';
 import NineGrid from 'components/icons/NineGrid';
+import { Project } from 'data/project-management/projects';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { ChangeEvent, useMemo } from 'react';
 import { Col, Row } from 'react-bootstrap';
@@ -16,7 +17,7 @@ interface ProjectsTopSectionInterface {
 const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
   const navigate = useNavigate();
   const { setGlobalFilter, getPrePaginationRowModel, getColumn } =
-    useAdvanceTableContext();
+    useAdvanceTableContext<Project>();
 
   const handleFilterItemClick = (columnId: string, value: string) => {
     const column = getColumn(columnId);
@@ -26,7 +27,7 @@ const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
   const tabItems: FilterTabItem[] = useMemo(() => {
     const getDataCount = (label: string) =>
       getPrePaginationRowModel().rows.filter(
-        ({ original: { status } }: any) => status.label === label
+        ({ original: { status } }) => status.label === label
       ).length;
 
     return [

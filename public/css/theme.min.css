@@ -27376,22 +27376,27 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .search-box.ecommerce-search-box .search-input {
   border-radius: 3rem;
 }
-.search-box.navbar-top-search-box .search-input:focus {
+
+.navbar-top-search-box .search-input:focus {
   border-color: var(--phoenix-gray-300);
 }
-.search-box.navbar-top-search-box .show .search-input {
+.navbar-top-search-box .show .search-input {
   border-radius: 0.375rem 0.375rem 0 0 !important;
 }
-.search-box.navbar-top-search-box .dropdown-menu {
+.navbar-top-search-box .dropdown-menu {
   margin-top: 0;
 }
-.search-box.navbar-top-search-box .dropdown-menu.show {
+.navbar-top-search-box .dropdown-menu.show {
   border-top: 0 !important;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.search-box.navbar-top-search-box .dropdown-menu .dropdown-item:hover {
+.navbar-top-search-box .dropdown-menu .dropdown-item:hover {
   background: var(--phoenix-gray-100);
+}
+
+.search-box-modal .modal-content {
+  background: transparent;
 }
 
 /* -------------------------------------------------------------------------- */

@@ -731,6 +731,12 @@ export const routes: RouteItems[] = [
             path: '/modules/tables/basic-tables',
             pathName: 'basic-tables',
             active: true
+          },
+          {
+            name: 'Advance tables',
+            path: '/modules/tables/advance-tables',
+            pathName: 'advance-tables',
+            active: true
           }
         ]
       },

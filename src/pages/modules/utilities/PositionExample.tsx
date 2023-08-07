@@ -46,6 +46,7 @@ const PositionExample = () => {
           <PhoenixDocCard.Header
             title="Position values"
             description="Quick positioning classes are available, though they are not responsive."
+            noPreview
           />
           <PhoenixDocCard.Body hidePreview code={exampleCode} />
         </PhoenixDocCard>

@@ -116,6 +116,7 @@ export const getRandomNumber = (min: number, max: number) => {
 export const getFileIcon = (fileFormat: string): IconProp => {
   switch (fileFormat) {
     case 'zip':
+    case 'rar':
       return 'file-zipper';
     case 'bat':
       return 'file-code';
@@ -127,7 +128,14 @@ export const getFileIcon = (fileFormat: string): IconProp => {
       return 'music';
     case 'pdf':
       return 'file-pdf';
+    case 'jpg':
+    case 'png':
+    case 'jpeg':
+      return 'image';
     default:
       return 'file-lines';
   }
 };
+
+export const getIntegerArrayBetween = (start = 0, end: number): number[] =>
+  new Array(end + 1 - start).fill(1).map((_, i) => i + start);

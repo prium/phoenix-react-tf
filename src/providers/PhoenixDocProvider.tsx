@@ -10,15 +10,25 @@ import React, {
 interface CollapseContextInterface {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
+  showPreviewBtn: boolean;
+  setShowPreviewBtn: Dispatch<SetStateAction<boolean>>;
 }
 
 export const CollapseContext = createContext({} as CollapseContextInterface);
 
 const PhoenixDocProvider = ({ children }: PropsWithChildren) => {
   const [open, setOpen] = useState(false);
+  const [showPreviewBtn, setShowPreviewBtn] = useState(true);
 
   return (
-    <CollapseContext.Provider value={{ open, setOpen }}>
+    <CollapseContext.Provider
+      value={{
+        open,
+        setOpen,
+        showPreviewBtn,
+        setShowPreviewBtn
+      }}
+    >
       {children}
     </CollapseContext.Provider>
   );

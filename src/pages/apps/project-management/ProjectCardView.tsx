@@ -23,7 +23,7 @@ export const columns: ColumnDef<Project>[] = [
 ];
 
 const ProjectCardView = () => {
-  const table = useAdvanceTable({
+  const table = useAdvanceTable<Project>({
     data: projects,
     columns,
     pageSize: 10,
