@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import { CSSProperties, PropsWithChildren } from 'react';
+import { CSSProperties } from 'react';
 import { Form, FormControlProps } from 'react-bootstrap';
 
 interface SearchBoxProps extends FormControlProps {
@@ -19,9 +19,8 @@ const SearchBox = ({
   inputClassName,
   formClassName,
   style,
-  children,
   ...rest
-}: PropsWithChildren<SearchBoxProps>) => {
+}: SearchBoxProps) => {
   return (
     <div className={classNames('search-box', className)} style={style}>
       <form className={classNames('position-relative', formClassName)}>
@@ -34,7 +33,6 @@ const SearchBox = ({
         />
         <FontAwesomeIcon icon="search" className="search-box-icon" />
       </form>
-      {children}
     </div>
   );
 };
