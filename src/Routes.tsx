@@ -103,6 +103,14 @@ import Error404 from 'pages/error/Error404';
 import Error403 from 'pages/error/Error403';
 import Error500 from 'pages/error/Error500';
 import AdvanceTableExample from 'pages/modules/tables/AdvanceTableExample';
+import SimpleSignIn from 'pages/pages/authentication/simple/SignIn';
+import SimpleSignUp from 'pages/pages/authentication/simple/SignUp';
+import SimpleSignOut from 'pages/pages/authentication/simple/SignOut';
+import SimpleResetPassword from 'pages/pages/authentication/simple/ResetPassword';
+import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
+import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
+import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
+import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 
 const routes = [
   {
@@ -603,6 +611,40 @@ const routes = [
       {
         path: 'Error500',
         element: <Error500 />
+      }
+    ]
+  },
+  {
+    element: <SimpleAuthLayout />,
+    path: '/pages/authentication/simple/',
+    children: [
+      {
+        path: 'sign-in',
+        element: <SimpleSignIn />
+      },
+      {
+        path: 'sign-up',
+        element: <SimpleSignUp />
+      },
+      {
+        path: 'sign-out',
+        element: <SimpleSignOut />
+      },
+      {
+        path: 'forgot-password',
+        element: <SimpleForgotPassword />
+      },
+      {
+        path: 'reset-password',
+        element: <SimpleResetPassword />
+      },
+      {
+        path: 'lock-screen',
+        element: <SimpleLockScreen />
+      },
+      {
+        path: '2FA',
+        element: <SimpleTwoFA />
       }
     ]
   }

@@ -30934,6 +30934,18 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   }
 }
 
+.verification-form {
+  max-width: 17.6875rem;
+  margin: 0 auto;
+}
+.verification-form .form-control {
+  -moz-appearance: textfield;
+}
+.verification-form .form-control::-webkit-outer-spin-button, .verification-form .form-control::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .pricing-column-title-box {
   height: 105px;
 }

@@ -127,7 +127,8 @@ import {
   faArtstation as fabArtstation,
   faBehance as fabBehance,
   faChrome,
-  faFirefoxBrowser
+  faFirefoxBrowser,
+  faGoogle as fabGoogle
 } from '@fortawesome/free-brands-svg-icons';
 import {
   faStar as farStar,
@@ -274,5 +275,6 @@ library.add(
   faClockRotateLeft,
   faLink,
   faChrome,
-  faFirefoxBrowser
+  faFirefoxBrowser,
+  fabGoogle
 );
