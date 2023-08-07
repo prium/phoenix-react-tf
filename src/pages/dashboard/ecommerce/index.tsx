@@ -10,13 +10,11 @@ import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
 import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
-import SearchBoxModal from 'components/common/SearchBoxModal';
 
 const Ecommerce = () => {
   return (
     <>
       <div className="pb-5">
-        <SearchBoxModal />
         <Row className="g-4">
           <Col xs={12} xxl={6}>
             <div className="mb-8">

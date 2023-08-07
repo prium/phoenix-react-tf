@@ -27376,6 +27376,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .search-box.ecommerce-search-box .search-input {
   border-radius: 3rem;
 }
+.search-box.navbar-top-search-box {
+  width: 25rem;
+}
 .search-box.navbar-top-search-box .search-input:focus {
   border-color: var(--phoenix-gray-300);
 }
