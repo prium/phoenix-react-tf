@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { CSSProperties } from 'react';
 import { Form, FormControlProps } from 'react-bootstrap';
 
-interface SearchBoxProps extends FormControlProps {
+export interface SearchBoxProps extends FormControlProps {
   placeholder?: string;
   className?: string;
   inputClassName?: string;

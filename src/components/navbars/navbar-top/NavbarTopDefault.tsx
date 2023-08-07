@@ -4,7 +4,8 @@ import classNames from 'classnames';
 import NavbarBrand from 'components/navbars/nav-items/NavbarBrand';
 import NavItems from 'components/navbars/nav-items/NavItems';
 import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
-import NavbarTopSearchBox from 'components/common/NavbarTopSearchBox';
+import DropdownSearchBox from 'components/common/DropdownSearchBox';
+import SearchResult from 'components/common/SearchResult';
 
 const NavbarTopDefault = () => {
   const {
@@ -25,7 +26,13 @@ const NavbarTopDefault = () => {
 
         {navbarTopShape === 'default' ? (
           <>
-            <NavbarTopSearchBox />
+            <DropdownSearchBox
+              className=" d-none d-lg-block"
+              size="sm"
+              style={{ width: '25rem' }}
+            >
+              <SearchResult />
+            </DropdownSearchBox>
             <NavItems />
           </>
         ) : (

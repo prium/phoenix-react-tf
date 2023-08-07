@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
-import SearchBox from './SearchBox';
-import SearchBoxModal from './SearchBoxModal';
+import React, {
+  Children,
+  PropsWithChildren,
+  ReactElement,
+  cloneElement,
+  useState
+} from 'react';
+import SearchBox, { SearchBoxProps } from './SearchBox';
 import { Dropdown } from 'react-bootstrap';
 
-const NavbarTopSearchBox = () => {
+interface DropdownSearchBoxProps extends SearchBoxProps {}
+
+const DropdownSearchBox = ({
+  children,
+  ...rest
+}: PropsWithChildren<DropdownSearchBoxProps>) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [searchInputValue, setSearchInputValue] = useState('');
   return (
@@ -19,17 +29,22 @@ const NavbarTopSearchBox = () => {
       >
         <SearchBox
           placeholder="Search..."
-          className=" d-none d-lg-block"
           inputClassName="rounded-pill"
-          size="sm"
           value={searchInputValue}
-          style={{ width: '25rem' }}
           onChange={({ target }) => setSearchInputValue(target.value)}
+          {...rest}
         />
       </Dropdown.Toggle>
-      <SearchBoxModal searchValue={searchInputValue} />
+      <Dropdown.Menu
+        className="dropdown-menu border border-300 font-base start-0 py-0 overflow-hidden w-100"
+        style={{ width: 400 }}
+      >
+        {Children.map(children, child =>
+          cloneElement(child as ReactElement, { searchValue: searchInputValue })
+        )}
+      </Dropdown.Menu>
     </Dropdown>
   );
 };
 
-export default NavbarTopSearchBox;
+export default DropdownSearchBox;

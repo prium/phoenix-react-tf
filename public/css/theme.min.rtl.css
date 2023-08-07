@@ -27360,6 +27360,10 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   background: var(--phoenix-gray-100);
 }
 
+.search-box-modal .modal-content {
+  background: transparent;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                   Avatar                                   */
 /* -------------------------------------------------------------------------- */
