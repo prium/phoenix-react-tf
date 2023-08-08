@@ -111,6 +111,7 @@ import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
 import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
+import Showcase from 'pages/Showcase';
 
 const routes = [
   {
@@ -647,6 +648,10 @@ const routes = [
         element: <SimpleTwoFA />
       }
     ]
+  },
+  {
+    path: 'showcase',
+    element: <Showcase />
   }
 ];
 
