@@ -1,6 +1,9 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import illustration31 from 'assets/img/spot-illustrations/31.png';
+import { necessaryPages } from 'data/showcase';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 const NecessaryPages = () => {
   return (
@@ -21,7 +24,34 @@ const NecessaryPages = () => {
             </h2>
           </Col>
         </Row>
-        <Row></Row>
+        <Row>
+          {necessaryPages.map((page, index) => (
+            <Col
+              key={page.pageName}
+              lg={6}
+              className="position-relative page-container"
+            >
+              <div
+                className={classNames('d-flex px-4 pt-6', {
+                  'justify-content-lg-end': (index + 1) % 2 !== 0,
+                  'justify-content-lg-start': (index + 1) % 2 === 0
+                })}
+              >
+                <div className="text-center">
+                  <div className="img-container w-100">
+                    <img
+                      src={page.thumb}
+                      alt=""
+                      className="img-fluid page-thumb rounded z-index-2"
+                    />
+                  </div>
+                  <h5 className="py-4 text-1000">{page.pageName}</h5>
+                </div>
+              </div>
+              <Link className="stretched-link" to={page.pageLink}></Link>
+            </Col>
+          ))}
+        </Row>
       </Container>
     </section>
   );

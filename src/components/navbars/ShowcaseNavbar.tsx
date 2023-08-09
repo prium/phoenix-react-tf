@@ -7,7 +7,7 @@ const ShowcaseNavbar = () => {
   return (
     <Navbar expand="lg" sticky="top" className="py-3">
       <div className="container-small px-0 px-sm-3">
-        <Navbar.Brand as={Link} to="#!">
+        <Navbar.Brand as={Link} to="/">
           <Logo />
         </Navbar.Brand>
         <Navbar.Toggle>

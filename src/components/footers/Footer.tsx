@@ -8,7 +8,7 @@ interface FooterProps {
 const Footer = ({ className }: FooterProps) => {
   return (
     <footer className={classNames(className, 'footer')}>
-      <Row className="g-0 justify-content-between align-items-center h-100">
+      <Row className="g-1 justify-content-between align-items-center h-100">
         <Col xs={12} sm="auto" className="text-center">
           <p className="mb-0 mt-2 mt-sm-0 text-900">
             Thank you for creating with {process.env.REACT_APP_TITLE}

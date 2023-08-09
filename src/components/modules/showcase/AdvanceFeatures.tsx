@@ -71,7 +71,7 @@ const AdvanceFeatures = () => {
 
         <div ref={gsapRef}>
           <Row
-            className="g-2 showcase-gallery gsap mx-auto"
+            className="g-2 showcase-gallery mx-auto"
             style={{ width: '1545px' }}
           >
             <Col xs={3} className="align-self-end mb-2">

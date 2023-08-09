@@ -191,33 +191,66 @@ export const importantApplications = [
 
 export const necessaryPages = [
   {
-    thumb: 'sections/21.webp',
+    thumb: section21,
     pageName: 'Profile',
     pageLink: '#!'
   },
   {
-    thumb: 'sections/22.webp',
+    thumb: section22,
     pageName: 'Pricing',
     pageLink: '#!'
   },
   {
-    thumb: 'sections/23.webp',
+    thumb: section23,
     pageName: 'FAQ',
     pageLink: '#!'
   },
   {
-    thumb: 'sections/24.webp',
+    thumb: section24,
     pageName: 'Notifications',
     pageLink: '#!'
   },
   {
-    thumb: 'sections/25.webp',
+    thumb: section25,
     pageName: 'Authentication',
     pageLink: '#!'
   },
   {
-    thumb: 'sections/26.webp',
+    thumb: section26,
     pageName: 'Event',
     pageLink: '#!'
+  }
+];
+
+export const showcaseFaqs = [
+  {
+    id: 1,
+    question: 'What about the update procedure of the theme?',
+    answer:
+      "This is our newest admin dashboard. We'll keep updating it according to users' needs. We keep a changelog with every release, so you'll be able to update the theme from one version to another with that changelog."
+  },
+  {
+    id: 2,
+    question: 'Is there any Trial version of Phoenix?',
+    answer:
+      'We are sorry to inform you that there is no free or trial version of Phoenix, but you would get a full refund within 10 days if the template does not match your requirement.'
+  },
+  {
+    id: 3,
+    question: 'Is it possible to build a mobile app using Phoenix components?',
+    answer:
+      "Phoenix is made out of HTML, CSS, and JS. You can not use Phoenix as a 'Native' component library for an android or iOS app. But if you use a web-view for your app or use a framework that uses HTML, CSS, and JS for mobile app UI, yes, you can use Phoenix in that case."
+  },
+  {
+    id: 4,
+    question: `Can I use ${process.env.REACT_APP_TITLE} with Django?`,
+    answer:
+      "Many of our customers are using Phoenix with Django. Using Phoenix is like using Bootstrap with Django, just with some extra features. For a starter, you need to take all the CSS and JS files from Phoenix's 'public/assets' folder to your project and link them to your view files. You can find all the required scripts and styles on the source of the starter page. It is also possible to compile the SCSS and use the ES6 JavaScript partial files with Django using Phoenix's built-in gulp based workflow."
+  },
+  {
+    id: 5,
+    question: `Does ${process.env.REACT_APP_TITLE} incorporate properly with Laravel?`,
+    answer:
+      "Many of our customers are using Phoenix with Laravel. Using Phoenix is like using Bootstrap with Laravel, just with some extra features. For a starter, you need to take all the CSS and JS files from Phoenix's 'public/assets' folder to your project and link them to your view files. You can find all the required scripts and styles on the source of the starter page. It is also possible to compile the SCSS and use the ES6 JavaScript partial files with Laravel using Phoenix's built-in gulp based workflow."
   }
 ];
