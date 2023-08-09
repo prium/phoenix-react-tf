@@ -20,7 +20,10 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '10%' }, className: 'pe-5' },
+      headerProps: {
+        style: { width: '15%', minWidth: '200' },
+        className: 'pe-5'
+      },
       cellProps: { className: 'py-0 pe-5 white-space-nowrap' }
     }
   },
@@ -36,7 +39,10 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '20%' }, className: 'pe-5' },
+      headerProps: {
+        style: { width: '15%', minWidth: '200' },
+        className: 'pe-5'
+      },
       cellProps: { className: 'pe-5' }
     }
   },
@@ -44,7 +50,10 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     accessorKey: 'mobile',
     header: 'Mobile Number',
     meta: {
-      headerProps: { style: { width: '10%' }, className: 'text-end' },
+      headerProps: {
+        style: { width: '20%', minWidth: '200' },
+        className: ''
+      },
       cellProps: { className: 'fw-bold text-1100' }
     }
   },
@@ -52,7 +61,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     accessorKey: 'city',
     header: 'City',
     meta: {
-      headerProps: { style: { width: '25%' }, className: 'ps-7' },
+      headerProps: { style: { width: '10%' }, className: 'ps-7' },
       cellProps: { className: 'ps-7 text-1000 white-space-nowrap' }
     }
   },
@@ -60,7 +69,10 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     accessorKey: 'lastActive',
     header: 'Last Active',
     meta: {
-      headerProps: { style: { width: '15%' }, className: 'text-end' },
+      headerProps: {
+        style: { width: '21%', minWidth: '200' },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-700 text-end' }
     }
   },
@@ -69,7 +81,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     header: 'Joined',
     meta: {
       headerProps: {
-        style: { width: '10%', minWidth: 150 },
+        style: { width: '19%', minWidth: '200' },
         className: 'text-end'
       },
       cellProps: { className: 'text-700 text-end' }
