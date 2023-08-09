@@ -1,7 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import ts, { transpile } from 'typescript';
 
-
 export const getItemFromStore = (
   key: string,
   defaultValue?: string | boolean,
@@ -142,8 +141,10 @@ export const getFileIcon = (fileFormat: string): IconProp => {
 export const getIntegerArrayBetween = (start = 0, end: number): number[] =>
   new Array(end + 1 - start).fill(1).map((_, i) => i + start);
 
-
-export const transformCode = (snippet: string, target: ts.ScriptTarget = ts.ScriptTarget.ES2015) =>
+export const transformTSCode = (
+  snippet: string,
+  target: ts.ScriptTarget = ts.ScriptTarget.ES2015
+) =>
   transpile(snippet, {
     jsx: ts.JsxEmit.React,
     target

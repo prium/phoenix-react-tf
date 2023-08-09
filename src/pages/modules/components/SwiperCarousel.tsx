@@ -9,52 +9,52 @@ import img33 from 'assets/img/generic/33.jpg';
 import img34 from 'assets/img/generic/34.jpg';
 import img35 from 'assets/img/generic/35.jpg';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { SwiperClass, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import Swiper from 'components/base/Swiper';
-import ts, { transpile } from 'typescript';
-import { transformCode } from 'helpers/utils';
 
 const swiperWithThumbnailCode = `
-  function SwiperWithThumbnail(){
-    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
-    return (
-      <div>
-        <Swiper
-          thumbs={{
-            swiper:
-              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
-          }}
-          modules={[FreeMode, Navigation, Thumbs]}
-        >
-          {[img30, img31, img32, img33, img34, img35].map(
-            (image, index) => (
-              <SwiperSlide className="h-auto" key={index}>
-                <div className="pb-1">
-                  <img src={image} alt="" className="img-fluid rounded-1" />
-                </div>
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-        <Swiper
-          onInit={setThumbsSwiper}
-          spaceBetween={5}
-          slidesPerView={5}
-          freeMode={true}
-          grabCursor={true}
-          navigation={false}
-        >
-          {[img30, img31, img32, img33, img34, img35].map(
-            (image, index) => (
-              <SwiperSlide className="h-auto" key={index}>
+import Swiper from 'components/base/Swiper';
+
+function SwiperWithThumbnail(){
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  return (
+    <div>
+      <Swiper
+        thumbs={{
+          swiper:
+            thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+        }}
+        modules={[FreeMode, Navigation, Thumbs]}
+      >
+        {[img30, img31, img32, img33, img34, img35].map(
+          (image, index) => (
+            <SwiperSlide className="h-auto" key={index}>
+              <div className="pb-1">
                 <img src={image} alt="" className="img-fluid rounded-1" />
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-      </div>
-    )
-  }
+              </div>
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+      <Swiper
+        onInit={setThumbsSwiper}
+        spaceBetween={5}
+        slidesPerView={5}
+        freeMode={true}
+        grabCursor={true}
+        navigation={false}
+      >
+        {[img30, img31, img32, img33, img34, img35].map(
+          (image, index) => (
+            <SwiperSlide className="h-auto" key={index}>
+              <img src={image} alt="" className="img-fluid rounded-1" />
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+    </div>
+  )
+}
 `;
 
 const SwiperCarousel = () => {
@@ -86,9 +86,7 @@ const SwiperCarousel = () => {
               img33,
               img34,
               img35
-              // SwiperClass
             }}
-            transformCode={() => transformCode(swiperWithThumbnailCode)}
           />
         </PhoenixDocCard>
       </DocPagesLayout>
