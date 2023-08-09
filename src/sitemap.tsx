@@ -710,6 +710,12 @@ export const routes: RouteItems[] = [
             active: true,
             pages: [
               {
+                name: 'editor',
+                path: '/modules/forms/editor',
+                pathName: 'editor',
+                active: true
+              },
+              {
                 name: 'emoji-button',
                 path: '/modules/forms/emoji-button',
                 pathName: 'emoji-button',
@@ -827,6 +833,12 @@ export const routes: RouteItems[] = [
                 name: 'bootstrap',
                 path: '/modules/components/carousel/bootstrap',
                 pathName: 'components-bs-carousel',
+                active: true
+              },
+              {
+                name: 'swiper',
+                path: '/modules/components/carousel/swiper',
+                pathName: 'swiper-carousel',
                 active: true
               }
             ]

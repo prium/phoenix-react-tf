@@ -1,21 +1,45 @@
-import { Navigation, SwiperOptions } from 'swiper';
-import { Swiper as ReactSwiper } from 'swiper/react';
+import { Navigation } from 'swiper';
+import {
+  Swiper as ReactSwiper,
+  SwiperProps as ReactSwiperProps
+} from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import { PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
+interface SwiperProps extends ReactSwiperProps {
+  navigationPosition?: number;
+}
+
+const Swiper = ({
+  children,
+  navigation = true,
+  navigationPosition,
+  ...rest
+}: PropsWithChildren<SwiperProps>) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
     <div className="swiper-theme-container">
-      <button className="swiper-button-next" ref={navigationNextRef}>
-        <FontAwesomeIcon icon="chevron-right" />
-      </button>
-      <button className="swiper-button-prev" ref={navigationPrevRef}>
-        <FontAwesomeIcon icon="chevron-left" />
-      </button>
+      {navigation && (
+        <>
+          <button
+            className="swiper-button-next"
+            style={{ top: `${navigationPosition}%` }}
+            ref={navigationNextRef}
+          >
+            <FontAwesomeIcon icon="chevron-right" />
+          </button>
+          <button
+            className="swiper-button-prev"
+            style={{ top: `${navigationPosition}%` }}
+            ref={navigationPrevRef}
+          >
+            <FontAwesomeIcon icon="chevron-left" />
+          </button>
+        </>
+      )}
       <ReactSwiper
         modules={[Navigation]}
         navigation={{

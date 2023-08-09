@@ -19,6 +19,7 @@ const EcomTopElectronics = ({ products }: { products: Product[] }) => {
       <Swiper
         slidesPerView={1}
         spaceBetween={16}
+        navigationPosition={25}
         breakpoints={{
           450: {
             slidesPerView: 2,
