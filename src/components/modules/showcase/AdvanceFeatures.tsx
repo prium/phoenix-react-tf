@@ -29,12 +29,9 @@ const AdvanceFeatures = () => {
     const ctx = gsap.context(self => {
       if (self.selector) {
         const boxes = self.selector('img');
-
         boxes.forEach((box: HTMLDivElement) => {
-          const y = Number(box.getAttribute('data-gsap')) || 0;
-
           gsap.to(box, {
-            y,
+            y: Number(box.getAttribute('data-gsap')) || 0,
             ease: 'none',
             scrollTrigger: {
               trigger: '.gsap',
@@ -50,26 +47,26 @@ const AdvanceFeatures = () => {
   }, []);
 
   return (
-    <section className="pb-0 overflow-hidden gsap">
-      <Container fluid="lg">
-        <Row className="justify-content-center mb-11">
-          <Col xs={12} xl={7} className="text-center">
-            <h2 className="text-1000 fw-normal lh-sm">
-              Beautiful blending of <br />
-              card and cardless designs of{' '}
-              <span className="text-primary position-relative fw-bolder d-inline-flex ms-2">
-                advanced forms
-                <img
-                  src={illustrations31}
-                  alt=""
-                  className="text-illustration-underline"
-                />
-              </span>
-            </h2>
-          </Col>
-        </Row>
+    <section className="pb-0 overflow-hidden">
+      <div ref={gsapRef}>
+        <Container fluid="lg" className="gsap">
+          <Row className="justify-content-center mb-11">
+            <Col xs={12} xl={7} className="text-center">
+              <h2 className="text-1000 fw-normal lh-sm">
+                Beautiful blending of <br />
+                card and cardless designs of{' '}
+                <span className="text-primary position-relative fw-bolder d-inline-flex ms-2">
+                  advanced forms
+                  <img
+                    src={illustrations31}
+                    alt=""
+                    className="text-illustration-underline"
+                  />
+                </span>
+              </h2>
+            </Col>
+          </Row>
 
-        <div ref={gsapRef}>
           <Row
             className="g-2 showcase-gallery mx-auto"
             style={{ width: '1545px' }}
@@ -227,8 +224,8 @@ const AdvanceFeatures = () => {
               </Row>
             </Col>
           </Row>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   );
 };

@@ -2,38 +2,14 @@ import { Container, Row, Col } from 'react-bootstrap';
 import thumbsUpIcon from 'assets/img/icons/thumbs-up.png';
 import bg26 from 'assets/img/bg/26.png';
 import section63 from 'assets/img/sections/63.webp';
-import { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useRef } from 'react';
+import useParallaxHooks from 'hooks/useParallaxHooks';
 
 const Feature = () => {
-  const gsapRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const parallaxElRef = useRef<HTMLDivElement | null>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(self => {
-      if (self.selector) {
-        const boxes = self.selector('img');
-
-        boxes.forEach((box: HTMLDivElement) => {
-          const y = Number(box.getAttribute('data-gsap')) || 0;
-
-          gsap.to(box, {
-            y,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.gsap',
-              scrub: true,
-              start: '+=450 bottom',
-              toggleActions: 'play none none reverse'
-            }
-          });
-        });
-      }
-    }, gsapRef); //
-    return () => ctx.revert();
-  }, []);
+  useParallaxHooks(containerRef, parallaxElRef);
 
   return (
     <section
@@ -41,16 +17,18 @@ const Feature = () => {
       style={{
         background: 'linear-gradient(94.41deg, #193D91 -6.4%, #091F51 105.25%)'
       }}
+      ref={containerRef}
     >
       <div
-        className="bg-holder opacity-50"
+        className="bg-holder gsap-parallax opacity-50"
         style={{
           backgroundImage: `url(${bg26})`,
           backgroundPosition: '14%',
           backgroundSize: 'contain',
           height: '150%'
         }}
-        data-gsap-parallax-y="-40%"
+        ref={parallaxElRef}
+        data-parallax-y="-40%"
       />
       <Container className="container-small position-relative py-8">
         <Row className="align-items-center gx-xxl-13">

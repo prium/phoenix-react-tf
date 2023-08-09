@@ -5,10 +5,22 @@ import { Link } from 'react-router-dom';
 import { importantApplications } from 'data/showcase';
 import bg29 from 'assets/img/bg/29.png';
 import bg28 from 'assets/img/bg/28.png';
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useParallaxHooks from 'hooks/useParallaxHooks';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ImportantApplications = () => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const leftParallaxElRef = useRef<HTMLDivElement | null>(null);
+  const rightParallaxElRef = useRef<HTMLDivElement | null>(null);
+
+  useParallaxHooks(containerRef, [leftParallaxElRef, rightParallaxElRef]);
+
   return (
-    <section className="py-md-10">
+    <section className="py-md-10" ref={containerRef}>
       <div
         className="bg-holder d-none d-lg-block"
         style={{
@@ -16,7 +28,8 @@ const ImportantApplications = () => {
           backgroundPosition: 'left 10%',
           backgroundSize: '15%'
         }}
-        data-gsap-parallax='{"y":"40%"}'
+        ref={leftParallaxElRef}
+        data-parallax-y="40%"
       />
 
       <div
@@ -26,7 +39,8 @@ const ImportantApplications = () => {
           backgroundPosition: 'right 10%',
           backgroundSize: '15%'
         }}
-        data-gsap-parallax='{"y":"50%"}'
+        ref={rightParallaxElRef}
+        data-parallax-y="50%"
       />
 
       <Container fluid="lg">

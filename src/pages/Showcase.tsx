@@ -21,8 +21,8 @@ const Showcase = () => {
       <Demos />
       <AdvanceFeatures />
       <EssentialFeatures />
-      {/* <Feature /> */}
-      {/* <ImportantApplications /> */}
+      <Feature />
+      <ImportantApplications />
       <NecessaryPages />
       {/* <FeatureFigma /> */}
       <Faq />
