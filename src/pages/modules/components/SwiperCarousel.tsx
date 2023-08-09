@@ -12,12 +12,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { SwiperClass, SwiperSlide } from 'swiper/react';
 import Swiper from 'components/base/Swiper';
 import ts, { transpile } from 'typescript';
-
-const transformCode = (snippet: string, target: ts.ScriptTarget) =>
-  transpile(snippet, {
-    jsx: ts.JsxEmit.React,
-    target
-  });
+import { transformCode } from 'helpers/utils';
 
 const swiperWithThumbnailCode = `
   function SwiperWithThumbnail(){
@@ -90,9 +85,10 @@ const SwiperCarousel = () => {
               img32,
               img33,
               img34,
-              img35,
-              SwiperClass
+              img35
+              // SwiperClass
             }}
+            transformCode={() => transformCode(swiperWithThumbnailCode)}
           />
         </PhoenixDocCard>
       </DocPagesLayout>
