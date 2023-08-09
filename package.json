@@ -30,6 +30,7 @@
     "fslightbox-react": "^1.7.6",
     "gh-pages": "^5.0.0",
     "gsap": "^3.12.2",
+    "lodash.merge": "^4.6.2",
     "lottie-react": "^2.4.0",
     "mapbox-gl": "^2.14.1",
     "npm": "^9.6.4",
@@ -79,6 +80,7 @@
   "devDependencies": {
     "@automattic/webpack-rtl-plugin": "^6.0.0",
     "@types/fslightbox-react": "^1.7.3",
+    "@types/lodash.merge": "^4.6.7",
     "@types/mapbox-gl": "^2.7.11",
     "@types/packery": "^1.4.33",
     "@types/react-datepicker": "^4.11.2",

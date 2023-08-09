@@ -24,7 +24,7 @@ const Showcase = () => {
       <Feature />
       <ImportantApplications />
       <NecessaryPages />
-      {/* <FeatureFigma /> */}
+      <FeatureFigma />
       <Faq />
       <Cta />
       <PreFooter />

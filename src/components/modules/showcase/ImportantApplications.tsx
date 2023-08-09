@@ -14,10 +14,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ImportantApplications = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const leftParallaxElRef = useRef<HTMLDivElement | null>(null);
-  const rightParallaxElRef = useRef<HTMLDivElement | null>(null);
+  const parallaxElRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useParallaxHooks(containerRef, [leftParallaxElRef, rightParallaxElRef]);
+  useParallaxHooks(containerRef, parallaxElRef);
 
   return (
     <section className="py-md-10" ref={containerRef}>
@@ -28,7 +27,7 @@ const ImportantApplications = () => {
           backgroundPosition: 'left 10%',
           backgroundSize: '15%'
         }}
-        ref={leftParallaxElRef}
+        ref={el => parallaxElRef.current?.push(el)}
         data-parallax-y="40%"
       />
 
@@ -39,7 +38,7 @@ const ImportantApplications = () => {
           backgroundPosition: 'right 10%',
           backgroundSize: '15%'
         }}
-        ref={rightParallaxElRef}
+        ref={el => parallaxElRef.current?.push(el)}
         data-parallax-y="50%"
       />
 
