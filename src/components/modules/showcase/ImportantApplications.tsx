@@ -5,12 +5,8 @@ import { Link } from 'react-router-dom';
 import { importantApplications } from 'data/showcase';
 import bg29 from 'assets/img/bg/29.png';
 import bg28 from 'assets/img/bg/28.png';
-import { useLayoutEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useRef } from 'react';
 import useParallaxHooks from 'hooks/useParallaxHooks';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const ImportantApplications = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -28,7 +24,7 @@ const ImportantApplications = () => {
           backgroundSize: '15%'
         }}
         ref={el => parallaxElRef.current?.push(el)}
-        data-parallax-y="40%"
+        data-parallax={JSON.stringify({ y: '40%' })}
       />
 
       <div
@@ -39,7 +35,7 @@ const ImportantApplications = () => {
           backgroundSize: '15%'
         }}
         ref={el => parallaxElRef.current?.push(el)}
-        data-parallax-y="50%"
+        data-parallax={JSON.stringify({ y: '50%' })}
       />
 
       <Container fluid="lg">

@@ -1,63 +1,46 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
 import figmaIcon from 'assets/img/icons/figma.png';
 import figmaBg from 'assets/img/bg/figma.png';
-import { Col, Container, Row } from 'react-bootstrap';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import useParallaxHooks from 'hooks/useParallaxHooks';
 
 const FeatureFigma = () => {
-  const gsapRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const parallaxElRef = useRef<(HTMLImageElement | HTMLDivElement | null)[]>(
+    []
+  );
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(self => {
-      if (self.selector) {
-        const boxes = self.selector('.feature-figma-img');
-
-        boxes.forEach((box: HTMLDivElement) => {
-          gsap.to(box, {
-            y: '-50%',
-            scrollTrigger: {
-              trigger: '.feature-figma-img',
-              toggleActions: 'play none none reverse',
-              scrub: true,
-              start: 'top bottom'
-            }
-          });
-        });
-      }
-    }, gsapRef);
-    return () => ctx.revert();
-  }, []);
+  useParallaxHooks(containerRef, parallaxElRef);
 
   return (
     <section
       className="py-12 position-relative overflow-hidden bg-100"
-      ref={gsapRef}
+      ref={containerRef}
     >
-      <div className="grd bg-gradient-figma">
-        <img className="feature-figma-img" src={figmaBg} alt="" />
+      <div
+        className="bg-gradient-figma"
+        ref={el => parallaxElRef.current?.push(el)}
+        data-parallax={JSON.stringify({
+          y: '-90%',
+          scrollTrigger: { end: 'top -20%' }
+        })}
+      />
+      <img
+        className="feature-figma-img"
+        src={figmaBg}
+        alt=""
+        ref={el => parallaxElRef.current?.push(el)}
+        data-parallax={JSON.stringify({ y: '-50%' })}
+      />
+      <div className="position-relative container-small text-center">
+        <div className="d-flex gap-3 justify-content-center mb-3">
+          <img src={figmaIcon} alt="" />
+          <h1 className="text-white">Figma design files</h1>
+        </div>
+        <p>
+          Modern &amp; highly customizable, simple and user-friendly UI
+          components 🎨 based on Bootstrap design system only for you!
+        </p>
       </div>
-      <Container className="position-relative container-small">
-        <Row className="px-4">
-          <Col
-            xs={12}
-            className="d-flex justify-content-center flex-between-center mb-3"
-          >
-            <img className="me-3" src={figmaIcon} alt="" />
-            <h1 className="text-white">Figma design files</h1>
-          </Col>
-        </Row>
-        <Row className="px-4">
-          <Col xs={12} className="text-center mb-0 text-white">
-            <p>
-              Modern &amp; highly customizable, simple and user-friendly UI
-              components 🎨 based on Bootstrap design system only for you!
-            </p>
-          </Col>
-        </Row>
-      </Container>
     </section>
   );
 };

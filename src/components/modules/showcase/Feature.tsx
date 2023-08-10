@@ -28,8 +28,7 @@ const Feature = () => {
           height: '150%'
         }}
         ref={parallaxElRef}
-        // data-parallax={{ y: '-40%' }}
-        data-parallax-y="-40%"
+        data-parallax={JSON.stringify({ y: '-40%' })}
       />
       <Container className="container-small position-relative py-8">
         <Row className="align-items-center gx-xxl-13">
