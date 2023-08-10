@@ -139,3 +139,18 @@ export const getFileIcon = (fileFormat: string): IconProp => {
 
 export const getIntegerArrayBetween = (start = 0, end: number): number[] =>
   new Array(end + 1 - start).fill(1).map((_, i) => i + start);
+
+export const parseData = (data: string) => {
+  try {
+    return JSON.parse(data);
+  } catch {
+    return data;
+  }
+};
+
+export const hexToRgb = (hex: string) => {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return [r, g, b];
+};

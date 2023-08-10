@@ -1178,7 +1178,8 @@ export const routes: RouteItems[] = [
         name: 'showcase',
         icon: 'monitor',
         path: '/showcase',
-        pathName: 'showcase'
+        pathName: 'showcase',
+        active: true
       }
     ]
   }
