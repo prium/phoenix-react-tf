@@ -710,6 +710,12 @@ export const routes: RouteItems[] = [
             active: true,
             pages: [
               {
+                name: 'advance-select',
+                path: '/modules/forms/advance-select',
+                pathName: 'advance-select',
+                active: true
+              },
+              {
                 name: 'editor',
                 path: '/modules/forms/editor',
                 pathName: 'editor',

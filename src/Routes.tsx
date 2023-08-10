@@ -112,12 +112,13 @@ import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import LightboxExample from 'pages/modules/components/LightboxExample';
-import EmojiButtonExample from 'pages/modules/forms/basic/advance/EmojiButtonExample';
-import RatingExample from 'pages/modules/forms/basic/advance/RatingExample';
+import EmojiButtonExample from 'pages/modules/forms/advance/EmojiButtonExample';
+import RatingExample from 'pages/modules/forms/advance/RatingExample';
 import CountupExample from 'pages/modules/components/CountupExample';
-import EditorExample from 'pages/modules/forms/basic/advance/EditorExample';
+import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
-import FileUploaderExample from 'pages/modules/forms/basic/advance/FileUploaderExample';
+import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
+import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
 
 const routes = [
   {
@@ -440,6 +441,10 @@ const routes = [
               {
                 path: 'editor',
                 element: <EditorExample />
+              },
+              {
+                path: 'advance-select',
+                element: <AdvanceSelectExample />
               },
               {
                 path: 'emoji-button',
