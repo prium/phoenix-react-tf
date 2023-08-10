@@ -6,61 +6,73 @@ import { Col, Row } from 'react-bootstrap';
 import Rating from 'components/base/Rating';
 
 const basicExampleCode = `
-  function DefaultRatingExample() {
-    return (
-      <Rating />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function DefaultRatingExample() {
+  return (
+    <Rating />
+  );
+}
 `;
 const initialRatingCode = `
-  function InitialRatingExample() {
-    return (
-      <Rating 
-        initialValue={3}
-      />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function InitialRatingExample() {
+  return (
+    <Rating 
+      initialValue={3}
+    />
+  );
+}
 `;
 const readOnlyRatingCode = `
-  function ReadOnlyRatingExample() {
-    return (
-      <Rating 
-        readonly
-        initialValue={2}
-      />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function ReadOnlyRatingExample() {
+  return (
+    <Rating 
+      readonly
+      initialValue={2}
+    />
+  );
+}
 `;
 const changeColorCode = `
-  function ColorRangeExample() {
-    return (
-      <Rating 
-        fillIconColor = 'dark'
-        emptyIconColor = 'gray-300'
-        transition
-      />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function ColorRangeExample() {
+  return (
+    <Rating 
+      fillIconColor = 'dark'
+      emptyIconColor = 'gray-300'
+      transition
+    />
+  );
+}
 `;
 const withTooltipCode = `
-  function withTooltipExample() {
-    return (
-      <Rating 
-        showTooltip
-        allowFraction={false}
-        tooltipArray={['Terrible', 'Bad', 'Average', 'Great', 'Prefect']}
-      />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function withTooltipExample() {
+  return (
+    <Rating 
+      showTooltip
+      allowFraction={false}
+      tooltipArray={['Terrible', 'Bad', 'Average', 'Great', 'Prefect']}
+    />
+  );
+}
 `;
 const rtlSupportCode = `
-  function rtlSupportExample() {
-    return (
-      <Rating 
-        rtl
-      />
-    );
-  }
+import Rating from 'components/base/Rating';
+
+function rtlSupportExample() {
+  return (
+    <Rating 
+      rtl
+    />
+  );
+}
 `;
 
 const RatingExample = () => {

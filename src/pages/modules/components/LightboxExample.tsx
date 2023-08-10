@@ -11,49 +11,53 @@ import img24 from 'assets/img/gallery/24.png';
 import Lightbox from 'components/base/LightBox';
 
 const galleryCode = `
-  function SocialPhotos () {
-    const [attachments] = useState([img9, img10, img11, img12, img13]);
-    const { lightboxProps, openLightbox } = useLightbox(attachments);
-    return (
-      <div>
-        <Lightbox {...lightboxProps} />
-        <Row className="g-2 g-md-3">
-          {attachments.map((img, index) => (
-            <Col key={img} xs={
-              index === 0 ? 6 : index === 1 ? 6 : 4
-            }>
-              <img
-                src={img}
-                alt=""
-                className="w-100 rounded-3 cursor-pointer"
-                onClick={() => openLightbox(index + 1)}
-              />
-            </Col>
-          ))}
-        </Row>
-      </div>
-    );
-  };`;
+import Lightbox from 'components/base/LightBox';
+
+function SocialPhotos () {
+  const [attachments] = useState([img9, img10, img11, img12, img13]);
+  const { lightboxProps, openLightbox } = useLightbox(attachments);
+  return (
+    <div>
+      <Lightbox {...lightboxProps} />
+      <Row className="g-2 g-md-3">
+        {attachments.map((img, index) => (
+          <Col key={img} xs={
+            index === 0 ? 6 : index === 1 ? 6 : 4
+          }>
+            <img
+              src={img}
+              alt=""
+              className="w-100 rounded-3 cursor-pointer"
+              onClick={() => openLightbox(index + 1)}
+            />
+          </Col>
+        ))}
+      </Row>
+    </div>
+  );
+};`;
 
 const simpleImageCode = `
-  function SocialPhotos () {
-    const { lightboxProps, openLightbox } = useLightbox([img24]);
-    return (
-      <div>
-        <Lightbox {...lightboxProps} />
-        <Row className="g-3">
-            <Col xs={4}>
-              <img
-                src={img24}
-                alt=""
-                className="w-100 rounded-3 cursor-pointer"
-                onClick={() => openLightbox(1)}
-              />
-            </Col>
-        </Row>
-      </div>
-    );
-  };`;
+import Lightbox from 'components/base/LightBox';
+
+function SocialPhotos () {
+  const { lightboxProps, openLightbox } = useLightbox([img24]);
+  return (
+    <div>
+      <Lightbox {...lightboxProps} />
+      <Row className="g-3">
+          <Col xs={4}>
+            <img
+              src={img24}
+              alt=""
+              className="w-100 rounded-3 cursor-pointer"
+              onClick={() => openLightbox(1)}
+            />
+          </Col>
+      </Row>
+    </div>
+  );
+};`;
 
 const LightboxExample = () => {
   return (

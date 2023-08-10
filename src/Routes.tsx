@@ -117,6 +117,7 @@ import RatingExample from 'pages/modules/forms/basic/advance/RatingExample';
 import CountupExample from 'pages/modules/components/CountupExample';
 import EditorExample from 'pages/modules/forms/basic/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
+import FileUploaderExample from 'pages/modules/forms/basic/advance/FileUploaderExample';
 
 const routes = [
   {
@@ -443,6 +444,10 @@ const routes = [
               {
                 path: 'emoji-button',
                 element: <EmojiButtonExample />
+              },
+              {
+                path: 'file-uploader',
+                element: <FileUploaderExample />
               },
               {
                 path: 'rating',

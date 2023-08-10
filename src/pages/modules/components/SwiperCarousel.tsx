@@ -56,6 +56,48 @@ function SwiperWithThumbnail(){
   )
 }
 `;
+const swiperWithoutThumbnailCode = `
+import Swiper from 'components/base/Swiper';
+
+function SwiperWithoutThumbnail(){
+  return (
+    <div>
+      <Swiper>
+        {[img30, img31, img32, img33, img34, img35].map(
+          (image, index) => (
+            <SwiperSlide className="h-auto" key={index}>
+              <div className="pb-1">
+                <img src={image} alt="" className="img-fluid rounded-1" />
+              </div>
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+    </div>
+  )
+}
+`;
+const withoutNavigationCode = `
+import Swiper from 'components/base/Swiper';
+
+function WithoutNavigation(){
+  return (
+    <div>
+      <Swiper navigation={false}>
+        {[img30, img31, img32, img33, img34, img35].map(
+          (image, index) => (
+            <SwiperSlide className="h-auto" key={index}>
+              <div className="pb-1">
+                <img src={image} alt="" className="img-fluid rounded-1" />
+              </div>
+            </SwiperSlide>
+          )
+        )}
+      </Swiper>
+    </div>
+  )
+}
+`;
 
 const SwiperCarousel = () => {
   return (
@@ -69,7 +111,7 @@ const SwiperCarousel = () => {
         }}
       />
       <DocPagesLayout>
-        <PhoenixDocCard>
+        <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Swiper with thumbnail" />
           <PhoenixDocCard.Body
             code={swiperWithThumbnailCode}
@@ -80,6 +122,38 @@ const SwiperCarousel = () => {
               FreeMode,
               Navigation,
               Thumbs,
+              img30,
+              img31,
+              img32,
+              img33,
+              img34,
+              img35
+            }}
+          />
+        </PhoenixDocCard>
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Swiper without thumbnail" />
+          <PhoenixDocCard.Body
+            code={swiperWithoutThumbnailCode}
+            scope={{
+              Swiper,
+              SwiperSlide,
+              img30,
+              img31,
+              img32,
+              img33,
+              img34,
+              img35
+            }}
+          />
+        </PhoenixDocCard>
+        <PhoenixDocCard>
+          <PhoenixDocCard.Header title="Swiper without navigation" />
+          <PhoenixDocCard.Body
+            code={withoutNavigationCode}
+            scope={{
+              Swiper,
+              SwiperSlide,
               img30,
               img31,
               img32,

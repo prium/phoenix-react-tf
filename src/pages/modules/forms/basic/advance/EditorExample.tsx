@@ -6,11 +6,17 @@ import DocPagesLayout from 'layouts/DocPagesLayout';
 import React from 'react';
 
 const editorCode = `
-  <TinymceEditor
-    options={{
-      height: '20rem'
-    }}
-  />
+import TinymceEditor from 'components/base/TinymceEditor';
+
+function EditorExample(){
+  return(
+    <TinymceEditor
+      options={{
+        height: '20rem'
+      }}
+    />
+  )
+}
 `;
 
 const EditorExample = () => {

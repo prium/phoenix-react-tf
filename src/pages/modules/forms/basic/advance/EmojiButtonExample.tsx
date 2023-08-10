@@ -7,23 +7,26 @@ import DocPagesLayout from 'layouts/DocPagesLayout';
 import React, { useState } from 'react';
 
 const emojiButtonCode = `
-  function(){
-    const [message, setMessage] = useState('')
-    return (
-      <EmojiPicker
-        onSelect={selection => {
-          setMessage(message + selection.emoji);
-        }}
+import Button from 'components/base/Button';
+import EmojiPicker from 'components/base/EmojiPicker';
+
+function(){
+  const [message, setMessage] = useState('')
+  return (
+    <EmojiPicker
+      onSelect={selection => {
+        setMessage(message + selection.emoji);
+      }}
+    >
+      <Button
+        variant="primary"
+        className="fs-7"
       >
-        <Button
-          variant="primary"
-          className="fs-7"
-        >
-          <FontAwesomeIcon icon={['far', 'face-smile']} />
-        </Button>
-      </EmojiPicker>
-    )
-  }
+        <FontAwesomeIcon icon={['far', 'face-smile']} />
+      </Button>
+    </EmojiPicker>
+  )
+}
 `;
 
 const EmojiButtonExample = () => {

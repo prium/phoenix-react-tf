@@ -722,6 +722,12 @@ export const routes: RouteItems[] = [
                 active: true
               },
               {
+                name: 'file-uploader',
+                path: '/modules/forms/file-uploader',
+                pathName: 'file-uploader',
+                active: true
+              },
+              {
                 name: 'rating',
                 path: '/modules/forms/rating',
                 pathName: 'rating',
