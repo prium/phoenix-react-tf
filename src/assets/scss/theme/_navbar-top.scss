@@ -2,6 +2,7 @@
 /*                                 Navbar Top                                 */
 /* -------------------------------------------------------------------------- */
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .navbar-nav-top {
     .dropdown {
@@ -102,7 +103,8 @@
     .nav-link {
       --#{$prefix}nav-link-color: var(--#{$prefix}gray-1000);
       --#{$prefix}nav-link-hover-color: var(--#{$prefix}black);
-      padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2) map-get($spacers, 6);
+      padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2)
+        map-get($spacers, 6);
       font-weight: $font-weight-semi-bold;
       &:hover {
         background: var(--#{$prefix}gray-100);
@@ -214,6 +216,7 @@
 /* -------------------------------------------------------------------------- */
 
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .dropdown-item-group {
     display: flex;
@@ -285,7 +288,9 @@
               .nav-link {
                 &.dropdown-toggle {
                   &.show {
-                    background-color: var(--#{$prefix}navbar-top-dropdown-hover-bg);
+                    background-color: var(
+                      --#{$prefix}navbar-top-dropdown-hover-bg
+                    );
                   }
                 }
               }
@@ -377,6 +382,7 @@
 }
 
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .navbar-nav-top {
     max-height: calc(100vh - $navbar-top-height);
@@ -425,11 +431,9 @@
 
       [aria-expanded='true'] {
         .dropdown-indicator-icon {
-          &.uil-angle-right {
-            transform: rotate(90deg);
-            [dir='rtl'] & {
-              transform: rotate(-90deg);
-            }
+          transform: rotate(90deg);
+          [dir='rtl'] & {
+            transform: rotate(-90deg);
           }
         }
       }
@@ -655,4 +659,39 @@
 .img-dropdown {
   background-position: right -14px bottom -20px;
   background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Dual Navbar                                    */
+/* -------------------------------------------------------------------------- */
+.dual-nav {
+  .navbar-top {
+    border-bottom: 1px solid var(--#{$prefix}dual-nav-border-color);
+
+    @each $item, $value in $navbar-vertical-breakpoints {
+      @include media-breakpoint-up($item) {
+        &.navbar-expand-#{$item} {
+          padding-left: 0;
+          padding-right: 0;
+          ~ {
+            .content {
+              --#{$prefix}navbar-top-height: 7.3rem;
+            }
+          }
+          .navbar-top-collapse {
+            border-top: 1px solid var(--#{$prefix}dual-nav-border-color);
+            padding: 0.5rem 2rem;
+            &.show {
+              padding-bottom: 0.5rem;
+            }
+          }
+          .dual-nav-first-layer {
+            background-color: var(--#{$prefix}dual-nav-first-layer-bg);
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+  }
 }

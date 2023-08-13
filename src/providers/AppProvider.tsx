@@ -83,6 +83,18 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       document.documentElement.classList.remove('navbar-combo');
     }
 
+    if (config.navbarPosition === 'dual') {
+      document.documentElement.classList.add('dual-nav');
+    } else {
+      document.documentElement.classList.remove('dual-nav');
+    }
+
+    if (config.navbarPosition === 'horizontal') {
+      document.documentElement.classList.add('navbar-horizontal');
+    } else {
+      document.documentElement.classList.remove('navbar-horizontal');
+    }
+
     if (config.isNavbarVerticalCollapsed) {
       document.documentElement.classList.add('navbar-vertical-collapsed');
     } else {

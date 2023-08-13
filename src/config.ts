@@ -1,5 +1,5 @@
 export type ThemeVariant = 'light' | 'dark';
-export type NavPositionVariant = 'horizontal' | 'vertical' | 'combo';
+export type NavPositionVariant = 'horizontal' | 'vertical' | 'combo' | 'dual';
 export type NavTopShapeVariant = 'default' | 'slim';
 export type NavbarAppearanceVariant = 'default' | 'darker';
 export interface Config {

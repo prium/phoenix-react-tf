@@ -1,14 +1,10 @@
-import { Dropdown, Navbar } from 'react-bootstrap';
-import { useState } from 'react';
+import { Navbar } from 'react-bootstrap';
 import { useAppContext } from 'providers/AppProvider';
-import { RouteItems, routes } from 'sitemap';
-import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import NavbarBrand from 'components/navbars/nav-items/NavbarBrand';
 import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
-import TopNavMegaMenu from './TopNavMegaMenu';
-import TopNavItem from './TopNavItem';
 import NavItems from 'components/navbars/nav-items/NavItems';
+import NavbarTopNav from './NavbarTopNav';
 
 const NavbarTopHorizontal = () => {
   const {
@@ -29,48 +25,10 @@ const NavbarTopHorizontal = () => {
         className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
         in={openNavbarVertical}
       >
-        <ul className="navbar-nav navbar-nav-top">
-          {routes.map(route => (
-            <DropdownItem route={route} key={route.label} />
-          ))}
-        </ul>
+        <NavbarTopNav />
       </Navbar.Collapse>
       {navbarTopShape === 'default' ? <NavItems /> : <NavItemsSlim />}
     </Navbar>
-  );
-};
-
-const DropdownItem = ({ route }: { route: RouteItems }) => {
-  const Icon = route.icon;
-  const [show, setShow] = useState(false);
-
-  return (
-    <Dropdown
-      as="li"
-      show={show}
-      className="nav-item"
-      key={route.label}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
-    >
-      <Dropdown.Toggle
-        as="a"
-        variant=""
-        className="nav-link dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
-      >
-        <Icon className="me-2" size={16} />
-        <span>
-          {capitalize(
-            route.horizontalNavLabel ? route.horizontalNavLabel : route.label
-          )}
-        </span>
-      </Dropdown.Toggle>
-      {route.megaMenu ? (
-        <TopNavMegaMenu route={route} />
-      ) : (
-        <TopNavItem route={route} />
-      )}
-    </Dropdown>
   );
 };
 

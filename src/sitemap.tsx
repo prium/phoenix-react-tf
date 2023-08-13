@@ -1,3 +1,4 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {
   Icon,
   UilChartPie,
@@ -9,7 +10,7 @@ import {
 
 export interface Route {
   name: string;
-  icon?: string | string[];
+  icon?: IconProp | string | string[];
   iconSet?: 'font-awesome' | 'feather' | 'unicons';
   pages?: Route[];
   path?: string;

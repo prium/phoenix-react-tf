@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FeatherIcon from 'feather-icons-react';
 import { UilAngleRight } from '@iconscout/react-unicons';
 import classNames from 'classnames';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const TopNavItem = ({ route }: { route: RouteItems }) => {
   return (
@@ -34,6 +36,25 @@ const TopNavItem = ({ route }: { route: RouteItems }) => {
 
 const TopNavLooper = ({ page }: { page: Route }) => {
   const [show, setShow] = useState(false);
+
+  const { breakpoints } = useBreakpoints();
+
+  const handleMouseEnter = () => {
+    if (breakpoints.up('lg')) {
+      setShow(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (breakpoints.up('lg')) {
+      setShow(false);
+    }
+  };
+
+  const handleClick = () => {
+    setShow(!show);
+  };
+
   return (
     <Dropdown
       as="li"
@@ -41,23 +62,15 @@ const TopNavLooper = ({ page }: { page: Route }) => {
       className={classNames({
         'dropdown-inside': page.dropdownInside
       })}
-      // onMouseEnter={() => {
-      //   if (!page.dropdownInside) {
-      //     setShow(true);
-      //   }
-      // }}
-      // onMouseLeave={() => {
-      //   if (!page.dropdownInside) {
-      //     setShow(false);
-      //   }
-      // }}
-      onMouseEnter={() => setShow(true)}
-      onMouseLeave={() => setShow(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      autoClose={false}
     >
       <Dropdown.Toggle
         as="a"
         variant=""
         className="dropdown-item dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
+        onClick={handleClick}
       >
         <div className="dropdown-item-wrapper">
           <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
@@ -67,7 +80,7 @@ const TopNavLooper = ({ page }: { page: Route }) => {
           </span>
         </div>
       </Dropdown.Toggle>
-      <Dropdown.Menu as="ul">
+      <Dropdown.Menu as="ul" className="asljksa">
         {page.pages?.map(page => (
           <Fragment key={page.name}>
             {page.pages ? (
@@ -90,8 +103,10 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
           {page.icon && (
             <>
               {page.iconSet === 'font-awesome' ? (
-                // @ts-ignore
-                <FontAwesomeIcon icon={page.icon} className="fs-8 ms-1 me-2" />
+                <FontAwesomeIcon
+                  icon={page.icon as IconProp}
+                  className="fs-8 ms-1 me-2"
+                />
               ) : (
                 <FeatherIcon icon={page.icon} size={14} className="me-2" />
               )}

@@ -7,6 +7,8 @@ import topDefault from 'assets/img/generic/top-default.png';
 import topDefaultDark from 'assets/img/generic/top-default-dark.png';
 import navComboLight from 'assets/img/generic/nav-combo-light.png';
 import navComboDark from 'assets/img/generic/nav-combo-dark.png';
+import dualLight from 'assets/img/generic/dual-light.png';
+import dualDark from 'assets/img/generic/dual-dark.png';
 import RadioItem from './RadioItem';
 import { NavPositionVariant } from 'config';
 
@@ -54,6 +56,16 @@ const NavigationType = () => {
             value="combo"
             thumb={theme === 'light' ? navComboLight : navComboDark}
             defaultChecked={navbarPosition === 'combo'}
+            handleChange={handleChange}
+          />
+        </Col>
+        <Col xs={6}>
+          <RadioItem
+            label="Dual nav"
+            name="nav-type"
+            value="dual"
+            thumb={theme === 'light' ? dualLight : dualDark}
+            defaultChecked={navbarPosition === 'dual'}
             handleChange={handleChange}
           />
         </Col>

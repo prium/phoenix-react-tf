@@ -71,6 +71,7 @@
   --#{$prefix}highlight-bg: #{$mark-bg};
   //test
   --#{$prefix}input-bg: #{$white};
+  --#{$prefix}input-color: #{$input-color};
   --#{$prefix}input-border-color: #{map-get($grays, '300')};
   --#{$prefix}input-group-addon-bg: #{$input-group-addon-bg};
 
@@ -87,6 +88,9 @@
   .nav-slim {
     --#{$prefix}navbar-top-height: 1.7rem;
   }
+  .dual-nav {
+    --#{$prefix}navbar-top-height: 7.25rem;
+  }
 
   /* ------------------------------- navbar-top  ------------------------------- */
   --#{$prefix}navbar-top-link-color: var(--#{$prefix}gray-900);
@@ -102,15 +106,14 @@
   .navbar-slim {
     --#{$prefix}navbar-top-menu-margin: 0.8rem;
   }
+  &.dual-nav {
+    --#{$prefix}navbar-top-menu-margin: 1.3rem;
+  }
 
   &:not(.dark) {
     .navbar-darker {
       --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
       --#{$prefix}navbar-top-dropdown-color: #{$gray-400};
-      // --#{$prefix}navbar-top-link-active-color: var(--#{$prefix}gray-200);
-
-      // --#{$prefix}navbar-top-link-color: #{$gray-400};
-      // --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
     }
     .navbar-darker:not(.dark) {
       .navbar-top-collapse {
@@ -127,6 +130,29 @@
     }
   }
 
+  /* ------------------------------- dual-nav ------------------------------- */
+
+  --#{$prefix}dual-nav-border-color: #{$dual-nav-border-color};
+  --#{$prefix}dual-nav-first-layer-bg: #{$dual-nav-first-layer-bg};
+
+  &.dual-nav {
+    &:not(.dark) {
+      .navbar-darker {
+        --#{$prefix}dual-nav-border-color: #{$gray-900};
+        --#{$prefix}dual-nav-first-layer-bg: #{map-get($dark-grays, 'soft')};
+        // --#{$prefix}navbar-top-bg-color: #{$gray-1000};
+
+        .search-box {
+          --#{$prefix}input-bg: #{$gray-1100};
+          --#{$prefix}input-border-color: #{map-get($dark-grays, '300')};
+          &.search-box-icon {
+            color: #{map-get($dark-grays, '500')};
+          }
+        }
+      }
+    }
+  }
+
   /* ------------------------------- navbar-vertical light ------------------------------- */
   --#{$prefix}navbar-vertical-border-color: #{$gray-300};
   --#{$prefix}navbar-vertical-bg-color: #{$white};
@@ -136,6 +162,10 @@
   --#{$prefix}navbar-vertical-link-hover-bg: #{$gray-100};
   --#{$prefix}navbar-vertical-link-active-color: #{$primary};
   --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500}; //need to check
+  --#{$prefix}navbar-vertical-width: #{$navbar-vertical-width};
+  &.navbar-vertical-collapsed {
+    --#{$prefix}navbar-vertical-width: #{$navbar-vertical-collapse-width};
+  }
 
   // --#{$prefix}navbar-vertical-link-text-active-color: #{$primary};
 
@@ -173,7 +203,7 @@
 
   /* ------------------------------- link-color ------------------------------- */
   --#{$prefix}link-color: #{map-get($theme-colors, 'primary')};
-  --#{$prefix}colored-link-100-hover-color: map-get(grays, 200);
+  // --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
 
   /* --------------------------------- choices -------------------------------- */
   --#{$prefix}choices-inner-min-height: auto;
@@ -217,7 +247,7 @@
   --#{$prefix}avatar-name-color: #{$blue-500};
 
   /* ---------------------------------- link ---------------------------------- */
-  --#{$prefix}colored-link-100-hover-color: map-get(grays, '200');
+  --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
 
   /* ---------------------------------- logo ---------------------------------- */
   --#{$prefix}logo-text: #{$gray-600};
@@ -268,7 +298,7 @@
       --#{$prefix}navbar-footer-border-color: #{map-get($dark-grays, '200')};
 
       //--------------- navbar top ---------------------------------
-      --#{$prefix}navbar-top-bg-color: #{$gray-1000};
+      --#{$prefix}navbar-top-bg-color: #{$gray-1100};
       --#{$prefix}nav-link-color: #{$gray-500};
 
       .form-control {
@@ -305,4 +335,20 @@
       }
     }
   }
+  /* -------------------------------- Kanban ------------------------------- */
+  --#{$prefix}kanban-bg: #{map-get($grays, '200')};
+  --#{$prefix}kanban-column-bg: #{map-get($grays, 'soft')};
+  --#{$prefix}ghost-bg: var(--#{$prefix}gray-100);
+  --#{$prefix}drag-bg: var(--#{$prefix}white);
+  --#{$prefix}kanban-column-hover-bg: var(--#{$prefix}white);
+
+  // .table-primary {
+  //   --#{$prefix}table-bg: var(--#{$prefix}primary-soft);
+  // }
+  // .table-secondary {
+  //   --#{$prefix}table-bg: var(--#{$prefix}gray-900);
+  // }
+  // .table-success {
+  //   --#{$prefix}table-bg: var(--#{$prefix}success-400);
+  // }
 }

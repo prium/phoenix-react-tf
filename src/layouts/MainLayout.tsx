@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import Footer from 'components/footers/Footer';
+import NavbarDual from 'components/navbars/navbar-dual/NavbarDual';
 import NavbarTopHorizontal from 'components/navbars/navbar-horizontal/NavbarTopHorizontal';
 import NavbarTopDefault from 'components/navbars/navbar-top/NavbarTopDefault';
 import NavbarVertical from 'components/navbars/navbar-vertical/NavbarVertical';
@@ -24,6 +25,7 @@ const MainLayout = () => {
       {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
         <NavbarTopHorizontal />
       )}
+      {navbarPosition === 'dual' && <NavbarDual />}
 
       <div className={classNames(contentClass, 'content')}>
         <Outlet />
