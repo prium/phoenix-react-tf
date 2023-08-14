@@ -8,12 +8,17 @@ import topSlimDark from 'assets/img/generic/top-slim-dark.png';
 import RadioItem from './RadioItem';
 import { NavTopShapeVariant } from 'config';
 import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const HorizontalNavbarShape = () => {
   const {
-    config: { theme, navbarTopShape, disableHorizontalNavbarShape },
+    config: { theme, navbarTopShape },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableHorizontalNavbarShape }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

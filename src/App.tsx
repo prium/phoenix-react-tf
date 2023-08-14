@@ -3,10 +3,15 @@ import SettingsPanel from 'components/settings-panel/SettingsPanel';
 import SettingsToggle from 'components/settings-panel/SettingsToggle';
 import useToggleStyle from 'hooks/useToggleStyle';
 import { useAppContext } from 'providers/AppProvider';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 import { RouterProvider } from 'react-router-dom';
 
 const App = () => {
   const { isStylesheetLoaded } = useToggleStyle();
+
+  const {
+    settingsPanelConfig: { showSettingPanelButton }
+  } = useSettingsPanelContext();
 
   const {
     config: { theme }
@@ -30,8 +35,12 @@ const App = () => {
   return (
     <>
       <RouterProvider router={router} />
-      <SettingsToggle />
-      <SettingsPanel />
+      {showSettingPanelButton && (
+        <>
+          <SettingsToggle />
+          <SettingsPanel />
+        </>
+      )}
     </>
   );
 };

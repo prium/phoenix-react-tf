@@ -12,12 +12,17 @@ import dualDark from 'assets/img/generic/dual-dark.png';
 import RadioItem from './RadioItem';
 import { NavPositionVariant } from 'config';
 import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const NavigationType = () => {
   const {
-    config: { theme, navbarPosition, disableNavigationType },
+    config: { theme, navbarPosition },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableNavigationType }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

@@ -11,10 +11,10 @@ import Pricing from 'components/modules/landing/default/pricing/Pricing';
 import TeamSection from 'components/modules/landing/default/team/TeamSection';
 import Testimonial from 'components/modules/landing/default/testimonial/Testimonial';
 import DefaultLandingNavbar from 'components/navbars/default-landing-navbar/DefaultLandingNavbar';
-import useConfigMountEffect from 'hooks/useConfigMountEffect';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const Default = () => {
-  useConfigMountEffect({
+  useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
     disableVerticalNavbarAppearance: true,

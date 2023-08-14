@@ -9,6 +9,7 @@ import RadioItem from './RadioItem';
 import { NavbarAppearanceVariant } from 'config';
 import classNames from 'classnames';
 import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 interface TopNavbarAppearanceProps {
   className?: string;
@@ -16,9 +17,13 @@ interface TopNavbarAppearanceProps {
 
 const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
   const {
-    config: { theme, navbarTopAppearance, disableHorizontalNavbarAppearance },
+    config: { theme, navbarTopAppearance },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableHorizontalNavbarAppearance }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

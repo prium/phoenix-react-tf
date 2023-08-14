@@ -8,16 +8,17 @@ import verticalDarker from 'assets/img/generic/vertical-darker.png';
 import RadioItem from './RadioItem';
 import { NavbarAppearanceVariant } from 'config';
 import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const VerticalNavbarAppearance = () => {
   const {
-    config: {
-      theme,
-      navbarVerticalAppearance,
-      disableVerticalNavbarAppearance
-    },
+    config: { theme, navbarVerticalAppearance },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableVerticalNavbarAppearance }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;

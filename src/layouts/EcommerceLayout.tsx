@@ -3,10 +3,10 @@ import Footer from 'components/footers/Footer';
 import EcommerceTopbar from 'components/navbars/ecommerce/EcommerceTopbar';
 import EcommerceNavbar from 'components/navbars/ecommerce/EcommerceNavbar';
 import { Outlet } from 'react-router-dom';
-import useConfigMountEffect from 'hooks/useConfigMountEffect';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const EcommerceLayout = () => {
-  useConfigMountEffect({
+  useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
     disableVerticalNavbarAppearance: true,

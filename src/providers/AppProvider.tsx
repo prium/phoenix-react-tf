@@ -44,14 +44,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       'navbarTopShape',
       initialConfig.navbarTopShape
     ),
-    isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
-    showSettingPanel: initialConfig.showSettingPanel,
-    disableNavigationType: initialConfig.disableNavigationType,
-    disableVerticalNavbarAppearance:
-      initialConfig.disableVerticalNavbarAppearance,
-    disableHorizontalNavbarShape: initialConfig.disableHorizontalNavbarShape,
-    disableHorizontalNavbarAppearance:
-      initialConfig.disableVerticalNavbarAppearance
+    isRTL: getItemFromStore('isRTL', initialConfig.isRTL)
   };
 
   const [config, configDispatch] = useReducer(configReducer, configState);
