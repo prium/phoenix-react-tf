@@ -11,7 +11,6 @@ export interface Config {
   navbarPosition: NavPositionVariant;
   navbarTopShape: NavTopShapeVariant;
   isRTL: boolean;
-  showSettingPanel: boolean;
   bodyClass?: string;
 }
 
@@ -23,6 +22,5 @@ export const initialConfig: Config = {
   navbarVerticalAppearance: 'default',
   navbarPosition: 'vertical',
   navbarTopShape: 'default',
-  isRTL: false,
-  showSettingPanel: false
+  isRTL: false
 };

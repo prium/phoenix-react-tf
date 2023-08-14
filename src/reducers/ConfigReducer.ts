@@ -10,7 +10,7 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
   switch (action.type) {
     case 'SET_CONFIG': {
       const { payload } = action;
-      Object.keys(payload).forEach((key: string) => {
+      Object.keys(payload).forEach(key => {
         if (
           [
             'theme',

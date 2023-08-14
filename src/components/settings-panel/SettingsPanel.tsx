@@ -8,17 +8,19 @@ import ColorScheme from './ColorScheme';
 import VerticalNavbarAppearance from './VerticalNavbarAppearance';
 import TopNavbarAppearance from './TopNavbarAppearance';
 import RTLMode from './RTLMode';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const SettingsPanel = () => {
+  const { configDispatch } = useAppContext();
+
   const {
-    config: { showSettingPanel },
-    setConfig,
-    configDispatch
-  } = useAppContext();
+    settingsPanelConfig: { openSettingPanel },
+    setSettingsPanelConfig
+  } = useSettingsPanelContext();
 
   const handleClose = () => {
-    setConfig({
-      showSettingPanel: !showSettingPanel
+    setSettingsPanelConfig({
+      openSettingPanel: !openSettingPanel
     });
   };
   const handleResetToDefault = () => {
@@ -30,7 +32,7 @@ const SettingsPanel = () => {
   return (
     <Offcanvas
       className="settings-panel border-0"
-      show={showSettingPanel}
+      show={openSettingPanel}
       onHide={handleClose}
       placement="end"
     >
@@ -67,8 +69,10 @@ const SettingsPanel = () => {
         <TopNavbarAppearance className="mb-5" />
         <Button
           as="a"
+          target="_blank"
           href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
           className="w-100 mb-3"
+          variant="primary"
         >
           Purchase template
         </Button>

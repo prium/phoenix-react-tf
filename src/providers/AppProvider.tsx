@@ -44,8 +44,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       'navbarTopShape',
       initialConfig.navbarTopShape
     ),
-    isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
-    showSettingPanel: initialConfig.showSettingPanel
+    isRTL: getItemFromStore('isRTL', initialConfig.isRTL)
   };
 
   const [config, configDispatch] = useReducer(configReducer, configState);

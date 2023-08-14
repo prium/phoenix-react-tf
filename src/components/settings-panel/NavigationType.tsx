@@ -11,12 +11,18 @@ import dualLight from 'assets/img/generic/dual-light.png';
 import dualDark from 'assets/img/generic/dual-dark.png';
 import RadioItem from './RadioItem';
 import { NavPositionVariant } from 'config';
+import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const NavigationType = () => {
   const {
     config: { theme, navbarPosition },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableNavigationType }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -37,6 +43,7 @@ const NavigationType = () => {
             thumb={theme === 'light' ? defaultLight : defaultDark}
             defaultChecked={navbarPosition === 'vertical'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
         <Col xs={6}>
@@ -47,6 +54,7 @@ const NavigationType = () => {
             thumb={theme === 'light' ? topDefault : topDefaultDark}
             defaultChecked={navbarPosition === 'horizontal'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
         <Col xs={6}>
@@ -57,6 +65,7 @@ const NavigationType = () => {
             thumb={theme === 'light' ? navComboLight : navComboDark}
             defaultChecked={navbarPosition === 'combo'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
         <Col xs={6}>
@@ -67,9 +76,13 @@ const NavigationType = () => {
             thumb={theme === 'light' ? dualLight : dualDark}
             defaultChecked={navbarPosition === 'dual'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
       </Row>
+      {disableNavigationType && (
+        <WarningMessage message="You can't update navigation type in this page" />
+      )}
     </div>
   );
 };

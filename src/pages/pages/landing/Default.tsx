@@ -11,8 +11,16 @@ import Pricing from 'components/modules/landing/default/pricing/Pricing';
 import TeamSection from 'components/modules/landing/default/team/TeamSection';
 import Testimonial from 'components/modules/landing/default/testimonial/Testimonial';
 import DefaultLandingNavbar from 'components/navbars/default-landing-navbar/DefaultLandingNavbar';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const Default = () => {
+  useSettingsMountEffect({
+    disableNavigationType: true,
+    disableHorizontalNavbarAppearance: true,
+    disableVerticalNavbarAppearance: true,
+    disableHorizontalNavbarShape: true
+  });
+
   return (
     <div className="bg-white">
       <DefaultLandingNavbar />

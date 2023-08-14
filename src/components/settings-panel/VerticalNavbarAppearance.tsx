@@ -7,12 +7,18 @@ import verticalLighter from 'assets/img/generic/vertical-lighter.png';
 import verticalDarker from 'assets/img/generic/vertical-darker.png';
 import RadioItem from './RadioItem';
 import { NavbarAppearanceVariant } from 'config';
+import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const VerticalNavbarAppearance = () => {
   const {
     config: { theme, navbarVerticalAppearance },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableVerticalNavbarAppearance }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -33,6 +39,7 @@ const VerticalNavbarAppearance = () => {
             thumb={theme === 'light' ? defaultLight : defaultDark}
             defaultChecked={navbarVerticalAppearance === 'default'}
             handleChange={handleChange}
+            disabled={disableVerticalNavbarAppearance}
           />
         </Col>
         <Col xs={6}>
@@ -43,9 +50,13 @@ const VerticalNavbarAppearance = () => {
             thumb={theme === 'light' ? verticalDarker : verticalLighter}
             defaultChecked={navbarVerticalAppearance === 'darker'}
             handleChange={handleChange}
+            disabled={disableVerticalNavbarAppearance}
           />
         </Col>
       </Row>
+      {disableVerticalNavbarAppearance && (
+        <WarningMessage message="You can't update vertical navbar appearance type in this page" />
+      )}
     </div>
   );
 };
