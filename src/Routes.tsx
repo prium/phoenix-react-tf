@@ -112,6 +112,9 @@ import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import Showcase from 'pages/Showcase';
+import VerticalSidenav from 'pages/pages/layouts/VerticalSidenav';
+import DarkModeDemo from 'pages/pages/layouts/DarkModeDemo';
+import SidenavCollapse from 'pages/pages/layouts/SidenavCollapse';
 
 const routes = [
   {
@@ -272,6 +275,23 @@ const routes = [
           {
             path: 'pricing-column',
             element: <PricingColumn />
+          }
+        ]
+      },
+      {
+        path: '/pages/demo/',
+        children: [
+          {
+            path: 'vertical-sidenav',
+            element: <VerticalSidenav />
+          },
+          {
+            path: 'dark-mode',
+            element: <DarkModeDemo />
+          },
+          {
+            path: 'sidenav-collapse',
+            element: <SidenavCollapse />
           }
         ]
       },

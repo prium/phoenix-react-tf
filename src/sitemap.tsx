@@ -592,21 +592,25 @@ export const routes: RouteItems[] = [
       {
         name: 'layouts',
         icon: 'layout',
+        active: true,
         pages: [
           {
             name: 'vertical-sidenav',
-            path: 'demo/vertical-sidenav',
-            pathName: 'demo-vertical-sidenav'
+            path: '/pages/demo/vertical-sidenav',
+            pathName: 'demo-vertical-sidenav',
+            active: true
           },
           {
             name: 'dark-mode',
-            path: 'demo/dark-mode',
-            pathName: 'demo-dark-mode'
+            path: '/pages/demo/dark-mode',
+            pathName: 'demo-dark-mode',
+            active: true
           },
           {
             name: 'sidenav-collapse',
-            path: 'demo/sidenav-collapse',
-            pathName: 'demo-sidenav-collapse'
+            path: '/pages/demo/sidenav-collapse',
+            pathName: 'demo-sidenav-collapse',
+            active: true
           },
           {
             name: 'darknav',
