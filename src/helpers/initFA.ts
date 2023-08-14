@@ -113,7 +113,8 @@ import {
   faVideo,
   faXmark,
   faClockRotateLeft,
-  faLink
+  faLink,
+  faTriangleExclamation
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookSquare,
@@ -276,5 +277,6 @@ library.add(
   faLink,
   faChrome,
   faFirefoxBrowser,
-  fabGoogle
+  fabGoogle,
+  faTriangleExclamation
 );

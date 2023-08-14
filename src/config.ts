@@ -13,6 +13,10 @@ export interface Config {
   isRTL: boolean;
   showSettingPanel: boolean;
   bodyClass?: string;
+  disableNavigationType: boolean;
+  disableVerticalNavbarAppearance: boolean;
+  disableHorizontalNavbarShape: boolean;
+  disableHorizontalNavbarAppearance: boolean;
 }
 
 export const initialConfig: Config = {
@@ -24,5 +28,9 @@ export const initialConfig: Config = {
   navbarPosition: 'vertical',
   navbarTopShape: 'default',
   isRTL: false,
-  showSettingPanel: false
+  showSettingPanel: false,
+  disableNavigationType: false,
+  disableVerticalNavbarAppearance: false,
+  disableHorizontalNavbarShape: false,
+  disableHorizontalNavbarAppearance: false
 };

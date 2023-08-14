@@ -67,8 +67,10 @@ const SettingsPanel = () => {
         <TopNavbarAppearance className="mb-5" />
         <Button
           as="a"
+          target="_blank"
           href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
           className="w-100 mb-3"
+          variant="primary"
         >
           Purchase template
         </Button>

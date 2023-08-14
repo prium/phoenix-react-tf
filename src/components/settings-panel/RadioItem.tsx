@@ -7,6 +7,7 @@ interface RadioItemProps {
   thumb: string;
   label: string;
   defaultChecked?: boolean;
+  disabled?: boolean;
   handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -16,7 +17,8 @@ const RadioItem = ({
   thumb,
   label,
   defaultChecked,
-  handleChange
+  handleChange,
+  disabled
 }: RadioItemProps) => {
   return (
     <>
@@ -28,6 +30,7 @@ const RadioItem = ({
         value={value}
         defaultChecked={defaultChecked}
         onChange={handleChange}
+        disabled={disabled}
       />
       <Form.Check.Label
         htmlFor={`${name}-${value}`}

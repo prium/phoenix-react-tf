@@ -8,6 +8,7 @@ import navTopLighter from 'assets/img/generic/top-style-lighter.png';
 import RadioItem from './RadioItem';
 import { NavbarAppearanceVariant } from 'config';
 import classNames from 'classnames';
+import WarningMessage from 'components/common/WarningMessage';
 
 interface TopNavbarAppearanceProps {
   className?: string;
@@ -15,7 +16,7 @@ interface TopNavbarAppearanceProps {
 
 const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
   const {
-    config: { theme, navbarTopAppearance },
+    config: { theme, navbarTopAppearance, disableHorizontalNavbarAppearance },
     setConfig
   } = useAppContext();
 
@@ -38,6 +39,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             thumb={theme === 'light' ? topDefault : topDefaultDarker}
             defaultChecked={navbarTopAppearance === 'default'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarAppearance}
           />
         </Col>
         <Col xs={6}>
@@ -48,9 +50,13 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             thumb={theme === 'light' ? navTopLight : navTopLighter}
             defaultChecked={navbarTopAppearance === 'darker'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarAppearance}
           />
         </Col>
       </Row>
+      {disableHorizontalNavbarAppearance && (
+        <WarningMessage message="You can't update horizontal navbar appearance in this page" />
+      )}
     </div>
   );
 };
