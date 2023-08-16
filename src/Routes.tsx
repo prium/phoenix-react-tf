@@ -112,6 +112,16 @@ import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
 import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import Showcase from 'pages/Showcase';
+import VerticalSidenav from 'pages/pages/layouts/VerticalSidenav';
+import DarkModeDemo from 'pages/pages/layouts/DarkModeDemo';
+import SidenavCollapse from 'pages/pages/layouts/SidenavCollapse';
+import Darknav from 'pages/pages/layouts/Darknav';
+import TopnavSlim from 'pages/pages/layouts/TopnavSlim';
+import NavbarTopSlim from 'pages/pages/layouts/NavbarTopSlim';
+import NavbarTop from 'pages/pages/layouts/NavbarTop';
+import NavbarHorizontalSlim from 'pages/pages/layouts/NavbarHorizontalSlim';
+import ComboNav from 'pages/pages/layouts/ComboNav';
+import ComboNavSlim from 'pages/pages/layouts/ComboNavSlim';
 
 const routes = [
   {
@@ -272,6 +282,51 @@ const routes = [
           {
             path: 'pricing-column',
             element: <PricingColumn />
+          }
+        ]
+      },
+      {
+        path: '/pages/demo/',
+        children: [
+          {
+            path: 'vertical-sidenav',
+            element: <VerticalSidenav />
+          },
+          {
+            path: 'dark-mode',
+            element: <DarkModeDemo />
+          },
+          {
+            path: 'sidenav-collapse',
+            element: <SidenavCollapse />
+          },
+          {
+            path: 'darknav',
+            element: <Darknav />
+          },
+          {
+            path: 'topnav-slim',
+            element: <TopnavSlim />
+          },
+          {
+            path: 'navbar-top-slim',
+            element: <NavbarTopSlim />
+          },
+          {
+            path: 'navbar-top',
+            element: <NavbarTop />
+          },
+          {
+            path: 'horizontal-slim',
+            element: <NavbarHorizontalSlim />
+          },
+          {
+            path: 'combo-nav',
+            element: <ComboNav />
+          },
+          {
+            path: 'combo-nav-slim',
+            element: <ComboNavSlim />
           }
         ]
       },

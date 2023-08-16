@@ -67,11 +67,11 @@ const Button = ({
     <BsButton
       variant={variant}
       type="button"
+      disabled={loading}
       {...rest}
       className={classNames(className, {
         'btn-loading lh-1 d-flex align-items-center position-relative': loading
       })}
-      disabled={loading}
     >
       {loading && loadingPosition === 'start' && (
         <Spinner animation="border" role="status" className="me-2">

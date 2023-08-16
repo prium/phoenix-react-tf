@@ -12,6 +12,7 @@ export interface SettingsPanelConfig {
   disableVerticalNavbarAppearance: boolean;
   disableHorizontalNavbarShape: boolean;
   disableHorizontalNavbarAppearance: boolean;
+  disableResetButton: boolean;
 }
 
 interface SettingsPanelContextInterFace {
@@ -31,7 +32,8 @@ const SettingsPanelProvider = ({ children }: PropsWithChildren) => {
       disableNavigationType: false,
       disableVerticalNavbarAppearance: false,
       disableHorizontalNavbarShape: false,
-      disableHorizontalNavbarAppearance: false
+      disableHorizontalNavbarAppearance: false,
+      disableResetButton: false
     });
 
   const updateSettingsPanelConfig = (config: Partial<SettingsPanelConfig>) => {

@@ -14,7 +14,7 @@ const SettingsPanel = () => {
   const { configDispatch } = useAppContext();
 
   const {
-    settingsPanelConfig: { openSettingPanel },
+    settingsPanelConfig: { openSettingPanel, disableResetButton },
     setSettingsPanelConfig
   } = useSettingsPanelContext();
 
@@ -55,6 +55,7 @@ const SettingsPanel = () => {
           variant="phoenix-secondary"
           className="w-100"
           onClick={handleResetToDefault}
+          disabled={disableResetButton}
         >
           <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           Reset to default

@@ -592,56 +592,67 @@ export const routes: RouteItems[] = [
       {
         name: 'layouts',
         icon: 'layout',
+        active: true,
         pages: [
           {
             name: 'vertical-sidenav',
-            path: 'demo/vertical-sidenav',
-            pathName: 'demo-vertical-sidenav'
+            path: '/pages/demo/vertical-sidenav',
+            pathName: 'demo-vertical-sidenav',
+            active: true
           },
           {
             name: 'dark-mode',
-            path: 'demo/dark-mode',
-            pathName: 'demo-dark-mode'
+            path: '/pages/demo/dark-mode',
+            pathName: 'demo-dark-mode',
+            active: true
           },
           {
             name: 'sidenav-collapse',
-            path: 'demo/sidenav-collapse',
-            pathName: 'demo-sidenav-collapse'
+            path: '/pages/demo/sidenav-collapse',
+            pathName: 'demo-sidenav-collapse',
+            active: true
           },
           {
             name: 'darknav',
-            path: 'demo/darknav',
-            pathName: 'demo-darknav'
+            path: '/pages/demo/darknav',
+            pathName: 'demo-darknav',
+            active: true
           },
           {
             name: 'topnav-slim',
-            path: 'demo/topnav-slim',
-            pathName: 'demo-topnav-slim'
+            path: '/pages/demo/topnav-slim',
+            pathName: 'demo-topnav-slim',
+            active: true
           },
           {
             name: 'navbar-top-slim',
-            path: 'demo/navbar-top-slim',
-            pathName: 'demo-navbar-top-slim'
+            path: '/pages/demo/navbar-top-slim',
+            pathName: 'demo-navbar-top-slim',
+            active: true
           },
           {
             name: 'navbar-top',
-            path: 'demo/navbar-top',
-            pathName: 'demo-navbar-top'
+            path: '/pages/demo/navbar-top',
+            pathName: 'demo-navbar-top',
+            active: true
           },
           {
             name: 'horizontal-slim',
-            path: 'demo/horizontal-slim',
-            pathName: 'demo-horizontal-slim'
+            path: '/pages/demo/horizontal-slim',
+            pathName: 'demo-horizontal-slim',
+            active: true
           },
           {
             name: 'combo-nav',
-            path: 'demo/combo-nav',
-            pathName: 'demo-combo-nav'
+            path: '/pages/demo/combo-nav',
+            pathName: 'demo-combo-nav',
+            active: true
           },
           {
             name: 'combo-nav-slim',
-            path: 'demo/combo-nav-slim',
-            pathName: 'demo-combo-nav-slim'
+            path: '/pages/demo/combo-nav-slim',
+            pathName: 'demo-combo-nav-slim',
+            active: true
           }
         ]
       }
