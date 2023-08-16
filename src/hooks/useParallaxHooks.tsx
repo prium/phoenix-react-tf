@@ -35,7 +35,13 @@ const useParallaxHooks = (
         gsap.to(elRef, options);
       });
     }, containerRef); //
-    return () => ctx.revert();
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1000);
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
   }, []);
 };
 
