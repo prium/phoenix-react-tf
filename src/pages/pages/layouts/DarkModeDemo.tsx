@@ -7,7 +7,8 @@ const DarkModeDemo = () => {
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
     disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
+    disableHorizontalNavbarShape: true,
+    disableResetButton: true
   });
 
   useConfigMountEffect({

@@ -2,7 +2,7 @@ import useConfigMountEffect from 'hooks/useConfigMountEffect';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import Ecommerce from 'pages/dashboard/ecommerce';
 
-const SidenavCollapse = () => {
+const ComboNav = () => {
   useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
@@ -12,10 +12,9 @@ const SidenavCollapse = () => {
   });
 
   useConfigMountEffect({
-    isNavbarVerticalCollapsed: true
+    navbarPosition: 'combo'
   });
 
   return <Ecommerce />;
 };
-
-export default SidenavCollapse;
+export default ComboNav;

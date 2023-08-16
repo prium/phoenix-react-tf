@@ -2,7 +2,7 @@ import useConfigMountEffect from 'hooks/useConfigMountEffect';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import Ecommerce from 'pages/dashboard/ecommerce';
 
-const SidenavCollapse = () => {
+const Darknav = () => {
   useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
@@ -12,10 +12,11 @@ const SidenavCollapse = () => {
   });
 
   useConfigMountEffect({
-    isNavbarVerticalCollapsed: true
+    navbarVerticalAppearance: 'darker',
+    navbarTopAppearance: 'darker'
   });
 
   return <Ecommerce />;
 };
 
-export default SidenavCollapse;
+export default Darknav;
