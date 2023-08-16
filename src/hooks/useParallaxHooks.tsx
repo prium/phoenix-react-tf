@@ -10,7 +10,8 @@ const useParallaxHooks = (
   containerRef: MutableRefObject<HTMLDivElement | null>,
   parallaxElRef:
     | MutableRefObject<HTMLDivElement | null>
-    | MutableRefObject<(HTMLDivElement | HTMLImageElement | null)[]>
+    | MutableRefObject<(HTMLDivElement | HTMLImageElement | null)[]>,
+  commonOptions?: any
 ) => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -20,6 +21,7 @@ const useParallaxHooks = (
 
       elRefs.forEach(elRef => {
         const elOptions = parseData(elRef?.getAttribute('data-parallax') || '');
+
         const options = merge(
           {
             ease: 'none',
@@ -30,8 +32,10 @@ const useParallaxHooks = (
               toggleActions: 'play none none reverse'
             }
           },
+          commonOptions,
           elOptions
         );
+
         gsap.to(elRef, options);
       });
     }, containerRef); //

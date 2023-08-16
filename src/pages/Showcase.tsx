@@ -12,7 +12,6 @@ import NecessaryPages from 'components/modules/showcase/NecessaryPages';
 import PreFooter from 'components/modules/showcase/PreFooter';
 import ShowcaseNavbar from 'components/navbars/ShowcaseNavbar';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import React from 'react';
 
 const Showcase = () => {
   useSettingsMountEffect({
