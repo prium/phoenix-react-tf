@@ -37,7 +37,7 @@ const VerticalNavbarAppearance = () => {
             name="vertical-navbar-appearance"
             value="default"
             thumb={theme === 'light' ? defaultLight : defaultDark}
-            defaultChecked={navbarVerticalAppearance === 'default'}
+            checked={navbarVerticalAppearance === 'default'}
             handleChange={handleChange}
             disabled={disableVerticalNavbarAppearance}
           />
@@ -48,7 +48,7 @@ const VerticalNavbarAppearance = () => {
             name="vertical-navbar-appearance"
             value="darker"
             thumb={theme === 'light' ? verticalDarker : verticalLighter}
-            defaultChecked={navbarVerticalAppearance === 'darker'}
+            checked={navbarVerticalAppearance === 'darker'}
             handleChange={handleChange}
             disabled={disableVerticalNavbarAppearance}
           />

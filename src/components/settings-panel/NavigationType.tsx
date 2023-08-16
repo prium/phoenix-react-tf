@@ -41,7 +41,7 @@ const NavigationType = () => {
             name="nav-type"
             value="vertical"
             thumb={theme === 'light' ? defaultLight : defaultDark}
-            defaultChecked={navbarPosition === 'vertical'}
+            checked={navbarPosition === 'vertical'}
             handleChange={handleChange}
             disabled={disableNavigationType}
           />
@@ -52,7 +52,7 @@ const NavigationType = () => {
             name="nav-type"
             value="horizontal"
             thumb={theme === 'light' ? topDefault : topDefaultDark}
-            defaultChecked={navbarPosition === 'horizontal'}
+            checked={navbarPosition === 'horizontal'}
             handleChange={handleChange}
             disabled={disableNavigationType}
           />
@@ -63,7 +63,7 @@ const NavigationType = () => {
             name="nav-type"
             value="combo"
             thumb={theme === 'light' ? navComboLight : navComboDark}
-            defaultChecked={navbarPosition === 'combo'}
+            checked={navbarPosition === 'combo'}
             handleChange={handleChange}
             disabled={disableNavigationType}
           />
@@ -74,7 +74,7 @@ const NavigationType = () => {
             name="nav-type"
             value="dual"
             thumb={theme === 'light' ? dualLight : dualDark}
-            defaultChecked={navbarPosition === 'dual'}
+            checked={navbarPosition === 'dual'}
             handleChange={handleChange}
             disabled={disableNavigationType}
           />
