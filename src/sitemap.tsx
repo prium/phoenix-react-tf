@@ -801,6 +801,19 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'charts',
+        icon: 'bar-chart-2',
+        active: true,
+        pages: [
+          {
+            name: 'ECharts',
+            path: '/modules/charts/e-charts',
+            pathName: 'e-charts',
+            active: true
+          }
+        ]
+      },
+      {
         name: 'components',
         icon: 'package',
         active: true,

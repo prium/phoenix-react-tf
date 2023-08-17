@@ -123,6 +123,7 @@ import FontAwesome from 'pages/modules/components/FontAwesome';
 import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
 import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
+import ECharts from 'pages/modules/charts/ECharts';
 
 const routes = [
   {
@@ -299,6 +300,15 @@ const routes = [
               {
                 path: 'advance-tables',
                 element: <AdvanceTableExample />
+              }
+            ]
+          },
+          {
+            path: 'charts',
+            children: [
+              {
+                path: 'e-charts',
+                element: <ECharts />
               }
             ]
           },
