@@ -114,7 +114,9 @@ import {
   faXmark,
   faClockRotateLeft,
   faLink,
-  faTriangleExclamation
+  faTriangleExclamation,
+  faSquare,
+  faPause
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookSquare,
@@ -278,5 +280,7 @@ library.add(
   faChrome,
   faFirefoxBrowser,
   fabGoogle,
-  faTriangleExclamation
+  faTriangleExclamation,
+  faSquare,
+  faPause
 );

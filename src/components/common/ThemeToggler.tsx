@@ -16,7 +16,9 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
   } = useAppContext();
   return (
     <Button
-      className={classNames(className, 'p-0')}
+      className={classNames(className, 'border-0 p-0', {
+        'lh-1': slim
+      })}
       onClick={() => toggleTheme()}
       {...rest}
     >

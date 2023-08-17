@@ -24,7 +24,7 @@ const Ecommerce = () => {
               </h5>
             </div>
             <EcomStats />
-            <Row className="justify-content-between align-items-end mb-4 g-3">
+            <Row className="justify-content-between align-items-center mb-4 g-3">
               <Col xs="auto">
                 <h3>Total sells</h3>
                 <p className="text-700 lh-sm mb-0">

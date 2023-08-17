@@ -1,34 +1,36 @@
-import React from 'react';
 import { Col, Row, Stack } from 'react-bootstrap';
-import ills4l from 'assets/img/icons/illustrations/4l.png';
-import ills3l from 'assets/img/icons/illustrations/3l.png';
-import ills2l from 'assets/img/icons/illustrations/2l.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 type StatType = {
   id: number | string;
-  icon: string;
+  icon: IconProp;
   title: string;
   subTitle: string;
+  color: string;
 };
 
 const stats: StatType[] = [
   {
     id: 1,
-    icon: ills4l,
+    icon: 'star',
     title: '57 new orders',
-    subTitle: 'Awating processing'
+    subTitle: 'Awating processing',
+    color: 'success'
   },
   {
     id: 2,
-    icon: ills3l,
+    icon: 'pause',
     title: '5 orders',
-    subTitle: 'On hold'
+    subTitle: 'On hold',
+    color: 'warning'
   },
   {
     id: 3,
-    icon: ills2l,
+    icon: 'xmark',
     title: '15 products',
-    subTitle: 'Out of stock'
+    subTitle: 'Out of stock',
+    color: 'danger'
   }
 ];
 
@@ -47,7 +49,31 @@ const EcomStats = () => {
 const Stat = ({ stat }: { stat: StatType }) => {
   return (
     <Stack direction="horizontal" className="align-items-center">
-      <img src={stat.icon} alt="" height={46} width={46} />
+      {/* <img src={stat.icon} alt="" height={46} width={46} /> */}
+      <span
+        className="fa-layers"
+        style={{ minHeight: '46px', minWidth: '46px' }}
+      >
+        <FontAwesomeIcon
+          icon="square"
+          size="2x"
+          className={`text-${stat.color}-300`}
+          transform="down-4 rotate--10 left-4"
+        />
+        <FontAwesomeIcon
+          icon="circle"
+          size="2x"
+          className={`text-${stat.color}-100 fa-layers-circle`}
+          transform="up-4 right-3 grow-2"
+        />
+        <FontAwesomeIcon
+          icon={stat.icon}
+          size="1x"
+          className={`text-${stat.color}`}
+          transform="shrink-2 up-8 right-6"
+        />
+      </span>
+
       <div className="ms-3">
         <h4 className="mb-0">{stat.title}</h4>
         <p className="text-800 fs-9 mb-0">{stat.subTitle}</p>

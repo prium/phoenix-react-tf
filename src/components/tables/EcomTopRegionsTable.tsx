@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 const columns: ColumnDef<TopRegionsTableDataType>[] = [
   {
     header: 'COUNTRY',
+    accessorFn: rowData => rowData.country.name,
     cell: ({ row }) => {
       const serial = row.index + 1;
       const { country } = row.original;
@@ -38,6 +39,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
   },
   {
     header: 'USERS',
+    accessorFn: rowData => rowData.users.number,
     cell: ({ row: { original } }) => {
       const { users } = original;
       return (
@@ -56,6 +58,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
   },
   {
     header: 'TRANSACTIONS',
+    accessorFn: rowData => rowData.transactions.number,
     cell: ({ row: { original } }) => {
       const { transactions } = original;
       return (
@@ -77,6 +80,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
   },
   {
     header: 'REVENUE',
+    accessorFn: rowData => rowData.revenue.number,
     cell: ({ row: { original } }) => {
       const { revenue } = original;
       return (
@@ -98,6 +102,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
   },
   {
     header: 'CONV. RATE',
+    accessorFn: rowData => rowData.convRate,
     cell: ({ row: { original } }) => {
       const { convRate } = original;
       return <h6 className="mb-0">{convRate}</h6>;
@@ -119,7 +124,7 @@ const EcomTopRegionsTable = () => {
     pageSize: 5,
     pagination: true,
     selectionColumnWidth: '30px',
-    sortable: false
+    sortable: true
   });
 
   const { getRowModel, getFlatHeaders } = table;
@@ -132,20 +137,28 @@ const EcomTopRegionsTable = () => {
             <tr>
               {getFlatHeaders().map(header => {
                 return (
-                  <th
-                    key={header.id}
-                    {...header.column.columnDef.meta?.headerProps}
-                    className={classNames(
-                      header.column.columnDef.meta?.headerProps?.className
-                    )}
-                  >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                  </th>
+                  <>
+                    <th
+                      key={header.id}
+                      {...header.column.columnDef.meta?.headerProps}
+                      className={classNames(
+                        'sort',
+                        header.column.columnDef.meta?.headerProps?.className,
+                        {
+                          desc: header.column.getIsSorted() === 'desc',
+                          asc: header.column.getIsSorted() === 'asc'
+                        }
+                      )}
+                      onClick={header.column.getToggleSortingHandler()}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.header,
+                            header.getContext()
+                          )}
+                    </th>
+                  </>
                 );
               })}
             </tr>

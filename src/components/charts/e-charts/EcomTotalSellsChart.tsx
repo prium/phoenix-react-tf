@@ -195,6 +195,7 @@ const EcomTotalSellsChart = () => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(theme, getThemeColor)}
+      style={{ height: '316px', width: '100%' }}
     />
   );
 };

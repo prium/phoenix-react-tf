@@ -162,7 +162,8 @@
 .content {
   min-height: 100vh;
   // min-height: calc(100vh - $navbar-top-height);
-  padding: $content-padding-top map-get($spacers, 4) $content-padding-bottom map-get($spacers, 4);
+  padding: $content-padding-top map-get($spacers, 4) $content-padding-bottom
+    map-get($spacers, 4);
   position: relative;
   padding-bottom: $footer-height + 2;
   @include media-breakpoint-up(sm) {
@@ -342,4 +343,11 @@
 
 .pt-18 {
   padding-top: 9rem;
+}
+/*-----------------------------------------------
+|   fontawesome layers icon border color
+-----------------------------------------------*/
+.fa-layers-circle path {
+  stroke: var(--#{$prefix}body-bg);
+  stroke-width: 60;
 }

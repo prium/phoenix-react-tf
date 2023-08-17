@@ -16,7 +16,7 @@ const NavItems = () => {
   return (
     <div className="navbar-nav navbar-nav-icons flex-row">
       <Nav.Item>
-        <ThemeToggler />
+        <ThemeToggler className="px-2" />
       </Nav.Item>
       {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
         <Nav.Item>
