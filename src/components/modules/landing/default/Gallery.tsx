@@ -18,26 +18,28 @@ type GalleryItemType = {
     lg: number;
   };
   img: string;
+  col: number;
+  row: number;
 };
 
 const galleryData: GalleryItemType[] = [
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery1 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery2 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery3 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery5 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery4 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery6 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery7 },
-  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery9 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery8 },
-  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery10 }
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery1, col: 1, row: 2 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery2, col: 1, row: 2 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery3, col: 1, row: 1 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery5, col: 1, row: 2 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery4, col: 1, row: 1 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery6, col: 1, row: 2 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery7, col: 1, row: 1 },
+  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery9, col: 2, row: 1 },
+  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery8, col: 1, row: 1 },
+  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery10, col: 2, row: 1 }
 ];
 
 const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItemType }) => {
   return (
-    <Col {...galleryItem.breakpoints}>
+    <div className={`col-span-${galleryItem.col} row-span-${galleryItem.row}`}>
       <img src={galleryItem.img} alt="" className="rounded img-fluid" />
-    </Col>
+    </div>
   );
 };
 
@@ -66,11 +68,11 @@ const Gallery = () => {
             </p>
           </Col>
         </Row>
-        <Row className="g-3">
+        <div className="d-grid grid-cols-4 gap-3">
           {galleryData.map(gallery => (
             <GalleryItem galleryItem={gallery} key={gallery.img} />
           ))}
-        </Row>
+        </div>
       </div>
     </section>
   );
