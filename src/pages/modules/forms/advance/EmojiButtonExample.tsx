@@ -10,7 +10,7 @@ const emojiButtonCode = `
 import Button from 'components/base/Button';
 import EmojiPicker from 'components/base/EmojiPicker';
 
-function(){
+function EmojiButtonExample() {
   const [message, setMessage] = useState('')
   return (
     <EmojiPicker

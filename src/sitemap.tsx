@@ -716,6 +716,12 @@ export const routes: RouteItems[] = [
                 active: true
               },
               {
+                name: 'date-picker',
+                path: '/modules/forms/date-picker',
+                pathName: 'date-picker',
+                active: true
+              },
+              {
                 name: 'editor',
                 path: '/modules/forms/editor',
                 pathName: 'editor',
@@ -753,21 +759,25 @@ export const routes: RouteItems[] = [
       {
         name: 'icons',
         icon: 'grid',
+        active: true,
         pages: [
           {
             name: 'feather',
             path: 'modules/icons/feather',
-            pathName: 'icons-feather'
+            pathName: 'icons-feather',
+            active: true
           },
           {
             name: 'font awesome',
             path: 'modules/icons/font-awesome',
-            pathName: 'icons-font-awesome'
+            pathName: 'icons-font-awesome',
+            active: true
           },
           {
             name: 'unicons',
             path: 'modules/icons/unicons',
-            pathName: 'icons-unicons'
+            pathName: 'icons-unicons',
+            active: true
           }
         ]
       },

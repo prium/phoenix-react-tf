@@ -119,6 +119,10 @@ import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
 import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
 import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
+import FontAwesome from 'pages/modules/components/FontAwesome';
+import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
+import Unicons from 'pages/modules/components/Unicons';
+import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
 
 const routes = [
   {
@@ -299,6 +303,23 @@ const routes = [
             ]
           },
           {
+            path: 'icons',
+            children: [
+              {
+                path: 'font-awesome',
+                element: <FontAwesome />
+              },
+              {
+                path: 'feather',
+                element: <FeatherIconExample />
+              },
+              {
+                path: 'unicons',
+                element: <Unicons />
+              }
+            ]
+          },
+          {
             path: 'components',
             children: [
               {
@@ -445,6 +466,10 @@ const routes = [
               {
                 path: 'advance-select',
                 element: <AdvanceSelectExample />
+              },
+              {
+                path: 'date-picker',
+                element: <DatePickerExample />
               },
               {
                 path: 'emoji-button',

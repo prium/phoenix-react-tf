@@ -89,7 +89,7 @@ const justifyCode = `
 
 const dropdownsCode = `
 const NavDropdownExample = () => {
-  const handleSelect = (eventKey) => alert('selected' + eventKey);
+  const handleSelect = (eventKey: string | null) => alert('selected' + eventKey);
 
   return (
     <Nav variant="pills" activeKey="1" onSelect={handleSelect}>

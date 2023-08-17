@@ -14,7 +14,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(Default)</p>
           </div>
@@ -31,7 +31,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(Duration 10s)</p>
           </div>
@@ -48,7 +48,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(No Separator)</p>
           </div>
@@ -65,7 +65,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(Space)</p>
           </div>
@@ -83,7 +83,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(Suffix)</p>
           </div>
@@ -101,7 +101,7 @@ const countupCode = `
           <div>
             <h1
               className="text-700 fw-bold mb-3"
-              ref={countUpRef}
+              ref={countUpRef as LegacyRef<HTMLHeadingElement>}
             />
             <p>(Prefix)</p>
           </div>

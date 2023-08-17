@@ -3,24 +3,28 @@ import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 import React from 'react';
 import ReactSelect from 'components/base/ReactSelect';
-import { Form } from 'react-bootstrap';
 import Button from 'components/base/Button';
 
 const multipleSelectCode = `
 import ReactSelect from 'components/base/ReactSelect';
 
 function MultipleSelect(){
-  const options = [
-    { value: 'Massachusetts Institute of Technology', label: 'Massachusetts Institute of Technology' },
-    { value: 'University of Chicago', label: 'University of Chicago' },
-    { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' }
-    { value: 'California Institute of Technology', label: 'California Institute of Technology' }
-  ]
   return(
     <>
       <label>Multiple</label>
       <ReactSelect
-        options={options}
+        options={[
+          {
+            value: 'Massachusetts Institute of Technology',
+            label: 'Massachusetts Institute of Technology'
+          },
+          { value: 'University of Chicago', label: 'University of Chicago' },
+          { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' },
+          {
+            value: 'California Institute of Technology',
+            label: 'California Institute of Technology'
+          }
+        ]}
         isMulti
         placeholder="Select organizer..."
       />
@@ -33,17 +37,22 @@ const singleSelectCode = `
 import ReactSelect from 'components/base/ReactSelect';
 
 function SingleSelect(){
-  const options = [
-    { value: 'Massachusetts Institute of Technology', label: 'Massachusetts Institute of Technology' },
-    { value: 'University of Chicago', label: 'University of Chicago' },
-    { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' }
-    { value: 'California Institute of Technology', label: 'California Institute of Technology' }
-  ]
   return(
     <>
       <label>Single</label>
       <ReactSelect
-        options={options}
+        options={[
+          {
+            value: 'Massachusetts Institute of Technology',
+            label: 'Massachusetts Institute of Technology'
+          },
+          { value: 'University of Chicago', label: 'University of Chicago' },
+          { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' },
+          {
+            value: 'California Institute of Technology',
+            label: 'California Institute of Technology'
+          }
+        ]}
         placeholder="Select organizer..."
       />
     </>
@@ -53,26 +62,43 @@ function SingleSelect(){
 
 const validationCode = `
 import ReactSelect from 'components/base/ReactSelect';
+import Button from 'components/base/Button';
 
 function Validation(){
-  const options = [
-    { value: 'Massachusetts Institute of Technology', label: 'Massachusetts Institute of Technology' },
-    { value: 'University of Chicago', label: 'University of Chicago' },
-    { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' }
-    { value: 'California Institute of Technology', label: 'California Institute of Technology' }
-  ]
   return(
     <Form>
       <label>Multiple</label>
       <ReactSelect
-        options={options}
+        options={[
+          {
+            value: 'Massachusetts Institute of Technology',
+            label: 'Massachusetts Institute of Technology'
+          },
+          { value: 'University of Chicago', label: 'University of Chicago' },
+          { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' },
+          {
+            value: 'California Institute of Technology',
+            label: 'California Institute of Technology'
+          }
+        ]}
         isMulti
         placeholder="Select organizer..."
         required
       />
       <label className="mt-4">Single</label>
       <ReactSelect
-        options={options}
+        options={[
+          {
+            value: 'Massachusetts Institute of Technology',
+            label: 'Massachusetts Institute of Technology'
+          },
+          { value: 'University of Chicago', label: 'University of Chicago' },
+          { value: 'GSAS Open Labs At Harvard', label: 'GSAS Open Labs At Harvard' },
+          {
+            value: 'California Institute of Technology',
+            label: 'California Institute of Technology'
+          }
+        ]}
         placeholder="Select organizer..."
         required
       />
@@ -112,7 +138,7 @@ const AdvanceSelectExample = () => {
           <PhoenixDocCard.Header title="Validation Example" />
           <PhoenixDocCard.Body
             code={validationCode}
-            scope={{ ReactSelect, Button, Form }}
+            scope={{ ReactSelect, Button }}
           />
         </PhoenixDocCard>
       </DocPagesLayout>

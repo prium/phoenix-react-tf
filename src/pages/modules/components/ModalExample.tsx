@@ -113,11 +113,11 @@ function StaticBackdropModal() {
 
 const fullscreenCode = `
 function Example() {
-  const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
-  const [fullscreen, setFullscreen] = useState(true);
+  const values: ModalProps['fullscreen'][] = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
+  const [fullscreen, setFullscreen] = useState<ModalProps['fullscreen']>(true);
   const [show, setShow] = useState(false);
 
-  function handleShow(breakpoint) {
+  function handleShow(breakpoint: ModalProps['fullscreen']) {
     setFullscreen(breakpoint);
     setShow(true);
   }
