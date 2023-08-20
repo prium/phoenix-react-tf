@@ -810,6 +810,12 @@ export const routes: RouteItems[] = [
             path: '/modules/charts/e-charts',
             pathName: 'e-charts',
             active: true
+          },
+          {
+            name: 'gantt-chart',
+            path: '/modules/charts/gantt-chart',
+            pathName: 'gantt-chart',
+            active: true
           }
         ]
       },

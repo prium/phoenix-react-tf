@@ -124,6 +124,7 @@ import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
 import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
 import ECharts from 'pages/modules/charts/ECharts';
+import GanttChart from 'pages/modules/charts/GanttChart';
 
 const routes = [
   {
@@ -309,6 +310,10 @@ const routes = [
               {
                 path: 'e-charts',
                 element: <ECharts />
+              },
+              {
+                path: 'gantt-chart',
+                element: <GanttChart />
               }
             ]
           },
