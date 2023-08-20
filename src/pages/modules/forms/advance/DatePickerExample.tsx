@@ -103,10 +103,10 @@ const DatePickerExample = () => {
   return (
     <div className="mb-9">
       <DocPageHeader
-        title="Date Picker"
-        description="React-Phoenix uses React Datepicker as datepicker. React Datepicker is a simple and reusable Datepicker component for React."
+        title="React Flatpickr"
+        description={`React-${process.env.REACT_APP_TITLE} uses React Flatpickr as datepicker. React Flatpickr is a simple and reusable Datepicker component for React.`}
         link={{
-          text: 'React Datepicker Documentation',
+          text: 'React Flatpickr Documentation',
           url: 'https://github.com/Hacker0x01/react-datepicker'
         }}
       />

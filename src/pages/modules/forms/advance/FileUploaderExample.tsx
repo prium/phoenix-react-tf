@@ -9,7 +9,7 @@ import Dropzone from 'components/base/Dropzone';
 
 function SingleFileUpload(){
   return (
-    <Dropzone multiple={false} />
+    <Dropzone multiple={false} onDrop={acceptedFiles => console.log(acceptedFiles)} />
   )
 }
 `;
@@ -18,7 +18,7 @@ import Dropzone from 'components/base/Dropzone';
 
 function SingleFileUpload(){
   return (
-    <Dropzone />
+    <Dropzone onDrop={acceptedFiles => console.log(acceptedFiles)} />
   )
 }
 `;
@@ -28,7 +28,7 @@ const FileUploaderExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="File Uploader"
-        description="Phoenix-React uses React Dropzone for file-uploader. React Dropzone provides a simple react hook to create a HTML5-compliant drag'n'drop zone for files."
+        description={`React-${process.env.REACT_APP_TITLE} uses React Dropzone for file-uploader. React Dropzone provides a simple react hook to create a HTML5-compliant drag'n'drop zone for files.`}
         link={{
           text: 'React Dropzone Documentation',
           url: 'https://react-dropzone.js.org/'

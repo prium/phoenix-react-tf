@@ -59,7 +59,11 @@ const FontAwesome = () => {
             <PhoenixLiveEditor code={individualAddIconCode} />
             <p className="mb-0 mt-3">
               For better understanding you can visit{' '}
-              <a href="https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react#using">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://fontawesome.com/v6/docs/web/use-with/react/"
+              >
                 fontawesome usage
               </a>
             </p>

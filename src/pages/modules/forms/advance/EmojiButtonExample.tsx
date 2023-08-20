@@ -34,7 +34,7 @@ const EmojiButtonExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Emoji button"
-        description="Phoenix uses Picmo as a emoji picker component. It displays a panel of emojis where one can be selected. What is done with the selected emoji is up to you."
+        description={`React-${process.env.REACT_APP_TITLE} uses Picmo as a emoji picker component. It displays a panel of emojis where one can be selected. What is done with the selected emoji is up to you.`}
         link={{
           text: 'Documentation for Picmo',
           url: 'https://picmojs.com/docs/api/overview/'

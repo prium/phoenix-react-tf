@@ -11,7 +11,7 @@ import ReactSelect from 'components/base/ReactSelect';
 function MultipleSelect(){
   return(
     <>
-      <label>Multiple</label>
+      <Form.Label>Multiple</Form.Label>
       <ReactSelect
         options={[
           {
@@ -39,7 +39,7 @@ import ReactSelect from 'components/base/ReactSelect';
 function SingleSelect(){
   return(
     <>
-      <label>Single</label>
+      <Form.Label>Single</Form.Label>
       <ReactSelect
         options={[
           {
@@ -67,7 +67,7 @@ import Button from 'components/base/Button';
 function Validation(){
   return(
     <Form>
-      <label>Multiple</label>
+      <Form.Label>Multiple</Form.Label>
       <ReactSelect
         options={[
           {
@@ -85,7 +85,7 @@ function Validation(){
         placeholder="Select organizer..."
         required
       />
-      <label className="mt-4">Single</label>
+      <Form.Label className="mt-4">Single</Form.Label>
       <ReactSelect
         options={[
           {
@@ -113,7 +113,7 @@ const AdvanceSelectExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Advance Select"
-        description="React-Falcon uses React Select for advance select component. React Select is a flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support."
+        description={`React-${process.env.REACT_APP_TITLE} uses React Select for advance select component. React Select is a flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support.`}
         link={{
           text: 'React Select Documentation',
           url: 'https://react-select.com/home'

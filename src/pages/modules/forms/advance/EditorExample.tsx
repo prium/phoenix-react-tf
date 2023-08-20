@@ -24,7 +24,7 @@ const EditorExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Editor"
-        description="React-Phoenix uses Tinymce React for rich text editor. TinyMCE React component integrates TinyMCE into React projects."
+        description={`React-${process.env.REACT_APP_TITLE} uses Tinymce React for rich text editor. TinyMCE React component integrates TinyMCE into React projects.`}
         link={{
           text: 'Documentation for React Tinymce',
           url: 'https://github.com/tinymce/tinymce-react'

@@ -29305,6 +29305,14 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   visibility: visible;
 }
 
+.gantt-chart-example .gantt_layout_cell,
+.gantt-chart-example .gantt_grid_scale,
+.gantt-chart-example .gantt_task_scale,
+.gantt-chart-example .gantt_row_task,
+.gantt-chart-example .gantt_task_row {
+  background: var(--phoenix-white) !important;
+}
+
 .navbar-shadow {
   box-shadow: 0px 8px 24px -4px rgba(36, 40, 46, 0.08);
 }

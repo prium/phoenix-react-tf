@@ -12,6 +12,7 @@ import Lightbox from 'components/base/LightBox';
 
 const galleryCode = `
 import Lightbox from 'components/base/LightBox';
+import useLightbox from 'hooks/useLightbox';
 
 function SocialPhotos () {
   const [attachments] = useState([img9, img10, img11, img12, img13]);
@@ -39,6 +40,7 @@ function SocialPhotos () {
 
 const simpleImageCode = `
 import Lightbox from 'components/base/LightBox';
+import useLightbox from 'hooks/useLightbox';
 
 function SocialPhotos () {
   const { lightboxProps, openLightbox } = useLightbox([img24]);
@@ -64,7 +66,7 @@ const LightboxExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Lightbox"
-        description="React-Phoenix uses React FsLightbox for lightbox. React FsLightbox is a flexible lightbox component for displaying images in a React project."
+        description={`React-${process.env.REACT_APP_TITLE} uses React FsLightbox for lightbox. React FsLightbox is a flexible lightbox component for displaying images in a React project.`}
         link={{
           text: 'React FsLightbox Documentation',
           url: 'https://github.com/banthagroup/fslightbox-react'
