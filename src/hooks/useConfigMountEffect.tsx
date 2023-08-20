@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Config, initialConfig } from 'config';
 import { useAppContext } from 'providers/AppProvider';
 import { useEffect } from 'react';

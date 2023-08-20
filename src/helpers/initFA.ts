@@ -166,7 +166,6 @@ library.add(
   faArrowUpRightFromSquare,
   faCheck,
   faStar,
-  //@ts-ignore
   farStar,
   faBars,
   faFacebookSquare,

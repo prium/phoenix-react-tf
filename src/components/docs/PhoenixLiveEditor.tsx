@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import LiveProvider from './PhoenixLiveProvider';
 import { LiveEditor } from 'react-live';
 

@@ -4,6 +4,7 @@ import { Swiper as ReactSwiper } from 'swiper/react';
 import 'swiper/css';
 import { PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavigationOptions } from 'swiper/types';
 
 const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
   const navigationPrevRef = useRef(null);
@@ -25,10 +26,9 @@ const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
         }}
         onBeforeInit={swiper => {
           if (swiper.params.navigation) {
-            //@ts-ignore
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            //@ts-ignore
-            swiper.params.navigation.nextEl = navigationNextRef.current;
+            const navigation = swiper.params.navigation as NavigationOptions;
+            navigation.prevEl = navigationPrevRef.current;
+            navigation.nextEl = navigationNextRef.current;
           }
         }}
         {...rest}

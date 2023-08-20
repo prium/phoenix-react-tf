@@ -6,6 +6,7 @@ import { Route } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface NavbarVerticalMenuProps {
   routes: Route[];
@@ -21,7 +22,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
   return (
     <Nav.Item as="li">
       <NavLink
-        to={route.path!}
+        to={route.path ? route.path : '#!'}
         className={({ isActive }) =>
           classNames('nav-link', {
             'label-1': level === 1,
@@ -38,8 +39,10 @@ const NavItem = ({ route, level }: NavItemProps) => {
             <>
               <span className="nav-link-icon ">
                 {route.iconSet === 'font-awesome' ? (
-                  // @ts-ignore
-                  <FontAwesomeIcon icon={route.icon} className="fs-8 mx-1" />
+                  <FontAwesomeIcon
+                    icon={route.icon as IconProp}
+                    className="fs-8 mx-1"
+                  />
                 ) : (
                   <FeatherIcon icon={route.icon} size={16} />
                 )}
@@ -60,15 +63,12 @@ const NavItem = ({ route, level }: NavItemProps) => {
 const CollapsableNavItem = ({ route, level }: NavItemProps) => {
   const { pathname } = useLocation();
 
-  const openCollapse = (childrens: any) => {
-    const checkLink = (children: any) => {
+  const openCollapse = (childrens: Route[] = []) => {
+    const checkLink = (children: Route) => {
       if (`${children.path}` === pathname) {
         return true;
       }
-      return (
-        Object.prototype.hasOwnProperty.call(children, 'pages') &&
-        children.pages!.some(checkLink)
-      );
+      return children.pages && children.pages.some(checkLink);
     };
     return childrens.some(checkLink);
   };

@@ -82,7 +82,7 @@ const CreateNew = () => {
             </Col>
             <Col sm={6} md={4}>
               <DatePicker
-                render={({ defaultValue }, ref) => {
+                render={(_, ref) => {
                   return (
                     <Form.Floating>
                       <Form.Control
@@ -101,7 +101,7 @@ const CreateNew = () => {
             </Col>
             <Col sm={6} md={4}>
               <DatePicker
-                render={({ defaultValue }, ref) => {
+                render={(_, ref) => {
                   return (
                     <Form.Floating>
                       <Form.Control

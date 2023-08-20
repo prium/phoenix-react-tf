@@ -15,6 +15,12 @@ interface TodoListItemInterface {
   fullLayoutBreakpoints?: Breakpoints[];
   onClick?: (item: ToDoItem) => void;
 }
+type FullLayoutBreakpoints = {
+  [key in Breakpoints]?: 'auto';
+};
+type HalfLayoutBreakpoints = {
+  [key in Breakpoints]?: 12;
+};
 
 const TodoListItem = ({
   todo,
@@ -67,14 +73,20 @@ const TodoListItem = ({
         <Row className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
           <Col
             xs={12}
-            {...fullLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
-              acc[val] = 'auto';
-              return acc;
-            }, {})}
-            {...halfLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
-              acc[val] = 12;
-              return acc;
-            }, {})}
+            {...fullLayoutBreakpoints?.reduce(
+              (acc: FullLayoutBreakpoints, val: Breakpoints) => {
+                acc[val] = 'auto';
+                return acc;
+              },
+              {}
+            )}
+            {...halfLayoutBreakpoints?.reduce(
+              (acc: HalfLayoutBreakpoints, val: Breakpoints) => {
+                acc[val] = 12;
+                return acc;
+              },
+              {}
+            )}
           >
             <div className="d-flex align-items-center lh-1 gap-2">
               <h5
@@ -101,14 +113,20 @@ const TodoListItem = ({
           </Col>
           <Col
             xs={12}
-            {...fullLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
-              acc[val] = 'auto';
-              return acc;
-            }, {})}
-            {...halfLayoutBreakpoints?.reduce((acc: any, val: Breakpoints) => {
-              acc[val] = 12;
-              return acc;
-            }, {})}
+            {...fullLayoutBreakpoints?.reduce(
+              (acc: FullLayoutBreakpoints, val: Breakpoints) => {
+                acc[val] = 'auto';
+                return acc;
+              },
+              {}
+            )}
+            {...halfLayoutBreakpoints?.reduce(
+              (acc: HalfLayoutBreakpoints, val: Breakpoints) => {
+                acc[val] = 12;
+                return acc;
+              },
+              {}
+            )}
           >
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
