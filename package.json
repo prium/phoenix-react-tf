@@ -79,6 +79,7 @@
   },
   "devDependencies": {
     "@automattic/webpack-rtl-plugin": "^6.0.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/fslightbox-react": "^1.7.3",
     "@types/lodash.merge": "^4.6.7",
     "@types/mapbox-gl": "^2.7.11",
