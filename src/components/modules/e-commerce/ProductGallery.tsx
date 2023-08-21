@@ -1,12 +1,11 @@
-// @ts-nocheck
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<null | SwiperClass>(null);
   const { breakpoints } = useBreakpoints();
 
   return (
@@ -42,7 +41,6 @@ const ProductGallery = ({ images }: { images: string[] }) => {
           <Swiper
             loop={true}
             spaceBetween={10}
-            navigation={true}
             thumbs={{
               swiper:
                 thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null

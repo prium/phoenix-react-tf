@@ -122,6 +122,20 @@ import NavbarTop from 'pages/pages/layouts/NavbarTop';
 import NavbarHorizontalSlim from 'pages/pages/layouts/NavbarHorizontalSlim';
 import ComboNav from 'pages/pages/layouts/ComboNav';
 import ComboNavSlim from 'pages/pages/layouts/ComboNavSlim';
+import LightboxExample from 'pages/modules/components/LightboxExample';
+import EmojiButtonExample from 'pages/modules/forms/advance/EmojiButtonExample';
+import RatingExample from 'pages/modules/forms/advance/RatingExample';
+import CountupExample from 'pages/modules/components/CountupExample';
+import EditorExample from 'pages/modules/forms/advance/EditorExample';
+import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
+import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
+import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
+import FontAwesome from 'pages/modules/components/FontAwesome';
+import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
+import Unicons from 'pages/modules/components/Unicons';
+import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
+import ECharts from 'pages/modules/charts/ECharts';
+import GanttChart from 'pages/modules/charts/GanttChart';
 
 const routes = [
   {
@@ -347,6 +361,36 @@ const routes = [
             ]
           },
           {
+            path: 'charts',
+            children: [
+              {
+                path: 'e-charts',
+                element: <ECharts />
+              },
+              {
+                path: 'gantt-chart',
+                element: <GanttChart />
+              }
+            ]
+          },
+          {
+            path: 'icons',
+            children: [
+              {
+                path: 'font-awesome',
+                element: <FontAwesome />
+              },
+              {
+                path: 'feather',
+                element: <FeatherIconExample />
+              },
+              {
+                path: 'unicons',
+                element: <Unicons />
+              }
+            ]
+          },
+          {
             path: 'components',
             children: [
               {
@@ -382,6 +426,10 @@ const routes = [
                 element: <BootstrapCarousel />
               },
               {
+                path: 'carousel/swiper',
+                element: <SwiperCarousel />
+              },
+              {
                 path: 'collapse',
                 element: <CollapseExample />
               },
@@ -392,6 +440,10 @@ const routes = [
               {
                 path: 'list-group',
                 element: <ListGroupExample />
+              },
+              {
+                path: 'countup',
+                element: <CountupExample />
               },
               {
                 path: 'modal',
@@ -440,6 +492,10 @@ const routes = [
               {
                 path: 'navs-and-tabs/navbar',
                 element: <NavbarExample />
+              },
+              {
+                path: 'pictures/lightbox',
+                element: <LightboxExample />
               }
             ]
           },
@@ -473,6 +529,30 @@ const routes = [
               {
                 path: 'layout',
                 element: <FormLayoutExample />
+              },
+              {
+                path: 'editor',
+                element: <EditorExample />
+              },
+              {
+                path: 'advance-select',
+                element: <AdvanceSelectExample />
+              },
+              {
+                path: 'date-picker',
+                element: <DatePickerExample />
+              },
+              {
+                path: 'emoji-button',
+                element: <EmojiButtonExample />
+              },
+              {
+                path: 'file-uploader',
+                element: <FileUploaderExample />
+              },
+              {
+                path: 'rating',
+                element: <RatingExample />
               },
               {
                 path: 'validation',

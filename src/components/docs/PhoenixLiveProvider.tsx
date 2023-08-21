@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import * as ReactBootstrap from 'react-bootstrap';
 import { LiveProvider } from 'react-live';
 import { defaultProps } from 'prism-react-renderer';
+import { transformTSCode } from 'helpers/utils';
 
 export interface PhoenixLiveProviderProps {
   code?: string;
@@ -24,7 +25,9 @@ const PhoenixLiveProvider = ({
       scope={{ ...ReactBootstrap, ...React, ...scope }}
       noInline={noInline}
       transformCode={
-        transformCode ? transformCode : code => code.replace(/^import.*$/gm, '')
+        transformCode
+          ? transformCode
+          : code => transformTSCode(code.replace(/^import.*$/gm, ''))
       }
       language="jsx"
       {...defaultProps}

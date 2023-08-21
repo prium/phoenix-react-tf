@@ -1,4 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import ts, { transpile } from 'typescript';
 
 export const getItemFromStore = (
   key: string,
@@ -154,3 +155,12 @@ export const hexToRgb = (hex: string) => {
   const b = parseInt(hex.slice(5, 7), 16);
   return [r, g, b];
 };
+
+export const transformTSCode = (
+  snippet: string,
+  target: ts.ScriptTarget = ts.ScriptTarget.ES2015
+) =>
+  transpile(snippet, {
+    jsx: ts.JsxEmit.React,
+    target
+  });

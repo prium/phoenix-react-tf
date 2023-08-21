@@ -21108,7 +21108,7 @@ pre[class*=language-] {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 25%;
+  top: 50%;
   border: 1px solid;
   border-color: var(--phoenix-gray-200);
   transition: opacity 0.4s ease-in-out;
@@ -29595,7 +29595,8 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 /*-----------------------------------------------
 |   Zero Roadmap chart
 -----------------------------------------------*/
-.gantt-zero-roadmap .gantt-zero-roadmap-chart {
+.gantt-zero-roadmap .gantt-zero-roadmap-chart,
+.gantt-chart-example .gantt-zero-roadmap-chart {
   width: 100%;
   height: 222px;
 }
@@ -29603,10 +29604,28 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .gantt-zero-roadmap .btn-group .google-map-control-btn .btn-check:checked + .zoomOut,
 .google-map-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut, .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn, .mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomIn,
 .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut,
-.mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut {
+.mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut,
+.gantt-chart-example .btn-group .btn-check:checked + .btn,
+.gantt-chart-example .btn-group [data-list] .btn-check:checked + .page,
+[data-list] .gantt-chart-example .btn-group .btn-check:checked + .page,
+.gantt-chart-example .btn-group .tox .btn-check:checked + .tox-button,
+.tox .gantt-chart-example .btn-group .btn-check:checked + .tox-button,
+.gantt-chart-example .btn-group .tox .btn-check:checked + .tox-button-secondary,
+.tox .gantt-chart-example .btn-group .btn-check:checked + .tox-button-secondary,
+.gantt-chart-example .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary,
+.tox .tox-dialog__footer .gantt-chart-example .btn-group .btn-check:checked + .tox-button--secondary,
+.gantt-chart-example .btn-group .google-map-control-btn .btn-check:checked + .zoomIn,
+.google-map-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomIn,
+.gantt-chart-example .btn-group .google-map-control-btn .btn-check:checked + .zoomOut,
+.google-map-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomOut,
+.gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn,
+.mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomIn,
+.gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut,
+.mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomOut {
   border-color: var(--phoenix-gray-soft) transparent;
 }
-.gantt-zero-roadmap .gantt_container {
+.gantt-zero-roadmap .gantt_container,
+.gantt-chart-example .gantt_container {
   position: relative;
   border: 0;
   background: var(--phoenix-gray-soft);
@@ -29615,63 +29634,84 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .gantt-zero-roadmap .gantt_container .gantt_grid_scale,
 .gantt-zero-roadmap .gantt_container .gantt_task_scale,
 .gantt-zero-roadmap .gantt_container .gantt_row_task,
-.gantt-zero-roadmap .gantt_container .gantt_task_row {
+.gantt-zero-roadmap .gantt_container .gantt_task_row,
+.gantt-chart-example .gantt_container .gantt_layout_cell,
+.gantt-chart-example .gantt_container .gantt_grid_scale,
+.gantt-chart-example .gantt_container .gantt_task_scale,
+.gantt-chart-example .gantt_container .gantt_row_task,
+.gantt-chart-example .gantt_container .gantt_task_row {
   border-bottom: 0;
   background: var(--phoenix-gray-soft);
 }
-.gantt-zero-roadmap .gantt_container .gantt_tree_content {
+.gantt-zero-roadmap .gantt_container .gantt_tree_content,
+.gantt-chart-example .gantt_container .gantt_tree_content {
   color: var(--phoenix-gray-900);
   font-size: 0.8rem;
   font-weight: 600;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line {
+.gantt-zero-roadmap .gantt_container .gantt_task_line,
+.gantt-chart-example .gantt_container .gantt_task_line {
   border: none;
   background: var(--phoenix-info-100);
   border-radius: 2px;
   border-right: 2px solid var(--phoenix-gray-soft);
   border-left: 2px solid var(--phoenix-gray-soft);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line .gantt_task_progress {
   border-radius: 2px;
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.research .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.research .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.research .gantt_task_progress {
   background: var(--phoenix-info-200);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.planning .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.planning .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.planning .gantt_task_progress {
   background: var(--phoenix-info-200);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.design .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.design .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.design .gantt_task_progress {
   background: var(--phoenix-info);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.review .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.review .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.review .gantt_task_progress {
   background: var(--phoenix-info-300);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.develop .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.develop .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.develop .gantt_task_progress {
   background: var(--phoenix-info);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.review-2 .gantt_task_progress {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.review-2 .gantt_task_progress,
+.gantt-chart-example .gantt_container .gantt_task_line.review-2 .gantt_task_progress {
   background: var(--phoenix-info-300);
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_line.gantt_selected {
+.gantt-zero-roadmap .gantt_container .gantt_task_line.gantt_selected,
+.gantt-chart-example .gantt_container .gantt_task_line.gantt_selected {
   box-shadow: none;
 }
-.gantt-zero-roadmap .gantt_container .gantt_scale_line {
+.gantt-zero-roadmap .gantt_container .gantt_scale_line,
+.gantt-chart-example .gantt_container .gantt_scale_line {
   border-width: 0;
 }
-.gantt-zero-roadmap .gantt_container .gantt_task_link .gantt_line_wrapper [class*=gantt_link_line_] {
+.gantt-zero-roadmap .gantt_container .gantt_task_link .gantt_line_wrapper [class*=gantt_link_line_],
+.gantt-chart-example .gantt_container .gantt_task_link .gantt_line_wrapper [class*=gantt_link_line_] {
   background-color: var(--phoenix-gray-300);
 }
-.gantt-zero-roadmap .gantt_container .gantt_grid_data .gantt_row.gantt_selected {
+.gantt-zero-roadmap .gantt_container .gantt_grid_data .gantt_row.gantt_selected,
+.gantt-chart-example .gantt_container .gantt_grid_data .gantt_row.gantt_selected {
   background: transparent;
 }
-.gantt-zero-roadmap .gantt_container .gantt_grid_data .gantt_row:hover {
+.gantt-zero-roadmap .gantt_container .gantt_grid_data .gantt_row:hover,
+.gantt-chart-example .gantt_container .gantt_grid_data .gantt_row:hover {
   background-color: transparent;
 }
-.gantt-zero-roadmap .gantt_link_arrow_right {
+.gantt-zero-roadmap .gantt_link_arrow_right,
+.gantt-chart-example .gantt_link_arrow_right {
   border-right-color: var(--phoenix-gray-300);
 }
-.gantt-zero-roadmap .gantt_link_arrow_left {
+.gantt-zero-roadmap .gantt_link_arrow_left,
+.gantt-chart-example .gantt_link_arrow_left {
   border-left-color: var(--phoenix-gray-300);
 }
 .gantt-zero-roadmap .gantt_row,
@@ -29679,38 +29719,70 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .gantt-zero-roadmap .grid_cell,
 .gantt-zero-roadmap .gantt_task_scale,
 .gantt-zero-roadmap .gantt_task_cell,
-.gantt-zero-roadmap .gantt_grid_scale {
+.gantt-zero-roadmap .gantt_grid_scale,
+.gantt-chart-example .gantt_row,
+.gantt-chart-example .gantt_task_row,
+.gantt-chart-example .grid_cell,
+.gantt-chart-example .gantt_task_scale,
+.gantt-chart-example .gantt_task_cell,
+.gantt-chart-example .gantt_grid_scale {
   border-color: var(--phoenix-gray-200) !important;
 }
-.gantt-zero-roadmap .gantt_task_link:hover .gantt_line_wrapper div {
+.gantt-zero-roadmap .gantt_task_link:hover .gantt_line_wrapper div,
+.gantt-chart-example .gantt_task_link:hover .gantt_line_wrapper div {
   box-shadow: none;
 }
-.gantt-zero-roadmap .gantt_task_link:hover [class*=gantt_link_line_] {
+.gantt-zero-roadmap .gantt_task_link:hover [class*=gantt_link_line_],
+.gantt-chart-example .gantt_task_link:hover [class*=gantt_link_line_] {
   background-color: var(--phoenix-gray-400) !important;
 }
-.gantt-zero-roadmap .gantt_task_link:hover .gantt_link_arrow_right {
+.gantt-zero-roadmap .gantt_task_link:hover .gantt_link_arrow_right,
+.gantt-chart-example .gantt_task_link:hover .gantt_link_arrow_right {
   border-right-color: var(--phoenix-gray-400);
 }
-.gantt-zero-roadmap .gantt_task_link:hover .gantt_link_arrow_left {
+.gantt-zero-roadmap .gantt_task_link:hover .gantt_link_arrow_left,
+.gantt-chart-example .gantt_task_link:hover .gantt_link_arrow_left {
   border-left-color: var(--phoenix-gray-400);
 }
-.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll {
+.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll {
   overflow: auto;
 }
-.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar {
+.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar {
   visibility: hidden;
   -webkit-appearance: none;
   width: 6px;
   height: 6px;
   background-color: transparent;
 }
-.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar-thumb {
+.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll::-webkit-scrollbar-thumb {
   visibility: hidden;
   border-radius: 3px;
   background-color: var(--phoenix-scrollbar-bg);
 }
-.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar-thumb {
+.gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar-thumb, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar, .gantt-zero-roadmap .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll:hover::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_ver_scroll:focus::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll:hover::-webkit-scrollbar-thumb,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar,
+.gantt-chart-example .gantt_layout_cell.gantt_hor_scroll:focus::-webkit-scrollbar-thumb {
   visibility: visible;
+}
+
+.gantt-chart-example .gantt_layout_cell,
+.gantt-chart-example .gantt_grid_scale,
+.gantt-chart-example .gantt_task_scale,
+.gantt-chart-example .gantt_row_task,
+.gantt-chart-example .gantt_task_row {
+  background: var(--phoenix-white) !important;
 }
 
 .navbar-shadow {

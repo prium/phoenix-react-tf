@@ -718,6 +718,48 @@ export const routes: RouteItems[] = [
             ]
           },
           {
+            name: 'advance',
+            active: true,
+            pages: [
+              {
+                name: 'advance-select',
+                path: '/modules/forms/advance-select',
+                pathName: 'advance-select',
+                active: true
+              },
+              {
+                name: 'date-picker',
+                path: '/modules/forms/date-picker',
+                pathName: 'date-picker',
+                active: true
+              },
+              {
+                name: 'editor',
+                path: '/modules/forms/editor',
+                pathName: 'editor',
+                active: true
+              },
+              {
+                name: 'emoji-button',
+                path: '/modules/forms/emoji-button',
+                pathName: 'emoji-button',
+                active: true
+              },
+              {
+                name: 'file-uploader',
+                path: '/modules/forms/file-uploader',
+                pathName: 'file-uploader',
+                active: true
+              },
+              {
+                name: 'rating',
+                path: '/modules/forms/rating',
+                pathName: 'rating',
+                active: true
+              }
+            ]
+          },
+          {
             name: 'validation',
             path: '/modules/forms/validation',
             pathName: 'forms-validation',
@@ -729,21 +771,25 @@ export const routes: RouteItems[] = [
       {
         name: 'icons',
         icon: 'grid',
+        active: true,
         pages: [
           {
             name: 'feather',
             path: 'modules/icons/feather',
-            pathName: 'icons-feather'
+            pathName: 'icons-feather',
+            active: true
           },
           {
             name: 'font awesome',
             path: 'modules/icons/font-awesome',
-            pathName: 'icons-font-awesome'
+            pathName: 'icons-font-awesome',
+            active: true
           },
           {
             name: 'unicons',
             path: 'modules/icons/unicons',
-            pathName: 'icons-unicons'
+            pathName: 'icons-unicons',
+            active: true
           }
         ]
       },
@@ -762,6 +808,25 @@ export const routes: RouteItems[] = [
             name: 'Advance tables',
             path: '/modules/tables/advance-tables',
             pathName: 'advance-tables',
+            active: true
+          }
+        ]
+      },
+      {
+        name: 'charts',
+        icon: 'bar-chart-2',
+        active: true,
+        pages: [
+          {
+            name: 'ECharts',
+            path: '/modules/charts/e-charts',
+            pathName: 'e-charts',
+            active: true
+          },
+          {
+            name: 'gantt-chart',
+            path: '/modules/charts/gantt-chart',
+            pathName: 'gantt-chart',
             active: true
           }
         ]
@@ -822,6 +887,12 @@ export const routes: RouteItems[] = [
                 path: '/modules/components/carousel/bootstrap',
                 pathName: 'components-bs-carousel',
                 active: true
+              },
+              {
+                name: 'swiper',
+                path: '/modules/components/carousel/swiper',
+                pathName: 'swiper-carousel',
+                active: true
               }
             ]
           },
@@ -841,6 +912,12 @@ export const routes: RouteItems[] = [
             name: 'list-group',
             pathName: 'components-bs-list-group',
             path: '/modules/components/list-group',
+            active: true
+          },
+          {
+            name: 'countup',
+            pathName: 'components-countup',
+            path: '/modules/components/countup',
             active: true
           },
           {
@@ -869,6 +946,18 @@ export const routes: RouteItems[] = [
                 name: 'tabs',
                 pathName: 'components-tabs',
                 path: '/modules/components/navs-and-tabs/tabs',
+                active: true
+              }
+            ]
+          },
+          {
+            name: 'pictures',
+            active: true,
+            pages: [
+              {
+                name: 'Lightbox',
+                pathName: 'lightbox',
+                path: '/modules/components/pictures/lightbox',
                 active: true
               }
             ]
