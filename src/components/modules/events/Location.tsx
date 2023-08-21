@@ -21,7 +21,7 @@ const Location = () => {
   } = useAppContext();
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY!
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || ''
   });
   return (
     <div className="mb-8">

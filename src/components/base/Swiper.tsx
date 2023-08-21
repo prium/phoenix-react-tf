@@ -7,6 +7,7 @@ import {
 import 'swiper/css';
 import { CSSProperties, PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavigationOptions } from 'swiper/types';
 
 interface SwiperProps extends ReactSwiperProps {
   navigationPosition?: CSSProperties;
@@ -49,10 +50,9 @@ const Swiper = ({
         }}
         onBeforeInit={swiper => {
           if (swiper.params.navigation) {
-            //@ts-ignore
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            //@ts-ignore
-            swiper.params.navigation.nextEl = navigationNextRef.current;
+            const navigation = swiper.params.navigation as NavigationOptions;
+            navigation.prevEl = navigationPrevRef.current;
+            navigation.nextEl = navigationNextRef.current;
           }
         }}
         {...rest}

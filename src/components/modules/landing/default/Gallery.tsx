@@ -1,47 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import gallery1 from 'assets/img/gallery/1.png';
-import gallery2 from 'assets/img/gallery/2.png';
-import gallery3 from 'assets/img/gallery/3.png';
-import gallery5 from 'assets/img/gallery/5.png';
-import gallery4 from 'assets/img/gallery/4.png';
-import gallery6 from 'assets/img/gallery/6.png';
-import gallery7 from 'assets/img/gallery/7.png';
-import gallery9 from 'assets/img/gallery/9.png';
-import gallery8 from 'assets/img/gallery/8.png';
-import gallery10 from 'assets/img/gallery/10.png';
+import img1 from 'assets/img/gallery/1.png';
+import img2 from 'assets/img/gallery/2.png';
+import img3 from 'assets/img/gallery/3.png';
+import img5 from 'assets/img/gallery/5.png';
+import img4 from 'assets/img/gallery/4.png';
+import img6 from 'assets/img/gallery/6.png';
+import img7 from 'assets/img/gallery/7.png';
+import img9 from 'assets/img/gallery/9.png';
+import img8 from 'assets/img/gallery/8.png';
+import img10 from 'assets/img/gallery/10.png';
+import IsotopeNav from 'components/navs/IsotopeNav';
 
 type GalleryItemType = {
-  breakpoints: {
-    xs: number;
-    md: number;
-    lg: number;
-  };
   img: string;
+  col: number;
+  row: number;
+  category: string[];
 };
 
-const galleryData: GalleryItemType[] = [
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery1 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery2 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery3 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery5 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery4 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery6 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery7 },
-  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery9 },
-  { breakpoints: { xs: 6, md: 4, lg: 3 }, img: gallery8 },
-  { breakpoints: { xs: 6, md: 4, lg: 6 }, img: gallery10 }
+const galleryItems: GalleryItemType[] = [
+  { img: img1, col: 1, row: 2, category: ['1', '4'] },
+  { img: img2, col: 1, row: 2, category: ['1', '3'] },
+  { img: img3, col: 1, row: 1, category: ['1', '2'] },
+  { img: img5, col: 1, row: 2, category: ['1', '3'] },
+  { img: img4, col: 1, row: 1, category: ['1', '2', '3'] },
+  { img: img6, col: 1, row: 2, category: ['1', '2'] },
+  { img: img7, col: 1, row: 1, category: ['1', '2'] },
+  { img: img9, col: 2, row: 1, category: ['1', '2'] },
+  { img: img8, col: 1, row: 1, category: ['1', '4'] },
+  { img: img10, col: 2, row: 1, category: ['1', '2'] }
+];
+
+const navItems = [
+  {
+    eventKey: '1',
+    label: 'First'
+  },
+  {
+    eventKey: '2',
+    label: 'Second'
+  },
+  {
+    eventKey: '3',
+    label: 'Third'
+  },
+  {
+    eventKey: '4',
+    label: 'Fourth'
+  }
 ];
 
 const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItemType }) => {
   return (
-    <Col {...galleryItem.breakpoints}>
+    <div className={`col-span-${galleryItem.col} row-span-${galleryItem.row}`}>
       <img src={galleryItem.img} alt="" className="rounded img-fluid" />
-    </Col>
+    </div>
   );
 };
 
 const Gallery = () => {
+  const [images, setImages] = useState(galleryItems);
+
+  const handleNavItemSelect = (category: string | null) => {
+    setImages(
+      galleryItems.filter(item =>
+        category ? item.category.includes(category) : true
+      )
+    );
+  };
   return (
     <section className="pt-15">
       <div className="container-small position-relative px-lg-7 px-xxl-3">
@@ -66,11 +93,18 @@ const Gallery = () => {
             </p>
           </Col>
         </Row>
-        <Row className="g-3">
-          {galleryData.map(gallery => (
+
+        <IsotopeNav
+          navItems={navItems}
+          className="mb-6 justify-content-center justify-content-sm-start w-max-content"
+          onSelect={handleNavItemSelect}
+        />
+
+        <div className="d-grid grid-cols-4 gap-3">
+          {images.map(gallery => (
             <GalleryItem galleryItem={gallery} key={gallery.img} />
           ))}
-        </Row>
+        </div>
       </div>
     </section>
   );

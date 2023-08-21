@@ -42,7 +42,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             name="top-navbar-appearance"
             value="default"
             thumb={theme === 'light' ? topDefault : topDefaultDarker}
-            defaultChecked={navbarTopAppearance === 'default'}
+            checked={navbarTopAppearance === 'default'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarAppearance}
           />
@@ -53,7 +53,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             name="top-navbar-appearance"
             value="darker"
             thumb={theme === 'light' ? navTopLight : navTopLighter}
-            defaultChecked={navbarTopAppearance === 'darker'}
+            checked={navbarTopAppearance === 'darker'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarAppearance}
           />

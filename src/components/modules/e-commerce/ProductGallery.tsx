@@ -5,7 +5,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<null | SwiperClass>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const { breakpoints } = useBreakpoints();
 
   return (

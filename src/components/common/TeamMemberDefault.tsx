@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { TeamMember } from 'data/users';
 import bg21 from 'assets/img/bg/bg-21.png';
 

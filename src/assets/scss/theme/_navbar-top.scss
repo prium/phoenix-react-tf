@@ -281,7 +281,7 @@
     @each $item, $value in $navbar-vertical-breakpoints {
       @include media-breakpoint-up($item) {
         &.navbar-expand-#{$item} {
-          // padding-left: $content-padding-x;
+          padding-left: $content-padding-x;
           padding-right: $content-padding-x;
           &:not(.navbar-slim) {
             .navbar-nav-top {

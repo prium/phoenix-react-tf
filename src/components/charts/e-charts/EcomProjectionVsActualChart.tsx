@@ -21,31 +21,6 @@ const data2 = [
   38911, 29452, 31894, 47876, 31302, 27731, 25490, 30355, 27176, 30393
 ];
 
-// const tooltipFormatter = (params: CallbackDataParams[]) => {
-//   const currentDate = dayjs(params[0].name);
-//   const prevDate = dayjs(params[0].name).subtract(1, 'month');
-
-//   const result = params.map((param, index) => ({
-//     value: param.value,
-//     date: index > 0 ? prevDate : currentDate,
-//     color: param.color
-//   }));
-
-//   let tooltipItem = ``;
-//   result.forEach((el: any, index: number) => {
-//     tooltipItem += `<h6 class="fs--1 text-700 ${
-//       index > 0 && 'mb-0'
-//     }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
-//       el.color
-//     }"></span>
-//     ${el.date.format('MMM DD')} : ${el.value}
-//   </h6>`;
-//   });
-//   return `<div class='ms-1'>
-//             ${tooltipItem}
-//           </div>`;
-// };
-
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   color: [getThemeColor('primary'), getThemeColor('gray-300')],
   tooltip: {

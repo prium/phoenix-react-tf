@@ -6,7 +6,7 @@ interface RadioItemProps {
   value: string;
   thumb: string;
   label: string;
-  defaultChecked?: boolean;
+  checked?: boolean;
   disabled?: boolean;
   handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -16,7 +16,7 @@ const RadioItem = ({
   value,
   thumb,
   label,
-  defaultChecked,
+  checked,
   handleChange,
   disabled
 }: RadioItemProps) => {
@@ -28,7 +28,7 @@ const RadioItem = ({
         id={`${name}-${value}`}
         name={name}
         value={value}
-        defaultChecked={defaultChecked}
+        checked={checked}
         onChange={handleChange}
         disabled={disabled}
       />

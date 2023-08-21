@@ -37,6 +37,10 @@ const TopNavItem = ({ route }: { route: RouteItems }) => {
 const TopNavLooper = ({ page }: { page: Route }) => {
   const [show, setShow] = useState(false);
 
+  if (!page.icon) {
+    console.log({ page });
+  }
+
   const { breakpoints } = useBreakpoints();
 
   const handleMouseEnter = () => {
@@ -72,7 +76,12 @@ const TopNavLooper = ({ page }: { page: Route }) => {
         className="dropdown-item dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
         onClick={handleClick}
       >
-        <div className="dropdown-item-wrapper">
+        <div
+          // className="dropdown-item-wrapper"
+          className={classNames('dropdown-item-wrapper', {
+            'text-300': !page.active
+          })}
+        >
           <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
           <span>
             <FeatherIcon icon={page.icon} size={16} className="me-2" />
@@ -98,7 +107,13 @@ const TopNavLooper = ({ page }: { page: Route }) => {
 const TopNavDropdownItem = ({ page }: { page: Route }) => {
   return (
     <li>
-      <Dropdown.Item as={Link} to="#!">
+      <Dropdown.Item
+        as={Link}
+        to={page.path || '#!'}
+        className={classNames({
+          'text-300': !page.active
+        })}
+      >
         <div className="dropdown-item-wrapper">
           {page.icon && (
             <>

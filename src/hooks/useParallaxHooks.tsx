@@ -11,7 +11,7 @@ const useParallaxHooks = (
   parallaxElRef:
     | MutableRefObject<HTMLDivElement | null>
     | MutableRefObject<(HTMLDivElement | HTMLImageElement | null)[]>,
-  commonOptions?: any
+  commonOptions?: unknown
 ) => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {

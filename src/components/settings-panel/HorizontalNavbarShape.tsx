@@ -37,7 +37,7 @@ const HorizontalNavbarShape = () => {
             name="top-nav-shape"
             value="default"
             thumb={theme === 'light' ? topDefault : topDefaultDark}
-            defaultChecked={navbarTopShape === 'default'}
+            checked={navbarTopShape === 'default'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarShape}
           />
@@ -48,7 +48,7 @@ const HorizontalNavbarShape = () => {
             name="top-nav-shape"
             value="slim"
             thumb={theme === 'light' ? topSlim : topSlimDark}
-            defaultChecked={navbarTopShape === 'slim'}
+            checked={navbarTopShape === 'slim'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarShape}
           />

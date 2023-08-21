@@ -54,16 +54,6 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       fontFamily: 'Nunito Sans'
     }
   },
-
-  // grid: {
-  //   left: '0%',
-  //   right: '4%',
-  //   bottom: '15%',
-  //   top: '10%',
-  //   containLabel: true,
-  //   show: true
-  // },
-
   xAxis: [
     {
       show: true,

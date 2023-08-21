@@ -168,27 +168,27 @@ export const members: Member[] = [
   },
   {
     id: 18,
-    name: 'Mizan Rifat',
+    name: 'John Doe',
     avatar: team9,
-    username: 'mizan_rifat',
-    connections: 89,
-    mutual: 6
+    username: 'john_doe',
+    connections: 120,
+    mutual: 8
   },
   {
     id: 19,
-    name: 'Mizan Rifat',
+    name: 'Jane Smith',
     avatar: team22,
-    username: 'mizan_rifat',
-    connections: 89,
-    mutual: 6
+    username: 'jane_smith',
+    connections: 95,
+    mutual: 4
   },
   {
     id: 20,
-    name: 'Mizan Rifat',
+    name: 'Alex Johnson',
     avatar: team28,
-    username: 'mizan_rifat',
-    connections: 89,
-    mutual: 6
+    username: 'alex_johnson',
+    connections: 60,
+    mutual: 12
   }
 ];
 

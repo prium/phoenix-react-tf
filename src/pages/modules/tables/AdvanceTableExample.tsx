@@ -1,4 +1,4 @@
-import { ColumnDef } from '@tanstack/react-table';
+import { ColumnDef, Row } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import Badge from 'components/base/Badge';
@@ -14,9 +14,8 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import { Project, projects, tableDocData } from 'data/doc/table';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import React, { ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import ts, { transpile } from 'typescript';
 
 const basicImportString = `
 import { ColumnDef } from '@tanstack/react-table';
@@ -680,28 +679,6 @@ const YourTableComponent = () => {
 };
 `;
 
-const advanceTableCode = `
-import AdvanceTable from 'components/base/AdvanceTable';
-
-const YourComponent = () => {
-  const table = useAdvanceTableContext();
-
-  return (
-    <AdvanceTable
-      headerClassName="your-header-class"
-      bodyClassName="your-body-class"
-      rowClassName="your-row-class"
-      tableProps={{
-        striped: true,
-        bordered: true,
-        size: 'sm',
-        // other react-bootstrap table props
-      }}
-    />
-  );
-};
-`;
-
 const advanceTableFooterCode = `
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import AdvanceTable from 'components/base/AdvanceTable';
@@ -732,12 +709,6 @@ const YourComponent = () => {
   );
 };
 `;
-
-const transformCode = (snippet: string, target: ts.ScriptTarget) =>
-  transpile(snippet, {
-    jsx: ts.JsxEmit.React,
-    target
-  });
 
 const AdvanceTableExample = () => {
   return (
@@ -1156,7 +1127,7 @@ const FilterByColumnExample = () => {
   const tabItems: FilterTabItem[] = useMemo(() => {
     const getDataCount = (label: string) =>
       getPrePaginationRowModel().rows.filter(
-        ({ original: { status } }: any) => status.label === label
+        ({ original: { status } }: Row<Project>) => status.label === label
       ).length;
 
     return [
