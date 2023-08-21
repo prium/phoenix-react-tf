@@ -10,6 +10,7 @@ import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
 import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
+import { mapMarkerPoints } from 'data/googleMapMarkerPoints';
 
 const Ecommerce = () => {
   return (
@@ -72,7 +73,7 @@ const Ecommerce = () => {
         </Col>
         <Col xs={12} xl={6}>
           <div className="h-100 w-100 py-5" style={{ minHeight: 300 }}>
-            <EcomTopRegionsMap />
+            <EcomTopRegionsMap data={mapMarkerPoints} />
           </div>
         </Col>
       </Row>
