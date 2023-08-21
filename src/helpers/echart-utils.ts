@@ -5,6 +5,8 @@ export const tooltipFormatter = (
   params: CallbackDataParams[],
   dateFormatter = 'MMM DD'
 ) => {
+  console.log({ utilparams: params });
+
   let tooltipItem = ``;
   params.forEach(el => {
     tooltipItem += `<div class='ms-1'>

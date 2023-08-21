@@ -10,6 +10,8 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, BarChart]);
 
 const tooltipFormatter = (params: CallbackDataParams[]) => {
+  console.log({ params });
+
   const currentDate = dayjs(params[0].name);
   const prevDate = dayjs(params[0].name).subtract(1, 'month');
 

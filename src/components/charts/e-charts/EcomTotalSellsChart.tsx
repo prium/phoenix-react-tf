@@ -14,6 +14,7 @@ import { LineChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { ThemeVariant } from 'config';
+import { tooltipFormatter } from 'helpers/echart-utils';
 
 echarts.use([
   TitleComponent,
@@ -40,7 +41,9 @@ const prevMonthData = [
   600, 800, 1000, 700, 400, 450, 500, 600, 700, 650, 600, 550
 ];
 
-const tooltipFormatter = (params: CallbackDataParams[]) => {
+const tooltipFormatters = (params: CallbackDataParams[]) => {
+  console.log({ params });
+
   const currentDate = dayjs(params[0].name);
   const prevDate = dayjs(params[0].name).subtract(1, 'month');
 
@@ -81,7 +84,7 @@ const getDefaultOptions = (
     axisPointer: {
       type: 'none'
     },
-    formatter: tooltipFormatter
+    formatter: tooltipFormatters
   },
   xAxis: [
     {
