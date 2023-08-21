@@ -212,15 +212,15 @@ const EcomLatestReviewsTable = () => {
                   onChange={handleSearchInputChange}
                 />
               </Col>
-              <Col xs="auto">
+              <Col xs="auto" className="d-flex gap-2">
                 <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100 me-2"
+                  className="bg-white hover-bg-100"
                 >
                   All products
                 </Button>
-                <Dropdown className="d-inline">
+                <Dropdown className="" align="start">
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"
@@ -229,7 +229,7 @@ const EcomLatestReviewsTable = () => {
                     <FontAwesomeIcon icon="ellipsis-h" className="10" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
+                  <Dropdown.Menu align="end">
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">
                       Another action
