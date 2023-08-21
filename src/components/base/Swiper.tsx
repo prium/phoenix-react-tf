@@ -5,11 +5,11 @@ import {
 } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import { PropsWithChildren, useRef } from 'react';
+import { CSSProperties, PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface SwiperProps extends ReactSwiperProps {
-  navigationPosition?: number;
+  navigationPosition?: CSSProperties;
 }
 
 const Swiper = ({
@@ -26,14 +26,14 @@ const Swiper = ({
         <>
           <button
             className="swiper-button-next"
-            style={{ top: `${navigationPosition}%` }}
+            style={navigationPosition}
             ref={navigationNextRef}
           >
             <FontAwesomeIcon icon="chevron-right" />
           </button>
           <button
             className="swiper-button-prev"
-            style={{ top: `${navigationPosition}%` }}
+            style={navigationPosition}
             ref={navigationPrevRef}
           >
             <FontAwesomeIcon icon="chevron-left" />
