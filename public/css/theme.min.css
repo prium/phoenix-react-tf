@@ -26169,7 +26169,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   border-bottom: 1px solid var(--phoenix-navbar-vertical-border-color);
 }
 .navbar-top .dropdown-menu {
-  margin-top: 0.5rem;
+  margin-top: 20px;
 }
 .navbar-top .dropdown-menu::before {
   content: "";

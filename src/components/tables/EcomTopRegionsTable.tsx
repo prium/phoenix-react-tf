@@ -137,28 +137,26 @@ const EcomTopRegionsTable = () => {
             <tr>
               {getFlatHeaders().map(header => {
                 return (
-                  <>
-                    <th
-                      key={header.id}
-                      {...header.column.columnDef.meta?.headerProps}
-                      className={classNames(
-                        'sort',
-                        header.column.columnDef.meta?.headerProps?.className,
-                        {
-                          desc: header.column.getIsSorted() === 'desc',
-                          asc: header.column.getIsSorted() === 'asc'
-                        }
-                      )}
-                      onClick={header.column.getToggleSortingHandler()}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </th>
-                  </>
+                  <th
+                    key={header.id}
+                    {...header.column.columnDef.meta?.headerProps}
+                    className={classNames(
+                      'sort',
+                      header.column.columnDef.meta?.headerProps?.className,
+                      {
+                        desc: header.column.getIsSorted() === 'desc',
+                        asc: header.column.getIsSorted() === 'asc'
+                      }
+                    )}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                  </th>
                 );
               })}
             </tr>
