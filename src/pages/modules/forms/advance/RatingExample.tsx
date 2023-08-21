@@ -80,7 +80,7 @@ const RatingExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Rating"
-        description={`React-${process.env.REACT_APP_TITLE} uses React Simple Rating as rating component. It's a simple react component for adding a star rating to your project.`}
+        description={`${process.env.REACT_APP_TITLE}-React uses React Simple Rating as rating component. It's a simple react component for adding a star rating to your project.`}
         link={{
           text: 'Documentation for React Simple Rating',
           url: 'https://github.com/awran5/react-simple-star-rating'

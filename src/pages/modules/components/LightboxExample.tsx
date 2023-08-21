@@ -66,9 +66,9 @@ const LightboxExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Lightbox"
-        description={`React-${process.env.REACT_APP_TITLE} uses React FsLightbox for lightbox. React FsLightbox is a flexible lightbox component for displaying images in a React project.`}
+        description={`${process.env.REACT_APP_TITLE}-React uses FsLightbox-react for lightbox. React FsLightbox is a flexible lightbox component for displaying images in a React project.`}
         link={{
-          text: 'React FsLightbox Documentation',
+          text: 'FsLightbox-react Documentation',
           url: 'https://github.com/banthagroup/fslightbox-react'
         }}
       />
