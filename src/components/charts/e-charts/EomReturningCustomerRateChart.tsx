@@ -5,7 +5,7 @@ import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { months } from 'data/commonData';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterDefault } from 'helpers/echart-utils';
 
 echarts.use([TooltipComponent, BarChart]);
 
@@ -58,7 +58,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
+    formatter: (params: CallbackDataParams[]) => tooltipFormatterDefault(params)
   },
   xAxis: {
     type: 'category',

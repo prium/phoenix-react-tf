@@ -12,9 +12,8 @@ import {
 } from 'echarts/components';
 import { LineChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { ThemeVariant } from 'config';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterList } from 'helpers/echart-utils';
 
 echarts.use([
   TitleComponent,
@@ -57,7 +56,7 @@ const getDefaultOptions = (
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
+    formatter: tooltipFormatterList
   },
   xAxis: [
     {

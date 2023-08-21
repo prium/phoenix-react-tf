@@ -5,7 +5,7 @@ import { TooltipComponent } from 'echarts/components';
 import { PieChart } from 'echarts/charts';
 import dayjs from 'dayjs';
 import { getPastDates } from 'helpers/utils';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, PieChart]);
 
@@ -20,7 +20,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     trigger: 'axis',
     backgroundColor: getThemeColor('gray-soft'),
     borderColor: getThemeColor('gray-200'),
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params),
+    formatter: (params: CallbackDataParams[]) =>
+      tooltipFormatterDefault(params),
     axisPointer: {
       shadowStyle: {
         color: 'red'

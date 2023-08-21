@@ -12,9 +12,8 @@ import {
 } from 'echarts/components';
 import { LineChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { ThemeVariant } from 'config';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterList } from 'helpers/echart-utils';
 
 echarts.use([
   TitleComponent,
@@ -41,33 +40,6 @@ const prevMonthData = [
   600, 800, 1000, 700, 400, 450, 500, 600, 700, 650, 600, 550
 ];
 
-const tooltipFormatters = (params: CallbackDataParams[]) => {
-  console.log({ params });
-
-  const currentDate = dayjs(params[0].name);
-  const prevDate = dayjs(params[0].name).subtract(1, 'month');
-
-  const result = params.map((param, index) => ({
-    value: param.value,
-    date: index > 0 ? prevDate : currentDate,
-    color: param.color
-  }));
-
-  let tooltipItem = ``;
-  result.forEach((el: any, index: number) => {
-    tooltipItem += `<h6 class="fs--1 text-700 ${
-      index > 0 && 'mb-0'
-    }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
-      el.color
-    }"></span>
-    ${el.date.format('MMM DD')} : ${el.value}
-  </h6>`;
-  });
-  return `<div class='ms-1'>
-            ${tooltipItem}
-          </div>`;
-};
-
 const getDefaultOptions = (
   theme: ThemeVariant,
   getThemeColor: (name: string) => string
@@ -84,7 +56,7 @@ const getDefaultOptions = (
     axisPointer: {
       type: 'none'
     },
-    formatter: tooltipFormatters
+    formatter: tooltipFormatterList
   },
   xAxis: [
     {
