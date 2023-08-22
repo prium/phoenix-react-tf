@@ -4,8 +4,16 @@ import errorIllustration from 'assets/img/spot-illustrations/404-illustration.pn
 import dark404illustrations from 'assets/img/spot-illustrations/dark_404-illustration.png';
 import error404Illustration from 'assets/img/spot-illustrations/404.png';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const Error404 = () => {
+  useSettingsMountEffect({
+    disableNavigationType: true,
+    disableHorizontalNavbarAppearance: true,
+    disableVerticalNavbarAppearance: true,
+    disableHorizontalNavbarShape: true
+  });
   return (
     <div>
       <div className="px-3">
@@ -38,11 +46,7 @@ const Error404 = () => {
                   <br className="d-none d-sm-block" />
                   while you wait safely.
                 </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="btn-support-chat"
-                >
+                <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home
                 </Button>
               </Col>

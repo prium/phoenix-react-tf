@@ -4,8 +4,16 @@ import dark403Illustration from 'assets/img/spot-illustrations/dark403-illustrat
 import light403Illustration from 'assets/img/spot-illustrations/403.png';
 import Button from 'components/base/Button';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const Error403 = () => {
+  useSettingsMountEffect({
+    disableNavigationType: true,
+    disableHorizontalNavbarAppearance: true,
+    disableVerticalNavbarAppearance: true,
+    disableHorizontalNavbarShape: true
+  });
   return (
     <div>
       <div className="px-3">
@@ -38,11 +46,7 @@ const Error403 = () => {
                   granted unto thee.
                   <br className="d-none d-sm-block" /> granted unto thee.
                 </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="btn-support-chat"
-                >
+                <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home
                 </Button>
               </Col>

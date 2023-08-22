@@ -4,8 +4,16 @@ import dark500Illustration from 'assets/img/spot-illustrations/500-illustration.
 import error500 from 'assets/img/spot-illustrations/500.png';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 
 const Error500 = () => {
+  useSettingsMountEffect({
+    disableNavigationType: true,
+    disableHorizontalNavbarAppearance: true,
+    disableVerticalNavbarAppearance: true,
+    disableHorizontalNavbarShape: true
+  });
   return (
     <div>
       <div className="px-3">
@@ -36,11 +44,7 @@ const Error500 = () => {
                 <p className="text-900 mb-5">
                   But relax! Our cat is here to play you some music.
                 </p>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  className="btn-support-chat"
-                >
+                <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home
                 </Button>
               </Col>
