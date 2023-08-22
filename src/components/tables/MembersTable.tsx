@@ -1,6 +1,5 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
-import { currencyFormat } from 'helpers/utils';
 import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import Avatar from 'components/base/Avatar';
@@ -25,9 +24,9 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     meta: {
       headerProps: {
         style: { width: '15%', minWidth: '200px' },
-        className: 'align-middle px-1'
+        className: 'px-1'
       },
-      cellProps: { className: 'align-middle white-space-nowrap py-0' }
+      cellProps: { className: 'align-middle white-space-nowrap py-2' }
     }
   },
   {
@@ -43,10 +42,9 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     },
     meta: {
       headerProps: {
-        style: { width: '15%', minWidth: '200px' },
-        className: 'pe-5'
+        style: { width: '15%', minWidth: '200px' }
       },
-      cellProps: { className: 'align-middle white-space-nowrap py-0' }
+      cellProps: { className: 'white-space-nowrap' }
     }
   },
   {
@@ -55,7 +53,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { mobile } = original;
       return (
-        <Link to={`tel:${mobile}`} className="fw-semi-bold">
+        <Link to={`tel:${mobile}`} className="fw-bold text-1100">
           {mobile}
         </Link>
       );
@@ -63,10 +61,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     meta: {
       headerProps: {
         style: { width: '20%', minWidth: '200px' },
-        className: ''
-      },
-      cellProps: {
-        className: 'align-middle white-space-nowrap fw-bold text-1100 py-0'
+        className: 'pe-3'
       }
     }
   },
@@ -75,7 +70,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     header: 'City',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-900 align-middle white-space-nowrap py-0' }
+      cellProps: { className: 'text-900' }
     }
   },
   {
@@ -87,7 +82,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
         className: 'text-end'
       },
       cellProps: {
-        className: 'align-middle text-end white-space-nowrap text-700 py-0'
+        className: 'text-end text-700'
       }
     }
   },
@@ -97,10 +92,10 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     meta: {
       headerProps: {
         style: { width: '19%', minWidth: '200px' },
-        className: 'text-end'
+        className: 'text-end pe-0'
       },
       cellProps: {
-        className: 'align-middle white-space-nowrap text-700 text-end py-0'
+        className: 'text-700 text-end'
       }
     }
   }
