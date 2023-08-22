@@ -136,6 +136,7 @@ import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
 import ECharts from 'pages/modules/charts/ECharts';
 import GanttChart from 'pages/modules/charts/GanttChart';
+import Members from 'pages/Members';
 
 const routes = [
   {
@@ -162,6 +163,10 @@ const routes = [
       {
         path: '/pages/notifications/notifications',
         element: <Notification />
+      },
+      {
+        path: '/pages/members',
+        element: <Members />
       },
       {
         path: '/pages/faq/faq-accordion',

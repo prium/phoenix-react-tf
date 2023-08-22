@@ -430,7 +430,8 @@ export const routes: RouteItems[] = [
         name: 'members',
         icon: 'users',
         path: 'pages/members',
-        pathName: 'members-page'
+        pathName: 'members-page',
+        active: true
       },
       {
         name: 'timeline',
