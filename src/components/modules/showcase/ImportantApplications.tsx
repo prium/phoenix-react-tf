@@ -7,6 +7,7 @@ import bg29 from 'assets/img/bg/29.png';
 import bg28 from 'assets/img/bg/28.png';
 import { useRef } from 'react';
 import useParallaxHooks from 'hooks/useParallaxHooks';
+import classNames from 'classnames';
 
 const ImportantApplications = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -68,12 +69,22 @@ const ImportantApplications = () => {
                 <img
                   src={application.thumb}
                   alt=""
-                  className="mb-7 shadow rounded mw-100"
+                  className={classNames('mb-7 shadow rounded mw-100', {
+                    'opacity-50': application.disable
+                  })}
                   width={550}
                 />
                 <h4 className="text-1000 mb-3">{application.title}</h4>
                 <p className="text-700 lh-sm pb-4">{application.details}</p>
-                <Button as={Link} to={application.link} variant="primary">
+                <Button
+                  as={Link}
+                  to={application.link}
+                  disabled={application.disable}
+                  variant="primary"
+                  className={classNames({
+                    disabled: application.disable
+                  })}
+                >
                   {application.btnLabel}
                 </Button>
               </div>
