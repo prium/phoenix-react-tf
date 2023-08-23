@@ -7,7 +7,7 @@ import bgRight17 from 'assets/img/bg/bg-right-17.png';
 
 const TeamSection = () => {
   return (
-    <section>
+    <section id="team">
       <div
         className="position-absolute h-70 w-100 bg-soft"
         style={{ transform: 'skew(0,-10deg)', top: '10%' }}

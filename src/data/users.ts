@@ -252,7 +252,7 @@ export const defaultTeamMembers: TeamMember[] = [
   },
   {
     image: team68,
-    name: 'Narokin Hijita',
+    name: 'Jane Smith',
     designation: 'CEO, Global Cheat',
     facebookHandle: '#!',
     twitterHandle: '#!',
@@ -260,7 +260,7 @@ export const defaultTeamMembers: TeamMember[] = [
   },
   {
     image: team69,
-    name: 'Narokin Hijita',
+    name: 'Alex Johnson',
     designation: 'CEO, Global Cheat',
     facebookHandle: '#!',
     twitterHandle: '#!',
