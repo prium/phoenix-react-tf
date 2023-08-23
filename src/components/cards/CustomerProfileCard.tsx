@@ -6,9 +6,9 @@ import team15 from 'assets/img/team/15.webp';
 const CustomerProfileCard = () => {
   return (
     <Card className="h-100">
-      <Card.Body className="d-flex flex-column justify-content-between">
+      <Card.Body className="d-flex flex-column justify-content-between pb-3">
         <Row className="align-items-center g-5 mb-3 text-center text-sm-start">
-          <Col xs={12} sm="auto">
+          <Col xs={12} sm="auto" className="mb-sm-3">
             <AvatarUpload size="5xl" src={team15} />
           </Col>
           <Col xs={12} sm="auto" className="flex-1">

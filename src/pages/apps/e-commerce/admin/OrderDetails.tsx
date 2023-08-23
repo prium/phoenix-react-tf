@@ -17,10 +17,10 @@ const OrderDetails = () => {
     <div>
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-3">
+        <h2 className="mb-1">
           Order <span>#349</span>
         </h2>
-        <div className="d-flex flex-wrap flex-between-center mb-3 gap-2">
+        <div className="d-flex flex-wrap flex-between-center mb-4 gap-2">
           <p className="text-800 lh-sm mb-0">
             Customer ID :{' '}
             <Link className="fw-bold" to="#!">
@@ -61,7 +61,7 @@ const OrderDetails = () => {
         </div>
         <Row className="g-5 gy-7">
           <Col xs={12} xl={8} xxl={9}>
-            <div className="mb-7">
+            <div className="mb-6">
               <OrderDetailsTable />
             </div>
             <Row className="gx-4 gy-6 g-xl-7 justify-content-sm-center justify-content-xl-start">

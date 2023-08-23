@@ -87,7 +87,8 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       );
     },
     meta: {
-      headerProps: { style: { minWidth: 250 }, className: 'ps-3' }
+      headerProps: { style: { width: 250 }, className: 'ps-3' },
+      cellProps: { style: { minWidth: 225 }, className: 'ps-3' }
     }
   },
   {
@@ -109,7 +110,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       return <Link to="#!">{vendor}</Link>;
     },
     meta: {
-      headerProps: { className: 'ps-4' },
+      headerProps: { style: { width: 200 }, className: 'ps-4' },
       cellProps: { className: 'ps-4 fw-semi-bold text-start' }
     }
   },

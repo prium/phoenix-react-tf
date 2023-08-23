@@ -38,7 +38,7 @@ const RevealDropdown = ({
         size="sm"
         className={classNames(
           btnClassName,
-          'btn-reveal dropdown-caret-none transition-none'
+          'btn-reveal dropdown-caret-none transition-none lh-1'
         )}
       >
         <FontAwesomeIcon icon={icon} className="fs-10" />

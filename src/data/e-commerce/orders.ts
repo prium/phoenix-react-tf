@@ -42,14 +42,14 @@ export const ordersTableData: Order[] = [
       name: 'Carry Anna'
     },
     payment_status: {
-      label: 'Complete',
+      label: 'Paid',
       type: 'success',
       icon: 'check'
     },
     fulfilment_status: {
-      label: 'Cancelled',
-      type: 'secondary',
-      icon: 'x'
+      label: 'Order Fulfilled',
+      type: 'success',
+      icon: 'check'
     },
     delivery_type: 'Cash on delivery',
     date: 'Dec 12, 12:56 PM'
@@ -86,9 +86,9 @@ export const ordersTableData: Order[] = [
       icon: 'clock'
     },
     fulfilment_status: {
-      label: 'Completed',
-      type: 'success',
-      icon: 'check'
+      label: 'Partial Fulfilled',
+      type: 'warning',
+      icon: 'info'
     },
     delivery_type: 'Local pickup',
     date: 'Dec 4, 12:56 PM'
@@ -106,9 +106,9 @@ export const ordersTableData: Order[] = [
       icon: 'x'
     },
     fulfilment_status: {
-      label: 'Partially Fulfiled',
-      type: 'warning',
-      icon: 'clock'
+      label: 'Order Cancelled',
+      type: 'secondary',
+      icon: 'x'
     },
     delivery_type: 'Standard shipping',
     date: 'Dec 1, 4:07 AM'
@@ -123,10 +123,10 @@ export const ordersTableData: Order[] = [
     payment_status: {
       label: 'Failed',
       type: 'danger',
-      icon: 'x'
+      icon: 'info'
     },
     fulfilment_status: {
-      label: 'Partially Fulfiled',
+      label: 'Order Fulfilled',
       type: 'success',
       icon: 'check'
     },
@@ -146,9 +146,9 @@ export const ordersTableData: Order[] = [
       icon: 'check'
     },
     fulfilment_status: {
-      label: 'Unfulfiled',
+      label: 'DELIVERY DELAYED',
       type: 'danger',
-      icon: 'x'
+      icon: 'info'
     },
     delivery_type: 'Local delivery',
     date: 'Nov 24, 10:16 AM'
@@ -165,7 +165,7 @@ export const ordersTableData: Order[] = [
       icon: 'clock'
     },
     fulfilment_status: {
-      label: 'Fulfiled',
+      label: 'Order Fulfilled',
       type: 'success',
       icon: 'check'
     },
@@ -185,7 +185,7 @@ export const ordersTableData: Order[] = [
       icon: 'clock'
     },
     fulfilment_status: {
-      label: 'Fulfiled',
+      label: 'Order Fulfilled',
       type: 'success',
       icon: 'check'
     },
@@ -205,7 +205,7 @@ export const ordersTableData: Order[] = [
       icon: 'check'
     },
     fulfilment_status: {
-      label: 'Canceled',
+      label: 'Order Cancelled',
       type: 'secondary',
       icon: 'x'
     },
@@ -265,7 +265,7 @@ export const ordersTableData: Order[] = [
       icon: 'clock'
     },
     fulfilment_status: {
-      label: 'Fulfiled',
+      label: 'Order Fulfilled',
       type: 'success',
       icon: 'check'
     },
@@ -326,7 +326,7 @@ export const ordersTableData: Order[] = [
       icon: 'clock'
     },
     fulfilment_status: {
-      label: 'Fulfiled',
+      label: 'Order Fulfilled',
       type: 'success',
       icon: 'check'
     },
