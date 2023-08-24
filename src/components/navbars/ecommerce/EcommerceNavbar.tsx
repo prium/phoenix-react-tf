@@ -33,7 +33,7 @@ const initNavItems: NavItemType[] = [
   },
   {
     id: 2,
-    label: 'Stores',
+    label: 'My Favorite Stores',
     url: '#!'
   },
   {
@@ -80,7 +80,10 @@ const EcommerceNavbar = () => {
     const otherElsWidth = otherElsRef.current?.clientWidth || 0;
     const containerWidth = containerRef.current?.clientWidth || 0;
     const navbarWidth = navbarRef.current?.clientWidth || 0;
+    console.log({ navbarWidth, containerWidth, otherElsWidth });
+
     if (navbarWidth + otherElsWidth + 50 > containerWidth) {
+      console.log('kjjk');
       setNavItems(items =>
         items.filter((item, index) => index !== items.length - 1)
       );
@@ -108,6 +111,10 @@ const EcommerceNavbar = () => {
     );
     setDropdownItems(items);
   }, [navItems]);
+
+  useEffect(() => {
+    // updateItems();
+  }, [dropdownItems]);
   return (
     <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
       <div

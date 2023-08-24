@@ -27932,6 +27932,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 .avatar .avatar-name > span {
   font-weight: 900 !important;
+  position: absolute;
 }
 .avatar .avatar-emoji {
   height: 100%;
@@ -29006,6 +29007,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   margin-left: -4px !important;
   padding-left: -4px !important;
   margin-right: -15px !important;
+}
+
+.product-scrollbar > div {
+  padding-left: 4px !important;
 }
 
 /* -------------------------------------------------------------------------- */

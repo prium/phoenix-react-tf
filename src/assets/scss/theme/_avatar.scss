@@ -20,6 +20,7 @@
     align-items: center;
     > span {
       font-weight: $font-weight-black !important;
+      position: absolute;
     }
   }
   .avatar-emoji {

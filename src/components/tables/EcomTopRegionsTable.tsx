@@ -189,7 +189,7 @@ const EcomTopRegionsTable = () => {
           </tbody>
         </Table>
 
-        <AdvanceTableFooter className="gx-0" navBtn />
+        <AdvanceTableFooter className="gx-0" navBtn showViewAllBtn={false} />
       </Scrollbar>
     </AdvanceTableProvider>
   );
