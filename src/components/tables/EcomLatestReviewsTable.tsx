@@ -224,7 +224,7 @@ const EcomLatestReviewsTable = () => {
                 >
                   All products
                 </Button>
-                <Dropdown className="" align="start">
+                <Dropdown>
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"

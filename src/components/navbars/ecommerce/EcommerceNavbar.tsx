@@ -80,15 +80,15 @@ const EcommerceNavbar = () => {
     const otherElsWidth = otherElsRef.current?.clientWidth || 0;
     const containerWidth = containerRef.current?.clientWidth || 0;
     const navbarWidth = navbarRef.current?.clientWidth || 0;
-    console.log({ navbarWidth, containerWidth, otherElsWidth });
-
     if (navbarWidth + otherElsWidth + 50 > containerWidth) {
-      console.log('kjjk');
-      setNavItems(items =>
-        items.filter((item, index) => index !== items.length - 1)
-      );
+      setNavItems(items => {
+        return items.filter((item, index) => index !== items.length - 1);
+      });
     } else {
-      if (dropdownItems.length > 0) {
+      if (
+        navbarWidth + otherElsWidth + 120 < containerWidth &&
+        dropdownItems.length > 0
+      ) {
         setNavItems(items => [...items, dropdownItems[0]]);
       }
     }
@@ -110,11 +110,9 @@ const EcommerceNavbar = () => {
       navItem => !navItems.map(navItem => navItem.id).includes(navItem.id)
     );
     setDropdownItems(items);
+    updateItems();
   }, [navItems]);
 
-  useEffect(() => {
-    // updateItems();
-  }, [dropdownItems]);
   return (
     <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
       <div
@@ -193,7 +191,7 @@ const EcommerceNavbar = () => {
                 <FontAwesomeIcon icon="angle-down" className="ms-2" />
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
+              <Dropdown.Menu align="end">
                 {dropdownItems.map(item => (
                   <Dropdown.Item key={item.id} as={Link} to={item.url}>
                     {item.label}
