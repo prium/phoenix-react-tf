@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import {
+  Accept,
   DropEvent,
   FileRejection,
   DropzoneProps as ReactDropZoneProps,
@@ -9,10 +10,17 @@ import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import Attachment, { FileAttachment } from 'components/common/Attachment';
+import {
+  convertFileToAttachment,
+  getFileExtension,
+  isImageFile
+} from 'helpers/utils';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
   size?: 'sm';
+  accept?: Accept;
   onDrop?: <T extends File>(
     acceptedFiles: T[],
     fileRejections: FileRejection[],
@@ -20,26 +28,38 @@ interface DropzoneProps extends ReactDropZoneProps {
   ) => void;
 }
 
-const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
+const Dropzone = ({
+  className,
+  size,
+  onDrop,
+  accept,
+  ...rest
+}: DropzoneProps) => {
   const [files, setFiles] = useState<File[]>([]);
+  const [previews, setPreviews] = useState<FileAttachment[]>([]);
 
   const handleRemoveFile = (index: number) => {
     setFiles(files.filter((file, ind) => index !== ind));
+    setPreviews(previews.filter((file, ind) => index !== ind));
   };
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (...args) => {
-      setFiles(args[0]);
+      const [acceptedFiles] = args;
+      setFiles(acceptedFiles);
+      setPreviews(acceptedFiles.map(file => convertFileToAttachment(file)));
       if (onDrop) {
         onDrop(...args);
       }
+      console.log({ acceptedFiles });
     },
     ...rest
   });
+  console.log({ previews });
 
   return (
     <>
-      {files.length > 0 && (
+      {accept && accept['image/*'] && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
             <div className="dropzone-file-preview" key={file.name}>
@@ -75,6 +95,20 @@ const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
           />
         </div>
       </div>
+      {previews.map((file, index) => (
+        <div
+          key={index}
+          className={classNames(
+            'border-bottom d-flex align-items-center justify-content-between py-3'
+          )}
+        >
+          <Attachment attachment={file} />
+
+          <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
+            <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />
+          </button>
+        </div>
+      ))}
     </>
   );
 };

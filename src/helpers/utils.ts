@@ -164,3 +164,24 @@ export const transformTSCode = (
     jsx: ts.JsxEmit.React,
     target
   });
+
+export const getFileExtension = (fileName: string, separator = '.') =>
+  fileName.split(separator).pop() || 'unknown';
+
+export const isImageFile = (file: File) => {
+  const imageMimeTypes = [
+    'image/jpeg',
+    'image/png',
+    'image/gif',
+    'image/bmp',
+    'image/webp'
+  ];
+  return imageMimeTypes.includes(file.type);
+};
+
+export const convertFileToAttachment = (file: File) => ({
+  name: file.name,
+  size: `${(file.size / 1024).toFixed(2)} KB`,
+  format: getFileExtension(file.name),
+  preview: isImageFile(file) ? URL.createObjectURL(file) : undefined
+});
