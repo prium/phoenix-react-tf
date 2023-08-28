@@ -6,7 +6,6 @@ import VariantFormCard from 'components/cards/VariantFormCard';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import InventoryTab from 'components/tabs/InventoryTab';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 
 const AddProduct = () => {
@@ -48,7 +47,12 @@ const AddProduct = () => {
             </div>
             <div className="mb-5">
               <h4 className="mb-3">Display images</h4>
-              <Dropzone className="mb-3" />
+              <Dropzone
+                className="mb-3"
+                accept={{
+                  'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+                }}
+              />
             </div>
             <div className="mb-5">
               <h4 className="mb-3">Inventory</h4>

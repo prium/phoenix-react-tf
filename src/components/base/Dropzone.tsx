@@ -9,13 +9,9 @@ import {
 import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Attachment, { FileAttachment } from 'components/common/Attachment';
-import {
-  convertFileToAttachment,
-  getFileExtension,
-  isImageFile
-} from 'helpers/utils';
+import { convertFileToAttachment } from 'helpers/utils';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
@@ -51,15 +47,18 @@ const Dropzone = ({
       if (onDrop) {
         onDrop(...args);
       }
-      console.log({ acceptedFiles });
     },
+    accept,
     ...rest
   });
-  console.log({ previews });
+
+  const imageOnly = useMemo(() => {
+    return Boolean(accept && accept['image/*']);
+  }, [accept]);
 
   return (
     <>
-      {accept && accept['image/*'] && (
+      {imageOnly && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
             <div className="dropzone-file-preview" key={file.name}>
@@ -82,7 +81,8 @@ const Dropzone = ({
       >
         <input {...getInputProps()} />
         <div className="text-600 fw-bold fs-9">
-          Drag your photo here <span className="text-800">or </span>
+          Drag your {imageOnly ? 'photo' : 'files'} here{' '}
+          <span className="text-800">or </span>
           <Button variant="link" className="p-0">
             Browse from device
           </Button>
@@ -95,20 +95,21 @@ const Dropzone = ({
           />
         </div>
       </div>
-      {previews.map((file, index) => (
-        <div
-          key={index}
-          className={classNames(
-            'border-bottom d-flex align-items-center justify-content-between py-3'
-          )}
-        >
-          <Attachment attachment={file} />
+      {!imageOnly &&
+        previews.map((file, index) => (
+          <div
+            key={index}
+            className={classNames(
+              'border-bottom d-flex align-items-center justify-content-between py-3'
+            )}
+          >
+            <Attachment attachment={file} />
 
-          <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
-            <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />
-          </button>
-        </div>
-      ))}
+            <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
+              <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />
+            </button>
+          </div>
+        ))}
     </>
   );
 };
