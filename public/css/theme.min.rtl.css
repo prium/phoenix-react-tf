@@ -21194,7 +21194,7 @@ pre[class*=language-] {
   padding: 1.5rem;
 }
 
-.dropzone-file-preview {
+.image-attachment-preview {
   height: 80px;
   width: 80px;
   display: flex;
@@ -21205,12 +21205,12 @@ pre[class*=language-] {
   border-radius: 8px;
   position: relative;
 }
-.dropzone-file-preview img {
+.image-attachment-preview img {
   height: 100%;
   width: 100%;
   border-radius: 8px;
 }
-.dropzone-file-preview .close-btn {
+.image-attachment-preview .close-btn {
   height: 18px;
   width: 18px;
   border-radius: 50%;

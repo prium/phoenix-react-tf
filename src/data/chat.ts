@@ -22,7 +22,7 @@ import team1 from 'assets/img/team/1.webp';
 import team6 from 'assets/img/team/6.webp';
 import team60 from 'assets/img/team/60.webp';
 import team57 from 'assets/img/team/57.webp';
-import { FileAttachment } from 'components/common/Attachment';
+import { FileAttachment } from 'components/common/AttachmentPreview';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface Message {

@@ -10,8 +10,11 @@ import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMemo, useState } from 'react';
-import Attachment, { FileAttachment } from 'components/common/Attachment';
+import AttachmentPreview, {
+  FileAttachment
+} from 'components/common/AttachmentPreview';
 import { convertFileToAttachment } from 'helpers/utils';
+import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
@@ -61,15 +64,11 @@ const Dropzone = ({
       {imageOnly && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
-            <div className="dropzone-file-preview" key={file.name}>
-              <img src={URL.createObjectURL(file)} alt="" />
-              <button
-                className="btn close-btn"
-                onClick={() => handleRemoveFile(index)}
-              >
-                <FontAwesomeIcon icon="xmark" />
-              </button>
-            </div>
+            <ImageAttachmentPreview
+              key={file.name}
+              image={URL.createObjectURL(file)}
+              handleClose={() => handleRemoveFile(index)}
+            />
           ))}
         </div>
       )}
@@ -103,7 +102,7 @@ const Dropzone = ({
               'border-bottom d-flex align-items-center justify-content-between py-3'
             )}
           >
-            <Attachment attachment={file} />
+            <AttachmentPreview attachment={file} />
 
             <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
               <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />

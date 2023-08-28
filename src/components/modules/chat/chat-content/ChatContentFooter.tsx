@@ -5,7 +5,7 @@ import { Card, Col, Form, Row } from 'react-bootstrap';
 import EmojiPicker from 'components/base/EmojiPicker';
 import { useChatContext } from 'providers/ChatProvider';
 import ReactTextareaAutosize from 'react-textarea-autosize';
-import Attachment from 'components/common/Attachment';
+import AttachmentPreview from 'components/common/AttachmentPreview';
 import generic41 from 'assets/img/generic/41.png';
 
 const ChatContentFooter = () => {
@@ -39,7 +39,7 @@ const ChatContentFooter = () => {
 
       <Row className="mb-2 gx-0 gy-2">
         <Col xs="auto" className="me-3">
-          <Attachment
+          <AttachmentPreview
             attachment={{
               name: 'workflow-data.pdf',
               size: '53.34 KB',
@@ -50,7 +50,7 @@ const ChatContentFooter = () => {
           />
         </Col>
         <Col xs="auto" className="me-3">
-          <Attachment
+          <AttachmentPreview
             attachment={{
               name: 'forest.jpg',
               size: '123.34 KB',

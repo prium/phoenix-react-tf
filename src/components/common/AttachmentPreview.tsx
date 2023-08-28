@@ -17,7 +17,7 @@ interface AttachmentProps {
   size?: 'lg' | 'xl';
 }
 
-const Attachment = ({
+const AttachmentPreview = ({
   attachment,
   type = 'primary',
   size = 'lg'
@@ -86,4 +86,4 @@ const Attachment = ({
   );
 };
 
-export default Attachment;
+export default AttachmentPreview;
