@@ -742,15 +742,15 @@ const routes = [
     path: '/pages/errors/',
     children: [
       {
-        path: 'Error404',
+        path: '404',
         element: <Error404 />
       },
       {
-        path: 'Error403',
+        path: '403',
         element: <Error403 />
       },
       {
-        path: 'Error500',
+        path: '500',
         element: <Error500 />
       }
     ]

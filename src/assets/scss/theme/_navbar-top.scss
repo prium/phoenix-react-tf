@@ -44,7 +44,7 @@
   border-bottom: 1px solid $navbar-vertical-border-color;
 
   .dropdown-menu {
-    margin-top: map-get($spacers, 2);
+    margin-top: 20px;
     &::before {
       content: '';
       position: absolute;

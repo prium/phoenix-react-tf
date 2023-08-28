@@ -7,7 +7,7 @@ import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterDefault } from 'helpers/echart-utils';
 
 echarts.use([TooltipComponent, BarChart]);
 
@@ -30,7 +30,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
+    formatter: (params: CallbackDataParams[]) => tooltipFormatterDefault(params)
   },
   legend: {
     data: ['Expenses', 'Income'],

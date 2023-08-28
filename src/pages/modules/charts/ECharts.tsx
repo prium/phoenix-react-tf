@@ -50,7 +50,7 @@ const basicImportString = `
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
-import { tooltipFormatter } from 'helpers/echart-utils';
+import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 `;
 
@@ -109,7 +109,7 @@ const getDefaultOptions = (
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
+    formatter: tooltipFormatterDefault
   },
   xAxis: [
     {
@@ -256,7 +256,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params)
+    formatter: tooltipFormatterDefault
   },
   legend: {
     data: ['Expenses', 'Income'],
@@ -470,7 +470,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     trigger: 'axis',
     backgroundColor: getThemeColor('gray-soft'),
     borderColor: getThemeColor('gray-200'),
-    formatter: (params: CallbackDataParams[]) => tooltipFormatter(params),
+    formatter: tooltipFormatterDefault,
     axisPointer: {
       shadowStyle: {
         color: 'red'

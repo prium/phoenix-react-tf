@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import {
+  Accept,
   DropEvent,
   FileRejection,
   DropzoneProps as ReactDropZoneProps,
@@ -8,11 +9,17 @@ import {
 import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import AttachmentPreview, {
+  FileAttachment
+} from 'components/common/AttachmentPreview';
+import { convertFileToAttachment } from 'helpers/utils';
+import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
   size?: 'sm';
+  accept?: Accept;
   onDrop?: <T extends File>(
     acceptedFiles: T[],
     fileRejections: FileRejection[],
@@ -20,37 +27,48 @@ interface DropzoneProps extends ReactDropZoneProps {
   ) => void;
 }
 
-const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
+const Dropzone = ({
+  className,
+  size,
+  onDrop,
+  accept,
+  ...rest
+}: DropzoneProps) => {
   const [files, setFiles] = useState<File[]>([]);
+  const [previews, setPreviews] = useState<FileAttachment[]>([]);
 
   const handleRemoveFile = (index: number) => {
     setFiles(files.filter((file, ind) => index !== ind));
+    setPreviews(previews.filter((file, ind) => index !== ind));
   };
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (...args) => {
-      setFiles(args[0]);
+      const [acceptedFiles] = args;
+      setFiles(acceptedFiles);
+      setPreviews(acceptedFiles.map(file => convertFileToAttachment(file)));
       if (onDrop) {
         onDrop(...args);
       }
     },
+    accept,
     ...rest
   });
 
+  const imageOnly = useMemo(() => {
+    return Boolean(accept && accept['image/*']);
+  }, [accept]);
+
   return (
     <>
-      {files.length > 0 && (
+      {imageOnly && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
-            <div className="dropzone-file-preview" key={file.name}>
-              <img src={URL.createObjectURL(file)} alt="" />
-              <button
-                className="btn close-btn"
-                onClick={() => handleRemoveFile(index)}
-              >
-                <FontAwesomeIcon icon="xmark" />
-              </button>
-            </div>
+            <ImageAttachmentPreview
+              key={file.name}
+              image={URL.createObjectURL(file)}
+              handleClose={() => handleRemoveFile(index)}
+            />
           ))}
         </div>
       )}
@@ -62,7 +80,8 @@ const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
       >
         <input {...getInputProps()} />
         <div className="text-600 fw-bold fs-9">
-          Drag your photo here <span className="text-800">or </span>
+          Drag your {imageOnly ? 'photo' : 'files'} here{' '}
+          <span className="text-800">or </span>
           <Button variant="link" className="p-0">
             Browse from device
           </Button>
@@ -75,6 +94,21 @@ const Dropzone = ({ className, size, onDrop, ...rest }: DropzoneProps) => {
           />
         </div>
       </div>
+      {!imageOnly &&
+        previews.map((file, index) => (
+          <div
+            key={index}
+            className={classNames(
+              'border-bottom d-flex align-items-center justify-content-between py-3'
+            )}
+          >
+            <AttachmentPreview attachment={file} />
+
+            <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
+              <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />
+            </button>
+          </div>
+        ))}
     </>
   );
 };

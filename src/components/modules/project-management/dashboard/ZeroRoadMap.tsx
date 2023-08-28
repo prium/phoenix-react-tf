@@ -13,27 +13,33 @@ const ZeroRoadMap = () => {
       <Row className="g-2 flex-between-center mb-3">
         <Col xs={12} sm="auto">
           <div className="d-flex gap-3">
-            <Form.Check className="d-flex align-items-end ps-0" id="progress">
+            <Form.Check
+              className="d-flex min-h-auto mb-0 align-items-end ps-0"
+              id="progress"
+            >
               <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
                 Progress
               </Form.Check.Label>
               <Form.Check
                 type="switch"
                 checked={showProgress}
-                className="min-h-auto mb-0"
+                className="mb-0"
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   setShowProgress(e.target.checked);
                 }}
               />
             </Form.Check>
-            <Form.Check className="d-flex align-items-end ps-0" id="links">
+            <Form.Check
+              className="d-flex min-h-auto mb-0 align-items-end ps-0"
+              id="links"
+            >
               <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
                 Links
               </Form.Check.Label>
               <Form.Check
                 type="switch"
                 checked={showLinks}
-                className="min-h-auto mb-0"
+                className="mb-0"
                 onChange={(e: ChangeEvent<HTMLInputElement>) => {
                   setShowLinks(e.target.checked);
                 }}
@@ -42,7 +48,7 @@ const ZeroRoadMap = () => {
           </div>
         </Col>
         <Col xs={12} sm="auto">
-          <ButtonGroup aria-label="Basic example">
+          <ButtonGroup>
             <CheckButton
               label="Week"
               id="week"
@@ -81,12 +87,12 @@ const ZeroRoadMap = () => {
             />
           </ButtonGroup>
         </Col>
-        <ZeroRoadMapChart
-          scaleView={scaleView}
-          showProgress={showProgress}
-          showLinks={showLinks}
-        />
       </Row>
+      <ZeroRoadMapChart
+        scaleView={scaleView}
+        showProgress={showProgress}
+        showLinks={showLinks}
+      />
     </div>
   );
 };

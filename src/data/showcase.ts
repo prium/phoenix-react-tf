@@ -30,25 +30,25 @@ export const demos = [
     sideThumb: demo2,
     mainThumb: demo1,
     variantName: 'Vertical Sidenav (Default)',
-    link: '#!'
+    link: '/pages/demo/vertical-sidenav'
   },
   {
     sideThumb: demo3,
     mainThumb: demo3,
     variantName: 'Dark Mode',
-    link: '#!'
+    link: '/pages/demo/dark-mode'
   },
   {
     sideThumb: demo5,
     mainThumb: demo4,
     variantName: 'Darknav',
-    link: '#!'
+    link: '/pages/demo/darknav'
   },
   {
     sideThumb: demo7,
     mainThumb: demo6,
     variantName: 'Topnav Slim',
-    link: '#!'
+    link: '/pages/demo/topnav-slim'
   },
   {
     sideThumb: demo9,
@@ -66,7 +66,7 @@ export const demos = [
     sideThumb: demo13,
     mainThumb: demo12,
     variantName: 'Combo Nav',
-    link: '#!'
+    link: '/pages/demo/combo-nav'
   },
   {
     sideThumb: demo15,
@@ -90,7 +90,7 @@ export const essentialFeatures = [
   {
     icon: '13',
     border: 'border-end-0 border-end-sm border-end-lg-0',
-    title: `Coded with <span class='text-html5 me-1 fw-bold'>HTML5</span>`
+    title: `Developed with <span class='text-html5 me-1 fw-bold'>ReactJS</span>`
   },
   {
     icon: '14',
@@ -157,7 +157,7 @@ export const essentialFeatures = [
 export const importantApplications = [
   {
     title: 'Email',
-    link: '#!',
+    link: '/apps/email/inbox',
     thumb: section64,
     details:
       'You’ll get a pre-built email app with this template so that your customer-client communication remains smooth and steady. Enjoy thorough communication with us!',
@@ -165,7 +165,7 @@ export const importantApplications = [
   },
   {
     title: 'Chat',
-    link: '#!',
+    link: '/apps/chat',
     thumb: section66,
     details:
       'Our pre-built web app will help you have steady communication with your customers and grow your business rigorously. Hopefully, you’ll enjoy using this web app in Phoenix!',
@@ -177,7 +177,8 @@ export const importantApplications = [
     thumb: section65,
     details:
       'Our calendar app will help you painlessly track all your trades. You can add, edit and revise the previous reminders and stay updated according to your schedule.',
-    btnLabel: 'View calender'
+    btnLabel: 'View calender',
+    disable: true
   },
   {
     title: 'Kanban',
@@ -185,7 +186,8 @@ export const importantApplications = [
     thumb: kanban,
     details:
       'Our pre-built web app will help you have steady communication with your customers and grow your business rigorously. Hopefully, you’ll enjoy using this web app in Phoenix!',
-    btnLabel: 'View kanban'
+    btnLabel: 'View kanban',
+    disable: true
   }
 ];
 
@@ -193,32 +195,32 @@ export const necessaryPages = [
   {
     thumb: section21,
     pageName: 'Profile',
-    pageLink: '#!'
+    pageLink: '/apps/social/profile'
   },
   {
     thumb: section22,
     pageName: 'Pricing',
-    pageLink: '#!'
+    pageLink: '/pages/pricing/pricing-column'
   },
   {
     thumb: section23,
     pageName: 'FAQ',
-    pageLink: '#!'
+    pageLink: '/pages/faq/faq-accordion'
   },
   {
     thumb: section24,
     pageName: 'Notifications',
-    pageLink: '#!'
+    pageLink: '/pages/notifications/notifications'
   },
   {
     thumb: section25,
     pageName: 'Authentication',
-    pageLink: '#!'
+    pageLink: '/pages/authentication/simple/sign-in'
   },
   {
     thumb: section26,
     pageName: 'Event',
-    pageLink: '#!'
+    pageLink: '/apps/events/event-detail'
   }
 ];
 

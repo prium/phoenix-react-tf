@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
-import Attachment from 'components/common/Attachment';
+import AttachmentPreview from 'components/common/AttachmentPreview';
 import { files } from 'data/chat';
 
 const SharedFiles = () => {
@@ -21,7 +21,7 @@ const SharedFiles = () => {
                 }
               )}
             >
-              <Attachment attachment={file} />
+              <AttachmentPreview attachment={file} />
 
               <button className="btn p-0">
                 <FontAwesomeIcon

@@ -10,7 +10,7 @@ import RevealDropdown, {
 } from 'components/base/RevealDropdown';
 import { Link } from 'react-router-dom';
 import TooltipIconButton from 'components/common/TooltipIconButton';
-import Attachment from 'components/common/Attachment';
+import AttachmentPreview from 'components/common/AttachmentPreview';
 
 const EmailDetail = () => {
   return (
@@ -114,7 +114,7 @@ const EmailDetail = () => {
               </div>
               <Row className="pb-11 border-bottom mb-4 gx-0 gy-2">
                 <Col xs="auto" className="me-3">
-                  <Attachment
+                  <AttachmentPreview
                     attachment={{
                       name: 'workflow-data.pdf',
                       size: '53.34 KB',
@@ -125,7 +125,7 @@ const EmailDetail = () => {
                   />
                 </Col>
                 <Col xs="auto" className="me-3">
-                  <Attachment
+                  <AttachmentPreview
                     attachment={{
                       name: 'forest.jpg',
                       size: '123.34 KB',

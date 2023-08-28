@@ -31,7 +31,11 @@ const EventDescriptionForm = () => {
         </FloatingLabel>
       </Col>
       <Col xs={12} className="gy-6">
-        <Dropzone />
+        <Dropzone
+          accept={{
+            'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+          }}
+        />
       </Col>
       <Col xs={12} className="gy-6">
         <ReactSelect

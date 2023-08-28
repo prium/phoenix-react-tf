@@ -40,8 +40,8 @@ const ProfileDropdownMenu = () => {
     >
       <Card className="position-relative border-0">
         <Card.Body className="p-0">
-          <div className="text-center pt-4 pb-3">
-            <Avatar src={avatar} size="xl" className="mb-2" />
+          <div className="d-flex flex-column align-items-center justify-content-center gap-2 pt-4 pb-3">
+            <Avatar src={avatar} size="xl" />
             <h6 className="text-black">Jerry Seinfield</h6>
           </div>
           <div className="mb-3 mx-3">

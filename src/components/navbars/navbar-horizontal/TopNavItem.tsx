@@ -37,10 +37,6 @@ const TopNavItem = ({ route }: { route: RouteItems }) => {
 const TopNavLooper = ({ page }: { page: Route }) => {
   const [show, setShow] = useState(false);
 
-  if (!page.icon) {
-    console.log({ page });
-  }
-
   const { breakpoints } = useBreakpoints();
 
   const handleMouseEnter = () => {

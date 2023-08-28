@@ -72,7 +72,7 @@ const ProductDetailsTab = () => {
               <Stack
                 gap={3}
                 direction="horizontal"
-                className="flex-wrap justify-content-between mb-4"
+                className="flex-wrap justify-content-between"
               >
                 <div className="d-flex align-items-center flex-wrap">
                   <h2 className="fw-bolder me-3">
@@ -87,6 +87,7 @@ const ProductDetailsTab = () => {
                   </p>
                 </div>
                 <Button
+                  variant="primary"
                   className="rounded-pill"
                   onClick={() => setOpenReviewModal(true)}
                 >

@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { useState } from 'react';
-import { Card, Form } from 'react-bootstrap';
+import { Card, Col, Form, Row } from 'react-bootstrap';
 import EmojiPicker from 'components/base/EmojiPicker';
 import { useChatContext } from 'providers/ChatProvider';
 import ReactTextareaAutosize from 'react-textarea-autosize';
+import AttachmentPreview from 'components/common/AttachmentPreview';
+import generic41 from 'assets/img/generic/41.png';
 
 const ChatContentFooter = () => {
   const { currentConversation, chatDispatch } = useChatContext();
@@ -34,6 +36,32 @@ const ChatContentFooter = () => {
         onChange={({ target: { value } }) => setMessageText(value)}
         className="chat-textarea form-control outline-none border-0 scrollbar resize-none mb-1 p-0 fs-8"
       />
+
+      <Row className="mb-2 gx-0 gy-2">
+        <Col xs="auto" className="me-3">
+          <AttachmentPreview
+            attachment={{
+              name: 'workflow-data.pdf',
+              size: '53.34 KB',
+              format: 'pdf'
+            }}
+            size="xl"
+            type="secondary"
+          />
+        </Col>
+        <Col xs="auto" className="me-3">
+          <AttachmentPreview
+            attachment={{
+              name: 'forest.jpg',
+              size: '123.34 KB',
+              format: 'jpg',
+              preview: generic41
+            }}
+            size="xl"
+            type="secondary"
+          />
+        </Col>
+      </Row>
 
       <div className="d-flex gap-3 align-items-center">
         <EmojiPicker

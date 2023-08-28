@@ -2,11 +2,13 @@ import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Scrollbar from 'components/base/Scrollbar';
 import Button from 'components/base/Button';
-import { notifications } from 'data/notifications';
+import { notifications as notificationData } from 'data/notifications';
 import NotificationItem from 'components/common/NotificationItem';
 import classNames from 'classnames';
+import { useState } from 'react';
 
 const NotificationDropdownMenu = () => {
+  const [notifications] = useState(notificationData.slice(0, 6));
   return (
     <Dropdown.Menu
       align="end"
@@ -23,7 +25,7 @@ const NotificationDropdownMenu = () => {
         </Card.Header>
         <Card.Body className="p-0" style={{ height: '27rem' }}>
           <Scrollbar>
-            {notifications.slice(0, 6).map((notification, index) => (
+            {notifications.map((notification, index) => (
               <NotificationItem
                 notification={notification}
                 type="dropdownItem"

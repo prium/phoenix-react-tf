@@ -22,7 +22,7 @@ const ProductsFilter = () => {
         className="p-5"
         fixed
       >
-        <Scrollbar>
+        <Scrollbar className="table-scrollbar">
           <ProductFilterItems handleClose={handleClose} />
         </Scrollbar>
       </PhoenixOffcanvas>
@@ -37,12 +37,12 @@ const ProductsFilter = () => {
           Filter
         </Button>
         <Row>
-          <Col lg={3} xxl={2} className="d-none d-lg-block">
+          <Col lg={3} xxl={2} className="d-none d-lg-block ps-xl-0 ps-xxl-3">
             <div
               className="position-sticky"
               style={{ top: '1rem', height: 'calc(100vh - 2rem) ' }}
             >
-              <Scrollbar>
+              <Scrollbar className="product-scrollbar">
                 <ProductFilterItems handleClose={handleClose} />
               </Scrollbar>
             </div>

@@ -315,13 +315,13 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'create an event',
-            path: 'apps/events/create-an-event',
+            path: '/apps/events/create-an-event',
             pathName: 'create-an-event',
             active: true
           },
           {
             name: 'Event detail',
-            path: 'apps/events/event-detail',
+            path: '/apps/events/event-detail',
             pathName: 'event-detail',
             active: true
           }
@@ -334,13 +334,13 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'profile',
-            path: 'apps/social/profile',
+            path: '/apps/social/profile',
             pathName: 'social-profile',
             active: true
           },
           {
             name: 'settings',
-            path: 'apps/social/settings',
+            path: '/apps/social/settings',
             pathName: 'settings',
             active: true
           }
@@ -372,7 +372,7 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'faq-accordion',
-            path: 'pages/faq/faq-accordion',
+            path: '/pages/faq/faq-accordion',
             pathName: 'faq-accordion',
             active: true
           },
@@ -408,7 +408,7 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'pricing-column',
-            path: 'pages/pricing/pricing-column',
+            path: '/pages/pricing/pricing-column',
             pathName: 'pricing-column',
             active: true
           },
@@ -422,7 +422,7 @@ export const routes: RouteItems[] = [
       {
         name: 'notifications',
         icon: 'bell',
-        path: 'pages/notifications/notifications',
+        path: '/pages/notifications/notifications',
         pathName: 'notifications-page',
         active: true
       },
@@ -446,13 +446,13 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: '404',
-            path: 'pages/errors/error404',
+            path: 'pages/errors/404',
             pathName: 'error404',
             active: true
           },
           {
             name: '403',
-            path: 'pages/errors/error403',
+            path: 'pages/errors/403',
             pathName: 'error403',
             active: true
           },
@@ -475,43 +475,43 @@ export const routes: RouteItems[] = [
             pages: [
               {
                 name: 'sign-in',
-                path: 'pages/authentication/simple/sign-in',
+                path: '/pages/authentication/simple/sign-in',
                 pathName: 'simple-signin',
                 active: true
               },
               {
                 name: 'sign-up',
-                path: 'pages/authentication/simple/sign-up',
+                path: '/pages/authentication/simple/sign-up',
                 pathName: 'simple-signup',
                 active: true
               },
               {
                 name: 'sign-out',
-                path: 'pages/authentication/simple/sign-out',
+                path: '/pages/authentication/simple/sign-out',
                 pathName: 'simple-signout',
                 active: true
               },
               {
                 name: 'forgot-password',
-                path: 'pages/authentication/simple/forgot-password',
+                path: '/pages/authentication/simple/forgot-password',
                 pathName: 'simple-forgot-password',
                 active: true
               },
               {
                 name: 'reset-password',
-                path: 'pages/authentication/simple/reset-password',
+                path: '/pages/authentication/simple/reset-password',
                 pathName: 'simple-reset-password',
                 active: true
               },
               {
                 name: 'lock-screen',
-                path: 'pages/authentication/simple/lock-screen',
+                path: '/pages/authentication/simple/lock-screen',
                 pathName: 'simple-lock-screen',
                 active: true
               },
               {
                 name: '2FA',
-                path: 'pages/authentication/simple/2FA',
+                path: '/pages/authentication/simple/2FA',
                 pathName: 'simple-2FA',
                 active: true
               }

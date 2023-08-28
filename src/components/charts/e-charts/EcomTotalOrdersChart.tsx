@@ -38,7 +38,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: false
     },
     axisLabel: {
-      formatter: (value: any) => dayjs(value).format('DD MMM'),
+      formatter: (value: string) => dayjs(value).format('DD MMM'),
       interval: 6,
       showMinLabel: true,
       showMaxLabel: true,

@@ -11,6 +11,8 @@ import img9 from 'assets/img/gallery/9.png';
 import img8 from 'assets/img/gallery/8.png';
 import img10 from 'assets/img/gallery/10.png';
 import IsotopeNav from 'components/navs/IsotopeNav';
+import useLightbox from 'hooks/useLightbox';
+import Lightbox from 'components/base/LightBox';
 
 type GalleryItemType = {
   img: string;
@@ -51,9 +53,18 @@ const navItems = [
   }
 ];
 
-const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItemType }) => {
+const GalleryItem = ({
+  galleryItem,
+  onClick
+}: {
+  galleryItem: GalleryItemType;
+  onClick: () => void;
+}) => {
   return (
-    <div className={`col-span-${galleryItem.col} row-span-${galleryItem.row}`}>
+    <div
+      className={`col-span-${galleryItem.col} row-span-${galleryItem.row} cursor-pointer`}
+      onClick={onClick}
+    >
       <img src={galleryItem.img} alt="" className="rounded img-fluid" />
     </div>
   );
@@ -61,18 +72,29 @@ const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItemType }) => {
 
 const Gallery = () => {
   const [images, setImages] = useState(galleryItems);
+  const [selectedCategory, setSelectedCategory] = useState('1');
+
+  const { lightboxProps, openLightbox } = useLightbox(
+    images.map(image => image.img)
+  );
 
   const handleNavItemSelect = (category: string | null) => {
+    setSelectedCategory(category || '1');
     setImages(
       galleryItems.filter(item =>
         category ? item.category.includes(category) : true
       )
     );
   };
+
+  const handleItemClick = (index: number) => {
+    openLightbox(index);
+  };
+
   return (
     <section className="pt-15">
       <div className="container-small position-relative px-lg-7 px-xxl-3">
-        <Row className=" mb-8 text-center text-sm-start">
+        <Row className="mb-8 text-center text-sm-start">
           <Col xs={12} className="mb-4">
             <h4 className="text-primary fw-bolder mb-3">Gallery</h4>
             <h2>Some of Our Best Works</h2>
@@ -96,15 +118,23 @@ const Gallery = () => {
 
         <IsotopeNav
           navItems={navItems}
-          className="mb-6 justify-content-center justify-content-sm-start w-max-content"
+          className="mb-5 justify-content-center justify-content-sm-start w-max-content"
           onSelect={handleNavItemSelect}
         />
 
         <div className="d-grid grid-cols-4 gap-3">
-          {images.map(gallery => (
-            <GalleryItem galleryItem={gallery} key={gallery.img} />
+          {images.map((gallery, index) => (
+            <>
+              <GalleryItem
+                galleryItem={gallery}
+                key={gallery.img}
+                onClick={() => handleItemClick(index + 1)}
+              />
+            </>
           ))}
         </div>
+
+        <Lightbox {...lightboxProps} key={selectedCategory} />
       </div>
     </section>
   );

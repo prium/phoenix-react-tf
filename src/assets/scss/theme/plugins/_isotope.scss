@@ -9,6 +9,7 @@
   letter-spacing: 0.02em;
   border: 1px solid transparent;
   padding: map_get($spacers, 2) map_get($spacers, 3);
+  transition: none;
   &.active {
     color: var(--#{$prefix}primary);
     border: 1px solid var(--#{$prefix}primary);

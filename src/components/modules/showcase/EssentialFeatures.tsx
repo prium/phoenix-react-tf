@@ -3,11 +3,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 import illustrations31 from 'assets/img/spot-illustrations/31.png';
 import illustration11 from 'assets/img/icons/illustrations/11.png';
 import illustration12 from 'assets/img/icons/illustrations/12.png';
-import illustration13 from 'assets/img/icons/illustrations/13.png';
+import illustration1 from 'assets/img/icons/illustrations/1.png';
 import illustration14 from 'assets/img/icons/illustrations/14.png';
 import illustration15 from 'assets/img/icons/illustrations/15.png';
 import illustration16 from 'assets/img/icons/illustrations/16.png';
-import illustration17 from 'assets/img/icons/illustrations/17.png';
+import illustration2 from 'assets/img/icons/illustrations/2.png';
 import illustration18 from 'assets/img/icons/illustrations/18.png';
 import illustration19 from 'assets/img/icons/illustrations/19.png';
 import illustration21 from 'assets/img/icons/illustrations/21.png';
@@ -42,11 +42,11 @@ export const featureItems = [
   },
   {
     id: 13,
-    icon: illustration13,
+    icon: illustration1,
     border: 'border-end-0 border-end-sm border-end-lg-0',
     title: (
       <>
-        Coded with <span className="text-html5 me-1 fw-bold">HTML5</span>
+        Developed with <span className="text-html5 me-1 fw-bold">ReactJs</span>
       </>
     )
   },
@@ -82,11 +82,11 @@ export const featureItems = [
   },
   {
     id: 17,
-    icon: illustration17,
+    icon: illustration2,
     border: 'border-end',
     title: (
       <>
-        <span className="text-gulp me-1 fw-bold">Gulp</span>based workflow
+        Built on <span className="text-gulp me-1 fw-bold">React Bootstrap</span>
       </>
     )
   },

@@ -24,10 +24,10 @@ export const activityTimelineData: ActivityTimelineData[] = [
       time: '10:30 AM'
     },
     content: {
-      title: 'Assigned as a director for Project The Chewing Gum Attack',
+      title: 'Phoenix Template: Unleashing Creative Possibilities',
       user: 'Shantinon Mekalan',
       details:
-        'Utilizing best practices to better leverage our assets, we must engage in black sky leadership thinking, not the usual band-aid solution.'
+        'Discover limitless creativity with the Phoenix template! Our latest update offers an array of innovative features and design options.'
     },
     separator: {
       icon: 'chess'
@@ -40,10 +40,10 @@ export const activityTimelineData: ActivityTimelineData[] = [
       time: '12:30 AM'
     },
     content: {
-      title: 'Assigned as a director for Project The Chewing Gum Attack',
-      user: 'Shantinon Mekalan',
+      title: 'Empower Your Digital Presence: The Phoenix Template Unveiled',
+      user: 'Bookworm22',
       details:
-        'We must repurpose with SEO optimized functionalities, instead of using those over used frictioned kumbaya.'
+        'Unveiling the Phoenix template, a game-changer for your digital presence. With its powerful features and sleek design,'
     },
     separator: {
       icon: 'dove'
@@ -52,14 +52,14 @@ export const activityTimelineData: ActivityTimelineData[] = [
   {
     id: 3,
     oppositeContent: {
-      date: '05 DEC, 2023',
+      date: '15 DEC, 2023',
       time: '2:30 PM'
     },
     content: {
-      title: 'Archieved all the files for the Project Membrane Memories',
+      title: 'Phoenix Template: Simplified Design, Maximum Impact',
       user: 'Sharuka Nijibum',
       details:
-        'To get off the runway and paradigm shift, we should take brass tacks with above-the-board actionable analytics, ramp up with viral partnering, not the usual goat rodeo putting socks on an octopus.'
+        'Introducing the Phoenix template, where simplified design meets maximum impact. Elevate your digital presence with its sleek and intuitive features.'
     },
     separator: {
       icon: 'dungeon'

@@ -25,7 +25,11 @@ const EcommerceTopbar = () => {
                 </Nav.Item>
 
                 <Nav.Item as="li">
-                  <Nav.Link className="px-2 icon-indicator icon-indicator-primary">
+                  <Nav.Link
+                    as={Link}
+                    to="/apps/e-commerce/customer/cart"
+                    className="px-2 icon-indicator icon-indicator-primary"
+                  >
                     <FeatherIcon icon="shopping-cart" size={20} />
                     <span className="icon-indicator-number">3</span>
                   </Nav.Link>

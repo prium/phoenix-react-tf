@@ -10,12 +10,14 @@ interface AdvanceTableFooterProps {
   className?: string;
   pagination?: boolean;
   navBtn?: boolean;
+  showViewAllBtn?: boolean;
 }
 
 const AdvanceTableFooter = ({
   className,
   pagination,
-  navBtn
+  navBtn,
+  showViewAllBtn = true
 }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
@@ -53,19 +55,23 @@ const AdvanceTableFooter = ({
           <span className="text-600"> items of </span>
           {getPrePaginationRowModel().rows.length}
         </p>
-        <Button
-          variant="link"
-          className="p-0 fw-semi-bold"
-          endIcon={<FontAwesomeIcon icon="angle-right" className="ms-1 fs-9" />}
-          onClick={() => {
-            setIsAllVisible(!isAllVisible);
-            setPageSize(
-              isAllVisible ? perPage : getPrePaginationRowModel().rows.length
-            );
-          }}
-        >
-          View {isAllVisible ? 'less' : 'all'}
-        </Button>
+        {showViewAllBtn && (
+          <Button
+            variant="link"
+            className="p-0 fw-semi-bold"
+            endIcon={
+              <FontAwesomeIcon icon="angle-right" className="ms-1 fs-9" />
+            }
+            onClick={() => {
+              setIsAllVisible(!isAllVisible);
+              setPageSize(
+                isAllVisible ? perPage : getPrePaginationRowModel().rows.length
+              );
+            }}
+          >
+            View {isAllVisible ? 'less' : 'all'}
+          </Button>
+        )}
       </Col>
       {navBtn && (
         <Col xs="auto" className="d-flex gap-2">

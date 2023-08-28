@@ -27,9 +27,12 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="d-block rounded-2 border"
+        >
           <img src={productImage} alt="" width={53} />
-        </div>
+        </Link>
       );
     },
     meta: { cellProps: { className: 'py-0' } },
@@ -41,9 +44,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
-          product.length > 46 ? '...' : ''
-        }`}</Link>
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="fw-semi-bold"
+        >{`${product.slice(0, 46)}${product.length > 46 ? '...' : ''}`}</Link>
       );
     },
     enableSorting: true,
@@ -57,7 +61,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { customer } = original;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link to="#!" className="d-flex align-items-center text-900">
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
               {customer.name.charAt(0).toUpperCase()}
@@ -212,15 +216,15 @@ const EcomLatestReviewsTable = () => {
                   onChange={handleSearchInputChange}
                 />
               </Col>
-              <Col xs="auto">
+              <Col xs="auto" className="d-flex gap-2">
                 <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100 me-2"
+                  className="bg-white hover-bg-100"
                 >
                   All products
                 </Button>
-                <Dropdown className="d-inline">
+                <Dropdown>
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"
@@ -229,7 +233,7 @@ const EcomLatestReviewsTable = () => {
                     <FontAwesomeIcon icon="ellipsis-h" className="10" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
+                  <Dropdown.Menu align="end">
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">
                       Another action

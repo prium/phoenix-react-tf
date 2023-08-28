@@ -87,7 +87,7 @@ export const notifications: Notification[] = [
     avatar: team59,
     name: 'Herman Carter',
     interactionIcon: '👤',
-    interaction: 'Tagged you in a comment.',
+    interaction: 'Tagged you in a ',
     detail: 'post',
     ago: '',
     icon: 'fas fa-clock',

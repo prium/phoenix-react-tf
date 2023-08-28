@@ -17,7 +17,7 @@ interface AttachmentProps {
   size?: 'lg' | 'xl';
 }
 
-const Attachment = ({
+const AttachmentPreview = ({
   attachment,
   type = 'primary',
   size = 'lg'
@@ -26,9 +26,9 @@ const Attachment = ({
     <a href="#!" className="text-decoration-none d-flex align-items-center">
       <div
         className={classNames(
-          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 overflow-hidden`,
+          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 overflow-hidden border`,
           {
-            border: !attachment.preview,
+            // border: !attachment.preview,
             'text-500 border-500': type === 'primary',
             'border-400 text-400': type === 'secondary'
           }
@@ -86,4 +86,4 @@ const Attachment = ({
   );
 };
 
-export default Attachment;
+export default AttachmentPreview;

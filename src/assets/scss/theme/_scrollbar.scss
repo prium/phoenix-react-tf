@@ -83,3 +83,13 @@
     }
   }
 }
+.product-scrollbar {
+  > {
+    div {
+      padding-left: 4px !important;
+      // [dir='rtl'] & {
+      //   padding-left: -4px !important;
+      // }
+    }
+  }
+}
