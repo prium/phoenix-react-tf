@@ -21939,6 +21939,9 @@ span.flatpickr-weekday,
   background-color: var(--phoenix-input-bg) !important;
   z-index: 1055 !important;
 }
+.react-select__menu .react-select__menu-list {
+  background: var(--phoenix-gray-200) !important;
+}
 .react-select__menu .react-select__option {
   color: var(--phoenix-gray-900) !important;
   padding: 0.5rem 1rem;

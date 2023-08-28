@@ -55,7 +55,7 @@ const VerticalNavbarAppearance = () => {
         </Col>
       </Row>
       {disableVerticalNavbarAppearance && (
-        <WarningMessage message="You can't update vertical navbar appearance type in this page" />
+        <WarningMessage message="You can't update vertical navbar appearance type here" />
       )}
     </div>
   );

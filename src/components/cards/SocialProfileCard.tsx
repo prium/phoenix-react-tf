@@ -35,8 +35,8 @@ const SocialProfileCard = ({ showAbout }: { showAbout?: boolean }) => {
               <h3 className="me-2">Ansolo Lazinatov</h3>
               <span className="fw-normal fs-8">u/hansolo</span>
             </div>
-            <div className="d-flex d-xl-block d-xxl-flex align-items-center">
-              <div className="d-flex mb-xl-2 mb-xxl-0 me-4">
+            <div className="d-flex flex-wrap gap-y-2 gap-x-4 d-xl-block d-xxl-flex align-items-center">
+              <div className="d-flex mb-xl-2 mb-xxl-0">
                 <FontAwesomeIcon
                   icon="user-group"
                   className="fs-10 me-2 me-lg-1 me-xl-2"

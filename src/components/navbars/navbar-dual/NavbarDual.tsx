@@ -6,11 +6,18 @@ import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import SearchResult from 'components/common/SearchResult';
 import NavItems from '../nav-items/NavItems';
 import NavbarTopNav from '../navbar-horizontal/NavbarTopNav';
+import { useAppContext } from 'providers/AppProvider';
 
 const NavbarDual = () => {
+  const {
+    config: { navbarTopAppearance }
+  } = useAppContext();
+
   return (
     <Navbar
-      className={classNames('navbar-top fixed-top', {})}
+      className={classNames('navbar-top fixed-top', {
+        'navbar-darker': navbarTopAppearance === 'darker'
+      })}
       expand="lg"
       variant=""
     >

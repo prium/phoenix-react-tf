@@ -2,8 +2,10 @@ import React, {
   PropsWithChildren,
   createContext,
   useContext,
+  useEffect,
   useState
 } from 'react';
+import { useAppContext } from './AppProvider';
 
 export interface SettingsPanelConfig {
   showSettingPanelButton: boolean;
@@ -25,6 +27,10 @@ export const SettingsPanelContext = createContext(
 );
 
 const SettingsPanelProvider = ({ children }: PropsWithChildren) => {
+  const {
+    config: { navbarPosition }
+  } = useAppContext();
+
   const [settingsPanelConfig, setSettingsPanelConfig] =
     useState<SettingsPanelConfig>({
       showSettingPanelButton: true,
@@ -42,6 +48,32 @@ const SettingsPanelProvider = ({ children }: PropsWithChildren) => {
       ...config
     });
   };
+
+  useEffect(() => {
+    if (navbarPosition === 'dual') {
+      updateSettingsPanelConfig({
+        disableHorizontalNavbarShape: true,
+        disableVerticalNavbarAppearance: true,
+        disableHorizontalNavbarAppearance: false
+      });
+    }
+
+    if (navbarPosition === 'horizontal') {
+      updateSettingsPanelConfig({
+        disableHorizontalNavbarShape: false,
+        disableVerticalNavbarAppearance: true,
+        disableHorizontalNavbarAppearance: false
+      });
+    }
+
+    if (navbarPosition === 'combo' || navbarPosition === 'vertical') {
+      updateSettingsPanelConfig({
+        disableHorizontalNavbarShape: false,
+        disableVerticalNavbarAppearance: false,
+        disableHorizontalNavbarAppearance: false
+      });
+    }
+  }, [navbarPosition]);
 
   return (
     <SettingsPanelContext.Provider
