@@ -1,17 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { useState } from 'react';
-import { Card, Col, Form, Row } from 'react-bootstrap';
+import { ChangeEvent, useState } from 'react';
+import { Card, Form } from 'react-bootstrap';
 import EmojiPicker from 'components/base/EmojiPicker';
 import { useChatContext } from 'providers/ChatProvider';
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import AttachmentPreview from 'components/common/AttachmentPreview';
-import generic41 from 'assets/img/generic/41.png';
+import { convertFileToAttachment } from 'helpers/utils';
+import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
 
 const ChatContentFooter = () => {
   const { currentConversation, chatDispatch } = useChatContext();
 
   const [messageText, setMessageText] = useState('');
+  const [fileAttachment, setFileAttachment] = useState<File | null>(null);
+  const [imageAttachments, setImageAttachments] = useState<File[]>([]);
 
   const sentMessage = () => {
     if (currentConversation) {
@@ -34,34 +37,34 @@ const ChatContentFooter = () => {
         value={messageText}
         placeholder="Type your message..."
         onChange={({ target: { value } }) => setMessageText(value)}
-        className="chat-textarea form-control outline-none border-0 scrollbar resize-none mb-1 p-0 fs-8"
+        className="chat-textarea form-control outline-none border-0 scrollbar resize-none mb-1 p-0 fs-8 fw-normal"
       />
 
-      <Row className="mb-2 gx-0 gy-2">
-        <Col xs="auto" className="me-3">
+      {fileAttachment && (
+        <div className="mb-2">
           <AttachmentPreview
-            attachment={{
-              name: 'workflow-data.pdf',
-              size: '53.34 KB',
-              format: 'pdf'
-            }}
+            attachment={convertFileToAttachment(fileAttachment)}
             size="xl"
-            type="secondary"
+            handleRemove={() => setFileAttachment(null)}
           />
-        </Col>
-        <Col xs="auto" className="me-3">
-          <AttachmentPreview
-            attachment={{
-              name: 'forest.jpg',
-              size: '123.34 KB',
-              format: 'jpg',
-              preview: generic41
-            }}
-            size="xl"
-            type="secondary"
-          />
-        </Col>
-      </Row>
+        </div>
+      )}
+
+      {imageAttachments && (
+        <div className="mb-2 d-flex gap-2">
+          {imageAttachments.map((attachment, index) => (
+            <ImageAttachmentPreview
+              key={index}
+              image={URL.createObjectURL(attachment)}
+              handleClose={() => {
+                setImageAttachments(
+                  imageAttachments.filter((_, i) => index !== i)
+                );
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="d-flex gap-3 align-items-center">
         <EmojiPicker
@@ -69,10 +72,7 @@ const ChatContentFooter = () => {
             setMessageText(messageText => messageText + selection.emoji);
           }}
         >
-          <Button
-            variant="link"
-            className="py-0 ps-0 pe-2 text-900 fs-9 btn-emoji"
-          >
+          <Button variant="link" className="p-0 text-900 fs-9 btn-emoji">
             <FontAwesomeIcon icon={['far', 'face-smile']} />
           </Button>
         </EmojiPicker>
@@ -87,6 +87,10 @@ const ChatContentFooter = () => {
             type="file"
             accept="image/*"
             id="images"
+            multiple
+            onChange={({ target: { files } }: ChangeEvent<HTMLInputElement>) =>
+              files && setImageAttachments(Array.from(files))
+            }
           />
         </div>
         <div>
@@ -98,7 +102,14 @@ const ChatContentFooter = () => {
               <FontAwesomeIcon icon="paperclip" />
             </label>
           </Button>
-          <Form.Control className="d-none" type="file" id="attachments" />
+          <Form.Control
+            className="d-none"
+            type="file"
+            id="attachments"
+            onChange={({ target: { files } }: ChangeEvent<HTMLInputElement>) =>
+              files && setFileAttachment(files[0])
+            }
+          />
         </div>
 
         <Button className="p-0 text-900 fs-9">
