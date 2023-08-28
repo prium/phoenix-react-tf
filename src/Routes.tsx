@@ -89,7 +89,7 @@ import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
 import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
-// import Chat from 'pages/apps/Chat';
+import Chat from 'pages/apps/Chat';
 import FaqAccordion from 'pages/faq/FaqAccordion';
 import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
@@ -248,19 +248,19 @@ const routes = [
           }
         ]
       },
-      // {
-      //   path: '/apps/chat/',
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <Chat />
-      //     },
-      //     {
-      //       path: ':userId/conversation',
-      //       element: <Chat />
-      //     }
-      //   ]
-      // },
+      {
+        path: '/apps/chat/',
+        children: [
+          {
+            index: true,
+            element: <Chat />
+          },
+          {
+            path: ':userId/conversation',
+            element: <Chat />
+          }
+        ]
+      },
       {
         path: '/apps/social/',
         children: [

@@ -15,18 +15,20 @@ interface AttachmentProps {
   attachment: FileAttachment;
   type?: 'primary' | 'secondary';
   size?: 'lg' | 'xl';
+  handleRemove?: () => void;
 }
 
 const AttachmentPreview = ({
   attachment,
   type = 'primary',
-  size = 'lg'
+  size = 'lg',
+  handleRemove
 }: AttachmentProps) => {
   return (
     <a href="#!" className="text-decoration-none d-flex align-items-center">
       <div
         className={classNames(
-          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 overflow-hidden border`,
+          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 border position-relative`,
           {
             // border: !attachment.preview,
             'text-500 border-500': type === 'primary',
@@ -48,6 +50,12 @@ const AttachmentPreview = ({
             />
             <p className="mb-0 fs-10 fw-bold lh-1">{attachment.format}</p>
           </>
+        )}
+
+        {handleRemove && (
+          <button className="btn btn-x" onClick={handleRemove}>
+            <FontAwesomeIcon icon="xmark" className="text-900" />
+          </button>
         )}
       </div>
 
