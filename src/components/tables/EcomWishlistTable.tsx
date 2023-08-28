@@ -78,6 +78,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
           <FontAwesomeIcon icon="trash" />
         </Button>
         <Button
+          variant="primary"
           className="fs-10 text-nowrap"
           startIcon={<FontAwesomeIcon icon="shopping-cart" />}
         >
@@ -95,7 +96,7 @@ const EcomWishlistTable = () => {
   const table = useAdvanceTable({
     data: wishlistProducts,
     columns,
-    pageSize: 6,
+    pageSize: 5,
     pagination: true,
     sortable: true
   });
