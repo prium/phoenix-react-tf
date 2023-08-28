@@ -13,7 +13,7 @@ const Refund = () => {
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <h2 className="mb-3">Refund</h2>
-        <div className="d-flex flex-wrap align-items-center mb-3 gap-3">
+        <div className="d-flex flex-wrap align-items-center mb-4 gap-3">
           <p className="text-800 lh-sm mb-0">
             Order :{' '}
             <Link className="fw-bold" to="#!">

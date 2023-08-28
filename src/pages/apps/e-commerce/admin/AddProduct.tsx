@@ -32,9 +32,9 @@ const AddProduct = () => {
             </Button>
           </div>
         </div>
-        <h4 className="mb-3">Product Title</h4>
         <Row className="g-5">
           <Col xs={12} xl={8}>
+            <h4 className="mb-3">Product Title</h4>
             <Form.Control placeholder="Write title here..." className="mb-5" />
             <div className="mb-6">
               <h4 className="mb-3">Product Description</h4>
@@ -54,14 +54,20 @@ const AddProduct = () => {
                 }}
               />
             </div>
-            <div className="mb-5">
+            <div>
               <h4 className="mb-3">Inventory</h4>
               <InventoryTab />
             </div>
           </Col>
           <Col xs={12} xl={4}>
-            <OrganizeFormCard className="mb-4" />
-            <VariantFormCard />
+            <Row className="g-2">
+              <Col xs={12} xl={12}>
+                <OrganizeFormCard className="mb-3" />
+              </Col>
+              <Col xs={12} xl={12}>
+                <VariantFormCard />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </form>

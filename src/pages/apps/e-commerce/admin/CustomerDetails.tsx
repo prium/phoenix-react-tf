@@ -42,7 +42,7 @@ const CustomerDetails = () => {
               </Col>
               <Col xs={12} md={5} xxl={12}>
                 <Card className="h-100">
-                  <Card.Body>
+                  <Card.Body className="">
                     <div className="d-flex align-items-center mb-3">
                       <h3 className="me-1">Default Address</h3>
                       <Button variant="link" className="p-0">
@@ -66,12 +66,10 @@ const CustomerDetails = () => {
                         shatinon@jeemail.com
                       </a>
                     </div>
-                    <div>
-                      <h5 className="text-800">Phone</h5>
-                      <a className="text-800" href="tel:+1234567890">
-                        +1234567890
-                      </a>
-                    </div>
+                    <h5 className="text-800">Phone</h5>
+                    <a className="text-800" href="tel:+1234567890">
+                      +1234567890
+                    </a>
                   </Card.Body>
                 </Card>
               </Col>

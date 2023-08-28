@@ -14,7 +14,6 @@ import { productsTableData } from 'data/e-commerce/products';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { ChangeEvent } from 'react';
-import { Col, Row } from 'react-bootstrap';
 
 const tabItems: FilterTabItem[] = [
   {
@@ -88,24 +87,19 @@ const Products = () => {
     <div>
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-5">Products</h2>
-        <FilterTab tabItems={tabItems} className="gap-5 mb-3" />
+        <h2 className="mb-4">Products</h2>
+        <FilterTab tabItems={tabItems} />
         <AdvanceTableProvider {...table}>
           <div className="mb-4">
-            <Row className="g-3">
-              <Col xs="auto">
-                <SearchBox
-                  placeholder="Search products"
-                  onChange={handleSearchInputChange}
-                />
-              </Col>
-              <Col
-                xs="auto"
-                className="scrollbar overflow-hidden-y flex-grow-1"
-              >
+            <div className="d-flex flex-wrap gap-3">
+              <SearchBox
+                placeholder="Search products"
+                onChange={handleSearchInputChange}
+              />
+              <div className="scrollbar overflow-hidden-y">
                 <FilterButtonGroup menus={filterMenus} />
-              </Col>
-              <Col xs="auto">
+              </div>
+              <div className="ms-xxl-auto">
                 <Button variant="link" className="text-900 me-4 px-0">
                   <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
                   Export
@@ -114,8 +108,8 @@ const Products = () => {
                   <FontAwesomeIcon icon="plus" className="me-2" />
                   Add product
                 </Button>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
 
           <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">

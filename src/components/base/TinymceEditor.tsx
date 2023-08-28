@@ -21,6 +21,16 @@ const TinymceEditor = ({
   } = useAppContext();
   const editorRef = useRef<TinyMCEEditor | null>(null);
 
+  const handleEditorFocus = () => {
+    const editorContainer = editorRef.current?.editorContainer;
+    editorContainer?.classList.add('editor-focused');
+  };
+
+  const handleEditorBlur = () => {
+    const editorContainer = editorRef.current?.editorContainer;
+    editorContainer?.classList.remove('editor-focused');
+  };
+
   useEffect(() => {
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
@@ -33,6 +43,8 @@ const TinymceEditor = ({
 
   return (
     <Editor
+      onFocus={handleEditorFocus}
+      onBlur={handleEditorBlur}
       onInit={(evt, editor) => (editorRef.current = editor)}
       value={value}
       onEditorChange={onChange}

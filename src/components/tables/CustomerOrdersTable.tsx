@@ -114,7 +114,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     id: 'action',
     cell: () => (
       <RevealDropdownTrigger>
-        <RevealDropdown>
+        <RevealDropdown btnClassName="lh-1">
           <ActionDropdownItems />
         </RevealDropdown>
       </RevealDropdownTrigger>

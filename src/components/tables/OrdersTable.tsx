@@ -21,8 +21,8 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '5%' }, className: 'pe-3' }
-      // cellProps: { className: 'py-0 pe-5 white-space-nowrap' }
+      headerProps: { style: { width: '5%' }, className: 'pe-3 ps-0' },
+      cellProps: { className: 'ps-0' }
     }
   },
   {

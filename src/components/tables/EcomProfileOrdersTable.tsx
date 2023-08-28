@@ -23,7 +23,8 @@ const columns: ColumnDef<CustomerOrder>[] = [
       </Link>
     ),
     meta: {
-      headerProps: { style: { width: '15%', minWidth: 140 } }
+      headerProps: { style: { width: '15%', minWidth: 140 } },
+      cellProps: { className: 'py-2' }
     }
   },
   {
@@ -91,7 +92,7 @@ const columns: ColumnDef<CustomerOrder>[] = [
     ),
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'text-end' }
+      cellProps: { className: 'text-end py-2' }
     }
   }
 ];

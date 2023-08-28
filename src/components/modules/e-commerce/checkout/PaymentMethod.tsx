@@ -26,30 +26,18 @@ export const PaymentMethod = () => {
                     Credit card
                   </Form.Check.Label>
                 </Form.Check>
+                <img className="h-100 me-2" src={visa} alt="visa" />
+                <img className="h-100 me-2" src={discover} alt="discover" />
+                <img className="h-100 me-2" src={mastercard} alt="mastercard" />
                 <img
-                  className="h-100 me-2 ms-4 ms-md-0"
-                  src={visa}
-                  alt="visa"
-                />
-                <img
-                  className="h-100 me-2 ms-4 ms-md-0"
-                  src={discover}
-                  alt="discover"
-                />
-                <img
-                  className="h-100 me-2 ms-4 ms-md-0"
-                  src={mastercard}
-                  alt="mastercard"
-                />
-                <img
-                  className="h-100 me-2 ms-4 ms-md-0"
+                  className="h-100"
                   src={american_express}
                   alt="american_express"
                 />
               </div>
             </Col>
             <Col xs={12} md="auto">
-              <Form.Check type="radio" id="paypal" className="me-3">
+              <Form.Check type="radio" id="paypal">
                 <Form.Check.Input
                   value="paypal"
                   type="radio"
@@ -61,7 +49,7 @@ export const PaymentMethod = () => {
               </Form.Check>
             </Col>
             <Col xs={12} md="auto">
-              <Form.Check type="radio" id="coupon" className="me-3">
+              <Form.Check type="radio" id="coupon">
                 <Form.Check.Input
                   type="radio"
                   value="coupon"
@@ -76,7 +64,9 @@ export const PaymentMethod = () => {
         </Col>
         <Col md={6}>
           <Form.Group as={Col}>
-            <h5 className="text-1000 mb-2">Select card</h5>
+            <Form.Label className="fs-8 text-1000 ps-0 text-none">
+              Select card
+            </Form.Label>
             <Form.Select className="text-1100">
               <option>Select a card</option>
               <option value="visa">Visa</option>

@@ -20,7 +20,7 @@ const ProductGallery = ({ images }: { images: string[] }) => {
           }
           onInit={setThumbsSwiper}
           loop={true}
-          spaceBetween={10}
+          spaceBetween={16}
           slidesPerView={4}
           freeMode={true}
           watchSlidesProgress={true}

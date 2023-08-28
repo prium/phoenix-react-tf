@@ -14,7 +14,7 @@ const ProjectListView = () => {
   const table = useAdvanceTable({
     data: projects,
     columns: projectListTableColumns,
-    pageSize: 10,
+    pageSize: 6,
     pagination: true,
     sortable: true
   });

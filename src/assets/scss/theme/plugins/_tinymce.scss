@@ -6,9 +6,17 @@
   &.tox-tinymce {
     border: 0;
     border-radius: 0;
+    overflow: unset !important;
+  }
+  .tox-editor-container {
+    overflow: unset !important;
   }
   .tox-edit-area {
     font-family: $font-family-sans-serif;
+  }
+  .tox-toolbar--scrolling {
+    background-color: transparent !important;
+    @extend .scrollbar;
   }
   &:not([dir='rtl']) {
     .tox-toolbar__group {
@@ -40,7 +48,6 @@
   .tox-sidebar-wrap {
     overflow: hidden;
     border: 1px solid var(--#{$prefix}input-border-color);
-    overflow: hidden;
     border-radius: $border-radius;
   }
 
@@ -153,6 +160,10 @@
     background-color: var(--#{$prefix}gray-100) !important;
     background-image: none !important;
   }
+  .tox-dialog-wrap__backdrop {
+    background-color: $black !important;
+    opacity: 0.5;
+  }
 }
 
 .tox .tox-tbtn {
@@ -181,4 +192,10 @@
 
 .tox .tox-edit-area__iframe {
   background-color: var(--#{$prefix}tinymce-bg) !important;
+}
+.editor-focused {
+  .tox-sidebar-wrap {
+    box-shadow: $input-focus-box-shadow !important;
+    border-color: $primary !important;
+  }
 }

@@ -122,7 +122,7 @@ const CustomerRatingsTable = () => {
   const table = useAdvanceTable({
     data: customerRatingsTableData,
     columns,
-    pageSize: 6,
+    pageSize: 5,
     pagination: true,
     selection: false,
     selectionColumnWidth: '30px',

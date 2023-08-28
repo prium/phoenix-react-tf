@@ -1,9 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import Button from 'components/base/Button';
 import { SubTaskItem } from 'data/project-management/todoListData';
 import { snakeCase } from 'helpers/utils';
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 const SubTask = ({
   task,
@@ -32,10 +33,10 @@ const SubTask = ({
       </Form.Check>
 
       <div className="hover-actions end-0">
-        <Button size="sm" className="me-1 text-700 px-0 me-3">
+        <Button variant="" size="sm" className="me-1 text-700 px-0 me-3">
           <FontAwesomeIcon icon="pencil" className="fs-10" />
         </Button>
-        <Button size="sm" className="me-1 text-700 px-0">
+        <Button size="sm" className="text-700 px-0">
           <FontAwesomeIcon icon="xmark" className="fs-8" />
         </Button>
       </div>

@@ -57,7 +57,7 @@ const Checkout = () => {
               </Row>
             </form>
           </Col>
-          <Col xs={5} xl={4}>
+          <Col lg={5} xl={4}>
             <CheckoutSummaryCard />
           </Col>
         </Row>
