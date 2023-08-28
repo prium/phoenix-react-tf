@@ -81,7 +81,6 @@ const columns: ColumnDef<WishlistProductType>[] = [
           variant="primary"
           className="fs-10 text-nowrap"
           startIcon={<FontAwesomeIcon icon="shopping-cart" />}
-          variant="primary"
         >
           Add to cart
         </Button>
