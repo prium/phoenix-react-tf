@@ -3,11 +3,11 @@ import React, { useContext, useEffect } from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
-// import 'leaflet.tilelayer.colorfilter';
+import 'leaflet.tilelayer.colorfilter';
 import 'leaflet/dist/leaflet.css';
 import '@changey/react-leaflet-markercluster/dist/styles.min.css';
+import { MapMarkerPoints } from 'data/mapMarkerPoints';
 import { AppContext } from 'providers/AppProvider';
-import { MapMarkerPoints } from 'data/googleMapMarkerPoints';
 
 const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
   const mapMarker = L.icon({
@@ -33,20 +33,20 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
     map.invalidateSize();
   }, [config]);
 
-  // useEffect(() => {
-  //   if (map) {
-  //     L.tileLayer
-  //       .colorFilter(
-  //         'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-  //         {
-  //           attribution: null,
-  //           transparent: true,
-  //           filter: filter
-  //         }
-  //       )
-  //       .addTo(map);
-  //   }
-  // }, [theme === 'dark']);
+  useEffect(() => {
+    if (map) {
+      L.tileLayer
+        .colorFilter(
+          'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+          {
+            attribution: null,
+            transparent: true,
+            filter: filter
+          }
+        )
+        .addTo(map);
+    }
+  }, [theme === 'dark']);
 
   return (
     <>
@@ -56,7 +56,11 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
       />
       <MarkerClusterGroup chunkedLoading={true} spiderfyOnMaxZoom={false}>
         {data.map(marker => (
-          <Marker key={marker.id} position={marker.position} icon={mapMarker}>
+          <Marker
+            key={marker.id}
+            position={[marker.lat, marker.lng]}
+            icon={mapMarker}
+          >
             <Popup>
               <h6 className="mb-1">{marker.name}</h6>
               <p className="m-0 text-500">
@@ -84,6 +88,7 @@ const EcomTopRegionsMap = ({ data, ...rest }: { data: MapMarkerPoints[] }) => {
       center={position}
       {...rest}
       radius={200}
+      className="h-100"
     >
       <LayerComponent data={data} />
     </MapContainer>

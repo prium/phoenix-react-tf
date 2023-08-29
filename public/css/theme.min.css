@@ -689,9 +689,7 @@
 }
 .dark .btn.active, .dark .mapbox-container .mapbox-control-btn .active.zoomIn, .mapbox-container .mapbox-control-btn .dark .active.zoomIn,
 .dark .mapbox-container .mapbox-control-btn .active.zoomOut,
-.mapbox-container .mapbox-control-btn .dark .active.zoomOut, .dark .google-map-control-btn .active.zoomIn, .google-map-control-btn .dark .active.zoomIn,
-.dark .google-map-control-btn .active.zoomOut,
-.google-map-control-btn .dark .active.zoomOut, .dark .tox .tox-dialog__footer .active.tox-button--secondary, .tox .tox-dialog__footer .dark .active.tox-button--secondary, .dark .tox .active.tox-button-secondary, .tox .dark .active.tox-button-secondary, .dark .tox .active.tox-button, .tox .dark .active.tox-button, .dark [data-list] .active.page, [data-list] .dark .active.page {
+.mapbox-container .mapbox-control-btn .dark .active.zoomOut, .dark .tox .tox-dialog__footer .active.tox-button--secondary, .tox .tox-dialog__footer .dark .active.tox-button--secondary, .dark .tox .active.tox-button-secondary, .tox .dark .active.tox-button-secondary, .dark .tox .active.tox-button, .tox .dark .active.tox-button, .dark [data-list] .active.page, [data-list] .dark .active.page {
   --phoenix-btn-active-bg: #373e53;
   --phoenix-btn-active-color: red;
 }
@@ -706,9 +704,7 @@
 }
 .dark .btn-phoenix-secondary, .dark .picmo__popupContainer.picmo__light .btn-phoenix-secondary, .dark .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .dark .zoomIn,
 .dark .mapbox-container .mapbox-control-btn .zoomOut,
-.mapbox-container .mapbox-control-btn .dark .zoomOut, .dark .google-map-control-btn .zoomIn, .google-map-control-btn .dark .zoomIn,
-.dark .google-map-control-btn .zoomOut,
-.google-map-control-btn .dark .zoomOut, .dark .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .dark .tox-button--secondary, .dark .tox .tox-button-secondary, .tox .dark .tox-button-secondary {
+.mapbox-container .mapbox-control-btn .dark .zoomOut, .dark .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .dark .tox-button--secondary, .dark .tox .tox-button-secondary, .tox .dark .tox-button-secondary {
   --phoenix-btn-color: #9fa6bc;
   --phoenix-btn-active-color: #9fa6bc;
   --phoenix-btn-hover-color: #cbd0dd;
@@ -757,10 +753,7 @@
 .dark .settings-panel .btn, .dark .settings-panel .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .dark .settings-panel .zoomIn, .dark .mapbox-container .mapbox-control-btn .picmo__popupContainer.picmo__light .settings-panel .zoomIn,
 .dark .settings-panel .mapbox-container .mapbox-control-btn .zoomOut,
 .mapbox-container .mapbox-control-btn .dark .settings-panel .zoomOut,
-.dark .mapbox-container .mapbox-control-btn .picmo__popupContainer.picmo__light .settings-panel .zoomOut, .dark .settings-panel .google-map-control-btn .zoomIn, .google-map-control-btn .dark .settings-panel .zoomIn, .dark .google-map-control-btn .picmo__popupContainer.picmo__light .settings-panel .zoomIn,
-.dark .settings-panel .google-map-control-btn .zoomOut,
-.google-map-control-btn .dark .settings-panel .zoomOut,
-.dark .google-map-control-btn .picmo__popupContainer.picmo__light .settings-panel .zoomOut, .dark .settings-panel .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .dark .settings-panel .tox-button--secondary, .dark .tox .tox-dialog__footer .picmo__popupContainer.picmo__light .settings-panel .tox-button--secondary, .dark .settings-panel .tox .tox-button-secondary, .tox .dark .settings-panel .tox-button-secondary, .dark .tox .picmo__popupContainer.picmo__light .settings-panel .tox-button-secondary, .dark .settings-panel .tox .tox-button, .tox .dark .settings-panel .tox-button, .dark .tox .picmo__popupContainer.picmo__light .settings-panel .tox-button, .dark .settings-panel [data-list] .page, [data-list] .dark .settings-panel .page, .dark [data-list] .picmo__popupContainer.picmo__light .settings-panel .page {
+.dark .mapbox-container .mapbox-control-btn .picmo__popupContainer.picmo__light .settings-panel .zoomOut, .dark .settings-panel .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .dark .settings-panel .tox-button--secondary, .dark .tox .tox-dialog__footer .picmo__popupContainer.picmo__light .settings-panel .tox-button--secondary, .dark .settings-panel .tox .tox-button-secondary, .tox .dark .settings-panel .tox-button-secondary, .dark .tox .picmo__popupContainer.picmo__light .settings-panel .tox-button-secondary, .dark .settings-panel .tox .tox-button, .tox .dark .settings-panel .tox-button, .dark .tox .picmo__popupContainer.picmo__light .settings-panel .tox-button, .dark .settings-panel [data-list] .page, [data-list] .dark .settings-panel .page, .dark [data-list] .picmo__popupContainer.picmo__light .settings-panel .page {
   --phoenix-btn-color: #8a94ad;
 }
 .dark .btn-soft-primary, .dark .picmo__popupContainer.picmo__light .btn-soft-primary {
@@ -3744,10 +3737,8 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 .btn-check[disabled] + .btn, .mapbox-container .mapbox-control-btn .btn-check[disabled] + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-check[disabled] + .zoomOut, .google-map-control-btn .btn-check[disabled] + .zoomIn,
-.google-map-control-btn .btn-check[disabled] + .zoomOut, .tox .tox-dialog__footer .btn-check[disabled] + .tox-button--secondary, .tox .btn-check[disabled] + .tox-button-secondary, .tox .btn-check[disabled] + .tox-button, [data-list] .btn-check[disabled] + .page, .btn-check:disabled + .btn, .mapbox-container .mapbox-control-btn .btn-check:disabled + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-check:disabled + .zoomOut, .google-map-control-btn .btn-check:disabled + .zoomIn,
-.google-map-control-btn .btn-check:disabled + .zoomOut, .tox .tox-dialog__footer .btn-check:disabled + .tox-button--secondary, .tox .btn-check:disabled + .tox-button-secondary, .tox .btn-check:disabled + .tox-button, [data-list] .btn-check:disabled + .page {
+.mapbox-container .mapbox-control-btn .btn-check[disabled] + .zoomOut, .tox .tox-dialog__footer .btn-check[disabled] + .tox-button--secondary, .tox .btn-check[disabled] + .tox-button-secondary, .tox .btn-check[disabled] + .tox-button, [data-list] .btn-check[disabled] + .page, .btn-check:disabled + .btn, .mapbox-container .mapbox-control-btn .btn-check:disabled + .zoomIn,
+.mapbox-container .mapbox-control-btn .btn-check:disabled + .zoomOut, .tox .tox-dialog__footer .btn-check:disabled + .tox-button--secondary, .tox .btn-check:disabled + .tox-button-secondary, .tox .btn-check:disabled + .tox-button, [data-list] .btn-check:disabled + .page {
   pointer-events: none;
   filter: none;
   opacity: 0.3;
@@ -3929,17 +3920,13 @@ textarea.form-control-lg {
 }
 .input-group .btn, .input-group .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .input-group .zoomIn,
 .input-group .mapbox-container .mapbox-control-btn .zoomOut,
-.mapbox-container .mapbox-control-btn .input-group .zoomOut, .input-group .google-map-control-btn .zoomIn, .google-map-control-btn .input-group .zoomIn,
-.input-group .google-map-control-btn .zoomOut,
-.google-map-control-btn .input-group .zoomOut, .input-group .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .input-group .tox-button:last-child, .input-group .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .input-group .tox-button--secondary, .input-group .tox .tox-button-secondary, .tox .input-group .tox-button-secondary, .input-group .tox .tox-button, .tox .input-group .tox-button, .input-group [data-list] .page, [data-list] .input-group .page {
+.mapbox-container .mapbox-control-btn .input-group .zoomOut, .input-group .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .input-group .tox-button:last-child, .input-group .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .input-group .tox-button--secondary, .input-group .tox .tox-button-secondary, .tox .input-group .tox-button-secondary, .input-group .tox .tox-button, .tox .input-group .tox-button, .input-group [data-list] .page, [data-list] .input-group .page {
   position: relative;
   z-index: 2;
 }
 .input-group .btn:focus, .input-group .mapbox-container .mapbox-control-btn .zoomIn:focus, .mapbox-container .mapbox-control-btn .input-group .zoomIn:focus,
 .input-group .mapbox-container .mapbox-control-btn .zoomOut:focus,
-.mapbox-container .mapbox-control-btn .input-group .zoomOut:focus, .input-group .google-map-control-btn .zoomIn:focus, .google-map-control-btn .input-group .zoomIn:focus,
-.input-group .google-map-control-btn .zoomOut:focus,
-.google-map-control-btn .input-group .zoomOut:focus, .input-group .tox .tox-dialog__footer .tox-button--secondary:focus, .tox .tox-dialog__footer .input-group .tox-button--secondary:focus, .input-group .tox .tox-button-secondary:focus, .tox .input-group .tox-button-secondary:focus, .input-group .tox .tox-button:focus, .tox .input-group .tox-button:focus, .input-group [data-list] .page:focus, [data-list] .input-group .page:focus {
+.mapbox-container .mapbox-control-btn .input-group .zoomOut:focus, .input-group .tox .tox-dialog__footer .tox-button--secondary:focus, .tox .tox-dialog__footer .input-group .tox-button--secondary:focus, .input-group .tox .tox-button-secondary:focus, .tox .input-group .tox-button-secondary:focus, .input-group .tox .tox-button:focus, .tox .input-group .tox-button:focus, .input-group [data-list] .page:focus, [data-list] .input-group .page:focus {
   z-index: 5;
 }
 
@@ -3964,8 +3951,6 @@ textarea.form-control-lg {
 .input-group-lg > .btn,
 .mapbox-container .mapbox-control-btn .input-group-lg > .zoomIn,
 .mapbox-container .mapbox-control-btn .input-group-lg > .zoomOut,
-.google-map-control-btn .input-group-lg > .zoomIn,
-.google-map-control-btn .input-group-lg > .zoomOut,
 .tox .tox-dialog__footer .input-group-lg > .tox-button:last-child,
 .tox .tox-dialog__footer .input-group-lg > .tox-button--secondary,
 .tox .input-group-lg > .tox-button-secondary,
@@ -3982,8 +3967,6 @@ textarea.form-control-lg {
 .input-group-sm > .btn,
 .mapbox-container .mapbox-control-btn .input-group-sm > .zoomIn,
 .mapbox-container .mapbox-control-btn .input-group-sm > .zoomOut,
-.google-map-control-btn .input-group-sm > .zoomIn,
-.google-map-control-btn .input-group-sm > .zoomOut,
 .tox .tox-dialog__footer .input-group-sm > .tox-button:last-child,
 .tox .tox-dialog__footer .input-group-sm > .tox-button--secondary,
 .tox .input-group-sm > .tox-button-secondary,
@@ -4565,13 +4548,10 @@ textarea.form-control-lg {
   vertical-align: middle;
 }
 .btn-group > .btn, .mapbox-container .mapbox-control-btn .btn-group > .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group > .zoomOut, .google-map-control-btn .btn-group > .zoomIn,
-.google-map-control-btn .btn-group > .zoomOut, .tox .tox-dialog__footer .btn-group > .tox-button:last-child, .tox .tox-dialog__footer .btn-group > .tox-button--secondary, .tox .btn-group > .tox-button-secondary, .tox .btn-group > .tox-button, [data-list] .btn-group > .page,
+.mapbox-container .mapbox-control-btn .btn-group > .zoomOut, .tox .tox-dialog__footer .btn-group > .tox-button:last-child, .tox .tox-dialog__footer .btn-group > .tox-button--secondary, .tox .btn-group > .tox-button-secondary, .tox .btn-group > .tox-button, [data-list] .btn-group > .page,
 .btn-group-vertical > .btn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut,
-.google-map-control-btn .btn-group-vertical > .zoomIn,
-.google-map-control-btn .btn-group-vertical > .zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .tox-button:last-child,
 .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary,
 .tox .btn-group-vertical > .tox-button-secondary,
@@ -4581,13 +4561,10 @@ textarea.form-control-lg {
   flex: 1 1 auto;
 }
 .btn-group > .btn-check:checked + .btn, .mapbox-container .mapbox-control-btn .btn-group > .btn-check:checked + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group > .btn-check:checked + .zoomOut, .google-map-control-btn .btn-group > .btn-check:checked + .zoomIn,
-.google-map-control-btn .btn-group > .btn-check:checked + .zoomOut, .tox .tox-dialog__footer .btn-group > .btn-check:checked + .tox-button--secondary, .tox .btn-group > .btn-check:checked + .tox-button-secondary, .tox .btn-group > .btn-check:checked + .tox-button, [data-list] .btn-group > .btn-check:checked + .page,
+.mapbox-container .mapbox-control-btn .btn-group > .btn-check:checked + .zoomOut, .tox .tox-dialog__footer .btn-group > .btn-check:checked + .tox-button--secondary, .tox .btn-group > .btn-check:checked + .tox-button-secondary, .tox .btn-group > .btn-check:checked + .tox-button, [data-list] .btn-group > .btn-check:checked + .page,
 .btn-group > .btn-check:focus + .btn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-check:focus + .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-check:focus + .zoomOut,
-.google-map-control-btn .btn-group > .btn-check:focus + .zoomIn,
-.google-map-control-btn .btn-group > .btn-check:focus + .zoomOut,
 .tox .tox-dialog__footer .btn-group > .btn-check:focus + .tox-button--secondary,
 .tox .btn-group > .btn-check:focus + .tox-button-secondary,
 .tox .btn-group > .btn-check:focus + .tox-button,
@@ -4595,8 +4572,6 @@ textarea.form-control-lg {
 .btn-group > .btn:hover,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomIn:hover,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomOut:hover,
-.google-map-control-btn .btn-group > .zoomIn:hover,
-.google-map-control-btn .btn-group > .zoomOut:hover,
 .tox .tox-dialog__footer .btn-group > .tox-button--secondary:hover,
 .tox .btn-group > .tox-button-secondary:hover,
 .tox .btn-group > .tox-button:hover,
@@ -4604,8 +4579,6 @@ textarea.form-control-lg {
 .btn-group > .btn:focus,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomIn:focus,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomOut:focus,
-.google-map-control-btn .btn-group > .zoomIn:focus,
-.google-map-control-btn .btn-group > .zoomOut:focus,
 .tox .tox-dialog__footer .btn-group > .tox-button--secondary:focus,
 .tox .btn-group > .tox-button-secondary:focus,
 .tox .btn-group > .tox-button:focus,
@@ -4613,8 +4586,6 @@ textarea.form-control-lg {
 .btn-group > .btn:active,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomIn:active,
 .mapbox-container .mapbox-control-btn .btn-group > .zoomOut:active,
-.google-map-control-btn .btn-group > .zoomIn:active,
-.google-map-control-btn .btn-group > .zoomOut:active,
 .tox .tox-dialog__footer .btn-group > .tox-button--secondary:active,
 .tox .btn-group > .tox-button-secondary:active,
 .tox .btn-group > .tox-button:active,
@@ -4622,8 +4593,6 @@ textarea.form-control-lg {
 .btn-group > .btn.active,
 .mapbox-container .mapbox-control-btn .btn-group > .active.zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group > .active.zoomOut,
-.google-map-control-btn .btn-group > .active.zoomIn,
-.google-map-control-btn .btn-group > .active.zoomOut,
 .tox .tox-dialog__footer .btn-group > .active.tox-button--secondary,
 .tox .btn-group > .active.tox-button-secondary,
 .tox .btn-group > .active.tox-button,
@@ -4631,8 +4600,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:checked + .btn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-check:checked + .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-check:checked + .zoomOut,
-.google-map-control-btn .btn-group-vertical > .btn-check:checked + .zoomIn,
-.google-map-control-btn .btn-group-vertical > .btn-check:checked + .zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .btn-check:checked + .tox-button--secondary,
 .tox .btn-group-vertical > .btn-check:checked + .tox-button-secondary,
 .tox .btn-group-vertical > .btn-check:checked + .tox-button,
@@ -4640,8 +4607,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:focus + .btn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-check:focus + .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-check:focus + .zoomOut,
-.google-map-control-btn .btn-group-vertical > .btn-check:focus + .zoomIn,
-.google-map-control-btn .btn-group-vertical > .btn-check:focus + .zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .btn-check:focus + .tox-button--secondary,
 .tox .btn-group-vertical > .btn-check:focus + .tox-button-secondary,
 .tox .btn-group-vertical > .btn-check:focus + .tox-button,
@@ -4649,8 +4614,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn:hover,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn:hover,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:hover,
-.google-map-control-btn .btn-group-vertical > .zoomIn:hover,
-.google-map-control-btn .btn-group-vertical > .zoomOut:hover,
 .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:hover,
 .tox .btn-group-vertical > .tox-button-secondary:hover,
 .tox .btn-group-vertical > .tox-button:hover,
@@ -4658,8 +4621,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn:focus,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn:focus,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:focus,
-.google-map-control-btn .btn-group-vertical > .zoomIn:focus,
-.google-map-control-btn .btn-group-vertical > .zoomOut:focus,
 .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:focus,
 .tox .btn-group-vertical > .tox-button-secondary:focus,
 .tox .btn-group-vertical > .tox-button:focus,
@@ -4667,8 +4628,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn:active,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn:active,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:active,
-.google-map-control-btn .btn-group-vertical > .zoomIn:active,
-.google-map-control-btn .btn-group-vertical > .zoomOut:active,
 .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:active,
 .tox .btn-group-vertical > .tox-button-secondary:active,
 .tox .btn-group-vertical > .tox-button:active,
@@ -4676,8 +4635,6 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn.active,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .active.zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .active.zoomOut,
-.google-map-control-btn .btn-group-vertical > .active.zoomIn,
-.google-map-control-btn .btn-group-vertical > .active.zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .active.tox-button--secondary,
 .tox .btn-group-vertical > .active.tox-button-secondary,
 .tox .btn-group-vertical > .active.tox-button,
@@ -4698,19 +4655,15 @@ textarea.form-control-lg {
   border-radius: 0.375rem;
 }
 .btn-group > :not(.btn-check:first-child) + .btn, .mapbox-container .mapbox-control-btn .btn-group > :not(.btn-check:first-child) + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group > :not(.btn-check:first-child) + .zoomOut, .google-map-control-btn .btn-group > :not(.btn-check:first-child) + .zoomIn,
-.google-map-control-btn .btn-group > :not(.btn-check:first-child) + .zoomOut, .tox .tox-dialog__footer .btn-group > :not(.btn-check:first-child) + .tox-button--secondary, .tox .btn-group > :not(.btn-check:first-child) + .tox-button-secondary, .tox .btn-group > :not(.btn-check:first-child) + .tox-button, [data-list] .btn-group > :not(.btn-check:first-child) + .page,
+.mapbox-container .mapbox-control-btn .btn-group > :not(.btn-check:first-child) + .zoomOut, .tox .tox-dialog__footer .btn-group > :not(.btn-check:first-child) + .tox-button--secondary, .tox .btn-group > :not(.btn-check:first-child) + .tox-button-secondary, .tox .btn-group > :not(.btn-check:first-child) + .tox-button, [data-list] .btn-group > :not(.btn-check:first-child) + .page,
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .mapbox-container .mapbox-control-btn .btn-group > .zoomIn:not(:last-child):not(.dropdown-toggle),
-.mapbox-container .mapbox-control-btn .btn-group > .zoomOut:not(:last-child):not(.dropdown-toggle), .google-map-control-btn .btn-group > .zoomIn:not(:last-child):not(.dropdown-toggle),
-.google-map-control-btn .btn-group > .zoomOut:not(:last-child):not(.dropdown-toggle), .tox .tox-dialog__footer .btn-group > .tox-button--secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group > .tox-button-secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group > .tox-button:not(:last-child):not(.dropdown-toggle), [data-list] .btn-group > .page:not(:last-child):not(.dropdown-toggle),
+.mapbox-container .mapbox-control-btn .btn-group > .zoomOut:not(:last-child):not(.dropdown-toggle), .tox .tox-dialog__footer .btn-group > .tox-button--secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group > .tox-button-secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group > .tox-button:not(:last-child):not(.dropdown-toggle), [data-list] .btn-group > .page:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn.dropdown-toggle-split:first-child,
 .mapbox-container .mapbox-control-btn .btn-group > .dropdown-toggle-split.zoomIn:first-child,
 .mapbox-container .mapbox-control-btn .btn-group > .dropdown-toggle-split.zoomOut:first-child,
-.google-map-control-btn .btn-group > .dropdown-toggle-split.zoomIn:first-child,
-.google-map-control-btn .btn-group > .dropdown-toggle-split.zoomOut:first-child,
 .tox .tox-dialog__footer .btn-group > .dropdown-toggle-split.tox-button--secondary:first-child,
 .tox .btn-group > .dropdown-toggle-split.tox-button-secondary:first-child,
 .tox .btn-group > .dropdown-toggle-split.tox-button:first-child,
@@ -4718,8 +4671,6 @@ textarea.form-control-lg {
 .btn-group > .btn-group:not(:last-child) > .btn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-group:not(:last-child) > .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-group:not(:last-child) > .zoomOut,
-.google-map-control-btn .btn-group > .btn-group:not(:last-child) > .zoomIn,
-.google-map-control-btn .btn-group > .btn-group:not(:last-child) > .zoomOut,
 .tox .tox-dialog__footer .btn-group > .btn-group:not(:last-child) > .tox-button--secondary,
 .tox .btn-group > .btn-group:not(:last-child) > .tox-button-secondary,
 .tox .btn-group > .btn-group:not(:last-child) > .tox-button,
@@ -4728,13 +4679,10 @@ textarea.form-control-lg {
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:nth-child(n+3), .mapbox-container .mapbox-control-btn .btn-group > .zoomIn:nth-child(n+3),
-.mapbox-container .mapbox-control-btn .btn-group > .zoomOut:nth-child(n+3), .google-map-control-btn .btn-group > .zoomIn:nth-child(n+3),
-.google-map-control-btn .btn-group > .zoomOut:nth-child(n+3), .tox .tox-dialog__footer .btn-group > .tox-button--secondary:nth-child(n+3), .tox .btn-group > .tox-button-secondary:nth-child(n+3), .tox .btn-group > .tox-button:nth-child(n+3), [data-list] .btn-group > .page:nth-child(n+3),
+.mapbox-container .mapbox-control-btn .btn-group > .zoomOut:nth-child(n+3), .tox .tox-dialog__footer .btn-group > .tox-button--secondary:nth-child(n+3), .tox .btn-group > .tox-button-secondary:nth-child(n+3), .tox .btn-group > .tox-button:nth-child(n+3), [data-list] .btn-group > .page:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
 .mapbox-container .mapbox-control-btn .btn-group > :not(.btn-check) + .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group > :not(.btn-check) + .zoomOut,
-.google-map-control-btn .btn-group > :not(.btn-check) + .zoomIn,
-.google-map-control-btn .btn-group > :not(.btn-check) + .zoomOut,
 .tox .tox-dialog__footer .btn-group > :not(.btn-check) + .tox-button--secondary,
 .tox .btn-group > :not(.btn-check) + .tox-button-secondary,
 .tox .btn-group > :not(.btn-check) + .tox-button,
@@ -4742,8 +4690,6 @@ textarea.form-control-lg {
 .btn-group > .btn-group:not(:first-child) > .btn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-group:not(:first-child) > .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group > .btn-group:not(:first-child) > .zoomOut,
-.google-map-control-btn .btn-group > .btn-group:not(:first-child) > .zoomIn,
-.google-map-control-btn .btn-group > .btn-group:not(:first-child) > .zoomOut,
 .tox .tox-dialog__footer .btn-group > .btn-group:not(:first-child) > .tox-button--secondary,
 .tox .btn-group > .btn-group:not(:first-child) > .tox-button-secondary,
 .tox .btn-group > .btn-group:not(:first-child) > .tox-button,
@@ -4764,15 +4710,13 @@ textarea.form-control-lg {
 }
 
 .btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .mapbox-container .mapbox-control-btn .btn-group-sm > .zoomIn + .dropdown-toggle-split,
-.mapbox-container .mapbox-control-btn .btn-group-sm > .zoomOut + .dropdown-toggle-split, .google-map-control-btn .btn-group-sm > .zoomIn + .dropdown-toggle-split,
-.google-map-control-btn .btn-group-sm > .zoomOut + .dropdown-toggle-split, .tox .tox-dialog__footer .btn-group-sm > .tox-button--secondary + .dropdown-toggle-split, .tox .btn-group-sm > .tox-button-secondary + .dropdown-toggle-split, .tox .btn-group-sm > .tox-button + .dropdown-toggle-split, [data-list] .btn-group-sm > .page + .dropdown-toggle-split {
+.mapbox-container .mapbox-control-btn .btn-group-sm > .zoomOut + .dropdown-toggle-split, .tox .tox-dialog__footer .btn-group-sm > .tox-button--secondary + .dropdown-toggle-split, .tox .btn-group-sm > .tox-button-secondary + .dropdown-toggle-split, .tox .btn-group-sm > .tox-button + .dropdown-toggle-split, [data-list] .btn-group-sm > .page + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
 
 .btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .mapbox-container .mapbox-control-btn .btn-group-lg > .zoomIn + .dropdown-toggle-split,
-.mapbox-container .mapbox-control-btn .btn-group-lg > .zoomOut + .dropdown-toggle-split, .google-map-control-btn .btn-group-lg > .zoomIn + .dropdown-toggle-split,
-.google-map-control-btn .btn-group-lg > .zoomOut + .dropdown-toggle-split, .tox .tox-dialog__footer .btn-group-lg > .tox-button--secondary + .dropdown-toggle-split, .tox .btn-group-lg > .tox-button-secondary + .dropdown-toggle-split, .tox .btn-group-lg > .tox-button + .dropdown-toggle-split, [data-list] .btn-group-lg > .page + .dropdown-toggle-split {
+.mapbox-container .mapbox-control-btn .btn-group-lg > .zoomOut + .dropdown-toggle-split, .tox .tox-dialog__footer .btn-group-lg > .tox-button--secondary + .dropdown-toggle-split, .tox .btn-group-lg > .tox-button-secondary + .dropdown-toggle-split, .tox .btn-group-lg > .tox-button + .dropdown-toggle-split, [data-list] .btn-group-lg > .page + .dropdown-toggle-split {
   padding-right: 1.125rem;
   padding-left: 1.125rem;
 }
@@ -4790,25 +4734,20 @@ textarea.form-control-lg {
   justify-content: center;
 }
 .btn-group-vertical > .btn, .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut, .google-map-control-btn .btn-group-vertical > .zoomIn,
-.google-map-control-btn .btn-group-vertical > .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary, .tox .btn-group-vertical > .tox-button-secondary, .tox .btn-group-vertical > .tox-button, [data-list] .btn-group-vertical > .page,
+.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary, .tox .btn-group-vertical > .tox-button-secondary, .tox .btn-group-vertical > .tox-button, [data-list] .btn-group-vertical > .page,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 .btn-group-vertical > .btn:not(:first-child), .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn:not(:first-child),
-.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:not(:first-child), .google-map-control-btn .btn-group-vertical > .zoomIn:not(:first-child),
-.google-map-control-btn .btn-group-vertical > .zoomOut:not(:first-child), .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:not(:first-child), .tox .btn-group-vertical > .tox-button-secondary:not(:first-child), .tox .btn-group-vertical > .tox-button:not(:first-child), [data-list] .btn-group-vertical > .page:not(:first-child),
+.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:not(:first-child), .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:not(:first-child), .tox .btn-group-vertical > .tox-button-secondary:not(:first-child), .tox .btn-group-vertical > .tox-button:not(:first-child), [data-list] .btn-group-vertical > .page:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn:not(:last-child):not(.dropdown-toggle),
-.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:not(:last-child):not(.dropdown-toggle), .google-map-control-btn .btn-group-vertical > .zoomIn:not(:last-child):not(.dropdown-toggle),
-.google-map-control-btn .btn-group-vertical > .zoomOut:not(:last-child):not(.dropdown-toggle), .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group-vertical > .tox-button-secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group-vertical > .tox-button:not(:last-child):not(.dropdown-toggle), [data-list] .btn-group-vertical > .page:not(:last-child):not(.dropdown-toggle),
+.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut:not(:last-child):not(.dropdown-toggle), .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group-vertical > .tox-button-secondary:not(:last-child):not(.dropdown-toggle), .tox .btn-group-vertical > .tox-button:not(:last-child):not(.dropdown-toggle), [data-list] .btn-group-vertical > .page:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-group:not(:last-child) > .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-group:not(:last-child) > .zoomOut,
-.google-map-control-btn .btn-group-vertical > .btn-group:not(:last-child) > .zoomIn,
-.google-map-control-btn .btn-group-vertical > .btn-group:not(:last-child) > .zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .btn-group:not(:last-child) > .tox-button--secondary,
 .tox .btn-group-vertical > .btn-group:not(:last-child) > .tox-button-secondary,
 .tox .btn-group-vertical > .btn-group:not(:last-child) > .tox-button,
@@ -4821,61 +4760,26 @@ textarea.form-control-lg {
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn ~ .zoomOut,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut, .google-map-control-btn .btn-group-vertical > .zoomIn ~ .btn, .google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .zoomIn, .mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomIn,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.google-map-control-btn .btn-group-vertical > .zoomOut ~ .btn,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut, .google-map-control-btn .btn-group-vertical > .btn ~ .zoomIn, .google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .zoomIn, .mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomIn,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn, .google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomIn,
-.google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomIn,
-.google-map-control-btn .btn-group-vertical > .btn ~ .zoomOut,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.google-map-control-btn .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut,
-.google-map-control-btn .btn-group-vertical > .zoomIn ~ .zoomOut,
-.google-map-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .btn, .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button--secondary ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomIn,
+.mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .btn, .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button--secondary ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomIn,
 .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button--secondary ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomOut, .tox .tox-dialog__footer .google-map-control-btn .btn-group-vertical > .tox-button--secondary ~ .zoomIn, .google-map-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomIn,
-.tox .tox-dialog__footer .google-map-control-btn .btn-group-vertical > .tox-button--secondary ~ .zoomOut,
-.google-map-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .btn ~ .tox-button--secondary, .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button--secondary, .mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomIn ~ .tox-button--secondary,
+.mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .btn ~ .tox-button--secondary, .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button--secondary, .mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomIn ~ .tox-button--secondary,
 .tox .tox-dialog__footer .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .tox-button--secondary,
-.mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomOut ~ .tox-button--secondary, .tox .tox-dialog__footer .google-map-control-btn .btn-group-vertical > .zoomIn ~ .tox-button--secondary, .google-map-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomIn ~ .tox-button--secondary,
-.tox .tox-dialog__footer .google-map-control-btn .btn-group-vertical > .zoomOut ~ .tox-button--secondary,
-.google-map-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomOut ~ .tox-button--secondary, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button--secondary, .tox .btn-group-vertical > .tox-button-secondary ~ .btn, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button-secondary ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomIn,
+.mapbox-container .mapbox-control-btn .tox .tox-dialog__footer .btn-group-vertical > .zoomOut ~ .tox-button--secondary, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button--secondary, .tox .btn-group-vertical > .tox-button-secondary ~ .btn, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button-secondary ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomIn,
 .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button-secondary ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomOut, .tox .google-map-control-btn .btn-group-vertical > .tox-button-secondary ~ .zoomIn, .google-map-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomIn,
-.tox .google-map-control-btn .btn-group-vertical > .tox-button-secondary ~ .zoomOut,
-.google-map-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button-secondary ~ .tox-button--secondary, .tox .btn-group-vertical > .btn ~ .tox-button-secondary, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button-secondary, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button-secondary,
+.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button-secondary ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button-secondary ~ .tox-button--secondary, .tox .btn-group-vertical > .btn ~ .tox-button-secondary, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button-secondary, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button-secondary,
 .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .tox-button-secondary,
-.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button-secondary, .tox .google-map-control-btn .btn-group-vertical > .zoomIn ~ .tox-button-secondary, .google-map-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button-secondary,
-.tox .google-map-control-btn .btn-group-vertical > .zoomOut ~ .tox-button-secondary,
-.google-map-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button-secondary, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button-secondary, .tox .btn-group-vertical > .tox-button-secondary ~ .tox-button-secondary, .tox .btn-group-vertical > .tox-button ~ .btn, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomIn,
+.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button-secondary, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button-secondary, .tox .btn-group-vertical > .tox-button-secondary ~ .tox-button-secondary, .tox .btn-group-vertical > .tox-button ~ .btn, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button ~ .zoomIn, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomIn,
 .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .tox-button ~ .zoomOut,
-.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomOut, .tox .google-map-control-btn .btn-group-vertical > .tox-button ~ .zoomIn, .google-map-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomIn,
-.tox .google-map-control-btn .btn-group-vertical > .tox-button ~ .zoomOut,
-.google-map-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button ~ .tox-button--secondary, .tox .btn-group-vertical > .tox-button ~ .tox-button-secondary, .tox .btn-group-vertical > .btn ~ .tox-button, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button,
+.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .tox-button ~ .zoomOut, .tox .tox-dialog__footer .btn-group-vertical > .tox-button ~ .tox-button--secondary, .tox .btn-group-vertical > .tox-button ~ .tox-button-secondary, .tox .btn-group-vertical > .btn ~ .tox-button, .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .tox-button, .mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button,
 .tox .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .tox-button,
-.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button, .tox .google-map-control-btn .btn-group-vertical > .zoomIn ~ .tox-button, .google-map-control-btn .tox .btn-group-vertical > .zoomIn ~ .tox-button,
-.tox .google-map-control-btn .btn-group-vertical > .zoomOut ~ .tox-button,
-.google-map-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button, .tox .btn-group-vertical > .tox-button-secondary ~ .tox-button, .tox .btn-group-vertical > .tox-button ~ .tox-button, [data-list] .btn-group-vertical > .page ~ .btn, [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .page ~ .zoomIn, .mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .page ~ .zoomIn,
+.mapbox-container .mapbox-control-btn .tox .btn-group-vertical > .zoomOut ~ .tox-button, .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .tox-button, .tox .btn-group-vertical > .tox-button-secondary ~ .tox-button, .tox .btn-group-vertical > .tox-button ~ .tox-button, [data-list] .btn-group-vertical > .page ~ .btn, [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .page ~ .zoomIn, .mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .page ~ .zoomIn,
 [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .page ~ .zoomOut,
-.mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .page ~ .zoomOut, [data-list] .google-map-control-btn .btn-group-vertical > .page ~ .zoomIn, .google-map-control-btn [data-list] .btn-group-vertical > .page ~ .zoomIn,
-[data-list] .google-map-control-btn .btn-group-vertical > .page ~ .zoomOut,
-.google-map-control-btn [data-list] .btn-group-vertical > .page ~ .zoomOut, [data-list] .tox .tox-dialog__footer .btn-group-vertical > .page ~ .tox-button--secondary, .tox .tox-dialog__footer [data-list] .btn-group-vertical > .page ~ .tox-button--secondary, [data-list] .tox .btn-group-vertical > .page ~ .tox-button-secondary, .tox [data-list] .btn-group-vertical > .page ~ .tox-button-secondary, [data-list] .tox .btn-group-vertical > .page ~ .tox-button, .tox [data-list] .btn-group-vertical > .page ~ .tox-button, [data-list] .btn-group-vertical > .btn ~ .page, [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .page, .mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .zoomIn ~ .page,
+.mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .page ~ .zoomOut, [data-list] .tox .tox-dialog__footer .btn-group-vertical > .page ~ .tox-button--secondary, .tox .tox-dialog__footer [data-list] .btn-group-vertical > .page ~ .tox-button--secondary, [data-list] .tox .btn-group-vertical > .page ~ .tox-button-secondary, .tox [data-list] .btn-group-vertical > .page ~ .tox-button-secondary, [data-list] .tox .btn-group-vertical > .page ~ .tox-button, .tox [data-list] .btn-group-vertical > .page ~ .tox-button, [data-list] .btn-group-vertical > .btn ~ .page, [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomIn ~ .page, .mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .zoomIn ~ .page,
 [data-list] .mapbox-container .mapbox-control-btn .btn-group-vertical > .zoomOut ~ .page,
-.mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .zoomOut ~ .page, [data-list] .google-map-control-btn .btn-group-vertical > .zoomIn ~ .page, .google-map-control-btn [data-list] .btn-group-vertical > .zoomIn ~ .page,
-[data-list] .google-map-control-btn .btn-group-vertical > .zoomOut ~ .page,
-.google-map-control-btn [data-list] .btn-group-vertical > .zoomOut ~ .page, [data-list] .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .page, .tox .tox-dialog__footer [data-list] .btn-group-vertical > .tox-button--secondary ~ .page, [data-list] .tox .btn-group-vertical > .tox-button-secondary ~ .page, .tox [data-list] .btn-group-vertical > .tox-button-secondary ~ .page, [data-list] .tox .btn-group-vertical > .tox-button ~ .page, .tox [data-list] .btn-group-vertical > .tox-button ~ .page, [data-list] .btn-group-vertical > .page ~ .page,
+.mapbox-container .mapbox-control-btn [data-list] .btn-group-vertical > .zoomOut ~ .page, [data-list] .tox .tox-dialog__footer .btn-group-vertical > .tox-button--secondary ~ .page, .tox .tox-dialog__footer [data-list] .btn-group-vertical > .tox-button--secondary ~ .page, [data-list] .tox .btn-group-vertical > .tox-button-secondary ~ .page, .tox [data-list] .btn-group-vertical > .tox-button-secondary ~ .page, [data-list] .tox .btn-group-vertical > .tox-button ~ .page, .tox [data-list] .btn-group-vertical > .tox-button ~ .page, [data-list] .btn-group-vertical > .page ~ .page,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-group:not(:first-child) > .zoomIn,
 .mapbox-container .mapbox-control-btn .btn-group-vertical > .btn-group:not(:first-child) > .zoomOut,
-.google-map-control-btn .btn-group-vertical > .btn-group:not(:first-child) > .zoomIn,
-.google-map-control-btn .btn-group-vertical > .btn-group:not(:first-child) > .zoomOut,
 .tox .tox-dialog__footer .btn-group-vertical > .btn-group:not(:first-child) > .tox-button--secondary,
 .tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button-secondary,
 .tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
@@ -5909,8 +5813,7 @@ textarea.form-control-lg {
 }
 
 .btn .badge, .mapbox-container .mapbox-control-btn .zoomIn .badge,
-.mapbox-container .mapbox-control-btn .zoomOut .badge, .google-map-control-btn .zoomIn .badge,
-.google-map-control-btn .zoomOut .badge, .tox .tox-dialog__footer .tox-button:last-child .badge, .tox .tox-dialog__footer .tox-button--secondary .badge, .tox .tox-button-secondary .badge, .tox .tox-button .badge, [data-list] .page .badge {
+.mapbox-container .mapbox-control-btn .zoomOut .badge, .tox .tox-dialog__footer .tox-button:last-child .badge, .tox .tox-dialog__footer .tox-button--secondary .badge, .tox .tox-button-secondary .badge, .tox .tox-button .badge, [data-list] .page .badge {
   position: relative;
   top: -1px;
 }
@@ -7751,8 +7654,7 @@ textarea.form-control-lg {
   opacity: 0.5;
 }
 .placeholder.btn::before, .mapbox-container .mapbox-control-btn .placeholder.zoomIn::before,
-.mapbox-container .mapbox-control-btn .placeholder.zoomOut::before, .google-map-control-btn .placeholder.zoomIn::before,
-.google-map-control-btn .placeholder.zoomOut::before, .tox .tox-dialog__footer .placeholder.tox-button:last-child::before, .tox .tox-dialog__footer .placeholder.tox-button--secondary::before, .tox .placeholder.tox-button-secondary::before, .tox .placeholder.tox-button::before, [data-list] .placeholder.page::before {
+.mapbox-container .mapbox-control-btn .placeholder.zoomOut::before, .tox .tox-dialog__footer .placeholder.tox-button:last-child::before, .tox .tox-dialog__footer .placeholder.tox-button--secondary::before, .tox .placeholder.tox-button-secondary::before, .tox .placeholder.tox-button::before, [data-list] .placeholder.page::before {
   display: inline-block;
   content: "";
 }
@@ -19680,8 +19582,6 @@ label,
 .btn,
 .mapbox-container .mapbox-control-btn .zoomIn,
 .mapbox-container .mapbox-control-btn .zoomOut,
-.google-map-control-btn .zoomIn,
-.google-map-control-btn .zoomOut,
 .tox .tox-dialog__footer .tox-button:last-child,
 .tox .tox-dialog__footer .tox-button--secondary,
 .tox .tox-button-secondary,
@@ -19780,8 +19680,7 @@ html:not(.dark) .d-light-none {
 }
 
 .btn, .mapbox-container .mapbox-control-btn .zoomIn,
-.mapbox-container .mapbox-control-btn .zoomOut, .google-map-control-btn .zoomIn,
-.google-map-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary, .tox .tox-button, [data-list] .page {
+.mapbox-container .mapbox-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary, .tox .tox-button, [data-list] .page {
   --phoenix-btn-padding-x: 1.5rem;
   --phoenix-btn-padding-y: 0.625rem;
   --phoenix-btn-font-family: ;
@@ -19815,24 +19714,20 @@ html:not(.dark) .d-light-none {
 }
 @media (prefers-reduced-motion: reduce) {
   .btn, .mapbox-container .mapbox-control-btn .zoomIn,
-  .mapbox-container .mapbox-control-btn .zoomOut, .google-map-control-btn .zoomIn,
-  .google-map-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary, .tox .tox-button, [data-list] .page {
+  .mapbox-container .mapbox-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary, .tox .tox-button, [data-list] .page {
     transition: none;
   }
 }
 .btn:hover, .mapbox-container .mapbox-control-btn .zoomIn:hover,
-.mapbox-container .mapbox-control-btn .zoomOut:hover, .google-map-control-btn .zoomIn:hover,
-.google-map-control-btn .zoomOut:hover, .tox .tox-dialog__footer .tox-button:hover:last-child, .tox .tox-dialog__footer .tox-button--secondary:hover, .tox .tox-button-secondary:hover, .tox .tox-button:hover, [data-list] .page:hover {
+.mapbox-container .mapbox-control-btn .zoomOut:hover, .tox .tox-dialog__footer .tox-button:hover:last-child, .tox .tox-dialog__footer .tox-button--secondary:hover, .tox .tox-button-secondary:hover, .tox .tox-button:hover, [data-list] .page:hover {
   color: var(--phoenix-btn-hover-color);
   text-decoration: none;
   background-color: var(--phoenix-btn-hover-bg);
   border-color: var(--phoenix-btn-hover-border-color);
 }
 .btn-check:focus + .btn, .mapbox-container .mapbox-control-btn .btn-check:focus + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-check:focus + .zoomOut, .google-map-control-btn .btn-check:focus + .zoomIn,
-.google-map-control-btn .btn-check:focus + .zoomOut, .tox .tox-dialog__footer .btn-check:focus + .tox-button--secondary, .tox .btn-check:focus + .tox-button-secondary, .tox .btn-check:focus + .tox-button, [data-list] .btn-check:focus + .page, .btn:focus, .mapbox-container .mapbox-control-btn .zoomIn:focus,
-.mapbox-container .mapbox-control-btn .zoomOut:focus, .google-map-control-btn .zoomIn:focus,
-.google-map-control-btn .zoomOut:focus, .tox .tox-dialog__footer .tox-button:focus:last-child, .tox .tox-dialog__footer .tox-button--secondary:focus, .tox .tox-button-secondary:focus, .tox .tox-button:focus, [data-list] .page:focus {
+.mapbox-container .mapbox-control-btn .btn-check:focus + .zoomOut, .tox .tox-dialog__footer .btn-check:focus + .tox-button--secondary, .tox .btn-check:focus + .tox-button-secondary, .tox .btn-check:focus + .tox-button, [data-list] .btn-check:focus + .page, .btn:focus, .mapbox-container .mapbox-control-btn .zoomIn:focus,
+.mapbox-container .mapbox-control-btn .zoomOut:focus, .tox .tox-dialog__footer .tox-button:focus:last-child, .tox .tox-dialog__footer .tox-button--secondary:focus, .tox .tox-button-secondary:focus, .tox .tox-button:focus, [data-list] .page:focus {
   color: var(--phoenix-btn-hover-color);
   background-color: var(--phoenix-btn-hover-bg);
   border-color: var(--phoenix-btn-hover-border-color);
@@ -19840,43 +19735,29 @@ html:not(.dark) .d-light-none {
   box-shadow: var(--phoenix-btn-box-shadow), var(--phoenix-btn-focus-box-shadow);
 }
 .btn-check:checked + .btn, .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut, .google-map-control-btn .btn-check:checked + .zoomIn,
-.google-map-control-btn .btn-check:checked + .zoomOut, .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary, .tox .btn-check:checked + .tox-button-secondary, .tox .btn-check:checked + .tox-button, [data-list] .btn-check:checked + .page, .btn-check:active + .btn, .mapbox-container .mapbox-control-btn .btn-check:active + .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-check:active + .zoomOut, .google-map-control-btn .btn-check:active + .zoomIn,
-.google-map-control-btn .btn-check:active + .zoomOut, .tox .tox-dialog__footer .btn-check:active + .tox-button--secondary, .tox .btn-check:active + .tox-button-secondary, .tox .btn-check:active + .tox-button, [data-list] .btn-check:active + .page, .btn:active, .mapbox-container .mapbox-control-btn .zoomIn:active,
-.mapbox-container .mapbox-control-btn .zoomOut:active, .google-map-control-btn .zoomIn:active,
-.google-map-control-btn .zoomOut:active, .tox .tox-dialog__footer .tox-button:active:last-child, .tox .tox-dialog__footer .tox-button--secondary:active, .tox .tox-button-secondary:active, .tox .tox-button:active, [data-list] .page:active, .btn.active, .mapbox-container .mapbox-control-btn .active.zoomIn,
-.mapbox-container .mapbox-control-btn .active.zoomOut, .google-map-control-btn .active.zoomIn,
-.google-map-control-btn .active.zoomOut, .tox .tox-dialog__footer .active.tox-button:last-child, .tox .tox-dialog__footer .active.tox-button--secondary, .tox .active.tox-button-secondary, .tox .active.tox-button, [data-list] .active.page, .btn.show, .mapbox-container .mapbox-control-btn .show.zoomIn,
-.mapbox-container .mapbox-control-btn .show.zoomOut, .google-map-control-btn .show.zoomIn,
-.google-map-control-btn .show.zoomOut, .tox .tox-dialog__footer .show.tox-button:last-child, .tox .tox-dialog__footer .show.tox-button--secondary, .tox .show.tox-button-secondary, .tox .show.tox-button, [data-list] .show.page {
+.mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut, .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary, .tox .btn-check:checked + .tox-button-secondary, .tox .btn-check:checked + .tox-button, [data-list] .btn-check:checked + .page, .btn-check:active + .btn, .mapbox-container .mapbox-control-btn .btn-check:active + .zoomIn,
+.mapbox-container .mapbox-control-btn .btn-check:active + .zoomOut, .tox .tox-dialog__footer .btn-check:active + .tox-button--secondary, .tox .btn-check:active + .tox-button-secondary, .tox .btn-check:active + .tox-button, [data-list] .btn-check:active + .page, .btn:active, .mapbox-container .mapbox-control-btn .zoomIn:active,
+.mapbox-container .mapbox-control-btn .zoomOut:active, .tox .tox-dialog__footer .tox-button:active:last-child, .tox .tox-dialog__footer .tox-button--secondary:active, .tox .tox-button-secondary:active, .tox .tox-button:active, [data-list] .page:active, .btn.active, .mapbox-container .mapbox-control-btn .active.zoomIn,
+.mapbox-container .mapbox-control-btn .active.zoomOut, .tox .tox-dialog__footer .active.tox-button:last-child, .tox .tox-dialog__footer .active.tox-button--secondary, .tox .active.tox-button-secondary, .tox .active.tox-button, [data-list] .active.page, .btn.show, .mapbox-container .mapbox-control-btn .show.zoomIn,
+.mapbox-container .mapbox-control-btn .show.zoomOut, .tox .tox-dialog__footer .show.tox-button:last-child, .tox .tox-dialog__footer .show.tox-button--secondary, .tox .show.tox-button-secondary, .tox .show.tox-button, [data-list] .show.page {
   color: var(--phoenix-btn-active-color);
   background-color: var(--phoenix-btn-active-bg);
   border-color: var(--phoenix-btn-active-border-color);
   box-shadow: var(--phoenix-btn-active-shadow);
 }
 .btn-check:checked + .btn:focus, .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn:focus,
-.mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut:focus, .google-map-control-btn .btn-check:checked + .zoomIn:focus,
-.google-map-control-btn .btn-check:checked + .zoomOut:focus, .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary:focus, .tox .btn-check:checked + .tox-button-secondary:focus, .tox .btn-check:checked + .tox-button:focus, [data-list] .btn-check:checked + .page:focus, .btn-check:active + .btn:focus, .mapbox-container .mapbox-control-btn .btn-check:active + .zoomIn:focus,
-.mapbox-container .mapbox-control-btn .btn-check:active + .zoomOut:focus, .google-map-control-btn .btn-check:active + .zoomIn:focus,
-.google-map-control-btn .btn-check:active + .zoomOut:focus, .tox .tox-dialog__footer .btn-check:active + .tox-button--secondary:focus, .tox .btn-check:active + .tox-button-secondary:focus, .tox .btn-check:active + .tox-button:focus, [data-list] .btn-check:active + .page:focus, .btn:active:focus, .mapbox-container .mapbox-control-btn .zoomIn:active:focus,
-.mapbox-container .mapbox-control-btn .zoomOut:active:focus, .google-map-control-btn .zoomIn:active:focus,
-.google-map-control-btn .zoomOut:active:focus, .tox .tox-dialog__footer .tox-button--secondary:active:focus, .tox .tox-button-secondary:active:focus, .tox .tox-button:active:focus, [data-list] .page:active:focus, .btn.active:focus, .mapbox-container .mapbox-control-btn .active.zoomIn:focus,
-.mapbox-container .mapbox-control-btn .active.zoomOut:focus, .google-map-control-btn .active.zoomIn:focus,
-.google-map-control-btn .active.zoomOut:focus, .tox .tox-dialog__footer .active.tox-button--secondary:focus, .tox .active.tox-button-secondary:focus, .tox .active.tox-button:focus, [data-list] .active.page:focus, .btn.show:focus, .mapbox-container .mapbox-control-btn .show.zoomIn:focus,
-.mapbox-container .mapbox-control-btn .show.zoomOut:focus, .google-map-control-btn .show.zoomIn:focus,
-.google-map-control-btn .show.zoomOut:focus, .tox .tox-dialog__footer .show.tox-button--secondary:focus, .tox .show.tox-button-secondary:focus, .tox .show.tox-button:focus, [data-list] .show.page:focus {
+.mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut:focus, .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary:focus, .tox .btn-check:checked + .tox-button-secondary:focus, .tox .btn-check:checked + .tox-button:focus, [data-list] .btn-check:checked + .page:focus, .btn-check:active + .btn:focus, .mapbox-container .mapbox-control-btn .btn-check:active + .zoomIn:focus,
+.mapbox-container .mapbox-control-btn .btn-check:active + .zoomOut:focus, .tox .tox-dialog__footer .btn-check:active + .tox-button--secondary:focus, .tox .btn-check:active + .tox-button-secondary:focus, .tox .btn-check:active + .tox-button:focus, [data-list] .btn-check:active + .page:focus, .btn:active:focus, .mapbox-container .mapbox-control-btn .zoomIn:active:focus,
+.mapbox-container .mapbox-control-btn .zoomOut:active:focus, .tox .tox-dialog__footer .tox-button--secondary:active:focus, .tox .tox-button-secondary:active:focus, .tox .tox-button:active:focus, [data-list] .page:active:focus, .btn.active:focus, .mapbox-container .mapbox-control-btn .active.zoomIn:focus,
+.mapbox-container .mapbox-control-btn .active.zoomOut:focus, .tox .tox-dialog__footer .active.tox-button--secondary:focus, .tox .active.tox-button-secondary:focus, .tox .active.tox-button:focus, [data-list] .active.page:focus, .btn.show:focus, .mapbox-container .mapbox-control-btn .show.zoomIn:focus,
+.mapbox-container .mapbox-control-btn .show.zoomOut:focus, .tox .tox-dialog__footer .show.tox-button--secondary:focus, .tox .show.tox-button-secondary:focus, .tox .show.tox-button:focus, [data-list] .show.page:focus {
   box-shadow: var(--phoenix-btn-active-shadow), var(--phoenix-btn-focus-box-shadow);
 }
 .btn:disabled, .mapbox-container .mapbox-control-btn .zoomIn:disabled,
-.mapbox-container .mapbox-control-btn .zoomOut:disabled, .google-map-control-btn .zoomIn:disabled,
-.google-map-control-btn .zoomOut:disabled, .tox .tox-dialog__footer .tox-button:disabled:last-child, .tox .tox-dialog__footer .tox-button--secondary:disabled, .tox .tox-button-secondary:disabled, .tox .tox-button:disabled, [data-list] .page:disabled, .btn.disabled, .mapbox-container .mapbox-control-btn .disabled.zoomIn,
-.mapbox-container .mapbox-control-btn .disabled.zoomOut, .google-map-control-btn .disabled.zoomIn,
-.google-map-control-btn .disabled.zoomOut, .tox .tox-dialog__footer .disabled.tox-button:last-child, .tox .tox-dialog__footer .disabled.tox-button--secondary, .tox .disabled.tox-button-secondary, .tox .disabled.tox-button, [data-list] .disabled.page, fieldset:disabled .btn, fieldset:disabled .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn fieldset:disabled .zoomIn,
+.mapbox-container .mapbox-control-btn .zoomOut:disabled, .tox .tox-dialog__footer .tox-button:disabled:last-child, .tox .tox-dialog__footer .tox-button--secondary:disabled, .tox .tox-button-secondary:disabled, .tox .tox-button:disabled, [data-list] .page:disabled, .btn.disabled, .mapbox-container .mapbox-control-btn .disabled.zoomIn,
+.mapbox-container .mapbox-control-btn .disabled.zoomOut, .tox .tox-dialog__footer .disabled.tox-button:last-child, .tox .tox-dialog__footer .disabled.tox-button--secondary, .tox .disabled.tox-button-secondary, .tox .disabled.tox-button, [data-list] .disabled.page, fieldset:disabled .btn, fieldset:disabled .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn fieldset:disabled .zoomIn,
 fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
-.mapbox-container .mapbox-control-btn fieldset:disabled .zoomOut, fieldset:disabled .google-map-control-btn .zoomIn, .google-map-control-btn fieldset:disabled .zoomIn,
-fieldset:disabled .google-map-control-btn .zoomOut,
-.google-map-control-btn fieldset:disabled .zoomOut, fieldset:disabled .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer fieldset:disabled .tox-button:last-child, fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer fieldset:disabled .tox-button--secondary, fieldset:disabled .tox .tox-button-secondary, .tox fieldset:disabled .tox-button-secondary, fieldset:disabled .tox .tox-button, .tox fieldset:disabled .tox-button, fieldset:disabled [data-list] .page, [data-list] fieldset:disabled .page {
+.mapbox-container .mapbox-control-btn fieldset:disabled .zoomOut, fieldset:disabled .tox .tox-dialog__footer .tox-button:last-child, .tox .tox-dialog__footer fieldset:disabled .tox-button:last-child, fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer fieldset:disabled .tox-button--secondary, fieldset:disabled .tox .tox-button-secondary, .tox fieldset:disabled .tox-button-secondary, fieldset:disabled .tox .tox-button, .tox fieldset:disabled .tox-button, fieldset:disabled [data-list] .page, [data-list] fieldset:disabled .page {
   color: var(--phoenix-btn-disabled-color);
   pointer-events: none;
   background-color: var(--phoenix-btn-disabled-bg);
@@ -20305,8 +20186,7 @@ fieldset:disabled .google-map-control-btn .zoomOut,
 }
 
 .btn-phoenix-secondary, .mapbox-container .mapbox-control-btn .zoomIn,
-.mapbox-container .mapbox-control-btn .zoomOut, .google-map-control-btn .zoomIn,
-.google-map-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary {
+.mapbox-container .mapbox-control-btn .zoomOut, .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-button-secondary {
   --phoenix-btn-color: #31374a;
   --phoenix-btn-bg: #f5f7fa;
   --phoenix-btn-border-color: #e3e6ed;
@@ -20409,8 +20289,7 @@ fieldset:disabled .google-map-control-btn .zoomOut,
 }
 
 .btn-lg, .btn-group-lg > .btn, .mapbox-container .mapbox-control-btn .btn-group-lg > .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group-lg > .zoomOut, .google-map-control-btn .btn-group-lg > .zoomIn,
-.google-map-control-btn .btn-group-lg > .zoomOut, .tox .tox-dialog__footer .btn-group-lg > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-lg > .tox-button--secondary, .tox .btn-group-lg > .tox-button-secondary, .tox .btn-group-lg > .tox-button, [data-list] .btn-group-lg > .page {
+.mapbox-container .mapbox-control-btn .btn-group-lg > .zoomOut, .tox .tox-dialog__footer .btn-group-lg > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-lg > .tox-button--secondary, .tox .btn-group-lg > .tox-button-secondary, .tox .btn-group-lg > .tox-button, [data-list] .btn-group-lg > .page {
   --phoenix-btn-padding-y: 0.875rem;
   --phoenix-btn-padding-x: 1.5rem;
   --phoenix-btn-font-size: 1rem;
@@ -20418,8 +20297,7 @@ fieldset:disabled .google-map-control-btn .zoomOut,
 }
 
 .btn-sm, .btn-group-sm > .btn, .mapbox-container .mapbox-control-btn .btn-group-sm > .zoomIn,
-.mapbox-container .mapbox-control-btn .btn-group-sm > .zoomOut, .google-map-control-btn .btn-group-sm > .zoomIn,
-.google-map-control-btn .btn-group-sm > .zoomOut, .tox .tox-dialog__footer .btn-group-sm > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-sm > .tox-button--secondary, .tox .btn-group-sm > .tox-button-secondary, .tox .btn-group-sm > .tox-button, [data-list] .btn-group-sm > .page {
+.mapbox-container .mapbox-control-btn .btn-group-sm > .zoomOut, .tox .tox-dialog__footer .btn-group-sm > .tox-button:last-child, .tox .tox-dialog__footer .btn-group-sm > .tox-button--secondary, .tox .btn-group-sm > .tox-button-secondary, .tox .btn-group-sm > .tox-button, [data-list] .btn-group-sm > .page {
   --phoenix-btn-padding-y: 0.5rem;
   --phoenix-btn-padding-x: 1rem;
   --phoenix-btn-font-size: 0.8rem;
@@ -20462,14 +20340,12 @@ fieldset:disabled .google-map-control-btn .zoomOut,
   --phoenix-spinner-border-width: 2px;
 }
 .btn-loading.btn-lg .spinner-border, .btn-group-lg > .btn-loading.btn .spinner-border, .mapbox-container .mapbox-control-btn .btn-group-lg > .btn-loading.zoomIn .spinner-border,
-.mapbox-container .mapbox-control-btn .btn-group-lg > .btn-loading.zoomOut .spinner-border, .google-map-control-btn .btn-group-lg > .btn-loading.zoomIn .spinner-border,
-.google-map-control-btn .btn-group-lg > .btn-loading.zoomOut .spinner-border, .tox .tox-dialog__footer .btn-group-lg > .btn-loading.tox-button--secondary .spinner-border, .tox .btn-group-lg > .btn-loading.tox-button-secondary .spinner-border, .tox .btn-group-lg > .btn-loading.tox-button .spinner-border, [data-list] .btn-group-lg > .btn-loading.page .spinner-border {
+.mapbox-container .mapbox-control-btn .btn-group-lg > .btn-loading.zoomOut .spinner-border, .tox .tox-dialog__footer .btn-group-lg > .btn-loading.tox-button--secondary .spinner-border, .tox .btn-group-lg > .btn-loading.tox-button-secondary .spinner-border, .tox .btn-group-lg > .btn-loading.tox-button .spinner-border, [data-list] .btn-group-lg > .btn-loading.page .spinner-border {
   --phoenix-spinner-width: 1.35rem;
   --phoenix-spinner-height: 1.35rem;
 }
 .btn-loading.btn-sm .spinner-border, .btn-group-sm > .btn-loading.btn .spinner-border, .mapbox-container .mapbox-control-btn .btn-group-sm > .btn-loading.zoomIn .spinner-border,
-.mapbox-container .mapbox-control-btn .btn-group-sm > .btn-loading.zoomOut .spinner-border, .google-map-control-btn .btn-group-sm > .btn-loading.zoomIn .spinner-border,
-.google-map-control-btn .btn-group-sm > .btn-loading.zoomOut .spinner-border, .tox .tox-dialog__footer .btn-group-sm > .btn-loading.tox-button--secondary .spinner-border, .tox .btn-group-sm > .btn-loading.tox-button-secondary .spinner-border, .tox .btn-group-sm > .btn-loading.tox-button .spinner-border, [data-list] .btn-group-sm > .btn-loading.page .spinner-border {
+.mapbox-container .mapbox-control-btn .btn-group-sm > .btn-loading.zoomOut .spinner-border, .tox .tox-dialog__footer .btn-group-sm > .btn-loading.tox-button--secondary .spinner-border, .tox .btn-group-sm > .btn-loading.tox-button-secondary .spinner-border, .tox .btn-group-sm > .btn-loading.tox-button .spinner-border, [data-list] .btn-group-sm > .btn-loading.page .spinner-border {
   --phoenix-spinner-width: 0.8rem;
   --phoenix-spinner-height: 0.8rem;
 }
@@ -20700,8 +20576,7 @@ fieldset:disabled .google-map-control-btn .zoomOut,
 }
 
 .square-icon-btn, .mapbox-container .mapbox-control-btn .zoomIn,
-.mapbox-container .mapbox-control-btn .zoomOut, .google-map-control-btn .zoomIn,
-.google-map-control-btn .zoomOut {
+.mapbox-container .mapbox-control-btn .zoomOut {
   height: 1.875rem;
   width: 1.875rem;
   padding: 0;
@@ -21598,52 +21473,92 @@ span.flatpickr-weekday,
 }
 
 /* -------------------------------------------------------------------------- */
-/*                                 Google Map                                 */
+/*                                   Leaflet                                  */
 /* -------------------------------------------------------------------------- */
-.googlemap .gm-style-iw.gm-style-iw-c {
-  background: var(--phoenix-white);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-  padding: 1rem !important;
-}
-.googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
-  margin-top: 1rem !important;
-  margin-right: 0.5rem !important;
-}
-.googlemap .gm-style-iw .gm-style-iw-d {
-  overflow: auto !important;
-}
-.googlemap .gm-style-iw-tc {
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-  filter: none;
-}
-.googlemap .gm-style-iw-tc:after {
-  background: var(--phoenix-white) !important;
+.leaflet-container {
+  background-color: var(--phoenix-gray-100);
 }
 
-html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
-  left: unset !important;
-  right: 0 !important;
+.leaflet-bar {
+  box-shadow: var(--phoenix-box-shadow);
+}
+.leaflet-bar a, .leaflet-bar a:hover {
+  background-color: var(--phoenix-body-bg);
+  color: var(--phoenix-body-color);
+  border-bottom-color: var(--phoenix-border-color);
+  text-decoration: none;
+}
+.leaflet-bar a.leaflet-disabled {
+  background-color: var(--phoenix-gray-200);
 }
 
-.googlemap > div {
-  background: transparent !important;
+.marker-cluster-small {
+  background-color: rgba(56, 116, 255, 0.2) !important;
+}
+.marker-cluster-small div {
+  margin: 5px;
+  background-color: var(--phoenix-primary) !important;
+  color: var(--phoenix-white);
 }
 
-.google-map-control-btn {
-  padding: 1rem;
+.marker-cluster-medium {
+  background-color: rgba(229, 120, 11, 0.2) !important;
 }
-.google-map-control-btn .zoomIn,
-.google-map-control-btn .zoomOut {
-  border-width: 2px;
+.marker-cluster-medium div {
+  margin: 5px;
+  background-color: var(--phoenix-warning) !important;
+  color: var(--phoenix-white);
 }
-.google-map-control-btn .zoomIn {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+
+.marker-cluster-large {
+  background-color: rgba(37, 176, 3, 0.2) !important;
 }
-.google-map-control-btn .zoomOut {
-  margin-top: -2px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.marker-cluster-large div {
+  margin: 5px;
+  background-color: var(--phoenix-success) !important;
+  color: var(--phoenix-white);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: var(--phoenix-body-bg);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  border-radius: 0.375rem;
+}
+
+.leaflet-popup-close-button {
+  right: 3px !important;
+  top: 3px !important;
+}
+
+.leaflet-marker-icon {
+  height: auto !important;
+  width: auto !important;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 999;
+}
+
+.leaflet-left .leaflet-control {
+  margin-left: 1.5rem;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: 1.5rem;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 1.5rem;
+}
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 1.5rem;
 }
 
 .mapbox-container {
@@ -24525,24 +24440,18 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   border-top: 1px solid var(--phoenix-navbar-footer-border-color);
   transition: width 0.2s ease;
 }
-.navbar-vertical .navbar-vertical-footer .btn, .navbar-vertical .navbar-vertical-footer [data-list] .page, [data-list] .navbar-vertical .navbar-vertical-footer .page, .navbar-vertical .navbar-vertical-footer .tox .tox-button, .tox .navbar-vertical .navbar-vertical-footer .tox-button, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary, .navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomIn, .google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn,
-.navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomOut,
-.google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn,
+.navbar-vertical .navbar-vertical-footer .btn, .navbar-vertical .navbar-vertical-footer [data-list] .page, [data-list] .navbar-vertical .navbar-vertical-footer .page, .navbar-vertical .navbar-vertical-footer .tox .tox-button, .tox .navbar-vertical .navbar-vertical-footer .tox-button, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn,
 .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomOut,
 .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut {
   color: var(--phoenix-navbar-vertical-link-color);
   text-decoration: none;
 }
-.navbar-vertical .navbar-vertical-footer .btn .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer [data-list] .page .navbar-vertical-footer-icon, [data-list] .navbar-vertical .navbar-vertical-footer .page .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-button .navbar-vertical-footer-icon, .tox .navbar-vertical .navbar-vertical-footer .tox-button .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary .navbar-vertical-footer-icon, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary .navbar-vertical-footer-icon, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomIn .navbar-vertical-footer-icon, .google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn .navbar-vertical-footer-icon,
-.navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomOut .navbar-vertical-footer-icon,
-.google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn .navbar-vertical-footer-icon, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn .navbar-vertical-footer-icon,
+.navbar-vertical .navbar-vertical-footer .btn .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer [data-list] .page .navbar-vertical-footer-icon, [data-list] .navbar-vertical .navbar-vertical-footer .page .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-button .navbar-vertical-footer-icon, .tox .navbar-vertical .navbar-vertical-footer .tox-button .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary .navbar-vertical-footer-icon, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary .navbar-vertical-footer-icon, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary .navbar-vertical-footer-icon, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn .navbar-vertical-footer-icon, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn .navbar-vertical-footer-icon,
 .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomOut .navbar-vertical-footer-icon,
 .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut .navbar-vertical-footer-icon {
   margin-right: 0.6125rem;
 }
-.navbar-vertical .navbar-vertical-footer .btn:hover, .navbar-vertical .navbar-vertical-footer [data-list] .page:hover, [data-list] .navbar-vertical .navbar-vertical-footer .page:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-button:hover, .tox .navbar-vertical .navbar-vertical-footer .tox-button:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary:hover, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary:hover, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary:hover, .navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomIn:hover, .google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn:hover,
-.navbar-vertical .navbar-vertical-footer .google-map-control-btn .zoomOut:hover,
-.google-map-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut:hover, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn:hover, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn:hover,
+.navbar-vertical .navbar-vertical-footer .btn:hover, .navbar-vertical .navbar-vertical-footer [data-list] .page:hover, [data-list] .navbar-vertical .navbar-vertical-footer .page:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-button:hover, .tox .navbar-vertical .navbar-vertical-footer .tox-button:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary:hover, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary:hover, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary:hover, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary:hover, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn:hover, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn:hover,
 .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomOut:hover,
 .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomOut:hover {
   color: var(--phoenix-navbar-vertical-link-hover-color);
@@ -28044,13 +27953,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   display: flex;
   animation: fade 0.15s ease-in-out;
 }
-.hover-actions-trigger:hover .hover-actions.btn, .hover-actions-trigger:hover [data-list] .hover-actions.page, [data-list] .hover-actions-trigger:hover .hover-actions.page, .hover-actions-trigger:hover .tox .hover-actions.tox-button, .tox .hover-actions-trigger:hover .hover-actions.tox-button, .hover-actions-trigger:hover .tox .hover-actions.tox-button-secondary, .tox .hover-actions-trigger:hover .hover-actions.tox-button-secondary, .hover-actions-trigger:hover .tox .tox-dialog__footer .hover-actions.tox-button--secondary, .tox .tox-dialog__footer .hover-actions-trigger:hover .hover-actions.tox-button--secondary, .hover-actions-trigger:hover .google-map-control-btn .hover-actions.zoomIn, .google-map-control-btn .hover-actions-trigger:hover .hover-actions.zoomIn,
-.hover-actions-trigger:hover .google-map-control-btn .hover-actions.zoomOut,
-.google-map-control-btn .hover-actions-trigger:hover .hover-actions.zoomOut, .hover-actions-trigger:hover .mapbox-container .mapbox-control-btn .hover-actions.zoomIn, .mapbox-container .mapbox-control-btn .hover-actions-trigger:hover .hover-actions.zoomIn,
+.hover-actions-trigger:hover .hover-actions.btn, .hover-actions-trigger:hover [data-list] .hover-actions.page, [data-list] .hover-actions-trigger:hover .hover-actions.page, .hover-actions-trigger:hover .tox .hover-actions.tox-button, .tox .hover-actions-trigger:hover .hover-actions.tox-button, .hover-actions-trigger:hover .tox .hover-actions.tox-button-secondary, .tox .hover-actions-trigger:hover .hover-actions.tox-button-secondary, .hover-actions-trigger:hover .tox .tox-dialog__footer .hover-actions.tox-button--secondary, .tox .tox-dialog__footer .hover-actions-trigger:hover .hover-actions.tox-button--secondary, .hover-actions-trigger:hover .mapbox-container .mapbox-control-btn .hover-actions.zoomIn, .mapbox-container .mapbox-control-btn .hover-actions-trigger:hover .hover-actions.zoomIn,
 .hover-actions-trigger:hover .mapbox-container .mapbox-control-btn .hover-actions.zoomOut,
-.mapbox-container .mapbox-control-btn .hover-actions-trigger:hover .hover-actions.zoomOut, .hover-actions-trigger:focus .hover-actions.btn, .hover-actions-trigger:focus [data-list] .hover-actions.page, [data-list] .hover-actions-trigger:focus .hover-actions.page, .hover-actions-trigger:focus .tox .hover-actions.tox-button, .tox .hover-actions-trigger:focus .hover-actions.tox-button, .hover-actions-trigger:focus .tox .hover-actions.tox-button-secondary, .tox .hover-actions-trigger:focus .hover-actions.tox-button-secondary, .hover-actions-trigger:focus .tox .tox-dialog__footer .hover-actions.tox-button--secondary, .tox .tox-dialog__footer .hover-actions-trigger:focus .hover-actions.tox-button--secondary, .hover-actions-trigger:focus .google-map-control-btn .hover-actions.zoomIn, .google-map-control-btn .hover-actions-trigger:focus .hover-actions.zoomIn,
-.hover-actions-trigger:focus .google-map-control-btn .hover-actions.zoomOut,
-.google-map-control-btn .hover-actions-trigger:focus .hover-actions.zoomOut, .hover-actions-trigger:focus .mapbox-container .mapbox-control-btn .hover-actions.zoomIn, .mapbox-container .mapbox-control-btn .hover-actions-trigger:focus .hover-actions.zoomIn,
+.mapbox-container .mapbox-control-btn .hover-actions-trigger:hover .hover-actions.zoomOut, .hover-actions-trigger:focus .hover-actions.btn, .hover-actions-trigger:focus [data-list] .hover-actions.page, [data-list] .hover-actions-trigger:focus .hover-actions.page, .hover-actions-trigger:focus .tox .hover-actions.tox-button, .tox .hover-actions-trigger:focus .hover-actions.tox-button, .hover-actions-trigger:focus .tox .hover-actions.tox-button-secondary, .tox .hover-actions-trigger:focus .hover-actions.tox-button-secondary, .hover-actions-trigger:focus .tox .tox-dialog__footer .hover-actions.tox-button--secondary, .tox .tox-dialog__footer .hover-actions-trigger:focus .hover-actions.tox-button--secondary, .hover-actions-trigger:focus .mapbox-container .mapbox-control-btn .hover-actions.zoomIn, .mapbox-container .mapbox-control-btn .hover-actions-trigger:focus .hover-actions.zoomIn,
 .hover-actions-trigger:focus .mapbox-container .mapbox-control-btn .hover-actions.zoomOut,
 .mapbox-container .mapbox-control-btn .hover-actions-trigger:focus .hover-actions.zoomOut {
   display: inline-block;
@@ -29163,9 +29068,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   width: 100%;
   height: 222px;
 }
-.gantt-zero-roadmap .btn-group .btn-check:checked + .btn, .gantt-zero-roadmap .btn-group [data-list] .btn-check:checked + .page, [data-list] .gantt-zero-roadmap .btn-group .btn-check:checked + .page, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button-secondary, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button-secondary, .gantt-zero-roadmap .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary, .tox .tox-dialog__footer .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button--secondary, .gantt-zero-roadmap .btn-group .google-map-control-btn .btn-check:checked + .zoomIn, .google-map-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomIn,
-.gantt-zero-roadmap .btn-group .google-map-control-btn .btn-check:checked + .zoomOut,
-.google-map-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut, .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn, .mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomIn,
+.gantt-zero-roadmap .btn-group .btn-check:checked + .btn, .gantt-zero-roadmap .btn-group [data-list] .btn-check:checked + .page, [data-list] .gantt-zero-roadmap .btn-group .btn-check:checked + .page, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button-secondary, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button-secondary, .gantt-zero-roadmap .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary, .tox .tox-dialog__footer .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button--secondary, .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn, .mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomIn,
 .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut,
 .mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut,
 .gantt-chart-example .btn-group .btn-check:checked + .btn,
@@ -29177,10 +29080,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .tox .gantt-chart-example .btn-group .btn-check:checked + .tox-button-secondary,
 .gantt-chart-example .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary,
 .tox .tox-dialog__footer .gantt-chart-example .btn-group .btn-check:checked + .tox-button--secondary,
-.gantt-chart-example .btn-group .google-map-control-btn .btn-check:checked + .zoomIn,
-.google-map-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomIn,
-.gantt-chart-example .btn-group .google-map-control-btn .btn-check:checked + .zoomOut,
-.google-map-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomOut,
 .gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn,
 .mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomIn,
 .gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut,
