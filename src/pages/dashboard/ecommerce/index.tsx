@@ -7,9 +7,10 @@ import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
 import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
 import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
 import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
-import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
+import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
+import { mapMarkerPoints } from 'data/mapMarkerPoints';
 
 const Ecommerce = () => {
   return (
@@ -71,8 +72,10 @@ const Ecommerce = () => {
           <EcomTopRegionsTable />
         </Col>
         <Col xs={12} xl={6}>
-          <div className="h-100 w-100 py-5" style={{ minHeight: 300 }}>
-            <EcomTopRegionsMap />
+          <div className="mx-n4 mx-lg-n6 ms-xl-0 h-100">
+            <div className="h-100 w-100" style={{ minHeight: 300 }}>
+              <EcomTopRegionsMap data={mapMarkerPoints} />
+            </div>
           </div>
         </Col>
       </Row>
