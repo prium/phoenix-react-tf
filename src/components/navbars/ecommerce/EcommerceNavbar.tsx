@@ -18,6 +18,7 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import Scrollbar from 'components/base/Scrollbar';
 
 type NavItemType = {
   id: number;
@@ -129,43 +130,45 @@ const EcommerceNavbar = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu className="border py-0 category-dropdown-menu ms-2">
-            <Card className="border-0" style={{ maxHeight: 657 }}>
-              <Card.Body className="p-6 pb-3">
-                <Row className="gx-7 gy-5 mb-5">
-                  {categories.map(category => (
-                    <Col xs={12} sm={6} md={4} key={category.title}>
-                      <div className="d-flex align-items-center mb-3">
-                        <FeatherIcon
-                          icon={category.icon}
-                          className="text-primary me-2"
-                          style={{ strokeWidth: 3 }}
-                          size={16}
-                        />
-                        <h6 className="text-1000 mb-0 text-nowrap">
-                          {category.title}
-                        </h6>
-                      </div>
-                      <div className="ms-n2">
-                        {category.sections.map(section => (
-                          <Link
-                            key={section.label}
-                            to={section.url}
-                            className="text-black d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2"
-                          >
-                            {section.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </Col>
-                  ))}
-                </Row>
-                <div className="text-center border-top pt-3">
-                  <Link className="fw-bold" to="#!">
-                    See all Categories
-                    <FontAwesomeIcon icon="angle-right" className="ms-1" />
-                  </Link>
-                </div>
-              </Card.Body>
+            <Card className="border-0">
+              <Scrollbar autoHeight autoHeightMax={657}>
+                <Card.Body className="p-6 pb-3">
+                  <Row className="gx-7 gy-5 mb-5">
+                    {categories.map(category => (
+                      <Col xs={12} sm={6} md={4} key={category.title}>
+                        <div className="d-flex align-items-center mb-3">
+                          <FeatherIcon
+                            icon={category.icon}
+                            className="text-primary me-2"
+                            style={{ strokeWidth: 3 }}
+                            size={16}
+                          />
+                          <h6 className="text-1000 mb-0 text-nowrap">
+                            {category.title}
+                          </h6>
+                        </div>
+                        <div className="ms-n2">
+                          {category.sections.map(section => (
+                            <Link
+                              key={section.label}
+                              to={section.url}
+                              className="text-black d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2"
+                            >
+                              {section.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </Col>
+                    ))}
+                  </Row>
+                  <div className="text-center border-top pt-3">
+                    <Link className="fw-bold" to="#!">
+                      See all Categories
+                      <FontAwesomeIcon icon="angle-right" className="ms-1" />
+                    </Link>
+                  </div>
+                </Card.Body>
+              </Scrollbar>
             </Card>
           </Dropdown.Menu>
         </Dropdown>

@@ -1,7 +1,7 @@
 import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import Section from 'components/base/Section';
 import { useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Pagination, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Scrollbar from 'components/base/Scrollbar';
 import ProductFilterItems from 'components/modules/e-commerce/products-filter/ProductFilterItems';
@@ -57,6 +57,20 @@ const ProductsFilter = () => {
                 </Col>
               ))}
             </Row>
+
+            <Pagination className="mb-0 justify-content-end">
+              <Pagination.Prev>
+                <FontAwesomeIcon icon="chevron-left" />
+              </Pagination.Prev>
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Item active>4</Pagination.Item>
+              <Pagination.Item>5</Pagination.Item>
+              <Pagination.Next>
+                <FontAwesomeIcon icon="chevron-right" />
+              </Pagination.Next>
+            </Pagination>
           </Col>
         </Row>
       </Section>

@@ -98,7 +98,7 @@ const Customers = () => {
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <h2 className="mb-4">Customers</h2>
-        <FilterTab tabItems={tabItems} />
+        <FilterTab tabItems={tabItems} className="mb-2" />
 
         <AdvanceTableProvider {...table}>
           <div className="mb-4">

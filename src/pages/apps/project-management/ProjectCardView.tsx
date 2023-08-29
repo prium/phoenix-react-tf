@@ -54,7 +54,7 @@ const ProjectCardView = () => {
             .getRowModel()
             .rows.map(row => row.original)
             .map(project => (
-              <Col xs={12} sm={6} md={4} xxl={3} key={project.id}>
+              <Col xs={12} sm={6} xl={4} xxl={3} key={project.id}>
                 <CardViewItem project={project} />
               </Col>
             ))}

@@ -20775,7 +20775,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
 /* -------------------------------- Todo List ------------------------------- */
 @media (min-width: 576px) {
   .todolist-container {
-    height: calc(100vh - 332px);
+    max-height: calc(100vh - var(--phoenix-navbar-top-height) - 309px);
   }
 }
 
@@ -20786,7 +20786,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
 
 .todolist-offcanvas {
   width: 35rem;
-  top: 4rem !important;
+  top: calc(1px + var(--phoenix-navbar-top-height)) !important;
   border-right: 1px solid var(--phoenix-gray-300);
   background: 1px solid var(--phoenix-gray-100);
 }
@@ -27631,7 +27631,6 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 .navbar .dropdown-menu {
   overflow: visible;
-  right: -0.5625rem;
 }
 .navbar .dropdown-menu.navbar-dropdown-caret:after {
   content: "";

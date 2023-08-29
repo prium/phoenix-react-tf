@@ -310,7 +310,7 @@
 
 .todolist-container {
   @include media-breakpoint-up(sm) {
-    height: calc(100vh - 332px);
+    max-height: calc(100vh - var(--phoenix-navbar-top-height) - 309px);
   }
 }
 
@@ -323,7 +323,7 @@
 }
 .todolist-offcanvas {
   width: 35rem;
-  top: 4rem !important;
+  top: calc(1px + var(--phoenix-navbar-top-height)) !important;
   border-left: 1px solid var(--#{$prefix}gray-300);
   background: 1px solid var(--#{$prefix}gray-100);
   @include media-breakpoint-up(sm) {
