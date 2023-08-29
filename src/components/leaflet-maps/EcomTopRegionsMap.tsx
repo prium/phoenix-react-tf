@@ -1,6 +1,5 @@
-// @ts-nocheck
-import React, { useContext, useEffect } from 'react';
-import L from 'leaflet';
+import { useContext, useEffect } from 'react';
+import L, { LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 import 'leaflet.tilelayer.colorfilter';
@@ -35,7 +34,8 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
 
   useEffect(() => {
     if (map) {
-      L.tileLayer
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (L.tileLayer as any)
         .colorFilter(
           'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
           {
@@ -46,12 +46,11 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
         )
         .addTo(map);
     }
-  }, [theme === 'dark']);
+  }, [theme]);
 
   return (
     <>
       <TileLayer
-        attribution={null}
         url={'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'}
       />
       <MarkerClusterGroup chunkedLoading={true} spiderfyOnMaxZoom={false}>
@@ -75,7 +74,7 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
 };
 
 const EcomTopRegionsMap = ({ data, ...rest }: { data: MapMarkerPoints[] }) => {
-  const position = [10.737, 0];
+  const position: LatLngExpression = [10.737, 0];
   const {
     config: { isRTL }
   } = useContext(AppContext);
@@ -87,7 +86,6 @@ const EcomTopRegionsMap = ({ data, ...rest }: { data: MapMarkerPoints[] }) => {
       zoomSnap={0.5}
       center={position}
       {...rest}
-      radius={200}
       className="h-100"
     >
       <LayerComponent data={data} />
