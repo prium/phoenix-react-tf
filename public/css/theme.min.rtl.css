@@ -26141,7 +26141,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 
 .notification-dropdown-menu {
-  min-width: 270px;
+  min-width: 260px;
 }
 @media (min-width: 576px) {
   .notification-dropdown-menu {

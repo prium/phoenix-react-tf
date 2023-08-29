@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
 import RevealDropdown from 'components/base/RevealDropdown';
 import { Notification } from 'data/notifications';
-import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
 export interface NotificationItemProps {
@@ -21,10 +20,11 @@ const NotificationItem = ({
     <div
       className={classNames(
         className,
-        'p-3 border-300 notification-card position-relative',
+        'py-3 border-300 notification-card position-relative',
         {
           unread: !notification.read,
-          'px-4 px-lg-6': type === 'pageItem'
+          'px-4 px-lg-6': type === 'pageItem',
+          'px-2 px-sm-3': type === 'dropdownItem'
         }
       )}
     >
@@ -36,7 +36,12 @@ const NotificationItem = ({
             size={type === 'pageItem' ? 'xl' : 'm'}
             className="me-3"
           />
-          <div className="me-3 flex-1 mt-2">
+          <div
+            className={classNames('flex-1', {
+              'me-sm-3': type === 'dropdownItem',
+              'mt-2 me-2': type === 'pageItem'
+            })}
+          >
             <h4 className="fs-9 text-black">{notification.name}</h4>
             <p className="fs-9 text-1000 mb-2 mb-sm-3">
               <span className="me-1">{notification.interactionIcon}</span>
@@ -57,7 +62,9 @@ const NotificationItem = ({
           </div>
         </div>
         <RevealDropdown
-          className="position-static"
+          className={classNames('position-static', {
+            'd-none d-sm-block': type === 'dropdownItem'
+          })}
           btnClassName="notification-dropdown-toggle"
         >
           <Dropdown.Item>
