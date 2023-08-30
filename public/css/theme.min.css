@@ -26095,17 +26095,14 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 
 .navbar-top {
-  position: fixed;
-  top: 0;
   width: 100%;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0;
-  z-index: 1020;
   background: var(--phoenix-navbar-top-bg-color);
   min-height: var(--phoenix-navbar-top-height);
   color: var(--phoenix-nav-link-color);
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1.5rem;
   border-bottom: 1px solid var(--phoenix-navbar-vertical-border-color);
 }
 .navbar-top .dropdown-menu {
@@ -28199,6 +28196,10 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     --phoenix-modal-width: 768px;
   }
 }
+.modal-open .navbar-toggler {
+  margin-right: 0.6125rem !important;
+}
+
 .accordion {
   --phoenix-accordion-color: #222834;
 }

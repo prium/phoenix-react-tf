@@ -1,21 +1,25 @@
+import { UilTimes } from '@iconscout/react-unicons';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
+import Button from 'components/base/Button';
 
 const exampleCode = `
 () => {
   const [show, setShow] = useState(true);
   return (
     <Toast show={show} onClose={() => setShow(!show)}>
-      <Toast.Header>
+      <Toast.Header closeButton={false}>
         <strong className="me-auto">Bootstrap</strong>
         <small>11 mins ago</small>
+        <Button className="ms-2 p-0 " onClick={() => setShow(false)} >
+          <UilTimes className="fs-7"/>
+        </Button>
       </Toast.Header>
       <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
     </Toast>
   );
 }`;
-
 const transcluentCode = `
 () => {
   const [show, setShow] = useState(true);
@@ -39,7 +43,7 @@ const stackingCode = `
 
   return (
     <ToastContainer className="position-static">
-      <Toast show={showA} className="mb-2" onClose={() => setShowA(!showA)}>
+      <Toast show={showA} className="mb-4" onClose={() => setShowA(!showA)}>
         <Toast.Header>
           <strong className="me-auto">Bootstrap</strong>
           <small className="text-muted">just now</small>
@@ -195,7 +199,10 @@ const ToastsExample = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Basic Example" />
-          <PhoenixDocCard.Body code={exampleCode} />
+          <PhoenixDocCard.Body
+            code={exampleCode}
+            scope={{ UilTimes, Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">

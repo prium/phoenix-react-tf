@@ -9,7 +9,8 @@
   }
 }
 
-// .modal-open {
-//   overflow: auto !important;
-//   padding-right: 0 !important;
-// }
+.modal-open {
+  .navbar-toggler {
+    margin-right: 0.6125rem !important;
+  }
+}

@@ -13,7 +13,7 @@ const NavbarTopHorizontal = () => {
 
   return (
     <Navbar
-      className={classNames('navbar-top', {
+      className={classNames('navbar-top fixed-top', {
         'navbar-slim': navbarTopShape === 'slim',
         'navbar-darker': navbarTopAppearance === 'darker'
       })}

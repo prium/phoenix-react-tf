@@ -24,6 +24,7 @@ const RTLMode = () => {
           id="custom-switch"
           onChange={handleChange}
           defaultChecked={isRTL}
+          className="text-end"
         />
       </div>
       <p className="mb-0 text-700">Change text direction</p>

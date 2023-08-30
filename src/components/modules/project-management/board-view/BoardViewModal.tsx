@@ -164,7 +164,7 @@ const BoardViewModal = ({
                 </Button>
               </div>
 
-              <div className="mb-6">
+              <div>
                 <h4 className="mb-3">Files</h4>
                 <div className="mb-3">
                   {attachments.map((attachment, index) => (

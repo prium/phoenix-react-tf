@@ -47,7 +47,9 @@ const EmailDetail = () => {
                 <Col
                   xs={12}
                   sm="auto"
-                  className="d-flex gap-4 gap-lg-3 gap-xl-4 order-sm-1"
+                  lg={12}
+                  xl="auto"
+                  className="d-flex gap-4 gap-lg-3 gap-xl-4 order-sm-1 order-lg-0 order-xl-1"
                 >
                   <TooltipIconButton title="Reply" icon="reply" />
                   <TooltipIconButton title="Remove" icon="trash-can" />
