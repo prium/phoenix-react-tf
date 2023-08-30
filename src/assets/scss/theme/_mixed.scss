@@ -344,6 +344,10 @@
 .pt-18 {
   padding-top: 9rem;
 }
+
+.pt-navbar {
+  padding-top: var(--phoenix-navbar-top-height);
+}
 /*-----------------------------------------------
 |   fontawesome layers icon border color
 -----------------------------------------------*/

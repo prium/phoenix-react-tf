@@ -83,6 +83,9 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     }
 
     if (config.navbarPosition === 'dual') {
+      setConfig({
+        navbarTopShape: 'default'
+      });
       document.documentElement.classList.add('dual-nav');
     } else {
       document.documentElement.classList.remove('dual-nav');
