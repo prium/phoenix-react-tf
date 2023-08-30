@@ -89,7 +89,9 @@ import ProjectCardView from 'pages/apps/project-management/ProjectCardView';
 import Default from 'pages/pages/landing/Default';
 import CreateAnEvent from 'pages/apps/events/CreateAnEvent';
 import EventDetail from 'pages/apps/events/EventDetail';
-import Chat from 'pages/apps/Chat';
+import Chat from 'pages/apps/chat/Chat';
+import ChatHomepage from 'pages/apps/chat/ChatHomepage';
+import ChatConversation from 'pages/apps/chat/ChatConversation';
 import FaqAccordion from 'pages/faq/FaqAccordion';
 import Inbox from 'pages/apps/email/Inbox';
 import EmailDetail from 'pages/apps/email/EmailDetail';
@@ -250,14 +252,15 @@ const routes = [
       },
       {
         path: '/apps/chat/',
+        element: <Chat />,
         children: [
           {
             index: true,
-            element: <Chat />
+            element: <ChatHomepage />
           },
           {
             path: ':userId/conversation',
-            element: <Chat />
+            element: <ChatConversation />
           }
         ]
       },
