@@ -9,16 +9,21 @@ import {
 import { useAppContext } from 'providers/AppProvider';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import NavbarTopNav from '../navbar-horizontal/NavbarTopNav';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 
 const NavbarVerical = () => {
   const {
     config: {
+      navbarPosition,
       openNavbarVertical,
       navbarVerticalAppearance,
       isNavbarVerticalCollapsed
     },
     setConfig
   } = useAppContext();
+
+  const { breakpoints } = useBreakpoints();
 
   return (
     <Navbar
@@ -45,6 +50,15 @@ const NavbarVerical = () => {
               </Nav.Item>
             ))}
           </Nav>
+
+          {navbarPosition === 'combo' && breakpoints.down('lg') && (
+            <div className="move-container">
+              <div className="navbar-vertical-divider">
+                <hr className="navbar-vertical-hr" />
+              </div>
+              <NavbarTopNav />
+            </div>
+          )}
         </div>
       </Navbar.Collapse>
       <div className="navbar-vertical-footer">

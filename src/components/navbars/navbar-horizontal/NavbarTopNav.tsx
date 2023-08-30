@@ -51,7 +51,7 @@ const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
       <Dropdown.Toggle
         as="a"
         variant=""
-        className="nav-link dropdown-caret-none lh-1 d-flex align-items-center cursor-pointer"
+        className="nav-link lh-1 d-flex align-items-center cursor-pointer"
         onClick={handleClick}
       >
         <Icon className="me-2" size={16} />
