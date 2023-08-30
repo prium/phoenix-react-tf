@@ -40,7 +40,7 @@ const AvatarUpload = ({
         onChange={handleChange}
       />
       <label
-        className="cursor-pointer hover-actions-trigger d-flex"
+        className="cursor-pointer hover-actions-trigger"
         htmlFor="avatarFile"
       >
         <Avatar

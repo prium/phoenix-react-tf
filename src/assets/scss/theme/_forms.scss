@@ -26,7 +26,9 @@
   }
   &:disabled {
     &::file-selector-button {
-      background-color: var(--#{$prefix}input-disabled-group-addon-bg) !important;
+      background-color: var(
+        --#{$prefix}input-disabled-group-addon-bg
+      ) !important;
       color: var(--#{$prefix}input-disabled-group-addon-color);
     }
   }
@@ -45,9 +47,9 @@
     font-size: map-get($font-sizes, '10');
     text-transform: uppercase;
   }
-  .form-control {
-    box-shadow: none;
-  }
+  // .form-control {
+  //   box-shadow: none;
+  // }
   .form-control-underlined {
     + label {
       padding: 0;
@@ -71,7 +73,9 @@
           background-image: escape-svg($form-check-light-input-checked-bg-image),
             var(--#{$prefix}gradient);
         } @else {
-          background-image: escape-svg($form-check-light-input-checked-bg-image);
+          background-image: escape-svg(
+            $form-check-light-input-checked-bg-image
+          );
         }
       }
     }

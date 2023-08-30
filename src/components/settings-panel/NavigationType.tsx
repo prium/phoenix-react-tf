@@ -81,7 +81,7 @@ const NavigationType = () => {
         </Col>
       </Row>
       {disableNavigationType && (
-        <WarningMessage message="You can't update navigation type in this page" />
+        <WarningMessage message="You can't update navigation type here" />
       )}
     </div>
   );

@@ -6,14 +6,13 @@ import { Card, Col, Row } from 'react-bootstrap';
 import TodoListItem from './TodoListItem';
 import { ToDoItem, todoList } from 'data/project-management/todoListData';
 import classNames from 'classnames';
-import Scrollbar from 'components/base/Scrollbar';
 import TodoItemDetailsModal from './TodoItemDetailsModal';
 
 const TodoList = () => {
   const [selectedItem, setSelectedItem] = useState<ToDoItem | null>(null);
   return (
     <>
-      <Card className="h-100">
+      <Card className="h-100 todo-list">
         <Card.Header className="border-bottom-0 pb-0">
           <Row className="justify-content-between align-items-center mb-4 gy-2">
             <Col xs="auto">
@@ -21,7 +20,7 @@ const TodoList = () => {
               <p className="mb-0 text-700">Task assigned to me</p>
             </Col>
             <Col xs="auto" className="w-100 w-md-auto">
-              <div className="d-flex align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
+              <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-5 gap-y-3">
                 <SearchBox
                   placeholder="Search tasks"
                   style={{ maxWidth: '30rem' }}
@@ -50,22 +49,22 @@ const TodoList = () => {
             </Col>
           </Row>
         </Card.Header>
-        <Scrollbar style={{ minHeight: 300 }}>
-          <Card.Body className="py-0">
-            {todoList.map((todo, index) => (
-              <TodoListItem
-                key={todo.task}
-                todo={todo}
-                className={classNames({
-                  'border-top': index === 0
-                })}
-                fullLayoutBreakpoints={['md', 'xxl']}
-                halfLayoutBreakpoints={['xl']}
-                onClick={setSelectedItem}
-              />
-            ))}
-          </Card.Body>
-        </Scrollbar>
+        {/* <Scrollbar style={{ minHeight: 300 }}> */}
+        <Card.Body className="py-0 scrollbar to-do-list-body">
+          {todoList.map((todo, index) => (
+            <TodoListItem
+              key={todo.task}
+              todo={todo}
+              className={classNames({
+                'border-top': index === 0
+              })}
+              fullLayoutBreakpoints={['md', 'xxl']}
+              halfLayoutBreakpoints={['xl']}
+              onClick={setSelectedItem}
+            />
+          ))}
+        </Card.Body>
+        {/* </Scrollbar> */}
         <Card.Footer className="border-0">
           <Button
             startIcon={<FontAwesomeIcon icon="plus" />}

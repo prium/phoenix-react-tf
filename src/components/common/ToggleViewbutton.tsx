@@ -14,7 +14,10 @@ const ToggleViewButton = ({
   onClick: () => void;
 }>) => {
   return (
-    <OverlayTrigger placement="top" overlay={<Tooltip>{tooltip}</Tooltip>}>
+    <OverlayTrigger
+      placement="top"
+      overlay={<Tooltip style={{ position: 'fixed' }}>{tooltip}</Tooltip>}
+    >
       <div>
         <Button
           variant="phoenix-primary"

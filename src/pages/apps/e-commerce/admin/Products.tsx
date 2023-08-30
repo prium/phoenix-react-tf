@@ -88,7 +88,7 @@ const Products = () => {
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <h2 className="mb-4">Products</h2>
-        <FilterTab tabItems={tabItems} />
+        <FilterTab tabItems={tabItems} className="mb-2" />
         <AdvanceTableProvider {...table}>
           <div className="mb-4">
             <div className="d-flex flex-wrap gap-3">

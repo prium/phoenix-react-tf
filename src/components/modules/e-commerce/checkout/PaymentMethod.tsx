@@ -11,7 +11,7 @@ export const PaymentMethod = () => {
   return (
     <>
       <h3 className="mb-5">Payment Method</h3>
-      <Row className="g-4 mb-7">
+      <Row className="g-4 mb-5">
         <Col xs={12}>
           <Row className="gx-lg-11">
             <Col xs={12} md="auto">

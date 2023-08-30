@@ -16,7 +16,7 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       <div className="d-flex justify-content-between mb-2">
         <div className="d-flex align-items-center">
           <Rating readonly initialValue={review.star} />
-          <h5 className="mb-0 ms-2">
+          <h5 className="mb-0 ms-2 line-clamp-1">
             <span className="text-800 me-1">by</span>
             {review.customer}
           </h5>

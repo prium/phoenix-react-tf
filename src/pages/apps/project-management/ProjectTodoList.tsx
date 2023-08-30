@@ -5,7 +5,7 @@ import SearchBox from 'components/common/SearchBox';
 import TodoItemDetailsOffcanvas from 'components/modules/project-management/todo-list/TodoItemDetailsOffcanvas';
 import TodoListItem from 'components/modules/project-management/todo-list/TodoListItem';
 import { ToDoItem, todoList } from 'data/project-management/todoListData';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ProjectTodoList = () => {
   const [selectedItem, setSelectedItem] = useState<ToDoItem | null>(null);
@@ -55,6 +55,13 @@ const ProjectTodoList = () => {
           />
         ))}
       </div>
+      <Button
+        startIcon={<FontAwesomeIcon icon="plus" />}
+        variant="link"
+        className="text-decoration-none p-0 mt-4"
+      >
+        Add new task
+      </Button>
       <TodoItemDetailsOffcanvas
         handleClose={() => setSelectedItem(null)}
         item={selectedItem}

@@ -32,7 +32,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
   return (
     <Nav.Item
       key={conversation.id}
-      className={lastMessage.readAt ? 'read' : 'unread'}
+      className={unseenMessageCount > 0 ? 'read' : 'unread'}
     >
       <Nav.Link
         as={Link}
@@ -41,7 +41,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
         className={classNames(
           'd-flex align-items-center justify-content-center p-2',
           {
-            unread: !lastMessage.readAt,
+            unread: unseenMessageCount > 0,
             active: currentConversation?.user.id === conversation.user.id
           }
         )}

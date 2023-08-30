@@ -19,6 +19,7 @@ const ProductVariant = ({ className }: { className?: string }) => {
         <option value="smell">Smell</option>
       </Form.Select>
       <ReactSelect
+        menuIsOpen
         options={[
           { value: '4x6 in', label: '4x6 in' },
           { value: '9x6 in', label: '9x6 in' },

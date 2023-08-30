@@ -62,8 +62,8 @@ const TopNavLooper = ({ page }: { page: Route }) => {
       className={classNames({
         'dropdown-inside': page.dropdownInside
       })}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={!page.dropdownInside ? handleMouseEnter : undefined}
+      onMouseLeave={!page.dropdownInside ? handleMouseLeave : undefined}
       autoClose={false}
     >
       <Dropdown.Toggle
@@ -73,7 +73,6 @@ const TopNavLooper = ({ page }: { page: Route }) => {
         onClick={handleClick}
       >
         <div
-          // className="dropdown-item-wrapper"
           className={classNames('dropdown-item-wrapper', {
             'text-300': !page.active
           })}
@@ -85,7 +84,7 @@ const TopNavLooper = ({ page }: { page: Route }) => {
           </span>
         </div>
       </Dropdown.Toggle>
-      <Dropdown.Menu as="ul" className="asljksa">
+      <Dropdown.Menu as="ul">
         {page.pages?.map(page => (
           <Fragment key={page.name}>
             {page.pages ? (

@@ -39,22 +39,20 @@ const Checkout = () => {
               <DeliveryType />
               <hr className="my-6" />
               <PaymentMethod />
-              <Row className="g-2 mb-5 mb-lg-0">
-                <Col md={8} lg={9}>
-                  <Button variant="primary" type="submit" className="w-100">
-                    Pay {currencyFormat(695.2)}
-                  </Button>
-                </Col>
-                <Col md={4} lg={3}>
-                  <Button
-                    variant="phoenix-secondary"
-                    type="submit"
-                    className="w-100 text-nowrap"
-                  >
-                    Save Order and Exit
-                  </Button>
-                </Col>
-              </Row>
+
+              <div className="d-flex flex-column flex-sm-row gap-2 mb-7 mb-lg-0">
+                <Button variant="primary" type="submit" className="w-100">
+                  Pay {currencyFormat(695.2)}
+                </Button>
+
+                <Button
+                  variant="phoenix-secondary"
+                  type="submit"
+                  className="text-nowrap"
+                >
+                  Save Order and Exit
+                </Button>
+              </div>
             </form>
           </Col>
           <Col lg={5} xl={4}>

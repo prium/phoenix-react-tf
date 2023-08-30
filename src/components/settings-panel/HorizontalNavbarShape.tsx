@@ -55,7 +55,7 @@ const HorizontalNavbarShape = () => {
         </Col>
       </Row>
       {disableHorizontalNavbarShape && (
-        <WarningMessage message="You can't update horizontal navbar shape in this page" />
+        <WarningMessage message="You can't update horizontal navbar shape here" />
       )}
     </div>
   );

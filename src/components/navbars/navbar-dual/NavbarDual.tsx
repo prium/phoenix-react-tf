@@ -6,11 +6,18 @@ import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import SearchResult from 'components/common/SearchResult';
 import NavItems from '../nav-items/NavItems';
 import NavbarTopNav from '../navbar-horizontal/NavbarTopNav';
+import { useAppContext } from 'providers/AppProvider';
 
 const NavbarDual = () => {
+  const {
+    config: { navbarTopAppearance }
+  } = useAppContext();
+
   return (
     <Navbar
-      className={classNames('navbar-top fixed-top', {})}
+      className={classNames('navbar-top fixed-top', {
+        'navbar-darker': navbarTopAppearance === 'darker'
+      })}
       expand="lg"
       variant=""
     >
@@ -18,7 +25,9 @@ const NavbarDual = () => {
         <div className="d-flex flex-between-center dual-nav-first-layer">
           <NavbarBrand />
           <DropdownSearchBox
-            className=" d-none d-lg-block"
+            className="navbar-top-search-box"
+            inputClassName="rounded-pill"
+            searchBoxClassName=" d-none d-lg-block"
             size="sm"
             style={{ width: '25rem' }}
           >

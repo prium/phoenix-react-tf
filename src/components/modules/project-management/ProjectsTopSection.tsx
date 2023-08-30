@@ -69,7 +69,7 @@ const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
   };
 
   return (
-    <Row className="g-3 justify-content-between align-items-end mb-4">
+    <Row className="g-3 justify-content-between align-items-center mb-4">
       <Col xs={12} sm="auto">
         <FilterTab tabItems={tabItems} />
       </Col>

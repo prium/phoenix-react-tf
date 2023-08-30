@@ -6,22 +6,27 @@ import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
 import Scrollbar from 'components/base/Scrollbar';
 import logoBg from 'assets/img/icons/logo-bg.png';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
-  const columns: Route[][] = [[], [], []];
+  const [columns, setColumns] = useState<Route[][]>([]);
 
-  route.pages.forEach((page, index) => {
-    if ([0, 1, 2].includes(index)) {
-      columns[1].push(page);
-    }
-    if (index === 3) {
-      columns[0].push(page);
-    }
-    if (index === 4) {
-      columns[2].push(page);
-    }
-  });
+  useEffect(() => {
+    const cols: Route[][] = [[], [], []];
+    route.pages.forEach((page, index) => {
+      if ([0, 1, 3].includes(index)) {
+        cols[1].push(page);
+      }
+      if (index === 4) {
+        cols[0].push(page);
+      }
+      if ([2, 5].includes(index)) {
+        cols[2].push(page);
+      }
+    });
+
+    setColumns(cols);
+  }, []);
 
   return (
     <Dropdown.Menu

@@ -45,7 +45,7 @@ const EcommerceTopbar = () => {
                     >
                       <FeatherIcon icon="bell" size={20} />
                     </Dropdown.Toggle>
-                    <NotificationDropdownMenu />
+                    <NotificationDropdownMenu className="mt-2" />
                   </Dropdown>
                 </Nav.Item>
 
@@ -59,7 +59,7 @@ const EcommerceTopbar = () => {
                     >
                       <FeatherIcon icon="user" size={20} />
                     </Dropdown.Toggle>
-                    <ProfileDropdownMenu />
+                    <ProfileDropdownMenu className="mt-2" />
                   </Dropdown>
                 </Nav.Item>
               </Nav>

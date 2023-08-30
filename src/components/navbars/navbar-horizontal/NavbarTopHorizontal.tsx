@@ -5,11 +5,19 @@ import NavbarBrand from 'components/navbars/nav-items/NavbarBrand';
 import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
 import NavItems from 'components/navbars/nav-items/NavItems';
 import NavbarTopNav from './NavbarTopNav';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 
 const NavbarTopHorizontal = () => {
   const {
-    config: { openNavbarVertical, navbarTopShape, navbarTopAppearance }
+    config: {
+      navbarPosition,
+      openNavbarVertical,
+      navbarTopShape,
+      navbarTopAppearance
+    }
   } = useAppContext();
+
+  const { breakpoints } = useBreakpoints();
 
   return (
     <Navbar
@@ -21,12 +29,14 @@ const NavbarTopHorizontal = () => {
       variant=""
     >
       <NavbarBrand />
-      <Navbar.Collapse
-        className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
-        in={openNavbarVertical}
-      >
-        <NavbarTopNav />
-      </Navbar.Collapse>
+      {!(navbarPosition === 'combo' && breakpoints.down('lg')) && (
+        <Navbar.Collapse
+          className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
+          in={openNavbarVertical}
+        >
+          <NavbarTopNav />
+        </Navbar.Collapse>
+      )}
       {navbarTopShape === 'default' ? <NavItems /> : <NavItemsSlim />}
     </Navbar>
   );

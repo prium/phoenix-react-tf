@@ -5,8 +5,9 @@ import avatar from 'assets/img/team/72x72/57.webp';
 import FeatherIcon from 'feather-icons-react';
 import { Link } from 'react-router-dom';
 import Scrollbar from 'components/base/Scrollbar';
+import classNames from 'classnames';
 
-const ProfileDropdownMenu = () => {
+const ProfileDropdownMenu = ({ className }: { className?: string }) => {
   const [navItems] = useState([
     {
       label: 'Profile',
@@ -36,7 +37,10 @@ const ProfileDropdownMenu = () => {
   return (
     <Dropdown.Menu
       align="end"
-      className="navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border border-300"
+      className={classNames(
+        className,
+        'navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border border-300'
+      )}
     >
       <Card className="position-relative border-0">
         <Card.Body className="p-0">

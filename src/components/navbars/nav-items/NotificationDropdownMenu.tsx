@@ -7,12 +7,15 @@ import NotificationItem from 'components/common/NotificationItem';
 import classNames from 'classnames';
 import { useState } from 'react';
 
-const NotificationDropdownMenu = () => {
+const NotificationDropdownMenu = ({ className }: { className?: string }) => {
   const [notifications] = useState(notificationData.slice(0, 6));
   return (
     <Dropdown.Menu
       align="end"
-      className="navbar-dropdown-caret py-0 notification-dropdown-menu shadow border border-300"
+      className={classNames(
+        className,
+        'navbar-dropdown-caret py-0 notification-dropdown-menu shadow border border-300'
+      )}
     >
       <Card className="position-relative border-0">
         <Card.Header className="p-2">

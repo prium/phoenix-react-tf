@@ -170,7 +170,7 @@ export const conversations: Conversation[] = [
         message:
           'But Shott says he shot Nott. Either the shot Shott shot at Nott was not shot, Or Nott was shot.',
         time: 'Yesterday, 10 AM',
-        readAt: new Date()
+        readAt: null
       },
       {
         id: 5,
@@ -185,7 +185,7 @@ export const conversations: Conversation[] = [
         message:
           'But if the shot Shott shot shot Shott, then Shott was shot, not Nott.',
         time: 'Yesterday, 10 AM',
-        readAt: new Date()
+        readAt: null
       },
       {
         id: 7,
@@ -194,7 +194,8 @@ export const conversations: Conversation[] = [
         time: 'Yesterday, 10 AM',
         readAt: new Date()
       }
-    ]
+    ],
+    unreadMessages: 2
   },
   {
     id: 3,
@@ -612,9 +613,6 @@ export const attachments = [
   },
   {
     image: image14
-  },
-  {
-    image: image2
   }
 ];
 

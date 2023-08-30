@@ -14,7 +14,7 @@ const Comment = ({ comment, className }: CommentProps) => {
     <Row
       className={classNames(
         className,
-        'justify-contnet-between gy-1 py-3 align-items-start'
+        'justify-contnet-between g-0 py-3 align-items-start'
       )}
     >
       <Col xs={12} sm>

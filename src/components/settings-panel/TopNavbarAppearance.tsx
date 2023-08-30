@@ -60,7 +60,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
         </Col>
       </Row>
       {disableHorizontalNavbarAppearance && (
-        <WarningMessage message="You can't update horizontal navbar appearance in this page" />
+        <WarningMessage message="You can't update horizontal navbar appearance here" />
       )}
     </div>
   );

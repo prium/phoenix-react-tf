@@ -2,30 +2,19 @@ import classNames from 'classnames';
 import { useAppContext } from 'providers/AppProvider';
 import { Navbar } from 'react-bootstrap';
 import logo from 'assets/img/icons/logo.png';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
+import NavbarToggleButton from './NavbarToggleButton';
 
 const NavbarBrand = () => {
   const {
-    config: { openNavbarVertical, navbarTopShape, navbarPosition },
-    setConfig
+    config: { navbarTopShape, navbarPosition }
   } = useAppContext();
-
-  const toggleOpenNavbarVertical = () => {
-    setConfig({
-      openNavbarVertical: !openNavbarVertical
-    });
-  };
+  const { breakpoints } = useBreakpoints();
 
   return (
     <>
       <div className="navbar-logo">
-        <Navbar.Toggle
-          className="hover-bg-transparent navbar-toggler-humburger-icon"
-          onClick={toggleOpenNavbarVertical}
-        >
-          <span className="navbar-toggle-icon">
-            <span className="toggle-line" />
-          </span>
-        </Navbar.Toggle>
+        {breakpoints.down('lg') && <NavbarToggleButton />}
         <Navbar.Brand
           href="/"
           className={classNames({
