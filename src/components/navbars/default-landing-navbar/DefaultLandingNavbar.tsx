@@ -53,9 +53,14 @@ const DefaultLandingNavbar = () => {
     <>
       <div className="bg-white sticky-top landing-navbar" ref={containerRef}>
         <Navbar className="px-3 px-lg-7 px-xxl-3 container-small" expand="lg">
-          <Navbar.Brand as={Link} to="/" className="text-decoration-none">
+          <Navbar.Brand
+            as={Link}
+            to="/"
+            className="text-decoration-none flex-1 flex-lg-grow-0"
+          >
             <Logo />
           </Navbar.Brand>
+          <ThemeToggler className="mx-2 d-lg-none" />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
             <div className="border-bottom d-lg-none mb-2">

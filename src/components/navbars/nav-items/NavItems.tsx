@@ -11,6 +11,7 @@ import ThemeToggler from 'components/common/ThemeToggler';
 import { useState } from 'react';
 import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import SearchResult from 'components/common/SearchResult';
+import classNames from 'classnames';
 
 const NavItems = () => {
   const {
@@ -23,13 +24,16 @@ const NavItems = () => {
       <Nav.Item>
         <ThemeToggler className="px-2" />
       </Nav.Item>
-      {(navbarPosition === 'horizontal' || navbarPosition === 'combo') && (
-        <Nav.Item>
-          <Nav.Link onClick={() => setOpenSearchModal(!openSearchModal)}>
-            <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />
-          </Nav.Link>
-        </Nav.Item>
-      )}
+      <Nav.Item
+        className={classNames({
+          'd-lg-none':
+            navbarPosition === 'vertical' || navbarPosition === 'dual'
+        })}
+      >
+        <Nav.Link onClick={() => setOpenSearchModal(!openSearchModal)}>
+          <FeatherIcon icon="search" size={19} style={{ marginBottom: 2 }} />
+        </Nav.Link>
+      </Nav.Item>
       <Nav.Item>
         <Dropdown autoClose="outside">
           <Dropdown.Toggle

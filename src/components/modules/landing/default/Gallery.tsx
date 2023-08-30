@@ -16,22 +16,61 @@ import Lightbox from 'components/base/LightBox';
 
 type GalleryItemType = {
   img: string;
-  col: number;
-  row: number;
+  className: string;
   category: string[];
 };
 
 const galleryItems: GalleryItemType[] = [
-  { img: img1, col: 1, row: 2, category: ['1', '4'] },
-  { img: img2, col: 1, row: 2, category: ['1', '3'] },
-  { img: img3, col: 1, row: 1, category: ['1', '2'] },
-  { img: img5, col: 1, row: 2, category: ['1', '3'] },
-  { img: img4, col: 1, row: 1, category: ['1', '2', '3'] },
-  { img: img6, col: 1, row: 2, category: ['1', '2'] },
-  { img: img7, col: 1, row: 1, category: ['1', '2'] },
-  { img: img9, col: 2, row: 1, category: ['1', '2'] },
-  { img: img8, col: 1, row: 1, category: ['1', '4'] },
-  { img: img10, col: 2, row: 1, category: ['1', '2'] }
+  {
+    img: img1,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-2',
+    category: ['1', '4']
+  },
+  {
+    img: img2,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-2',
+    category: ['1', '3']
+  },
+  {
+    img: img3,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-1',
+    category: ['1', '2']
+  },
+  {
+    img: img5,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-2',
+    category: ['1', '3']
+  },
+  {
+    img: img4,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-1',
+    category: ['1', '2', '3']
+  },
+  {
+    img: img6,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-2',
+    category: ['1', '2']
+  },
+  {
+    img: img7,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-1',
+    category: ['1', '2']
+  },
+  {
+    img: img9,
+    className: 'col-span-6 col-span-md-4 col-span-lg-6 row-span-1',
+    category: ['1', '2']
+  },
+  {
+    img: img8,
+    className: 'col-span-6 col-span-md-4 col-span-lg-3 row-span-1',
+    category: ['1', '4']
+  },
+  {
+    img: img10,
+    className: 'col-span-6 col-span-md-4 col-span-lg-6 row-span-1',
+    category: ['1', '2']
+  }
 ];
 
 const navItems = [
@@ -62,7 +101,7 @@ const GalleryItem = ({
 }) => {
   return (
     <div
-      className={`col-span-${galleryItem.col} row-span-${galleryItem.row} cursor-pointer`}
+      className={`${galleryItem.className} cursor-pointer`}
       onClick={onClick}
     >
       <img src={galleryItem.img} alt="" className="rounded img-fluid" />
