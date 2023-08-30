@@ -92,7 +92,12 @@ const NavItems = () => {
         className="search-box-modal mt-15"
       >
         <Modal.Body className="p-0 bg-transparent">
-          <DropdownSearchBox size="lg" style={{ width: 'auto' }}>
+          <DropdownSearchBox
+            className="navbar-top-search-box"
+            inputClassName="rounded-pill"
+            size="lg"
+            style={{ width: 'auto' }}
+          >
             <SearchResult />
           </DropdownSearchBox>
         </Modal.Body>

@@ -27,7 +27,9 @@ const NavbarTopDefault = () => {
         {navbarTopShape === 'default' ? (
           <>
             <DropdownSearchBox
-              className=" d-none d-lg-block"
+              className="navbar-top-search-box"
+              inputClassName="rounded-pill"
+              searchBoxClassName=" d-none d-lg-block"
               size="sm"
               style={{ width: '25rem' }}
             >

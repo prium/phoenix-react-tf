@@ -25,7 +25,9 @@ const NavbarDual = () => {
         <div className="d-flex flex-between-center dual-nav-first-layer">
           <NavbarBrand />
           <DropdownSearchBox
-            className=" d-none d-lg-block"
+            className="navbar-top-search-box"
+            inputClassName="rounded-pill"
+            searchBoxClassName=" d-none d-lg-block"
             size="sm"
             style={{ width: '25rem' }}
           >
