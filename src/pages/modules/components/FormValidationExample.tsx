@@ -18,7 +18,7 @@ function FormExample() {
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
+      <Row className="mb-3 gx-3">
         <Form.Group as={Col} md="4" controlId="tooltipFirstName" className="position-relative">
           <Form.Label>First name</Form.Label>
           <Form.Control
@@ -55,7 +55,7 @@ function FormExample() {
           </InputGroup>
         </Form.Group>
       </Row>
-      <Row className="mb-3">
+      <Row className="mb-3 gx-3">
         <Form.Group as={Col} md="6" controlId="tooltipCity" className="position-relative">
           <Form.Label>City</Form.Label>
           <Form.Control type="text" placeholder="City" required />
@@ -105,7 +105,7 @@ function FormExample() {
 
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
-      <Row className="mb-3">
+      <Row className="mb-3 gx-3">
         <Form.Group as={Col} md="4" controlId="exampleFirstName">
           <Form.Label>First name</Form.Label>
           <Form.Control
@@ -142,7 +142,7 @@ function FormExample() {
           </InputGroup>
         </Form.Group>
       </Row>
-      <Row className="mb-3">
+      <Row className="mb-3 gx-3">
         <Form.Group as={Col} md="6" controlId="exampleCity">
           <Form.Label>City</Form.Label>
           <Form.Control type="text" placeholder="City" required />

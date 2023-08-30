@@ -654,6 +654,12 @@ export const routes: RouteItems[] = [
             path: '/pages/demo/combo-nav-slim',
             pathName: 'demo-combo-nav-slim',
             active: true
+          },
+          {
+            name: 'dual-nav',
+            path: '/pages/demo/dual-nav',
+            pathName: 'demo-dual-nav',
+            active: true
           }
         ]
       }

@@ -31,10 +31,13 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
           <div className="p-3">
             <div className="text-end">
               <button className="btn p-0 me-2">
-                <FontAwesomeIcon icon="user-plus" className="text-white" />
+                <FontAwesomeIcon
+                  icon="user-plus"
+                  className="text-white light"
+                />
               </button>
               <button className="btn p-0">
-                <FontAwesomeIcon icon="ellipsis" className="text-white" />
+                <FontAwesomeIcon icon="ellipsis" className="text-white light" />
               </button>
             </div>
             <div className="text-center">

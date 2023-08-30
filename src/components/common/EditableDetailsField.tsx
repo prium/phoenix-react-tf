@@ -22,7 +22,7 @@ const EditableDetailsField = ({
 
   return (
     <div className={className}>
-      <div className="d-flex align-items-center mb-4">
+      <div className="d-flex align-items-center mb-2">
         <h4 className="text-900 me-4">Description</h4>
         {!editMode && (
           <Button

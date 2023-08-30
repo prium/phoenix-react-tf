@@ -30,7 +30,7 @@ const AttachmentPreview = ({
         className={classNames(
           `btn-icon btn-icon-${size} rounded-3 flex-column me-2 border position-relative`,
           {
-            // border: !attachment.preview,
+            border: !attachment.preview,
             'text-500 border-500': type === 'primary',
             'border-400 text-400': type === 'secondary'
           }
@@ -40,7 +40,7 @@ const AttachmentPreview = ({
           <img
             src={attachment.preview}
             alt={attachment.name}
-            className="w-100"
+            className="w-100 rounded"
           />
         ) : (
           <>

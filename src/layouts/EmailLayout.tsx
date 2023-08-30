@@ -28,7 +28,7 @@ const EmailLayout = ({
   }, []);
   return (
     <div className="email-container">
-      <Row className="gx-lg-6 gx-3 py-4 z-index-2 position-sticky bg-soft email-header">
+      <Row className="gx-lg-4 gx-xl-6 gx-3 py-4 z-index-2 position-sticky bg-soft email-header">
         <Col className="col-auto">
           <Button
             variant="primary"
@@ -61,7 +61,7 @@ const EmailLayout = ({
           <SearchBox className="w-100" />
         </Col>
       </Row>
-      <Row className="g-lg-6 mb-8">
+      <Row className="g-lg-4 g-xl-6 mb-8">
         <Col lg="auto">
           <div
             className="email-sidebar email-sidebar-width bg-soft d-none d-lg-block"

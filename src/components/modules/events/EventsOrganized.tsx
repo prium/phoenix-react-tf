@@ -24,7 +24,7 @@ const EventsOrganized = () => {
           </Link>
         </Col>
         <Col sm="auto" xl={12} xxl="auto">
-          <Button variant="link" className="text-900 p-0 me-1">
+          <Button variant="link" className="text-900 p-0 me-2">
             10k Followers
           </Button>
           <Button

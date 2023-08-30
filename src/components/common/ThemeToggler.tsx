@@ -42,7 +42,7 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
           <div className="theme-control-toggle-label">
             <FeatherIcon
               className={classNames({
-                'me-1': slim
+                'me-1 d-none d-sm-block': slim
               })}
               icon={theme === 'dark' ? 'moon' : 'sun'}
               size={slim ? 10 : 16}

@@ -170,33 +170,6 @@ const buttonsWithDropdowsCode = `
       <Dropdown.Item href="#">Separated link</Dropdown.Item>
     </DropdownButton>
   </InputGroup>
-
-  <InputGroup>
-    <DropdownButton
-      variant="phoenix-secondary"
-      title="Dropdown"
-      id="input-group-dropdown-3"
-    >
-      <Dropdown.Item href="#">Action</Dropdown.Item>
-      <Dropdown.Item href="#">Another action</Dropdown.Item>
-      <Dropdown.Item href="#">Something else here</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="#">Separated link</Dropdown.Item>
-    </DropdownButton>
-    <FormControl aria-label="Text input with 2 dropdown buttons" />
-    <DropdownButton
-      variant="phoenix-secondary"
-      title="Dropdown"
-      id="input-group-dropdown-4"
-      align="end"
-    >
-      <Dropdown.Item href="#">Action</Dropdown.Item>
-      <Dropdown.Item href="#">Another action</Dropdown.Item>
-      <Dropdown.Item href="#">Something else here</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="#">Separated link</Dropdown.Item>
-    </DropdownButton>
-  </InputGroup>
 </>
 `;
 
@@ -296,7 +269,7 @@ const InputGroupExample = () => {
           <PhoenixDocCard.Body code={buttonAddOnsCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Buttons with Dropdowns" />
           <PhoenixDocCard.Body code={buttonsWithDropdowsCode} />
         </PhoenixDocCard>
