@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { CSSProperties, PropsWithChildren } from 'react';
+import React, { CSSProperties, PropsWithChildren, useEffect } from 'react';
 
 interface PhoenixOffcanvasProps {
   open: boolean;
@@ -34,6 +34,18 @@ const PhoenixOffcanvas = ({
   placement,
   noBackdrop
 }: PropsWithChildren<PhoenixOffcanvasProps>) => {
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.removeProperty('overflow');
+    }
+
+    return () => {
+      document.body.style.removeProperty('overflow');
+    };
+  }, [open]);
+
   return (
     <>
       <div

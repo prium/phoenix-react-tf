@@ -6,6 +6,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import ThemeToggler from 'components/common/ThemeToggler';
+import PhoenixDocProvider from 'providers/PhoenixDocProvider';
 
 const darkModeExampleCode = `
 import { useAppContext } from 'providers/AppProvider';
@@ -149,64 +150,66 @@ const DarkMode = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard noProvider className="mb-4">
-          <PhoenixDocCard.Header title="Using the Dark className" noPreview />
-          <PhoenixDocCard.Body>
-            <h6 className="fs-8 mb-3">
-              You can keep a style constant regardless of current (light or
-              dark) mode
-            </h6>
-            <p className="mb-2">
-              If you want a component to retain it’s color (light or dark) as it
-              is regardless of the current mode, you can use the following
-              classeNames -
-            </p>
-            <p className="mb-2">
-              <code> .light </code> - It will keep the color light even if the
-              current mode is dark
-            </p>
-            <p>
-              <code> .dark </code> - It will keep the color dark even if the
-              current mode is light
-            </p>
+          <PhoenixDocProvider>
+            <PhoenixDocCard.Header title="Using the Dark className" noPreview />
+            <PhoenixDocCard.Body>
+              <h6 className="fs-8 mb-3">
+                You can keep a style constant regardless of current (light or
+                dark) mode
+              </h6>
+              <p className="mb-2">
+                If you want a component to retain it’s color (light or dark) as
+                it is regardless of the current mode, you can use the following
+                classeNames -
+              </p>
+              <p className="mb-2">
+                <code> .light </code> - It will keep the color light even if the
+                current mode is dark
+              </p>
+              <p>
+                <code> .dark </code> - It will keep the color dark even if the
+                current mode is light
+              </p>
 
-            <Row className="mb-5">
-              <Col sm={6}>
-                <PhoenixDocCard>
-                  <PhoenixDocCard.Header />
-                  <PhoenixDocCard.Body code={lightCode} />
-                </PhoenixDocCard>
-              </Col>
-              <Col sm={6}>
-                <PhoenixDocCard>
-                  <PhoenixDocCard.Header />
-                  <PhoenixDocCard.Body code={darkCode} />
-                </PhoenixDocCard>
-              </Col>
-            </Row>
+              <Row className="mb-5">
+                <Col sm={6}>
+                  <PhoenixDocCard>
+                    <PhoenixDocCard.Header />
+                    <PhoenixDocCard.Body code={lightCode} />
+                  </PhoenixDocCard>
+                </Col>
+                <Col sm={6}>
+                  <PhoenixDocCard>
+                    <PhoenixDocCard.Header />
+                    <PhoenixDocCard.Body code={darkCode} />
+                  </PhoenixDocCard>
+                </Col>
+              </Row>
 
-            <h6 className="fs-8 mb-3">
-              Override Background and Text color only for dark mode
-            </h6>
-            <p className="mb-2">
-              If you want to use a different text color or background color
-              rather than the default dark theme color for any element, you can
-              use the special "dark" classeNames:
-            </p>
-            <ul className="mb-2">
-              <li>
-                <code>dark__bg-* </code>
-              </li>
-              <li>
-                <code>dark__text-* </code>
-              </li>
-            </ul>
-            <p>The following element illustrates the example:</p>
+              <h6 className="fs-8 mb-3">
+                Override Background and Text color only for dark mode
+              </h6>
+              <p className="mb-2">
+                If you want to use a different text color or background color
+                rather than the default dark theme color for any element, you
+                can use the special "dark" classeNames:
+              </p>
+              <ul className="mb-2">
+                <li>
+                  <code>dark__bg-* </code>
+                </li>
+                <li>
+                  <code>dark__text-* </code>
+                </li>
+              </ul>
+              <p>The following element illustrates the example:</p>
 
-            <PhoenixDocCard className="mb-4">
-              <PhoenixDocCard.Header />
-              <PhoenixDocCard.Body code={dark__Code} />
-            </PhoenixDocCard>
-          </PhoenixDocCard.Body>
+              <PhoenixDocCard className="mb-4">
+                <PhoenixDocCard.Header />
+                <PhoenixDocCard.Body code={dark__Code} />
+              </PhoenixDocCard>
+            </PhoenixDocCard.Body>
+          </PhoenixDocProvider>
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

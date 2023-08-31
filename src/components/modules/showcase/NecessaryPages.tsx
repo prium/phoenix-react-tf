@@ -32,10 +32,13 @@ const NecessaryPages = () => {
               className="position-relative page-container"
             >
               <div
-                className={classNames('d-flex px-4 pt-6', {
-                  'justify-content-lg-end': (index + 1) % 2 !== 0,
-                  'justify-content-lg-start': (index + 1) % 2 === 0
-                })}
+                className={classNames(
+                  'd-flex px-4 pt-6 justify-content-center',
+                  {
+                    'justify-content-lg-end': (index + 1) % 2 !== 0,
+                    'justify-content-lg-start': (index + 1) % 2 === 0
+                  }
+                )}
               >
                 <div className="text-center">
                   <div className="img-container w-100">

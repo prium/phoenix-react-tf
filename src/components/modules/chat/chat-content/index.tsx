@@ -59,7 +59,7 @@ const ChatContent = () => {
           open={showConversationDetails}
           placement="top"
           noBackdrop
-          className="bg-white w-100 scrollbar"
+          className="bg-white w-100 z-index-0 scrollbar"
         >
           <ConversationDetails
             conversation={currentConversation}
