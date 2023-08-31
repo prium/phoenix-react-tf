@@ -20,7 +20,7 @@ const CoverUpload = ({ src, gradient, onChange }: CoverUploadProps) => {
   };
   return (
     <div
-      className="bg-holder rounded-top"
+      className="bg-holder rounded-top hover-actions-trigger position-absolute"
       style={{
         backgroundImage: `${gradient ? gradient + ',' : ''}url(${
           image ? URL.createObjectURL(image) : src

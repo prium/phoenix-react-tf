@@ -26,9 +26,12 @@ const transcluentCode = `
   return (
     <div className='bg-dark p-3'>
       <Toast show={show} onClose={() => setShow(!show)}>
-        <Toast.Header className="text-bg-light">
+        <Toast.Header className="text-bg-light" closeButton={false}>
           <strong className="me-auto">Bootstrap</strong>
           <small>11 mins ago</small>
+          <Button className="ms-2 p-0 " onClick={() => setShow(false)} >
+            <UilTimes className="fs-7"/>
+          </Button>
         </Toast.Header>
         <Toast.Body className="text-bg-light">Hello, world! This is a toast message.</Toast.Body>
       </Toast>
@@ -44,16 +47,22 @@ const stackingCode = `
   return (
     <ToastContainer className="position-static">
       <Toast show={showA} className="mb-4" onClose={() => setShowA(!showA)}>
-        <Toast.Header>
+        <Toast.Header closeButton={false}>
           <strong className="me-auto">Bootstrap</strong>
           <small className="text-muted">just now</small>
+          <Button className="ms-2 p-0 " onClick={() => setShowA(false)} >
+            <UilTimes className="fs-7"/>
+          </Button>
         </Toast.Header>
         <Toast.Body>See? Just like this.</Toast.Body>
       </Toast>
       <Toast show={showB} onClose={() => setShowB(!showB)}>
-        <Toast.Header>
+        <Toast.Header closeButton={false}>
           <strong className="me-auto">Bootstrap</strong>
           <small className="text-muted">2 seconds ago</small>
+          <Button className="ms-2 p-0 " onClick={() => setShowB(false)} >
+            <UilTimes className="fs-7"/>
+          </Button>
         </Toast.Header>
         <Toast.Body>Heads up, toasts will stack automatically</Toast.Body>
       </Toast>
@@ -120,12 +129,15 @@ const autoHideCode = `
   const [show, setShow] = useState(false);
   return (
     <>
-      <Button onClick={() => setShow(true)}>Show Toast</Button>
+      <Button variant="primary" onClick={() => setShow(true)}>Show Toast</Button>
       <div className="position-fixed bottom-0 end-0 p-3">
         <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide>
-          <Toast.Header>
+          <Toast.Header closeButton={false}>
             <strong className="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>
+            <Button className="ms-2 p-0 " onClick={() => setShow(false)} >
+              <UilTimes className="fs-7"/>
+            </Button>
           </Toast.Header>
           <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
         </Toast>
@@ -146,11 +158,11 @@ const dismissibleCode = `
   return (
     <Row>
       <Col md={6} className="mb-2">
-        <Button onClick={toggleShowA} className="mb-2">
+        <Button variant="primary" onClick={toggleShowA} className="mb-2">
           Toggle Toast <strong>with</strong> Animation
         </Button>
         <Toast show={showA} onClose={toggleShowA}>
-          <Toast.Header>
+          <Toast.Header closeButton={false}>
             <img
               src="holder.js/20x20?text=%20"
               className="rounded me-2"
@@ -158,16 +170,19 @@ const dismissibleCode = `
             />
             <strong className="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>
+            <Button className="ms-2 p-0 " onClick={() => setShowA(false)} >
+              <UilTimes className="fs-7"/>
+            </Button>
           </Toast.Header>
           <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
         </Toast>
       </Col>
       <Col md={6} className="mb-2">
-        <Button onClick={toggleShowB} className="mb-2">
+        <Button variant="primary" onClick={toggleShowB} className="mb-2">
           Toggle Toast <strong>without</strong> Animation
         </Button>
         <Toast onClose={toggleShowB} show={showB} animation={false}>
-          <Toast.Header>
+          <Toast.Header closeButton={false}>
             <img
               src="holder.js/20x20?text=%20"
               className="rounded me-2"
@@ -175,6 +190,9 @@ const dismissibleCode = `
             />
             <strong className="me-auto">Bootstrap</strong>
             <small>11 mins ago</small>
+            <Button className="ms-2 p-0 " onClick={() => setShowB(false)} >
+              <UilTimes className="fs-7"/>
+            </Button>
           </Toast.Header>
           <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
         </Toast>
@@ -221,7 +239,10 @@ const ToastsExample = () => {
             title="Translucent"
             description="Toasts are slightly translucent, too, so they blend over whatever they might appear over."
           />
-          <PhoenixDocCard.Body code={transcluentCode} />
+          <PhoenixDocCard.Body
+            code={transcluentCode}
+            scope={{ UilTimes, Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -229,12 +250,18 @@ const ToastsExample = () => {
             title="Stacking"
             description="When you have multiple toasts, we default to vertically stacking them in a readable manner."
           />
-          <PhoenixDocCard.Body code={stackingCode} />
+          <PhoenixDocCard.Body
+            code={stackingCode}
+            scope={{ UilTimes, Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Dismissible" />
-          <PhoenixDocCard.Body code={dismissibleCode} />
+          <PhoenixDocCard.Body
+            code={dismissibleCode}
+            scope={{ UilTimes, Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -246,7 +273,10 @@ const ToastsExample = () => {
               property.
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={autoHideCode} />
+          <PhoenixDocCard.Body
+            code={autoHideCode}
+            scope={{ UilTimes, Button }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

@@ -445,15 +445,15 @@ export const routes: RouteItems[] = [
         active: true,
         pages: [
           {
-            name: '404',
-            path: 'pages/errors/404',
-            pathName: 'error404',
-            active: true
-          },
-          {
             name: '403',
             path: 'pages/errors/403',
             pathName: 'error403',
+            active: true
+          },
+          {
+            name: '404',
+            path: 'pages/errors/404',
+            pathName: 'error404',
             active: true
           },
           {

@@ -14,13 +14,17 @@ const HeroHeader = () => {
     <section className="pb-8" id="home">
       <div className="container-small hero-header-container px-lg-7 px-xxl-3">
         <Row className="align-items-center">
-          <Col xs={12} className="text-end">
+          <Col
+            xs={12}
+            lg="auto"
+            className="text-end order-0 order-md-1 order-1"
+          >
             <div className="position-relative p-5 p-md-7 d-lg-none">
               <div
                 className="bg-holder banner-bg"
                 style={{
                   backgroundImage: `url(${bg23})`,
-                  backgroundPosition: 'contain'
+                  backgroundSize: 'contain'
                 }}
               />
               <div className="position-relative">

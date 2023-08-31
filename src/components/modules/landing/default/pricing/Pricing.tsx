@@ -52,7 +52,7 @@ const Pricing = () => {
             </p>
           </Col>
         </Row>
-        <Row className="pt-9 g-3 g-xl-0 mb-8">
+        <Row className="pt-9 g-3 g-xl-0 mb-4 mb-md-8">
           {pricingItems.slice(0, 3).map((item, index) => (
             <Col key={item.id} md={6} xl={3}>
               <>

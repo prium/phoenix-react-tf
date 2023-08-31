@@ -11,7 +11,7 @@ const SocialProfileCard = ({ showAbout }: { showAbout?: boolean }) => {
   return (
     <Card className="mb-5">
       <Card.Header
-        className="hover-actions-trigger position-relative mb-6"
+        className="position-relative mb-6"
         style={{ minHeight: '130px' }}
       >
         <CoverUpload
