@@ -1,6 +1,6 @@
 import MainLayout from 'layouts/MainLayout';
 import Starter from 'pages/pages/Starter';
-import { createBrowserRouter } from 'react-router-dom';
+import { RouteObject, createBrowserRouter } from 'react-router-dom';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
 import AvatarExample from 'pages/modules/components/AvatarExample';
@@ -140,666 +140,672 @@ import ECharts from 'pages/modules/charts/ECharts';
 import GanttChart from 'pages/modules/charts/GanttChart';
 import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
+import App from 'App';
 
-const routes = [
+const routes: RouteObject[] = [
   {
-    path: '/',
-    element: (
-      <MainLayoutProvider>
-        <MainLayout />
-      </MainLayoutProvider>
-    ),
+    element: <App />,
     children: [
       {
-        index: true,
-        element: <Ecommerce />
-      },
-      {
-        path: '/dashboard/project-management',
-        element: <ProjectManagement />
-      },
-      {
-        path: '/pages/starter',
-        element: <Starter />
-      },
-
-      {
-        path: '/pages/notifications/notifications',
-        element: <Notification />
-      },
-      {
-        path: '/pages/members',
-        element: <Members />
-      },
-      {
-        path: '/pages/faq/faq-accordion',
-        element: <FaqAccordion />
-      },
-
-      {
-        path: '/apps/e-commerce/admin/',
-        children: [
-          {
-            path: 'add-product',
-            element: <AddProduct />
-          },
-          {
-            path: 'products',
-            element: <Products />
-          },
-          {
-            path: 'customers',
-            element: <Customers />
-          },
-          {
-            path: 'orders',
-            element: <Orders />
-          },
-          {
-            path: 'order-details',
-            element: <OrderDetails />
-          },
-          {
-            path: 'refund',
-            element: <Refund />
-          },
-          {
-            path: 'customer-details',
-            element: <CustomerDetails />
-          }
-        ]
-      },
-      {
-        path: '/apps/project-management/',
-        children: [
-          {
-            path: 'create-new',
-            element: <CreateNew />
-          },
-          {
-            path: 'project-list-view',
-            element: <ProjectListView />
-          },
-          {
-            path: 'project-card-view',
-            element: <ProjectCardView />
-          },
-          {
-            path: 'project-board-view',
-            element: <ProjectBoardView />
-          },
-          {
-            path: 'todo-list',
-            element: <ProjectTodoList />
-          },
-          {
-            path: 'project-details',
-            element: <ProjectDetails />
-          }
-        ]
-      },
-      {
-        path: '/apps/events/',
-        children: [
-          {
-            path: 'create-an-event',
-            element: <CreateAnEvent />
-          },
-          {
-            path: 'event-detail',
-            element: <EventDetail />
-          }
-        ]
-      },
-      {
-        path: '/apps/chat/',
-        element: <Chat />,
+        path: '/',
+        element: (
+          <MainLayoutProvider>
+            <MainLayout />
+          </MainLayoutProvider>
+        ),
         children: [
           {
             index: true,
-            element: <ChatHomepage />
+            element: <Ecommerce />
           },
           {
-            path: ':userId/conversation',
-            element: <ChatConversation />
-          }
-        ]
-      },
-      {
-        path: '/apps/social/',
-        children: [
-          {
-            path: 'profile',
-            element: <SocialProfile />
+            path: '/dashboard/project-management',
+            element: <ProjectManagement />
           },
           {
-            path: 'settings',
-            element: <Settings />
+            path: '/pages/starter',
+            element: <Starter />
+          },
+
+          {
+            path: '/pages/notifications/notifications',
+            element: <Notification />
           },
           {
-            path: 'feed',
-            element: <Feed />
-          }
-        ]
-      },
-      {
-        path: '/apps/email/',
-        children: [
-          {
-            path: 'inbox',
-            element: <Inbox />
+            path: '/pages/members',
+            element: <Members />
           },
           {
-            path: 'email-detail',
-            element: <EmailDetail />
+            path: '/pages/faq/faq-accordion',
+            element: <FaqAccordion />
           },
+
           {
-            path: 'compose',
-            element: <Compose />
-          }
-        ]
-      },
-      {
-        path: '/pages/pricing/',
-        children: [
-          {
-            path: 'pricing-column',
-            element: <PricingColumn />
-          }
-        ]
-      },
-      {
-        path: '/pages/demo/',
-        children: [
-          {
-            path: 'vertical-sidenav',
-            element: <VerticalSidenav />
-          },
-          {
-            path: 'dark-mode',
-            element: <DarkModeDemo />
-          },
-          {
-            path: 'sidenav-collapse',
-            element: <SidenavCollapse />
-          },
-          {
-            path: 'darknav',
-            element: <Darknav />
-          },
-          {
-            path: 'topnav-slim',
-            element: <TopnavSlim />
-          },
-          {
-            path: 'navbar-top-slim',
-            element: <NavbarTopSlim />
-          },
-          {
-            path: 'navbar-top',
-            element: <NavbarTop />
-          },
-          {
-            path: 'horizontal-slim',
-            element: <NavbarHorizontalSlim />
-          },
-          {
-            path: 'combo-nav',
-            element: <ComboNav />
-          },
-          {
-            path: 'combo-nav-slim',
-            element: <ComboNavSlim />
-          },
-          {
-            path: 'dual-nav',
-            element: <DualNav />
-          }
-        ]
-      },
-      {
-        path: '/modules',
-        children: [
-          {
-            path: 'tables',
+            path: '/apps/e-commerce/admin/',
             children: [
               {
-                path: 'basic-tables',
-                element: <BasicTableExample />
+                path: 'add-product',
+                element: <AddProduct />
               },
               {
-                path: 'advance-tables',
-                element: <AdvanceTableExample />
+                path: 'products',
+                element: <Products />
+              },
+              {
+                path: 'customers',
+                element: <Customers />
+              },
+              {
+                path: 'orders',
+                element: <Orders />
+              },
+              {
+                path: 'order-details',
+                element: <OrderDetails />
+              },
+              {
+                path: 'refund',
+                element: <Refund />
+              },
+              {
+                path: 'customer-details',
+                element: <CustomerDetails />
               }
             ]
           },
           {
-            path: 'charts',
+            path: '/apps/project-management/',
             children: [
               {
-                path: 'e-charts',
-                element: <ECharts />
+                path: 'create-new',
+                element: <CreateNew />
               },
               {
-                path: 'gantt-chart',
-                element: <GanttChart />
+                path: 'project-list-view',
+                element: <ProjectListView />
+              },
+              {
+                path: 'project-card-view',
+                element: <ProjectCardView />
+              },
+              {
+                path: 'project-board-view',
+                element: <ProjectBoardView />
+              },
+              {
+                path: 'todo-list',
+                element: <ProjectTodoList />
+              },
+              {
+                path: 'project-details',
+                element: <ProjectDetails />
               }
             ]
           },
           {
-            path: 'icons',
+            path: '/apps/events/',
             children: [
               {
-                path: 'font-awesome',
-                element: <FontAwesome />
+                path: 'create-an-event',
+                element: <CreateAnEvent />
               },
               {
-                path: 'feather',
-                element: <FeatherIconExample />
-              },
-              {
-                path: 'unicons',
-                element: <Unicons />
+                path: 'event-detail',
+                element: <EventDetail />
               }
             ]
           },
           {
-            path: 'components',
+            path: '/apps/chat/',
+            element: <Chat />,
             children: [
               {
-                path: 'accordion',
-                element: <AccordionExample />
+                index: true,
+                element: <ChatHomepage />
               },
               {
-                path: 'avatar',
-                element: <AvatarExample />
-              },
-              {
-                path: 'alerts',
-                element: <AlertsExample />
-              },
-              {
-                path: 'button',
-                element: <ButtonExample />
-              },
-              {
-                path: 'badge',
-                element: <BadgeExample />
-              },
-              {
-                path: 'breadcrumb',
-                element: <BreadcrumbExample />
-              },
-              {
-                path: 'card',
-                element: <CardExample />
-              },
-              {
-                path: 'carousel/bootstrap',
-                element: <BootstrapCarousel />
-              },
-              {
-                path: 'carousel/swiper',
-                element: <SwiperCarousel />
-              },
-              {
-                path: 'collapse',
-                element: <CollapseExample />
-              },
-              {
-                path: 'dropdown',
-                element: <DropdownExample />
-              },
-              {
-                path: 'list-group',
-                element: <ListGroupExample />
-              },
-              {
-                path: 'countup',
-                element: <CountupExample />
-              },
-              {
-                path: 'modal',
-                element: <ModalExample />
-              },
-              {
-                path: 'offcanvas',
-                element: <OffcanvasExample />
-              },
-              {
-                path: 'progress-bar',
-                element: <ProgressbarExample />
-              },
-              {
-                path: 'placeholder',
-                element: <PlaceholderExample />
-              },
-              {
-                path: 'pagination',
-                element: <PaginationExample />
-              },
-              {
-                path: 'popovers',
-                element: <PopoversExample />
-              },
-              {
-                path: 'spinners',
-                element: <SpinnerExample />
-              },
-              {
-                path: 'toast',
-                element: <ToastsExample />
-              },
-              {
-                path: 'tooltips',
-                element: <TooltipExample />
-              },
-              {
-                path: 'navs-and-tabs/navs',
-                element: <NavsExample />
-              },
-              {
-                path: 'navs-and-tabs/tabs',
-                element: <TabsExample />
-              },
-              {
-                path: 'navs-and-tabs/navbar',
-                element: <NavbarExample />
-              },
-              {
-                path: 'pictures/lightbox',
-                element: <LightboxExample />
+                path: ':userId/conversation',
+                element: <ChatConversation />
               }
             ]
           },
           {
-            path: 'forms',
+            path: '/apps/social/',
             children: [
               {
-                path: 'form-control',
-                element: <FormControlExample />
+                path: 'profile',
+                element: <SocialProfile />
               },
               {
-                path: 'input-group',
-                element: <InputGroupExample />
+                path: 'settings',
+                element: <Settings />
               },
               {
-                path: 'select',
-                element: <SelectExample />
-              },
-              {
-                path: 'checks',
-                element: <ChecksExample />
-              },
-              {
-                path: 'range',
-                element: <RangeExample />
-              },
-              {
-                path: 'floating-labels',
-                element: <FloatingLabelExample />
-              },
-              {
-                path: 'layout',
-                element: <FormLayoutExample />
-              },
-              {
-                path: 'editor',
-                element: <EditorExample />
-              },
-              {
-                path: 'advance-select',
-                element: <AdvanceSelectExample />
-              },
-              {
-                path: 'date-picker',
-                element: <DatePickerExample />
-              },
-              {
-                path: 'emoji-button',
-                element: <EmojiButtonExample />
-              },
-              {
-                path: 'file-uploader',
-                element: <FileUploaderExample />
-              },
-              {
-                path: 'rating',
-                element: <RatingExample />
-              },
-              {
-                path: 'validation',
-                element: <FormValidationExample />
+                path: 'feed',
+                element: <Feed />
               }
             ]
           },
           {
-            path: 'utilities',
+            path: '/apps/email/',
             children: [
               {
-                path: 'background',
-                element: <BackgroundExample />
+                path: 'inbox',
+                element: <Inbox />
               },
               {
-                path: 'borders',
-                element: <BorderExample />
+                path: 'email-detail',
+                element: <EmailDetail />
               },
               {
-                path: 'colors',
-                element: <ColorsExample />
-              },
-              {
-                path: 'display',
-                element: <DisplayExample />
-              },
-              {
-                path: 'grid',
-                element: <GridExample />
-              },
-              {
-                path: 'flex',
-                element: <FlexExample />
-              },
-              {
-                path: 'stack',
-                element: <StackExample />
-              },
-              {
-                path: 'float',
-                element: <FloatExample />
-              },
-              {
-                path: 'interactions',
-                element: <InteractionsExample />
-              },
-              {
-                path: 'opacity',
-                element: <OpacityExample />
-              },
-              {
-                path: 'overflow',
-                element: <OverflowExample />
-              },
-              {
-                path: 'position',
-                element: <PositionExample />
-              },
-              {
-                path: 'shadows',
-                element: <ShadowsExample />
-              },
-              {
-                path: 'sizing',
-                element: <SizingExample />
-              },
-              {
-                path: 'spacing',
-                element: <SpacingExample />
-              },
-              {
-                path: 'typography',
-                element: <TypographyExample />
-              },
-              {
-                path: 'vertical-align',
-                element: <VerticalAlignExample />
-              },
-              {
-                path: 'visibility',
-                element: <VisibilityExample />
+                path: 'compose',
+                element: <Compose />
               }
             ]
-          }
-        ]
-      },
-      {
-        path: '/documentation',
-        children: [
-          {
-            path: 'getting-started',
-            element: <GettingStarted />
           },
           {
-            path: 'design-file',
-            element: <DesignFile />
-          },
-          {
-            path: 'customization',
+            path: '/pages/pricing/',
             children: [
               {
-                path: 'configuration',
-                element: <Configuration />
-              },
+                path: 'pricing-column',
+                element: <PricingColumn />
+              }
+            ]
+          },
+          {
+            path: '/pages/demo/',
+            children: [
               {
-                path: 'styling',
-                element: <Styling />
+                path: 'vertical-sidenav',
+                element: <VerticalSidenav />
               },
               {
                 path: 'dark-mode',
-                element: <DarkMode />
+                element: <DarkModeDemo />
+              },
+              {
+                path: 'sidenav-collapse',
+                element: <SidenavCollapse />
+              },
+              {
+                path: 'darknav',
+                element: <Darknav />
+              },
+              {
+                path: 'topnav-slim',
+                element: <TopnavSlim />
+              },
+              {
+                path: 'navbar-top-slim',
+                element: <NavbarTopSlim />
+              },
+              {
+                path: 'navbar-top',
+                element: <NavbarTop />
+              },
+              {
+                path: 'horizontal-slim',
+                element: <NavbarHorizontalSlim />
+              },
+              {
+                path: 'combo-nav',
+                element: <ComboNav />
+              },
+              {
+                path: 'combo-nav-slim',
+                element: <ComboNavSlim />
+              },
+              {
+                path: 'dual-nav',
+                element: <DualNav />
               }
             ]
+          },
+          {
+            path: '/modules',
+            children: [
+              {
+                path: 'tables',
+                children: [
+                  {
+                    path: 'basic-tables',
+                    element: <BasicTableExample />
+                  },
+                  {
+                    path: 'advance-tables',
+                    element: <AdvanceTableExample />
+                  }
+                ]
+              },
+              {
+                path: 'charts',
+                children: [
+                  {
+                    path: 'e-charts',
+                    element: <ECharts />
+                  },
+                  {
+                    path: 'gantt-chart',
+                    element: <GanttChart />
+                  }
+                ]
+              },
+              {
+                path: 'icons',
+                children: [
+                  {
+                    path: 'font-awesome',
+                    element: <FontAwesome />
+                  },
+                  {
+                    path: 'feather',
+                    element: <FeatherIconExample />
+                  },
+                  {
+                    path: 'unicons',
+                    element: <Unicons />
+                  }
+                ]
+              },
+              {
+                path: 'components',
+                children: [
+                  {
+                    path: 'accordion',
+                    element: <AccordionExample />
+                  },
+                  {
+                    path: 'avatar',
+                    element: <AvatarExample />
+                  },
+                  {
+                    path: 'alerts',
+                    element: <AlertsExample />
+                  },
+                  {
+                    path: 'button',
+                    element: <ButtonExample />
+                  },
+                  {
+                    path: 'badge',
+                    element: <BadgeExample />
+                  },
+                  {
+                    path: 'breadcrumb',
+                    element: <BreadcrumbExample />
+                  },
+                  {
+                    path: 'card',
+                    element: <CardExample />
+                  },
+                  {
+                    path: 'carousel/bootstrap',
+                    element: <BootstrapCarousel />
+                  },
+                  {
+                    path: 'carousel/swiper',
+                    element: <SwiperCarousel />
+                  },
+                  {
+                    path: 'collapse',
+                    element: <CollapseExample />
+                  },
+                  {
+                    path: 'dropdown',
+                    element: <DropdownExample />
+                  },
+                  {
+                    path: 'list-group',
+                    element: <ListGroupExample />
+                  },
+                  {
+                    path: 'countup',
+                    element: <CountupExample />
+                  },
+                  {
+                    path: 'modal',
+                    element: <ModalExample />
+                  },
+                  {
+                    path: 'offcanvas',
+                    element: <OffcanvasExample />
+                  },
+                  {
+                    path: 'progress-bar',
+                    element: <ProgressbarExample />
+                  },
+                  {
+                    path: 'placeholder',
+                    element: <PlaceholderExample />
+                  },
+                  {
+                    path: 'pagination',
+                    element: <PaginationExample />
+                  },
+                  {
+                    path: 'popovers',
+                    element: <PopoversExample />
+                  },
+                  {
+                    path: 'spinners',
+                    element: <SpinnerExample />
+                  },
+                  {
+                    path: 'toast',
+                    element: <ToastsExample />
+                  },
+                  {
+                    path: 'tooltips',
+                    element: <TooltipExample />
+                  },
+                  {
+                    path: 'navs-and-tabs/navs',
+                    element: <NavsExample />
+                  },
+                  {
+                    path: 'navs-and-tabs/tabs',
+                    element: <TabsExample />
+                  },
+                  {
+                    path: 'navs-and-tabs/navbar',
+                    element: <NavbarExample />
+                  },
+                  {
+                    path: 'pictures/lightbox',
+                    element: <LightboxExample />
+                  }
+                ]
+              },
+              {
+                path: 'forms',
+                children: [
+                  {
+                    path: 'form-control',
+                    element: <FormControlExample />
+                  },
+                  {
+                    path: 'input-group',
+                    element: <InputGroupExample />
+                  },
+                  {
+                    path: 'select',
+                    element: <SelectExample />
+                  },
+                  {
+                    path: 'checks',
+                    element: <ChecksExample />
+                  },
+                  {
+                    path: 'range',
+                    element: <RangeExample />
+                  },
+                  {
+                    path: 'floating-labels',
+                    element: <FloatingLabelExample />
+                  },
+                  {
+                    path: 'layout',
+                    element: <FormLayoutExample />
+                  },
+                  {
+                    path: 'editor',
+                    element: <EditorExample />
+                  },
+                  {
+                    path: 'advance-select',
+                    element: <AdvanceSelectExample />
+                  },
+                  {
+                    path: 'date-picker',
+                    element: <DatePickerExample />
+                  },
+                  {
+                    path: 'emoji-button',
+                    element: <EmojiButtonExample />
+                  },
+                  {
+                    path: 'file-uploader',
+                    element: <FileUploaderExample />
+                  },
+                  {
+                    path: 'rating',
+                    element: <RatingExample />
+                  },
+                  {
+                    path: 'validation',
+                    element: <FormValidationExample />
+                  }
+                ]
+              },
+              {
+                path: 'utilities',
+                children: [
+                  {
+                    path: 'background',
+                    element: <BackgroundExample />
+                  },
+                  {
+                    path: 'borders',
+                    element: <BorderExample />
+                  },
+                  {
+                    path: 'colors',
+                    element: <ColorsExample />
+                  },
+                  {
+                    path: 'display',
+                    element: <DisplayExample />
+                  },
+                  {
+                    path: 'grid',
+                    element: <GridExample />
+                  },
+                  {
+                    path: 'flex',
+                    element: <FlexExample />
+                  },
+                  {
+                    path: 'stack',
+                    element: <StackExample />
+                  },
+                  {
+                    path: 'float',
+                    element: <FloatExample />
+                  },
+                  {
+                    path: 'interactions',
+                    element: <InteractionsExample />
+                  },
+                  {
+                    path: 'opacity',
+                    element: <OpacityExample />
+                  },
+                  {
+                    path: 'overflow',
+                    element: <OverflowExample />
+                  },
+                  {
+                    path: 'position',
+                    element: <PositionExample />
+                  },
+                  {
+                    path: 'shadows',
+                    element: <ShadowsExample />
+                  },
+                  {
+                    path: 'sizing',
+                    element: <SizingExample />
+                  },
+                  {
+                    path: 'spacing',
+                    element: <SpacingExample />
+                  },
+                  {
+                    path: 'typography',
+                    element: <TypographyExample />
+                  },
+                  {
+                    path: 'vertical-align',
+                    element: <VerticalAlignExample />
+                  },
+                  {
+                    path: 'visibility',
+                    element: <VisibilityExample />
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            path: '/documentation',
+            children: [
+              {
+                path: 'getting-started',
+                element: <GettingStarted />
+              },
+              {
+                path: 'design-file',
+                element: <DesignFile />
+              },
+              {
+                path: 'customization',
+                children: [
+                  {
+                    path: 'configuration',
+                    element: <Configuration />
+                  },
+                  {
+                    path: 'styling',
+                    element: <Styling />
+                  },
+                  {
+                    path: 'dark-mode',
+                    element: <DarkMode />
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            path: 'changelog',
+            element: <ChangeLog />
+          },
+          {
+            path: '*',
+            element: <ComingSoon />
           }
         ]
       },
       {
-        path: 'changelog',
-        element: <ChangeLog />
+        element: <EcommerceLayout />,
+        path: '/apps/e-commerce/customer/',
+        children: [
+          {
+            path: 'homepage',
+            element: <Homepage />
+          },
+          {
+            path: 'product-details',
+            element: <ProductDetails />
+          },
+          {
+            path: 'cart',
+            element: <Cart />
+          },
+          {
+            path: 'checkout',
+            element: <Checkout />
+          },
+          {
+            path: 'shipping-info',
+            element: <ShippingInfo />
+          },
+          {
+            path: 'profile',
+            element: <Profile />
+          },
+          {
+            path: 'products-filter',
+            element: <ProductsFilter />
+          },
+          {
+            path: 'wishlist',
+            element: <Wishlist />
+          },
+          {
+            path: 'favorite-stores',
+            element: <FavoriteStores />
+          },
+          {
+            path: 'order-tracking',
+            element: <OrderTracking />
+          },
+          {
+            path: 'invoice',
+            element: <Invoice />
+          }
+        ]
       },
       {
-        path: '*',
-        element: <ComingSoon />
+        path: '/landing/default',
+        element: <Default />
+      },
+      {
+        path: '/pages/errors/',
+        children: [
+          {
+            path: '404',
+            element: <Error404 />
+          },
+          {
+            path: '403',
+            element: <Error403 />
+          },
+          {
+            path: '500',
+            element: <Error500 />
+          }
+        ]
+      },
+      {
+        element: <SimpleAuthLayout />,
+        path: '/pages/authentication/simple/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <SimpleSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <SimpleSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <SimpleSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <SimpleForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <SimpleResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <SimpleLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <SimpleTwoFA />
+          }
+        ]
+      },
+      {
+        path: 'showcase',
+        element: <Showcase />
       }
     ]
-  },
-  {
-    element: <EcommerceLayout />,
-    path: '/apps/e-commerce/customer/',
-    children: [
-      {
-        path: 'homepage',
-        element: <Homepage />
-      },
-      {
-        path: 'product-details',
-        element: <ProductDetails />
-      },
-      {
-        path: 'cart',
-        element: <Cart />
-      },
-      {
-        path: 'checkout',
-        element: <Checkout />
-      },
-      {
-        path: 'shipping-info',
-        element: <ShippingInfo />
-      },
-      {
-        path: 'profile',
-        element: <Profile />
-      },
-      {
-        path: 'products-filter',
-        element: <ProductsFilter />
-      },
-      {
-        path: 'wishlist',
-        element: <Wishlist />
-      },
-      {
-        path: 'favorite-stores',
-        element: <FavoriteStores />
-      },
-      {
-        path: 'order-tracking',
-        element: <OrderTracking />
-      },
-      {
-        path: 'invoice',
-        element: <Invoice />
-      }
-    ]
-  },
-  {
-    path: '/landing/default',
-    element: <Default />
-  },
-  {
-    path: '/pages/errors/',
-    children: [
-      {
-        path: '404',
-        element: <Error404 />
-      },
-      {
-        path: '403',
-        element: <Error403 />
-      },
-      {
-        path: '500',
-        element: <Error500 />
-      }
-    ]
-  },
-  {
-    element: <SimpleAuthLayout />,
-    path: '/pages/authentication/simple/',
-    children: [
-      {
-        path: 'sign-in',
-        element: <SimpleSignIn />
-      },
-      {
-        path: 'sign-up',
-        element: <SimpleSignUp />
-      },
-      {
-        path: 'sign-out',
-        element: <SimpleSignOut />
-      },
-      {
-        path: 'forgot-password',
-        element: <SimpleForgotPassword />
-      },
-      {
-        path: 'reset-password',
-        element: <SimpleResetPassword />
-      },
-      {
-        path: 'lock-screen',
-        element: <SimpleLockScreen />
-      },
-      {
-        path: '2FA',
-        element: <SimpleTwoFA />
-      }
-    ]
-  },
-  {
-    path: 'showcase',
-    element: <Showcase />
   }
 ];
 
