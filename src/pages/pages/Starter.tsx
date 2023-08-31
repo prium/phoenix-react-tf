@@ -2,6 +2,8 @@ import React from 'react';
 import { Stack } from 'react-bootstrap';
 import starterImg from 'assets/img/spot-illustrations/2.png';
 import starterDarkImg from 'assets/img/spot-illustrations/dark_2.png';
+import Button from 'components/base/Button';
+import { Link } from 'react-router-dom';
 
 const Starter = () => {
   return (
@@ -20,12 +22,13 @@ const Starter = () => {
           alt="starter"
         />
         <h1 className="text-800 fw-normal mb-5">Create Something Beautiful.</h1>
-        <a
+        <Button
+          as={Link}
           className="btn btn-lg btn-primary"
-          href="../documentation/getting-started.html"
+          to="/documentation/getting-started"
         >
           Getting Started
-        </a>
+        </Button>
       </div>
     </Stack>
   );

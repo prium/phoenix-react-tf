@@ -104,7 +104,11 @@ const GalleryItem = ({
       className={`${galleryItem.className} cursor-pointer`}
       onClick={onClick}
     >
-      <img src={galleryItem.img} alt="" className="rounded img-fluid" />
+      <img
+        src={galleryItem.img}
+        alt=""
+        className="rounded h-100 w-100 fit-cover"
+      />
     </div>
   );
 };

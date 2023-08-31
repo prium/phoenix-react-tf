@@ -61,12 +61,12 @@ const DocPagesLayout = ({
   }, []);
 
   return (
-    <Row className="g-3">
+    <Row className="gx-3 gy-4 mb-7">
       <Col xs={12} xl={10} className="order-1 order-xl-0">
         {children}
       </Col>
       <Col xs={12} xl={2}>
-        <div className="position-sticky mt-xl-4" style={{ top: 80 }}>
+        <div className="position-sticky" style={{ top: 80 }}>
           <h5>On this page</h5>
           <hr className="text-300" />
           <Nav as="ul" className="flex-column nav-vertical doc-nav">

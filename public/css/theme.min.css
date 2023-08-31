@@ -20507,6 +20507,13 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-spinner-height: 0.8rem;
 }
 
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: none;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Browser Fixing                               */
 /* -------------------------------------------------------------------------- */

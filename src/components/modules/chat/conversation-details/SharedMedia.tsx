@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Lightbox from 'components/base/LightBox';
+import Portal from 'components/base/Portal';
 import { attachments } from 'data/chat';
 import useLightbox from 'hooks/useLightbox';
 import { Col, Row } from 'react-bootstrap';
@@ -30,7 +31,9 @@ const SharedMedia = () => {
             </Col>
           ))}
         </Row>
-        <Lightbox {...lightboxProps} />
+        <Portal>
+          <Lightbox {...lightboxProps} />
+        </Portal>
       </div>
     </div>
   );

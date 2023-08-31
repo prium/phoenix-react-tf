@@ -1,10 +1,11 @@
 import { capitalize } from 'helpers/utils';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dropdown, Nav } from 'react-bootstrap';
 import { RouteItems, routes } from 'sitemap';
 import TopNavMegaMenu from './TopNavMegaMenu';
 import TopNavItem from './TopNavItem';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
+import { useLocation } from 'react-router-dom';
 
 const NavbarTopNav = () => {
   return (
@@ -19,6 +20,7 @@ const NavbarTopNav = () => {
 const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
   const Icon = route.icon;
   const [show, setShow] = useState(false);
+  const { pathname } = useLocation();
 
   const { breakpoints } = useBreakpoints();
 
@@ -37,6 +39,12 @@ const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
   const handleClick = () => {
     setShow(!show);
   };
+
+  useEffect(() => {
+    if (show) {
+      setShow(false);
+    }
+  }, [pathname]);
 
   return (
     <Dropdown

@@ -52,7 +52,8 @@ const ShowcaseNavbar = () => {
           <div className="d-grid d-lg-flex align-items-center">
             <Button
               variant="primary"
-              href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
+              as={Link}
+              to="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
               target="_blank"
             >
               Purchase

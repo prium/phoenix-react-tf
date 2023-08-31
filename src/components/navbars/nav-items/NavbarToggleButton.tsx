@@ -1,12 +1,14 @@
 import { useAppContext } from 'providers/AppProvider';
 import { useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 
 const NavbarToggleButton = () => {
   const {
     config: { openNavbarVertical },
     setConfig
   } = useAppContext();
+  const { pathname } = useLocation();
 
   const toggleOpenNavbarVertical = () => {
     setConfig({
@@ -21,6 +23,14 @@ const NavbarToggleButton = () => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    if (openNavbarVertical) {
+      setConfig({
+        openNavbarVertical: false
+      });
+    }
+  }, [pathname]);
 
   return (
     <Navbar.Toggle
