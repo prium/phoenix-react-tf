@@ -42,7 +42,7 @@ const PhoenixDocCard = ({
     <Card
       className={classNames(
         className,
-        'shadow-none border border-300 overflow-hidden'
+        'shadow-none border border-300 overflow-visible'
       )}
     >
       {noProvider ? (
