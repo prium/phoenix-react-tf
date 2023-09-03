@@ -24,7 +24,7 @@ const ShowcaseNavbar = () => {
             <Nav.Item className="border-bottom border-bottom-lg-0">
               <Nav.Link
                 as={Link}
-                to="#!"
+                to="/documentation/getting-started"
                 className="fs-9 fw-bold pe-3 active"
                 aria-current="page"
               >

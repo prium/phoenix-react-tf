@@ -1,5 +1,6 @@
 import Logo from 'components/common/Logo';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const PreFooter = () => {
   return (
@@ -14,13 +15,13 @@ const PreFooter = () => {
             </p>
           </Col>
           <Col md={6} className="d-lg-flex justify-content-lg-end text-center">
-            <a href="documentation/getting-started.html" className="me-4">
+            <Link to="/documentation/getting-started" className="me-4">
               Documentation
-            </a>
-            <a href="mailto:support@themewagon.com" className="me-4">
+            </Link>
+            <Link to="mailto:support@themewagon.com" className="me-4">
               Support
-            </a>
-            <a href="changelog.html">Changelog</a>
+            </Link>
+            <Link to="/changelog">Changelog</Link>
           </Col>
         </Row>
       </div>

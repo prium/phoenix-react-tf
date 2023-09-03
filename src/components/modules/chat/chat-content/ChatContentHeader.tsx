@@ -3,6 +3,7 @@ import Button from 'components/base/Button';
 import { Card, Dropdown } from 'react-bootstrap';
 import { useChatContext } from 'providers/ChatProvider';
 import classNames from 'classnames';
+import { useMemo } from 'react';
 
 const ChatContentHeader = () => {
   const {
@@ -10,6 +11,10 @@ const ChatContentHeader = () => {
     setShowConversationDetails,
     setShowUserListOffcanvas
   } = useChatContext();
+
+  const firstName = useMemo(() => {
+    return currentConversation?.user.name.split(' ')[0] || '';
+  }, [currentConversation]);
 
   return (
     <>
@@ -28,9 +33,7 @@ const ChatContentHeader = () => {
                   className="fs-7 fw-semi-bold text-1100 d-flex align-items-center p-0 me-3 text-start"
                   onClick={() => setShowConversationDetails(true)}
                 >
-                  <span className="line-clamp-1">
-                    {currentConversation.user.name}
-                  </span>
+                  <span>{firstName}</span>
                   <FontAwesomeIcon icon="chevron-down" className="ms-2 fs-10" />
                 </Button>
                 <p className="fs-9 mb-0 me-2">

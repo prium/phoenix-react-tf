@@ -84,7 +84,7 @@ const PhoenixDocCardHeader = ({
         <Col xs={12} md>
           {title && (
             <h4
-              className={classNames('text-900', {
+              className={classNames('text-900 text-nowrap', {
                 'mb-0': !children && !description,
                 'mb-2': children || description
               })}

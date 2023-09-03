@@ -29494,10 +29494,15 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 @media (min-width: 576px) {
   .category-dropdown-menu {
-    min-width: 520px;
+    min-width: 500px;
   }
 }
 @media (min-width: 768px) {
+  .category-dropdown-menu {
+    min-width: 680px;
+  }
+}
+@media (min-width: 992px) {
   .category-dropdown-menu {
     min-width: 750px;
   }
