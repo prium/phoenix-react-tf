@@ -13,7 +13,8 @@ const NavbarTopSlim = () => {
 
   useConfigMountEffect({
     navbarTopShape: 'slim',
-    navbarPosition: 'horizontal'
+    navbarPosition: 'horizontal',
+    navbarTopAppearance: 'darker'
   });
 
   return <Ecommerce />;

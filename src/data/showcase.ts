@@ -54,13 +54,13 @@ export const demos = [
     sideThumb: demo9,
     mainThumb: demo8,
     variantName: 'Topnav Only',
-    link: '#!'
+    link: '/pages/demo/navbar-top'
   },
   {
     sideThumb: demo11,
     mainThumb: demo10,
     variantName: 'Horizontal Slim',
-    link: '#!'
+    link: '/pages/demo/navbar-top-slim'
   },
   {
     sideThumb: demo13,
@@ -72,7 +72,7 @@ export const demos = [
     sideThumb: demo15,
     mainThumb: demo14,
     variantName: 'Dual Nav',
-    link: '#!'
+    link: '/pages/demo/dual-nav'
   }
 ];
 
