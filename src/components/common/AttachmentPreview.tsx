@@ -28,7 +28,7 @@ const AttachmentPreview = ({
     <a href="#!" className="text-decoration-none d-flex align-items-center">
       <div
         className={classNames(
-          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 border position-relative`,
+          `btn-icon btn-icon-${size} rounded-3 flex-column me-2 position-relative`,
           {
             border: !attachment.preview,
             'text-500 border-500': type === 'primary',
