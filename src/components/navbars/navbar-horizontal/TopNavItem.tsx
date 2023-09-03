@@ -2,7 +2,7 @@ import { Dropdown } from 'react-bootstrap';
 import { Fragment, useState } from 'react';
 import { Route, RouteItems } from 'sitemap';
 import { capitalize } from 'helpers/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FeatherIcon from 'feather-icons-react';
 import { UilAngleRight } from '@iconscout/react-unicons';
@@ -79,7 +79,9 @@ const TopNavLooper = ({ page }: { page: Route }) => {
         >
           <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
           <span>
-            <FeatherIcon icon={page.icon} size={16} className="me-2" />
+            {page.icon && (
+              <FeatherIcon icon={page.icon} size={16} className="me-2" />
+            )}
             {capitalize(page.name)}
           </span>
         </div>
@@ -100,13 +102,15 @@ const TopNavLooper = ({ page }: { page: Route }) => {
 };
 
 const TopNavDropdownItem = ({ page }: { page: Route }) => {
+  const { pathname } = useLocation();
   return (
     <li>
       <Dropdown.Item
         as={Link}
         to={page.path || '#!'}
         className={classNames({
-          'text-300': !page.active
+          'text-300': !page.active,
+          active: pathname === page.path
         })}
       >
         <div className="dropdown-item-wrapper">

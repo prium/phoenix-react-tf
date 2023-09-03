@@ -20,7 +20,7 @@ const TodoList = () => {
               <p className="mb-0 text-700">Task assigned to me</p>
             </Col>
             <Col xs="auto" className="w-100 w-md-auto">
-              <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-5 gap-y-3">
+              <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-3 gap-y-3">
                 <SearchBox
                   placeholder="Search tasks"
                   style={{ maxWidth: '30rem' }}

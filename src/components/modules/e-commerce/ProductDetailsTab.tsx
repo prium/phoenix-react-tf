@@ -11,9 +11,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReviewModal from 'components/modals/ReviewModal';
 import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCard';
 import { suggestedProducts } from 'data/e-commerce/products';
+import useLightbox from 'hooks/useLightbox';
+import Lightbox from 'components/base/LightBox';
 
 const ProductDetailsTab = () => {
   const [openReviewModal, setOpenReviewModal] = useState(false);
+  const { lightboxProps, openLightbox } = useLightbox([product23]);
   return (
     <>
       <Tab.Container defaultActiveKey="description">
@@ -56,11 +59,13 @@ const ProductDetailsTab = () => {
                   working with large photos are faster than ever before thanks
                   to the power and performance of M1 and macOS Big Sur.
                 </p>
+                <Lightbox {...lightboxProps} />
                 <Link to="#!">
                   <img
                     src={product23}
                     alt=""
                     className="img-fluid mb-5 rounded-3"
+                    onClick={() => openLightbox(1)}
                   />
                 </Link>
                 <p className="mb-0">

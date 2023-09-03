@@ -67,7 +67,7 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'social-feed',
-            path: 'apps/social/feed',
+            path: '/apps/social/feed',
             pathName: 'social-feed',
             topNavIcon: 'share-2',
             active: true
@@ -279,7 +279,7 @@ export const routes: RouteItems[] = [
       {
         name: 'chat',
         icon: 'message-square',
-        path: 'apps/chat',
+        path: '/apps/chat',
         pathName: 'app-chat',
         active: true
       },
@@ -429,14 +429,14 @@ export const routes: RouteItems[] = [
       {
         name: 'members',
         icon: 'users',
-        path: 'pages/members',
+        path: '/pages/members',
         pathName: 'members-page',
         active: true
       },
       {
         name: 'timeline',
         icon: 'clock',
-        path: 'pages/timeline',
+        path: '/pages/timeline',
         pathName: 'timeline-page'
       },
       {
@@ -445,15 +445,15 @@ export const routes: RouteItems[] = [
         active: true,
         pages: [
           {
-            name: '404',
-            path: 'pages/errors/404',
-            pathName: 'error404',
-            active: true
-          },
-          {
             name: '403',
             path: 'pages/errors/403',
             pathName: 'error403',
+            active: true
+          },
+          {
+            name: '404',
+            path: 'pages/errors/404',
+            pathName: 'error404',
             active: true
           },
           {

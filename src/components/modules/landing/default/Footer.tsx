@@ -43,7 +43,7 @@ const Footer = () => {
     <div className="position-relative">
       <div
         className="bg-holder footer-bg"
-        style={{ backgroundImage: `url(${bg19})` }}
+        style={{ backgroundImage: `url(${bg19})`, backgroundSize: 'auto' }}
       />
       <div
         className="bg-holder"
@@ -72,10 +72,10 @@ const Footer = () => {
         >
           <path d="M1920 0.44L0 367.74V0H1920V0.44Z" fill="currentColor" />
         </svg>
-        <section style={{ paddingTop: 250 }}>
-          <div className="container-small px-lg-7 px-xxl-3 footer-default">
+        <section className="footer-default">
+          <div className="container-small px-lg-7 px-xxl-3">
             <Row className="position-relative">
-              <Col xs={12} md={12} lg={5} className="mb-4 order-0 order-md-0">
+              <Col xs={12} lg={5} className="mb-4 order-0 order-sm-0">
                 <Link to="#!">
                   <img className="mb-3" src={logoWhite} height="48" alt="" />
                 </Link>
@@ -86,9 +86,9 @@ const Footer = () => {
                   wonderland and other places.
                 </p>
               </Col>
-              <Col md={7}>
-                <Row className="justify-content-between g-4">
-                  <Col xs={6} md={4} lg={3}>
+              <Col lg={7}>
+                <Row className="justify-content-between">
+                  <Col xs={6} sm={4} lg={3} className="mb-3 order-2 order-sm-1">
                     <FooterList
                       label="Help"
                       className="mb-4"
@@ -99,7 +99,7 @@ const Footer = () => {
                       items={['Facebook', 'Twitter', 'Linkedin']}
                     />
                   </Col>
-                  <Col xs={6} md={4} lg={3}>
+                  <Col xs={6} sm={4} lg={3} className="mb-3 order-3 order-sm-2">
                     <FooterList
                       label="Support"
                       items={[
@@ -113,7 +113,7 @@ const Footer = () => {
                       ]}
                     />
                   </Col>
-                  <Col xs={6} md={4} lg={3}>
+                  <Col xs={6} md={4} lg={3} className="mb-3 order-3 order-sm-2">
                     <FooterList
                       label="Info"
                       items={[

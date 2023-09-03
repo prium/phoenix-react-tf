@@ -329,7 +329,7 @@ const autoCloseCode = `
 
 const DropdownExample = () => {
   return (
-    <div>
+    <div className="mb-9">
       <DocPageHeader
         title="Dropdowns"
         description="Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin"
@@ -344,40 +344,40 @@ const DropdownExample = () => {
       <DocPagesLayout>
         <Row className="g-3">
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="mb-4 overflow-visible">
               <PhoenixDocCard.Header title="Example" />
               <PhoenixDocCard.Body code={exampleCode} />
             </PhoenixDocCard>
           </Col>
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="mb-4 overflow-visible">
               <PhoenixDocCard.Header title="Dropwdown Button" />
               <PhoenixDocCard.Body code={dropdownBtnCode} />
             </PhoenixDocCard>
           </Col>
         </Row>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Button Variant" />
           <PhoenixDocCard.Body code={btnVariantCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Button Split" />
           <PhoenixDocCard.Body code={splitBtnCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Sizing" />
           <PhoenixDocCard.Body code={sizingCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Directions" />
           <PhoenixDocCard.Body code={directionCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Dropdown items">
             <p>
               Historically dropdown menu contents had to be links, but that’s no
@@ -394,7 +394,7 @@ const DropdownExample = () => {
           <PhoenixDocCard.Body code={dropdownItemsCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Menu alignment">
             <p className="mb-0">
               By default, a dropdown menu is aligned to the left, but you can
@@ -406,7 +406,7 @@ const DropdownExample = () => {
           <PhoenixDocCard.Body code={menuAlignMentCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Responsive alignment">
             <p className="mb-0">
               If you want to use responsive menu alignment, pass an object
@@ -421,7 +421,7 @@ const DropdownExample = () => {
           <PhoenixDocCard.Body code={responsiveAlignmentCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Auto Close">
             <p>
               By default, the dropdown menu is closed when selecting a menu item
@@ -447,13 +447,13 @@ const DropdownExample = () => {
 
         <Row className="g-3">
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="overflow-visible">
               <PhoenixDocCard.Header title="Dropwdown Headers" />
               <PhoenixDocCard.Body code={headerCode} />
             </PhoenixDocCard>
           </Col>
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="overflow-visible">
               <PhoenixDocCard.Header title="Dropwdown Divider" />
               <PhoenixDocCard.Body code={dividerCode} />
             </PhoenixDocCard>

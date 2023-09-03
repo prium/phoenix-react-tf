@@ -1,7 +1,7 @@
 import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Route, RouteItems } from 'sitemap';
 import { capitalize } from 'helpers/utils';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
 import Scrollbar from 'components/base/Scrollbar';
@@ -74,6 +74,7 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
 };
 
 const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
+  const { pathname } = useLocation();
   return (
     <>
       {page.pages?.map(page => (
@@ -84,7 +85,8 @@ const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
             <Link
               to={page.path || '#!'}
               className={classNames('dropdown-link', {
-                'text-300': !page.active
+                'text-300': !page.active,
+                active: pathname === page.path
               })}
             >
               {capitalize(page.name)}

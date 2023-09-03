@@ -13,7 +13,7 @@ const SocialCoverCard = () => {
   return (
     <Card className="mb-5">
       <Card.Header
-        className="hover-actions-trigger d-flex justify-content-center align-items-end position-relative mb-7 mb-xxl-0"
+        className="d-flex justify-content-center align-items-end position-relative mb-7 mb-xxl-0"
         style={{ minHeight: '214px' }}
       >
         <CoverUpload src={coverImage} />

@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import Lightbox from 'components/base/LightBox';
 import Rating from 'components/base/Rating';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { ProductReviewType } from 'data/e-commerce';
+import useLightbox from 'hooks/useLightbox';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const ProductReview = ({ review }: { review: ProductReviewType }) => {
+  const { lightboxProps, openLightbox } = useLightbox(review.images || []);
   return (
     <RevealDropdownTrigger className="mb-4 hover-actions-trigger">
       <div className="d-flex justify-content-between mb-2">
@@ -36,14 +39,16 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       </p>
       {review.images && (
         <Row className="g-2 mb-2">
-          {review.images.map(image => (
+          <Lightbox {...lightboxProps} />
+          {review.images.map((image, index) => (
             <Col xs="auto" key={image}>
               <img
                 src={image}
                 key={image}
                 alt=""
-                className="w-100"
+                className="w-100 fit-cover"
                 height={164}
+                onClick={() => openLightbox(index + 1)}
               />
             </Col>
           ))}

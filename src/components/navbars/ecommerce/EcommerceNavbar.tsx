@@ -16,9 +16,10 @@ import {
   Navbar,
   Row
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import Scrollbar from 'components/base/Scrollbar';
+import classNames from 'classnames';
 
 type NavItemType = {
   id: number;
@@ -30,48 +31,49 @@ const initNavItems: NavItemType[] = [
   {
     id: 1,
     label: 'Home',
-    url: '#!'
+    url: '/apps/e-commerce/customer/homepage'
   },
   {
     id: 2,
     label: 'My Favorite Stores',
-    url: '#!'
+    url: '/apps/e-commerce/customer/favorite-stores'
   },
   {
     id: 3,
     label: 'Products',
-    url: '#!'
+    url: '/apps/e-commerce/customer/products-filter'
   },
   {
     id: 4,
     label: 'Wishlist',
-    url: '#!'
+    url: '/apps/e-commerce/customer/wishlist'
   },
   {
     id: 5,
     label: 'Shipping Info',
-    url: '#!'
+    url: '/apps/e-commerce/customer/shipping-info'
   },
   {
     id: 6,
     label: 'Be a vendor',
-    url: '#!'
+    url: '/apps/e-commerce/admin/add-product'
   },
   {
     id: 7,
     label: 'Track order',
-    url: '#!'
+    url: '/apps/e-commerce/customer/order-tracking'
   },
   {
     id: 8,
     label: 'Checkout',
-    url: '#!'
+    url: '/apps/e-commerce/customer/checkout'
   }
 ];
 
 const EcommerceNavbar = () => {
   const [navItems, setNavItems] = useState(initNavItems);
   const [dropdownItems, setDropdownItems] = useState<NavItemType[]>([]);
+  const { pathname } = useLocation();
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const otherElsRef = useRef<HTMLDivElement | null>(null);
@@ -179,7 +181,14 @@ const EcommerceNavbar = () => {
         >
           {navItems.map(item => (
             <Nav.Item className="gap-3" key={item.id}>
-              <Nav.Link key={item.id} as={Link} to={item.url}>
+              <Nav.Link
+                key={item.id}
+                as={Link}
+                to={item.url}
+                className={classNames({
+                  active: pathname === item.url
+                })}
+              >
                 {item.label}
               </Nav.Link>
             </Nav.Item>
