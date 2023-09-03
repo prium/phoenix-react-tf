@@ -181,6 +181,7 @@ const PhoenixDocCardBody = ({
   );
 };
 
+PhoenixDocCardHeader.componentName = 'PhoenixDocCardHeader';
 PhoenixDocCard.Header = PhoenixDocCardHeader;
 PhoenixDocCard.Body = PhoenixDocCardBody;
 

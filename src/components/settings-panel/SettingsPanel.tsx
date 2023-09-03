@@ -72,7 +72,7 @@ const SettingsPanel = () => {
           as="a"
           target="_blank"
           href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
-          className="w-100 mb-3"
+          className="w-100 mb-3 text-white dark__text-100"
           variant="primary"
         >
           Purchase template

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { snakeCase } from 'helpers/utils';
 import React, {
@@ -36,13 +37,15 @@ const DocPagesLayout = ({
             if (
               child?.props?.children &&
               typeof child.type !== 'string' &&
-              child.type?.name !== 'PhoenixDocCardHeader'
+              //@ts-ignore
+              child.type?.componentName !== 'PhoenixDocCardHeader'
             ) {
               recursiveMap((child.props as any).children);
             } else {
               if (
                 typeof child.type !== 'string' &&
-                child.type?.name === 'PhoenixDocCardHeader' &&
+                //@ts-ignore
+                child.type?.componentName === 'PhoenixDocCardHeader' &&
                 (child.props as any).title
               ) {
                 items.push({
