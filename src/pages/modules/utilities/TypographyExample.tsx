@@ -176,14 +176,6 @@ const TypographyExample = () => {
           <PhoenixDocCard.Body code={textBreakCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header
-            title="Text transform"
-            description="Transform text in components with text capitalization classes."
-          />
-          <PhoenixDocCard.Body code={textTransformCode} />
-        </PhoenixDocCard>
-
         <PhoenixDocCard noProvider className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Font size">

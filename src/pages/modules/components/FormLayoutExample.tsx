@@ -361,11 +361,6 @@ const FormLayoutExample = () => {
           <PhoenixDocCard.Header title="Gutters" />
           <PhoenixDocCard.Body code={guttersCode} />
         </PhoenixDocCard>
-
-        <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Gutters" />
-          <PhoenixDocCard.Body code={guttersCode} />
-        </PhoenixDocCard>
       </DocPagesLayout>
     </div>
   );
