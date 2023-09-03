@@ -36,7 +36,7 @@ const FeatureFigma = () => {
           <img src={figmaIcon} alt="" />
           <h1 className="text-white">Figma design files</h1>
         </div>
-        <p>
+        <p className="mb-0 text-white">
           Modern &amp; highly customizable, simple and user-friendly UI
           components 🎨 based on Bootstrap design system only for you!
         </p>

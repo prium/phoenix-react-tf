@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { HTMLAttributes, useEffect, useRef } from 'react';
 import mapboxgl, { Map, MapboxOptions } from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -5,8 +6,12 @@ import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { useAppContext } from 'providers/AppProvider';
+// @ts-ignore
+import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
+// @ts-ignore
+mapboxgl.workerClass = MapboxWorker;
 
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;

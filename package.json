@@ -1,6 +1,6 @@
 {
   "name": "phoenix-react",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
@@ -55,7 +55,8 @@
     "react-textarea-autosize": "^8.5.2",
     "swiper": "^9.2.0",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",

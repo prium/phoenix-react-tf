@@ -1,10 +1,11 @@
 import AppProvider from 'providers/AppProvider';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import 'helpers/initFA';
 import BreakpointsProvider from 'providers/BreakpointsProvider';
 import SettingsPanelProvider from 'providers/SettingsPanelProvider';
+import { RouterProvider } from 'react-router-dom';
+import { router } from 'Routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,7 +15,7 @@ root.render(
     <AppProvider>
       <SettingsPanelProvider>
         <BreakpointsProvider>
-          <App />
+          <RouterProvider router={router} />
         </BreakpointsProvider>
       </SettingsPanelProvider>
     </AppProvider>

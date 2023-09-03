@@ -20472,6 +20472,13 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-spinner-height: 0.8rem;
 }
 
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: none;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Browser Fixing                               */
 /* -------------------------------------------------------------------------- */
@@ -29452,10 +29459,15 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 @media (min-width: 576px) {
   .category-dropdown-menu {
-    min-width: 520px;
+    min-width: 500px;
   }
 }
 @media (min-width: 768px) {
+  .category-dropdown-menu {
+    min-width: 680px;
+  }
+}
+@media (min-width: 992px) {
   .category-dropdown-menu {
     min-width: 750px;
   }

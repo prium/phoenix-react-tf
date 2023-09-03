@@ -19,7 +19,7 @@ const DocPageHeader = ({
   children,
   link,
   id,
-  className = 'mb-7'
+  className = 'mb-5'
 }: PropsWithChildren<DocPageHeaderProps>) => {
   return (
     <div className={classNames(className)} id={id}>

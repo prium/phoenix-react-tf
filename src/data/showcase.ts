@@ -20,8 +20,8 @@ import section21 from 'assets/img/sections/21.webp';
 import section22 from 'assets/img/sections/22.webp';
 import section23 from 'assets/img/sections/23.webp';
 import section24 from 'assets/img/sections/24.webp';
-import section25 from 'assets/img/sections/25.webp';
 import section26 from 'assets/img/sections/26.webp';
+import section27 from 'assets/img/sections/27.webp';
 
 import kanban from 'assets/img/sections/kanban.webp';
 
@@ -213,7 +213,7 @@ export const necessaryPages = [
     pageLink: '/pages/notifications/notifications'
   },
   {
-    thumb: section25,
+    thumb: section27,
     pageName: 'Authentication',
     pageLink: '/pages/authentication/simple/sign-in'
   },
@@ -227,32 +227,27 @@ export const necessaryPages = [
 export const showcaseFaqs = [
   {
     id: 1,
-    question: 'What about the update procedure of the theme?',
-    answer:
-      "This is our newest admin dashboard. We'll keep updating it according to users' needs. We keep a changelog with every release, so you'll be able to update the theme from one version to another with that changelog."
+    question: `Is this template built on Vite or Create React App scaffolding?`,
+    answer: 'This template is built using Create React App scaffolding.'
   },
   {
     id: 2,
-    question: 'Is there any Trial version of Phoenix?',
-    answer:
-      'We are sorry to inform you that there is no free or trial version of Phoenix, but you would get a full refund within 10 days if the template does not match your requirement.'
+    question: ` Is this template built using TypeScript?`,
+    answer: 'Yes, this template is built using TypeScript.'
   },
   {
     id: 3,
-    question: 'Is it possible to build a mobile app using Phoenix components?',
-    answer:
-      "Phoenix is made out of HTML, CSS, and JS. You can not use Phoenix as a 'Native' component library for an android or iOS app. But if you use a web-view for your app or use a framework that uses HTML, CSS, and JS for mobile app UI, yes, you can use Phoenix in that case."
+    question: `Is there any Trial version of ${process.env.REACT_APP_TITLE} React?`,
+    answer: `We are sorry to inform you that there is no free or trial version of  ${process.env.REACT_APP_TITLE} React, but you would get a full refund within 10 days if the template does not match your requirement.`
   },
   {
     id: 4,
-    question: `Can I use ${process.env.REACT_APP_TITLE} with Django?`,
-    answer:
-      "Many of our customers are using Phoenix with Django. Using Phoenix is like using Bootstrap with Django, just with some extra features. For a starter, you need to take all the CSS and JS files from Phoenix's 'public/assets' folder to your project and link them to your view files. You can find all the required scripts and styles on the source of the starter page. It is also possible to compile the SCSS and use the ES6 JavaScript partial files with Django using Phoenix's built-in gulp based workflow."
+    question: `Which bootstrap react framework you are using?`,
+    answer: `We are using React-Bootstrap for ${process.env.REACT_APP_TITLE} React`
   },
   {
     id: 5,
-    question: `Does ${process.env.REACT_APP_TITLE} incorporate properly with Laravel?`,
-    answer:
-      "Many of our customers are using Phoenix with Laravel. Using Phoenix is like using Bootstrap with Laravel, just with some extra features. For a starter, you need to take all the CSS and JS files from Phoenix's 'public/assets' folder to your project and link them to your view files. You can find all the required scripts and styles on the source of the starter page. It is also possible to compile the SCSS and use the ES6 JavaScript partial files with Laravel using Phoenix's built-in gulp based workflow."
+    question: 'Where will I get the Figma Files?',
+    answer: `You will find the Figma link in the README.md file on your downloaded copy of  ${process.env.REACT_APP_TITLE} React.`
   }
 ];
