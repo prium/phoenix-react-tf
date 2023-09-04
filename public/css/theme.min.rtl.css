@@ -302,6 +302,9 @@
   --phoenix-ghost-bg: var(--phoenix-gray-100);
   --phoenix-drag-bg: var(--phoenix-white);
   --phoenix-kanban-column-hover-bg: var(--phoenix-white);
+  /* -------------------------------- Leaflet ------------------------------- */
+  --phoenix-leaflet-bar-bg: #fff;
+  --phoenix-leaflet-popup-content-wrapper-bg: #fff;
 }
 :root .nav-slim,
 :root.light .nav-slim,
@@ -21712,18 +21715,13 @@ span.flatpickr-weekday,
 /* -------------------------------------------------------------------------- */
 /*                                   Leaflet                                  */
 /* -------------------------------------------------------------------------- */
-.leaflet-container {
-  background-color: var(--phoenix-gray-100);
-}
-
 .leaflet-bar {
   box-shadow: var(--phoenix-box-shadow);
 }
 .leaflet-bar a, .leaflet-bar a:hover {
-  background-color: var(--phoenix-body-bg);
+  background-color: var(--phoenix-leaflet-bar-bg);
   color: var(--phoenix-body-color);
   border-bottom-color: var(--phoenix-border-color);
-  text-decoration: none;
 }
 .leaflet-bar a.leaflet-disabled {
   background-color: var(--phoenix-gray-200);
@@ -21758,7 +21756,7 @@ span.flatpickr-weekday,
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background-color: var(--phoenix-body-bg);
+  background-color: var(--phoenix-leaflet-popup-content-wrapper-bg);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
   border-radius: 0.375rem;
 }
@@ -29086,6 +29084,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .badge-phoenix[href]:hover, .badge-phoenix[href]:focus {
   text-decoration: none;
+}
+
+.safari .badge-label {
+  transform: none !important;
 }
 
 .badge-phoenix-primary[href]:hover, .badge-phoenix-primary[href]:focus {

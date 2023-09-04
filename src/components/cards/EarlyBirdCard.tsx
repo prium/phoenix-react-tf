@@ -58,8 +58,11 @@ const EarlyBirdCard = () => {
       </Card.Body>
       <Card.Footer className="border-0 py-0 px-5 z-index-1">
         <p className="text-700 fw-semi-bold">
-          Follow <a href="https://themewagon.com/">ThemeWagon </a>at{' '}
-          <br className="d-none d-xxl-block" />
+          Follow{' '}
+          <a href="https://themewagon.com/" target="_blank" rel="noreferrer">
+            ThemeWagon{' '}
+          </a>
+          at <br className="d-none d-xxl-block" />
           Bootstrap Marketplace for updates.
         </p>
       </Card.Footer>

@@ -168,7 +168,7 @@ const routes: RouteObject[] = [
           },
 
           {
-            path: '/pages/notifications/notifications',
+            path: '/pages/notifications',
             element: <Notification />
           },
           {

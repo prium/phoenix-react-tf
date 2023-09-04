@@ -59,7 +59,7 @@ const Refund = () => {
                 <Form.Control
                   type="number"
                   placeholder="Amount"
-                  className="mb-4"
+                  className="mb-4 input-spin-none"
                 />
                 <Button variant="primary" className="w-100">
                   Refund $500

@@ -55,6 +55,11 @@
     }
   }
 }
+.safari {
+  .badge-label {
+    transform: none !important;
+  }
+}
 
 @each $color, $value in $theme-colors-light {
   .badge-phoenix-#{$color} {

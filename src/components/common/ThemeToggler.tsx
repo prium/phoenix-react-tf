@@ -30,7 +30,7 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
         <OverlayTrigger
           placement="left"
           overlay={
-            <Tooltip id="ThemeColor">
+            <Tooltip id="ThemeColor" style={{ position: 'fixed' }}>
               {slim
                 ? 'Switch theme'
                 : theme === 'dark'

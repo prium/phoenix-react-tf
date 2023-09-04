@@ -82,7 +82,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     header: 'RATING',
     cell: ({ row: { original } }) => {
       const { rating } = original;
-      return <Rating readonly initialValue={rating} />;
+      return <Rating iconClass="fs-10" readonly initialValue={rating} />;
     },
     meta: {
       headerProps: { style: { minWidth: 110 } }

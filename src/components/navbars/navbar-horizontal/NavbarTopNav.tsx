@@ -36,10 +36,6 @@ const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
     }
   };
 
-  const handleClick = () => {
-    setShow(!show);
-  };
-
   useEffect(() => {
     if (show) {
       setShow(false);
@@ -55,12 +51,13 @@ const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
       autoClose="outside"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onToggle={() => setShow(!show)}
     >
       <Dropdown.Toggle
         as="a"
         variant=""
         className="nav-link lh-1 d-flex align-items-center cursor-pointer"
-        onClick={handleClick}
+        // onClick={handleClick}
       >
         <Icon className="me-2" size={16} />
         <span>

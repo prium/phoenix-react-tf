@@ -10,6 +10,7 @@ interface RevealDropdownTriggerProps extends HTMLAttributes<HTMLDivElement> {
 interface RevealDropdownProps {
   className?: string;
   btnClassName?: string;
+  dropdownMenuClassName?: string;
   icon?: IconProp;
 }
 
@@ -29,6 +30,7 @@ const RevealDropdown = ({
   children,
   className,
   btnClassName,
+  dropdownMenuClassName,
   icon = 'ellipsis'
 }: PropsWithChildren<RevealDropdownProps>) => {
   return (
@@ -43,7 +45,10 @@ const RevealDropdown = ({
       >
         <FontAwesomeIcon icon={icon} className="fs-10" />
       </Dropdown.Toggle>
-      <Dropdown.Menu align="end" className="py-2">
+      <Dropdown.Menu
+        align="end"
+        className={classNames(dropdownMenuClassName, 'py-2')}
+      >
         {children}
       </Dropdown.Menu>
     </Dropdown>

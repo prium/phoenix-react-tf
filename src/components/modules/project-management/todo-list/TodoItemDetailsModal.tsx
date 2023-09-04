@@ -83,17 +83,28 @@ const TodoItemDetailsModal = ({
                     </Button>
                   </div>
 
-                  <div className="mb-3">
+                  <div>
                     <h4 className="mb-3">Files</h4>
-                    {attachments.map((attachment, index) => (
-                      <FileListItem
-                        key={attachment.name}
-                        attachment={attachment}
-                        className={classNames({
-                          'border-top': index === 0
-                        })}
-                      />
-                    ))}
+                    <div className="mb-3">
+                      {attachments.map((attachment, index) => (
+                        <FileListItem
+                          key={attachment.name}
+                          attachment={attachment}
+                          className={classNames({
+                            'border-top': index === 0
+                          })}
+                        />
+                      ))}
+                    </div>
+                    <Button
+                      variant="link"
+                      className="text-decoration-none p-0"
+                      startIcon={
+                        <FontAwesomeIcon icon="plus" className="me-1" />
+                      }
+                    >
+                      Add file(s)
+                    </Button>
                   </div>
                 </div>
               </Col>

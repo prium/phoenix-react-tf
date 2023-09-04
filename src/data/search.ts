@@ -25,59 +25,59 @@ export type SearchResult = {
 
 export const searchItems: SearchResult[] = [
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Store Macbook',
     category: 'recently_searched'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'MacBook Air - 13″',
     category: 'recently_searched'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     image: product60,
     label: 'MacBook Air - 13″',
     details: '8GB Memory - 1.6GHz - 128GB Storage',
     category: 'products'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     image: product60,
     label: 'MacBook Pro - 13″',
     details: '30 Sep at 12:30 PM',
     category: 'products'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Support MacBook House',
     category: 'quick_links'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Store MacBook″',
     category: 'quick_links'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Library MacBook folder.rar',
     format: 'rar',
     category: 'suggestion_files'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Feature MacBook extensions.txt',
     format: 'txt',
     category: 'suggestion_files'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'MacBook Pro_13.jpg',
     format: 'jpg',
     category: 'suggestion_files'
   },
   {
-    url: `#!`,
+    url: `/pages/members`,
     avatar: team10,
     label: 'Carry Anna',
     details: 'anna@technext.it',
@@ -85,20 +85,20 @@ export const searchItems: SearchResult[] = [
     category: 'members'
   },
   {
-    url: `#!`,
+    url: `/pages/members`,
     avatar: team12,
     label: 'John Smith',
     details: 'smith@technext.it',
     category: 'members'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Search in the Web MacBook',
     icon: ['fab', 'firefox-browser'],
     category: 'related_search'
   },
   {
-    url: `#!`,
+    url: `/apps/e-commerce/customer/product-details`,
     label: 'Store MacBook″',
     icon: ['fab', 'chrome'],
     category: 'related_search'

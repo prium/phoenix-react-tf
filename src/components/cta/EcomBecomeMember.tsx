@@ -27,7 +27,10 @@ const EcomBecomeMember = () => {
             Become a <span className="text-primary fw-bolder">member</span>{' '}
             today!
           </h1>
-          <Link to="#!" className="btn btn-lg btn-primary px-7">
+          <Link
+            to="/pages/authentication/simple/sign-up"
+            className="btn btn-lg btn-primary px-7"
+          >
             Sign up
             <FontAwesomeIcon icon="chevron-right" className="ms-2 fs-9" />
           </Link>

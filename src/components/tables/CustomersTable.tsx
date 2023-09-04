@@ -13,7 +13,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link to="#!" className="d-flex align-items-center text-1100">
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
         </Link>

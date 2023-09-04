@@ -32,6 +32,7 @@
     "fslightbox-react": "^1.7.6",
     "gh-pages": "^5.0.0",
     "gsap": "^3.12.2",
+    "is_js": "^0.9.0",
     "leaflet": "^1.9.4",
     "leaflet.tilelayer.colorfilter": "^1.2.5",
     "lodash.merge": "^4.6.2",
