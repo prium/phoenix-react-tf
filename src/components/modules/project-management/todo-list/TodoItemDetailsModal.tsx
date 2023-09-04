@@ -36,10 +36,10 @@ const TodoItemDetailsModal = ({
               <FontAwesomeIcon icon="xmark" />
             </Button>
           </Modal.Header>
-          <Modal.Body className="bg-100 px-6 py-0 rounded-bottom">
+          <Modal.Body className="bg-100 px-5 px-sm-6 py-0 rounded-bottom">
             <Row className="gx-14">
               <Col xs={12} lg={7} className="border-end-lg border-300">
-                <div className="py-6">
+                <div className="mt-6 mb-7">
                   <div className="mb-7">
                     <div className="d-flex align-items-center mb-3">
                       <h4 className="text-900 me-3">Description</h4>
@@ -74,16 +74,13 @@ const TodoItemDetailsModal = ({
                         />
                       ))}
                     </div>
-                    <Button
-                      variant="link"
-                      className="fw-bold fs-9 text-decoration-none p-0"
-                    >
+                    <Button variant="link" className="fw-bold fs-9 p-0">
                       <FontAwesomeIcon icon="plus" className="me-1" />
                       Add subtask
                     </Button>
                   </div>
 
-                  <div className="mb-3">
+                  <div>
                     <h4 className="mb-3">Files</h4>
                     {attachments.map((attachment, index) => (
                       <FileListItem
@@ -94,12 +91,16 @@ const TodoItemDetailsModal = ({
                         })}
                       />
                     ))}
+                    <Button variant="link" className="fs-9 p-0 mt-3">
+                      <FontAwesomeIcon icon="plus" className="me-1" />
+                      Add file(s)
+                    </Button>
                   </div>
                 </div>
               </Col>
               <Col xs={12} lg={5}>
-                <div className="py-6">
-                  <h4 className="mb-4 text-black">Others Information</h4>
+                <div className="mt-lg-6 mb-5 mb-sm-6">
+                  <h4 className="mb-5 text-black">Others Information</h4>
                   <h5 className="text-1000 mb-2">Status</h5>
                   <Form.Select className="mb-4">
                     <option>Select</option>
@@ -148,7 +149,7 @@ const TodoItemDetailsModal = ({
                         label: 'California Institute of Technology'
                       }
                     ]}
-                    className="mb-6"
+                    className="mb-5"
                     isMulti
                     placeholder="Select organizer"
                     icon={
@@ -159,7 +160,7 @@ const TodoItemDetailsModal = ({
                     }
                   />
 
-                  <div className="text-end mb-9">
+                  <div className="text-end">
                     <Button variant="phoenix-danger">Delete Task</Button>
                   </div>
                 </div>

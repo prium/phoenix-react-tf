@@ -31,7 +31,7 @@ const NavbarTopHorizontal = () => {
       <NavbarBrand />
       {!(navbarPosition === 'combo' && breakpoints.down('lg')) && (
         <Navbar.Collapse
-          className="navbar-top-collapse order-1 order-lg-0 justify-content-center"
+          className="navbar-top-collapse order-1 order-lg-0 justify-content-center pb-0"
           in={openNavbarVertical}
         >
           <NavbarTopNav />

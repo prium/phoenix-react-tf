@@ -46,7 +46,7 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
               <img
                 src={attachment.thumbnail}
                 alt={attachment.name}
-                className="rounded-2"
+                className="rounded-2 img-fluid"
               />
             )}
           </div>
