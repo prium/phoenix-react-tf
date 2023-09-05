@@ -25,7 +25,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
           >
             <FontAwesomeIcon icon="bars" className="fs-7 text-600" />
           </Dropdown.Toggle>
-          <Dropdown.Menu align="start" className="p-0">
+          <Dropdown.Menu align="start" className="p-0" style={{ zIndex: 1020 }}>
             <Dropdown.Item eventKey="1">All</Dropdown.Item>
             <Dropdown.Item eventKey="2">Read</Dropdown.Item>
             <Dropdown.Item eventKey="3">Unread</Dropdown.Item>

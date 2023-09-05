@@ -20946,6 +20946,13 @@ button,
   align-items: center;
 }
 
+[type=tel],
+[type=url],
+[type=email],
+[type=number] {
+  direction: ltr;
+}
+
 .star-rating {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjc4MTMgNC4xNzkzTDcuODcyNjYgMy43NjA5NEw2LjU1NzgxIDEuMTExMzNDNi4zMzg2NyAwLjY1MzEyNSA1LjY2MTMzIDAuNjMzMjAzIDUuNDIyMjcgMS4xMTEzM0w0LjEyNzM0IDMuNzYwOTRMMS4xOTg4MyA0LjE3OTNDMC42ODA4NiA0LjI1ODk4IDAuNDgxNjQxIDQuODk2NDggMC44NjAxNTcgNS4yNzVMMi45NTE5NSA3LjMyNjk1TDIuNDUzOTEgMTAuMjE1NkMyLjM3NDIyIDEwLjczMzYgMi45MzIwMyAxMS4xMzIgMy4zOTAyMyAxMC44OTNMNiA5LjUxODM2TDguNTg5ODQgMTAuODkzQzkuMDQ4MDUgMTEuMTMyIDkuNjA1ODYgMTAuNzMzNiA5LjUyNjE3IDEwLjIxNTZMOS4wMjgxMyA3LjMyNjk1TDExLjExOTkgNS4yNzVDMTEuNDk4NCA0Ljg5NjQ4IDExLjI5OTIgNC4yNTg5OCAxMC43ODEzIDQuMTc5M1pNNy45OTIxOSA2Ljk4ODI4TDguNDcwMzEgOS43Mzc1TDYgOC40NDI1OEwzLjUwOTc3IDkuNzM3NUwzLjk4Nzg5IDYuOTg4MjhMMS45NzU3OCA1LjAzNTk0TDQuNzQ0OTIgNC42Mzc1TDYgMi4xMjczNEw3LjIzNTE2IDQuNjM3NUwxMC4wMDQzIDUuMDM1OTRMNy45OTIxOSA2Ljk4ODI4WiIgZmlsbD0iI0U1NzgwQiIvPgo8L3N2Zz4K") !important;
 }
@@ -28955,26 +28962,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   background: var(--phoenix-scrollbar-bg);
 }
 
-/*-----------------------------------------------
-|   Simplebar
------------------------------------------------*/
-.simplebar-track.simplebar-vertical {
-  width: 10px;
-}
-
-.simplebar-scrollbar::before {
-  background: var(--phoenix-scrollbar-bg);
-}
-.simplebar-scrollbar.simplebar-visible::before {
-  opacity: 1;
-}
-
-.simplebar-content-wrapper::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
 .table-scrollbar {
   margin-left: -4px !important;
   padding-left: 4px !important;
@@ -28984,13 +28971,27 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   padding-left: 4px !important;
 }
 .table-scrollbar > div {
+  overflow: auto !important;
   margin-left: -4px !important;
   padding-left: 4px !important;
 }
 [dir=rtl] .table-scrollbar > div {
   margin-left: -4px !important;
   padding-left: -4px !important;
-  margin-right: -15px !important;
+}
+
+.windows .track-vertical {
+  right: 2px !important;
+}
+.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div {
+  margin-right: -17px !important;
+  margin-left: 0px !important;
+}
+.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) .track-vertical {
+  right: 19px !important;
+}
+.windows .table-scrollbar > div {
+  margin-right: 0 !important;
 }
 
 .product-scrollbar > div {

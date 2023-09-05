@@ -424,3 +424,10 @@
   justify-content: center;
   align-items: center;
 }
+
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='number'] {
+  direction: ltr;
+}

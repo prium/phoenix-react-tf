@@ -142,6 +142,7 @@ const TodoItemDetailsOffcanvas = ({
               </div>
               <h5 className="text-1000 mb-2">Tag</h5>
               <ReactSelect
+                menuPlacement="top"
                 options={[
                   {
                     value: 'massachusetts_institute_of_technology',

@@ -26,9 +26,9 @@ const NavItem = ({ item, isLast }: { item: NavItemType; isLast?: boolean }) => {
     <Nav.Link
       eventKey={item.eventKey}
       className={classNames(
-        'border-end border-end-sm-0 border-300 text-center text-sm-start cursor-pointer outline-none d-sm-flex align-items-sm-center',
+        'text-center text-sm-start cursor-pointer outline-none d-sm-flex align-items-sm-center',
         {
-          'border-bottom-sm': !isLast
+          'border-bottom-sm border-end border-end-sm-0 border-300': !isLast
         }
       )}
     >

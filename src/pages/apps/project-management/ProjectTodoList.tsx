@@ -42,7 +42,7 @@ const ProjectTodoList = () => {
           </Button>
         </div>
       </div>
-      <div className="todolist-container scrollbar">
+      <div className="todolist-container ms-n1 ps-1 scrollbar">
         {todoList.map((todo, index) => (
           <TodoListItem
             key={todo.task}

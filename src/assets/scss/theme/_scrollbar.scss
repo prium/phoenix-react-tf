@@ -36,31 +36,18 @@
   }
 }
 
-/*-----------------------------------------------
-|   Simplebar
------------------------------------------------*/
-
-.simplebar-track {
-  &.simplebar-vertical {
-    width: 10px;
-  }
-}
-.simplebar-scrollbar {
-  &::before {
-    background: $scrollbar-bg;
-  }
-  &.simplebar-visible {
-    &::before {
-      opacity: 1;
+.custom-scrollbar {
+  > {
+    div {
+      // &::-webkit-scrollbar {
+      //   display: none;
+      //   -ms-overflow-style: none;
+      //   scrollbar-width: none;
+      //   width: 0;
+      // }
+      // overflow: auto !important;
+      // margin-right: 0 !important;
     }
-  }
-}
-
-.simplebar-content-wrapper {
-  &::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
   }
 }
 
@@ -73,12 +60,41 @@
   }
   > {
     div {
+      overflow: auto !important;
       margin-left: -4px !important;
       padding-left: 4px !important;
       [dir='rtl'] & {
         margin-left: -4px !important;
         padding-left: -4px !important;
-        margin-right: -15px !important;
+        // margin-right: -15px !important;
+      }
+    }
+  }
+}
+
+.windows {
+  .track-vertical {
+    right: 2px !important;
+  }
+  &[dir='rtl'] {
+    .custom-scrollbar {
+      &:not(.table-scrollbar) {
+        > {
+          div {
+            margin-right: -17px !important;
+            margin-left: 0px !important;
+          }
+        }
+        .track-vertical {
+          right: 19px !important;
+        }
+      }
+    }
+  }
+  .table-scrollbar {
+    > {
+      div {
+        margin-right: 0 !important;
       }
     }
   }

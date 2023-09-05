@@ -131,8 +131,9 @@ const EcomTopRegionsTable = () => {
 
   return (
     <AdvanceTableProvider {...table}>
-      <Scrollbar autoHeight autoHeightMax="100%">
-        <Table className="fs-10 mb-0 border-top">
+      {/* <Scrollbar autoHeight autoHeightMax="100%"> */}
+      <div className="scrollbar">
+        <Table className="fs-10 mb-0 border-top scrollbar">
           <thead>
             <tr>
               {getFlatHeaders().map(header => {
@@ -188,9 +189,10 @@ const EcomTopRegionsTable = () => {
             ))}
           </tbody>
         </Table>
+      </div>
 
-        <AdvanceTableFooter className="gx-0" navBtn showViewAllBtn={false} />
-      </Scrollbar>
+      <AdvanceTableFooter className="gx-0" navBtn showViewAllBtn={false} />
+      {/* </Scrollbar> */}
     </AdvanceTableProvider>
   );
 };
