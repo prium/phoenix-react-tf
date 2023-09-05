@@ -14,6 +14,7 @@ import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
+import AvatarDropdown from 'components/common/AvatarDropdown';
 
 const columns: ColumnDef<Project>[] = [
   {
@@ -40,14 +41,7 @@ const columns: ColumnDef<Project>[] = [
       return (
         <Avatar.Group total={assigness.length} size="s">
           {assigness.slice(0, 4).map(assigne => (
-            <Avatar
-              key={assigne.username}
-              src={assigne.avatar ? assigne.avatar : undefined}
-              variant={assigne.avatar ? 'image' : 'name'}
-              size="s"
-            >
-              {!assigne.avatar && assigne.name[0]}
-            </Avatar>
+            <AvatarDropdown key={assigne.username} user={assigne} size="s" />
           ))}
         </Avatar.Group>
       );

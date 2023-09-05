@@ -15,7 +15,9 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="" className="dropdown-caret-none p-0">
-        <Avatar src={user.avatar} size={size} />
+        <Avatar src={user.avatar} size={size}>
+          {!user.avatar && user.name[0]}
+        </Avatar>
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="avatar-dropdown-menu p-0 overflow-hidden">

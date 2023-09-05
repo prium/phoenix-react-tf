@@ -31,7 +31,7 @@ const AvatarUpload = ({
     }
   };
   return (
-    <div className={classNames(className)}>
+    <div className={classNames('d-inline-flex', className)}>
       <input
         className="d-none"
         id="avatarFile"

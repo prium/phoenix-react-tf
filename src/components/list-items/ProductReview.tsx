@@ -11,6 +11,7 @@ import { ProductReviewType } from 'data/e-commerce';
 import useLightbox from 'hooks/useLightbox';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ProductReview = ({ review }: { review: ProductReviewType }) => {
   const { lightboxProps, openLightbox } = useLightbox(review.images || []);
@@ -37,19 +38,21 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       >
         {review.review}
       </p>
+      <Lightbox {...lightboxProps} />
       {review.images && (
         <Row className="g-2 mb-2">
-          <Lightbox {...lightboxProps} />
           {review.images.map((image, index) => (
             <Col xs="auto" key={image}>
-              <img
-                src={image}
-                key={image}
-                alt=""
-                className="w-100 fit-cover"
-                height={164}
-                onClick={() => openLightbox(index + 1)}
-              />
+              <Link to="#!">
+                <img
+                  src={image}
+                  key={image}
+                  alt=""
+                  className="w-100 fit-cover"
+                  height={164}
+                  onClick={() => openLightbox(index + 1)}
+                />
+              </Link>
             </Col>
           ))}
         </Row>

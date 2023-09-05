@@ -8,6 +8,7 @@ import SocialSettingsSideBar from 'components/modules/social/SocialSettingsSideB
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import profileImage from 'assets/img/team/20.webp';
 
 const Settings = () => {
   const { setFooterClass } = useMainLayoutContext();
@@ -22,7 +23,7 @@ const Settings = () => {
     <div className="mb-9">
       <Row className="g-6">
         <Col xs={12} xl={4}>
-          <SocialProfileCard />
+          <SocialProfileCard avatar={profileImage} />
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>
