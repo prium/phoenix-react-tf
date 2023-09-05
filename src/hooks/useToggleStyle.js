@@ -38,7 +38,7 @@ const useToggleStyle = () => {
     link.className = 'theme-stylesheet';
 
     const userLink = document.createElement('link');
-    userLink.href = `${publicUrl}/css/user${isRTL ? '.rtl' : ''}.min.css`;
+    userLink.href = `${publicUrl}/css/user.min${isRTL ? '.rtl' : ''}.css`;
     userLink.type = 'text/css';
     userLink.rel = 'stylesheet';
     userLink.className = 'theme-stylesheet';

@@ -11,17 +11,24 @@ const App = () => {
   const { pathname } = useLocation();
 
   const {
-    settingsPanelConfig: { showSettingPanelButton }
+    settingsPanelConfig: { showSettingPanelButton },
+    setSettingsPanelConfig
   } = useSettingsPanelContext();
 
   const {
-    config: { theme }
+    config: { theme, isRTL }
   } = useAppContext();
 
   // Automatically scrolls to top whenever pathname changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    setSettingsPanelConfig({
+      openSettingPanel: false
+    });
+  }, [isRTL]);
 
   return (
     <>
