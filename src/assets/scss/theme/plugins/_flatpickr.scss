@@ -187,7 +187,7 @@ span.flatpickr-weekday,
   .flatpickr-prev-month,
   .flatpickr-next-month {
     top: 20px;
-    padding: 0;
+    padding: 0 map-get($spacers, 2);
   }
   .flatpickr-prev-month {
     left: 28px !important;

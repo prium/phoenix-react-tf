@@ -29,7 +29,7 @@ const StoreItem = ({ store }: { store: StoreItemType }) => {
       </Link>
 
       <RevealDropdown
-        className="hover-actions top-0 end-0 mt-2 me-3"
+        className="hover-actions top-0 end-0 mt-2 me-2"
         btnClassName="btn-icon"
       >
         <ActionDropdownItems />

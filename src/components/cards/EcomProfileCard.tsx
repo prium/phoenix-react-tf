@@ -16,14 +16,14 @@ const EcomProfileCard = () => {
             <Col xs={12} sm="auto" className="flex-1">
               <h3>Ansolo Lazinatov</h3>
               <p className="text-800">Joined 3 months ago</p>
-              <div className="d-flex gap-2">
-                <a href="#!">
+              <div>
+                <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={['fab', 'linkedin-in']}
                     className="text-400 hover-primary"
                   />
                 </a>
-                <a href="#!">
+                <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={['fab', 'facebook']}
                     className="text-400 hover-primary"

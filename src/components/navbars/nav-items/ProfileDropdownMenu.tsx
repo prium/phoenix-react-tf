@@ -66,7 +66,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
                         size={16}
                         className="me-2 text-900"
                       />
-                      <span>{item.label}</span>
+                      <span className="text-1000">{item.label}</span>
                     </Nav.Link>
                   </Nav.Item>
                 ))}

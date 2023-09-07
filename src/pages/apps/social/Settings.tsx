@@ -6,13 +6,14 @@ import SettingsPersonalInfo from 'components/forms/SettingsPersonalInfo';
 import SettingsSocial from 'components/forms/SettingsSocial';
 import SocialSettingsSideBar from 'components/modules/social/SocialSettingsSideBar';
 import { Col, Row } from 'react-bootstrap';
+import profileImage from 'assets/img/team/20.webp';
 
 const Settings = () => {
   return (
     <div className="mb-9">
       <Row className="g-6">
         <Col xs={12} xl={4}>
-          <SocialProfileCard />
+          <SocialProfileCard avatar={profileImage} />
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>

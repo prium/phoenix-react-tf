@@ -1,13 +1,17 @@
 import CoverUpload from 'components/common/CoverUpload';
 import coverImage from 'assets/img/generic/59.png';
 import AvatarUpload from 'components/common/AvatarUpload';
-import profileImage from 'assets/img/team/20.webp';
 import { Card, Col, Row } from 'react-bootstrap';
 import { CSSProperties } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-const SocialProfileCard = ({ showAbout }: { showAbout?: boolean }) => {
+interface SocialProfileCardProps {
+  showAbout?: boolean;
+  avatar: string;
+}
+
+const SocialProfileCard = ({ showAbout, avatar }: SocialProfileCardProps) => {
   return (
     <Card className="mb-5">
       <Card.Header
@@ -22,7 +26,7 @@ const SocialProfileCard = ({ showAbout }: { showAbout?: boolean }) => {
         />
         <AvatarUpload
           size="4xl"
-          src={profileImage}
+          src={avatar}
           status="online"
           thumbnail
           className="feed-avatar-profile"

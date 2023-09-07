@@ -20303,7 +20303,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 201, 213, 240;
   --phoenix-btn-active-color: #3874ff;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -20321,7 +20321,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 200, 204, 213;
   --phoenix-btn-active-color: #31374a;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -20338,7 +20338,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 199, 222, 202;
   --phoenix-btn-active-color: #25b003;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -20355,7 +20355,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 193, 218, 237;
   --phoenix-btn-active-color: #0097eb;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -20372,7 +20372,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 227, 214, 203;
   --phoenix-btn-active-color: #e5780b;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -20389,7 +20389,7 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   --phoenix-btn-focus-shadow-rgb: 229, 200, 201;
   --phoenix-btn-active-color: #ed2000;
   --phoenix-btn-active-bg: #e3e6ed;
-  --phoenix-btn-active-border-color: #e6e9ef;
+  --phoenix-btn-active-border-color: var(--phoenix-gray-200);
   --phoenix-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
   --phoenix-btn-disabled-color: #000000;
   --phoenix-btn-disabled-bg: #f5f7fa;
@@ -21604,7 +21604,7 @@ span.flatpickr-weekday,
 .flatpickr-months .flatpickr-next-month,
 .flatpickr-months .flatpickr-prev-month {
   top: 20px;
-  padding: 0;
+  padding: 0 0.5rem;
 }
 .flatpickr-months .flatpickr-prev-month {
   right: 28px !important;
@@ -22710,7 +22710,7 @@ span.flatpickr-weekday,
 .flatpickr-months .flatpickr-next-month,
 .flatpickr-months .flatpickr-prev-month {
   top: 20px;
-  padding: 0;
+  padding: 0 0.5rem;
 }
 .flatpickr-months .flatpickr-prev-month {
   right: 28px !important;
@@ -22769,6 +22769,11 @@ span.flatpickr-weekday,
   width: 100% !important;
   min-width: 100% !important;
   max-width: 100% !important;
+}
+
+[dir=rtl] .fslightbox-toolbar {
+  left: 0;
+  right: unset;
 }
 
 /* -------------------------------------------------------------------------- */

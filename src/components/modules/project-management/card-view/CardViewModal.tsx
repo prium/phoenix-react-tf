@@ -231,7 +231,7 @@ const CardViewModal = ({
               ))}
             </div>
             <h5 className="text-800 mb-3">Actions</h5>
-            <div className="mb-6 d-flex flex-column gap-2">
+            <div className="d-flex flex-column gap-2">
               {actionItems.map(item => (
                 <Button
                   variant="soft-secondary"

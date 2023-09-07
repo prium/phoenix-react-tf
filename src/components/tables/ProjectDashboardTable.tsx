@@ -23,7 +23,10 @@ const columns: ColumnDef<Project>[] = [
     cell: ({ row: { original } }) => {
       const { name } = original;
       return (
-        <Link to="#!" className="text-decoration-none fw-bold fs-8">
+        <Link
+          to="/apps/project-management/project-details"
+          className="text-decoration-none fw-bold fs-8"
+        >
           {name}
         </Link>
       );

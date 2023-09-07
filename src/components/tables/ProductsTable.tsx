@@ -18,9 +18,12 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="rounded-2 border d-inline-block"
+        >
           <img src={productImage} alt="" width={53} />
-        </div>
+        </Link>
       );
     },
     meta: {
@@ -35,7 +38,10 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-3">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="fw-semi-bold line-clamp-3"
+        >
           {product}
         </Link>
       );

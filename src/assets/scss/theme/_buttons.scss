@@ -211,7 +211,8 @@
       $color: $value,
       $hover-color: $hover-color,
       $active-background: $gray-200,
-      $active-color: $value
+      $active-color: $value,
+      $active-border: var(--#{$prefix}gray-200)
     );
   }
 }

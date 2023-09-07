@@ -11,7 +11,7 @@ interface ThemeTogglerProps extends ButtonProps {
 
 const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
   const {
-    config: { theme },
+    config: { theme, isRTL },
     toggleTheme
   } = useAppContext();
   return (
@@ -28,7 +28,7 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
         })}
       >
         <OverlayTrigger
-          placement="left"
+          placement={isRTL ? 'right' : 'left'}
           overlay={
             <Tooltip id="ThemeColor" style={{ position: 'fixed' }}>
               {slim

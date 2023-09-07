@@ -12,6 +12,7 @@ import ProfileNavigation from 'components/list-items/ProfileNavigation';
 import FeedTextarea from 'components/forms/FeedTextarea';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect } from 'react';
+import profileImage from 'assets/img/team/59.webp';
 
 const Feed = () => {
   const { setFooterClass } = useMainLayoutContext();
@@ -28,7 +29,7 @@ const Feed = () => {
       <div className="mb-9">
         <Row className="gy-3 gx-5 gx-xxl-6">
           <Col lg={5} xl={4} className="d-none d-lg-block">
-            <SocialProfileCard showAbout={true} />
+            <SocialProfileCard showAbout={true} avatar={profileImage} />
             <ProfileNavigation />
             <div className="mb-8 mt-6">
               <SocialMessages messages={messages} />
