@@ -18,7 +18,11 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
         <Avatar src={user.avatar} size={size} />
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className="avatar-dropdown-menu p-0 overflow-hidden">
+      <Dropdown.Menu
+        className="avatar-dropdown-menu p-0 overflow-hidden"
+        popperConfig={{ strategy: 'fixed' }}
+        renderOnMount
+      >
         <div className="position-relative">
           <div
             className="bg-holder z-index--1"
