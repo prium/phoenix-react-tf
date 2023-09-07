@@ -11,6 +11,7 @@ import ChatContentHeader from './ChatContentHeader';
 import ConversationStarter from './ConversationStarter';
 import ChatContentFooter from './ChatContentFooter';
 import Message from '../message';
+import Scrollbar from 'components/base/Scrollbar';
 
 const ChatContent = () => {
   const {
@@ -59,12 +60,14 @@ const ChatContent = () => {
           open={showConversationDetails}
           placement="top"
           noBackdrop
-          className="bg-white w-100 z-index-0 scrollbar"
+          className="bg-white w-100 z-index-0 "
         >
-          <ConversationDetails
-            conversation={currentConversation}
-            handleClose={() => setShowConversationDetails(false)}
-          />
+          <Scrollbar>
+            <ConversationDetails
+              conversation={currentConversation}
+              handleClose={() => setShowConversationDetails(false)}
+            />
+          </Scrollbar>
         </PhoenixOffcanvas>
 
         {breakpoints.down('sm') && (
@@ -72,7 +75,7 @@ const ChatContent = () => {
             open={showUserListOffcanvas}
             placement="start"
             noBackdrop
-            className="w-100"
+            className="w-100 z-index-0"
           >
             <ChatSidebar className="border-0 h-100" />
           </PhoenixOffcanvas>

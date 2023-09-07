@@ -10,6 +10,7 @@ import { Col, Row } from 'react-bootstrap';
 import InboxToolbar from '../components/modules/email/InboxToolbar';
 import { emails } from 'data/email';
 import EmailRow from '../components/modules/email/EmailRow';
+import { Link } from 'react-router-dom';
 
 const EmailLayout = ({
   children,
@@ -33,7 +34,8 @@ const EmailLayout = ({
           <Button
             variant="primary"
             className="email-sidebar-width d-none d-lg-block"
-            onClick={() => setOpenSidebar(true)}
+            as={Link}
+            to="/apps/email/compose"
           >
             Compose
           </Button>

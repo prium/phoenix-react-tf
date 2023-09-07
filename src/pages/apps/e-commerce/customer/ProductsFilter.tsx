@@ -19,11 +19,13 @@ const ProductsFilter = () => {
         open={show}
         onHide={handleClose}
         style={{ width: 300, top: 92 }}
-        className="p-5"
+        className="py-5 ps-5"
         fixed
       >
         <Scrollbar className="table-scrollbar">
-          <ProductFilterItems handleClose={handleClose} />
+          <div className="pe-5">
+            <ProductFilterItems handleClose={handleClose} />
+          </div>
         </Scrollbar>
       </PhoenixOffcanvas>
       <Section className="pt-5 pb-9">

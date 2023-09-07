@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { PropsWithChildren } from 'react';
 import Scrollbars, {
   ScrollbarProps as ScrollbarsProps
@@ -5,26 +6,22 @@ import Scrollbars, {
 
 interface ScrollbarProps extends ScrollbarsProps {
   autoHide?: boolean;
+  className?: string;
 }
 
 const Scrollbar = ({
   children,
   autoHide = true,
+  className,
   ...rest
 }: PropsWithChildren<ScrollbarProps>) => {
   return (
     <Scrollbars
-      renderThumbHorizontal={props => (
-        <div {...props} className="bg-400 rounded" />
-      )}
-      renderTrackVertical={props => (
-        <div {...props} className="bg-400 rounded" />
-      )}
       autoHide={autoHide}
-      // autoHeight
-      // autoHeightMin="100%"
-      // autoHeightMax="100%"
-      // style={{ height: 1 }}
+      renderTrackVertical={props => (
+        <div {...props} className="track-vertical h-100 rounded" />
+      )}
+      className={classNames('custom-scrollbar', className)}
       {...rest}
     >
       {children}

@@ -681,7 +681,7 @@ $calendar-color: $danger !default;
 //|   Footer
 //-----------------------------------------------*/
 
-$footer-height: 4rem !default;
+$footer-height: var(--#{$prefix}footer-height) !default;
 $responsive-footer-height: 0.625rem !default;
 
 // /*-----------------------------------------------

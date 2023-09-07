@@ -29,7 +29,7 @@ const EventDetailsForm = () => {
           </Form.Select>
         </FloatingLabel>
       </Col>
-      <Col sx={12} className="mt-4">
+      <Col xs={12} className="mt-4">
         <Form.Check type="radio" id="online" className="form-check-inline">
           <Form.Check.Input
             type="radio"
@@ -48,12 +48,12 @@ const EventDetailsForm = () => {
           <Form.Check.Label htmlFor="both">Both</Form.Check.Label>
         </Form.Check>
       </Col>
-      <Col sm={6} md={12} className="mt-md-0 mt-lg-1">
+      <Col sm={6} md={12} className="gy-1">
         <FloatingLabel controlId="floatingVenueInput" label="Venue">
           <Form.Control type="text" placeholder="Venue" />
         </FloatingLabel>
       </Col>
-      <Col sm={6} md={4}>
+      <Col sm={6} md={4} className="gy-sm-1 gy-md-4">
         <FloatingLabel controlId="floatingSelectCountry" label="country">
           <Form.Select>
             <option>Select Country</option>

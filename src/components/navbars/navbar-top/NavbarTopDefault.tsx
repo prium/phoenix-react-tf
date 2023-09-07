@@ -6,11 +6,14 @@ import NavItems from 'components/navbars/nav-items/NavItems';
 import NavItemsSlim from 'components/navbars/nav-items/NavItemsSlim';
 import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import SearchResult from 'components/common/SearchResult';
+import { useBreakpoints } from 'providers/BreakpointsProvider';
 
 const NavbarTopDefault = () => {
   const {
     config: { navbarTopShape, navbarTopAppearance }
   } = useAppContext();
+
+  const { breakpoints } = useBreakpoints();
 
   return (
     <Navbar
@@ -26,15 +29,16 @@ const NavbarTopDefault = () => {
 
         {navbarTopShape === 'default' ? (
           <>
-            <DropdownSearchBox
-              className="navbar-top-search-box"
-              inputClassName="rounded-pill"
-              searchBoxClassName=" d-none d-lg-block"
-              size="sm"
-              style={{ width: '25rem' }}
-            >
-              <SearchResult />
-            </DropdownSearchBox>
+            {breakpoints.up('lg') && (
+              <DropdownSearchBox
+                className="navbar-top-search-box"
+                inputClassName="rounded-pill"
+                size="sm"
+                style={{ width: '25rem' }}
+              >
+                <SearchResult />
+              </DropdownSearchBox>
+            )}
             <NavItems />
           </>
         ) : (

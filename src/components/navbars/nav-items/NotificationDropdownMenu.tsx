@@ -42,7 +42,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
         </Card.Body>
         <Card.Footer className="p-0 border-top">
           <div className="my-2 text-center fw-bold fs-10 text-600">
-            <Link to="#!" className="fw-bolder">
+            <Link to="/pages/notifications" className="fw-bolder">
               Notification history
             </Link>
           </div>

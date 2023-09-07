@@ -6,7 +6,7 @@ import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
 import EcomWishlistTable from 'components/tables/EcomWishlistTable';
 import React, { useState } from 'react';
-import { Tab, Tabs } from 'react-bootstrap';
+import { Nav, Tab, Tabs } from 'react-bootstrap';
 
 interface TabLink {
   id: string;
@@ -55,30 +55,45 @@ const ProfileDetailsTab = () => {
   const [key, setKey] = useState('orders');
 
   return (
-    <Tabs
-      id="controlled-tab-example"
-      activeKey={key}
-      onSelect={k => setKey(k as string)}
-      className="mb-3 pb-1 gap-3 nav-underline"
+    <Tab.Container
+      defaultActiveKey="orders"
+      // activeKey={key}
+      // onSelect={k => setKey(k as string)}
     >
-      {tabLinks.map(item => (
-        <Tab
-          key={item.id}
-          eventKey={item.id}
-          title={
-            <>
+      <Nav className="mb-3 pb-1 gap-3 nav-underline flex-nowrap scrollbar">
+        {tabLinks.map(item => (
+          <Nav.Item key={item.id}>
+            <Nav.Link eventKey={item.id} className="text-nowrap">
               <FontAwesomeIcon icon={item.icon} className="me-2" />
               {item.label}{' '}
               {item.number && (
                 <span className="text-700 fw-normal">({item.number})</span>
               )}
-            </>
-          }
-        >
-          {item.content}
-        </Tab>
-      ))}
-    </Tabs>
+            </Nav.Link>
+          </Nav.Item>
+        ))}
+      </Nav>
+
+      <Tab.Content>
+        {tabLinks.map(item => (
+          <Tab.Pane
+            key={item.id}
+            eventKey={item.id}
+            // title={
+            //   <>
+            //     <FontAwesomeIcon icon={item.icon} className="me-2" />
+            //     {item.label}{' '}
+            //     {item.number && (
+            //       <span className="text-700 fw-normal">({item.number})</span>
+            //     )}
+            //   </>
+            // }
+          >
+            {item.content}
+          </Tab.Pane>
+        ))}
+      </Tab.Content>
+    </Tab.Container>
   );
 };
 

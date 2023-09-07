@@ -31,12 +31,19 @@ const ActionSection = () => {
             <div className="d-flex gap-2">
               <Dropdown align="end">
                 <Dropdown.Toggle
-                  className="dropdown-caret-none"
+                  className="d-none d-sm-block btn btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center"
                   variant="soft-secondary"
                 >
                   Add to card
                   <FontAwesomeIcon icon="plus" className="ms-2" />
                 </Dropdown.Toggle>
+                <Dropdown.Toggle
+                  className="d-sm-none btn btn-icon btn-icon-lg btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
+                  variant="soft-secondary"
+                >
+                  <FontAwesomeIcon icon="plus" />
+                </Dropdown.Toggle>
+
                 <Dropdown.Menu>
                   <div className="px-2 d-flex flex-column gap-2">
                     {addToCardItems.map(item => (

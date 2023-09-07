@@ -4,7 +4,6 @@ import { capitalize } from 'helpers/utils';
 import { Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
-import Scrollbar from 'components/base/Scrollbar';
 import logoBg from 'assets/img/icons/logo-bg.png';
 import { Fragment, useEffect, useState } from 'react';
 
@@ -33,41 +32,39 @@ const TopNavMegaMenu = ({ route }: { route: RouteItems }) => {
       as="ul"
       className=" navbar-dropdown-caret dropdown-menu-card py-0"
     >
-      <div className="border-0" style={{ height: '60vh' }}>
-        <Scrollbar>
-          <div
-            className="px-3 pt-4 pb-3 img-dropdown"
-            style={{
-              backgroundImage: `url(${logoBg})`
-            }}
-          >
-            <Row className="gx-4 gy-5">
-              {columns.map((column, index) => (
-                <Col key={index} xs={12} sm={6} md={4}>
-                  {column.map((page, index) => (
-                    <Fragment key={page.name}>
-                      <div
-                        className={classNames('dropdown-item-group', {
-                          'mt-5': index > 0
-                        })}
-                      >
-                        <FeatherIcon
-                          icon={page.icon}
-                          size={16}
-                          className="me-2"
-                        />
-                        <h6 className="dropdown-item-title">
-                          {capitalize(page.name)}
-                        </h6>
-                      </div>
-                      <TopNavMegaMenuIitemsLooper page={page} />
-                    </Fragment>
-                  ))}
-                </Col>
-              ))}
-            </Row>
-          </div>
-        </Scrollbar>
+      <div className="border-0 scrollbar" style={{ height: '60vh' }}>
+        <div
+          className="px-3 pt-4 pb-3 img-dropdown scrollbar"
+          style={{
+            backgroundImage: `url(${logoBg})`
+          }}
+        >
+          <Row className="gx-4 gy-5">
+            {columns.map((column, index) => (
+              <Col key={index} xs={12} sm={6} md={4}>
+                {column.map((page, index) => (
+                  <Fragment key={page.name}>
+                    <div
+                      className={classNames('dropdown-item-group', {
+                        'mt-5': index > 0
+                      })}
+                    >
+                      <FeatherIcon
+                        icon={page.icon}
+                        size={16}
+                        className="me-2"
+                      />
+                      <h6 className="dropdown-item-title">
+                        {capitalize(page.name)}
+                      </h6>
+                    </div>
+                    <TopNavMegaMenuIitemsLooper page={page} />
+                  </Fragment>
+                ))}
+              </Col>
+            ))}
+          </Row>
+        </div>
       </div>
     </Dropdown.Menu>
   );

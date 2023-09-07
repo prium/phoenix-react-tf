@@ -1,5 +1,6 @@
 import { useAppContext } from 'providers/AppProvider';
 import { useEffect, useState } from 'react';
+import is from 'is_js';
 
 const publicUrl = process.env.PUBLIC_URL;
 
@@ -9,6 +10,27 @@ const useToggleStyle = () => {
     config: { theme, isRTL },
     configDispatch
   } = useAppContext();
+  const HTMLClassList = document.getElementsByTagName('html')[0].classList;
+  useEffect(() => {
+    if (is.windows()) {
+      HTMLClassList.add('windows');
+    }
+    if (is.chrome()) {
+      HTMLClassList.add('chrome');
+    }
+    if (is.firefox()) {
+      HTMLClassList.add('firefox');
+    }
+    if (is.safari()) {
+      HTMLClassList.add('safari');
+    }
+    if (is.windows()) {
+      HTMLClassList.add('windows');
+    }
+    if (is.mac()) {
+      HTMLClassList.add('osx');
+    }
+  }, [HTMLClassList]);
 
   useEffect(() => {
     setIsStylesheetLoaded(false);
@@ -22,7 +44,7 @@ const useToggleStyle = () => {
     link.className = 'theme-stylesheet';
 
     const userLink = document.createElement('link');
-    userLink.href = `${publicUrl}/css/user${isRTL ? '.rtl' : ''}.min.css`;
+    userLink.href = `${publicUrl}/css/user.min${isRTL ? '.rtl' : ''}.css`;
     userLink.type = 'text/css';
     userLink.rel = 'stylesheet';
     userLink.className = 'theme-stylesheet';

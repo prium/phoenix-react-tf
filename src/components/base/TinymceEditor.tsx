@@ -62,10 +62,6 @@ const TinymceEditor = ({
           font-size: 12.8px;
         }
         `,
-        mobile: {
-          theme: 'mobile',
-          toolbar: ['undo', 'bold']
-        },
         statusbar: false,
         plugins: ['link', 'image', 'lists', 'table', 'media'],
         theme_advanced_toolbar_align: 'center',

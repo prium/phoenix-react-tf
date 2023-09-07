@@ -1,6 +1,14 @@
 /*-----------------------------------------------
 |   Object fit and Z-index
 -----------------------------------------------*/
+
+:root {
+  --#{$prefix}footer-height: 6rem;
+  @include media-breakpoint-up(sm) {
+    --#{$prefix}footer-height: 4rem;
+  }
+}
+
 .fit-cover {
   object-fit: cover;
 }
@@ -165,21 +173,21 @@
   padding: $content-padding-top map-get($spacers, 4) $content-padding-bottom
     map-get($spacers, 4);
   position: relative;
-  padding-bottom: $footer-height + 2;
-  @include media-breakpoint-up(sm) {
-    padding-bottom: $footer-height;
-  }
+  padding-bottom: $footer-height;
+  // @include media-breakpoint-up(sm) {
+  //   padding-bottom: $footer-height;
+  // }
 }
 .footer {
   bottom: 0;
   width: 100%;
-  height: $footer-height + 2;
+  height: $footer-height;
   border-top: 1px solid $navbar-footer-border-color;
   padding: 0 map-get($spacers, 4);
   left: 0;
-  @include media-breakpoint-up(sm) {
-    height: $footer-height;
-  }
+  // @include media-breakpoint-up(sm) {
+  //   height: $footer-height;
+  // }
   @include media-breakpoint-up(lg) {
     padding: 0 map-get($spacers, 6);
   }
@@ -423,4 +431,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='number'] {
+  direction: ltr;
 }

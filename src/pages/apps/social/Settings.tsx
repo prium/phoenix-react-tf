@@ -5,19 +5,9 @@ import SettingsCompanyInfo from 'components/forms/SettingsCompanyInfo';
 import SettingsPersonalInfo from 'components/forms/SettingsPersonalInfo';
 import SettingsSocial from 'components/forms/SettingsSocial';
 import SocialSettingsSideBar from 'components/modules/social/SocialSettingsSideBar';
-import { useMainLayoutContext } from 'providers/MainLayoutProvider';
-import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const Settings = () => {
-  const { setFooterClass } = useMainLayoutContext();
-
-  useEffect(() => {
-    setFooterClass('d-none d-lg-block');
-    return () => {
-      setFooterClass('');
-    };
-  }, []);
   return (
     <div className="mb-9">
       <Row className="g-6">

@@ -62,10 +62,11 @@ const NotificationItem = ({
           </div>
         </div>
         <RevealDropdown
-          className={classNames('position-static', {
+          className={classNames('', {
             'd-none d-sm-block': type === 'dropdownItem'
           })}
           btnClassName="notification-dropdown-toggle"
+          dropdownMenuClassName="mt-2"
         >
           <Dropdown.Item>
             Mark as {notification.read ? 'unread' : 'read'}

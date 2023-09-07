@@ -1,5 +1,15 @@
 .chat {
-  height: calc(100vh - (var(--#{$prefix}navbar-top-height) + 10rem));
+  --#{$prefix}chat-bottom-gap: 4rem;
+  @include media-breakpoint-up(sm) {
+    --#{$prefix}chat-bottom-gap: 6rem;
+  }
+  height: calc(
+    100vh -
+      (
+        var(--#{$prefix}navbar-top-height) + var(--#{$prefix}footer-height) +
+          var(--#{$prefix}chat-bottom-gap)
+      )
+  );
   .chat-sidebar {
     // position: absolute;
     // top: 0;

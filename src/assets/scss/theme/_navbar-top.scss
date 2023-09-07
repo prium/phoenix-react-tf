@@ -40,7 +40,7 @@
   border-bottom: 1px solid $navbar-vertical-border-color;
 
   .dropdown-menu {
-    margin-top: 20px;
+    margin-top: 1rem;
     &::before {
       content: '';
       position: absolute;
@@ -49,6 +49,12 @@
       top: -1.5rem;
       width: calc(100% - 5px);
       z-index: -1;
+    }
+  }
+
+  &.navbar-slim {
+    .dropdown-menu {
+      margin-top: 12px;
     }
   }
 
@@ -563,10 +569,10 @@
                   padding-left: 1rem !important;
                 }
                 .dropdown-indicator-icon {
-                  &.uil-angle-right {
-                    // transition: none;
-                    transform: none;
-                  }
+                  // &.uil-angle-right {
+                  // transition: none;
+                  transform: none;
+                  // }
                 }
                 &.dropdown-menu-card {
                   min-width: 550px;

@@ -21,6 +21,10 @@ const EcomTopElectronics = ({ products }: { products: Product[] }) => {
         spaceBetween={16}
         navigationPosition={{ top: '25%' }}
         breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 16
+          },
           450: {
             slidesPerView: 2,
             spaceBetween: 16

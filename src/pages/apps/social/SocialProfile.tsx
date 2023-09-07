@@ -6,8 +6,19 @@ import SocialPosts from 'components/modules/social/SocialPosts';
 import { profilePosts, socialPhotos } from 'data/social/postsData';
 import { Col, Row } from 'react-bootstrap';
 import ProfileNavigation from 'components/list-items/ProfileNavigation';
+import { useMainLayoutContext } from 'providers/MainLayoutProvider';
+import { useEffect } from 'react';
 
 const SocialProfile = () => {
+  const { setFooterClass } = useMainLayoutContext();
+
+  useEffect(() => {
+    setFooterClass('d-none d-lg-block');
+    return () => {
+      setFooterClass('');
+    };
+  }, []);
+
   return (
     <>
       <div className="mb-9">

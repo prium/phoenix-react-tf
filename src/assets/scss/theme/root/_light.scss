@@ -342,6 +342,10 @@
   --#{$prefix}drag-bg: var(--#{$prefix}white);
   --#{$prefix}kanban-column-hover-bg: var(--#{$prefix}white);
 
+  /* -------------------------------- Leaflet ------------------------------- */
+  --#{$prefix}leaflet-bar-bg: #{$white};
+  --#{$prefix}leaflet-popup-content-wrapper-bg: #{$white};
+
   // .table-primary {
   //   --#{$prefix}table-bg: var(--#{$prefix}primary-soft);
   // }

@@ -39,7 +39,7 @@ const CardViewModal = ({
       <Modal.Body className="p-5 px-md-6">
         {/* <ActionSection /> */}
         <Row className="g-5">
-          <Col xs={12} md={9}>
+          <Col xs={12} xl={9}>
             <div className="mb-4">
               <h3 className="fw-bolder lh-sm">{project.name}</h3>
               <p className="text-1000 fw-semi-bold mb-0">
