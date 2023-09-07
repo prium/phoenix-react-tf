@@ -219,6 +219,8 @@
   /* ------------------------------- dual-nav ------------------------------- */
   --phoenix-dual-nav-border-color: #e3e6ed;
   --phoenix-dual-nav-first-layer-bg: #eff2f6;
+  /* --------------------------------- Footer --------------------------------- */
+  --phoenix-footer-height: 6rem;
   /* ------------------------------- navbar-vertical light ------------------------------- */
   --phoenix-navbar-vertical-border-color: #cbd0dd;
   --phoenix-navbar-vertical-bg-color: #fff;
@@ -305,6 +307,8 @@
   /* -------------------------------- Leaflet ------------------------------- */
   --phoenix-leaflet-bar-bg: #fff;
   --phoenix-leaflet-popup-content-wrapper-bg: #fff;
+  /* ---------------------------------- Chat ---------------------------------- */
+  --phoenix-chat-bottom-gap: 4rem;
 }
 :root .nav-slim,
 :root.light .nav-slim,
@@ -358,6 +362,13 @@
 :root.light.dual-nav:not(.dark) .navbar-darker .search-box.search-box-icon,
 :root .light.dual-nav:not(.dark) .navbar-darker .search-box.search-box-icon {
   color: #525b75;
+}
+@media (min-width: 576px) {
+  :root,
+  :root.light,
+  :root .light {
+    --phoenix-footer-height: 4rem;
+  }
 }
 :root.navbar-vertical-collapsed,
 :root.light.navbar-vertical-collapsed,
@@ -450,6 +461,13 @@
 :root.light:not(.dark) .navbar-darker.navbar-slim .navbar-brand span,
 :root .light:not(.dark) .navbar-darker.navbar-slim .navbar-brand span {
   color: #cbd0dd !important;
+}
+@media (min-width: 576px) {
+  :root,
+  :root.light,
+  :root .light {
+    --phoenix-chat-bottom-gap: 6rem;
+  }
 }
 
 .dark, .dark .picmo__popupContainer.picmo__light {
@@ -20646,26 +20664,16 @@ button,
   min-height: 100vh;
   padding: calc(var(--phoenix-navbar-top-height) + 2rem) 1.5rem 6.375rem 1.5rem;
   position: relative;
-  padding-bottom: 6rem;
-}
-@media (min-width: 576px) {
-  .content {
-    padding-bottom: 4rem;
-  }
+  padding-bottom: var(--phoenix-footer-height);
 }
 
 .footer {
   bottom: 0;
   width: 100%;
-  height: 6rem;
+  height: var(--phoenix-footer-height);
   border-top: 1px solid var(--phoenix-navbar-footer-border-color);
   padding: 0 1.5rem;
   right: 0;
-}
-@media (min-width: 576px) {
-  .footer {
-    height: 4rem;
-  }
 }
 @media (min-width: 992px) {
   .footer {
@@ -24504,7 +24512,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .navbar-vertical-content {
     height: calc(100vh - var(--phoenix-navbar-top-height));
   }
   html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xxl .navbar-vertical-content {
-    height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+    height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
   }
 }
 @media (min-width: 1200px) {
@@ -24512,7 +24520,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .navbar-vertical-content {
     height: calc(100vh - var(--phoenix-navbar-top-height));
   }
   html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xl .navbar-vertical-content {
-    height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+    height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
   }
 }
 @media (min-width: 992px) {
@@ -24520,7 +24528,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .navbar-vertical-content {
     height: calc(100vh - var(--phoenix-navbar-top-height));
   }
   html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-lg .navbar-vertical-content {
-    height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+    height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
   }
 }
 @media (min-width: 768px) {
@@ -24528,7 +24536,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .navbar-vertical-content {
     height: calc(100vh - var(--phoenix-navbar-top-height));
   }
   html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-md .navbar-vertical-content {
-    height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+    height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
   }
 }
 @media (min-width: 576px) {
@@ -24536,14 +24544,14 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .navbar-vertical-content {
     height: calc(100vh - var(--phoenix-navbar-top-height));
   }
   html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-sm .navbar-vertical-content {
-    height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+    height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
   }
 }
 html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs {
   height: calc(100vh - var(--phoenix-navbar-top-height));
 }
 html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-vertical-content {
-  height: calc(100vh - var(--phoenix-navbar-top-height) - 4rem);
+  height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height));
 }
 
 .navbar-vertical {
@@ -24675,7 +24683,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .navbar-vertical .navbar-vertical-footer {
   position: fixed;
   width: 15.875rem;
-  height: 4rem;
+  height: var(--phoenix-footer-height);
   display: none;
   align-items: center;
   bottom: 0;
@@ -25154,7 +25162,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     height: auto;
     min-height: 100%;
     padding-top: var(--phoenix-navbar-top-height);
-    padding-bottom: 4rem;
+    padding-bottom: var(--phoenix-footer-height);
     width: 4rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xxl .navbar-vertical-line {
@@ -25311,7 +25319,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     height: auto;
     min-height: 100%;
     padding-top: var(--phoenix-navbar-top-height);
-    padding-bottom: 4rem;
+    padding-bottom: var(--phoenix-footer-height);
     width: 4rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xl .navbar-vertical-line {
@@ -25468,7 +25476,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     height: auto;
     min-height: 100%;
     padding-top: var(--phoenix-navbar-top-height);
-    padding-bottom: 4rem;
+    padding-bottom: var(--phoenix-footer-height);
     width: 4rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg .navbar-vertical-line {
@@ -25625,7 +25633,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     height: auto;
     min-height: 100%;
     padding-top: var(--phoenix-navbar-top-height);
-    padding-bottom: 4rem;
+    padding-bottom: var(--phoenix-footer-height);
     width: 4rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-md .navbar-vertical-line {
@@ -25782,7 +25790,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     height: auto;
     min-height: 100%;
     padding-top: var(--phoenix-navbar-top-height);
-    padding-bottom: 4rem;
+    padding-bottom: var(--phoenix-footer-height);
     width: 4rem;
   }
   .navbar-vertical-collapsed .navbar-vertical.navbar-expand-sm .navbar-vertical-line {
@@ -25938,7 +25946,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   height: auto;
   min-height: 100%;
   padding-top: var(--phoenix-navbar-top-height);
-  padding-bottom: 4rem;
+  padding-bottom: var(--phoenix-footer-height);
   width: 4rem;
 }
 .navbar-vertical-collapsed .navbar-vertical.navbar-expand-xs .navbar-vertical-line {
@@ -30236,7 +30244,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   position: fixed;
   width: 35rem !important;
   top: calc(var(--phoenix-navbar-top-height) + 1px) !important;
-  height: calc(100vh - (var(--phoenix-navbar-top-height) + 4rem)) !important;
+  height: calc(100vh - (var(--phoenix-navbar-top-height) + var(--phoenix-footer-height))) !important;
 }
 @media (min-width: 576px) {
   .content-offcanvas {
@@ -31172,7 +31180,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 
 .chat {
-  height: calc(100vh - (var(--phoenix-navbar-top-height) + 10rem));
+  height: calc(100vh - (var(--phoenix-navbar-top-height) + var(--phoenix-footer-height) + var(--phoenix-chat-bottom-gap)));
 }
 .chat .chat-sidebar {
   flex-shrink: 0;
