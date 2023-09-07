@@ -1,6 +1,14 @@
 /*-----------------------------------------------
 |   Object fit and Z-index
 -----------------------------------------------*/
+
+:root {
+  --#{$prefix}footer-height: 6rem;
+  @include media-breakpoint-up(sm) {
+    --#{$prefix}footer-height: 4rem;
+  }
+}
+
 .fit-cover {
   object-fit: cover;
 }

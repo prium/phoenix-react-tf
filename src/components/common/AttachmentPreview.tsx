@@ -61,7 +61,7 @@ const AttachmentPreview = ({
 
       <div className="flex-1">
         <h6
-          className={classNames('text-900 line-clamp-1', {
+          className={classNames('text-900 line-clamp-1 text-break', {
             'text-900': type === 'primary',
             'text-1000': type === 'secondary'
           })}
@@ -77,7 +77,7 @@ const AttachmentPreview = ({
             }
           )}
         >
-          <p className="mb-0">{attachment.size}</p>
+          <p className="mb-0 text-nowrap">{attachment.size}</p>
           {attachment.date && (
             <>
               <FontAwesomeIcon
@@ -85,7 +85,7 @@ const AttachmentPreview = ({
                 className="text-500"
                 transform="shrink-12"
               />
-              <p className="mb-0">{attachment.date}</p>
+              <p className="mb-0 text-nowrap">{attachment.date}</p>
             </>
           )}
         </div>

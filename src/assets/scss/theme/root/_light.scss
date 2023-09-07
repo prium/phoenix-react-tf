@@ -153,13 +153,6 @@
     }
   }
 
-  /* --------------------------------- Footer --------------------------------- */
-
-  --#{$prefix}footer-height: 6rem;
-  @include media-breakpoint-up(sm) {
-    --#{$prefix}footer-height: 4rem;
-  }
-
   /* ------------------------------- navbar-vertical light ------------------------------- */
   --#{$prefix}navbar-vertical-border-color: #{$gray-300};
   --#{$prefix}navbar-vertical-bg-color: #{$white};
@@ -362,10 +355,4 @@
   // .table-success {
   //   --#{$prefix}table-bg: var(--#{$prefix}success-400);
   // }
-
-  /* ---------------------------------- Chat ---------------------------------- */
-  --#{$prefix}chat-bottom-gap: 4rem;
-  @include media-breakpoint-up(sm) {
-    --#{$prefix}chat-bottom-gap: 6rem;
-  }
 }
