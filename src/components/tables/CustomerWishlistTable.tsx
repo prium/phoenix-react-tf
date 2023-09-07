@@ -17,9 +17,12 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border d-inline-block">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="rounded-2 border d-inline-block"
+        >
           <img src={productImage} alt="" width={40} height={40} />
-        </div>
+        </Link>
       );
     },
     meta: {
@@ -33,7 +36,10 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="fw-semi-bold line-clamp-1"
+        >
           {product}
         </Link>
       );
