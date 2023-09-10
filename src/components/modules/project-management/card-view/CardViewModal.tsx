@@ -36,7 +36,7 @@ const CardViewModal = ({
       <Modal.Header className="position-relative p-0 overflow-hidden">
         <CoverImage handleClose={handleClose} />
       </Modal.Header>
-      <Modal.Body className="p-5 px-md-6">
+      <Modal.Body className="p-5 px-md-6 pb-md-6">
         {/* <ActionSection /> */}
         <Row className="g-5">
           <Col xs={12} xl={9}>

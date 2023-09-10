@@ -132,3 +132,16 @@
   // overflow: hidden;
   background-size: cover;
 }
+
+.coming-soon-badge {
+  position: absolute;
+  top: 2.0625rem;
+  left: -3.25rem;
+  width: 12.5rem;
+  height: 1.875rem;
+  text-align: center;
+  background-color: var(--#{$prefix}warning);
+  color: $white;
+  line-height: 1.875rem;
+  transform: rotate(-45deg);
+}

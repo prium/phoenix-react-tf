@@ -61,7 +61,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { customer } = original;
       return (
-        <Link to="#!" className="d-flex align-items-center text-900">
+        <Link
+          to="/apps/e-commerce/admin/customer-details"
+          className="d-flex align-items-center text-900"
+        >
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
               {customer.name.charAt(0).toUpperCase()}

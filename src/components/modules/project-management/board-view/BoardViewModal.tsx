@@ -111,7 +111,7 @@ const BoardViewModal = ({
           </Col>
 
           <Col xs={12} xl={7}>
-            <div className="px-5 px-lg-6 py-4">
+            <div className="px-5 px-lg-6 pt-4 pb-5 pb-lg-6">
               <div className="mb-7">
                 <h4 className="mb-4">
                   To do list{' '}
