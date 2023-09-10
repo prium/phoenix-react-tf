@@ -29155,46 +29155,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   background-color: var(--phoenix-gray-300);
 }
 
-/*-----------------------------------------------
-|   Hover Box
------------------------------------------------*/
-.hoverbox {
-  position: relative;
-  overflow: hidden;
-}
-.hoverbox .hoverbox-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-  margin: 0 !important;
-  display: flex;
-  background: rgba(0, 0, 0, 0.6) !important;
-}
-.hoverbox .hoverbox-primary-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  min-height: 100%;
-}
-.hoverbox:hover .hover-box-content-initial, .hoverbox:focus .hover-box-content-initial {
-  opacity: 0;
-}
-.hoverbox:hover .hoverbox-content, .hoverbox:focus .hoverbox-content {
-  opacity: 1;
-}
-.hoverbox:hover .as-hoverbox-content, .hoverbox:focus .as-hoverbox-content {
-  z-index: 1;
-}
-
-.hoverbox-content-gradient {
-  background: linear-gradient(transparent, var(--phoenix-black));
-}
-
 .container-small,
 .container-small-fluid {
   --phoenix-gutter-x: 2rem;
