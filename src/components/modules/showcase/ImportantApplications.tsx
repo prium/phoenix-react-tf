@@ -57,45 +57,50 @@ const ImportantApplications = () => {
             </h2>
           </Col>
         </Row>
-        <Row className="justify-content-center mt-11">
-          {importantApplications.map(application => (
-            <Col
-              xs={12}
-              lg={6}
-              className="mb-7 mb-lg-10"
-              key={application.title}
-            >
-              <div className="text-center">
-                <div className="mx-auto mb-7" style={{ width: '550px' }}>
-                  <div className="position-relative overflow-hidden">
-                    <img
-                      src={application.thumb}
-                      alt=""
-                      className={classNames('shadow rounded mw-100', {
-                        // 'opacity-50': application.disable
-                      })}
-                    />
-                    {application.disable && (
-                      <div className="coming-soon-badge">Coming soon</div>
-                    )}
-                  </div>
-                </div>
-                <h4 className="text-1000 mb-3">{application.title}</h4>
-                <p className="text-700 lh-sm pb-4">{application.details}</p>
-                <Button
-                  as={Link}
-                  to={application.link}
-                  disabled={application.disable}
-                  variant="primary"
-                  className={classNames({
-                    disabled: application.disable
-                  })}
+        <Row>
+          <Col xxl={8} className="mx-auto">
+            <Row className="justify-content-center mt-11">
+              {importantApplications.map(application => (
+                <Col
+                  xs={12}
+                  lg={6}
+                  className="mb-7 mb-lg-10 ms-auto"
+                  key={application.title}
                 >
-                  {application.btnLabel}
-                </Button>
-              </div>
-            </Col>
-          ))}
+                  <div className="text-center">
+                    <div
+                      className="mx-auto mb-7 mw-100"
+                      style={{ width: '550px' }}
+                    >
+                      <div className="position-relative overflow-hidden">
+                        <img
+                          src={application.thumb}
+                          alt=""
+                          className={classNames('shadow rounded mw-100')}
+                        />
+                        {application.disable && (
+                          <div className="coming-soon-badge">Coming soon</div>
+                        )}
+                      </div>
+                    </div>
+                    <h4 className="text-1000 mb-3">{application.title}</h4>
+                    <p className="text-700 lh-sm pb-4">{application.details}</p>
+                    <Button
+                      as={Link}
+                      to={application.link}
+                      disabled={application.disable}
+                      variant="primary"
+                      className={classNames({
+                        disabled: application.disable
+                      })}
+                    >
+                      {application.btnLabel}
+                    </Button>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </Col>
         </Row>
       </Container>
     </section>

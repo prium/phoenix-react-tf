@@ -20439,6 +20439,14 @@ fieldset:disabled .mapbox-container .mapbox-control-btn .zoomOut,
   align-items: center;
 }
 
+.project-modal-btn {
+  --phoenix-bg-opacity: 0.64;
+  transition: 0.3s;
+}
+.project-modal-btn:hover {
+  --phoenix-bg-opacity: 1;
+}
+
 .btn-icon {
   height: 2rem;
   width: 2rem;
