@@ -25,48 +25,66 @@ type NavItemType = {
   id: number;
   label: string;
   url: string;
+  className: string;
+  dropdownClassName: string;
 };
 
 const initNavItems: NavItemType[] = [
   {
     id: 1,
     label: 'Home',
-    url: '/apps/e-commerce/customer/homepage'
+    url: '/apps/e-commerce/customer/homepage',
+    className: '',
+    dropdownClassName: 'd-none'
   },
   {
     id: 2,
     label: 'My Favorite Stores',
-    url: '/apps/e-commerce/customer/favorite-stores'
+    url: '/apps/e-commerce/customer/favorite-stores',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 3,
     label: 'Products',
-    url: '/apps/e-commerce/customer/products-filter'
+    url: '/apps/e-commerce/customer/products-filter',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 4,
     label: 'Wishlist',
-    url: '/apps/e-commerce/customer/wishlist'
+    url: '/apps/e-commerce/customer/wishlist',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 5,
     label: 'Shipping Info',
-    url: '/apps/e-commerce/customer/shipping-info'
+    url: '/apps/e-commerce/customer/shipping-info',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 6,
     label: 'Be a vendor',
-    url: '/apps/e-commerce/admin/add-product'
+    url: '/apps/e-commerce/admin/add-product',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 7,
     label: 'Track order',
-    url: '/apps/e-commerce/customer/order-tracking'
+    url: '/apps/e-commerce/customer/order-tracking',
+    className: 'd-none',
+    dropdownClassName: ''
   },
   {
     id: 8,
     label: 'Checkout',
-    url: '/apps/e-commerce/customer/checkout'
+    url: '/apps/e-commerce/customer/checkout',
+    className: 'd-none',
+    dropdownClassName: ''
   }
 ];
 
@@ -75,54 +93,51 @@ const EcommerceNavbar = () => {
   const [dropdownItems, setDropdownItems] = useState<NavItemType[]>([]);
   const { pathname } = useLocation();
 
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const otherElsRef = useRef<HTMLDivElement | null>(null);
-  const navbarRef = useRef<HTMLUListElement | null>(null);
+  // const containerRef = useRef<HTMLDivElement | null>(null);
+  // const otherElsRef = useRef<HTMLDivElement | null>(null);
+  // const navbarRef = useRef<HTMLUListElement | null>(null);
 
-  const updateItems = useCallback(() => {
-    const otherElsWidth = otherElsRef.current?.clientWidth || 0;
-    const containerWidth = containerRef.current?.clientWidth || 0;
-    const navbarWidth = navbarRef.current?.clientWidth || 0;
-    if (navbarWidth + otherElsWidth + 50 > containerWidth) {
-      setNavItems(items => {
-        return items.filter((item, index) => index !== items.length - 1);
-      });
-    } else {
-      if (
-        navbarWidth + otherElsWidth + 120 < containerWidth &&
-        dropdownItems.length > 0
-      ) {
-        setNavItems(items => [...items, dropdownItems[0]]);
-      }
-    }
-  }, [dropdownItems]);
+  // const updateItems = useCallback(() => {
+  //   const otherElsWidth = otherElsRef.current?.clientWidth || 0;
+  //   const containerWidth = containerRef.current?.clientWidth || 0;
+  //   const navbarWidth = navbarRef.current?.clientWidth || 0;
+  //   if (navbarWidth + otherElsWidth + 50 > containerWidth) {
+  //     setNavItems(items => {
+  //       return items.filter((item, index) => index !== items.length - 1);
+  //     });
+  //   } else {
+  //     if (
+  //       navbarWidth + otherElsWidth + 120 < containerWidth &&
+  //       dropdownItems.length > 0
+  //     ) {
+  //       setNavItems(items => [...items, dropdownItems[0]]);
+  //     }
+  //   }
+  // }, [dropdownItems]);
 
-  useLayoutEffect(() => {
-    updateItems();
-  }, []);
+  // useLayoutEffect(() => {
+  //   updateItems();
+  // }, []);
 
-  useLayoutEffect(() => {
-    window.addEventListener('resize', updateItems);
-    return () => {
-      window.removeEventListener('resize', updateItems);
-    };
-  }, [updateItems]);
+  // useLayoutEffect(() => {
+  //   window.addEventListener('resize', updateItems);
+  //   return () => {
+  //     window.removeEventListener('resize', updateItems);
+  //   };
+  // }, [updateItems]);
 
-  useEffect(() => {
-    const items = initNavItems.filter(
-      navItem => !navItems.map(navItem => navItem.id).includes(navItem.id)
-    );
-    setDropdownItems(items);
-    updateItems();
-  }, [navItems]);
+  // useEffect(() => {
+  //   const items = initNavItems.filter(
+  //     navItem => !navItems.map(navItem => navItem.id).includes(navItem.id)
+  //   );
+  //   setDropdownItems(items);
+  //   updateItems();
+  // }, [navItems]);
 
   return (
     <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
-      <div
-        className="container-small d-flex flex-between-center flex-nowrap w-100"
-        ref={containerRef}
-      >
-        <Dropdown ref={otherElsRef}>
+      <div className="container-small d-flex flex-between-center flex-nowrap w-100">
+        <Dropdown>
           <Dropdown.Toggle
             variant=""
             className="text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
@@ -174,13 +189,12 @@ const EcommerceNavbar = () => {
             </Card>
           </Dropdown.Menu>
         </Dropdown>
-        <Nav
-          as="ul"
-          className="justify-content-end align-items-center gap-5"
-          ref={navbarRef}
-        >
-          {navItems.map(item => (
-            <Nav.Item className="gap-3" key={item.id}>
+        <Nav as="ul" className="justify-content-end align-items-center gap-5">
+          {initNavItems.map(item => (
+            <Nav.Item
+              className={classNames('gap-3', item.className)}
+              key={item.id}
+            >
               <Nav.Link
                 key={item.id}
                 as={Link}
@@ -193,25 +207,30 @@ const EcommerceNavbar = () => {
               </Nav.Link>
             </Nav.Item>
           ))}
-          {dropdownItems.length > 0 && (
-            <Dropdown align="end" as={NavItem}>
-              <Dropdown.Toggle
-                variant=""
-                className="fw-bold nav-link dropdown-caret-none"
-              >
-                More
-                <FontAwesomeIcon icon="angle-down" className="ms-2" />
-              </Dropdown.Toggle>
+          {/* {dropdownItems.length > 0 && ( */}
+          <Dropdown align="end" as={NavItem}>
+            <Dropdown.Toggle
+              variant=""
+              className="fw-bold nav-link dropdown-caret-none"
+            >
+              More
+              <FontAwesomeIcon icon="angle-down" className="ms-2" />
+            </Dropdown.Toggle>
 
-              <Dropdown.Menu align="end">
-                {dropdownItems.map(item => (
-                  <Dropdown.Item key={item.id} as={Link} to={item.url}>
-                    {item.label}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          )}
+            <Dropdown.Menu align="end">
+              {initNavItems.map(item => (
+                <Dropdown.Item
+                  className={item.dropdownClassName}
+                  key={item.id}
+                  as={Link}
+                  to={item.url}
+                >
+                  {item.label}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
+          {/* )} */}
         </Nav>
       </div>
     </Navbar>
