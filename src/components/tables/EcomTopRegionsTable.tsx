@@ -1,7 +1,6 @@
 import { ColumnDef, flexRender } from '@tanstack/react-table';
 import classNames from 'classnames';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-import Scrollbar from 'components/base/Scrollbar';
 import {
   TopRegionsTableDataType,
   topRegionsTableData

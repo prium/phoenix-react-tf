@@ -5,8 +5,8 @@ import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
 import EcomWishlistTable from 'components/tables/EcomWishlistTable';
-import React, { useState } from 'react';
-import { Nav, Tab, Tabs } from 'react-bootstrap';
+import React from 'react';
+import { Nav, Tab } from 'react-bootstrap';
 
 interface TabLink {
   id: string;
@@ -52,8 +52,6 @@ const tabLinks: TabLink[] = [
 ];
 
 const ProfileDetailsTab = () => {
-  const [key, setKey] = useState('orders');
-
   return (
     <Tab.Container
       defaultActiveKey="orders"
