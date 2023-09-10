@@ -8,7 +8,7 @@ import { Member } from 'data/members';
 export const membersTablecolumns: ColumnDef<Member>[] = [
   {
     accessorKey: 'name',
-    header: 'Customer',
+    header: 'Member',
     cell: ({ row: { original } }) => {
       const { name, avatar } = original;
       return (

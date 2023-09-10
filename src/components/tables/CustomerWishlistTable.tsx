@@ -101,7 +101,7 @@ const CustomerWishlistTable = () => {
       <AdvanceTableProvider {...table}>
         <div className="border-y">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
-          <AdvanceTableFooter pagination />
+          <AdvanceTableFooter pagination showViewAllBtn={false} />
         </div>
       </AdvanceTableProvider>
     </div>

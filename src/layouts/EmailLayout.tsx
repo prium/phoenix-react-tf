@@ -49,11 +49,7 @@ const EmailLayout = ({
         </Col>
         {page !== 'compose' && (
           <Col className="col-auto d-lg-none">
-            <Button
-              variant="primary"
-              className="px-3 px-sm-4"
-              // href={`${CWD}${paths['email-compose']}`}
-            >
+            <Button variant="primary" className="px-3 px-sm-4">
               <span className="d-none d-sm-inline-block">Compose</span>
               <FontAwesomeIcon icon="plus" className="d-sm-none" />
             </Button>

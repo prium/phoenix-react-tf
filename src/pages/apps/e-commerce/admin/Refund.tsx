@@ -23,7 +23,7 @@ const Refund = () => {
           </p>
           <div className="flex-1 d-flex flex-between-center gap-3">
             <p className="text-800 lh-sm mb-0 flex-1 white-space-nowrap">
-              Customer IP :{' '}
+              Customer Id :{' '}
               <Link className="fw-bold" to="#!">
                 {' '}
                 2364847

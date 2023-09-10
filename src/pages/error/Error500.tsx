@@ -2,7 +2,7 @@ import Button from 'components/base/Button';
 import error500Illustration from 'assets/img/spot-illustrations/dark_500-illustration.png';
 import dark500Illustration from 'assets/img/spot-illustrations/500-illustration.png';
 import error500 from 'assets/img/spot-illustrations/500.png';
-import React from 'react';
+import darkError500 from 'assets/img/spot-illustrations/dark_500.png';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
@@ -38,6 +38,11 @@ const Error500 = () => {
                 <img
                   src={error500}
                   className="img-fluid mb-6 w-50 w-lg-75 d-dark-none"
+                  alt=""
+                />
+                <img
+                  src={darkError500}
+                  className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
                 <h2 className="text-800 fw-bolder mb-3">Unknow error!</h2>

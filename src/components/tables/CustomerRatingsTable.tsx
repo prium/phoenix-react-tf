@@ -137,7 +137,7 @@ const CustomerRatingsTable = () => {
             tableProps={{ className: 'phoenix-table fs-9 mb-0' }}
             rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
           />
-          <AdvanceTableFooter navBtn />
+          <AdvanceTableFooter navBtn showViewAllBtn={false} />
         </div>
       </AdvanceTableProvider>
     </>

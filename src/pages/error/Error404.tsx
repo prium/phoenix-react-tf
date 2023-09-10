@@ -1,8 +1,8 @@
 import Button from 'components/base/Button';
-import React from 'react';
 import errorIllustration from 'assets/img/spot-illustrations/404-illustration.png';
 import dark404illustrations from 'assets/img/spot-illustrations/dark_404-illustration.png';
-import error404Illustration from 'assets/img/spot-illustrations/404.png';
+import error404 from 'assets/img/spot-illustrations/404.png';
+import darkError40 from 'assets/img/spot-illustrations/dark_404.png';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
@@ -36,8 +36,13 @@ const Error404 = () => {
               </Col>
               <Col xs={12} lg={6} className="text-center text-lg-start">
                 <img
-                  src={error404Illustration}
+                  src={error404}
                   className="img-fluid mb-6 w-50 w-lg-75 d-dark-none"
+                  alt=""
+                />
+                <img
+                  src={darkError40}
+                  className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
                 <h2 className="text-800 fw-bolder mb-3">Page Missing!</h2>

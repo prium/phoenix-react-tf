@@ -141,7 +141,7 @@ const CustomerOrdersTable = () => {
         <AdvanceTable
           tableProps={{ className: 'phoenix-table table-sm fs-9' }}
         />
-        <AdvanceTableFooter pagination />
+        <AdvanceTableFooter pagination showViewAllBtn={false} />
       </div>
     </AdvanceTableProvider>
   );

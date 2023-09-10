@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import illustrations31 from 'assets/img/spot-illustrations/31.png';
 import illustration11 from 'assets/img/icons/illustrations/11.png';
@@ -8,7 +7,6 @@ import illustration14 from 'assets/img/icons/illustrations/14.png';
 import illustration15 from 'assets/img/icons/illustrations/15.png';
 import illustration16 from 'assets/img/icons/illustrations/16.png';
 import illustration2 from 'assets/img/icons/illustrations/2.png';
-import illustration18 from 'assets/img/icons/illustrations/18.png';
 import illustration19 from 'assets/img/icons/illustrations/19.png';
 import illustration21 from 'assets/img/icons/illustrations/21.png';
 import illustration22 from 'assets/img/icons/illustrations/22.png';
@@ -16,6 +14,7 @@ import illustration23 from 'assets/img/icons/illustrations/23.png';
 import illustration24 from 'assets/img/icons/illustrations/24.png';
 import illustration25 from 'assets/img/icons/illustrations/25.png';
 import illustration26 from 'assets/img/icons/illustrations/26.png';
+import illustration27 from 'assets/img/icons/illustrations/27.png';
 import classNames from 'classnames';
 
 export const featureItems = [
@@ -46,7 +45,40 @@ export const featureItems = [
     border: 'border-end-0 border-end-sm border-end-lg-0',
     title: (
       <>
-        Developed with <span className="text-html5 me-1 fw-bold">ReactJs</span>
+        Developed with{' '}
+        <span className="text-info-300 me-1 fw-bold">ReactJs</span>
+      </>
+    )
+  },
+  {
+    id: 17,
+    icon: illustration2,
+    border: 'border-end',
+    title: (
+      <>
+        Built with{' '}
+        <span className="text-info-300 me-1 fw-bold">React Bootstrap</span>
+      </>
+    )
+  },
+  {
+    id: 15,
+    icon: illustration15,
+    border: 'border-end-0',
+    title: (
+      <>
+        <span className="text-sass ms-1 fw-bold">SASS</span> Supported
+      </>
+    )
+  },
+
+  {
+    id: 18,
+    icon: illustration27,
+    border: 'border-end-0 border-end-sm border-end-lg-0',
+    title: (
+      <>
+        Built on <span className="text-info fw-bold">Typescript</span>
       </>
     )
   },
@@ -71,26 +103,6 @@ export const featureItems = [
     )
   },
   {
-    id: 15,
-    icon: illustration15,
-    border: 'border-end-0',
-    title: (
-      <>
-        <span className="text-sass ms-1 fw-bold">SASS</span> Supported
-      </>
-    )
-  },
-  {
-    id: 17,
-    icon: illustration2,
-    border: 'border-end',
-    title: (
-      <>
-        Built on <span className="text-gulp me-1 fw-bold">React Bootstrap</span>
-      </>
-    )
-  },
-  {
     id: 19,
     icon: illustration19,
     border: 'border-end',
@@ -100,24 +112,15 @@ export const featureItems = [
       </>
     )
   },
-  {
-    id: 18,
-    icon: illustration18,
-    border: 'border-end-0 border-end-sm border-end-lg-0',
-    title: (
-      <>
-        Collection of <span className="text-info fw-bold">pages</span>
-      </>
-    )
-  },
+
   {
     id: 22,
     icon: illustration22,
     border: 'border-end',
     title: (
       <>
-        <span className="text-warning ms-1 fw-bold">Chart JS &amp;</span> ,
-        ECharts
+        <span className="text-warning ms-1 fw-bold">Echarts </span>
+        &amp; DHtmlx Gantt
       </>
     )
   },
