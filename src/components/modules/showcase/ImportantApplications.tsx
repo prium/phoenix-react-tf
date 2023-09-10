@@ -66,14 +66,20 @@ const ImportantApplications = () => {
               key={application.title}
             >
               <div className="text-center">
-                <img
-                  src={application.thumb}
-                  alt=""
-                  className={classNames('mb-7 shadow rounded mw-100', {
-                    'opacity-50': application.disable
-                  })}
-                  width={550}
-                />
+                <div className="mx-auto mb-7" style={{ width: '550px' }}>
+                  <div className="position-relative overflow-hidden">
+                    <img
+                      src={application.thumb}
+                      alt=""
+                      className={classNames('shadow rounded mw-100', {
+                        // 'opacity-50': application.disable
+                      })}
+                    />
+                    {application.disable && (
+                      <div className="coming-soon-badge">Coming soon</div>
+                    )}
+                  </div>
+                </div>
                 <h4 className="text-1000 mb-3">{application.title}</h4>
                 <p className="text-700 lh-sm pb-4">{application.details}</p>
                 <Button

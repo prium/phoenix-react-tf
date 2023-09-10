@@ -41,7 +41,10 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original.customer;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link
+          to="/apps/e-commerce/admin/customer-details"
+          className="d-flex align-items-center"
+        >
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
         </Link>
