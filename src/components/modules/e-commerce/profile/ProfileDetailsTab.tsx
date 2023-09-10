@@ -5,8 +5,7 @@ import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
 import EcomProfileReviewsTable from 'components/tables/EcomProfileReviewsTable';
 import EcomProfileStoresTable from 'components/tables/EcomProfileStoresTable';
 import EcomWishlistTable from 'components/tables/EcomWishlistTable';
-import React, { useState } from 'react';
-import { Nav, Tab, Tabs } from 'react-bootstrap';
+import { Nav, Tab } from 'react-bootstrap';
 
 interface TabLink {
   id: string;
@@ -52,14 +51,8 @@ const tabLinks: TabLink[] = [
 ];
 
 const ProfileDetailsTab = () => {
-  const [key, setKey] = useState('orders');
-
   return (
-    <Tab.Container
-      defaultActiveKey="orders"
-      // activeKey={key}
-      // onSelect={k => setKey(k as string)}
-    >
+    <Tab.Container defaultActiveKey="orders">
       <Nav className="mb-3 pb-1 gap-3 nav-underline flex-nowrap scrollbar">
         {tabLinks.map(item => (
           <Nav.Item key={item.id}>
