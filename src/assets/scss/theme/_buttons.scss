@@ -278,6 +278,14 @@
   align-items: center;
 }
 
+.project-modal-btn {
+  --#{$prefix}bg-opacity: 0.64;
+  transition: 0.3s;
+  &:hover {
+    --#{$prefix}bg-opacity: 1;
+  }
+}
+
 .btn-icon {
   height: 2rem;
   width: 2rem;
