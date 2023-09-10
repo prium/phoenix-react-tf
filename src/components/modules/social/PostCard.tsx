@@ -18,7 +18,7 @@ interface PostCardProps {
 const PostCard = ({ post }: PostCardProps) => {
   return (
     <div className="mb-5">
-      <Card className="mb-4">
+      <Card className="mb-4 overflow-hidden">
         <Card.Body className="p-3 p-sm-4">
           <div className="border-bottom mb-3">
             <div className="d-flex align-items-center mb-3">

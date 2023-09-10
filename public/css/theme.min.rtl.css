@@ -28957,10 +28957,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   padding-right: -4px !important;
 }
 
-.windows .track-vertical,
-.firefox .track-vertical {
+.track-vertical {
   left: 2px !important;
 }
+
 .windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div,
 .firefox[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div {
   margin-left: -17px !important;
@@ -29414,9 +29414,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   border-color: var(--phoenix-primary) !important;
 }
 
-.swiper-products-thumb {
-  margin-left: 4px;
-}
 @media (min-width: 768px) {
   .swiper-products-thumb {
     height: 484px;

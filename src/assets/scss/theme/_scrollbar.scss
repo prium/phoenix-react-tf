@@ -36,21 +36,6 @@
   }
 }
 
-.custom-scrollbar {
-  > {
-    div {
-      // &::-webkit-scrollbar {
-      //   display: none;
-      //   -ms-overflow-style: none;
-      //   scrollbar-width: none;
-      //   width: 0;
-      // }
-      // overflow: auto !important;
-      // margin-right: 0 !important;
-    }
-  }
-}
-
 .table-scrollbar {
   margin-left: -4px !important;
   padding-left: 4px !important;
@@ -72,11 +57,12 @@
   }
 }
 
+.track-vertical {
+  right: 2px !important;
+}
+
 .windows,
 .firefox {
-  .track-vertical {
-    right: 2px !important;
-  }
   &[dir='rtl'] {
     .custom-scrollbar {
       &:not(.table-scrollbar) {
