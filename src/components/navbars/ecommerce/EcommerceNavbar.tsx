@@ -1,12 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { categories } from 'data/e-commerce';
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState
-} from 'react';
+import { useCallback, useLayoutEffect, useRef } from 'react';
 import {
   Card,
   Col,
@@ -71,31 +65,41 @@ const initNavItems: NavItemType[] = [
 ];
 
 const EcommerceNavbar = () => {
-  const [navItems, setNavItems] = useState(initNavItems);
-  const [dropdownItems, setDropdownItems] = useState<NavItemType[]>([]);
   const { pathname } = useLocation();
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const otherElsRef = useRef<HTMLDivElement | null>(null);
-  const navbarRef = useRef<HTMLUListElement | null>(null);
+  const moreBtnRef = useRef<HTMLDivElement | null>(null);
+  const navItemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const dropdownItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   const updateItems = useCallback(() => {
     const otherElsWidth = otherElsRef.current?.clientWidth || 0;
     const containerWidth = containerRef.current?.clientWidth || 0;
-    const navbarWidth = navbarRef.current?.clientWidth || 0;
-    if (navbarWidth + otherElsWidth + 50 > containerWidth) {
-      setNavItems(items => {
-        return items.filter((item, index) => index !== items.length - 1);
-      });
-    } else {
-      if (
-        navbarWidth + otherElsWidth + 120 < containerWidth &&
-        dropdownItems.length > 0
-      ) {
-        setNavItems(items => [...items, dropdownItems[0]]);
-      }
+    const moreBtnWidth = moreBtnRef.current?.clientWidth || 0;
+
+    let totalItemsWidth = 0;
+    if (moreBtnRef.current) {
+      moreBtnRef.current.style.display = 'none';
     }
-  }, [dropdownItems]);
+    navItemsRef.current.forEach((item, index) => {
+      const dropdownItem = dropdownItemsRef.current[index];
+      if (item && dropdownItem && moreBtnRef.current) {
+        totalItemsWidth = totalItemsWidth + item.clientWidth + 32;
+        if (
+          otherElsWidth + totalItemsWidth + moreBtnWidth + 50 >
+          containerWidth
+        ) {
+          item.style.display = 'none';
+          dropdownItem.style.display = 'block';
+          moreBtnRef.current.style.display = 'block';
+        } else {
+          item.style.display = 'block';
+          dropdownItem.style.display = 'none';
+        }
+      }
+    });
+  }, []);
 
   useLayoutEffect(() => {
     updateItems();
@@ -107,14 +111,6 @@ const EcommerceNavbar = () => {
       window.removeEventListener('resize', updateItems);
     };
   }, [updateItems]);
-
-  useEffect(() => {
-    const items = initNavItems.filter(
-      navItem => !navItems.map(navItem => navItem.id).includes(navItem.id)
-    );
-    setDropdownItems(items);
-    updateItems();
-  }, [navItems]);
 
   return (
     <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
@@ -174,13 +170,13 @@ const EcommerceNavbar = () => {
             </Card>
           </Dropdown.Menu>
         </Dropdown>
-        <Nav
-          as="ul"
-          className="justify-content-end align-items-center gap-5"
-          ref={navbarRef}
-        >
-          {navItems.map(item => (
-            <Nav.Item className="gap-3" key={item.id}>
+        <Nav as="ul" className="justify-content-end align-items-center gap-5">
+          {initNavItems.map((item, index) => (
+            <Nav.Item
+              className="gap-3"
+              key={item.id}
+              ref={(el: HTMLDivElement) => (navItemsRef.current[index] = el)}
+            >
               <Nav.Link
                 key={item.id}
                 as={Link}
@@ -193,25 +189,30 @@ const EcommerceNavbar = () => {
               </Nav.Link>
             </Nav.Item>
           ))}
-          {dropdownItems.length > 0 && (
-            <Dropdown align="end" as={NavItem}>
-              <Dropdown.Toggle
-                variant=""
-                className="fw-bold nav-link dropdown-caret-none"
-              >
-                More
-                <FontAwesomeIcon icon="angle-down" className="ms-2" />
-              </Dropdown.Toggle>
+          <Dropdown align="end" as={NavItem} ref={moreBtnRef}>
+            <Dropdown.Toggle
+              variant=""
+              className="fw-bold nav-link dropdown-caret-none"
+            >
+              More
+              <FontAwesomeIcon icon="angle-down" className="ms-2" />
+            </Dropdown.Toggle>
 
-              <Dropdown.Menu align="end">
-                {dropdownItems.map(item => (
-                  <Dropdown.Item key={item.id} as={Link} to={item.url}>
-                    {item.label}
-                  </Dropdown.Item>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
-          )}
+            <Dropdown.Menu align="end" renderOnMount>
+              {initNavItems.map((item, index) => (
+                <Dropdown.Item
+                  key={item.id}
+                  as={Link}
+                  to={item.url}
+                  ref={(el: HTMLAnchorElement) =>
+                    (dropdownItemsRef.current[index] = el)
+                  }
+                >
+                  {item.label}
+                </Dropdown.Item>
+              ))}
+            </Dropdown.Menu>
+          </Dropdown>
         </Nav>
       </div>
     </Navbar>

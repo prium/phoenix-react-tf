@@ -9,8 +9,6 @@ import RevealDropdown, {
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { ProductReviewType } from 'data/e-commerce';
 import useLightbox from 'hooks/useLightbox';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ProductReview = ({ review }: { review: ProductReviewType }) => {
@@ -40,22 +38,20 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       </p>
       <Lightbox {...lightboxProps} />
       {review.images && (
-        <Row className="g-2 mb-2">
+        <div className="d-flex gap-2 flex-wrap mb-2">
           {review.images.map((image, index) => (
-            <Col xs="auto" key={image}>
-              <Link to="#!">
-                <img
-                  src={image}
-                  key={image}
-                  alt=""
-                  className="w-100 fit-cover"
-                  height={164}
-                  onClick={() => openLightbox(index + 1)}
-                />
-              </Link>
-            </Col>
+            <Link to="#!" key={image}>
+              <img
+                src={image}
+                key={image}
+                alt=""
+                className="fit-cover"
+                height={164}
+                onClick={() => openLightbox(index + 1)}
+              />
+            </Link>
           ))}
-        </Row>
+        </div>
       )}
 
       {review.reply && (
