@@ -28954,17 +28954,21 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   padding-right: -4px !important;
 }
 
-.windows .track-vertical {
+.windows .track-vertical,
+.firefox .track-vertical {
   left: 2px !important;
 }
-.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div {
+.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div,
+.firefox[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div {
   margin-left: -17px !important;
   margin-right: 0px !important;
 }
-.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) .track-vertical {
+.windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) .track-vertical,
+.firefox[dir=rtl] .custom-scrollbar:not(.table-scrollbar) .track-vertical {
   left: 19px !important;
 }
-.windows .table-scrollbar > div {
+.windows .table-scrollbar > div,
+.firefox .table-scrollbar > div {
   margin-left: 0 !important;
 }
 
