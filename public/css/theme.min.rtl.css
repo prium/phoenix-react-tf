@@ -21724,6 +21724,9 @@ span.flatpickr-weekday,
 .leaflet-bar {
   box-shadow: var(--phoenix-box-shadow);
 }
+.leaflet-bar a {
+  text-decoration: none;
+}
 .leaflet-bar a, .leaflet-bar a:hover {
   background-color: var(--phoenix-leaflet-bar-bg);
   color: var(--phoenix-body-color);
@@ -29392,6 +29395,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   align-items: center;
   border: 1px solid var(--phoenix-border-color);
   border-radius: 0.375rem;
+  margin-left: 1px;
   cursor: pointer;
 }
 @media (min-width: 1200px) {
@@ -29410,6 +29414,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   border-color: var(--phoenix-primary) !important;
 }
 
+.swiper-products-thumb {
+  margin-left: 4px;
+}
 @media (min-width: 768px) {
   .swiper-products-thumb {
     height: 484px;

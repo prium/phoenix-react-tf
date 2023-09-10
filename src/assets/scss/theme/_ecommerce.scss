@@ -140,6 +140,7 @@
   align-items: center;
   border: 1px solid var(--#{$prefix}border-color);
   border-radius: $border-radius;
+  margin-right: 1px;
   cursor: pointer;
   @include media-breakpoint-up(xl) {
     height: 82px;
@@ -159,6 +160,7 @@
 }
 
 .swiper-products-thumb {
+  margin-right: 4px;
   @include media-breakpoint-up(md) {
     height: 484px;
   }

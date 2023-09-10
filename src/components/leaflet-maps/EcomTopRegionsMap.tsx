@@ -86,7 +86,7 @@ const EcomTopRegionsMap = ({ data, ...rest }: { data: MapMarkerPoints[] }) => {
       zoomSnap={0.5}
       center={position}
       {...rest}
-      className="h-100"
+      className="h-100 bg-white"
     >
       <LayerComponent data={data} />
     </MapContainer>

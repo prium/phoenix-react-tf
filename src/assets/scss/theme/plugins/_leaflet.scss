@@ -8,6 +8,7 @@
 .leaflet-bar {
   box-shadow: var(--#{$prefix}box-shadow);
   a {
+    text-decoration: none;
     &,
     &:hover {
       background-color: var(--#{$prefix}leaflet-bar-bg);

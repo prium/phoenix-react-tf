@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { Table, TableProps } from 'react-bootstrap';
-import Scrollbar from './Scrollbar';
 import { flexRender } from '@tanstack/react-table';
 
 interface AdvanceTableProps {
@@ -21,7 +20,7 @@ const AdvanceTable = ({
   const { getRowModel, getFlatHeaders } = table;
 
   return (
-    <Scrollbar autoHeight autoHeightMax="100%" className="table-scrollbar">
+    <div className="scrollbar ms-n1 ps-1">
       <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>
@@ -63,7 +62,7 @@ const AdvanceTable = ({
           ))}
         </tbody>
       </Table>
-    </Scrollbar>
+    </div>
   );
 };
 
