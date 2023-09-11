@@ -71,7 +71,7 @@ const SocialSettingsSideBar = () => {
             defaultChecked
           />
           <Form.Check.Label htmlFor="showEmail" className="fs-8">
-            Allow users to show your email
+            Allow users to see my email
           </Form.Check.Label>
         </Form.Check>
         <Form.Check type="checkbox" id="showExperiences">
@@ -81,7 +81,7 @@ const SocialSettingsSideBar = () => {
             value="option2"
           />
           <Form.Check.Label htmlFor="showExperiences" className="fs-8">
-            Allow users to show your experiences
+            Allow users to see my experiences
           </Form.Check.Label>
         </Form.Check>
         <Form.Check type="checkbox" id="showFollowers">
@@ -91,7 +91,7 @@ const SocialSettingsSideBar = () => {
             value="option3"
           />
           <Form.Check.Label htmlFor="showFollowers" className="fs-8">
-            Allow users to show your followers
+            Allow users to see my followers
           </Form.Check.Label>
         </Form.Check>
       </div>
@@ -104,7 +104,7 @@ const SocialSettingsSideBar = () => {
             defaultChecked
           />
           <Form.Check.Label htmlFor="showPhone" className="fs-8">
-            Allow users to show your experiences
+            See my your phone number
           </Form.Check.Label>
         </Form.Check>
         <Form.Check type="checkbox" id="permitFollow" className="form-switch">
@@ -115,7 +115,7 @@ const SocialSettingsSideBar = () => {
             value="option3"
           />
           <Form.Check.Label htmlFor="permitFollow" className="fs-8">
-            Allow users to show your followers
+            Permit users to follow you.
           </Form.Check.Label>
         </Form.Check>
       </div>

@@ -122,7 +122,7 @@ export const PaymentMethod = () => {
           <Form.Group as={Col}>
             <h5 className="text-1000 mb-2">CVC</h5>
             <Form.Control
-              className="text-1100"
+              className="text-1100 input-spin-none"
               type="number"
               placeholder="Enter a valid CVC"
             />

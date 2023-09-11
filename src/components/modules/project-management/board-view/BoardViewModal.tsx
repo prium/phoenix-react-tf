@@ -37,8 +37,8 @@ const BoardViewModal = ({
       <Modal.Body className="p-0 overflow-hidden">
         <ActionSection />
         <Row className="g-0">
-          <Col xs={12} xl={5} className="border-end border-300">
-            <div className="px-5 px-lg-6 py-4">
+          <Col xs={12} xl={5} className="border-end border-300 bg-100">
+            <div className="px-5 px-lg-6 py-4 bg-white">
               <h3 className="fw-bolder lh-sm mb-5">{project.name}</h3>
               <div className="d-flex align-items-center mb-5">
                 <p className="text-1000 fw-700 mb-0 me-2">{progress}%</p>
@@ -92,7 +92,7 @@ const BoardViewModal = ({
                 Chagall his private box seats. Chagall completed 19 gouaches
               </EditableDetailsField>
             </div>
-            <div className="bg-100 px-5 px-lg-6 py-4">
+            <div className="px-5 px-lg-6 py-4">
               <div className="mb-1">
                 {comments.map((comment, index) => (
                   <Comment
