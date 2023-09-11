@@ -103,6 +103,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         lineStyle: {
           color: getThemeColor('gray-200')
         }
+      },
+      itemStyle: {
+        color: getThemeColor('gray-200')
       }
     },
     {
@@ -113,7 +116,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         color: getThemeColor('primary')
       },
       showSymbol: false,
-      symbol: 'circle'
+      symbol: 'circle',
+      itemStyle: {
+        color: getThemeColor('primary')
+      }
     }
   ],
   grid: { left: 0, right: 0, top: 5, bottom: 20 }

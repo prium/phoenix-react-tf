@@ -111,6 +111,7 @@ const InventoryTab = () => {
                       type="number"
                       placeholder="Quantity"
                       style={{ maxWidth: 385 }}
+                      className="input-spin-none"
                     />
                     <Button
                       variant="primary"

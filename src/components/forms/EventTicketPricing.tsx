@@ -26,19 +26,31 @@ const EventTicketPricing = () => {
           <Form.Control type="text" placeholder="Top Gallery" />
         </Col>
         <Col xs={6} xl={5}>
-          <Form.Control type="number" placeholder="$0.0" />
+          <Form.Control
+            type="number"
+            placeholder="$0.0"
+            className="input-spin-none"
+          />
         </Col>
         <Col xs={6} xl={7}>
           <Form.Control type="text" placeholder="VIP" />
         </Col>
         <Col xs={6} xl={5}>
-          <Form.Control type="number" placeholder="$0.0" />
+          <Form.Control
+            type="number"
+            placeholder="$0.0"
+            className="input-spin-none"
+          />
         </Col>
         <Col xs={6} xl={7}>
           <Form.Control type="text" placeholder="Front row" />
         </Col>
         <Col xs={6} xl={5}>
-          <Form.Control type="number" placeholder="$0.0" />
+          <Form.Control
+            type="number"
+            placeholder="$0.0"
+            className="input-spin-none"
+          />
         </Col>
         <Col xs={12}>
           <Button

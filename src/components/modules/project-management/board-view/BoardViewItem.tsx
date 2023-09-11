@@ -24,7 +24,11 @@ const BoardViewItem = ({ project }: { project: Project }) => {
         />
         <div className="position-relative h-100 d-flex flex-column justify-content-between">
           <div className="d-flex justify-content-between align-items-center">
-            <Badge variant="phoenix" bg={project.status.type} className="fs-10">
+            <Badge
+              variant="phoenix"
+              bg={project.status.type}
+              className="fs-10 light"
+            >
               {project.status.label}
             </Badge>
             <div className="z-index-2">

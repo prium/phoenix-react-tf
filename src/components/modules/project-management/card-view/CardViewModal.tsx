@@ -32,7 +32,7 @@ const CardViewModal = ({
 }: BoardViewModalModalProps) => {
   const { progress, bgClassName, variant } = useProjectProgress(project);
   return (
-    <Modal show={show} onHide={handleClose} size="lg">
+    <Modal show={show} onHide={handleClose} size="lg" className="p-0">
       <Modal.Header className="position-relative p-0 overflow-hidden">
         <CoverImage handleClose={handleClose} />
       </Modal.Header>

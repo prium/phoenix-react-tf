@@ -40,7 +40,7 @@ const OrganizeFormCard = ({ className }: { className?: string }) => {
           <Col xs={12} sm={6} xl={12}>
             <div className="d-flex gap-2 mb-2">
               <h5 className="mb-0 text-1000">Tags</h5>
-              <Link className="fw-bold fs-9" to="#!">
+              <Link className="fw-bold fs-9 lh-sm" to="#!">
                 View all tags
               </Link>
             </div>
