@@ -1,7 +1,8 @@
 import React from 'react';
 import error403Illustration from 'assets/img/spot-illustrations/403-illustration.png';
 import dark403Illustration from 'assets/img/spot-illustrations/dark403-illustration.png';
-import light403Illustration from 'assets/img/spot-illustrations/403.png';
+import light403 from 'assets/img/spot-illustrations/403.png';
+import dark403 from 'assets/img/spot-illustrations/dark_403.png';
 import Button from 'components/base/Button';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -36,8 +37,13 @@ const Error403 = () => {
               </Col>
               <Col xs={12} lg={6} className="text-center text-lg-start">
                 <img
-                  src={light403Illustration}
+                  src={light403}
                   className="img-fluid mb-6 w-50 w-lg-75 d-dark-none"
+                  alt=""
+                />
+                <img
+                  src={dark403}
+                  className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
                 <h2 className="text-800 fw-bolder mb-3">Access Forbidden!</h2>

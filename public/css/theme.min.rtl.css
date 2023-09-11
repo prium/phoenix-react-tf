@@ -309,7 +309,7 @@
 :root .nav-slim,
 :root.light .nav-slim,
 :root .light .nav-slim {
-  --phoenix-navbar-top-height: 1.7rem;
+  --phoenix-navbar-top-height: 2rem;
 }
 :root .dual-nav,
 :root.light .dual-nav,
@@ -10550,6 +10550,12 @@ textarea.form-control-lg {
 .text-nowrap {
   white-space: nowrap !important;
 }
+
+.text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
 .text-soft {
   --phoenix-text-opacity: 1;
   color: rgba(var(--phoenix-soft-rgb), var(--phoenix-text-opacity)) !important;
@@ -20803,7 +20809,7 @@ button,
 
 .todolist-offcanvas {
   width: 35rem;
-  top: calc(1px + var(--phoenix-navbar-top-height)) !important;
+  top: var(--phoenix-navbar-top-height) !important;
   border-right: 1px solid var(--phoenix-gray-300);
   background: 1px solid var(--phoenix-gray-100);
 }
@@ -21816,7 +21822,6 @@ span.flatpickr-weekday,
 .mapbox-container {
   position: relative;
   height: 100%;
-  min-height: 300px;
   overflow: hidden;
 }
 .mapbox-container .map-container {
@@ -27628,7 +27633,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 
 .navbar-top.navbar-slim {
-  min-height: 1.7rem;
+  height: 1.7rem;
 }
 .navbar-top.navbar-slim .navbar-toggler-humburger-icon {
   height: 1rem;
@@ -28947,6 +28952,11 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   background: var(--phoenix-scrollbar-bg);
 }
 
+[dir=rtl] .custom-scrollbar > div:first-child {
+  margin-left: -15px !important;
+  margin-right: 0px !important;
+}
+
 .table-scrollbar {
   margin-right: -4px !important;
   padding-right: 4px !important;
@@ -28983,7 +28993,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   margin-left: 0 !important;
 }
 
-.product-scrollbar > div {
+.product-scrollbar > div:first-child {
   padding-right: 4px !important;
 }
 

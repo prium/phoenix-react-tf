@@ -36,6 +36,19 @@
   }
 }
 
+.custom-scrollbar {
+  > {
+    div {
+      &:first-child {
+        [dir='rtl'] & {
+          margin-right: -15px !important;
+          margin-left: 0px !important;
+        }
+      }
+    }
+  }
+}
+
 .table-scrollbar {
   margin-left: -4px !important;
   padding-left: 4px !important;
@@ -89,7 +102,9 @@
 .product-scrollbar {
   > {
     div {
-      padding-left: 4px !important;
+      &:first-child {
+        padding-left: 4px !important;
+      }
       // [dir='rtl'] & {
       //   padding-left: -4px !important;
       // }

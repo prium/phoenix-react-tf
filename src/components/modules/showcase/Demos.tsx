@@ -41,7 +41,11 @@ const Demos = () => {
                   <h5 className="py-4 text-1000">{demo.variantName}</h5>
                 </div>
               </div>
-              <Link to={demo.link} className="stretched-link"></Link>
+              <Link
+                to={demo.link}
+                target="_blank"
+                className="stretched-link"
+              ></Link>
             </Col>
           ))}
         </Row>

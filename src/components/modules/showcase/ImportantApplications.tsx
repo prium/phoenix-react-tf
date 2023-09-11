@@ -87,6 +87,7 @@ const ImportantApplications = () => {
                     <p className="text-700 lh-sm pb-4">{application.details}</p>
                     <Button
                       as={Link}
+                      target="_blank"
                       to={application.link}
                       disabled={application.disable}
                       variant="primary"

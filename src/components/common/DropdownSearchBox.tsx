@@ -23,9 +23,9 @@ const DropdownSearchBox = ({
   const [searchInputValue, setSearchInputValue] = useState('');
   return (
     <Dropdown
-      // className="navbar-top-search-box"
       className={className}
       onToggle={() => setOpenDropdown(!openDropdown)}
+      show={openDropdown}
     >
       <Dropdown.Toggle
         as="div"
@@ -35,10 +35,12 @@ const DropdownSearchBox = ({
       >
         <SearchBox
           placeholder="Search..."
-          // inputClassName="rounded-pill"
           className={searchBoxClassName}
           value={searchInputValue}
-          onChange={({ target }) => setSearchInputValue(target.value)}
+          onChange={({ target }) => {
+            setSearchInputValue(target.value);
+            setOpenDropdown(true);
+          }}
           {...rest}
         />
       </Dropdown.Toggle>

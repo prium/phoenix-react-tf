@@ -51,7 +51,11 @@ const NecessaryPages = () => {
                   <h5 className="py-4 text-1000">{page.pageName}</h5>
                 </div>
               </div>
-              <Link className="stretched-link" to={page.pageLink}></Link>
+              <Link
+                className="stretched-link"
+                target="_blank"
+                to={page.pageLink}
+              ></Link>
             </Col>
           ))}
         </Row>

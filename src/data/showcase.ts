@@ -1,6 +1,6 @@
 import demo1 from 'assets/img/sections/demo-1.webp';
 import demo2 from 'assets/img/sections/demo-2.webp';
-import demo3 from 'assets/img/sections/demo-3.webp';
+import demo16 from 'assets/img/sections/demo-16.webp';
 import demo4 from 'assets/img/sections/demo-4.webp';
 import demo5 from 'assets/img/sections/demo-5.webp';
 import demo6 from 'assets/img/sections/demo-6.webp';
@@ -33,8 +33,8 @@ export const demos = [
     link: '/pages/demo/vertical-sidenav'
   },
   {
-    sideThumb: demo3,
-    mainThumb: demo3,
+    sideThumb: demo16,
+    mainThumb: demo16,
     variantName: 'Dark Mode',
     link: '/pages/demo/dark-mode'
   },
@@ -132,7 +132,7 @@ export const necessaryPages = [
   {
     thumb: section24,
     pageName: 'Notifications',
-    pageLink: '/pages/notifications/notifications'
+    pageLink: '/pages/notifications'
   },
   {
     thumb: section27,

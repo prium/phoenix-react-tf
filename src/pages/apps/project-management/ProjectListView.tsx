@@ -25,8 +25,8 @@ const ProjectListView = () => {
       <AdvanceTableProvider {...table}>
         <div className="d-flex flex-wrap mb-4 gap-3 gap-sm-6 align-items-center">
           <h2 className="mb-0">
-            Projects
-            <span className="fw-normal text-700 ms-3">({projects.length})</span>
+            <span className="me-3">Projects</span>{' '}
+            <span className="fw-normal text-700">({projects.length})</span>
           </h2>
           <Link className="btn btn-primary px-5" to="/">
             <FontAwesomeIcon icon="plus" className="me-2" />

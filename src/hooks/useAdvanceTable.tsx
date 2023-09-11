@@ -40,7 +40,10 @@ const selectionColumn = {
         onChange: row.getToggleSelectedHandler()
       }}
     />
-  )
+  ),
+  meta: {
+    headerProps: { style: { width: '30px' } }
+  }
 };
 
 const useAdvanceTable = <T,>({

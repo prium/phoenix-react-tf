@@ -275,6 +275,14 @@ $utilities: map_merge(
         4: 4,
         5: 5
       )
+    ),
+    'word-wrap': (
+      property: word-wrap word-break,
+      class: text,
+      values: (
+        break: break-word
+      ),
+      rtl: true
     )
   ),
   $utilities

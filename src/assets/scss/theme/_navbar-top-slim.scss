@@ -1,9 +1,10 @@
-.navbar-top{
-  &.navbar-slim{
-    min-height: $navbar-top-slim-height;
-    .navbar-toggler-humburger-icon{
+.navbar-top {
+  &.navbar-slim {
+    height: $navbar-top-slim-height;
+    .navbar-toggler-humburger-icon {
       height: 1rem;
-      &:hover, &:focus{
+      &:hover,
+      &:focus {
         background-color: transparent;
       }
     }
@@ -12,17 +13,17 @@
       height: $navbar-top-slim-height;
       // padding-left: 2rem;
     }
-    .navbar-brand{
+    .navbar-brand {
       margin-bottom: 0;
       color: $warning;
       font-size: larger;
     }
 
-    .navbar-nav-icons{
-      >{
-        .nav-item{
-          >{
-            .nav-link{
+    .navbar-nav-icons {
+      > {
+        .nav-item {
+          > {
+            .nav-link {
               padding: 0.25rem 0.5rem;
             }
           }
@@ -34,8 +35,8 @@
     @include media-breakpoint-up($item) {
       &.navbar-expand-#{$item} {
         &.navbar-slim {
-          .nav-link{
-            &.dropdown-toggle{
+          .nav-link {
+            &.dropdown-toggle {
               // padding: 0.4rem 0.5rem;
               padding-top: 0.5rem;
               padding-bottom: 0.4rem;
