@@ -4,15 +4,14 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 
 const exampleCode = `
 export const initialConfig = {
-    isNavbarVerticalCollapsed: false,
-    openNavbarVertical: false, // for responsive
-    theme: 'light',
-    navbarTopAppearance: 'default',
-    navbarVerticalAppearance: 'default',
-    navbarPosition: 'vertical',
-    navbarTopShape: 'default',
-    isRTL: false,
-    showSettingPanel: false
+  isNavbarVerticalCollapsed: false,
+  openNavbarVertical: false, // for responsive
+  theme: 'light',
+  navbarTopAppearance: 'default',
+  navbarVerticalAppearance: 'default',
+  navbarPosition: 'vertical',
+  navbarTopShape: 'default',
+  isRTL: false
 };`;
 
 const contextCode = `
@@ -177,19 +176,6 @@ const Configuration = () => {
                   Set <code>true</code> to make the whole layout RTL (Right to
                   Left). Recommended for languages such as Arabic, Hebrew and
                   others.
-                </td>
-              </tr>
-              <tr>
-                <td className="white-space-nowrap">showSettingPanel</td>
-                <td>
-                  <code>Boolean</code>
-                </td>
-                <td>
-                  <code>false</code>
-                </td>
-                <td>
-                  To keep the setting panel <code>open</code> set this option to{' '}
-                  <code>true</code> when the page first loads
                 </td>
               </tr>
             </tbody>

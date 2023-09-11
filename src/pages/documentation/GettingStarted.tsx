@@ -58,8 +58,9 @@ const GettingStarted = () => {
                 if you do not already have it installed on your machine.
               </li>
               <li>
-                Open the “{process.env.REACT_APP_TITLE}-React” directory with
-                your cmd or terminal
+                Open the “{process.env.REACT_APP_NAME}-react-v
+                {process.env.REACT_APP_VERSION}” directory with your cmd or
+                terminal
               </li>
               <li>
                 Run <code>npm i</code>
@@ -102,8 +103,7 @@ const GettingStarted = () => {
               put them in the <code>build/</code> folder.
             </p>
             <p>
-              To run the production build locally at
-              <code> http://localhost:5000 </code> run the following commands:
+              To run the production build locally run the following commands:
             </p>
             <PhoenixLiveEditor code={serveCode} />
           </PhoenixDocCard.Body>

@@ -61,7 +61,7 @@ const SettingsPanel = () => {
           Reset to default
         </Button>
       </Offcanvas.Header>
-      <Offcanvas.Body className="px-card">
+      <Offcanvas.Body className="px-card scrollbar">
         <ColorScheme />
         <RTLMode />
         <NavigationType />
@@ -71,7 +71,7 @@ const SettingsPanel = () => {
         <Button
           as="a"
           target="_blank"
-          href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
+          href="#!"
           className="w-100 mb-3 text-white dark__text-100"
           variant="primary"
         >

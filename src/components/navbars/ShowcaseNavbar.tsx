@@ -50,12 +50,7 @@ const ShowcaseNavbar = () => {
             </Nav.Item>
           </Nav>
           <div className="d-grid d-lg-flex align-items-center">
-            <Button
-              variant="primary"
-              as={Link}
-              to="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
-              target="_blank"
-            >
+            <Button variant="primary" as={Link} to="#!" target="_blank">
               Purchase
             </Button>
           </div>

@@ -29005,6 +29005,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .track-vertical {
   right: 2px !important;
 }
+.track-vertical > div {
+  background-color: var(--phoenix-scrollbar-bg) !important;
+}
 
 .windows[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div,
 .firefox[dir=rtl] .custom-scrollbar:not(.table-scrollbar) > div {

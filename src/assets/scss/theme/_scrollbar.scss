@@ -72,6 +72,11 @@
 
 .track-vertical {
   right: 2px !important;
+  > {
+    div {
+      background-color: $scrollbar-bg !important;
+    }
+  }
 }
 
 .windows,
