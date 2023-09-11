@@ -57,12 +57,12 @@ const ComingSoon = () => {
                 />
 
                 <h2 className="text-gray-800 fs-xl-6 mb-3">
-                  This page is under development.
+                  {pathName} page is under development.
                 </h2>
                 <p className="mb-6">
-                  {pathName} page is under development. We're making it a top
-                  priority to get all the pages from the newest HTML version of
-                  Phoenix over to the React JS version. Let's go!
+                  This page is under development. We're making it a top priority
+                  to get all the pages from the newest HTML version of Phoenix
+                  over to the React JS version. Let's go!
                 </p>
                 <Link
                   className="btn btn-primary"
