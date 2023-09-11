@@ -4,6 +4,7 @@ import { Navbar } from 'react-bootstrap';
 import logo from 'assets/img/icons/logo.png';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import NavbarToggleButton from './NavbarToggleButton';
+import { Link } from 'react-router-dom';
 
 const NavbarBrand = () => {
   const {
@@ -16,7 +17,8 @@ const NavbarBrand = () => {
       <div className="navbar-logo">
         {breakpoints.down('lg') && <NavbarToggleButton />}
         <Navbar.Brand
-          href="/"
+          as={Link}
+          to="/"
           className={classNames({
             'me-1 me-sm-3':
               navbarTopShape === 'slim' || navbarPosition === 'horizontal'
