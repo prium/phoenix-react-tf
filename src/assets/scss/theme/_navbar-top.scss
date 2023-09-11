@@ -16,6 +16,17 @@
           border-radius: 15px;
         }
       }
+      .dropdown-menu {
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1.5rem;
+          background: transparent;
+          top: -1.5rem;
+          width: calc(100% - 5px);
+          z-index: -1;
+        }
+      }
       .dropdown {
         .dropdown-toggle:after {
           display: none;
@@ -41,15 +52,6 @@
 
   .dropdown-menu {
     margin-top: 1rem;
-    &::before {
-      content: '';
-      position: absolute;
-      height: 1.5rem;
-      background: transparent;
-      top: -1.5rem;
-      width: calc(100% - 5px);
-      z-index: -1;
-    }
   }
 
   &.navbar-slim {

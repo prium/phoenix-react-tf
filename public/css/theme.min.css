@@ -26153,6 +26153,17 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   border-left: 0.25rem solid transparent;
   border-radius: 15px;
 }
+.navbar-horizontal .navbar-nav-top .dropdown .dropdown-menu::before,
+.dual-nav .navbar-nav-top .dropdown .dropdown-menu::before,
+.navbar-combo .navbar-nav-top .dropdown .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  height: 1.5rem;
+  background: transparent;
+  top: -1.5rem;
+  width: calc(100% - 5px);
+  z-index: -1;
+}
 .navbar-horizontal .navbar-nav-top .dropdown .dropdown .dropdown-toggle:after,
 .dual-nav .navbar-nav-top .dropdown .dropdown .dropdown-toggle:after,
 .navbar-combo .navbar-nav-top .dropdown .dropdown .dropdown-toggle:after {
@@ -26177,15 +26188,6 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 .navbar-top .dropdown-menu {
   margin-top: 1rem;
-}
-.navbar-top .dropdown-menu::before {
-  content: "";
-  position: absolute;
-  height: 1.5rem;
-  background: transparent;
-  top: -1.5rem;
-  width: calc(100% - 5px);
-  z-index: -1;
 }
 .navbar-top.navbar-slim .dropdown-menu {
   margin-top: 12px;

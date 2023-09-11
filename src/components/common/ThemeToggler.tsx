@@ -28,7 +28,7 @@ const ThemeToggler = ({ slim, className, ...rest }: ThemeTogglerProps) => {
         })}
       >
         <OverlayTrigger
-          placement={isRTL ? 'right' : 'left'}
+          placement={slim ? 'bottom' : isRTL ? 'right' : 'left'}
           overlay={
             <Tooltip id="ThemeColor" style={{ position: 'fixed' }}>
               {slim
