@@ -30,11 +30,16 @@ const BoardViewModal = ({
 }: BoardViewModalModalProps) => {
   const { progress, bgClassName, variant } = useProjectProgress(project);
   return (
-    <Modal show={show} onHide={handleClose} size="xl">
-      <Modal.Header className="position-relative p-0 overflow-hidden">
+    <Modal
+      show={show}
+      onHide={handleClose}
+      size="xl"
+      contentClassName="overflow-hidden"
+    >
+      <Modal.Header className="position-relative p-0">
         <CoverImage handleClose={handleClose} />
       </Modal.Header>
-      <Modal.Body className="p-0 overflow-hidden">
+      <Modal.Body className="p-0">
         <ActionSection />
         <Row className="g-0">
           <Col xs={12} xl={5} className="border-end border-300 bg-100">

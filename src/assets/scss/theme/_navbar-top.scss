@@ -569,10 +569,7 @@
                   padding-left: 1rem !important;
                 }
                 .dropdown-indicator-icon {
-                  // &.uil-angle-right {
-                  // transition: none;
                   transform: none;
-                  // }
                 }
                 &.dropdown-menu-card {
                   min-width: 550px;
@@ -604,15 +601,11 @@
               &.dropdown-inside {
                 .dropdown-item {
                   .dropdown-indicator-icon {
-                    &.uil-angle-right {
-                      transform: rotate(90deg);
-                    }
+                    transform: rotate(90deg);
                   }
                   &.show {
                     .dropdown-indicator-icon {
-                      &.uil-angle-right {
-                        transform: rotate(-90deg);
-                      }
+                      transform: rotate(-90deg);
                     }
                   }
                 }
