@@ -116,7 +116,9 @@ import {
   faLink,
   faTriangleExclamation,
   faSquare,
-  faPause
+  faPause,
+  faPhoneAlt,
+  faCalendar
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookSquare,
@@ -281,5 +283,7 @@ library.add(
   fabGoogle,
   faTriangleExclamation,
   faSquare,
-  faPause
+  faPause,
+  faPhoneAlt,
+  faCalendar
 );

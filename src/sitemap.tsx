@@ -61,9 +61,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'CRM',
-            path: 'dashboard/crm',
+            path: '/dashboard/crm',
             pathName: 'crm',
-            topNavIcon: 'phone'
+            topNavIcon: 'phone',
+            active: true
           },
           {
             name: 'social-feed',
