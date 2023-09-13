@@ -118,7 +118,8 @@ import {
   faSquare,
   faPause,
   faPhoneAlt,
-  faCalendar
+  faCalendar,
+  faCaretUp
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookSquare,
@@ -285,5 +286,6 @@ library.add(
   faSquare,
   faPause,
   faPhoneAlt,
-  faCalendar
+  faCalendar,
+  faCaretUp
 );

@@ -1,6 +1,8 @@
 import CrmStatCard from 'components/cards/CrmStatCard';
 import ContactsCreatedChart from 'components/charts/e-charts/ContactsCreatedChart';
 import LeadSources from 'components/list-items/LeadSources';
+import ContactsBySource from 'components/modules/crm/ContactsBySource';
+import NewUsersAndLeads from 'components/modules/crm/NewUsersAndLeads';
 import { Col, Row } from 'react-bootstrap';
 
 const Crm = () => {
@@ -46,6 +48,12 @@ const Crm = () => {
         <h3>Contacts Created</h3>
         <p className="text-700 mb-1">Payment received across all channels</p>
         <ContactsCreatedChart style={{ height: 270, width: '100%' }} />
+      </Col>
+      <Col xs={12} xxl={6} className="mb-3 mb-sm-0">
+        <ContactsBySource />
+      </Col>
+      <Col xs={12} xxl={6} className="mb-8">
+        <NewUsersAndLeads />
       </Col>
     </Row>
   );
