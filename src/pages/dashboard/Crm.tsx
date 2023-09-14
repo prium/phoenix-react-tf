@@ -1,7 +1,9 @@
 import CrmStatCard from 'components/cards/CrmStatCard';
 import ContactsCreatedChart from 'components/charts/e-charts/ContactsCreatedChart';
 import LeadSources from 'components/list-items/LeadSources';
+import AdClicks from 'components/modules/crm/AdClicks';
 import ContactsBySource from 'components/modules/crm/ContactsBySource';
+import DealForecast from 'components/modules/crm/DealForecast';
 import NewUsersAndLeads from 'components/modules/crm/NewUsersAndLeads';
 import { Col, Row } from 'react-bootstrap';
 
@@ -54,6 +56,12 @@ const Crm = () => {
       </Col>
       <Col xs={12} xxl={6} className="mb-8">
         <NewUsersAndLeads />
+      </Col>
+      <Col xs={12} xxl={6}>
+        <AdClicks />
+      </Col>
+      <Col xs={12} xxl={6} className="mb-6 gy-0 gy-xxl-3">
+        <DealForecast />
       </Col>
     </Row>
   );

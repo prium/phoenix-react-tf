@@ -28855,6 +28855,14 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .table.phoenix-table > tbody > tr > td:last-child {
   padding-left: 0;
 }
+.table.phoenix-table-bordered > :not(caption) > * {
+  border-width: 1px 0;
+}
+.table.phoenix-table-bordered > :not(caption) > * > td:not(:first-child, :last-child),
+.table.phoenix-table-bordered > :not(caption) > * th:not(:first-child, :last-child) {
+  border-width: 0 1px;
+  border-color: var(--phoenix-gray-300);
+}
 .table .table-primary, .table.table-primary {
   color: #31374a;
   border-color: #cbd0dd;
@@ -28884,7 +28892,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   border-color: #cbd0dd;
 }
 .table .table-dark, .table.table-dark {
-  --phoenix-table-hover-bg: rgba(var(--phoenix-primary-600-rgb), 0.07);
+  --phoenix-table-hover-bg: rgba(
+    var(--phoenix-primary-600-rgb),
+    0.07
+  );
   color: #9fa6bc;
 }
 
