@@ -141,6 +141,7 @@ import GanttChart from 'pages/modules/charts/GanttChart';
 import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
+import Analytics from 'pages/apps/crm/Analytics';
 
 const routes: RouteObject[] = [
   {
@@ -210,6 +211,15 @@ const routes: RouteObject[] = [
               {
                 path: 'customer-details',
                 element: <CustomerDetails />
+              }
+            ]
+          },
+          {
+            path: '/apps/crm/',
+            children: [
+              {
+                path: 'analytics',
+                element: <Analytics />
               }
             ]
           },

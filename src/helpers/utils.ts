@@ -156,6 +156,9 @@ export const hexToRgb = (hex: string) => {
   return [r, g, b];
 };
 
+export const rgbaColor = (color = '#fff', alpha = 0.5) =>
+  `rgba(${hexToRgb(color)}, ${alpha})`;
+
 export const transformTSCode = (
   snippet: string,
   target: ts.ScriptTarget = ts.ScriptTarget.ES2015

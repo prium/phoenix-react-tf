@@ -210,7 +210,14 @@ export const routes: RouteItems[] = [
       {
         name: 'CRM',
         icon: 'phone',
+        active: true,
         pages: [
+          {
+            name: 'analytics',
+            path: '/apps/crm/analytics',
+            pathName: 'crm-analytics',
+            active: true
+          },
           {
             name: 'leads',
             path: '/crm/leads',

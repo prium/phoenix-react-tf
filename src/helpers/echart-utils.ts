@@ -1,17 +1,17 @@
+//@ts-nocheck
 import dayjs from 'dayjs';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 
 export const tooltipFormatterDefault = (
   params: CallbackDataParams[],
-  dateFormatter = 'MMM DD'
+  dateFormatter = 'MMM DD',
+  colorProperty? = 'borderColor'
 ) => {
   let tooltipItem = ``;
   params.forEach(el => {
     tooltipItem += `<div class='ms-1'>
         <h6 class="text-700">
-        <span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${
-          el.borderColor ? el.borderColor : el.color
-        }"></span>
+        <span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${el[colorProperty]}"></span>
           ${el.seriesName} : ${el.value}
         </h6>
       </div>`;
