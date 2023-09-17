@@ -154,7 +154,8 @@ const DealForecastTable = () => {
         hasFooter
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table-bordered fs-9 mb-0 border-top border-300'
+          className:
+            'phoenix-table phoenix-table-bordered fs-9 mb-0 border-top border-300'
         }}
       />
     </AdvanceTableProvider>
