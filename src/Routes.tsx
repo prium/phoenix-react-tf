@@ -142,6 +142,7 @@ import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
 import Crm from 'pages/dashboard/Crm';
+import LeadDetails from 'pages/apps/crm/LeadDetails';
 
 const routes: RouteObject[] = [
   {
@@ -244,6 +245,15 @@ const routes: RouteObject[] = [
               {
                 path: 'project-details',
                 element: <ProjectDetails />
+              }
+            ]
+          },
+          {
+            path: '/apps/crm/',
+            children: [
+              {
+                path: 'lead-details',
+                element: <LeadDetails />
               }
             ]
           },
