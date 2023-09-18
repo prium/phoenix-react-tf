@@ -1,0 +1,102 @@
+import { ToDoItem } from 'data/project-management/todoListData';
+
+export interface LeadDeal {
+  name: string;
+  amount: number;
+  stage: string;
+  probability: number;
+  closing_date: string;
+  type: string;
+}
+
+export const leadTasks: ToDoItem[] = [
+  {
+    task: 'Platforms for data administration',
+    date: '19 Nov, 2022',
+    time: '11:56 PM'
+  },
+  {
+    task: 'Make wiser business choices.',
+    date: '05 Nov, 2022',
+    time: '09:30 PM'
+  },
+  {
+    task: 'Market and consumer insights',
+    date: '02 Nov, 2022',
+    time: '05:25 AM'
+  },
+  {
+    task: 'Dashboards for business insights',
+    date: '29 Oct, 2022',
+    time: '08:21 PM'
+  },
+  {
+    task: 'Analytics and consultancy for data',
+    date: '21 Oct, 2022',
+    time: '03:45 PM',
+    completed: true
+  },
+  {
+    task: 'Planning your locations Customer data platform',
+    date: '14 Oct, 2022',
+    time: '10:00 PM',
+    completed: true
+  },
+  {
+    task: 'Promotion of technology',
+    date: '12 Oct, 2022',
+    time: '02:00 AM',
+    completed: true
+  }
+];
+
+export const leadDealsTableData: LeadDeal[] = [
+  {
+    name: 'Mocking Bird',
+    amount: 6800000,
+    stage: 'won deal',
+    probability: 67,
+    closing_date: 'Dec 29, 2021',
+    type: 'warm'
+  },
+  {
+    name: 'Airbender',
+    amount: 89090000,
+    stage: 'new deal',
+    probability: 34,
+    closing_date: 'Mar 27, 2021',
+    type: 'hot'
+  },
+  {
+    name: 'Showmen',
+    amount: 78650000,
+    stage: 'canceled',
+    probability: 89,
+    closing_date: 'Jun 24, 2021',
+    type: 'cold'
+  },
+  {
+    name: 'Tarakihi',
+    amount: 1200000,
+    stage: 'in progress',
+    probability: 90,
+    closing_date: 'May 19, 2024',
+    type: 'hot'
+  },
+  {
+    name: 'Ponce d’leon',
+    amount: 46000,
+    stage: 'won deal',
+    probability: 97,
+    closing_date: 'Aug 19, 2024',
+    type: 'cold'
+  },
+  {
+    name: 'leon',
+    amount: 66000,
+    stage: 'in progress',
+    probability: 88,
+    closing_date: 'Aug 19, 2024',
+    type: 'cold'
+  }
+];

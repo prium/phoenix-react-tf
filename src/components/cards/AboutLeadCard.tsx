@@ -1,7 +1,19 @@
+import {
+  UilBuilding,
+  UilCheckCircle,
+  UilClock,
+  UilDollarAlt,
+  UilEnvelopeAlt,
+  UilFileCheckAlt,
+  UilGlobe,
+  UilPhone,
+  UilPostcard
+} from '@iconscout/react-unicons';
 import classNames from 'classnames';
+import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
-import DetailsLabel from 'components/common/DetailsLabel';
-import React from 'react';
+import LeadInfoItem from 'components/info-items/LeadInfoItem';
+import { currencyFormat } from 'helpers/utils';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +27,54 @@ const AboutLeadCard = ({ className }: { className?: string }) => {
             Edit
           </Button>
         </div>
+        <LeadInfoItem className="mb-4" label="Email" icon={UilEnvelopeAlt}>
+          <Link to="mailto:ansolo5@jeemail.com">ansolo5@jeemail.com</Link>
+        </LeadInfoItem>
+        <LeadInfoItem className="mb-4" label="Phone" icon={UilPhone}>
+          <a href="tel:+1234567890">+1234567890</a>
+        </LeadInfoItem>
+
+        <LeadInfoItem className="mb-4" label="Website" icon={UilGlobe}>
+          <a href="#!">www.bb.ru.com</a>
+        </LeadInfoItem>
+
+        <LeadInfoItem className="mb-4" label="Industry" icon={UilBuilding}>
+          <p className="mb-0 text-800">Large Enterprise</p>
+        </LeadInfoItem>
+
+        <LeadInfoItem
+          className="mb-4"
+          label="Number of employees"
+          icon={UilPostcard}
+        >
+          <p className="mb-0 text-800">126</p>
+        </LeadInfoItem>
+
+        <LeadInfoItem
+          className="mb-4"
+          label="Annual Revenue"
+          icon={UilDollarAlt}
+        >
+          <p className="mb-0 text-800">{currencyFormat(12000)}</p>
+        </LeadInfoItem>
+
+        <LeadInfoItem className="mb-4" label="Last contacted" icon={UilClock}>
+          <p className="mb-0 text-800">12 November 2021, 10:54 AM</p>
+        </LeadInfoItem>
+
+        <LeadInfoItem
+          className="mb-4"
+          label="Lead source"
+          icon={UilFileCheckAlt}
+        >
+          <p className="mb-0 text-800">Advertisement</p>
+        </LeadInfoItem>
+
+        <LeadInfoItem label="Lead status" icon={UilCheckCircle}>
+          <Badge variant="phoenix" bg="primary">
+            New Lead
+          </Badge>
+        </LeadInfoItem>
       </Card.Body>
     </Card>
   );

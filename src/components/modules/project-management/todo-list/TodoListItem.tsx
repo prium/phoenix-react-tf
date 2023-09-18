@@ -11,6 +11,7 @@ type Breakpoints = 'md' | 'lg' | 'xl' | 'xxl';
 interface TodoListItemInterface {
   todo: ToDoItem;
   className?: string;
+  labelClassName?: string;
   halfLayoutBreakpoints?: Breakpoints[];
   fullLayoutBreakpoints?: Breakpoints[];
   onClick?: (item: ToDoItem) => void;
@@ -25,11 +26,12 @@ type HalfLayoutBreakpoints = {
 const TodoListItem = ({
   todo,
   className,
+  labelClassName,
   halfLayoutBreakpoints = [],
   fullLayoutBreakpoints = [],
   onClick
 }: TodoListItemInterface) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(todo.completed);
 
   const handleSelectionChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSelected(e.target.checked);
@@ -70,7 +72,7 @@ const TodoListItem = ({
           className={classNames('flex-shrink-0 my-0 align-self-start')}
           onChange={handleSelectionChange}
         />
-        <Row className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
+        <Row className="justify-content-between align-items-center btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
           <Col
             xs={12}
             {...fullLayoutBreakpoints?.reduce(
@@ -91,7 +93,8 @@ const TodoListItem = ({
             <div className="d-flex align-items-center lh-1 gap-2">
               <h5
                 className={classNames(
-                  'mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer',
+                  labelClassName,
+                  'mb-0 line-clamp-1 fw-semi-bold text-700 cursor-pointer',
                   {
                     'text-decoration-line-through': selected
                   }

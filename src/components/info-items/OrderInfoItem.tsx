@@ -1,12 +1,11 @@
-import React from 'react';
 import FeatherIcon from 'feather-icons-react';
 
-interface DetailsLabelProps {
+interface OrderInfoItemProps {
   icon: string;
   label: string;
 }
 
-const DetailsLabel = ({ icon, label }: DetailsLabelProps) => {
+const OrderInfoItem = ({ icon, label }: OrderInfoItemProps) => {
   return (
     <div className="d-flex align-items-center mb-1">
       <FeatherIcon
@@ -20,4 +19,4 @@ const DetailsLabel = ({ icon, label }: DetailsLabelProps) => {
   );
 };
 
-export default DetailsLabel;
+export default OrderInfoItem;

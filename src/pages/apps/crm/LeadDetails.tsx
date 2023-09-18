@@ -1,11 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import AboutLeadCard from 'components/cards/AboutLeadCard';
+import LeadAddressCard from 'components/cards/LeadAddressCard';
 import LeadProfileCard from 'components/cards/LeadProfileCard';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import LeadDeals from 'components/modules/crm/LeadDeals';
+import Tasks from 'components/modules/crm/Tasks';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import React from 'react';
-import { Col, Dropdown, Row } from 'react-bootstrap';
+import { Col, Dropdown, Nav, Row } from 'react-bootstrap';
 
 const LeadDetails = () => {
   return (
@@ -65,8 +68,32 @@ const LeadDetails = () => {
                 <h3 className="mb-0">Lead Details</h3>
               </div>
               <LeadProfileCard className="mb-3" />
-              <AboutLeadCard />
+              <AboutLeadCard className="mb-3" />
+              <LeadAddressCard />
             </div>
+          </div>
+        </Col>
+        <Col md={7} xl={8}>
+          <div className="lead-details-container">
+            <Nav
+              className="nav-underline"
+              // onSelect={selectedKey => alert('selected ' + selectedKey)}
+            >
+              <Nav.Item>
+                <Nav.Link href="#task">Task</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#deals">Deals</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#email">Emails</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href="#attachments">Attachments</Nav.Link>
+              </Nav.Item>
+            </Nav>
+            <Tasks className="mb-8" />
+            <LeadDeals className="mb-8" />
           </div>
         </Col>
       </Row>
