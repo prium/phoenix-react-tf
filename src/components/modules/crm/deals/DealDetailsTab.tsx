@@ -12,9 +12,9 @@ import DealDetailsNotes from './DealDetailsNotes';
 import DealDetailsMeeting from './DealDetailsMeeting';
 import DealDetailsTask from './DealDetailsTask';
 import DealDetailsCall from './DealDetailsCall';
-import DealDetailsEmails from './DealDetailsEmails';
 import DealDetailsAttachments from './DealDetailsAttachments';
 import { attachments } from 'data/project-management/todoListData';
+import LeadEmails from '../LeadEmails';
 
 interface TabItem {
   name: string;
@@ -51,7 +51,7 @@ const tabitems: TabItem[] = [
   {
     name: 'Emails',
     icon: 'envelope',
-    content: <DealDetailsEmails />
+    content: <LeadEmails />
   },
   {
     name: 'Attachments',

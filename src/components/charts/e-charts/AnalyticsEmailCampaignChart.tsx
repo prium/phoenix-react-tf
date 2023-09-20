@@ -4,6 +4,7 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([TooltipComponent, BarChart]);
 
@@ -150,8 +151,7 @@ const getDefaultOptions = (
 });
 
 const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
-  const initialRef: any = null;
-  const chartRef = useRef(initialRef);
+  const chartRef = useRef<null | EChartsReactCore>(null);
   const updateDimensions = () => {
     if (window.innerWidth < 576) {
       chartRef.current?.getEchartsInstance().setOption({

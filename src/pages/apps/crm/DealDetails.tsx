@@ -7,7 +7,7 @@ import DealsOtherInformation from 'components/forms/DealsOtherInformation';
 import DealDetailsInfo from 'components/modules/crm/deals/DealDetailsInfo';
 import DealDetailsTab from 'components/modules/crm/deals/DealDetailsTab';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import { dealDetailsInfoData } from 'data/crm/dealDetailsInfo';
+import { dealDetailsInfoData, stats } from 'data/crm/dealDetailsInfo';
 import { Col, Dropdown, Row } from 'react-bootstrap';
 
 const DealDetails = () => {
@@ -53,13 +53,13 @@ const DealDetails = () => {
         <Row className="g-4 g-xl-6">
           <Col xl={5} xxl={4}>
             <div className="sticky-leads-sidebar">
-              <DealProfileCard />
+              <DealProfileCard className="mb-3" />
               <DealsOtherInformation />
             </div>
           </Col>
           <Col xl={7} xxl={8}>
-            <DealsPrintingDimensionsCard />
-            <DealDetailsInfo data={dealDetailsInfoData} />
+            <DealsPrintingDimensionsCard stats={stats} className="mb-5" />
+            <DealDetailsInfo data={dealDetailsInfoData} className="mb-7" />
             <DealDetailsTab />
           </Col>
         </Row>

@@ -72,3 +72,35 @@ export const dealDetailsInfoData: DealDetailsInfoType[][] = [
     }
   ]
 ];
+
+export interface Stat {
+  id: number;
+  title: string;
+  value: string;
+  icon: string;
+  color: string;
+}
+
+export const stats: Stat[] = [
+  {
+    id: 1,
+    title: 'Deal Amount',
+    value: '$12,000.00',
+    icon: 'dollar-sign',
+    color: 'success'
+  },
+  {
+    id: 2,
+    title: 'Deal Code',
+    value: 'PHO1234',
+    icon: 'code',
+    color: 'info'
+  },
+  {
+    id: 3,
+    title: 'Deal Type',
+    value: 'New Business',
+    icon: 'layout',
+    color: 'primary'
+  }
+];

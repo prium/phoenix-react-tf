@@ -8,6 +8,7 @@ import { LineChart } from 'echarts/charts';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import dayjs from 'dayjs';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([TooltipComponent, LineChart]);
 
@@ -156,8 +157,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
 });
 
 const AnalyticsCallCampaignChart = ({ style }: { style: CSSProperties }) => {
-  const initialRef: any = null;
-  const chartRef = useRef(initialRef);
+  const chartRef = useRef<null | EChartsReactCore>(null);
   const updateDimensions = () => {
     if (window.innerWidth < 576) {
       chartRef.current?.getEchartsInstance().setOption({

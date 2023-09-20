@@ -1,42 +1,19 @@
 import classNames from 'classnames';
 import { Card, Col, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import { Stat } from 'data/crm/dealDetailsInfo';
 
-interface Stat {
-  id: number;
-  title: string;
-  value: string;
-  icon: string;
-  color: string;
+interface DimensionsCardProps {
+  stats: Stat[];
+  className?: string;
 }
 
-const stats: Stat[] = [
-  {
-    id: 1,
-    title: 'Deal Amount',
-    value: '$12,000.00',
-    icon: 'dollar-sign',
-    color: 'success'
-  },
-  {
-    id: 2,
-    title: 'Deal Code',
-    value: 'PHO1234',
-    icon: 'code',
-    color: 'info'
-  },
-  {
-    id: 3,
-    title: 'Deal Type',
-    value: 'New Business',
-    icon: 'layout',
-    color: 'primary'
-  }
-];
-
-const DealsPrintingDimensionsCard = () => {
+const DealsPrintingDimensionsCard = ({
+  stats,
+  className
+}: DimensionsCardProps) => {
   return (
-    <Card className="mb-5">
+    <Card className={className}>
       <Card.Body>
         <Row className="g-4 g-xl-1 g-xxl-3 justify-content-between">
           {stats.map((stat, index) => (
