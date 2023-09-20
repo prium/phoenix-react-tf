@@ -1,13 +1,13 @@
 .lead-details-container {
   .nav-underline-scrollspy {
     z-index: 1014;
-    top: calc(var(--#{$prefix}navbar-top-height) + 1px);
+    top: var(--#{$prefix}navbar-top-height);
   }
 }
 .sticky-leads-sidebar {
   position: sticky;
   z-index: 1015;
-  top: calc(var(--#{$prefix}navbar-top-height) + 21px);
+  top: calc(var(--#{$prefix}navbar-top-height) + 20px);
 }
 .leads-table {
   th {

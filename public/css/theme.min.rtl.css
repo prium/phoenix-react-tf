@@ -30297,12 +30297,15 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .phoenix-offcanvas.show ~ .phoenix-offcanvas-backdrop {
   position: fixed;
-  top: 92px;
+  top: var(--phoenix-navbar-top-height);
   right: 0;
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.1);
   z-index: 8;
+}
+.phoenix-offcanvas.phoenix-offcanvas-content {
+  top: var(--phoenix-navbar-top-height);
 }
 
 .theme-wizard .nav-item {
@@ -31401,13 +31404,13 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .lead-details-container .nav-underline-scrollspy {
   z-index: 1014;
-  top: calc(var(--phoenix-navbar-top-height) + 1px);
+  top: var(--phoenix-navbar-top-height);
 }
 
 .sticky-leads-sidebar {
   position: sticky;
   z-index: 1015;
-  top: calc(var(--phoenix-navbar-top-height) + 21px);
+  top: calc(var(--phoenix-navbar-top-height) + 20px);
 }
 
 .leads-table th {

@@ -10,7 +10,7 @@ const LeadProfileCard = ({ className }: { className?: string }) => {
       <Card.Body>
         <Row className="align-items-center g-3 text-center text-xxl-start">
           <Col xs={12} xxl="auto">
-            <Avatar size="5xl" src={team33} />
+            <Avatar size="5xl" src={team33} className="d-inline-block" />
           </Col>
           <Col xs={12} sm="auto" className="flex-1">
             <h3 className="fw-bolder mb-2">Ansolo Lazinatov</h3>

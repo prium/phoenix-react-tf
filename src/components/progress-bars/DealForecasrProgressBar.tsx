@@ -1,4 +1,3 @@
-import React, { CSSProperties } from 'react';
 import { ProgressBar } from 'react-bootstrap';
 
 const DealForecasrProgressBar = () => {
