@@ -143,6 +143,8 @@ import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
 import Crm from 'pages/dashboard/Crm';
 import LeadDetails from 'pages/apps/crm/LeadDetails';
+import Analytics from 'pages/apps/crm/Analytics';
+import DealDetails from 'pages/apps/crm/DealDetails';
 
 const routes: RouteObject[] = [
   {
@@ -216,6 +218,19 @@ const routes: RouteObject[] = [
               {
                 path: 'customer-details',
                 element: <CustomerDetails />
+              }
+            ]
+          },
+          {
+            path: '/apps/crm/',
+            children: [
+              {
+                path: 'analytics',
+                element: <Analytics />
+              },
+              {
+                path: 'deal-details',
+                element: <DealDetails />
               }
             ]
           },
