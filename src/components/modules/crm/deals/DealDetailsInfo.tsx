@@ -3,9 +3,14 @@ import { Col, Row, Table } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
 
-const DealDetailsInfo = ({ data }: { data: DealDetailsInfoType[][] }) => {
+interface DealDetailsInfoProps {
+  data: DealDetailsInfoType[][];
+  className?: string;
+}
+
+const DealDetailsInfo = ({ data, className }: DealDetailsInfoProps) => {
   return (
-    <div className="px-xl-4 mb-7">
+    <div className={classNames('px-xl-4', className)}>
       <Row className="mx-0 mx-sm-3 mx-lg-0 px-lg-0">
         {data.map((category, index) => (
           <Col

@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Badge from 'components/base/Badge';
 
-const DealProfileCard = () => {
+const DealProfileCard = ({ className }: { className?: string }) => {
   return (
-    <Card className="mb-3">
+    <Card className={className}>
       <Card.Body>
         <Row className="align-items-center g-3">
           <Col sm="auto" className="flex-1">
