@@ -63,13 +63,28 @@
       }
     }
   }
+  &.phoenix-table-bordered {
+    > :not(caption) > * {
+      border-width: $table-border-width 0;
+      > td,
+      th {
+        &:not(:first-child, :last-child) {
+          border-width: 0 $table-border-width;
+          border-color: var(--#{$prefix}gray-300);
+        }
+      }
+    }
+  }
 
   // table varient
   @each $color, $value in $theme-colors {
     @if $color == 'dark' {
       .table-#{$color},
       &.table-#{$color} {
-        --#{$prefix}table-hover-bg: rgba(var(--#{$prefix}primary-600-rgb), 0.07);
+        --#{$prefix}table-hover-bg: rgba(
+          var(--#{$prefix}primary-600-rgb),
+          0.07
+        );
         color: $gray-400;
       }
     } @else {

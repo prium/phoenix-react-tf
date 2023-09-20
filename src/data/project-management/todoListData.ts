@@ -12,6 +12,7 @@ export interface ToDoItem {
   attachment?: number;
   badge?: Badge;
   listitems?: number;
+  completed?: boolean;
 }
 export interface SubTaskItem {
   task: string;

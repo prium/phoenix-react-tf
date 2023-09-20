@@ -141,6 +141,8 @@ import GanttChart from 'pages/modules/charts/GanttChart';
 import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
+import Crm from 'pages/dashboard/Crm';
+import LeadDetails from 'pages/apps/crm/LeadDetails';
 
 const routes: RouteObject[] = [
   {
@@ -161,6 +163,10 @@ const routes: RouteObject[] = [
           {
             path: '/dashboard/project-management',
             element: <ProjectManagement />
+          },
+          {
+            path: '/dashboard/crm',
+            element: <Crm />
           },
           {
             path: '/pages/starter',
@@ -239,6 +245,15 @@ const routes: RouteObject[] = [
               {
                 path: 'project-details',
                 element: <ProjectDetails />
+              }
+            ]
+          },
+          {
+            path: '/apps/crm/',
+            children: [
+              {
+                path: 'lead-details',
+                element: <LeadDetails />
               }
             ]
           },
