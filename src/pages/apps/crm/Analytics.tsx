@@ -1,13 +1,12 @@
 import DatePicker from 'components/base/DatePicker';
-import AnalyticsEmailCampaignChart from 'components/charts/e-charts/AnalyticsEmailCampaignChart';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import CallCampaignReport from 'components/modules/crm/analytics/CallCampaignReport';
+import EmailCampaign from 'components/modules/crm/analytics/EmailCampaign';
 import MarketingCampaign from 'components/modules/crm/analytics/MarketingCampaign';
 import SalesTrends from 'components/modules/crm/analytics/SalesTrends';
 import AnalyticsStats from 'components/stats/AnalyticsStats';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { stats } from 'data/crm/stats';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const Analytics = () => {
@@ -34,13 +33,7 @@ const Analytics = () => {
               xl={6}
               className="mb-5 mb-md-3 mb-lg-5 mb-xl-2 mb-xxl-3"
             >
-              <div className="scrollbar">
-                <h3>Email Campaign Reports</h3>
-                <p className="text-700">
-                  Paid and Verified for each piece of content
-                </p>
-                <AnalyticsEmailCampaignChart className="echart-contacts-width" />
-              </div>
+              <EmailCampaign />
             </Col>
             <Col md={6} lg={12} xl={6} className="mb-1 mb-sm-0">
               <MarketingCampaign />

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AnalyticsCallCampaignChart from 'components/charts/e-charts/AnalyticsCallCampaignChart';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const CallCampaignReport = () => {
@@ -18,7 +17,7 @@ const CallCampaignReport = () => {
           </div>
         </Col>
       </Row>
-      <AnalyticsCallCampaignChart height="290px" width="100%" />
+      <AnalyticsCallCampaignChart style={{ height: '290px', width: '100%' }} />
     </>
   );
 };

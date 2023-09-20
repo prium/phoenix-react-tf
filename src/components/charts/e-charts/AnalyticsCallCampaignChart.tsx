@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, CSSProperties } from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { getPastDates, rgbaColor } from 'helpers/utils';
@@ -155,13 +155,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   animation: false
 });
 
-const AnalyticsCallCampaignChart = ({
-  height,
-  width
-}: {
-  height: string;
-  width: string;
-}) => {
+const AnalyticsCallCampaignChart = ({ style }: { style: CSSProperties }) => {
   const initialRef: any = null;
   const chartRef = useRef(initialRef);
   const updateDimensions = () => {
@@ -204,7 +198,7 @@ const AnalyticsCallCampaignChart = ({
       ref={chartRef}
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
-      style={{ height, width }}
+      style={style}
     />
   );
 };

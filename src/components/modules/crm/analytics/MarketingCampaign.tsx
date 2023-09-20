@@ -22,7 +22,7 @@ const MarketingCampaign = () => {
       </Row>
       <Row className="g-3 align-items-center">
         <Col sm={8} md={12} lg={8} xl={12} xxl={8}>
-          <MarketingCampaignChart height="320px" width="100%" />
+          <MarketingCampaignChart style={{ height: '320px', width: '100%' }} />
         </Col>
         <Col
           sm={4}

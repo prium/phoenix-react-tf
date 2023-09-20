@@ -219,6 +219,17 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'deals',
+            path: '/apps/crm/deals',
+            pathName: 'crm-deals'
+          },
+          {
+            name: 'deal-details',
+            path: '/apps/crm/deal-details',
+            pathName: 'crm-deal-details',
+            active: true
+          },
+          {
             name: 'leads',
             path: '/crm/leads',
             pathName: 'crm-leads'

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { CSSProperties, useEffect, useRef } from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { rgbaColor } from 'helpers/utils';
@@ -109,17 +109,11 @@ const getDefaultOptions = (
   }
 });
 
-const MarketingCampaignChart = ({
-  height,
-  width
-}: {
-  height: string;
-  width: string;
-}) => {
+const MarketingCampaignChart = ({ style }: { style: CSSProperties }) => {
   const initialRef: any = null;
   const chartRef = useRef(initialRef);
   const updateDimensions = () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth < 1200) {
       chartRef.current?.getEchartsInstance().setOption({
         radar: {
           radius: '74%'
@@ -151,7 +145,7 @@ const MarketingCampaignChart = ({
       ref={chartRef}
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, theme)}
-      style={{ height, width }}
+      style={style}
     />
   );
 };

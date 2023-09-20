@@ -1,4 +1,4 @@
-import React from 'react';
+import { CSSProperties } from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { getPastDates, rgbaColor } from 'helpers/utils';
@@ -131,13 +131,7 @@ const getDefaultOptions = (
   animation: false
 });
 
-const AnalyticsSalesTrendsChart = ({
-  height,
-  width
-}: {
-  height: string;
-  width: string;
-}) => {
+const AnalyticsSalesTrendsChart = ({ style }: { style: CSSProperties }) => {
   const {
     getThemeColor,
     config: { theme }
@@ -146,7 +140,7 @@ const AnalyticsSalesTrendsChart = ({
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, theme)}
-      style={{ height, width }}
+      style={style}
     />
   );
 };

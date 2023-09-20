@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import classNames from 'classnames';
 
 echarts.use([TooltipComponent, BarChart]);
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const tooltipFormatter = (params: any) => {
   const el = params[1];
 
@@ -133,8 +133,9 @@ const getDefaultOptions = (
             ? getThemeColor('gray-1100')
             : getThemeColor('gray-200'),
         fontWeight: 'normal',
-        fontSize: '12.8px'
-        // formatter: (value: any) => `${value.value.toLocaleString()}`
+        fontSize: '12.8px',
+        formatter: (value: { value: string }) =>
+          `${value.value.toLocaleString()}`
       }
     }
   ],
@@ -230,7 +231,7 @@ const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
       ref={chartRef}
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, theme)}
-      className={classNames(className)}
+      className={className}
     />
   );
 };

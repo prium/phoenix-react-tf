@@ -142,6 +142,7 @@ import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
 import Analytics from 'pages/apps/crm/Analytics';
+import DealDetails from 'pages/apps/crm/DealDetails';
 
 const routes: RouteObject[] = [
   {
@@ -220,6 +221,10 @@ const routes: RouteObject[] = [
               {
                 path: 'analytics',
                 element: <Analytics />
+              },
+              {
+                path: 'deal-details',
+                element: <DealDetails />
               }
             ]
           },

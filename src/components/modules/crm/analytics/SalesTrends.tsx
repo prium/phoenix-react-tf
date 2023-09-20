@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AnalyticsSalesTrendsChart from 'components/charts/e-charts/AnalyticsSalesTrendsChart';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const SalesTrends = () => {
@@ -25,7 +24,7 @@ const SalesTrends = () => {
           </div>
         </Col>
       </Row>
-      <AnalyticsSalesTrendsChart height="270px" width="100%" />
+      <AnalyticsSalesTrendsChart style={{ width: '100%', height: '270px' }} />
     </>
   );
 };
