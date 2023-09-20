@@ -5,6 +5,7 @@ import { rgbaColor } from 'helpers/utils';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { RadarChart } from 'echarts/charts';
+import EChartsReactCore from 'echarts-for-react/lib/core';
 
 echarts.use([TooltipComponent, RadarChart]);
 
@@ -110,11 +111,10 @@ const getDefaultOptions = (
 });
 
 const MarketingCampaignChart = ({ style }: { style: CSSProperties }) => {
-  const initialRef: any = null;
-  const chartRef = useRef(initialRef);
+  const chartRef = useRef<null | EChartsReactCore>(null);
   const updateDimensions = () => {
     if (window.innerWidth < 1200) {
-      chartRef.current?.getEchartsInstance().setOption({
+      chartRef.current?.getEchartsInstance()?.setOption({
         radar: {
           radius: '74%'
         }

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { StatType } from 'data/crm/stats';
 import classNames from 'classnames';

@@ -55,9 +55,7 @@ const DealProfileCard = () => {
                             <h4 className="mb-3 fw-bold">Switch ownership</h4>
                             <h5 className="mb-3">Deal Owner</h5>
                             <Form.Select className="mb-3">
-                              <option selected value="">
-                                Select
-                              </option>
+                              <option value="">Select</option>
                               <option value="1">Jerry Seinfield</option>
                               <option value="2">Anthoney Michael</option>
                               <option value="3">Ansolo Lazinatov</option>

@@ -188,6 +188,3 @@ export const convertFileToAttachment = (file: File) => ({
   format: getFileExtension(file.name),
   preview: isImageFile(file) ? URL.createObjectURL(file) : undefined
 });
-
-export const rgbaColor = (color = '#fff', alpha = 0.5) =>
-  `rgba(${hexToRgb(color)}, ${alpha})`;

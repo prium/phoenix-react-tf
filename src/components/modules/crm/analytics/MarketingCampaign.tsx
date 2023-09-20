@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import MarketingCampaignChart from 'components/charts/e-charts/MarketingCampaignChart';
-import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 
 const MarketingCampaign = () => {
