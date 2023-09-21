@@ -3,44 +3,74 @@ import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
+import LeadsFilterModal from 'components/modals/LeadsFilterModal';
+import LeadsTable, { leadsTableColumns } from 'components/tables/LeadsTable';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
+import { leadsTableData } from 'data/crm/leadsTableData';
+import useAdvanceTable from 'hooks/useAdvanceTable';
+import AdvanceTableProvider from 'providers/AdvanceTableProvider';
+import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const Leads = () => {
+  const table = useAdvanceTable({
+    data: leadsTableData,
+    columns: leadsTableColumns,
+    pageSize: 10,
+    pagination: true,
+    sortable: true,
+    selection: true
+  });
+  const [openFilterModal, setOpenFilterModal] = useState(false);
   return (
     <div>
       <PageBreadcrumb items={defaultBreadcrumbItems} />
-      <div className="mb-9">
-        <h2 className="mb-4">25 Leads</h2>
+      <div className="mb-6">
+        <h2 className="mb-4">{leadsTableData.length} Leads</h2>
         <Row className="g-3 justify-content-between mb-4">
           <Col xs="auto">
-            <div className="d-md-flex justify-content-between">
-              <Button
-                variant="primary"
-                className="me-4"
-                startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
-              >
-                Create Lead
-              </Button>
-              <Button
-                variant="link"
-                className="text-900 px-0"
-                startIcon={
-                  <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
-                }
-              >
-                Export
-              </Button>
-            </div>
+            <Button
+              variant="primary"
+              className="me-4"
+              startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+            >
+              Create Lead
+            </Button>
+            <Button
+              variant="link"
+              className="text-900 px-0"
+              startIcon={
+                <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
+              }
+            >
+              Export
+            </Button>
           </Col>
           <Col xs="auto">
             <div className="d-flex">
               <SearchBox placeholder="Search by name" className="me-2" />
-              <DatePicker />
+              <DatePicker defaultValue="Mar 1, 2022" />
+              <Button
+                variant="phoenix-secondary"
+                className="px-3 ms-2"
+                onClick={() => setOpenFilterModal(true)}
+              >
+                <FontAwesomeIcon
+                  icon="filter"
+                  transform="down-3"
+                  className="text-primary"
+                />
+              </Button>
             </div>
+            <LeadsFilterModal
+              show={openFilterModal}
+              handleClose={() => setOpenFilterModal(false)}
+            />
           </Col>
         </Row>
+        <AdvanceTableProvider {...table}>
+          <LeadsTable />
+        </AdvanceTableProvider>
       </div>
     </div>
   );
