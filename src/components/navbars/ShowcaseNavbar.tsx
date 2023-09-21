@@ -50,7 +50,12 @@ const ShowcaseNavbar = () => {
             </Nav.Item>
           </Nav>
           <div className="d-grid d-lg-flex align-items-center">
-            <Button variant="primary" as={Link} to="#!" target="_blank">
+            <Button
+              variant="primary"
+              as={Link}
+              to={`${process.env.REACT_APP_PURCHASE_LINK}`}
+              target="_blank"
+            >
               Purchase
             </Button>
           </div>
