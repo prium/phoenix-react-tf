@@ -145,6 +145,7 @@ import Crm from 'pages/dashboard/Crm';
 import LeadDetails from 'pages/apps/crm/LeadDetails';
 import Analytics from 'pages/apps/crm/Analytics';
 import DealDetails from 'pages/apps/crm/DealDetails';
+import ReportDetails from 'pages/apps/crm/ReportDetails';
 
 const routes: RouteObject[] = [
   {
@@ -231,6 +232,10 @@ const routes: RouteObject[] = [
               {
                 path: 'deal-details',
                 element: <DealDetails />
+              },
+              {
+                path: 'report-details',
+                element: <ReportDetails />
               }
             ]
           },
