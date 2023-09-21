@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <>
@@ -112,7 +112,9 @@ const FloatingLabelExample = () => {
         description="Create beautifully simple form labels that float over your input fields."
         link={{
           text: 'Floating labels on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/floating-labels/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/forms/floating-labels/`
         }}
       />
 
@@ -120,11 +122,12 @@ const FloatingLabelExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0">
-              Wrap a <code>&lt;Form.Control&gt;</code> element in <code>&lt;FloatingLabel&gt;</code>{' '}
-              to enable floating labels with Bootstrap’s textual form fields. A{' '}
-              <code>placeholder</code> is required on each <code>&lt;Form.Control&gt;</code> as our
-              method of CSS-only floating labels uses the <code>:placeholder-shown</code>{' '}
-              pseudo-element.
+              Wrap a <code>&lt;Form.Control&gt;</code> element in{' '}
+              <code>&lt;FloatingLabel&gt;</code> to enable floating labels with
+              Bootstrap’s textual form fields. A <code>placeholder</code> is
+              required on each <code>&lt;Form.Control&gt;</code> as our method
+              of CSS-only floating labels uses the{' '}
+              <code>:placeholder-shown</code> pseudo-element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={exampleCode} />
@@ -133,10 +136,11 @@ const FloatingLabelExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Textareas">
             <p className="mb-0">
-              By default, <code>&lt;textarea&gt;</code>s will be the same height as{' '}
-              <code>&lt;input&gt;</code>s. To set a custom height on your{' '}
-              <code>&lt;textarea&gt;</code>, do not use the <code>rows</code> attribute. Instead,
-              set an explicit <code>height</code> (either inline or via custom CSS).
+              By default, <code>&lt;textarea&gt;</code>s will be the same height
+              as <code>&lt;input&gt;</code>s. To set a custom height on your{' '}
+              <code>&lt;textarea&gt;</code>, do not use the <code>rows</code>{' '}
+              attribute. Instead, set an explicit <code>height</code> (either
+              inline or via custom CSS).
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={textAreaCode} />
@@ -145,9 +149,10 @@ const FloatingLabelExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Selects">
             <p className="mb-0">
-              Other than <code>&lt;Form.Control&gt;</code>, floating labels are only available on{' '}
-              <code>&lt;Form.Select&gt;</code>s. They work in the same way, but unlike{' '}
-              <code>&lt;input&gt;</code>s, they’ll always show the <code>&lt;label&gt;</code>
+              Other than <code>&lt;Form.Control&gt;</code>, floating labels are
+              only available on <code>&lt;Form.Select&gt;</code>s. They work in
+              the same way, but unlike <code>&lt;input&gt;</code>s, they’ll
+              always show the <code>&lt;label&gt;</code>
               in its floated state.
             </p>
           </PhoenixDocCard.Header>
@@ -169,9 +174,9 @@ const FloatingLabelExample = () => {
           >
             <p className="mb-0">
               If you need greater control over the rendering, use the{' '}
-              <code>&lt;FormFloating&gt;</code> component to wrap your input and label. Also note
-              that the <code>&lt;Form.Control&gt;</code> must come first so we can utilize a sibling
-              selector (e.g., ~).
+              <code>&lt;FormFloating&gt;</code> component to wrap your input and
+              label. Also note that the <code>&lt;Form.Control&gt;</code> must
+              come first so we can utilize a sibling selector (e.g., ~).
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={customizingRenderCode} />
@@ -180,7 +185,8 @@ const FloatingLabelExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Validation">
             <p className="mb-0">
-              Use <code>isValid</code> or <code>isInvalid</code> props for validation.
+              Use <code>isValid</code> or <code>isInvalid</code> props for
+              validation.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={validationCode} />

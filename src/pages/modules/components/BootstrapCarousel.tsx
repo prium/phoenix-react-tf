@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import generic5 from 'assets/img/generic/5.jpg';
 import generic6 from 'assets/img/generic/6.jpg';
 import generic7 from 'assets/img/generic/7.jpg';
@@ -140,7 +140,7 @@ const controlledCode = `
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
   };
 
@@ -216,23 +216,31 @@ const BootstrapCarousel = () => {
   return (
     <div>
       <DocPageHeader
-        title="Accordion"
+        title="Carousel"
         description="A slideshow component for cycling through elements—images or slides of text—like a carousel."
         link={{
           text: 'Carousels on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/carousel/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/carousel/`
         }}
       />
 
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Basic Example" />
-          <PhoenixDocCard.Body code={exampleCode} scope={{ generic6, generic7, generic8 }} />
+          <PhoenixDocCard.Body
+            code={exampleCode}
+            scope={{ generic6, generic7, generic8 }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Controlled" />
-          <PhoenixDocCard.Body code={controlledCode} scope={{ generic6, generic7, generic8 }} />
+          <PhoenixDocCard.Body
+            code={controlledCode}
+            scope={{ generic6, generic7, generic8 }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -245,23 +253,32 @@ const BootstrapCarousel = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="With Captions" />
-          <PhoenixDocCard.Body code={withCaptionsCode} scope={{ generic5, generic28, generic9 }} />
+          <PhoenixDocCard.Body
+            code={withCaptionsCode}
+            scope={{ generic5, generic28, generic9 }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Crossfade" />
-          <PhoenixDocCard.Body code={fadeCode} scope={{ generic6, generic7, generic8 }} />
+          <PhoenixDocCard.Body
+            code={fadeCode}
+            scope={{ generic6, generic7, generic8 }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Individual Item Intervals">
             <p className="mb-0">
-              You can specify individual intervals for each carousel item via the{' '}
-              <code>interval</code>
+              You can specify individual intervals for each carousel item via
+              the <code>interval</code>
               prop.
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={intervalCode} scope={{ generic6, generic7, generic8 }} />
+          <PhoenixDocCard.Body
+            code={intervalCode}
+            scope={{ generic6, generic7, generic8 }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

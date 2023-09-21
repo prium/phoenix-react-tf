@@ -1,8 +1,12 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { Button as BsButton, ButtonProps as BsButtonProps, Spinner } from 'react-bootstrap';
+import {
+  Button as BsButton,
+  ButtonProps as BsButtonProps,
+  Spinner
+} from 'react-bootstrap';
 
-type ButtonVariant =
+export type ButtonVariant =
   | ''
   | 'primary'
   | 'secondary'
@@ -13,6 +17,7 @@ type ButtonVariant =
   | 'dark'
   | 'light'
   | 'link'
+  | 'circle'
   | 'outline-primary'
   | 'outline-secondary'
   | 'outline-success'
@@ -55,15 +60,18 @@ const Button = ({
   loading,
   loadingPosition,
   className,
+  variant = '',
   ...rest
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <BsButton
+      variant={variant}
+      type="button"
+      disabled={loading}
       {...rest}
       className={classNames(className, {
         'btn-loading lh-1 d-flex align-items-center position-relative': loading
       })}
-      disabled={loading}
     >
       {loading && loadingPosition === 'start' && (
         <Spinner animation="border" role="status" className="me-2">

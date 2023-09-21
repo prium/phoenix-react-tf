@@ -1,4 +1,6 @@
-import SpecificationTable, { TableRowData } from 'components/tables/SpecificationTable';
+import SpecificationTable, {
+  TableRowData
+} from 'components/tables/SpecificationTable';
 import React from 'react';
 
 const processorData: TableRowData[] = [
@@ -110,7 +112,10 @@ const ProductSpecificationTables = () => {
         <SpecificationTable title="Display" data={displayData} />
       </div>
       <div className="mb-6">
-        <SpecificationTable title="Additional Specifications" data={additionalData} />
+        <SpecificationTable
+          title="Additional Specifications"
+          data={additionalData}
+        />
       </div>
       <div>
         <h3 className="mb-3 mt-6 ms-4 fw-bold">In The Box</h3>
@@ -119,7 +124,9 @@ const ProductSpecificationTables = () => {
         <p className="lh-sm border-top mb-0 py-3 px-4">Magic Mouse</p>
         <p className="lh-sm border-top mb-0 py-3 px-4">143W power adapter</p>
         <p className="lh-sm border-top mb-0 py-3 px-4">2m Power Cord</p>
-        <p className="lh-sm border-y mb-0 py-3 px-4">USB-C to Lightning Cable</p>
+        <p className="lh-sm border-y mb-0 py-3 px-4">
+          USB-C to Lightning Cable
+        </p>
       </div>
     </>
   );

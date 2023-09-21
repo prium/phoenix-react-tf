@@ -5,34 +5,9 @@ import dayjs from 'dayjs';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
+import { tooltipFormatterList } from 'helpers/echart-utils';
 
 echarts.use([TooltipComponent, BarChart]);
-
-const tooltipFormatter = (params: CallbackDataParams[]) => {
-  const currentDate = dayjs(params[0].name);
-  const prevDate = dayjs(params[0].name).subtract(1, 'month');
-
-  const result = params.map((param, index) => ({
-    value: param.value,
-    date: index > 0 ? prevDate : currentDate,
-    color: param.color
-  }));
-
-  let tooltipItem = ``;
-  result.forEach((el: any, index: number) => {
-    tooltipItem += `<h6 class="fs--1 text-700 ${
-      index > 0 && 'mb-0'
-    }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
-      el.color
-    }"></span>
-    ${el.date.format('MMM DD')} : ${el.value}
-  </h6>`;
-  });
-  return `<div class='ms-1'>
-            ${tooltipItem}
-          </div>`;
-};
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   tooltip: {
@@ -46,12 +21,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisPointer: {
       type: 'none'
     },
-    formatter: tooltipFormatter
+    formatter: tooltipFormatterList
   },
   xAxis: [
     {
       type: 'category',
-      data: getDates(new Date('5/1/2022'), new Date('5/7/2022'), 1000 * 60 * 60 * 24),
+      data: getDates(
+        new Date('5/1/2022'),
+        new Date('5/7/2022'),
+        1000 * 60 * 60 * 24
+      ),
       show: true,
       boundaryGap: false,
       axisLine: {
@@ -77,7 +56,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       type: 'category',
       position: 'bottom',
       show: true,
-      data: getDates(new Date('5/1/2022'), new Date('5/7/2022'), 1000 * 60 * 60 * 24),
+      data: getDates(
+        new Date('5/1/2022'),
+        new Date('5/7/2022'),
+        1000 * 60 * 60 * 24
+      ),
       axisLabel: {
         formatter: (value: Date) => dayjs(value).format('DD MMM'),
         interval: 130,
@@ -120,6 +103,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         lineStyle: {
           color: getThemeColor('gray-200')
         }
+      },
+      itemStyle: {
+        color: getThemeColor('gray-200')
       }
     },
     {
@@ -130,7 +116,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         color: getThemeColor('primary')
       },
       showSymbol: false,
-      symbol: 'circle'
+      symbol: 'circle',
+      itemStyle: {
+        color: getThemeColor('primary')
+      }
     }
   ],
   grid: { left: 0, right: 0, top: 5, bottom: 20 }

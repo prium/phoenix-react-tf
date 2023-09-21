@@ -7,9 +7,10 @@ import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
 import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
 import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
 import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
-import EcomTopRegionsMap from 'components/google-maps/EcomTopRegionsMap';
+import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
+import { mapMarkerPoints } from 'data/mapMarkerPoints';
 
 const Ecommerce = () => {
   return (
@@ -24,10 +25,12 @@ const Ecommerce = () => {
               </h5>
             </div>
             <EcomStats />
-            <Row className="justify-content-between align-items-end mb-4 g-3">
+            <Row className="justify-content-between align-items-center mb-4 g-3">
               <Col xs="auto">
                 <h3>Total sells</h3>
-                <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+                <p className="text-700 lh-sm mb-0">
+                  Payment received across all channels
+                </p>
               </Col>
               <Col xs={8} sm={4}>
                 <Form.Select size="sm">
@@ -69,8 +72,10 @@ const Ecommerce = () => {
           <EcomTopRegionsTable />
         </Col>
         <Col xs={12} xl={6}>
-          <div className="h-100 w-100 py-5" style={{ minHeight: 300 }}>
-            <EcomTopRegionsMap />
+          <div className="mx-n4 mx-lg-n6 ms-xl-0 h-100">
+            <div className="h-100 w-100" style={{ minHeight: 300 }}>
+              <EcomTopRegionsMap data={mapMarkerPoints} />
+            </div>
           </div>
         </Col>
       </Row>
@@ -80,7 +85,9 @@ const Ecommerce = () => {
             <div className="me-xl-4">
               <div>
                 <h3>Projection vs actual</h3>
-                <p className="mb-1 text-700">Actual earnings vs projected earnings</p>
+                <p className="mb-1 text-700">
+                  Actual earnings vs projected earnings
+                </p>
               </div>
               <EcomProjectionVsActualChart height="300px" width="100%" />
             </div>
@@ -88,7 +95,9 @@ const Ecommerce = () => {
           <Col xs={12} xl={6}>
             <div>
               <h3>Returning customer rate</h3>
-              <p className="mb-1 text-700">Rate of customers returning to your shop over time</p>
+              <p className="mb-1 text-700">
+                Rate of customers returning to your shop over time
+              </p>
             </div>
             <EomReturningCustomerRateChart />
           </Col>

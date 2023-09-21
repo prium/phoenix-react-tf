@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
   <Accordion defaultActiveKey="0">
@@ -51,7 +51,9 @@ const AccordionExample = () => {
         description="Build vertically collapsing accordions in combination with the Collapse component"
         link={{
           text: 'Accordion on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/accordion/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/accordion/`
         }}
       />
 

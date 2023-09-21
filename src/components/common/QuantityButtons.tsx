@@ -8,7 +8,11 @@ interface QuantityButtonsProps {
   setQuantity: Dispatch<SetStateAction<number>>;
 }
 
-const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityButtonsProps) => {
+const QuantityButtons = ({
+  type = 'default',
+  quantity,
+  setQuantity
+}: QuantityButtonsProps) => {
   const handleIncrease = () => {
     setQuantity(quantity + 1);
   };
@@ -26,7 +30,11 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
   if (type === 'default') {
     return (
       <div className="d-flex flex-between-center">
-        <Button variant="phoenix-primary" className="px-3" onClick={handleDecrease}>
+        <Button
+          variant="phoenix-primary"
+          className="px-3"
+          onClick={handleDecrease}
+        >
           <FontAwesomeIcon icon="minus" />
         </Button>
         <input
@@ -37,7 +45,11 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
           value={quantity}
           onChange={handleChange}
         />
-        <Button variant="phoenix-primary" className="px-3" onClick={handleIncrease}>
+        <Button
+          variant="phoenix-primary"
+          className="px-3"
+          onClick={handleIncrease}
+        >
           <FontAwesomeIcon icon="plus" />
         </Button>
       </div>
@@ -45,7 +57,7 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
   }
   return (
     <div className="input-group input-group-sm flex-nowrap">
-      <Button size="sm" variant="" className="px-2" onClick={handleDecrease}>
+      <Button size="sm" className="px-2" onClick={handleDecrease}>
         -
       </Button>
       <input
@@ -55,7 +67,7 @@ const QuantityButtons = ({ type = 'default', quantity, setQuantity }: QuantityBu
         value={quantity}
         onChange={handleChange}
       />
-      <Button size="sm" variant="" className="px-2" onClick={handleIncrease}>
+      <Button size="sm" className="px-2" onClick={handleIncrease}>
         +
       </Button>
     </div>

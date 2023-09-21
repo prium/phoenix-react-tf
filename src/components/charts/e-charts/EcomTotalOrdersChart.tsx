@@ -23,7 +23,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   xAxis: {
     type: 'category',
-    data: getDates(new Date('5/1/2022'), new Date('5/7/2022'), 1000 * 60 * 60 * 24),
+    data: getDates(
+      new Date('5/1/2022'),
+      new Date('5/7/2022'),
+      1000 * 60 * 60 * 24
+    ),
     show: true,
     boundaryGap: false,
     axisLine: {
@@ -34,7 +38,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: false
     },
     axisLabel: {
-      formatter: (value: any) => dayjs(value).format('DD MMM'),
+      formatter: (value: string) => dayjs(value).format('DD MMM'),
       interval: 6,
       showMinLabel: true,
       showMaxLabel: true,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import { PropsWithChildren } from 'react';
 import {
@@ -6,12 +7,11 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  Table,
-  Row
+  ColumnDef
 } from '@tanstack/react-table';
-interface UseAdvanceTableProps {
-  columns: any[];
-  data: any[];
+interface UseAdvanceTableProps<T> {
+  columns: ColumnDef<T>[];
+  data: T[];
   selection?: boolean;
   sortable?: boolean;
   pagination?: boolean;
@@ -21,7 +21,8 @@ interface UseAdvanceTableProps {
 
 const selectionColumn = {
   id: 'select',
-  header: ({ table }: { table: Table<{}> }) => (
+  accessorKey: '',
+  header: ({ table }: any) => (
     <IndeterminateCheckbox
       {...{
         checked: table.getIsAllRowsSelected(),
@@ -30,7 +31,7 @@ const selectionColumn = {
       }}
     />
   ),
-  cell: ({ row }: { row: Row<{}> }) => (
+  cell: ({ row }: any) => (
     <IndeterminateCheckbox
       {...{
         checked: row.getIsSelected(),
@@ -39,18 +40,21 @@ const selectionColumn = {
         onChange: row.getToggleSelectedHandler()
       }}
     />
-  )
+  ),
+  meta: {
+    headerProps: { style: { width: '30px' } }
+  }
 };
 
-const useAdvanceTable = ({
+const useAdvanceTable = <T,>({
   columns,
   data,
   selection,
   sortable,
   pagination,
   pageSize
-}: PropsWithChildren<UseAdvanceTableProps>) => {
-  const table = useReactTable({
+}: PropsWithChildren<UseAdvanceTableProps<T>>) => {
+  const table = useReactTable<T>({
     data,
     columns: selection ? [selectionColumn, ...columns] : columns,
     enableSorting: sortable,
@@ -58,7 +62,9 @@ const useAdvanceTable = ({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    initialState: { pagination: { pageSize: pagination ? pageSize : data.length } }
+    initialState: {
+      pagination: { pageSize: pagination ? pageSize : data.length }
+    }
   });
 
   return table;

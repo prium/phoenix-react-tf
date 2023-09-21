@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 () => {
@@ -160,7 +160,9 @@ const OffcanvasExample = () => {
         description="Build hidden sidebars into your project for navigation, shopping carts, and more."
         link={{
           text: 'Offcanvas on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/offcanvas/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/offcanvas/`
         }}
       />
 
@@ -184,7 +186,8 @@ const OffcanvasExample = () => {
                 <code>top</code> places offcanvas on the top of the viewport
               </li>
               <li>
-                <code>bottom</code> places offcanvas on the bottom of the viewport
+                <code>bottom</code> places offcanvas on the bottom of the
+                viewport
               </li>
             </ul>
           </PhoenixDocCard.Header>
@@ -194,9 +197,10 @@ const OffcanvasExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Backdrop">
             <p className="mb-0">
-              Scrolling the <code>&lt;body&gt;</code> element is disabled when an offcanvas and its
-              backdrop are visible. Use the <code>scroll</code> prop to toggle{' '}
-              <code>&lt;body&gt;</code> scrolling and the <code>backdrop</code> prop to toggle the
+              Scrolling the <code>&lt;body&gt;</code> element is disabled when
+              an offcanvas and its backdrop are visible. Use the{' '}
+              <code>scroll</code> prop to toggle <code>&lt;body&gt;</code>{' '}
+              scrolling and the <code>backdrop</code> prop to toggle the
               backdrop.
             </p>
           </PhoenixDocCard.Header>
@@ -206,8 +210,8 @@ const OffcanvasExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Static backdrop">
             <p className="mb-0">
-              When <code>backdrop</code> is set to <code>static</code>, the offcanvas will not close
-              when clicking outside of it.
+              When <code>backdrop</code> is set to <code>static</code>, the
+              offcanvas will not close when clicking outside of it.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={staticBackdropCode} />

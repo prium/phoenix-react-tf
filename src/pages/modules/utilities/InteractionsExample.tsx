@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Link } from 'react-router-dom';
 
 const textSelectionCode = `
@@ -52,8 +52,8 @@ const InteractionsExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Pointer events">
             <p className="mb-0 text-800">
-              Bootstrap provides <code>.pe-none</code> and <code>.pe-auto</code> classes to prevent
-              or add element interactions.
+              Bootstrap provides <code>.pe-none</code> and <code>.pe-auto</code>{' '}
+              classes to prevent or add element interactions.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={pointerEventsCode} scope={{ Link }} />

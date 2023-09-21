@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import avatar from 'assets/img/team/40x40/avatar.webp';
-import { PropsWithChildren } from 'react';
+import { Children, PropsWithChildren } from 'react';
 
 export type Size = '5xl' | '4xl' | '3xl' | '2xl' | 'xl' | 'l' | 'm' | 's';
 export type Variant = 'image' | 'name' | 'emoji';
@@ -13,10 +13,14 @@ interface AvatarProps {
   rounded?: Rounded;
   status?: Status;
   placeholder?: boolean;
+  thumbnail?: boolean;
+  imageClassName?: string;
   className?: string;
 }
 interface AvatarGroupProps {
   className?: string;
+  total?: number;
+  size: Size;
 }
 
 const Avatar = ({
@@ -26,7 +30,8 @@ const Avatar = ({
   rounded = 'circle',
   status,
   className,
-  placeholder,
+  imageClassName,
+  thumbnail,
   children
 }: PropsWithChildren<AvatarProps>) => {
   return (
@@ -39,8 +44,8 @@ const Avatar = ({
         <img
           src={src ? src : avatar}
           alt="avatar"
-          className={classNames({
-            // 'avatar-placeholder': placeholder,
+          className={classNames(imageClassName, {
+            'img-thumbnail bg-white': thumbnail,
             'avatar-placeholder': !src,
             'rounded-circle': rounded === 'circle',
             'rounded-soft': rounded === 'soft'
@@ -74,10 +79,24 @@ const Avatar = ({
   );
 };
 
-export const AvatarGroup = ({ children, className }: PropsWithChildren<AvatarGroupProps>) => {
-  return <div className={classNames(className, 'avatar-group')}>{children}</div>;
+export const AvatarGroup = ({
+  children,
+  className,
+  total,
+  size
+}: PropsWithChildren<AvatarGroupProps>) => {
+  return (
+    <div className={classNames(className, 'avatar-group')}>
+      {children}
+      {total && total > Children.count(children) && (
+        <Avatar size={size} variant="name">
+          +{total - Children.count(children)}
+        </Avatar>
+      )}
+    </div>
+  );
 };
 
-Avatar.Gropup = AvatarGroup;
+Avatar.Group = AvatarGroup;
 
 export default Avatar;

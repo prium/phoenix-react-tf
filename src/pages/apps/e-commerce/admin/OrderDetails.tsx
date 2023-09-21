@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import OrderDetailsTable from 'components/tables/OrderDetailsTable';
-import { Breadcrumb, Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
 import {
@@ -9,22 +9,18 @@ import {
   OtherDetails,
   ShippingDetails
 } from 'components/modules/e-commerce/OrderDeliveryDetails';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { defaultBreadcrumbItems } from 'data/commonData';
 
 const OrderDetails = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
-        <h2 className="mb-2">
+        <h2 className="mb-1">
           Order <span>#349</span>
         </h2>
-        <div className="d-flex flex-wrap flex-between-center mb-3 gap-2">
+        <div className="d-flex flex-wrap flex-between-center mb-4 gap-2">
           <p className="text-800 lh-sm mb-0">
             Customer ID :{' '}
             <Link className="fw-bold" to="#!">
@@ -48,7 +44,10 @@ const OrderDetails = () => {
               Refund
             </Button>
             <Dropdown>
-              <Dropdown.Toggle variant="" className="p-0 dropdown-caret-none text-decoration-none">
+              <Dropdown.Toggle
+                variant=""
+                className="p-0 dropdown-caret-none text-decoration-none"
+              >
                 More action
                 <FontAwesomeIcon icon="chevron-down" className="ms-2" />
               </Dropdown.Toggle>
@@ -62,7 +61,7 @@ const OrderDetails = () => {
         </div>
         <Row className="g-5 gy-7">
           <Col xs={12} xl={8} xxl={9}>
-            <div className="mb-7">
+            <div className="mb-6">
               <OrderDetailsTable />
             </div>
             <Row className="gx-4 gy-6 g-xl-7 justify-content-sm-center justify-content-xl-start">

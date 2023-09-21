@@ -7,12 +7,18 @@ import topSlim from 'assets/img/generic/top-slim.png';
 import topSlimDark from 'assets/img/generic/top-slim-dark.png';
 import RadioItem from './RadioItem';
 import { NavTopShapeVariant } from 'config';
+import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const HorizontalNavbarShape = () => {
   const {
     config: { theme, navbarTopShape },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableHorizontalNavbarShape }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -31,8 +37,9 @@ const HorizontalNavbarShape = () => {
             name="top-nav-shape"
             value="default"
             thumb={theme === 'light' ? topDefault : topDefaultDark}
-            defaultChecked={navbarTopShape === 'default'}
+            checked={navbarTopShape === 'default'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarShape}
           />
         </Col>
         <Col xs={6}>
@@ -41,11 +48,15 @@ const HorizontalNavbarShape = () => {
             name="top-nav-shape"
             value="slim"
             thumb={theme === 'light' ? topSlim : topSlimDark}
-            defaultChecked={navbarTopShape === 'slim'}
+            checked={navbarTopShape === 'slim'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarShape}
           />
         </Col>
       </Row>
+      {disableHorizontalNavbarShape && (
+        <WarningMessage message="You can't update horizontal navbar shape here" />
+      )}
     </div>
   );
 };

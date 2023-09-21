@@ -1,21 +1,46 @@
-import { Navigation, SwiperOptions } from 'swiper';
-import { Swiper as ReactSwiper } from 'swiper/react';
+import { Navigation } from 'swiper';
+import {
+  Swiper as ReactSwiper,
+  SwiperProps as ReactSwiperProps
+} from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
-import { PropsWithChildren, useRef } from 'react';
+import { CSSProperties, PropsWithChildren, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavigationOptions } from 'swiper/types';
 
-const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
+interface SwiperProps extends ReactSwiperProps {
+  navigationPosition?: CSSProperties;
+}
+
+const Swiper = ({
+  children,
+  navigation = true,
+  navigationPosition,
+  ...rest
+}: PropsWithChildren<SwiperProps>) => {
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
   return (
     <div className="swiper-theme-container">
-      <button className="swiper-button-next" ref={navigationNextRef}>
-        <FontAwesomeIcon icon="chevron-right" />
-      </button>
-      <button className="swiper-button-prev" ref={navigationPrevRef}>
-        <FontAwesomeIcon icon="chevron-left" />
-      </button>
+      {navigation && (
+        <>
+          <button
+            className="swiper-button-next"
+            style={navigationPosition}
+            ref={navigationNextRef}
+          >
+            <FontAwesomeIcon icon="chevron-right" />
+          </button>
+          <button
+            className="swiper-button-prev"
+            style={navigationPosition}
+            ref={navigationPrevRef}
+          >
+            <FontAwesomeIcon icon="chevron-left" />
+          </button>
+        </>
+      )}
       <ReactSwiper
         modules={[Navigation]}
         navigation={{
@@ -25,10 +50,9 @@ const Swiper = ({ children, ...rest }: PropsWithChildren<SwiperOptions>) => {
         }}
         onBeforeInit={swiper => {
           if (swiper.params.navigation) {
-            //@ts-ignore
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            //@ts-ignore
-            swiper.params.navigation.nextEl = navigationNextRef.current;
+            const navigation = swiper.params.navigation as NavigationOptions;
+            navigation.prevEl = navigationPrevRef.current;
+            navigation.nextEl = navigationNextRef.current;
           }
         }}
         {...rest}

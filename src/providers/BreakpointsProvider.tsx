@@ -1,4 +1,10 @@
-import { createContext, PropsWithChildren, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState
+} from 'react';
 
 type Breakpoints = {
   xs: number;
@@ -16,7 +22,9 @@ interface BreakpointContextInterface {
   };
 }
 
-export const BreakpointContext = createContext({} as BreakpointContextInterface);
+export const BreakpointContext = createContext(
+  {} as BreakpointContextInterface
+);
 
 const gridBreakpoints: Breakpoints = {
   xs: 0,
@@ -55,7 +63,9 @@ const BreakpointsProvider = ({ children }: PropsWithChildren) => {
   }, [width]);
 
   return (
-    <BreakpointContext.Provider value={{ breakpoints }}>{children}</BreakpointContext.Provider>
+    <BreakpointContext.Provider value={{ breakpoints }}>
+      {children}
+    </BreakpointContext.Provider>
   );
 };
 

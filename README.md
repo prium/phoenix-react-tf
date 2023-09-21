@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Getting Started with Phoenix-React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the ReactJS version of the original Phoenix theme. This document will guide you on how the Phoenix-React theme is organized, the basics of customization, and how to compile it from the source code if needed.
 
-## Available Scripts
+## Running in Local Environment
 
-In the project directory, you can run:
+This project is scaffolded using Create React App.
 
-### `npm start`
+- Install Node.js if you do not already have it installed on your machine.
+- Open the “phoenix-react-{version}” directory with your cmd or terminal and run npm i
+- This command will download all the necessary dependencies for phoenix in the node_modules directory.
+- Run npm start. A local web server will start at http://localhost:3000.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Creating a Production Build
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+After you've done your customization and are ready to build, follow these steps:
 
-### `npm test`
+- Edit homepage in your package.json file to change asset files relative paths. For more information, visit Create React App Doc.
+- Then Run npm run build command in your project directory to make the Production build.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This will create an optimized production build by compiling, merging, and minifying all the source files as necessary and will put them in the build/ folder.
 
-### `npm run build`
+To run the production build locally, run the following commands:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+ npm install -g serve
+ serve -s build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Design File
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Get the figma design file here:
+[https://www.figma.com/file/iACQcwBein0huanVBqFaAj/Phoenix-React-v1.0.0-(Distributed)](<https://www.figma.com/file/iACQcwBein0huanVBqFaAj/Phoenix-React-v1.0.0-(Distributed)

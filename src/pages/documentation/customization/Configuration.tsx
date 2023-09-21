@@ -4,15 +4,14 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 
 const exampleCode = `
 export const initialConfig = {
-    isNavbarVerticalCollapsed: false,
-    openNavbarVertical: false, // for responsive
-    theme: 'light',
-    navbarTopAppearance: 'default',
-    navbarVerticalAppearance: 'default',
-    navbarPosition: 'vertical',
-    navbarTopShape: 'default',
-    isRTL: false,
-    showSettingPanel: false
+  isNavbarVerticalCollapsed: false,
+  openNavbarVertical: false, // for responsive
+  theme: 'light',
+  navbarTopAppearance: 'default',
+  navbarVerticalAppearance: 'default',
+  navbarPosition: 'vertical',
+  navbarTopShape: 'default',
+  isRTL: false
 };`;
 
 const contextCode = `
@@ -39,9 +38,10 @@ const Configuration = () => {
         <PhoenixDocCard.Header title="Settings configuration" noPreview />
         <PhoenixDocCard.Body>
           <p>
-            Control side panel settings from one place. Go to <code>src/config.ts</code> file and
-            set your setting configuration. If any config value is already saved in local storage
-            and you want to change the default config, please clear the local storage first.
+            Control side panel settings from one place. Go to{' '}
+            <code>src/config.ts</code> file and set your setting configuration.
+            If any config value is already saved in local storage and you want
+            to change the default config, please clear the local storage first.
           </p>
           <PhoenixLiveEditor code={exampleCode} />
         </PhoenixDocCard.Body>
@@ -66,7 +66,9 @@ const Configuration = () => {
             </thead>
             <tbody>
               <tr>
-                <td className="white-space-nowrap">isNavbarVerticalCollapsed</td>
+                <td className="white-space-nowrap">
+                  isNavbarVerticalCollapsed
+                </td>
                 <td className="white-space-nowrap">
                   <code>Boolean</code>
                 </td>
@@ -74,8 +76,8 @@ const Configuration = () => {
                   <code>false</code>
                 </td>
                 <td>
-                  Set <code>true</code> to make the vertical navbar stay collapsed when the page
-                  loads.{' '}
+                  Set <code>true</code> to make the vertical navbar stay
+                  collapsed when the page loads.{' '}
                 </td>
               </tr>
 
@@ -88,8 +90,9 @@ const Configuration = () => {
                   <code>false</code>
                 </td>
                 <td>
-                  This option is for showing up the <code> vertical navbar </code> menus in small
-                  screens <code>(sm to lg)</code>.
+                  This option is for showing up the{' '}
+                  <code> vertical navbar </code> menus in small screens{' '}
+                  <code>(sm to lg)</code>.
                 </td>
               </tr>
 
@@ -103,7 +106,8 @@ const Configuration = () => {
                 </td>
                 <td>
                   This option is to set the <code> theme </code> mode. Set
-                  <code> light </code> or <code> dark </code> to make the default theme mode.
+                  <code> light </code> or <code> dark </code> to make the
+                  default theme mode.
                 </td>
               </tr>
 
@@ -116,8 +120,10 @@ const Configuration = () => {
                   <code> default </code>
                 </td>
                 <td>
-                  This option is for setting up the <code> Navbar Top Appearance</code>. To make a
-                  darker top navbar (lighter in dark mode) set the value to <code> darker </code>.
+                  This option is for setting up the{' '}
+                  <code> Navbar Top Appearance</code>. To make a darker top
+                  navbar (lighter in dark mode) set the value to{' '}
+                  <code> darker </code>.
                 </td>
               </tr>
 
@@ -130,8 +136,9 @@ const Configuration = () => {
                   <code> default </code>
                 </td>
                 <td>
-                  This option is for setting up the <code> Navbar Vertical Appearance</code>. To
-                  make a darker vertical navbar (lighter in dark mode) set the value to{' '}
+                  This option is for setting up the{' '}
+                  <code> Navbar Vertical Appearance</code>. To make a darker
+                  vertical navbar (lighter in dark mode) set the value to{' '}
                   <code> darker </code>.
                 </td>
               </tr>
@@ -166,21 +173,9 @@ const Configuration = () => {
                   <code>false</code>
                 </td>
                 <td>
-                  Set <code>true</code> to make the whole layout RTL (Right to Left). Recommended
-                  for languages such as Arabic, Hebrew and others.
-                </td>
-              </tr>
-              <tr>
-                <td className="white-space-nowrap">showSettingPanel</td>
-                <td>
-                  <code>Boolean</code>
-                </td>
-                <td>
-                  <code>false</code>
-                </td>
-                <td>
-                  To keep the setting panel <code>open</code> set this option to <code>true</code>{' '}
-                  when the page first loads
+                  Set <code>true</code> to make the whole layout RTL (Right to
+                  Left). Recommended for languages such as Arabic, Hebrew and
+                  others.
                 </td>
               </tr>
             </tbody>
@@ -195,8 +190,8 @@ const Configuration = () => {
             <a href="https://legacy.reactjs.org/docs/context.html#reactcreatecontext">
               React context
             </a>{' '}
-            to manage config state. To access and update any config value in your component use our
-            custom hook <code>useAppContext</code>.
+            to manage config state. To access and update any config value in
+            your component use our custom hook <code>useAppContext</code>.
           </p>
           <PhoenixLiveEditor code={contextCode} />
         </PhoenixDocCard.Body>

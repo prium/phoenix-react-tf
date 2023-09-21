@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const additiveBorderCode = `
 <div className='border-component'>
@@ -102,46 +102,50 @@ const BorderExample = () => {
           <PhoenixDocCard.Header title="Border" noPreview />
           <PhoenixDocCard.Body>
             <p>
-              The classes are named using the format <code>border-{`{side}`}</code> for{' '}
-              <code>xs</code> and{' '}
+              The classes are named using the format{' '}
+              <code>border-{`{side}`}</code> for <code>xs</code> and{' '}
               <code>
                 border-{`{side}`}-{`{breakpoint}`}
               </code>{' '}
-              for <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, and{' '}
-              <code>xxl</code>.
+              for <code>sm</code>, <code>md</code>, <code>lg</code>,{' '}
+              <code>xl</code>, and <code>xxl</code>.
             </p>
             <p>
               Where<em> side</em> is one of:
             </p>
             <ul>
               <li>
-                <code>top</code> - for classes that set style for <code>border-top</code>
+                <code>top</code> - for classes that set style for{' '}
+                <code>border-top</code>
               </li>
               <li>
-                <code>bottom</code> - for classes that set style for <code>border-bottom</code>
+                <code>bottom</code> - for classes that set style for{' '}
+                <code>border-bottom</code>
               </li>
               <li>
-                <code>left</code> - for classes that set style for <code>border-start</code>
+                <code>left</code> - for classes that set style for{' '}
+                <code>border-start</code>
               </li>
               <li>
-                <code>right</code> - for classes that set style for <code>border-right</code>
+                <code>right</code> - for classes that set style for{' '}
+                <code>border-right</code>
               </li>
               <li>
-                <code>x</code> - for classes that set both<code>*-left</code> and{' '}
-                <code>*-right</code>
+                <code>x</code> - for classes that set both<code>*-left</code>{' '}
+                and <code>*-right</code>
               </li>
               <li>
                 <code>y</code> - for classes that set both<code>*-top</code> and{' '}
                 <code>*-bottom</code>
               </li>
               <li>
-                blank - for classes that set the<code>border</code> style on all 4 side of the
-                element.
+                blank - for classes that set the<code>border</code> style on all
+                4 side of the element.
               </li>
             </ul>
             <p className="mb-0">
-              Use border utilities to quickly style the<code>border </code> of an element. Great for
-              images, buttons, or any other element.
+              Use border utilities to quickly style the<code>border </code> of
+              an element. Great for images, buttons, or any other element.
             </p>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>

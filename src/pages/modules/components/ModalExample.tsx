@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 function DemoModal() {
@@ -113,11 +113,11 @@ function StaticBackdropModal() {
 
 const fullscreenCode = `
 function Example() {
-  const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
-  const [fullscreen, setFullscreen] = useState(true);
+  const values: ModalProps['fullscreen'][] = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
+  const [fullscreen, setFullscreen] = useState<ModalProps['fullscreen']>(true);
   const [show, setShow] = useState(false);
 
-  function handleShow(breakpoint) {
+  function handleShow(breakpoint: ModalProps['fullscreen']) {
     setFullscreen(breakpoint);
     setShow(true);
   }
@@ -192,8 +192,8 @@ const ModalExample = () => {
         title="Modals"
         description="Add dialogs to your site for lightboxes, user notifications, or completely custom content."
         link={{
-          text: 'Accordion on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/accordion/'
+          text: 'Modals on react-bootstrap',
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/modal/`
         }}
       />
 
@@ -214,8 +214,8 @@ const ModalExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Focus on specific element">
             <p className="mb-0">
-              You can focus on an element inside the modal using <code>autoFocus</code> attribute on
-              the element.
+              You can focus on an element inside the modal using{' '}
+              <code>autoFocus</code> attribute on the element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={focusCode} />
@@ -234,9 +234,9 @@ const ModalExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Fullscreen Modal">
             <p className="mb-0">
-              You can use the <code>fullscreen</code> prop to make the modal fullscreen. Specifying
-              a breakpoint will only set the modal as fullscreen <strong>below</strong> the
-              breakpoint size.
+              You can use the <code>fullscreen</code> prop to make the modal
+              fullscreen. Specifying a breakpoint will only set the modal as
+              fullscreen <strong>below</strong> the breakpoint size.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={fullscreenCode} />

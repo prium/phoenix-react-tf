@@ -18,12 +18,16 @@ const EcomPayingVsNonPayingCard = () => {
         <div className="mt-3">
           <div className="d-flex align-items-center mb-2">
             <div className="bullet-item bg-primary me-2"></div>
-            <h6 className="text-900 fw-semi-bold flex-1 mb-0">Paying customer</h6>
+            <h6 className="text-900 fw-semi-bold flex-1 mb-0">
+              Paying customer
+            </h6>
             <h6 className="text-900 fw-semi-bold mb-0">30%</h6>
           </div>
           <div className="d-flex align-items-center">
             <div className="bullet-item bg-primary-100 me-2"></div>
-            <h6 className="text-900 fw-semi-bold flex-1 mb-0">Non-paying customer</h6>
+            <h6 className="text-900 fw-semi-bold flex-1 mb-0">
+              Non-paying customer
+            </h6>
             <h6 className="text-900 fw-semi-bold mb-0">70%</h6>
           </div>
         </div>

@@ -2,22 +2,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import CustomerNotesCard from 'components/cards/CustomerNotesCard';
 import CustomerProfileCard from 'components/cards/CustomerProfileCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import CustomerOrdersTable from 'components/tables/CustomerOrdersTable';
 import CustomerRatingsTable from 'components/tables/CustomerRatingsTable';
 import CustomerWishlistTable from 'components/tables/CustomerWishlistTable';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import React from 'react';
-import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 
 const CustomerDetails = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <Row className="d-flex align-items-center justify-content-between g-3 mb-4">
           <Col xs="auto">
@@ -46,11 +42,14 @@ const CustomerDetails = () => {
               </Col>
               <Col xs={12} md={5} xxl={12}>
                 <Card className="h-100">
-                  <Card.Body>
+                  <Card.Body className="">
                     <div className="d-flex align-items-center mb-3">
                       <h3 className="me-1">Default Address</h3>
                       <Button variant="link" className="p-0">
-                        <FontAwesomeIcon icon="pen" className="fs-8 ms-3 text-500" />
+                        <FontAwesomeIcon
+                          icon="pen"
+                          className="fs-8 ms-3 text-500"
+                        />
                       </Button>
                     </div>
                     <h5 className="text-800">Address</h5>
@@ -63,14 +62,14 @@ const CustomerDetails = () => {
                     </p>
                     <div className="mb-3">
                       <h5 className="text-800">Email</h5>
-                      <a href="mailto:shatinon@jeemail.com">shatinon@jeemail.com</a>
-                    </div>
-                    <div>
-                      <h5 className="text-800">Phone</h5>
-                      <a className="text-800" href="tel:+1234567890">
-                        +1234567890
+                      <a href="mailto:shatinon@jeemail.com">
+                        shatinon@jeemail.com
                       </a>
                     </div>
+                    <h5 className="text-800">Phone</h5>
+                    <a className="text-800" href="tel:+1234567890">
+                      +1234567890
+                    </a>
                   </Card.Body>
                 </Card>
               </Col>
@@ -95,7 +94,8 @@ const CustomerDetails = () => {
               </div>
               <div>
                 <h3 className="mb-4">
-                  Ratings & reviews <span className="text-700 fw-normal">(43)</span>
+                  Ratings & reviews{' '}
+                  <span className="text-700 fw-normal">(43)</span>
                 </h3>
                 <CustomerRatingsTable />
               </div>

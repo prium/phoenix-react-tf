@@ -20,9 +20,10 @@ const EcommerceFooter = () => {
           <Col xs={12} lg={4}>
             <Logo className="mb-3" />
             <p className="text-700 mb-1 fw-semi-bold lh-sm fs-9">
-              Phoenix is an admin dashboard template with fascinating features and amazing layout.
-              The template is responsive to all major browsers and is compatible with all available
-              devices and screen sizes.
+              Phoenix is an admin dashboard template with fascinating features
+              and amazing layout. The template is responsive to all major
+              browsers and is compatible with all available devices and screen
+              sizes.
             </p>
           </Col>
           <Col xs={6} md="auto">
@@ -39,11 +40,17 @@ const EcommerceFooter = () => {
             <Stack>
               <LinkItem to="#!">Blogs</LinkItem>
               <Link to="#!" className="mb-1 fw-semi-bold fs-9">
-                <FontAwesomeIcon icon={['fab', 'facebook-square']} className="text-800 me-2 fs-8" />
+                <FontAwesomeIcon
+                  icon={['fab', 'facebook-square']}
+                  className="text-primary me-2 fs-8"
+                />
                 <span className="text-800">Facebook</span>
               </Link>
               <Link to="#!" className="mb-1 fw-semi-bold fs-9">
-                <FontAwesomeIcon icon={['fab', 'twitter-square']} className="text-800 me-2 fs-8" />
+                <FontAwesomeIcon
+                  icon={['fab', 'twitter-square']}
+                  className="text-info me-2 fs-8"
+                />
                 <span className="text-800">Twitter</span>
               </Link>
             </Stack>

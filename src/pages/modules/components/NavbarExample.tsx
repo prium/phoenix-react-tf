@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const lightCode = `
 <Navbar bg="light" expand="lg">
@@ -76,7 +76,7 @@ const NavbarExample = () => {
         description="A powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more."
         link={{
           text: 'Navbar on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/navbar/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/navbar/`
         }}
       />
 

@@ -4,7 +4,10 @@ import Avatar from 'components/base/Avatar';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
-import { latestReviewsTableData, LatestReviewsTableDataType } from 'data/LatestReviewsTableData';
+import {
+  latestReviewsTableData,
+  LatestReviewsTableDataType
+} from 'data/LatestReviewsTableData';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Col, Dropdown, Row } from 'react-bootstrap';
@@ -24,9 +27,12 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border">
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="d-block rounded-2 border"
+        >
           <img src={productImage} alt="" width={53} />
-        </div>
+        </Link>
       );
     },
     meta: { cellProps: { className: 'py-0' } },
@@ -38,9 +44,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">{`${product.slice(0, 46)}${
-          product.length > 46 ? '...' : ''
-        }`}</Link>
+        <Link
+          to="/apps/e-commerce/customer/product-details"
+          className="fw-semi-bold"
+        >{`${product.slice(0, 46)}${product.length > 46 ? '...' : ''}`}</Link>
       );
     },
     enableSorting: true,
@@ -54,7 +61,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { customer } = original;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link
+          to="/apps/e-commerce/admin/customer-details"
+          className="d-flex align-items-center text-900"
+        >
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
               {customer.name.charAt(0).toUpperCase()}
@@ -75,7 +85,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     header: 'RATING',
     cell: ({ row: { original } }) => {
       const { rating } = original;
-      return <Rating readonly initialValue={rating} />;
+      return <Rating iconClass="fs-10" readonly initialValue={rating} />;
     },
     meta: {
       headerProps: { style: { minWidth: 110 } }
@@ -146,12 +156,16 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     accessorKey: 'action',
     enableSorting: false,
     header: '',
-    cell: row => {
+    cell: () => {
       return (
         <>
           <div className="position-relative">
             <div className="hover-actions">
-              <Button variant="phoenix-secondary" className="me-1 fs-10" size="sm">
+              <Button
+                variant="phoenix-secondary"
+                className="me-1 fs-10"
+                size="sm"
+              >
                 <FontAwesomeIcon icon="check" />
               </Button>
               <Button variant="phoenix-secondary" className="fs-10" size="sm">
@@ -192,22 +206,28 @@ const EcomLatestReviewsTable = () => {
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
-            <p className="text-700 lh-sm mb-0">Payment received across all channels</p>
+            <p className="text-700 lh-sm mb-0">
+              Payment received across all channels
+            </p>
           </Col>
           <Col xs={12} md="auto">
             <Row className="g-2 gy-3">
               <Col xs="auto" className="flex-1">
-                <SearchBox placeholder="Search..." size="sm" onChange={handleSearchInputChange} />
+                <SearchBox
+                  placeholder="Search..."
+                  size="sm"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
-              <Col xs="auto">
+              <Col xs="auto" className="d-flex gap-2">
                 <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100 me-2"
+                  className="bg-white hover-bg-100"
                 >
                   All products
                 </Button>
-                <Dropdown className="d-inline">
+                <Dropdown>
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"
@@ -216,10 +236,14 @@ const EcomLatestReviewsTable = () => {
                     <FontAwesomeIcon icon="ellipsis-h" className="10" />
                   </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
+                  <Dropdown.Menu align="end">
                     <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">
+                      Another action
+                    </Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">
+                      Something else
+                    </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Col>
@@ -228,7 +252,9 @@ const EcomLatestReviewsTable = () => {
         </Row>
 
         <AdvanceTable
-          tableProps={{ className: 'phoenix-table fs-9 mb-0 border-top border-200' }}
+          tableProps={{
+            className: 'phoenix-table fs-9 mb-0 border-top border-200'
+          }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
         <AdvanceTableFooter navBtn />

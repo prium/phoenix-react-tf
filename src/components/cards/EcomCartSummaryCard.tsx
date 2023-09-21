@@ -30,12 +30,16 @@ const EcomCartSummaryCard = () => {
         </InputGroup>
         <div className="d-flex justify-content-between border-y border-dashed py-3 mb-4">
           <h4 className="mb-0">Total :</h4>
-          <h4 className="mb-">{currencyFormat(695.2, { minimumFractionDigits: 2 })}</h4>
+          <h4 className="mb-">
+            {currencyFormat(695.2, { minimumFractionDigits: 2 })}
+          </h4>
         </div>
         <Button
           className="w-100"
           variant="primary"
-          endIcon={<FontAwesomeIcon icon="chevron-right" className="ms-1 fs-10" />}
+          endIcon={
+            <FontAwesomeIcon icon="chevron-right" className="ms-1 fs-10" />
+          }
         >
           Proceed to check out
         </Button>

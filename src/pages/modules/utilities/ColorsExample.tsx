@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <>
@@ -56,8 +56,8 @@ const ColorsExample = () => {
 
         <DocPageHeader title="Opacity" className="mb-5">
           <p className="mb-0">
-            Color opacity allows for real-time color changes without compilation and dynamic alpha
-            transparency changes.
+            Color opacity allows for real-time color changes without compilation
+            and dynamic alpha transparency changes.
           </p>
         </DocPageHeader>
 

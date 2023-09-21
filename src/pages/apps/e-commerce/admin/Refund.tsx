@@ -1,23 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import OrderDetailsTable from 'components/tables/OrderDetailsTable';
-import { Breadcrumb, Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { Card, Col, Dropdown, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { defaultBreadcrumbItems } from 'data/commonData';
 
 const Refund = () => {
   return (
     <div>
-      <Breadcrumb className="mb-2">
-        <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-        <Breadcrumb.Item href="#!" active>
-          Default
-        </Breadcrumb.Item>
-      </Breadcrumb>
+      <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-9">
         <h2 className="mb-3">Refund</h2>
-        <div className="d-flex flex-wrap align-items-center mb-3 gap-3">
+        <div className="d-flex flex-wrap align-items-center mb-4 gap-3">
           <p className="text-800 lh-sm mb-0">
             Order :{' '}
             <Link className="fw-bold" to="#!">
@@ -27,14 +23,17 @@ const Refund = () => {
           </p>
           <div className="flex-1 d-flex flex-between-center gap-3">
             <p className="text-800 lh-sm mb-0 flex-1 white-space-nowrap">
-              Customer IP :{' '}
+              Customer Id :{' '}
               <Link className="fw-bold" to="#!">
                 {' '}
                 2364847
               </Link>
             </p>
             <Dropdown>
-              <Dropdown.Toggle variant="" className="p-0 dropdown-caret-none text-decoration-none">
+              <Dropdown.Toggle
+                variant=""
+                className="p-0 dropdown-caret-none text-decoration-none"
+              >
                 More action
                 <FontAwesomeIcon icon="chevron-down" className="ms-2" />
               </Dropdown.Toggle>
@@ -57,8 +56,14 @@ const Refund = () => {
                 <Card.Title as="h4" className="mb-4">
                   Refund Amount
                 </Card.Title>
-                <Form.Control type="number" placeholder="Amount" className="mb-4" />
-                <Button className="w-100">Refund $500</Button>
+                <Form.Control
+                  type="number"
+                  placeholder="Amount"
+                  className="mb-4 input-spin-none"
+                />
+                <Button variant="primary" className="w-100">
+                  Refund $500
+                </Button>
               </Card.Body>
             </Card>
           </Col>

@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const exampleCode = `
@@ -57,7 +57,9 @@ const PaginationExample = () => {
         description="A set of presentational components for building pagination UI."
         link={{
           text: 'Pagination on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/pagination/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/pagination/`
         }}
       />
 
@@ -72,7 +74,10 @@ const PaginationExample = () => {
             title="More options"
             description='For building more complex pagination UI, there are few convenient sub-components for adding "First", "Previous", "Next", and "Last" buttons, as well as an "Ellipsis" item for indicating previous or continuing results.'
           />
-          <PhoenixDocCard.Body code={moreOptionsCode} scope={{ FontAwesomeIcon }} />
+          <PhoenixDocCard.Body
+            code={moreOptionsCode}
+            scope={{ FontAwesomeIcon }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

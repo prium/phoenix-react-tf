@@ -3,7 +3,7 @@ import React from 'react';
 
 const EcomInvoiceTable = () => {
   return (
-    <Scrollbar style={{ height: '100%' }}>
+    <Scrollbar autoHeight autoHeightMax="100%">
       <table className="table fs-9 text-900 mb-0">
         <thead className="bg-200">
           <tr>
@@ -47,8 +47,9 @@ const EcomInvoiceTable = () => {
             <td className="align-middle">1</td>
             <td className="align-middle">
               <p className="line-clamp-1 mb-0 fw-semi-bold">
-                Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management
-                &amp; Skin Temperature Trends, Carbon/Graphite, One Size (S &amp; L Bands)
+                Fitbit Sense Advanced Smartwatch with Tools for Heart Health,
+                Stress Management &amp; Skin Temperature Trends,
+                Carbon/Graphite, One Size (S &amp; L Bands)
               </p>
             </td>
             <td className="align-middle ps-5">Glossy black</td>
@@ -88,13 +89,25 @@ const EcomInvoiceTable = () => {
               </p>
             </td>
             <td className="align-middle ps-5 border-0">White</td>
-            <td className="align-middle text-700 fw-semi-bold border-0">Regular</td>
-            <td className="align-middle text-end text-1000 fw-semi-bold border-0">1</td>
-            <td className="align-middle text-end fw-semi-bold border-0">$185</td>
+            <td className="align-middle text-700 fw-semi-bold border-0">
+              Regular
+            </td>
+            <td className="align-middle text-end text-1000 fw-semi-bold border-0">
+              1
+            </td>
+            <td className="align-middle text-end fw-semi-bold border-0">
+              $185
+            </td>
             <td className="align-middle text-end border-0">3.5%</td>
-            <td className="align-middle text-center fw-semi-bold border-0">VAT</td>
-            <td className="align-middle text-end fw-semi-bold border-0">$199</td>
-            <td className="align-middle text-end fw-semi-bold border-0">$398</td>
+            <td className="align-middle text-center fw-semi-bold border-0">
+              VAT
+            </td>
+            <td className="align-middle text-end fw-semi-bold border-0">
+              $199
+            </td>
+            <td className="align-middle text-end fw-semi-bold border-0">
+              $398
+            </td>
             <td className="border-0" />
           </tr>
           <tr className="bg-200">
@@ -122,7 +135,10 @@ const EcomInvoiceTable = () => {
             <td className="align-middle fw-bold ps-15" colSpan={2}>
               Discount/Voucher
             </td>
-            <td className="align-middle text-end fw-semi-bold text-danger" colSpan={2}>
+            <td
+              className="align-middle text-end fw-semi-bold text-danger"
+              colSpan={2}
+            >
               -$50
             </td>
             <td />

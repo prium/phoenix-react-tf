@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <>
@@ -170,33 +170,6 @@ const buttonsWithDropdowsCode = `
       <Dropdown.Item href="#">Separated link</Dropdown.Item>
     </DropdownButton>
   </InputGroup>
-
-  <InputGroup>
-    <DropdownButton
-      variant="phoenix-secondary"
-      title="Dropdown"
-      id="input-group-dropdown-3"
-    >
-      <Dropdown.Item href="#">Action</Dropdown.Item>
-      <Dropdown.Item href="#">Another action</Dropdown.Item>
-      <Dropdown.Item href="#">Something else here</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="#">Separated link</Dropdown.Item>
-    </DropdownButton>
-    <FormControl aria-label="Text input with 2 dropdown buttons" />
-    <DropdownButton
-      variant="phoenix-secondary"
-      title="Dropdown"
-      id="input-group-dropdown-4"
-      align="end"
-    >
-      <Dropdown.Item href="#">Action</Dropdown.Item>
-      <Dropdown.Item href="#">Another action</Dropdown.Item>
-      <Dropdown.Item href="#">Something else here</Dropdown.Item>
-      <Dropdown.Divider />
-      <Dropdown.Item href="#">Separated link</Dropdown.Item>
-    </DropdownButton>
-  </InputGroup>
 </>
 `;
 
@@ -243,7 +216,7 @@ const InputGroupExample = () => {
         description="Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs."
         link={{
           text: 'InputGroup on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/input-group/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/forms/input-group/`
         }}
       />
 
@@ -256,9 +229,10 @@ const InputGroupExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              Add the relative form sizing classes to the <code>InputGroup</code> and contents
-              within will automatically resize—no need for repeating the form control size classes
-              on each element.
+              Add the relative form sizing classes to the{' '}
+              <code>InputGroup</code> and contents within will automatically
+              resize—no need for repeating the form control size classes on each
+              element.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={sizingCode} />
@@ -295,7 +269,7 @@ const InputGroupExample = () => {
           <PhoenixDocCard.Body code={buttonAddOnsCode} />
         </PhoenixDocCard>
 
-        <PhoenixDocCard className="mb-4">
+        <PhoenixDocCard className="mb-4 overflow-visible">
           <PhoenixDocCard.Header title="Buttons with Dropdowns" />
           <PhoenixDocCard.Body code={buttonsWithDropdowsCode} />
         </PhoenixDocCard>

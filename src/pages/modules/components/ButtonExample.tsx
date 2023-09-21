@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout, { SideNavItem } from 'components/layouts/DocPagesLayout';
+import DocPagesLayout, { SideNavItem } from 'layouts/DocPagesLayout';
 import FeatherIcon from 'feather-icons-react';
 
 const phoenixButtonsCode = `
@@ -478,7 +478,9 @@ const ButtonExample = () => {
         description={`Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.`}
         link={{
           text: 'Buttons on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/buttons/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/buttons/`
         }}
       />
 
@@ -506,8 +508,8 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Button Sizes">
             <p className="mb-0">
-              Fancy larger or smaller buttons? Add <code>size="lg"</code>,<code>size="sm"</code> for
-              additional sizes.
+              Fancy larger or smaller buttons? Add <code>size="lg"</code>,
+              <code>size="sm"</code> for additional sizes.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={buttonSizesCode} />
@@ -516,8 +518,8 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Buttons with icons and label">
             <p className="mb-0">
-              Add <code>startIcon</code>, <code>endIcon</code> props to add icons in{' '}
-              <code>Button</code>
+              Add <code>startIcon</code>, <code>endIcon</code> props to add
+              icons in <code>Button</code>
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body
@@ -529,7 +531,8 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Disabled state">
             <p className="mb-0">
-              Make buttons look inactive by adding the <code>disabled</code> prop to.
+              Make buttons look inactive by adding the <code>disabled</code>{' '}
+              prop to.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={disableButtonsCode} />
@@ -538,12 +541,14 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Button loading state">
             <p className="mb-1">
-              When activating an asynchronous action from a button it is a good UX pattern to give
-              the user feedback as to the loading state, this can easily be done by updating your{' '}
-              <code>&lt;Button /&gt;</code>s props from a state change like below.
+              When activating an asynchronous action from a button it is a good
+              UX pattern to give the user feedback as to the loading state, this
+              can easily be done by updating your <code>&lt;Button /&gt;</code>s
+              props from a state change like below.
             </p>
             <p className="mb-0">
-              To position loading spinner, use <code>loadingPosition: 'start' | 'end'</code> prop
+              To position loading spinner, use{' '}
+              <code>loadingPosition: 'start' | 'end'</code> prop
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={loadingButtonsCode} scope={{ Button }} />
@@ -552,9 +557,9 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Checkbox / Radio">
             <p className="mb-0">
-              Buttons can also be used to style <code>checkbox</code> and <code>radio</code> form
-              elements. This is helpful when you want a toggle button that works neatly inside an
-              HTML form.
+              Buttons can also be used to style <code>checkbox</code> and{' '}
+              <code>radio</code> form elements. This is helpful when you want a
+              toggle button that works neatly inside an HTML form.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={toggleBtnCode} scope={{ Button }} />
@@ -564,10 +569,12 @@ const ButtonExample = () => {
           <PhoenixDocCard.Header title="Uncontrolled">
             <p className="mb-0">
               For a nicer experience with checked state management use the
-              <code>&lt;ToggleButtonGroup&gt;</code> instead of a <code>&lt;ButtonGroup&gt;</code>{' '}
-              component. The group behaves as a form component, where the <code>value</code> is an
-              array of the selected
-              <code>value</code>s for a named checkbox group or the single toggled
+              <code>&lt;ToggleButtonGroup&gt;</code> instead of a{' '}
+              <code>&lt;ButtonGroup&gt;</code> component. The group behaves as a
+              form component, where the <code>value</code> is an array of the
+              selected
+              <code>value</code>s for a named checkbox group or the single
+              toggled
               <code>value</code> in a similarly named radio group.
             </p>
           </PhoenixDocCard.Header>
@@ -585,17 +592,23 @@ const ButtonExample = () => {
           description="Group a series of buttons together on a single line or stack them in a vertical column."
           link={{
             text: 'Buttons on react-bootstrap',
-            url: 'https://react-bootstrap.github.io/components/button-group/'
+            url: `${
+              process.env.REACT_APP_RB_URL_PREFIX || ''
+            }/components/button-group/`
           }}
         />
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Basic example">
             <p className="mb-0">
-              Wrap a series of <code>&lt;Button&gt;</code>s in a <code>&lt;ButtonGroup&gt;</code>.
+              Wrap a series of <code>&lt;Button&gt;</code>s in a{' '}
+              <code>&lt;ButtonGroup&gt;</code>.
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={buttonGroupExampleCode} scope={{ Button }} />
+          <PhoenixDocCard.Body
+            code={buttonGroupExampleCode}
+            scope={{ Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -611,18 +624,23 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Button toolbar with input group">
             <p className="mb-0">
-              Feel free to mix input groups with button groups in your toolbars. Similar to the
-              example above, you’ll likely need some utilities though to space things properly.
+              Feel free to mix input groups with button groups in your toolbars.
+              Similar to the example above, you’ll likely need some utilities
+              though to space things properly.
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={inputGroupExampleCode} scope={{ Button }} />
+          <PhoenixDocCard.Body
+            code={inputGroupExampleCode}
+            scope={{ Button }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Sizing">
             <p className="mb-0">
-              Instead of applying button sizing props to every button in a group, just add{' '}
-              <code>size </code> prop to the <code>&lt;ButtonGroup&gt;</code>.
+              Instead of applying button sizing props to every button in a
+              group, just add <code>size </code> prop to the{' '}
+              <code>&lt;ButtonGroup&gt;</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={sizingCode} scope={{ Button }} />
@@ -632,7 +650,8 @@ const ButtonExample = () => {
           <PhoenixDocCard.Header title="Nesting">
             <p className="mb-0">
               You can place other button types within the
-              <code>&lt;ButtonGroup&gt;</code> like <code>&lt;DropdownButton&gt;</code>s.
+              <code>&lt;ButtonGroup&gt;</code> like{' '}
+              <code>&lt;DropdownButton&gt;</code>s.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={nestingCode} scope={{ Button }} />
@@ -641,12 +660,16 @@ const ButtonExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Vertical variation">
             <p className="mb-0">
-              Make a set of buttons appear vertically stacked rather than horizontally, by adding
+              Make a set of buttons appear vertically stacked rather than
+              horizontally, by adding
               <code>vertical</code> to the <code>&lt;ButtonGroup&gt;</code>.
               <strong> Split button dropdowns are not supported here.</strong>
             </p>
           </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={verticalVariationCode} scope={{ Button }} />
+          <PhoenixDocCard.Body
+            code={verticalVariationCode}
+            scope={{ Button }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

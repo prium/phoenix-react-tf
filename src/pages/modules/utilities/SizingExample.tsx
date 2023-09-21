@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const sizingWidthCode = `<>
   <div className="bg-light text-dark p-2 border border-dashed mb-3 w-100"><code>.w-100</code></div>
@@ -136,7 +136,10 @@ const SizingExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Special classes (relative to viewport)" noPreview />
+          <PhoenixDocCard.Header
+            title="Special classes (relative to viewport)"
+            noPreview
+          />
           <div className="p-4">
             <PhoenixDocCard.Body code={specialClassesCode} hidePreview />
           </div>

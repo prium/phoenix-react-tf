@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const basicFormCode = `
 <Form>
@@ -322,7 +322,7 @@ const FormLayoutExample = () => {
         description="Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
         link={{
           text: 'Forms layout on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/layout/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/forms/layout/`
         }}
       />
 
@@ -355,11 +355,6 @@ const FormLayoutExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Grid - Auto Sizing" />
           <PhoenixDocCard.Body code={autoSizingCode} />
-        </PhoenixDocCard>
-
-        <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Gutters" />
-          <PhoenixDocCard.Body code={guttersCode} />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">

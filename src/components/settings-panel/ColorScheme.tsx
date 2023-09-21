@@ -29,7 +29,7 @@ const ColorScheme = () => {
             name="theme"
             value="light"
             thumb={defaultLight}
-            defaultChecked={theme === 'light'}
+            checked={theme === 'light'}
             handleChange={handleThemeChange}
           />
         </Col>
@@ -39,7 +39,7 @@ const ColorScheme = () => {
             name="theme"
             value="dark"
             thumb={defaultDark}
-            defaultChecked={theme === 'dark'}
+            checked={theme === 'dark'}
             handleChange={handleThemeChange}
           />
         </Col>

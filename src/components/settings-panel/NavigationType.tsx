@@ -7,14 +7,22 @@ import topDefault from 'assets/img/generic/top-default.png';
 import topDefaultDark from 'assets/img/generic/top-default-dark.png';
 import navComboLight from 'assets/img/generic/nav-combo-light.png';
 import navComboDark from 'assets/img/generic/nav-combo-dark.png';
+import dualLight from 'assets/img/generic/dual-light.png';
+import dualDark from 'assets/img/generic/dual-dark.png';
 import RadioItem from './RadioItem';
 import { NavPositionVariant } from 'config';
+import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const NavigationType = () => {
   const {
     config: { theme, navbarPosition },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableNavigationType }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -33,8 +41,9 @@ const NavigationType = () => {
             name="nav-type"
             value="vertical"
             thumb={theme === 'light' ? defaultLight : defaultDark}
-            defaultChecked={navbarPosition === 'vertical'}
+            checked={navbarPosition === 'vertical'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
         <Col xs={6}>
@@ -43,8 +52,9 @@ const NavigationType = () => {
             name="nav-type"
             value="horizontal"
             thumb={theme === 'light' ? topDefault : topDefaultDark}
-            defaultChecked={navbarPosition === 'horizontal'}
+            checked={navbarPosition === 'horizontal'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
         <Col xs={6}>
@@ -53,11 +63,26 @@ const NavigationType = () => {
             name="nav-type"
             value="combo"
             thumb={theme === 'light' ? navComboLight : navComboDark}
-            defaultChecked={navbarPosition === 'combo'}
+            checked={navbarPosition === 'combo'}
             handleChange={handleChange}
+            disabled={disableNavigationType}
+          />
+        </Col>
+        <Col xs={6}>
+          <RadioItem
+            label="Dual nav"
+            name="nav-type"
+            value="dual"
+            thumb={theme === 'light' ? dualLight : dualDark}
+            checked={navbarPosition === 'dual'}
+            handleChange={handleChange}
+            disabled={disableNavigationType}
           />
         </Col>
       </Row>
+      {disableNavigationType && (
+        <WarningMessage message="You can't update navigation type here" />
+      )}
     </div>
   );
 };

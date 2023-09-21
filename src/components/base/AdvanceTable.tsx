@@ -1,14 +1,13 @@
 import classNames from 'classnames';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
-import { Table } from 'react-bootstrap';
-import Scrollbar from './Scrollbar';
+import { Table, TableProps } from 'react-bootstrap';
 import { flexRender } from '@tanstack/react-table';
 
 interface AdvanceTableProps {
   headerClassName?: string;
   bodyClassName?: string;
   rowClassName?: string;
-  tableProps?: any;
+  tableProps?: TableProps;
 }
 
 const AdvanceTable = ({
@@ -21,7 +20,7 @@ const AdvanceTable = ({
   const { getRowModel, getFlatHeaders } = table;
 
   return (
-    <Scrollbar style={{ height: '100%' }} className="table-scrollbar">
+    <div className="scrollbar ms-n1 ps-1">
       <Table {...tableProps}>
         <thead className={headerClassName}>
           <tr>
@@ -30,16 +29,22 @@ const AdvanceTable = ({
                 <th
                   key={header.id}
                   {...header.column.columnDef.meta?.headerProps}
-                  className={classNames(header.column.columnDef.meta?.headerProps?.className, {
-                    sort: header.column.getCanSort(),
-                    desc: header.column.getIsSorted() === 'desc',
-                    asc: header.column.getIsSorted() === 'asc'
-                  })}
+                  className={classNames(
+                    header.column.columnDef.meta?.headerProps?.className,
+                    {
+                      sort: header.column.getCanSort(),
+                      desc: header.column.getIsSorted() === 'desc',
+                      asc: header.column.getIsSorted() === 'asc'
+                    }
+                  )}
                   onClick={header.column.getToggleSortingHandler()}
                 >
                   {header.isPlaceholder
                     ? null
-                    : flexRender(header.column.columnDef.header, header.getContext())}
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
                 </th>
               );
             })}
@@ -57,7 +62,7 @@ const AdvanceTable = ({
           ))}
         </tbody>
       </Table>
-    </Scrollbar>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <>
@@ -37,14 +37,14 @@ const FloatExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Overview">
             <p className="mb-0 text-800">
-              These utility classes float an element to the left or right, or disable floating,
-              based on the current viewport size using the
+              These utility classes float an element to the left or right, or
+              disable floating, based on the current viewport size using the
               <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">
                 CSS <code>float</code> property
               </a>
-              . <code>!important</code> is included to avoid specificity issues. These use the same
-              viewport breakpoints as our grid system. Please be aware float utilities have no
-              effect on flex items.
+              . <code>!important</code> is included to avoid specificity issues.
+              These use the same viewport breakpoints as our grid system. Please
+              be aware float utilities have no effect on flex items.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={exampleCode} />

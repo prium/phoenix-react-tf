@@ -16,7 +16,9 @@ const OrderDetailsSummaryCard = ({ className }: { className?: string }) => {
         </div>
         <div className="d-flex justify-content-between">
           <h4 className="mb-0">Total :</h4>
-          <h4 className="mb-">{currencyFormat(695.2, { minimumFractionDigits: 2 })}</h4>
+          <h4 className="mb-">
+            {currencyFormat(695.2, { minimumFractionDigits: 2 })}
+          </h4>
         </div>
       </Card.Body>
     </Card>

@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 () => {
@@ -108,7 +108,7 @@ const AlertsExample = () => {
         description="Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages."
         link={{
           text: 'Alerts on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/alerts/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/alerts/`
         }}
       />
 
@@ -144,8 +144,8 @@ const AlertsExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Dismissing">
             <p className="mb-0">
-              Add the <code>dismissible</code> prop to add a functioning dismiss button to the
-              Alert.
+              Add the <code>dismissible</code> prop to add a functioning dismiss
+              button to the Alert.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={dismissCode} />

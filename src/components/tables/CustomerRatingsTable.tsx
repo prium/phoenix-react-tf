@@ -7,9 +7,14 @@ import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { ColumnDef } from '@tanstack/react-table';
 import Rating from 'components/base/Rating';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import { customerRatingsTableData, CustomerReview } from 'data/e-commerce/customers';
+import {
+  customerRatingsTableData,
+  CustomerReview
+} from 'data/e-commerce/customers';
 
 const columns: ColumnDef<CustomerReview>[] = [
   {
@@ -117,7 +122,7 @@ const CustomerRatingsTable = () => {
   const table = useAdvanceTable({
     data: customerRatingsTableData,
     columns,
-    pageSize: 6,
+    pageSize: 5,
     pagination: true,
     selection: false,
     selectionColumnWidth: '30px',
@@ -132,7 +137,7 @@ const CustomerRatingsTable = () => {
             tableProps={{ className: 'phoenix-table fs-9 mb-0' }}
             rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
           />
-          <AdvanceTableFooter navBtn />
+          <AdvanceTableFooter navBtn showViewAllBtn={false} />
         </div>
       </AdvanceTableProvider>
     </>

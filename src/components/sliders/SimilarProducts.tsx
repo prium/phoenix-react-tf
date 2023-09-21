@@ -10,7 +10,9 @@ const SimilarProducts = ({ products }: { products: Product[] }) => {
       <div className="d-flex flex-between-center mb-3">
         <div>
           <h3>Similar Products</h3>
-          <p className="mb-0 text-700 fw-semi-bold">Essential for a better life</p>
+          <p className="mb-0 text-700 fw-semi-bold">
+            Essential for a better life
+          </p>
         </div>
         <Button variant="phoenix-primary" size="sm">
           View all
@@ -20,7 +22,12 @@ const SimilarProducts = ({ products }: { products: Product[] }) => {
       <Swiper
         slidesPerView={1}
         spaceBetween={16}
+        navigationPosition={{ top: '25%' }}
         breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 16
+          },
           450: {
             slidesPerView: 2,
             spaceBetween: 16

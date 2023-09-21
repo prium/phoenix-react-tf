@@ -1,5 +1,4 @@
 import DetailsLabel from 'components/common/DetailsLabel';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 

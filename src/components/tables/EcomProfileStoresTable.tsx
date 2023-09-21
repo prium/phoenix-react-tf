@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { StoreProductType, storeProducts } from 'data/e-commerce/products';
 import Rating from 'components/base/Rating';
-import RevealDropdown, { RevealDropdownTrigger } from 'components/base/RevealDropdown';
+import RevealDropdown, {
+  RevealDropdownTrigger
+} from 'components/base/RevealDropdown';
 import MyFavoriteStores from 'components/modules/e-commerce/profile/MyFavoriteStores';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 
@@ -55,7 +57,10 @@ const columns: ColumnDef<StoreProductType>[] = [
     accessorKey: 'orders',
     header: 'orders',
     meta: {
-      headerProps: { style: { width: '12%', minWidth: 150 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '12%', minWidth: 150 },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-primary fw-bold text-end' }
     }
   },
@@ -64,7 +69,10 @@ const columns: ColumnDef<StoreProductType>[] = [
     header: () => 'Total Spent',
     cell: ({ row: { original } }) => currencyFormat(original.totalSpent),
     meta: {
-      headerProps: { style: { width: '15%', minWidth: 150 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '15%', minWidth: 150 },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-end fw-semi-bold' }
     }
   },
@@ -72,7 +80,10 @@ const columns: ColumnDef<StoreProductType>[] = [
     accessorKey: 'lastOrderDate',
     header: 'Last Order',
     meta: {
-      headerProps: { style: { width: '15%', minWidth: 150 }, className: 'text-end' },
+      headerProps: {
+        style: { width: '15%', minWidth: 150 },
+        className: 'text-end'
+      },
       cellProps: { className: 'text-end text-700' }
     }
   },
@@ -107,7 +118,9 @@ const EcomProfileStoresTable = () => {
     <div>
       <AdvanceTableProvider {...table}>
         <div className="border-y mb-6">
-          <AdvanceTable tableProps={{ className: 'phoenix-table table-sm fs-9' }} />
+          <AdvanceTable
+            tableProps={{ className: 'phoenix-table table-sm fs-9' }}
+          />
           <AdvanceTableFooter pagination />
         </div>
       </AdvanceTableProvider>

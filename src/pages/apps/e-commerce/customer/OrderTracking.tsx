@@ -1,22 +1,18 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import Mapbox from 'components/base/MapBox';
 import Section from 'components/base/Section';
-import OrderTrackingMap from 'components/maps/OrderTrackingMap';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import OrderTrackingTimeline from 'components/timelines/OrderTrackingTimeline';
+import { defaultBreadcrumbItems } from 'data/commonData';
 import { orderTrackingTimelineData } from 'data/timelineData';
-import { Breadcrumb, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const OrderTracking = () => {
   return (
     <div className="pt-5 mb-9">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-3 flex-wrap justify-content-between align-items-end mb-5">
           <div>
             <h2>Order #234 Status</h2>
@@ -36,7 +32,14 @@ const OrderTracking = () => {
         </div>
         <Row className="gy-9 gx-5">
           <Col xs={12} lg={6}>
-            <OrderTrackingMap />
+            <Mapbox
+              className="border border-300 rounded-3 min-vh-50"
+              options={{
+                center: [-74.0020158, 40.7228022],
+                zoom: 15,
+                scrollZoom: false
+              }}
+            />
           </Col>
           <Col xs={12} lg={6}>
             <OrderTrackingTimeline data={orderTrackingTimelineData} />

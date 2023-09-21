@@ -4,7 +4,12 @@ import { customerNotes } from 'data/e-commerce/customers';
 import React from 'react';
 import { Card, Form } from 'react-bootstrap';
 
-const Note = ({ note, date, isLast }: { note: string; date: string; isLast?: boolean }) => {
+interface NoteProps {
+  note: string;
+  date: string;
+  isLast?: boolean;
+}
+const Note = ({ note, date, isLast }: NoteProps) => {
   return (
     <div
       className={classNames('fs-9 fw-semi-bold', {

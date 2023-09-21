@@ -2,6 +2,7 @@
 /*                                 Navbar Top                                 */
 /* -------------------------------------------------------------------------- */
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .navbar-nav-top {
     .dropdown {
@@ -13,6 +14,17 @@
           border-right: 0.25rem solid transparent;
           border-left: 0.25rem solid transparent;
           border-radius: 15px;
+        }
+      }
+      .dropdown-menu {
+        &::before {
+          content: '';
+          position: absolute;
+          height: 1.5rem;
+          background: transparent;
+          top: -1.5rem;
+          width: calc(100% - 5px);
+          z-index: -1;
         }
       }
       .dropdown {
@@ -28,30 +40,23 @@
   }
 }
 .navbar-top {
-  position: fixed;
-  top: 0;
   width: 100%;
   font-size: map_get($font-sizes, '9');
   font-weight: $font-weight-semi-bold;
   padding: 0;
-  z-index: $zindex-sticky;
   background: var(--#{$prefix}navbar-top-bg-color);
   min-height: $navbar-top-height;
   color: var(--#{$prefix}nav-link-color);
-
-  padding: 0 map-get($spacers, 4) 0 map-get($spacers, 4);
+  padding: 0 map-get($spacers, 4);
   border-bottom: 1px solid $navbar-vertical-border-color;
 
   .dropdown-menu {
-    margin-top: map-get($spacers, 2);
-    &::before {
-      content: '';
-      position: absolute;
-      height: 1.5rem;
-      background: transparent;
-      top: -1.5rem;
-      width: calc(100% - 5px);
-      z-index: -1;
+    margin-top: 1rem;
+  }
+
+  &.navbar-slim {
+    .dropdown-menu {
+      margin-top: 12px;
     }
   }
 
@@ -102,7 +107,8 @@
     .nav-link {
       --#{$prefix}nav-link-color: var(--#{$prefix}gray-1000);
       --#{$prefix}nav-link-hover-color: var(--#{$prefix}black);
-      padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2) map-get($spacers, 6);
+      padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2)
+        map-get($spacers, 6);
       font-weight: $font-weight-semi-bold;
       &:hover {
         background: var(--#{$prefix}gray-100);
@@ -112,7 +118,7 @@
 }
 
 .notification-dropdown-menu {
-  min-width: 270px;
+  min-width: 260px;
   @include media-breakpoint-up(sm) {
     min-width: 360px;
   }
@@ -214,6 +220,7 @@
 /* -------------------------------------------------------------------------- */
 
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .dropdown-item-group {
     display: flex;
@@ -278,14 +285,16 @@
     @each $item, $value in $navbar-vertical-breakpoints {
       @include media-breakpoint-up($item) {
         &.navbar-expand-#{$item} {
-          // padding-left: $content-padding-x;
+          padding-left: $content-padding-x;
           padding-right: $content-padding-x;
           &:not(.navbar-slim) {
             .navbar-nav-top {
               .nav-link {
                 &.dropdown-toggle {
                   &.show {
-                    background-color: var(--#{$prefix}navbar-top-dropdown-hover-bg);
+                    background-color: var(
+                      --#{$prefix}navbar-top-dropdown-hover-bg
+                    );
                   }
                 }
               }
@@ -377,6 +386,7 @@
 }
 
 .navbar-horizontal,
+.dual-nav,
 .navbar-combo {
   .navbar-nav-top {
     max-height: calc(100vh - $navbar-top-height);
@@ -425,11 +435,9 @@
 
       [aria-expanded='true'] {
         .dropdown-indicator-icon {
-          &.uil-angle-right {
-            transform: rotate(90deg);
-            [dir='rtl'] & {
-              transform: rotate(-90deg);
-            }
+          transform: rotate(90deg);
+          [dir='rtl'] & {
+            transform: rotate(-90deg);
           }
         }
       }
@@ -563,10 +571,7 @@
                   padding-left: 1rem !important;
                 }
                 .dropdown-indicator-icon {
-                  &.uil-angle-right {
-                    // transition: none;
-                    transform: none;
-                  }
+                  transform: none;
                 }
                 &.dropdown-menu-card {
                   min-width: 550px;
@@ -598,15 +603,11 @@
               &.dropdown-inside {
                 .dropdown-item {
                   .dropdown-indicator-icon {
-                    &.uil-angle-right {
-                      transform: rotate(90deg);
-                    }
+                    transform: rotate(90deg);
                   }
                   &.show {
                     .dropdown-indicator-icon {
-                      &.uil-angle-right {
-                        transform: rotate(-90deg);
-                      }
+                      transform: rotate(-90deg);
                     }
                   }
                 }
@@ -655,4 +656,39 @@
 .img-dropdown {
   background-position: right -14px bottom -20px;
   background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Dual Navbar                                    */
+/* -------------------------------------------------------------------------- */
+.dual-nav {
+  .navbar-top {
+    border-bottom: 1px solid var(--#{$prefix}dual-nav-border-color);
+
+    @each $item, $value in $navbar-vertical-breakpoints {
+      @include media-breakpoint-up($item) {
+        &.navbar-expand-#{$item} {
+          padding-left: 0;
+          padding-right: 0;
+          ~ {
+            .content {
+              --#{$prefix}navbar-top-height: 7.3rem;
+            }
+          }
+          .navbar-top-collapse {
+            border-top: 1px solid var(--#{$prefix}dual-nav-border-color);
+            padding: 0.5rem 2rem;
+            &.show {
+              padding-bottom: 0.5rem;
+            }
+          }
+          .dual-nav-first-layer {
+            background-color: var(--#{$prefix}dual-nav-first-layer-bg);
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 
 const exampleCode = `
@@ -61,7 +61,9 @@ const ProgressbarExample = () => {
         description="Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars."
         link={{
           text: 'Progress on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/progress/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/progress/`
         }}
       />
 
@@ -114,7 +116,8 @@ const ProgressbarExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Animated">
             <p className="mb-0">
-              Add <code>animated</code> prop to animate the stripes right to left.
+              Add <code>animated</code> prop to animate the stripes right to
+              left.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={animatedCode} />

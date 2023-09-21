@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <>
@@ -156,7 +156,7 @@ const customRenderCode = `
     <div key={type} className="mb-3">
       <Form.Check type={type} id={'check-api-' + type }>
         <Form.Check.Input type={type} isValid />
-        <Form.Check.Label className='ms-2'>{'Custom api' + type }</Form.Check.Label>
+        <Form.Check.Label>{'Custom api' + type }</Form.Check.Label>
         <Form.Control.Feedback type="valid">You did it!</Form.Control.Feedback>
       </Form.Check>
     </div>
@@ -172,7 +172,9 @@ const ChecksExample = () => {
         description="Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
         link={{
           text: 'Checks and radios on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/forms/checks-radios/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/forms/checks-radios/`
         }}
       />
 
@@ -190,9 +192,10 @@ const ChecksExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Switches">
             <p className="mb-0">
-              A switch has the markup of a custom checkbox but uses <code>type="switch"</code>
-              to render a toggle switch. Switches also support the same customizable children as{' '}
-              <code>&lt;FormCheck&gt;</code>.
+              A switch has the markup of a custom checkbox but uses{' '}
+              <code>type="switch"</code>
+              to render a toggle switch. Switches also support the same
+              customizable children as <code>&lt;FormCheck&gt;</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={switchesCode} />
@@ -201,7 +204,8 @@ const ChecksExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Check Inline">
             <p className="mb-0">
-              Group checkboxes on the same horizontal row by adding the <code>inline</code> prop.
+              Group checkboxes on the same horizontal row by adding the{' '}
+              <code>inline</code> prop.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={inlineCheckboxCode} />
@@ -210,7 +214,8 @@ const ChecksExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Radio Inline">
             <p className="mb-0">
-              Group radio on the same horizontal row by adding the <code>inline</code> prop.
+              Group radio on the same horizontal row by adding the{' '}
+              <code>inline</code> prop.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={inlineRadioCode} />
@@ -219,8 +224,8 @@ const ChecksExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Reverse">
             <p className="mb-0">
-              Put your checkboxes, radios, and switches on the opposite side with the{' '}
-              <code>reverse</code> prop.
+              Put your checkboxes, radios, and switches on the opposite side
+              with the <code>reverse</code> prop.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={reverseCode} />
@@ -229,14 +234,17 @@ const ChecksExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Custom rendering">
             <p className="mb-0">
-              When you need tighter control, or want to customize how the <code>FormCheck</code>{' '}
-              component renders, it may better to use its constituent parts directly.
+              When you need tighter control, or want to customize how the{' '}
+              <code>FormCheck</code> component renders, it may better to use its
+              constituent parts directly.
             </p>
             <p className="mb-0">
-              By provided <code>children</code> to the <code>FormCheck</code> you can forgo the
-              default rendering and handle it yourself. (You can still provide an <code>id</code> to
-              the <code>FormCheck</code> or
-              <code>FormGroup</code> and have it propagate to the label and input).
+              By provided <code>children</code> to the <code>FormCheck</code>{' '}
+              you can forgo the default rendering and handle it yourself. (You
+              can still provide an <code>id</code> to the <code>FormCheck</code>{' '}
+              or
+              <code>FormGroup</code> and have it propagate to the label and
+              input).
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={customRenderCode} />

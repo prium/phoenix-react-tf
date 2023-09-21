@@ -3,19 +3,15 @@ import Button from 'components/base/Button';
 import Section from 'components/base/Section';
 import EcomInvoiceTable from 'components/tables/EcomInvoiceTable';
 import React from 'react';
-import { Breadcrumb, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import phoenixMart from 'assets/img/logos/phoenix-mart.png';
+import { defaultBreadcrumbItems } from 'data/commonData';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
 const Invoice = () => {
   return (
     <div className="pt-5 pb-9 bg-white dark__bg-1200 border-top border-300">
       <Section small className="py-0">
-        <Breadcrumb className="mb-2">
-          <Breadcrumb.Item href="#!">Page 1</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!">Page 2</Breadcrumb.Item>
-          <Breadcrumb.Item href="#!" active>
-            Default
-          </Breadcrumb.Item>
-        </Breadcrumb>
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">
           <h2 className="mb-0 flex-1">Invoice</h2>
           <Button variant="phoenix-secondary">
@@ -38,7 +34,9 @@ const Invoice = () => {
                       <h6 className="mb-0 me-3">Invoice No :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">#FLR978282</p>
+                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                        #FLR978282
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -48,7 +46,9 @@ const Invoice = () => {
                       <h6 className="me-3">Invoice Date :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">19.06.2019</p>
+                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                        19.06.2019
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -66,7 +66,9 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> PAN No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">XVCJ963782008</p>
+                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                    XVCJ963782008
+                  </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> GST Reg No :</h6>
@@ -74,7 +76,9 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">A-8934792734</p>
+                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                    A-8934792734
+                  </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order Date :</h6>

@@ -1,12 +1,11 @@
-// @ts-nocheck
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const { breakpoints } = useBreakpoints();
 
   return (
@@ -14,13 +13,14 @@ const ProductGallery = ({ images }: { images: string[] }) => {
       <Col xs={12} md={2} lg={12} xl={2}>
         <Swiper
           direction={
-            breakpoints.down('md') || (breakpoints.up('lg') && breakpoints.down('xl'))
+            breakpoints.down('md') ||
+            (breakpoints.up('lg') && breakpoints.down('xl'))
               ? 'horizontal'
               : 'vertical'
           }
           onInit={setThumbsSwiper}
           loop={true}
-          spaceBetween={10}
+          spaceBetween={16}
           slidesPerView={4}
           freeMode={true}
           watchSlidesProgress={true}
@@ -41,8 +41,10 @@ const ProductGallery = ({ images }: { images: string[] }) => {
           <Swiper
             loop={true}
             spaceBetween={10}
-            navigation={true}
-            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+            thumbs={{
+              swiper:
+                thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null
+            }}
             modules={[FreeMode, Navigation, Thumbs]}
           >
             {images.map((image, index) => (

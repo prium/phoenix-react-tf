@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Table } from 'react-bootstrap';
 
 const exampleCode = `
@@ -29,13 +29,16 @@ const DisplayExample = () => {
           <PhoenixDocCard.Header title="Notation" noPreview />
           <PhoenixDocCard.Body>
             <p>
-              Display utility classes that apply to all breakpoints, from <code>xs </code>to{' '}
-              <code>xl</code>, have no breakpoint abbreviation in them. This is because those
-              classes are applied from <code>min-width: 0; </code>
-              and up, and thus are not bound by a media query. The remaining breakpoints, however,
-              do include a breakpoint abbreviation.
+              Display utility classes that apply to all breakpoints, from{' '}
+              <code>xs </code>to <code>xl</code>, have no breakpoint
+              abbreviation in them. This is because those classes are applied
+              from <code>min-width: 0; </code>
+              and up, and thus are not bound by a media query. The remaining
+              breakpoints, however, do include a breakpoint abbreviation.
             </p>
-            <p className="mt-3">As such, the classes are named using the format:</p>
+            <p className="mt-3">
+              As such, the classes are named using the format:
+            </p>
             <ul>
               <li>
                 <code>.d-{'{value}'} </code> for <code>xs</code>
@@ -44,7 +47,8 @@ const DisplayExample = () => {
                 <code>
                   .d-{'{breakpoint}'}-{'{value}'}
                 </code>{' '}
-                for<code> sm</code>,<code> md</code>,<code> lg</code>, and <code> xl</code>,
+                for<code> sm</code>,<code> md</code>,<code> lg</code>, and{' '}
+                <code> xl</code>,
               </li>
             </ul>
             <p className="mt-3">Where value is one of:</p>
@@ -79,14 +83,14 @@ const DisplayExample = () => {
             </ul>
 
             <p>
-              The display values can be altered by changing the <code>$displays </code>variable and
-              recompiling the SCSS.
+              The display values can be altered by changing the{' '}
+              <code>$displays </code>variable and recompiling the SCSS.
             </p>
             <p>
-              The media queries effect screen widths with the given breakpoint or larger. For
-              example,
-              <code>.d-lg-none </code>sets <code>display: none;</code>on both <code>lg </code>and{' '}
-              <code>xl </code>screens.
+              The media queries effect screen widths with the given breakpoint
+              or larger. For example,
+              <code>.d-lg-none </code>sets <code>display: none;</code>on both{' '}
+              <code>lg </code>and <code>xl </code>screens.
             </p>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
@@ -100,20 +104,23 @@ const DisplayExample = () => {
           <PhoenixDocCard.Header title="Hiding Elements" noPreview />
           <PhoenixDocCard.Body code={exampleCode}>
             <p>
-              For faster mobile-friendly development, use responsive display classes for showing and
-              hiding elements by device. Avoid creating entirely different versions of the same
-              site, instead hide elements responsively for each screen size.
+              For faster mobile-friendly development, use responsive display
+              classes for showing and hiding elements by device. Avoid creating
+              entirely different versions of the same site, instead hide
+              elements responsively for each screen size.
             </p>
             <p>
-              To hide elements simply use the <code>.d-none </code>class or one of the
-              <code>.d-{'{sm,md,lg,xl}'}-none </code>classes for any responsive screen variation.
+              To hide elements simply use the <code>.d-none </code>class or one
+              of the
+              <code>.d-{'{sm,md,lg,xl}'}-none </code>classes for any responsive
+              screen variation.
             </p>
             <p>
-              To show an element only on a given interval of screen sizes you can combine one{' '}
-              <code>.d-*-none class with a </code>
+              To show an element only on a given interval of screen sizes you
+              can combine one <code>.d-*-none class with a </code>
               <code>.d-*-* class, for example </code>
-              <code>.d-none .d-md-block .d-xl-none </code>will hide the element for all screen sizes
-              except on medium and large devices.
+              <code>.d-none .d-md-block .d-xl-none </code>will hide the element
+              for all screen sizes except on medium and large devices.
             </p>
             <Table className="table-bordered">
               <thead>
@@ -203,9 +210,10 @@ const DisplayExample = () => {
         <PhoenixDocCard>
           <PhoenixDocCard.Header title="Display in print" alignItems="end">
             <p className="mt-2">
-              Change the <code>display </code>value of elements when printing with our print display
-              utility classes. Includes support for the same <code>display </code>values as our
-              responsive <code>.d-* utilities.</code>
+              Change the <code>display </code>value of elements when printing
+              with our print display utility classes. Includes support for the
+              same <code>display </code>values as our responsive{' '}
+              <code>.d-* utilities.</code>
             </p>
             <ul>
               <li>
@@ -236,7 +244,9 @@ const DisplayExample = () => {
                 <code>.d-print-inline-flex</code>
               </li>
             </ul>
-            <p className="mb-0">The print and display classes can be combined.</p>
+            <p className="mb-0">
+              The print and display classes can be combined.
+            </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={displayInPrintCode} />
         </PhoenixDocCard>

@@ -1,7 +1,7 @@
 import Avatar from 'components/base/Avatar';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 import team30 from 'assets/img/team/30.webp';
 import team57 from 'assets/img/team/57.webp';
@@ -77,7 +77,7 @@ import Avatar from 'components/base/Avatar';
   return (
     <div className="d-flex flex-column gap-4">
       {sizes.map(size => (
-        <Avatar.Gropup key={size}>
+        <Avatar.Group key={size}>
           <Avatar src={team30} size={size} />
           <Avatar src={team57} size={size} />
           <Avatar src={team25} size={size} />
@@ -86,7 +86,7 @@ import Avatar from 'components/base/Avatar';
           <Avatar size={size} variant="name">
             +3
           </Avatar>
-        </Avatar.Gropup>
+        </Avatar.Group>
       ))}
     </div>
   );
@@ -106,13 +106,19 @@ const AvatarExample = () => {
           <Col md={4} sm={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Circular" />
-              <PhoenixDocCard.Body code={circularCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={circularCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col md={4} sm={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Square" />
-              <PhoenixDocCard.Body code={squareCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={squareCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col md={4} sm={6}>
@@ -142,13 +148,19 @@ const AvatarExample = () => {
           <Col lg={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Status" />
-              <PhoenixDocCard.Body code={statusCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={statusCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col lg={6}>
             <PhoenixDocCard className="mb-4">
               <PhoenixDocCard.Header title="Sizes" />
-              <PhoenixDocCard.Body code={sizesCode} scope={{ Avatar, team30 }} />
+              <PhoenixDocCard.Body
+                code={sizesCode}
+                scope={{ Avatar, team30 }}
+              />
             </PhoenixDocCard>
           </Col>
           <Col xs={12}>

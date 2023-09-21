@@ -23,6 +23,26 @@
   --#{$prefix}body-color: #{map-get($dark-grays, '900')};
   --#{$prefix}body-bg: #{map-get($dark-grays, 'soft')};
 
+  // static colors
+  .text-success-100 {
+    color: #134207 !important;
+  }
+  .text-success-300 {
+    color: #42962d !important;
+  }
+  .text-warning-100 {
+    color: #52310b !important;
+  }
+  .text-warning-300 {
+    color: #8d6333 !important;
+  }
+  .text-danger-100 {
+    color: #612017 !important;
+  }
+  .text-danger-300 {
+    color: #612017 !important;
+  }
+
   /* ---------------------------------- Card ---------------------------------- */
   .card {
     --#{$prefix}card-bg: var(--#{$prefix}white);
@@ -43,7 +63,7 @@
 
   --#{$prefix}input-bg: #{map-get($grays, '1100')};
   --#{$prefix}input-border-color: #{map-get($dark-grays, '300')};
-  --#{$prefix}input-group-addon-bg: #{$gray-900};
+  --#{$prefix}input-group-addon-bg: #{map-get($dark-grays, '200')};
 
   /* ------------------------------- navbar-vertical ------------------------------- */
   --#{$prefix}navbar-vertical-border-color: #{map-get($dark-grays, '200')};
@@ -74,7 +94,10 @@
       &:not(.light) {
         --#{$prefix}badge-bg: rgba(var(--#{$prefix}#{$color}-rgb), 0.08);
         --#{$prefix}badge-color: #{$value};
-        --#{$prefix}badge-border-color: rgba(var(--#{$prefix}#{$color}-rgb), 0.2);
+        --#{$prefix}badge-border-color: rgba(
+          var(--#{$prefix}#{$color}-rgb),
+          0.2
+        );
         &[href] {
           @include hover-focus {
             color: map-get($theme-colors-dark, $color);
@@ -120,7 +143,7 @@
       --#{$prefix}btn-hover-border-color: #{map-get($dark-grays, '200')};
     }
   }
-  --#{$prefix}btn-active-bg: $primary;
+  // --#{$prefix}btn-active-bg: #{map-get($theme-colors, 'primary')};
   .settings-panel .btn {
     --#{$prefix}btn-color: #{map-get($dark-grays, '600')};
   }
@@ -224,9 +247,9 @@
   --#{$prefix}flatpickr-calendar-bg: #{map-get($dark-common, 'white')};
   --#{$prefix}flatpickr-current-month-color: #{map-get($dark-grays, '1000')};
   --#{$prefix}flatpickr-weekday-color: #{map-get($dark-grays, '1000')};
-  --#{$prefix}flatpickr-calendar-day-hover-bg: #{$gray-1000};
+  --#{$prefix}flatpickr-calendar-day-hover-bg: #{map-get($dark-grays, '100')};
   --#{$prefix}flatpickr-weekend-days-color: #{$warning};
-  --#{$prefix}flatpickr-today-color: #{$gray-900};
+  --#{$prefix}flatpickr-today-color: #{map-get($dark-grays, '200')};
   --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
 
   /* -------------------------------- Fullcalendar ------------------------------- */
@@ -255,54 +278,69 @@
 
   /* --------------------------------- global scss --------------------------------- */
   /* ------------------------------- navbar-top  ------------------------------- */
-  --#{$prefix}navbar-top-link-color: #{$gray-400};
+  --#{$prefix}navbar-top-link-color: #{map-get($dark-grays, '900')};
   --#{$prefix}navbar-top-menu-bg-color: #{$gray-1100};
-  --#{$prefix}navbar-top-border-color: #{$gray-900};
-  --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
-  --#{$prefix}navbar-top-link-hover-bg: #{$gray-1000};
-  --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-1000};
-  --#{$prefix}navbar-top-dropdown-color: #{$gray-500};
+  --#{$prefix}navbar-top-border-color: #{map-get($dark-grays, '200')};
+  --#{$prefix}navbar-top-link-hover-color: #{map-get($dark-grays, '1000')};
+  --#{$prefix}navbar-top-link-hover-bg: #{map-get($dark-grays, '100')};
+  --#{$prefix}navbar-top-dropdown-hover-bg: #{map-get($dark-grays, '100')};
+  --#{$prefix}navbar-top-dropdown-color: #{map-get($dark-grays, '600')};
 
   .navbar-darker {
-    --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
+    --#{$prefix}navbar-top-dropdown-hover-bg: #{map-get($dark-grays, '200')};
   }
+
+  /* ------------------------------- navbar-double top ------------------------------- */
+
+  --#{$prefix}dual-nav-border-color: #{$dual-nav-border-color-dark};
+  --#{$prefix}dual-nav-first-layer-bg: #{map-get($dark-grays, 'soft')};
 
   /* ------------------------------- navbar-vertical inverted ------------------------------- */
 
   --#{$prefix}navbar-vertical-bg-color: #{$gray-1100};
+  // --#{$prefix}navbar-vertical-label-color:#{map-get($dark-grays, '500')};
   --#{$prefix}navbar-vertical-label-color: #{$gray-600};
-  --#{$prefix}navbar-vertical-link-color: #{$gray-400};
+  --#{$prefix}navbar-vertical-link-color: #{map-get($dark-grays, '900')};
   --#{$prefix}navbar-vertical-link-hover-color: #{$gray-100};
-  --#{$prefix}navbar-vertical-link-hover-bg: #{$gray-900};
+  --#{$prefix}navbar-vertical-link-hover-bg: #{map-get($dark-grays, '200')};
   --#{$prefix}navbar-vertical-link-active-color: #{$white};
-  --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500};
-  --#{$prefix}navbar-vertical-link-icon-color: #{$gray-400}; //
+  --#{$prefix}navbar-vertical-link-disable-color: #{map-get($dark-grays, '600')};
+  --#{$prefix}navbar-vertical-link-icon-color: #{map-get($dark-grays, '900')}; //
 
-  --#{$prefix}hamburger-menu-color: #{$gray-700};
+  --#{$prefix}hamburger-menu-color: #{map-get($dark-grays, '500')};
   // ----------- collapsed colors ----------------
   --#{$prefix}navbar-vertical-hr-color: #{map-get($dark-grays, '400')};
-  --#{$prefix}navbar-vertical-collapsed-menu-bg: #{$gray-1000};
-  --#{$prefix}navbar-vertical-collapsed-menu-color: #{$gray-400};
+  --#{$prefix}navbar-vertical-collapsed-menu-bg: #{map-get($dark-grays, '100')};
+  --#{$prefix}navbar-vertical-collapsed-menu-color: #{map-get(
+      $dark-grays,
+      '900'
+    )};
 
   .navbar-darker {
-    --#{$prefix}navbar-vertical-bg-color: #{$gray-1000};
+    --#{$prefix}navbar-vertical-bg-color: #{map-get($dark-grays, '100')};
     --#{$prefix}navbar-vertical-label-color: #{$gray-600};
-    --#{$prefix}navbar-vertical-link-color: #{$gray-400};
+    --#{$prefix}navbar-vertical-link-color: #{map-get($dark-grays, '900')};
     --#{$prefix}navbar-vertical-link-hover-color: #{$gray-100};
-    --#{$prefix}navbar-vertical-link-hover-bg: #{$gray-900};
+    --#{$prefix}navbar-vertical-link-hover-bg: #{map-get($dark-grays, '200')};
     --#{$prefix}navbar-vertical-link-active-color: #{$white};
-    --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500};
-    --#{$prefix}navbar-vertical-link-icon-color: #{$gray-400};
+    --#{$prefix}navbar-vertical-link-disable-color: #{map-get(
+        $dark-grays,
+        '600'
+      )};
+    --#{$prefix}navbar-vertical-link-icon-color: #{map-get($dark-grays, '900')};
     // ----------- collapsed colors ----------------
     // --#{$prefix}navbar-vertical-hr-color: #{map-get($dark-grays, '400')};
-    --#{$prefix}navbar-vertical-collapsed-menu-bg: #{$gray-1000};
-    --#{$prefix}navbar-vertical-collapsed-menu-color: #{$gray-400};
+    --#{$prefix}navbar-vertical-collapsed-menu-bg: #{map-get($dark-grays, '100')};
+    --#{$prefix}navbar-vertical-collapsed-menu-color: #{map-get(
+        $dark-grays,
+        '900'
+      )};
 
     //--------------- navbar top ---------------------------------
-    --#{$prefix}navbar-top-bg-color: #{$gray-1000};
-    --#{$prefix}nav-link-color: #{$gray-500};
+    --#{$prefix}navbar-top-bg-color: #{map-get($dark-grays, '100')};
+    --#{$prefix}nav-link-color: #{map-get($dark-grays, '600')};
     //input
-    --#{$prefix}input-bg: #{$gray-1000};
+    --#{$prefix}input-bg: #{map-get($dark-grays, '100')};
     --#{$prefix}input-border-color: #{map-get($dark-grays, '300')};
     .form-control {
       color: #{$gray-600};
@@ -316,11 +354,88 @@
   --#{$prefix}theme-control-toggle-bg: #{rgba($primary, 0.24)};
   --#{$prefix}theme-control-toggle-hover-bg: #{rgba($primary, 0.7)};
   --#{$prefix}theme-control-toggle-color: #{$blue-300};
-  --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-soft, 'primary')};
+  --#{$prefix}theme-control-toggle-hover-color: #{map-get(
+      $theme-colors-soft,
+      'primary'
+    )};
 
   /* -------------------------------- Scrollbar ------------------------------- */
   --#{$variable-prefix}scrollbar-bg: #{rgba($gray-900, 0.6)};
+  /* -------------------------------- Kanban ------------------------------- */
+  --#{$prefix}kanban-bg: #{map-get($dark-grays, 'soft')};
+  --#{$prefix}kanban-column-bg: #{map-get($grays, '1100')};
+  --#{$prefix}ghost-bg: #{map-get($dark-grays, 'soft')};
+  --#{$prefix}drag-bg: #1c222c;
+  --#{$prefix}kanban-column-hover-bg: #1c222c;
+  // --#{$prefix}drag-bg: #{map-get($dark-grays, '100')};
+  // --#{$prefix}kanban-column-hover-bg:  #{map-get($dark-grays, '100')};
 
+  --#{$prefix}leaflet-bar-bg: #{map-get($dark-grays, '300')};
+  --#{$prefix}leaflet-popup-content-wrapper-bg: #{$dark};
+
+  // table variants
+  @each $color, $value in $theme-colors {
+    @if $color == 'dark' {
+      .table-#{$color} {
+        --#{$prefix}table-bg: $value;
+      }
+    } @else if $color == 'light' {
+      .table-#{$color} {
+        --#{$prefix}table-bg: #{map-get($grays, '100')};
+      }
+    } @else {
+      .table-#{$color} {
+        --#{$prefix}table-bg: #{shift-color($value, -$table-bg-scale)};
+        --#{$prefix}table-color: #{color-contrast(
+            opaque(map-get($dark-grays, '200'), $value)
+          )};
+        --#{$prefix}table-hover-bg: #{mix(
+            color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+            $value,
+            percentage($table-hover-bg-factor)
+          )};
+        --#{$prefix}table-hover-color: #{color-contrast(
+            mix(
+              color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+              $value,
+              percentage($table-hover-bg-factor)
+            )
+          )};
+        --#{$prefix}table-striped-bg: #{mix(
+            color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+            $value,
+            percentage($table-striped-bg-factor)
+          )};
+        --#{$prefix}table-striped-color: #{color-contrast(
+            mix(
+              color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+              $value,
+              percentage($table-striped-bg-factor)
+            )
+          )};
+        --#{$prefix}table-active-bg: #{mix(
+            color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+            $value,
+            percentage($table-active-bg-factor)
+          )};
+        --#{$prefix}table-active-color: #{color-contrast(
+            mix(
+              color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+              $value,
+              percentage($table-active-bg-factor)
+            )
+          )};
+        --#{$prefix}table-border-color: #{rgba(
+            mix(
+              color-contrast(opaque(map-get($dark-grays, '200'), $value)),
+              $value,
+              percentage($table-border-factor)
+            ),
+            0.05
+          )};
+      }
+    }
+  }
   /* ------------------------------- Pagination ------------------------------- */
   .pagination {
     --#{$prefix}pagination-disabled-color: #{map-get($dark-grays, '400')};

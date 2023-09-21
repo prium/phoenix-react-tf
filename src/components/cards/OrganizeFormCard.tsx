@@ -35,12 +35,12 @@ const OrganizeFormCard = ({ className }: { className?: string }) => {
           </Col>
           <Col xs={12} sm={6} xl={12}>
             <h5 className="mb-2 text-1000">Collection</h5>
-            <Form.Control placeholder="tags" />
+            <Form.Control placeholder="Collection" />
           </Col>
           <Col xs={12} sm={6} xl={12}>
             <div className="d-flex gap-2 mb-2">
               <h5 className="mb-0 text-1000">Tags</h5>
-              <Link className="fw-bold fs-9" to="#!">
+              <Link className="fw-bold fs-9 lh-sm" to="#!">
                 View all tags
               </Link>
             </div>

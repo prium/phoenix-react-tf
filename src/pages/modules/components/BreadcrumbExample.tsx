@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <Breadcrumb className="mb-0">
@@ -20,7 +20,9 @@ const BreadcrumbExample = () => {
         description="Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS."
         link={{
           text: 'Breadcrumb on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/breadcrumb/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/breadcrumb/`
         }}
       />
 

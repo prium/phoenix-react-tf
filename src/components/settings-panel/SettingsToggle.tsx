@@ -1,20 +1,23 @@
-import { useAppContext } from 'providers/AppProvider';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 import { Card } from 'react-bootstrap';
 
 const SettingsToggle = () => {
   const {
-    config: { showSettingPanel },
-    setConfig
-  } = useAppContext();
+    settingsPanelConfig: { openSettingPanel },
+    setSettingsPanelConfig
+  } = useSettingsPanelContext();
 
   const handleClick = () => {
-    setConfig({ showSettingPanel: !showSettingPanel });
+    setSettingsPanelConfig({ openSettingPanel: !openSettingPanel });
   };
 
   return (
     <Card className="setting-toggle" onClick={handleClick}>
       <Card.Body className="d-flex align-items-center px-2 py-1">
-        <div className="position-relative rounded-start" style={{ height: 34, width: 28 }}>
+        <div
+          className="position-relative rounded-start"
+          style={{ height: 34, width: 28 }}
+        >
           <div className="settings-popover">
             <span className="ripple">
               <span className="fa-spin position-absolute all-0 d-flex flex-center">

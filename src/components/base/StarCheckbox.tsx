@@ -1,13 +1,17 @@
-import React, { InputHTMLAttributes, useState } from 'react';
-import Rating from './Rating';
+import { useState } from 'react';
+import Rating, { RatingProps } from './Rating';
 
-interface StarCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
-  className?: string;
+interface StarCheckboxProps extends RatingProps {
   defaultChecked?: boolean;
+  onClick?: () => void;
 }
 
-const StarCheckbox = ({ className, defaultChecked, ...rest }: StarCheckboxProps) => {
-  const [rating, setRating] = useState(0);
+const StarCheckbox = ({
+  defaultChecked,
+  onClick,
+  ...rest
+}: StarCheckboxProps) => {
+  const [rating, setRating] = useState(defaultChecked ? 1 : 0);
 
   const handleRating = () => {
     if (rating === 0) {
@@ -15,18 +19,21 @@ const StarCheckbox = ({ className, defaultChecked, ...rest }: StarCheckboxProps)
     } else {
       setRating(0);
     }
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
-    <>
-      <Rating
-        initialValue={rating}
-        iconsCount={1}
-        allowFraction={false}
-        onClick={handleRating}
-        iconClass="fs-8"
-      />
-    </>
+    <Rating
+      key={rating}
+      iconClass="fs-8"
+      {...rest}
+      initialValue={rating}
+      iconsCount={1}
+      allowFraction={false}
+      onClick={handleRating}
+    />
   );
 };
 

@@ -6,9 +6,9 @@ import team15 from 'assets/img/team/15.webp';
 const CustomerProfileCard = () => {
   return (
     <Card className="h-100">
-      <Card.Body className="d-flex flex-column justify-content-between">
+      <Card.Body className="d-flex flex-column justify-content-between pb-3">
         <Row className="align-items-center g-5 mb-3 text-center text-sm-start">
-          <Col xs={12} sm="auto">
+          <Col xs={12} sm="auto" className="mb-sm-3">
             <AvatarUpload size="5xl" src={team15} />
           </Col>
           <Col xs={12} sm="auto" className="flex-1">
@@ -16,13 +16,22 @@ const CustomerProfileCard = () => {
             <p className="text-800">Joined 3 months ago</p>
             <div className="d-inline-flex gap-2">
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'linkedin-in']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'linkedin-in']}
+                  className="text-400 hover-primary"
+                />
               </a>
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'facebook']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'facebook']}
+                  className="text-400 hover-primary"
+                />
               </a>
               <a href="#!">
-                <FontAwesomeIcon icon={['fab', 'twitter']} className="text-400 hover-primary" />
+                <FontAwesomeIcon
+                  icon={['fab', 'twitter']}
+                  className="text-400 hover-primary"
+                />
               </a>
             </div>
           </Col>

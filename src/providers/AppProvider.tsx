@@ -28,15 +28,23 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     ),
     openNavbarVertical: initialConfig.openNavbarVertical,
     theme: getItemFromStore('theme', initialConfig.theme),
-    navbarTopAppearance: getItemFromStore('navbarTopAppearance', initialConfig.navbarTopAppearance),
+    navbarTopAppearance: getItemFromStore(
+      'navbarTopAppearance',
+      initialConfig.navbarTopAppearance
+    ),
     navbarVerticalAppearance: getItemFromStore(
       'navbarVerticalAppearance',
       initialConfig.navbarVerticalAppearance
     ),
-    navbarPosition: getItemFromStore('navbarPosition', initialConfig.navbarPosition),
-    navbarTopShape: getItemFromStore('navbarTopShape', initialConfig.navbarTopShape),
-    isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
-    showSettingPanel: initialConfig.showSettingPanel
+    navbarPosition: getItemFromStore(
+      'navbarPosition',
+      initialConfig.navbarPosition
+    ),
+    navbarTopShape: getItemFromStore(
+      'navbarTopShape',
+      initialConfig.navbarTopShape
+    ),
+    isRTL: getItemFromStore('isRTL', initialConfig.isRTL)
   };
 
   const [config, configDispatch] = useReducer(configReducer, configState);
@@ -74,6 +82,21 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       document.documentElement.classList.remove('navbar-combo');
     }
 
+    if (config.navbarPosition === 'dual') {
+      setConfig({
+        navbarTopShape: 'default'
+      });
+      document.documentElement.classList.add('dual-nav');
+    } else {
+      document.documentElement.classList.remove('dual-nav');
+    }
+
+    if (config.navbarPosition === 'horizontal') {
+      document.documentElement.classList.add('navbar-horizontal');
+    } else {
+      document.documentElement.classList.remove('navbar-horizontal');
+    }
+
     if (config.isNavbarVerticalCollapsed) {
       document.documentElement.classList.add('navbar-vertical-collapsed');
     } else {
@@ -82,7 +105,9 @@ const AppProvider = ({ children }: PropsWithChildren) => {
   }, [config]);
 
   return (
-    <AppContext.Provider value={{ config, setConfig, toggleTheme, getThemeColor, configDispatch }}>
+    <AppContext.Provider
+      value={{ config, setConfig, toggleTheme, getThemeColor, configDispatch }}
+    >
       {children}
     </AppContext.Provider>
   );

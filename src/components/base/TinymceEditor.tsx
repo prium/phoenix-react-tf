@@ -11,25 +11,40 @@ interface TinymceEditorProps {
   options?: IProps['init'];
 }
 
-const TinymceEditor = ({ value, onChange, options = { height: '50vh' } }: TinymceEditorProps) => {
+const TinymceEditor = ({
+  value,
+  onChange,
+  options = { height: '50vh' }
+}: TinymceEditorProps) => {
   const {
     config: { theme }
   } = useAppContext();
   const editorRef = useRef<TinyMCEEditor | null>(null);
-  console.log(getColor('black'));
+
+  const handleEditorFocus = () => {
+    const editorContainer = editorRef.current?.editorContainer;
+    editorContainer?.classList.add('editor-focused');
+  };
+
+  const handleEditorBlur = () => {
+    const editorContainer = editorRef.current?.editorContainer;
+    editorContainer?.classList.remove('editor-focused');
+  };
 
   useEffect(() => {
-    console.log({ theme });
-
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
-        `body{color: ${getColor(theme === 'dark' ? 'white' : 'black')} !important;}`
+        `body{color: ${getColor(
+          theme === 'dark' ? 'white' : 'black'
+        )} !important;}`
       );
     }
   }, [theme]);
 
   return (
     <Editor
+      onFocus={handleEditorFocus}
+      onBlur={handleEditorBlur}
       onInit={(evt, editor) => (editorRef.current = editor)}
       value={value}
       onEditorChange={onChange}
@@ -47,10 +62,6 @@ const TinymceEditor = ({ value, onChange, options = { height: '50vh' } }: Tinymc
           font-size: 12.8px;
         }
         `,
-        mobile: {
-          theme: 'mobile',
-          toolbar: ['undo', 'bold']
-        },
         statusbar: false,
         plugins: ['link', 'image', 'lists', 'table', 'media'],
         theme_advanced_toolbar_align: 'center',

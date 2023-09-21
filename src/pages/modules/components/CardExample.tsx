@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 import generic66 from 'assets/img/generic/66.jpg';
 import generic44 from 'assets/img/generic/44.png';
@@ -166,7 +166,7 @@ const CardExample = () => {
         description="Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options."
         link={{
           text: 'Cards on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/cards/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/cards/`
         }}
       />
 

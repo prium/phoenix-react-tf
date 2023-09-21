@@ -1,3 +1,4 @@
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import {
   Icon,
   UilChartPie,
@@ -9,7 +10,7 @@ import {
 
 export interface Route {
   name: string;
-  icon?: string | string[];
+  icon?: IconProp | string | string[];
   iconSet?: 'font-awesome' | 'feather' | 'unicons';
   pages?: Route[];
   path?: string;
@@ -53,9 +54,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'project-management',
-            path: 'dashboard/project-management',
+            path: '/dashboard/project-management',
             pathName: 'project-management-dashbaord',
-            topNavIcon: 'clipboard'
+            topNavIcon: 'clipboard',
+            active: true
           },
           {
             name: 'CRM',
@@ -65,9 +67,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'social-feed',
-            path: 'apps/social/feed',
+            path: '/apps/social/feed',
             pathName: 'social-feed',
-            topNavIcon: 'share-2'
+            topNavIcon: 'share-2',
+            active: true
           }
         ]
       }
@@ -233,95 +236,113 @@ export const routes: RouteItems[] = [
       {
         name: 'project-management',
         icon: 'clipboard',
+        active: true,
         pages: [
           {
             name: 'create new',
-            path: 'apps/project-management/create-new',
-            pathName: 'project-management-create-new'
+            path: '/apps/project-management/create-new',
+            pathName: 'project-management-create-new',
+            active: true
           },
           {
             name: 'project-list-view',
-            path: 'apps/project-management/project-list-view',
-            pathName: 'project-management-project-list-view'
+            path: '/apps/project-management/project-list-view',
+            pathName: 'project-management-project-list-view',
+            active: true
           },
           {
             name: 'project-card-view',
-            path: 'apps/project-management/project-card-view',
-            pathName: 'project-management-project-card-view'
+            path: '/apps/project-management/project-card-view',
+            pathName: 'project-management-project-card-view',
+            active: true
           },
           {
             name: 'project-board-view',
-            path: 'apps/project-management/project-board-view',
-            pathName: 'project-management-project-board-view'
+            path: '/apps/project-management/project-board-view',
+            pathName: 'project-management-project-board-view',
+            active: true
           },
           {
             name: 'todo-list',
-            path: 'apps/project-management/todo-list',
-            pathName: 'project-management-todo-list'
+            path: '/apps/project-management/todo-list',
+            pathName: 'project-management-todo-list',
+            active: true
           },
           {
             name: 'project-details',
-            path: 'apps/project-management/project-details',
-            pathName: 'project-management-project-details'
+            path: '/apps/project-management/project-details',
+            pathName: 'project-management-project-details',
+            active: true
           }
         ]
       },
       {
         name: 'chat',
         icon: 'message-square',
-        path: 'apps/chat',
-        pathName: 'app-chat'
+        path: '/apps/chat',
+        pathName: 'app-chat',
+        active: true
       },
       {
         name: 'email',
         icon: 'mail',
+        active: true,
         pages: [
           {
             name: 'inbox',
-            path: 'apps/email/inbox',
-            pathName: 'email-inbox'
+            path: '/apps/email/inbox',
+            pathName: 'email-inbox',
+            active: true
           },
           {
             name: 'email-detail',
-            path: 'apps/email/email-detail',
-            pathName: 'email-detail'
+            path: '/apps/email/email-detail',
+            pathName: 'email-detail',
+            active: true
           },
           {
             name: 'compose',
-            path: 'apps/email/compose',
-            pathName: 'email-compose'
+            path: '/apps/email/compose',
+            pathName: 'email-compose',
+            active: true
           }
         ]
       },
       {
         name: 'events',
         icon: 'bookmark',
+        active: true,
         pages: [
           {
             name: 'create an event',
-            path: 'apps/events/create-an-event',
-            pathName: 'create-an-event'
+            path: '/apps/events/create-an-event',
+            pathName: 'create-an-event',
+            active: true
           },
           {
             name: 'Event detail',
-            path: 'apps/events/event-detail',
-            pathName: 'event-detail'
+            path: '/apps/events/event-detail',
+            pathName: 'event-detail',
+            active: true
           }
         ]
       },
       {
         name: 'social',
         icon: 'share-2',
+        active: true,
         pages: [
           {
             name: 'profile',
-            path: 'apps/social/profile',
-            pathName: 'social-profile'
+            path: '/apps/social/profile',
+            pathName: 'social-profile',
+            active: true
           },
           {
             name: 'settings',
-            path: 'apps/social/settings',
-            pathName: 'settings'
+            path: '/apps/social/settings',
+            pathName: 'settings',
+            active: true
           }
         ]
       },
@@ -347,17 +368,31 @@ export const routes: RouteItems[] = [
       {
         name: 'faq',
         icon: 'help-circle',
-        path: 'pages/faq',
-        pathName: 'faq-accordion'
+        active: true,
+        pages: [
+          {
+            name: 'faq-accordion',
+            path: '/pages/faq/faq-accordion',
+            pathName: 'faq-accordion',
+            active: true
+          },
+          {
+            name: 'faq-tab',
+            path: 'pages/faq/faq-tab',
+            pathName: 'faq-tab'
+          }
+        ]
       },
       {
         name: 'landing',
         icon: 'globe',
+        active: true,
         pages: [
           {
             name: 'default',
-            path: 'pages/landing/default',
-            pathName: 'landing-default'
+            path: '/landing/default',
+            pathName: 'landing-default',
+            active: true
           },
           {
             name: 'alternate',
@@ -369,11 +404,13 @@ export const routes: RouteItems[] = [
       {
         name: 'pricing',
         icon: 'tag',
+        active: true,
         pages: [
           {
             name: 'pricing-column',
-            path: 'pages/pricing/pricing-column',
-            pathName: 'pricing-column'
+            path: '/pages/pricing/pricing-column',
+            pathName: 'pricing-column',
+            active: true
           },
           {
             name: 'pricing-grid',
@@ -385,73 +422,98 @@ export const routes: RouteItems[] = [
       {
         name: 'notifications',
         icon: 'bell',
-        path: 'pages/notifications',
-        pathName: 'notifications-page'
+        path: '/pages/notifications',
+        pathName: 'notifications-page',
+        active: true
       },
       {
         name: 'members',
         icon: 'users',
-        path: 'pages/members',
-        pathName: 'members-page'
+        path: '/pages/members',
+        pathName: 'members-page',
+        active: true
       },
       {
         name: 'timeline',
         icon: 'clock',
-        path: 'pages/timeline',
+        path: '/pages/timeline',
         pathName: 'timeline-page'
       },
       {
         name: 'errors',
         icon: 'alert-triangle',
+        active: true,
         pages: [
+          {
+            name: '403',
+            path: 'pages/errors/403',
+            pathName: 'error403',
+            active: true
+          },
           {
             name: '404',
             path: 'pages/errors/404',
-            pathName: 'error-404'
+            pathName: 'error404',
+            active: true
           },
           {
             name: '500',
             path: 'pages/errors/500',
-            pathName: 'error-500'
+            pathName: 'error500',
+            active: true
           }
         ]
       },
       {
         name: 'authentication',
         icon: 'lock',
+        active: true,
         pages: [
           {
             name: 'simple',
+            active: true,
             pages: [
               {
                 name: 'sign-in',
-                path: 'pages/authentication/simple/sign-in',
-                pathName: 'simple-signin'
+                path: '/pages/authentication/simple/sign-in',
+                pathName: 'simple-signin',
+                active: true
               },
               {
                 name: 'sign-up',
-                path: 'pages/authentication/simple/sign-up',
-                pathName: 'simple-signup'
+                path: '/pages/authentication/simple/sign-up',
+                pathName: 'simple-signup',
+                active: true
               },
               {
                 name: 'sign-out',
-                path: 'pages/authentication/simple/sign-out',
-                pathName: 'simple-signout'
+                path: '/pages/authentication/simple/sign-out',
+                pathName: 'simple-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
-                path: 'pages/authentication/simple/forgot-password',
-                pathName: 'simple-forgot-password'
+                path: '/pages/authentication/simple/forgot-password',
+                pathName: 'simple-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
-                path: 'pages/authentication/simple/reset-password',
-                pathName: 'simple-reset-password'
+                path: '/pages/authentication/simple/reset-password',
+                pathName: 'simple-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
-                path: 'pages/authentication/simple/lock-screen',
-                pathName: 'simple-lock-screen'
+                path: '/pages/authentication/simple/lock-screen',
+                pathName: 'simple-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: '/pages/authentication/simple/2FA',
+                pathName: 'simple-2FA',
+                active: true
               }
             ]
           },
@@ -531,56 +593,73 @@ export const routes: RouteItems[] = [
       {
         name: 'layouts',
         icon: 'layout',
+        active: true,
         pages: [
           {
             name: 'vertical-sidenav',
-            path: 'demo/vertical-sidenav',
-            pathName: 'demo-vertical-sidenav'
+            path: '/pages/demo/vertical-sidenav',
+            pathName: 'demo-vertical-sidenav',
+            active: true
           },
           {
             name: 'dark-mode',
-            path: 'demo/dark-mode',
-            pathName: 'demo-dark-mode'
+            path: '/pages/demo/dark-mode',
+            pathName: 'demo-dark-mode',
+            active: true
           },
           {
             name: 'sidenav-collapse',
-            path: 'demo/sidenav-collapse',
-            pathName: 'demo-sidenav-collapse'
+            path: '/pages/demo/sidenav-collapse',
+            pathName: 'demo-sidenav-collapse',
+            active: true
           },
           {
             name: 'darknav',
-            path: 'demo/darknav',
-            pathName: 'demo-darknav'
+            path: '/pages/demo/darknav',
+            pathName: 'demo-darknav',
+            active: true
           },
           {
             name: 'topnav-slim',
-            path: 'demo/topnav-slim',
-            pathName: 'demo-topnav-slim'
+            path: '/pages/demo/topnav-slim',
+            pathName: 'demo-topnav-slim',
+            active: true
           },
           {
             name: 'navbar-top-slim',
-            path: 'demo/navbar-top-slim',
-            pathName: 'demo-navbar-top-slim'
+            path: '/pages/demo/navbar-top-slim',
+            pathName: 'demo-navbar-top-slim',
+            active: true
           },
           {
             name: 'navbar-top',
-            path: 'demo/navbar-top',
-            pathName: 'demo-navbar-top'
+            path: '/pages/demo/navbar-top',
+            pathName: 'demo-navbar-top',
+            active: true
           },
           {
             name: 'horizontal-slim',
-            path: 'demo/horizontal-slim',
-            pathName: 'demo-horizontal-slim'
+            path: '/pages/demo/horizontal-slim',
+            pathName: 'demo-horizontal-slim',
+            active: true
           },
           {
             name: 'combo-nav',
-            path: 'demo/combo-nav',
-            pathName: 'demo-combo-nav'
+            path: '/pages/demo/combo-nav',
+            pathName: 'demo-combo-nav',
+            active: true
           },
           {
             name: 'combo-nav-slim',
-            path: 'demo/combo-nav-slim',
-            pathName: 'demo-combo-nav-slim'
+            path: '/pages/demo/combo-nav-slim',
+            pathName: 'demo-combo-nav-slim',
+            active: true
+          },
+          {
+            name: 'dual-nav',
+            path: '/pages/demo/dual-nav',
+            pathName: 'demo-dual-nav',
+            active: true
           }
         ]
       }
@@ -646,6 +725,48 @@ export const routes: RouteItems[] = [
             ]
           },
           {
+            name: 'advance',
+            active: true,
+            pages: [
+              {
+                name: 'advance-select',
+                path: '/modules/forms/advance-select',
+                pathName: 'advance-select',
+                active: true
+              },
+              {
+                name: 'date-picker',
+                path: '/modules/forms/date-picker',
+                pathName: 'date-picker',
+                active: true
+              },
+              {
+                name: 'editor',
+                path: '/modules/forms/editor',
+                pathName: 'editor',
+                active: true
+              },
+              {
+                name: 'emoji-button',
+                path: '/modules/forms/emoji-button',
+                pathName: 'emoji-button',
+                active: true
+              },
+              {
+                name: 'file-uploader',
+                path: '/modules/forms/file-uploader',
+                pathName: 'file-uploader',
+                active: true
+              },
+              {
+                name: 'rating',
+                path: '/modules/forms/rating',
+                pathName: 'rating',
+                active: true
+              }
+            ]
+          },
+          {
             name: 'validation',
             path: '/modules/forms/validation',
             pathName: 'forms-validation',
@@ -657,21 +778,25 @@ export const routes: RouteItems[] = [
       {
         name: 'icons',
         icon: 'grid',
+        active: true,
         pages: [
           {
             name: 'feather',
             path: 'modules/icons/feather',
-            pathName: 'icons-feather'
+            pathName: 'icons-feather',
+            active: true
           },
           {
             name: 'font awesome',
             path: 'modules/icons/font-awesome',
-            pathName: 'icons-font-awesome'
+            pathName: 'icons-font-awesome',
+            active: true
           },
           {
             name: 'unicons',
             path: 'modules/icons/unicons',
-            pathName: 'icons-unicons'
+            pathName: 'icons-unicons',
+            active: true
           }
         ]
       },
@@ -684,6 +809,31 @@ export const routes: RouteItems[] = [
             name: 'Basic tables',
             path: '/modules/tables/basic-tables',
             pathName: 'basic-tables',
+            active: true
+          },
+          {
+            name: 'Advance tables',
+            path: '/modules/tables/advance-tables',
+            pathName: 'advance-tables',
+            active: true
+          }
+        ]
+      },
+      {
+        name: 'charts',
+        icon: 'bar-chart-2',
+        active: true,
+        pages: [
+          {
+            name: 'ECharts',
+            path: '/modules/charts/e-charts',
+            pathName: 'e-charts',
+            active: true
+          },
+          {
+            name: 'gantt-chart',
+            path: '/modules/charts/gantt-chart',
+            pathName: 'gantt-chart',
             active: true
           }
         ]
@@ -744,6 +894,12 @@ export const routes: RouteItems[] = [
                 path: '/modules/components/carousel/bootstrap',
                 pathName: 'components-bs-carousel',
                 active: true
+              },
+              {
+                name: 'swiper',
+                path: '/modules/components/carousel/swiper',
+                pathName: 'swiper-carousel',
+                active: true
               }
             ]
           },
@@ -763,6 +919,12 @@ export const routes: RouteItems[] = [
             name: 'list-group',
             pathName: 'components-bs-list-group',
             path: '/modules/components/list-group',
+            active: true
+          },
+          {
+            name: 'countup',
+            pathName: 'components-countup',
+            path: '/modules/components/countup',
             active: true
           },
           {
@@ -791,6 +953,18 @@ export const routes: RouteItems[] = [
                 name: 'tabs',
                 pathName: 'components-tabs',
                 path: '/modules/components/navs-and-tabs/tabs',
+                active: true
+              }
+            ]
+          },
+          {
+            name: 'pictures',
+            active: true,
+            pages: [
+              {
+                name: 'Lightbox',
+                pathName: 'lightbox',
+                path: '/modules/components/pictures/lightbox',
                 active: true
               }
             ]
@@ -1112,7 +1286,8 @@ export const routes: RouteItems[] = [
         name: 'showcase',
         icon: 'monitor',
         path: '/showcase',
-        pathName: 'showcase'
+        pathName: 'showcase',
+        active: true
       }
     ]
   }

@@ -1,7 +1,7 @@
 import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import Section from 'components/base/Section';
 import { useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Pagination, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Scrollbar from 'components/base/Scrollbar';
 import ProductFilterItems from 'components/modules/e-commerce/products-filter/ProductFilterItems';
@@ -19,11 +19,13 @@ const ProductsFilter = () => {
         open={show}
         onHide={handleClose}
         style={{ width: 300, top: 92 }}
-        className="p-5"
+        className="py-5 ps-5"
         fixed
       >
-        <Scrollbar>
-          <ProductFilterItems handleClose={handleClose} />
+        <Scrollbar className="table-scrollbar">
+          <div className="pe-5">
+            <ProductFilterItems handleClose={handleClose} />
+          </div>
         </Scrollbar>
       </PhoenixOffcanvas>
       <Section className="pt-5 pb-9">
@@ -37,9 +39,12 @@ const ProductsFilter = () => {
           Filter
         </Button>
         <Row>
-          <Col lg={3} xxl={2} className="d-none d-lg-block">
-            <div className="position-sticky" style={{ top: '1rem', height: 'calc(100vh - 2rem) ' }}>
-              <Scrollbar>
+          <Col lg={3} xxl={2} className="d-none d-lg-block ps-xl-0 ps-xxl-3">
+            <div
+              className="position-sticky"
+              style={{ top: '1rem', height: 'calc(100vh - 2rem) ' }}
+            >
+              <Scrollbar className="product-scrollbar">
                 <ProductFilterItems handleClose={handleClose} />
               </Scrollbar>
             </div>
@@ -47,13 +52,27 @@ const ProductsFilter = () => {
           <Col lg={9} xxl={10}>
             <Row className="gx-3 gy-6 mb-8">
               {allProducts.map(product => (
-                <Col xs={12} sm={6} md={4} xxl={2}>
+                <Col xs={12} sm={6} md={4} xxl={2} key={product.id}>
                   <div className="product-card-container h-100">
                     <ProductCard product={product} />
                   </div>
                 </Col>
               ))}
             </Row>
+
+            <Pagination className="mb-0 justify-content-end">
+              <Pagination.Prev>
+                <FontAwesomeIcon icon="chevron-left" />
+              </Pagination.Prev>
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Item active>4</Pagination.Item>
+              <Pagination.Item>5</Pagination.Item>
+              <Pagination.Next>
+                <FontAwesomeIcon icon="chevron-right" />
+              </Pagination.Next>
+            </Pagination>
           </Col>
         </Row>
       </Section>

@@ -15,7 +15,9 @@ const ProductDescription = () => {
   const [quantity, setQuantity] = useState(1);
 
   const selectedVariant = useMemo(() => {
-    return productColorVariants.find(variant => variant.id === selectedVariantKey);
+    return productColorVariants.find(
+      variant => variant.id === selectedVariantKey
+    );
   }, [selectedVariantKey]);
 
   return (
@@ -48,11 +50,13 @@ const ProductDescription = () => {
               <div className="me-2">
                 <Rating readonly initialValue={5} />
               </div>
-              <p className="text-primary fw-semi-bold mb-2">6548 People rated and reviewed</p>
+              <p className="text-primary fw-semi-bold mb-2">
+                6548 People rated and reviewed
+              </p>
             </div>
             <h3 className="mb-3 lh-sm">
-              24" iMac® with Retina 4.5K display - Apple M1 8GB Memory - 256GB SSD - w/Touch ID
-              (Latest Model) - Blue
+              24" iMac® with Retina 4.5K display - Apple M1 8GB Memory - 256GB
+              SSD - w/Touch ID (Latest Model) - Blue
             </h3>
             <div className="d-flex flex-wrap align-items-start mb-3">
               <span className="badge bg-success fs-9 rounded-pill me-2 fw-semi-bold">
@@ -71,9 +75,12 @@ const ProductDescription = () => {
             </div>
             <p className="text-success fw-semi-bold fs-7 mb-2"> In stock</p>
             <p className="mb-2 text-800">
-              <strong className="text-1000">Do you want it on Saturday, July 29th?</strong> Choose{' '}
-              <strong className="text-1000">Saturday Delivery </strong>at checkout if you want your
-              order delivered within 12 hours 43 minutes,{' '}
+              <strong className="text-1000">
+                Do you want it on Saturday, July 29th?
+              </strong>{' '}
+              Choose <strong className="text-1000">Saturday Delivery </strong>at
+              checkout if you want your order delivered within 12 hours 43
+              minutes,{' '}
               <Link className="fw-bold" to="#!">
                 Details.{' '}
               </Link>
@@ -87,7 +94,8 @@ const ProductDescription = () => {
           <div>
             <div className="mb-3">
               <p className="fw-semi-bold mb-2 text-900">
-                Color : <span className="text-1100">{selectedVariant?.name}</span>
+                Color :{' '}
+                <span className="text-1100">{selectedVariant?.name}</span>
               </p>
               <ProductColorNav
                 selectedVariantKey={selectedVariantKey}
@@ -111,7 +119,10 @@ const ProductDescription = () => {
               <div className="col-12 col-sm">
                 <p className="fw-semi-bold mb-2 text-900">Quantity : </p>
                 <div className="d-flex justify-content-between align-items-end">
-                  <QuantityButtons quantity={quantity} setQuantity={setQuantity} />
+                  <QuantityButtons
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                  />
                   <Button variant="phoenix-primary" className="px-3 border-0">
                     <FontAwesomeIcon icon="share-alt" className="fs-7" />
                   </Button>

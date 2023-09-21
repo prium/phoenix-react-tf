@@ -90,7 +90,11 @@
     }
 
     .gradient-text {
-      background: linear-gradient(197.02deg, #28e4ff 11.41%, rgba(97, 198, 255, 0) 107.7%);
+      background: linear-gradient(
+        197.02deg,
+        #28e4ff 11.41%,
+        rgba(97, 198, 255, 0) 107.7%
+      );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -136,6 +140,7 @@
   align-items: center;
   border: 1px solid var(--#{$prefix}border-color);
   border-radius: $border-radius;
+  margin-right: 1px;
   cursor: pointer;
   @include media-breakpoint-up(xl) {
     height: 82px;
@@ -217,9 +222,12 @@
 .category-dropdown-menu {
   min-width: 250px;
   @include media-breakpoint-up(sm) {
-    min-width: 520px;
+    min-width: 500px;
   }
   @include media-breakpoint-up(md) {
+    min-width: 680px;
+  }
+  @include media-breakpoint-up(lg) {
     min-width: 750px;
   }
   &::after {

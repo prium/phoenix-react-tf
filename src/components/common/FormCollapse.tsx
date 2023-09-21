@@ -20,7 +20,6 @@ const FormCollapse = ({
     <>
       <Button
         onClick={() => setOpen(!open)}
-        variant=""
         className={classNames('px-0 d-block collapse-indicator w-100', {
           collapsed: !open
         })}

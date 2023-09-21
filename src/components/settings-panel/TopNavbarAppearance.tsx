@@ -8,6 +8,8 @@ import navTopLighter from 'assets/img/generic/top-style-lighter.png';
 import RadioItem from './RadioItem';
 import { NavbarAppearanceVariant } from 'config';
 import classNames from 'classnames';
+import WarningMessage from 'components/common/WarningMessage';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 interface TopNavbarAppearanceProps {
   className?: string;
@@ -18,6 +20,10 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
     config: { theme, navbarTopAppearance },
     setConfig
   } = useAppContext();
+
+  const {
+    settingsPanelConfig: { disableHorizontalNavbarAppearance }
+  } = useSettingsPanelContext();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
@@ -36,8 +42,9 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             name="top-navbar-appearance"
             value="default"
             thumb={theme === 'light' ? topDefault : topDefaultDarker}
-            defaultChecked={navbarTopAppearance === 'default'}
+            checked={navbarTopAppearance === 'default'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarAppearance}
           />
         </Col>
         <Col xs={6}>
@@ -46,11 +53,15 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             name="top-navbar-appearance"
             value="darker"
             thumb={theme === 'light' ? navTopLight : navTopLighter}
-            defaultChecked={navbarTopAppearance === 'darker'}
+            checked={navbarTopAppearance === 'darker'}
             handleChange={handleChange}
+            disabled={disableHorizontalNavbarAppearance}
           />
         </Col>
       </Row>
+      {disableHorizontalNavbarAppearance && (
+        <WarningMessage message="You can't update horizontal navbar appearance here" />
+      )}
     </div>
   );
 };

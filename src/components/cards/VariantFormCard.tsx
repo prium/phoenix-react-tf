@@ -1,27 +1,24 @@
-import { Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import Button from 'components/base/Button';
+import ProductVariant from 'components/forms/ProductVariant';
+import { Card, Col, Row } from 'react-bootstrap';
 
 const VariantFormCard = ({ className }: { className?: string }) => {
   return (
     <Card className={className}>
       <Card.Body>
         <h4 className="mb-4">Variants</h4>
-        <Row className="gx-3 gy-4">
+
+        <Row className="gx-3 gy-4 mb-3">
           <Col xs={12} sm={6} xl={12}>
-            <div className="d-flex gap-2 mb-2">
-              <h5 className="mb-0 text-1000">Option 1</h5>
-              <Link className="fw-bold fs-9" to="#!">
-                Remove
-              </Link>
-            </div>
-            <Form.Select>
-              <option value="size">Size</option>
-              <option value="color">Color</option>
-              <option value="weight">Weight</option>
-              <option value="smell">Smell</option>
-            </Form.Select>
+            <ProductVariant className="border-bottom border-dashed border-sm-0 border-bottom-xl pb-4" />
+          </Col>
+          <Col xs={12} sm={6} xl={12}>
+            <ProductVariant />
           </Col>
         </Row>
+        <Button variant="phoenix-primary" className="w-100">
+          Add another option
+        </Button>
       </Card.Body>
     </Card>
   );

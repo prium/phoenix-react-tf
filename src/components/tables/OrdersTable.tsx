@@ -21,8 +21,8 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '5%' }, className: 'pe-3' }
-      // cellProps: { className: 'py-0 pe-5 white-space-nowrap' }
+      headerProps: { style: { width: '5%' }, className: 'pe-3 ps-0' },
+      cellProps: { className: 'ps-0' }
     }
   },
   {
@@ -41,14 +41,20 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original.customer;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link
+          to="/apps/e-commerce/admin/customer-details"
+          className="d-flex align-items-center"
+        >
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
         </Link>
       );
     },
     meta: {
-      headerProps: { style: { width: '28%', minWidth: 250 }, className: 'ps-8' },
+      headerProps: {
+        style: { width: '28%', minWidth: 250 },
+        className: 'ps-8'
+      },
       cellProps: { className: 'ps-8 py-0 white-space-nowrap' }
     }
   },
@@ -64,7 +70,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={payment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={payment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {payment_status.label}
         </Badge>
@@ -86,7 +98,13 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           variant="phoenix"
           iconPosition="end"
           className="fs-10"
-          icon={<FeatherIcon icon={fulfilment_status.icon} size={12.8} className="ms-1" />}
+          icon={
+            <FeatherIcon
+              icon={fulfilment_status.icon}
+              size={12.8}
+              className="ms-1"
+            />
+          }
         >
           {fulfilment_status.label}
         </Badge>

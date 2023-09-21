@@ -12,8 +12,8 @@ import {
 } from 'echarts/components';
 import { LineChart } from 'echarts/charts';
 import { CanvasRenderer } from 'echarts/renderers';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { ThemeVariant } from 'config';
+import { tooltipFormatterList } from 'helpers/echart-utils';
 
 echarts.use([
   TitleComponent,
@@ -24,44 +24,26 @@ echarts.use([
   LegendComponent
 ]);
 
-const dates = getDates(new Date('5/1/2022'), new Date('5/30/2022'), 1000 * 60 * 60 * 24);
+const dates = getDates(
+  new Date('5/1/2022'),
+  new Date('5/30/2022'),
+  1000 * 60 * 60 * 24
+);
 
 const currentMonthData = [
-  100, 200, 300, 300, 300, 250, 200, 200, 200, 200, 200, 500, 500, 500, 600, 700, 800, 900, 1000,
-  1100, 850, 600, 600, 600, 400, 200, 200, 300, 300, 300
+  100, 200, 300, 300, 300, 250, 200, 200, 200, 200, 200, 500, 500, 500, 600,
+  700, 800, 900, 1000, 1100, 850, 600, 600, 600, 400, 200, 200, 300, 300, 300
 ];
 
 const prevMonthData = [
-  200, 200, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 200, 400, 600, 600, 600, 800, 1000,
-  700, 400, 450, 500, 600, 700, 650, 600, 550
+  200, 200, 100, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 200, 400, 600, 600,
+  600, 800, 1000, 700, 400, 450, 500, 600, 700, 650, 600, 550
 ];
 
-const tooltipFormatter = (params: CallbackDataParams[]) => {
-  const currentDate = dayjs(params[0].name);
-  const prevDate = dayjs(params[0].name).subtract(1, 'month');
-
-  const result = params.map((param, index) => ({
-    value: param.value,
-    date: index > 0 ? prevDate : currentDate,
-    color: param.color
-  }));
-
-  let tooltipItem = ``;
-  result.forEach((el: any, index: number) => {
-    tooltipItem += `<h6 class="fs--1 text-700 ${
-      index > 0 && 'mb-0'
-    }"><span class="d-inline-block rounded-circle me-2" style="height: 0.625rem; width: 0.625rem; background:${
-      el.color
-    }"></span>
-    ${el.date.format('MMM DD')} : ${el.value}
-  </h6>`;
-  });
-  return `<div class='ms-1'>
-            ${tooltipItem}
-          </div>`;
-};
-
-const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  theme: ThemeVariant,
+  getThemeColor: (name: string) => string
+) => ({
   color: [getThemeColor('primary'), getThemeColor('info')],
   tooltip: {
     trigger: 'axis',
@@ -74,7 +56,7 @@ const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) =>
     axisPointer: {
       type: 'none'
     },
-    formatter: tooltipFormatter
+    formatter: tooltipFormatterList
   },
   xAxis: [
     {
@@ -104,7 +86,10 @@ const getDefaultOptions = (theme: ThemeVariant, getThemeColor: (name: string) =>
         show: true,
         interval: 0,
         lineStyle: {
-          color: theme === 'dark' ? getThemeColor('gray-100') : getThemeColor('gray-200')
+          color:
+            theme === 'dark'
+              ? getThemeColor('gray-100')
+              : getThemeColor('gray-200')
         }
       },
       boundaryGap: false
@@ -181,7 +166,13 @@ const EcomTotalSellsChart = () => {
     getThemeColor
   } = useAppContext();
 
-  return <ReactEChartsCore echarts={echarts} option={getDefaultOptions(theme, getThemeColor)} />;
+  return (
+    <ReactEChartsCore
+      echarts={echarts}
+      option={getDefaultOptions(theme, getThemeColor)}
+      style={{ height: '316px', width: '100%' }}
+    />
+  );
 };
 
 export default EcomTotalSellsChart;

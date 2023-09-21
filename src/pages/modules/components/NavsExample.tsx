@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import PhoenixDocProvider from 'providers/PhoenixDocProvider';
 
 const horizontalCode = `
@@ -89,7 +89,7 @@ const justifyCode = `
 
 const dropdownsCode = `
 const NavDropdownExample = () => {
-  const handleSelect = (eventKey) => alert('selected' + eventKey);
+  const handleSelect = (eventKey: string | null) => alert('selected' + eventKey);
 
   return (
     <Nav variant="pills" activeKey="1" onSelect={handleSelect}>
@@ -129,7 +129,7 @@ const NavsExample = () => {
         description="Documentation and examples of how to use Bootstrap’s included navigation components."
         link={{
           text: 'Navs on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/navs/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/navs/`
         }}
       />
       <DocPagesLayout>
@@ -156,7 +156,8 @@ const NavsExample = () => {
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
               <p className="mb-0">
-                If you want each NavItem to be the same size use <code>justify</code>.
+                If you want each NavItem to be the same size use{' '}
+                <code>justify</code>.
               </p>
             </PhoenixDocCard.Header>
             <PhoenixDocCard.Body code={justifyCode} />

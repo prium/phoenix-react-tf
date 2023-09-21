@@ -3,6 +3,7 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { GaugeChart } from 'echarts/charts';
+import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, GaugeChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
@@ -14,7 +15,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
-    formatter: (params: any) => {
+    formatter: (params: CallbackDataParams) => {
       return `<strong>${params.seriesName}:</strong> ${params.value}%`;
     }
   },

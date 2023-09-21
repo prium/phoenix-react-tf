@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
 <div className='d-flex gap-2'>
@@ -41,16 +41,17 @@ const VerticalAlignExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0">
-              Change the alignment of elements with the vertical-alignment utilities. Please note
-              that vertical-align only affects inline, inline-block, inline-table, and table cell
-              elements.
-              <br /> Choose from <code>.align-baseline,</code> <code>.align-top,</code>{' '}
-              <code>.align-middle,</code> <code>.align-bottom,</code>{' '}
-              <code>.align-text-bottom,</code> and <code>.align-text-top</code> as needed.
+              Change the alignment of elements with the vertical-alignment
+              utilities. Please note that vertical-align only affects inline,
+              inline-block, inline-table, and table cell elements.
+              <br /> Choose from <code>.align-baseline,</code>{' '}
+              <code>.align-top,</code> <code>.align-middle,</code>{' '}
+              <code>.align-bottom,</code> <code>.align-text-bottom,</code> and{' '}
+              <code>.align-text-top</code> as needed.
               <br />
-              Multiple links and tap targets are not recommended with stretched links. However, some{' '}
-              <code>position </code>and <code>z-index </code>styles can help should this be
-              required.
+              Multiple links and tap targets are not recommended with stretched
+              links. However, some <code>position </code>and{' '}
+              <code>z-index </code>styles can help should this be required.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={exampleCode} />

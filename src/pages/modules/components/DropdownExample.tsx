@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 
 const exampleCode = `
@@ -329,13 +329,15 @@ const autoCloseCode = `
 
 const DropdownExample = () => {
   return (
-    <div>
+    <div className="mb-9">
       <DocPageHeader
         title="Dropdowns"
         description="Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin"
         link={{
           text: 'Dropdowns on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/dropdowns/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/dropdowns/`
         }}
       />
 
@@ -378,15 +380,15 @@ const DropdownExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Dropdown items">
             <p>
-              Historically dropdown menu contents had to be links, but that’s no longer the case
-              with v4. Now you can optionally use
-              <code>&lt;button&gt;</code> elements in your dropdowns instead of just{' '}
-              <code>&lt;a&gt;</code>s.
+              Historically dropdown menu contents had to be links, but that’s no
+              longer the case with v4. Now you can optionally use
+              <code>&lt;button&gt;</code> elements in your dropdowns instead of
+              just <code>&lt;a&gt;</code>s.
             </p>
             <p className="mb-0">
               You can also create non-interactive dropdown items with{' '}
-              <code>&lt;Dropdown.ItemText&gt;</code>. Feel free to style further with custom CSS or
-              text utilities.
+              <code>&lt;Dropdown.ItemText&gt;</code>. Feel free to style further
+              with custom CSS or text utilities.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={dropdownItemsCode} />
@@ -395,9 +397,10 @@ const DropdownExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Menu alignment">
             <p className="mb-0">
-              By default, a dropdown menu is aligned to the left, but you can switch it by passing{' '}
-              <code>align="end"</code> to a <code>&lt;Dropdown&gt;</code>,{' '}
-              <code>&lt;DropdownButton&gt;</code>, or <code>&lt;SplitButton&gt;</code>.
+              By default, a dropdown menu is aligned to the left, but you can
+              switch it by passing <code>align="end"</code> to a{' '}
+              <code>&lt;Dropdown&gt;</code>, <code>&lt;DropdownButton&gt;</code>
+              , or <code>&lt;SplitButton&gt;</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={menuAlignMentCode} />
@@ -406,11 +409,13 @@ const DropdownExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Responsive alignment">
             <p className="mb-0">
-              If you want to use responsive menu alignment, pass an object containing a breakpoint
-              to the
+              If you want to use responsive menu alignment, pass an object
+              containing a breakpoint to the
               <code>align</code> prop on the <code>&lt;DropdownMenu&gt;</code>,{' '}
-              <code>&lt;DropdownButton&gt;</code>, or <code>&lt;SplitButton&gt;</code>. You can
-              specify <code>start</code> or <code>end</code> for the various breakpoints.
+              <code>&lt;DropdownButton&gt;</code>, or{' '}
+              <code>&lt;SplitButton&gt;</code>. You can specify{' '}
+              <code>start</code> or <code>end</code> for the various
+              breakpoints.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={responsiveAlignmentCode} />
@@ -419,21 +424,22 @@ const DropdownExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Auto Close">
             <p>
-              By default, the dropdown menu is closed when selecting a menu item or clicking outside
-              of the dropdown menu. This behaviour can be changed by using the{' '}
-              <code>autoClose</code> property.
+              By default, the dropdown menu is closed when selecting a menu item
+              or clicking outside of the dropdown menu. This behaviour can be
+              changed by using the <code>autoClose</code> property.
             </p>
             <p>
-              By default, <code>autoClose</code> is set to the default value <code>true</code> and
-              behaves like expected. By choosing <code>false</code>, the dropdown menu can only be
-              toggled by clicking on the dropdown button. <code>inside</code> makes the dropdown
-              disappear <strong>only</strong>
-              by choosing a menu item and <code>outside</code> closes the dropdown menu{' '}
-              <strong>only</strong> by clicking outside.
+              By default, <code>autoClose</code> is set to the default value{' '}
+              <code>true</code> and behaves like expected. By choosing{' '}
+              <code>false</code>, the dropdown menu can only be toggled by
+              clicking on the dropdown button. <code>inside</code> makes the
+              dropdown disappear <strong>only</strong>
+              by choosing a menu item and <code>outside</code> closes the
+              dropdown menu <strong>only</strong> by clicking outside.
             </p>
             <p className="mb-0">
-              <strong>Notice</strong> how the dropdown is toggled in each scenario by clicking on
-              the button.
+              <strong>Notice</strong> how the dropdown is toggled in each
+              scenario by clicking on the button.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={autoCloseCode} />
@@ -441,13 +447,13 @@ const DropdownExample = () => {
 
         <Row className="g-3">
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="overflow-visible">
               <PhoenixDocCard.Header title="Dropwdown Headers" />
               <PhoenixDocCard.Body code={headerCode} />
             </PhoenixDocCard>
           </Col>
           <Col md>
-            <PhoenixDocCard className="mb-4">
+            <PhoenixDocCard className="overflow-visible">
               <PhoenixDocCard.Header title="Dropwdown Divider" />
               <PhoenixDocCard.Body code={dividerCode} />
             </PhoenixDocCard>

@@ -8,17 +8,19 @@ import ColorScheme from './ColorScheme';
 import VerticalNavbarAppearance from './VerticalNavbarAppearance';
 import TopNavbarAppearance from './TopNavbarAppearance';
 import RTLMode from './RTLMode';
+import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const SettingsPanel = () => {
+  const { configDispatch } = useAppContext();
+
   const {
-    config: { showSettingPanel },
-    setConfig,
-    configDispatch
-  } = useAppContext();
+    settingsPanelConfig: { openSettingPanel, disableResetButton },
+    setSettingsPanelConfig
+  } = useSettingsPanelContext();
 
   const handleClose = () => {
-    setConfig({
-      showSettingPanel: !showSettingPanel
+    setSettingsPanelConfig({
+      openSettingPanel: !openSettingPanel
     });
   };
   const handleResetToDefault = () => {
@@ -30,7 +32,7 @@ const SettingsPanel = () => {
   return (
     <Offcanvas
       className="settings-panel border-0"
-      show={showSettingPanel}
+      show={openSettingPanel}
       onHide={handleClose}
       placement="end"
     >
@@ -41,18 +43,25 @@ const SettingsPanel = () => {
               <FontAwesomeIcon icon="palette" className="me-2 fs-8" />
               Theme Customizer
             </h5>
-            <p className="mb-0 fs-9">Explore different styles according to your preferences</p>
+            <p className="mb-0 fs-9">
+              Explore different styles according to your preferences
+            </p>
           </div>
           <button className="btn p-1 fw-bolder" onClick={handleClose}>
             <FontAwesomeIcon icon="times" className="fs-8" />
           </button>
         </div>
-        <Button variant="phoenix-secondary" className="w-100" onClick={handleResetToDefault}>
+        <Button
+          variant="phoenix-secondary"
+          className="w-100"
+          onClick={handleResetToDefault}
+          disabled={disableResetButton}
+        >
           <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           Reset to default
         </Button>
       </Offcanvas.Header>
-      <Offcanvas.Body className="px-card">
+      <Offcanvas.Body className="px-card scrollbar">
         <ColorScheme />
         <RTLMode />
         <NavigationType />
@@ -61,8 +70,10 @@ const SettingsPanel = () => {
         <TopNavbarAppearance className="mb-5" />
         <Button
           as="a"
-          href="https://themes.getbootstrap.com/product/phoenix-admin-dashboard-webapp-template/"
-          className="w-100 mb-3"
+          target="_blank"
+          href={`${process.env.REACT_APP_PURCHASE_LINK}`}
+          className="w-100 mb-3 text-white dark__text-100"
+          variant="primary"
         >
           Purchase template
         </Button>

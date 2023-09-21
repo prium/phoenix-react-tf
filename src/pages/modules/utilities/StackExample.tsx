@@ -1,6 +1,6 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const flexCode = `<>
   <Stack className="p-2 bg-200 mb-2">Flexbox container!</Stack>
@@ -43,7 +43,7 @@ const StackExample = () => {
         description="Shorthand helpers that build on top of our flexbox utilities to make component layout faster and easier than ever."
         link={{
           text: 'Stacks on react-bootstrap',
-          url: 'https://react-bootstrap.netlify.app/layout/stack/'
+          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/layout/stack`
         }}
       />
 
@@ -51,8 +51,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Behaviors">
             <p>
-              Stacks are vertical by default and stacked items are full-width by default. Use the{' '}
-              <code>gap</code>
+              Stacks are vertical by default and stacked items are full-width by
+              default. Use the <code>gap</code>
               prop to add space between items.
             </p>
           </PhoenixDocCard.Header>
@@ -62,8 +62,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Vertical">
             <p className="mb-0">
-              Stacks are vertical by default and stacked items are full-width by default. Use the{' '}
-              <code>gap</code>
+              Stacks are vertical by default and stacked items are full-width by
+              default. Use the <code>gap</code>
               prop to add space between items.
             </p>
           </PhoenixDocCard.Header>
@@ -73,9 +73,10 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Horizontal">
             <p className="mb-0">
-              Use <code>direction="horizontal"</code> for horizontal layouts. Stacked items are
-              vertically centered by default and only take up their necessary width. Use the{' '}
-              <code>gap</code> prop to add space between items.
+              Use <code>direction="horizontal"</code> for horizontal layouts.
+              Stacked items are vertically centered by default and only take up
+              their necessary width. Use the <code>gap</code> prop to add space
+              between items.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={horizontalCode} />
@@ -84,7 +85,8 @@ const StackExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Stack buttons">
             <p className="mb-0">
-              Use a vertical <code>Stack</code> to stack buttons and other elements:
+              Use a vertical <code>Stack</code> to stack buttons and other
+              elements:
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={buttonCode} />

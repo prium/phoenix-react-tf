@@ -79,7 +79,7 @@ const EcomProfilePersonalInfo = () => {
           <Form.Control type="text" placeholder="Twitter" />
         </Col>
         <Col xs={12} className="text-end">
-          <Button type="submit" className="px-7">
+          <Button type="submit" variant="primary" className="px-7">
             Save changes
           </Button>
         </Col>

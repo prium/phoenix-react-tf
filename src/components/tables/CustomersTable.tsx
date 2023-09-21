@@ -13,15 +13,18 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original;
       return (
-        <Link to="#!" className="d-flex align-items-center">
+        <Link
+          to="/apps/e-commerce/admin/customer-details"
+          className="d-flex align-items-center text-1100"
+        >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
+          <p className="mb-0 ms-3 fw-bold">{name}</p>
         </Link>
       );
     },
     meta: {
-      headerProps: { style: { width: '10%' }, className: 'pe-5' },
-      cellProps: { className: 'py-0 pe-5 white-space-nowrap' }
+      headerProps: { style: { width: '10%' }, className: 'pe-5 ps-0' },
+      cellProps: { className: 'py-0 pe-5 ps-0 white-space-nowrap' }
     }
   },
   {
@@ -36,16 +39,16 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
       );
     },
     meta: {
-      headerProps: { style: { width: '20%' }, className: 'pe-5' },
-      cellProps: { className: 'pe-5' }
+      headerProps: { style: { width: '20%' }, className: 'pe-5 ps-1' },
+      cellProps: { className: 'pe-5 ps-1' }
     }
   },
   {
     accessorKey: 'totalOrders',
     header: 'Orders',
     meta: {
-      headerProps: { style: { width: '10%' }, className: 'text-end' },
-      cellProps: { className: 'fw-semi-bold text-1000 text-end' }
+      headerProps: { style: { width: '10%' }, className: 'text-end px-1' },
+      cellProps: { className: 'fw-semi-bold text-1000 text-end px-1' }
     }
   },
   {
@@ -53,8 +56,8 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Total spent',
     cell: ({ row: { original } }) => currencyFormat(original.totalSpent),
     meta: {
-      headerProps: { style: { width: '10%' }, className: 'text-end ps-3' },
-      cellProps: { className: 'fw-bold text-1100 ps-3 text-end' }
+      headerProps: { style: { width: '10%' }, className: 'text-end ps-3 pe-1' },
+      cellProps: { className: 'fw-bold text-1100 ps-3 text-end pe-1' }
     }
   },
   {
@@ -69,16 +72,19 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     accessorKey: 'lastSeen',
     header: 'Last seen',
     meta: {
-      headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'text-700 text-end' }
+      headerProps: { style: { width: '15%' }, className: 'text-end px-1' },
+      cellProps: { className: 'text-700 text-end px-1' }
     }
   },
   {
     accessorKey: 'lastOrder',
     header: 'Last order',
     meta: {
-      headerProps: { style: { width: '10%', minWidth: 150 }, className: 'text-end' },
-      cellProps: { className: 'text-700 text-end' }
+      headerProps: {
+        style: { width: '10%', minWidth: 150 },
+        className: 'text-end'
+      },
+      cellProps: { className: 'text-700 text-end pe-0' }
     }
   }
 ];

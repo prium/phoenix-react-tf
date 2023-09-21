@@ -1,6 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Select, { ClearIndicatorProps, DropdownIndicatorProps, components } from 'react-select';
+import { ReactElement } from 'react';
+import Select, {
+  ClearIndicatorProps,
+  DropdownIndicatorProps,
+  components
+} from 'react-select';
 import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager';
+
+interface ReactSelectProps extends StateManagerProps {
+  icon?: ReactElement;
+}
 
 const ClearIndicator = (props: ClearIndicatorProps) => {
   const {
@@ -21,14 +30,21 @@ const DropdownIndicator = (props: DropdownIndicatorProps) => {
   );
 };
 
-const ReactSelect = ({ ...rest }: StateManagerProps) => {
+const ReactSelect = ({ icon, ...rest }: ReactSelectProps) => {
   return (
-    <Select
-      closeMenuOnSelect={false}
-      components={{ ClearIndicator, DropdownIndicator }}
-      classNamePrefix="react-select"
-      {...rest}
-    />
+    <div className="react-select-container">
+      <Select
+        closeMenuOnSelect={false}
+        components={{ ClearIndicator, DropdownIndicator }}
+        classNamePrefix="react-select"
+        classNames={{
+          control: () => (icon ? 'ps-5' : ''),
+          placeholder: () => (icon ? 'ps-2' : '')
+        }}
+        {...rest}
+      />
+      {icon}
+    </div>
   );
 };
 

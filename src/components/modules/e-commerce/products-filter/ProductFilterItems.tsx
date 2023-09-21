@@ -26,19 +26,34 @@ const ProductFilterItems = ({ handleClose }: { handleClose: () => void }) => {
       </div>
       <FormCollapse title="Availability">
         {availabiltyOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Color family">
         {colorFamilyOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Brands">
         {brandsOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
@@ -78,37 +93,67 @@ const ProductFilterItems = ({ handleClose }: { handleClose: () => void }) => {
 
       <FormCollapse title="Display type">
         {displyOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Delivery">
         {deliveryOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Campaign">
         {campaignOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Warranty">
         {warrantyOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Warranty Type">
         {warrantyTypeOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
 
       <FormCollapse title="Certification">
         {certificationOptions.map(item => (
-          <CheckboxItem name={item.name} value={item.value} label={item.label} key={item.value} />
+          <CheckboxItem
+            name={item.name}
+            value={item.value}
+            label={item.label}
+            key={item.value}
+          />
         ))}
       </FormCollapse>
     </>

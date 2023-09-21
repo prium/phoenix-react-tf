@@ -22,11 +22,19 @@ const ReviewModal = ({ show, handleClose }: ReviewModalProps) => {
           <h5 className="text-1000 mb-3">Your review</h5>
           <Form.Control as="textarea" rows={5} />
         </div>
-        <Dropzone className="mb-3" size="sm" />
+        <Dropzone
+          className="mb-3"
+          size="sm"
+          accept={{
+            'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+          }}
+        />
         <div className="d-flex flex-between-center">
           <Form.Check type="checkbox" id="confirmCheck" className="flex-1">
             <Form.Check.Input type="checkbox" />
-            <Form.Check.Label className="text-1100">Review anonymously</Form.Check.Label>
+            <Form.Check.Label className="text-1100">
+              Review anonymously
+            </Form.Check.Label>
           </Form.Check>
           <button className="btn" onClick={handleClose}>
             Close

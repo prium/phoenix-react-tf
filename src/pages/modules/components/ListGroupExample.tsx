@@ -1,7 +1,7 @@
 import Badge from 'components/base/Badge';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
-import DocPagesLayout from 'components/layouts/DocPagesLayout';
+import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -180,7 +180,9 @@ const ListGroupExample = () => {
         description="List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within."
         link={{
           text: 'List groups on react-bootstrap',
-          url: 'https://react-bootstrap.github.io/components/list-group/'
+          url: `${
+            process.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/list-group/`
         }}
       />
 
@@ -214,15 +216,17 @@ const ListGroupExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Actionable items">
             <p>
-              Toggle the <code>action</code> prop to create <em>actionable</em> list group items,
-              with disabled, hover and active styles. List item actions will render a{' '}
-              <code>&lt;button&gt;</code> or <code>&lt;a&gt;</code> (depending on the presence of an{' '}
-              <code>href</code>) by default but can be overridden by setting the <code>as</code>{' '}
-              prop as usual.
+              Toggle the <code>action</code> prop to create <em>actionable</em>{' '}
+              list group items, with disabled, hover and active styles. List
+              item actions will render a <code>&lt;button&gt;</code> or{' '}
+              <code>&lt;a&gt;</code> (depending on the presence of an{' '}
+              <code>href</code>) by default but can be overridden by setting the{' '}
+              <code>as</code> prop as usual.
             </p>
             <p className="mb-0">
-              List items <code>actions</code> are distinct from plain items to ensure that click or
-              tap affordances aren't applied to non-interactive items.
+              List items <code>actions</code> are distinct from plain items to
+              ensure that click or tap affordances aren't applied to
+              non-interactive items.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={actionableCode} />
@@ -231,9 +235,12 @@ const ListGroupExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Horizontal">
             <p className="mb-0">
-              Use the <code>horizontal</code> prop to make the ListGroup render horizontally.
-              Currently{' '}
-              <strong>horizontal list groups cannot be combined with flush list groups.</strong>
+              Use the <code>horizontal</code> prop to make the ListGroup render
+              horizontally. Currently{' '}
+              <strong>
+                horizontal list groups cannot be combined with flush list
+                groups.
+              </strong>
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={horizontalCode} />
@@ -242,9 +249,9 @@ const ListGroupExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Responsive Horizontal">
             <p className="mb-0">
-              There are responsive variants to <code>horizontal</code>: setting it to{' '}
-              <code>sm | md | lg | xl | xxl</code> makes the list group horizontal starting at that
-              breakpoint’s <code>min-width</code>.
+              There are responsive variants to <code>horizontal</code>: setting
+              it to <code>sm | md | lg | xl | xxl</code> makes the list group
+              horizontal starting at that breakpoint’s <code>min-width</code>.
             </p>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body code={responsiveHorizontalCode} />
