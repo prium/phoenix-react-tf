@@ -1,10 +1,10 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
-import Badge from 'components/base/Badge';
-import { CustomerOrder, customerOrders } from 'data/e-commerce';
-import { currencyFormat } from 'helpers/utils';
-import useAdvanceTable from 'hooks/useAdvanceTable';
-import AdvanceTableProvider from 'providers/AdvanceTableProvider';
+import {
+  currencyFormat,
+  getColor,
+  getProgressColorVariant
+} from 'helpers/utils';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
@@ -12,10 +12,13 @@ import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import { DealsReport, dealsReportData } from 'data/crm/reportsData';
+import { DealsReport } from 'data/crm/reportsData';
 import Avatar from 'components/base/Avatar';
+import { CSSProperties } from 'react';
+import CircleProgress from 'components/icons/CircleProgress';
+import classNames from 'classnames';
 
-const columns: ColumnDef<DealsReport>[] = [
+export const dealsReportColumns: ColumnDef<DealsReport>[] = [
   {
     accessorKey: 'dealName',
     header: 'Deal Name',
@@ -27,9 +30,11 @@ const columns: ColumnDef<DealsReport>[] = [
     meta: {
       headerProps: {
         style: { minWidth: 120 },
-        className: 'pe-5'
+        className: 'pe-5 text-nowrap'
       },
-      cellProps: { className: 'py-2' }
+      cellProps: {
+        className: 'white-space-nowrap pe-5'
+      }
     }
   },
   {
@@ -44,16 +49,16 @@ const columns: ColumnDef<DealsReport>[] = [
           className=" d-flex align-items-center text-900 text-hover-1000"
         >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-semi-bold">{name}</p>
+          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
         </Link>
       );
     },
     meta: {
       headerProps: {
-        style: { minWidth: 120 },
-        className: 'pe-5'
+        style: { minWidth: 50 },
+        className: 'pe-5 text-nowrap'
       },
-      cellProps: { className: 'py-2' }
+      cellProps: { className: 'white-space-nowrap pe-5 py-0' }
     }
   },
   {
@@ -61,10 +66,68 @@ const columns: ColumnDef<DealsReport>[] = [
     header: 'Account Name',
     meta: {
       headerProps: {
-        style: { minWidth: 120 },
-        className: 'pe-5'
+        style: { minWidth: 250 },
+        className: 'text-nowrap'
       },
-      cellProps: { className: 'py-2' }
+      cellProps: {
+        className: 'white-space-nowrap fw-semi-bold text-900'
+      }
+    }
+  },
+  {
+    id: 'stage',
+    accessorFn: ({ stage }) => stage.label,
+    header: 'Stage',
+    cell: ({ row: { original } }) => {
+      const { label, value } = original.stage;
+      return (
+        <div className="d-flex align-items-center gap-3">
+          <div
+            style={{ '--phoenix-circle-progress-bar': value } as CSSProperties}
+          >
+            <CircleProgress color={getColor(getProgressColorVariant(value))} />
+          </div>
+          <h6 className="mb-0 text-900">{label}</h6>
+        </div>
+      );
+    },
+    meta: {
+      headerProps: {
+        style: { minWidth: 160 },
+        className: 'pe-5 ps-4'
+      },
+      cellProps: {
+        style: { paddingTop: 1, paddingBottom: 1 },
+        className: 'white-space-nowrap fw-bold text-900 pe-5 overflow-hidden'
+      }
+    }
+  },
+  {
+    id: 'amount',
+    accessorFn: ({ amount }) => amount.value,
+    header: 'Amount',
+    cell: ({ row: { original } }) => {
+      const { value, trending } = original.amount;
+      return (
+        <>
+          {currencyFormat(value)}
+          <FeatherIcon
+            icon={`trending-${trending}`}
+            size={14}
+            className={classNames('ms-2', {
+              'text-success': trending === 'up',
+              'text-danger': trending === 'down'
+            })}
+          />
+        </>
+      );
+    },
+    meta: {
+      headerProps: {
+        style: { minWidth: 50 },
+        className: 'ps-4 pe-5'
+      },
+      cellProps: { className: 'white-space-nowrap fw-bold ps-4 text-900' }
     }
   },
 
@@ -78,32 +141,23 @@ const columns: ColumnDef<DealsReport>[] = [
       </RevealDropdownTrigger>
     ),
     meta: {
-      headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'text-end py-2' }
+      headerProps: {
+        className: 'text-end ps-4'
+      },
+      cellProps: { className: 'text-end ps-4 py-0' }
     }
   }
 ];
 
 const DealsReportTable = () => {
-  const table = useAdvanceTable({
-    data: dealsReportData,
-    columns,
-    pageSize: 10,
-    selection: true,
-    pagination: true,
-    sortable: true
-  });
-
   return (
     <div>
-      <AdvanceTableProvider {...table}>
-        <div className="border-y">
-          <AdvanceTable
-            tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
-          />
-          <AdvanceTableFooter pagination />
-        </div>
-      </AdvanceTableProvider>
+      <div className="border-y">
+        <AdvanceTable
+          tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
+        />
+        <AdvanceTableFooter pagination />
+      </div>
     </div>
   );
 };

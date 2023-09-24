@@ -27,6 +27,7 @@ export interface DealsReport {
   };
   amount: {
     value: number;
+    trending: 'up' | 'down';
   };
 }
 
@@ -86,7 +87,8 @@ export const dealsReportData: DealsReport[] = [
       value: 20
     },
     amount: {
-      value: 140
+      value: 140,
+      trending: 'down'
     }
   },
   {
@@ -102,7 +104,8 @@ export const dealsReportData: DealsReport[] = [
       value: 40
     },
     amount: {
-      value: 214
+      value: 214,
+      trending: 'up'
     }
   },
   {
@@ -118,7 +121,8 @@ export const dealsReportData: DealsReport[] = [
       value: 50
     },
     amount: {
-      value: 412
+      value: 412,
+      trending: 'up'
     }
   },
   {
@@ -134,7 +138,8 @@ export const dealsReportData: DealsReport[] = [
       value: 60
     },
     amount: {
-      value: 110
+      value: 110,
+      trending: 'up'
     }
   },
   {
@@ -150,7 +155,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 325
+      value: 325,
+      trending: 'down'
     }
   },
   {
@@ -166,7 +172,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 198
+      value: 198,
+      trending: 'down'
     }
   },
   {
@@ -181,7 +188,8 @@ export const dealsReportData: DealsReport[] = [
       value: 80
     },
     amount: {
-      value: 142
+      value: 142,
+      trending: 'up'
     }
   },
   {
@@ -196,7 +204,8 @@ export const dealsReportData: DealsReport[] = [
       value: 80
     },
     amount: {
-      value: 457
+      value: 457,
+      trending: 'up'
     }
   },
   {
@@ -211,7 +220,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 120
+      value: 120,
+      trending: 'down'
     }
   },
   {
@@ -227,7 +237,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 150
+      value: 150,
+      trending: 'down'
     }
   },
   {
@@ -243,7 +254,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 140
+      value: 140,
+      trending: 'down'
     }
   },
   {
@@ -258,7 +270,8 @@ export const dealsReportData: DealsReport[] = [
       value: 80
     },
     amount: {
-      value: 122
+      value: 122,
+      trending: 'up'
     }
   },
   {
@@ -273,7 +286,8 @@ export const dealsReportData: DealsReport[] = [
       value: 80
     },
     amount: {
-      value: 321
+      value: 321,
+      trending: 'up'
     }
   },
   {
@@ -288,7 +302,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 104
+      value: 104,
+      trending: 'down'
     }
   },
   {
@@ -304,7 +319,8 @@ export const dealsReportData: DealsReport[] = [
       value: 100
     },
     amount: {
-      value: 124
+      value: 124,
+      trending: 'down'
     }
   }
 ];

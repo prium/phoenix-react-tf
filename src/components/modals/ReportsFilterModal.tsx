@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import { DealsReport, dealsReportData } from 'data/crm/reportsData';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { useMemo, useState } from 'react';
 import { Form, Modal } from 'react-bootstrap';
 
 interface ReportsFilterModalProps {
@@ -8,6 +11,39 @@ interface ReportsFilterModalProps {
 }
 
 const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
+  const [formData, setFormData] = useState({
+    accountName: 'all',
+    stage: 'all'
+  });
+  const { getColumn, resetColumnFilters } =
+    useAdvanceTableContext<DealsReport>();
+
+  const handleFilter = (columnId: string, value: string) => {
+    setFormData({
+      ...formData,
+      [columnId]: value
+    });
+    const column = getColumn(columnId);
+    column?.setFilterValue(value === 'all' ? '' : value);
+  };
+  const handleReset = () => {
+    setFormData({
+      accountName: 'all',
+      stage: 'all'
+    });
+    resetColumnFilters();
+  };
+
+  const accountOptions = useMemo(
+    () => Array.from(new Set(dealsReportData.map(item => item.accountName))),
+    [dealsReportData]
+  );
+
+  const stageOptions = useMemo(
+    () => Array.from(new Set(dealsReportData.map(item => item.stage.label))),
+    [dealsReportData]
+  );
+
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header className="p-4">
@@ -19,37 +55,31 @@ const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
       <Modal.Body className="p-4 pb-3">
         <Form id="addEventForm" autoComplete="off">
           <Form.Group className="mb-3">
-            <h5 className="mb-2 lh-lg">Lead Status</h5>
-            <Form.Select id="leadStatus">
-              <option value="newLead" selected>
-                New Lead
-              </option>
-              <option value="coldLead">Cold Lead</option>
-              <option value="wonLead">Won Lead</option>
-              <option value="canceled">Canceled</option>
+            <h5 className="mb-2 lh-lg">Account Name</h5>
+            <Form.Select
+              value={formData.accountName}
+              onChange={e => handleFilter('accountName', e.target.value)}
+            >
+              <option value="all">Select</option>
+              {accountOptions.map(account => (
+                <option value={account} key={account}>
+                  {account}
+                </option>
+              ))}
             </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3">
-            <h5 className="mb-2 lh-lg">Create Date</h5>
-            <Form.Select id="createDate">
-              <option value="today" selected>
-                Today
-              </option>
-              <option value="last7Days">Last 7 Days</option>
-              <option value="last30Days">Last 30 Days</option>
-              <option value="chooseATimePeriod">Choose a time period</option>
-            </Form.Select>
-          </Form.Group>
-          <Form.Group>
-            <h5 className="mb-2 lh-lg">Designation</h5>
-            <Form.Select id="designation">
-              <option value="VPAccounting" selected>
-                VP Accounting
-              </option>
-              <option value="ceo">CEO</option>
-              <option value="creativeDirector">Creative Director</option>
-              <option value="accountant">Accountant</option>
-              <option value="executiveManager">Executive Manager</option>
+            <h5 className="mb-2 lh-lg">Stage</h5>
+            <Form.Select
+              value={formData.stage}
+              onChange={e => handleFilter('stage', e.target.value)}
+            >
+              <option value="all">Select</option>
+              {stageOptions.map(stage => (
+                <option value={stage} key={stage}>
+                  {stage}
+                </option>
+              ))}
             </Form.Select>
           </Form.Group>
         </Form>
@@ -60,10 +90,16 @@ const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
           size="sm"
           className="fs-10 px-4"
           startIcon={<FontAwesomeIcon icon="arrows-rotate" className="me-2" />}
+          onClick={handleReset}
         >
           Reset
         </Button>
-        <Button variant="primary" size="sm" className="px-9 fs-10">
+        <Button
+          variant="primary"
+          size="sm"
+          className="px-9 fs-10"
+          onClick={onHide}
+        >
           Done
         </Button>
       </Modal.Footer>

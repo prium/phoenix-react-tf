@@ -188,3 +188,15 @@ export const convertFileToAttachment = (file: File) => ({
   format: getFileExtension(file.name),
   preview: isImageFile(file) ? URL.createObjectURL(file) : undefined
 });
+
+export const getProgressColorVariant = (value: number) => {
+  if (value < 21) {
+    return 'warning';
+  } else if (value < 41) {
+    return 'info';
+  } else if (value < 81) {
+    return 'primary';
+  } else {
+    return 'success';
+  }
+};
