@@ -580,37 +580,49 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'Card',
-
+            active: true,
             pages: [
               {
                 name: 'sign-in',
                 path: 'pages/authentication/card/sign-in',
-                pathName: 'card-signin'
+                pathName: 'card-signin',
+                active: true
               },
               {
                 name: 'sign-up',
                 path: 'pages/authentication/card/sign-up',
-                pathName: 'card-signup'
+                pathName: 'card-signup',
+                active: true
               },
               {
                 name: 'sign-out',
                 path: 'pages/authentication/card/sign-out',
-                pathName: 'card-signout'
+                pathName: 'card-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
                 path: 'pages/authentication/card/forgot-password',
-                pathName: 'card-forgot-password'
+                pathName: 'card-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
                 path: 'pages/authentication/card/reset-password',
-                pathName: 'card-reset-password'
+                pathName: 'card-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
                 path: 'pages/authentication/card/lock-screen',
-                pathName: 'card-lock-screen'
+                pathName: 'card-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: '/pages/authentication/card/2FA',
+                pathName: 'card-2FA',
+                active: true
               }
             ]
           }

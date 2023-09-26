@@ -146,6 +146,14 @@ import LeadDetails from 'pages/apps/crm/LeadDetails';
 import Analytics from 'pages/apps/crm/Analytics';
 import DealDetails from 'pages/apps/crm/DealDetails';
 import ReportDetails from 'pages/apps/crm/ReportDetails';
+import AuthCardLayout from 'layouts/AuthCardLayout';
+import CardSignIn from 'pages/pages/authentication/card/SignIn';
+import CardSignUp from 'pages/pages/authentication/card/SignUp';
+import CardForgotPassword from 'pages/pages/authentication/card/ForgotPassword';
+import CardSignOut from 'pages/pages/authentication/card/SignOut';
+import CardResetPassword from 'pages/pages/authentication/card/ResetPassword';
+import CardTwoFA from 'pages/pages/authentication/card/TwoFA';
+import CardLockScreen from 'pages/pages/authentication/card/LockScreen';
 
 const routes: RouteObject[] = [
   {
@@ -833,6 +841,40 @@ const routes: RouteObject[] = [
           {
             path: '2FA',
             element: <SimpleTwoFA />
+          }
+        ]
+      },
+      {
+        element: <AuthCardLayout />,
+        path: '/pages/authentication/card/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <CardSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <CardSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <CardSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <CardForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <CardResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <CardLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <CardTwoFA />
           }
         ]
       },
