@@ -146,6 +146,8 @@ import LeadDetails from 'pages/apps/crm/LeadDetails';
 import Analytics from 'pages/apps/crm/Analytics';
 import DealDetails from 'pages/apps/crm/DealDetails';
 import Leads from 'pages/apps/crm/Leads';
+import Reports from 'pages/apps/crm/Reports';
+import AddContact from 'pages/apps/crm/AddContact';
 
 const routes: RouteObject[] = [
   {
@@ -236,6 +238,14 @@ const routes: RouteObject[] = [
               {
                 path: 'leads',
                 element: <Leads />
+              },
+              {
+                path: 'reports',
+                element: <Reports />
+              },
+              {
+                path: 'add-contact',
+                element: <AddContact />
               }
             ]
           },
