@@ -9,37 +9,42 @@ import React, {
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-let currentOtpIndex = 0;
+const totalInputLength = 6;
+
 const TwoFAForm = () => {
-  const [otp, setOtp] = useState<string[]>(new Array(6).fill(''));
-  const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [otp, setOtp] = useState('');
+  const [otpInputFields] = useState(Array(totalInputLength).fill(''));
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    const { value } = e.target;
-    const newOtp: string[] = [...otp];
-    newOtp[currentOtpIndex] = value.substring(value.length - 1);
-    if (!value) {
-      setActiveOtpIndex(currentOtpIndex - 1);
-    } else {
-      setActiveOtpIndex(currentOtpIndex + 1);
-    }
-    setOtp(newOtp);
-  };
-
-  const handleOnKeyDown = (
-    e: KeyboardEvent<HTMLInputElement>,
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement>,
     index: number
-  ) => {
-    currentOtpIndex = index;
-    if (e.key === 'Backspace' && otp[currentOtpIndex] === '') {
-      setActiveOtpIndex(currentOtpIndex - 1);
+  ): void => {
+    const { value } = e.target;
+    console.log({ inputRefs });
+
+    if (value) {
+      [...value].slice(0, 6).forEach((char, charIndex) => {
+        if (inputRefs.current && inputRefs.current[index + charIndex]) {
+          //@ts-ignore
+          inputRefs.current[index + charIndex].value = char;
+          inputRefs.current[index + charIndex + 1]?.focus();
+        }
+      });
+    } else {
+      //@ts-ignore
+      inputRefs.current[index].value = '';
+      inputRefs.current[index - 1]?.focus();
     }
+
+    const updatedOtp = inputRefs.current.reduce(
+      (acc, input) => acc + (input?.value || ''),
+      ''
+    );
+    setOtp(updatedOtp);
   };
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, [activeOtpIndex]);
+  console.log({ otp });
 
   return (
     <div>
@@ -56,17 +61,20 @@ const TwoFAForm = () => {
           </p>
           <div className="verification-form">
             <div className="d-flex align-items-center gap-2 mb-3">
-              {otp.map((_, index) => (
+              {otpInputFields.map((_, index) => (
                 <React.Fragment key={index}>
                   <Form.Control
-                    ref={index === activeOtpIndex ? inputRef : null}
+                    // ref={index === activeOtpIndex ? inputRef : null}
+                    ref={(el: HTMLInputElement) => inputRefs.current?.push(el)}
                     className="px-2 text-center"
                     type="number"
-                    onChange={handleChange}
-                    onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
-                      handleOnKeyDown(e, index)
+                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                      handleChange(e, index)
                     }
-                    value={otp[index]}
+                    // onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
+                    //   handleOnKeyDown(e, index)
+                    // }
+                    // value={otp[index]}
                   />
                   {index === 2 && <span>-</span>}
                 </React.Fragment>
