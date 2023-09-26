@@ -110,7 +110,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
     }
   },
   {
-    id: 'productImage',
+    id: 'dealDropdown',
     accessorKey: '',
     cell: () => {
       return (
