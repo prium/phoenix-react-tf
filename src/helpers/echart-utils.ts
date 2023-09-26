@@ -1,11 +1,10 @@
-//@ts-nocheck
 import dayjs from 'dayjs';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 
 export const tooltipFormatterDefault = (
   params: CallbackDataParams[],
   dateFormatter = 'MMM DD',
-  colorProperty? = 'borderColor'
+  colorProperty: 'borderColor' | 'color' = 'borderColor'
 ) => {
   let tooltipItem = ``;
   params.forEach(el => {

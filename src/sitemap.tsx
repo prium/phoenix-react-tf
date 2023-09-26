@@ -247,6 +247,12 @@ export const routes: RouteItems[] = [
             pathName: 'crm-reports'
           },
           {
+            name: 'report details',
+            path: '/apps/crm/report-details',
+            pathName: 'crm-report-details',
+            active: true
+          },
+          {
             name: 'add-contact',
             path: 'apps/crm/add-contact',
             pathName: 'crm-add-contact'

@@ -24347,6 +24347,28 @@ h3,
   margin-left: 0;
 }
 
+.circle-progress-svg {
+  transform: rotate(-170deg);
+}
+[dir=rtl] .circle-progress-svg {
+  transform: rotate(170deg);
+}
+.circle-progress-svg .progress-bar-rail {
+  stroke-dasharray: 340px;
+  stroke-dashoffset: 150;
+  stroke: var(--phoenix-gray-200);
+}
+.circle-progress-svg .progress-bar-top {
+  stroke-dasharray: 340px;
+  stroke-dashoffset: 340;
+  animation: strokeAnimation 1s ease-in-out forwards;
+}
+
+@keyframes strokeAnimation {
+  to {
+    stroke-dashoffset: calc(340px - 188px * var(--phoenix-circle-progress-bar) / 100);
+  }
+}
 .toast {
   padding: 0.5rem 1.5rem;
 }
