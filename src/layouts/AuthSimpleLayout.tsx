@@ -4,17 +4,17 @@ import { Dispatch, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link, Outlet, useOutletContext } from 'react-router-dom';
 
-interface SimpleAuthLayoutProps {
+interface AuthSimpleLayoutProps {
   logo?: boolean;
   className?: string;
 }
 
-interface UseSimpleAuthConfig {
-  setConfig: Dispatch<React.SetStateAction<SimpleAuthLayoutProps | null>>;
+interface UseAuthSimpleConfig {
+  setConfig: Dispatch<React.SetStateAction<AuthSimpleLayoutProps | null>>;
 }
 
-const SimpleAuthLayout = () => {
-  const [config, setConfig] = useState<SimpleAuthLayoutProps>({
+const AuthSimpleLayout = () => {
+  const [config, setConfig] = useState<AuthSimpleLayoutProps>({
     logo: true,
     className: 'col-xl-5 col-xxl-3'
   });
@@ -41,8 +41,8 @@ const SimpleAuthLayout = () => {
   );
 };
 
-export function useSimpleAuthConfig() {
-  return useOutletContext<UseSimpleAuthConfig>();
+export function useAuthSimpleConfig() {
+  return useOutletContext<UseAuthSimpleConfig>();
 }
 
-export default SimpleAuthLayout;
+export default AuthSimpleLayout;

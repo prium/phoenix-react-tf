@@ -4,10 +4,10 @@ import darkImg from 'assets/img/spot-illustrations/dark_1.png';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
+import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
 
 const SignOut = () => {
-  const { setConfig } = useSimpleAuthConfig();
+  const { setConfig } = useAuthSimpleConfig();
   useEffect(() => {
     setConfig({ logo: false, className: 'col-xl-6 col-xxl-4' });
     return () => {

@@ -112,7 +112,7 @@ import SimpleResetPassword from 'pages/pages/authentication/simple/ResetPassword
 import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
 import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
+import AuthSimpleLayout from 'layouts/AuthSimpleLayout';
 import Showcase from 'pages/Showcase';
 import VerticalSidenav from 'pages/pages/layouts/VerticalSidenav';
 import DarkModeDemo from 'pages/pages/layouts/DarkModeDemo';
@@ -803,7 +803,7 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        element: <SimpleAuthLayout />,
+        element: <AuthSimpleLayout />,
         path: '/pages/authentication/simple/',
         children: [
           {

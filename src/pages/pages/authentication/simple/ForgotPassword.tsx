@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
+import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
 import { useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ForgotPassword = () => {
-  const { setConfig } = useSimpleAuthConfig();
+  const { setConfig } = useAuthSimpleConfig();
   useEffect(() => {
     setConfig({ logo: true, className: 'col-xxl-4' });
   }, []);

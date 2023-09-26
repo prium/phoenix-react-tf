@@ -1,5 +1,5 @@
 import Button from 'components/base/Button';
-import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
+import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
 import React, {
   ChangeEvent,
   KeyboardEvent,
@@ -15,7 +15,7 @@ const TwoFA = () => {
   const [otp, setOtp] = useState<string[]>(new Array(6).fill(''));
   const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const { setConfig } = useSimpleAuthConfig();
+  const { setConfig } = useAuthSimpleConfig();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { value } = e.target;

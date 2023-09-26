@@ -4,10 +4,10 @@ import avatar from 'assets/img/team/30.webp';
 import { Form } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
-import { useSimpleAuthConfig } from 'layouts/SimpleAuthLayout';
+import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
 
 const LockScreen = () => {
-  const { setConfig } = useSimpleAuthConfig();
+  const { setConfig } = useAuthSimpleConfig();
   useEffect(() => {
     setConfig({ logo: false, className: 'col-xl-5 col-xxl-3' });
   }, []);
