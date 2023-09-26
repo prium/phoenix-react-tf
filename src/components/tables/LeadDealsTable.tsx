@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
-import { currencyFormat } from 'helpers/utils';
+import { currencyFormat, getProgressColorVariant } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import { Link } from 'react-router-dom';
@@ -80,13 +80,14 @@ const columns: ColumnDef<LeadDeal>[] = [
     header: 'Probability',
     cell: ({ row: { original } }) => {
       const { probability } = original;
+      const variant = getProgressColorVariant(probability);
       return (
         <>
           <p className="text-800 fs-10 mb-0">{probability}%</p>
           <ProgressBar
             now={probability}
             style={{ height: 3 }}
-            variant="success"
+            variant={variant}
             className="bg-primary-100"
           />
         </>
