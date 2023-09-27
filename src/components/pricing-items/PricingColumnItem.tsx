@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { Pricing, pricingColumnFeatures } from 'data/pricing';
+import { PricingColumn, pricingColumnFeatures } from 'data/pricing';
 import { Col } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +8,7 @@ import Badge from 'components/base/Badge';
 import { currencyFormat } from 'helpers/utils';
 
 interface PricingColumnItemProps {
-  pricing: Pricing;
+  pricing: PricingColumn;
 }
 
 const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {

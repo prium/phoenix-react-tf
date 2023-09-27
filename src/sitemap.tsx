@@ -444,7 +444,8 @@ export const routes: RouteItems[] = [
           {
             name: 'pricing-grid',
             path: 'pages/pricing/pricing-grid',
-            pathName: 'pricing-grid'
+            pathName: 'pricing-grid',
+            active: true
           }
         ]
       },
