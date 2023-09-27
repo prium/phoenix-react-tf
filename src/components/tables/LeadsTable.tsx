@@ -147,6 +147,14 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
         className: 'text-end pe-0 ps-4'
       }
     }
+  },
+  {
+    id: 'designation',
+    accessorFn: ({ customer }) => customer.designation
+  },
+  {
+    id: 'status',
+    accessorFn: ({ customer }) => customer.status.label
   }
 ];
 

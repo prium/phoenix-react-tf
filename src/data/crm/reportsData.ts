@@ -333,7 +333,7 @@ export interface Report {
     type: string;
   };
   reportsby: string;
-  reports: string;
+  category: string;
   date: string;
 }
 
@@ -347,7 +347,7 @@ export const reports: Report[] = [
       type: 'danger'
     },
     reportsby: 'Reports by email',
-    reports: 'Sales Reports',
+    category: 'Sales Reports',
     date: 'Dec 30, 2022'
   },
   {
@@ -359,7 +359,7 @@ export const reports: Report[] = [
       type: 'danger'
     },
     reportsby: 'Reports by email',
-    reports: 'HR Reports',
+    category: 'HR Reports',
     date: 'Dec 20, 2022'
   },
   {
@@ -371,7 +371,7 @@ export const reports: Report[] = [
       type: 'success'
     },
     reportsby: 'Reports on Sales Orders',
-    reports: 'Marketing Reports',
+    category: 'Marketing Reports',
     date: 'Dec 28, 2022'
   },
   {
@@ -383,7 +383,7 @@ export const reports: Report[] = [
       type: 'success'
     },
     reportsby: 'Reviews of Products',
-    reports: 'Sales Reports',
+    category: 'Sales Reports',
     date: 'Dec 28, 2022'
   },
   {
@@ -395,7 +395,7 @@ export const reports: Report[] = [
       type: 'info'
     },
     reportsby: 'Reports by email',
-    reports: 'Hr Reports',
+    category: 'HR Reports',
     date: 'Dec 27, 2022'
   },
   {
@@ -407,7 +407,7 @@ export const reports: Report[] = [
       type: 'info'
     },
     reportsby: 'Reports by email',
-    reports: 'Service Reports',
+    category: 'Service Reports',
     date: 'Dec 26, 2022'
   },
   {
@@ -419,7 +419,7 @@ export const reports: Report[] = [
       type: 'warning'
     },
     reportsby: 'Reports on Deals',
-    reports: 'Sales Reports',
+    category: 'Sales Reports',
     date: 'Dec 25, 2022'
   },
   {
@@ -431,7 +431,7 @@ export const reports: Report[] = [
       type: 'info'
     },
     reportsby: 'Reports on Deals',
-    reports: 'Marketing Reports',
+    category: 'Marketing Reports',
     date: 'Dec 25, 2022'
   },
   {
@@ -443,7 +443,7 @@ export const reports: Report[] = [
       type: 'success'
     },
     reportsby: 'Reviews of Products',
-    reports: 'Sales Reports',
+    category: 'Sales Reports',
     date: 'Dec 24, 2022'
   },
   {
@@ -455,7 +455,7 @@ export const reports: Report[] = [
       type: 'success'
     },
     reportsby: 'Reports by email',
-    reports: 'Marketing Reports',
+    category: 'Marketing Reports',
     date: 'Dec 23, 2022'
   },
   {
@@ -467,7 +467,7 @@ export const reports: Report[] = [
       type: 'warning'
     },
     reportsby: 'Reports on Sales Orders',
-    reports: 'Marketing Reports',
+    category: 'Marketing Reports',
     date: 'Dec 22, 2022'
   },
   {
@@ -479,7 +479,7 @@ export const reports: Report[] = [
       type: 'danger'
     },
     reportsby: 'Reviews of Products',
-    reports: 'Sales Reports',
+    category: 'Sales Reports',
     date: 'Dec 22, 2022'
   },
   {
@@ -491,7 +491,7 @@ export const reports: Report[] = [
       type: 'danger'
     },
     reportsby: 'Reports on Deals',
-    reports: 'Marketing Reports',
+    category: 'Marketing Reports',
     date: 'Dec 21, 2022'
   },
   {
@@ -503,7 +503,7 @@ export const reports: Report[] = [
       type: 'danger'
     },
     reportsby: 'Reports by email',
-    reports: 'Hr Reports',
+    category: 'HR Reports',
     date: 'Dec 20, 2022'
   }
 ];

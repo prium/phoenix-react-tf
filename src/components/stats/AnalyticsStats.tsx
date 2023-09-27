@@ -1,6 +1,7 @@
 import { Col, Row } from 'react-bootstrap';
 import { StatType } from 'data/crm/stats';
 import classNames from 'classnames';
+import Unicon from 'components/base/Unicon';
 
 const AnalyticsStats = ({ stats }: { stats: StatType[] }) => {
   return (
@@ -35,7 +36,11 @@ const AnalyticsStats = ({ stats }: { stats: StatType[] }) => {
 const Stat = ({ data }: { data: StatType }) => {
   return (
     <>
-      {data.icon}
+      <Unicon
+        icon={data.icon}
+        className={`text-${data.iconColor} mb-1`}
+        size={31.25}
+      />
       <h1 className="fs-5 mt-3">{data.emailCount}</h1>
       <p className="fs-9 mb-0">{data.title}</p>
     </>

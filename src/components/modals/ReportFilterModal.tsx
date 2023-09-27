@@ -1,5 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import { Report, reports } from 'data/crm/reportsData';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { useMemo, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 
@@ -9,6 +12,37 @@ interface ReportFilterModalProps {
 }
 
 const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
+  const [formData, setFormData] = useState({
+    priority: 'all',
+    category: 'all'
+  });
+  const { getColumn, resetColumnFilters } = useAdvanceTableContext<Report>();
+
+  const handleFilter = (columnId: string, value: string) => {
+    setFormData({
+      ...formData,
+      [columnId]: value
+    });
+    const column = getColumn(columnId);
+    column?.setFilterValue(value === 'all' ? '' : value);
+  };
+  const handleReset = () => {
+    setFormData({
+      priority: 'all',
+      category: 'all'
+    });
+    resetColumnFilters();
+  };
+
+  const priorityOptions = useMemo(
+    () => Array.from(new Set(reports.map(item => item.priority.label))),
+    [reports]
+  );
+  const categoryOptions = useMemo(
+    () => Array.from(new Set(reports.map(item => item.category))),
+    [reports]
+  );
+
   return (
     <Modal show={show} onHide={handleClose} className="p-0" centered>
       <Modal.Header className="border-200 p-4">
@@ -20,31 +54,30 @@ const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
       <Modal.Body className="pt-4 pb-2 px-4">
         <div className="mb-3">
           <label className="fw-bold mb-2 text-1000">Priority</label>
-          <Form.Select>
-            <option value="urgent">Urgent</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-            <option value="low">Low</option>
+          <Form.Select
+            value={formData.priority}
+            onChange={e => handleFilter('priority', e.target.value)}
+          >
+            <option value="all">Select</option>
+            {priorityOptions.map(priority => (
+              <option value={priority} key={priority}>
+                {priority}
+              </option>
+            ))}
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Create Date</label>
-          <Form.Select>
-            <option value="today">Today</option>
-            <option value="last-7-days">Last 7 Days</option>
-            <option value="last-30-days">Last 30 Days</option>
-            <option value="choose-a-time-period">Choose a time period</option>
-          </Form.Select>
-        </div>
-        <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Category</label>
-          <Form.Select>
-            <option value="sales-reports">Sales Reports</option>
-            <option value="HR-eports">HR Reports</option>
-            <option value="marketing-reports">Marketing Reports</option>
-            <option value="administrative-reports">
-              Administrative Reports
-            </option>
+          <label className="fw-bold mb-2 text-1000">category</label>
+          <Form.Select
+            value={formData.category}
+            onChange={e => handleFilter('category', e.target.value)}
+          >
+            <option value="all">Select</option>
+            {categoryOptions.map(category => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
           </Form.Select>
         </div>
       </Modal.Body>
@@ -53,13 +86,19 @@ const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
           variant="phoenix-primary"
           size="sm"
           className="px-4 fs-10 my-0"
+          onClick={handleReset}
           startIcon={
             <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           }
         >
           Reset
         </Button>
-        <Button variant="primary" size="sm" className="px-9 fs-9 my-0">
+        <Button
+          variant="primary"
+          size="sm"
+          className="px-9 fs-9 my-0"
+          onClick={handleClose}
+        >
           Done
         </Button>
       </Modal.Footer>

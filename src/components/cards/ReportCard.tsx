@@ -47,7 +47,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 className="me-2"
               />
               <p className="mb-0 fs-9 fw-semi-bold text-700">
-                {report.reports}
+                {report.category}
               </p>
             </div>
           </Col>

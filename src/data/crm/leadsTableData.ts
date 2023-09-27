@@ -39,7 +39,7 @@ export const leadsTableData: LeadDataType[] = [
       designation: 'VP Accounting',
       status: {
         label: 'new lead',
-        type: 'primary'
+        type: 'info'
       }
     },
     email: 'anth125@gmail.com',
