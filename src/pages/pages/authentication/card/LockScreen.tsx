@@ -1,10 +1,11 @@
 import LockScreenForm from 'components/modules/auth/LockScreenForm';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const LockScreen = () => {
   return (
-    <div className="auth-form-box">
+    <AuthCardLayout logo={false}>
       <LockScreenForm />
-    </div>
+    </AuthCardLayout>
   );
 };
 

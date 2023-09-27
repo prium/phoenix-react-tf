@@ -1,9 +1,15 @@
 import Button from 'components/base/Button';
 import AuthSocialButtons from 'components/common/AuthSocialButtons';
+import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
+import { useEffect } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SignUp = () => {
+  const { setConfig } = useAuthSimpleConfig();
+  // useEffect(() => {
+  //   setConfig({ className: 'sign-out' });
+  // }, []);
   return (
     <div>
       <div className="text-center mb-7">

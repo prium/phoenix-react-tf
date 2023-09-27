@@ -1,13 +1,25 @@
 import { UilCheckCircle } from '@iconscout/react-unicons';
 import Unicon from 'components/base/Unicon';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { Outlet } from 'react-router-dom';
 import bg37 from 'assets/img/bg/37.png';
 import bg38 from 'assets/img/bg/38.png';
 import authIllustrations from 'assets/img/spot-illustrations/auth.png';
 import authIllustrationsDark from 'assets/img/spot-illustrations/auth-dark.png';
+import { PropsWithChildren } from 'react';
+import { Link } from 'react-router-dom';
+import Logo from 'components/common/Logo';
+import classNames from 'classnames';
 
-const AuthCardLayout = () => {
+interface AuthCardLayoutProps {
+  logo?: boolean;
+  className?: string;
+}
+
+const AuthCardLayout = ({
+  logo = true,
+  className,
+  children
+}: PropsWithChildren<AuthCardLayoutProps>) => {
   return (
     <Container fluid className="bg-300 dark__bg-1200">
       <div
@@ -28,7 +40,12 @@ const AuthCardLayout = () => {
                     className="bg-holder"
                     style={{ backgroundImage: `url(${bg38})` }}
                   />
-                  <div className="position-relative px-4 px-lg-7 pt-7 pb-7 pb-sm-5 text-center text-md-start pb-lg-7">
+                  <div
+                    className={classNames(
+                      className,
+                      'position-relative px-4 px-lg-7 py-7 pb-sm-5 text-center text-md-start pb-lg-7'
+                    )}
+                  >
                     <h3 className="mb-3 text-black fs-7">
                       Phoenix Authentication
                     </h3>
@@ -65,7 +82,7 @@ const AuthCardLayout = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="position-relative mb-6 d-none d-md-block text-center mt-md-15">
+                  <div className="position-relative mb-6 d-none d-md-block text-center mt-md-15 z-index--1">
                     <img
                       className="auth-title-box-img d-dark-none"
                       src={authIllustrations}
@@ -79,7 +96,21 @@ const AuthCardLayout = () => {
                   </div>
                 </Col>
                 <Col className="mx-auto">
-                  <Outlet />
+                  {logo && (
+                    <div className="text-center">
+                      <Link
+                        to="/"
+                        className="d-inline-block text-decoration-none mb-4"
+                      >
+                        <Logo
+                          text={false}
+                          width={58}
+                          className="fw-bolder fs-5 d-inline-block"
+                        />
+                      </Link>
+                    </div>
+                  )}
+                  <div className="auth-form-box">{children}</div>
                 </Col>
               </Row>
             </Card.Body>

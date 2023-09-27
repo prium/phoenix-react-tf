@@ -3,7 +3,7 @@ import AuthSocialButtons from 'components/common/AuthSocialButtons';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SignUpForm = () => {
+const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
     <>
       <div className="text-center mb-7">
@@ -60,7 +60,7 @@ const SignUpForm = () => {
         </Button>
         <div className="text-center">
           <Link
-            to="/pages/authentication/simple/sign-in"
+            to={`/pages/authentication/${layout}/sign-in`}
             className="fs-9 fw-bold"
           >
             Sign in to an existing account

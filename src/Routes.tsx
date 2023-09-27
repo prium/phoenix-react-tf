@@ -146,7 +146,6 @@ import LeadDetails from 'pages/apps/crm/LeadDetails';
 import Analytics from 'pages/apps/crm/Analytics';
 import DealDetails from 'pages/apps/crm/DealDetails';
 import ReportDetails from 'pages/apps/crm/ReportDetails';
-import AuthCardLayout from 'layouts/AuthCardLayout';
 import CardSignIn from 'pages/pages/authentication/card/SignIn';
 import CardSignUp from 'pages/pages/authentication/card/SignUp';
 import CardForgotPassword from 'pages/pages/authentication/card/ForgotPassword';
@@ -845,7 +844,6 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        element: <AuthCardLayout />,
         path: '/pages/authentication/card/',
         children: [
           {

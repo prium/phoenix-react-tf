@@ -9,10 +9,7 @@ import { useAuthSimpleConfig } from 'layouts/AuthSimpleLayout';
 const SignOut = () => {
   const { setConfig } = useAuthSimpleConfig();
   useEffect(() => {
-    setConfig({ logo: false, className: 'col-xl-6 col-xxl-4' });
-    return () => {
-      setConfig({ logo: true, className: 'col-xl-5 col-xxl-3' });
-    };
+    setConfig({ className: 'sign-out' });
   }, []);
   return (
     <div>

@@ -1,11 +1,6 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import Button from 'components/base/Button';
-import React, {
-  ChangeEvent,
-  KeyboardEvent,
-  useEffect,
-  useRef,
-  useState
-} from 'react';
+import React, { ChangeEvent, useRef, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +8,6 @@ const totalInputLength = 6;
 
 const TwoFAForm = () => {
   const [otp, setOtp] = useState('');
-  const [otpInputFields] = useState(Array(totalInputLength).fill(''));
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleChange = (
@@ -21,19 +15,16 @@ const TwoFAForm = () => {
     index: number
   ): void => {
     const { value } = e.target;
-    console.log({ inputRefs });
 
     if (value) {
-      [...value].slice(0, 6).forEach((char, charIndex) => {
+      [...value].slice(0, totalInputLength).forEach((char, charIndex) => {
         if (inputRefs.current && inputRefs.current[index + charIndex]) {
-          //@ts-ignore
-          inputRefs.current[index + charIndex].value = char;
+          inputRefs.current[index + charIndex]!.value = char;
           inputRefs.current[index + charIndex + 1]?.focus();
         }
       });
     } else {
-      //@ts-ignore
-      inputRefs.current[index].value = '';
+      inputRefs.current[index]!.value = '';
       inputRefs.current[index - 1]?.focus();
     }
 
@@ -43,8 +34,6 @@ const TwoFAForm = () => {
     );
     setOtp(updatedOtp);
   };
-
-  console.log({ otp });
 
   return (
     <div>
@@ -61,24 +50,23 @@ const TwoFAForm = () => {
           </p>
           <div className="verification-form">
             <div className="d-flex align-items-center gap-2 mb-3">
-              {otpInputFields.map((_, index) => (
-                <React.Fragment key={index}>
-                  <Form.Control
-                    // ref={index === activeOtpIndex ? inputRef : null}
-                    ref={(el: HTMLInputElement) => inputRefs.current?.push(el)}
-                    className="px-2 text-center"
-                    type="number"
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      handleChange(e, index)
-                    }
-                    // onKeyDown={(e: KeyboardEvent<HTMLInputElement>) =>
-                    //   handleOnKeyDown(e, index)
-                    // }
-                    // value={otp[index]}
-                  />
-                  {index === 2 && <span>-</span>}
-                </React.Fragment>
-              ))}
+              {Array(totalInputLength)
+                .fill('')
+                .map((_, index) => (
+                  <React.Fragment key={index}>
+                    <Form.Control
+                      ref={(el: HTMLInputElement) => {
+                        inputRefs.current[index] = el;
+                      }}
+                      className="px-2 text-center"
+                      type="number"
+                      onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                        handleChange(e, index)
+                      }
+                    />
+                    {index === 2 && <span>-</span>}
+                  </React.Fragment>
+                ))}
             </div>
             <Form.Check type="checkbox" className="text-start mb-4">
               <Form.Check.Input type="checkbox" name="2fa-checkbox" />
@@ -89,7 +77,12 @@ const TwoFAForm = () => {
                 Don’t ask again on this device
               </Form.Check.Label>
             </Form.Check>
-            <Button variant="primary" className="w-100 mb-5" type="submit">
+            <Button
+              variant="primary"
+              className="w-100 mb-5"
+              type="submit"
+              disabled={otp.length < totalInputLength}
+            >
               Verify
             </Button>
             <Link to="#!" className="fs-9">

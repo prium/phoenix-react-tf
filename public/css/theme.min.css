@@ -22885,7 +22885,7 @@ span.flatpickr-weekday,
   left: auto;
   right: 0;
 }
-.bg-holder.overlay:before, .bg-holder.bg-auth-card-overlay:before {
+.bg-holder.overlay:before {
   position: absolute;
   content: "";
   background: rgba(0, 0, 0, 0.25);
@@ -23051,6 +23051,7 @@ span.flatpickr-weekday,
 /*                                   Borders                                  */
 /* -------------------------------------------------------------------------- */
 .overflow-hidden[class*=rounded] {
+  -webkit-mask-image: radial-gradient(#fff, #000000);
   mask-image: radial-gradient(#fff, #000000);
 }
 
@@ -31659,86 +31660,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
-}
-
-.bg-auth-card-overlay:before {
-  background-color: rgba(227, 230, 237, 0.5) !important;
-}
-.dark .bg-auth-card-overlay:before, .dark .picmo__popupContainer.picmo__light .bg-auth-card-overlay:before {
-  background-color: rgba(20, 24, 36, 0.9) !important;
-}
-
-.auth-card {
-  background-color: #fff;
-}
-.dark .auth-card, .dark .picmo__popupContainer.picmo__light .auth-card {
-  background-color: #0f111a;
-}
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .auth-card {
-    width: 27rem;
-    margin: 0 auto;
-  }
-}
-.auth-card .auth-title-box {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .auth-card .auth-title-box {
-    width: 16.875rem;
-  }
-}
-@media (min-width: 992px) {
-  .auth-card .auth-title-box {
-    width: 23.4375rem;
-  }
-}
-.auth-card .auth-title-box .auth-title-box-img {
-  width: 9.5rem;
-  height: 7.56rem;
-}
-@media (min-width: 768px) {
-  .auth-card .auth-title-box .auth-title-box-img {
-    width: 12.5rem;
-    height: 9.875rem;
-  }
-}
-@media (min-width: 992px) {
-  .auth-card .auth-title-box .auth-title-box-img {
-    width: 17.93rem;
-    height: 14.18rem;
-  }
-}
-.auth-card .auth-form-box {
-  margin: auto;
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .auth-card .auth-form-box {
-    max-width: 15.625rem;
-  }
-}
-@media (min-width: 992px) {
-  .auth-card .auth-form-box {
-    max-width: 18.75rem;
-  }
-}
-@media (min-width: 1540px) {
-  .auth-card .auth-form-box {
-    max-width: 25rem;
-  }
-}
-
-.verification-form {
-  max-width: 17.6875rem;
-  margin: 0 auto;
-}
-.verification-form .form-control {
-  -moz-appearance: textfield;
-}
-.verification-form .form-control::-webkit-outer-spin-button, .verification-form .form-control::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 
 .pricing-column-title-box {

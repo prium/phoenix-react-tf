@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SignOutForm = () => {
+const SignOutForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
     <div className="text-center mb-6 mx-auto">
       <img className="mb-7 d-dark-none" src={lightImg} alt="phoenix" />
@@ -20,7 +20,7 @@ const SignOutForm = () => {
         <Button
           variant="primary"
           as={Link}
-          to="/pages/authentication/simple/sign-in"
+          to={`/pages/authentication/${layout}/sign-in`}
           startIcon={<FontAwesomeIcon icon="angle-left" className="me-2" />}
         >
           Go to sign in page

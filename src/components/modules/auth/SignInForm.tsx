@@ -4,7 +4,7 @@ import AuthSocialButtons from 'components/common/AuthSocialButtons';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const SignInForm = () => {
+const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
     <>
       <div className="text-center mb-7">
@@ -55,7 +55,7 @@ const SignInForm = () => {
         </Col>
         <Col xs="auto">
           <Link
-            to="/pages/authentication/simple/forgot-password"
+            to={`/pages/authentication/${layout}/forgot-password`}
             className="fs-9 fw-semi-bold"
           >
             Forgot Password?
@@ -67,7 +67,7 @@ const SignInForm = () => {
       </Button>
       <div className="text-center">
         <Link
-          to="/pages/authentication/simple/sign-up"
+          to={`/pages/authentication/${layout}/sign-up`}
           className="fs-9 fw-bold"
         >
           Create an account

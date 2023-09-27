@@ -1,11 +1,11 @@
 import SignOutForm from 'components/modules/auth/SignOutForm';
-import React from 'react';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const SignOut = () => {
   return (
-    <div className="auth-form-box">
-      <SignOutForm />
-    </div>
+    <AuthCardLayout logo={false}>
+      <SignOutForm layout="card" />
+    </AuthCardLayout>
   );
 };
 
