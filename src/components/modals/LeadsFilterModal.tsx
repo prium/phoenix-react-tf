@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import React from 'react';
+import { LeadDataType, leadsTableData } from 'data/crm/leadsTableData';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { useState, useMemo } from 'react';
 import { Form, Modal } from 'react-bootstrap';
 
 interface LeadsFilterModalProps {
@@ -9,6 +11,49 @@ interface LeadsFilterModalProps {
 }
 
 const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
+  const [formData, setFormData] = useState({
+    status: 'all',
+    designation: 'all',
+    company: 'all'
+  });
+  const { getColumn, resetColumnFilters } =
+    useAdvanceTableContext<LeadDataType>();
+
+  const handleFilter = (columnId: string, value: string) => {
+    setFormData({
+      ...formData,
+      [columnId]: value
+    });
+    const column = getColumn(columnId);
+    column?.setFilterValue(value === 'all' ? '' : value);
+  };
+  const handleReset = () => {
+    setFormData({
+      status: 'all',
+      designation: 'all',
+      company: 'all'
+    });
+    resetColumnFilters();
+  };
+
+  const statusOptions = useMemo(
+    () =>
+      Array.from(
+        new Set(leadsTableData.map(item => item.customer.status.label))
+      ),
+    [leadsTableData]
+  );
+  const designationOptions = useMemo(
+    () =>
+      Array.from(
+        new Set(leadsTableData.map(item => item.customer.designation))
+      ),
+    [leadsTableData]
+  );
+  const companyOptions = useMemo(
+    () => Array.from(new Set(leadsTableData.map(item => item.company))),
+    [leadsTableData]
+  );
   return (
     <Modal show={show} onHide={handleClose} className="p-0" centered>
       <Modal.Header className="border-200 p-4">
@@ -20,29 +65,44 @@ const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
       <Modal.Body className="pt-4 pb-2 px-4">
         <div className="mb-3">
           <label className="fw-bold mb-2 text-1000">Lead Status</label>
-          <Form.Select>
-            <option value="new-lead">New Lead</option>
-            <option value="cold-lead">Cold Lead</option>
-            <option value="won-lead">Won Lead</option>
-            <option value="canceled">Canceled</option>
+          <Form.Select
+            value={formData.status}
+            onChange={e => handleFilter('status', e.target.value)}
+          >
+            <option value="all">Select</option>
+            {statusOptions.map(status => (
+              <option value={status} key={status}>
+                {status}
+              </option>
+            ))}
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Create Date</label>
-          <Form.Select>
-            <option value="today">Today</option>
-            <option value="last-7-days">Last 7 Days</option>
-            <option value="last-30-days">Last 30 Days</option>
-            <option value="choose-a-time-period">Choose a time period</option>
+          <label className="fw-bold mb-2 text-1000">Company name</label>
+          <Form.Select
+            value={formData.company}
+            onChange={e => handleFilter('company', e.target.value)}
+          >
+            <option value="all">Select</option>
+            {companyOptions.map(company => (
+              <option value={company} key={company}>
+                {company}
+              </option>
+            ))}
           </Form.Select>
         </div>
         <div className="mb-3">
           <label className="fw-bold mb-2 text-1000">Designation</label>
-          <Form.Select>
-            <option value="vp-accounting">VP Accounting</option>
-            <option value="ceo">CEO</option>
-            <option value="creative-director">Creative Director</option>
-            <option value="executive-manager">Executive Manager</option>
+          <Form.Select
+            value={formData.designation}
+            onChange={e => handleFilter('designation', e.target.value)}
+          >
+            <option value="all">Select</option>
+            {designationOptions.map(designation => (
+              <option value={designation} key={designation}>
+                {designation}
+              </option>
+            ))}
           </Form.Select>
         </div>
       </Modal.Body>
@@ -54,10 +114,16 @@ const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
           startIcon={
             <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
           }
+          onClick={handleReset}
         >
           Reset
         </Button>
-        <Button variant="primary" size="sm" className="px-9 fs-9 my-0">
+        <Button
+          variant="primary"
+          size="sm"
+          className="px-9 fs-9 my-0"
+          onClick={handleClose}
+        >
           Done
         </Button>
       </Modal.Footer>

@@ -149,6 +149,7 @@ import ReportDetails from 'pages/apps/crm/ReportDetails';
 import Leads from 'pages/apps/crm/Leads';
 import Reports from 'pages/apps/crm/Reports';
 import AddContact from 'pages/apps/crm/AddContact';
+import PricingGrid from 'pages/pages/pricing/PricingGrid';
 
 const routes: RouteObject[] = [
   {
@@ -359,6 +360,10 @@ const routes: RouteObject[] = [
               {
                 path: 'pricing-column',
                 element: <PricingColumn />
+              },
+              {
+                path: 'pricing-grid',
+                element: <PricingGrid />
               }
             ]
           },

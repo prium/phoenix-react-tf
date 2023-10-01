@@ -19,7 +19,13 @@ const Leads = () => {
     pageSize: 10,
     pagination: true,
     sortable: true,
-    selection: true
+    selection: true,
+    initialState: {
+      columnVisibility: {
+        status: false,
+        designation: false
+      }
+    }
   });
   const [openFilterModal, setOpenFilterModal] = useState(false);
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {

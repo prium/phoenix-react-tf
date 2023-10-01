@@ -26,7 +26,7 @@
     + {
       div {
         .card {
-          border: 1px solid $primary;
+          border: 1px solid var(--#{$prefix}primary-300);
           box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
         }
       }
@@ -37,12 +37,18 @@
       + {
         div {
           .card {
-            border: 1px solid $warning;
+            border: 1px solid var(--#{$prefix}warning-300);
             box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
           }
         }
       }
     }
+  }
+}
+.pricing-business-plus {
+  .dark & {
+    background-color: rgba($warning, 0.08) !important;
+    border: 1px solid rgba($warning, 0.2);
   }
 }
 

@@ -11,9 +11,14 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 
 export const columns: ColumnDef<Report>[] = [
   {
-    // For filtering and searching projects by status
-    id: 'status',
+    // For filtering and searching projects by priority
+    id: 'priority',
     accessorFn: ({ priority }) => priority.label
+  },
+  {
+    // For filtering and searching projects by category
+    id: 'category',
+    accessorFn: ({ category }) => category
   },
   {
     // For searching projects by name

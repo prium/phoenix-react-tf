@@ -12,7 +12,10 @@ const ReportCard = ({ report }: { report: Report }) => {
           <div className="d-flex align-items-start mb-1">
             <Form.Check type="checkbox" />
             <div className="d-sm-flex align-items-center ps-3">
-              <Link to="#!" className="fw-bold fs-7 lh-sm line-clamp-1 me-sm-4">
+              <Link
+                to="/apps/crm/report-details"
+                className="fw-bold fs-7 lh-sm line-clamp-1 me-sm-4"
+              >
                 {report.title}
               </Link>
               <div className="d-flex align-items-center">
@@ -47,7 +50,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 className="me-2"
               />
               <p className="mb-0 fs-9 fw-semi-bold text-700">
-                {report.reports}
+                {report.category}
               </p>
             </div>
           </Col>

@@ -1,10 +1,11 @@
+import Unicon from 'components/base/Unicon';
 import { ProjectManagementStat } from 'data/project-management/stats';
 import React from 'react';
 
 const Stat = ({ stat }: { stat: ProjectManagementStat }) => {
   return (
     <div className="d-flex align-items-center">
-      {stat.icon}
+      <Unicon icon={stat.icon} size={40} className={`text-${stat.iconColor}`} />
       <div className="ms-2">
         <div className="d-flex align-items-end">
           <h2 className="mb-0 me-2">{stat.count}</h2>

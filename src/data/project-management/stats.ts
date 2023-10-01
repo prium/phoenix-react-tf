@@ -1,4 +1,5 @@
 import {
+  Icon,
   UilBooks,
   UilInvoice,
   UilRefresh,
@@ -8,7 +9,8 @@ import {
 export interface ProjectManagementStat {
   title: string;
   count: string;
-  icon: JSX.Element;
+  icon: Icon;
+  iconColor: string;
   subtitle: string;
 }
 
@@ -16,24 +18,28 @@ export const stats: ProjectManagementStat[] = [
   {
     title: 'Projects',
     count: '32',
-    icon: <UilBooks className="text-primary-500" size={40} />,
+    icon: UilBooks,
+    iconColor: 'primary',
     subtitle: 'Awating processing'
   },
   {
     title: 'Members',
-    icon: <UilUsersAlt className="text-success-500" size={40} />,
+    icon: UilUsersAlt,
+    iconColor: 'success',
     count: '94',
     subtitle: 'Working hard'
   },
   {
     title: 'Invoices',
-    icon: <UilInvoice className="text-warning-500" size={40} />,
+    icon: UilInvoice,
+    iconColor: 'warning',
     count: '23',
     subtitle: 'Soon to be cleared'
   },
   {
     title: 'Refunds',
-    icon: <UilRefresh className="text-danger-500" size={40} />,
+    icon: UilRefresh,
+    iconColor: 'danger',
     count: '3',
     subtitle: 'Fresh start'
   }
