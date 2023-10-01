@@ -1,11 +1,11 @@
 import TwoFAForm from 'components/modules/auth/TwoFAForm';
-import AuthSimpleLayout from 'layouts/AuthSimpleLayout';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const TwoFA = () => {
   return (
-    <AuthSimpleLayout className="col-xxl-4">
+    <AuthCardLayout>
       <TwoFAForm />
-    </AuthSimpleLayout>
+    </AuthCardLayout>
   );
 };
 

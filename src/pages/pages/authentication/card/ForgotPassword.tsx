@@ -1,11 +1,11 @@
 import ForgotPasswordForm from 'components/modules/auth/ForgotPasswordForm';
-import AuthSimpleLayout from 'layouts/AuthSimpleLayout';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const ForgotPassword = () => {
   return (
-    <AuthSimpleLayout className="col-xxl-4">
+    <AuthCardLayout>
       <ForgotPasswordForm />
-    </AuthSimpleLayout>
+    </AuthCardLayout>
   );
 };
 

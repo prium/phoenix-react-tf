@@ -1,11 +1,5 @@
 .bg-auth-card-overlay {
-  @extend .overlay;
-  &:before {
-    background-color: rgba($gray-200, 0.5) !important;
-    .dark & {
-      background-color: rgba($gray-1100, 0.9) !important;
-    }
-  }
+  mix-blend-mode: overlay;
 }
 .auth-card {
   background-color: $white;
@@ -36,12 +30,20 @@
         height: 14.18rem;
       }
     }
+    .card-sign-up {
+      @include media-breakpoint-up(md) {
+        padding-bottom: 10rem !important;
+      }
+      @include media-breakpoint-up(xl) {
+        padding-bottom: map-get($spacers, 7) !important;
+      }
+    }
   }
   .auth-form-box {
     margin: auto;
     width: 100%;
     @include media-breakpoint-up(md) {
-      max-width: 15.625rem;
+      max-width: 16.625rem;
     }
     @include media-breakpoint-up(lg) {
       max-width: 18.75rem;

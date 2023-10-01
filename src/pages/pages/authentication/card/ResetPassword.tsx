@@ -1,11 +1,11 @@
 import ResetPasswordForm from 'components/modules/auth/ResetPasswordForm';
-import AuthSimpleLayout from 'layouts/AuthSimpleLayout';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const ResetPassword = () => {
   return (
-    <AuthSimpleLayout>
+    <AuthCardLayout>
       <ResetPasswordForm />
-    </AuthSimpleLayout>
+    </AuthCardLayout>
   );
 };
 

@@ -1,11 +1,11 @@
-import AuthSimpleLayout from 'layouts/AuthSimpleLayout';
 import LockScreenForm from 'components/modules/auth/LockScreenForm';
+import AuthCardLayout from 'layouts/AuthCardLayout';
 
 const LockScreen = () => {
   return (
-    <AuthSimpleLayout logo={false} className="col-xl-5 col-xxl-3">
+    <AuthCardLayout logo={false}>
       <LockScreenForm />
-    </AuthSimpleLayout>
+    </AuthCardLayout>
   );
 };
 

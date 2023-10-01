@@ -112,7 +112,6 @@ import SimpleResetPassword from 'pages/pages/authentication/simple/ResetPassword
 import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
 import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import Showcase from 'pages/Showcase';
 import VerticalSidenav from 'pages/pages/layouts/VerticalSidenav';
 import DarkModeDemo from 'pages/pages/layouts/DarkModeDemo';
@@ -146,6 +145,13 @@ import LeadDetails from 'pages/apps/crm/LeadDetails';
 import Analytics from 'pages/apps/crm/Analytics';
 import DealDetails from 'pages/apps/crm/DealDetails';
 import ReportDetails from 'pages/apps/crm/ReportDetails';
+import CardSignIn from 'pages/pages/authentication/card/SignIn';
+import CardSignUp from 'pages/pages/authentication/card/SignUp';
+import CardForgotPassword from 'pages/pages/authentication/card/ForgotPassword';
+import CardSignOut from 'pages/pages/authentication/card/SignOut';
+import CardResetPassword from 'pages/pages/authentication/card/ResetPassword';
+import CardTwoFA from 'pages/pages/authentication/card/TwoFA';
+import CardLockScreen from 'pages/pages/authentication/card/LockScreen';
 
 const routes: RouteObject[] = [
   {
@@ -803,7 +809,6 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        element: <SimpleAuthLayout />,
         path: '/pages/authentication/simple/',
         children: [
           {
@@ -833,6 +838,39 @@ const routes: RouteObject[] = [
           {
             path: '2FA',
             element: <SimpleTwoFA />
+          }
+        ]
+      },
+      {
+        path: '/pages/authentication/card/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <CardSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <CardSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <CardSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <CardForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <CardResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <CardLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <CardTwoFA />
           }
         ]
       },
