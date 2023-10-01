@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import {
@@ -33,7 +34,13 @@ const columns: ColumnDef<ForecastTableData>[] = [
     }
   },
   {
-    header: 'Appoinment',
+    id: 'Appoinment',
+    header: () => (
+      <div className="d-inline-flex flex-center gap-2">
+        <FontAwesomeIcon icon="square" className="fs-11 text-primary" />
+        Appoinment
+      </div>
+    ),
     accessorKey: 'appointment',
     cell: ({ row: { original } }) => numberFormat(original.appointment),
     meta: {
@@ -59,7 +66,13 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    header: 'Qualified',
+    id: 'Qualified',
+    header: () => (
+      <div className="d-inline-flex flex-center gap-2">
+        <FontAwesomeIcon icon="square" className="fs-11 text-primary-300" />
+        Qualified
+      </div>
+    ),
     accessorKey: 'qualified',
     cell: ({ row: { original } }) => currencyFormat(original.qualified),
     meta: {
@@ -85,7 +98,13 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    header: 'Closed Won',
+    id: 'Closed Won',
+    header: () => (
+      <div className="d-inline-flex flex-center gap-2">
+        <FontAwesomeIcon icon="square" className="fs-11 text-success" />
+        Closed Won
+      </div>
+    ),
     accessorKey: 'closed_won',
     cell: ({ row: { original } }) => currencyFormat(original.closed_won),
     meta: {
@@ -111,7 +130,13 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    header: 'Contact Sent',
+    id: 'Contact Sent',
+    header: () => (
+      <div className="d-inline-flex flex-center gap-2">
+        <FontAwesomeIcon icon="square" className="fs-11 text-info" />
+        Contact Sent
+      </div>
+    ),
     accessorKey: 'contact_sent',
     cell: ({ row: { original } }) => currencyFormat(original.contact_sent),
     meta: {

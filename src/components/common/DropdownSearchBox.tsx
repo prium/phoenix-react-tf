@@ -27,12 +27,7 @@ const DropdownSearchBox = ({
       onToggle={() => setOpenDropdown(!openDropdown)}
       show={openDropdown}
     >
-      <Dropdown.Toggle
-        as="div"
-        data-toggle="dropdown"
-        aria-expanded={openDropdown}
-        bsPrefix="toggle"
-      >
+      <Dropdown.Toggle as="div" aria-expanded={openDropdown} bsPrefix="toggle">
         <SearchBox
           placeholder="Search..."
           className={searchBoxClassName}
