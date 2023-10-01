@@ -131,7 +131,6 @@ import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
 import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
 import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
-import FontAwesome from 'pages/modules/components/FontAwesome';
 import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
 import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
@@ -163,6 +162,9 @@ import SplitForgotPassword from 'pages/pages/authentication/split/ForgotPassword
 import SplitResetPassword from 'pages/pages/authentication/split/ResetPassword';
 import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
 import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
+import { lazy } from 'react';
+
+const FontAwesome = lazy(() => import('pages/modules/components/FontAwesome'));
 
 const routes: RouteObject[] = [
   {
