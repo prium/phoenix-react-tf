@@ -9,6 +9,7 @@ import RevealDropdown, {
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import { LeadDataType } from 'data/crm/leadsTableData';
 import { Link } from 'react-router-dom';
+import FeatherIcon from 'feather-icons-react';
 
 export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
   {
@@ -23,11 +24,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       } = original.customer;
       return (
         <div className="d-flex align-items-center">
-          <Link to="#!">
+          <Link to="/apps/crm/lead-details#tasks">
             <Avatar src={avatar} size="xl" className="me-3" />
           </Link>
           <div>
-            <Link to="#!" className="fs-8 fw-bold">
+            <Link to="/apps/crm/lead-details#tasks" className="fs-8 fw-bold">
               {name}
             </Link>
             <div className="d-flex align-items-center">
@@ -49,7 +50,20 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
   },
   {
     accessorKey: 'email',
-    header: 'Email',
+    header: () => {
+      return (
+        <div className="d-inline-flex flex-center">
+          <div className="px-1 py-1 bg-success-100 rounded me-2">
+            <FeatherIcon
+              icon="mail"
+              size={16}
+              className="text-success-600 dark__text-success-300"
+            />
+          </div>
+          <span>Email</span>
+        </div>
+      );
+    },
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
@@ -70,7 +84,20 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
   },
   {
     accessorKey: 'phone',
-    header: 'Phone',
+    header: () => {
+      return (
+        <div className="d-inline-flex flex-center">
+          <div className="px-1 py-1 bg-primary-100 rounded me-2">
+            <FeatherIcon
+              icon="phone"
+              size={16}
+              className="text-primary-600 dark__text-primary-300"
+            />
+          </div>
+          <span>Phone</span>
+        </div>
+      );
+    },
     cell: ({ row: { original } }) => {
       const { phone } = original;
       return (
@@ -91,7 +118,20 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
   },
   {
     accessorKey: 'contact',
-    header: 'Contact name',
+    header: () => {
+      return (
+        <div className="d-inline-flex flex-center">
+          <div className="px-1 py-1 bg-info-100 rounded me-2">
+            <FeatherIcon
+              icon="user"
+              size={16}
+              className="text-info-600 dark__text-info-300"
+            />
+          </div>
+          <span>Contact name</span>
+        </div>
+      );
+    },
     cell: ({ row: { original } }) => original.contact,
     meta: {
       headerProps: {
@@ -105,7 +145,20 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
   },
   {
     accessorKey: 'company',
-    header: 'Company name',
+    header: () => {
+      return (
+        <div className="d-inline-flex flex-center">
+          <div className="px-1 py-1 bg-warning-100 rounded me-2">
+            <FeatherIcon
+              icon="grid"
+              size={16}
+              className="text-warning-600 dark__text-warning-300"
+            />
+          </div>
+          <span>Company name</span>
+        </div>
+      );
+    },
     cell: ({ row: { original } }) => original.company,
     meta: {
       headerProps: {

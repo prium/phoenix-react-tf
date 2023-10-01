@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import PricingPackageList from 'components/list-items/PricingPackageList';
 import PricingGridItem from 'components/pricing-items/PricingGridItem';
-import { pricingBreadcrumbItems, pricingGridItems } from 'data/pricing';
+import {
+  pricingBreadcrumbItems,
+  pricingGridFeatures,
+  pricingGridItems
+} from 'data/pricing';
 import { Col, Nav, Row, Tab } from 'react-bootstrap';
 
 const PricingGrid = () => {
@@ -70,6 +75,10 @@ const PricingGrid = () => {
               </Button>
             </div>
           </div>
+        </Col>
+        <Col xxl={3} className="mt-8">
+          <h3 className="fw-semi-bold mb-3">Included in our all packages</h3>
+          <PricingPackageList features={pricingGridFeatures} />
         </Col>
       </Row>
     </div>

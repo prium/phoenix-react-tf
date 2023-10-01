@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import Badge from 'components/base/Badge';
 import Unicon from 'components/base/Unicon';
 import { PricingGrid } from 'data/pricing';
+import { currencyFormat } from 'helpers/utils';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 
 interface PricingGridItemProps {
@@ -72,10 +73,10 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                   {item.monthlyPrice === 0 || item.yearlyPrice === 0 ? (
                     <h4 className="fw-bolder me-1">Free</h4>
                   ) : (
-                    <h4 className="fw-bolder me-1">{`$${
+                    <h4 className="fw-bolder me-1">{`${
                       pricingType === 'monthly'
-                        ? item.monthlyPrice
-                        : item.yearlyPrice
+                        ? currencyFormat(item.monthlyPrice)
+                        : currencyFormat(item.yearlyPrice)
                     }`}</h4>
                   )}
                   {item.monthlyPrice === 0 || item.yearlyPrice === 0 ? (

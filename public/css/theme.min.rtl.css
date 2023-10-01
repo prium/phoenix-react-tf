@@ -31732,7 +31732,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   border-radius: 0.5rem;
 }
 .pricing-plan-radio:checked + div .card {
-  border: 1px solid #3874ff;
+  border: 1px solid var(--phoenix-primary-300);
   box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
 }
 .pricing-plan-radio.pricing-plan-recommended:checked + div .card {

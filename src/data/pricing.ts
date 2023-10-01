@@ -74,6 +74,42 @@ export const pricingColumnFeatures: Feature[] = [
   }
 ];
 
+export const pricingGridFeatures: Feature[] = [
+  {
+    id: 'timeline',
+    label: 'Timeline'
+  },
+  {
+    id: 'advanced_search',
+    label: 'Advanced Search'
+  },
+  {
+    id: 'custom_fields',
+    label: 'Custom fields',
+    new: true
+  },
+  {
+    id: 'task_dependencies',
+    label: 'Task dependencies'
+  },
+  {
+    id: 'additional-space',
+    label: '20TB of additional space'
+  },
+  {
+    id: 'bandwidth',
+    label: 'Bandwidth of  Upto 1 Gbps'
+  },
+  {
+    id: 'private_teams',
+    label: 'Private teams & projects'
+  },
+  {
+    id: 'early-access',
+    label: 'Early Access / Beta Features'
+  }
+];
+
 export const pricingColumnItems: PricingColumn[] = [
   {
     id: 1,
