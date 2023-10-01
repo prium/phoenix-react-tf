@@ -31760,3 +31760,50 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   -webkit-appearance: none;
   margin: 0;
 }
+<<<<<<< HEAD
+=======
+
+.pricing-column-title-box {
+  height: 105px;
+}
+
+.pricing--hover:hover .warning-boxshadow, .pricing--hover:focus .warning-boxshadow {
+  box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
+  border-radius: 0.5rem;
+  outline: 0;
+}
+.pricing--hover:hover .border-warning-300, .pricing--hover:focus .border-warning-300 {
+  --phoenix-border-color: #ffcc85;
+}
+
+.pricing-plan-radio + label {
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+.pricing-plan-radio:checked + div .card {
+  border: 1px solid var(--phoenix-primary-300);
+  box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
+}
+.pricing-plan-radio.pricing-plan-recommended:checked + div .card {
+  border: 1px solid var(--phoenix-warning-300);
+  box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
+}
+
+.dark .pricing-business-plus, .dark .picmo__popupContainer.picmo__light .pricing-business-plus {
+  background-color: rgba(229, 120, 11, 0.08) !important;
+  border: 1px solid rgba(229, 120, 11, 0.2);
+}
+
+/* ------------------------- defaul landing pricing ------------------------- */
+.pricing-card-group .pricing-card-group-item {
+  border-radius: 0;
+}
+.pricing-card-group .pricing-card-group-item:first-child {
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+}
+.pricing-card-group .pricing-card-group-item:last-of-type {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+>>>>>>> b310fd68a48499ed1b21940506e6052619cd620c

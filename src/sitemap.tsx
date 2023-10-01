@@ -232,8 +232,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'leads',
-            path: '/crm/leads',
-            pathName: 'crm-leads'
+            path: '/apps/crm/leads',
+            pathName: 'crm-leads',
+            active: true
           },
           {
             name: 'lead details',
@@ -243,8 +244,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'reports',
-            path: 'apps/crm/reports',
-            pathName: 'crm-reports'
+            path: '/apps/crm/reports',
+            pathName: 'crm-reports',
+            active: true
           },
           {
             name: 'report details',
@@ -254,8 +256,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'add-contact',
-            path: 'apps/crm/add-contact',
-            pathName: 'crm-add-contact'
+            path: '/apps/crm/add-contact',
+            pathName: 'crm-add-contact',
+            active: true
           }
         ]
       },
@@ -441,7 +444,8 @@ export const routes: RouteItems[] = [
           {
             name: 'pricing-grid',
             path: 'pages/pricing/pricing-grid',
-            pathName: 'pricing-grid'
+            pathName: 'pricing-grid',
+            active: true
           }
         ]
       },

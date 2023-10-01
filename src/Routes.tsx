@@ -152,6 +152,10 @@ import CardSignOut from 'pages/pages/authentication/card/SignOut';
 import CardResetPassword from 'pages/pages/authentication/card/ResetPassword';
 import CardTwoFA from 'pages/pages/authentication/card/TwoFA';
 import CardLockScreen from 'pages/pages/authentication/card/LockScreen';
+import Leads from 'pages/apps/crm/Leads';
+import Reports from 'pages/apps/crm/Reports';
+import AddContact from 'pages/apps/crm/AddContact';
+import PricingGrid from 'pages/pages/pricing/PricingGrid';
 
 const routes: RouteObject[] = [
   {
@@ -242,6 +246,18 @@ const routes: RouteObject[] = [
               {
                 path: 'report-details',
                 element: <ReportDetails />
+              },
+              {
+                path: 'leads',
+                element: <Leads />
+              },
+              {
+                path: 'reports',
+                element: <Reports />
+              },
+              {
+                path: 'add-contact',
+                element: <AddContact />
               }
             ]
           },
@@ -350,6 +366,10 @@ const routes: RouteObject[] = [
               {
                 path: 'pricing-column',
                 element: <PricingColumn />
+              },
+              {
+                path: 'pricing-grid',
+                element: <PricingGrid />
               }
             ]
           },

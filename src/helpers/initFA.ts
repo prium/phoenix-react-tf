@@ -146,7 +146,8 @@ import {
   faCreditCard as farCreditCard,
   faCalendarPlus as farCalendarPlus,
   faFaceSmile as farFaceSmile,
-  faArrowAltCircleDown as farArrowAltCircleDown
+  faArrowAltCircleDown as farArrowAltCircleDown,
+  faFolderBlank as farFolderBlank
 } from '@fortawesome/free-regular-svg-icons';
 
 library.add(
@@ -296,5 +297,6 @@ library.add(
   faChartLine,
   faClipboard,
   faCalendarDay,
-  faPhoneAlt
+  faPhoneAlt,
+  farFolderBlank
 );
