@@ -49,7 +49,11 @@ const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
           </Col>
         </Row>
         <Form.Check type="checkbox" className="mb-3">
-          <Form.Check.Input type="checkbox" name="termsService" />
+          <Form.Check.Input
+            type="checkbox"
+            name="termsService"
+            id="termsService"
+          />
           <Form.Check.Label htmlFor="termsService" className="fs-9 text-none">
             I accept the <Link to="#!">terms </Link>and{' '}
             <Link to="#!">privacy policy</Link>

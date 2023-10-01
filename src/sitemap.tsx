@@ -549,36 +549,49 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'split',
+            active: true,
             pages: [
               {
                 name: 'sign-in',
-                path: 'pages/authentication/split/sign-in',
-                pathName: 'split-signin'
+                path: '/pages/authentication/split/sign-in',
+                pathName: 'split-signin',
+                active: true
               },
               {
                 name: 'sign-up',
-                path: 'pages/authentication/split/sign-up',
-                pathName: 'split-signup'
+                path: '/pages/authentication/split/sign-up',
+                pathName: 'split-signup',
+                active: true
               },
               {
                 name: 'sign-out',
-                path: 'pages/authentication/split/sign-out',
-                pathName: 'split-signout'
+                path: '/pages/authentication/split/sign-out',
+                pathName: 'split-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
-                path: 'pages/authentication/split/forgot-password',
-                pathName: 'split-forgot-password'
+                path: '/pages/authentication/split/forgot-password',
+                pathName: 'split-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
-                path: 'pages/authentication/split/reset-password',
-                pathName: 'split-reset-password'
+                path: '/pages/authentication/split/reset-password',
+                pathName: 'split-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
-                path: 'pages/authentication/split/lock-screen',
-                pathName: 'split-lock-screen'
+                path: '/pages/authentication/split/lock-screen',
+                pathName: 'split-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: '/pages/authentication/split/2FA',
+                pathName: 'split-2FA',
+                active: true
               }
             ]
           },

@@ -156,6 +156,13 @@ import Leads from 'pages/apps/crm/Leads';
 import Reports from 'pages/apps/crm/Reports';
 import AddContact from 'pages/apps/crm/AddContact';
 import PricingGrid from 'pages/pages/pricing/PricingGrid';
+import SplitSignIn from 'pages/pages/authentication/split/SignIn';
+import SplitSignUp from 'pages/pages/authentication/split/SignUp';
+import SplitSignOut from 'pages/pages/authentication/split/SignOut';
+import SplitForgotPassword from 'pages/pages/authentication/split/ForgotPassword';
+import SplitResetPassword from 'pages/pages/authentication/split/ResetPassword';
+import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
+import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 
 const routes: RouteObject[] = [
   {
@@ -858,6 +865,39 @@ const routes: RouteObject[] = [
           {
             path: '2FA',
             element: <SimpleTwoFA />
+          }
+        ]
+      },
+      {
+        path: '/pages/authentication/split/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <SplitSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <SplitSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <SplitSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <SplitForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <SplitResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <SplitLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <SplitTwoFA />
           }
         ]
       },

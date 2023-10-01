@@ -46,6 +46,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             <Form.Check.Input
               type="checkbox"
               name="remember-me"
+              id="remember-me"
               defaultChecked
             />
             <Form.Check.Label htmlFor="remember-me" className="mb-0">

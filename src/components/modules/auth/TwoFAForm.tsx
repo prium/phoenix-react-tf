@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
+import classNames from 'classnames';
 import Button from 'components/base/Button';
 import React, { ChangeEvent, useRef, useState } from 'react';
 import { Form } from 'react-bootstrap';
@@ -6,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const totalInputLength = 6;
 
-const TwoFAForm = () => {
+const TwoFAForm = ({ layout }: { layout?: 'simple' | 'card' | 'split' }) => {
   const [otp, setOtp] = useState('');
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -37,8 +38,12 @@ const TwoFAForm = () => {
 
   return (
     <div>
-      <div className="px-xxl-5">
-        <div className="text-center mb-6">
+      <div className={classNames({ 'px-xxl-5': !(layout === 'split') })}>
+        <div
+          className={classNames('text-center', {
+            'mb-6': !(layout === 'split')
+          })}
+        >
           <h4 className="text-1000">Enter the verification code</h4>
           <p className="text-700 mb-0">
             An email containing a 6-digit verification code has been sent to the
@@ -69,7 +74,11 @@ const TwoFAForm = () => {
                 ))}
             </div>
             <Form.Check type="checkbox" className="text-start mb-4">
-              <Form.Check.Input type="checkbox" name="2fa-checkbox" />
+              <Form.Check.Input
+                type="checkbox"
+                name="2fa-checkbox"
+                id="2fa-checkbox"
+              />
               <Form.Check.Label
                 className="fs-8 fw-medium"
                 htmlFor="2fa-checkbox"
