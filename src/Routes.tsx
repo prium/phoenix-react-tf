@@ -162,7 +162,8 @@ import SplitForgotPassword from 'pages/pages/authentication/split/ForgotPassword
 import SplitResetPassword from 'pages/pages/authentication/split/ResetPassword';
 import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
 import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
-import { lazy } from 'react';
+import { Suspense, lazy } from 'react';
+import CopyMessageToastContainer from 'components/common/CopyMessageToastContainer';
 
 const FontAwesome = lazy(() => import('pages/modules/components/FontAwesome'));
 
@@ -433,6 +434,7 @@ const routes: RouteObject[] = [
           },
           {
             path: '/modules',
+            element: <CopyMessageToastContainer />,
             children: [
               {
                 path: 'tables',
@@ -465,7 +467,11 @@ const routes: RouteObject[] = [
                 children: [
                   {
                     path: 'font-awesome',
-                    element: <FontAwesome />
+                    element: (
+                      <Suspense fallback={<>Loading...</>}>
+                        <FontAwesome />
+                      </Suspense>
+                    )
                   },
                   {
                     path: 'feather',
