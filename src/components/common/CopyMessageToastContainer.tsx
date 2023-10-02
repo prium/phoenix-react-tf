@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import { Toast } from 'react-bootstrap';
 import { Outlet, useOutletContext } from 'react-router-dom';
 
@@ -7,8 +7,7 @@ type ContextType = { setToastMessage: Dispatch<SetStateAction<string>> };
 const CopyMessageToastContainer = () => {
   const [toastMessage, setToastMessage] = useState('');
   return (
-    <div>
-      CopyMessageToastContainer
+    <>
       <Outlet context={{ setToastMessage } satisfies ContextType} />
       <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 5 }}>
         <Toast
@@ -25,7 +24,7 @@ const CopyMessageToastContainer = () => {
           </div>
         </Toast>
       </div>
-    </div>
+    </>
   );
 };
 

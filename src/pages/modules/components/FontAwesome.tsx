@@ -73,7 +73,7 @@ const FontAwesome = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Solid Icons" />
+          <PhoenixDocCard.Header title="Solid Icons" noPreview />
           <Card.Body>
             <p className="mb-2">
               Import solid icons from{' '}
@@ -86,6 +86,7 @@ const FontAwesome = () => {
               {Object.keys(faSolidIcons).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
+                    iconFamily="font-awesome"
                     icon={faSolidIcons[icon]}
                     name={icon}
                     onCopy={message => setToastMessage(message)}
@@ -97,7 +98,7 @@ const FontAwesome = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Regular Icons" />
+          <PhoenixDocCard.Header title="Regular Icons" noPreview />
           <Card.Body>
             <p className="mb-2">
               Import regular icons from{' '}
@@ -110,6 +111,7 @@ const FontAwesome = () => {
               {Object.keys(faRegularIcons).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
+                    iconFamily="font-awesome"
                     icon={faRegularIcons[icon]}
                     name={icon}
                     onCopy={message => setToastMessage(message)}
@@ -121,7 +123,7 @@ const FontAwesome = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Brand Icons" />
+          <PhoenixDocCard.Header title="Brand Icons" noPreview />
           <Card.Body>
             <p className="mb-2">
               Import brand icons from{' '}
@@ -134,6 +136,7 @@ const FontAwesome = () => {
               {Object.keys(faBrandIcons).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
+                    iconFamily="font-awesome"
                     icon={faBrandIcons[icon]}
                     name={icon}
                     onCopy={message => setToastMessage(message)}

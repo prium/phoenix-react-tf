@@ -1,10 +1,24 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
-import React from 'react';
 import * as Unicons from '@iconscout/react-unicons';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
-import { UilHome } from '@iconscout/react-unicons';
+import {
+  UilHome,
+  UilPlaneDeparture,
+  UilRocket
+} from '@iconscout/react-unicons';
+import { Card, Col, Row } from 'react-bootstrap';
+import IconCard from 'components/cards/IconCard';
+import { useCopyMessageToast } from 'components/common/CopyMessageToastContainer';
+import { uniconList } from 'data/icons/uniconList';
+import Unicon from 'components/base/Unicon';
+
+const phoenixUniconCode = `
+import Unicon from 'components/base/Unicon';
+
+const element = <Unicon icon={UilHome} />
+`;
 
 const individualIconCode = `
 import { UilHome } from '@iconscout/react-unicons';
@@ -19,24 +33,31 @@ const element = <Unicons.UilHome />
 `;
 
 const ExampleCode = `
-import { UilHome } from '@iconscout/react-unicons';
+import Unicon from 'components/base/Unicon';
+import { UilRocket, UilPlaneDeparture } from '@iconscout/react-unicons';
 import * as Unicons from '@iconscout/react-unicons';
 
 <div>
   <div className="mb-3">
-    <UilHome className="text-success me-2" size={32} />
-    <UilHome className="text-success me-2" size={24} />
-    <UilHome className="text-success" size={16} />
+    <Unicon icon={UilRocket} className="text-danger me-2" size={32} />
+    <Unicon icon={UilRocket} className="text-success me-2" size={24} />
+    <Unicon icon={UilRocket} className="text-primary" size={16} />
+  </div>
+  <div className="mb-3">
+    <UilPlaneDeparture className="text-danger me-2" size={32} />
+    <UilPlaneDeparture className="text-success me-2" size={24} />
+    <UilPlaneDeparture className="text-primary" size={16} />
   </div>
   <div>
-    <Unicons.UilFacebook className="text-primary me-2" />
-    <Unicons.UilTwitter className="text-info me-2" />
-    <Unicons.UilYoutube className="text-danger" />
+    <Unicons.UilStretcher className="text-danger me-2" size={32} />
+    <Unicons.UilStretcher className="text-success me-2" size={24}  />
+    <Unicons.UilStretcher className="text-primary" size={16}  />
   </div>
 </div>
 `;
 
-const sdfdsfdd = () => {
+const UniconsDoc = () => {
+  const { setToastMessage } = useCopyMessageToast();
   return (
     <div className="mb-9">
       <DocPageHeader
@@ -51,22 +72,43 @@ const sdfdsfdd = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Usage" noPreview />
           <PhoenixDocCard.Body>
-            <p>Use individual icons</p>
+            <p className="mb-2">Use Phoenix Unicon component</p>
+            <PhoenixLiveEditor code={phoenixUniconCode} />
+            <p className="mt-4 mb-2">Use individual icons</p>
             <PhoenixLiveEditor code={individualIconCode} />
-            <p className="pt-3">Usage as full Package</p>
+            <p className="mt-4 mb-2">Usage as full Package</p>
             <PhoenixLiveEditor code={fullPackageCode} />
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
-        <PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example" />
           <PhoenixDocCard.Body
             code={ExampleCode}
-            scope={{ Unicons, UilHome }}
+            scope={{ Unicons, Unicon, UilPlaneDeparture, UilRocket }}
           />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard className="mb-4">
+          <PhoenixDocCard.Header title="Icons" />
+          <Card.Body>
+            <Row className="mt-3">
+              {Object.keys(uniconList).map(icon => (
+                <Col xs={12} sm={6} md={4} lg={3} key={icon}>
+                  <IconCard
+                    icon={uniconList[icon]}
+                    iconFamily="unicons"
+                    name={icon}
+                    onCopy={message => setToastMessage(message)}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Card.Body>
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>
   );
 };
 
-export default sdfdsfdd;
+export default UniconsDoc;

@@ -5,6 +5,10 @@ import React from 'react';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import FeatherIcon from 'feather-icons-react';
 import { Youtube, Facebook, Twitter } from 'feather-icons-react';
+import { Card, Col, Row } from 'react-bootstrap';
+import IconCard from 'components/cards/IconCard';
+import { useCopyMessageToast } from 'components/common/CopyMessageToastContainer';
+import { featherIcons } from 'data/icons/featherIcons';
 
 const defaultExportCode = `
 import FeatherIcon from 'feather-icons-react';
@@ -38,6 +42,7 @@ import { Youtube, Facebook, Twitter } from 'feather-icons-react';
 `;
 
 const FeatherIconsExample = () => {
+  const { setToastMessage } = useCopyMessageToast();
   return (
     <div className="mb-9">
       <DocPageHeader
@@ -63,13 +68,31 @@ const FeatherIconsExample = () => {
             <PhoenixLiveEditor code={namedExportCode} />
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
-        <PhoenixDocCard>
+        <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example" />
           <PhoenixDocCard.Body
             code={exampleCode}
             scope={{ FeatherIcon, Youtube, Facebook, Twitter }}
           />
           <FeatherIcon />
+        </PhoenixDocCard>
+
+        <PhoenixDocCard>
+          <PhoenixDocCard.Header title="Icons" noPreview />
+          <Card.Body>
+            <Row className="mt-3">
+              {featherIcons.map(icon => (
+                <Col xs={12} sm={6} md={4} lg={3} key={icon}>
+                  <IconCard
+                    icon={icon}
+                    iconFamily="feather"
+                    name={icon}
+                    onCopy={message => setToastMessage(message)}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Card.Body>
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

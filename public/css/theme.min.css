@@ -20958,6 +20958,49 @@ button,
   direction: ltr;
 }
 
+.loading-container {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.logo-ripple {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.ripple-1 {
+  animation: ripple1 2s ease-out infinite;
+}
+
+.ripple-2 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 0.5s;
+}
+
+.ripple-3 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 1s;
+}
+
+.ripple-4 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes ripple1 {
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: rotate(30deg) scale(4);
+    opacity: 0;
+  }
+}
 .star-rating {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxMiAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjc4MTMgNC4xNzkzTDcuODcyNjYgMy43NjA5NEw2LjU1NzgxIDEuMTExMzNDNi4zMzg2NyAwLjY1MzEyNSA1LjY2MTMzIDAuNjMzMjAzIDUuNDIyMjcgMS4xMTEzM0w0LjEyNzM0IDMuNzYwOTRMMS4xOTg4MyA0LjE3OTNDMC42ODA4NiA0LjI1ODk4IDAuNDgxNjQxIDQuODk2NDggMC44NjAxNTcgNS4yNzVMMi45NTE5NSA3LjMyNjk1TDIuNDUzOTEgMTAuMjE1NkMyLjM3NDIyIDEwLjczMzYgMi45MzIwMyAxMS4xMzIgMy4zOTAyMyAxMC44OTNMNiA5LjUxODM2TDguNTg5ODQgMTAuODkzQzkuMDQ4MDUgMTEuMTMyIDkuNjA1ODYgMTAuNzMzNiA5LjUyNjE3IDEwLjIxNTZMOS4wMjgxMyA3LjMyNjk1TDExLjExOTkgNS4yNzVDMTEuNDk4NCA0Ljg5NjQ4IDExLjI5OTIgNC4yNTg5OCAxMC43ODEzIDQuMTc5M1pNNy45OTIxOSA2Ljk4ODI4TDguNDcwMzEgOS43Mzc1TDYgOC40NDI1OEwzLjUwOTc3IDkuNzM3NUwzLjk4Nzg5IDYuOTg4MjhMMS45NzU3OCA1LjAzNTk0TDQuNzQ0OTIgNC42Mzc1TDYgMi4xMjczNEw3LjIzNTE2IDQuNjM3NUwxMC4wMDQzIDUuMDM1OTRMNy45OTIxOSA2Ljk4ODI4WiIgZmlsbD0iI0U1NzgwQiIvPgo8L3N2Zz4K") !important;
 }
@@ -31680,12 +31723,17 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   border-radius: 0.5rem;
 }
 .pricing-plan-radio:checked + div .card {
-  border: 1px solid #3874ff;
+  border: 1px solid var(--phoenix-primary-300);
   box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
 }
 .pricing-plan-radio.pricing-plan-recommended:checked + div .card {
-  border: 1px solid #e5780b;
+  border: 1px solid var(--phoenix-warning-300);
   box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
+}
+
+.dark .pricing-business-plus, .dark .picmo__popupContainer.picmo__light .pricing-business-plus {
+  background-color: rgba(229, 120, 11, 0.08) !important;
+  border: 1px solid rgba(229, 120, 11, 0.2);
 }
 
 /* ------------------------- defaul landing pricing ------------------------- */
@@ -31788,51 +31836,4 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   margin: 0;
 }
 
-<<<<<<< HEAD
-=======
-.pricing-column-title-box {
-  height: 105px;
-}
-
-.pricing--hover:hover .warning-boxshadow, .pricing--hover:focus .warning-boxshadow {
-  box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
-  border-radius: 0.5rem;
-  outline: 0;
-}
-.pricing--hover:hover .border-warning-300, .pricing--hover:focus .border-warning-300 {
-  --phoenix-border-color: #ffcc85;
-}
-
-.pricing-plan-radio + label {
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
-}
-.pricing-plan-radio:checked + div .card {
-  border: 1px solid var(--phoenix-primary-300);
-  box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
-}
-.pricing-plan-radio.pricing-plan-recommended:checked + div .card {
-  border: 1px solid var(--phoenix-warning-300);
-  box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
-}
-
-.dark .pricing-business-plus, .dark .picmo__popupContainer.picmo__light .pricing-business-plus {
-  background-color: rgba(229, 120, 11, 0.08) !important;
-  border: 1px solid rgba(229, 120, 11, 0.2);
-}
-
-/* ------------------------- defaul landing pricing ------------------------- */
-.pricing-card-group .pricing-card-group-item {
-  border-radius: 0;
-}
-.pricing-card-group .pricing-card-group-item:first-child {
-  border-top-left-radius: 0.375rem;
-  border-bottom-left-radius: 0.375rem;
-}
-.pricing-card-group .pricing-card-group-item:last-of-type {
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
-}
-
->>>>>>> b310fd68a48499ed1b21940506e6052619cd620c
 /*# sourceMappingURL=theme.min.css.map*/
