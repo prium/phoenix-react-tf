@@ -192,251 +192,280 @@ const routes: RouteObject[] = [
             element: <Ecommerce />
           },
           {
-            path: '/dashboard/project-management',
-            element: <ProjectManagement />
-          },
-          {
-            path: '/dashboard/crm',
-            element: <Crm />
-          },
-          {
-            path: '/pages/starter',
-            element: <Starter />
-          },
-
-          {
-            path: '/pages/notifications',
-            element: <Notification />
-          },
-          {
-            path: '/pages/members',
-            element: <Members />
-          },
-          {
-            path: '/pages/faq/faq-accordion',
-            element: <FaqAccordion />
-          },
-
-          {
-            path: '/apps/e-commerce/admin/',
+            path: '/dashboard',
             children: [
               {
-                path: 'add-product',
-                element: <AddProduct />
+                path: 'project-management',
+                element: <ProjectManagement />
               },
               {
-                path: 'products',
-                element: <Products />
-              },
-              {
-                path: 'customers',
-                element: <Customers />
-              },
-              {
-                path: 'orders',
-                element: <Orders />
-              },
-              {
-                path: 'order-details',
-                element: <OrderDetails />
-              },
-              {
-                path: 'refund',
-                element: <Refund />
-              },
-              {
-                path: 'customer-details',
-                element: <CustomerDetails />
+                path: 'crm',
+                element: <Crm />
               }
             ]
           },
           {
-            path: '/apps/crm/',
+            path: '/apps',
             children: [
               {
-                path: 'analytics',
-                element: <Analytics />
+                path: 'e-commerce/admin',
+                children: [
+                  {
+                    path: 'add-product',
+                    element: <AddProduct />
+                  },
+                  {
+                    path: 'products',
+                    element: <Products />
+                  },
+                  {
+                    path: 'customers',
+                    element: <Customers />
+                  },
+                  {
+                    path: 'orders',
+                    element: <Orders />
+                  },
+                  {
+                    path: 'order-details',
+                    element: <OrderDetails />
+                  },
+                  {
+                    path: 'refund',
+                    element: <Refund />
+                  },
+                  {
+                    path: 'customer-details',
+                    element: <CustomerDetails />
+                  }
+                ]
               },
               {
-                path: 'deal-details',
-                element: <DealDetails />
+                path: 'crm',
+                children: [
+                  {
+                    path: 'analytics',
+                    element: <Analytics />
+                  },
+                  {
+                    path: 'deals',
+                    element: <ComingSoon />
+                  },
+                  {
+                    path: 'deal-details',
+                    element: <DealDetails />
+                  },
+                  {
+                    path: 'report-details',
+                    element: <ReportDetails />
+                  },
+                  {
+                    path: 'leads',
+                    element: <Leads />
+                  },
+                  {
+                    path: 'lead-details',
+                    element: <LeadDetails />
+                  },
+                  {
+                    path: 'reports',
+                    element: <Reports />
+                  },
+                  {
+                    path: 'add-contact',
+                    element: <AddContact />
+                  }
+                ]
               },
               {
-                path: 'report-details',
-                element: <ReportDetails />
+                path: 'project-management',
+                children: [
+                  {
+                    path: 'create-new',
+                    element: <CreateNew />
+                  },
+                  {
+                    path: 'project-list-view',
+                    element: <ProjectListView />
+                  },
+                  {
+                    path: 'project-card-view',
+                    element: <ProjectCardView />
+                  },
+                  {
+                    path: 'project-board-view',
+                    element: <ProjectBoardView />
+                  },
+                  {
+                    path: 'todo-list',
+                    element: <ProjectTodoList />
+                  },
+                  {
+                    path: 'project-details',
+                    element: <ProjectDetails />
+                  }
+                ]
               },
               {
-                path: 'leads',
-                element: <Leads />
+                path: 'events',
+                children: [
+                  {
+                    path: 'create-an-event',
+                    element: <CreateAnEvent />
+                  },
+                  {
+                    path: 'event-detail',
+                    element: <EventDetail />
+                  }
+                ]
               },
               {
-                path: 'reports',
-                element: <Reports />
+                path: 'chat',
+                element: <Chat />,
+                children: [
+                  {
+                    index: true,
+                    element: <ChatHomepage />
+                  },
+                  {
+                    path: ':userId/conversation',
+                    element: <ChatConversation />
+                  }
+                ]
               },
               {
-                path: 'add-contact',
-                element: <AddContact />
+                path: 'social',
+                children: [
+                  {
+                    path: 'profile',
+                    element: <SocialProfile />
+                  },
+                  {
+                    path: 'settings',
+                    element: <Settings />
+                  },
+                  {
+                    path: 'feed',
+                    element: <Feed />
+                  }
+                ]
+              },
+              {
+                path: 'email',
+                children: [
+                  {
+                    path: 'inbox',
+                    element: <Inbox />
+                  },
+                  {
+                    path: 'email-detail',
+                    element: <EmailDetail />
+                  },
+                  {
+                    path: 'compose',
+                    element: <Compose />
+                  }
+                ]
+              },
+              {
+                path: 'calendar',
+                element: <ComingSoon />
               }
             ]
           },
           {
-            path: '/apps/project-management/',
+            path: '/pages',
             children: [
               {
-                path: 'create-new',
-                element: <CreateNew />
+                path: 'starter',
+                element: <Starter />
               },
               {
-                path: 'project-list-view',
-                element: <ProjectListView />
+                path: 'faq',
+                children: [
+                  {
+                    path: 'faq-accordion',
+                    element: <FaqAccordion />
+                  },
+                  {
+                    path: 'faq-tab',
+                    element: <ComingSoon />
+                  }
+                ]
               },
               {
-                path: 'project-card-view',
-                element: <ProjectCardView />
+                path: 'pricing',
+                children: [
+                  {
+                    path: 'pricing-column',
+                    element: <PricingColumn />
+                  },
+                  {
+                    path: 'pricing-grid',
+                    element: <PricingGrid />
+                  }
+                ]
               },
               {
-                path: 'project-board-view',
-                element: <ProjectBoardView />
+                path: 'notifications',
+                element: <Notification />
               },
               {
-                path: 'todo-list',
-                element: <ProjectTodoList />
+                path: 'members',
+                element: <Members />
               },
               {
-                path: 'project-details',
-                element: <ProjectDetails />
-              }
-            ]
-          },
-          {
-            path: '/apps/crm/',
-            children: [
-              {
-                path: 'lead-details',
-                element: <LeadDetails />
-              }
-            ]
-          },
-          {
-            path: '/apps/events/',
-            children: [
-              {
-                path: 'create-an-event',
-                element: <CreateAnEvent />
+                path: 'timeline',
+                element: <ComingSoon />
               },
               {
-                path: 'event-detail',
-                element: <EventDetail />
-              }
-            ]
-          },
-          {
-            path: '/apps/chat/',
-            element: <Chat />,
-            children: [
-              {
-                index: true,
-                element: <ChatHomepage />
-              },
-              {
-                path: ':userId/conversation',
-                element: <ChatConversation />
-              }
-            ]
-          },
-          {
-            path: '/apps/social/',
-            children: [
-              {
-                path: 'profile',
-                element: <SocialProfile />
-              },
-              {
-                path: 'settings',
-                element: <Settings />
-              },
-              {
-                path: 'feed',
-                element: <Feed />
-              }
-            ]
-          },
-          {
-            path: '/apps/email/',
-            children: [
-              {
-                path: 'inbox',
-                element: <Inbox />
-              },
-              {
-                path: 'email-detail',
-                element: <EmailDetail />
-              },
-              {
-                path: 'compose',
-                element: <Compose />
-              }
-            ]
-          },
-          {
-            path: '/pages/pricing/',
-            children: [
-              {
-                path: 'pricing-column',
-                element: <PricingColumn />
-              },
-              {
-                path: 'pricing-grid',
-                element: <PricingGrid />
-              }
-            ]
-          },
-          {
-            path: '/pages/demo/',
-            children: [
-              {
-                path: 'vertical-sidenav',
-                element: <VerticalSidenav />
-              },
-              {
-                path: 'dark-mode',
-                element: <DarkModeDemo />
-              },
-              {
-                path: 'sidenav-collapse',
-                element: <SidenavCollapse />
-              },
-              {
-                path: 'darknav',
-                element: <Darknav />
-              },
-              {
-                path: 'topnav-slim',
-                element: <TopnavSlim />
-              },
-              {
-                path: 'navbar-top-slim',
-                element: <NavbarTopSlim />
-              },
-              {
-                path: 'navbar-top',
-                element: <NavbarTop />
-              },
-              {
-                path: 'horizontal-slim',
-                element: <NavbarHorizontalSlim />
-              },
-              {
-                path: 'combo-nav',
-                element: <ComboNav />
-              },
-              {
-                path: 'combo-nav-slim',
-                element: <ComboNavSlim />
-              },
-              {
-                path: 'dual-nav',
-                element: <DualNav />
+                path: 'demo',
+                children: [
+                  {
+                    path: 'vertical-sidenav',
+                    element: <VerticalSidenav />
+                  },
+                  {
+                    path: 'dark-mode',
+                    element: <DarkModeDemo />
+                  },
+                  {
+                    path: 'sidenav-collapse',
+                    element: <SidenavCollapse />
+                  },
+                  {
+                    path: 'darknav',
+                    element: <Darknav />
+                  },
+                  {
+                    path: 'topnav-slim',
+                    element: <TopnavSlim />
+                  },
+                  {
+                    path: 'navbar-top-slim',
+                    element: <NavbarTopSlim />
+                  },
+                  {
+                    path: 'navbar-top',
+                    element: <NavbarTop />
+                  },
+                  {
+                    path: 'horizontal-slim',
+                    element: <NavbarHorizontalSlim />
+                  },
+                  {
+                    path: 'combo-nav',
+                    element: <ComboNav />
+                  },
+                  {
+                    path: 'combo-nav-slim',
+                    element: <ComboNavSlim />
+                  },
+                  {
+                    path: 'dual-nav',
+                    element: <DualNav />
+                  }
+                ]
               }
             ]
           },
@@ -780,13 +809,10 @@ const routes: RouteObject[] = [
           {
             path: 'changelog',
             element: <ChangeLog />
-          },
-          {
-            path: '*',
-            element: <ComingSoon />
           }
         ]
       },
+
       {
         element: <EcommerceLayout />,
         path: '/apps/e-commerce/customer/',
@@ -838,8 +864,17 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        path: '/landing/default',
-        element: <Default />
+        path: 'pages/landing',
+        children: [
+          {
+            path: 'default',
+            element: <Default />
+          },
+          {
+            path: 'alternate',
+            element: <ComingSoon />
+          }
+        ]
       },
       {
         path: '/pages/errors/',
@@ -960,6 +995,10 @@ const routes: RouteObject[] = [
       {
         path: 'showcase',
         element: <Showcase />
+      },
+      {
+        path: '*',
+        element: <Error404 />
       }
     ]
   }

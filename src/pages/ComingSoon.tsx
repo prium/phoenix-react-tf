@@ -66,7 +66,7 @@ const ComingSoon = () => {
                 </p>
                 <Link
                   className="btn btn-primary"
-                  to="documentation/getting-started"
+                  to="/documentation/getting-started"
                   style={{ minWidth: 200 }}
                 >
                   Getting Started

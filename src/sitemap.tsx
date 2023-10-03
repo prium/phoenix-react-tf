@@ -419,13 +419,13 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'default',
-            path: '/landing/default',
+            path: '/pages/landing/default',
             pathName: 'landing-default',
             active: true
           },
           {
             name: 'alternate',
-            path: 'pages/landing/alternate',
+            path: '/pages/landing/alternate',
             pathName: 'landing-alternate'
           }
         ]
