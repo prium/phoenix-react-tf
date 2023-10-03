@@ -4,6 +4,7 @@ import FeatherIcon from 'feather-icons-react';
 import Badge from 'components/base/Badge';
 import BasicLineChart from 'components/charts/e-charts/BasicLineChart';
 import { getPastDates } from 'helpers/utils';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 
 const NewUsersAndLeads = () => {
   return (
@@ -27,7 +28,7 @@ const NewUsersAndLeads = () => {
             >
               +24.5%
               <FontAwesomeIcon
-                icon="caret-up"
+                icon={faCaretUp}
                 className="d-inline-block lh-1 ms-1"
                 transform="down-2"
               />
@@ -57,7 +58,7 @@ const NewUsersAndLeads = () => {
             >
               +30.5%
               <FontAwesomeIcon
-                icon="caret-up"
+                icon={faCaretUp}
                 className="d-inline-block lh-1 ms-1"
                 transform="down-2"
               />

@@ -15,6 +15,15 @@ import DealDetailsCall from './DealDetailsCall';
 import DealDetailsAttachments from './DealDetailsAttachments';
 import { attachments } from 'data/project-management/todoListData';
 import LeadEmails from '../LeadEmails';
+import {
+  faChartLine,
+  faClipboard,
+  faEnvelope,
+  faPaperclip,
+  faPhone,
+  faSquareCheck,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
 
 interface TabItem {
   name: string;
@@ -25,37 +34,37 @@ interface TabItem {
 const tabitems: TabItem[] = [
   {
     name: 'Activity',
-    icon: 'chart-line',
+    icon: faChartLine,
     content: <DealDetailsActivity activities={dealActivities} />
   },
   {
     name: 'Notes',
-    icon: 'clipboard',
+    icon: faClipboard,
     content: <DealDetailsNotes notes={dealNotes} />
   },
   {
     name: 'Meeting',
-    icon: 'video',
+    icon: faVideo,
     content: <DealDetailsMeeting meetings={meetingData} />
   },
   {
     name: 'Task',
-    icon: 'square-check',
+    icon: faSquareCheck,
     content: <DealDetailsTask tasks={taskList} />
   },
   {
     name: 'Call',
-    icon: 'phone',
+    icon: faPhone,
     content: <DealDetailsCall />
   },
   {
     name: 'Emails',
-    icon: 'envelope',
+    icon: faEnvelope,
     content: <LeadEmails />
   },
   {
     name: 'Attachments',
-    icon: 'paperclip',
+    icon: faPaperclip,
     content: <DealDetailsAttachments attachments={attachments} />
   }
 ];

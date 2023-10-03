@@ -1,3 +1,10 @@
+import {
+  faFacebook,
+  faFacebookMessenger,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 
@@ -24,22 +31,19 @@ const ResponsesAndShare = () => {
       <h4 className="mb-3 fw-bold text-1000">Share with Friends:</h4>
       <div className="d-flex mb-5">
         <Button variant="phoenix-primary" className="btn-icon me-2">
-          <FontAwesomeIcon icon={['fab', 'facebook']} />
+          <FontAwesomeIcon icon={faFacebook} />
         </Button>
         <Button variant="phoenix-primary" className="btn-icon me-2">
-          <FontAwesomeIcon icon={['fab', 'facebook-messenger']} />
+          <FontAwesomeIcon icon={faFacebookMessenger} />
         </Button>
         <Button variant="phoenix-primary" className="btn-icon me-2">
-          <FontAwesomeIcon icon={['fab', 'twitter']} className="text-info" />
+          <FontAwesomeIcon icon={faTwitter} className="text-info" />
         </Button>
         <Button variant="phoenix-primary" className="btn-icon me-2">
-          <FontAwesomeIcon icon="envelope" className="text-danger" />
+          <FontAwesomeIcon icon={faEnvelope} className="text-danger" />
         </Button>
         <Button variant="phoenix-primary" className="btn-icon me-2">
-          <FontAwesomeIcon
-            icon={['fab', 'linkedin-in']}
-            className="text-info"
-          />
+          <FontAwesomeIcon icon={faLinkedinIn} className="text-info" />
         </Button>
       </div>
       <Button variant="phoenix-primary" className="w-100 mb-5 mb-xl-0">

@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DealDetailsCallTable from 'components/tables/DealDetailsCallTable';
@@ -39,7 +40,7 @@ const DealDetailsCall = () => {
         <Col xs="auto">
           <Button
             variant="primary"
-            startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
           >
             Add Call
           </Button>

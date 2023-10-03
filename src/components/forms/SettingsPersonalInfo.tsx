@@ -1,3 +1,9 @@
+import {
+  faCircleInfo,
+  faEnvelope,
+  faPhone,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Form, Row } from 'react-bootstrap';
 
@@ -19,7 +25,10 @@ const SettingsPersonalInfo = () => {
                 FIRST NAME
               </label>
             </Form.Floating>
-            <FontAwesomeIcon icon="user" className="text-900 fs-9 form-icon" />
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-900 fs-9 form-icon"
+            />
           </div>
         </Col>
         <Col xs={12} sm={6}>
@@ -35,7 +44,10 @@ const SettingsPersonalInfo = () => {
                 LAST NAME
               </label>
             </Form.Floating>
-            <FontAwesomeIcon icon="user" className="text-900 fs-9 form-icon" />
+            <FontAwesomeIcon
+              icon={faUser}
+              className="text-900 fs-9 form-icon"
+            />
           </div>
         </Col>
         <Col xs={12} sm={6}>
@@ -52,7 +64,7 @@ const SettingsPersonalInfo = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon="envelope"
+              icon={faEnvelope}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -70,7 +82,10 @@ const SettingsPersonalInfo = () => {
                 ENTER YOUR PHONE
               </label>
             </Form.Floating>
-            <FontAwesomeIcon icon="phone" className="text-900 fs-9 form-icon" />
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-900 fs-9 form-icon"
+            />
           </div>
         </Col>
         <Col xs={12} sm={6}>
@@ -89,7 +104,7 @@ const SettingsPersonalInfo = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon="circle-info"
+              icon={faCircleInfo}
               className="text-900 fs-9 form-icon"
             />
           </div>

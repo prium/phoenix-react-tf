@@ -1,3 +1,4 @@
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AnalyticsCallCampaignChart from 'components/charts/e-charts/AnalyticsCallCampaignChart';
 import { Col, Row } from 'react-bootstrap';
@@ -12,7 +13,7 @@ const CallCampaignReport = () => {
         </Col>
         <Col xs={12}>
           <div className="d-flex">
-            <FontAwesomeIcon icon="circle" className="text-primary me-2" />
+            <FontAwesomeIcon icon={faCircle} className="text-primary me-2" />
             <h6 className="mb-0 me-3 lh-base">Campaign</h6>
           </div>
         </Col>

@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import ProjectsTopSection from 'components/modules/project-management/ProjectsTopSection';
@@ -29,7 +30,7 @@ const ProjectListView = () => {
             <span className="fw-normal text-700">({projects.length})</span>
           </h2>
           <Link className="btn btn-primary px-5" to="/">
-            <FontAwesomeIcon icon="plus" className="me-2" />
+            <FontAwesomeIcon icon={faPlus} className="me-2" />
             Add new project
           </Link>
         </div>

@@ -11,6 +11,7 @@ import InboxToolbar from '../components/modules/email/InboxToolbar';
 import { emails } from 'data/email';
 import EmailRow from '../components/modules/email/EmailRow';
 import { Link } from 'react-router-dom';
+import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const EmailLayout = ({
   children,
@@ -44,14 +45,14 @@ const EmailLayout = ({
             className="px-3 text-700 d-lg-none"
             onClick={() => setOpenSidebar(true)}
           >
-            <FontAwesomeIcon icon="bars" />
+            <FontAwesomeIcon icon={faBars} />
           </Button>
         </Col>
         {page !== 'compose' && (
           <Col className="col-auto d-lg-none">
             <Button variant="primary" className="px-3 px-sm-4">
               <span className="d-none d-sm-inline-block">Compose</span>
-              <FontAwesomeIcon icon="plus" className="d-sm-none" />
+              <FontAwesomeIcon icon={faPlus} className="d-sm-none" />
             </Button>
           </Col>
         )}

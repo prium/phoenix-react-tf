@@ -4,6 +4,7 @@ import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout, { SideNavItem } from 'layouts/DocPagesLayout';
 import FeatherIcon from 'feather-icons-react';
+import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const phoenixButtonsCode = `
 import Button from 'components/base/Button';
@@ -72,14 +73,14 @@ const buttonWithIconCode = `
 import Button from 'components/base/Button';
 
 <div className="d-flex align-items-center gap-2">
-  <Button variant="primary" startIcon={<FontAwesomeIcon icon="plus" />}>
+  <Button variant="primary" startIcon={<FontAwesomeIcon icon={faPlus} />}>
     Create
   </Button>
   <Button variant="primary" endIcon={<FeatherIcon icon="send" size={14} />}>
     Send
   </Button>
   <Button variant="phoenix-danger">
-    <FontAwesomeIcon icon="trash" />
+    <FontAwesomeIcon icon={faTrash} />
   </Button>
 </div>
 `;
@@ -524,7 +525,7 @@ const ButtonExample = () => {
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body
             code={buttonWithIconCode}
-            scope={{ FontAwesomeIcon, FeatherIcon, Button }}
+            scope={{ FontAwesomeIcon, FeatherIcon, Button, faPlus, faTrash }}
           />
         </PhoenixDocCard>
 

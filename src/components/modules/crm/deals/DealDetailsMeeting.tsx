@@ -1,3 +1,4 @@
+import { faFilter, faPlus, faSort } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import MeetingCard from 'components/cards/MeetingCard';
@@ -17,7 +18,7 @@ const DealDetailsMeeting = ({ meetings }: { meetings: Meeting[] }) => {
           <div className="d-flex">
             <p className="mb-0 fs-9 text-700 fw-bold">
               <FontAwesomeIcon
-                icon="filter"
+                icon={faFilter}
                 className="me-1 fw-extra-bold fs-10"
               />
               23 tasks
@@ -25,14 +26,17 @@ const DealDetailsMeeting = ({ meetings }: { meetings: Meeting[] }) => {
             <Button
               variant="link"
               className="p-0 ms-3 fs-9 text-primary fw-bold"
-              startIcon={<FontAwesomeIcon icon="sort" className="fs-10" />}
+              startIcon={<FontAwesomeIcon icon={faSort} className="fs-10" />}
             >
               Sorting
             </Button>
           </div>
         </Col>
         <Col xs="auto">
-          <Button variant="primary" startIcon={<FontAwesomeIcon icon="plus" />}>
+          <Button
+            variant="primary"
+            startIcon={<FontAwesomeIcon icon={faPlus} />}
+          >
             Add Meeting
           </Button>
         </Col>

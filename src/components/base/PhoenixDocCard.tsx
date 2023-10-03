@@ -13,6 +13,7 @@ import PhoenixDocProvider, {
 import PhoenixLiveProvider, {
   PhoenixLiveProviderProps
 } from 'components/docs/PhoenixLiveProvider';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 interface PhoenixDocCardProps {
   className?: string;
@@ -115,7 +116,7 @@ const PhoenixDocCardHeader = ({
                 className="px-2 text-900 copy-code-btn me-2"
                 onClick={handleCopyCode}
               >
-                <FontAwesomeIcon icon="copy" className="me-1" />
+                <FontAwesomeIcon icon={faCopy} className="me-1" />
                 Copy Code
               </Button>
               <Button

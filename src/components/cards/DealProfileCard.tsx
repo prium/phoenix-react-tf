@@ -6,6 +6,7 @@ import avatar from 'assets/img/team/72x72/58.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Badge from 'components/base/Badge';
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 
 const DealProfileCard = ({ className }: { className?: string }) => {
   return (
@@ -40,7 +41,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                     >
                       Owner
                       <FontAwesomeIcon
-                        icon="caret-down"
+                        icon={faCaretDown}
                         className="text-800 fs-9 ms-2"
                       />
                     </Dropdown.Toggle>

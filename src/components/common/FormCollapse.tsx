@@ -1,3 +1,4 @@
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -26,7 +27,7 @@ const FormCollapse = ({
       >
         <div className="d-flex align-items-center justify-content-between w-100">
           <div className="fs-8 text-1000">{title}</div>
-          <FontAwesomeIcon icon="angle-up" className="toggle-icon text-500" />
+          <FontAwesomeIcon icon={faAngleUp} className="toggle-icon text-500" />
         </div>
       </Button>
       <Collapse in={open}>

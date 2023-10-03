@@ -6,6 +6,7 @@ import boltIlls from 'assets/img/icons/illustrations/bolt.png';
 import pie from 'assets/img/icons/illustrations/pie.png';
 import { defaultFeatures } from 'data/landing/default-landing-data';
 import FeatureSection from './FeatureSection';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Features = () => {
   return (
@@ -34,7 +35,7 @@ const Features = () => {
                 variant="outline-primary"
                 className="rounded-pill me-2"
                 endIcon={
-                  <FontAwesomeIcon icon="angle-right" className="ms-2" />
+                  <FontAwesomeIcon icon={faAngleRight} className="ms-2" />
                 }
               >
                 Find out more
@@ -59,7 +60,7 @@ const Features = () => {
                   </div>
                   <Link to="#!" className="me-2 p-0 fs-9 fw-bold">
                     Check Demo
-                    <FontAwesomeIcon icon="angle-right" className="ms-2" />
+                    <FontAwesomeIcon icon={faAngleRight} className="ms-2" />
                   </Link>
                 </div>
               </div>
@@ -83,7 +84,7 @@ const Features = () => {
                   </div>
                   <Link to="#!" className="me-2 p-0 fs-9 fw-bold">
                     Check Demo
-                    <FontAwesomeIcon icon="angle-right" className="ms-2" />
+                    <FontAwesomeIcon icon={faAngleRight} className="ms-2" />
                   </Link>
                 </div>
               </div>

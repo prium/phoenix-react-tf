@@ -1,3 +1,4 @@
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
@@ -35,7 +36,7 @@ const QuantityButtons = ({
           className="px-3"
           onClick={handleDecrease}
         >
-          <FontAwesomeIcon icon="minus" />
+          <FontAwesomeIcon icon={faMinus} />
         </Button>
         <input
           type="number"
@@ -50,7 +51,7 @@ const QuantityButtons = ({
           className="px-3"
           onClick={handleIncrease}
         >
-          <FontAwesomeIcon icon="plus" />
+          <FontAwesomeIcon icon={faPlus} />
         </Button>
       </div>
     );

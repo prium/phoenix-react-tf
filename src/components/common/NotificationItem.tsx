@@ -1,3 +1,4 @@
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
@@ -55,7 +56,7 @@ const NotificationItem = ({
               </span>
             </p>
             <p className="text-800 fs-9 mb-0">
-              <FontAwesomeIcon icon="clock" className="me-1" />
+              <FontAwesomeIcon icon={faClock} className="me-1" />
               <span className="fw-bold">{notification.time}</span>
               {notification.date}
             </p>

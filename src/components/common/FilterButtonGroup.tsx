@@ -1,3 +1,4 @@
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import React from 'react';
@@ -26,7 +27,7 @@ const FilterButtonGroup = ({ menus }: FilterButtonGroupProps) => {
           >
             {menu.label}
             <FontAwesomeIcon
-              icon="angle-down"
+              icon={faAngleDown}
               className="ms-2"
               transform="down-2"
             />

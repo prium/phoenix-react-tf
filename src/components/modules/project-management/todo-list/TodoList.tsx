@@ -7,6 +7,7 @@ import TodoListItem from './TodoListItem';
 import { ToDoItem, todoList } from 'data/project-management/todoListData';
 import classNames from 'classnames';
 import TodoItemDetailsModal from './TodoItemDetailsModal';
+import { faFilter, faPlus, faSort } from '@fortawesome/free-solid-svg-icons';
 
 const TodoList = () => {
   const [selectedItem, setSelectedItem] = useState<ToDoItem | null>(null);
@@ -30,7 +31,7 @@ const TodoList = () => {
                     variant="link"
                     className="p-0 fs-9 text-700 text-decoration-none me-3"
                     startIcon={
-                      <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                      <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
                     }
                   >
                     23 tasks
@@ -39,7 +40,7 @@ const TodoList = () => {
                     variant="link"
                     className="p-0 fs-9 text-primary text-decoration-none"
                     startIcon={
-                      <FontAwesomeIcon icon="sort" className="fs-10" />
+                      <FontAwesomeIcon icon={faSort} className="fs-10" />
                     }
                   >
                     Sorting
@@ -68,7 +69,7 @@ const TodoList = () => {
         {/* </Scrollbar> */}
         <Card.Footer className="border-0">
           <Button
-            startIcon={<FontAwesomeIcon icon="plus" />}
+            startIcon={<FontAwesomeIcon icon={faPlus} />}
             variant="link"
             className="text-decoration-none p-0"
           >

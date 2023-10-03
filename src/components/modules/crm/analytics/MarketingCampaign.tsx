@@ -1,3 +1,4 @@
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import MarketingCampaignChart from 'components/charts/e-charts/MarketingCampaignChart';
@@ -41,7 +42,7 @@ const MarketingCampaign = () => {
               </div>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
-                  icon="circle"
+                  icon={faCircle}
                   className="text-warning-300 me-2"
                 />
                 <h6 className="mb-0">Online Campaign</h6>
@@ -56,7 +57,7 @@ const MarketingCampaign = () => {
               </div>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
-                  icon="circle"
+                  icon={faCircle}
                   className="text-primary-300 me-2"
                 />
                 <h6 className="mb-0">Offline Campaign</h6>

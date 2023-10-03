@@ -7,6 +7,7 @@ import Badge from 'components/base/Badge';
 import { Link } from 'react-router-dom';
 import ReactSelect from 'components/base/ReactSelect';
 import classNames from 'classnames';
+import { faCheck, faRotate } from '@fortawesome/free-solid-svg-icons';
 
 type NavItemType = {
   label: string;
@@ -116,7 +117,7 @@ const InventoryTab = () => {
                     <Button
                       variant="primary"
                       type="button"
-                      startIcon={<FontAwesomeIcon icon="check" />}
+                      startIcon={<FontAwesomeIcon icon={faCheck} />}
                       className="text-nowrap"
                     >
                       Confirm
@@ -139,7 +140,7 @@ const InventoryTab = () => {
                         $1,090
                         <Button className="p-0 ms-1" type="button">
                           <FontAwesomeIcon
-                            icon="rotate"
+                            icon={faRotate}
                             className="text-900"
                             style={
                               { '--phoenix-text-opacity': 0.6 } as CSSProperties

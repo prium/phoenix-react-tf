@@ -13,6 +13,7 @@ import team58 from 'assets/img/team/58.webp';
 import team57 from 'assets/img/team/57.webp';
 import team59 from 'assets/img/team/59.webp';
 import team30 from 'assets/img/team/30.webp';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 export interface SidebarItem {
   icon: JSX.Element;
@@ -81,7 +82,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-primary ms-n1"
         transform="shrink-10"
       />
@@ -91,7 +92,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-primary-600 ms-n1"
         transform="shrink-10"
       />
@@ -101,7 +102,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-success ms-n1"
         transform="shrink-10"
       />
@@ -111,7 +112,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-warning ms-n1"
         transform="shrink-10"
       />
@@ -121,7 +122,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-danger ms-n1"
         transform="shrink-10"
       />
@@ -131,7 +132,7 @@ export const labelItems: SidebarItem[] = [
   {
     icon: (
       <FontAwesomeIcon
-        icon="circle"
+        icon={faCircle}
         className="text-info ms-n1"
         transform="shrink-10"
       />

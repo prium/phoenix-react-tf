@@ -5,6 +5,11 @@ import classNames from 'classnames';
 import ChatFilterTab from './ChatFilterTab';
 import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import { useState } from 'react';
+import {
+  faBars,
+  faMagnifyingGlass,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 
 const ChatSidebar = ({ className }: { className?: string }) => {
   const [openSearchModal, setOpenSearchModal] = useState(false);
@@ -15,7 +20,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
           className="d-none d-sm-block d-xl-none mb-2"
           onClick={() => setOpenSearchModal(true)}
         >
-          <FontAwesomeIcon icon="magnifying-glass" className="text-600 fs-7" />
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-600 fs-7" />
         </Button>
         <Dropdown className="d-none d-sm-block d-xl-none mb-5">
           <Dropdown.Toggle
@@ -23,7 +28,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
             size="sm"
             className="w-100 mx-auto dropdown-caret-none"
           >
-            <FontAwesomeIcon icon="bars" className="fs-7 text-600" />
+            <FontAwesomeIcon icon={faBars} className="fs-7 text-600" />
           </Dropdown.Toggle>
           <Dropdown.Menu align="start" className="p-0" style={{ zIndex: 1020 }}>
             <Dropdown.Item eventKey="1">All</Dropdown.Item>
@@ -37,7 +42,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
             placeholder="People, Groups and Messages"
             className="form-icon-input"
           />
-          <FontAwesomeIcon icon="user" className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faUser} className="text-900 fs-9 form-icon" />
         </Form.Group>
         <ChatFilterTab />
       </Card>

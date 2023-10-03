@@ -1,3 +1,4 @@
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import classNames from 'classnames';
@@ -89,7 +90,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
       return (
         <div className="d-flex align-items-center flex-1">
           <FontAwesomeIcon
-            icon="clock"
+            icon={faClock}
             className={classNames('me-1 text-500', {
               'text-success': original.activity === 'Active'
             })}

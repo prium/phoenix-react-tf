@@ -1,3 +1,4 @@
+import { faFilter, faPlus, faSort } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -29,14 +30,16 @@ const ProjectTodoList = () => {
           <Button
             variant="link"
             className="p-0 fs-9 text-700 text-decoration-none me-3"
-            startIcon={<FontAwesomeIcon icon="filter" className="fs-10 me-1" />}
+            startIcon={
+              <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
+            }
           >
             23 tasks
           </Button>
           <Button
             variant="link"
             className="p-0 fs-9 text-primary text-decoration-none"
-            startIcon={<FontAwesomeIcon icon="sort" className="fs-10" />}
+            startIcon={<FontAwesomeIcon icon={faSort} className="fs-10" />}
           >
             Sorting
           </Button>
@@ -56,7 +59,7 @@ const ProjectTodoList = () => {
         ))}
       </div>
       <Button
-        startIcon={<FontAwesomeIcon icon="plus" />}
+        startIcon={<FontAwesomeIcon icon={faPlus} />}
         variant="link"
         className="text-decoration-none p-0 mt-4"
       >

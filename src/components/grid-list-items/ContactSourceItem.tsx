@@ -1,3 +1,4 @@
+import { faSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 
@@ -23,7 +24,7 @@ const ContactSourceItem = ({
     >
       <div className="d-flex align-items-center mb-1">
         <FontAwesomeIcon
-          icon="square"
+          icon={faSquare}
           className={`fs-11 me-2 text-${color}`}
           transform="up-2"
         />

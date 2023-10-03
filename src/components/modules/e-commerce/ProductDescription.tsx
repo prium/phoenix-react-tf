@@ -9,6 +9,8 @@ import { useMemo, useState } from 'react';
 import { Col, Row, Stack } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import QuantityButtons from 'components/common/QuantityButtons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faShareAlt, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const ProductDescription = () => {
   const [selectedVariantKey, setSelectedVariantKey] = useState('blue');
@@ -30,7 +32,7 @@ const ProductDescription = () => {
             size="lg"
             className="rounded-pill w-100 me-3 px-2 px-sm-4 fs--1 fs-sm-0"
           >
-            <FontAwesomeIcon icon={['far', 'heart']} className="me-2" />
+            <FontAwesomeIcon icon={faHeart} className="me-2" />
             Add to wishlist
           </Button>
           <Button
@@ -38,7 +40,7 @@ const ProductDescription = () => {
             size="lg"
             className="rounded-pill w-100 px-2 px-sm-4 fs--1 fs-sm-0"
           >
-            <FontAwesomeIcon icon="shopping-cart" className="me-2" />
+            <FontAwesomeIcon icon={faShoppingCart} className="me-2" />
             Add to cart
           </Button>
         </div>
@@ -124,7 +126,7 @@ const ProductDescription = () => {
                     setQuantity={setQuantity}
                   />
                   <Button variant="phoenix-primary" className="px-3 border-0">
-                    <FontAwesomeIcon icon="share-alt" className="fs-7" />
+                    <FontAwesomeIcon icon={faShareAlt} className="fs-7" />
                   </Button>
                 </div>
               </div>

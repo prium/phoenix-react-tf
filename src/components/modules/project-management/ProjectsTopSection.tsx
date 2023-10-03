@@ -1,3 +1,4 @@
+import { faList } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
 import SearchBox from 'components/common/SearchBox';
@@ -88,7 +89,7 @@ const ProjectsTopSection = ({ activeView }: ProjectsTopSectionInterface) => {
               navigate('/apps/project-management/project-list-view');
             }}
           >
-            <FontAwesomeIcon icon="list" className="fs-10" />
+            <FontAwesomeIcon icon={faList} className="fs-10" />
           </ToggleViewButton>
           <ToggleViewButton
             tooltip="Board view"

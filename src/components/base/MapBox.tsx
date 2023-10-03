@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import { useAppContext } from 'providers/AppProvider';
 // @ts-ignore
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
 // @ts-ignore
@@ -61,10 +62,10 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
         <div ref={mapContainer} className="map-container" />
         <div className="mapbox-control-btn">
           <Button onClick={() => map.current?.zoomIn()} className="zoomIn">
-            <FontAwesomeIcon icon="plus" />
+            <FontAwesomeIcon icon={faPlus} />
           </Button>
           <Button onClick={() => map.current?.zoomOut()} className="zoomOut">
-            <FontAwesomeIcon icon="minus" />
+            <FontAwesomeIcon icon={faMinus} />
           </Button>
         </div>
       </div>

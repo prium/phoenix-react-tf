@@ -6,6 +6,7 @@ import RevealDropdown, {
 import { StoreItem as StoreItemType } from 'data/e-commerce/stores';
 import { Link } from 'react-router-dom';
 import ActionDropdownItems from './ActionDropdownItems';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const StoreItem = ({ store }: { store: StoreItemType }) => {
   return (
@@ -25,7 +26,7 @@ const StoreItem = ({ store }: { store: StoreItemType }) => {
       </p>
       <Link className="p-0 fs-9 fw-bold" to="#!">
         Visit Store
-        <FontAwesomeIcon icon="chevron-right" className="ms-1 fs-10" />
+        <FontAwesomeIcon icon={faChevronRight} className="ms-1 fs-10" />
       </Link>
 
       <RevealDropdown

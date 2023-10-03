@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Badge from 'components/base/Badge';
 import { currencyFormat } from 'helpers/utils';
+import { faCheck, faCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 interface PricingColumnItemProps {
   pricing: PricingColumn;
@@ -58,7 +59,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
       >
         <li className="text-800 mb-2">
           <span className="fa-li">
-            <FontAwesomeIcon icon="check" className="text-primary" />
+            <FontAwesomeIcon icon={faCheck} className="text-primary" />
           </span>
           Timeline
         </li>
@@ -72,13 +73,13 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
             <span className="fa-li me-2 stack-icon-item">
               <span className="fa-layers fa-fw">
                 <FontAwesomeIcon
-                  icon="circle"
+                  icon={faCircle}
                   className={classNames('text-300', {
                     'text-success': pricing.features.includes(item.id)
                   })}
                 />
                 <FontAwesomeIcon
-                  icon={pricing.features.includes(item.id) ? 'check' : 'times'}
+                  icon={pricing.features.includes(item.id) ? faCheck : faTimes}
                   inverse
                   className={classNames('text-600 fs-11', {
                     'text-white': pricing.features.includes(item.id)

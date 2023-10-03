@@ -1,3 +1,4 @@
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SuggestedProductType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
@@ -56,7 +57,7 @@ const UsuallyBoughtTogetherCard = ({
           </div>
           <Button variant="outline-warning">
             Add 3 items to cart
-            <FontAwesomeIcon icon="shopping-cart" className="ms-2" />
+            <FontAwesomeIcon icon={faShoppingCart} className="ms-2" />
           </Button>
         </div>
       </Card.Body>

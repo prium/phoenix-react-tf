@@ -3,6 +3,7 @@ import { HTMLAttributes, PropsWithChildren } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
 interface RevealDropdownTriggerProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -31,7 +32,7 @@ const RevealDropdown = ({
   className,
   btnClassName,
   dropdownMenuClassName,
-  icon = 'ellipsis'
+  icon = faEllipsis
 }: PropsWithChildren<RevealDropdownProps>) => {
   return (
     <Dropdown className={classNames(className)} align="end">

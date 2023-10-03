@@ -5,6 +5,12 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { ToDoItem } from 'data/project-management/todoListData';
 import classNames from 'classnames';
+import {
+  faEdit,
+  faPaperclip,
+  faTasks,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 
 type Breakpoints = 'md' | 'lg' | 'xl' | 'xxl';
 
@@ -134,13 +140,13 @@ const TodoListItem = ({
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
                 <Button className="p-0 text-700 fs-10 me-2">
-                  <FontAwesomeIcon icon="paperclip" className="me-1" />
+                  <FontAwesomeIcon icon={faPaperclip} className="me-1" />
                   {todo.attachment}
                 </Button>
               )}
               {todo.listitems && (
                 <Button className="p-0 text-warning fs-10 me-2">
-                  <FontAwesomeIcon icon="tasks" className="me-1" />
+                  <FontAwesomeIcon icon={faTasks} className="me-1" />
                   {todo.listitems}
                 </Button>
               )}
@@ -178,10 +184,10 @@ const TodoListItem = ({
         >
           <div className="hover-actions end-0">
             <Button variant="phoenix-secondary" className="btn-icon fs-10 me-1">
-              <FontAwesomeIcon icon="edit" />
+              <FontAwesomeIcon icon={faEdit} />
             </Button>
             <Button variant="phoenix-secondary" className="btn-icon fs-10">
-              <FontAwesomeIcon icon="trash" className="text-danger" />
+              <FontAwesomeIcon icon={faTrash} className="text-danger" />
             </Button>
           </div>
         </div>

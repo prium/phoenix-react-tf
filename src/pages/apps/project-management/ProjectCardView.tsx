@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
@@ -44,7 +45,7 @@ const ProjectCardView = () => {
             className="btn btn-primary px-5"
             to="/apps/project-management/create-new"
           >
-            <FontAwesomeIcon icon="plus" className="me-2" />
+            <FontAwesomeIcon icon={faPlus} className="me-2" />
             Add new project
           </Link>
         </div>

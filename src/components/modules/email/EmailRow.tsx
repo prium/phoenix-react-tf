@@ -1,3 +1,4 @@
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
@@ -48,7 +49,7 @@ const EmailRow = ({ email }: { email: Email }) => {
                 variant="phoenix-secondary"
                 className="dropdown-caret-none btn-icon"
               >
-                <FontAwesomeIcon icon="ellipsis" />
+                <FontAwesomeIcon icon={faEllipsis} />
               </Dropdown.Toggle>
 
               <Dropdown.Menu>

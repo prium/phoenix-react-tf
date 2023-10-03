@@ -1,3 +1,8 @@
+import {
+  faReply,
+  faThumbsDown,
+  faThumbsUp
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -57,7 +62,7 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       {review.reply && (
         <div className="d-flex">
           <FontAwesomeIcon
-            icon="reply"
+            icon={faReply}
             className="me-2"
             transform="rotate-180"
           />
@@ -72,10 +77,10 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
       )}
       <div className="hover-actions top-0">
         <Button className="me-2" variant="phoenix-secondary" size="sm">
-          <FontAwesomeIcon icon="thumbs-up" />
+          <FontAwesomeIcon icon={faThumbsUp} />
         </Button>
         <Button className="me-1" variant="phoenix-secondary" size="sm">
-          <FontAwesomeIcon icon="thumbs-down" />
+          <FontAwesomeIcon icon={faThumbsDown} />
         </Button>
       </div>
     </RevealDropdownTrigger>

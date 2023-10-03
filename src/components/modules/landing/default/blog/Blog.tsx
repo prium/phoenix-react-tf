@@ -6,6 +6,7 @@ import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BlogItem from './BlogItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = () => {
   return (
@@ -44,7 +45,7 @@ const Blog = () => {
             as={Link}
             variant="outline-primary"
             to="#!"
-            endIcon={<FontAwesomeIcon icon="angle-right" className="ms-2" />}
+            endIcon={<FontAwesomeIcon icon={faAngleRight} className="ms-2" />}
           >
             View All
           </Button>

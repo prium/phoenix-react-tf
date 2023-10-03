@@ -1,3 +1,4 @@
+import { faKey, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import AuthSocialButtons from 'components/common/AuthSocialButtons';
@@ -25,7 +26,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             className="form-icon-input"
             placeholder="name@example.com"
           />
-          <FontAwesomeIcon icon="user" className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faUser} className="text-900 fs-9 form-icon" />
         </div>
       </Form.Group>
       <Form.Group className="mb-3 text-start">
@@ -37,7 +38,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             className="form-icon-input"
             placeholder="Password"
           />
-          <FontAwesomeIcon icon="key" className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faKey} className="text-900 fs-9 form-icon" />
         </div>
       </Form.Group>
       <Row className="flex-between-center mb-7">

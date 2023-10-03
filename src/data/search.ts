@@ -2,6 +2,7 @@ import team10 from 'assets/img/team/40x40/10.webp';
 import team12 from 'assets/img/team/40x40/12.webp';
 import product60 from 'assets/img/products/60x60/3.png';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faChrome, faFirefoxBrowser } from '@fortawesome/free-brands-svg-icons';
 
 type SearchItemCategory =
   | 'recently_searched'
@@ -94,13 +95,13 @@ export const searchItems: SearchResult[] = [
   {
     url: `/apps/e-commerce/customer/product-details`,
     label: 'Search in the Web MacBook',
-    icon: ['fab', 'firefox-browser'],
+    icon: faFirefoxBrowser,
     category: 'related_search'
   },
   {
     url: `/apps/e-commerce/customer/product-details`,
     label: 'Store MacBook″',
-    icon: ['fab', 'chrome'],
+    icon: faChrome,
     category: 'related_search'
   }
 ];

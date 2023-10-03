@@ -1,3 +1,8 @@
+import {
+  faImage,
+  faPaperPlane,
+  faPaperclip
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import TinymceEditor from 'components/base/TinymceEditor';
@@ -40,7 +45,7 @@ const Compose = () => {
                         className="text-900 fs-9 cursor-pointer"
                         htmlFor="attachments"
                       >
-                        <FontAwesomeIcon icon="paperclip" />
+                        <FontAwesomeIcon icon={faPaperclip} />
                       </label>
                     </Button>
                     <Form.Control
@@ -56,7 +61,7 @@ const Compose = () => {
                         className="text-900 fs-9 cursor-pointer"
                         htmlFor="images"
                       >
-                        <FontAwesomeIcon icon="image" />
+                        <FontAwesomeIcon icon={faImage} />
                       </label>
                     </Button>
                     <Form.Control
@@ -78,7 +83,7 @@ const Compose = () => {
                     variant="primary"
                     className="fs-10"
                     type="submit"
-                    endIcon={<FontAwesomeIcon icon="paper-plane" />}
+                    endIcon={<FontAwesomeIcon icon={faPaperPlane} />}
                   >
                     Send
                   </Button>

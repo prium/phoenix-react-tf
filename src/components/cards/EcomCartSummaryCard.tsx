@@ -1,3 +1,4 @@
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import OrderSummaryDetails from 'components/common/OrderSummaryDetails';
@@ -38,7 +39,7 @@ const EcomCartSummaryCard = () => {
           className="w-100"
           variant="primary"
           endIcon={
-            <FontAwesomeIcon icon="chevron-right" className="ms-1 fs-10" />
+            <FontAwesomeIcon icon={faChevronRight} className="ms-1 fs-10" />
           }
         >
           Proceed to check out

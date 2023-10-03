@@ -1,3 +1,4 @@
+import { faComment } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import React from 'react';
@@ -12,7 +13,7 @@ const FaqCta = () => {
           variant="outline-primary"
           size="sm"
           className="btn-support-chat"
-          startIcon={<FontAwesomeIcon icon="comment" className="me-2" />}
+          startIcon={<FontAwesomeIcon icon={faComment} className="me-2" />}
         >
           Chat with us
         </Button>

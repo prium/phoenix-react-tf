@@ -1,7 +1,7 @@
+import { faCircle, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { getFileIcon } from 'helpers/utils';
-import React from 'react';
 
 export interface FileAttachment {
   name: string;
@@ -54,7 +54,7 @@ const AttachmentPreview = ({
 
         {handleRemove && (
           <button className="btn btn-x" onClick={handleRemove}>
-            <FontAwesomeIcon icon="xmark" className="text-900" />
+            <FontAwesomeIcon icon={faXmark} className="text-900" />
           </button>
         )}
       </div>
@@ -81,7 +81,7 @@ const AttachmentPreview = ({
           {attachment.date && (
             <>
               <FontAwesomeIcon
-                icon="circle"
+                icon={faCircle}
                 className="text-500"
                 transform="shrink-12"
               />

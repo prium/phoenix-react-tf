@@ -5,6 +5,7 @@ import { Product } from 'data/e-commerce/products';
 import ProductCard from 'components/common/ProductCard';
 import Swiper from 'components/base/Swiper';
 import { SwiperSlide } from 'swiper/react';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const EcomTopElectronics = ({ products }: { products: Product[] }) => {
   return (
@@ -13,7 +14,7 @@ const EcomTopElectronics = ({ products }: { products: Product[] }) => {
         <h3>Top Electronics</h3>
         <Link to="#!" className="btn btn-link btn-lg p-0 d-none d-md-block">
           Explore more
-          <FontAwesomeIcon icon="chevron-right" className="fs-9 ms-1" />
+          <FontAwesomeIcon icon={faChevronRight} className="fs-9 ms-1" />
         </Link>
       </div>
       <Swiper

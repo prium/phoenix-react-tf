@@ -1,3 +1,4 @@
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Scrollbar from 'components/base/Scrollbar';
@@ -96,7 +97,7 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
           variant="link"
           className="text-500 hover-text-600 me-2"
         >
-          <FontAwesomeIcon icon="trash" />
+          <FontAwesomeIcon icon={faTrash} />
         </Button>
       </td>
     </tr>

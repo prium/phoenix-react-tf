@@ -1,10 +1,11 @@
+import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import EmojiPicker from 'components/base/EmojiPicker';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const emojiButtonCode = `
 import Button from 'components/base/Button';
@@ -22,7 +23,7 @@ function EmojiButtonExample() {
         variant="primary"
         className="fs-7"
       >
-        <FontAwesomeIcon icon={['far', 'face-smile']} />
+        <FontAwesomeIcon icon={faFaceSmile} />
       </Button>
     </EmojiPicker>
   )
@@ -45,7 +46,13 @@ const EmojiButtonExample = () => {
           <PhoenixDocCard.Header title="Example" />
           <PhoenixDocCard.Body
             code={emojiButtonCode}
-            scope={{ EmojiPicker, Button, FontAwesomeIcon, useState }}
+            scope={{
+              EmojiPicker,
+              Button,
+              FontAwesomeIcon,
+              useState,
+              faFaceSmile
+            }}
           />
         </PhoenixDocCard>
       </DocPagesLayout>

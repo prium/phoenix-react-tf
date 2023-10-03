@@ -1,3 +1,4 @@
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { Feature } from 'data/landing/default-landing-data';
@@ -37,7 +38,7 @@ const FeatureSection = ({ feature, orderReverse }: FeatureSectionProps) => {
         <p className="mb-4 px-md-7 px-lg-0">{details}</p>
         <Link to={link} className="me-2 p-0 fs-9 fw-bold">
           Check Demo
-          <FontAwesomeIcon icon="angle-right" className="ms-2" />
+          <FontAwesomeIcon icon={faAngleRight} className="ms-2" />
         </Link>
       </Col>
     </Row>

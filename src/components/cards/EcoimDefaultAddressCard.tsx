@@ -1,3 +1,4 @@
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { Card } from 'react-bootstrap';
@@ -10,7 +11,7 @@ const EcoimDefaultAddressCard = () => {
           <h4 className="mb-3 lh-sm lh-xl-1">
             Default Address
             <Button variant="link" className="p-0 ms-3" type="button">
-              <FontAwesomeIcon icon="edit" className="text-500" />
+              <FontAwesomeIcon icon={faEdit} className="text-500" />
             </Button>
           </h4>
         </div>

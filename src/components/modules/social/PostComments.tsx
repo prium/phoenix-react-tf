@@ -1,3 +1,4 @@
+import { faReply } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
@@ -35,7 +36,9 @@ const PostComments = ({ comments }: PostCommentsProps) => {
                 <Button
                   variant="link"
                   className="p-0 text-900 mb-2 fs-10"
-                  startIcon={<FontAwesomeIcon icon="reply" className="me-1" />}
+                  startIcon={
+                    <FontAwesomeIcon icon={faReply} className="me-1" />
+                  }
                 >
                   Reply
                 </Button>

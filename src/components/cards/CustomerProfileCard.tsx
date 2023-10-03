@@ -2,6 +2,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AvatarUpload from 'components/common/AvatarUpload';
 import { Card, Col, Row } from 'react-bootstrap';
 import team15 from 'assets/img/team/15.webp';
+import {
+  faFacebook,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
 
 const CustomerProfileCard = () => {
   return (
@@ -17,19 +22,19 @@ const CustomerProfileCard = () => {
             <div className="d-inline-flex gap-2">
               <a href="#!">
                 <FontAwesomeIcon
-                  icon={['fab', 'linkedin-in']}
+                  icon={faLinkedinIn}
                   className="text-400 hover-primary"
                 />
               </a>
               <a href="#!">
                 <FontAwesomeIcon
-                  icon={['fab', 'facebook']}
+                  icon={faFacebook}
                   className="text-400 hover-primary"
                 />
               </a>
               <a href="#!">
                 <FontAwesomeIcon
-                  icon={['fab', 'twitter']}
+                  icon={faTwitter}
                   className="text-400 hover-primary"
                 />
               </a>

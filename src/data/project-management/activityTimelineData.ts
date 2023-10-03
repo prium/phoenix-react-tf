@@ -1,4 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faChess, faDove, faDungeon } from '@fortawesome/free-solid-svg-icons';
 
 export interface ActivityTimelineData {
   id: number;
@@ -30,7 +31,7 @@ export const activityTimelineData: ActivityTimelineData[] = [
         'Discover limitless creativity with the Phoenix template! Our latest update offers an array of innovative features and design options.'
     },
     separator: {
-      icon: 'chess'
+      icon: faChess
     }
   },
   {
@@ -46,7 +47,7 @@ export const activityTimelineData: ActivityTimelineData[] = [
         'Unveiling the Phoenix template, a game-changer for your digital presence. With its powerful features and sleek design,'
     },
     separator: {
-      icon: 'dove'
+      icon: faDove
     }
   },
   {
@@ -62,7 +63,7 @@ export const activityTimelineData: ActivityTimelineData[] = [
         'Introducing the Phoenix template, where simplified design meets maximum impact. Elevate your digital presence with its sleek and intuitive features.'
     },
     separator: {
-      icon: 'dungeon'
+      icon: faDungeon
     }
   }
 ];

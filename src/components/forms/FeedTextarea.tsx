@@ -1,3 +1,11 @@
+import {
+  faCalendarAlt,
+  faCaretDown,
+  faGlobeAsia,
+  faImage,
+  faMapMarkerAlt,
+  faTag
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import React, { useState } from 'react';
@@ -17,27 +25,30 @@ const FeedTextarea = () => {
         <Card.Footer className="p-3">
           <div className="d-flex justify-content-between align-items-center">
             <Button className="p-0 me-3">
-              <FontAwesomeIcon icon="image" className="fs-8" />
+              <FontAwesomeIcon icon={faImage} className="fs-8" />
             </Button>
             <Button className="p-0 me-3">
-              <FontAwesomeIcon icon="calendar-alt" className="fs-8" />
+              <FontAwesomeIcon icon={faCalendarAlt} className="fs-8" />
             </Button>
             <Button className="p-0 me-3">
-              <FontAwesomeIcon icon="map-marker-alt" className="fs-8" />
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="fs-8" />
             </Button>
             <Button className="p-0 me-3">
-              <FontAwesomeIcon icon="tag" className="fs-8" />
+              <FontAwesomeIcon icon={faTag} className="fs-8" />
             </Button>
             <Dropdown className="me-3 flex-1">
               <Dropdown.Toggle
                 variant=""
                 className="p-0 dropdown-caret-none d-flex align-items-center"
               >
-                <FontAwesomeIcon icon="globe-asia" className="fs-8 me-1" />
+                <FontAwesomeIcon icon={faGlobeAsia} className="fs-8 me-1" />
                 <span className="me-1 lh-base d-none d-sm-block">
                   {privacy}
                 </span>
-                <FontAwesomeIcon icon="caret-down" className="fs-10 text-500" />
+                <FontAwesomeIcon
+                  icon={faCaretDown}
+                  className="fs-10 text-500"
+                />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => setPrivacy('Public')}>

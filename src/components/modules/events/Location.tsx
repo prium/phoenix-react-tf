@@ -1,3 +1,4 @@
+import { faRotate } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Mapbox from 'components/base/MapBox';
@@ -30,7 +31,7 @@ const Location = () => {
           <Button
             variant="phoenix-primary"
             className="w-100"
-            startIcon={<FontAwesomeIcon icon="route" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faRotate} className="me-2" />}
           >
             Get directions
           </Button>

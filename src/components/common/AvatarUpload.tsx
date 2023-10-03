@@ -2,6 +2,7 @@ import React, { CSSProperties, ChangeEvent, useState } from 'react';
 import Avatar, { Size, Status } from 'components/base/Avatar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 interface AvatarUploadProps {
   size: Size;
@@ -53,7 +54,7 @@ const AvatarUpload = ({
           className="h-100 w-100 bg-black light position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
           style={{ '--phoenix-bg-opacity': 0.56 } as CSSProperties}
         >
-          <FontAwesomeIcon icon="camera" className="text-300 w-30 h-30" />
+          <FontAwesomeIcon icon={faCamera} className="text-300 w-30 h-30" />
         </div>
       </label>
     </div>

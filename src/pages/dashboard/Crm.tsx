@@ -1,3 +1,4 @@
+import { faCalendar, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import CrmStatCard from 'components/cards/CrmStatCard';
 import ContactsCreatedChart from 'components/charts/e-charts/ContactsCreatedChart';
 import LeadSources from 'components/list-items/LeadSources';
@@ -21,7 +22,7 @@ const Crm = () => {
           <Row className="g-3 mb-3">
             <Col sm={6} md={4} xl={3} xxl={4}>
               <CrmStatCard
-                icon="phone-alt"
+                icon={faPhoneAlt}
                 color="primary"
                 label="Outgoing call"
                 value={3}
@@ -32,7 +33,7 @@ const Crm = () => {
             </Col>
             <Col sm={6} md={4} xl={3} xxl={4}>
               <CrmStatCard
-                icon="calendar"
+                icon={faCalendar}
                 color="info"
                 label="Outgoing meeting"
                 value={12}

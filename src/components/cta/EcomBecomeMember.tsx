@@ -4,6 +4,7 @@ import illustration30 from 'assets/img/spot-illustrations/light_30.png';
 import illustration30Dark from 'assets/img/spot-illustrations/dark_30.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const EcomBecomeMember = () => {
   return (
@@ -32,7 +33,7 @@ const EcomBecomeMember = () => {
             className="btn btn-lg btn-primary px-7"
           >
             Sign up
-            <FontAwesomeIcon icon="chevron-right" className="ms-2 fs-9" />
+            <FontAwesomeIcon icon={faChevronRight} className="ms-2 fs-9" />
           </Link>
         </div>
       </Col>

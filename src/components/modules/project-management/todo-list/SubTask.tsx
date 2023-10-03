@@ -1,3 +1,4 @@
+import { faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -34,10 +35,10 @@ const SubTask = ({
 
       <div className="hover-actions end-0">
         <Button variant="" size="sm" className="me-1 text-700 px-0 me-3">
-          <FontAwesomeIcon icon="pencil" className="fs-10" />
+          <FontAwesomeIcon icon={faPencil} className="fs-10" />
         </Button>
         <Button size="sm" className="text-700 px-0">
-          <FontAwesomeIcon icon="xmark" className="fs-8" />
+          <FontAwesomeIcon icon={faXmark} className="fs-8" />
         </Button>
       </div>
     </div>

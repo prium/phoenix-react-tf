@@ -14,6 +14,11 @@ import { Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import Scrollbar from 'components/base/Scrollbar';
 import classNames from 'classnames';
+import {
+  faAngleDown,
+  faAngleRight,
+  faBars
+} from '@fortawesome/free-solid-svg-icons';
 
 type NavItemType = {
   id: number;
@@ -123,7 +128,7 @@ const EcommerceNavbar = () => {
             variant=""
             className="text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
           >
-            <FontAwesomeIcon icon="bars" className="me-2" />
+            <FontAwesomeIcon icon={faBars} className="me-2" />
             Category
           </Dropdown.Toggle>
 
@@ -162,7 +167,7 @@ const EcommerceNavbar = () => {
                   <div className="text-center border-top pt-3">
                     <Link className="fw-bold" to="#!">
                       See all Categories
-                      <FontAwesomeIcon icon="angle-right" className="ms-1" />
+                      <FontAwesomeIcon icon={faAngleRight} className="ms-1" />
                     </Link>
                   </div>
                 </Card.Body>
@@ -195,7 +200,7 @@ const EcommerceNavbar = () => {
               className="fw-bold nav-link dropdown-caret-none"
             >
               More
-              <FontAwesomeIcon icon="angle-down" className="ms-2" />
+              <FontAwesomeIcon icon={faAngleDown} className="ms-2" />
             </Dropdown.Toggle>
 
             <Dropdown.Menu align="end" renderOnMount>

@@ -1,3 +1,4 @@
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { CSSProperties } from 'react';
@@ -31,7 +32,7 @@ const SearchBox = ({
           size={size}
           {...rest}
         />
-        <FontAwesomeIcon icon="search" className="search-box-icon" />
+        <FontAwesomeIcon icon={faSearch} className="search-box-icon" />
       </form>
     </div>
   );

@@ -1,3 +1,4 @@
+import { faBuilding, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Form } from 'react-bootstrap';
@@ -18,7 +19,10 @@ const SettingsCompanyInfo = () => {
             COMPANY NAME
           </label>
         </Form.Floating>
-        <FontAwesomeIcon icon="building" className="text-900 fs-9 form-icon" />
+        <FontAwesomeIcon
+          icon={faBuilding}
+          className="text-900 fs-9 form-icon"
+        />
       </div>
       <div className="form-icon-container">
         <Form.Floating>
@@ -32,7 +36,7 @@ const SettingsCompanyInfo = () => {
             WEBSITE
           </label>
         </Form.Floating>
-        <FontAwesomeIcon icon="globe" className="text-900 fs-9 form-icon" />
+        <FontAwesomeIcon icon={faGlobe} className="text-900 fs-9 form-icon" />
       </div>
     </>
   );
