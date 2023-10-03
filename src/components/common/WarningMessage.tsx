@@ -1,3 +1,4 @@
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
@@ -5,7 +6,7 @@ const WarningMessage = ({ message }: { message: string }) => {
   return (
     <p className="text-warning-500 font-medium">
       <FontAwesomeIcon
-        icon="triangle-exclamation"
+        icon={faTriangleExclamation}
         className="me-2 text-warning"
       />
       {message}

@@ -3,6 +3,8 @@ import { Report } from 'data/crm/reportsData';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 const ReportCard = ({ report }: { report: Report }) => {
   return (
@@ -20,7 +22,7 @@ const ReportCard = ({ report }: { report: Report }) => {
               </Link>
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
-                  icon="circle"
+                  icon={faCircle}
                   transform="shrink-6 up-1"
                   className={`me-1 text-${report.priority.type}`}
                 />
@@ -37,7 +39,7 @@ const ReportCard = ({ report }: { report: Report }) => {
         <Row className="g-1 g-sm-3 mt-2 lh-1">
           <Col sm="auto" className="flex-1 text-truncate">
             <Link to="#!" className="fw-semi-bold fs-9">
-              <FontAwesomeIcon icon={['far', 'folder']} className="me-2" />
+              <FontAwesomeIcon icon={faFolder} className="me-2" />
               {report.reportsby}
             </Link>
           </Col>

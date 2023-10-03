@@ -1,3 +1,4 @@
+import { faSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
@@ -37,7 +38,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     id: 'Appoinment',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
-        <FontAwesomeIcon icon="square" className="fs-11 text-primary" />
+        <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary" />
         Appoinment
       </div>
     ),
@@ -69,7 +70,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     id: 'Qualified',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
-        <FontAwesomeIcon icon="square" className="fs-11 text-primary-300" />
+        <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary-300" />
         Qualified
       </div>
     ),
@@ -101,7 +102,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     id: 'Closed Won',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
-        <FontAwesomeIcon icon="square" className="fs-11 text-success" />
+        <FontAwesomeIcon icon={faSquare} className="fs-11 text-success" />
         Closed Won
       </div>
     ),
@@ -133,7 +134,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     id: 'Contact Sent',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
-        <FontAwesomeIcon icon="square" className="fs-11 text-info" />
+        <FontAwesomeIcon icon={faSquare} className="fs-11 text-info" />
         Contact Sent
       </div>
     ),

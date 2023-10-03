@@ -9,6 +9,7 @@ import NotificationDropdownMenu from './NotificationDropdownMenu';
 import { useState } from 'react';
 import DropdownSearchBox from 'components/common/DropdownSearchBox';
 import SearchResult from 'components/common/SearchResult';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const NavItemsSlim = () => {
   const [openSearchModal, setOpenSearchModal] = useState(false);
@@ -72,7 +73,7 @@ const NavItemsSlim = () => {
             className="dropdown-caret-none nav-link pe-0 py-0"
             variant=""
           >
-            Olivia <FontAwesomeIcon icon="chevron-down" className="fs-10" />
+            Olivia <FontAwesomeIcon icon={faChevronDown} className="fs-10" />
           </Dropdown.Toggle>
           <ProfileDropdownMenu />
         </Dropdown>

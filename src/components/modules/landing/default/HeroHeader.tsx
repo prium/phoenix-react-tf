@@ -8,6 +8,7 @@ import bg23 from 'assets/img/bg/bg-23.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const HeroHeader = () => {
   return (
@@ -92,7 +93,7 @@ const HeroHeader = () => {
                 className="me-2 fs-8 p-0 text-decoration-none"
               >
                 Check Demo
-                <FontAwesomeIcon icon="angle-right" className="ms-2 fs-9" />
+                <FontAwesomeIcon icon={faAngleRight} className="ms-2 fs-9" />
               </Button>
             </div>
           </Col>

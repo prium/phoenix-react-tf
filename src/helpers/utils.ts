@@ -1,4 +1,13 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFileCircleExclamation,
+  faFileCode,
+  faFileLines,
+  faFilePdf,
+  faFileZipper,
+  faImage,
+  faMusic
+} from '@fortawesome/free-solid-svg-icons';
 import ts, { transpile } from 'typescript';
 
 export const getItemFromStore = (
@@ -118,23 +127,23 @@ export const getFileIcon = (fileFormat: string): IconProp => {
   switch (fileFormat) {
     case 'zip':
     case 'rar':
-      return 'file-zipper';
+      return faFileZipper;
     case 'bat':
-      return 'file-code';
+      return faFileCode;
     case 'txt':
-      return 'file-lines';
+      return faFileLines;
     case 'mad':
-      return 'file-circle-exclamation';
+      return faFileCircleExclamation;
     case 'wav':
-      return 'music';
+      return faMusic;
     case 'pdf':
-      return 'file-pdf';
+      return faFilePdf;
     case 'jpg':
     case 'png':
     case 'jpeg':
-      return 'image';
+      return faImage;
     default:
-      return 'file-lines';
+      return faFileLines;
   }
 };
 

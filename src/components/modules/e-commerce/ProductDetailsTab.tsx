@@ -13,6 +13,10 @@ import UsuallyBoughtTogetherCard from 'components/cards/UsuallyBoughtTogetherCar
 import { suggestedProducts } from 'data/e-commerce/products';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
+import {
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
 
 const ProductDetailsTab = () => {
   const [openReviewModal, setOpenReviewModal] = useState(false);
@@ -130,7 +134,7 @@ const ProductDetailsTab = () => {
 
                     <Pagination className="mb-0 justify-content-center">
                       <Pagination.Prev>
-                        <FontAwesomeIcon icon="chevron-left" />
+                        <FontAwesomeIcon icon={faChevronLeft} />
                       </Pagination.Prev>
                       <Pagination.Item>1</Pagination.Item>
                       <Pagination.Item>2</Pagination.Item>
@@ -138,7 +142,7 @@ const ProductDetailsTab = () => {
                       <Pagination.Item active>4</Pagination.Item>
                       <Pagination.Item>5</Pagination.Item>
                       <Pagination.Next>
-                        <FontAwesomeIcon icon="chevron-right" />
+                        <FontAwesomeIcon icon={faChevronRight} />
                       </Pagination.Next>
                     </Pagination>
                   </Card.Body>

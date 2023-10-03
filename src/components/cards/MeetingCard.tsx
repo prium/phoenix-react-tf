@@ -1,3 +1,4 @@
+import { faCircle, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UilCalendarAlt } from '@iconscout/react-unicons';
 import Avatar from 'components/base/Avatar';
@@ -46,7 +47,7 @@ const MeetingCard = ({ meeting }: { meeting: Meeting }) => {
           </Badge>
           <div className="d-flex align-items-center flex-1">
             <FontAwesomeIcon
-              icon="circle"
+              icon={faCircle}
               transform="shrink-6 up-1"
               className={`text-${meeting.priority.color} me-1`}
             />
@@ -58,7 +59,7 @@ const MeetingCard = ({ meeting }: { meeting: Meeting }) => {
             variant="phoenix-primary"
             startIcon={
               <FontAwesomeIcon
-                icon="video"
+                icon={faVideo}
                 className="me-2 d-none d-sm-inline-block"
               />
             }

@@ -4,6 +4,7 @@ import { Note } from 'data/crm/dealDetailsData';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
   return (
@@ -20,7 +21,7 @@ const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
           <p className="mb-1 text-1000">{note.description}</p>
           <div className="d-flex">
             <div className="fs-9 text-600">
-              <FontAwesomeIcon icon="clock" className="me-2" />
+              <FontAwesomeIcon icon={faClock} className="me-2" />
               <span className="fw-semi-bold me-1">{note.date}</span>
             </div>
             <p className="fs-9 mb-0 text-600">

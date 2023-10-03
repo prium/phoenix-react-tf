@@ -1,3 +1,9 @@
+import {
+  faFacebook,
+  faTwitter,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
@@ -19,14 +25,14 @@ const element = <FontAwesomeIcon icon={faCoffee} />`;
 const exampleCode = `
 <div>
   <div>
-    <FontAwesomeIcon icon="home" className="text-success fs-5 me-3" />
-    <FontAwesomeIcon icon="home" className="text-success fs-6 me-3" />
-    <FontAwesomeIcon icon="home" className="text-success fs-7" />
+    <FontAwesomeIcon icon={faHome} className="text-success fs-5 me-3" />
+    <FontAwesomeIcon icon={faHome} className="text-success fs-6 me-3" />
+    <FontAwesomeIcon icon={faHome} className="text-success fs-7" />
   </div>
   <div className='mt-3'>
-    <FontAwesomeIcon icon={['fab', 'facebook']} className="text-facebook fs-5 me-3" />
-    <FontAwesomeIcon icon={['fab', 'twitter']} className="text-twitter fs-5 me-3"/>
-    <FontAwesomeIcon icon={['fab', 'youtube']} className="text-youtube fs-5 me-3"/>
+  <FontAwesomeIcon icon={faFacebook} className="text-facebook fs-5 me-3"/>
+    <FontAwesomeIcon icon={faTwitter} className="text-twitter fs-5 me-3"/>
+    <FontAwesomeIcon icon={faYoutube} className="text-youtube fs-5 me-3"/>
   </div>
 </div>`;
 
@@ -71,7 +77,16 @@ const FontAwesome = () => {
         </PhoenixDocCard>
         <PhoenixDocCard>
           <PhoenixDocCard.Header title="Example" />
-          <PhoenixDocCard.Body code={exampleCode} scope={{ FontAwesomeIcon }} />
+          <PhoenixDocCard.Body
+            code={exampleCode}
+            scope={{
+              FontAwesomeIcon,
+              faHome,
+              faFacebook,
+              faTwitter,
+              faYoutube
+            }}
+          />
         </PhoenixDocCard>
       </DocPagesLayout>
     </div>

@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UilStopwatch } from '@iconscout/react-unicons';
 import classNames from 'classnames';
@@ -121,7 +122,7 @@ const ProjectDetails = () => {
                 <Button
                   variant="link"
                   className="text-decoration-none p-0"
-                  startIcon={<FontAwesomeIcon icon="plus" className="me-1" />}
+                  startIcon={<FontAwesomeIcon icon={faPlus} className="me-1" />}
                 >
                   Add file(s)
                 </Button>

@@ -3,6 +3,7 @@ import darkImg from 'assets/img/spot-illustrations/dark_1.png';
 import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const SignOutForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
@@ -21,7 +22,7 @@ const SignOutForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
           variant="primary"
           as={Link}
           to={`/pages/authentication/${layout}/sign-in`}
-          startIcon={<FontAwesomeIcon icon="angle-left" className="me-2" />}
+          startIcon={<FontAwesomeIcon icon={faAngleLeft} className="me-2" />}
         >
           Go to sign in page
         </Button>

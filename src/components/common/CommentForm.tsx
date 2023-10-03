@@ -1,3 +1,9 @@
+import {
+  faCalendarDays,
+  faImage,
+  faLocationDot,
+  faTag
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import React from 'react';
@@ -11,16 +17,16 @@ const CommentForm = () => {
       </Form.Group>
       <div className="d-flex align-items-center gap-3">
         <Button size="sm" className="p-0">
-          <FontAwesomeIcon icon="image" className="fs-8 text-600" />
+          <FontAwesomeIcon icon={faImage} className="fs-8 text-600" />
         </Button>
         <Button size="sm" className="p-0">
-          <FontAwesomeIcon icon="calendar-days" className="fs-8 text-600" />
+          <FontAwesomeIcon icon={faCalendarDays} className="fs-8 text-600" />
         </Button>
         <Button size="sm" className="p-0">
-          <FontAwesomeIcon icon="location-dot" className="fs-8 text-600" />
+          <FontAwesomeIcon icon={faLocationDot} className="fs-8 text-600" />
         </Button>
         <Button size="sm" className="p-0">
-          <FontAwesomeIcon icon="tag" className="fs-8 text-600" />
+          <FontAwesomeIcon icon={faTag} className="fs-8 text-600" />
         </Button>
         <Button variant="primary" className="px-6 ms-auto">
           Comment

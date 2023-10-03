@@ -15,6 +15,15 @@ import member14 from 'assets/img/team/62.webp';
 import member15 from 'assets/img/team/34.webp';
 import { BadgeBg, BadgeVariant } from 'components/base/Badge';
 import { Status } from 'components/base/Avatar';
+import {
+  faClipboard,
+  faEnvelope,
+  faPaperclip,
+  faPhoneAlt,
+  faSquareCheck,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface Activity {
   id: number;
@@ -22,7 +31,7 @@ export interface Activity {
   name: string;
   date: string;
   variant: string;
-  icon: string;
+  icon: IconProp;
   description?: string;
 }
 
@@ -35,7 +44,7 @@ export const dealActivities: Activity[] = [
     description:
       'Utilizing best practices to better leverage our assets, we must engage in black sky leadership thinking, not the usual band-aid solution. ',
     variant: 'primary',
-    icon: 'clipboard'
+    icon: faClipboard
   },
   {
     id: 2,
@@ -43,7 +52,7 @@ export const dealActivities: Activity[] = [
     name: 'Jackson Pollock',
     date: '20 September, 2022, 5:31pm',
     variant: 'info',
-    icon: 'video'
+    icon: faVideo
   },
   {
     id: 3,
@@ -53,7 +62,7 @@ export const dealActivities: Activity[] = [
     description:
       'To get off the runway and paradigm shift, we should take  brass tacks with above-the-board actionable analytics, ramp up with viral partnering, not the usual goat rodeo putting socks on an octopus.  ',
     variant: 'success',
-    icon: 'square-check'
+    icon: faSquareCheck
   },
   {
     id: 4,
@@ -61,7 +70,7 @@ export const dealActivities: Activity[] = [
     name: 'Ansolo Lazinatov',
     date: '22 September, 2022, 4:30pm',
     variant: 'warning',
-    icon: 'phone-alt'
+    icon: faPhoneAlt
   },
   {
     id: 5,
@@ -71,7 +80,7 @@ export const dealActivities: Activity[] = [
     description:
       'I’ve come across your posts and found some favorable deals on your page. I’ve added a load of products to the cart and I don’t know the payment options you avail. Also, can you enlighten me about any discount.',
     variant: 'danger',
-    icon: 'envelope'
+    icon: faEnvelope
   },
   {
     id: 6,
@@ -79,7 +88,7 @@ export const dealActivities: Activity[] = [
     name: 'Ansolo Lazinatov',
     date: '11 September, 2022, 12:15am ',
     variant: 'primary',
-    icon: 'paperclip'
+    icon: faPaperclip
   }
 ];
 

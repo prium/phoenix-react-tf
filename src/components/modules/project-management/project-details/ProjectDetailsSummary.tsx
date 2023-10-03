@@ -1,3 +1,10 @@
+import { faCreditCard } from '@fortawesome/free-regular-svg-icons';
+import {
+  faChevronRight,
+  faEarthAmericas,
+  faListCheck,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -12,7 +19,7 @@ const ProjectDetailsSummary = () => {
               <td className="py-1" colSpan={2}>
                 <div className="d-flex">
                   <FontAwesomeIcon
-                    icon="earth-americas"
+                    icon={faEarthAmericas}
                     className="me-2 text-700 fs-9"
                   />
                   <h5 className="text-900">Public project</h5>
@@ -22,7 +29,10 @@ const ProjectDetailsSummary = () => {
             <tr>
               <td className="align-top py-1">
                 <div className="d-flex">
-                  <FontAwesomeIcon icon="user" className="me-2 text-700 fs-9" />
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    className="me-2 text-700 fs-9"
+                  />
                   <h5 className="text-900 mb-0 text-nowrap">Client :</h5>
                 </div>
               </td>
@@ -36,7 +46,7 @@ const ProjectDetailsSummary = () => {
               <td className="align-top py-1">
                 <div className="d-flex">
                   <FontAwesomeIcon
-                    icon={['far', 'credit-card']}
+                    icon={faCreditCard}
                     className="me-2 text-700 fs-9"
                   />
                   <h5 className="text-900 mb-0 text-nowrap">Budget : </h5>
@@ -71,13 +81,13 @@ const ProjectDetailsSummary = () => {
       </div>
       <div>
         <div className="d-flex align-items-center">
-          <FontAwesomeIcon icon="list-check" className="me-2 text-700 fs-9" />
+          <FontAwesomeIcon icon={faListCheck} className="me-2 text-700 fs-9" />
           <h5 className="text-1100 mb-0 me-2">
             91<span className="text-900 fw-normal ms-2">tasks</span>
           </h5>
           <Link className="fw-bold fs-9 mt-1" to="#!">
             See tasks{' '}
-            <FontAwesomeIcon icon="chevron-right" className="me-2 fs-10" />
+            <FontAwesomeIcon icon={faChevronRight} className="me-2 fs-10" />
           </Link>
         </div>
       </div>

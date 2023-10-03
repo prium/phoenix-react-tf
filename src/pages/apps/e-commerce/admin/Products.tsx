@@ -1,3 +1,4 @@
+import { faFileExport, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import FilterButtonGroup, {
@@ -101,11 +102,11 @@ const Products = () => {
               </div>
               <div className="ms-xxl-auto">
                 <Button variant="link" className="text-900 me-4 px-0">
-                  <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
+                  <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                   Export
                 </Button>
                 <Button variant="primary">
-                  <FontAwesomeIcon icon="plus" className="me-2" />
+                  <FontAwesomeIcon icon={faPlus} className="me-2" />
                   Add product
                 </Button>
               </div>

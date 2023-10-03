@@ -7,6 +7,7 @@ import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 interface NavbarVerticalMenuProps {
   routes: Route[];
@@ -89,7 +90,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
         <div className="d-flex align-items-center">
           <div className="dropdown-indicator-icon">
             <FontAwesomeIcon
-              icon="caret-right"
+              icon={faCaretRight}
               className={classNames({
                 'text-300': !route.active
               })}

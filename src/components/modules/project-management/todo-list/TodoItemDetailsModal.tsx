@@ -12,6 +12,7 @@ import {
 import { Col, Form, Modal, Row } from 'react-bootstrap';
 import FileListItem from './FileListItem';
 import SubTask from './SubTask';
+import { faPen, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface TodoItemDetailsModalProps {
   handleClose: () => void;
@@ -33,7 +34,7 @@ const TodoItemDetailsModal = ({
               onClick={handleClose}
               className="btn-icon btn-icon-xl flex-shrink-0"
             >
-              <FontAwesomeIcon icon="xmark" />
+              <FontAwesomeIcon icon={faXmark} />
             </Button>
           </Modal.Header>
           <Modal.Body className="bg-100 px-5 px-sm-6 py-0 rounded-bottom">
@@ -47,7 +48,7 @@ const TodoItemDetailsModal = ({
                         variant="link"
                         className="text-decoration-none p-0"
                       >
-                        <FontAwesomeIcon icon="pen" />
+                        <FontAwesomeIcon icon={faPen} />
                       </Button>
                     </div>
                     <p className="text-1000 mb-0">
@@ -75,7 +76,7 @@ const TodoItemDetailsModal = ({
                       ))}
                     </div>
                     <Button variant="link" className="fw-bold fs-9 p-0">
-                      <FontAwesomeIcon icon="plus" className="me-1" />
+                      <FontAwesomeIcon icon={faPlus} className="me-1" />
                       Add subtask
                     </Button>
                   </div>
@@ -97,7 +98,7 @@ const TodoItemDetailsModal = ({
                       variant="link"
                       className="text-decoration-none p-0"
                       startIcon={
-                        <FontAwesomeIcon icon="plus" className="me-1" />
+                        <FontAwesomeIcon icon={faPlus} className="me-1" />
                       }
                     >
                       Add file(s)

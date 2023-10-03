@@ -1,3 +1,4 @@
+import { faClock, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Badge from 'components/base/Badge';
@@ -5,7 +6,7 @@ import Button from 'components/base/Button';
 import Rating from 'components/base/Rating';
 import { Product as ProductType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
-import React from 'react';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }: { product: ProductType }) => {
@@ -19,14 +20,11 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               className="rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container"
             >
               {product.wishListed ? (
-                <FontAwesomeIcon icon="heart" />
+                <FontAwesomeIcon icon={faHeart} />
               ) : (
                 <>
-                  <FontAwesomeIcon icon="heart" className="d-block-hover" />
-                  <FontAwesomeIcon
-                    icon={['far', 'heart']}
-                    className="d-none-hover"
-                  />
+                  <FontAwesomeIcon icon={faHeart} className="d-block-hover" />
+                  <FontAwesomeIcon icon={farHeart} className="d-none-hover" />
                 </>
               )}
             </Button>
@@ -34,7 +32,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             {product.verified && (
               <Badge bg="success" className="fs-10 product-verified-badge">
                 Verified
-                <FontAwesomeIcon icon="check" className="ms-1" />
+                <FontAwesomeIcon icon={faClock} className="ms-1" />
               </Badge>
             )}
           </div>

@@ -3,6 +3,11 @@ import AvatarUpload from 'components/common/AvatarUpload';
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import team15 from 'assets/img/team/15.webp';
+import {
+  faFacebook,
+  faLinkedin,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
 
 const EcomProfileCard = () => {
   return (
@@ -19,19 +24,19 @@ const EcomProfileCard = () => {
               <div>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
-                    icon={['fab', 'linkedin-in']}
+                    icon={faLinkedin}
                     className="text-400 hover-primary"
                   />
                 </a>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
-                    icon={['fab', 'facebook']}
+                    icon={faFacebook}
                     className="text-400 hover-primary"
                   />
                 </a>
                 <a href="#!">
                   <FontAwesomeIcon
-                    icon={['fab', 'twitter']}
+                    icon={faTwitter}
                     className="text-400 hover-primary"
                   />
                 </a>

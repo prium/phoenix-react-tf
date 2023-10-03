@@ -15,6 +15,7 @@ import RevealDropdown, {
 } from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import AvatarDropdown from 'components/common/AvatarDropdown';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const columns: ColumnDef<Project>[] = [
   {
@@ -91,7 +92,7 @@ const columns: ColumnDef<Project>[] = [
       }
       return (
         <Button variant="phoenix-secondary" className="btn-icon">
-          <FontAwesomeIcon icon="plus" />
+          <FontAwesomeIcon icon={faPlus} />
         </Button>
       );
     },

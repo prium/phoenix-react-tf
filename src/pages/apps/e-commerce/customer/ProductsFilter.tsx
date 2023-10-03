@@ -7,6 +7,11 @@ import Scrollbar from 'components/base/Scrollbar';
 import ProductFilterItems from 'components/modules/e-commerce/products-filter/ProductFilterItems';
 import ProductCard from 'components/common/ProductCard';
 import { allProducts } from 'data/e-commerce/products';
+import {
+  faChevronLeft,
+  faChevronRight,
+  faFilter
+} from '@fortawesome/free-solid-svg-icons';
 
 const ProductsFilter = () => {
   const [show, setShow] = useState(false);
@@ -35,7 +40,7 @@ const ProductsFilter = () => {
           className="text-700 mb-5 d-lg-none"
           onClick={handleShow}
         >
-          <FontAwesomeIcon icon="filter" className="me-2" />
+          <FontAwesomeIcon icon={faFilter} className="me-2" />
           Filter
         </Button>
         <Row>
@@ -62,7 +67,7 @@ const ProductsFilter = () => {
 
             <Pagination className="mb-0 justify-content-end">
               <Pagination.Prev>
-                <FontAwesomeIcon icon="chevron-left" />
+                <FontAwesomeIcon icon={faChevronLeft} />
               </Pagination.Prev>
               <Pagination.Item>1</Pagination.Item>
               <Pagination.Item>2</Pagination.Item>
@@ -70,7 +75,7 @@ const ProductsFilter = () => {
               <Pagination.Item active>4</Pagination.Item>
               <Pagination.Item>5</Pagination.Item>
               <Pagination.Next>
-                <FontAwesomeIcon icon="chevron-right" />
+                <FontAwesomeIcon icon={faChevronRight} />
               </Pagination.Next>
             </Pagination>
           </Col>

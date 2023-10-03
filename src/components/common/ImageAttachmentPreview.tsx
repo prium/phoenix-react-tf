@@ -1,3 +1,4 @@
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ImageAttachmentPreview = ({
@@ -11,7 +12,7 @@ const ImageAttachmentPreview = ({
     <div className="image-attachment-preview">
       <img src={image} alt="" />
       <button className="btn close-btn" onClick={handleClose}>
-        <FontAwesomeIcon icon="xmark" />
+        <FontAwesomeIcon icon={faXmark} />
       </button>
     </div>
   );

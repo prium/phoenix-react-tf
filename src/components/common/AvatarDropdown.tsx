@@ -5,6 +5,16 @@ import Button from 'components/base/Button';
 import FeatherIcon from 'feather-icons-react';
 import { Dropdown, Nav } from 'react-bootstrap';
 import { Member } from 'data/users';
+import {
+  faChevronRight,
+  faCircle,
+  faEllipsis,
+  faEnvelope,
+  faMessage,
+  faPhone,
+  faUserPlus,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
 
 interface AvatarDropdownInterface {
   user: Member;
@@ -36,12 +46,15 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
             <div className="text-end">
               <button className="btn p-0 me-2">
                 <FontAwesomeIcon
-                  icon="user-plus"
+                  icon={faUserPlus}
                   className="text-white light"
                 />
               </button>
               <button className="btn p-0">
-                <FontAwesomeIcon icon="ellipsis" className="text-white light" />
+                <FontAwesomeIcon
+                  icon={faEllipsis}
+                  className="text-white light"
+                />
               </button>
             </div>
             <div className="text-center">
@@ -61,7 +74,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                   <span className="fw-normal text-300">connections</span>
                 </h6>
                 <FontAwesomeIcon
-                  icon="circle"
+                  icon={faCircle}
                   className="text-700 mx-1 fs-9"
                   transform="shrink-10 up-2"
                 />
@@ -80,23 +93,25 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 variant="phoenix-secondary"
                 className="btn-icon btn-icon-lg"
               >
-                <FontAwesomeIcon icon="phone" />
+                <FontAwesomeIcon icon={faPhone} />
               </Button>
               <Button
                 variant="phoenix-secondary"
                 className="btn-icon btn-icon-lg"
               >
-                <FontAwesomeIcon icon="message" />
+                <FontAwesomeIcon icon={faMessage} />
               </Button>
               <Button
                 variant="phoenix-secondary"
                 className="btn-icon btn-icon-lg"
               >
-                <FontAwesomeIcon icon="video" />
+                <FontAwesomeIcon icon={faVideo} />
               </Button>
               <Button
                 variant="phoenix-primary"
-                startIcon={<FontAwesomeIcon icon="envelope" className="me-2" />}
+                startIcon={
+                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                }
                 className="ms-auto"
               >
                 Send Email
@@ -111,7 +126,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 className="me-2 text-900 d-inline-block"
               />
               <span className="text-1000 flex-1">Assigned Projects</span>
-              <FontAwesomeIcon icon="chevron-right" className="fs-11" />
+              <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
             <Nav.Link className="">
               <FeatherIcon
@@ -120,7 +135,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 className="me-2 text-900 d-inline-block"
               />
               <span className="text-1000 flex-1">View activiy</span>
-              <FontAwesomeIcon icon="chevron-right" className="fs-11" />
+              <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
           </Nav>
 

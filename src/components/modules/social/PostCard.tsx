@@ -10,6 +10,13 @@ import PostGallery from 'components/image-gallery/PostGallery';
 import { Post } from 'data/social/postsData';
 import { Card, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import {
+  faCircle,
+  faComment,
+  faEarthAmericas,
+  faHeart,
+  faShare
+} from '@fortawesome/free-solid-svg-icons';
 
 interface PostCardProps {
   post: Post;
@@ -37,18 +44,18 @@ const PostCard = ({ post }: PostCardProps) => {
                   {post.location && (
                     <>
                       <FontAwesomeIcon
-                        icon="circle"
+                        icon={faCircle}
                         className="text-300"
                         transform="shrink-10 down-2"
                       />
                       {post.location}
                       <FontAwesomeIcon
-                        icon="circle"
+                        icon={faCircle}
                         className="text-300"
                         transform="shrink-10 down-2"
                       />
                       <FontAwesomeIcon
-                        icon="earth-americas"
+                        icon={faEarthAmericas}
                         className="text-900"
                       />
                     </>
@@ -72,21 +79,21 @@ const PostCard = ({ post }: PostCardProps) => {
           <div className="d-flex">
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="heart" />}
+              startIcon={<FontAwesomeIcon icon={faHeart} />}
               className="p-0 me-3 fs-10 fw-bolder"
             >
               {post.interactions.likes} Likes
             </Button>
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="comment" />}
+              startIcon={<FontAwesomeIcon icon={faComment} />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
               {post.interactions.comments} Comments
             </Button>
             <Button
               variant="link"
-              startIcon={<FontAwesomeIcon icon="share" />}
+              startIcon={<FontAwesomeIcon icon={faShare} />}
               className="p-0 me-3 fs-10 fw-bolder text-900"
             >
               {post.interactions.shares} Shares

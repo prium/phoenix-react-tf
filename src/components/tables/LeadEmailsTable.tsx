@@ -5,6 +5,7 @@ import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import { LeadEmail } from 'data/crm/leadsData';
 import Badge, { BadgeBg } from 'components/base/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const getBadgeBg = (label: string): BadgeBg => {
   switch (label) {
@@ -79,7 +80,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
       }
     }) => (
       <>
-        <FontAwesomeIcon icon="phone" className="text-primary me-2" />
+        <FontAwesomeIcon icon={faPhone} className="text-primary me-2" />
         {action}
       </>
     ),

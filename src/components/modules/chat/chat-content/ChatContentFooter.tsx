@@ -8,6 +8,14 @@ import ReactTextareaAutosize from 'react-textarea-autosize';
 import AttachmentPreview from 'components/common/AttachmentPreview';
 import { convertFileToAttachment } from 'helpers/utils';
 import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
+import { faFaceSmile } from '@fortawesome/free-regular-svg-icons';
+import {
+  faEllipsis,
+  faImage,
+  faMicrophone,
+  faPaperPlane,
+  faPaperclip
+} from '@fortawesome/free-solid-svg-icons';
 
 const ChatContentFooter = () => {
   const { currentConversation, chatDispatch } = useChatContext();
@@ -73,13 +81,13 @@ const ChatContentFooter = () => {
           }}
         >
           <Button variant="link" className="p-0 text-900 fs-9 btn-emoji">
-            <FontAwesomeIcon icon={['far', 'face-smile']} />
+            <FontAwesomeIcon icon={faFaceSmile} />
           </Button>
         </EmojiPicker>
         <div>
           <Button className="p-0">
             <label className="text-900 fs-9 cursor-pointer" htmlFor="images">
-              <FontAwesomeIcon icon="image" />
+              <FontAwesomeIcon icon={faImage} />
             </label>
           </Button>
           <Form.Control
@@ -99,7 +107,7 @@ const ChatContentFooter = () => {
               className="text-900 fs-9 cursor-pointer"
               htmlFor="attachments"
             >
-              <FontAwesomeIcon icon="paperclip" />
+              <FontAwesomeIcon icon={faPaperclip} />
             </label>
           </Button>
           <Form.Control
@@ -113,15 +121,15 @@ const ChatContentFooter = () => {
         </div>
 
         <Button className="p-0 text-900 fs-9">
-          <FontAwesomeIcon icon="microphone" />
+          <FontAwesomeIcon icon={faMicrophone} />
         </Button>
         <Button className="p-0 text-900 fs-9">
-          <FontAwesomeIcon icon="ellipsis" />
+          <FontAwesomeIcon icon={faEllipsis} />
         </Button>
 
         <Button
           variant="primary"
-          endIcon={<FontAwesomeIcon icon="paper-plane" className="ms-2" />}
+          endIcon={<FontAwesomeIcon icon={faPaperPlane} className="ms-2" />}
           className="ms-auto"
           type="submit"
           onClick={sentMessage}

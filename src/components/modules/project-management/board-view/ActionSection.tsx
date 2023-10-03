@@ -1,3 +1,9 @@
+import {
+  faAngleDown,
+  faCheck,
+  faEllipsisVertical,
+  faPlus
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
@@ -35,13 +41,13 @@ const ActionSection = () => {
                   variant="soft-secondary"
                 >
                   Add to card
-                  <FontAwesomeIcon icon="plus" className="ms-2" />
+                  <FontAwesomeIcon icon={faPlus} className="ms-2" />
                 </Dropdown.Toggle>
                 <Dropdown.Toggle
                   className="d-sm-none btn btn-icon btn-icon-lg btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
                   variant="soft-secondary"
                 >
-                  <FontAwesomeIcon icon="plus" />
+                  <FontAwesomeIcon icon={faPlus} />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
@@ -68,7 +74,7 @@ const ActionSection = () => {
                   className="btn-icon btn-icon-lg bg-100 text-1100 hover-bg-200 rounded-2 me-2 dropdown-caret-none"
                   variant=""
                 >
-                  <FontAwesomeIcon icon="ellipsis-vertical" />
+                  <FontAwesomeIcon icon={faEllipsisVertical} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <div className="px-2 d-flex flex-column gap-2">
@@ -97,7 +103,7 @@ const ActionSection = () => {
                   variant="soft-info"
                 >
                   Review
-                  <FontAwesomeIcon icon="angle-down" className="ms-2" />
+                  <FontAwesomeIcon icon={faAngleDown} className="ms-2" />
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="py-2">
                   <Dropdown.Item eventKey="1">View</Dropdown.Item>
@@ -110,7 +116,7 @@ const ActionSection = () => {
               </Dropdown>
 
               <Button className="btn-icon btn-icon-lg" variant="soft-secondary">
-                <FontAwesomeIcon icon="check" />
+                <FontAwesomeIcon icon={faCheck} />
               </Button>
             </div>
           </div>

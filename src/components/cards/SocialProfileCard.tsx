@@ -5,6 +5,11 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { CSSProperties } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import {
+  faPencil,
+  faUserCheck,
+  faUserGroup
+} from '@fortawesome/free-solid-svg-icons';
 
 interface SocialProfileCardProps {
   showAbout?: boolean;
@@ -42,7 +47,7 @@ const SocialProfileCard = ({ showAbout, avatar }: SocialProfileCardProps) => {
             <div className="d-flex flex-wrap gap-y-2 gap-x-4 d-xl-block d-xxl-flex align-items-center">
               <div className="d-flex mb-xl-2 mb-xxl-0">
                 <FontAwesomeIcon
-                  icon="user-group"
+                  icon={faUserGroup}
                   className="fs-10 me-2 me-lg-1 me-xl-2"
                 />
                 <h6 className="mb-0">
@@ -52,7 +57,7 @@ const SocialProfileCard = ({ showAbout, avatar }: SocialProfileCardProps) => {
               </div>
               <div className="d-flex">
                 <FontAwesomeIcon
-                  icon="user-check"
+                  icon={faUserCheck}
                   className="fs-10 me-2 me-lg-1 me-xl-2"
                 />
                 <h6 className="mb-0">
@@ -67,7 +72,7 @@ const SocialProfileCard = ({ showAbout, avatar }: SocialProfileCardProps) => {
                   About me
                   <Link to="#!">
                     <FontAwesomeIcon
-                      icon="pencil"
+                      icon={faPencil}
                       className="fs-10 text-500 ms-3"
                     />
                   </Link>

@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -12,7 +13,7 @@ const LeadDeals = ({ className }: { className?: string }) => {
         <Button
           variant="primary"
           size="sm"
-          startIcon={<FontAwesomeIcon icon="plus" />}
+          startIcon={<FontAwesomeIcon icon={faPlus} />}
         >
           Add Deals
         </Button>

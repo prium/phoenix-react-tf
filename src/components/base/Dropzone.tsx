@@ -15,6 +15,7 @@ import AttachmentPreview, {
 } from 'components/common/AttachmentPreview';
 import { convertFileToAttachment } from 'helpers/utils';
 import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 interface DropzoneProps extends ReactDropZoneProps {
   className?: string;
@@ -105,7 +106,7 @@ const Dropzone = ({
             <AttachmentPreview attachment={file} />
 
             <button className="btn p-0" onClick={() => handleRemoveFile(index)}>
-              <FontAwesomeIcon icon="trash-alt" className="fs-0 text-danger" />
+              <FontAwesomeIcon icon={faTrashAlt} className="fs-0 text-danger" />
             </button>
           </div>
         ))}

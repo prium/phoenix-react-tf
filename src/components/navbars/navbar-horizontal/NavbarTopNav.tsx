@@ -1,5 +1,5 @@
 import { capitalize } from 'helpers/utils';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dropdown, Nav } from 'react-bootstrap';
 import { RouteItems, routes } from 'sitemap';
 import TopNavMegaMenu from './TopNavMegaMenu';

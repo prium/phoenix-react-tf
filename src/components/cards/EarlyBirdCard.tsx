@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import illustration32 from 'assets/img/spot-illustrations/32.png';
 import illustration21 from 'assets/img/spot-illustrations/21.png';
 import illustration21Dark from 'assets/img/spot-illustrations/dark_21.png';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 const EarlyBirdCard = () => {
   return (
@@ -43,7 +44,7 @@ const EarlyBirdCard = () => {
           iconPosition="end"
           className="fs-10 mb-4"
           iconFamily="fa"
-          icon={<FontAwesomeIcon icon="award" className="ms-1 fs-10" />}
+          icon={<FontAwesomeIcon icon={faAward} className="ms-1 fs-10" />}
         >
           COMING SOON
         </Badge>

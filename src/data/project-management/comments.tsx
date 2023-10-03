@@ -1,5 +1,6 @@
 import bg42 from 'assets/img/generic/42.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 type User = {
   name: string;
@@ -59,7 +60,7 @@ export const comments: Comment[] = [
       <div className="d-flex text-800 fs-9">
         <p className="mb-0 fw-semi-bold text-1000">
           <FontAwesomeIcon
-            icon="circle"
+            icon={faCircle}
             className="text-primary"
             transform="shrink-8"
           />
@@ -68,7 +69,7 @@ export const comments: Comment[] = [
         <span className="mx-2">to</span>
         <p className="mb-0 fw-semi-bold text-1000">
           <FontAwesomeIcon
-            icon="circle"
+            icon={faCircle}
             className="text-primary"
             transform="shrink-8"
           />

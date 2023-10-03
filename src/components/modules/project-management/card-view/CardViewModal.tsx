@@ -18,6 +18,7 @@ import { actionItems, addToCardItems } from 'data/project-management/actions';
 import Comment from 'components/common/Comment';
 import EditableDetailsField from 'components/common/EditableDetailsField';
 import useProjectProgress from '../useProjectProgress';
+import { faFilter, faPlus, faSort } from '@fortawesome/free-solid-svg-icons';
 
 interface BoardViewModalModalProps {
   handleClose: () => void;
@@ -82,7 +83,7 @@ const CardViewModal = ({
                   className="btn-circle"
                   size="sm"
                 >
-                  <FontAwesomeIcon icon="plus" />
+                  <FontAwesomeIcon icon={faPlus} />
                 </Button>
               </div>
             </div>
@@ -102,7 +103,7 @@ const CardViewModal = ({
                 <Button
                   variant="link"
                   className="p-0 fs-9 text-900 fw-bolder text-decoration-none lh-1"
-                  startIcon={<FontAwesomeIcon icon="plus" />}
+                  startIcon={<FontAwesomeIcon icon={faPlus} />}
                 >
                   Add another
                 </Button>
@@ -150,7 +151,7 @@ const CardViewModal = ({
                     variant="link"
                     className="p-0 fs-9 text-700 text-decoration-none me-3"
                     startIcon={
-                      <FontAwesomeIcon icon="filter" className="fs-10 me-1" />
+                      <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
                     }
                   >
                     23 tasks
@@ -159,7 +160,7 @@ const CardViewModal = ({
                     variant="link"
                     className="p-0 fs-9 text-primary text-decoration-none"
                     startIcon={
-                      <FontAwesomeIcon icon="sort" className="fs-10" />
+                      <FontAwesomeIcon icon={faSort} className="fs-10" />
                     }
                   >
                     Sorting
@@ -180,7 +181,7 @@ const CardViewModal = ({
                 ))}
               </div>
               <Button
-                startIcon={<FontAwesomeIcon icon="plus" />}
+                startIcon={<FontAwesomeIcon icon={faPlus} />}
                 variant="link"
                 className="text-decoration-none p-0"
               >
@@ -205,7 +206,7 @@ const CardViewModal = ({
                 <Button
                   variant="link"
                   className="text-decoration-none p-0"
-                  startIcon={<FontAwesomeIcon icon="plus" className="me-1" />}
+                  startIcon={<FontAwesomeIcon icon={faPlus} className="me-1" />}
                 >
                   Add file(s)
                 </Button>

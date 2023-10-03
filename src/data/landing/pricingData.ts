@@ -2,6 +2,7 @@ import pie from 'assets/img/icons/illustrations/pie.png';
 import bolt from 'assets/img/icons/illustrations/bolt.png';
 import edit from 'assets/img/icons/illustrations/edit.png';
 import shield from 'assets/img/icons/illustrations/shield.png';
+import { faCheck, faStar } from '@fortawesome/free-solid-svg-icons';
 
 export type Feature = {
   label: string;
@@ -22,28 +23,28 @@ export const pricingFeatures = [
   {
     id: 'timeline',
     label: 'Timeline',
-    icon: 'check'
+    icon: faCheck
   },
   {
     id: 'adv_search',
     label: 'Advanced Search',
-    icon: 'check'
+    icon: faCheck
   },
   {
     id: 'custom_fields',
     label: 'Custom fields',
     new: true,
-    icon: 'check'
+    icon: faCheck
   },
   {
     id: 'task_dependencies',
     label: 'Task dependencies',
-    icon: 'star'
+    icon: faStar
   },
   {
     id: 'private_teams_projects',
     label: 'Private teams & projects',
-    icon: 'star'
+    icon: faStar
   }
 ];
 

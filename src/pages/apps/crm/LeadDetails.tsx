@@ -14,6 +14,12 @@ import LeadDetailsNavbar from 'components/modules/crm/LeadDetailsNavbar';
 import ScrollSpy from 'react-ui-scrollspy';
 import { useState } from 'react';
 import LeadDetailsOffcanvas from 'components/modules/crm/LeadDetailsOffcanvas';
+import {
+  faBars,
+  faEllipsis,
+  faEnvelope,
+  faThumbtack
+} from '@fortawesome/free-solid-svg-icons';
 
 const LeadDetails = () => {
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
@@ -34,17 +40,19 @@ const LeadDetails = () => {
                   className="px-3 text-700"
                   onClick={() => setOpenOffcanvas(true)}
                 >
-                  <FontAwesomeIcon icon="bars" />
+                  <FontAwesomeIcon icon={faBars} />
                 </Button>
               </div>
               <Button
                 variant="primary"
-                startIcon={<FontAwesomeIcon icon="envelope" className="me-2" />}
+                startIcon={
+                  <FontAwesomeIcon icon={faEnvelope} className="me-2" />
+                }
               >
                 Send an email
               </Button>
               <Button variant="phoenix-secondary" className="px-3 px-sm-5">
-                <FontAwesomeIcon icon="thumbtack" className="me-0 me-sm-2" />
+                <FontAwesomeIcon icon={faThumbtack} className="me-0 me-sm-2" />
                 <span className="d-none d-sm-inline">Shortlist</span>
               </Button>
               <Dropdown>
@@ -52,7 +60,7 @@ const LeadDetails = () => {
                   variant="phoenix-secondary"
                   className="dropdown-caret-none px-3"
                 >
-                  <FontAwesomeIcon icon="ellipsis" />
+                  <FontAwesomeIcon icon={faEllipsis} />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>

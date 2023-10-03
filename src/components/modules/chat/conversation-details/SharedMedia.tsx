@@ -1,3 +1,4 @@
+import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Lightbox from 'components/base/LightBox';
@@ -13,7 +14,7 @@ const SharedMedia = () => {
 
   return (
     <div className="d-flex gap-3 my-3">
-      <FontAwesomeIcon icon="photo-film" className="fs-9" />
+      <FontAwesomeIcon icon={faPhotoFilm} className="fs-9" />
       <div>
         <h6 className="fw-semi-bold mb-2">Shared Media</h6>
         <Row className="g-2">

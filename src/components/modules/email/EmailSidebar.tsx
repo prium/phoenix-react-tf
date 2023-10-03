@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UilTimes } from '@iconscout/react-unicons';
 import classNames from 'classnames';
@@ -62,7 +63,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
           <Button
             variant="link"
             className="fs-10 fw-bold p-0"
-            startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
           >
             Add Folder
           </Button>
@@ -79,7 +80,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
           <Button
             variant="link"
             className="fs-10 fw-bold p-0"
-            startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
           >
             Add Label
           </Button>

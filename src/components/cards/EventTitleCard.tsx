@@ -2,6 +2,8 @@ import { Card, Col, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons';
+import { faHeart, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 
 const EventTitleCard = () => {
   return (
@@ -68,10 +70,7 @@ const EventTitleCard = () => {
               variant="phoenix-primary"
               className="w-100"
               startIcon={
-                <FontAwesomeIcon
-                  icon={['far', 'calendar-plus']}
-                  className="me-2"
-                />
+                <FontAwesomeIcon icon={faCalendarPlus} className="me-2" />
               }
             >
               Add to Calendar
@@ -81,7 +80,7 @@ const EventTitleCard = () => {
             <Button
               variant="phoenix-primary"
               className="w-100"
-              startIcon={<FontAwesomeIcon icon="heart" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faHeart} className="me-2" />}
             >
               3677
             </Button>
@@ -91,7 +90,7 @@ const EventTitleCard = () => {
               variant="phoenix-primary"
               className="w-100"
               startIcon={
-                <FontAwesomeIcon icon="share-nodes" className="me-2" />
+                <FontAwesomeIcon icon={faShareNodes} className="me-2" />
               }
             >
               4467

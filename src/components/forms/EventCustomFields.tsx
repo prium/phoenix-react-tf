@@ -1,3 +1,4 @@
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import React from 'react';
@@ -61,7 +62,7 @@ const EventCustomFields = () => {
         <Col xs={12}>
           <Button
             className="p-0"
-            startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
             variant="link"
           >
             Add an item

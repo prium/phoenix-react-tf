@@ -1,3 +1,7 @@
+import {
+  faFacebookSquare,
+  faTwitterSquare
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logo from 'components/common/Logo';
 import { PropsWithChildren } from 'react';
@@ -41,14 +45,14 @@ const EcommerceFooter = () => {
               <LinkItem to="#!">Blogs</LinkItem>
               <Link to="#!" className="mb-1 fw-semi-bold fs-9">
                 <FontAwesomeIcon
-                  icon={['fab', 'facebook-square']}
+                  icon={faFacebookSquare}
                   className="text-primary me-2 fs-8"
                 />
                 <span className="text-800">Facebook</span>
               </Link>
               <Link to="#!" className="mb-1 fw-semi-bold fs-9">
                 <FontAwesomeIcon
-                  icon={['fab', 'twitter-square']}
+                  icon={faTwitterSquare}
                   className="text-info me-2 fs-8"
                 />
                 <span className="text-800">Twitter</span>

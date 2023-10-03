@@ -1,4 +1,10 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCheck,
+  faTruck,
+  faTruckFast,
+  faTruckRampBox
+} from '@fortawesome/free-solid-svg-icons';
 
 export interface TimelineData {
   oppositeContent: {
@@ -27,7 +33,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
       subtitle: 'Your package is ready for the seller to prepare.'
     },
     separator: {
-      icon: 'check',
+      icon: faCheck,
       dotClass: 'bg-success dark__bg-success',
       barClass: 'border-success'
     }
@@ -42,7 +48,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
       subtitle: 'Your package has been picked up from the seller.'
     },
     separator: {
-      icon: 'check',
+      icon: faCheck,
       dotClass: 'bg-success dark__bg-success',
       barClass: 'border-warning'
     }
@@ -57,7 +63,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
       subtitle: 'Your package is now ready to be shipped.'
     },
     separator: {
-      icon: 'truck-ramp-box',
+      icon: faTruckRampBox,
       dotClass: 'bg-warning dark__bg-warning',
       barClass: 'border-400 border-dashed'
     }
@@ -72,7 +78,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
       subtitle: 'Pending'
     },
     separator: {
-      icon: 'truck',
+      icon: faTruck,
       dotClass: 'bg-400',
       barClass: 'border-400 border-dashed'
     }
@@ -87,7 +93,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
       subtitle: 'Pending'
     },
     separator: {
-      icon: 'truck-fast',
+      icon: faTruckFast,
       dotClass: 'bg-400'
     }
   }

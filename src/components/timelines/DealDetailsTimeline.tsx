@@ -1,8 +1,7 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { Activity } from 'data/crm/dealDetailsData';
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
@@ -21,7 +20,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
               style={{ width: '25px', height: '25px' }}
             >
               <FontAwesomeIcon
-                icon={activity.icon as IconProp}
+                icon={activity.icon}
                 className={`text-${activity.variant}-600 dark__text-${activity.variant}-300 fs-9`}
               />
             </div>
@@ -38,7 +37,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
                 </div>
                 <div className="fs-9">
                   <FontAwesomeIcon
-                    icon="calendar-days"
+                    icon={faCalendarDays}
                     className="text-primary me-2"
                   />
                   <span className="fw-semi-bold">{activity.date}</span>

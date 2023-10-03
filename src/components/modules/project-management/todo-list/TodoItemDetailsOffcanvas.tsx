@@ -14,6 +14,7 @@ import { Form } from 'react-bootstrap';
 import DatePicker from 'components/base/DatePicker';
 import { UilBellSchool, UilTagAlt } from '@iconscout/react-unicons';
 import ReactSelect from 'components/base/ReactSelect';
+import { faPen, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface TodoItemDetailsOffcanvasProps {
   handleClose: () => void;
@@ -45,14 +46,14 @@ const TodoItemDetailsOffcanvas = ({
                 onClick={handleClose}
                 className="btn-icon flex-shrink-0"
               >
-                <FontAwesomeIcon icon="xmark" />
+                <FontAwesomeIcon icon={faXmark} />
               </Button>
             </div>
             <div className="mb-6">
               <div className="d-flex align-items-center mb-3">
                 <h4 className="text-900 me-3">Description</h4>
                 <Button variant="link" className="text-decoration-none p-0">
-                  <FontAwesomeIcon icon="pen" />
+                  <FontAwesomeIcon icon={faPen} />
                 </Button>
               </div>
               <p className="text-1000 mb-0">
@@ -82,7 +83,7 @@ const TodoItemDetailsOffcanvas = ({
                 variant="link"
                 className="fw-bold fs-9 text-decoration-none p-0"
               >
-                <FontAwesomeIcon icon="plus" className="me-1" />
+                <FontAwesomeIcon icon={faPlus} className="me-1" />
                 Add subtask
               </Button>
             </div>
@@ -104,7 +105,7 @@ const TodoItemDetailsOffcanvas = ({
                 <Button
                   variant="link"
                   className="text-decoration-none p-0"
-                  startIcon={<FontAwesomeIcon icon="plus" className="me-1" />}
+                  startIcon={<FontAwesomeIcon icon={faPlus} className="me-1" />}
                 >
                   Add file(s)
                 </Button>

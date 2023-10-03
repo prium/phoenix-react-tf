@@ -1,3 +1,8 @@
+import {
+  faFileExport,
+  faFilter,
+  faPlus
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
@@ -42,7 +47,7 @@ const Leads = () => {
               <Button
                 variant="primary"
                 className="me-4"
-                startIcon={<FontAwesomeIcon icon="plus" className="me-2" />}
+                startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
               >
                 Create Lead
               </Button>
@@ -50,7 +55,7 @@ const Leads = () => {
                 variant="link"
                 className="text-900 px-0"
                 startIcon={
-                  <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
+                  <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                 }
               >
                 Export
@@ -70,7 +75,7 @@ const Leads = () => {
                   onClick={() => setOpenFilterModal(true)}
                 >
                   <FontAwesomeIcon
-                    icon="filter"
+                    icon={faFilter}
                     transform="down-3"
                     className="text-primary"
                   />

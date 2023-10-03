@@ -5,7 +5,11 @@ import RevealDropdown, {
 import { Dropdown } from 'react-bootstrap';
 import { Attachment } from 'data/project-management/todoListData';
 import classNames from 'classnames';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFileLines,
+  faFileZipper,
+  faImage
+} from '@fortawesome/free-solid-svg-icons';
 
 interface FileListItemProps {
   attachment: Attachment;
@@ -21,11 +25,11 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
             <div className="d-flex align-items-center mb-1">
               <FontAwesomeIcon
                 icon={
-                  classNames({
-                    image: attachment.mimeType === 'image',
-                    'file-zipper': attachment.mimeType === 'zip',
-                    'file-lines': attachment.mimeType === 'txt'
-                  }) as IconProp
+                  attachment.mimeType === 'image'
+                    ? faImage
+                    : attachment.mimeType === 'zip'
+                    ? faFileZipper
+                    : faFileLines
                 }
                 className="me-2 fs-9 text-700"
               />

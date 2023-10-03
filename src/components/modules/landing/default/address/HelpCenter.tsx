@@ -1,3 +1,8 @@
+import {
+  faFacebook,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UilEnvelope, UilMapMarker, UilPhone } from '@iconscout/react-unicons';
 import { Link } from 'react-router-dom';
@@ -55,20 +60,14 @@ const HelpCenter = () => {
         </div>
         <div className="d-flex gap-3">
           <a href="#!">
-            <FontAwesomeIcon
-              icon={['fab', 'facebook']}
-              className="text-primary fs-6"
-            />
+            <FontAwesomeIcon icon={faFacebook} className="text-primary fs-6" />
+          </a>
+          <a href="#!">
+            <FontAwesomeIcon icon={faTwitter} className="text-primary fs-6" />
           </a>
           <a href="#!">
             <FontAwesomeIcon
-              icon={['fab', 'twitter']}
-              className="text-primary fs-6"
-            />
-          </a>
-          <a href="#!">
-            <FontAwesomeIcon
-              icon={['fab', 'linkedin-in']}
+              icon={faLinkedinIn}
               className="text-primary fs-6"
             />
           </a>

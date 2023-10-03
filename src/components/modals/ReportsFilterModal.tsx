@@ -1,3 +1,4 @@
+import { faArrowsRotate, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { DealsReport, dealsReportData } from 'data/crm/reportsData';
@@ -49,7 +50,7 @@ const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
       <Modal.Header className="p-4">
         <h5 className="modal-title text-1000 fs-6 lh-sm">Filter</h5>
         <Button className="p-1 text-900" onClick={onHide}>
-          <FontAwesomeIcon icon="times" className="fs-9" />
+          <FontAwesomeIcon icon={faTimes} className="fs-9" />
         </Button>
       </Modal.Header>
       <Modal.Body className="p-4 pb-3">
@@ -89,7 +90,7 @@ const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
           variant="phoenix-primary"
           size="sm"
           className="fs-10 px-4"
-          startIcon={<FontAwesomeIcon icon="arrows-rotate" className="me-2" />}
+          startIcon={<FontAwesomeIcon icon={faArrowsRotate} className="me-2" />}
           onClick={handleReset}
         >
           Reset

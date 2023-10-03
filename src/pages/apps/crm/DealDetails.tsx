@@ -1,3 +1,4 @@
+import { faEdit, faEllipsis, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DealProfileCard from 'components/cards/DealProfileCard';
@@ -21,13 +22,13 @@ const DealDetails = () => {
           </Col>
           <Col md="auto" className="d-flex">
             <Button variant="phoenix-secondary" className="px-3 px-sm-5 me-2">
-              <FontAwesomeIcon icon="edit" className="me-sm-2" />
+              <FontAwesomeIcon icon={faEdit} className="me-sm-2" />
               <span className="d-none d-sm-inline">Edit</span>
             </Button>
             <Button
               variant="phoenix-danger"
               className="me-2"
-              startIcon={<FontAwesomeIcon icon="trash" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faTrash} className="me-2" />}
             >
               <span>Delete Deal</span>
             </Button>
@@ -36,7 +37,7 @@ const DealDetails = () => {
                 variant="phoenix-secondary"
                 className="px-3 dropdown-caret-none"
               >
-                <FontAwesomeIcon icon="ellipsis" />
+                <FontAwesomeIcon icon={faEllipsis} />
               </Dropdown.Toggle>
 
               <Dropdown.Menu className="py-2">

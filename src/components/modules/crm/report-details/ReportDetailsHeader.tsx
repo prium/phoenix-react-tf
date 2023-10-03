@@ -1,3 +1,9 @@
+import {
+  faEnvelope,
+  faFileExport,
+  faFilter,
+  faPencil
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
@@ -22,13 +28,13 @@ const ReportDetailsHeader = () => {
           <div className="d-flex flex-wrap gap-2">
             <Button
               variant="primary"
-              startIcon={<FontAwesomeIcon icon="envelope" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faEnvelope} className="me-2" />}
             >
               Send mail
             </Button>
             <Button
               variant="phoenix-primary"
-              startIcon={<FontAwesomeIcon icon="pencil" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faPencil} className="me-2" />}
             >
               Edit
             </Button>
@@ -36,7 +42,7 @@ const ReportDetailsHeader = () => {
               variant="phoenix-secondary"
               className="text-900"
               startIcon={
-                <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
+                <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
               }
             >
               Export
@@ -55,7 +61,7 @@ const ReportDetailsHeader = () => {
               className="px-3"
               onClick={() => setOpenFilterModal(true)}
             >
-              <FontAwesomeIcon icon="filter" transform="down-3" />
+              <FontAwesomeIcon icon={faFilter} transform="down-3" />
             </Button>
           </div>
         </Col>

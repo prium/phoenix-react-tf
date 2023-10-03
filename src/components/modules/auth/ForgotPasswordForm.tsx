@@ -1,3 +1,4 @@
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -29,7 +30,7 @@ const ForgotPasswordForm = ({
           <Button
             variant="primary"
             className="ms-2"
-            endIcon={<FontAwesomeIcon icon="chevron-right" className="ms-2" />}
+            endIcon={<FontAwesomeIcon icon={faChevronRight} className="ms-2" />}
           >
             Send
           </Button>

@@ -1,6 +1,13 @@
 import { Col, Row, Stack } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCircle,
+  faPause,
+  faSquare,
+  faStar,
+  faXmark
+} from '@fortawesome/free-solid-svg-icons';
 
 type StatType = {
   id: number | string;
@@ -13,21 +20,21 @@ type StatType = {
 const stats: StatType[] = [
   {
     id: 1,
-    icon: 'star',
+    icon: faStar,
     title: '57 new orders',
     subTitle: 'Awating processing',
     color: 'success'
   },
   {
     id: 2,
-    icon: 'pause',
+    icon: faPause,
     title: '5 orders',
     subTitle: 'On hold',
     color: 'warning'
   },
   {
     id: 3,
-    icon: 'xmark',
+    icon: faXmark,
     title: '15 products',
     subTitle: 'Out of stock',
     color: 'danger'
@@ -55,13 +62,13 @@ const Stat = ({ stat }: { stat: StatType }) => {
         style={{ minHeight: '46px', minWidth: '46px' }}
       >
         <FontAwesomeIcon
-          icon="square"
+          icon={faSquare}
           size="2x"
           className={`text-${stat.color}-300`}
           transform="down-4 rotate--10 left-4"
         />
         <FontAwesomeIcon
-          icon="circle"
+          icon={faCircle}
           size="2x"
           className={`text-${stat.color}-100 fa-layers-circle`}
           transform="up-4 right-3 grow-2"

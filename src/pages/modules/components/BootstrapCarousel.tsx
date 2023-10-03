@@ -8,6 +8,7 @@ import generic8 from 'assets/img/generic/8.jpg';
 import generic9 from 'assets/img/generic/9.jpg';
 import generic28 from 'assets/img/generic/28.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const exampleCode = `
 <Carousel>
@@ -40,10 +41,10 @@ const customStyledCode = `
   className='theme-slider'
   indicators={false}
   nextIcon={
-    <FontAwesomeIcon icon="angle-right" />
+    <FontAwesomeIcon icon={faAngleRight} />
   }
   prevIcon={
-    <FontAwesomeIcon icon="angle-left" />
+    <FontAwesomeIcon icon={faAngleLeft} />
   }
 >
   <Carousel.Item>
@@ -247,7 +248,14 @@ const BootstrapCarousel = () => {
           <PhoenixDocCard.Header title="Styled Example" />
           <PhoenixDocCard.Body
             code={customStyledCode}
-            scope={{ generic6, generic7, generic8, FontAwesomeIcon }}
+            scope={{
+              generic6,
+              generic7,
+              generic8,
+              FontAwesomeIcon,
+              faAngleRight,
+              faAngleLeft
+            }}
           />
         </PhoenixDocCard>
 

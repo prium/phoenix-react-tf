@@ -10,6 +10,12 @@ import classNames from 'classnames';
 import CardViewModal from './CardViewModal';
 import { currencyFormat } from 'helpers/utils';
 import useProjectProgress from '../useProjectProgress';
+import {
+  faChevronRight,
+  faCreditCard,
+  faListCheck,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 
 const CardViewItem = ({ project }: { project: Project }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
@@ -29,7 +35,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
                 className="btn-icon flex-shrink-0"
                 onClick={() => setOpenDetailsModal(true)}
               >
-                <FontAwesomeIcon icon="chevron-right" />
+                <FontAwesomeIcon icon={faChevronRight} />
               </Button>
             </div>
           </div>
@@ -42,7 +48,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
           </Badge>
           <div className="d-flex align-items-center mb-2">
             <FontAwesomeIcon
-              icon="user"
+              icon={faUser}
               className="me-2 text-700 fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
@@ -55,7 +61,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
           </div>
           <div className="d-flex align-items-center mb-4">
             <FontAwesomeIcon
-              icon="credit-card"
+              icon={faCreditCard}
               className="me-2 text-700 fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
@@ -103,7 +109,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
               </div>
 
               <div className="mt-lg-3 mt-xl-0">
-                <FontAwesomeIcon icon="list-check" className="me-1" />
+                <FontAwesomeIcon icon={faListCheck} className="me-1" />
 
                 <p className="d-inline-block fw-bold mb-0">
                   {project.task}
