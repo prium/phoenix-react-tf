@@ -259,7 +259,7 @@ import {
   faHandPointLeft
 } from '@fortawesome/free-regular-svg-icons';
 
-export const faRegularIcons: { [key: string]: IconProp } = {
+export const faRegularIconList: { [key: string]: IconProp } = {
   faTrashCan,
   faTrashAlt,
   faMessage,

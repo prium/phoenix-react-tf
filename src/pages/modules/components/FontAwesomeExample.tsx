@@ -1,15 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import IconCard from 'components/cards/IconCard';
-import { useCopyMessageToast } from 'components/common/CopyMessageToastContainer';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
-import { faSolidIcons } from 'data/icons/faSolidIcons';
+import { faSolidIconList } from 'data/icons/faSolidIconList';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 import { Card, Col, Row } from 'react-bootstrap';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { faRegularIcons } from 'data/icons/faRegularIcons';
-import { faBrandIcons } from 'data/icons/faBrandIcons';
+import { faRegularIconList } from 'data/icons/faRegularIconList';
+import { faBrandIconList } from 'data/icons/faBrandIconList';
 const individualAddIconCode = `import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
@@ -29,8 +28,7 @@ const exampleCode = `
   </div>
 </div>`;
 
-const FontAwesome = () => {
-  const { setToastMessage } = useCopyMessageToast();
+const FontAwesomeExample = () => {
   return (
     <div className="mb-9">
       <DocPageHeader
@@ -83,13 +81,12 @@ const FontAwesome = () => {
               code={`import {faHome} from @fortawesome/free-solid-svg-icons'`}
             />
             <Row className="mt-3">
-              {Object.keys(faSolidIcons).map(icon => (
+              {Object.keys(faSolidIconList).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
                     iconFamily="font-awesome"
-                    icon={faSolidIcons[icon]}
+                    icon={faSolidIconList[icon]}
                     name={icon}
-                    onCopy={message => setToastMessage(message)}
                   />
                 </Col>
               ))}
@@ -108,13 +105,12 @@ const FontAwesome = () => {
               code={`import {faHome} from @fortawesome/free-regular-svg-icons'`}
             />
             <Row className="mt-3">
-              {Object.keys(faRegularIcons).map(icon => (
+              {Object.keys(faRegularIconList).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
                     iconFamily="font-awesome"
-                    icon={faRegularIcons[icon]}
+                    icon={faRegularIconList[icon]}
                     name={icon}
-                    onCopy={message => setToastMessage(message)}
                   />
                 </Col>
               ))}
@@ -133,13 +129,12 @@ const FontAwesome = () => {
               code={`import {faHome} from @fortawesome/free-brands-svg-icons'`}
             />
             <Row className="mt-3">
-              {Object.keys(faBrandIcons).map(icon => (
+              {Object.keys(faBrandIconList).map(icon => (
                 <Col xs={12} sm={6} md={4} lg={3} key={icon}>
                   <IconCard
                     iconFamily="font-awesome"
-                    icon={faBrandIcons[icon]}
+                    icon={faBrandIconList[icon]}
                     name={icon}
-                    onCopy={message => setToastMessage(message)}
                   />
                 </Col>
               ))}
@@ -151,4 +146,4 @@ const FontAwesome = () => {
   );
 };
 
-export default FontAwesome;
+export default FontAwesomeExample;

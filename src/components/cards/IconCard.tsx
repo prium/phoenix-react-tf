@@ -3,31 +3,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Icon } from '@iconscout/react-unicons';
 import Unicon from 'components/base/Unicon';
 import { PropsWithChildren, useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Toast } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
 interface IconCardProps {
   icon: IconProp | Icon | string;
   name: string;
   iconFamily: 'font-awesome' | 'unicons' | 'feather';
-  onCopy?: (text: string) => void;
 }
 
 const IconCard = ({
   icon,
   name,
-  onCopy,
   iconFamily,
   children
 }: PropsWithChildren<IconCardProps>) => {
   const [text, setText] = useState('');
+  const [showCopyToast, setShowCopyToast] = useState(false);
 
   const handleClick = async () => {
-    const copied = await navigator.clipboard.writeText(text);
-    if (onCopy) {
-      onCopy(text);
-    }
-    console.log({ copied });
+    await navigator.clipboard.writeText(text);
+    setShowCopyToast(true);
   };
 
   useEffect(() => {
@@ -61,6 +57,22 @@ const IconCard = ({
         value={text}
         className="text-center text-dark bg-200 dark__bg-1100 border-300 mt-3"
       />
+
+      <Toast
+        show={showCopyToast}
+        onClose={() => setShowCopyToast(false)}
+        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        delay={3000}
+        autohide
+      >
+        <div className="d-flex">
+          <Toast.Body className="P-3">
+            <span className="fw-black">
+              Copied: <code className="text-500">{text}</code>
+            </span>
+          </Toast.Body>
+        </div>
+      </Toast>
     </div>
   );
 };

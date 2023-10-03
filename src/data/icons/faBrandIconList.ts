@@ -503,7 +503,7 @@ import {
   faSteamSymbol
 } from '@fortawesome/free-brands-svg-icons';
 
-export const faBrandIcons: { [key: string]: IconProp } = {
+export const faBrandIconList: { [key: string]: IconProp } = {
   faMonero,
   faHooli,
   faYelp,

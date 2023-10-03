@@ -3,14 +3,9 @@ import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 import * as Unicons from '@iconscout/react-unicons';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
-import {
-  UilHome,
-  UilPlaneDeparture,
-  UilRocket
-} from '@iconscout/react-unicons';
+import { UilPlaneDeparture, UilRocket } from '@iconscout/react-unicons';
 import { Card, Col, Row } from 'react-bootstrap';
 import IconCard from 'components/cards/IconCard';
-import { useCopyMessageToast } from 'components/common/CopyMessageToastContainer';
 import { uniconList } from 'data/icons/uniconList';
 import Unicon from 'components/base/Unicon';
 
@@ -56,8 +51,7 @@ import * as Unicons from '@iconscout/react-unicons';
 </div>
 `;
 
-const UniconsDoc = () => {
-  const { setToastMessage } = useCopyMessageToast();
+const UniconsExample = () => {
   return (
     <div className="mb-9">
       <DocPageHeader
@@ -99,7 +93,6 @@ const UniconsDoc = () => {
                     icon={uniconList[icon]}
                     iconFamily="unicons"
                     name={icon}
-                    onCopy={message => setToastMessage(message)}
                   />
                 </Col>
               ))}
@@ -111,4 +104,4 @@ const UniconsDoc = () => {
   );
 };
 
-export default UniconsDoc;
+export default UniconsExample;

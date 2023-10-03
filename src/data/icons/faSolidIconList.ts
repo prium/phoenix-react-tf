@@ -1956,7 +1956,7 @@ import {
   faLevelUpAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-export const faSolidIcons: { [key: string]: IconProp } = {
+export const faSolidIconList: { [key: string]: IconProp } = {
   fa0,
   fa1,
   fa2,
