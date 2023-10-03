@@ -131,9 +131,6 @@ import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
 import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
 import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
-import FontAwesome from 'pages/modules/components/FontAwesome';
-import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
-import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
 import ECharts from 'pages/modules/charts/ECharts';
 import GanttChart from 'pages/modules/charts/GanttChart';
@@ -163,6 +160,20 @@ import SplitForgotPassword from 'pages/pages/authentication/split/ForgotPassword
 import SplitResetPassword from 'pages/pages/authentication/split/ResetPassword';
 import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
 import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
+import { Suspense, lazy } from 'react';
+import PhoenixLoader from 'components/common/PhoenixLoader';
+
+const FontAwesomeExample = lazy(
+  () => import('pages/modules/components/FontAwesomeExample')
+);
+
+const FeatherIconsExample = lazy(
+  () => import('pages/modules/components/FeatherIconsExample')
+);
+
+const UniconsExample = lazy(
+  () => import('pages/modules/components/UniconsExample')
+);
 
 const routes: RouteObject[] = [
   {
@@ -463,15 +474,27 @@ const routes: RouteObject[] = [
                 children: [
                   {
                     path: 'font-awesome',
-                    element: <FontAwesome />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <FontAwesomeExample />
+                      </Suspense>
+                    )
                   },
                   {
                     path: 'feather',
-                    element: <FeatherIconExample />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <FeatherIconsExample />
+                      </Suspense>
+                    )
                   },
                   {
                     path: 'unicons',
-                    element: <Unicons />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <UniconsExample />
+                      </Suspense>
+                    )
                   }
                 ]
               },

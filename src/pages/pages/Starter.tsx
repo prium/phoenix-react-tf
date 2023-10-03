@@ -1,4 +1,3 @@
-import React from 'react';
 import { Stack } from 'react-bootstrap';
 import starterImg from 'assets/img/spot-illustrations/2.png';
 import starterDarkImg from 'assets/img/spot-illustrations/dark_2.png';

@@ -837,19 +837,19 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'feather',
-            path: 'modules/icons/feather',
+            path: '/modules/icons/feather',
             pathName: 'icons-feather',
             active: true
           },
           {
             name: 'font awesome',
-            path: 'modules/icons/font-awesome',
+            path: '/modules/icons/font-awesome',
             pathName: 'icons-font-awesome',
             active: true
           },
           {
             name: 'unicons',
-            path: 'modules/icons/unicons',
+            path: '/modules/icons/unicons',
             pathName: 'icons-unicons',
             active: true
           }

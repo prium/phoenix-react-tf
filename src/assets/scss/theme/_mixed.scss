@@ -439,3 +439,47 @@
 [type='number'] {
   direction: ltr;
 }
+
+.loading-container {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.logo-ripple {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.ripple-1 {
+  animation: ripple1 2s ease-out infinite;
+}
+
+.ripple-2 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 0.5s;
+}
+
+.ripple-3 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 1s;
+}
+
+.ripple-4 {
+  animation: ripple1 2s ease-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes ripple1 {
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: rotate(30deg) scale(4);
+    opacity: 0;
+  }
+}

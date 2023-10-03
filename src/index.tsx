@@ -1,7 +1,6 @@
 import AppProvider from 'providers/AppProvider';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'helpers/initFA';
 import BreakpointsProvider from 'providers/BreakpointsProvider';
 import SettingsPanelProvider from 'providers/SettingsPanelProvider';
 import { RouterProvider } from 'react-router-dom';
