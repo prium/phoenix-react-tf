@@ -152,11 +152,11 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
 const DealsReportTable = () => {
   return (
     <div>
-      <div className="border-y">
+      <div className="border-t">
         <AdvanceTable
           tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
         />
-        <AdvanceTableFooter pagination />
+        <AdvanceTableFooter pagination className="pt-3" />
       </div>
     </div>
   );

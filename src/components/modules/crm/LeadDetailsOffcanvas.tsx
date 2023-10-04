@@ -23,11 +23,11 @@ const LeadDetailsOffcanvas = ({ open, setOpen }: LeadDetailsOffcanvasProps) => {
           open={open}
           onHide={() => setOpen(false)}
           style={{ maxWidth: 350 }}
-          className="p-4 pt-3 phoenix-offcanvas-content"
+          className="p-4 pt-3 phoenix-offcanvas-content scrollbar"
           placement="start"
           fixed
         >
-          <div className="scrollbar">
+          <div>
             <div className="d-flex justify-content-between align-items-center mb-2 d-md-none">
               <h3 className="mb-0">Lead Details</h3>
               <Button className="p-0" onClick={() => setOpen(false)}>

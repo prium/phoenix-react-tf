@@ -17,7 +17,7 @@ const AuthSplitLayout = ({
     <Row className="vh-100 g-0">
       <Col lg={6} className="position-relative d-none d-lg-block">
         <div
-          className="bg-holder d-dark-none"
+          className="bg-holder"
           style={{
             backgroundImage: `url(${bg})`
           }}
