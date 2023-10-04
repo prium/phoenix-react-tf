@@ -162,6 +162,7 @@ import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
 import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
+import Migrations from 'pages/documentation/Migrations';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -809,6 +810,10 @@ const routes: RouteObject[] = [
           {
             path: 'changelog',
             element: <ChangeLog />
+          },
+          {
+            path: 'migrations',
+            element: <Migrations />
           }
         ]
       },

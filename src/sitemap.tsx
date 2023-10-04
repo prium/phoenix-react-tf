@@ -1338,6 +1338,13 @@ export const routes: RouteItems[] = [
         active: true
       },
       {
+        name: 'migrations',
+        icon: 'fast-forward',
+        path: '/migrations',
+        pathName: 'migrations',
+        active: true
+      },
+      {
         name: 'showcase',
         icon: 'monitor',
         path: '/showcase',
