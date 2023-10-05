@@ -156,7 +156,7 @@ const LeadDealsTable = () => {
       <AdvanceTableProvider {...table}>
         <div className="border-y">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
-          <AdvanceTableFooter pagination showViewAllBtn={false} />
+          <AdvanceTableFooter pagination />
         </div>
       </AdvanceTableProvider>
     </div>

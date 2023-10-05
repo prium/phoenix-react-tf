@@ -88,11 +88,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       barWidth: '4px',
       barGap: '3',
       label: {
-        show: true,
-        position: 'top',
-        color: getThemeColor('gray-900'),
-        fontWeight: 'bold',
-        fontSize: '10.24px'
+        show: false
       },
       z: 10,
       itemStyle: {
@@ -106,11 +102,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       barWidth: '4px',
       data: data2,
       label: {
-        show: true,
-        position: 'top',
-        color: getThemeColor('primary'),
-        fontWeight: 'bold',
-        fontSize: '10.24px'
+        show: false
       },
       itemStyle: {
         borderRadius: [2, 2, 0, 0],

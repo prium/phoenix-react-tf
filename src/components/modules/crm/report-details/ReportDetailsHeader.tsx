@@ -2,7 +2,8 @@ import {
   faEnvelope,
   faFileExport,
   faFilter,
-  faPencil
+  faPencil,
+  faSearch
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
@@ -56,6 +57,9 @@ const ReportDetailsHeader = () => {
               className="d-none d-xl-block"
               onChange={handleSearchInputChange}
             />
+            <Button variant="phoenix-secondary" className="px-3 me-2 d-xl-none">
+              <FontAwesomeIcon icon={faSearch} />
+            </Button>
             <Button
               variant="phoenix-primary"
               className="px-3"

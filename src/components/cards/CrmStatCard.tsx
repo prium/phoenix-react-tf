@@ -1,6 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Badge from 'components/base/Badge';
+import Badge, { BadgeBg } from 'components/base/Badge';
 import { Card } from 'react-bootstrap';
 
 interface CrmStatCardProps {
@@ -10,6 +10,7 @@ interface CrmStatCardProps {
   title: string;
   value: number;
   badgeLabel: string;
+  badgeBg: BadgeBg;
   footerText: string;
 }
 
@@ -20,6 +21,7 @@ const CrmStatCard = ({
   title,
   value,
   badgeLabel,
+  badgeBg,
   footerText
 }: CrmStatCardProps) => {
   return (
@@ -44,7 +46,7 @@ const CrmStatCard = ({
             </p>
           </div>
           <div className="d-flex flex-column justify-content-center flex-between-end d-sm-block text-end text-sm-start">
-            <Badge variant="phoenix" bg="success" className="fs-10 mb-2">
+            <Badge variant="phoenix" bg={badgeBg} className="fs-10 mb-2">
               {badgeLabel}
             </Badge>
             <p className="mb-0 fs-9 text-700">{footerText}</p>
