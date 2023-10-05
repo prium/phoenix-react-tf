@@ -10,17 +10,17 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import TooltipIconButton from 'components/common/TooltipIconButton';
-import React from 'react';
-import { Form } from 'react-bootstrap';
+import { useBulkSelect } from 'providers/BulkSelectProvider';
 
-const InboxToolbar = ({
-  size = 'lg',
-  className
-}: {
+interface InboxToolbarProps {
   size?: 'sm' | 'lg';
   className?: string;
-}) => {
+}
+
+const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
+  const { getParentCheckboxProps } = useBulkSelect();
   return (
     <>
       <div
@@ -56,7 +56,7 @@ const InboxToolbar = ({
         </div>
       </div>
       <div className="border-y py-2 d-flex justify-content-between">
-        <Form.Check type="checkbox" id="defaultCheckbox" />
+        <IndeterminateCheckbox {...getParentCheckboxProps()} />
         <div className="d-flex gap-2">
           <TooltipIconButton
             iconClass="fs-10"

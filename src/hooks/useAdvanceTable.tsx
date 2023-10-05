@@ -26,6 +26,7 @@ const selectionColumn = {
   accessorKey: '',
   header: ({ table }: any) => (
     <IndeterminateCheckbox
+      className="form-check fs-8 mb-0"
       {...{
         checked: table.getIsAllRowsSelected(),
         indeterminate: table.getIsSomeRowsSelected(),
@@ -35,6 +36,7 @@ const selectionColumn = {
   ),
   cell: ({ row }: any) => (
     <IndeterminateCheckbox
+      className="form-check fs-8 mb-0"
       {...{
         checked: row.getIsSelected(),
         disabled: !row.getCanSelect(),

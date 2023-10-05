@@ -3,20 +3,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
+import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import StarCheckbox from 'components/base/StarCheckbox';
 import { Email } from 'data/email';
 import { getFileIcon } from 'helpers/utils';
-import React from 'react';
-import { Col, Dropdown, Form, Row } from 'react-bootstrap';
+import { useBulkSelect } from 'providers/BulkSelectProvider';
+import { Col, Dropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const EmailRow = ({ email }: { email: Email }) => {
+interface EmailRowProps {
+  email: Email;
+  index: number;
+}
+
+const EmailRow = ({ email, index }: EmailRowProps) => {
+  const { getRowCheckboxProps } = useBulkSelect();
   return (
     <div className="border-bottom hover-actions-trigger py-3">
       <Row className="gx-2">
         <Col xs="auto">
           <div className="d-flex flex-column flex-sm-row">
-            <Form.Check type="checkbox" className="mb-2 m-sm-0 me-sm-2" />
+            <IndeterminateCheckbox
+              {...getRowCheckboxProps(String(index))}
+              className="mb-2 m-sm-0 me-sm-2"
+            />
             <Button className="btn p-0">
               <StarCheckbox defaultChecked={email.starred} iconClass="fs-9" />
             </Button>
