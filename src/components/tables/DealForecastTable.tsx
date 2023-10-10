@@ -28,7 +28,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
         style: { width: '15%', minWidth: '100px' },
         className: 'text-start text-700'
       },
-      cellProps: { className: 'ps-0 py-2' },
+      cellProps: { className: 'pe-3 white-space-nowrap py-2' },
       footerProps: {
         className: 'text-end px-3 border-bottom-0'
       }

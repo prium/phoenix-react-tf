@@ -30,7 +30,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatterDefault(params)
+    formatter: (params: CallbackDataParams[]) =>
+      tooltipFormatterDefault(params, 'MMM DD', 'color')
   },
   xAxis: {
     type: 'category',
@@ -88,7 +89,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       barWidth: '4px',
       barGap: '3',
       label: {
-        show: false
+        show: false,
+        position: 'top',
+        color: getThemeColor('gray-900'),
+        fontWeight: 'bold',
+        fontSize: '10.24px'
+      },
+      emphasis: {
+        label: {
+          show: true
+        }
       },
       z: 10,
       itemStyle: {
@@ -102,7 +112,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       barWidth: '4px',
       data: data2,
       label: {
-        show: false
+        show: false,
+        position: 'top',
+        color: getThemeColor('primary'),
+        fontWeight: 'bold',
+        fontSize: '10.24px'
+      },
+      emphasis: {
+        label: {
+          show: true
+        }
       },
       itemStyle: {
         borderRadius: [2, 2, 0, 0],
