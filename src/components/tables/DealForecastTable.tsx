@@ -35,7 +35,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     }
   },
   {
-    id: 'Appoinment',
+    id: 'appointment',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
         <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary" />
@@ -67,7 +67,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    id: 'Qualified',
+    id: 'qualified',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
         <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary-300" />
@@ -99,7 +99,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    id: 'Closed Won',
+    id: 'closed_won',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
         <FontAwesomeIcon icon={faSquare} className="fs-11 text-success" />
@@ -131,7 +131,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
       )
   },
   {
-    id: 'Contact Sent',
+    id: 'contact_sent',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
         <FontAwesomeIcon icon={faSquare} className="fs-11 text-info" />
