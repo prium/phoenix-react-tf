@@ -14,7 +14,7 @@ const LeadAddressCard = ({ className }: { className?: string }) => {
     <Card className={classNames(className)}>
       <Card.Body>
         <div className="d-flex align-items-center mb-5">
-          <h3>About lead</h3>
+          <h3>Address</h3>
           <Button variant="link" className="px-3">
             Edit
           </Button>

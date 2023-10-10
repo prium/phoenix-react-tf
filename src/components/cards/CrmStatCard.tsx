@@ -10,8 +10,8 @@ interface CrmStatCardProps {
   title: string;
   value: number;
   badgeLabel: string;
-  footerText: string;
   badgeBg: BadgeBg;
+  footerText: string;
 }
 
 const CrmStatCard = ({

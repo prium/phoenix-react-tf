@@ -40,7 +40,7 @@ const DealDetails = () => {
                 <FontAwesomeIcon icon={faEllipsis} />
               </Dropdown.Toggle>
 
-              <Dropdown.Menu className="py-2">
+              <Dropdown.Menu className="py-2" style={{ zIndex: 9999 }}>
                 <Dropdown.Item href="#!">View profile</Dropdown.Item>
                 <Dropdown.Item href="#!">Report</Dropdown.Item>
                 <Dropdown.Item href="#!">Manage notifications</Dropdown.Item>

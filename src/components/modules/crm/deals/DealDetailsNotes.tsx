@@ -19,7 +19,7 @@ const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
           })}
         >
           <p className="mb-1 text-1000">{note.description}</p>
-          <div className="d-flex">
+          <div className="d-sm-flex">
             <div className="fs-9 text-600">
               <FontAwesomeIcon icon={faClock} className="me-2" />
               <span className="fw-semi-bold me-1">{note.date}</span>

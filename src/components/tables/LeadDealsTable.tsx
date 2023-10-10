@@ -47,8 +47,8 @@ const columns: ColumnDef<LeadDeal>[] = [
       </Link>
     ),
     meta: {
-      cellProps: { className: 'py-0' },
-      headerProps: { style: { width: '15%', minWidth: 200 } }
+      cellProps: { className: 'py-0 ps-0' },
+      headerProps: { style: { width: '15%', minWidth: 200 }, className: 'px-0' }
     }
   },
   {
@@ -156,7 +156,7 @@ const LeadDealsTable = () => {
       <AdvanceTableProvider {...table}>
         <div className="border-y">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
-          <AdvanceTableFooter pagination showViewAllBtn={false} />
+          <AdvanceTableFooter pagination />
         </div>
       </AdvanceTableProvider>
     </div>

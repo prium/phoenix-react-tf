@@ -10,7 +10,7 @@ const Tasks = ({ className }: { className: string }) => {
   return (
     <div className={classNames(className, 'lead-details-scrollspy')} id="tasks">
       <h2 className="mb-4"> Tasks</h2>
-      <div className="d-flex align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
+      <div className="d-flex align-items-center flex-wrap gap-x-3 gap-y-3 mb-3">
         <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
         <div>
           <Button

@@ -43,8 +43,11 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
       </>
     ),
     meta: {
-      headerProps: { style: { width: '30%', minWidth: 350 } },
-      cellProps: { className: 'py-2' }
+      headerProps: {
+        style: { width: '30%', minWidth: 350 },
+        className: 'ps-0'
+      },
+      cellProps: { className: 'py-2 ps-0' }
     }
   },
   {
