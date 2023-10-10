@@ -64,7 +64,10 @@ const LeadEmails = ({ className }: { className?: string }) => {
   };
 
   return (
-    <div className={classNames(className)} id="emails">
+    <div
+      className={classNames(className, 'lead-details-scrollspy')}
+      id="emails"
+    >
       <h2 className="mb-2">Emails</h2>
       <AdvanceTableProvider {...table}>
         <FilterTab tabItems={tabItems} />

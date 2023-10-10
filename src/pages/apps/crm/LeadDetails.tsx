@@ -92,7 +92,7 @@ const LeadDetails = () => {
           <Col md={7} xl={8}>
             <div className="lead-details-container">
               <LeadDetailsNavbar />
-              <ScrollSpy activeClass="active">
+              <ScrollSpy activeClass="active" offsetTop={40}>
                 <Tasks className="mb-8" />
                 <LeadDeals className="mb-8" />
                 <LeadEmails className="mb-8" />

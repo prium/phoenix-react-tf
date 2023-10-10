@@ -7,7 +7,7 @@ import React from 'react';
 
 const LeadDeals = ({ className }: { className?: string }) => {
   return (
-    <div className={classNames(className)} id="deals">
+    <div className={classNames(className, 'lead-details-scrollspy')} id="deals">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="mb-0">Deals</h2>
         <Button

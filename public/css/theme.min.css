@@ -29106,6 +29106,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   padding-left: 4px !important;
 }
 
+.lead-details-scrollspy {
+  scroll-margin-top: 130px;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                             Bootstrap Carousel                             */
 /* -------------------------------------------------------------------------- */

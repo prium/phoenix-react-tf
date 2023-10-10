@@ -28,6 +28,7 @@ const Crm = () => {
                 value={3}
                 title="Leads Today"
                 badgeLabel="+24.5%"
+                badgeBg="success"
                 footerText="Than yesterday"
               />
             </Col>
@@ -39,6 +40,7 @@ const Crm = () => {
                 value={12}
                 title="This Week"
                 badgeLabel="+20.5%"
+                badgeBg="warning"
                 footerText="Than last week"
               />
             </Col>
