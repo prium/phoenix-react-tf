@@ -40,21 +40,21 @@ export const stats: StatType[] = [
   {
     id: 4,
     icon: UilEnvelopeOpen,
-    iconColor: 'primary',
+    iconColor: 'info',
     emailCount: '1,200',
     title: 'Emails Opened'
   },
   {
     id: 5,
     icon: UilEnvelopeCheck,
-    iconColor: 'primary',
+    iconColor: 'success',
     emailCount: '900',
     title: 'Emails Clicked'
   },
   {
     id: 6,
     icon: UilEnvelopeBlock,
-    iconColor: 'primary',
+    iconColor: 'danger',
     emailCount: '500',
     title: 'Emails Bounce'
   }

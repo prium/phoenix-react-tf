@@ -84,7 +84,7 @@ const getDefaultOptions = (
         color:
           theme === 'light'
             ? getThemeColor('primary-300')
-            : getThemeColor('parimary')
+            : getThemeColor('primary')
       },
       data: sellersReportData.map(data => data.totalCount)
     }
