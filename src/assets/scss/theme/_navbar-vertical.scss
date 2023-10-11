@@ -138,6 +138,19 @@ html:not(.navbar-vertical-collapsed) {
     }
     .nav-link-text {
       padding-top: 0.125rem;
+      &.new {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background: $cyan;
+          top: 2px;
+          right: -8px;
+        }
+      }
     }
   }
   .nav-item-wrapper:has(.active) {
@@ -546,5 +559,20 @@ html:not(.navbar-vertical-collapsed) {
     margin-left: -8px !important;
     margin-top: -15px;
     display: block !important;
+  }
+  .nav-link-icon {
+    &.new {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        background: $cyan;
+        top: -4px;
+        right: -6px;
+      }
+    }
   }
 }

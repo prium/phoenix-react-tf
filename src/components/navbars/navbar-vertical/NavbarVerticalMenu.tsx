@@ -7,9 +7,10 @@ import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCaretRight, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavbarVerticalCollapse } from './NavbarVerticalCollapseProvider';
 import Badge from 'components/base/Badge';
+import { useAppContext } from 'providers/AppProvider';
 
 interface NavbarVerticalMenuProps {
   routes: Route[];
@@ -22,6 +23,9 @@ interface NavItemProps {
 }
 
 const NavItem = ({ route, level }: NavItemProps) => {
+  const {
+    config: { isNavbarVerticalCollapsed }
+  } = useAppContext();
   const { setOpenItems, openItems } = useNavbarVerticalCollapse();
   return (
     <Nav.Item as="li">
@@ -42,7 +46,11 @@ const NavItem = ({ route, level }: NavItemProps) => {
         >
           {route.icon ? (
             <>
-              <span className="nav-link-icon ">
+              <span
+                className={classNames('nav-link-icon', {
+                  new: route.new || route.hasNew
+                })}
+              >
                 {route.iconSet === 'font-awesome' ? (
                   <FontAwesomeIcon
                     icon={route.icon as IconProp}
@@ -54,7 +62,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
               </span>
               <span className="nav-link-text-wrapper">
                 <span className="nav-link-text">{capitalize(route.name)}</span>
-                {route.new && (
+                {route.new && !isNavbarVerticalCollapsed && (
                   <Badge variant="phoenix" bg="info" className="ms-2">
                     New
                   </Badge>
@@ -80,6 +88,9 @@ const NavItem = ({ route, level }: NavItemProps) => {
 const CollapsableNavItem = ({ route, level }: NavItemProps) => {
   const { pathname } = useLocation();
   const { setOpenItems, openItems } = useNavbarVerticalCollapse();
+  const {
+    config: { isNavbarVerticalCollapsed }
+  } = useAppContext();
 
   const openCollapse = (childrens: Route[] = []) => {
     const checkLink = (children: Route) => {
@@ -135,22 +146,26 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
             />
           </div>
           {level === 1 && (
-            <span className="nav-link-icon">
+            <span
+              className={classNames('nav-link-icon', {
+                new: route.new || route.hasNew
+              })}
+            >
               <FeatherIcon icon={route.icon} size={16} />
             </span>
           )}
-          <span className="nav-link-text">{capitalize(route.name)}</span>
-          {route.new && (
-            <Badge variant="phoenix" bg="info" className="ms-2">
-              New
-            </Badge>
-          )}
-          {route.hasNew && (
-            <FontAwesomeIcon
-              icon={faCircle}
-              className="text-info ms-1 new-page-indicator"
-            />
-          )}
+          <span
+            className={classNames('nav-link-text', {
+              new: route.hasNew
+            })}
+          >
+            {capitalize(route.name)}
+            {(!isNavbarVerticalCollapsed || level !== 1) && route.new && (
+              <Badge variant="phoenix" bg="info" className="ms-2">
+                New
+              </Badge>
+            )}
+          </span>
         </div>
       </Nav.Link>
       <div
@@ -163,6 +178,11 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
             {level === 1 && (
               <div className="collapsed-nav-item-title d-none">
                 {capitalize(route.name)}
+                {isNavbarVerticalCollapsed && route.new && (
+                  <Badge variant="phoenix" bg="info" className="ms-2">
+                    New
+                  </Badge>
+                )}
               </div>
             )}
             <NavbarVerticalMenu routes={route.pages || []} level={level + 1} />
