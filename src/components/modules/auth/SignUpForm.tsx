@@ -29,13 +29,13 @@ const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
           />
         </Form.Group>
         <Row className="g-3 mb-3">
-          <Col sm={6}>
+          <Col sm={layout === 'card' ? 12 : 6} lg={6}>
             <Form.Group>
               <Form.Label htmlFor="password">Password</Form.Label>
               <Form.Control id="password" type="text" placeholder="Password" />
             </Form.Group>
           </Col>
-          <Col sm={6}>
+          <Col sm={layout === 'card' ? 12 : 6} lg={6}>
             <Form.Group>
               <Form.Label htmlFor="confirmPassword">
                 Confirm Password

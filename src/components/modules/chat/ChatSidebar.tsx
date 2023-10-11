@@ -10,9 +10,13 @@ import {
   faMagnifyingGlass,
   faUser
 } from '@fortawesome/free-solid-svg-icons';
+import { useAppContext } from 'providers/AppProvider';
 
 const ChatSidebar = ({ className }: { className?: string }) => {
   const [openSearchModal, setOpenSearchModal] = useState(false);
+  const {
+    config: { isRTL }
+  } = useAppContext();
   return (
     <>
       <Card className={classNames(className, 'chat-sidebar p-3 p-xl-1')}>
@@ -22,7 +26,10 @@ const ChatSidebar = ({ className }: { className?: string }) => {
         >
           <FontAwesomeIcon icon={faMagnifyingGlass} className="text-600 fs-7" />
         </Button>
-        <Dropdown className="d-none d-sm-block d-xl-none mb-5">
+        <Dropdown
+          className="d-none d-sm-block d-xl-none mb-5"
+          align={isRTL ? 'end' : 'start'}
+        >
           <Dropdown.Toggle
             variant=""
             size="sm"
@@ -30,7 +37,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
           >
             <FontAwesomeIcon icon={faBars} className="fs-7 text-600" />
           </Dropdown.Toggle>
-          <Dropdown.Menu align="start" className="p-0" style={{ zIndex: 1020 }}>
+          <Dropdown.Menu className="p-0">
             <Dropdown.Item eventKey="1">All</Dropdown.Item>
             <Dropdown.Item eventKey="2">Read</Dropdown.Item>
             <Dropdown.Item eventKey="3">Unread</Dropdown.Item>

@@ -29,10 +29,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
                 <div className="flex-1 me-2">
                   <h5 className="text-1000 lh-sm">{activity.title}</h5>
                   <p className="fs-9 mb-0">
-                    by
-                    <Link to="#!" className="ms-1">
-                      {activity.name}
-                    </Link>
+                    by <Link to="#!">{activity.name}</Link>
                   </p>
                 </div>
                 <div className="fs-9">

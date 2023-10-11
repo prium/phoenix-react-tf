@@ -7,8 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Badge from 'components/base/Badge';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { useAppContext } from 'providers/AppProvider';
 
 const DealProfileCard = ({ className }: { className?: string }) => {
+  const {
+    config: { isRTL }
+  } = useAppContext();
   return (
     <Card className={className}>
       <Card.Body>
@@ -34,7 +38,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                 <Avatar size="xl" src={avatar} className="me-3" />
                 <div>
                   <h5>Ansolo Lazinatov</h5>
-                  <Dropdown>
+                  <Dropdown align={isRTL ? 'end' : 'start'}>
                     <Dropdown.Toggle
                       variant="link"
                       className="text-800 text-decoration-none dropdown-caret-none p-0 fs-8 fw-normal"
