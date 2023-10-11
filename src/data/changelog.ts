@@ -2,7 +2,7 @@ export default [
   {
     version: '1.1.0',
     title: 'Theseus',
-    publishDate: '11 October, 2023',
+    publishDate: '12 October, 2023',
     logs: {
       new: [
         'Dashboard : <code>CRM</code>',
