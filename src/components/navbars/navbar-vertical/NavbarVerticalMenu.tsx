@@ -7,8 +7,9 @@ import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavbarVerticalCollapse } from './NavbarVerticalCollapseProvider';
+import Badge from 'components/base/Badge';
 
 interface NavbarVerticalMenuProps {
   routes: Route[];
@@ -53,10 +54,22 @@ const NavItem = ({ route, level }: NavItemProps) => {
               </span>
               <span className="nav-link-text-wrapper">
                 <span className="nav-link-text">{capitalize(route.name)}</span>
+                {route.new && (
+                  <Badge variant="phoenix" bg="info" className="ms-2">
+                    New
+                  </Badge>
+                )}
               </span>
             </>
           ) : (
-            <span className="nav-link-text ">{capitalize(route.name)}</span>
+            <>
+              <span className="nav-link-text ">{capitalize(route.name)}</span>
+              {route.new && (
+                <Badge variant="phoenix" bg="info" className="ms-2">
+                  New
+                </Badge>
+              )}
+            </>
           )}
         </div>
       </NavLink>
@@ -127,6 +140,17 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
             </span>
           )}
           <span className="nav-link-text">{capitalize(route.name)}</span>
+          {route.new && (
+            <Badge variant="phoenix" bg="info" className="ms-2">
+              New
+            </Badge>
+          )}
+          {route.hasNew && (
+            <FontAwesomeIcon
+              icon={faCircle}
+              className="text-info ms-1 new-page-indicator"
+            />
+          )}
         </div>
       </Nav.Link>
       <div

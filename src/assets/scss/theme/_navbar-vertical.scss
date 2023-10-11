@@ -334,6 +334,10 @@ html:not(.navbar-vertical-collapsed) {
   //     }
   //   }
   // }
+  .new-page-indicator {
+    margin-top: -10px;
+    font-size: 6px;
+  }
 }
 
 // ----------------------------------------------------------------------------
@@ -537,5 +541,10 @@ html:not(.navbar-vertical-collapsed) {
   }
   .nav-link-badge {
     display: none;
+  }
+  .new-page-indicator {
+    margin-left: -8px !important;
+    margin-top: -15px;
+    display: block !important;
   }
 }

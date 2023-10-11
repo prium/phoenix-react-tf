@@ -19,6 +19,8 @@ export interface Route {
   topNavIcon?: string;
   dropdownInside?: boolean;
   active?: boolean;
+  new?: boolean;
+  hasNew?: boolean;
 }
 
 export interface RouteItems {
@@ -43,6 +45,7 @@ export const routes: RouteItems[] = [
         name: 'home',
         icon: 'pie-chart',
         active: true,
+        hasNew: true,
         flat: true,
         pages: [
           {
@@ -64,7 +67,8 @@ export const routes: RouteItems[] = [
             path: '/dashboard/crm',
             pathName: 'crm',
             topNavIcon: 'phone',
-            active: true
+            active: true,
+            new: true
           },
           {
             name: 'social-feed',
@@ -212,6 +216,7 @@ export const routes: RouteItems[] = [
         name: 'CRM',
         icon: 'phone',
         active: true,
+        new: true,
         pages: [
           {
             name: 'analytics',
@@ -434,6 +439,7 @@ export const routes: RouteItems[] = [
         name: 'pricing',
         icon: 'tag',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'pricing-column',
@@ -445,7 +451,8 @@ export const routes: RouteItems[] = [
             name: 'pricing-grid',
             path: 'pages/pricing/pricing-grid',
             pathName: 'pricing-grid',
-            active: true
+            active: true,
+            new: true
           }
         ]
       },
@@ -498,6 +505,7 @@ export const routes: RouteItems[] = [
         name: 'authentication',
         icon: 'lock',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'simple',
@@ -550,6 +558,7 @@ export const routes: RouteItems[] = [
           {
             name: 'split',
             active: true,
+            new: true,
             pages: [
               {
                 name: 'sign-in',
@@ -598,6 +607,7 @@ export const routes: RouteItems[] = [
           {
             name: 'Card',
             active: true,
+            new: true,
             pages: [
               {
                 name: 'sign-in',
@@ -1342,7 +1352,8 @@ export const routes: RouteItems[] = [
         icon: 'fast-forward',
         path: '/migrations',
         pathName: 'migrations',
-        active: true
+        active: true,
+        new: true
       },
       {
         name: 'showcase',

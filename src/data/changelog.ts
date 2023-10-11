@@ -2,7 +2,7 @@ export default [
   {
     version: '1.1.0',
     title: 'Theseus',
-    publishDate: '4 October, 2023',
+    publishDate: '11 October, 2023',
     logs: {
       new: [
         'Dashboard : <code>CRM</code>',
@@ -28,12 +28,14 @@ export default [
         'PAGE : <code>authentication/card/reset-password</code>',
         'PAGE : <code>authentication/card/lock-screen</code>',
         'PAGE : <code>authentication/card/2FA</code>',
+        'PAGE : <code>migrations</code>',
         'COMPONENT : <code>Unicon</code>',
         'COMPONENT : <code>PhoenixLoader</code>'
       ],
       update: [
         'Migrated from Font Awesome React  <code>Global Use</code> to <code>Individual Use</code> for improved icon management.',
-        'Added <code>footerProps</code> in <code>AdvanceTable</code> columns definition.'
+        'Added <code>footerProps</code> in <code>AdvanceTable</code> columns definition.',
+        'Example added for all <code>Icon</code> sets.'
       ],
       fix: ['Minor Bugs']
     }
