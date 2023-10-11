@@ -1,11 +1,35 @@
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import migrations from 'data/migrations';
+import { Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Migrations = () => {
   return (
     <div>
       <h2 className="mb-4 lh-sm">Migrations</h2>
+
+      <Card className="mb-4">
+        <Card.Body>
+          <Alert variant="soft-warning" className="mb-0">
+            <div className="d-flex">
+              <FontAwesomeIcon icon={faExclamationTriangle} className="fs-5" />
+              <div className="ms-3 flex-1">
+                <h4 className="alert-heading">Before you update!</h4>
+                Backup your files and read the changelog before updating{' '}
+                {process.env.REACT_APP_TITLE}-React on your project. If you come
+                across with any problems with {process.env.REACT_APP_TITLE}
+                -React template during the update, feel free to contact us at{' '}
+                <a href="mailto:support@themewagon.com">
+                  support@themewagon.com
+                </a>
+                .
+              </div>
+            </div>
+          </Alert>
+        </Card.Body>
+      </Card>
 
       {migrations.map(migration => (
         <PhoenixDocCard className="mb-4" key={migration.from}>
