@@ -25,7 +25,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisPointer: {
       type: 'none'
     },
-    formatter: (params: CallbackDataParams[]) => tooltipFormatterDefault(params)
+    formatter: (params: CallbackDataParams[]) =>
+      tooltipFormatterDefault(params, 'MMM DD', 'color')
   },
   xAxis: {
     type: 'value',
