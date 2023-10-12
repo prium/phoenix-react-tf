@@ -854,6 +854,11 @@ const AdvanceTableExample = () => {
                   column. This allows you to add attributes like classes or
                   event handlers to the column headers.
                 </li>
+                <li>
+                  <code>footerProps</code> : This prop allows you to specify
+                  additional HTML attributes for the footer cell element in a
+                  table header to enhance its appearance or behavior.
+                </li>
               </ul>
             </p>
           </div>
