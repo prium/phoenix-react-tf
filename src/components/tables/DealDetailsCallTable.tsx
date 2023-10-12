@@ -25,7 +25,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
       } = original;
       return (
         <Link
-          to="/apps/e-commerce/customer/product-details"
+          to="/pages/members"
           className="d-flex align-items-center text-1000"
         >
           <Avatar src={avatar} size="m" className="me-3" status={status} />
