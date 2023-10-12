@@ -362,6 +362,30 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'kanban',
+        icon: 'trello',
+        new: true,
+        active: true,
+        pages: [
+          {
+            name: 'Kanban',
+            path: '/apps/kanban',
+            pathName: 'app-kanban',
+            active: true
+          },
+          {
+            name: 'boards',
+            path: 'apps/kanban/boards',
+            pathName: 'kanban-boards'
+          },
+          {
+            name: 'create board',
+            path: '/apps/kanban/create-kanban-board',
+            pathName: 'create-kanban-board'
+          }
+        ]
+      },
+      {
         name: 'social',
         icon: 'share-2',
         active: true,

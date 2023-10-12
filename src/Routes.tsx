@@ -163,6 +163,7 @@ import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
+import Kanban from 'pages/apps/kanban/Kanban';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -317,6 +318,15 @@ const routes: RouteObject[] = [
                   {
                     path: 'event-detail',
                     element: <EventDetail />
+                  }
+                ]
+              },
+              {
+                path: 'kanban',
+                children: [
+                  {
+                    index: true,
+                    element: <Kanban />
                   }
                 ]
               },
