@@ -1,3 +1,10 @@
+import {
+  faCalendarDays,
+  faHome,
+  faImage,
+  faMessage,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { Nav } from 'react-bootstrap';
@@ -17,7 +24,7 @@ const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
           to="/apps/social/feed"
           className={classNames({ active: active === 'home' })}
         >
-          <FontAwesomeIcon icon="home" className="nav-icon" />
+          <FontAwesomeIcon icon={faHome} className="nav-icon" />
           <span className="nav-label">Home</span>
         </Nav.Link>
         <Nav.Link
@@ -25,7 +32,7 @@ const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
           to="/apps/social/profile"
           className={classNames({ active: active === 'profile' })}
         >
-          <FontAwesomeIcon icon="user" className="nav-icon" />
+          <FontAwesomeIcon icon={faUser} className="nav-icon" />
           <span className="nav-label">Profile</span>
         </Nav.Link>
         <Nav.Link
@@ -33,7 +40,7 @@ const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
           to="#!"
           className={classNames({ active: active === 'photos' })}
         >
-          <FontAwesomeIcon icon="image" className="nav-icon" />
+          <FontAwesomeIcon icon={faImage} className="nav-icon" />
           <span className="nav-label">Photos</span>
         </Nav.Link>
         <Nav.Link
@@ -41,7 +48,7 @@ const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
           to="/apps/chat"
           className={classNames({ active: active === 'messages' })}
         >
-          <FontAwesomeIcon icon="message" className="nav-icon" />
+          <FontAwesomeIcon icon={faMessage} className="nav-icon" />
           <span className="nav-label">Messages</span>
         </Nav.Link>
         <Nav.Link
@@ -49,7 +56,7 @@ const NavbarBottom = ({ active, className }: NavbarBottomProps) => {
           to="/apps/events/event-detail"
           className={classNames({ active: active === 'events' })}
         >
-          <FontAwesomeIcon icon="calendar-days" className="nav-icon" />
+          <FontAwesomeIcon icon={faCalendarDays} className="nav-icon" />
           <span className="nav-label">Events</span>
         </Nav.Link>
       </Nav>

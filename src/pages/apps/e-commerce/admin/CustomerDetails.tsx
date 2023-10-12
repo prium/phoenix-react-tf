@@ -1,3 +1,4 @@
+import { faKey, faPen, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import CustomerNotesCard from 'components/cards/CustomerNotesCard';
@@ -22,13 +23,13 @@ const CustomerDetails = () => {
           <Col xs="auto" className="d-flex gap-3 flex-wrap">
             <Button
               variant="phoenix-danger"
-              startIcon={<FontAwesomeIcon icon="trash-alt" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faTrashAlt} className="me-2" />}
             >
               Delete customer
             </Button>
             <Button
               variant="phoenix-secondary"
-              startIcon={<FontAwesomeIcon icon="key" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faKey} className="me-2" />}
             >
               Reset password
             </Button>
@@ -47,7 +48,7 @@ const CustomerDetails = () => {
                       <h3 className="me-1">Default Address</h3>
                       <Button variant="link" className="p-0">
                         <FontAwesomeIcon
-                          icon="pen"
+                          icon={faPen}
                           className="fs-8 ms-3 text-500"
                         />
                       </Button>

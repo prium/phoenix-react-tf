@@ -24,6 +24,13 @@ import team60 from 'assets/img/team/60.webp';
 import team57 from 'assets/img/team/57.webp';
 import { FileAttachment } from 'components/common/AttachmentPreview';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFaceSmile,
+  faPenToSquare,
+  faReply,
+  faShare,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 
 export interface Message {
   id: number;
@@ -645,23 +652,23 @@ export const files: FileAttachment[] = [
 
 export const actions: MessageActionType[] = [
   {
-    icon: 'trash',
+    icon: faTrash,
     label: 'Delete'
   },
   {
-    icon: 'reply',
+    icon: faReply,
     label: 'Reply'
   },
   {
-    icon: 'pen-to-square',
+    icon: faPenToSquare,
     label: 'Edit'
   },
   {
-    icon: 'share',
+    icon: faShare,
     label: 'Share'
   },
   {
-    icon: 'face-smile',
+    icon: faFaceSmile,
     label: 'Emoji'
   }
 ];

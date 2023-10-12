@@ -167,13 +167,11 @@ const Gallery = () => {
 
         <div className="d-grid grid-cols-4 gap-3">
           {images.map((gallery, index) => (
-            <>
-              <GalleryItem
-                galleryItem={gallery}
-                key={gallery.img}
-                onClick={() => handleItemClick(index + 1)}
-              />
-            </>
+            <GalleryItem
+              galleryItem={gallery}
+              key={gallery.img}
+              onClick={() => handleItemClick(index + 1)}
+            />
           ))}
         </div>
 

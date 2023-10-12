@@ -8,16 +8,18 @@ interface AdvanceTableProps {
   bodyClassName?: string;
   rowClassName?: string;
   tableProps?: TableProps;
+  hasFooter?: boolean;
 }
 
 const AdvanceTable = ({
   headerClassName,
   bodyClassName,
   rowClassName,
-  tableProps
+  tableProps,
+  hasFooter
 }: AdvanceTableProps) => {
   const table = useAdvanceTableContext();
-  const { getRowModel, getFlatHeaders } = table;
+  const { getRowModel, getFlatHeaders, getFooterGroups } = table;
 
   return (
     <div className="scrollbar ms-n1 ps-1">
@@ -61,6 +63,29 @@ const AdvanceTable = ({
             </tr>
           ))}
         </tbody>
+        {hasFooter && (
+          <tfoot>
+            {getFooterGroups().map(footerGroup => (
+              <tr key={footerGroup.id} className="border-0">
+                {footerGroup.headers.map(header => {
+                  return (
+                    <th
+                      key={header.id}
+                      {...header.column.columnDef.meta?.footerProps}
+                    >
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                            header.column.columnDef.footer,
+                            header.getContext()
+                          )}
+                    </th>
+                  );
+                })}
+              </tr>
+            ))}
+          </tfoot>
+        )}
       </Table>
     </div>
   );

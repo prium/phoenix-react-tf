@@ -9,6 +9,11 @@ import VerticalNavbarAppearance from './VerticalNavbarAppearance';
 import TopNavbarAppearance from './TopNavbarAppearance';
 import RTLMode from './RTLMode';
 import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
+import {
+  faArrowsRotate,
+  faPalette,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
 
 const SettingsPanel = () => {
   const { configDispatch } = useAppContext();
@@ -40,7 +45,7 @@ const SettingsPanel = () => {
         <div className="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
           <div>
             <h5 className="mb-2 me-2 lh-sm">
-              <FontAwesomeIcon icon="palette" className="me-2 fs-8" />
+              <FontAwesomeIcon icon={faPalette} className="me-2 fs-8" />
               Theme Customizer
             </h5>
             <p className="mb-0 fs-9">
@@ -48,7 +53,7 @@ const SettingsPanel = () => {
             </p>
           </div>
           <button className="btn p-1 fw-bolder" onClick={handleClose}>
-            <FontAwesomeIcon icon="times" className="fs-8" />
+            <FontAwesomeIcon icon={faTimes} className="fs-8" />
           </button>
         </div>
         <Button
@@ -57,7 +62,7 @@ const SettingsPanel = () => {
           onClick={handleResetToDefault}
           disabled={disableResetButton}
         >
-          <FontAwesomeIcon icon="arrows-rotate" className="me-2 fs-10" />
+          <FontAwesomeIcon icon={faArrowsRotate} className="me-2 fs-10" />
           Reset to default
         </Button>
       </Offcanvas.Header>

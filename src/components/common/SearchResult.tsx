@@ -9,6 +9,7 @@ import Scrollbar from 'components/base/Scrollbar';
 import useSearchHook from 'hooks/useSearchHook';
 import { ColumnDef } from '@tanstack/react-table';
 import { useMemo } from 'react';
+import { faClockRotateLeft, faLink } from '@fortawesome/free-solid-svg-icons';
 
 const ResultSectionHeader = ({ title }: { title: string }) => {
   return (
@@ -70,7 +71,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
                 <div className="d-flex align-items-center fw-normal gap-1 text-1000">
                   <FontAwesomeIcon
-                    icon="clock-rotate-left"
+                    icon={faClockRotateLeft}
                     transform="shrink-2"
                   />
                   {item.label}
@@ -119,7 +120,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
                 <div className="d-flex align-items-center fw-normal gap-1 text-1000">
                   <FontAwesomeIcon
-                    icon="link"
+                    icon={faLink}
                     transform="shrink-2"
                     className="text-900"
                   />

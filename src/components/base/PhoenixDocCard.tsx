@@ -1,5 +1,5 @@
-import React, { PropsWithChildren, useEffect } from 'react';
-import { Card, Col, Nav, Row, Collapse } from 'react-bootstrap';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
+import { Card, Col, Nav, Row, Collapse, Toast } from 'react-bootstrap';
 import Button from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FeatherIcon from 'feather-icons-react';
@@ -13,6 +13,7 @@ import PhoenixDocProvider, {
 import PhoenixLiveProvider, {
   PhoenixLiveProviderProps
 } from 'components/docs/PhoenixLiveProvider';
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 interface PhoenixDocCardProps {
   className?: string;
@@ -63,10 +64,18 @@ const PhoenixDocCardHeader = ({
   children,
   className
 }: PropsWithChildren<PhoenixDocCardHeaderProps>) => {
-  const { open, setOpen, showPreviewBtn, setShowPreviewBtn } =
+  const [showToast, setShowToast] = useState(false);
+  const { open, setOpen, showPreviewBtn, setShowPreviewBtn, textToCopy } =
     usePhoenixDocContext();
 
   const headerId = id ? id : title && snakeCase(title);
+
+  const handleCopyCode = async () => {
+    if (textToCopy) {
+      await navigator.clipboard.writeText(textToCopy);
+      setShowToast(true);
+    }
+  };
 
   useEffect(() => {
     setShowPreviewBtn(!noPreview);
@@ -105,8 +114,9 @@ const PhoenixDocCardHeader = ({
                 variant="link"
                 size="sm"
                 className="px-2 text-900 copy-code-btn me-2"
+                onClick={handleCopyCode}
               >
-                <FontAwesomeIcon icon="copy" className="me-1" />
+                <FontAwesomeIcon icon={faCopy} className="me-1" />
                 Copy Code
               </Button>
               <Button
@@ -132,6 +142,24 @@ const PhoenixDocCardHeader = ({
           </Col>
         )}
       </Row>
+
+      <Toast
+        show={showToast}
+        onClose={() => setShowToast(false)}
+        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        delay={3000}
+        autohide
+      >
+        <div className="d-flex">
+          <Toast.Body className="P-3">
+            <span className="fw-black">
+              <code className="text-500">
+                Code has been copied to clipboard.
+              </code>
+            </span>
+          </Toast.Body>
+        </div>
+      </Toast>
     </Card.Header>
   );
 };
@@ -145,8 +173,13 @@ const PhoenixDocCardBody = ({
   className,
   transformCode
 }: PropsWithChildren<PhoenixDocCardBodyProps>) => {
-  const { open, showPreviewBtn } = usePhoenixDocContext();
+  const { open, showPreviewBtn, setTextToCopy } = usePhoenixDocContext();
 
+  useEffect(() => {
+    if (code) {
+      setTextToCopy(code);
+    }
+  }, []);
   return (
     <Card.Body className={classNames(className, 'p-0')}>
       {code && (

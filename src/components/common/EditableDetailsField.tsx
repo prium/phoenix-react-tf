@@ -1,3 +1,4 @@
+import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import SeeMoreText from 'components/base/SeeMoreText';
@@ -30,7 +31,7 @@ const EditableDetailsField = ({
             className="text-decoration-none p-0"
             onClick={() => setEditMode(true)}
           >
-            <FontAwesomeIcon icon="pen" />
+            <FontAwesomeIcon icon={faPen} />
           </Button>
         )}
       </div>

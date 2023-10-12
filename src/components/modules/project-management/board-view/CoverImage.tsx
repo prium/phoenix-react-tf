@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { ChangeEvent, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import generic43 from 'assets/img/generic/43.webp';
+import { faImage, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
   const [image, setImage] = useState<File | null>(null);
@@ -24,7 +25,7 @@ const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
         htmlFor="projectCoverInput"
       >
         <span className="project-modal-btn d-inline-block bg-white dark__text-white rounded-2 py-2 px-3 fs-9 fw-bolder mt-3 ms-3 cursor-pointer">
-          <FontAwesomeIcon icon="image" className="me-1" />
+          <FontAwesomeIcon icon={faImage} className="me-1" />
           Change
         </span>
       </label>
@@ -34,7 +35,7 @@ const CoverImage = ({ handleClose }: { handleClose: () => void }) => {
         className="project-modal-btn position-absolute end-0 top-0 mt-3 me-3 bg-white"
         onClick={handleClose}
       >
-        <FontAwesomeIcon icon="xmark" />
+        <FontAwesomeIcon icon={faXmark} />
       </Button>
       <img
         src={image ? URL.createObjectURL(image) : generic43}

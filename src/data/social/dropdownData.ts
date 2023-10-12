@@ -1,4 +1,19 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faBan,
+  faBellSlash,
+  faCalendarDays,
+  faDice,
+  faFlag,
+  faGear,
+  faHandHoldingHeart,
+  faLocationDot,
+  faPhotoFilm,
+  faTags,
+  faUserGear,
+  faUserGroup,
+  faUsers
+} from '@fortawesome/free-solid-svg-icons';
 
 export interface DropdownData {
   label: string;
@@ -8,69 +23,69 @@ export interface DropdownData {
 export const dropdownData: DropdownData[] = [
   {
     label: 'Followers',
-    icon: 'user-group'
+    icon: faUserGroup
   },
   {
     label: 'Communities',
-    icon: 'users'
+    icon: faUsers
   },
   {
     label: 'Media Files',
-    icon: 'photo-film'
+    icon: faPhotoFilm
   },
   {
     label: 'Events',
-    icon: 'calendar-days'
+    icon: faCalendarDays
   },
   {
     label: 'Games',
-    icon: 'dice'
+    icon: faDice
   },
   {
     label: 'Settings',
-    icon: 'user-gear'
+    icon: faUserGear
   },
   {
     label: 'Mute Conversation',
-    icon: 'bell-slash'
+    icon: faBellSlash
   },
   {
     label: 'Manage Settings',
-    icon: 'gear'
+    icon: faGear
   },
   {
     label: 'Get help',
-    icon: 'hand-holding-heart'
+    icon: faHandHoldingHeart
   },
   {
     label: 'Report Account',
-    icon: 'flag'
+    icon: faFlag
   },
   {
     label: 'Block Account',
-    icon: 'ban'
+    icon: faBan
   }
 ];
 
 export const mutualData: DropdownData[] = [
   {
     label: '432 Common Followers',
-    icon: 'user-group'
+    icon: faUserGroup
   },
   {
     label: '21 Communities',
-    icon: 'users'
+    icon: faUsers
   },
   {
     label: '12 Tagged Images',
-    icon: 'tags'
+    icon: faTags
   },
   {
     label: '3 Common Events',
-    icon: 'calendar-days'
+    icon: faCalendarDays
   },
   {
     label: '45 Common Check-ins',
-    icon: 'location-dot'
+    icon: faLocationDot
   }
 ];

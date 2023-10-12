@@ -4,6 +4,7 @@
 
 // Safari clipping mask
 .overflow-hidden[class*='rounded'] {
+  -webkit-mask-image: radial-gradient($white, $black);
   mask-image: radial-gradient($white, $black);
 }
 

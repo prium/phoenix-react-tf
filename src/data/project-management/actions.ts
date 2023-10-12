@@ -1,4 +1,16 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faArrowRight,
+  faBoxArchive,
+  faCalendarDays,
+  faCopy,
+  faPaperclip,
+  faShareNodes,
+  faSquareCheck,
+  faTag,
+  faTrash,
+  faUserPlus
+} from '@fortawesome/free-solid-svg-icons';
 
 type ActionItem = {
   icon: IconProp;
@@ -7,46 +19,46 @@ type ActionItem = {
 
 export const addToCardItems: ActionItem[] = [
   {
-    icon: 'user-plus',
+    icon: faUserPlus,
     label: 'Assignee'
   },
   {
-    icon: 'tag',
+    icon: faTag,
     label: 'Labels'
   },
   {
-    icon: 'paperclip',
+    icon: faPaperclip,
     label: 'Attachments'
   },
   {
-    icon: 'square-check',
+    icon: faSquareCheck,
     label: 'Checklist'
   },
   {
-    icon: 'calendar-days',
+    icon: faCalendarDays,
     label: 'Dates'
   }
 ];
 
 export const actionItems: ActionItem[] = [
   {
-    icon: 'arrow-right',
+    icon: faArrowRight,
     label: 'Move'
   },
   {
-    icon: 'copy',
+    icon: faCopy,
     label: 'Copy'
   },
   {
-    icon: 'trash',
+    icon: faTrash,
     label: 'Remove'
   },
   {
-    icon: 'box-archive',
+    icon: faBoxArchive,
     label: 'Archive'
   },
   {
-    icon: 'share-nodes',
+    icon: faShareNodes,
     label: 'Share'
   }
 ];

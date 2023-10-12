@@ -1,3 +1,4 @@
+import { faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevealDropdown, {
   RevealDropdownTrigger
@@ -41,11 +42,11 @@ const EventItem = ({ event }: EventItemProps) => {
       </p>
       <p className="fs-10 text-600">{event.people} people going</p>
       <p className="fs-9 text-700 fw-bold mb-1">
-        <FontAwesomeIcon icon="clock" className="text-800 me-1" />
+        <FontAwesomeIcon icon={faClock} className="text-800 me-1" />
         {event.time}
       </p>
       <p className="fs-9 text-700 fw-bold mb-0">
-        <FontAwesomeIcon icon="map-marker-alt" className="text-800 me-1" />
+        <FontAwesomeIcon icon={faMapMarkerAlt} className="text-800 me-1" />
         {event.place}
       </p>
     </div>

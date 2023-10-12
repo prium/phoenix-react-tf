@@ -112,7 +112,6 @@ import SimpleResetPassword from 'pages/pages/authentication/simple/ResetPassword
 import SimpleLockScreen from 'pages/pages/authentication/simple/LockScreen';
 import SimpleTwoFA from 'pages/pages/authentication/simple/TwoFA';
 import SimpleForgotPassword from 'pages/pages/authentication/simple/ForgotPassword';
-import SimpleAuthLayout from 'layouts/SimpleAuthLayout';
 import Showcase from 'pages/Showcase';
 import VerticalSidenav from 'pages/pages/layouts/VerticalSidenav';
 import DarkModeDemo from 'pages/pages/layouts/DarkModeDemo';
@@ -132,15 +131,50 @@ import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
 import FileUploaderExample from 'pages/modules/forms/advance/FileUploaderExample';
 import AdvanceSelectExample from 'pages/modules/forms/advance/AdvanceSelectExample';
-import FontAwesome from 'pages/modules/components/FontAwesome';
-import FeatherIconExample from 'pages/modules/components/FeatherIconsExample';
-import Unicons from 'pages/modules/components/Unicons';
 import DatePickerExample from 'pages/modules/forms/advance/DatePickerExample';
 import ECharts from 'pages/modules/charts/ECharts';
 import GanttChart from 'pages/modules/charts/GanttChart';
 import Members from 'pages/Members';
 import DualNav from 'pages/pages/layouts/DualNav';
 import App from 'App';
+import Crm from 'pages/dashboard/Crm';
+import LeadDetails from 'pages/apps/crm/LeadDetails';
+import Analytics from 'pages/apps/crm/Analytics';
+import DealDetails from 'pages/apps/crm/DealDetails';
+import ReportDetails from 'pages/apps/crm/ReportDetails';
+import CardSignIn from 'pages/pages/authentication/card/SignIn';
+import CardSignUp from 'pages/pages/authentication/card/SignUp';
+import CardForgotPassword from 'pages/pages/authentication/card/ForgotPassword';
+import CardSignOut from 'pages/pages/authentication/card/SignOut';
+import CardResetPassword from 'pages/pages/authentication/card/ResetPassword';
+import CardTwoFA from 'pages/pages/authentication/card/TwoFA';
+import CardLockScreen from 'pages/pages/authentication/card/LockScreen';
+import Leads from 'pages/apps/crm/Leads';
+import Reports from 'pages/apps/crm/Reports';
+import AddContact from 'pages/apps/crm/AddContact';
+import PricingGrid from 'pages/pages/pricing/PricingGrid';
+import SplitSignIn from 'pages/pages/authentication/split/SignIn';
+import SplitSignUp from 'pages/pages/authentication/split/SignUp';
+import SplitSignOut from 'pages/pages/authentication/split/SignOut';
+import SplitForgotPassword from 'pages/pages/authentication/split/ForgotPassword';
+import SplitResetPassword from 'pages/pages/authentication/split/ResetPassword';
+import SplitLockScreen from 'pages/pages/authentication/split/LockScreen';
+import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
+import { Suspense, lazy } from 'react';
+import PhoenixLoader from 'components/common/PhoenixLoader';
+import Migrations from 'pages/documentation/Migrations';
+
+const FontAwesomeExample = lazy(
+  () => import('pages/modules/components/FontAwesomeExample')
+);
+
+const FeatherIconsExample = lazy(
+  () => import('pages/modules/components/FeatherIconsExample')
+);
+
+const UniconsExample = lazy(
+  () => import('pages/modules/components/UniconsExample')
+);
 
 const routes: RouteObject[] = [
   {
@@ -159,205 +193,280 @@ const routes: RouteObject[] = [
             element: <Ecommerce />
           },
           {
-            path: '/dashboard/project-management',
-            element: <ProjectManagement />
-          },
-          {
-            path: '/pages/starter',
-            element: <Starter />
-          },
-
-          {
-            path: '/pages/notifications',
-            element: <Notification />
-          },
-          {
-            path: '/pages/members',
-            element: <Members />
-          },
-          {
-            path: '/pages/faq/faq-accordion',
-            element: <FaqAccordion />
-          },
-
-          {
-            path: '/apps/e-commerce/admin/',
+            path: '/dashboard',
             children: [
               {
-                path: 'add-product',
-                element: <AddProduct />
+                path: 'project-management',
+                element: <ProjectManagement />
               },
               {
-                path: 'products',
-                element: <Products />
-              },
-              {
-                path: 'customers',
-                element: <Customers />
-              },
-              {
-                path: 'orders',
-                element: <Orders />
-              },
-              {
-                path: 'order-details',
-                element: <OrderDetails />
-              },
-              {
-                path: 'refund',
-                element: <Refund />
-              },
-              {
-                path: 'customer-details',
-                element: <CustomerDetails />
+                path: 'crm',
+                element: <Crm />
               }
             ]
           },
           {
-            path: '/apps/project-management/',
+            path: '/apps',
             children: [
               {
-                path: 'create-new',
-                element: <CreateNew />
+                path: 'e-commerce/admin',
+                children: [
+                  {
+                    path: 'add-product',
+                    element: <AddProduct />
+                  },
+                  {
+                    path: 'products',
+                    element: <Products />
+                  },
+                  {
+                    path: 'customers',
+                    element: <Customers />
+                  },
+                  {
+                    path: 'orders',
+                    element: <Orders />
+                  },
+                  {
+                    path: 'order-details',
+                    element: <OrderDetails />
+                  },
+                  {
+                    path: 'refund',
+                    element: <Refund />
+                  },
+                  {
+                    path: 'customer-details',
+                    element: <CustomerDetails />
+                  }
+                ]
               },
               {
-                path: 'project-list-view',
-                element: <ProjectListView />
+                path: 'crm',
+                children: [
+                  {
+                    path: 'analytics',
+                    element: <Analytics />
+                  },
+                  {
+                    path: 'deals',
+                    element: <ComingSoon />
+                  },
+                  {
+                    path: 'deal-details',
+                    element: <DealDetails />
+                  },
+                  {
+                    path: 'report-details',
+                    element: <ReportDetails />
+                  },
+                  {
+                    path: 'leads',
+                    element: <Leads />
+                  },
+                  {
+                    path: 'lead-details',
+                    element: <LeadDetails />
+                  },
+                  {
+                    path: 'reports',
+                    element: <Reports />
+                  },
+                  {
+                    path: 'add-contact',
+                    element: <AddContact />
+                  }
+                ]
               },
               {
-                path: 'project-card-view',
-                element: <ProjectCardView />
+                path: 'project-management',
+                children: [
+                  {
+                    path: 'create-new',
+                    element: <CreateNew />
+                  },
+                  {
+                    path: 'project-list-view',
+                    element: <ProjectListView />
+                  },
+                  {
+                    path: 'project-card-view',
+                    element: <ProjectCardView />
+                  },
+                  {
+                    path: 'project-board-view',
+                    element: <ProjectBoardView />
+                  },
+                  {
+                    path: 'todo-list',
+                    element: <ProjectTodoList />
+                  },
+                  {
+                    path: 'project-details',
+                    element: <ProjectDetails />
+                  }
+                ]
               },
               {
-                path: 'project-board-view',
-                element: <ProjectBoardView />
+                path: 'events',
+                children: [
+                  {
+                    path: 'create-an-event',
+                    element: <CreateAnEvent />
+                  },
+                  {
+                    path: 'event-detail',
+                    element: <EventDetail />
+                  }
+                ]
               },
               {
-                path: 'todo-list',
-                element: <ProjectTodoList />
+                path: 'chat',
+                element: <Chat />,
+                children: [
+                  {
+                    index: true,
+                    element: <ChatHomepage />
+                  },
+                  {
+                    path: ':userId/conversation',
+                    element: <ChatConversation />
+                  }
+                ]
               },
               {
-                path: 'project-details',
-                element: <ProjectDetails />
+                path: 'social',
+                children: [
+                  {
+                    path: 'profile',
+                    element: <SocialProfile />
+                  },
+                  {
+                    path: 'settings',
+                    element: <Settings />
+                  },
+                  {
+                    path: 'feed',
+                    element: <Feed />
+                  }
+                ]
+              },
+              {
+                path: 'email',
+                children: [
+                  {
+                    path: 'inbox',
+                    element: <Inbox />
+                  },
+                  {
+                    path: 'email-detail',
+                    element: <EmailDetail />
+                  },
+                  {
+                    path: 'compose',
+                    element: <Compose />
+                  }
+                ]
+              },
+              {
+                path: 'calendar',
+                element: <ComingSoon />
               }
             ]
           },
           {
-            path: '/apps/events/',
+            path: '/pages',
             children: [
               {
-                path: 'create-an-event',
-                element: <CreateAnEvent />
+                path: 'starter',
+                element: <Starter />
               },
               {
-                path: 'event-detail',
-                element: <EventDetail />
-              }
-            ]
-          },
-          {
-            path: '/apps/chat/',
-            element: <Chat />,
-            children: [
-              {
-                index: true,
-                element: <ChatHomepage />
+                path: 'faq',
+                children: [
+                  {
+                    path: 'faq-accordion',
+                    element: <FaqAccordion />
+                  },
+                  {
+                    path: 'faq-tab',
+                    element: <ComingSoon />
+                  }
+                ]
               },
               {
-                path: ':userId/conversation',
-                element: <ChatConversation />
-              }
-            ]
-          },
-          {
-            path: '/apps/social/',
-            children: [
-              {
-                path: 'profile',
-                element: <SocialProfile />
+                path: 'pricing',
+                children: [
+                  {
+                    path: 'pricing-column',
+                    element: <PricingColumn />
+                  },
+                  {
+                    path: 'pricing-grid',
+                    element: <PricingGrid />
+                  }
+                ]
               },
               {
-                path: 'settings',
-                element: <Settings />
+                path: 'notifications',
+                element: <Notification />
               },
               {
-                path: 'feed',
-                element: <Feed />
-              }
-            ]
-          },
-          {
-            path: '/apps/email/',
-            children: [
-              {
-                path: 'inbox',
-                element: <Inbox />
+                path: 'members',
+                element: <Members />
               },
               {
-                path: 'email-detail',
-                element: <EmailDetail />
+                path: 'timeline',
+                element: <ComingSoon />
               },
               {
-                path: 'compose',
-                element: <Compose />
-              }
-            ]
-          },
-          {
-            path: '/pages/pricing/',
-            children: [
-              {
-                path: 'pricing-column',
-                element: <PricingColumn />
-              }
-            ]
-          },
-          {
-            path: '/pages/demo/',
-            children: [
-              {
-                path: 'vertical-sidenav',
-                element: <VerticalSidenav />
-              },
-              {
-                path: 'dark-mode',
-                element: <DarkModeDemo />
-              },
-              {
-                path: 'sidenav-collapse',
-                element: <SidenavCollapse />
-              },
-              {
-                path: 'darknav',
-                element: <Darknav />
-              },
-              {
-                path: 'topnav-slim',
-                element: <TopnavSlim />
-              },
-              {
-                path: 'navbar-top-slim',
-                element: <NavbarTopSlim />
-              },
-              {
-                path: 'navbar-top',
-                element: <NavbarTop />
-              },
-              {
-                path: 'horizontal-slim',
-                element: <NavbarHorizontalSlim />
-              },
-              {
-                path: 'combo-nav',
-                element: <ComboNav />
-              },
-              {
-                path: 'combo-nav-slim',
-                element: <ComboNavSlim />
-              },
-              {
-                path: 'dual-nav',
-                element: <DualNav />
+                path: 'demo',
+                children: [
+                  {
+                    path: 'vertical-sidenav',
+                    element: <VerticalSidenav />
+                  },
+                  {
+                    path: 'dark-mode',
+                    element: <DarkModeDemo />
+                  },
+                  {
+                    path: 'sidenav-collapse',
+                    element: <SidenavCollapse />
+                  },
+                  {
+                    path: 'darknav',
+                    element: <Darknav />
+                  },
+                  {
+                    path: 'topnav-slim',
+                    element: <TopnavSlim />
+                  },
+                  {
+                    path: 'navbar-top-slim',
+                    element: <NavbarTopSlim />
+                  },
+                  {
+                    path: 'navbar-top',
+                    element: <NavbarTop />
+                  },
+                  {
+                    path: 'horizontal-slim',
+                    element: <NavbarHorizontalSlim />
+                  },
+                  {
+                    path: 'combo-nav',
+                    element: <ComboNav />
+                  },
+                  {
+                    path: 'combo-nav-slim',
+                    element: <ComboNavSlim />
+                  },
+                  {
+                    path: 'dual-nav',
+                    element: <DualNav />
+                  }
+                ]
               }
             ]
           },
@@ -395,15 +504,27 @@ const routes: RouteObject[] = [
                 children: [
                   {
                     path: 'font-awesome',
-                    element: <FontAwesome />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <FontAwesomeExample />
+                      </Suspense>
+                    )
                   },
                   {
                     path: 'feather',
-                    element: <FeatherIconExample />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <FeatherIconsExample />
+                      </Suspense>
+                    )
                   },
                   {
                     path: 'unicons',
-                    element: <Unicons />
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <UniconsExample />
+                      </Suspense>
+                    )
                   }
                 ]
               },
@@ -691,11 +812,12 @@ const routes: RouteObject[] = [
             element: <ChangeLog />
           },
           {
-            path: '*',
-            element: <ComingSoon />
+            path: 'migrations',
+            element: <Migrations />
           }
         ]
       },
+
       {
         element: <EcommerceLayout />,
         path: '/apps/e-commerce/customer/',
@@ -747,8 +869,17 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        path: '/landing/default',
-        element: <Default />
+        path: 'pages/landing',
+        children: [
+          {
+            path: 'default',
+            element: <Default />
+          },
+          {
+            path: 'alternate',
+            element: <ComingSoon />
+          }
+        ]
       },
       {
         path: '/pages/errors/',
@@ -768,7 +899,6 @@ const routes: RouteObject[] = [
         ]
       },
       {
-        element: <SimpleAuthLayout />,
         path: '/pages/authentication/simple/',
         children: [
           {
@@ -802,8 +932,78 @@ const routes: RouteObject[] = [
         ]
       },
       {
+        path: '/pages/authentication/split/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <SplitSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <SplitSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <SplitSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <SplitForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <SplitResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <SplitLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <SplitTwoFA />
+          }
+        ]
+      },
+      {
+        path: '/pages/authentication/card/',
+        children: [
+          {
+            path: 'sign-in',
+            element: <CardSignIn />
+          },
+          {
+            path: 'sign-up',
+            element: <CardSignUp />
+          },
+          {
+            path: 'sign-out',
+            element: <CardSignOut />
+          },
+          {
+            path: 'forgot-password',
+            element: <CardForgotPassword />
+          },
+          {
+            path: 'reset-password',
+            element: <CardResetPassword />
+          },
+          {
+            path: 'lock-screen',
+            element: <CardLockScreen />
+          },
+          {
+            path: '2FA',
+            element: <CardTwoFA />
+          }
+        ]
+      },
+      {
         path: 'showcase',
         element: <Showcase />
+      },
+      {
+        path: '*',
+        element: <Error404 />
       }
     ]
   }

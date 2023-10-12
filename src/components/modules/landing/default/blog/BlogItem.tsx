@@ -1,3 +1,9 @@
+import {
+  faAngleRight,
+  faComment,
+  faEye,
+  faHeart
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
@@ -22,7 +28,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon="eye" className="text-500 me-1" />
+              <FontAwesomeIcon icon={faEye} className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.views}</span>
             </Link>
           </div>
@@ -31,7 +37,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon="heart" className="text-500 me-1" />
+              <FontAwesomeIcon icon={faHeart} className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.likes}</span>
             </Link>
           </div>
@@ -40,7 +46,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon="comment" className="text-500 me-1" />
+              <FontAwesomeIcon icon={faComment} className="text-500 me-1" />
               <span className="text-900 fs-10 lh-1">{blog.comments}</span>
             </Link>
           </div>
@@ -51,7 +57,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
         <h4 className="fw-bold mb-3 lh-sm line-clamp-2">{blog.title}</h4>
         <Button as={Link} to="#!" className="p-0" variant="link">
           Read more
-          <FontAwesomeIcon icon="angle-right" className="ms-2" />
+          <FontAwesomeIcon icon={faAngleRight} className="ms-2" />
         </Button>
       </Card.Body>
     </Card>

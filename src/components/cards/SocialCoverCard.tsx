@@ -8,6 +8,14 @@ import { Link } from 'react-router-dom';
 import Button from 'components/base/Button';
 import { dropdownData } from 'data/social/dropdownData';
 import classNames from 'classnames';
+import {
+  faChevronDown,
+  faLocationDot,
+  faMessage,
+  faUserCheck,
+  faUserGroup,
+  faUserPlus
+} from '@fortawesome/free-solid-svg-icons';
 
 const SocialCoverCard = () => {
   return (
@@ -35,7 +43,7 @@ const SocialCoverCard = () => {
               <div className="d-md-flex align-items-center">
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
-                    icon="user-group"
+                    icon={faUserGroup}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-1100">
@@ -47,7 +55,7 @@ const SocialCoverCard = () => {
                 </div>
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
-                    icon="user-check"
+                    icon={faUserCheck}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-1100">
@@ -59,7 +67,7 @@ const SocialCoverCard = () => {
                 </div>
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
-                    icon="location-dot"
+                    icon={faLocationDot}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-1100">
@@ -82,7 +90,7 @@ const SocialCoverCard = () => {
                   variant="primary"
                   className="lh-1"
                   startIcon={
-                    <FontAwesomeIcon icon="user-plus" className="me-2" />
+                    <FontAwesomeIcon icon={faUserPlus} className="me-2" />
                   }
                 >
                   Follow Request
@@ -93,7 +101,7 @@ const SocialCoverCard = () => {
                   variant="phoenix-primary"
                   className="lh-1"
                   startIcon={
-                    <FontAwesomeIcon icon="message" className="me-2" />
+                    <FontAwesomeIcon icon={faMessage} className="me-2" />
                   }
                 >
                   Send Message
@@ -106,7 +114,7 @@ const SocialCoverCard = () => {
                       className="dropdown-caret-none d-flex align-items-center lh-1"
                       variant="phoenix-secondary"
                     >
-                      <FontAwesomeIcon icon="chevron-down" className="me-2" />
+                      <FontAwesomeIcon icon={faChevronDown} className="me-2" />
                       More
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="py-2">

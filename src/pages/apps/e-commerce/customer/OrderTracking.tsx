@@ -1,3 +1,4 @@
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import Mapbox from 'components/base/MapBox';
@@ -26,7 +27,7 @@ const OrderTracking = () => {
             </p>
           </div>
           <Button variant="outline-primary">
-            <FontAwesomeIcon icon="phone" className="me-2" />
+            <FontAwesomeIcon icon={faPhone} className="me-2" />
             Call Support
           </Button>
         </div>

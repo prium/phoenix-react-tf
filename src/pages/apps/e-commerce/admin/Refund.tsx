@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Refund = () => {
   return (
@@ -35,7 +36,7 @@ const Refund = () => {
                 className="p-0 dropdown-caret-none text-decoration-none"
               >
                 More action
-                <FontAwesomeIcon icon="chevron-down" className="ms-2" />
+                <FontAwesomeIcon icon={faChevronDown} className="ms-2" />
               </Dropdown.Toggle>
               <Dropdown.Menu align="end">
                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

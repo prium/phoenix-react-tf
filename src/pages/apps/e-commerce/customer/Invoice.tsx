@@ -7,6 +7,11 @@ import { Col, Row } from 'react-bootstrap';
 import phoenixMart from 'assets/img/logos/phoenix-mart.png';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import {
+  faBagShopping,
+  faDownload,
+  faPrint
+} from '@fortawesome/free-solid-svg-icons';
 const Invoice = () => {
   return (
     <div className="pt-5 pb-9 bg-white dark__bg-1200 border-top border-300">
@@ -15,11 +20,11 @@ const Invoice = () => {
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">
           <h2 className="mb-0 flex-1">Invoice</h2>
           <Button variant="phoenix-secondary">
-            <FontAwesomeIcon icon="download" className="me-sm-2" />
+            <FontAwesomeIcon icon={faDownload} className="me-sm-2" />
             <span className="d-none d-sm-inline-block">Download Invoice</span>
           </Button>
           <Button variant="phoenix-secondary">
-            <FontAwesomeIcon icon="print" className="me-sm-2" />
+            <FontAwesomeIcon icon={faPrint} className="me-sm-2" />
             <span className="d-none d-sm-inline-block">Print</span>
           </Button>
         </div>
@@ -135,16 +140,16 @@ const Invoice = () => {
 
         <div className="d-flex justify-content-between">
           <button className="btn btn-primary">
-            <FontAwesomeIcon icon="bag-shopping" className="me-2" />
+            <FontAwesomeIcon icon={faBagShopping} className="me-2" />
             Browse more items
           </button>
           <div>
             <button className="btn btn-phoenix-secondary me-2">
-              <FontAwesomeIcon icon="download" className="me-sm-2" />
+              <FontAwesomeIcon icon={faDownload} className="me-sm-2" />
               <span className="d-none d-sm-inline-block">Download Invoice</span>
             </button>
             <button className="btn btn-phoenix-secondary">
-              <FontAwesomeIcon icon="print" className="me-sm-2" />
+              <FontAwesomeIcon icon={faPrint} className="me-sm-2" />
               <span className="d-none d-sm-inline-block">Print</span>
             </button>
           </div>

@@ -19,6 +19,8 @@ export interface Route {
   topNavIcon?: string;
   dropdownInside?: boolean;
   active?: boolean;
+  new?: boolean;
+  hasNew?: boolean;
 }
 
 export interface RouteItems {
@@ -43,6 +45,7 @@ export const routes: RouteItems[] = [
         name: 'home',
         icon: 'pie-chart',
         active: true,
+        hasNew: true,
         flat: true,
         pages: [
           {
@@ -61,9 +64,11 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'CRM',
-            path: 'dashboard/crm',
+            path: '/dashboard/crm',
             pathName: 'crm',
-            topNavIcon: 'phone'
+            topNavIcon: 'phone',
+            active: true,
+            new: true
           },
           {
             name: 'social-feed',
@@ -210,26 +215,55 @@ export const routes: RouteItems[] = [
       {
         name: 'CRM',
         icon: 'phone',
+        active: true,
+        new: true,
         pages: [
           {
+            name: 'analytics',
+            path: '/apps/crm/analytics',
+            pathName: 'crm-analytics',
+            active: true
+          },
+          {
+            name: 'deals',
+            path: '/apps/crm/deals',
+            pathName: 'crm-deals'
+          },
+          {
+            name: 'deal-details',
+            path: '/apps/crm/deal-details',
+            pathName: 'crm-deal-details',
+            active: true
+          },
+          {
             name: 'leads',
-            path: '/crm/leads',
-            pathName: 'crm-leads'
+            path: '/apps/crm/leads',
+            pathName: 'crm-leads',
+            active: true
           },
           {
             name: 'lead details',
-            path: 'apps/crm/lead-details',
-            pathName: 'crm-lead-details'
+            path: '/apps/crm/lead-details',
+            pathName: 'crm-lead-details',
+            active: true
           },
           {
             name: 'reports',
-            path: 'apps/crm/reports',
-            pathName: 'crm-reports'
+            path: '/apps/crm/reports',
+            pathName: 'crm-reports',
+            active: true
+          },
+          {
+            name: 'report details',
+            path: '/apps/crm/report-details',
+            pathName: 'crm-report-details',
+            active: true
           },
           {
             name: 'add-contact',
-            path: 'apps/crm/add-contact',
-            pathName: 'crm-add-contact'
+            path: '/apps/crm/add-contact',
+            pathName: 'crm-add-contact',
+            active: true
           }
         ]
       },
@@ -390,13 +424,13 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'default',
-            path: '/landing/default',
+            path: '/pages/landing/default',
             pathName: 'landing-default',
             active: true
           },
           {
             name: 'alternate',
-            path: 'pages/landing/alternate',
+            path: '/pages/landing/alternate',
             pathName: 'landing-alternate'
           }
         ]
@@ -405,6 +439,7 @@ export const routes: RouteItems[] = [
         name: 'pricing',
         icon: 'tag',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'pricing-column',
@@ -415,7 +450,9 @@ export const routes: RouteItems[] = [
           {
             name: 'pricing-grid',
             path: 'pages/pricing/pricing-grid',
-            pathName: 'pricing-grid'
+            pathName: 'pricing-grid',
+            active: true,
+            new: true
           }
         ]
       },
@@ -468,6 +505,7 @@ export const routes: RouteItems[] = [
         name: 'authentication',
         icon: 'lock',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'simple',
@@ -519,72 +557,99 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'split',
+            active: true,
+            new: true,
             pages: [
               {
                 name: 'sign-in',
-                path: 'pages/authentication/split/sign-in',
-                pathName: 'split-signin'
+                path: '/pages/authentication/split/sign-in',
+                pathName: 'split-signin',
+                active: true
               },
               {
                 name: 'sign-up',
-                path: 'pages/authentication/split/sign-up',
-                pathName: 'split-signup'
+                path: '/pages/authentication/split/sign-up',
+                pathName: 'split-signup',
+                active: true
               },
               {
                 name: 'sign-out',
-                path: 'pages/authentication/split/sign-out',
-                pathName: 'split-signout'
+                path: '/pages/authentication/split/sign-out',
+                pathName: 'split-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
-                path: 'pages/authentication/split/forgot-password',
-                pathName: 'split-forgot-password'
+                path: '/pages/authentication/split/forgot-password',
+                pathName: 'split-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
-                path: 'pages/authentication/split/reset-password',
-                pathName: 'split-reset-password'
+                path: '/pages/authentication/split/reset-password',
+                pathName: 'split-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
-                path: 'pages/authentication/split/lock-screen',
-                pathName: 'split-lock-screen'
+                path: '/pages/authentication/split/lock-screen',
+                pathName: 'split-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: '/pages/authentication/split/2FA',
+                pathName: 'split-2FA',
+                active: true
               }
             ]
           },
           {
             name: 'Card',
-
+            active: true,
+            new: true,
             pages: [
               {
                 name: 'sign-in',
                 path: 'pages/authentication/card/sign-in',
-                pathName: 'card-signin'
+                pathName: 'card-signin',
+                active: true
               },
               {
                 name: 'sign-up',
                 path: 'pages/authentication/card/sign-up',
-                pathName: 'card-signup'
+                pathName: 'card-signup',
+                active: true
               },
               {
                 name: 'sign-out',
                 path: 'pages/authentication/card/sign-out',
-                pathName: 'card-signout'
+                pathName: 'card-signout',
+                active: true
               },
               {
                 name: 'forgot-password',
                 path: 'pages/authentication/card/forgot-password',
-                pathName: 'card-forgot-password'
+                pathName: 'card-forgot-password',
+                active: true
               },
               {
                 name: 'reset-password',
                 path: 'pages/authentication/card/reset-password',
-                pathName: 'card-reset-password'
+                pathName: 'card-reset-password',
+                active: true
               },
               {
                 name: 'lock-screen',
                 path: 'pages/authentication/card/lock-screen',
-                pathName: 'card-lock-screen'
+                pathName: 'card-lock-screen',
+                active: true
+              },
+              {
+                name: '2FA',
+                path: '/pages/authentication/card/2FA',
+                pathName: 'card-2FA',
+                active: true
               }
             ]
           }
@@ -782,19 +847,19 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'feather',
-            path: 'modules/icons/feather',
+            path: '/modules/icons/feather',
             pathName: 'icons-feather',
             active: true
           },
           {
             name: 'font awesome',
-            path: 'modules/icons/font-awesome',
+            path: '/modules/icons/font-awesome',
             pathName: 'icons-font-awesome',
             active: true
           },
           {
             name: 'unicons',
-            path: 'modules/icons/unicons',
+            path: '/modules/icons/unicons',
             pathName: 'icons-unicons',
             active: true
           }
@@ -1281,6 +1346,14 @@ export const routes: RouteItems[] = [
         path: '/changelog',
         pathName: 'changelog',
         active: true
+      },
+      {
+        name: 'migrations',
+        icon: 'fast-forward',
+        path: '/migrations',
+        pathName: 'migrations',
+        active: true,
+        new: true
       },
       {
         name: 'showcase',

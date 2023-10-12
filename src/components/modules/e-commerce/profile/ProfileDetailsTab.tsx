@@ -1,4 +1,11 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {
+  faHeart,
+  faHome,
+  faShoppingCart,
+  faStar,
+  faUser
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EcomProfilePersonalInfo from 'components/forms/EcomProfilePersonalInfo';
 import EcomProfileOrdersTable from 'components/tables/EcomProfileOrdersTable';
@@ -20,32 +27,32 @@ const tabLinks: TabLink[] = [
     id: 'orders',
     label: 'Orders',
     number: 35,
-    icon: 'shopping-cart',
+    icon: faShoppingCart,
     content: <EcomProfileOrdersTable />
   },
   {
     id: 'review',
     label: 'Reviews',
     number: 24,
-    icon: 'star',
+    icon: faStar,
     content: <EcomProfileReviewsTable />
   },
   {
     id: 'wishlist',
     label: 'Wishlist',
-    icon: 'heart',
+    icon: faHeart,
     content: <EcomWishlistTable />
   },
   {
     id: 'stores',
     label: 'Stores',
-    icon: 'home',
+    icon: faHome,
     content: <EcomProfileStoresTable />
   },
   {
     id: 'personal-info',
     label: 'Personal info',
-    icon: 'user',
+    icon: faUser,
     content: <EcomProfilePersonalInfo />
   }
 ];

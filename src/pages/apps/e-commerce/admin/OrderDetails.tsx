@@ -11,6 +11,11 @@ import {
 } from 'components/modules/e-commerce/OrderDeliveryDetails';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
+import {
+  faChevronDown,
+  faPrint,
+  faUndo
+} from '@fortawesome/free-solid-svg-icons';
 
 const OrderDetails = () => {
   return (
@@ -32,14 +37,14 @@ const OrderDetails = () => {
             <Button
               variant="link"
               className="p-0 text-900 text-decoration-none"
-              startIcon={<FontAwesomeIcon icon="print" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faPrint} className="me-2" />}
             >
               Print
             </Button>
             <Button
               variant="link"
               className="p-0 text-900 text-decoration-none"
-              startIcon={<FontAwesomeIcon icon="undo" className="me-2" />}
+              startIcon={<FontAwesomeIcon icon={faUndo} className="me-2" />}
             >
               Refund
             </Button>
@@ -49,7 +54,7 @@ const OrderDetails = () => {
                 className="p-0 dropdown-caret-none text-decoration-none"
               >
                 More action
-                <FontAwesomeIcon icon="chevron-down" className="ms-2" />
+                <FontAwesomeIcon icon={faChevronDown} className="ms-2" />
               </Dropdown.Toggle>
               <Dropdown.Menu align="end">
                 <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

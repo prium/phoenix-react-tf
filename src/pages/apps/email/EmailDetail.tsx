@@ -11,6 +11,18 @@ import RevealDropdown, {
 import { Link } from 'react-router-dom';
 import TooltipIconButton from 'components/common/TooltipIconButton';
 import AttachmentPreview from 'components/common/AttachmentPreview';
+import {
+  faAngleLeft,
+  faArchive,
+  faPaperclip,
+  faPrint,
+  faReply,
+  faReplyAll,
+  faShare,
+  faTrashCan
+} from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 const EmailDetail = () => {
   return (
@@ -25,7 +37,10 @@ const EmailDetail = () => {
                 variant="link"
                 className="p-0 text-800 me-3"
               >
-                <FontAwesomeIcon icon="angle-left" className="fw-bolder fs-8" />
+                <FontAwesomeIcon
+                  icon={faAngleLeft}
+                  className="fw-bolder fs-8"
+                />
               </Button>
               <h3 className="flex-1 mb-0 lh-sm line-clamp-1">
                 Query about recently purchased soccer socks
@@ -51,11 +66,11 @@ const EmailDetail = () => {
                   xl="auto"
                   className="d-flex gap-4 gap-lg-3 gap-xl-4 order-sm-1 order-lg-0 order-xl-1"
                 >
-                  <TooltipIconButton title="Reply" icon="reply" />
-                  <TooltipIconButton title="Remove" icon="trash-can" />
-                  <TooltipIconButton title="Archive" icon="archive" />
-                  <TooltipIconButton title="Print" icon="print" />
-                  <TooltipIconButton title="Star" icon={['far', 'star']} />
+                  <TooltipIconButton title="Reply" icon={faReply} />
+                  <TooltipIconButton title="Remove" icon={faTrashCan} />
+                  <TooltipIconButton title="Archive" icon={faArchive} />
+                  <TooltipIconButton title="Print" icon={faPrint} />
+                  <TooltipIconButton title="Star" icon={faStar} />
                 </Col>
                 <Col xs="auto">
                   <Avatar src={team60} size="xl" />
@@ -76,10 +91,7 @@ const EmailDetail = () => {
                     <span className="fw-semi-bold text-900 fs-10 me-1">
                       6:32 PM
                     </span>
-                    <FontAwesomeIcon
-                      icon={['far', 'star']}
-                      className="text-500"
-                    />
+                    <FontAwesomeIcon icon={farStar} className="text-500" />
                   </p>
                 </Col>
               </Row>
@@ -108,7 +120,7 @@ const EmailDetail = () => {
                   className="text-1000 fs-8 text-decoration-none p-0"
                   type="button"
                   startIcon={
-                    <FontAwesomeIcon icon="paperclip" className="me-2" />
+                    <FontAwesomeIcon icon={faPaperclip} className="me-2" />
                   }
                 >
                   2 Attachments
@@ -144,7 +156,7 @@ const EmailDetail = () => {
                   variant="phoenix-secondary"
                   className="me-1 text-nowrap px-2 px-sm-4"
                   endIcon={
-                    <FontAwesomeIcon icon="reply" className="ms-2 fs-10" />
+                    <FontAwesomeIcon icon={faReply} className="ms-2 fs-10" />
                   }
                 >
                   Reply
@@ -153,7 +165,7 @@ const EmailDetail = () => {
                   variant="phoenix-secondary"
                   className="me-1 text-nowrap px-2 px-sm-4"
                   endIcon={
-                    <FontAwesomeIcon icon="reply-all" className="ms-2 fs-10" />
+                    <FontAwesomeIcon icon={faReplyAll} className="ms-2 fs-10" />
                   }
                 >
                   Reply All
@@ -162,7 +174,7 @@ const EmailDetail = () => {
                   variant="phoenix-secondary"
                   className="ms-auto text-nowrap px-2 px-sm-4"
                   endIcon={
-                    <FontAwesomeIcon icon="share" className="ms-2 fs-10" />
+                    <FontAwesomeIcon icon={faShare} className="ms-2 fs-10" />
                   }
                 >
                   Forward

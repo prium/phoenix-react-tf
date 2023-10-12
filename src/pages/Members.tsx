@@ -10,6 +10,7 @@ import { memberBreadcrumbItems, members } from 'data/members';
 import MembersTable, {
   membersTablecolumns
 } from 'components/tables/MembersTable';
+import { faFileExport, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Members = () => {
   const table = useAdvanceTable({
@@ -46,11 +47,11 @@ const Members = () => {
               ></Col>
               <Col xs="auto">
                 <Button variant="link" className="text-900 me-4 px-0">
-                  <FontAwesomeIcon icon="file-export" className="fs-9 me-2" />
+                  <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                   Export
                 </Button>
                 <Button variant="primary">
-                  <FontAwesomeIcon icon="plus" className="me-2" />
+                  <FontAwesomeIcon icon={faPlus} className="me-2" />
                   Add member
                 </Button>
               </Col>

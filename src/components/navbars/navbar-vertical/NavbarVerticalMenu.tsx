@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Collapse, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { Route } from 'sitemap';
@@ -7,6 +7,10 @@ import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
 import { NavLink, useLocation } from 'react-router-dom';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavbarVerticalCollapse } from './NavbarVerticalCollapseProvider';
+import Badge from 'components/base/Badge';
+import { useAppContext } from 'providers/AppProvider';
 
 interface NavbarVerticalMenuProps {
   routes: Route[];
@@ -19,6 +23,10 @@ interface NavItemProps {
 }
 
 const NavItem = ({ route, level }: NavItemProps) => {
+  const {
+    config: { isNavbarVerticalCollapsed }
+  } = useAppContext();
+  const { setOpenItems, openItems } = useNavbarVerticalCollapse();
   return (
     <Nav.Item as="li">
       <NavLink
@@ -29,6 +37,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
             active: isActive && route.path !== '#!'
           })
         }
+        onClick={() => level === 1 && setOpenItems(openItems.map(() => ''))}
       >
         <div
           className={classNames('d-flex align-items-center', {
@@ -37,7 +46,11 @@ const NavItem = ({ route, level }: NavItemProps) => {
         >
           {route.icon ? (
             <>
-              <span className="nav-link-icon ">
+              <span
+                className={classNames('nav-link-icon', {
+                  new: route.new || route.hasNew
+                })}
+              >
                 {route.iconSet === 'font-awesome' ? (
                   <FontAwesomeIcon
                     icon={route.icon as IconProp}
@@ -49,10 +62,22 @@ const NavItem = ({ route, level }: NavItemProps) => {
               </span>
               <span className="nav-link-text-wrapper">
                 <span className="nav-link-text">{capitalize(route.name)}</span>
+                {route.new && !isNavbarVerticalCollapsed && (
+                  <Badge variant="phoenix" bg="info" className="ms-2">
+                    New
+                  </Badge>
+                )}
               </span>
             </>
           ) : (
-            <span className="nav-link-text ">{capitalize(route.name)}</span>
+            <>
+              <span className="nav-link-text ">{capitalize(route.name)}</span>
+              {route.new && (
+                <Badge variant="phoenix" bg="info" className="ms-2">
+                  New
+                </Badge>
+              )}
+            </>
           )}
         </div>
       </NavLink>
@@ -62,6 +87,10 @@ const NavItem = ({ route, level }: NavItemProps) => {
 
 const CollapsableNavItem = ({ route, level }: NavItemProps) => {
   const { pathname } = useLocation();
+  const { setOpenItems, openItems } = useNavbarVerticalCollapse();
+  const {
+    config: { isNavbarVerticalCollapsed }
+  } = useAppContext();
 
   const openCollapse = (childrens: Route[] = []) => {
     const checkLink = (children: Route) => {
@@ -73,34 +102,70 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
     return childrens.some(checkLink);
   };
 
-  const [open, setOpen] = useState(openCollapse(route.pages));
+  const updateOpenItems = (name: string) => {
+    const updatedOpenItems = [...openItems];
+    updatedOpenItems[level] = name;
+    updatedOpenItems.forEach((item, index) => {
+      if (index > level) {
+        updatedOpenItems[index] = '';
+      }
+    });
+    setOpenItems(updatedOpenItems);
+  };
+
+  useEffect(() => {
+    if (openCollapse(route.pages)) {
+      updateOpenItems(route.name);
+    }
+  }, []);
 
   return (
     <>
       <Nav.Link
-        onClick={() => setOpen(!open)}
+        onClick={() => {
+          if (route.name === openItems[level]) {
+            updateOpenItems('');
+          } else {
+            updateOpenItems(route.name);
+          }
+        }}
         className={classNames('dropdown-indicator', {
           'label-1': level === 1,
-          collapsed: !open,
+          collapsed: openItems[level] !== route.name,
           'text-300': !route.active
         })}
-        aria-expanded={open}
+        aria-expanded={openItems[level] === route.name}
       >
         <div className="d-flex align-items-center">
           <div className="dropdown-indicator-icon">
             <FontAwesomeIcon
-              icon="caret-right"
+              icon={faCaretRight}
               className={classNames({
                 'text-300': !route.active
               })}
             />
           </div>
           {level === 1 && (
-            <span className="nav-link-icon">
+            <span
+              className={classNames('nav-link-icon', {
+                new: route.new || route.hasNew
+              })}
+            >
               <FeatherIcon icon={route.icon} size={16} />
             </span>
           )}
-          <span className="nav-link-text">{capitalize(route.name)}</span>
+          <span
+            className={classNames('nav-link-text', {
+              new: route.hasNew
+            })}
+          >
+            {capitalize(route.name)}
+            {(!isNavbarVerticalCollapsed || level !== 1) && route.new && (
+              <Badge variant="phoenix" bg="info" className="ms-2">
+                New
+              </Badge>
+            )}
+          </span>
         </div>
       </Nav.Link>
       <div
@@ -108,11 +173,16 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
           'label-1': level === 1
         })}
       >
-        <Collapse in={open} className="nav parent">
+        <Collapse in={openItems[level] === route.name} className="nav parent">
           <div>
             {level === 1 && (
               <div className="collapsed-nav-item-title d-none">
                 {capitalize(route.name)}
+                {isNavbarVerticalCollapsed && route.new && (
+                  <Badge variant="phoenix" bg="info" className="ms-2">
+                    New
+                  </Badge>
+                )}
               </div>
             )}
             <NavbarVerticalMenu routes={route.pages || []} level={level + 1} />

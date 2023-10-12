@@ -5,6 +5,7 @@ import bg18 from 'assets/img/bg/bg-18.png';
 import illustrations27 from 'assets/img/spot-illustrations/27.png';
 import illustrations27dark from 'assets/img/spot-illustrations/dark_27.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Cta = () => {
   return (
@@ -38,7 +39,7 @@ const Cta = () => {
                 <div className="d-flex align-items-center fw-bold justify-content-center mb-3">
                   <p className="mb-0">2008 Premium Icons</p>
                   <FontAwesomeIcon
-                    icon="circle"
+                    icon={faCircle}
                     className="text-primary"
                     transform="shrink-12"
                   />

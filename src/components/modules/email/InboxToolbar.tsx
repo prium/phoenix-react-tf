@@ -1,17 +1,26 @@
+import {
+  faAngleLeft,
+  faAngleRight,
+  faArchive,
+  faRedo,
+  faStar,
+  faTag,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
+import IndeterminateCheckbox from 'components/base/IndeterminateCheckbox';
 import TooltipIconButton from 'components/common/TooltipIconButton';
-import React from 'react';
-import { Form } from 'react-bootstrap';
+import { useBulkSelect } from 'providers/BulkSelectProvider';
 
-const InboxToolbar = ({
-  size = 'lg',
-  className
-}: {
+interface InboxToolbarProps {
   size?: 'sm' | 'lg';
   className?: string;
-}) => {
+}
+
+const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
+  const { getParentCheckboxProps } = useBulkSelect();
   return (
     <>
       <div
@@ -22,7 +31,7 @@ const InboxToolbar = ({
       >
         <div className="d-flex align-items-center flex-1 me-2">
           <Button className="p-0 me-2" onClick={() => location.reload()}>
-            <FontAwesomeIcon icon="redo" className="text-primary fs-10" />
+            <FontAwesomeIcon icon={faRedo} className="text-primary fs-10" />
           </Button>
           <p className="fw-semi-bold fs-10 text-600 mb-0 lh-sm text-nowrap">
             Last refreshed 1m ago
@@ -36,23 +45,27 @@ const InboxToolbar = ({
             <span className="text-900">205</span>
           </p>
           <Button className="p-0" type="button">
-            <FontAwesomeIcon icon="angle-left" className="text-500 fs-10" />
+            <FontAwesomeIcon icon={faAngleLeft} className="text-500 fs-10" />
           </Button>
           <Button className="p-0" type="button">
             <FontAwesomeIcon
-              icon="angle-right"
+              icon={faAngleRight}
               className="text-primary fs-10"
             />
           </Button>
         </div>
       </div>
       <div className="border-y py-2 d-flex justify-content-between">
-        <Form.Check type="checkbox" id="defaultCheckbox" />
+        <IndeterminateCheckbox {...getParentCheckboxProps()} />
         <div className="d-flex gap-2">
-          <TooltipIconButton iconClass="fs-10" title="Archive" icon="archive" />
-          <TooltipIconButton iconClass="fs-10" title="Delete" icon="trash" />
-          <TooltipIconButton iconClass="fs-10" title="Star" icon="star" />
-          <TooltipIconButton iconClass="fs-10" title="Tags" icon="tag" />
+          <TooltipIconButton
+            iconClass="fs-10"
+            title="Archive"
+            icon={faArchive}
+          />
+          <TooltipIconButton iconClass="fs-10" title="Delete" icon={faTrash} />
+          <TooltipIconButton iconClass="fs-10" title="Star" icon={faStar} />
+          <TooltipIconButton iconClass="fs-10" title="Tags" icon={faTag} />
         </div>
       </div>
     </>

@@ -1,3 +1,11 @@
+import {
+  faArtstation,
+  faBehance,
+  faFacebook,
+  faLinkedin,
+  faTwitter,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Form } from 'react-bootstrap';
@@ -22,7 +30,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'facebook']}
+              icon={faFacebook}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -41,7 +49,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'twitter']}
+              icon={faTwitter}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -60,7 +68,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'linkedin-in']}
+              icon={faLinkedin}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -79,7 +87,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'youtube']}
+              icon={faYoutube}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -98,7 +106,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'artstation']}
+              icon={faArtstation}
               className="text-900 fs-9 form-icon"
             />
           </div>
@@ -117,7 +125,7 @@ const SettingsSocial = () => {
               </label>
             </Form.Floating>
             <FontAwesomeIcon
-              icon={['fab', 'behance']}
+              icon={faBehance}
               className="text-900 fs-9 form-icon"
             />
           </div>

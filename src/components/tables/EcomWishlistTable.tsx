@@ -11,6 +11,7 @@ import {
 } from 'data/e-commerce/products';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const columns: ColumnDef<WishlistProductType>[] = [
   {
@@ -75,12 +76,12 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: () => (
       <div className="d-flex gap-2 justify-content-end">
         <Button size="sm" className="text-500 hover-text-600">
-          <FontAwesomeIcon icon="trash" />
+          <FontAwesomeIcon icon={faTrash} />
         </Button>
         <Button
           variant="primary"
           className="fs-10 text-nowrap"
-          startIcon={<FontAwesomeIcon icon="shopping-cart" />}
+          startIcon={<FontAwesomeIcon icon={faShoppingCart} />}
         >
           Add to cart
         </Button>

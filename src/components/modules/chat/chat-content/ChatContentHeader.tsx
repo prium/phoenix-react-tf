@@ -4,6 +4,14 @@ import { Card, Dropdown } from 'react-bootstrap';
 import { useChatContext } from 'providers/ChatProvider';
 import classNames from 'classnames';
 import { useMemo } from 'react';
+import {
+  faChevronDown,
+  faChevronLeft,
+  faCircle,
+  faEllipsisVertical,
+  faPhone,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
 
 const ChatContentHeader = () => {
   const {
@@ -26,7 +34,7 @@ const ChatContentHeader = () => {
                 className="ps-0 pe-2 text-700 d-sm-none"
                 onClick={() => setShowUserListOffcanvas(true)}
               >
-                <FontAwesomeIcon icon="chevron-left" />
+                <FontAwesomeIcon icon={faChevronLeft} />
               </Button>
               <div className="d-flex flex-column flex-md-row align-items-md-center">
                 <Button
@@ -34,11 +42,14 @@ const ChatContentHeader = () => {
                   onClick={() => setShowConversationDetails(true)}
                 >
                   <span>{firstName}</span>
-                  <FontAwesomeIcon icon="chevron-down" className="ms-2 fs-10" />
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className="ms-2 fs-10"
+                  />
                 </Button>
                 <p className="fs-9 mb-0 me-2">
                   <FontAwesomeIcon
-                    icon="circle"
+                    icon={faCircle}
                     className={classNames('fs-11 me-2', {
                       'text-success':
                         currentConversation.user.status === 'online',
@@ -53,10 +64,10 @@ const ChatContentHeader = () => {
             </div>
             <div className="d-flex">
               <Button variant="primary" className="btn-icon me-1">
-                <FontAwesomeIcon icon="phone" />
+                <FontAwesomeIcon icon={faPhone} />
               </Button>
               <Button variant="primary" className="btn-icon me-1">
-                <FontAwesomeIcon icon="video" />
+                <FontAwesomeIcon icon={faVideo} />
               </Button>
 
               <Dropdown>
@@ -64,7 +75,7 @@ const ChatContentHeader = () => {
                   variant="phoenix-primary"
                   className="btn-icon dropdown-caret-none"
                 >
-                  <FontAwesomeIcon icon="ellipsis-vertical" />
+                  <FontAwesomeIcon icon={faEllipsisVertical} />
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu className="py-2">

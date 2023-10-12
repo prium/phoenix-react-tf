@@ -5,6 +5,11 @@ import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import usePagination from 'hooks/usePagination';
+import {
+  faAngleRight,
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
 
 interface AdvanceTableFooterProps {
   className?: string;
@@ -60,7 +65,7 @@ const AdvanceTableFooter = ({
             variant="link"
             className="p-0 fw-semi-bold"
             endIcon={
-              <FontAwesomeIcon icon="angle-right" className="ms-1 fs-9" />
+              <FontAwesomeIcon icon={faAngleRight} className="ms-1 fs-9" />
             }
             onClick={() => {
               setIsAllVisible(!isAllVisible);
@@ -77,7 +82,9 @@ const AdvanceTableFooter = ({
         <Col xs="auto" className="d-flex gap-2">
           <Button
             variant="link"
-            startIcon={<FontAwesomeIcon icon="chevron-left" className="me-2" />}
+            startIcon={
+              <FontAwesomeIcon icon={faChevronLeft} className="me-2" />
+            }
             className={classNames('px-1', {
               disabled: !getCanPreviousPage()
             })}
@@ -89,7 +96,7 @@ const AdvanceTableFooter = ({
           </Button>
           <Button
             variant="link"
-            endIcon={<FontAwesomeIcon icon="chevron-right" className="ms-2" />}
+            endIcon={<FontAwesomeIcon icon={faChevronRight} className="ms-2" />}
             className={classNames('px-1', {
               disabled: !getCanNextPage()
             })}
@@ -108,7 +115,7 @@ const AdvanceTableFooter = ({
               disabled={!getCanPreviousPage()}
               onClick={() => setPageIndex(pageIndex - 1)}
             >
-              <FontAwesomeIcon icon="chevron-left" />
+              <FontAwesomeIcon icon={faChevronLeft} />
             </Pagination.Prev>
 
             {hasPrevEllipsis && (
@@ -148,7 +155,7 @@ const AdvanceTableFooter = ({
               disabled={!getCanNextPage()}
               onClick={() => setPageIndex(pageIndex + 1)}
             >
-              <FontAwesomeIcon icon="chevron-right" />
+              <FontAwesomeIcon icon={faChevronRight} />
             </Pagination.Next>
           </Pagination>
         </Col>

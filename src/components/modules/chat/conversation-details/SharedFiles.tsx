@@ -1,3 +1,5 @@
+import { faArrowAltCircleDown } from '@fortawesome/free-regular-svg-icons';
+import { faChevronDown, faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
@@ -7,7 +9,7 @@ import { files } from 'data/chat';
 const SharedFiles = () => {
   return (
     <div className="d-flex gap-3 my-3">
-      <FontAwesomeIcon icon="folder" className="fs-9" />
+      <FontAwesomeIcon icon={faFolder} className="fs-9" />
       <div className="flex-1">
         <h6 className="fw-semi-bold mb-2">Shared Files</h6>
         <div className="mb-2">
@@ -25,7 +27,7 @@ const SharedFiles = () => {
 
               <button className="btn p-0">
                 <FontAwesomeIcon
-                  icon={['far', 'arrow-alt-circle-down']}
+                  icon={faArrowAltCircleDown}
                   className="fs-0 text-700"
                 />
               </button>
@@ -35,7 +37,7 @@ const SharedFiles = () => {
         <Button
           variant="link"
           className="p-0 fs-10"
-          endIcon={<FontAwesomeIcon icon="chevron-down" />}
+          endIcon={<FontAwesomeIcon icon={faChevronDown} />}
         >
           See 19 more
         </Button>

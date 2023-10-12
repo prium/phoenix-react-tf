@@ -3,6 +3,7 @@ import Button from 'components/base/Button';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import brandImg from 'assets/img/brand2/b.png';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 const EventsOrganized = () => {
   return (
@@ -30,7 +31,7 @@ const EventsOrganized = () => {
           <Button
             variant="phoenix-primary"
             className="px-3"
-            startIcon={<FontAwesomeIcon icon="user-plus" className="me-2" />}
+            startIcon={<FontAwesomeIcon icon={faUserPlus} className="me-2" />}
           >
             Follow
           </Button>

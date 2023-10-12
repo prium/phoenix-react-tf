@@ -11,11 +11,17 @@ import InboxToolbar from '../components/modules/email/InboxToolbar';
 import { emails } from 'data/email';
 import EmailRow from '../components/modules/email/EmailRow';
 import { Link } from 'react-router-dom';
+import { faBars, faPlus } from '@fortawesome/free-solid-svg-icons';
+import BulkSelectProvider from 'providers/BulkSelectProvider';
+
+interface EmailLayoutProps {
+  page: 'inbox' | 'detail' | 'compose';
+}
 
 const EmailLayout = ({
   children,
   page
-}: PropsWithChildren<{ page: 'inbox' | 'detail' | 'compose' }>) => {
+}: PropsWithChildren<EmailLayoutProps>) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const { breakpoints } = useBreakpoints();
   const { setContentClass } = useMainLayoutContext();
@@ -44,14 +50,14 @@ const EmailLayout = ({
             className="px-3 text-700 d-lg-none"
             onClick={() => setOpenSidebar(true)}
           >
-            <FontAwesomeIcon icon="bars" />
+            <FontAwesomeIcon icon={faBars} />
           </Button>
         </Col>
         {page !== 'compose' && (
           <Col className="col-auto d-lg-none">
             <Button variant="primary" className="px-3 px-sm-4">
               <span className="d-none d-sm-inline-block">Compose</span>
-              <FontAwesomeIcon icon="plus" className="d-sm-none" />
+              <FontAwesomeIcon icon={faPlus} className="d-sm-none" />
             </Button>
           </Col>
         )}
@@ -84,10 +90,12 @@ const EmailLayout = ({
           <Col xs="3" className="d-none d-xxl-block">
             <div className="email-content scrollbar">
               <div className="px-lg-1">
-                <InboxToolbar size="sm" />
-                {emails.map(email => (
-                  <EmailRow email={email} key={email.id} />
-                ))}
+                <BulkSelectProvider data={emails}>
+                  <InboxToolbar size="sm" />
+                  {emails.map((email, index) => (
+                    <EmailRow email={email} index={index} key={email.id} />
+                  ))}
+                </BulkSelectProvider>
               </div>
             </div>
           </Col>

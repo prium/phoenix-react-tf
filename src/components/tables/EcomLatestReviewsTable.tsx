@@ -19,6 +19,11 @@ import { ChangeEvent } from 'react';
 import Rating from 'components/base/Rating';
 import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
+import {
+  faCheck,
+  faEllipsisH,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 
 const columns: ColumnDef<LatestReviewsTableDataType>[] = [
   {
@@ -166,10 +171,10 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
                 className="me-1 fs-10"
                 size="sm"
               >
-                <FontAwesomeIcon icon="check" />
+                <FontAwesomeIcon icon={faCheck} />
               </Button>
               <Button variant="phoenix-secondary" className="fs-10" size="sm">
-                <FontAwesomeIcon icon="trash" />
+                <FontAwesomeIcon icon={faTrash} />
               </Button>
             </div>
           </div>
@@ -233,7 +238,7 @@ const EcomLatestReviewsTable = () => {
                     size="sm"
                     className="bg-white hover-bg-100 dropdown-caret-none"
                   >
-                    <FontAwesomeIcon icon="ellipsis-h" className="10" />
+                    <FontAwesomeIcon icon={faEllipsisH} className="10" />
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu align="end">

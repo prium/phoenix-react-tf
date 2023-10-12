@@ -5,12 +5,19 @@ import React, { ChangeEvent, useCallback, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { ToDoItem } from 'data/project-management/todoListData';
 import classNames from 'classnames';
+import {
+  faEdit,
+  faPaperclip,
+  faTasks,
+  faTrash
+} from '@fortawesome/free-solid-svg-icons';
 
 type Breakpoints = 'md' | 'lg' | 'xl' | 'xxl';
 
 interface TodoListItemInterface {
   todo: ToDoItem;
   className?: string;
+  labelClassName?: string;
   halfLayoutBreakpoints?: Breakpoints[];
   fullLayoutBreakpoints?: Breakpoints[];
   onClick?: (item: ToDoItem) => void;
@@ -25,11 +32,12 @@ type HalfLayoutBreakpoints = {
 const TodoListItem = ({
   todo,
   className,
+  labelClassName,
   halfLayoutBreakpoints = [],
   fullLayoutBreakpoints = [],
   onClick
 }: TodoListItemInterface) => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(todo.completed);
 
   const handleSelectionChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSelected(e.target.checked);
@@ -70,7 +78,7 @@ const TodoListItem = ({
           className={classNames('flex-shrink-0 my-0 align-self-start')}
           onChange={handleSelectionChange}
         />
-        <Row className="justify-content-between btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
+        <Row className="justify-content-between align-items-center btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
           <Col
             xs={12}
             {...fullLayoutBreakpoints?.reduce(
@@ -91,7 +99,8 @@ const TodoListItem = ({
             <div className="d-flex align-items-center lh-1 gap-2">
               <h5
                 className={classNames(
-                  'mb-0 line-clamp-1 fw-semi-bold text-1000 cursor-pointer',
+                  labelClassName,
+                  'mb-0 line-clamp-1 fw-semi-bold text-700 cursor-pointer',
                   {
                     'text-decoration-line-through': selected
                   }
@@ -131,13 +140,13 @@ const TodoListItem = ({
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
                 <Button className="p-0 text-700 fs-10 me-2">
-                  <FontAwesomeIcon icon="paperclip" className="me-1" />
+                  <FontAwesomeIcon icon={faPaperclip} className="me-1" />
                   {todo.attachment}
                 </Button>
               )}
               {todo.listitems && (
                 <Button className="p-0 text-warning fs-10 me-2">
-                  <FontAwesomeIcon icon="tasks" className="me-1" />
+                  <FontAwesomeIcon icon={faTasks} className="me-1" />
                   {todo.listitems}
                 </Button>
               )}
@@ -175,10 +184,10 @@ const TodoListItem = ({
         >
           <div className="hover-actions end-0">
             <Button variant="phoenix-secondary" className="btn-icon fs-10 me-1">
-              <FontAwesomeIcon icon="edit" />
+              <FontAwesomeIcon icon={faEdit} />
             </Button>
             <Button variant="phoenix-secondary" className="btn-icon fs-10">
-              <FontAwesomeIcon icon="trash" className="text-danger" />
+              <FontAwesomeIcon icon={faTrash} className="text-danger" />
             </Button>
           </div>
         </div>

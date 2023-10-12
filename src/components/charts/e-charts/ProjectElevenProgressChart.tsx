@@ -21,7 +21,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     backgroundColor: getThemeColor('gray-soft'),
     borderColor: getThemeColor('gray-200'),
     formatter: (params: CallbackDataParams[]) =>
-      tooltipFormatterDefault(params, 'MMM DD, YYYY'),
+      tooltipFormatterDefault(params, 'MMM DD, YYYY', 'color'),
     axisPointer: {
       shadowStyle: {
         color: 'red'

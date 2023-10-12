@@ -7,7 +7,8 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
-  ColumnDef
+  ColumnDef,
+  InitialTableState
 } from '@tanstack/react-table';
 interface UseAdvanceTableProps<T> {
   columns: ColumnDef<T>[];
@@ -17,6 +18,7 @@ interface UseAdvanceTableProps<T> {
   pagination?: boolean;
   pageSize?: number;
   selectionColumnWidth?: number | string;
+  initialState?: InitialTableState;
 }
 
 const selectionColumn = {
@@ -24,6 +26,7 @@ const selectionColumn = {
   accessorKey: '',
   header: ({ table }: any) => (
     <IndeterminateCheckbox
+      className="form-check fs-8 mb-0"
       {...{
         checked: table.getIsAllRowsSelected(),
         indeterminate: table.getIsSomeRowsSelected(),
@@ -33,6 +36,7 @@ const selectionColumn = {
   ),
   cell: ({ row }: any) => (
     <IndeterminateCheckbox
+      className="form-check fs-8 mb-0"
       {...{
         checked: row.getIsSelected(),
         disabled: !row.getCanSelect(),
@@ -52,8 +56,13 @@ const useAdvanceTable = <T,>({
   selection,
   sortable,
   pagination,
-  pageSize
+  pageSize,
+  initialState
 }: PropsWithChildren<UseAdvanceTableProps<T>>) => {
+  const state = {
+    pagination: { pageSize: pagination ? pageSize : data.length },
+    ...initialState
+  };
   const table = useReactTable<T>({
     data,
     columns: selection ? [selectionColumn, ...columns] : columns,
@@ -62,9 +71,7 @@ const useAdvanceTable = <T,>({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
-    initialState: {
-      pagination: { pageSize: pagination ? pageSize : data.length }
-    }
+    initialState: state
   });
 
   return table;

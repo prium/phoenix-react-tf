@@ -7,6 +7,21 @@ import { Dropdown } from 'react-bootstrap';
 import SharedMedia from './SharedMedia';
 import SharedFiles from './SharedFiles';
 import ActionButton from './ActionButton';
+import {
+  faBan,
+  faBellSlash,
+  faChevronLeft,
+  faEllipsisV,
+  faFlag,
+  faGear,
+  faHandHoldingHeart,
+  faPalette,
+  faPhone,
+  faSearch,
+  faUserPen,
+  faUserPlus,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons';
 
 interface ConversationDetailsProps {
   conversation: Conversation;
@@ -22,7 +37,7 @@ const ConversationDetails = ({
       <div className="border-bottom p-4">
         <div className="d-flex flex-between-center">
           <Button className="p-0" onClick={handleClose}>
-            <FontAwesomeIcon icon="chevron-left" className="text-700" />
+            <FontAwesomeIcon icon={faChevronLeft} className="text-700" />
           </Button>
           <Dropdown align="end">
             <Dropdown.Toggle
@@ -30,7 +45,7 @@ const ConversationDetails = ({
               size="sm"
               className="p-0 btn-reveal dropdown-toggle dropdown-caret-none transition-none"
             >
-              <FontAwesomeIcon icon="ellipsis-v" className="text-700" />
+              <FontAwesomeIcon icon={faEllipsisV} className="text-700" />
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="py-2">
               <ActionDropdownItems />
@@ -42,31 +57,31 @@ const ConversationDetails = ({
           <h4 className="fw-semi-bold mb-3">{conversation.user.name}</h4>
           <div className="d-flex gap-1">
             <Button variant="primary" className="btn-icon fs-10">
-              <FontAwesomeIcon icon="phone" />
+              <FontAwesomeIcon icon={faPhone} />
             </Button>
             <Button variant="primary" className="btn-icon fs-10">
-              <FontAwesomeIcon icon="video" />
+              <FontAwesomeIcon icon={faVideo} />
             </Button>
             <Button variant="phoenix-primary" className="btn-icon fs-10">
-              <FontAwesomeIcon icon="search" />
+              <FontAwesomeIcon icon={faSearch} />
             </Button>
           </div>
         </div>
       </div>
       <div className="p-4 px-sm-5 d-flex flex-column gap-3 scrollbar">
-        <ActionButton icon="user-pen">Nickname</ActionButton>
-        <ActionButton icon="palette">Change Color</ActionButton>
-        <ActionButton icon="user-plus">Create Group Chat</ActionButton>
+        <ActionButton icon={faUserPen}>Nickname</ActionButton>
+        <ActionButton icon={faPalette}>Change Color</ActionButton>
+        <ActionButton icon={faUserPlus}>Create Group Chat</ActionButton>
 
         <SharedMedia />
 
         <SharedFiles />
 
-        <ActionButton icon="bell-slash">Mute Conversation</ActionButton>
-        <ActionButton icon="gear">Manage Settings</ActionButton>
-        <ActionButton icon="hand-holding-heart">Get help</ActionButton>
-        <ActionButton icon="flag">Report Account</ActionButton>
-        <ActionButton icon="ban">Block Account</ActionButton>
+        <ActionButton icon={faBellSlash}>Mute Conversation</ActionButton>
+        <ActionButton icon={faGear}>Manage Settings</ActionButton>
+        <ActionButton icon={faHandHoldingHeart}>Get help</ActionButton>
+        <ActionButton icon={faFlag}>Report Account</ActionButton>
+        <ActionButton icon={faBan}>Block Account</ActionButton>
       </div>
     </>
   );

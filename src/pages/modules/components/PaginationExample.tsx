@@ -2,11 +2,19 @@ import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronLeft,
+  faChevronRight,
+  faAngleLeft,
+  faAnglesLeft,
+  faAngleRight,
+  faAnglesRight
+} from '@fortawesome/free-solid-svg-icons';
 
 const exampleCode = `
 <Pagination className='mb-0 justify-content-center'>
   <Pagination.Prev>
-    <FontAwesomeIcon icon="chevron-left" />
+    <FontAwesomeIcon icon={faChevronLeft} />
   </Pagination.Prev>
   <Pagination.Item>1</Pagination.Item>
   <Pagination.Item>2</Pagination.Item>
@@ -14,7 +22,7 @@ const exampleCode = `
   <Pagination.Item active>4</Pagination.Item>
   <Pagination.Item>5</Pagination.Item>
   <Pagination.Next>
-    <FontAwesomeIcon icon="chevron-right" />
+    <FontAwesomeIcon icon={faChevronRight} />
   </Pagination.Next>
 </Pagination>
 `;
@@ -22,11 +30,11 @@ const exampleCode = `
 const moreOptionsCode = `
   <Pagination>
     <Pagination.First>
-      <FontAwesomeIcon icon="angles-left" />
+      <FontAwesomeIcon icon={faAnglesLeft} />
     </Pagination.First>
 
     <Pagination.Prev>
-      <FontAwesomeIcon icon="angle-left" />
+      <FontAwesomeIcon icon={faAngleLeft} />
     </Pagination.Prev>
     <Pagination.Item>{1}</Pagination.Item>
     <Pagination.Ellipsis />
@@ -40,10 +48,10 @@ const moreOptionsCode = `
     <Pagination.Ellipsis />
     <Pagination.Item>{20}</Pagination.Item>
     <Pagination.Next>
-      <FontAwesomeIcon icon="angle-right" />
+      <FontAwesomeIcon icon={faAngleRight} />
     </Pagination.Next>
     <Pagination.Last>
-      <FontAwesomeIcon icon="angles-right" />
+      <FontAwesomeIcon icon={faAnglesRight} />
     </Pagination.Last>
   </Pagination>
 
@@ -66,7 +74,10 @@ const PaginationExample = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Pagination Example" />
-          <PhoenixDocCard.Body code={exampleCode} scope={{ FontAwesomeIcon }} />
+          <PhoenixDocCard.Body
+            code={exampleCode}
+            scope={{ FontAwesomeIcon, faChevronLeft, faChevronRight }}
+          />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
@@ -76,7 +87,13 @@ const PaginationExample = () => {
           />
           <PhoenixDocCard.Body
             code={moreOptionsCode}
-            scope={{ FontAwesomeIcon }}
+            scope={{
+              FontAwesomeIcon,
+              faAngleLeft,
+              faAnglesLeft,
+              faAngleRight,
+              faAnglesRight
+            }}
           />
         </PhoenixDocCard>
       </DocPagesLayout>

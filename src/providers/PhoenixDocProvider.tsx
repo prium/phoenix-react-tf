@@ -12,6 +12,8 @@ interface CollapseContextInterface {
   setOpen: Dispatch<SetStateAction<boolean>>;
   showPreviewBtn: boolean;
   setShowPreviewBtn: Dispatch<SetStateAction<boolean>>;
+  textToCopy: string;
+  setTextToCopy: Dispatch<SetStateAction<string>>;
 }
 
 export const CollapseContext = createContext({} as CollapseContextInterface);
@@ -19,6 +21,7 @@ export const CollapseContext = createContext({} as CollapseContextInterface);
 const PhoenixDocProvider = ({ children }: PropsWithChildren) => {
   const [open, setOpen] = useState(false);
   const [showPreviewBtn, setShowPreviewBtn] = useState(true);
+  const [textToCopy, setTextToCopy] = useState('');
 
   return (
     <CollapseContext.Provider
@@ -26,7 +29,9 @@ const PhoenixDocProvider = ({ children }: PropsWithChildren) => {
         open,
         setOpen,
         showPreviewBtn,
-        setShowPreviewBtn
+        setShowPreviewBtn,
+        textToCopy,
+        setTextToCopy
       }}
     >
       {children}
