@@ -32013,6 +32013,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .kanban-container .kanban-title-badge {
   border-radius: var(--phoenix-border-radius-pill);
   background-color: var(--phoenix-gray-200);
+  font-size: 0.8rem;
   font-weight: 600;
   padding: 4px 9px;
   margin-right: 0.5rem;

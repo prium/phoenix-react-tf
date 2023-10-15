@@ -1,13 +1,18 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { members } from './users';
+import { Member, members } from './users';
 import {
   faCheckDouble,
   faShoppingBag,
   faSpinner,
   faTriangleExclamation
 } from '@fortawesome/free-solid-svg-icons';
+import kanban1 from 'assets/img/kanban/1.jpg';
+import glass from 'assets/img/kanban/glass.jpg';
+import home from 'assets/img/kanban/home.jpg';
+import wall from 'assets/img/kanban/wall.jpg';
 
-interface Task {
+export interface KanbanBoardTask {
+  id: number;
   status: {
     label: string;
     icon: IconProp;
@@ -17,26 +22,29 @@ interface Task {
   img?: string;
   completedTasks?: number[];
   attachments?: number;
-  date?: boolean;
-  members?: { img: string; more?: string; contentClass?: string }[];
+  date?: Date | string;
+  members?: Member[];
 }
 
-interface Column {
+export interface KanbanBoardItem {
+  id: number;
   title: string;
   borderColor: string;
   isCollapsed?: boolean;
-  items: Task[];
+  tasks: KanbanBoardTask[];
 }
 
 export const kanbanBoardMembers = members.slice(0, 4);
 
-export const kanbanItems: Column[] = [
+export const kanbanItems: KanbanBoardItem[] = [
   {
+    id: 1,
     title: 'Unassigned',
     borderColor: 'warning',
     isCollapsed: true,
-    items: [
+    tasks: [
       {
+        id: 1,
         status: {
           label: 'feature',
           icon: faCheckDouble,
@@ -45,6 +53,7 @@ export const kanbanItems: Column[] = [
         details: 'Develop a new feature for the Phoenix mobile app'
       },
       {
+        id: 2,
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -54,6 +63,7 @@ export const kanbanItems: Column[] = [
           'Conduct user research to gather feedback on the latest product iteration'
       },
       {
+        id: 3,
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -65,10 +75,12 @@ export const kanbanItems: Column[] = [
     ]
   },
   {
+    id: 2,
     title: 'To do',
     borderColor: '300',
-    items: [
+    tasks: [
       {
+        id: 1,
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -76,66 +88,41 @@ export const kanbanItems: Column[] = [
         },
         details:
           'Test and debug code for the e-commerce website checkout process',
-        img: '1.jpg',
+        img: kanban1,
         attachments: 15,
-        members: [
-          {
-            img: 'team/30.webp'
-          },
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/25.webp'
-          }
-        ]
+        members: [members[2], members[3], members[7]]
       },
       {
+        id: 2,
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
           color: 'warning'
         },
         details: 'Write a blog post on industry trends and best practices',
-        date: true,
-        members: [
-          {
-            img: 'team/30.webp'
-          },
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/25.webp'
-          }
-        ]
+        date: 'Jan 25',
+        members: [members[12], members[13], members[17]]
       }
     ]
   },
   {
+    id: 3,
     title: 'Doing',
     borderColor: 'primary',
-    items: [
+    tasks: [
       {
+        id: 1,
         status: {
           label: 'Bug',
           icon: faShoppingBag,
           color: 'danger'
         },
         details: 'Create wireframes for a new Phoenix landing page design',
-        date: true,
-        members: [
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/57.webp',
-            // more: 'R',
-            contentClass: 'text-warning bg-soft-warning'
-          }
-        ]
+        date: 'Jan 25',
+        members: [members[8], members[10]]
       },
       {
+        id: 2,
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -144,40 +131,40 @@ export const kanbanItems: Column[] = [
         details:
           'Set up and configure a new software tool for the marketing team',
         completedTasks: [34, 5],
-        members: [
-          {
-            img: 'team/25.webp'
-          }
-        ]
+        members: [members[11]]
       },
       {
+        id: 3,
         status: {
           label: 'Feature',
           icon: faCheckDouble,
           color: 'primary'
         },
         details: 'Draft and send a press release to announce a new partnership',
-        date: true,
+        date: 'Feb 28',
         attachments: 15
       },
       {
+        id: 4,
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
           color: 'warning'
         },
         details: 'Conduct a security audit of the Phoenix web applications',
-        date: true,
+        date: 'Mar 2',
         attachments: 15,
-        img: 'glass.jpg'
+        img: glass
       }
     ]
   },
   {
+    id: 4,
     title: 'Review',
     borderColor: 'info',
-    items: [
+    tasks: [
       {
+        id: 1,
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -185,19 +172,10 @@ export const kanbanItems: Column[] = [
         },
         details: 'Design and develop a new logo for the Phoenix',
         attachments: 15,
-        members: [
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/25.webp'
-          },
-          {
-            img: 'team/30.webp'
-          }
-        ]
+        members: [members[14], members[15], members[16]]
       },
       {
+        id: 2,
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -206,19 +184,10 @@ export const kanbanItems: Column[] = [
         details:
           'Create a fresh visual identity for Phoenix with a new logo design',
         completedTasks: [20, 18],
-        members: [
-          {
-            img: 'team/25.webp'
-          },
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/30.webp'
-          }
-        ]
+        members: [members[5], members[6], members[7]]
       },
       {
+        id: 3,
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -229,6 +198,7 @@ export const kanbanItems: Column[] = [
         attachments: 15
       },
       {
+        id: 4,
         status: {
           label: 'Feature',
           icon: faCheckDouble,
@@ -236,15 +206,17 @@ export const kanbanItems: Column[] = [
         },
         details: 'Write and edit copy for a new email marketing campaign',
         attachments: 15,
-        img: 'wall.jpg'
+        img: wall
       }
     ]
   },
   {
+    id: 5,
     title: 'Release',
     borderColor: 'success',
-    items: [
+    tasks: [
       {
+        id: 1,
         status: {
           label: 'Feature',
           icon: faCheckDouble,
@@ -252,13 +224,10 @@ export const kanbanItems: Column[] = [
         },
         details: 'Improve Phoenix website usability through user testing',
         attachments: 15,
-        members: [
-          {
-            img: 'team/57.webp'
-          }
-        ]
+        members: [members[11]]
       },
       {
+        id: 2,
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -266,20 +235,11 @@ export const kanbanItems: Column[] = [
         },
         details: 'Develop and deliver a training program for new employees',
         attachments: 15,
-        img: 'home.jpg',
-        members: [
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/25.webp'
-          },
-          {
-            img: 'team/30.webp'
-          }
-        ]
+        img: home,
+        members: [members[4], members[7], members[9]]
       },
       {
+        id: 3,
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -288,14 +248,7 @@ export const kanbanItems: Column[] = [
         details:
           'Organize and lead a brainstorming session to generate new product ideas',
         attachments: 15,
-        members: [
-          {
-            img: 'team/57.webp'
-          },
-          {
-            img: 'team/25.webp'
-          }
-        ]
+        members: [members[12], members[13]]
       }
     ]
   }
