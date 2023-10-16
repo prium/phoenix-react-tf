@@ -412,8 +412,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'faq-tab',
-            path: 'pages/faq/faq-tab',
-            pathName: 'faq-tab'
+            path: '/pages/faq/faq-tab',
+            pathName: 'faq-tab',
+            active: true
           }
         ]
       },

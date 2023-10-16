@@ -163,6 +163,7 @@ import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
+import FaqTab from 'pages/faq/FaqTab';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -390,7 +391,7 @@ const routes: RouteObject[] = [
                   },
                   {
                     path: 'faq-tab',
-                    element: <ComingSoon />
+                    element: <FaqTab />
                   }
                 ]
               },
