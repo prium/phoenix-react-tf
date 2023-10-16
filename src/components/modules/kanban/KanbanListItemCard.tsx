@@ -1,25 +1,77 @@
 import {
+  faAngleRight,
   faCalendarXmark,
   faCircle,
+  faEllipsisV,
   faPaperclip
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Avatar from 'components/base/Avatar';
 import Badge, { BadgeBg } from 'components/base/Badge';
-import { KanbanBoardTask } from 'data/kanban';
-import { Card } from 'react-bootstrap';
+import { KanbanBoardItem, KanbanBoardTask } from 'data/kanban';
+import { Card, Dropdown } from 'react-bootstrap';
 import KanbanTaskDetailsModal from './KanbanTaskDetailsModal';
-import { useState } from 'react';
+import { MouseEvent, MouseEventHandler, useState } from 'react';
 
-const KanbanListItemCard = ({ task }: { task: KanbanBoardTask }) => {
+const actions = [
+  {
+    label: 'Move',
+    isNested: true
+  },
+  {
+    label: 'Duplicate'
+  },
+  {
+    label: 'Jump to top'
+  },
+  {
+    label: 'Jump to bottom'
+  },
+  {
+    hr: true
+  },
+  {
+    label: 'Print/Download'
+  },
+  {
+    label: 'Share',
+    isNested: true
+  },
+  {
+    hr: true
+  },
+  {
+    label: 'Move to archive',
+    isNested: true
+  },
+  {
+    label: 'Delete',
+    class: 'text-danger'
+  }
+];
+
+const KanbanListItemCard = ({
+  task,
+  list
+}: {
+  task: KanbanBoardTask;
+  list: KanbanBoardItem;
+}) => {
   const [openModal, setOpenModal] = useState(false);
+
+  const handleCardClick = (e: MouseEvent<HTMLDivElement>) => {
+    //@ts-ignore
+    if (!e.target.closest('.kanban-item-dropdown-btn')) {
+      setOpenModal(true);
+    }
+  };
   return (
     <>
-      <div
-        className="sortable-item-wrapper border-bottom px-2 py-2 cursor-pointer"
-        onClick={() => setOpenModal(true)}
-      >
-        <Card className="sortable-item">
+      <div className="sortable-item-wrapper border-bottom px-2 py-2 cursor-pointer">
+        <Card
+          className="sortable-item hover-actions-trigger"
+          onClick={handleCardClick}
+        >
           <Card.Body className="p-3">
             {task.img && (
               <div
@@ -54,8 +106,41 @@ const KanbanListItemCard = ({ task }: { task: KanbanBoardTask }) => {
                   style={{ height: 7.8, width: 7.8 }}
                 />
               </Badge>
+              <Dropdown autoClose="outside" className="position-static">
+                <Dropdown.Toggle
+                  variant=""
+                  size="sm"
+                  className="hover-actions dropdown-caret-none kanban-item-dropdown-btn"
+                >
+                  <FontAwesomeIcon icon={faEllipsisV} />
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu className="py-2" style={{ width: '15rem' }}>
+                  {actions.map(action => (
+                    <>
+                      {action.hr ? (
+                        <hr className="my-2" />
+                      ) : (
+                        <Dropdown.Item
+                          href="#!"
+                          key={action.label}
+                          className="d-flex flex-between-center border-1"
+                        >
+                          {action.label}
+                          {action.isNested && (
+                            <FontAwesomeIcon
+                              icon={faAngleRight}
+                              className="fs-10"
+                            />
+                          )}
+                        </Dropdown.Item>
+                      )}
+                    </>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
             </div>
-            <p className="mb-2 stretched-link">{task.details}</p>
+            <p className="mb-2 stretched-link">{task.title}</p>
             <div className="d-flex mt-2 align-items-center">
               {task.date && (
                 <p className="mb-0 text-600 fs-9 lh-1 me-3 white-space-nowrap">
@@ -104,6 +189,7 @@ const KanbanListItemCard = ({ task }: { task: KanbanBoardTask }) => {
         show={openModal}
         handleClose={() => setOpenModal(false)}
         task={task}
+        list={list}
       />
     </>
   );

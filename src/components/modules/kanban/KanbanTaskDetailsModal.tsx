@@ -1,48 +1,78 @@
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircle,
+  faEdit,
+  faPlus,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Badge, { BadgeBg } from 'components/base/Badge';
+import Button from 'components/base/Button';
 import AvatarDropdown from 'components/common/AvatarDropdown';
-import { KanbanBoardTask } from 'data/kanban';
-import React from 'react';
-import { Button, Col, Modal, Row } from 'react-bootstrap';
+import {
+  KanbanBoardItem,
+  KanbanBoardTask,
+  kanbanActions,
+  kanbanActivities,
+  kanbanAttachments
+} from 'data/kanban';
+import { Col, Modal, Row } from 'react-bootstrap';
+import KanbanAttachment from './KanbanAttachment';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
+import classNames from 'classnames';
+import CoverUpload from 'components/common/CoverUpload';
+import { getPriorityColor } from 'helpers/utils';
 
 interface KanbanTaskDetailsModalProps {
   show: boolean;
   handleClose: () => void;
   task: KanbanBoardTask;
+  list: KanbanBoardItem;
 }
 
 const KanbanTaskDetailsModal = ({
   show,
   handleClose,
-  task
+  task,
+  list
 }: KanbanTaskDetailsModalProps) => {
   return (
-    <Modal show={show} onHide={handleClose} size="lg" className="p-0">
-      {task.img && (
-        <Modal.Header className="position-relative p-0 overflow-hidden">
-          <img src={task.img} alt="" className="w-100 fit-cover" height={200} />
-        </Modal.Header>
-      )}
-      <Modal.Body className="">
+    <Modal
+      show={show}
+      onHide={handleClose}
+      fullscreen="md-down"
+      centered
+      className="modal-md p-0"
+      contentClassName="rounded-md-top-xl rounded-md-bottom-xl overflow-hidden"
+      scrollable
+    >
+      <Modal.Header className="position-relative p-0" style={{ height: 200 }}>
+        {task.img ? (
+          <img src={task.img} alt="" className="w-100 h-100 fit-cover" />
+        ) : (
+          <CoverUpload />
+        )}
+      </Modal.Header>
+      <Modal.Body className="p-0 scrollbar">
         {/* <ActionSection /> */}
         <Row className="gy-4 py-0 gx-0">
           <Col xs={12} lg={8}>
-            <Row className="mt-0 gy-4 pb-3 gx-0 px-3">
+            <Row className="position-sticky mt-0 top-0 gy-4 pb-3 gx-0 px-3">
               <Col xs={4} sm={3}>
                 <h6 className="text-600 fw-bolder lh-sm mt-1">TITLE</h6>
               </Col>
               <Col xs={8} sm={9}>
-                <h4 className="mb-0 text-1100 lh-sm">
-                  Reproduced below for those interested
-                </h4>
+                <h4 className="mb-0 text-1100 lh-sm">{task.title}</h4>
               </Col>
 
               <Col xs={4} sm={3}>
                 <h6 className="text-600 fw-bolder lh-sm mt-1">DESCRIPTION</h6>
               </Col>
               <Col xs={8} sm={9}>
-                <p className="fs--1 mb-0">{task.details}</p>
+                <p className="fs-9 mb-0">
+                  {task.desctiption
+                    ? task.desctiption
+                    : 'Reproduced below for those interested" is a phrase used to provide additional content or details for individuals who have expressed interest in a particular topic. It signals that what follows is optional and caters specifically to those who want to delve deeper into the subject matter.'}
+                </p>
               </Col>
 
               <Col xs={4} sm={3}>
@@ -56,8 +86,10 @@ const KanbanTaskDetailsModal = ({
                 <h6 className="text-600 fw-bolder lh-sm mt-1">COLUMN</h6>
               </Col>
               <Col xs={8} sm={9}>
-                <p className="mb-0 text-1100 fw-semi-bold d-inline-block kanban-column-underline-warning">
-                  Doing
+                <p
+                  className={`mb-0 text-1100 fw-semi-bold d-inline-block kanban-column-underline-${list.borderColor}`}
+                >
+                  {list.title}
                 </p>
               </Col>
 
@@ -84,8 +116,9 @@ const KanbanTaskDetailsModal = ({
                   <FontAwesomeIcon
                     icon={faCircle}
                     transform="shrink-6 down-1"
+                    className={`text-${getPriorityColor(task.priority)}`}
                   />
-                  High
+                  {task.priority}
                 </p>
               </Col>
 
@@ -107,45 +140,104 @@ const KanbanTaskDetailsModal = ({
                   />
                 </Badge>
               </Col>
+
+              <Col xs={4} sm={3}>
+                <h6 className="text-600 fw-bolder lh-sm mt-1">ATTACHMENTS</h6>
+              </Col>
+              <Col xs={8} sm={9}>
+                <div className="d-flex flex-column gap-3 mb-2">
+                  {kanbanAttachments.map(attachment => (
+                    <KanbanAttachment
+                      attachment={attachment}
+                      key={attachment.name}
+                    />
+                  ))}
+                </div>
+                <Button
+                  variant="link"
+                  className="p-0"
+                  startIcon={<FontAwesomeIcon icon={faPlus} />}
+                >
+                  Add an Attachment
+                </Button>
+              </Col>
             </Row>
           </Col>
 
-          {/* <Col xs={12} xl={3}>
-            <h5 className="text-800 mb-3">Add to card</h5>
-            <div className="mb-6 d-flex flex-column gap-2">
-              {addToCardItems.map(item => (
-                <Button
-                  key={item.label}
-                  variant="soft-secondary"
-                  startIcon={
-                    <FontAwesomeIcon icon={item.icon} className="me-2" />
-                  }
-                  className="w-100 text-start"
-                  size="sm"
-                >
-                  {item.label}
-                </Button>
-              ))}
+          <Col xs={12} lg={4} className="border-start-lg">
+            <div>
+              <div className="px-3">
+                <div>
+                  <h5 className="mb-3 mt-4">Actions</h5>
+                  <div className="d-flex flex-wrap flex-column gap-2 flex-sm-row flex-lg-column">
+                    {kanbanActions.map(action => (
+                      <Button
+                        variant="soft-secondary"
+                        startIcon={
+                          <FontAwesomeIcon
+                            icon={action.icon}
+                            className="me-2"
+                          />
+                        }
+                        className="text-start text-nowrap"
+                        size="sm"
+                        key={action.label}
+                      >
+                        {action.label}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h5 className="mb-3 mt-4">Activities</h5>
+                  <div className="d-flex flex-column gap-3">
+                    {kanbanActivities.map((activity, index) => (
+                      <div
+                        className={classNames('d-flex gap-2 pb-3', {
+                          'border-bottom': index !== kanbanActivities.length - 1
+                        })}
+                        key={activity.id}
+                      >
+                        <FontAwesomeIcon
+                          icon={activity.icon}
+                          className={`border rounded-pill p-1 text-${activity.iconColor}`}
+                          transform="shrink-4"
+                        />
+                        <div className="activity-item">
+                          <p
+                            className="mb-1 fs-9"
+                            dangerouslySetInnerHTML={{ __html: activity.task }}
+                          />
+                          <div className="d-flex gap-2 justify-content-between fs-9">
+                            <p className="mb-0">
+                              <FontAwesomeIcon
+                                icon={faClock}
+                                className="me-1"
+                              />
+                              {activity.time}
+                            </p>
+                            <p className="mb-0">{activity.date}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            <h5 className="text-800 mb-3">Actions</h5>
-            <div className="d-flex flex-column gap-2">
-              {actionItems.map(item => (
-                <Button
-                  variant="soft-secondary"
-                  startIcon={
-                    <FontAwesomeIcon icon={item.icon} className="me-2" />
-                  }
-                  className="w-100 text-start"
-                  size="sm"
-                  key={item.label}
-                >
-                  {item.label}
-                </Button>
-              ))}
-            </div>
-          </Col> */}
+          </Col>
         </Row>
       </Modal.Body>
+      <Modal.Footer className="justify-content-between">
+        <Button startIcon={<FontAwesomeIcon icon={faTimes} />}>Close</Button>
+        <Button
+          endIcon={<FontAwesomeIcon icon={faEdit} transform="up-1" />}
+          variant="phoenix-primary"
+          className="px-6"
+        >
+          Edit
+        </Button>
+      </Modal.Footer>
     </Modal>
   );
 };

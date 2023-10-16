@@ -7,46 +7,32 @@ import Button from 'components/base/Button';
 import { KanbanBoardItem } from 'data/kanban';
 import React, { useState } from 'react';
 import KanbanListItemCard from './KanbanListItemCard';
-import { Form } from 'react-bootstrap';
+import { Dropdown, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisH, faPlus } from '@fortawesome/free-solid-svg-icons';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import KanbanListHeader from './KanbanListHeader';
 
 interface KanbanListProps {
   list: KanbanBoardItem;
 }
 
 const KanbanList = ({ list }: KanbanListProps) => {
-  const [collapsed, setCollapsed] = useState(list.isCollapsed);
+  const [collapsed, setCollapsed] = useState(!!list.isCollapsed);
   return (
     <div
       className={classNames('kanban-column scrollbar', {
         collapsed
       })}
     >
-      <div className="kanban-column-header px-4 hover-actions-trigger">
-        <div
-          className={`d-flex align-items-center border-bottom border-3 py-3 border-${list.borderColor}`}
-        >
-          <h5 className="mb-0 kanban-column-title">
-            {list.title}
-            <span className="kanban-title-badge">{list.tasks.length}</span>
-          </h5>
-          <div className="hover-actions-trigger"></div>
-          <Button
-            className="ms-auto kanban-collapse-icon p-0"
-            onClick={() => setCollapsed(!collapsed)}
-          >
-            {collapsed ? (
-              <UilArrowFromRight size={16} />
-            ) : (
-              <UilLeftArrowToLeft size={16} />
-            )}
-          </Button>
-        </div>
-      </div>
+      <KanbanListHeader
+        list={list}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+      />
       <div className="kanban-items-container">
         {list.tasks.map(task => (
-          <KanbanListItemCard key={task.id} task={task} />
+          <KanbanListItemCard key={task.id} list={list} task={task} />
         ))}
       </div>
       <div className="py-3 px-4 kanban-add-task">
