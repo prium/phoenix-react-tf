@@ -66,7 +66,7 @@ export const faqs: Faq[] = [
   }
 ];
 
-export interface FaqCategorie {
+export interface FaqCategory {
   id: string;
   name: string;
   icon: IconProp;
@@ -82,7 +82,7 @@ export interface FaqCategorie {
   }[];
 }
 
-export const faqCategories: FaqCategorie[] = [
+export const faqCategories: FaqCategory[] = [
   {
     id: 'sale-101',
     name: 'Sales',

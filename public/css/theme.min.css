@@ -21011,6 +21011,7 @@ button,
 .faq-title-box {
   top: 2rem;
   width: 90%;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .faq-title-box {

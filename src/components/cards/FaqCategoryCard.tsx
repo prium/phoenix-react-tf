@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaqCategorie } from 'data/faq';
+import { FaqCategory } from 'data/faq';
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 
@@ -7,7 +7,7 @@ const FaqCategoryCard = ({
   category,
   subCategoryActiveKey
 }: {
-  category: FaqCategorie;
+  category: FaqCategory;
   subCategoryActiveKey?: string;
 }) => {
   return (
