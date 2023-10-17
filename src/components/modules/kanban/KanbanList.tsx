@@ -1,17 +1,13 @@
-import {
-  UilArrowFromRight,
-  UilLeftArrowToLeft
-} from '@iconscout/react-unicons';
 import classNames from 'classnames';
 import Button from 'components/base/Button';
 import { KanbanBoardItem } from 'data/kanban';
 import React, { useState } from 'react';
 import KanbanListItemCard from './KanbanListItemCard';
-import { Dropdown, Form } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisH, faPlus } from '@fortawesome/free-solid-svg-icons';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import KanbanListHeader from './KanbanListHeader';
+import { Draggable } from 'react-beautiful-dnd';
 
 interface KanbanListProps {
   list: KanbanBoardItem;
@@ -31,8 +27,22 @@ const KanbanList = ({ list }: KanbanListProps) => {
         setCollapsed={setCollapsed}
       />
       <div className="kanban-items-container">
-        {list.tasks.map(task => (
-          <KanbanListItemCard key={task.id} list={list} task={task} />
+        {list.tasks.map((task, index) => (
+          <Draggable
+            key={task.id}
+            draggableId={`${list.id}-${task.id}`}
+            index={index}
+          >
+            {provided => (
+              <div
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+              >
+                <KanbanListItemCard list={list} task={task} />
+              </div>
+            )}
+          </Draggable>
         ))}
       </div>
       <div className="py-3 px-4 kanban-add-task">

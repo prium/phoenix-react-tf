@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, Fragment, SetStateAction } from 'react';
 import {
   UilArrowFromRight,
   UilLeftArrowToLeft
@@ -17,52 +17,67 @@ interface KanbanListHeaderProps {
 
 const kanbanHeaderActions = [
   {
+    id: 1,
     label: 'Sort tasks',
     isNested: true
   },
   {
+    id: 2,
     label: 'Sort all tasks'
   },
   {
+    id: 3,
     label: 'Move all tasks',
     isNested: true
   },
   {
+    id: 4,
     label: 'Remove all tasks'
   },
   {
+    id: 5,
     hr: true
   },
   {
+    id: 6,
     label: 'Import'
   },
   {
+    id: 7,
     label: 'Export',
     isNested: true
   },
   {
+    id: 8,
     hr: true
   },
   {
+    id: 9,
     label: 'Move column',
     isNested: true
   },
   {
+    id: 10,
     label: 'Duplicate column'
   },
   {
+    id: 11,
     label: 'Delete column'
   },
   {
+    id: 12,
     label: 'Archive column'
   },
   {
+    id: 13,
     hr: true
   },
   {
+    id: 14,
     label: 'Edit title & description'
   },
   {
+    id: 15,
     label: 'Edit colour',
     isNested: true
   }
@@ -93,7 +108,7 @@ const KanbanListHeader = ({
 
           <Dropdown.Menu className="py-2" style={{ width: '15rem' }}>
             {kanbanHeaderActions.map(action => (
-              <>
+              <Fragment key={action.id}>
                 {action.hr ? (
                   <hr className="my-2" />
                 ) : (
@@ -108,7 +123,7 @@ const KanbanListHeader = ({
                     )}
                   </Dropdown.Item>
                 )}
-              </>
+              </Fragment>
             ))}
           </Dropdown.Menu>
         </Dropdown>

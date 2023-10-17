@@ -55,6 +55,8 @@
 .kanban-container {
   white-space: nowrap;
   padding: 0 map-get($spacers, 4);
+  display: flex;
+  gap: 1rem;
 
   background-color: var(--#{$prefix}kanban-bg);
   height: calc(100vh - $navbar-top-height - $footer-height - 106px);
@@ -88,15 +90,16 @@
     min-height: 1rem;
   }
   .kanban-column {
-    display: inline-block !important;
+    // display: inline-block;
     width: 22rem;
     white-space: normal;
     vertical-align: top;
-    margin-right: 1rem;
+    // margin-right: 1rem;
     background-color: var(--#{$prefix}kanban-column-bg);
     transition: width 0.2s ease;
     height: 100%;
     user-select: none;
+    flex-shrink: 0;
   }
   .kanban-column-title {
     font-weight: $font-weight-bold;

@@ -11,40 +11,50 @@ import Badge, { BadgeBg } from 'components/base/Badge';
 import { KanbanBoardItem, KanbanBoardTask } from 'data/kanban';
 import { Card, Dropdown } from 'react-bootstrap';
 import KanbanTaskDetailsModal from './KanbanTaskDetailsModal';
-import { MouseEvent, MouseEventHandler, useState } from 'react';
+import { Fragment, useState } from 'react';
 
 const actions = [
   {
+    id: 1,
     label: 'Move',
     isNested: true
   },
   {
+    id: 2,
     label: 'Duplicate'
   },
   {
+    id: 3,
     label: 'Jump to top'
   },
   {
+    id: 4,
     label: 'Jump to bottom'
   },
   {
+    id: 5,
     hr: true
   },
   {
+    id: 6,
     label: 'Print/Download'
   },
   {
+    id: 7,
     label: 'Share',
     isNested: true
   },
   {
+    id: 8,
     hr: true
   },
   {
+    id: 9,
     label: 'Move to archive',
     isNested: true
   },
   {
+    id: 10,
     label: 'Delete',
     class: 'text-danger'
   }
@@ -59,19 +69,10 @@ const KanbanListItemCard = ({
 }) => {
   const [openModal, setOpenModal] = useState(false);
 
-  const handleCardClick = (e: MouseEvent<HTMLDivElement>) => {
-    //@ts-ignore
-    if (!e.target.closest('.kanban-item-dropdown-btn')) {
-      setOpenModal(true);
-    }
-  };
   return (
     <>
       <div className="sortable-item-wrapper border-bottom px-2 py-2 cursor-pointer">
-        <Card
-          className="sortable-item hover-actions-trigger"
-          onClick={handleCardClick}
-        >
+        <Card className="sortable-item hover-actions-trigger">
           <Card.Body className="p-3">
             {task.img && (
               <div
@@ -117,7 +118,7 @@ const KanbanListItemCard = ({
 
                 <Dropdown.Menu className="py-2" style={{ width: '15rem' }}>
                   {actions.map(action => (
-                    <>
+                    <Fragment key={action.id}>
                       {action.hr ? (
                         <hr className="my-2" />
                       ) : (
@@ -135,12 +136,17 @@ const KanbanListItemCard = ({
                           )}
                         </Dropdown.Item>
                       )}
-                    </>
+                    </Fragment>
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-            <p className="mb-2 stretched-link">{task.title}</p>
+            <p
+              className="mb-2 stretched-link"
+              onClick={() => setOpenModal(true)}
+            >
+              {task.title}
+            </p>
             <div className="d-flex mt-2 align-items-center">
               {task.date && (
                 <p className="mb-0 text-600 fs-9 lh-1 me-3 white-space-nowrap">

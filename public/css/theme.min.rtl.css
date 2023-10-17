@@ -32070,6 +32070,8 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .kanban-container {
   white-space: nowrap;
   padding: 0 1.5rem;
+  display: flex;
+  gap: 1rem;
   background-color: var(--phoenix-kanban-bg);
   height: calc(100vh - var(--phoenix-navbar-top-height) - var(--phoenix-footer-height) - 106px);
 }
@@ -32096,15 +32098,14 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   min-height: 1rem;
 }
 .kanban-container .kanban-column {
-  display: inline-block !important;
   width: 22rem;
   white-space: normal;
   vertical-align: top;
-  margin-left: 1rem;
   background-color: var(--phoenix-kanban-column-bg);
   transition: width 0.2s ease;
   height: 100%;
   user-select: none;
+  flex-shrink: 0;
 }
 .kanban-container .kanban-column-title {
   font-weight: 700;

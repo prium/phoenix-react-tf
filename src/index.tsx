@@ -10,13 +10,13 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <AppProvider>
-      <SettingsPanelProvider>
-        <BreakpointsProvider>
-          <RouterProvider router={router} />
-        </BreakpointsProvider>
-      </SettingsPanelProvider>
-    </AppProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <AppProvider>
+    <SettingsPanelProvider>
+      <BreakpointsProvider>
+        <RouterProvider router={router} />
+      </BreakpointsProvider>
+    </SettingsPanelProvider>
+  </AppProvider>
+  // </React.StrictMode>
 );

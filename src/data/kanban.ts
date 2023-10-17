@@ -25,7 +25,7 @@ import attachment1 from 'assets/img/kanban/a1.jpg';
 import { FileAttachment } from 'components/common/AttachmentPreview';
 
 export interface KanbanBoardTask {
-  id: number;
+  id: string;
   status: {
     label: string;
     icon: IconProp;
@@ -42,7 +42,7 @@ export interface KanbanBoardTask {
 }
 
 export interface KanbanBoardItem {
-  id: number;
+  id: string;
   title: string;
   borderColor: string;
   isCollapsed?: boolean;
@@ -53,13 +53,13 @@ export const kanbanBoardMembers = members.slice(0, 4);
 
 export const kanbanItems: KanbanBoardItem[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Unassigned',
     borderColor: 'warning',
     isCollapsed: true,
     tasks: [
       {
-        id: 1,
+        id: '1',
         status: {
           label: 'feature',
           icon: faCheckDouble,
@@ -69,7 +69,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'High'
       },
       {
-        id: 2,
+        id: '2',
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -80,7 +80,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Medium'
       },
       {
-        id: 3,
+        id: '3',
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -93,12 +93,12 @@ export const kanbanItems: KanbanBoardItem[] = [
     ]
   },
   {
-    id: 2,
+    id: '2',
     title: 'To do',
     borderColor: '300',
     tasks: [
       {
-        id: 1,
+        id: '1',
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -112,7 +112,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Medium'
       },
       {
-        id: 2,
+        id: '2',
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -126,12 +126,12 @@ export const kanbanItems: KanbanBoardItem[] = [
     ]
   },
   {
-    id: 3,
+    id: '3',
     title: 'Doing',
     borderColor: 'primary',
     tasks: [
       {
-        id: 1,
+        id: '1',
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -143,7 +143,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Medium'
       },
       {
-        id: 2,
+        id: '2',
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -156,7 +156,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Low'
       },
       {
-        id: 3,
+        id: '3',
         status: {
           label: 'Feature',
           icon: faCheckDouble,
@@ -168,7 +168,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Medium'
       },
       {
-        id: 4,
+        id: '4',
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -183,12 +183,12 @@ export const kanbanItems: KanbanBoardItem[] = [
     ]
   },
   {
-    id: 4,
+    id: '4',
     title: 'Review',
     borderColor: 'info',
     tasks: [
       {
-        id: 1,
+        id: '1',
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -200,7 +200,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Medium'
       },
       {
-        id: 2,
+        id: '2',
         status: {
           label: 'Issue',
           icon: faTriangleExclamation,
@@ -213,7 +213,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Low'
       },
       {
-        id: 3,
+        id: '3',
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -225,7 +225,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'High'
       },
       {
-        id: 4,
+        id: '4',
         status: {
           label: 'Feature',
           icon: faCheckDouble,
@@ -239,12 +239,12 @@ export const kanbanItems: KanbanBoardItem[] = [
     ]
   },
   {
-    id: 5,
+    id: '5',
     title: 'Release',
     borderColor: 'success',
     tasks: [
       {
-        id: 1,
+        id: '1',
         status: {
           label: 'Feature',
           icon: faCheckDouble,
@@ -256,7 +256,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'High'
       },
       {
-        id: 2,
+        id: '2',
         status: {
           label: 'Bug',
           icon: faShoppingBag,
@@ -269,7 +269,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         priority: 'Low'
       },
       {
-        id: 3,
+        id: '3',
         status: {
           label: 'Undefined',
           icon: faSpinner,
@@ -337,7 +337,7 @@ export const kanbanActions = [
 
 export const kanbanActivities = [
   {
-    id: 1,
+    id: '1',
     task: '<span class="fw-bold"> Alfen Loebe </span> Moved the task <a href="#!">"the standard chunk" </a>from <span class="fw-bold">Doing</span> to <span class="fw-bold">To Do</span>',
     time: '10:41 AM',
     date: 'Aughst 7,2022',
@@ -345,7 +345,7 @@ export const kanbanActivities = [
     iconColor: 'warning'
   },
   {
-    id: 2,
+    id: '2',
     task: '<span class="fw-bold"> Jessie Samson </span> Attached image3.png to the task <a href="#!">"the standard chunk" </a>',
     time: '10:41 AM',
     date: 'Aughst 7,2022',
@@ -353,7 +353,7 @@ export const kanbanActivities = [
     iconColor: 'info'
   },
   {
-    id: 3,
+    id: '3',
     task: '<span class="fw-bold"> Alfen Loebe </span> Moved the task <a href="#!">"the standard chunk" </a>from <span class="fw-bold">Doing</span> to <span class="fw-bold">To Do</span>',
     time: '10:41 AM',
     date: 'Aughst 7,2022',
@@ -361,7 +361,7 @@ export const kanbanActivities = [
     iconColor: 'info'
   },
   {
-    id: 4,
+    id: '4',
     task: '<span class="fw-bold"> Alfen Loebe </span> Moved the task <a href="#!">"the standard chunk" </a>from <span class="fw-bold">Doing</span> to <span class="fw-bold">To Do</span>',
     time: '10:41 AM',
     date: 'Aughst 7,2022',
