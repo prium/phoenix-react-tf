@@ -1,3 +1,4 @@
+import { produce } from 'immer';
 import { KanbanState } from 'providers/KanbanProvider';
 import { DraggableLocation } from 'react-beautiful-dnd';
 
@@ -11,7 +12,7 @@ export type ACTIONTYPE =
       payload: { listId: string; itemIndex: number };
     }
   | {
-      type: 'ADD_ITEM_TO_LIST';
+      type: 'MOVE_ITEMS';
       payload: { destination: DraggableLocation; source: DraggableLocation };
     };
 
@@ -42,28 +43,26 @@ export const kanbanReducer = (state: KanbanState, action: ACTIONTYPE) => {
         )
       };
     }
-    case 'ADD_ITEM_TO_LIST': {
+    case 'MOVE_ITEMS': {
       const {
         payload: { destination, source }
       } = action;
 
-      const item = state.boardLists
-        .find(list => list.id === source.droppableId)
-        ?.tasks.find((task, index) => index === source.index);
+      const updatedList = produce(state.boardLists, draft => {
+        const task = draft
+          .find(list => list.id === source.droppableId)
+          ?.tasks.splice(source.index, 1)[0];
 
-      console.log({ item });
-
-      const updatedDestinationList = state.boardLists.find(
-        list => list.id === destination.droppableId
-      );
-      if (updatedDestinationList && item) {
-        updatedDestinationList.tasks.splice(0, destination.index, item);
-      }
-
-      console.log({ updatedDestinationList });
+        if (task) {
+          draft
+            .find(list => list.id === destination.droppableId)
+            ?.tasks.splice(destination.index, 0, task);
+        }
+      });
 
       return {
-        ...state
+        ...state,
+        boardLists: updatedList
       };
     }
 

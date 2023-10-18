@@ -28,21 +28,31 @@ const KanbanList = ({ list }: KanbanListProps) => {
       />
       <div className="kanban-items-container">
         {list.tasks.map((task, index) => (
-          <Draggable
-            key={task.id}
-            draggableId={`${list.id}-${task.id}`}
-            index={index}
-          >
-            {provided => (
-              <div
-                ref={provided.innerRef}
-                {...provided.draggableProps}
-                {...provided.dragHandleProps}
-              >
-                <KanbanListItemCard list={list} task={task} />
-              </div>
-            )}
-          </Draggable>
+          <div className="py-2 px-2 border-bottom" key={task.id}>
+            <Draggable
+              key={task.id}
+              draggableId={`${list.id}-${task.id}`}
+              index={index}
+            >
+              {(provided, snapshot) => (
+                <>
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.draggableProps}
+                    {...provided.dragHandleProps}
+                  >
+                    <KanbanListItemCard
+                      list={list}
+                      task={task}
+                      className={classNames({
+                        'bg-white': snapshot.isDragging
+                      })}
+                    />
+                  </div>
+                </>
+              )}
+            </Draggable>
+          </div>
         ))}
       </div>
       <div className="py-3 px-4 kanban-add-task">
