@@ -78,7 +78,7 @@ const KanbanListItemCard = ({
         className={classNames(className, 'sortable-item hover-actions-trigger')}
       >
         <Card.Body className="p-3">
-          {task.img && (
+          {task.coverImage && (
             <div
               className="position-relative mb-2 overflow-hidden rounded w-100"
               style={{ height: 200 }}
@@ -86,7 +86,7 @@ const KanbanListItemCard = ({
               <div
                 className="bg-holder banner-bg"
                 style={{
-                  backgroundImage: `url(${task.img})`,
+                  backgroundImage: `url(${task.coverImage})`,
                   backgroundPosition: 'bottom left'
                 }}
               />

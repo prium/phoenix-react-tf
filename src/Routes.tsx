@@ -164,6 +164,7 @@ import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
 import Kanban from 'pages/apps/kanban/Kanban';
+import Boards from 'pages/apps/kanban/Boards';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -325,8 +326,12 @@ const routes: RouteObject[] = [
                 path: 'kanban',
                 children: [
                   {
-                    index: true,
+                    path: 'kanban',
                     element: <Kanban />
+                  },
+                  {
+                    path: 'boards',
+                    element: <Boards />
                   }
                 ]
               },

@@ -71,7 +71,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
             </>
           ) : (
             <>
-              <span className="nav-link-text ">{capitalize(route.name)}</span>
+              <span className="nav-link-text">{capitalize(route.name)}</span>
               {route.new && (
                 <Badge variant="phoenix" bg="info" className="ms-2">
                   New

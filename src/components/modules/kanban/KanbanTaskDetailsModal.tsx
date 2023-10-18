@@ -46,8 +46,8 @@ const KanbanTaskDetailsModal = ({
       scrollable
     >
       <Modal.Header className="position-relative p-0" style={{ height: 200 }}>
-        {task.img ? (
-          <img src={task.img} alt="" className="w-100 h-100 fit-cover" />
+        {task.coverImage ? (
+          <img src={task.coverImage} alt="" className="w-100 h-100 fit-cover" />
         ) : (
           <CoverUpload />
         )}

@@ -21,6 +21,15 @@ import kanban1 from 'assets/img/kanban/1.jpg';
 import glass from 'assets/img/kanban/glass.jpg';
 import home from 'assets/img/kanban/home.jpg';
 import wall from 'assets/img/kanban/wall.jpg';
+import board2 from 'assets/img/kanban/board-2.png';
+import board3 from 'assets/img/kanban/board-3.png';
+import board4 from 'assets/img/kanban/board-4.png';
+import board5 from 'assets/img/kanban/board-5.png';
+import board6 from 'assets/img/kanban/board-6.png';
+// import board7 from 'assets/img/kanban/board-7.png';
+import board8 from 'assets/img/kanban/board-8.png';
+import board9 from 'assets/img/kanban/board-9.png';
+
 import attachment1 from 'assets/img/kanban/a1.jpg';
 import { FileAttachment } from 'components/common/AttachmentPreview';
 
@@ -34,11 +43,22 @@ export interface KanbanBoardTask {
   title: string;
   desctiption?: string;
   priority: 'High' | 'Low' | 'Medium';
-  img?: string;
+  coverImage?: string;
   completedTasks?: number[];
   attachments?: number;
   date?: Date | string;
   members?: Member[];
+}
+
+export interface KanbanBoard {
+  id: number;
+  title: string;
+  category: string;
+  coverImage?: string;
+  totalTasks: number;
+  comments: number;
+  deadlines: number;
+  users: Member[];
 }
 
 export interface KanbanBoardItem {
@@ -106,7 +126,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         },
         title:
           'Test and debug code for the e-commerce website checkout process',
-        img: kanban1,
+        coverImage: kanban1,
         attachments: 15,
         members: [members[2], members[3], members[7]],
         priority: 'Medium'
@@ -177,7 +197,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         title: 'Conduct a security audit of the Phoenix web applications',
         date: 'Mar 2',
         attachments: 15,
-        img: glass,
+        coverImage: glass,
         priority: 'High'
       }
     ]
@@ -233,7 +253,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         },
         title: 'Write and edit copy for a new email marketing campaign',
         attachments: 15,
-        img: wall,
+        coverImage: wall,
         priority: 'Medium'
       }
     ]
@@ -264,7 +284,7 @@ export const kanbanItems: KanbanBoardItem[] = [
         },
         title: 'Develop and deliver a training program for new employees',
         attachments: 15,
-        img: home,
+        coverImage: home,
         members: [members[4], members[7], members[9]],
         priority: 'Low'
       },
@@ -367,5 +387,102 @@ export const kanbanActivities = [
     date: 'Aughst 7,2022',
     icon: faRandom,
     iconColor: 'primary'
+  }
+];
+
+export const recentBoards: KanbanBoard[] = [
+  {
+    id: 1,
+    title: 'Issue Tickets',
+    category: 'Daily task',
+    totalTasks: 44,
+    comments: 12,
+    deadlines: 3,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 2,
+    title: 'Falcon React',
+    category: 'Production line',
+    coverImage: board2,
+    totalTasks: 11,
+    comments: 29,
+    deadlines: 9,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 3,
+    title: 'Rebuilding',
+    category: 'Production line',
+    coverImage: board3,
+    totalTasks: 13,
+    comments: 11,
+    deadlines: 15,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 4,
+    title: 'ThemePro Devs',
+    category: 'Project Management',
+    coverImage: board4,
+    totalTasks: 103,
+    comments: 2,
+    deadlines: 20,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  }
+];
+export const yourBoards: KanbanBoard[] = [
+  {
+    id: 5,
+    title: 'Post Tracking',
+    category: 'Deals Tracking',
+    coverImage: board5,
+    totalTasks: 142,
+    comments: 21,
+    deadlines: 100,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 6,
+    title: 'Automation Team',
+    category: 'Remote team',
+    coverImage: board6,
+    totalTasks: 6,
+    comments: 761,
+    deadlines: 2,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 7,
+    title: 'Phoenix Kanban',
+    category: 'Project Management',
+    // boardClass: 'bg-200',
+    totalTasks: 43,
+    comments: 22,
+    deadlines: 17,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  },
+  {
+    id: 8,
+    title: 'Reconciling Backlogs',
+    category: 'Meeting Agenda',
+    coverImage: board8,
+    totalTasks: 23,
+    comments: 111,
+    deadlines: 23,
+    users: [members[1], members[2], members[3], members[4], members[5]]
+  }
+];
+
+export const privateBoards: KanbanBoard[] = [
+  {
+    id: 9,
+    title: 'Inventory update',
+    category: 'Shipping Process',
+    coverImage: board9,
+    totalTasks: 68,
+    comments: 31,
+    deadlines: 14,
+    users: [members[1], members[2], members[3], members[4], members[5]]
   }
 ];

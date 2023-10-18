@@ -369,14 +369,15 @@ export const routes: RouteItems[] = [
         pages: [
           {
             name: 'Kanban',
-            path: '/apps/kanban',
+            path: '/apps/kanban/kanban',
             pathName: 'app-kanban',
             active: true
           },
           {
             name: 'boards',
-            path: 'apps/kanban/boards',
-            pathName: 'kanban-boards'
+            path: '/apps/kanban/boards',
+            pathName: 'kanban-boards',
+            active: true
           },
           {
             name: 'create board',
