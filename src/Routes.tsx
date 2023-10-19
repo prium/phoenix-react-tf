@@ -166,6 +166,7 @@ import Migrations from 'pages/documentation/Migrations';
 import Kanban from 'pages/apps/kanban/Kanban';
 import Boards from 'pages/apps/kanban/Boards';
 import CreateBoard from 'pages/apps/kanban/CreateBoard';
+import WizardExample from 'pages/modules/forms/WizardExample';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -715,6 +716,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'validation',
                     element: <FormValidationExample />
+                  },
+                  {
+                    path: 'wizard',
+                    element: <WizardExample />
                   }
                 ]
               },
