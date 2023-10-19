@@ -1,6 +1,16 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
-const usePhoenixForm = <T,>(defaultValues?: Partial<T>) => {
+export interface UsePhoenixFormResult<T> {
+  formData: T;
+  setFormData: React.Dispatch<React.SetStateAction<T>>;
+  setValue: (values: Partial<T>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+}
+
+const usePhoenixForm = <T,>(
+  defaultValues?: Partial<T>
+): UsePhoenixFormResult<T> => {
   const [formData, setFormData] = useState<T>({
     ...(defaultValues || {})
   } as T);

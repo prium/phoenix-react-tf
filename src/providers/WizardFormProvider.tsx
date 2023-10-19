@@ -1,15 +1,13 @@
-import React, {
-  ChangeEvent,
+import usePhoenixForm, { UsePhoenixFormResult } from 'hooks/usePhoenixForm';
+import {
+  Context,
   Dispatch,
-  FormEvent,
   PropsWithChildren,
   SetStateAction,
   createContext,
   useContext,
-  useReducer,
   useState
 } from 'react';
-import { Form } from 'react-bootstrap';
 
 interface WizardFormProviderInterface {}
 
@@ -17,26 +15,28 @@ export interface WizardFormState {
   step: number;
 }
 
-interface WizardFormContextInterface {
+interface WizardFormContextInterface<T> extends UsePhoenixFormResult<T> {
   step: number;
   setStep: Dispatch<SetStateAction<number>>;
 }
 
 export const WizardFormContext = createContext(
-  {} as WizardFormContextInterface
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  {} as WizardFormContextInterface<any>
 );
 
-const WizardFormFormProvider = ({
+const WizardFormProvider = <T,>({
   children
 }: PropsWithChildren<WizardFormProviderInterface>) => {
-  // const initState: WizardFormState = {};
   const [step, setStep] = useState(1);
+  const methods = usePhoenixForm<T>();
 
   return (
     <WizardFormContext.Provider
       value={{
         step,
-        setStep
+        setStep,
+        ...methods
       }}
     >
       {children}
@@ -44,6 +44,7 @@ const WizardFormFormProvider = ({
   );
 };
 
-export const useWizardFormContext = () => useContext(WizardFormContext);
+export const useWizardFormContext = <T,>() =>
+  useContext(WizardFormContext as Context<WizardFormContextInterface<T>>);
 
-export default WizardFormFormProvider;
+export default WizardFormProvider;

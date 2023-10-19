@@ -6,7 +6,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import usePhoenixForm from 'hooks/usePhoenixForm';
-import { useWizardFormContext } from 'providers/WizardFormProvider';
+import WizardFormProvider, {
+  useWizardFormContext
+} from 'providers/WizardFormProvider';
 import React from 'react';
 import { Form } from 'react-bootstrap';
 
@@ -17,9 +19,11 @@ interface FormData {
 }
 
 const StepOneForm = () => {
-  const { formData, onSubmit, onChange } = usePhoenixForm<FormData>({
-    email: 'jggh'
-  });
+  const methods = useWizardFormContext<FormData>();
+  const { formData, onChange, onSubmit } = methods;
+
+  console.log({ methods });
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -50,28 +54,33 @@ const StepOneForm = () => {
   );
 };
 
-const WizardExample = () => {
-  const { step } = useWizardFormContext();
+const WizardFooter = () => {
+  const { step, setStep } = useWizardFormContext<FormData>();
   return (
-    <div>
-      <StepOneForm />
-      <div className="d-flex justify-content-between mb-0">
-        <Button
-          variant="link"
-          className="p-0"
-          startIcon={<FontAwesomeIcon icon={faChevronLeft} />}
-        >
-          Previous
-        </Button>
-        <Button
-          variant="primary"
-          endIcon={<FontAwesomeIcon icon={faChevronRight} />}
-          // className="p-0"
-        >
-          Next
-        </Button>
-      </div>
+    <div className="d-flex justify-content-between mb-0">
+      <Button
+        variant="link"
+        className="p-0"
+        startIcon={<FontAwesomeIcon icon={faChevronLeft} />}
+      >
+        Previous
+      </Button>
+      <Button
+        variant="primary"
+        endIcon={<FontAwesomeIcon icon={faChevronRight} />}
+        // className="p-0"
+        onClick={() => setStep(step + 1)}
+      >
+        Next
+      </Button>
     </div>
+  );
+};
+const WizardExample = () => {
+  return (
+    <WizardFormProvider>
+      <StepOneForm />
+    </WizardFormProvider>
   );
 };
 
