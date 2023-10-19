@@ -381,8 +381,9 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'create board',
-            path: '/apps/kanban/create-kanban-board',
-            pathName: 'create-kanban-board'
+            path: '/apps/kanban/create-board',
+            pathName: 'create-kanban-board',
+            active: true
           }
         ]
       },

@@ -165,6 +165,7 @@ import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
 import Kanban from 'pages/apps/kanban/Kanban';
 import Boards from 'pages/apps/kanban/Boards';
+import CreateBoard from 'pages/apps/kanban/CreateBoard';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -332,6 +333,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'boards',
                     element: <Boards />
+                  },
+                  {
+                    path: 'create-board',
+                    element: <CreateBoard />
                   }
                 ]
               },
