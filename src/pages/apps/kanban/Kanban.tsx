@@ -30,7 +30,6 @@ const Kanban = () => {
 const KanbanContent = () => {
   const { boardLists, kanbanDispatch } = useKanbanContext();
   const handleDragEnd = (result: DropResult) => {
-    console.log({ result });
     const { source, destination } = result;
 
     if (destination) {
@@ -49,16 +48,12 @@ const KanbanContent = () => {
           <div className="kanban-container scrollbar">
             {boardLists.map(list => (
               <Droppable key={list.id} droppableId={list.id}>
-                {provided => {
-                  console.log({ pl: provided.placeholder });
-
-                  return (
-                    <div ref={provided.innerRef} {...provided.droppableProps}>
-                      <KanbanList list={list} key={list.id} />
-                      {provided.placeholder}
-                    </div>
-                  );
-                }}
+                {provided => (
+                  <div ref={provided.innerRef} {...provided.droppableProps}>
+                    <KanbanList list={list} key={list.id} />
+                    {provided.placeholder}
+                  </div>
+                )}
               </Droppable>
             ))}
 

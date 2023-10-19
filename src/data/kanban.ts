@@ -408,7 +408,7 @@ export const recentBoards: KanbanBoard[] = [
     totalTasks: 11,
     comments: 29,
     deadlines: 9,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[4], members[5], members[6], members[7], members[8]]
   },
   {
     id: 3,
@@ -418,7 +418,7 @@ export const recentBoards: KanbanBoard[] = [
     totalTasks: 13,
     comments: 11,
     deadlines: 15,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[9], members[10], members[11], members[12], members[13]]
   },
   {
     id: 4,
@@ -428,7 +428,7 @@ export const recentBoards: KanbanBoard[] = [
     totalTasks: 103,
     comments: 2,
     deadlines: 20,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[14], members[15], members[16]]
   }
 ];
 export const yourBoards: KanbanBoard[] = [
@@ -440,7 +440,7 @@ export const yourBoards: KanbanBoard[] = [
     totalTasks: 142,
     comments: 21,
     deadlines: 100,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[16], members[17], members[18], members[19], members[15]]
   },
   {
     id: 6,
@@ -450,7 +450,7 @@ export const yourBoards: KanbanBoard[] = [
     totalTasks: 6,
     comments: 761,
     deadlines: 2,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[8], members[2], members[3], members[4]]
   },
   {
     id: 7,
@@ -460,7 +460,7 @@ export const yourBoards: KanbanBoard[] = [
     totalTasks: 43,
     comments: 22,
     deadlines: 17,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[7], members[8], members[9], members[10], members[11]]
   },
   {
     id: 8,
@@ -470,7 +470,7 @@ export const yourBoards: KanbanBoard[] = [
     totalTasks: 23,
     comments: 111,
     deadlines: 23,
-    users: [members[1], members[2], members[3], members[4], members[5]]
+    users: [members[8], members[14], members[16], members[18], members[15]]
   }
 ];
 

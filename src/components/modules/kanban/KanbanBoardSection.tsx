@@ -22,7 +22,7 @@ const KanbanBoardSection = ({
     <div className="px-4 px-lg-6 py-5 border-bottom">
       <h4>{title}</h4>
       <p className="mb-4">
-        {description}
+        {description}{' '}
         {changePreference && <Link to="#!">Change preference</Link>}
       </p>
 

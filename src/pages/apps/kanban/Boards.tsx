@@ -10,7 +10,7 @@ import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
 import { privateBoards, recentBoards, yourBoards } from 'data/kanban';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import KanbanBoardSection from 'components/modules/kanban/KanbanBoardSection';
