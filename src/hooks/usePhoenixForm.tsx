@@ -19,7 +19,7 @@ const usePhoenixForm = <T,>(
     setFormData({
       ...formData,
       [e.target.name]: ['checkbox', 'radio'].includes(e.target.type)
-        ? e.target.checked
+        ? (e.target as HTMLInputElement).checked
         : e.target.value
     });
   };
