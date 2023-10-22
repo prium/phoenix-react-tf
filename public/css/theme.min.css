@@ -30351,6 +30351,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .counter-container .counter-overlay {
   background-color: var(--phoenix-primary);
+  transform: skewY(-8deg);
   opacity: 4%;
   min-height: 100%;
   top: 0;

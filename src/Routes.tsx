@@ -163,6 +163,7 @@ import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
+import Alternate from 'pages/pages/landing/Alternate';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -877,7 +878,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'alternate',
-            element: <ComingSoon />
+            element: <Alternate />
           }
         ]
       },

@@ -25,7 +25,7 @@ const Default = () => {
     <div className="bg-white">
       <DefaultLandingNavbar />
       <HeroHeader />
-      <Brands />
+      <Brands className="py-5 pt-xl-13" />
       <Features />
       <Testimonial />
       <FunFacts />
