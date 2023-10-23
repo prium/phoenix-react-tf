@@ -1,78 +1,24 @@
-import usePhoenixForm, { UsePhoenixFormResult } from 'hooks/usePhoenixForm';
-import {
-  Context,
-  Dispatch,
-  MutableRefObject,
-  PropsWithChildren,
-  SetStateAction,
-  createContext,
-  useContext,
-  useRef,
-  useState
-} from 'react';
+import WizardAccessDeniedModal from 'components/wizard/WizardAccessDeniedModal';
+import { UseWizardFormResult } from 'hooks/useWizardForm';
+import { Context, PropsWithChildren, createContext, useContext } from 'react';
 import { Tab } from 'react-bootstrap';
 
-interface WizardFormProviderInterface {
-  validation?: boolean;
-}
-
-interface WizardFormContextInterface<T> extends UsePhoenixFormResult<T> {
-  selectedStep: number;
-  setSelectedStep: Dispatch<SetStateAction<number>>;
-  formRefs: MutableRefObject<(HTMLFormElement | null)[]>;
-  goToStep: (targetStep: number) => void;
-  validation: boolean;
-}
+interface WizardFormContextInterface<T> extends UseWizardFormResult<T> {}
+interface WizardFormProviderInterface<T>
+  extends WizardFormContextInterface<T> {}
 
 export const WizardFormContext = createContext(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   {} as WizardFormContextInterface<any>
 );
 
-const submitEvent = new Event('submit', {
-  bubbles: true,
-  cancelable: true
-});
-
 const WizardFormProvider = <T,>({
   children,
-  validation
-}: PropsWithChildren<WizardFormProviderInterface>) => {
-  const [selectedStep, setSelectedStep] = useState(1);
-  const formRefs = useRef([]);
-  const methods = usePhoenixForm<T>();
-
-  const goToStep = (targetStep: number) => {
-    if (selectedStep > targetStep) {
-      setSelectedStep(Number(targetStep));
-    } else {
-      const form = formRefs.current[selectedStep - 1];
-      //@ts-ignore
-      if (form) {
-        //@ts-ignore
-        form.dispatchEvent(submitEvent);
-        //@ts-ignore
-        if (form.checkValidity()) {
-          setSelectedStep(Number(targetStep));
-        } else {
-          //@ts-ignore
-          form.classList.add('was-validated');
-        }
-      }
-    }
-  };
-
+  ...rest
+}: PropsWithChildren<WizardFormProviderInterface<T>>) => {
+  const { selectedStep, goToStep } = rest;
   return (
-    <WizardFormContext.Provider
-      value={{
-        selectedStep,
-        setSelectedStep,
-        formRefs,
-        goToStep,
-        validation: !!validation,
-        ...methods
-      }}
-    >
+    <WizardFormContext.Provider value={{ ...rest }}>
       <Tab.Container
         activeKey={selectedStep}
         onSelect={(eventKey: string | null) => {
@@ -83,6 +29,7 @@ const WizardFormProvider = <T,>({
       >
         {children}
       </Tab.Container>
+      <WizardAccessDeniedModal />
     </WizardFormContext.Provider>
   );
 };

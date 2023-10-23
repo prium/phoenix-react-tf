@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Avatar from 'components/base/Avatar';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { useState } from 'react';
@@ -5,16 +6,10 @@ import { Col, Form, Row } from 'react-bootstrap';
 import avatarPlaceholder from 'assets/img/team/avatar.webp';
 import AvatarDropzone from 'components/common/AvatarDropzone';
 import DatePicker from 'components/base/DatePicker';
-
-interface FormData {
-  gender: string;
-  phone: string;
-  dob: string;
-  address: string;
-}
+import { WizardFormData } from 'pages/modules/forms/WizardExample';
 
 const WizardPersonalForm = () => {
-  const methods = useWizardFormContext<FormData>();
+  const methods = useWizardFormContext<WizardFormData>();
   const { formData, onChange, validation } = methods;
   const [avatar, setAvatar] = useState(avatarPlaceholder);
 
@@ -33,10 +28,9 @@ const WizardPersonalForm = () => {
         </Col>
       </Row>
       <Form.Group className="mb-2">
-        <Form.Label htmlFor="gender">Gender</Form.Label>
+        <Form.Label>Gender</Form.Label>
         <Form.Select
           name="gender"
-          id="gender"
           value={formData.gender}
           //@ts-ignore
           onChange={onChange}
@@ -52,12 +46,11 @@ const WizardPersonalForm = () => {
         </Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-2">
-        <Form.Label htmlFor="phone">Phone</Form.Label>
+        <Form.Label>Phone</Form.Label>
         <Form.Control
           type="text"
           name="phone"
           placeholder="Phone"
-          id="phone"
           value={formData.phone}
           onChange={onChange}
           required={validation}
@@ -72,13 +65,12 @@ const WizardPersonalForm = () => {
         render={(_, ref) => {
           return (
             <Form.Group className="mb-2">
-              <Form.Label htmlFor="dob">Date of birth</Form.Label>
+              <Form.Label>Date of birth</Form.Label>
               <Form.Control
                 type="date"
                 placeholder="Date of birth"
                 ref={ref}
-                value={''}
-                id="dob"
+                value={formData.dob}
                 name="dob"
               />
             </Form.Group>
@@ -87,13 +79,12 @@ const WizardPersonalForm = () => {
       />
 
       <Form.Group className="mb-2">
-        <Form.Label htmlFor="address">Address</Form.Label>
+        <Form.Label>Address</Form.Label>
         <Form.Control
           as="textarea"
           value={formData.address}
           onChange={onChange}
           rows={4}
-          id="address"
           required={validation}
         />
         <Form.Control.Feedback type="invalid">

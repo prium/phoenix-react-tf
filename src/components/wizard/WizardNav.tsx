@@ -6,21 +6,29 @@ import {
   faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import classNames from 'classnames';
+import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { Nav } from 'react-bootstrap';
 
 const WizardNavItem = ({
   icon,
   label,
-  eventKey
+  step
 }: {
   icon: IconProp;
   label: string;
-  eventKey: number;
+  step: number;
 }) => {
+  const { selectedStep, totalStep } = useWizardFormContext();
   return (
     <Nav.Item as="li" className="nav-item">
-      <Nav.Link className="fw-semi-bold" eventKey={eventKey}>
+      <Nav.Link
+        className={classNames('fw-semi-bold', {
+          done: selectedStep > step && step !== totalStep,
+          complete: selectedStep > step && step !== totalStep - 1
+        })}
+        eventKey={step}
+      >
         <div className="text-center d-inline-block">
           <span className="nav-item-circle-parent">
             <span className="nav-item-circle">
@@ -37,10 +45,10 @@ const WizardNavItem = ({
 const WizardNav = () => {
   return (
     <Nav className="justify-content-between nav-wizard">
-      <WizardNavItem icon={faLock} eventKey={1} label="Account" />
-      <WizardNavItem icon={faUser} eventKey={2} label="Personal" />
-      <WizardNavItem icon={faFileAlt} eventKey={3} label="Billing" />
-      <WizardNavItem icon={faCheck} eventKey={4} label="Done" />
+      <WizardNavItem icon={faLock} step={1} label="Account" />
+      <WizardNavItem icon={faUser} step={2} label="Personal" />
+      <WizardNavItem icon={faFileAlt} step={3} label="Billing" />
+      <WizardNavItem icon={faCheck} step={4} label="Done" />
     </Nav>
   );
 };

@@ -3,26 +3,34 @@ import {
   faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import Button from 'components/base/Button';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React from 'react';
 
-const WizardFooter = () => {
-  const { selectedStep, goToStep } = useWizardFormContext<FormData>();
+const WizardFooter = ({ className }: { className?: string }) => {
+  const { selectedStep, goToStep, getCanNextPage, getCanPreviousPage } =
+    useWizardFormContext<FormData>();
 
   return (
-    <div className="d-flex justify-content-between mb-0">
+    <div
+      className={classNames(className, 'd-flex justify-content-between mb-0')}
+    >
       <Button
         variant="link"
-        className="p-0"
-        startIcon={<FontAwesomeIcon icon={faChevronLeft} />}
+        className={classNames('p-0', {
+          'd-none': !getCanPreviousPage
+        })}
+        startIcon={<FontAwesomeIcon icon={faChevronLeft} className="fs-10" />}
         onClick={() => goToStep(selectedStep - 1)}
       >
         Previous
       </Button>
       <Button
         variant="primary"
-        endIcon={<FontAwesomeIcon icon={faChevronRight} />}
+        className={classNames('ms-auto px-6', {
+          'd-none': !getCanNextPage
+        })}
+        endIcon={<FontAwesomeIcon icon={faChevronRight} className="fs-10" />}
         onClick={() => goToStep(selectedStep + 1)}
       >
         Next
