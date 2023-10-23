@@ -209,3 +209,18 @@ export const getProgressColorVariant = (value: number) => {
     return 'success';
   }
 };
+
+export const getPriorityColor = (priority: string) => {
+  switch (priority.toLowerCase()) {
+    case 'urgent':
+      return 'danger';
+    case 'high':
+      return 'warning';
+    case 'medium':
+      return 'success';
+    case 'low':
+      return 'info';
+    default:
+      return 'primary';
+  }
+};

@@ -362,6 +362,32 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'kanban',
+        icon: 'trello',
+        new: true,
+        active: true,
+        pages: [
+          {
+            name: 'Kanban',
+            path: '/apps/kanban/kanban',
+            pathName: 'app-kanban',
+            active: true
+          },
+          {
+            name: 'boards',
+            path: '/apps/kanban/boards',
+            pathName: 'kanban-boards',
+            active: true
+          },
+          {
+            name: 'create board',
+            path: '/apps/kanban/create-board',
+            pathName: 'create-kanban-board',
+            active: true
+          }
+        ]
+      },
+      {
         name: 'social',
         icon: 'share-2',
         active: true,
@@ -835,6 +861,12 @@ export const routes: RouteItems[] = [
             name: 'validation',
             path: '/modules/forms/validation',
             pathName: 'forms-validation',
+            active: true
+          },
+          {
+            name: 'wizard',
+            path: '/modules/forms/wizard',
+            pathName: 'forms-wizard',
             active: true
           }
         ]

@@ -1,9 +1,10 @@
 import { CSSProperties, ChangeEvent, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
-
+import Button from 'components/base/Button';
+import imageIcon from 'assets/img/icons/image-icon.png';
 interface CoverUploadProps {
-  src: string;
+  src?: string;
   gradient?: CSSProperties;
   onChange?: () => void;
 }
@@ -20,26 +21,36 @@ const CoverUpload = ({ src, gradient, onChange }: CoverUploadProps) => {
     }
   };
   return (
-    <div
-      className="bg-holder rounded-top hover-actions-trigger position-absolute"
-      style={{
-        backgroundImage: `${gradient ? gradient + ',' : ''}url(${
-          image ? URL.createObjectURL(image) : src
-        })`
-      }}
-    >
-      <input
-        className="d-none"
-        id="coverFile"
-        type="file"
-        accept="image/*"
-        onChange={handleChange}
-      />
-      <label className="cover-image-file-input" htmlFor="coverFile"></label>
-      <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white dark__text-white">
-        <FontAwesomeIcon icon={faCamera} className="me-2 overlay-icon" />
+    <>
+      {!src && (
+        <div className="text-600 fw-bold d-flex flex-center flex-column gap-3 fs-9 w-100 h-100">
+          <img className="mt-3" src={imageIcon} width={40} alt="" />
+          <Button variant="link" className="p-0">
+            Add cover image
+          </Button>
+        </div>
+      )}
+      <div
+        className="bg-holder rounded-top hover-actions-trigger position-absolute"
+        style={{
+          backgroundImage: `${gradient ? gradient + ',' : ''}url(${
+            image ? URL.createObjectURL(image) : src
+          })`
+        }}
+      >
+        <input
+          className="d-none"
+          id="coverFile"
+          type="file"
+          accept="image/*"
+          onChange={handleChange}
+        />
+        <label className="cover-image-file-input" htmlFor="coverFile"></label>
+        <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white dark__text-white">
+          <FontAwesomeIcon icon={faCamera} className="me-2 overlay-icon" />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
