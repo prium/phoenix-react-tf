@@ -384,7 +384,8 @@ export const routes: RouteItems[] = [
         name: 'calendar',
         icon: 'calendar',
         path: 'apps/calendar',
-        pathName: 'app-calendar'
+        pathName: 'app-calendar',
+        active: true
       }
     ]
   },

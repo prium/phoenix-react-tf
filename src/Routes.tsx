@@ -164,6 +164,7 @@ import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
 import Alternate from 'pages/pages/landing/Alternate';
+import Calendar from 'pages/apps/calendar/Calendar';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -351,6 +352,10 @@ const routes: RouteObject[] = [
                     element: <Feed />
                   }
                 ]
+              },
+              {
+                path: 'calendar',
+                element: <Calendar />
               },
               {
                 path: 'email',
