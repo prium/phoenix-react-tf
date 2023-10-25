@@ -39,10 +39,10 @@ const useWizardForm = <T,>({
   const methods = usePhoenixForm<T>();
 
   const goToStep = (targetStep: number) => {
-    if (selectedStep === totalStep && targetStep < selectedStep) {
-      setOpenDeniedModal(true);
-      return;
-    }
+    // if (selectedStep === totalStep && targetStep < selectedStep) {
+    //   setOpenDeniedModal(true);
+    //   return;
+    // }
     if (targetStep <= totalStep && targetStep > 0) {
       if (selectedStep > targetStep) {
         setSelectedStep(Number(targetStep));
@@ -68,7 +68,7 @@ const useWizardForm = <T,>({
 
   const getCanNextPage = selectedStep < totalStep;
 
-  const getCanPreviousPage = selectedStep > 1 && selectedStep !== totalStep;
+  const getCanPreviousPage = selectedStep > 1;
 
   return {
     selectedStep,

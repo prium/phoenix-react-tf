@@ -29,7 +29,7 @@ const WizardFormProvider = <T,>({
       >
         {children}
       </Tab.Container>
-      <WizardAccessDeniedModal />
+      {/* <WizardAccessDeniedModal /> */}
     </WizardFormContext.Provider>
   );
 };

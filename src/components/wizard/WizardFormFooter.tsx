@@ -7,9 +7,17 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 
-const WizardFooter = ({ className }: { className?: string }) => {
+const WizardFormFooter = ({
+  className,
+  nextBtnLabel = 'Next',
+  handleSubmit
+}: {
+  className?: string;
+  nextBtnLabel?: string;
+  handleSubmit?: () => void;
+}) => {
   const { selectedStep, goToStep, getCanNextPage, getCanPreviousPage } =
-    useWizardFormContext<FormData>();
+    useWizardFormContext();
 
   return (
     <div
@@ -27,16 +35,22 @@ const WizardFooter = ({ className }: { className?: string }) => {
       </Button>
       <Button
         variant="primary"
-        className={classNames('ms-auto px-6', {
-          'd-none': !getCanNextPage
-        })}
+        className={classNames('ms-auto px-6')}
         endIcon={<FontAwesomeIcon icon={faChevronRight} className="fs-10" />}
-        onClick={() => goToStep(selectedStep + 1)}
+        onClick={() => {
+          if (getCanNextPage) {
+            goToStep(selectedStep + 1);
+          } else {
+            if (handleSubmit) {
+              handleSubmit();
+            }
+          }
+        }}
       >
-        Next
+        {nextBtnLabel}
       </Button>
     </div>
   );
 };
 
-export default WizardFooter;
+export default WizardFormFooter;

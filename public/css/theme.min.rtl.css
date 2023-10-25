@@ -24680,6 +24680,34 @@ h3,
   border-color: #373e53;
 }
 
+.phoenix-form-floating .form-control {
+  padding-right: 2.5rem;
+}
+.phoenix-form-floating .form-floating-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.phoenix-form-floating .form-floating-start-icon {
+  right: 1rem;
+}
+.phoenix-form-floating .form-floating-end-icon {
+  left: 0.5rem;
+}
+
+.checkbox-color {
+  height: 40px;
+  width: 50px;
+  border-radius: 50rem !important;
+  border: 1px solid var(--phoenix-gray-200) !important;
+  margin-top: 0 !important;
+}
+.checkbox-color:checked {
+  background-image: none !important;
+  border-color: #3874ff !important;
+  box-shadow: 0 0 0 0.2rem rgba(var(--phoenix-primary-rgb), 0.5);
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               Navbar Vertical                              */
 /* -------------------------------------------------------------------------- */
@@ -32246,6 +32274,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .kanban-color-picker::-webkit-color-swatch {
   border: none;
+  border-radius: 0;
 }
 
 .kanban-column-item {

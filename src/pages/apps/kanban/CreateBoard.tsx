@@ -3,7 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import boardIcon from 'assets/img/kanban/board.png';
 import boardIllustration from 'assets/img/kanban/board-light.png';
 import boardIllustrationDark from 'assets/img/kanban/board-dark.png';
-import KanbanCreateBoardForm from 'components/modules/kanban/KanbanCreateBoardForm';
+import CreateBoardWizardForm from 'components/modules/kanban/create-board/CreateBoardWizardForm';
 
 const CreateBoard = () => {
   return (
@@ -19,7 +19,7 @@ const CreateBoard = () => {
       </Row>
       <Row className="kanban-create-board">
         <Col xs={12} xl={6} xxl={5}>
-          <KanbanCreateBoardForm />
+          <CreateBoardWizardForm />
         </Col>
         <Col xs={12} xl={6} xxl={7} className="text-center kanban-board-bg">
           <img

@@ -230,3 +230,35 @@ select:-webkit-autofill:focus {
     }
   }
 }
+
+.phoenix-form-floating {
+  .form-control {
+    padding-left: map-get($spacers, 6);
+  }
+  .form-floating-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .form-floating-start-icon {
+    left: 1rem;
+  }
+  .form-floating-end-icon {
+    right: 0.5rem;
+  }
+}
+
+.checkbox-color {
+  // input {
+  height: 40px;
+  width: 50px;
+  border-radius: 50rem !important;
+  border: 1px solid $border-color !important;
+  margin-top: 0 !important;
+  &:checked {
+    background-image: none !important;
+    border-color: $primary !important;
+    box-shadow: 0 0 0 0.2rem rgba(var(--#{$prefix}primary-rgb), 0.5);
+  }
+  // }
+}
