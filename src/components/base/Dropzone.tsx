@@ -9,7 +9,7 @@ import {
 import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useMemo, useState } from 'react';
+import { PropsWithChildren, useMemo, useState } from 'react';
 import AttachmentPreview, {
   FileAttachment
 } from 'components/common/AttachmentPreview';
@@ -17,9 +17,10 @@ import { convertFileToAttachment } from 'helpers/utils';
 import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-interface DropzoneProps extends ReactDropZoneProps {
+interface DropzoneProps {
   className?: string;
   size?: 'sm';
+  reactDropZoneProps?: ReactDropZoneProps;
   accept?: Accept;
   onDrop?: <T extends File>(
     acceptedFiles: T[],
@@ -33,8 +34,9 @@ const Dropzone = ({
   size,
   onDrop,
   accept,
-  ...rest
-}: DropzoneProps) => {
+  reactDropZoneProps,
+  children
+}: PropsWithChildren<DropzoneProps>) => {
   const [files, setFiles] = useState<File[]>([]);
   const [previews, setPreviews] = useState<FileAttachment[]>([]);
 
@@ -53,7 +55,7 @@ const Dropzone = ({
       }
     },
     accept,
-    ...rest
+    ...reactDropZoneProps
   });
 
   const imageOnly = useMemo(() => {
@@ -80,20 +82,24 @@ const Dropzone = ({
         })}
       >
         <input {...getInputProps()} />
-        <div className="text-600 fw-bold fs-9">
-          Drag your {imageOnly ? 'photo' : 'files'} here{' '}
-          <span className="text-800">or </span>
-          <Button variant="link" className="p-0">
-            Browse from device
-          </Button>
-          <br />
-          <img
-            className="mt-3"
-            src={imageIcon}
-            width={classNames({ 24: size === 'sm', 40: size !== 'sm' })}
-            alt=""
-          />
-        </div>
+        {children ? (
+          <>{children}</>
+        ) : (
+          <div className="text-600 fw-bold fs-9">
+            Drag your {imageOnly ? 'photo' : 'files'} here{' '}
+            <span className="text-800">or </span>
+            <Button variant="link" className="p-0">
+              Browse from device
+            </Button>
+            <br />
+            <img
+              className="mt-3"
+              src={imageIcon}
+              width={classNames({ 24: size === 'sm', 40: size !== 'sm' })}
+              alt=""
+            />
+          </div>
+        )}
       </div>
       {!imageOnly &&
         previews.map((file, index) => (

@@ -1,13 +1,7 @@
-import {
-  faImage,
-  faPalette,
-  faPlus,
-  faShuffle
-} from '@fortawesome/free-solid-svg-icons';
+import { faImage, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from 'components/base/Button';
-import React from 'react';
-import { Col, Form, FormCheck, Nav, Row, Tab, Tabs } from 'react-bootstrap';
+import { ChangeEvent } from 'react';
+import { Col, Nav, Row, Tab } from 'react-bootstrap';
 import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 import kanban1 from 'assets/img/kanban/bg1.jpg';
 import kanban2 from 'assets/img/kanban/bg2.jpg';
@@ -16,8 +10,13 @@ import kanban4 from 'assets/img/kanban/bg4.jpg';
 import kanban5 from 'assets/img/kanban/bg5.jpg';
 import kanban6 from 'assets/img/kanban/bg6.jpg';
 import Dropzone from 'components/base/Dropzone';
+import { useWizardFormContext } from 'providers/WizardFormProvider';
+import { AddBoradFormData } from './CreateBoardWizardForm';
+import { CustomColorButton, RandomColorButton } from './ColorCheckButton';
+import Button from 'components/base/Button';
+import imageIcon from 'assets/img/icons/image-icon.png';
 
-const colors = [
+export const colors = [
   '#ffffff',
   '#F5F8FF',
   '#EFF2F6',
@@ -42,12 +41,22 @@ const colors = [
   '#222834'
 ];
 const ColorCheckbox = ({ color }: { color: string }) => {
+  const { formData, setFormData } = useWizardFormContext<AddBoradFormData>();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setFormData({ ...formData, backgroundColor: color });
+    }
+  };
+
   return (
     <FormCheckInput
-      className="checkbox-color"
+      className="kanban-form-check kanban-form-check-color"
       type="radio"
-      name="colors"
+      name="backgroundColor"
       style={{ backgroundColor: color }}
+      value={formData.backgroundColor}
+      onChange={handleChange}
     />
   );
 };
@@ -55,8 +64,13 @@ const ColorCheckbox = ({ color }: { color: string }) => {
 const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
   return (
     <>
-      <input type="radio" id={id} className="d-none" />
-      <label htmlFor={id}>
+      <input
+        type="radio"
+        id={id}
+        name="backgroundImage"
+        className="d-none kanban-form-check"
+      />
+      <label htmlFor={id} className="rounded-3">
         <img
           className="me-2 cursor-pointer rounded-3 fit-cover w-100"
           src={img}
@@ -95,24 +109,9 @@ const BackgroundColorForm = () => {
               {colors.map(color => (
                 <ColorCheckbox color={color} key={color} />
               ))}
-              <Button
-                variant="outline-secondary"
-                // size="sm"
-                className="rounded-pill"
-                startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
-              >
-                Custom Color
-              </Button>
-              <Button
-                variant="outline-danger"
-                // size="sm"
-                className="rounded-pill"
-                startIcon={
-                  <FontAwesomeIcon icon={faShuffle} className="me-2" />
-                }
-              >
-                Random
-              </Button>
+
+              <CustomColorButton />
+              <RandomColorButton />
             </div>
           </Tab.Pane>
           <Tab.Pane eventKey="second">
@@ -121,22 +120,33 @@ const BackgroundColorForm = () => {
                 <ImageCheckbox img={kanban1} id="img1" />
               </Col>
               <Col xs={6}>
-                <ImageCheckbox img={kanban2} id="img1" />
+                <ImageCheckbox img={kanban2} id="img2" />
               </Col>
               <Col xs={6}>
-                <ImageCheckbox img={kanban3} id="img1" />
+                <ImageCheckbox img={kanban3} id="img3" />
               </Col>
               <Col xs={6}>
-                <ImageCheckbox img={kanban4} id="img1" />
+                <ImageCheckbox img={kanban4} id="img4" />
               </Col>
               <Col xs={6}>
-                <ImageCheckbox img={kanban5} id="img1" />
+                <ImageCheckbox img={kanban5} id="img5" />
               </Col>
               <Col xs={6}>
-                <ImageCheckbox img={kanban6} id="img1" />
+                <ImageCheckbox img={kanban6} id="img6" />
               </Col>
               <Col xs={12}>
-                <Dropzone />
+                <Dropzone
+                  size="sm"
+                  accept={{
+                    'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+                  }}
+                >
+                  <div className="text-600">
+                    or, Add a custom background
+                    <br />
+                    <img className="mt-3" src={imageIcon} width={30} alt="" />
+                  </div>
+                </Dropzone>
               </Col>
             </Row>
           </Tab.Pane>

@@ -5,5 +5,6 @@ declare module 'react-bootstrap' {
   interface ButtonProps {
     as?: ElementType;
     to?: To;
+    htmlFor?: string;
   }
 }

@@ -11,10 +11,16 @@ import WizardForm from 'components/wizard/WizardForm';
 import BoardForm from './BoardForm';
 import ColumnForm from './ColumnForm';
 import BackgroundColorForm from './BackgroundColorForm';
+import TagsForm from './TagsForm';
+import AccessForm from './AccessForm';
+
+export interface AddBoradFormData {
+  backgroundColor: string;
+}
 
 const CreateBoardWizardForm = () => {
   const form = useWizardForm({
-    totalStep: 4
+    totalStep: 5
   });
   return (
     <WizardFormProvider {...form}>
@@ -23,7 +29,7 @@ const CreateBoardWizardForm = () => {
         <Tab.Content>
           <Tab.Pane eventKey={1}>
             <WizardForm step={1}>
-              <BackgroundColorForm />
+              <AccessForm />
             </WizardForm>
           </Tab.Pane>
           <Tab.Pane eventKey={2}>
@@ -38,6 +44,11 @@ const CreateBoardWizardForm = () => {
           </Tab.Pane>
           <Tab.Pane eventKey={4}>
             <WizardForm step={4}>
+              <BackgroundColorForm />
+            </WizardForm>
+          </Tab.Pane>
+          <Tab.Pane eventKey={5}>
+            <WizardForm step={5}>
               <BoardForm />
             </WizardForm>
           </Tab.Pane>
