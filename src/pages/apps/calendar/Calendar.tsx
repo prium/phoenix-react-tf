@@ -1,9 +1,10 @@
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import { ButtonGroup, Col, Row } from 'react-bootstrap';
 import { useState, useEffect, useRef } from 'react';
-import { CalendarApi } from '@fullcalendar/core';
+import { CalendarApi, EventClickArg } from '@fullcalendar/core';
 import events, { Event, Schedule } from 'data/calendarEvents';
 import Button from 'components/base/Button';
 import { days, monthsShort } from 'data/commonData';
@@ -15,13 +16,29 @@ import {
   faSync
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
+import CalendarEventModal from 'components/modals/CalendarEventModal';
+import { EventImpl } from '@fullcalendar/core/internal';
+import CalendarScheduleModal from 'components/modals/CalendarScheduleModal';
 
 const Calendar = () => {
   const calendarRef = useRef<FullCalendar>(null);
   const [calendarApi, setCalendarApi] = useState<CalendarApi | null>(null);
   const [calendarTitle, setCalendarTitle] = useState('');
   const [calendarView, setCalendarView] = useState('dayGridMonth');
+  const [isOpenEventModal, setIsOpenEventModal] = useState(false);
+  const [modalEventContent, setModalEventContent] = useState<EventImpl>();
+  const [isOpenScheduleModal, setIsOpenScheduleModal] = useState(false);
+  const [scheduleStartDate, setScheduleStartDate] = useState<Date>();
+  const [scheduleEndDate, setScheduleEndDate] = useState<Date>();
   const d = new Date();
+
+  const eventList = events.reduce(
+    (acc: Schedule[], val: Event) =>
+      val.schedules ? acc.concat(val.schedules.concat(val)) : acc.concat(val),
+    []
+  );
+  const [initialEvents, setInitialEvents] = useState(eventList);
+
   useEffect(() => {
     const api = calendarRef.current?.getApi();
     if (api) {
@@ -29,12 +46,6 @@ const Calendar = () => {
       setCalendarTitle(api.view.title);
     }
   }, []);
-
-  const eventList = events.reduce(
-    (acc: Schedule[], val: Event) =>
-      val.schedules ? acc.concat(val.schedules.concat(val)) : acc.concat(val),
-    []
-  );
 
   const updateDay = (day: number) => {
     return days[day];
@@ -63,6 +74,16 @@ const Calendar = () => {
     }
   };
 
+  const handleEventClick = (info: EventClickArg) => {
+    if (info.event.url) {
+      window.open(info.event.url);
+      info.jsEvent.preventDefault();
+    } else {
+      setModalEventContent(info.event);
+      setIsOpenEventModal(true);
+    }
+  };
+
   return (
     <div>
       <Row className="g-0 mb-4 align-items-center">
@@ -86,6 +107,7 @@ const Calendar = () => {
             <span className="d-none d-md-inline">Sync Now</span>
           </Button>
           <Button
+            onClick={() => setIsOpenScheduleModal(true)}
             variant="primary"
             size="sm"
             startIcon={<FontAwesomeIcon icon={faPlus} className="fs-10 me-2" />}
@@ -158,12 +180,15 @@ const Calendar = () => {
       <div className="mt-6 mb-9">
         <FullCalendar
           ref={calendarRef}
-          plugins={[dayGridPlugin, timeGridPlugin]}
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
           initialView={calendarView}
           headerToolbar={false}
           dayMaxEvents={3}
           height={800}
           stickyHeaderDates={false}
+          editable
+          selectable
+          selectMirror
           views={{
             week: {
               eventLimit: 3
@@ -175,9 +200,31 @@ const Calendar = () => {
             omitZeroMinute: true,
             meridiem: true
           }}
-          events={eventList}
+          select={info => {
+            setIsOpenScheduleModal(true);
+            setScheduleStartDate(info.start);
+            setScheduleEndDate(info.end);
+            console.log('first');
+          }}
+          events={initialEvents}
+          eventClick={handleEventClick}
         />
       </div>
+      {modalEventContent && (
+        <CalendarEventModal
+          event={modalEventContent}
+          isOpenEventModal={isOpenEventModal}
+          setIsOpenEventModal={setIsOpenEventModal}
+        />
+      )}
+
+      <CalendarScheduleModal
+        isOpenScheduleModal={isOpenScheduleModal}
+        setIsOpenScheduleModal={setIsOpenScheduleModal}
+        scheduleStartDate={scheduleStartDate}
+        scheduleEndDate={scheduleEndDate}
+        setInitialEvents={setInitialEvents}
+      />
     </div>
   );
 };
