@@ -8,13 +8,15 @@ import CreateBoardWizardForm from 'components/modules/kanban/create-board/Create
 const CreateBoard = () => {
   return (
     <div>
-      <Row>
+      <Row className="mb-8">
         <Col xs={6}>
           <div className="d-flex align-items-center mb-3">
             <img src={boardIcon} alt="" className="me-3" />
             <h1 className="mb-0 text-1100 fw-semi-bold">Phoenix Kanban</h1>
           </div>
-          <p>Create a Kanban board by following the steps below</p>
+          <p className="mb-0">
+            Create a Kanban board by following the steps below
+          </p>
         </Col>
       </Row>
       <Row className="kanban-create-board">

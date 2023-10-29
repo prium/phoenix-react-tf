@@ -1,65 +1,35 @@
+import { faPaste } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import React, { PropsWithChildren, useState } from 'react';
-import { Accordion, Collapse, Form, useAccordionButton } from 'react-bootstrap';
+import PhoenixFloatingLabel from 'components/base/PhoenixFloatingLabel';
+import {
+  Accordion,
+  Col,
+  FloatingLabel,
+  Form,
+  FormCheckProps,
+  OverlayTrigger,
+  Row,
+  Tooltip,
+  useAccordionButton
+} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const CollapseRadioItem = ({
-  label,
-  id,
-  children
-}: PropsWithChildren<{ label: string; id: string }>) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <Form.Check
-        type="radio"
-        id={id}
-        name="access"
-        label={label}
-        onChange={e => {
-          console.log(e.target.checked);
+interface CustomToggleProps extends FormCheckProps {
+  eventKey: string;
+}
 
-          if (e.target.checked) {
-            setOpen(true);
-          } else {
-            setOpen(false);
-          }
-        }}
-        // onClick={() => setOpen(!open)}
-      />
-
-      <Collapse in={open}>
-        <div>
-          <>{children}</>
-        </div>
-      </Collapse>
-    </>
-  );
-};
-
-const CustomToggle = ({
-  children,
-  label,
-  id,
-  eventKey
-}: PropsWithChildren<{ eventKey: string; label: string; id: string }>) => {
-  const [setselectedEventKey, setSetselectedEventKey] = useState('1');
-  const decoratedOnClick = useAccordionButton(
-    eventKey,
-    () => console.log({ eventKey })
-    // setSetselectedEventKey(eventKey)
-  );
+const CustomToggle = ({ eventKey, ...rest }: CustomToggleProps) => {
+  const decoratedOnClick = useAccordionButton(eventKey);
 
   return (
-    <div>
-      <Form.Check
-        type="radio"
-        id={id}
-        name="access"
-        label={label}
-        onClick={decoratedOnClick}
-      />
-    </div>
+    <Form.Check
+      type="radio"
+      onClick={decoratedOnClick}
+      name="access"
+      {...rest}
+    />
   );
 };
 
@@ -80,20 +50,90 @@ const AccessForm = () => {
           eventKey="0"
           id="anyone"
           label="Anyone with shareable link can access"
+          className="mb-4"
+          defaultChecked
         />
 
-        <Accordion.Collapse eventKey="0">
-          <p>kjhhjg</p>
+        <Accordion.Collapse eventKey="0" className="ms-4">
+          <Row className="g-3 mb-4">
+            <Col md={9}>
+              <PhoenixFloatingLabel
+                label="Shareable Link"
+                className="flex-1"
+                endComponent={
+                  <Button className="fs-8 text-400 end-0">
+                    <OverlayTrigger
+                      placement="top"
+                      overlay={
+                        <Tooltip id="ThemeColor" style={{ position: 'fixed' }}>
+                          Copy
+                        </Tooltip>
+                      }
+                    >
+                      <FontAwesomeIcon icon={faPaste} />
+                    </OverlayTrigger>
+                  </Button>
+                }
+              >
+                <Form.Control type="text" placeholder="Board Name" />
+              </PhoenixFloatingLabel>
+            </Col>
+            <Col md={3}>
+              <FloatingLabel controlId="addTye" label="Add as">
+                <Form.Select>
+                  <option value="guest">Guest</option>
+                  <option value="member">Member</option>
+                </Form.Select>
+              </FloatingLabel>
+            </Col>
+          </Row>
         </Accordion.Collapse>
 
         <CustomToggle
           eventKey="1"
           id="invited"
           label="Only invited people can access"
+          className="mb-4"
         />
 
-        <Accordion.Collapse eventKey="1">
-          <p>kjikl</p>
+        <Accordion.Collapse eventKey="1" className="ms-4">
+          <div className="d-flex flex-column gap-3">
+            <Row className="g-3">
+              <Col md={9}>
+                <PhoenixFloatingLabel
+                  label="ADD PEOPLE (ID OR EMAIL)"
+                  className="flex-1"
+                >
+                  <Form.Control type="text" placeholder="Board Name" />
+                </PhoenixFloatingLabel>
+              </Col>
+              <Col md={3}>
+                <FloatingLabel controlId="addTye" label="Add as">
+                  <Form.Select>
+                    <option value="guest">Guest</option>
+                    <option value="member">Member</option>
+                  </Form.Select>
+                </FloatingLabel>
+              </Col>
+            </Row>
+            <FloatingLabel
+              controlId="addAMessage"
+              label="ADD A MESSAGE (OPTIONAL)"
+            >
+              <Form.Control
+                as="textarea"
+                placeholder="ADD A MESSAGE (OPTIONAL)"
+                style={{ height: '128px' }}
+              />
+            </FloatingLabel>
+            <Button
+              variant="outline-primary"
+              endIcon={<FontAwesomeIcon icon={faEnvelope} className="ms-2" />}
+              className="w-100"
+            >
+              Invite
+            </Button>
+          </div>
         </Accordion.Collapse>
       </Accordion>
     </div>

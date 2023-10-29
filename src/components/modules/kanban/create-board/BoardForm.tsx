@@ -1,6 +1,9 @@
+import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { FloatingLabel, Form } from 'react-bootstrap';
+import { CreateBoardFormData } from './CreateBoardWizardForm';
 
 const BoardForm = () => {
+  const { formData, onChange } = useWizardFormContext<CreateBoardFormData>();
   return (
     <>
       <div className="mt-6 border-bottom-0">
@@ -11,10 +14,21 @@ const BoardForm = () => {
         </p>
       </div>
       <FloatingLabel label="Board Name" className="mb-4">
-        <Form.Control type="text" placeholder="Board Name" />
+        <Form.Control
+          type="text"
+          placeholder="Board Name"
+          name="name"
+          value={formData.name}
+          onChange={onChange}
+        />
       </FloatingLabel>
       <FloatingLabel label="Board type" className="mb-4">
-        <Form.Select>
+        <Form.Select
+          value={formData.type}
+          name="type"
+          //@ts-ignore
+          onChange={onChange}
+        >
           <option>Open this select menu</option>
           <option value="1">One</option>
           <option value="2">Two</option>
@@ -26,6 +40,9 @@ const BoardForm = () => {
           as="textarea"
           placeholder="Description"
           style={{ height: 128 }}
+          value={formData.description}
+          name="description"
+          onChange={onChange}
         />
       </FloatingLabel>
     </>

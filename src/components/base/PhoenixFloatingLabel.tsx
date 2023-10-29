@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { FloatingLabel, FloatingLabelProps, Form } from 'react-bootstrap';
+import { FloatingLabelProps, Form } from 'react-bootstrap';
 
 export interface PhoenixFloatingLabelProps extends FloatingLabelProps {
   startComponent?: ReactElement;
@@ -16,9 +16,7 @@ const PhoenixFloatingLabel = ({
 }: PropsWithChildren<PhoenixFloatingLabelProps>) => {
   return (
     <Form.Floating
-      className={classNames(className, 'phoenix-form-floating', {
-        // 'ps-6': startComponent
-      })}
+      className={classNames(className, 'phoenix-form-floating')}
       {...rest}
     >
       {startComponent &&
@@ -29,7 +27,13 @@ const PhoenixFloatingLabel = ({
           )
         })}
 
-      {children}
+      {React.Children.map(children, child =>
+        React.cloneElement(child as ReactElement, {
+          className: classNames((child as ReactElement).props.className, {
+            'ps-6': startComponent
+          })
+        })
+      )}
 
       {endComponent &&
         React.cloneElement(endComponent as ReactElement, {

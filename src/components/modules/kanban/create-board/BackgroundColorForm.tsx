@@ -11,9 +11,8 @@ import kanban5 from 'assets/img/kanban/bg5.jpg';
 import kanban6 from 'assets/img/kanban/bg6.jpg';
 import Dropzone from 'components/base/Dropzone';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { AddBoradFormData } from './CreateBoardWizardForm';
+import { CreateBoardFormData } from './CreateBoardWizardForm';
 import { CustomColorButton, RandomColorButton } from './ColorCheckButton';
-import Button from 'components/base/Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 
 export const colors = [
@@ -41,7 +40,7 @@ export const colors = [
   '#222834'
 ];
 const ColorCheckbox = ({ color }: { color: string }) => {
-  const { formData, setFormData } = useWizardFormContext<AddBoradFormData>();
+  const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
@@ -62,6 +61,14 @@ const ColorCheckbox = ({ color }: { color: string }) => {
 };
 
 const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
+  const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setFormData({ ...formData, backgroundImage: img });
+    }
+  };
+
   return (
     <>
       <input
@@ -69,6 +76,8 @@ const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
         id={id}
         name="backgroundImage"
         className="d-none kanban-form-check"
+        value={formData.backgroundImage}
+        onChange={handleChange}
       />
       <label htmlFor={id} className="rounded-3">
         <img
@@ -82,6 +91,8 @@ const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
 };
 
 const BackgroundColorForm = () => {
+  const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
+
   return (
     <div>
       <p className="mb-4">
@@ -93,12 +104,12 @@ const BackgroundColorForm = () => {
         <Nav variant="underline" className="border-bottom mb-10">
           <Nav.Item>
             <Nav.Link eventKey="first">
-              <FontAwesomeIcon icon={faPalette} className="me-2" /> Solid Color
+              <FontAwesomeIcon icon={faPalette} className="me-1" /> Solid Color
             </Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link eventKey="second">
-              <FontAwesomeIcon icon={faImage} className="me-2" /> Image
+              <FontAwesomeIcon icon={faImage} className="me-1" /> Image
             </Nav.Link>
           </Nav.Item>
         </Nav>
@@ -139,6 +150,12 @@ const BackgroundColorForm = () => {
                   size="sm"
                   accept={{
                     'image/*': ['.png', '.gif', '.jpeg', '.jpg']
+                  }}
+                  onDrop={(acceptedFiles: File[]) => {
+                    setFormData({
+                      ...formData,
+                      backgroundImage: URL.createObjectURL(acceptedFiles[0])
+                    });
                   }}
                 >
                   <div className="text-600">

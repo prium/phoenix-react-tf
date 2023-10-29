@@ -4,11 +4,11 @@ import Button from 'components/base/Button';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { getRandomNumber, invertHex } from 'helpers/utils';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { AddBoradFormData } from './CreateBoardWizardForm';
+import { CreateBoardFormData } from './CreateBoardWizardForm';
 import { colors } from './BackgroundColorForm';
 
 export const CustomColorButton = () => {
-  const { formData, setFormData } = useWizardFormContext<AddBoradFormData>();
+  const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
   const [color, setColor] = useState('');
   const [checked, setChecked] = useState(false);
 
@@ -47,7 +47,7 @@ export const CustomColorButton = () => {
         variant="outline-secondary"
         as="label"
         htmlFor="customColor"
-        className="rounded-pill"
+        className="rounded-pill text-uppercase"
         startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
         style={{
           background: color,
@@ -61,7 +61,7 @@ export const CustomColorButton = () => {
 };
 
 export const RandomColorButton = () => {
-  const { formData, setFormData } = useWizardFormContext<AddBoradFormData>();
+  const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
   const [color, setColor] = useState('');
 
   const ref = useRef<HTMLInputElement | null>(null);
@@ -93,7 +93,7 @@ export const RandomColorButton = () => {
         variant="outline-danger"
         as="label"
         htmlFor="randomColor"
-        className="rounded-pill"
+        className="rounded-pill text-uppercase"
         startIcon={<FontAwesomeIcon icon={faShuffle} className="me-2" />}
         style={{
           background: color,

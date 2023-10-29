@@ -26,17 +26,20 @@ const submitEvent = new Event('submit', {
   cancelable: true
 });
 
-const useWizardForm = <T,>({
-  validation,
-  totalStep
-}: {
-  validation?: boolean;
-  totalStep: number;
-}): UseWizardFormResult<T> => {
+const useWizardForm = <T,>(
+  {
+    validation,
+    totalStep
+  }: {
+    validation?: boolean;
+    totalStep: number;
+  },
+  defaultValues?: Partial<T>
+): UseWizardFormResult<T> => {
   const [selectedStep, setSelectedStep] = useState(1);
   const [openDeniedModal, setOpenDeniedModal] = useState(false);
   const formRefs = useRef<HTMLFormElement[]>([]);
-  const methods = usePhoenixForm<T>();
+  const methods = usePhoenixForm<T>(defaultValues);
 
   const goToStep = (targetStep: number) => {
     // if (selectedStep === totalStep && targetStep < selectedStep) {

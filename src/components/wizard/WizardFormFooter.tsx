@@ -16,8 +16,13 @@ const WizardFormFooter = ({
   nextBtnLabel?: string;
   handleSubmit?: () => void;
 }) => {
-  const { selectedStep, goToStep, getCanNextPage, getCanPreviousPage } =
-    useWizardFormContext();
+  const {
+    formData,
+    selectedStep,
+    goToStep,
+    getCanNextPage,
+    getCanPreviousPage
+  } = useWizardFormContext();
 
   return (
     <div
@@ -38,6 +43,8 @@ const WizardFormFooter = ({
         className={classNames('ms-auto px-6')}
         endIcon={<FontAwesomeIcon icon={faChevronRight} className="fs-10" />}
         onClick={() => {
+          console.log({ formData });
+
           if (getCanNextPage) {
             goToStep(selectedStep + 1);
           } else {

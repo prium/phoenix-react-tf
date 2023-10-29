@@ -1,4 +1,3 @@
-import WizardAccessDeniedModal from 'components/wizard/WizardAccessDeniedModal';
 import { UseWizardFormResult } from 'hooks/useWizardForm';
 import { Context, PropsWithChildren, createContext, useContext } from 'react';
 import { Tab } from 'react-bootstrap';

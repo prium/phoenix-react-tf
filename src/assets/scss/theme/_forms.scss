@@ -232,9 +232,6 @@ select:-webkit-autofill:focus {
 }
 
 .phoenix-form-floating {
-  .form-control {
-    padding-left: map-get($spacers, 6);
-  }
   .form-floating-icon {
     position: absolute;
     top: 50%;
