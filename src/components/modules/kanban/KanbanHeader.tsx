@@ -16,6 +16,8 @@ import AvatarDropdown from 'components/common/AvatarDropdown';
 import { kanbanBoardMembers } from 'data/kanban';
 import { Col, Dropdown, Nav, Row } from 'react-bootstrap';
 import { useKanbanContext } from 'providers/KanbanProvider';
+import { useState } from 'react';
+import KanbanInviteModal from 'components/modals/KanbanInviteModal';
 
 const navItems = [
   {
@@ -45,6 +47,7 @@ const navItems = [
 ];
 
 const KanbanHeader = () => {
+  const [openInviteModal, setOpenInviteModal] = useState(false);
   const { kanbanDispatch } = useKanbanContext();
 
   return (
@@ -81,6 +84,7 @@ const KanbanHeader = () => {
               startIcon={<FontAwesomeIcon icon={faUserPlus} />}
               variant="primary"
               className="fs-10 px-3"
+              onClick={() => setOpenInviteModal(!openInviteModal)}
             >
               <span className="d-none d-sm-inline">invite</span>
             </Button>
@@ -112,6 +116,10 @@ const KanbanHeader = () => {
           </Col>
         </Row>
       </div>
+      <KanbanInviteModal
+        show={openInviteModal}
+        handleClose={() => setOpenInviteModal(false)}
+      />
     </>
   );
 };
