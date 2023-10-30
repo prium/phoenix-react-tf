@@ -23,12 +23,12 @@ const SubCategoryTab = ({
   return (
     <Col md={6} xl={5} xxl={4}>
       <Nav
-        className="faq-subcategory-tab w-sm-75 w-md-100 mx-auto mb-4"
+        className="faq-subcategory-tab w-sm-75 w-md-100 mx-auto mb-4 gap-3"
         style={{ width: '90%' }}
       >
         {categoryType === 'popular' &&
           categories.map(
-            (category, index) =>
+            category =>
               category.category === 'popular' && (
                 <Nav.Item
                   onClick={() => {
@@ -38,9 +38,7 @@ const SubCategoryTab = ({
                       setSubCategoryActiveKey(category.id);
                   }}
                   key={category.id}
-                  className={`w-100 ${
-                    index !== categories.length - 1 ? 'mb-3' : 'mb-0'
-                  }`}
+                  className="w-100"
                 >
                   <FaqCategoryCard
                     subCategoryActiveKey={subCategoryActiveKey}
@@ -50,7 +48,7 @@ const SubCategoryTab = ({
               )
           )}
         {categoryType === 'all' &&
-          categories.map((category, index) => (
+          categories.map(category => (
             <Nav.Item
               onClick={() => {
                 setOpenTab && setOpenTab(false);
@@ -58,9 +56,7 @@ const SubCategoryTab = ({
                 setSubCategoryActiveKey && setSubCategoryActiveKey(category.id);
               }}
               key={category.id}
-              className={`w-100 ${
-                index !== categories.length - 1 ? 'mb-3' : 'mb-0'
-              }`}
+              className={`w-100`}
             >
               <FaqCategoryCard
                 subCategoryActiveKey={subCategoryActiveKey}

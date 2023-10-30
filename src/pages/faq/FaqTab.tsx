@@ -41,28 +41,30 @@ const FaqTab = () => {
           <h1>How can we help?</h1>
           <p className="my-3">
             Search for the topic you need help with or
-            <Link to="#!"> contact our support</Link>
+            <Link to="mailto:support@themewagon.com"> contact our support</Link>
           </p>
           <SearchBox className="w-100" placeholder="" />
         </div>
       </div>
       <Tab.Container
         defaultActiveKey={activeKey}
-        onSelect={(key: any) => setActiveKey(key)}
+        onSelect={(key: string | null) => setActiveKey(key || '')}
         activeKey={activeKey}
       >
         <Row className="gx-xl-8 gx-xxl-11 gy-6">
           {breakpoints.up('md') && <CategoryTab />}
-          <Col
+          {/* <Col
             md={6}
             xl={7}
             xxl={8}
             className="empty-header d-none d-md-block"
-          />
+          /> */}
           <Col xs={12} className="m-0">
             <Tab.Container
               defaultActiveKey={subCategoryActiveKey}
-              onSelect={(key: any) => setSubCategoryActiveKey(key)}
+              onSelect={(key: string | null) =>
+                setSubCategoryActiveKey(key || '')
+              }
               id="sub-category"
               activeKey={subCategoryActiveKey}
             >
