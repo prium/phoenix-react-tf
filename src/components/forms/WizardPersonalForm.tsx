@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import Avatar from 'components/base/Avatar';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { useState } from 'react';
@@ -32,7 +31,6 @@ const WizardPersonalForm = () => {
         <Form.Select
           name="gender"
           value={formData.gender}
-          //@ts-ignore
           onChange={onChange}
           required={validation}
         >

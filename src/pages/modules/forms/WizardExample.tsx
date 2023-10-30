@@ -9,7 +9,8 @@ import WizardAccountForm from 'components/forms/WizardAccountForm';
 import WizardPersonalForm from 'components/forms/WizardPersonalForm';
 import WizardBillingForm from 'components/forms/WizardBillingForm';
 import WizardSuccessStep from 'components/wizard/WizardSuccessStep';
-import WizardFooter from 'components/wizard/WizardFooter';
+import WizardFormFooter from 'components/wizard/WizardFormFooter';
+import classNames from 'classnames';
 
 export interface WizardFormData {
   name: string;
@@ -32,7 +33,7 @@ const progressTabExampleCode = `
 import WizardAccountForm from 'components/forms/WizardAccountForm';
 import WizardBillingForm from 'components/forms/WizardBillingForm';
 import WizardPersonalForm from 'components/forms/WizardPersonalForm';
-import WizardFooter from 'components/wizard/WizardFooter';
+import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import WizardForm from 'components/wizard/WizardForm';
 import WizardNav from 'components/wizard/WizardNav';
 import WizardSuccessStep from 'components/wizard/WizardSuccessStep';
@@ -90,7 +91,9 @@ const ProgressTabExample = () => {
           </Tab.Content>
         </Card.Body>
         <Card.Footer className="border-top-0">
-          <WizardFooter />
+          <WizardFormFooter 
+            className={classNames({ 'd-none': !form.getCanNextPage })}
+          />
         </Card.Footer>
       </Card>
     </WizardFormProvider>
@@ -102,7 +105,7 @@ const withValidationExampleCode = `
 import WizardAccountForm from 'components/forms/WizardAccountForm';
 import WizardBillingForm from 'components/forms/WizardBillingForm';
 import WizardPersonalForm from 'components/forms/WizardPersonalForm';
-import WizardFooter from 'components/wizard/WizardFooter';
+import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import WizardForm from 'components/wizard/WizardForm';
 import WizardNav from 'components/wizard/WizardNav';
 import WizardSuccessStep from 'components/wizard/WizardSuccessStep';
@@ -161,7 +164,9 @@ const WithValidationExample = () => {
           </Tab.Content>
         </Card.Body>
         <Card.Footer className="border-top-0">
-          <WizardFooter />
+          <WizardFormFooter 
+            className={classNames({ 'd-none': !form.getCanNextPage })}
+          />
         </Card.Footer>
       </Card>
     </WizardFormProvider>
@@ -232,7 +237,9 @@ const ProgressTabExample = () => {
           </Tab.Content>
         </Card.Body>
         <Card.Footer className="border-top-0">
-          <WizardFooter />
+          <WizardFormFooter
+            className={classNames({ 'd-none': !form.getCanNextPage })}
+          />
         </Card.Footer>
       </Card>
     </WizardFormProvider>
@@ -273,7 +280,9 @@ const WithValidationExample = () => {
           </Tab.Content>
         </Card.Body>
         <Card.Footer className="border-top-0">
-          <WizardFooter />
+          <WizardFormFooter
+            className={classNames({ 'd-none': !form.getCanNextPage })}
+          />
         </Card.Footer>
       </Card>
     </WizardFormProvider>

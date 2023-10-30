@@ -230,3 +230,17 @@ select:-webkit-autofill:focus {
     }
   }
 }
+
+.phoenix-form-floating {
+  .form-floating-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .form-floating-start-icon {
+    left: 1rem;
+  }
+  .form-floating-end-icon {
+    right: 0.5rem;
+  }
+}

@@ -148,7 +148,6 @@
   padding-left: map-get($spacers, 2);
   padding-right: map-get($spacers, 2);
   background-color: var(--#{$prefix}body-bg);
-  font-family: $font-family-sans-serif;
   font-size: map-get($font-sizes, '9');
   color: var(--#{$prefix}gray-600);
   white-space: nowrap;

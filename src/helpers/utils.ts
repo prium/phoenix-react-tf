@@ -224,3 +224,9 @@ export const getPriorityColor = (priority: string) => {
       return 'primary';
   }
 };
+
+export const invertHex = (hex: string) =>
+  `#${(Number(`0x1${hex.slice(1)}`) ^ 0xffffff)
+    .toString(16)
+    .substring(1)
+    .toUpperCase()}`;

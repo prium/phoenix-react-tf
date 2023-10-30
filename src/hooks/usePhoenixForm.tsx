@@ -4,7 +4,9 @@ export interface UsePhoenixFormResult<T> {
   formData: T;
   setFormData: React.Dispatch<React.SetStateAction<T>>;
   setValue: (values: Partial<T>) => void;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => void;
   onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
@@ -15,7 +17,9 @@ const usePhoenixForm = <T,>(
     ...(defaultValues || {})
   } as T);
 
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: ['checkbox', 'radio'].includes(e.target.type)

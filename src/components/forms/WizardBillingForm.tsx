@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { WizardFormData } from 'pages/modules/forms/WizardExample';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { Col, Form, Row } from 'react-bootstrap';
@@ -48,7 +47,6 @@ const WizardBillingForm = () => {
             <Form.Select
               name="country"
               value={formData.country}
-              //@ts-ignore
               onChange={onChange}
               required={validation}
             >
