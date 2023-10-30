@@ -23,12 +23,7 @@ const BoardForm = () => {
         />
       </FloatingLabel>
       <FloatingLabel label="Board type" className="mb-4">
-        <Form.Select
-          value={formData.type}
-          name="type"
-          //@ts-ignore
-          onChange={onChange}
-        >
+        <Form.Select value={formData.type} name="type" onChange={onChange}>
           <option>Open this select menu</option>
           <option value="1">One</option>
           <option value="2">Two</option>

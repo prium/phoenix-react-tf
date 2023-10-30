@@ -3,6 +3,7 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixFloatingLabel from 'components/base/PhoenixFloatingLabel';
+import { useState } from 'react';
 import {
   Accordion,
   Col,
@@ -33,7 +34,17 @@ const CustomToggle = ({ eventKey, ...rest }: CustomToggleProps) => {
   );
 };
 
+const shareableLink = `${window.location.origin}/kanban/invite/jd9sklaicijs`;
 const AccessForm = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyShareableLink = async () => {
+    await navigator.clipboard.writeText(shareableLink);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
   return (
     <div>
       <p className="mb-4">
@@ -61,12 +72,15 @@ const AccessForm = () => {
                 label="Shareable Link"
                 className="flex-1"
                 endComponent={
-                  <Button className="fs-8 text-400 end-0">
+                  <Button
+                    className="fs-8 text-400 end-0"
+                    onClick={handleCopyShareableLink}
+                  >
                     <OverlayTrigger
                       placement="top"
                       overlay={
                         <Tooltip id="ThemeColor" style={{ position: 'fixed' }}>
-                          Copy
+                          {copied ? 'Copied' : 'Copy'}
                         </Tooltip>
                       }
                     >
@@ -75,7 +89,13 @@ const AccessForm = () => {
                   </Button>
                 }
               >
-                <Form.Control type="text" placeholder="Board Name" />
+                <Form.Control
+                  type="text"
+                  readOnly
+                  placeholder="Board Name"
+                  value={shareableLink}
+                  className="pe-7"
+                />
               </PhoenixFloatingLabel>
             </Col>
             <Col md={3}>

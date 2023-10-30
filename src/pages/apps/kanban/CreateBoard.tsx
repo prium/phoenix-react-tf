@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import boardIcon from 'assets/img/kanban/board.png';
 import boardIllustration from 'assets/img/kanban/board-light.png';
@@ -7,7 +6,7 @@ import CreateBoardWizardForm from 'components/modules/kanban/create-board/Create
 
 const CreateBoard = () => {
   return (
-    <div>
+    <div className="mb-9">
       <Row className="mb-8">
         <Col xs={6}>
           <div className="d-flex align-items-center mb-3">

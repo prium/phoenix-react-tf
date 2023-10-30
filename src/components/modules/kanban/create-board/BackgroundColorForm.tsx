@@ -1,6 +1,6 @@
 import { faImage, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Col, Nav, Row, Tab } from 'react-bootstrap';
 import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 import kanban1 from 'assets/img/kanban/bg1.jpg';
@@ -44,7 +44,11 @@ const ColorCheckbox = ({ color }: { color: string }) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      setFormData({ ...formData, backgroundColor: color });
+      setFormData({
+        ...formData,
+        backgroundImage: undefined,
+        backgroundColor: color
+      });
     }
   };
 
@@ -55,6 +59,7 @@ const ColorCheckbox = ({ color }: { color: string }) => {
       name="backgroundColor"
       style={{ backgroundColor: color }}
       value={formData.backgroundColor}
+      checked={formData.backgroundColor === color}
       onChange={handleChange}
     />
   );
@@ -65,7 +70,11 @@ const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      setFormData({ ...formData, backgroundImage: img });
+      setFormData({
+        ...formData,
+        backgroundColor: undefined,
+        backgroundImage: img
+      });
     }
   };
 
@@ -77,9 +86,10 @@ const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
         name="backgroundImage"
         className="d-none kanban-form-check"
         value={formData.backgroundImage}
+        checked={formData.backgroundImage === img}
         onChange={handleChange}
       />
-      <label htmlFor={id} className="rounded-3">
+      <label htmlFor={id} className="rounded-3 w-100">
         <img
           className="me-2 cursor-pointer rounded-3 fit-cover w-100"
           src={img}
@@ -92,6 +102,8 @@ const ImageCheckbox = ({ img, id }: { img: string; id: string }) => {
 
 const BackgroundColorForm = () => {
   const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
+
+  const [customBgImage, setCustomBgImage] = useState('');
 
   return (
     <div>
@@ -145,16 +157,24 @@ const BackgroundColorForm = () => {
               <Col xs={6}>
                 <ImageCheckbox img={kanban6} id="img6" />
               </Col>
+              {customBgImage && (
+                <Col xs={12}>
+                  <ImageCheckbox img={customBgImage} id="customImg" />
+                </Col>
+              )}
               <Col xs={12}>
                 <Dropzone
                   size="sm"
+                  noPreview
                   accept={{
                     'image/*': ['.png', '.gif', '.jpeg', '.jpg']
                   }}
                   onDrop={(acceptedFiles: File[]) => {
+                    const image = URL.createObjectURL(acceptedFiles[0]);
+                    setCustomBgImage(image);
                     setFormData({
                       ...formData,
-                      backgroundImage: URL.createObjectURL(acceptedFiles[0])
+                      backgroundImage: image
                     });
                   }}
                 >

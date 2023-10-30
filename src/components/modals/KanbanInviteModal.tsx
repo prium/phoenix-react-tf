@@ -39,29 +39,26 @@ const KanbanInviteModal = ({
               name="email"
             />
           </Col>
-          <Col xs={3}>
+          <Col xs="auto" sm={3} className="flex-1">
             <Form.Select>
               <option value="guest">Guest</option>
               <option value="member">Member</option>
             </Form.Select>
           </Col>
-          <Col xs={3}>
-            <Button
-              variant="primary"
-              endIcon={<FontAwesomeIcon icon={faEnvelope} className="fs-10" />}
-            >
-              Invite
+          <Col xs="auto" sm={3}>
+            <Button variant="primary">
+              <FontAwesomeIcon icon={faEnvelope} className="fs-10 me-sm-2" />
+              <span className="d-none d-sm-inline-block">Invite</span>
             </Button>
           </Col>
         </Row>
         <div className="py-2 border-bottom border-dashed position-relative mb-4">
-          {/* <span className="border-bottom border-dashed" /> */}
           <span className="bg-white px-1 position-absolute top-50 start-50 translate-x-50 fs-9 fw-semi-bold">
             Or,
           </span>
         </div>
         <Row className="g-2">
-          <Col xs={9}>
+          <Col xs="auto" sm={9} className="flex-1">
             <Button
               variant="phoenix-secondary"
               startIcon={
@@ -69,10 +66,11 @@ const KanbanInviteModal = ({
               }
               className="w-100"
             >
-              Create & Copy Shareable link
+              <span className="d-none d-sm-inline-block">Create & Copy</span>
+              Shareable link
             </Button>
           </Col>
-          <Col xs={3}>
+          <Col xs="auto" sm={3}>
             <Form.Select>
               <option value="guest">Guest</option>
               <option value="member">Member</option>

@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import PhoenixFloatingLabel from 'components/base/PhoenixFloatingLabel';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { Form } from 'react-bootstrap';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
 

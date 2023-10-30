@@ -22,6 +22,7 @@ interface DropzoneProps {
   size?: 'sm';
   reactDropZoneProps?: ReactDropZoneProps;
   accept?: Accept;
+  noPreview?: boolean;
   onDrop?: <T extends File>(
     acceptedFiles: T[],
     fileRejections: FileRejection[],
@@ -34,6 +35,7 @@ const Dropzone = ({
   size,
   onDrop,
   accept,
+  noPreview,
   reactDropZoneProps,
   children
 }: PropsWithChildren<DropzoneProps>) => {
@@ -64,7 +66,7 @@ const Dropzone = ({
 
   return (
     <>
-      {imageOnly && (
+      {imageOnly && !noPreview && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
             <ImageAttachmentPreview

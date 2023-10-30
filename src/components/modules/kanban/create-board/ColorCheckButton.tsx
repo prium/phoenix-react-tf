@@ -14,7 +14,11 @@ export const CustomColorButton = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setColor(e.target.value);
-    setFormData({ ...formData, backgroundColor: e.target.value });
+    setFormData({
+      ...formData,
+      backgroundImage: undefined,
+      backgroundColor: e.target.value
+    });
   };
 
   useEffect(() => {
@@ -69,14 +73,12 @@ export const RandomColorButton = () => {
   const handleChange = () => {
     const value = colors[getRandomNumber(1, colors.length)];
     setColor(value);
-    setFormData({ ...formData, backgroundColor: value });
+    setFormData({
+      ...formData,
+      backgroundImage: undefined,
+      backgroundColor: value
+    });
   };
-
-  useEffect(() => {
-    if (!ref.current?.checked) {
-      setColor('');
-    }
-  }, [formData.backgroundColor]);
 
   return (
     <div>
