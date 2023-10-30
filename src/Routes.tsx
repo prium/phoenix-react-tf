@@ -167,6 +167,7 @@ import Kanban from 'pages/apps/kanban/Kanban';
 import Boards from 'pages/apps/kanban/Boards';
 import CreateBoard from 'pages/apps/kanban/CreateBoard';
 import WizardExample from 'pages/modules/forms/WizardExample';
+import Deals from 'pages/apps/crm/Deals';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -254,7 +255,7 @@ const routes: RouteObject[] = [
                   },
                   {
                     path: 'deals',
-                    element: <ComingSoon />
+                    element: <Deals />
                   },
                   {
                     path: 'deal-details',
