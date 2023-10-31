@@ -7,8 +7,10 @@ const nextMonth = dayjs && dayjs().add(1, 'month').format('MM');
 const currentYear = dayjs && dayjs().format('YYYY');
 
 export interface Schedule {
+  id: number;
   title: string;
   start: string;
+  end?: string;
   description: string;
   className: string;
 }
@@ -58,6 +60,7 @@ export const events: Event[] = [
     // allDay: true,
     schedules: [
       {
+        id: 31,
         title: 'Reporting',
         start: `${currentYear}-${currentMonth}-${currentDay} 11:00:00`,
         description:
@@ -65,18 +68,21 @@ export const events: Event[] = [
         className: 'text-success '
       },
       {
+        id: 32,
         title: 'Lunch',
         start: `${currentYear}-${currentMonth}-${currentDay} 14:00:00`,
         description: 'Lunch facility for all the attendance in the conference.',
         className: 'text-info'
       },
       {
+        id: 33,
         title: 'Contest',
         start: `${currentYear}-${currentMonth}-${currentDay} 16:00:00`,
         description: 'The starting of the programming contest',
         className: 'text-success'
       },
       {
+        id: 34,
         title: 'Dinner',
         start: `${currentYear}-${currentMonth}-${currentDay} 22:00:00`,
         description: 'Dinner facility for all the attendance in the conference',

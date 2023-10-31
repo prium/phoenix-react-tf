@@ -165,6 +165,7 @@ import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
 import Alternate from 'pages/pages/landing/Alternate';
 import Calendar from 'pages/apps/calendar/Calendar';
+import CalendarProvider from 'providers/CalendarProvider';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -355,7 +356,11 @@ const routes: RouteObject[] = [
               },
               {
                 path: 'calendar',
-                element: <Calendar />
+                element: (
+                  <CalendarProvider>
+                    <Calendar />
+                  </CalendarProvider>
+                )
               },
               {
                 path: 'email',
