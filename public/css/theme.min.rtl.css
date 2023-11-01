@@ -29317,10 +29317,26 @@ a[href].bg-200:hover, a[href].bg-200:focus {
     max-width: 1216px;
   }
 }
+.timeline-vertical .timeline-item .timeline-separator {
+  padding-right: 1rem;
+}
+@media (min-width: 768px) {
+  .timeline-vertical .timeline-item .timeline-separator {
+    padding-right: 0;
+  }
+}
 .timeline-vertical .timeline-item .timeline-separator .timeline-bar {
   position: absolute;
   right: 11px;
   top: 24px;
+}
+.timeline-vertical .timeline-item .timeline-content {
+  padding-right: 2.5rem;
+}
+@media (min-width: 768px) {
+  .timeline-vertical .timeline-item .timeline-content {
+    padding-right: 1rem;
+  }
 }
 .timeline-vertical.timeline-with-details .timeline-item:not(:last-child) .timeline-separator .timeline-bar {
   height: calc(100% - 1rem) !important;

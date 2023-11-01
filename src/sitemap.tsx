@@ -477,7 +477,9 @@ export const routes: RouteItems[] = [
         name: 'timeline',
         icon: 'clock',
         path: '/pages/timeline',
-        pathName: 'timeline-page'
+        pathName: 'timeline-page',
+        active: true,
+        new: true
       },
       {
         name: 'errors',
