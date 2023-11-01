@@ -1,11 +1,8 @@
 import { Col, Nav } from 'react-bootstrap';
-import { Dispatch, SetStateAction } from 'react';
+import { useFaqTabContext } from 'providers/FaqTabProvider';
 
-const CategoryTab = ({
-  setActiveKey
-}: {
-  setActiveKey?: Dispatch<SetStateAction<string>>;
-}) => {
+const CategoryTab = () => {
+  const { setActiveKey } = useFaqTabContext();
   return (
     <Col md={6} xl={5} xxl={4} className="faq-category-tab">
       <Nav
@@ -16,9 +13,7 @@ const CategoryTab = ({
           <Nav.Link
             eventKey="popular"
             className="fw-semi-bold me-3 fs-8 pe-2 text-center"
-            onClick={() => {
-              setActiveKey && setActiveKey('popular');
-            }}
+            onClick={() => setActiveKey('popular')}
           >
             Popular Categories
           </Nav.Link>
@@ -27,7 +22,7 @@ const CategoryTab = ({
           <Nav.Link
             eventKey="all"
             className="fw-semi-bold me-3 fs-8 pe-2 text-center"
-            onClick={() => setActiveKey && setActiveKey('all')}
+            onClick={() => setActiveKey('all')}
           >
             All Categories
           </Nav.Link>

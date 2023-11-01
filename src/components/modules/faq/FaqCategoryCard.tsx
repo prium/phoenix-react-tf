@@ -1,15 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { FaqCategory } from 'data/faq';
+import { useFaqTabContext } from 'providers/FaqTabProvider';
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 
-const FaqCategoryCard = ({
-  category,
-  subCategoryActiveKey
-}: {
-  category: FaqCategory;
-  subCategoryActiveKey?: string;
-}) => {
+const FaqCategoryCard = ({ category }: { category: FaqCategory }) => {
+  const { subCategoryActiveKey } = useFaqTabContext();
   return (
     <Nav.Link
       eventKey={category.id}

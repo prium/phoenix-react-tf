@@ -66,20 +66,19 @@ export const faqs: Faq[] = [
   }
 ];
 
+export interface FaqType {
+  que: string;
+  ans: string;
+}
+
 export interface FaqCategory {
   id: string;
   name: string;
   icon: IconProp;
   description: string;
   category?: string;
-  topFaqs: {
-    que: string;
-    ans: string;
-  }[];
-  faqs: {
-    que: string;
-    ans: string;
-  }[];
+  topFaqs: FaqType[];
+  faqs: FaqType[];
 }
 
 export const faqCategories: FaqCategory[] = [

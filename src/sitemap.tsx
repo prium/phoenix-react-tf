@@ -403,6 +403,7 @@ export const routes: RouteItems[] = [
         name: 'faq',
         icon: 'help-circle',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'faq-accordion',
@@ -414,7 +415,8 @@ export const routes: RouteItems[] = [
             name: 'faq-tab',
             path: '/pages/faq/faq-tab',
             pathName: 'faq-tab',
-            active: true
+            active: true,
+            new: true
           }
         ]
       },

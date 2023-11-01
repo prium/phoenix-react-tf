@@ -6,18 +6,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { Tab } from 'react-bootstrap';
-import { Dispatch, SetStateAction } from 'react';
-import { FaqCategory } from 'data/faq';
+import { FaqType, faqCategories } from 'data/faq';
+import { useFaqTabContext } from 'providers/FaqTabProvider';
+import classNames from 'classnames';
 
-interface SubCategoryContentProps {
-  setOpenTab: Dispatch<SetStateAction<boolean>>;
-  categories: FaqCategory[];
-}
-
-const SubCategoryContent = ({
-  setOpenTab,
-  categories
-}: SubCategoryContentProps) => {
+const SubCategoryContent = () => {
+  const { setIsOpenOffcanvas } = useFaqTabContext();
   return (
     <Tab.Content
       className="position-sticky"
@@ -25,7 +19,7 @@ const SubCategoryContent = ({
       defaultValue="sale-101"
     >
       <Button
-        onClick={() => setOpenTab(true)}
+        onClick={() => setIsOpenOffcanvas(true)}
         variant="link"
         className="d-md-none mb-6 mt-15 mt-md-6 fs-8 ps-0"
         startIcon={
@@ -34,34 +28,37 @@ const SubCategoryContent = ({
       >
         Categories
       </Button>
-      {categories.map(category => (
+      {faqCategories.map(category => (
         <Tab.Pane key={category.id} eventKey={category.id}>
           <ul className="list-inline mb-0">
             {category.topFaqs.map(item => (
-              <li key={item.que} className="d-flex gap-2 mb-6">
-                <FontAwesomeIcon icon={faStar} className="fs-8 text-primary" />
-                <div>
-                  <h4 className="mb-3 text-1000">{item.que}</h4>
-                  <p className="mb-0 text-700">{item.ans}</p>
-                </div>
-              </li>
+              <QueAndAns key={item.que} item={item} type="topFaq" />
             ))}
           </ul>
           <hr className="text-300" />
           <ul className="faq-list list-inline">
             {category.faqs.map(item => (
-              <li key={item.que} className="d-flex mt-6">
-                <FontAwesomeIcon icon={faCircle} />
-                <div>
-                  <h4 className="mb-3 text-1000">{item.que}</h4>
-                  <p className="mb-0 text-700">{item.ans}</p>
-                </div>
-              </li>
+              <QueAndAns key={item.que} item={item} />
             ))}
           </ul>
         </Tab.Pane>
       ))}
     </Tab.Content>
+  );
+};
+
+const QueAndAns = ({ item, type }: { item: FaqType; type?: string }) => {
+  return (
+    <li className="d-flex mt-6">
+      <FontAwesomeIcon
+        icon={type === 'topFaq' ? faStar : faCircle}
+        className={classNames({ 'fs-8 text-primary me-2': type === 'topFaq' })}
+      />
+      <div>
+        <h4 className="mb-3 text-1000">{item.que}</h4>
+        <p className="mb-0 text-700">{item.ans}</p>
+      </div>
+    </li>
   );
 };
 
