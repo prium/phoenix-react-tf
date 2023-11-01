@@ -1,5 +1,5 @@
 export interface Deal {
-  id: number;
+  id: string;
   title: string;
   revenue: number;
   category: string;
@@ -9,7 +9,7 @@ export interface Deal {
   closingTime: string;
   company: string;
   agent: string;
-  badge: {
+  status: {
     label: string;
     variant: string;
   };
@@ -23,21 +23,21 @@ export interface Deal {
   };
 }
 
-interface DealColumn {
-  id: number;
+export interface DealColumn {
+  id: string;
   title: string;
   revenue: number;
   deals: Deal[];
 }
 
-export const dealColumns: DealColumn[] = [
+export const dealColumnsData: DealColumn[] = [
   {
-    id: 1,
+    id: '1',
     title: 'New',
     revenue: 37000,
     deals: [
       {
-        id: 1,
+        id: '1',
         title: 'Jo_Td01',
         revenue: 14000,
         category: 'Financial',
@@ -47,7 +47,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '11:19 PM',
         company: 'Knitkake.inc',
         agent: 'Ally Aagaard',
-        badge: {
+        status: {
           label: 'new',
           variant: 'info'
         },
@@ -61,7 +61,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 2,
+        id: '2',
         title: 'Dimensions for Printing',
         revenue: 23000,
         category: 'Marketplace',
@@ -71,7 +71,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '2:00 PM',
         company: 'Kibikaba Clothings',
         agent: 'Lonnie Kub',
-        badge: {
+        status: {
           label: 'New',
           variant: 'info'
         },
@@ -87,12 +87,12 @@ export const dealColumns: DealColumn[] = [
     ]
   },
   {
-    id: 2,
+    id: '2',
     title: 'In Progress',
     revenue: 101300,
     deals: [
       {
-        id: 3,
+        id: '3',
         title: 'True and True Attorneys',
         revenue: 33000,
         category: 'Financial',
@@ -102,7 +102,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '11:19 PM',
         company: 'PBR Holdings',
         agent: 'Aida Moen',
-        badge: {
+        status: {
           label: 'In Progress',
           variant: 'primary'
         },
@@ -116,7 +116,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 4,
+        id: '4',
         title: 'The Morlong Corporation',
         revenue: 45300,
         category: 'Marketplace',
@@ -126,7 +126,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '12:10 PM',
         company: 'Giraffes Studio',
         agent: 'Niko Koss',
-        badge: {
+        status: {
           label: 'In Progress',
           variant: 'primary'
         },
@@ -140,7 +140,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 5,
+        id: '5',
         title: 'Product List',
         revenue: 23000,
         category: 'Marketplace',
@@ -150,7 +150,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '11:19 PM',
         company: 'Birds eye',
         agent: 'Alec Haag',
-        badge: {
+        status: {
           label: 'In Progress',
           variant: 'primary'
         },
@@ -166,12 +166,12 @@ export const dealColumns: DealColumn[] = [
     ]
   },
   {
-    id: 3,
+    id: '3',
     title: 'Pending',
     revenue: 23400,
     deals: [
       {
-        id: 6,
+        id: '6',
         title: 'Printing Services by Feltz',
         revenue: 23400,
         category: 'Marketplace',
@@ -181,7 +181,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '11:19 PM',
         company: 'Ant Family',
         agent: 'Ally Aagaard',
-        badge: {
+        status: {
           label: 'Pending',
           variant: 'warning'
         },
@@ -197,12 +197,12 @@ export const dealColumns: DealColumn[] = [
     ]
   },
   {
-    id: 4,
+    id: '4',
     title: 'Canceled',
     revenue: 260,
     deals: [
       {
-        id: 7,
+        id: '7',
         title: 'SP Flat Plate',
         revenue: 14000,
         category: 'Financial',
@@ -212,7 +212,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '01:30 PM',
         company: 'Ant Family',
         agent: 'Ola Smith',
-        badge: {
+        status: {
           label: 'Canceled',
           variant: 'secondary'
         },
@@ -226,7 +226,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 8,
+        id: '8',
         title: 'Ventilated Pipe',
         revenue: 14000,
         category: 'Marketplace',
@@ -236,7 +236,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '02:15 PM',
         company: 'Giraffes Studio',
         agent: 'Leif Walsh',
-        badge: {
+        status: {
           label: 'Canceled',
           variant: 'secondary'
         },
@@ -252,12 +252,12 @@ export const dealColumns: DealColumn[] = [
     ]
   },
   {
-    id: 5,
+    id: '5',
     title: 'Completed',
     revenue: 1650,
     deals: [
       {
-        id: 9,
+        id: '9',
         title: 'Product Shipping',
         revenue: 15000,
         category: 'Financial',
@@ -267,7 +267,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '11:19 PM',
         company: 'Birds eye',
         agent: 'Brain Cole',
-        badge: {
+        status: {
           label: 'Completed',
           variant: 'success'
         },
@@ -281,7 +281,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 10,
+        id: '10',
         title: 'Product List',
         revenue: 3300,
         category: 'Financial',
@@ -291,7 +291,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '12:20 PM',
         company: 'Ink Incorporated',
         agent: 'Reese Mann',
-        badge: {
+        status: {
           label: 'Completed',
           variant: 'success'
         },
@@ -305,7 +305,7 @@ export const dealColumns: DealColumn[] = [
         }
       },
       {
-        id: 11,
+        id: '11',
         title: 'Dimensions for Printing',
         revenue: 23400,
         category: 'Marketplace',
@@ -315,7 +315,7 @@ export const dealColumns: DealColumn[] = [
         closingTime: '02:19 PM',
         company: 'Slim Apes',
         agent: 'Ally Aagaard',
-        badge: {
+        status: {
           label: 'Completed',
           variant: 'success'
         },

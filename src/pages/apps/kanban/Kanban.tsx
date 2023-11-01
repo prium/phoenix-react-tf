@@ -30,6 +30,8 @@ const Kanban = () => {
 const KanbanContent = () => {
   const { boardLists, kanbanDispatch } = useKanbanContext();
   const handleDragEnd = (result: DropResult) => {
+    console.log({ result });
+
     const { source, destination } = result;
 
     if (destination) {

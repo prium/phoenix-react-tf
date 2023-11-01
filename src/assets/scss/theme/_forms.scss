@@ -6,7 +6,13 @@
   .form-check & {
     padding-left: 0 !important;
   }
-  &.form-label-bold {
+  &.form-label-header {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    padding-left: 0 !important;
+    line-height: $line-height-base !important;
+    color: $gray-1000 !important;
+    text-transform: none !important;
   }
 }
 .form-control {
