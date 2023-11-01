@@ -13,6 +13,7 @@ const StatItem = ({ stat }: { stat: Stat }) => {
       prefix={stat.prefix}
       suffix={stat.suffix}
       separator=","
+      enableScrollSpy
     >
       {({ countUpRef }) => (
         <div>
