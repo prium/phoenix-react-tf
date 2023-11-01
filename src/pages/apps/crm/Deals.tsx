@@ -15,11 +15,13 @@ import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
 import DealColumn from 'components/modules/crm/deals/DealColumn';
 import AddDealModal from 'components/modules/crm/deals/AddDealModal';
+import FilterDealsModal from 'components/modals/FilterDealsModal';
 
 const Deals = () => {
   const { setContentClass } = useMainLayoutContext();
   const [dealColumns, setDealColumns] = useState(dealColumnsData);
   const [openAddDealModal, setOpenAddDealModal] = useState(false);
+  const [openFilterDealModal, setOpenFilterDealModal] = useState(false);
 
   useEffect(() => {
     setContentClass('vh-100');
@@ -53,13 +55,14 @@ const Deals = () => {
     <div className="d-flex flex-column h-100">
       <PageBreadcrumb items={defaultBreadcrumbItems} />
       <div className="mb-6">
-        <h2 className="mb-4">Deals</h2>
-        <Row className="g-3 justify-content-between mb-4">
+        <h2 className="mb-5">Deals</h2>
+        <Row className="g-3 justify-content-between">
           <Col xs="auto">
             <Button
               variant="primary"
               className="me-4"
               startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
+              onClick={() => setOpenAddDealModal(true)}
             >
               Add Deal
             </Button>
@@ -76,10 +79,14 @@ const Deals = () => {
           <Col xs="auto">
             <div className="d-flex">
               <SearchBox placeholder="Search by name" className="me-2" />
-              <Form.Select>
+              <Form.Select className="w-auto">
                 <option value="deals">Deals</option>
               </Form.Select>
-              <Button variant="phoenix-secondary" className="px-3 ms-2">
+              <Button
+                variant="phoenix-secondary"
+                className="px-3 ms-2"
+                onClick={() => setOpenFilterDealModal(true)}
+              >
                 <FontAwesomeIcon
                   icon={faFilter}
                   transform="down-3"
@@ -112,6 +119,10 @@ const Deals = () => {
       <AddDealModal
         show={openAddDealModal}
         handleClose={() => setOpenAddDealModal(false)}
+      />
+      <FilterDealsModal
+        show={openFilterDealModal}
+        handleClose={() => setOpenFilterDealModal(false)}
       />
     </div>
   );

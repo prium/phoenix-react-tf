@@ -179,9 +179,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
                           'Brain Cole',
                           'Reese Mann'
                         ].map(agent => (
-                          <option key={agent} selected={agent === deal.agent}>
-                            {agent}
-                          </option>
+                          <option key={agent}>{agent}</option>
                         ))}
                       </Form.Select>
                     </td>
