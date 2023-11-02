@@ -18,6 +18,7 @@ import { Col, Dropdown, Nav, Row } from 'react-bootstrap';
 import { useKanbanContext } from 'providers/KanbanProvider';
 import { useState } from 'react';
 import KanbanInviteModal from 'components/modals/KanbanInviteModal';
+import { TOGGLE_DETAILS_OFFCANVAS } from 'reducers/KanbanReducer';
 
 const navItems = [
   {
@@ -104,7 +105,7 @@ const KanbanHeader = () => {
                   className="d-flex gap-2 align-items-center text-900 px-2 px-xl-3 fw-bold"
                   onClick={() => {
                     kanbanDispatch({
-                      type: 'TOGGLE_DETAILS_OFFCANVAS',
+                      type: TOGGLE_DETAILS_OFFCANVAS,
                       payload: true
                     });
                   }}

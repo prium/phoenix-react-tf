@@ -29,9 +29,10 @@ const PhoenixFloatingLabel = ({
 
       {React.Children.map(children, child =>
         React.cloneElement(child as ReactElement, {
-          className: classNames((child as ReactElement).props.className, {
-            'ps-6': startComponent
-          })
+          className: classNames((child as ReactElement).props.className),
+          style: {
+            paddingLeft: startComponent && '2.25rem'
+          }
         })
       )}
 

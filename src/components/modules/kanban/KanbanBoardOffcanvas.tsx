@@ -12,6 +12,7 @@ import { members } from 'data/users';
 import { useKanbanContext } from 'providers/KanbanProvider';
 import { Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { TOGGLE_DETAILS_OFFCANVAS } from 'reducers/KanbanReducer';
 
 const actions = [
   {
@@ -44,17 +45,17 @@ const actions = [
 ];
 
 const KanbanBoardOffcanvas = () => {
-  const { openBoradDetailsOffcanvas, kanbanDispatch } = useKanbanContext();
+  const { openBoardDetailsOffcanvas, kanbanDispatch } = useKanbanContext();
 
   const handleClose = () => {
     kanbanDispatch({
-      type: 'TOGGLE_DETAILS_OFFCANVAS',
+      type: TOGGLE_DETAILS_OFFCANVAS,
       payload: false
     });
   };
   return (
     <PhoenixOffcanvas
-      open={openBoradDetailsOffcanvas}
+      open={openBoardDetailsOffcanvas}
       onHide={handleClose}
       className="bg-100"
       placement="end"

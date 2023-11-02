@@ -11,6 +11,12 @@ import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { ChangeEvent } from 'react';
 import { Form } from 'react-bootstrap';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
+import {
+  DragDropContext,
+  Draggable,
+  DropResult,
+  Droppable
+} from 'react-beautiful-dnd';
 
 const ColumnItem = ({
   className,
@@ -92,6 +98,21 @@ const ColumnForm = () => {
     setFormData(updatedFormData);
   };
 
+  const onDragEnd = (droppedItem: DropResult) => {
+    if (!droppedItem.destination) return;
+    const updatedFormData = { ...formData };
+    const reorderedItem = updatedFormData.columns.splice(
+      droppedItem.source.index,
+      1
+    )[0];
+    updatedFormData.columns.splice(
+      droppedItem.destination.index,
+      0,
+      reorderedItem
+    );
+    setFormData(updatedFormData);
+  };
+
   return (
     <div>
       <p className="mb-4">
@@ -100,14 +121,39 @@ const ColumnForm = () => {
         Rearranged or Added in future.
       </p>
 
-      {formData.columns?.map((_, index) => (
-        <ColumnItem
-          key={index}
-          className="mb-5"
-          label={`Column ${index + 1}`}
-          index={index}
-        />
-      ))}
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="droppable">
+          {provided => (
+            <div {...provided.droppableProps} ref={provided.innerRef}>
+              {formData.columns?.map((column, index) => (
+                <Draggable
+                  key={column.name}
+                  draggableId={column.name}
+                  index={index}
+                >
+                  {provided => (
+                    <>
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <ColumnItem
+                          key={index}
+                          className="mb-5"
+                          label={`Column ${index + 1}`}
+                          index={index}
+                        />
+                      </div>
+                    </>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
 
       <Button
         variant="phoenix-secondary"

@@ -32236,6 +32236,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   background-size: 11px 12px;
 }
 .kanban-color-picker::-webkit-color-swatch {
+  max-width: 50px;
   border: none;
   border-radius: 0;
 }

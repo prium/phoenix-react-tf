@@ -12,7 +12,8 @@ export type ConversationFilterType = 'all' | 'read' | 'unread';
 interface KanbanProviderInterface {}
 
 export interface KanbanState {
-  openBoradDetailsOffcanvas: boolean;
+  openBoardDetailsOffcanvas: boolean;
+  openAddListModal: boolean;
   boardLists: KanbanBoardItem[];
 }
 
@@ -26,7 +27,8 @@ const KanbanProvider = ({
   children
 }: PropsWithChildren<KanbanProviderInterface>) => {
   const initState: KanbanState = {
-    openBoradDetailsOffcanvas: false,
+    openBoardDetailsOffcanvas: false,
+    openAddListModal: false,
     boardLists: kanbanItems
   };
 

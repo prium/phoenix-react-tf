@@ -3,13 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
+import classNames from 'classnames';
 interface CoverUploadProps {
   src?: string;
+  className?: string;
   gradient?: CSSProperties;
   onChange?: () => void;
 }
 
-const CoverUpload = ({ src, gradient, onChange }: CoverUploadProps) => {
+const CoverUpload = ({
+  src,
+  gradient,
+  onChange,
+  className
+}: CoverUploadProps) => {
   const [image, setImage] = useState<File | null>(null);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,7 +38,10 @@ const CoverUpload = ({ src, gradient, onChange }: CoverUploadProps) => {
         </div>
       )}
       <div
-        className="bg-holder rounded-top hover-actions-trigger position-absolute"
+        className={classNames(
+          className,
+          'bg-holder rounded-top hover-actions-trigger position-absolute'
+        )}
         style={{
           backgroundImage: `${gradient ? gradient + ',' : ''}url(${
             image ? URL.createObjectURL(image) : src

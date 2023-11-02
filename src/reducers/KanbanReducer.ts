@@ -1,33 +1,57 @@
-import { produce } from 'immer';
+import { KanbanBoardItem } from 'data/kanban';
 import { KanbanState } from 'providers/KanbanProvider';
 import { DraggableLocation } from 'react-beautiful-dnd';
 
+//Action types
+export const TOGGLE_DETAILS_OFFCANVAS = 'TOGGLE_DETAILS_OFFCANVAS';
+export const TOGGLE_ADD_LIST_MODAL = 'TOGGLE_ADD_LIST_MODAL';
+export const REMOVE_ITEM_FROM_LIST = 'REMOVE_ITEM_FROM_LIST';
+export const MOVE_ITEMS = 'MOVE_ITEMS';
+export const ADD_NEW_LIST = 'ADD_NEW_LIST';
+
+//Action ts type
 export type ACTIONTYPE =
   | {
-      type: 'TOGGLE_DETAILS_OFFCANVAS';
+      type: typeof TOGGLE_DETAILS_OFFCANVAS;
       payload?: boolean;
     }
   | {
-      type: 'REMOVE_ITEM_FROM_LIST';
+      type: typeof TOGGLE_ADD_LIST_MODAL;
+      payload?: boolean;
+    }
+  | {
+      type: typeof REMOVE_ITEM_FROM_LIST;
       payload: { listId: string; itemIndex: number };
     }
   | {
-      type: 'MOVE_ITEMS';
+      type: typeof MOVE_ITEMS;
       payload: { destination: DraggableLocation; source: DraggableLocation };
+    }
+  | {
+      type: typeof ADD_NEW_LIST;
+      payload: { list: KanbanBoardItem; columnNo: number };
     };
 
+// Reducer function
 export const kanbanReducer = (state: KanbanState, action: ACTIONTYPE) => {
   switch (action.type) {
-    case 'TOGGLE_DETAILS_OFFCANVAS': {
+    case TOGGLE_DETAILS_OFFCANVAS: {
       const { payload } = action;
       return {
         ...state,
-        openBoradDetailsOffcanvas: payload
-          ? payload
-          : !state.openBoradDetailsOffcanvas
+        openBoardDetailsOffcanvas:
+          payload !== undefined ? payload : !state.openBoardDetailsOffcanvas
       };
     }
-    case 'REMOVE_ITEM_FROM_LIST': {
+    case TOGGLE_ADD_LIST_MODAL: {
+      const { payload } = action;
+      return {
+        ...state,
+        openAddListModal:
+          payload !== undefined ? payload : !state.openBoardDetailsOffcanvas
+      };
+    }
+    case REMOVE_ITEM_FROM_LIST: {
       const { payload } = action;
       return {
         ...state,
@@ -43,26 +67,40 @@ export const kanbanReducer = (state: KanbanState, action: ACTIONTYPE) => {
         )
       };
     }
-    case 'MOVE_ITEMS': {
+    case MOVE_ITEMS: {
       const {
         payload: { destination, source }
       } = action;
 
-      const updatedList = produce(state.boardLists, draft => {
-        const task = draft
-          .find(list => list.id === source.droppableId)
-          ?.tasks.splice(source.index, 1)[0];
+      const updatedList = [...state.boardLists];
 
-        if (task) {
-          draft
-            .find(list => list.id === destination.droppableId)
-            ?.tasks.splice(destination.index, 0, task);
-        }
-      });
+      const task = updatedList
+        .find(list => list.id === source.droppableId)
+        ?.tasks.splice(source.index, 1)[0];
+
+      if (task && destination) {
+        updatedList
+          .find(list => list.id === destination.droppableId)
+          ?.tasks.splice(destination.index, 0, task);
+      }
 
       return {
         ...state,
         boardLists: updatedList
+      };
+    }
+    case ADD_NEW_LIST: {
+      const {
+        payload: { list, columnNo }
+      } = action;
+
+      const updatedList = [...state.boardLists];
+      updatedList.splice(columnNo - 1, 1, list);
+
+      return {
+        ...state,
+        boardLists: updatedList,
+        openAddListModal: false
       };
     }
 
