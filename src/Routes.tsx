@@ -168,6 +168,7 @@ import Boards from 'pages/apps/kanban/Boards';
 import CreateBoard from 'pages/apps/kanban/CreateBoard';
 import WizardExample from 'pages/modules/forms/WizardExample';
 import Deals from 'pages/apps/crm/Deals';
+import FaqTab from 'pages/faq/FaqTab';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -412,7 +413,7 @@ const routes: RouteObject[] = [
                   },
                   {
                     path: 'faq-tab',
-                    element: <ComingSoon />
+                    element: <FaqTab />
                   }
                 ]
               },
