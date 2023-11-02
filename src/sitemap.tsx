@@ -462,7 +462,8 @@ export const routes: RouteItems[] = [
           {
             name: 'alternate',
             path: '/pages/landing/alternate',
-            pathName: 'landing-alternate'
+            pathName: 'landing-alternate',
+            active: true
           }
         ]
       },
