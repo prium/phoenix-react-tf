@@ -1,4 +1,9 @@
-import React, { Dispatch, Fragment, SetStateAction } from 'react';
+import React, {
+  CSSProperties,
+  Dispatch,
+  Fragment,
+  SetStateAction
+} from 'react';
 import {
   UilArrowFromRight,
   UilLeftArrowToLeft
@@ -8,6 +13,7 @@ import { KanbanBoardItem } from 'data/kanban';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { getColor } from 'helpers/utils';
 
 interface KanbanListHeaderProps {
   list: KanbanBoardItem;
@@ -91,7 +97,12 @@ const KanbanListHeader = ({
   return (
     <div className="kanban-column-header px-4 hover-actions-trigger">
       <div
-        className={`d-flex align-items-center border-bottom border-3 py-3 border-${list.borderColor}`}
+        className={`d-flex align-items-center border-bottom border-3 py-3`}
+        style={
+          {
+            '--phoenix-border-color': list.borderColor
+          } as CSSProperties
+        }
       >
         <h5 className="mb-0 kanban-column-title">
           {list.title}

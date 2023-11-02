@@ -66,8 +66,8 @@ const KanbanInviteModal = ({
               }
               className="w-100"
             >
-              <span className="d-none d-sm-inline-block">Create & Copy</span>
-              Shareable link
+              <span className="d-none d-sm-inline">Create & Copy</span>{' '}
+              <span>Shareable link</span>
             </Button>
           </Col>
           <Col xs="auto" sm={3}>

@@ -257,6 +257,7 @@
   background-position: right 1rem center;
   background-size: 11px 12px;
   &::-webkit-color-swatch {
+    max-width: 50px;
     border: none;
     border-radius: 0;
   }

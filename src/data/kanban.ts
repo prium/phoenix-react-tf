@@ -75,7 +75,7 @@ export const kanbanItems: KanbanBoardItem[] = [
   {
     id: '1',
     title: 'Unassigned',
-    borderColor: 'warning',
+    borderColor: '#e5780b',
     isCollapsed: true,
     tasks: [
       {
@@ -115,7 +115,7 @@ export const kanbanItems: KanbanBoardItem[] = [
   {
     id: '2',
     title: 'To do',
-    borderColor: '300',
+    borderColor: '#cbd0dd',
     tasks: [
       {
         id: '4',
@@ -148,7 +148,7 @@ export const kanbanItems: KanbanBoardItem[] = [
   {
     id: '3',
     title: 'Doing',
-    borderColor: 'primary',
+    borderColor: '#3874ff',
     tasks: [
       {
         id: '6',
@@ -205,7 +205,7 @@ export const kanbanItems: KanbanBoardItem[] = [
   {
     id: '4',
     title: 'Review',
-    borderColor: 'info',
+    borderColor: '#0097eb',
     tasks: [
       {
         id: '10',
@@ -261,7 +261,7 @@ export const kanbanItems: KanbanBoardItem[] = [
   {
     id: '5',
     title: 'Release',
-    borderColor: 'success',
+    borderColor: '#25b003',
     tasks: [
       {
         id: '14',

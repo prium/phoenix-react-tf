@@ -68,7 +68,7 @@ const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">category</label>
+          <label className="fw-bold mb-2 text-1000">Category</label>
           <Form.Select
             value={formData.category}
             onChange={e => handleFilter('category', e.target.value)}

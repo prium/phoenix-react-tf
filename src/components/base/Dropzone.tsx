@@ -66,7 +66,7 @@ const Dropzone = ({
 
   return (
     <>
-      {imageOnly && !noPreview && (
+      {imageOnly && !noPreview && files.length > 0 && (
         <div className="d-flex flex-wrap gap-2 mb-2">
           {files.map((file, index) => (
             <ImageAttachmentPreview
