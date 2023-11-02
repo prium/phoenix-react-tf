@@ -7,8 +7,16 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import CategoryTab from 'components/modules/faq/CategoryTab';
 import SubCategoryTab from 'components/modules/faq/SubCategoryTab';
 import SubCategoryContent from 'components/modules/faq/SubCategoryContent';
-import { useFaqTabContext } from 'providers/FaqTabProvider';
+import FaqTabProvider, { useFaqTabContext } from 'providers/FaqTabProvider';
 import CategoryOffcanvas from 'components/modules/faq/CategoryOffcanvas';
+
+const index = () => {
+  return (
+    <FaqTabProvider>
+      <FaqTab />
+    </FaqTabProvider>
+  );
+};
 
 const FaqTab = () => {
   const { breakpoints } = useBreakpoints();
@@ -86,4 +94,4 @@ const FaqTab = () => {
   );
 };
 
-export default FaqTab;
+export default index;

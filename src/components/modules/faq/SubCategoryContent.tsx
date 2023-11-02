@@ -32,13 +32,13 @@ const SubCategoryContent = () => {
         <Tab.Pane key={category.id} eventKey={category.id}>
           <ul className="list-inline mb-0">
             {category.topFaqs.map(item => (
-              <QueAndAns key={item.que} item={item} type="topFaq" />
+              <FaqItem key={item.question} item={item} type="topFaq" />
             ))}
           </ul>
           <hr className="text-300" />
           <ul className="faq-list list-inline">
             {category.faqs.map(item => (
-              <QueAndAns key={item.que} item={item} />
+              <FaqItem key={item.question} item={item} />
             ))}
           </ul>
         </Tab.Pane>
@@ -47,7 +47,7 @@ const SubCategoryContent = () => {
   );
 };
 
-const QueAndAns = ({ item, type }: { item: FaqType; type?: string }) => {
+const FaqItem = ({ item, type }: { item: FaqType; type?: string }) => {
   return (
     <li className="d-flex mt-6">
       <FontAwesomeIcon
@@ -55,8 +55,8 @@ const QueAndAns = ({ item, type }: { item: FaqType; type?: string }) => {
         className={classNames({ 'fs-8 text-primary me-2': type === 'topFaq' })}
       />
       <div>
-        <h4 className="mb-3 text-1000">{item.que}</h4>
-        <p className="mb-0 text-700">{item.ans}</p>
+        <h4 className="mb-3 text-1000">{item.question}</h4>
+        <p className="mb-0 text-700">{item.answer}</p>
       </div>
     </li>
   );
