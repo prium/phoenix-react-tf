@@ -44,7 +44,11 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       'navbarTopShape',
       initialConfig.navbarTopShape
     ),
-    isRTL: getItemFromStore('isRTL', initialConfig.isRTL)
+    isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
+    isChatWidgetVisible: getItemFromStore(
+      'isChatWidgetVisible',
+      initialConfig.isChatWidgetVisible
+    )
   };
 
   const [config, configDispatch] = useReducer(configReducer, configState);

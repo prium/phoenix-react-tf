@@ -19,7 +19,8 @@ export const configReducer = (state: Config, action: ACTIONTYPE) => {
             'navbarTopAppearance',
             'navbarVerticalAppearance',
             'isRTL',
-            'isNavbarVerticalCollapsed'
+            'isNavbarVerticalCollapsed',
+            'isChatWidgetVisible'
           ].includes(key)
         ) {
           setItemToStore(key, String(payload[key as keyof Config]));
