@@ -22131,6 +22131,9 @@ span.flatpickr-weekday,
 .fc .fc-timegrid-axis-frame {
   background-color: var(--phoenix-calendar-bg);
 }
+.fc .fc-highlight {
+  background: rgba(var(--phoenix-gray-700-rgb), 0.1) !important;
+}
 .fc.fc-theme-standard a:not([href]) {
   color: inherit;
 }
@@ -22193,6 +22196,7 @@ span.flatpickr-weekday,
   border: 2px solid transparent;
   padding: 2px !important;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 .fc .fc-daygrid-day-frame:active {
   background-color: var(--phoenix-gray-300) !important;

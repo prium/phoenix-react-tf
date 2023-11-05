@@ -4,12 +4,17 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useEffect, useRef } from 'react';
 import { EventClickArg } from '@fullcalendar/core';
-import CalendarScheduleModal from 'components/modals/CalendarScheduleModal';
+import CalendarAddNewEventModal from 'components/modals/CalendarAddNewEventModal';
 import { useCalendar } from 'providers/CalendarProvider';
 import CalendarTop from './CalendarTop';
 import CalendarHeader from './CalendarHeader';
 import CalendarEventModal from 'components/modals/CalendarEventModal';
 import { useAppContext } from 'providers/AppProvider';
+import {
+  HANDLE_SELECT,
+  INITIALIZE_CALENDAR,
+  SET_CALENDAR_STATE
+} from 'reducers/CalendarReducer';
 
 const Calendar = () => {
   const calendarRef = useRef<FullCalendar>(null);
@@ -17,23 +22,12 @@ const Calendar = () => {
     config: { isRTL }
   } = useAppContext();
 
-  const {
-    setCalendarApi,
-    calendarView,
-    setCalendarTitle,
-    setIsOpenScheduleModal,
-    setScheduleStartDate,
-    setScheduleEndDate,
-    setModalEventContent,
-    setIsOpenEventModal,
-    initialEvents
-  } = useCalendar();
+  const { view, events, calendarDispatch } = useCalendar();
 
   useEffect(() => {
     const api = calendarRef.current?.getApi();
     if (api) {
-      setCalendarApi(api);
-      setCalendarTitle(api.view.title);
+      calendarDispatch({ type: INITIALIZE_CALENDAR, payload: api });
     }
   }, []);
 
@@ -42,8 +36,12 @@ const Calendar = () => {
       window.open(info.event.url);
       info.jsEvent.preventDefault();
     } else {
-      setModalEventContent(info.event);
-      setIsOpenEventModal(true);
+      calendarDispatch({
+        type: SET_CALENDAR_STATE,
+        payload: {
+          selectedEvent: info.event
+        }
+      });
     }
   };
 
@@ -55,7 +53,7 @@ const Calendar = () => {
         <FullCalendar
           ref={calendarRef}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView={calendarView}
+          initialView={view}
           headerToolbar={false}
           dayMaxEvents={3}
           height={800}
@@ -76,17 +74,17 @@ const Calendar = () => {
             meridiem: true
           }}
           select={info => {
-            setIsOpenScheduleModal(true);
-            setScheduleStartDate(info.start);
-            setScheduleEndDate(info.end);
+            calendarDispatch({
+              type: HANDLE_SELECT,
+              payload: info
+            });
           }}
-          // @ts-ignore
-          events={initialEvents}
+          events={events}
           eventClick={handleEventClick}
         />
       </div>
       <CalendarEventModal />
-      <CalendarScheduleModal />
+      <CalendarAddNewEventModal />
     </div>
   );
 };

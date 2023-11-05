@@ -22,6 +22,10 @@
     background-color: var(--#{$prefix}calendar-bg);
   }
 
+  .fc-highlight {
+    background: rgba(var(--#{$prefix}gray-700-rgb), 0.1) !important;
+  }
+
   &.fc-theme-standard {
     a:not([href]) {
       color: inherit;
@@ -94,6 +98,7 @@
     border: 2px solid transparent;
     padding: 2px !important;
     transition: $transition-base;
+    cursor: pointer;
     &:active {
       background-color: var(--#{$prefix}gray-300) !important;
     }

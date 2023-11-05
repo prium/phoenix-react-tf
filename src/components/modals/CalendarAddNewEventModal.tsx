@@ -8,19 +8,24 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getRandomNumber } from 'helpers/utils';
 import { useCalendar } from 'providers/CalendarProvider';
+import { ADD_NEW_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
+import { CalendarEvent } from 'data/calendarEvents';
 
-const CalendarScheduleModal = () => {
-  const [formData, setFormData] = useState(Object);
+const CalendarAddNewEventModal = () => {
   const {
-    isOpenScheduleModal,
-    setIsOpenScheduleModal,
-    scheduleStartDate,
-    scheduleEndDate,
-    initialEvents,
-    setInitialEvents,
-    setScheduleStartDate,
-    setScheduleEndDate
+    openNewEventModal,
+    selectedStartDate,
+    selectedEndDate,
+    calendarDispatch
   } = useCalendar();
+
+  const [formData, setFormData] = useState<CalendarEvent>({
+    start: '',
+    end: '',
+    description: '',
+    id: String(getRandomNumber(2000, 3000)),
+    title: ''
+  });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -34,31 +39,31 @@ const CalendarScheduleModal = () => {
   };
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setInitialEvents([
-      ...initialEvents,
-      { ...formData, id: getRandomNumber(2000, 3000) }
-    ]);
-    setIsOpenScheduleModal(false);
+    calendarDispatch({
+      type: ADD_NEW_EVENT,
+      payload: formData
+    });
+  };
+
+  const handleClose = () => {
+    calendarDispatch({
+      type: SET_CALENDAR_STATE,
+      payload: {
+        openNewEventModal: false
+      }
+    });
   };
 
   useEffect(() => {
-    if (isOpenScheduleModal) {
-      setFormData({
-        ...formData,
-        start: scheduleStartDate,
-        end: scheduleEndDate
-      });
-    } else {
-      setScheduleStartDate('');
-      setScheduleEndDate('');
-    }
-  }, [isOpenScheduleModal, scheduleStartDate, scheduleEndDate]);
+    setFormData({
+      ...formData,
+      start: selectedStartDate,
+      end: selectedEndDate
+    });
+  }, [selectedEndDate, selectedStartDate]);
 
   return (
-    <Modal
-      show={isOpenScheduleModal}
-      onHide={() => setIsOpenScheduleModal(false)}
-    >
+    <Modal show={openNewEventModal} onHide={handleClose}>
       <Form onSubmit={handleSubmit}>
         <Modal.Header className="px-card border-0">
           <div className="w-100 d-flex justify-content-between align-items-start">
@@ -87,10 +92,7 @@ const CalendarScheduleModal = () => {
                 </Form.Check>
               </div>
             </div>
-            <Button
-              className="p-1 fs-10 text-900"
-              onClick={() => setIsOpenScheduleModal(false)}
-            >
+            <Button className="p-1 fs-10 text-900" onClick={handleClose}>
               DISCARD
             </Button>
           </div>
@@ -120,9 +122,14 @@ const CalendarScheduleModal = () => {
             options={{
               enableTime: true,
               dateFormat: 'Y-m-d H:i',
-              defaultDate: scheduleStartDate
+              defaultDate: selectedStartDate
             }}
-            onChange={([date]) => setScheduleStartDate(date)}
+            onChange={([date]) => {
+              setFormData({
+                ...formData,
+                start: date
+              });
+            }}
             render={(_, ref) => {
               return (
                 <Form.Floating className="mb-3">
@@ -140,9 +147,14 @@ const CalendarScheduleModal = () => {
             }}
           />
           <DatePicker
-            value={scheduleEndDate}
+            value={selectedEndDate}
             options={{ enableTime: true, dateFormat: 'Y-m-d H:i' }}
-            onChange={([date]) => setScheduleEndDate(date)}
+            onChange={([date]) => {
+              setFormData({
+                ...formData,
+                end: date
+              });
+            }}
             render={(_, ref) => {
               return (
                 <Form.Floating className="mb-3">
@@ -232,4 +244,4 @@ const CalendarScheduleModal = () => {
   );
 };
 
-export default CalendarScheduleModal;
+export default CalendarAddNewEventModal;

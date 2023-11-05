@@ -11,53 +11,49 @@ import dayjs from 'dayjs';
 import { useCalendar } from 'providers/CalendarProvider';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { REMOVE_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 
 const CalendarEventModal = () => {
-  const {
-    modalEventContent,
-    isOpenEventModal,
-    setIsOpenEventModal,
-    setInitialEvents,
-    initialEvents
-  } = useCalendar();
+  const { selectedEvent, calendarDispatch } = useCalendar();
 
   const handleRemove = () => {
-    modalEventContent?.remove;
-    const updatedEvents = initialEvents.filter(
-      item => item.id !== Number(modalEventContent?._def.publicId)
-    );
-    setInitialEvents(updatedEvents);
-    setIsOpenEventModal(false);
+    calendarDispatch({
+      type: REMOVE_EVENT
+    });
+  };
+
+  const handleClose = () => {
+    calendarDispatch({
+      type: SET_CALENDAR_STATE,
+      payload: {
+        selectedEvent: null
+      }
+    });
   };
 
   return (
-    <Modal
-      centered
-      show={isOpenEventModal}
-      onHide={() => setIsOpenEventModal(false)}
-    >
+    <Modal centered show={!!selectedEvent} onHide={handleClose}>
       <Modal.Header className="ps-card border-bottom">
         <div>
           <Modal.Title className="modal-title text-1000 mb-0">
-            {modalEventContent?.title}
+            {selectedEvent?.title}
           </Modal.Title>
-          {modalEventContent?.extendedProps.organizer && (
+          {selectedEvent?.extendedProps.organizer && (
             <p className="mb-0 fs-9 mt-1">
-              by{' '}
-              <Link to="#!">{modalEventContent.extendedProps.organizer}</Link>
+              by <Link to="#!">{selectedEvent.extendedProps.organizer}</Link>
             </p>
           )}
         </div>
-        <Button className="p-1" onClick={() => setIsOpenEventModal(false)}>
+        <Button className="p-1" onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} className="fs-8" />
         </Button>
       </Modal.Header>
       <Modal.Body className="px-card pb-card pt-1 fs-9">
-        {modalEventContent?.extendedProps.description && (
+        {selectedEvent?.extendedProps.description && (
           <div className="mt-3 border-bottom pb-3">
             <h5 className="mb-0 text-800">Description</h5>
             <p className="mb-0 mt-2">
-              {modalEventContent.extendedProps.description
+              {selectedEvent.extendedProps.description
                 .split(' ')
                 .slice(0, 30)
                 .join(' ')}
@@ -67,34 +63,32 @@ const CalendarEventModal = () => {
         <div className="mt-4 ${event.extendedProps.location ? 'border-bottom pb-3' : ''}">
           <h5 className="mb-0 text-800">Date and Time</h5>
           <p className="mb-1 mt-2">
-            {dayjs(modalEventContent?.start).format(
-              'dddd, MMMM D, YYYY, h:mm A'
-            )}
-            {modalEventContent?.end &&
+            {dayjs(selectedEvent?.start).format('dddd, MMMM D, YYYY, h:mm A')}
+            {selectedEvent?.end &&
               ` – ${
                 dayjs &&
-                dayjs(modalEventContent?.end)
+                dayjs(selectedEvent?.end)
                   .subtract(1, 'day')
                   .format('dddd, MMMM D, YYYY, h:mm A')
               }`}
           </p>
         </div>
-        {modalEventContent?.extendedProps.location && (
+        {selectedEvent?.extendedProps.location && (
           <div className="mt-4 ">
             <h5 className="mb-0 text-800">Location</h5>
             <p
               className="mb-0 mt-2"
               dangerouslySetInnerHTML={{
-                __html: modalEventContent.extendedProps.location
+                __html: selectedEvent.extendedProps.location
               }}
             ></p>
           </div>
         )}
-        {modalEventContent?.extendedProps.schedules && (
+        {selectedEvent?.extendedProps.schedules && (
           <div className="mt-3">
             <h5 className="mb-0 text-800">Schedule</h5>
             <ul className="list-unstyled timeline mt-2 mb-0">
-              {modalEventContent.extendedProps.schedules.map(
+              {selectedEvent.extendedProps.schedules.map(
                 (schedule: Schedule) => (
                   <li key={schedule.title}>{schedule.title}</li>
                 )

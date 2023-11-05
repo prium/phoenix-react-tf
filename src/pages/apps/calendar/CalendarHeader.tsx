@@ -7,32 +7,20 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import { CalendarView, useCalendar } from 'providers/CalendarProvider';
 import { ButtonGroup, Col, Row } from 'react-bootstrap';
+import { SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 
 const CalendarHeader = () => {
-  const {
-    calendarApi,
-    calendarTitle,
-    setCalendarTitle,
-    calendarView,
-    setCalendarView
-  } = useCalendar();
-
-  const handleUpdate = (type: string) => {
-    if (calendarApi) {
-      type === 'next'
-        ? calendarApi.next()
-        : type === 'prev'
-        ? calendarApi.prev()
-        : type === 'today' && calendarApi?.today();
-      setCalendarTitle(calendarApi.view.title);
-    }
-  };
+  const { calendarApi, view, calendarDispatch } = useCalendar();
 
   const handleCalendarView = (viewType: CalendarView) => {
     if (calendarApi) {
       calendarApi.changeView(viewType);
-      setCalendarView(viewType);
-      setCalendarTitle(calendarApi.view.title);
+      calendarDispatch({
+        type: SET_CALENDAR_STATE,
+        payload: {
+          view: viewType
+        }
+      });
     }
   };
 
@@ -41,7 +29,7 @@ const CalendarHeader = () => {
       <Row className="py-3 gy-3 gx-0">
         <Col xs={6} md={4} className="order-1 d-flex align-items-center">
           <Button
-            onClick={() => handleUpdate('today')}
+            onClick={() => calendarApi?.today()}
             variant="phoenix-primary"
             size="sm"
             className="px-4"
@@ -55,14 +43,18 @@ const CalendarHeader = () => {
           className="order-md-1 d-flex align-items-center justify-content-center"
         >
           <Button
-            onClick={() => handleUpdate('prev')}
+            onClick={() => calendarApi?.prev()}
             className="icon-item icon-item-sm shadow-none text-1100 p-0"
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </Button>
-          <h3 className="px-3 text-1100 fw-semi-bold mb-0">{calendarTitle}</h3>
+          {calendarApi && (
+            <h3 className="px-3 text-1100 fw-semi-bold mb-0">
+              {calendarApi.view.title}
+            </h3>
+          )}
           <Button
-            onClick={() => handleUpdate('next')}
+            onClick={() => calendarApi?.next()}
             className="icon-item icon-item-sm shadow-none text-1100 p-0"
           >
             <FontAwesomeIcon icon={faChevronRight} />
@@ -78,7 +70,7 @@ const CalendarHeader = () => {
               onClick={() => handleCalendarView('dayGridMonth')}
               variant="phoenix-secondary"
               className={classNames({
-                active: calendarView === 'dayGridMonth'
+                active: view === 'dayGridMonth'
               })}
             >
               Month
@@ -87,7 +79,7 @@ const CalendarHeader = () => {
               onClick={() => handleCalendarView('timeGridWeek')}
               variant="phoenix-secondary"
               className={classNames({
-                active: calendarView === 'timeGridWeek'
+                active: view === 'timeGridWeek'
               })}
             >
               Week

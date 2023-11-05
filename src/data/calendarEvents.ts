@@ -7,7 +7,7 @@ const nextMonth = dayjs && dayjs().add(1, 'month').format('MM');
 const currentYear = dayjs && dayjs().format('YYYY');
 
 export interface Schedule {
-  id: number;
+  id: string;
   title: string;
   start: string;
   end?: string;
@@ -15,13 +15,13 @@ export interface Schedule {
   className: string;
 }
 
-export interface Event {
-  id: number;
+export interface CalendarEvent {
+  id: string;
   title: string;
-  start: string;
-  end?: string;
+  start: string | Date;
+  end?: string | Date;
   description: string;
-  className: string;
+  className?: string;
   location?: string;
   organizer?: string;
   schedules?: Schedule[];
@@ -29,9 +29,9 @@ export interface Event {
   url?: string;
 }
 
-export const events: Event[] = [
+export const events: CalendarEvent[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Boot Camp',
     start: `${currentYear}-${currentMonth}-01 10:00:00`,
     end: `${currentYear}-${currentMonth}-03 16:00:00`,
@@ -43,7 +43,7 @@ export const events: Event[] = [
     organizer: 'Boston Harbor Now'
   },
   {
-    id: 2,
+    id: '2',
     title: `Crain's New York Business `,
     start: `${currentYear}-${currentMonth}-11`,
     description:
@@ -51,7 +51,7 @@ export const events: Event[] = [
     className: 'text-primary'
   },
   {
-    id: 3,
+    id: '3',
     title: 'Conference',
     start: `${currentYear}-${currentMonth}-${currentDay}`,
     description:
@@ -60,7 +60,7 @@ export const events: Event[] = [
     // allDay: true,
     schedules: [
       {
-        id: 31,
+        id: '31',
         title: 'Reporting',
         start: `${currentYear}-${currentMonth}-${currentDay} 11:00:00`,
         description:
@@ -68,21 +68,21 @@ export const events: Event[] = [
         className: 'text-success '
       },
       {
-        id: 32,
+        id: '32',
         title: 'Lunch',
         start: `${currentYear}-${currentMonth}-${currentDay} 14:00:00`,
         description: 'Lunch facility for all the attendance in the conference.',
         className: 'text-info'
       },
       {
-        id: 33,
+        id: '33',
         title: 'Contest',
         start: `${currentYear}-${currentMonth}-${currentDay} 16:00:00`,
         description: 'The starting of the programming contest',
         className: 'text-success'
       },
       {
-        id: 34,
+        id: '34',
         title: 'Dinner',
         start: `${currentYear}-${currentMonth}-${currentDay} 22:00:00`,
         description: 'Dinner facility for all the attendance in the conference',
@@ -91,7 +91,7 @@ export const events: Event[] = [
     ]
   },
   {
-    id: 4,
+    id: '4',
     title: `ICT Expo ${currentYear} - Product Release`,
     start: `${currentYear}-${currentMonth}-16 10:00:00`,
     description: `ICT Expo ${currentYear} is the largest private-sector exposition aimed at showcasing IT and ITES products and services in Switzerland.`,
@@ -100,7 +100,7 @@ export const events: Event[] = [
     allDay: true
   },
   {
-    id: 5,
+    id: '5',
     title: 'Meeting',
     start: `${currentYear}-${currentMonth}-07 10:00:00`,
     description:
@@ -108,7 +108,7 @@ export const events: Event[] = [
     className: 'text-info'
   },
   {
-    id: 6,
+    id: '6',
     title: 'Contest',
     start: `${currentYear}-${currentMonth}-14 10:00:00`,
     className: 'text-info',
@@ -116,7 +116,7 @@ export const events: Event[] = [
       'PeaceX is an international peace and amity organisation that aims at casting a pall at the striking issues surmounting the development of peoples and is committed to impacting the lives of young people all over the world.'
   },
   {
-    id: 7,
+    id: '7',
     title: 'Event With Url',
     start: `${currentYear}-${currentMonth}-23`,
     description:
@@ -125,7 +125,7 @@ export const events: Event[] = [
     url: 'http://google.com'
   },
   {
-    id: 8,
+    id: '8',
     title: 'Competition',
     start: `${currentYear}-${currentMonth}-26`,
     description:
@@ -133,14 +133,14 @@ export const events: Event[] = [
     className: 'text-danger'
   },
   {
-    id: 9,
+    id: '9',
     title: 'Birthday Party',
     start: `${currentYear}-${nextMonth}-05`,
     description: 'Will celebrate birthday party with my friends and family',
     className: 'text-primary'
   },
   {
-    id: 10,
+    id: '10',
     title: 'Click for Google',
     url: 'http://google.com/',
     start: `${currentYear}-${prevMonth}-10`,
