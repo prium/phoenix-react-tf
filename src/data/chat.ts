@@ -39,6 +39,7 @@ export interface Message {
   time: string;
   readAt: Date | string | null;
   attachments?: string[];
+  seen?: boolean;
 }
 export interface User {
   id: number;
@@ -57,6 +58,35 @@ export type MessageActionType = {
   icon: IconProp;
   label: string;
 };
+
+export const supportChat: Conversation = {
+  id: 1,
+  user: { id: 1, avatar: team30, status: 'online', name: 'Sharuka Nijibum' },
+  messages: [
+    // {
+    //   id: 1,
+    //   type: 'received',
+    //   message: 'Hello, welcome to the jungle.',
+    //   time: 'Just now',
+    //   readAt: new Date()
+    // },
+    // {
+    //   id: 2,
+    //   type: 'sent',
+    //   message: 'I need a little help with something',
+    //   time: 'Just now',
+    //   readAt: new Date(),
+    //   seen: true
+    // }
+  ]
+};
+
+export const suggestions: string[] = [
+  'I need help with something',
+  'I can’t reorder a product I previously ordered',
+  'How do I place an order?',
+  'My payment method not working'
+];
 
 export const conversations: Conversation[] = [
   {

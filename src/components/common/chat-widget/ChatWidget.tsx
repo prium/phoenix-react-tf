@@ -19,14 +19,48 @@ import ImageAttachmentPreview from '../ImageAttachmentPreview';
 import AttachmentPreview from '../AttachmentPreview';
 import { convertFileToAttachment } from 'helpers/utils';
 import { useAppContext } from 'providers/AppProvider';
+import Message from './Message';
+import { Message as Messagetype, supportChat } from 'data/chat';
+import dayjs from 'dayjs';
+import ChatWidgetProvider, {
+  useChatWidgetContext
+} from 'providers/ChatWidgetProvider';
+
+const index = () => {
+  return (
+    <ChatWidgetProvider>
+      <ChatWidget />
+    </ChatWidgetProvider>
+  );
+};
 
 const ChatWidget = () => {
-  const [isOpenChat, setIsOpenChat] = useState(false);
   const [fileAttachment, setFileAttachment] = useState<File | null>(null);
   const [imageAttachments, setImageAttachments] = useState<File[]>([]);
+  const [conversation, setConversation] = useState(supportChat);
+  const [messageText, setMessageTest] = useState('');
   const {
     config: { isChatWidgetVisible }
   } = useAppContext();
+  const { isOpenChat, setIsOpenChat } = useChatWidgetContext();
+
+  const sentMessage = () => {
+    if (messageText.trim()) {
+      const newMessages = [
+        {
+          id: Date.now(),
+          type: 'sent',
+          time: dayjs().toNow(),
+          readAt: null,
+          message: messageText
+        } as Messagetype,
+        ...conversation.messages
+      ];
+      const newConversation = { ...conversation, messages: newMessages };
+      setConversation(newConversation);
+      setMessageTest('');
+    }
+  };
   return (
     <div
       className={classNames({
@@ -50,7 +84,12 @@ const ChatWidget = () => {
               </RevealDropdown>
             </RevealDropdownTrigger>
           </Card.Header>
-          <Card.Body className="p-0 chat"></Card.Body>
+          <Card.Body className="p-0 chat">
+            <Message
+              conversation={conversation}
+              setConversation={setConversation}
+            />
+          </Card.Body>
           <Card.Footer className="border-top ps-3 pe-4 py-3">
             {fileAttachment && (
               <div className={classNames({ 'mb-2': fileAttachment })}>
@@ -87,6 +126,8 @@ const ChatWidget = () => {
                   className="outline-none border-0 flex-1 fs--1 px-0"
                   type="text"
                   placeholder="Write message"
+                  value={messageText}
+                  onChange={e => setMessageTest(e.target.value)}
                 />
                 <div>
                   <Button className="p-0">
@@ -131,7 +172,7 @@ const ChatWidget = () => {
                   />
                 </div>
               </div>
-              <Button className="p-0 border-0 send-btn">
+              <Button className="p-0 border-0 send-btn" onClick={sentMessage}>
                 <FontAwesomeIcon icon={faPaperPlane} className="fs-9" />
               </Button>
             </div>
@@ -154,4 +195,4 @@ const ChatWidget = () => {
   );
 };
 
-export default ChatWidget;
+export default index;
