@@ -55,7 +55,7 @@ export const TimelineContent = ({
   className
 }: PropsWithChildren<TimelineItemProps>) => {
   return (
-    <div className={classNames(className, 'ps-6 ps-md-3')}>{children}</div>
+    <div className={classNames(className, 'timeline-content')}>{children}</div>
   );
 };
 
@@ -64,7 +64,7 @@ export const TimelineSeparator = ({
   className
 }: PropsWithChildren<TimelineItemProps>) => {
   return (
-    <div className={classNames(className, 'timeline-separator me-3 me-md-0')}>
+    <div className={classNames(className, 'timeline-separator')}>
       {children}
     </div>
   );

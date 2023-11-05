@@ -412,7 +412,9 @@ export const routes: RouteItems[] = [
         name: 'calendar',
         icon: 'calendar',
         path: 'apps/calendar',
-        pathName: 'app-calendar'
+        pathName: 'app-calendar',
+        active: true,
+        new: true
       }
     ]
   },
@@ -506,7 +508,9 @@ export const routes: RouteItems[] = [
         name: 'timeline',
         icon: 'clock',
         path: '/pages/timeline',
-        pathName: 'timeline-page'
+        pathName: 'timeline-page',
+        active: true,
+        new: true
       },
       {
         name: 'errors',

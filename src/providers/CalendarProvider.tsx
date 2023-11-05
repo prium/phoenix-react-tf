@@ -1,0 +1,64 @@
+import { CalendarApi } from '@fullcalendar/core';
+import { EventImpl } from '@fullcalendar/core/internal';
+import events, { CalendarEvent } from 'data/calendarEvents';
+import {
+  PropsWithChildren,
+  useContext,
+  Dispatch,
+  createContext,
+  useReducer
+} from 'react';
+import {
+  CALENDAR_ACTION_TYPE,
+  calendarReducer
+} from 'reducers/CalendarReducer';
+
+export type CalendarView = 'dayGridMonth' | 'timeGridWeek';
+
+export interface CalendarState {
+  calendarApi: CalendarApi | null;
+  view: CalendarView;
+  events: CalendarEvent[];
+  selectedEvent: EventImpl | null;
+  openNewEventModal: boolean;
+  selectedStartDate: Date | string;
+  selectedEndDate: Date | string;
+}
+
+interface CalendarContextInterface extends CalendarState {
+  calendarDispatch: Dispatch<CALENDAR_ACTION_TYPE>;
+}
+
+export const CalendarContext = createContext({} as CalendarContextInterface);
+
+const CalendarProvider = ({ children }: PropsWithChildren) => {
+  const initialState: CalendarState = {
+    calendarApi: null,
+    view: 'dayGridMonth',
+    events: events,
+    selectedEvent: null,
+    openNewEventModal: false,
+    selectedStartDate: '',
+    selectedEndDate: ''
+  };
+
+  const [calendarState, calendarDispatch] = useReducer(
+    calendarReducer,
+    initialState
+  );
+
+  return (
+    <CalendarContext.Provider
+      value={{
+        ...calendarState,
+        calendarDispatch
+      }}
+    >
+      {children}
+    </CalendarContext.Provider>
+  );
+};
+
+export const useCalendar = () => useContext(CalendarContext);
+
+export default CalendarProvider;

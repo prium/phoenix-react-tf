@@ -170,6 +170,9 @@ import WizardExample from 'pages/modules/forms/WizardExample';
 import Deals from 'pages/apps/crm/Deals';
 import FaqTab from 'pages/faq/FaqTab';
 import Alternate from 'pages/pages/landing/Alternate';
+import Calendar from 'pages/apps/calendar/Calendar';
+import CalendarProvider from 'providers/CalendarProvider';
+import Timeline from 'pages/pages/Timeline';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -376,6 +379,14 @@ const routes: RouteObject[] = [
                 ]
               },
               {
+                path: 'calendar',
+                element: (
+                  <CalendarProvider>
+                    <Calendar />
+                  </CalendarProvider>
+                )
+              },
+              {
                 path: 'email',
                 children: [
                   {
@@ -391,10 +402,6 @@ const routes: RouteObject[] = [
                     element: <Compose />
                   }
                 ]
-              },
-              {
-                path: 'calendar',
-                element: <ComingSoon />
               }
             ]
           },
@@ -441,7 +448,7 @@ const routes: RouteObject[] = [
               },
               {
                 path: 'timeline',
-                element: <ComingSoon />
+                element: <Timeline />
               },
               {
                 path: 'demo',
