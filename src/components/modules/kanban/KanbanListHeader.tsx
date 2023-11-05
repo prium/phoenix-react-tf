@@ -13,7 +13,6 @@ import { KanbanBoardItem } from 'data/kanban';
 import { Dropdown } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { getColor } from 'helpers/utils';
 
 interface KanbanListHeaderProps {
   list: KanbanBoardItem;

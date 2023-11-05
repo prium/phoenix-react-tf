@@ -57,7 +57,7 @@ import ChangeLog from 'pages/documentation/ChangeLog';
 import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
-import ComingSoon from 'pages/ComingSoon';
+// import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
 import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
