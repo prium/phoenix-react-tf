@@ -2,14 +2,15 @@ import { faAngleRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
-import { ChangeEvent, FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { getRandomNumber } from 'helpers/utils';
 import { useCalendar } from 'providers/CalendarProvider';
 import { ADD_NEW_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 import { CalendarEvent } from 'data/calendarEvents';
+import usePhoenixForm from 'hooks/usePhoenixForm';
 
 const CalendarAddNewEventModal = () => {
   const {
@@ -19,24 +20,12 @@ const CalendarAddNewEventModal = () => {
     calendarDispatch
   } = useCalendar();
 
-  const [formData, setFormData] = useState<CalendarEvent>({
-    start: '',
-    end: '',
-    description: '',
+  const { formData, setFormData, onChange } = usePhoenixForm<CalendarEvent>({
     id: String(getRandomNumber(2000, 3000)),
-    title: ''
+    start: selectedStartDate,
+    end: selectedEndDate
   });
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    const name = e.target.name;
-    const value = name === 'allDay' ? true : e.target.value;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     calendarDispatch({
@@ -101,14 +90,14 @@ const CalendarAddNewEventModal = () => {
           <FloatingLabel controlId="event-title" label="Title" className="mb-3">
             <input
               className="form-control"
-              onChange={handleChange}
+              onChange={onChange}
               name="title"
               type="text"
               placeholder="Title"
             />
           </FloatingLabel>
           <FloatingLabel controlId="eventLabel" label="Label" className="mb-5">
-            <Form.Select onChange={handleChange} name="className">
+            <Form.Select onChange={onChange} name="className">
               <option>Select</option>
               <option value="text-primary">Business</option>
               <option value="text-secondary">Personal</option>
@@ -173,7 +162,7 @@ const CalendarAddNewEventModal = () => {
           />
           <Form.Check>
             <Form.Check.Input
-              onChange={handleChange}
+              onChange={onChange}
               name="allDay"
               type="checkbox"
               id="all-day"
@@ -185,7 +174,7 @@ const CalendarAddNewEventModal = () => {
             <FloatingLabel controlId="description" label="Description">
               <textarea
                 className="form-control"
-                onChange={handleChange}
+                onChange={onChange}
                 placeholder="Description"
                 name="description"
                 style={{ height: '128px' }}
@@ -197,7 +186,7 @@ const CalendarAddNewEventModal = () => {
             label="Repetition"
             className="mb-3"
           >
-            <Form.Select onChange={handleChange} name="repetition">
+            <Form.Select onChange={onChange} name="repetition">
               <option>Select</option>
               <option value="noRepeat">No Repeat</option>
               <option value="daily">Daily</option>
@@ -210,7 +199,7 @@ const CalendarAddNewEventModal = () => {
             </Form.Select>
           </FloatingLabel>
           <FloatingLabel controlId="reminder" label="Reminder" className="mb-3">
-            <Form.Select onChange={handleChange} name="reminder">
+            <Form.Select onChange={onChange} name="reminder">
               <option>Select</option>
               <option value="1">30 minutes earlier</option>
               <option value="2">8 am on the day</option>
