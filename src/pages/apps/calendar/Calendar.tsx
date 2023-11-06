@@ -5,7 +5,9 @@ import interactionPlugin from '@fullcalendar/interaction';
 import { useEffect, useRef } from 'react';
 import { EventClickArg } from '@fullcalendar/core';
 import CalendarAddNewEventModal from 'components/modals/CalendarAddNewEventModal';
-import { useCalendar } from 'providers/CalendarProvider';
+import CalendarProvider, {
+  useCalendarContext
+} from 'providers/CalendarProvider';
 import CalendarTop from './CalendarTop';
 import CalendarHeader from './CalendarHeader';
 import CalendarEventModal from 'components/modals/CalendarEventModal';
@@ -16,13 +18,21 @@ import {
   SET_CALENDAR_STATE
 } from 'reducers/CalendarReducer';
 
+const index = () => {
+  return (
+    <CalendarProvider>
+      <Calendar />
+    </CalendarProvider>
+  );
+};
+
 const Calendar = () => {
   const calendarRef = useRef<FullCalendar>(null);
   const {
     config: { isRTL }
   } = useAppContext();
 
-  const { view, events, calendarDispatch } = useCalendar();
+  const { view, events, calendarDispatch } = useCalendarContext();
 
   useEffect(() => {
     const api = calendarRef.current?.getApi();
@@ -89,4 +99,4 @@ const Calendar = () => {
   );
 };
 
-export default Calendar;
+export default index;

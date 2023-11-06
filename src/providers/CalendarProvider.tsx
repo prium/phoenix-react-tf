@@ -59,6 +59,6 @@ const CalendarProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-export const useCalendar = () => useContext(CalendarContext);
+export const useCalendarContext = () => useContext(CalendarContext);
 
 export default CalendarProvider;
