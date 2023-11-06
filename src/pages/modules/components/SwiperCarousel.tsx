@@ -8,7 +8,7 @@ import img32 from 'assets/img/generic/32.jpg';
 import img33 from 'assets/img/generic/33.jpg';
 import img34 from 'assets/img/generic/34.jpg';
 import img35 from 'assets/img/generic/35.jpg';
-import { FreeMode, Navigation, Thumbs } from 'swiper';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { SwiperSlide } from 'swiper/react';
 import Swiper from 'components/base/Swiper';
 
