@@ -1,4 +1,4 @@
-import { Navigation } from 'swiper';
+import { Navigation } from 'swiper/modules';
 import {
   Swiper as ReactSwiper,
   SwiperProps as ReactSwiperProps

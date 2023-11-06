@@ -1,11 +1,12 @@
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { FreeMode, Navigation, Thumbs } from 'swiper';
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const ProductGallery = ({ images }: { images: string[] }) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
   const { breakpoints } = useBreakpoints();
 
   return (
