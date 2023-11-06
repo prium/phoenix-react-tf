@@ -1,36 +1,16 @@
 import Avatar from 'components/base/Avatar';
-import team22 from 'assets/img/team/22.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckDouble, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import { Conversation, Message as MessageType, suggestions } from 'data/chat';
+import { suggestions } from 'data/chat';
 import Button from 'components/base/Button';
-import { Dispatch, SetStateAction } from 'react';
-import dayjs from 'dayjs';
+import { useChatWidgetContext } from 'providers/ChatWidgetProvider';
+import MessageAttachments from './MessageAttachments';
 
-const Message = ({
-  conversation,
-  setConversation
-}: {
-  conversation: Conversation;
-  setConversation: Dispatch<SetStateAction<Conversation>>;
-}) => {
-  const sentMessage = (test: string) => {
-    const newMessages = [
-      {
-        id: Date.now(),
-        type: 'sent',
-        time: dayjs().toNow(),
-        readAt: null,
-        message: test
-      } as MessageType,
-      ...conversation.messages
-    ];
-    const newConversation = { ...conversation, messages: newMessages };
-    setConversation(newConversation);
-  };
+const Message = () => {
+  const { conversation, sentMessage } = useChatWidgetContext();
   return (
-    <div className="d-flex flex-column-reverse scrollbar h-100 p-3">
+    <>
       {!conversation.messages.length && (
         <div className="text-end mt-6">
           {suggestions.map((message, index) => (
@@ -38,7 +18,7 @@ const Message = ({
               key={message}
               onClick={() => sentMessage(message)}
               className={classNames(
-                'd-inline-flex align-items-center text-1100 hover-bg-soft rounded-pill border border-primary py-2 ps-4 pe-3',
+                'd-inline-flex align-items-center text-1100 hover-bg-soft rounded-pill border border-primary py-2 ps-4 pe-3 lh-base',
                 { 'mb-2': index !== suggestions.length - 1 }
               )}
             >
@@ -57,7 +37,8 @@ const Message = ({
             <div key={message.id} className="chat-message mb-2">
               <div
                 className={classNames('d-flex', {
-                  'flex-end-center me-3': message.type === 'sent'
+                  'flex-end-center': message.type === 'sent',
+                  'me-2': message.type === 'sent' && !message.attachments
                 })}
               >
                 {message.type === 'received' && (
@@ -68,15 +49,18 @@ const Message = ({
                   />
                 )}
                 <div
-                  className={classNames('mb-1 rounded-2 p-3', {
-                    'received-message-content bg-white border':
+                  className={classNames('mb-1', {
+                    'received-message-content border me-5':
                       message.type === 'received',
-                    'sent-message-content light bg-primary text-white':
-                      message.type === 'sent' && message.message,
+                    'sent-message-content light ms-5 text-end':
+                      message.type === 'sent',
                     attachments: message.attachments && !message.message
                   })}
                 >
                   {message.message && <p className="mb-0">{message.message}</p>}
+                  {message.attachments && (
+                    <MessageAttachments attachments={message.attachments} />
+                  )}
                 </div>
               </div>
               <div
@@ -105,14 +89,19 @@ const Message = ({
         </div>
       )}
       <div className="text-center mt-auto">
-        <Avatar src={team22} size="3xl" status="online" className="mx-auto" />
+        <Avatar
+          src={conversation.user.avatar}
+          size="3xl"
+          status="online"
+          className="mx-auto border border-3 border-white"
+        />
         <h5 className="mt-2 mb-3">Eric</h5>
         <p className="text-center text-black mb-0">
           Ask us anything – we’ll get back to you here or by email within 24
           hours.
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

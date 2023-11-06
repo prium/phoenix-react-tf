@@ -36,11 +36,11 @@
       box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
     }
   }
-  .card-body {
-    height: 27rem;
+  .chat {
+    height: 34.5rem;
   }
   &.show-chat {
-    transform: scale(1);
+    transform: unset;
     opacity: 1;
   }
   .send-btn {

@@ -31912,11 +31912,11 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .dark .support-chat .card {
   box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
 }
-.support-chat .card-body {
-  height: 27rem;
+.support-chat .chat {
+  height: 34.5rem;
 }
 .support-chat.show-chat {
-  transform: scale(1);
+  transform: unset;
   opacity: 1;
 }
 .support-chat .send-btn {

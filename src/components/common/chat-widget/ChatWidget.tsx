@@ -1,30 +1,18 @@
-import {
-  faChevronDown,
-  faCircle,
-  faImage,
-  faPaperPlane,
-  faPaperclip
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import { Card } from 'react-bootstrap';
 import ActionDropdownItems from '../ActionDropdownItems';
-import { Form } from 'react-bootstrap';
 import Button from 'components/base/Button';
-import { useState, ChangeEvent } from 'react';
 import classNames from 'classnames';
-import ImageAttachmentPreview from '../ImageAttachmentPreview';
-import AttachmentPreview from '../AttachmentPreview';
-import { convertFileToAttachment } from 'helpers/utils';
 import { useAppContext } from 'providers/AppProvider';
 import Message from './Message';
-import { Message as Messagetype, supportChat } from 'data/chat';
-import dayjs from 'dayjs';
 import ChatWidgetProvider, {
   useChatWidgetContext
 } from 'providers/ChatWidgetProvider';
+import ChatWidgetFooter from './ChatWidgetFooter';
 
 const index = () => {
   return (
@@ -35,32 +23,11 @@ const index = () => {
 };
 
 const ChatWidget = () => {
-  const [fileAttachment, setFileAttachment] = useState<File | null>(null);
-  const [imageAttachments, setImageAttachments] = useState<File[]>([]);
-  const [conversation, setConversation] = useState(supportChat);
-  const [messageText, setMessageTest] = useState('');
   const {
     config: { isChatWidgetVisible }
   } = useAppContext();
   const { isOpenChat, setIsOpenChat } = useChatWidgetContext();
-
-  const sentMessage = () => {
-    if (messageText.trim()) {
-      const newMessages = [
-        {
-          id: Date.now(),
-          type: 'sent',
-          time: dayjs().toNow(),
-          readAt: null,
-          message: messageText
-        } as Messagetype,
-        ...conversation.messages
-      ];
-      const newConversation = { ...conversation, messages: newMessages };
-      setConversation(newConversation);
-      setMessageTest('');
-    }
-  };
+  console.log(isOpenChat);
   return (
     <div
       className={classNames({
@@ -72,7 +39,7 @@ const ChatWidget = () => {
           'show-chat': isOpenChat
         })}
       >
-        <Card className="bg-white">
+        <Card className="bg-white chat">
           <Card.Header className="d-flex flex-between-center px-4 py-2 border-bottom">
             <h5 className="mb-0 d-flex align-items-center gap-2">
               Demo widget
@@ -84,98 +51,11 @@ const ChatWidget = () => {
               </RevealDropdown>
             </RevealDropdownTrigger>
           </Card.Header>
-          <Card.Body className="p-0 chat">
-            <Message
-              conversation={conversation}
-              setConversation={setConversation}
-            />
+          <Card.Body className="d-flex flex-column-reverse scrollbar p-3">
+            <Message />
           </Card.Body>
           <Card.Footer className="border-top ps-3 pe-4 py-3">
-            {fileAttachment && (
-              <div className={classNames({ 'mb-2': fileAttachment })}>
-                <AttachmentPreview
-                  attachment={convertFileToAttachment(fileAttachment)}
-                  size="xl"
-                  handleRemove={() => setFileAttachment(null)}
-                />
-              </div>
-            )}
-
-            {imageAttachments && (
-              <div
-                className={classNames('d-flex gap-2', {
-                  'mb-2': imageAttachments.length
-                })}
-              >
-                {imageAttachments.map((attachment, index) => (
-                  <ImageAttachmentPreview
-                    key={index}
-                    image={URL.createObjectURL(attachment)}
-                    handleClose={() => {
-                      setImageAttachments(
-                        imageAttachments.filter((_, i) => index !== i)
-                      );
-                    }}
-                  />
-                ))}
-              </div>
-            )}
-            <div className="d-flex align-items-center gap-2">
-              <div className="d-flex align-items-center flex-1 gap-3 border rounded-pill px-4">
-                <Form.Control
-                  className="outline-none border-0 flex-1 fs--1 px-0"
-                  type="text"
-                  placeholder="Write message"
-                  value={messageText}
-                  onChange={e => setMessageTest(e.target.value)}
-                />
-                <div>
-                  <Button className="p-0">
-                    <label
-                      className="text-500 fs-9 cursor-pointer"
-                      htmlFor="widgetImages"
-                    >
-                      <FontAwesomeIcon icon={faImage} transform="down-1" />
-                    </label>
-                  </Button>
-                  <Form.Control
-                    className="d-none"
-                    type="file"
-                    accept="image/*"
-                    id="widgetImages"
-                    multiple
-                    onChange={({
-                      target: { files }
-                    }: ChangeEvent<HTMLInputElement>) =>
-                      files && setImageAttachments(Array.from(files))
-                    }
-                  />
-                </div>
-                <div>
-                  <Button className="p-0">
-                    <label
-                      className="text-500 fs-9 cursor-pointer"
-                      htmlFor="widgetAttachments"
-                    >
-                      <FontAwesomeIcon icon={faPaperclip} transform="down-1" />
-                    </label>
-                  </Button>
-                  <Form.Control
-                    className="d-none"
-                    type="file"
-                    id="widgetAttachments"
-                    onChange={({
-                      target: { files }
-                    }: ChangeEvent<HTMLInputElement>) =>
-                      files && setFileAttachment(files[0])
-                    }
-                  />
-                </div>
-              </div>
-              <Button className="p-0 border-0 send-btn" onClick={sentMessage}>
-                <FontAwesomeIcon icon={faPaperPlane} className="fs-9" />
-              </Button>
-            </div>
+            <ChatWidgetFooter />
           </Card.Footer>
         </Card>
       </div>
