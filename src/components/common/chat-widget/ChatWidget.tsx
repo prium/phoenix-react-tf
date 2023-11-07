@@ -3,31 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
-import { Card } from 'react-bootstrap';
-import ActionDropdownItems from '../ActionDropdownItems';
+import { Card, Dropdown } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import classNames from 'classnames';
 import { useAppContext } from 'providers/AppProvider';
 import Message from './Message';
-import ChatWidgetProvider, {
-  useChatWidgetContext
-} from 'providers/ChatWidgetProvider';
+import { useChatWidgetContext } from 'providers/ChatWidgetProvider';
 import ChatWidgetFooter from './ChatWidgetFooter';
-
-const index = () => {
-  return (
-    <ChatWidgetProvider>
-      <ChatWidget />
-    </ChatWidgetProvider>
-  );
-};
 
 const ChatWidget = () => {
   const {
     config: { isChatWidgetVisible }
   } = useAppContext();
   const { isOpenChat, setIsOpenChat } = useChatWidgetContext();
-  console.log(isOpenChat);
   return (
     <div
       className={classNames({
@@ -47,7 +35,13 @@ const ChatWidget = () => {
             </h5>
             <RevealDropdownTrigger>
               <RevealDropdown>
-                <ActionDropdownItems />
+                <Dropdown.Item>Request a callback</Dropdown.Item>
+                <Dropdown.Item>Search in chat</Dropdown.Item>
+                <Dropdown.Item>Show history</Dropdown.Item>
+                <Dropdown.Item>Report to Admin</Dropdown.Item>
+                <Dropdown.Item onClick={() => setIsOpenChat(!isOpenChat)}>
+                  Close Support
+                </Dropdown.Item>
               </RevealDropdown>
             </RevealDropdownTrigger>
           </Card.Header>
@@ -75,4 +69,4 @@ const ChatWidget = () => {
   );
 };
 
-export default index;
+export default ChatWidget;

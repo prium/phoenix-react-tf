@@ -1,20 +1,10 @@
 import SearchBox from 'components/common/SearchBox';
 import { faqBreadcrumbItems, faqs } from 'data/faq';
-import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import FaqCta from 'components/cta/FaqCta';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
-import ChatWidgetProvider from 'providers/ChatWidgetProvider';
-
-const index = () => {
-  return (
-    <ChatWidgetProvider>
-      <FaqAccordion />
-    </ChatWidgetProvider>
-  );
-};
 
 const FaqAccordion = () => {
   return (
@@ -53,4 +43,4 @@ const FaqAccordion = () => {
   );
 };
 
-export default index;
+export default FaqAccordion;

@@ -48,7 +48,6 @@ const ChatWidgetProvider = ({ children }: PropsWithChildren) => {
       setMessageText('');
     }
   };
-  console.log(isOpenChat);
   return (
     <ChatWidgetContext.Provider
       value={{
