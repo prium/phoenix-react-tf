@@ -1,8 +1,3 @@
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import { useEffect, useRef } from 'react';
 import { EventClickArg } from '@fullcalendar/core';
 import CalendarAddNewEventModal from 'components/modals/CalendarAddNewEventModal';
 import CalendarProvider, {
@@ -11,12 +6,8 @@ import CalendarProvider, {
 import CalendarTop from './CalendarTop';
 import CalendarHeader from './CalendarHeader';
 import CalendarEventModal from 'components/modals/CalendarEventModal';
-import { useAppContext } from 'providers/AppProvider';
-import {
-  HANDLE_SELECT,
-  INITIALIZE_CALENDAR,
-  SET_CALENDAR_STATE
-} from 'reducers/CalendarReducer';
+import { HANDLE_SELECT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
+import FullCalendar from 'components/base/FullCalendar';
 
 const index = () => {
   return (
@@ -27,19 +18,7 @@ const index = () => {
 };
 
 const Calendar = () => {
-  const calendarRef = useRef<FullCalendar>(null);
-  const {
-    config: { isRTL }
-  } = useAppContext();
-
-  const { view, events, calendarDispatch } = useCalendarContext();
-
-  useEffect(() => {
-    const api = calendarRef.current?.getApi();
-    if (api) {
-      calendarDispatch({ type: INITIALIZE_CALENDAR, payload: api });
-    }
-  }, []);
+  const { events, calendarDispatch } = useCalendarContext();
 
   const handleEventClick = (info: EventClickArg) => {
     if (info.event.url) {
@@ -61,28 +40,6 @@ const Calendar = () => {
       <CalendarHeader />
       <div className="mt-6 mb-9">
         <FullCalendar
-          ref={calendarRef}
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView={view}
-          headerToolbar={false}
-          dayMaxEvents={3}
-          height={800}
-          stickyHeaderDates={false}
-          editable
-          selectable
-          selectMirror
-          direction={isRTL ? 'rtl' : 'ltr'}
-          views={{
-            week: {
-              eventLimit: 3
-            }
-          }}
-          eventTimeFormat={{
-            hour: 'numeric',
-            minute: '2-digit',
-            omitZeroMinute: true,
-            meridiem: true
-          }}
           select={info => {
             calendarDispatch({
               type: HANDLE_SELECT,
