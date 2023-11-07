@@ -63,22 +63,22 @@ export const supportChat: Conversation = {
   id: 1,
   user: { id: 1, avatar: team30, status: 'online', name: 'Sharuka Nijibum' },
   messages: [
-    {
-      id: 1,
-      type: 'received',
-      message: 'Hello, welcome to the jungle.',
-      time: 'Just now',
-      readAt: new Date()
-    },
-    {
-      id: 2,
-      type: 'sent',
-      message: 'Peter Piper picked a peck of pickle.',
-      attachments: [image12, image13],
-      time: 'Just now',
-      readAt: new Date(),
-      seen: true
-    }
+    // {
+    //   id: 1,
+    //   type: 'received',
+    //   message: 'Hello, welcome to the jungle.',
+    //   time: 'Just now',
+    //   readAt: new Date()
+    // },
+    // {
+    //   id: 2,
+    //   type: 'sent',
+    //   message: 'Peter Piper picked a peck of pickle.',
+    //   attachments: [image12, image13],
+    //   time: 'Just now',
+    //   readAt: new Date(),
+    //   seen: true
+    // }
   ]
 };
 
