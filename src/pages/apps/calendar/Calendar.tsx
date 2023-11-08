@@ -8,6 +8,7 @@ import CalendarHeader from './CalendarHeader';
 import CalendarEventModal from 'components/modals/CalendarEventModal';
 import { HANDLE_SELECT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 import FullCalendar from 'components/base/FullCalendar';
+import events from 'data/calendarEvents';
 
 const index = () => {
   return (
@@ -18,7 +19,7 @@ const index = () => {
 };
 
 const Calendar = () => {
-  const { events, calendarDispatch } = useCalendarContext();
+  const { calendarDispatch } = useCalendarContext();
 
   const handleEventClick = (info: EventClickArg) => {
     if (info.event.url) {

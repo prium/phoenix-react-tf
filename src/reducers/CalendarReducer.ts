@@ -61,20 +61,17 @@ export const calendarReducer = (
       };
     }
     case REMOVE_EVENT: {
-      const updatedEvents = state.events.filter(
-        item => item.id !== state.selectedEvent?.id
-      );
+      state.selectedEvent?.remove();
       return {
         ...state,
-        events: updatedEvents,
         selectedEvent: null
       };
     }
     case ADD_NEW_EVENT: {
       const { payload } = action;
+      state.calendarApi?.addEvent(payload);
       return {
         ...state,
-        events: [...state.events, payload],
         openNewEventModal: false
       };
     }

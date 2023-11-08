@@ -1,6 +1,5 @@
 import { CalendarApi } from '@fullcalendar/core';
 import { EventImpl } from '@fullcalendar/core/internal';
-import events, { CalendarEvent } from 'data/calendarEvents';
 import {
   PropsWithChildren,
   useContext,
@@ -18,7 +17,6 @@ export type CalendarView = 'dayGridMonth' | 'timeGridWeek';
 export interface CalendarState {
   calendarApi: CalendarApi | null;
   view: CalendarView;
-  events: CalendarEvent[];
   selectedEvent: EventImpl | null;
   openNewEventModal: boolean;
   selectedStartDate: Date | string;
@@ -35,7 +33,6 @@ const CalendarProvider = ({ children }: PropsWithChildren) => {
   const initialState: CalendarState = {
     calendarApi: null,
     view: 'dayGridMonth',
-    events: events,
     selectedEvent: null,
     openNewEventModal: false,
     selectedStartDate: '',
