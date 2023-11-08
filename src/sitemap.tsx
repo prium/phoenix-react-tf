@@ -944,6 +944,7 @@ export const routes: RouteItems[] = [
         name: 'components',
         icon: 'package',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'accordion',
@@ -980,6 +981,13 @@ export const routes: RouteItems[] = [
             pathName: 'components-buttons',
             path: '/modules/components/button',
             active: true
+          },
+          {
+            name: 'calendar',
+            pathName: 'components-calendar',
+            path: '/modules/components/calendar',
+            active: true,
+            new: true
           },
           {
             name: 'card',

@@ -7,7 +7,7 @@ import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { getRandomNumber } from 'helpers/utils';
-import { useCalendar } from 'providers/CalendarProvider';
+import { useCalendarContext } from 'providers/CalendarProvider';
 import { ADD_NEW_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 import { CalendarEvent } from 'data/calendarEvents';
 import usePhoenixForm from 'hooks/usePhoenixForm';
@@ -18,7 +18,7 @@ const CalendarAddNewEventModal = () => {
     selectedStartDate,
     selectedEndDate,
     calendarDispatch
-  } = useCalendar();
+  } = useCalendarContext();
 
   const { formData, setFormData, onChange } = usePhoenixForm<CalendarEvent>({
     id: String(getRandomNumber(2000, 3000)),

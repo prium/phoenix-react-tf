@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { Schedule } from 'data/calendarEvents';
 import dayjs from 'dayjs';
-import { useCalendar } from 'providers/CalendarProvider';
+import { useCalendarContext } from 'providers/CalendarProvider';
 import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { REMOVE_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 
 const CalendarEventModal = () => {
-  const { selectedEvent, calendarDispatch } = useCalendar();
+  const { selectedEvent, calendarDispatch } = useCalendarContext();
 
   const handleRemove = () => {
     calendarDispatch({

@@ -2,12 +2,12 @@ import { faPlus, faSync } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import dayjs from 'dayjs';
-import { useCalendar } from 'providers/CalendarProvider';
+import { useCalendarContext } from 'providers/CalendarProvider';
 import { Col, Row } from 'react-bootstrap';
 import { SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
 
 const CalendarTop = () => {
-  const { calendarDispatch } = useCalendar();
+  const { calendarDispatch } = useCalendarContext();
 
   return (
     <Row className="g-0 mb-4 align-items-center">
