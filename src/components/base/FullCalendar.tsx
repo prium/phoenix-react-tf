@@ -3,14 +3,10 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { useEffect, useRef } from 'react';
-import { CalendarOptions, EventClickArg } from '@fullcalendar/core';
+import { CalendarOptions } from '@fullcalendar/core';
 import { useCalendarContext } from 'providers/CalendarProvider';
 import { useAppContext } from 'providers/AppProvider';
-import {
-  HANDLE_SELECT,
-  INITIALIZE_CALENDAR,
-  SET_CALENDAR_STATE
-} from 'reducers/CalendarReducer';
+import { INITIALIZE_CALENDAR } from 'reducers/CalendarReducer';
 
 interface FullCalendarProps extends CalendarOptions {}
 
@@ -36,7 +32,6 @@ const FullCalendar = ({ ...rest }: FullCalendarProps) => {
       initialView={view}
       headerToolbar={false}
       dayMaxEvents={3}
-      height={800}
       stickyHeaderDates={false}
       editable
       selectable
