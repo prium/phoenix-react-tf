@@ -173,6 +173,7 @@ import Alternate from 'pages/pages/landing/Alternate';
 import Calendar from 'pages/apps/calendar/Calendar';
 import CalendarProvider from 'providers/CalendarProvider';
 import Timeline from 'pages/pages/Timeline';
+import DraggableExample from 'pages/modules/components/DraggableExample';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -613,6 +614,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'countup',
                     element: <CountupExample />
+                  },
+                  {
+                    path: 'draggable',
+                    element: <DraggableExample />
                   },
                   {
                     path: 'modal',
