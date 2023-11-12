@@ -10,6 +10,8 @@ const ZeroRoadMap = () => {
 
   return (
     <div className="gantt-zero-roadmap">
+      <h3>Project: zero Roadmap</h3>
+      <p className="text-700">Phase 2 is now ongoing</p>
       <Row className="g-2 flex-between-center mb-3">
         <Col xs={12} sm="auto">
           <div className="d-flex gap-3">

@@ -4,13 +4,14 @@ import EcomNewCustomersCard from 'components/cards/EcomNewCustomersCard';
 import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
 import EcomPayingVsNonPayingCard from 'components/cards/EcomPayingVsNonPayingCard';
 import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
-import EcomProjectionVsActualChart from 'components/charts/e-charts/EcomProjectionVsActualChart';
-import EomReturningCustomerRateChart from 'components/charts/e-charts/EomReturningCustomerRateChart';
 import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
 import { mapMarkerPoints } from 'data/mapMarkerPoints';
+import EcomProjectionVsActual from 'components/modules/e-commerce/dashboard/EcomProjectionVsActual';
+import EcomReturningCustomerRate from 'components/modules/e-commerce/dashboard/EcomReturningCustomerRate';
+import EcomTotalSells from 'components/modules/e-commerce/dashboard/EcomTotalSells';
 
 const Ecommerce = () => {
   return (
@@ -25,22 +26,7 @@ const Ecommerce = () => {
               </h5>
             </div>
             <EcomStats />
-            <Row className="justify-content-between align-items-center mb-4 g-3">
-              <Col xs="auto">
-                <h3>Total sells</h3>
-                <p className="text-700 lh-sm mb-0">
-                  Payment received across all channels
-                </p>
-              </Col>
-              <Col xs={8} sm={4}>
-                <Form.Select size="sm">
-                  <option value="mar">Mar 1 - 31, 2023</option>
-                  <option value="apr">April 1 - 30, 2023</option>
-                  <option value="may">May 1 - 31, 2023</option>
-                </Form.Select>
-              </Col>
-            </Row>
-            <EcomTotalSellsChart />
+            <EcomTotalSells />
           </Col>
           <Col xs={12} xxl={6}>
             <Row className="g-3">
@@ -82,24 +68,10 @@ const Ecommerce = () => {
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">
         <Row className="g-6">
           <Col xs={12} xl={6}>
-            <div className="me-xl-4">
-              <div>
-                <h3>Projection vs actual</h3>
-                <p className="mb-1 text-700">
-                  Actual earnings vs projected earnings
-                </p>
-              </div>
-              <EcomProjectionVsActualChart height="300px" width="100%" />
-            </div>
+            <EcomProjectionVsActual />
           </Col>
           <Col xs={12} xl={6}>
-            <div>
-              <h3>Returning customer rate</h3>
-              <p className="mb-1 text-700">
-                Rate of customers returning to your shop over time
-              </p>
-            </div>
-            <EomReturningCustomerRateChart />
+            <EcomReturningCustomerRate />
           </Col>
         </Row>
       </div>

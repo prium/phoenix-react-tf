@@ -1,6 +1,5 @@
 import DatePicker from 'components/base/DatePicker';
 import EarlyBirdCard from 'components/cards/EarlyBirdCard';
-import ProjectElevenProgressChart from 'components/charts/e-charts/ProjectElevenProgressChart';
 import ZeroRoadMap from 'components/modules/project-management/dashboard/ZeroRoadMap';
 import IssuesDiscovered from 'components/modules/project-management/dashboard/IssuesDiscovered';
 import ProjectDashboardTable from 'components/tables/ProjectDashboardTable';
@@ -10,6 +9,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import TodoList from 'components/modules/project-management/todo-list/TodoList';
 import { stats } from 'data/project-management/stats';
 import Stat from 'components/modules/project-management/dashboard/Stat';
+import ProjectElevenProgress from 'components/modules/project-management/dashboard/ProjectElevenProgress';
 
 const ProjectManagement = () => {
   return (
@@ -48,8 +48,6 @@ const ProjectManagement = () => {
           </Row>
         </Col>
         <Col xs={12} xl={6} xxl={5}>
-          <h3>Project: zero Roadmap</h3>
-          <p className="text-700">Phase 2 is now ongoing</p>
           <ZeroRoadMap />
         </Col>
         <Col xs={12} xl={6} xxl={5}>
@@ -62,9 +60,7 @@ const ProjectManagement = () => {
             <IssuesDiscovered />
           </Col>
           <Col xs={12} xl={5} xxl={6}>
-            <h3>Project: eleven Progress</h3>
-            <p className="text-700 mb-0 mb-xl-3">Deadline &amp; progress</p>
-            <ProjectElevenProgressChart />
+            <ProjectElevenProgress />
           </Col>
         </Row>
       </div>

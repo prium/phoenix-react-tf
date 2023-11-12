@@ -21100,6 +21100,9 @@ button,
     opacity: 0;
   }
 }
+/*-----------------------------------------------
+|   faq
+-----------------------------------------------*/
 .faq-list li .fa-circle {
   font-size: 6px;
   margin-right: 1.25rem;
@@ -21121,6 +21124,18 @@ button,
   .faq-title-box {
     width: 55%;
   }
+}
+
+/*-----------------------------------------------
+|   widgets
+-----------------------------------------------*/
+.widgets-scrollspy-nav {
+  position: sticky;
+  top: var(--phoenix-navbar-top-height);
+}
+.widgets-scrollspy-nav .nav .nav-item .nav-link.active {
+  color: var(--phoenix-primary) !important;
+  border-bottom: 1px solid var(--phoenix-primary) !important;
 }
 
 .star-rating {
