@@ -7,7 +7,7 @@ import { Card, Dropdown } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import classNames from 'classnames';
 import { useAppContext } from 'providers/AppProvider';
-import Message from './Message';
+import ChatWidgetConversation from './ChatWidgetConversation';
 import { useChatWidgetContext } from 'providers/ChatWidgetProvider';
 import ChatWidgetFooter from './ChatWidgetFooter';
 
@@ -45,8 +45,8 @@ const ChatWidget = () => {
               </RevealDropdown>
             </RevealDropdownTrigger>
           </Card.Header>
-          <Card.Body className="d-flex flex-column-reverse scrollbar p-3">
-            <Message />
+          <Card.Body className="scrollbar p-3">
+            <ChatWidgetConversation />
           </Card.Body>
           <Card.Footer className="border-top ps-3 pe-4 py-3">
             <ChatWidgetFooter />

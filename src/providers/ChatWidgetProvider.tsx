@@ -1,3 +1,4 @@
+import { FileAttachment } from 'components/common/AttachmentPreview';
 import { supportChat, Message as MessageType, Conversation } from 'data/chat';
 import dayjs from 'dayjs';
 import {
@@ -6,7 +7,8 @@ import {
   useState,
   useContext,
   Dispatch,
-  SetStateAction
+  SetStateAction,
+  useCallback
 } from 'react';
 
 interface ChatWidgetProps {
@@ -14,13 +16,13 @@ interface ChatWidgetProps {
   conversation: Conversation;
   setConversation: Dispatch<SetStateAction<Conversation>>;
   setIsOpenChat: Dispatch<SetStateAction<boolean>>;
-  messageText: string;
-  setMessageText: Dispatch<SetStateAction<string>>;
-  fileAttachment: File | null;
-  setFileAttachment: Dispatch<SetStateAction<File | null>>;
-  imageAttachments: File[];
-  setImageAttachments: Dispatch<SetStateAction<File[]>>;
-  sentMessage: (text?: string) => void;
+  sentMessage: ({
+    message,
+    attachments
+  }: {
+    message?: string;
+    attachments?: { images?: string[]; file?: FileAttachment };
+  }) => void;
 }
 
 export const ChatWidgetContext = createContext({} as ChatWidgetProps);
@@ -28,39 +30,39 @@ export const ChatWidgetContext = createContext({} as ChatWidgetProps);
 const ChatWidgetProvider = ({ children }: PropsWithChildren) => {
   const [isOpenChat, setIsOpenChat] = useState(false);
   const [conversation, setConversation] = useState(supportChat);
-  const [messageText, setMessageText] = useState('');
-  const [fileAttachment, setFileAttachment] = useState<File | null>(null);
-  const [imageAttachments, setImageAttachments] = useState<File[]>([]);
-  const sentMessage = (text?: string) => {
-    if (messageText.trim() || text) {
+
+  const sentMessage = useCallback(
+    ({
+      message,
+      attachments
+    }: {
+      message?: string;
+      attachments?: { images?: string[]; file?: FileAttachment };
+    }) => {
       const newMessages = [
+        ...conversation.messages,
         {
           id: Date.now(),
           type: 'sent',
           time: dayjs().toNow(),
           readAt: null,
-          message: messageText || text
-        } as MessageType,
-        ...conversation.messages
+          message,
+          attachments
+        } as MessageType
       ];
       const newConversation = { ...conversation, messages: newMessages };
       setConversation(newConversation);
-      setMessageText('');
-    }
-  };
+    },
+    [conversation]
+  );
+
   return (
     <ChatWidgetContext.Provider
       value={{
         conversation,
         setConversation,
-        fileAttachment,
-        setFileAttachment,
-        imageAttachments,
-        setImageAttachments,
         isOpenChat,
         setIsOpenChat,
-        messageText,
-        setMessageText,
         sentMessage
       }}
     >

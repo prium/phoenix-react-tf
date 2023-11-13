@@ -1,9 +1,9 @@
 import { useChatWidgetContext } from 'providers/ChatWidgetProvider';
-import { ChangeEvent } from 'react';
-import ImageAttachmentPreview from '../ImageAttachmentPreview';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import ImageAttachmentPreview from 'components/common/ImageAttachmentPreview';
 import classNames from 'classnames';
 import { convertFileToAttachment } from 'helpers/utils';
-import AttachmentPreview from '../AttachmentPreview';
+import AttachmentPreview from 'components/common/AttachmentPreview';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,17 +14,32 @@ import {
 import { Form } from 'react-bootstrap';
 
 const ChatWidgetFooter = () => {
-  const {
-    fileAttachment,
-    setFileAttachment,
-    imageAttachments,
-    setImageAttachments,
-    setMessageText,
-    messageText,
-    sentMessage
-  } = useChatWidgetContext();
+  const [messageText, setMessageText] = useState('');
+  const [fileAttachment, setFileAttachment] = useState<File | null>(null);
+  const [imageAttachments, setImageAttachments] = useState<File[]>([]);
+
+  const { sentMessage } = useChatWidgetContext();
+
+  const handleSumbit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    sentMessage({
+      message: messageText,
+      attachments: {
+        images: imageAttachments.map(imageAttachment =>
+          URL.createObjectURL(imageAttachment)
+        ),
+        file: fileAttachment
+          ? convertFileToAttachment(fileAttachment)
+          : undefined
+      }
+    });
+    setMessageText('');
+    setImageAttachments([]);
+    setFileAttachment(null);
+  };
+
   return (
-    <>
+    <form onSubmit={handleSumbit}>
       {fileAttachment && (
         <div className={classNames({ 'mb-2': fileAttachment })}>
           <AttachmentPreview
@@ -98,19 +113,20 @@ const ChatWidgetFooter = () => {
               className="d-none"
               type="file"
               id="widgetAttachments"
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar"
               onChange={({
                 target: { files }
-              }: ChangeEvent<HTMLInputElement>) =>
-                files && setFileAttachment(files[0])
-              }
+              }: ChangeEvent<HTMLInputElement>) => {
+                files && setFileAttachment(files[0]);
+              }}
             />
           </div>
         </div>
-        <Button className="p-0 border-0 send-btn" onClick={() => sentMessage()}>
+        <Button className="p-0 border-0 send-btn" type="submit">
           <FontAwesomeIcon icon={faPaperPlane} className="fs-9" />
         </Button>
       </div>
-    </>
+    </form>
   );
 };
 
