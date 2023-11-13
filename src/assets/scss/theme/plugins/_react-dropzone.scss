@@ -28,6 +28,10 @@
   border-radius: 8px;
   position: relative;
   // overflow: hidden;
+  .support-chat & {
+    height: 50px;
+    width: 50px;
+  }
   img {
     height: 100%;
     width: 100%;

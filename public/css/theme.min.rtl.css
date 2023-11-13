@@ -21334,6 +21334,10 @@ pre[class*=language-] {
   border-radius: 8px;
   position: relative;
 }
+.support-chat .image-attachment-preview {
+  height: 50px;
+  width: 50px;
+}
 .image-attachment-preview img {
   height: 100%;
   width: 100%;
@@ -31560,7 +31564,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.12), 0px 8px 24px -4px rgba(36, 40, 46, 0.12);
 }
 .chat .chat-message .chat-message-content {
-  max-width: calc(100% - 4rem);
+  max-width: calc(100% - 2rem);
 }
 .chat .chat-message .chat-message-content.received {
   max-width: calc(100% - 6rem);
@@ -31568,6 +31572,8 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .chat .chat-message .chat-message-content img {
   width: 100%;
   max-width: 200px;
+  height: 100%;
+  object-fit: cover;
 }
 @media (min-width: 576px) {
   .chat .chat-message .chat-message-content {
@@ -32004,6 +32010,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   margin: 0;
 }
 
+<<<<<<< HEAD
 .kanban-content {
   position: fixed;
   padding-top: var(--phoenix-navbar-top-height);
@@ -32529,4 +32536,132 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .kanban-form-check[type=radio]:checked + label {
   border-color: #3874ff !important;
   box-shadow: 0 0 0 0.2rem rgba(var(--phoenix-primary-rgb), 0.5);
+=======
+.support-chat {
+  position: fixed;
+  bottom: 3rem;
+  left: 0;
+  max-width: 27.87rem;
+  width: 100%;
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: bottom left;
+  z-index: 1045;
+  transition: 0.3s ease-out;
+  padding-bottom: 3rem;
+}
+.support-chat-start .support-chat {
+  left: auto;
+  right: 0;
+  transform-origin: bottom right;
+}
+.support-chat-bottom-lg .support-chat {
+  bottom: 5rem;
+}
+@media (min-width: 576px) {
+  .support-chat {
+    left: 1rem;
+  }
+  .support-chat-start .support-chat {
+    right: 1rem;
+  }
+}
+@media (min-width: 992px) {
+  .support-chat {
+    left: 2rem;
+  }
+  .support-chat-start .support-chat {
+    right: 2rem;
+  }
+}
+.support-chat .card {
+  box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+}
+.dark .support-chat .card {
+  box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+}
+.support-chat .chat {
+  height: 34.5rem;
+}
+.support-chat.show-chat {
+  transform: unset;
+  opacity: 1;
+}
+.support-chat .send-btn {
+  width: 37.06px;
+  height: 37.06px;
+  border-radius: 50%;
+  color: var(--phoenix-primary);
+}
+.support-chat .send-btn:hover {
+  background-color: var(--phoenix-gray-100);
+  color: var(--phoenix-primary-500);
+}
+.support-chat .send-btn:active {
+  background-color: var(--phoenix-gray-200);
+  color: var(--phoenix-primary-500);
+}
+.support-chat .chat-message-content {
+  max-width: calc(100% - 2.5rem) !important;
+}
+
+.btn-support-chat {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 1rem;
+  width: 9rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--phoenix-white) !important;
+  z-index: 1045;
+  border-radius: var(--phoenix-border-radius-pill);
+  box-shadow: 0px 0px 32px 0px rgba(36, 40, 46, 0.12);
+  transition: 0.3s ease;
+}
+.dark .btn-support-chat, .dark .picmo__popupContainer.picmo__light .btn-support-chat {
+  box-shadow: 0px 0px 32px 10px rgba(0, 0, 0, 0.41);
+}
+.support-chat-start .btn-support-chat {
+  left: auto;
+  right: 1rem;
+}
+.support-chat-bottom-lg .btn-support-chat {
+  bottom: 4.5rem;
+}
+@media (min-width: 576px) {
+  .btn-support-chat {
+    left: 2rem;
+  }
+  .support-chat-start .btn-support-chat {
+    right: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .btn-support-chat {
+    left: 3rem;
+  }
+  .support-chat-start .btn-support-chat {
+    right: 3rem;
+  }
+}
+.btn-support-chat:hover {
+  background-color: var(--phoenix-gray-100) !important;
+}
+.btn-support-chat .fa-chevron-down {
+  display: none;
+}
+.btn-support-chat.btn-chat-close {
+  border-radius: 50%;
+  width: 3rem;
+}
+.btn-support-chat.btn-chat-close .btn-text,
+.btn-support-chat.btn-chat-close .fa-circle {
+  display: none;
+}
+.btn-support-chat.btn-chat-close .fa-chevron-down {
+  display: block;
+>>>>>>> feature/chat-widget
 }

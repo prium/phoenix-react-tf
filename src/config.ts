@@ -12,6 +12,7 @@ export interface Config {
   navbarTopShape: NavTopShapeVariant;
   isRTL: boolean;
   bodyClass?: string;
+  isChatWidgetVisible: boolean;
 }
 
 export const initialConfig: Config = {
@@ -22,5 +23,6 @@ export const initialConfig: Config = {
   navbarVerticalAppearance: 'default',
   navbarPosition: 'vertical',
   navbarTopShape: 'default',
-  isRTL: false
+  isRTL: false,
+  isChatWidgetVisible: true
 };

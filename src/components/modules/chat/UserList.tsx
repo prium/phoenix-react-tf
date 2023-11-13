@@ -50,7 +50,6 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
           <Avatar
             src={conversation.user.avatar}
             size="xl"
-            // status="online"
             className="d-block"
             imageClassName="border border-2 border-white"
           />

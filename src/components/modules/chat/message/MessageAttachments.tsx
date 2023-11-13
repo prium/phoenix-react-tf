@@ -35,7 +35,7 @@ const MessageAttachments = ({
           <img
             src={attachment}
             alt=""
-            className="rounded-2 fit-cover cursor-pointer"
+            className="rounded-2 cursor-pointer img-fluid"
             onClick={() => {
               openLightbox(index + 1);
             }}

@@ -11,7 +11,8 @@ export const initialConfig = {
   navbarVerticalAppearance: 'default',
   navbarPosition: 'vertical',
   navbarTopShape: 'default',
-  isRTL: false
+  isRTL: false,
+  isChatWidgetVisible: true
 };`;
 
 const contextCode = `
@@ -176,6 +177,19 @@ const Configuration = () => {
                   Set <code>true</code> to make the whole layout RTL (Right to
                   Left). Recommended for languages such as Arabic, Hebrew and
                   others.
+                </td>
+              </tr>
+              <tr>
+                <td className="white-space-nowrap">isChatWidgetVisible</td>
+                <td>
+                  <code>Boolean</code>
+                </td>
+                <td>
+                  <code>true</code>
+                </td>
+                <td>
+                  Set <code>false</code> to hide the chat widget when the page
+                  loads.
                 </td>
               </tr>
             </tbody>

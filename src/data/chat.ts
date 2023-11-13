@@ -38,7 +38,8 @@ export interface Message {
   message?: string;
   time: string;
   readAt: Date | string | null;
-  attachments?: string[];
+  attachments?: { images?: string[]; file?: FileAttachment };
+  seen?: boolean;
 }
 export interface User {
   id: number;
@@ -57,6 +58,19 @@ export type MessageActionType = {
   icon: IconProp;
   label: string;
 };
+
+export const supportChat: Conversation = {
+  id: 1,
+  user: { id: 1, avatar: team30, status: 'online', name: 'Sharuka Nijibum' },
+  messages: []
+};
+
+export const suggestions: string[] = [
+  'I need help with something',
+  'I can’t reorder a product I previously ordered',
+  'How do I place an order?',
+  'My payment method not working'
+];
 
 export const conversations: Conversation[] = [
   {
@@ -83,7 +97,7 @@ export const conversations: Conversation[] = [
         id: 3,
         type: 'sent',
         message: 'Yes, in an organization stature',
-        attachments: [image1],
+        attachments: { images: [image1] },
         time: 'Yesterday, 10 AM',
         readAt: new Date()
       },
@@ -147,20 +161,22 @@ export const conversations: Conversation[] = [
       {
         id: 2,
         type: 'sent',
-        attachments: [
-          image12,
-          image13,
-          image2,
-          image3,
-          image4,
-          image5,
-          image6,
-          image7,
-          image8,
-          image9,
-          image10,
-          image11
-        ],
+        attachments: {
+          images: [
+            image12,
+            image13,
+            image2,
+            image3,
+            image4,
+            image5,
+            image6,
+            image7,
+            image8,
+            image9,
+            image10,
+            image11
+          ]
+        },
         time: 'Yesterday, 10 AM',
         readAt: new Date()
       },
@@ -200,9 +216,23 @@ export const conversations: Conversation[] = [
         message: 'However, the shot Shott shot shot not Shott, but Nott.',
         time: 'Yesterday, 10 AM',
         readAt: new Date()
+      },
+      {
+        id: 8,
+        type: 'received',
+        time: 'Yesterday, 10 AM',
+        readAt: null,
+        attachments: {
+          file: {
+            name: 'Unsupported file format.mad',
+            size: '11.13 KB',
+            date: 'Dec 2, 2011',
+            format: 'mad'
+          }
+        }
       }
     ],
-    unreadMessages: 2
+    unreadMessages: 3
   },
   {
     id: 3,

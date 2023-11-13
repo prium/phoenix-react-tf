@@ -1,6 +1,5 @@
 import SearchBox from 'components/common/SearchBox';
 import { faqBreadcrumbItems, faqs } from 'data/faq';
-import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import FaqCta from 'components/cta/FaqCta';
 import { Link } from 'react-router-dom';
