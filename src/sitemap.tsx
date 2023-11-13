@@ -771,6 +771,7 @@ export const routes: RouteItems[] = [
         name: 'forms',
         icon: 'file-text',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'basic',
@@ -872,7 +873,8 @@ export const routes: RouteItems[] = [
             name: 'wizard',
             path: '/modules/forms/wizard',
             pathName: 'forms-wizard',
-            active: true
+            active: true,
+            new: true
           }
         ]
       },
