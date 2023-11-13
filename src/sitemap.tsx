@@ -1038,6 +1038,13 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'draggable',
+            pathName: 'components-draggable',
+            path: '/modules/components/draggable',
+            active: true,
+            new: true
+          },
+          {
             name: 'modals',
             pathName: 'components-modal',
             path: '/modules/components/modal',
