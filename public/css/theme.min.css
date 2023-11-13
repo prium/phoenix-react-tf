@@ -31397,7 +31397,7 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.12), 0px 8px 24px -4px rgba(36, 40, 46, 0.12);
 }
 .chat .chat-message .chat-message-content {
-  max-width: calc(100% - 4rem);
+  max-width: calc(100% - 2rem);
 }
 .chat .chat-message .chat-message-content.received {
   max-width: calc(100% - 6rem);
@@ -31405,6 +31405,8 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .chat .chat-message .chat-message-content img {
   width: 100%;
   max-width: 200px;
+  height: 100%;
+  object-fit: cover;
 }
 @media (min-width: 576px) {
   .chat .chat-message .chat-message-content {
@@ -31959,6 +31961,9 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .support-chat .send-btn:active {
   background-color: var(--phoenix-gray-200);
   color: var(--phoenix-primary-500);
+}
+.support-chat .chat-message-content {
+  max-width: calc(100% - 2.5rem) !important;
 }
 
 .btn-support-chat {

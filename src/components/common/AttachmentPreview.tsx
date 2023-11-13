@@ -13,26 +13,28 @@ export interface FileAttachment {
 
 interface AttachmentProps {
   attachment: FileAttachment;
-  type?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary';
   size?: 'lg' | 'xl';
+  url?: string;
   handleRemove?: () => void;
 }
 
 const AttachmentPreview = ({
   attachment,
-  type = 'primary',
+  variant = 'primary',
   size = 'lg',
+  url = '#!',
   handleRemove
 }: AttachmentProps) => {
   return (
-    <a href="#!" className="text-decoration-none d-flex align-items-center">
+    <a href={url} className="text-decoration-none d-flex align-items-center">
       <div
         className={classNames(
           `btn-icon btn-icon-${size} rounded-3 flex-column me-2 position-relative`,
           {
             border: !attachment.preview,
-            'text-500 border-500': type === 'primary',
-            'border-400 text-400': type === 'secondary'
+            'text-500 border-500': variant === 'primary',
+            'border-white text-white': variant === 'secondary'
           }
         )}
       >
@@ -62,18 +64,18 @@ const AttachmentPreview = ({
       <div className="flex-1">
         <h6
           className={classNames('text-900 line-clamp-1 text-break', {
-            'text-900': type === 'primary',
-            'text-1000': type === 'secondary'
+            'text-900': variant === 'primary',
+            'text-white': variant === 'secondary'
           })}
         >
           {attachment.name}
         </h6>
         <div
           className={classNames(
-            'd-flex align-items-center lh-1 text-700 fw-semi-bold',
+            'd-flex align-items-center lh-1 fw-semi-bold fs-10',
             {
-              'fs-10': type == 'primary',
-              'fs-9': type == 'secondary'
+              'text-700': variant == 'primary',
+              'text-200': variant == 'secondary'
             }
           )}
         >

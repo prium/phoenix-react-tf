@@ -1,3 +1,4 @@
+import { FileAttachment } from 'components/common/AttachmentPreview';
 import { Message } from 'data/chat';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -12,7 +13,7 @@ export type ACTIONTYPE =
       payload: {
         conversationId: number;
         message?: string;
-        attachments?: string[];
+        attachments?: { images?: string[]; file?: FileAttachment };
       };
     }
   | { type: 'SET_CURRENT_CONVERSATION'; payload: { userId?: number | string } }

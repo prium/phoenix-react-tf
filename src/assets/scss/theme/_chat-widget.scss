@@ -57,6 +57,9 @@
       color: var(--#{$prefix}primary-500);
     }
   }
+  .chat-message-content {
+    max-width: calc(100% - 2.5rem) !important;
+  }
 }
 .btn-support-chat {
   position: fixed;
