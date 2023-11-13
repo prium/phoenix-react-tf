@@ -203,9 +203,9 @@ const DraggableExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Draggable"
-        description="Beautiful and accessible drag and drop for lists with React"
+        description={`${process.env.REACT_APP_TITLE}-React utilizes react-beautiful-dnd for its draggable component. React-beautiful-dnd is designed to create visually appealing drag-and-drop functionality for lists, making it accessible to all.`}
         link={{
-          text: 'Draggable Documentation',
+          text: 'react-beautiful-dnd Documentation',
           url: 'https://github.com/atlassian/react-beautiful-dnd'
         }}
       />
@@ -214,9 +214,9 @@ const DraggableExample = () => {
           <PhoenixDocCard.Header title="Example">
             <p className="mb-0">
               Here is the example of the Multiple Container Sortable feature of
-              the Draggable library. We also design{' '}
-              <Link to="/apps/kanban/kanban">Kanban</Link> using this Draggable
-              Library.{' '}
+              the <code>react-beautiful-dnd</code> library. We also design{' '}
+              <Link to="/apps/kanban/kanban">Kanban</Link> using this{' '}
+              <code>react-beautiful-dnd</code> Library.{' '}
               <b>You can drag any card in between the two columns below:</b>
             </p>
           </PhoenixDocCard.Header>

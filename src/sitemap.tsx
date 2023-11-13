@@ -944,6 +944,7 @@ export const routes: RouteItems[] = [
         name: 'components',
         icon: 'package',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'accordion',
@@ -1033,7 +1034,8 @@ export const routes: RouteItems[] = [
             name: 'draggable',
             pathName: 'components-draggable',
             path: '/modules/components/draggable',
-            active: true
+            active: true,
+            new: true
           },
           {
             name: 'modals',
