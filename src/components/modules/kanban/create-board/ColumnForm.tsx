@@ -11,12 +11,8 @@ import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { ChangeEvent } from 'react';
 import { Form } from 'react-bootstrap';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
-import {
-  DragDropContext,
-  Draggable,
-  DropResult,
-  Droppable
-} from 'react-beautiful-dnd';
+import { DragDropContext, Draggable, DropResult } from 'react-beautiful-dnd';
+import PhoenixDroppable from 'components/base/PhoenixDroppable';
 
 const ColumnItem = ({
   className,
@@ -122,7 +118,7 @@ const ColumnForm = () => {
       </p>
 
       <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="droppable">
+        <PhoenixDroppable droppableId="droppable">
           {provided => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
               {formData.columns?.map((column, index) => (
@@ -152,7 +148,7 @@ const ColumnForm = () => {
               {provided.placeholder}
             </div>
           )}
-        </Droppable>
+        </PhoenixDroppable>
       </DragDropContext>
 
       <Button

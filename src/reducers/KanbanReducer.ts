@@ -71,8 +71,7 @@ export const kanbanReducer = (state: KanbanState, action: ACTIONTYPE) => {
       const {
         payload: { destination, source }
       } = action;
-
-      const updatedList = [...state.boardLists];
+      const updatedList = structuredClone(state.boardLists);
 
       const task = updatedList
         .find(list => list.id === source.droppableId)

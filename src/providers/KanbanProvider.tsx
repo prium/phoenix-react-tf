@@ -23,16 +23,20 @@ interface KanbanContextInterface extends KanbanState {
 
 export const KanbanContext = createContext({} as KanbanContextInterface);
 
-const KanbanProvider = ({
-  children
-}: PropsWithChildren<KanbanProviderInterface>) => {
+const useKanbanReducer = () => {
   const initState: KanbanState = {
     openBoardDetailsOffcanvas: false,
     openAddListModal: false,
     boardLists: kanbanItems
   };
 
-  const [kanbanState, kanbanDispatch] = useReducer(kanbanReducer, initState);
+  return useReducer(kanbanReducer, initState);
+};
+
+const KanbanProvider = ({
+  children
+}: PropsWithChildren<KanbanProviderInterface>) => {
+  const [kanbanState, kanbanDispatch] = useKanbanReducer();
 
   return (
     <KanbanContext.Provider

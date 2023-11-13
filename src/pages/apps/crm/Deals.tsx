@@ -12,10 +12,11 @@ import { dealColumnsData } from 'data/crm/deals';
 import { useEffect, useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
-import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext, DropResult } from 'react-beautiful-dnd';
 import DealColumn from 'components/modules/crm/deals/DealColumn';
 import AddDealModal from 'components/modules/crm/deals/AddDealModal';
 import FilterDealsModal from 'components/modals/FilterDealsModal';
+import PhoenixDroppable from 'components/base/PhoenixDroppable';
 
 const Deals = () => {
   const { setContentClass } = useMainLayoutContext();
@@ -35,7 +36,7 @@ const Deals = () => {
     const { source, destination } = result;
 
     if (destination) {
-      const updatedColumns = [...dealColumns];
+      const updatedColumns = structuredClone(dealColumns);
 
       const deal = updatedColumns
         .find(column => column.id === source.droppableId)
@@ -100,7 +101,7 @@ const Deals = () => {
       <DragDropContext onDragEnd={handleDragEnd}>
         <div className="flex-1 d-flex gap-4 scrollbar">
           {dealColumns.map(col => (
-            <Droppable key={col.id} droppableId={col.id}>
+            <PhoenixDroppable key={col.id} droppableId={col.id}>
               {provided => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   <DealColumn
@@ -111,7 +112,7 @@ const Deals = () => {
                   {provided.placeholder}
                 </div>
               )}
-            </Droppable>
+            </PhoenixDroppable>
           ))}
         </div>
       </DragDropContext>
