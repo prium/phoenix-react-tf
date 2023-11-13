@@ -32037,7 +32037,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   margin: 0;
 }
 
-<<<<<<< HEAD
 .kanban-content {
   position: fixed;
   padding-top: var(--phoenix-navbar-top-height);
@@ -32563,7 +32562,8 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 .kanban-form-check[type=radio]:checked + label {
   border-color: #3874ff !important;
   box-shadow: 0 0 0 0.2rem rgba(var(--phoenix-primary-rgb), 0.5);
-=======
+}
+
 .support-chat {
   position: fixed;
   bottom: 3rem;
@@ -32690,7 +32690,6 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 }
 .btn-support-chat.btn-chat-close .fa-chevron-down {
   display: block;
->>>>>>> feature/chat-widget
 }
 
 /*# sourceMappingURL=theme.min.css.map*/
