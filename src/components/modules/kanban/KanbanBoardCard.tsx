@@ -8,14 +8,19 @@ import Avatar from 'components/base/Avatar';
 import { KanbanBoard } from 'data/kanban';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+const arr = [1, 2, 3];
 const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
   return (
-    <Card className="overflow-hidden bg-transparent border-0 h-100 position-relative">
+    <Card className="overflow-hidden bg-transparent h-100 position-relative">
       <div className="position-relative">
         {board.coverImage ? (
           <>
-            <img src={board.coverImage} alt="" height={128} className="w-100" />
+            <img
+              src={board.coverImage}
+              alt=""
+              height={128}
+              className="w-100 fit-cover"
+            />
           </>
         ) : (
           <div className="bg-200" style={{ height: '128px' }} />
@@ -35,7 +40,7 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
           ))}
         </Avatar.Group>
       </div>
-      <Card.Body className="d-flex flex-column rounded-bottom-lg justify-content-between border border-top-0">
+      <Card.Body className="d-flex flex-column rounded-bottom-lg justify-content-between">
         <div>
           <h3 className="text-900">{board.title}</h3>
           <p className="text-700 mb-4">{board.category}</p>

@@ -19,10 +19,12 @@ const CreateBoard = () => {
         </Col>
       </Row>
       <Row className="kanban-create-board">
-        <Col xs={12} xl={6} xxl={5}>
-          <CreateBoardWizardForm />
-        </Col>
-        <Col xs={12} xl={6} xxl={7} className="text-center kanban-board-bg">
+        <Col
+          xs={12}
+          xl={6}
+          xxl={7}
+          className="text-center kanban-board-bg order-xl-1"
+        >
           <img
             src={boardIllustration}
             alt=""
@@ -33,6 +35,9 @@ const CreateBoard = () => {
             alt=""
             className="d-light-none mt-5 position-sticky"
           />
+        </Col>
+        <Col xs={12} xl={6} xxl={5}>
+          <CreateBoardWizardForm />
         </Col>
       </Row>
     </div>

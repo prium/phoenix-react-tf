@@ -18,7 +18,7 @@ import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 const DealCard = ({ deal }: { deal: Deal }) => {
   const [openDetails, setOpenDetails] = useState(false);
   return (
-    <Card>
+    <Card className="mb-3">
       <Card.Body>
         <div className="d-flex align-items-center justify-content-between mb-3">
           <FeatherIcon icon="clock" size={16} className="me-2" />

@@ -69,7 +69,11 @@ export interface KanbanBoardItem {
   tasks: KanbanBoardTask[];
 }
 
-export const kanbanBoardMembers = members.slice(0, 4);
+export const kanbanBoardMembers = {
+  admin: members[3],
+  members: members.slice(0, 4),
+  guests: members.slice(4, 8)
+};
 
 export const kanbanItems: KanbanBoardItem[] = [
   {

@@ -58,7 +58,7 @@ const Boards = () => {
           variant="primary"
           className="px-3 px-sm-5 px-md-10"
           as={Link}
-          to="#!"
+          to="/apps/kanban/create-board"
           startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
         >
           Create New Board
