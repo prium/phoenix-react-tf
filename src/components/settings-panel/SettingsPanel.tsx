@@ -15,6 +15,7 @@ import {
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import ChatWidgetVisibility from './ChatWidgetVisibility';
+import { RESET } from 'reducers/ConfigReducer';
 
 const SettingsPanel = () => {
   const { configDispatch } = useAppContext();
@@ -31,7 +32,7 @@ const SettingsPanel = () => {
   };
   const handleResetToDefault = () => {
     configDispatch({
-      type: 'RESET'
+      type: RESET
     });
   };
 

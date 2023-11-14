@@ -6,6 +6,7 @@ import { useChatContext } from 'providers/ChatProvider';
 import React, { useMemo } from 'react';
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { MARKED_AS_READ } from 'reducers/ChatReducer';
 
 const UserListitem = ({ conversation }: { conversation: Conversation }) => {
   const { currentConversation, chatDispatch } = useChatContext();
@@ -24,7 +25,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
 
   const markedAsRead = () => {
     chatDispatch({
-      type: 'MARKED_AS_READ',
+      type: MARKED_AS_READ,
       payload: { conversationId: conversation.id }
     });
   };

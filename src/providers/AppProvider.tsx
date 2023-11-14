@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { getColor, getItemFromStore } from 'helpers/utils';
 import { Config, initialConfig } from 'config';
-import { ACTIONTYPE, configReducer } from 'reducers/ConfigReducer';
+import { ACTIONTYPE, configReducer, SET_CONFIG } from 'reducers/ConfigReducer';
 
 interface AppContextInterFace {
   config: Config;
@@ -55,14 +55,14 @@ const AppProvider = ({ children }: PropsWithChildren) => {
 
   const setConfig = (payload: Partial<Config>) => {
     configDispatch({
-      type: 'SET_CONFIG',
+      type: SET_CONFIG,
       payload
     });
   };
 
   const toggleTheme = () => {
     configDispatch({
-      type: 'SET_CONFIG',
+      type: SET_CONFIG,
       payload: {
         theme: config.theme === 'dark' ? 'light' : 'dark'
       }

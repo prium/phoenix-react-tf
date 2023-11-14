@@ -16,6 +16,7 @@ import {
   faPaperPlane,
   faPaperclip
 } from '@fortawesome/free-solid-svg-icons';
+import { SENT_MESSAGE } from 'reducers/ChatReducer';
 
 const ChatContentFooter = () => {
   const { currentConversation, chatDispatch } = useChatContext();
@@ -27,7 +28,7 @@ const ChatContentFooter = () => {
   const sentMessage = () => {
     if (currentConversation) {
       chatDispatch({
-        type: 'SENT_MESSAGE',
+        type: SENT_MESSAGE,
         payload: {
           conversationId: currentConversation.id,
           message: messageText,
