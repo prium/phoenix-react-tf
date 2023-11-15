@@ -1,17 +1,16 @@
-import { Col, Form, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import EcomTotalOrdersCard from 'components/cards/EcomTotalOrdersCard';
 import EcomNewCustomersCard from 'components/cards/EcomNewCustomersCard';
 import EcomTopCouponsCard from 'components/cards/EcomTopCouponsCard';
 import EcomPayingVsNonPayingCard from 'components/cards/EcomPayingVsNonPayingCard';
 import EcomLatestReviewsTable from 'components/tables/EcomLatestReviewsTable';
-import EcomTopRegionsTable from 'components/tables/EcomTopRegionsTable';
 import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
-import EcomTotalSellsChart from 'components/charts/e-charts/EcomTotalSellsChart';
 import EcomStats from 'components/stats/EcomStats';
 import { mapMarkerPoints } from 'data/mapMarkerPoints';
 import EcomProjectionVsActual from 'components/modules/e-commerce/dashboard/EcomProjectionVsActual';
 import EcomReturningCustomerRate from 'components/modules/e-commerce/dashboard/EcomReturningCustomerRate';
 import EcomTotalSells from 'components/modules/e-commerce/dashboard/EcomTotalSells';
+import EcomTopRegions from 'components/modules/e-commerce/dashboard/EcomTopRegions';
 
 const Ecommerce = () => {
   return (
@@ -51,11 +50,7 @@ const Ecommerce = () => {
       </div>
       <Row className="gx-6">
         <Col xs={12} xl={6}>
-          <div className="mb-5 mt-7">
-            <h3> Top regions by revenue</h3>
-            <p className="text-700"> Where you generated most of the revenue</p>
-          </div>
-          <EcomTopRegionsTable />
+          <EcomTopRegions />
         </Col>
         <Col xs={12} xl={6}>
           <div className="mx-n4 mx-lg-n6 ms-xl-0 h-100">

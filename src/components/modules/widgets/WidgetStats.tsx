@@ -1,4 +1,3 @@
-import React from 'react';
 import WidgetsSectionTitle from './WidgetsSectionTitle';
 import { faPercentage } from '@fortawesome/free-solid-svg-icons';
 import AnalyticsStats from 'components/stats/AnalyticsStats';
@@ -16,10 +15,16 @@ import EcomTotalSells from '../e-commerce/dashboard/EcomTotalSells';
 import ZeroRoadMap from '../project-management/dashboard/ZeroRoadMap';
 import IssuesDiscovered from '../project-management/dashboard/IssuesDiscovered';
 import ProjectElevenProgress from '../project-management/dashboard/ProjectElevenProgress';
+import LeadConversion from '../crm/LeadConversion';
+import RevenueTarget from '../crm/RevenueTarget';
+import EmailCampaign from '../crm/analytics/EmailCampaign';
+import MarketingCampaign from '../crm/analytics/MarketingCampaign';
+import SalesTrends from '../crm/analytics/SalesTrends';
+import CallCampaignReport from '../crm/analytics/CallCampaignReport';
 
-const Stats = () => {
+const WidgetStats = () => {
   return (
-    <>
+    <div id="stats" className="widgets-scrollspy">
       <WidgetsSectionTitle
         title="Number Stats & Charts"
         subtitle="You can easily show your stats content by using these cards."
@@ -79,8 +84,41 @@ const Stats = () => {
           </Col>
         </Row>
       </div>
-    </>
+      <div className="mx-lg-n4">
+        <Row className="g-3 pt-3">
+          <Col xl={5}>
+            <LeadConversion />
+          </Col>
+          <Col xl={7}>
+            <RevenueTarget />
+          </Col>
+        </Row>
+      </div>
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-3 mt-3">
+        <Row className="gx-6">
+          <Col
+            md={6}
+            lg={12}
+            xl={6}
+            className="mb-5 mb-md-3 mb-lg-5 mb-xl-2 mb-xxl-3"
+          >
+            <EmailCampaign />
+          </Col>
+          <Col md={6} lg={12} xl={6} className="mb-1 mb-sm-0">
+            <MarketingCampaign />
+          </Col>
+        </Row>
+      </div>
+      <Row className="g-6 mt-0">
+        <Col md={6}>
+          <SalesTrends />
+        </Col>
+        <Col md={6}>
+          <CallCampaignReport />
+        </Col>
+      </Row>
+    </div>
   );
 };
 
-export default Stats;
+export default WidgetStats;

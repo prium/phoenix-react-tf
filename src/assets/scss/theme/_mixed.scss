@@ -514,6 +514,7 @@
 .widgets-scrollspy-nav {
   position: sticky;
   top: var(--#{$prefix}navbar-top-height);
+  z-index: 11;
   .nav {
     .nav-item {
       .nav-link {

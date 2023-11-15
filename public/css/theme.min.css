@@ -21132,6 +21132,7 @@ button,
 .widgets-scrollspy-nav {
   position: sticky;
   top: var(--phoenix-navbar-top-height);
+  z-index: 11;
 }
 .widgets-scrollspy-nav .nav .nav-item .nav-link.active {
   color: var(--phoenix-primary) !important;
@@ -29348,6 +29349,10 @@ a[href].bg-200:hover, a[href].bg-200:focus {
 
 .lead-details-scrollspy {
   scroll-margin-top: 130px;
+}
+
+.widgets-scrollspy {
+  scroll-margin-top: 150px;
 }
 
 /* -------------------------------------------------------------------------- */

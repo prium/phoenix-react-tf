@@ -2,14 +2,13 @@ import DatePicker from 'components/base/DatePicker';
 import EarlyBirdCard from 'components/cards/EarlyBirdCard';
 import ZeroRoadMap from 'components/modules/project-management/dashboard/ZeroRoadMap';
 import IssuesDiscovered from 'components/modules/project-management/dashboard/IssuesDiscovered';
-import ProjectDashboardTable from 'components/tables/ProjectDashboardTable';
-import ActivityTimeline from 'components/timelines/ActivityTimeline';
-import { activityTimelineData } from 'data/project-management/activityTimelineData';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import TodoList from 'components/modules/project-management/todo-list/TodoList';
 import { stats } from 'data/project-management/stats';
 import Stat from 'components/modules/project-management/dashboard/Stat';
 import ProjectElevenProgress from 'components/modules/project-management/dashboard/ProjectElevenProgress';
+import ProjectDashboard from 'components/modules/project-management/dashboard/ProjectDashboard';
+import ProjectActivityCard from 'components/cards/ProjectActivityCard';
 
 const ProjectManagement = () => {
   return (
@@ -70,25 +69,13 @@ const ProjectManagement = () => {
             <TodoList />
           </Col>
           <Col xs={12} xl={6} xxl={5}>
-            <Card className="h-100">
-              <Card.Body>
-                <Card.Title className="mb-1">
-                  <h3 className="text-1100">Activity</h3>
-                </Card.Title>
-                <p className="text-700 mb-4">
-                  Recent activity across all projects
-                </p>
-                <ActivityTimeline data={activityTimelineData} />
-              </Card.Body>
-            </Card>
+            <ProjectActivityCard />
           </Col>
         </Row>
       </div>
 
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 border-top border-300">
-        <h3>Projects</h3>
-        <p className="text-700 lh-sm mb-4">Brief summary of all projects</p>
-        <ProjectDashboardTable />
+        <ProjectDashboard />
       </div>
     </>
   );

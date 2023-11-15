@@ -13,7 +13,7 @@ const Settings = () => {
     <div className="mb-9">
       <Row className="g-6">
         <Col xs={12} xl={4}>
-          <SocialProfileCard avatar={profileImage} />
+          <SocialProfileCard avatar={profileImage} className="mb-5" />
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>

@@ -1,17 +1,16 @@
 import Scrollbar from 'components/base/Scrollbar';
-import React from 'react';
 import { Nav } from 'react-bootstrap';
 
 const WidgetsScrollspyNav = () => {
   return (
-    <div className="widgets-scrollspy-nav mt-n5 bg-white z-index-5 mx-n4 mx-lg-n6 border-bottom border-300">
+    <div className="widgets-scrollspy-nav mt-n5 bg-white mx-n4 mx-lg-n6 border-bottom border-300">
       <Scrollbar autoHeight>
         <Nav className="px-4 flex-nowrap">
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyStats"
-              data-to-scrollspy-id="scrollspyStats"
+              href="#stats"
+              data-to-scrollspy-id="stats"
             >
               Number Stats and Charts
             </Nav.Link>
@@ -19,8 +18,8 @@ const WidgetsScrollspyNav = () => {
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyTables"
-              data-to-scrollspy-id="scrollspyTables"
+              href="#tables"
+              data-to-scrollspy-id="tables"
             >
               Tables, Files, and Lists
             </Nav.Link>
@@ -28,8 +27,8 @@ const WidgetsScrollspyNav = () => {
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyEcommerce"
-              data-to-scrollspy-id="scrollspyEcommerce"
+              href="#e-commerce"
+              data-to-scrollspy-id="e-commerce"
             >
               E-commerce
             </Nav.Link>
@@ -37,8 +36,8 @@ const WidgetsScrollspyNav = () => {
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyUsers"
-              data-to-scrollspy-id="scrollspyUsers"
+              href="#users-and-feed"
+              data-to-scrollspy-id="users-and-feed"
             >
               Users & Feed
             </Nav.Link>
@@ -46,8 +45,8 @@ const WidgetsScrollspyNav = () => {
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyForms"
-              data-to-scrollspy-id="scrollspyForms"
+              href="#forms"
+              data-to-scrollspy-id="forms"
             >
               Forms
             </Nav.Link>
@@ -55,8 +54,8 @@ const WidgetsScrollspyNav = () => {
           <Nav.Item>
             <Nav.Link
               className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
-              href="#scrollspyOthers"
-              data-to-scrollspy-id="scrollspyOthers"
+              href="#others"
+              data-to-scrollspy-id="others"
             >
               Others
             </Nav.Link>
