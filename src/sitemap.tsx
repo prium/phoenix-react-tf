@@ -1254,6 +1254,13 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'widgets',
+        icon: 'server',
+        path: '/widgets',
+        active: true,
+        new: true
+      },
+      {
         name: 'multi-level',
         icon: 'layers',
         active: true,

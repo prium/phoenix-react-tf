@@ -174,6 +174,7 @@ import Calendar from 'pages/apps/calendar/Calendar';
 import Timeline from 'pages/pages/Timeline';
 import CalendarExample from 'pages/modules/components/CalendarExample';
 import DraggableExample from 'pages/modules/components/DraggableExample';
+import Widgets from 'pages/modules/Widgets';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -854,6 +855,10 @@ const routes: RouteObject[] = [
           {
             path: 'migrations',
             element: <Migrations />
+          },
+          {
+            path: 'widgets',
+            element: <Widgets />
           }
         ]
       },

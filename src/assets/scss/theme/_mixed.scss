@@ -483,6 +483,9 @@
   }
 }
 
+/*-----------------------------------------------
+|   faq
+-----------------------------------------------*/
 .faq-list {
   li {
     .fa-circle {
@@ -502,5 +505,24 @@
   }
   @include media-breakpoint-up(xl) {
     width: 55%;
+  }
+}
+
+/*-----------------------------------------------
+|   widgets
+-----------------------------------------------*/
+.widgets-scrollspy-nav {
+  position: sticky;
+  top: var(--#{$prefix}navbar-top-height);
+  z-index: 11;
+  .nav {
+    .nav-item {
+      .nav-link {
+        &.active {
+          color: var(--#{$prefix}primary) !important;
+          border-bottom: 1px solid var(--#{$prefix}primary) !important;
+        }
+      }
+    }
   }
 }

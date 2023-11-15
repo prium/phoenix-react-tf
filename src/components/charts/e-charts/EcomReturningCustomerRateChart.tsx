@@ -173,7 +173,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   grid: { left: 0, right: 8, top: '14%', bottom: 0, containLabel: true }
 });
 
-const EomReturningCustomerRateChart = () => {
+const EcomReturningCustomerRateChart = () => {
   const { getThemeColor } = useAppContext();
 
   return (
@@ -185,4 +185,4 @@ const EomReturningCustomerRateChart = () => {
   );
 };
 
-export default EomReturningCustomerRateChart;
+export default EcomReturningCustomerRateChart;

@@ -29,7 +29,11 @@ const Feed = () => {
       <div className="mb-9">
         <Row className="gy-3 gx-5 gx-xxl-6">
           <Col lg={5} xl={4} className="d-none d-lg-block">
-            <SocialProfileCard showAbout={true} avatar={profileImage} />
+            <SocialProfileCard
+              showAbout={true}
+              avatar={profileImage}
+              className="mb-5"
+            />
             <ProfileNavigation />
             <div className="mb-8 mt-6">
               <SocialMessages messages={messages} />
@@ -40,7 +44,7 @@ const Feed = () => {
             <Events events={events} title="Events" />
           </Col>
           <Col lg={7} xl={8}>
-            <FeedTextarea />
+            <FeedTextarea className="mb-5" />
             <SocialPosts posts={feedPosts} />
           </Col>
         </Row>
