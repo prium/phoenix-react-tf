@@ -1,4 +1,3 @@
-import React from 'react';
 import WidgetsSectionTitle from './WidgetsSectionTitle';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import EcomCartTable from 'components/tables/EcomCartTable';
@@ -14,7 +13,7 @@ import OrderDetailsSummaryCard from 'components/cards/OrderDetailsSummaryCard';
 
 const WidgetECommerce = () => {
   return (
-    <div id="e-commerce" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="E-commerce"
         subtitle="Find more cards which are dedicatedly made for E-commerce."

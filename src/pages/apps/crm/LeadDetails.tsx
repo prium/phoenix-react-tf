@@ -11,7 +11,6 @@ import { defaultBreadcrumbItems } from 'data/commonData';
 import { Col, Dropdown, Row } from 'react-bootstrap';
 import LeadAttachments from 'components/modules/crm/LeadAttachments';
 import LeadDetailsNavbar from 'components/modules/crm/LeadDetailsNavbar';
-import ScrollSpy from 'react-ui-scrollspy';
 import { useState } from 'react';
 import LeadDetailsOffcanvas from 'components/modules/crm/LeadDetailsOffcanvas';
 import {
@@ -20,6 +19,7 @@ import {
   faEnvelope,
   faThumbtack
 } from '@fortawesome/free-solid-svg-icons';
+import ScrollSpy from 'components/base/ScrollSpy';
 
 const LeadDetails = () => {
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
@@ -91,12 +91,37 @@ const LeadDetails = () => {
           </Col>
           <Col md={7} xl={8}>
             <div className="lead-details-container">
-              <LeadDetailsNavbar />
-              <ScrollSpy activeClass="active" offsetTop={40}>
-                <Tasks className="mb-8" />
-                <LeadDeals className="mb-8" />
-                <LeadEmails className="mb-8" />
-                <LeadAttachments />
+              <ScrollSpy>
+                <LeadDetailsNavbar />
+
+                <ScrollSpy.Content
+                  id="tasks"
+                  className="lead-details-scrollspy mb-8"
+                >
+                  <Tasks />
+                </ScrollSpy.Content>
+
+                <ScrollSpy.Content
+                  id="deals"
+                  className="lead-details-scrollspy mb-8"
+                  minTopValue={150}
+                >
+                  <LeadDeals />
+                </ScrollSpy.Content>
+
+                <ScrollSpy.Content
+                  id="emails"
+                  className="lead-details-scrollspy mb-8"
+                >
+                  <LeadEmails />
+                </ScrollSpy.Content>
+
+                <ScrollSpy.Content
+                  id="attachments"
+                  className="lead-details-scrollspy"
+                >
+                  <LeadAttachments />
+                </ScrollSpy.Content>
               </ScrollSpy>
             </div>
           </Col>

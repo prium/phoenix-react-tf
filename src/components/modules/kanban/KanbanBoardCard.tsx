@@ -8,7 +8,7 @@ import Avatar from 'components/base/Avatar';
 import { KanbanBoard } from 'data/kanban';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-const arr = [1, 2, 3];
+
 const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
   return (
     <Card className="overflow-hidden bg-transparent h-100 position-relative">

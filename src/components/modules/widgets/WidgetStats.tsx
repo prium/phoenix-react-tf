@@ -24,7 +24,7 @@ import CallCampaignReport from '../crm/analytics/CallCampaignReport';
 
 const WidgetStats = () => {
   return (
-    <div id="stats" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="Number Stats & Charts"
         subtitle="You can easily show your stats content by using these cards."

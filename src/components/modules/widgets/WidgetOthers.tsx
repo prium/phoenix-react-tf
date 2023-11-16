@@ -14,7 +14,7 @@ import LeadProfileCard from 'components/cards/LeadProfileCard';
 
 const WidgetOthers = () => {
   return (
-    <div id="others" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="Others"
         subtitle="Get more awesome cards for showing your different types of content.."
