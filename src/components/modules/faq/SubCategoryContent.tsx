@@ -21,7 +21,7 @@ const SubCategoryContent = () => {
       <Button
         onClick={() => setIsOpenOffcanvas(true)}
         variant="link"
-        className="d-md-none mb-6 mt-15 mt-md-6 fs-8 ps-0"
+        className="d-md-none mt-15 mt-md-6 fs-8 ps-0"
         startIcon={
           <FontAwesomeIcon icon={faChevronLeft} className="fs-9 me-2" />
         }
@@ -35,7 +35,7 @@ const SubCategoryContent = () => {
               <FaqItem key={item.question} item={item} type="topFaq" />
             ))}
           </ul>
-          <hr className="text-300" />
+          <hr className="text-300 mt-6" />
           <ul className="faq-list list-inline">
             {category.faqs.map(item => (
               <FaqItem key={item.question} item={item} />

@@ -69,7 +69,7 @@ const CalendarAddNewEventModal = () => {
                     name="pricingRadio"
                     defaultChecked
                   />
-                  <Form.Check.Label htmlFor="event">Free</Form.Check.Label>
+                  <Form.Check.Label htmlFor="event">Event</Form.Check.Label>
                 </Form.Check>
                 <Form.Check
                   type="radio"
@@ -77,7 +77,7 @@ const CalendarAddNewEventModal = () => {
                   className="form-check-inline"
                 >
                   <Form.Check.Input type="radio" name="pricingRadio" />
-                  <Form.Check.Label htmlFor="task">Paid</Form.Check.Label>
+                  <Form.Check.Label htmlFor="task">Task</Form.Check.Label>
                 </Form.Check>
               </div>
             </div>

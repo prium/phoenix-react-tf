@@ -17,12 +17,14 @@ import DealColumn from 'components/modules/crm/deals/DealColumn';
 import AddDealModal from 'components/modules/crm/deals/AddDealModal';
 import FilterDealsModal from 'components/modals/FilterDealsModal';
 import PhoenixDroppable from 'components/base/PhoenixDroppable';
+import DealsAddStageModal from 'components/modals/DealsAddStageModal';
 
 const Deals = () => {
   const { setContentClass } = useMainLayoutContext();
   const [dealColumns, setDealColumns] = useState(dealColumnsData);
   const [openAddDealModal, setOpenAddDealModal] = useState(false);
   const [openFilterDealModal, setOpenFilterDealModal] = useState(false);
+  const [openAddStageModal, setOpenAddStageModal] = useState(false);
 
   useEffect(() => {
     setContentClass('vh-100');
@@ -114,6 +116,17 @@ const Deals = () => {
               )}
             </PhoenixDroppable>
           ))}
+          <div className="deals-column flex-center flex-shrink-0">
+            <h3 className="mb-4">Add new stage</h3>
+            <Button
+              variant="primary"
+              size="sm"
+              startIcon={<FontAwesomeIcon icon={faPlus} />}
+              onClick={() => setOpenAddStageModal(true)}
+            >
+              New Stage
+            </Button>
+          </div>
         </div>
       </DragDropContext>
 
@@ -124,6 +137,10 @@ const Deals = () => {
       <FilterDealsModal
         show={openFilterDealModal}
         handleClose={() => setOpenFilterDealModal(false)}
+      />
+      <DealsAddStageModal
+        show={openAddStageModal}
+        handleClose={() => setOpenAddStageModal(false)}
       />
     </div>
   );
