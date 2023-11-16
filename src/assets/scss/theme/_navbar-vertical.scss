@@ -181,6 +181,7 @@ html:not(.navbar-vertical-collapsed) {
       .fa-caret-right {
         transform: scale(0.8);
         transition: transform 0.2s ease;
+        /*rtl:ignore*/
         [dir='rtl'] & {
           transform: scale(0.8) rotate(180deg);
         }
@@ -193,6 +194,7 @@ html:not(.navbar-vertical-collapsed) {
     &[aria-expanded='true'] .dropdown-indicator-icon {
       .fa-caret-right {
         transform: rotate(90deg) scale(0.8);
+        /*rtl:ignore*/
         [dir='rtl'] & {
           transform: rotate(-90deg) scale(0.8);
         }

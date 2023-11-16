@@ -273,6 +273,7 @@
 /* ------------------------------ font-awesome ------------------------------ */
 .fa-ul {
   [dir='rtl'] & {
+    right: initial;
     --fa-li-margin: -0.5em !important;
     &.pricing {
       margin-left: var(--fa-li-margin, 2.5em) !important;
