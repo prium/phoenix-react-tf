@@ -31940,6 +31940,13 @@ a[href].bg-200:hover, a[href].bg-200:focus {
   }
 }
 
+.deal-collapse-btn .fa-angle-down {
+  transition: 0.3s;
+}
+.deal-collapse-btn .fa-angle-down.show {
+  transform: rotate(180deg);
+}
+
 .pricing-column-title-box {
   height: 105px;
 }

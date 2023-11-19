@@ -97,7 +97,7 @@ const Deals = () => {
         </Row>
       </div>
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="flex-1 d-flex gap-4 scrollbar">
+        <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 flex-1 d-flex gap-4 scrollbar">
           {dealColumns.map(col => (
             <PhoenixDroppable key={col.id} droppableId={col.id}>
               {provided => (

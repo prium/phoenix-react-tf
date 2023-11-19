@@ -161,3 +161,11 @@
     padding-right: map-get($spacers, 6);
   }
 }
+.deal-collapse-btn {
+  .fa-angle-down {
+    transition: 0.3s;
+  }
+  .fa-angle-down.show {
+    transform: rotate(180deg);
+  }
+}
