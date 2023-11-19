@@ -54,7 +54,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
                 {route.iconSet === 'font-awesome' ? (
                   <FontAwesomeIcon
                     icon={route.icon as IconProp}
-                    className="fs-8 mx-1"
+                    transform={{ size: 16 }}
                   />
                 ) : (
                   <FeatherIcon icon={route.icon} size={16} />

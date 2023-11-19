@@ -1,5 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faHourglass } from '@fortawesome/free-regular-svg-icons';
+import { faHourglassHalf } from '@fortawesome/free-regular-svg-icons';
 import {
   Icon,
   UilChartPie,
@@ -514,7 +514,7 @@ export const routes: RouteItems[] = [
       {
         name: 'coming-soon',
         iconSet: 'font-awesome',
-        icon: faHourglass,
+        icon: faHourglassHalf,
         path: '/pages/coming-soon',
         pathName: 'coming-soon',
         active: true,
