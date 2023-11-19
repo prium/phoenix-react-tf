@@ -1,5 +1,29 @@
 export default [
   {
+    version: '1.2.0',
+    title: 'Theseus',
+    publishDate: '-',
+    logs: {
+      new: [
+        'PAGE : <code>Apps/CRM/Deals</code>',
+        'PAGE : <code>Apps/Kanban/Kanban</code>',
+        'PAGE : <code>Apps/Kanban/Boards</code>',
+        'PAGE : <code>Apps/Kanban/Create-Board</code>',
+        'PAGE : <code>Apps/Calendar</code>',
+        'PAGE : <code>Pages/Faq/Faq-Tab</code>',
+        'PAGE : <code>Pages/Landing/Alternate</code>',
+        'PAGE : <code>Pages/Timeline</code>',
+        'PAGE : <code>Pages/Coming-Soon</code>',
+        'PAGE : <code>Modules/Forms/Wizard</code>',
+        'PAGE : <code>Modules/Components/Calendar</code>',
+        'PAGE : <code>Modules/Components/Draggable</code>',
+        'PAGE : <code>Modules/Widgets</code>',
+        'FEATURE : <code>Chat Demo (floating widget)</code>'
+      ],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.1.0',
     title: 'Theseus',
     publishDate: '12 October, 2023',
