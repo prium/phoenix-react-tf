@@ -1,29 +1,18 @@
-import { Col, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import Lottie from 'lottie-react';
 import comingSoonLight from 'assets/img/animated-icons/coming-soon-light.json';
 import comingSoonDark from 'assets/img/animated-icons/coming-soon-dark.json';
-import comingSoonText from 'assets/img/spot-illustrations/39.png';
-import comingSoonTextDark from 'assets/img/spot-illustrations/dark_39.png';
+import comingSoonText from 'assets/img/spot-illustrations/40.png';
+import comingSoonTextDark from 'assets/img/spot-illustrations/dark_40.png';
 import { useAppContext } from 'providers/AppProvider';
-import { Link, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { cleanText } from 'helpers/utils';
+import Button from 'components/base/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const ComingSoon = () => {
-  const [pathName, setPathName] = useState('');
-  const { pathname } = useLocation();
-
   const {
     config: { theme }
   } = useAppContext();
-
-  useEffect(() => {
-    const nameString = pathname.split('/').pop()?.split('-').join(' ');
-    if (nameString) {
-      const name = cleanText(nameString);
-      setPathName(name);
-    }
-  }, [pathname]);
 
   return (
     <Row className="flex-center content-min-h pb-9">
@@ -46,31 +35,38 @@ const ComingSoon = () => {
                 <img
                   src={comingSoonText}
                   alt=""
-                  className="mb-5 w-100 w-xl-75 w-xxl-100 d-dark-none"
-                  style={{ maxWidth: 408 }}
+                  className="mb-5 w-75 w-lg-50 w-xl-75 w-xxl-100 d-dark-none"
+                  style={{ maxWidth: 415 }}
                 />
                 <img
                   src={comingSoonTextDark}
                   alt=""
-                  className="mb-5 w-100 w-xl-75 w-xxl-100 d-light-none"
-                  style={{ maxWidth: 408 }}
+                  className="mb-5 w-75 w-lg-50 w-xl-75 w-xxl-100 d-light-none"
+                  style={{ maxWidth: 415 }}
                 />
 
                 <h2 className="text-gray-800 fs-xl-6 mb-3">
-                  {pathName} page is under development.
+                  Get notified when we launch
                 </h2>
-                <p className="mb-6">
-                  This page is under development. We're making it a top priority
-                  to get all the pages from the newest HTML version of Phoenix
-                  over to the React JS version. Let's go!
+                <p className="mb-6 w-xxl-75">
+                  <b>Something in the way!</b> Subscribe to our newsletter to be
+                  the first to know about upcoming features and discounts.
                 </p>
-                <Link
-                  className="btn btn-primary"
-                  to="/documentation/getting-started"
-                  style={{ minWidth: 200 }}
-                >
-                  Getting Started
-                </Link>
+                <Row className="g-3 w-md-75 w-xl-100 w-xxl-75 mx-auto mx-xl-0">
+                  <Col className="ps-0">
+                    <Form.Control />
+                  </Col>
+                  <Col xs="auto" className="pe-0">
+                    <Button
+                      variant="primary"
+                      endIcon={
+                        <FontAwesomeIcon icon={faEnvelope} className="fs-10" />
+                      }
+                    >
+                      Subscribe
+                    </Button>
+                  </Col>
+                </Row>
               </div>
             </div>
           </Col>

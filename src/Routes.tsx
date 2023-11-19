@@ -57,7 +57,6 @@ import ChangeLog from 'pages/documentation/ChangeLog';
 import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
-// import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
 import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
@@ -175,6 +174,7 @@ import Timeline from 'pages/pages/Timeline';
 import CalendarExample from 'pages/modules/components/CalendarExample';
 import DraggableExample from 'pages/modules/components/DraggableExample';
 import Widgets from 'pages/modules/Widgets';
+import ComingSoon from 'pages/ComingSoon';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -447,6 +447,10 @@ const routes: RouteObject[] = [
               {
                 path: 'timeline',
                 element: <Timeline />
+              },
+              {
+                path: 'coming-soon',
+                element: <ComingSoon />
               },
               {
                 path: 'demo',
