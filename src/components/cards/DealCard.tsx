@@ -6,7 +6,6 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Deal } from 'data/crm/deals';
 import { currencyFormat } from 'helpers/utils';
-import { useState } from 'react';
 import { Card, Collapse, Form, ProgressBar, Table } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { UilHeadphones, UilUser } from '@iconscout/react-unicons';
@@ -14,9 +13,27 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import Badge, { BadgeBg } from 'components/base/Badge';
 import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
+import { useDealsContext } from 'providers/CrmDealsProvider';
 
-const DealCard = ({ deal }: { deal: Deal }) => {
-  const [openDetails, setOpenDetails] = useState(false);
+interface DealCardProps {
+  deal: Deal;
+  columnId: string;
+}
+
+const DealCard = ({ deal, columnId }: DealCardProps) => {
+  const { dealColumns, setDealColumns } = useDealsContext();
+  const handleOpenDetails = () => {
+    const updatedColumns = structuredClone(dealColumns);
+    const column = updatedColumns.find(c => c.id === columnId);
+    if (column) {
+      const targetDeal = column.deals.find(item => item.id === deal.id);
+      if (targetDeal) {
+        targetDeal.openDetails = !targetDeal.openDetails;
+      }
+    }
+    setDealColumns(updatedColumns);
+  };
+
   return (
     <Card className="mb-3">
       <Card.Body>
@@ -26,10 +43,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
           <p className="mb-0 fs-9 fw-semi-bold text-700 flex-1">
             {deal.date} . <span className="text-500">{deal.time}</span>
           </p>
-          <button
-            className="btn p-0"
-            onClick={() => setOpenDetails(!openDetails)}
-          >
+          <button className="btn p-0" onClick={handleOpenDetails}>
             <FontAwesomeIcon icon={faAngleDown} className="text-700 fs-8" />
           </button>
         </div>
@@ -42,7 +56,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
           </Link>
           <p
             className={classNames('fs-10 mb-0', {
-              'd-none': !openDetails
+              'd-none': !deal.openDetails
             })}
           >
             <FeatherIcon icon="grid" size={12} className="text-500 me-1" />
@@ -50,7 +64,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
           </p>
           <p
             className={classNames('ms-auto fs-9 text-1100 fw-semi-bold mb-0', {
-              'd-none': openDetails
+              'd-none': deal.openDetails
             })}
           >
             {currencyFormat(deal.revenue, { minimumFractionDigits: 2 })}
@@ -59,7 +73,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
 
         <div
           className={classNames('d-flex flex-between-center mb-2', {
-            'd-none': openDetails
+            'd-none': deal.openDetails
           })}
         >
           <div className="d-flex align-items-center">
@@ -72,7 +86,7 @@ const DealCard = ({ deal }: { deal: Deal }) => {
           </div>
         </div>
 
-        <Collapse in={openDetails}>
+        <Collapse in={deal.openDetails}>
           <div>
             <div className="d-flex gap-2 mb-5">
               <Badge variant="phoenix" bg={deal.status.variant as BadgeBg}>

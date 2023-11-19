@@ -59,7 +59,7 @@ const DealColumn = ({
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}
                 >
-                  <DealCard deal={item} key={item.id} />
+                  <DealCard deal={item} key={item.id} columnId={column.id} />
                 </div>
               </>
             )}

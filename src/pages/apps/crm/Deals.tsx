@@ -9,22 +9,37 @@ import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import SearchBox from 'components/common/SearchBox';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { dealColumnsData } from 'data/crm/deals';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { DragDropContext } from 'react-beautiful-dnd';
 import DealColumn from 'components/modules/crm/deals/DealColumn';
 import AddDealModal from 'components/modules/crm/deals/AddDealModal';
 import FilterDealsModal from 'components/modals/FilterDealsModal';
 import PhoenixDroppable from 'components/base/PhoenixDroppable';
 import DealsAddStageModal from 'components/modals/DealsAddStageModal';
+import DealsProvider, { useDealsContext } from 'providers/CrmDealsProvider';
+
+const index = () => {
+  return (
+    <DealsProvider data={dealColumnsData}>
+      <Deals />
+    </DealsProvider>
+  );
+};
 
 const Deals = () => {
   const { setContentClass } = useMainLayoutContext();
-  const [dealColumns, setDealColumns] = useState(dealColumnsData);
-  const [openAddDealModal, setOpenAddDealModal] = useState(false);
-  const [openFilterDealModal, setOpenFilterDealModal] = useState(false);
-  const [openAddStageModal, setOpenAddStageModal] = useState(false);
+  const {
+    dealColumns,
+    openAddDealModal,
+    setOpenAddDealModal,
+    openFilterDealModal,
+    setOpenFilterDealModal,
+    openAddStageModal,
+    setOpenAddStageModal,
+    handleDragEnd
+  } = useDealsContext();
 
   useEffect(() => {
     setContentClass('vh-100');
@@ -33,26 +48,6 @@ const Deals = () => {
       setContentClass('');
     };
   }, []);
-
-  const handleDragEnd = (result: DropResult) => {
-    const { source, destination } = result;
-
-    if (destination) {
-      const updatedColumns = structuredClone(dealColumns);
-
-      const deal = updatedColumns
-        .find(column => column.id === source.droppableId)
-        ?.deals.splice(source.index, 1)[0];
-
-      if (deal) {
-        updatedColumns
-          .find(column => column.id === destination.droppableId)
-          ?.deals.splice(destination.index, 0, deal);
-      }
-
-      setDealColumns(updatedColumns);
-    }
-  };
 
   return (
     <div className="d-flex flex-column h-100">
@@ -146,4 +141,4 @@ const Deals = () => {
   );
 };
 
-export default Deals;
+export default index;
