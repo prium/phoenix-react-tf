@@ -1,4 +1,3 @@
-import React from 'react';
 import WidgetsSectionTitle from './WidgetsSectionTitle';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row } from 'react-bootstrap';
@@ -17,7 +16,7 @@ const options = [
 
 const WidgetForms = () => {
   return (
-    <div id="forms" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="Forms"
         subtitle="Get different types of data from the user by using Phoenix's customizable form."

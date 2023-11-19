@@ -9,6 +9,7 @@ export interface Deal {
   closingTime: string;
   company: string;
   agent: string;
+  openDetails?: boolean;
   status: {
     label: string;
     variant: string;

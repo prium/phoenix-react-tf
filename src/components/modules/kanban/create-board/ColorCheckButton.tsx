@@ -2,7 +2,7 @@ import { faPlus, faShuffle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
-import { getRandomNumber, invertHex } from 'helpers/utils';
+import { getColorByBgColor, getRandomNumber } from 'helpers/utils';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
 import { colors } from './BackgroundColorForm';
@@ -55,7 +55,7 @@ export const CustomColorButton = () => {
         startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
         style={{
           background: color,
-          color: invertHex(color)
+          color: color && getColorByBgColor(color)
         }}
       >
         Custom Color
@@ -99,7 +99,7 @@ export const RandomColorButton = () => {
         startIcon={<FontAwesomeIcon icon={faShuffle} className="me-2" />}
         style={{
           background: color,
-          color: color && invertHex(color)
+          color: color && getColorByBgColor(color)
         }}
       >
         Random

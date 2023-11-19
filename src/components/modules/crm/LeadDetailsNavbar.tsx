@@ -1,3 +1,4 @@
+import ScrollSpy from 'components/base/ScrollSpy';
 import { Nav } from 'react-bootstrap';
 
 const LeadDetailsNavbar = () => {
@@ -5,32 +6,24 @@ const LeadDetailsNavbar = () => {
     <div className="pt-3 pb-4 px-0 sticky-top bg-soft nav-underline-scrollspy z-index-5">
       <Nav className="nav-underline">
         <Nav.Item>
-          <Nav.Link className="pt-0" href="#tasks" data-to-scrollspy-id="tasks">
+          <ScrollSpy.NavLink className="pt-0" href="#tasks">
             Tasks
-          </Nav.Link>
+          </ScrollSpy.NavLink>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="pt-0" href="#deals" data-to-scrollspy-id="deals">
+          <ScrollSpy.NavLink className="pt-0" href="#deals">
             Deals
-          </Nav.Link>
+          </ScrollSpy.NavLink>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link
-            className="pt-0"
-            href="#emails"
-            data-to-scrollspy-id="emails"
-          >
+          <ScrollSpy.NavLink className="pt-0" href="#emails">
             Emails
-          </Nav.Link>
+          </ScrollSpy.NavLink>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link
-            className="pt-0"
-            href="#attachments"
-            data-to-scrollspy-id="attachments"
-          >
+          <ScrollSpy.NavLink className="pt-0" href="#attachments">
             Attachments
-          </Nav.Link>
+          </ScrollSpy.NavLink>
         </Nav.Item>
       </Nav>
     </div>

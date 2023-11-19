@@ -11,7 +11,13 @@ interface FilterDealsModalProps {
 
 const FilterDealsModal = ({ show, handleClose }: FilterDealsModalProps) => {
   return (
-    <Modal show={show} onHide={handleClose} className="p-0" centered>
+    <Modal
+      show={show}
+      onHide={handleClose}
+      className="p-0"
+      centered
+      contentClassName="border"
+    >
       <Modal.Header className="border-200 p-4">
         <h5 className="modal-title text-1000 fs-6 lh-sm">Filter</h5>
         <Button className="p-1" onClick={handleClose}>

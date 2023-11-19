@@ -32,7 +32,7 @@ const AlternateTestimonialCarousel = () => {
   return (
     <div className="testimonial-carousel position-relative dark__bg-1100">
       <div
-        className="bg-holder d-none d-md-block"
+        className="bg-holder d-none d-xl-block"
         style={{
           backgroundImage: `url(${bg39})`,
           backgroundSize: '186px',

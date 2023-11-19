@@ -144,6 +144,7 @@
     left: 53%;
     .hero-image-container-bg {
       left: -23%;
+      /*rtl:ignore*/
       [dir='rtl'] & {
         transform: scaleX(-1);
       }
@@ -213,15 +214,16 @@
   .hero-image-container-bg {
     width: 130%;
     left: -15%;
-    @include media-breakpoint-up(lg) {
-      width: 120%;
-      bottom: 0;
-      left: unset;
-    }
+    /*rtl:ignore*/
     [dir='rtl'] & {
       transform: scaleX(-1);
       padding-left: 0;
       padding-right: map-get($spacers, 4);
+    }
+    @include media-breakpoint-up(lg) {
+      width: 120%;
+      bottom: 0;
+      left: unset;
     }
   }
   .hero-image-shadow {
@@ -245,6 +247,7 @@
 }
 
 .pricing-list {
+  /*rtl:ignore*/
   [dir='rtl'] & {
     margin: 0 !important;
   }
@@ -296,6 +299,10 @@
     .lottie {
       width: 140%;
       height: 100%;
+      /*rtl:ignore*/
+      [dir='rtl'] & {
+        transform: scaleX(-1);
+      }
       @include media-breakpoint-up(lg) {
         width: 47rem;
         height: 47rem;
@@ -308,21 +315,20 @@
         width: 78.125rem;
         height: 78.125rem;
       }
-      [dir='rtl'] & {
-        transform: scaleX(-1);
-      }
     }
     img {
       left: 20%;
       top: 50%;
       width: 50%;
+
+      /*rtl:ignore*/
+      [dir='rtl'] & {
+        transform: scaleX(-1);
+      }
       @include media-breakpoint-up(lg) {
         left: 14%;
         top: 50%;
         width: 40%;
-      }
-      [dir='rtl'] & {
-        transform: scaleX(-1);
       }
     }
   }

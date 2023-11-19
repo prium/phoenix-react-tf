@@ -5,6 +5,7 @@ import {
   faTrash
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames';
 import Button from 'components/base/Button';
 import { Schedule } from 'data/calendarEvents';
 import dayjs from 'dayjs';
@@ -32,7 +33,12 @@ const CalendarEventModal = () => {
   };
 
   return (
-    <Modal centered show={!!selectedEvent} onHide={handleClose}>
+    <Modal
+      centered
+      show={!!selectedEvent}
+      onHide={handleClose}
+      contentClassName="border"
+    >
       <Modal.Header className="ps-card border-bottom">
         <div>
           <Modal.Title className="modal-title text-1000 mb-0">
@@ -60,7 +66,11 @@ const CalendarEventModal = () => {
             </p>
           </div>
         )}
-        <div className="mt-4 ${event.extendedProps.location ? 'border-bottom pb-3' : ''}">
+        <div
+          className={classNames('mt-4', {
+            'border-bottom pb-3': selectedEvent?.extendedProps.location
+          })}
+        >
           <h5 className="mb-0 text-800">Date and Time</h5>
           <p className="mb-1 mt-2">
             {dayjs(selectedEvent?.start).format('dddd, MMMM D, YYYY, h:mm A')}

@@ -49,7 +49,7 @@ const DealColumn = ({
           </Dropdown>
         </div>
       </div>
-      <div className="scrollbar flex-1 d-flex flex-column gap-3">
+      <div className="scrollbar flex-1 d-flex flex-column">
         {column.deals.map((item, index) => (
           <Draggable key={item.id} draggableId={item.id} index={index}>
             {provided => (
@@ -59,7 +59,7 @@ const DealColumn = ({
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}
                 >
-                  <DealCard deal={item} key={item.id} />
+                  <DealCard deal={item} key={item.id} columnId={column.id} />
                 </div>
               </>
             )}

@@ -24,7 +24,7 @@ const WidgetTables = () => {
     sortable: true
   });
   return (
-    <div id="tables" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="Tables, Files, and Lists"
         subtitle="Phoenix's styled components are dedicatedly made for displaying your contents and lists."

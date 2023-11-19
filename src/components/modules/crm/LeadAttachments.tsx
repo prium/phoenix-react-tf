@@ -2,12 +2,9 @@ import classNames from 'classnames';
 import { attachments } from 'data/project-management/todoListData';
 import FileListItem from '../project-management/todo-list/FileListItem';
 
-const LeadAttachments = ({ className }: { className?: string }) => {
+const LeadAttachments = () => {
   return (
-    <div
-      className={classNames(className, 'lead-details-scrollspy')}
-      id="attachments"
-    >
+    <div>
       <h2 className="mb-4">Attachments</h2>
       {attachments.map((attachment, index) => (
         <FileListItem

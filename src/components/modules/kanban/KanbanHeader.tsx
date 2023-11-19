@@ -76,8 +76,14 @@ const KanbanHeader = () => {
             </Dropdown>
           </Col>
           <Col xs="auto" className="d-flex align-items-center gap-4">
-            <Avatar.Group total={kanbanBoardMembers.length} size="m">
-              {kanbanBoardMembers.map(member => (
+            <Avatar.Group
+              total={
+                kanbanBoardMembers.members.length +
+                kanbanBoardMembers.guests.length
+              }
+              size="m"
+            >
+              {kanbanBoardMembers.members.map(member => (
                 <AvatarDropdown user={member} size="m" key={member.id} />
               ))}
             </Avatar.Group>

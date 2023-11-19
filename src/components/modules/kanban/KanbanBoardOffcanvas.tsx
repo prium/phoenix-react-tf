@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import AvatarDropdown from 'components/common/AvatarDropdown';
-import { members } from 'data/users';
+import { kanbanBoardMembers } from 'data/kanban';
 import { useKanbanContext } from 'providers/KanbanProvider';
 import { Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -72,7 +72,7 @@ const KanbanBoardOffcanvas = () => {
       <Offcanvas.Body>
         <h4 className="text-1000 fw-semi-bold mb-3">Admins</h4>
         <div className="d-flex align-items-center gap-3 mb-5">
-          <AvatarDropdown user={members[0]} size="xl" />
+          <AvatarDropdown user={kanbanBoardMembers.admin} size="xl" />
           <div className="flex-1">
             <Link
               to="#!"
@@ -86,19 +86,16 @@ const KanbanBoardOffcanvas = () => {
 
         <h4 className="text-1000 fw-semi-bold mb-3">Members</h4>
         <div className="d-flex align-items-center gap-2 mb-3">
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
+          {kanbanBoardMembers.members.map(member => (
+            <AvatarDropdown user={member} size="m" key={member.id} />
+          ))}
         </div>
 
         <h4 className="text-1000 fw-semi-bold mb-3">Guests</h4>
         <div className="d-flex align-items-center gap-2 mb-7">
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
-          <AvatarDropdown user={members[0]} size="m" />
+          {kanbanBoardMembers.guests.map(member => (
+            <AvatarDropdown user={member} size="m" key={member.id} />
+          ))}
         </div>
 
         <div className="d-flex mb-3 border-bottom pb-3 gap-3">

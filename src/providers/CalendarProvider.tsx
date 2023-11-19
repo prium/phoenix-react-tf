@@ -16,6 +16,7 @@ export type CalendarView = 'dayGridMonth' | 'timeGridWeek';
 
 export interface CalendarState {
   calendarApi: CalendarApi | null;
+  title: string;
   view: CalendarView;
   selectedEvent: EventImpl | null;
   openNewEventModal: boolean;
@@ -32,6 +33,7 @@ export const CalendarContext = createContext({} as CalendarContextInterface);
 const CalendarProvider = ({ children }: PropsWithChildren) => {
   const initialState: CalendarState = {
     calendarApi: null,
+    title: '',
     view: 'dayGridMonth',
     selectedEvent: null,
     openNewEventModal: false,

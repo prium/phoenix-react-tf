@@ -62,7 +62,7 @@ const FaqTab = () => {
         onSelect={(key: string | null) => setActiveKey(key || '')}
         activeKey={activeKey}
       >
-        <Row className="gx-xl-8 gx-xxl-11 gy-6">
+        <Row className="gx-xl-8 gx-xxl-11">
           {breakpoints.up('md') && <CategoryTab />}
           <Col
             md={6}

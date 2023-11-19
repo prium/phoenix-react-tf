@@ -5,7 +5,7 @@ import {
   faEnvelope,
   faPaperclip,
   faRocket,
-  faScrewdriver,
+  faScrewdriverWrench,
   faSkullCrossbones,
   faStethoscope,
   faSwatchbook,
@@ -223,7 +223,7 @@ export const timelineData: Timeline[] = [
       {
         id: 31,
         time: '8:32pm',
-        icon: faScrewdriver,
+        icon: faScrewdriverWrench,
         iconColor: 'warning',
         title: 'To take the ants out',
         content:

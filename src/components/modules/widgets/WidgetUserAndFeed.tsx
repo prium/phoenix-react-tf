@@ -1,4 +1,3 @@
-import React from 'react';
 import WidgetsSectionTitle from './WidgetsSectionTitle';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import SocialCoverCard from 'components/cards/SocialCoverCard';
@@ -17,7 +16,7 @@ import ProfileNavigation from 'components/list-items/ProfileNavigation';
 
 const WidgetUserAndFeed = () => {
   return (
-    <div id="users-and-feed" className="widgets-scrollspy">
+    <div>
       <WidgetsSectionTitle
         title="Users & Feed"
         subtitle="User engagement and personalized content presentation."

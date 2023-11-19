@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SearchBox from 'components/common/SearchBox';
 import { faFilter, faPlus, faSort } from '@fortawesome/free-solid-svg-icons';
 
-const Tasks = ({ className }: { className: string }) => {
+const Tasks = () => {
   return (
-    <div className={classNames(className, 'lead-details-scrollspy')} id="tasks">
+    <div>
       <h2 className="mb-4"> Tasks</h2>
       <div className="d-flex align-items-center flex-wrap gap-x-3 gap-y-3 mb-3">
         <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />

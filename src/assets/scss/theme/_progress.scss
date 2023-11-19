@@ -13,6 +13,7 @@
 }
 .circle-progress-svg {
   transform: rotate(170deg);
+  /*rtl:ignore*/
   [dir='rtl'] & {
     transform: rotate(-170deg);
   }
