@@ -24539,6 +24539,12 @@ h3,
 .faq-subcategory-tab .nav-link.active .category-icon {
   color: var(--phoenix-primary) !important;
 }
+@media (min-width: 768px) {
+  .faq-subcategory-tab {
+    min-height: 100%;
+    height: 1px;
+  }
+}
 
 .empty-header {
   height: 60px;

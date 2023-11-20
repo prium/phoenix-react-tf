@@ -24,7 +24,7 @@ const SubCategoryTab = () => {
   return (
     <Col md={6} xl={5} xxl={4}>
       <Nav
-        className="faq-subcategory-tab w-sm-75 w-md-100 mx-auto mb-4 gap-3"
+        className="faq-subcategory-tab scrollbar align-content-start w-sm-75 w-md-100 mx-auto mb-4 gap-3"
         style={{ width: '90%' }}
       >
         {categories?.map(category => (
