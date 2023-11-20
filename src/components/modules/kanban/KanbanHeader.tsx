@@ -83,7 +83,7 @@ const KanbanHeader = () => {
               }
               size="m"
             >
-              {kanbanBoardMembers.members.map(member => (
+              {kanbanBoardMembers.members.slice(0, 3).map(member => (
                 <AvatarDropdown user={member} size="m" key={member.id} />
               ))}
             </Avatar.Group>

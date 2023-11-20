@@ -79,6 +79,7 @@ const Deals = () => {
               <SearchBox placeholder="Search by name" className="me-2" />
               <Form.Select className="w-auto">
                 <option value="deals">Deals</option>
+                <option value="dealss">Deals</option>
               </Form.Select>
               <Button
                 variant="phoenix-secondary"

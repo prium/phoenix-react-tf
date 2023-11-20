@@ -43,8 +43,8 @@ const CalendarHeader = () => {
 
   return (
     <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 border-y border-200">
-      <Row className="py-3 gy-3 gx-0">
-        <Col xs={6} md={4} className="order-1 d-flex align-items-center">
+      <Row className="py-3 gy-3 gx-0 justify-content-between">
+        <Col xs={6} md="auto" className="order-1 d-flex align-items-center">
           <Button
             onClick={() => handleCalendarUpdate('today')}
             variant="phoenix-primary"
@@ -56,7 +56,7 @@ const CalendarHeader = () => {
         </Col>
         <Col
           xs={12}
-          md={4}
+          md="auto"
           className="order-md-1 d-flex align-items-center justify-content-center"
         >
           <Button
@@ -77,11 +77,7 @@ const CalendarHeader = () => {
             <FontAwesomeIcon icon={faChevronRight} />
           </Button>
         </Col>
-        <Col
-          xs={6}
-          md={4}
-          className="ms-auto order-1 d-flex justify-content-end"
-        >
+        <Col xs={6} md="auto" className="order-1 d-flex justify-content-end">
           <ButtonGroup size="sm">
             <Button
               onClick={() => handleCalendarView('dayGridMonth')}
