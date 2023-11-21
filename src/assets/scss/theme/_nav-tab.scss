@@ -157,6 +157,10 @@
       }
     }
   }
+  @include media-breakpoint-up(md) {
+    min-height: 100%;
+    height: 1px;
+  }
 }
 .empty-header {
   height: 60px;

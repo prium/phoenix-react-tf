@@ -83,7 +83,7 @@ const KanbanHeader = () => {
               }
               size="m"
             >
-              {kanbanBoardMembers.members.map(member => (
+              {kanbanBoardMembers.members.slice(0, 3).map(member => (
                 <AvatarDropdown user={member} size="m" key={member.id} />
               ))}
             </Avatar.Group>
@@ -106,7 +106,7 @@ const KanbanHeader = () => {
                   </Nav.Link>
                 </Nav.Item>
               ))}
-              <Nav.Item>
+              <Nav.Item className="my-auto">
                 <Nav.Link
                   className="d-flex gap-2 align-items-center text-900 px-2 px-xl-3 fw-bold"
                   onClick={() => {
@@ -116,7 +116,7 @@ const KanbanHeader = () => {
                     });
                   }}
                 >
-                  <FontAwesomeIcon icon={faBars} />
+                  <FontAwesomeIcon icon={faBars} transform="up-2" />
                 </Nav.Link>
               </Nav.Item>
             </Nav>

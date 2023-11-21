@@ -70,7 +70,9 @@ const Boards = () => {
           to="#!"
         >
           <FontAwesomeIcon icon={faAnglesDown} className="me-sm-2" />
-          <span className="d-none d-sm-block">Import Bulk Tasks</span>
+          <span className="d-none d-sm-block white-space-nowrap">
+            Import Bulk Tasks
+          </span>
         </Button>
         <Button
           variant="phoenix-primary"

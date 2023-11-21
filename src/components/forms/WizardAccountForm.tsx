@@ -4,7 +4,7 @@ import React from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const WizardAccountForm = () => {
+const WizardAccountForm = ({ id }: { id: string }) => {
   const methods = useWizardFormContext<WizardFormData>();
   const { formData, onChange, validation } = methods;
 
@@ -76,11 +76,11 @@ const WizardAccountForm = () => {
         <Form.Check.Input
           type="checkbox"
           name="terms"
-          id="terms"
+          id={`${id}-terms`}
           checked={formData.accept_terms}
           onChange={onChange}
         />
-        <Form.Check.Label className="text-900" htmlFor="terms">
+        <Form.Check.Label className="text-900" htmlFor={`${id}-terms`}>
           I accept the <Link to="#!">terms</Link> and{' '}
           <Link to="#!">privacy policy</Link>
         </Form.Check.Label>

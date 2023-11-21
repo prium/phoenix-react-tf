@@ -17,9 +17,6 @@ const CreateBoard = () => {
         </p>
       </div>
       <Row className="kanban-create-board">
-        <Col xs={12} xl={6} xxl={5}>
-          <CreateBoardWizardForm />
-        </Col>
         <Col
           xs={12}
           xl={6}
@@ -36,6 +33,9 @@ const CreateBoard = () => {
             alt=""
             className="d-light-none mt-5 mb-6 mb-xl-0 position-sticky"
           />
+        </Col>
+        <Col xs={12} xl={6} xxl={5}>
+          <CreateBoardWizardForm />
         </Col>
       </Row>
     </div>

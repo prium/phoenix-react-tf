@@ -72,7 +72,7 @@ const ProgressTabExample = () => {
           <Tab.Content>
             <Tab.Pane eventKey={1}>
               <WizardForm step={1}>
-                <WizardAccountForm />
+                <WizardAccountForm id='progress'/>
               </WizardForm>
             </Tab.Pane>
             <Tab.Pane eventKey={2}>
@@ -145,7 +145,7 @@ const WithValidationExample = () => {
           <Tab.Content>
             <Tab.Pane eventKey={1}>
               <WizardForm step={1}>
-                <WizardAccountForm />
+                <WizardAccountForm  id='validation'/>
               </WizardForm>
             </Tab.Pane>
             <Tab.Pane eventKey={2}>
@@ -218,7 +218,7 @@ const ProgressTabExample = () => {
           <Tab.Content>
             <Tab.Pane eventKey={1}>
               <WizardForm step={1}>
-                <WizardAccountForm />
+                <WizardAccountForm id="progress" />
               </WizardForm>
             </Tab.Pane>
             <Tab.Pane eventKey={2}>
@@ -261,7 +261,7 @@ const WithValidationExample = () => {
           <Tab.Content>
             <Tab.Pane eventKey={1}>
               <WizardForm step={1}>
-                <WizardAccountForm />
+                <WizardAccountForm id="validation" />
               </WizardForm>
             </Tab.Pane>
             <Tab.Pane eventKey={2}>

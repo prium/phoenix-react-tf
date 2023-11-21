@@ -121,7 +121,7 @@
 
   .btn.active {
     --#{$prefix}btn-active-bg: #{map-get($dark-grays, '300')};
-    --#{$prefix}btn-active-color: red;
+    // --#{$prefix}btn-active-color: red;
   }
 
   /* ----------------------------- phoenix-buttons ---------------------------- */

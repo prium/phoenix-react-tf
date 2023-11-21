@@ -43,8 +43,16 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
           <p className="mb-0 fs-9 fw-semi-bold text-700 flex-1">
             {deal.date} . <span className="text-500">{deal.time}</span>
           </p>
-          <button className="btn p-0" onClick={handleOpenDetails}>
-            <FontAwesomeIcon icon={faAngleDown} className="text-700 fs-8" />
+          <button
+            className="btn p-0 deal-collapse-btn"
+            onClick={handleOpenDetails}
+          >
+            <FontAwesomeIcon
+              icon={faAngleDown}
+              className={classNames('text-700 fs-8', {
+                show: deal.openDetails
+              })}
+            />
           </button>
         </div>
         <div className="d-flex align-items-center mb-2">

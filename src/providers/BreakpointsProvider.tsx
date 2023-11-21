@@ -57,8 +57,8 @@ const BreakpointsProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     setBreakpoints({
-      up: bp => width > gridBreakpoints[bp],
-      down: bp => width < gridBreakpoints[bp]
+      up: bp => width >= gridBreakpoints[bp],
+      down: bp => width <= gridBreakpoints[bp]
     });
   }, [width]);
 

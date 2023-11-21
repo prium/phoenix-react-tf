@@ -13,11 +13,7 @@ import classNames from 'classnames';
 const SubCategoryContent = () => {
   const { setIsOpenOffcanvas } = useFaqTabContext();
   return (
-    <Tab.Content
-      className="position-sticky"
-      style={{ top: '8rem' }}
-      defaultValue="sale-101"
-    >
+    <Tab.Content style={{ top: '8rem' }} defaultValue="sale-101">
       <Button
         onClick={() => setIsOpenOffcanvas(true)}
         variant="link"

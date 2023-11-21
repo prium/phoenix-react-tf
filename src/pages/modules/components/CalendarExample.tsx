@@ -12,6 +12,7 @@ function Calendar() {
   return (
     <CalendarProvider>
       <FullCalendar
+        height={800}
         headerToolbar={{
           left: 'prev,next today',
           center: 'title',

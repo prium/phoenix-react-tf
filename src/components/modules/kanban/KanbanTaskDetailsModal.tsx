@@ -46,7 +46,7 @@ const KanbanTaskDetailsModal = ({
         fullscreen="md-down"
         centered
         className="modal-md p-0"
-        contentClassName="rounded-md-top-xl rounded-md-bottom-xl overflow-hidden"
+        contentClassName="rounded-md-top-xl rounded-md-bottom-xl overflow-hidden h-100"
         scrollable
       >
         <Modal.Header className="position-relative p-0" style={{ height: 200 }}>
@@ -60,11 +60,10 @@ const KanbanTaskDetailsModal = ({
             <CoverUpload />
           )}
         </Modal.Header>
-        <Modal.Body className="p-0 scrollbar">
-          {/* <ActionSection /> */}
-          <Row className="gy-4 py-0 gx-0">
-            <Col xs={12} lg={8}>
-              <Row className="position-sticky mt-0 top-0 gy-4 pb-3 gx-0 px-3">
+        <Modal.Body className="p-0 ">
+          <Row className="gy-4 py-0 gx-0 h-100">
+            <Col xs={12} lg={8} className="h-100 scrollbar">
+              <Row className="mt-0 top-0 gy-4 pb-3 gx-0 px-3">
                 <Col xs={4} sm={3}>
                   <h6 className="text-600 fw-bolder lh-sm mt-1">TITLE</h6>
                 </Col>
@@ -176,7 +175,7 @@ const KanbanTaskDetailsModal = ({
               </Row>
             </Col>
 
-            <Col xs={12} lg={4} className="border-start-lg">
+            <Col xs={12} lg={4} className="border-start-lg h-100 scrollbar">
               <div>
                 <div className="px-3">
                   <div>

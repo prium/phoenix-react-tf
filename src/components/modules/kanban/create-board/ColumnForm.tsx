@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import Button from 'components/base/Button';
 import PhoenixFloatingLabel from 'components/base/PhoenixFloatingLabel';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
 import { DragDropContext, Draggable, DropResult } from 'react-beautiful-dnd';
@@ -24,17 +24,27 @@ const ColumnItem = ({
   index: number;
 }) => {
   const { formData, setFormData } = useWizardFormContext<CreateBoardFormData>();
+  const [name, setName] = useState(formData.columns[index].name);
+
+  const handleBlur = () => {
+    setFormData(prev => ({
+      ...prev,
+      columns: prev.columns.map((column, ind) =>
+        ind === index ? { ...column, name } : column
+      )
+    }));
+  };
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement>,
     field: 'name' | 'color'
   ) => {
-    setFormData({
-      ...formData,
-      columns: formData.columns.map((column, ind) =>
+    setFormData(prev => ({
+      ...prev,
+      columns: prev.columns.map((column, ind) =>
         ind === index ? { ...column, [field]: e.target.value } : column
       )
-    });
+    }));
   };
 
   const handleClear = () => {
@@ -61,9 +71,11 @@ const ColumnItem = ({
         <Form.Control
           type="text"
           placeholder="Board Name"
-          value={formData.columns[index].name}
+          value={name}
+          onBlur={handleBlur}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            handleChange(e, 'name')
+            // handleChange(e, 'name')
+            setName(e.target.value)
           }
         />
       </PhoenixFloatingLabel>
@@ -135,7 +147,7 @@ const ColumnForm = () => {
                         {...provided.dragHandleProps}
                       >
                         <ColumnItem
-                          key={index}
+                          key={column.name}
                           className="mb-5"
                           label={`Column ${index + 1}`}
                           index={index}

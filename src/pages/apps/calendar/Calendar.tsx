@@ -41,6 +41,7 @@ const Calendar = () => {
       <CalendarHeader />
       <div className="mt-6 mb-9">
         <FullCalendar
+          height={800}
           select={info => {
             calendarDispatch({
               type: HANDLE_SELECT,
