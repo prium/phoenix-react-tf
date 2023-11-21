@@ -106,7 +106,7 @@ const KanbanHeader = () => {
                   </Nav.Link>
                 </Nav.Item>
               ))}
-              <Nav.Item className="my-auto">
+              <Nav.Item className="my-auto ms-auto">
                 <Nav.Link
                   className="d-flex gap-2 align-items-center text-900 px-2 px-xl-3 fw-bold"
                   onClick={() => {
