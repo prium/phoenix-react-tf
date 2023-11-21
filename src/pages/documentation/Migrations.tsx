@@ -66,14 +66,16 @@ const Migrations = () => {
                   ))}
                 </ul>
               </li>
-              <li>
-                <h6 className="d-inline-block">Remove</h6>
-                <ul>
-                  {migration.delete.map(file => (
-                    <li key={file}>{file}</li>
-                  ))}
-                </ul>
-              </li>
+              {migration.delete && (
+                <li>
+                  <h6 className="d-inline-block">Remove</h6>
+                  <ul>
+                    {migration.delete.map(file => (
+                      <li key={file}>{file}</li>
+                    ))}
+                  </ul>
+                </li>
+              )}
             </ul>
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
