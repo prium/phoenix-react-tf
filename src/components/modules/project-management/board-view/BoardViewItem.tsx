@@ -6,6 +6,7 @@ import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import React, { useState } from 'react';
 import BoardViewModal from './BoardViewModal';
 import { Project } from 'data/project-management/projects';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 const BoardViewItem = ({ project }: { project: Project }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
@@ -32,7 +33,7 @@ const BoardViewItem = ({ project }: { project: Project }) => {
               {project.status.label}
             </Badge>
             <div className="z-index-2">
-              <RevealDropdown btnClassName="btn-icon" icon="ellipsis-v">
+              <RevealDropdown btnClassName="btn-icon" icon={faEllipsisV}>
                 <ActionDropdownItems />
               </RevealDropdown>
             </div>
