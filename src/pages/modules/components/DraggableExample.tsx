@@ -1,13 +1,9 @@
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
+import PhoenixDroppable from 'components/base/PhoenixDroppable';
 import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 import { useState } from 'react';
-import {
-  DragDropContext,
-  Droppable,
-  Draggable,
-  DropResult
-} from 'react-beautiful-dnd';
+import { DragDropContext, Draggable, DropResult } from 'react-beautiful-dnd';
 import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -78,6 +74,7 @@ import {
   Draggable,
   DropResult
 } from 'react-beautiful-dnd';
+import PhoenixDroppable from 'components/base/PhoenixDroppable';
 
 interface ColumnDataType {
   id: string;
@@ -163,7 +160,7 @@ function Example() {
       <Row>
         {columns.map(list => (
           <Col lg={6} key={list.id}>
-            <Droppable key={list.id} droppableId={list.id}>
+            <PhoenixDroppable key={list.id} droppableId={list.id}>
               {provided => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   {list.tasks.map((task, index) => (
@@ -189,7 +186,7 @@ function Example() {
                   {provided.placeholder}
                 </div>
               )}
-            </Droppable>
+            </PhoenixDroppable>
           </Col>
         ))}
       </Row>
@@ -253,7 +250,7 @@ const Example = () => {
       <Row>
         {columns.map(list => (
           <Col lg={6} key={list.id}>
-            <Droppable key={list.id} droppableId={list.id}>
+            <PhoenixDroppable key={list.id} droppableId={list.id}>
               {provided => (
                 <div ref={provided.innerRef} {...provided.droppableProps}>
                   {list.tasks.map((task, index) => (
@@ -279,7 +276,7 @@ const Example = () => {
                   {provided.placeholder}
                 </div>
               )}
-            </Droppable>
+            </PhoenixDroppable>
           </Col>
         ))}
       </Row>

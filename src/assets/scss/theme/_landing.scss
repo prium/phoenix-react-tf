@@ -214,7 +214,6 @@
   .hero-image-container-bg {
     width: 130%;
     left: -15%;
-    /*rtl:ignore*/
     [dir='rtl'] & {
       transform: scaleX(-1);
       padding-left: 0;

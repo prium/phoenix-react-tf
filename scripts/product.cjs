@@ -16,7 +16,7 @@ const excludedFilesAndFolders = [
 ];
 const sourceDir = './'; // Current directory
 
-const output = fs.createWriteStream(`products/${name}-${version}.zip`);
+const output = fs.createWriteStream(`${name}-${version}.zip`);
 const archive = archiver('zip', {
   zlib: { level: 9 } // Set compression level
 });

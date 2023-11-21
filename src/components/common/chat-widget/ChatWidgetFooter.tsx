@@ -22,20 +22,22 @@ const ChatWidgetFooter = () => {
 
   const handleSumbit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    sentMessage({
-      message: messageText,
-      attachments: {
-        images: imageAttachments.map(imageAttachment =>
-          URL.createObjectURL(imageAttachment)
-        ),
-        file: fileAttachment
-          ? convertFileToAttachment(fileAttachment)
-          : undefined
-      }
-    });
-    setMessageText('');
-    setImageAttachments([]);
-    setFileAttachment(null);
+    if (messageText || fileAttachment || imageAttachments.length > 0) {
+      sentMessage({
+        message: messageText,
+        attachments: {
+          images: imageAttachments.map(imageAttachment =>
+            URL.createObjectURL(imageAttachment)
+          ),
+          file: fileAttachment
+            ? convertFileToAttachment(fileAttachment)
+            : undefined
+        }
+      });
+      setMessageText('');
+      setImageAttachments([]);
+      setFileAttachment(null);
+    }
   };
 
   return (

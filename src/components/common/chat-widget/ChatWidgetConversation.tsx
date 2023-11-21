@@ -55,14 +55,12 @@ const ChatWidgetConversation = () => {
           <hr className="my-4 border-dashed border-top border-300" />
           <div className="d-flex flex-column gap-2">
             {conversation.messages.map(message => (
-              <>
-                <Message
-                  message={message}
-                  user={conversation.user}
-                  key={message.id}
-                  showActions={false}
-                />
-              </>
+              <Message
+                message={message}
+                user={conversation.user}
+                key={message.id}
+                showActions={false}
+              />
             ))}
             <span ref={messageEndRef} />
           </div>

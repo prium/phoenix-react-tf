@@ -26,7 +26,10 @@ const ChatContentFooter = () => {
   const [imageAttachments, setImageAttachments] = useState<File[]>([]);
 
   const sentMessage = () => {
-    if (currentConversation) {
+    if (
+      currentConversation &&
+      (messageText || fileAttachment || imageAttachments.length > 0)
+    ) {
       chatDispatch({
         type: SENT_MESSAGE,
         payload: {

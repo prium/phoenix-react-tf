@@ -19,8 +19,8 @@ const HeroHeader = () => {
               className="pt-8 pb-6 position-relative z-index-5 text-center text-lg-start"
             >
               <h1 className="fs-3 fs-md-2 fs-xl-1 fw-black mb-4">
-                <span className="text-gradient-info me-3">Elegance</span>
-                for <br />
+                <span className="text-gradient-info me-3">Elegance</span> for{' '}
+                <br />
                 your web app
               </h1>
               <p className="mb-5 pe-xl-10">
