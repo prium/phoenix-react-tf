@@ -2,7 +2,7 @@ export default [
   {
     version: '1.2.0',
     title: 'Demetra',
-    publishDate: '21 Nov, 2023',
+    publishDate: '22 Nov, 2023',
     logs: {
       new: [
         'PAGE : <code>Apps/CRM/Deals</code>',

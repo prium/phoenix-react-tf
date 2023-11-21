@@ -37,11 +37,6 @@ const FullCalendar = ({ ...rest }: FullCalendarProps) => {
       selectable
       selectMirror
       direction={isRTL ? 'rtl' : 'ltr'}
-      views={{
-        week: {
-          eventLimit: 3
-        }
-      }}
       eventTimeFormat={{
         hour: 'numeric',
         minute: '2-digit',

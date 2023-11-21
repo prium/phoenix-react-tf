@@ -225,7 +225,6 @@ const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
     getThemeColor,
     config: { theme }
   } = useAppContext();
-
   return (
     <ReactEChartsCore
       ref={chartRef}
