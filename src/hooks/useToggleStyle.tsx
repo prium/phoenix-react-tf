@@ -1,6 +1,7 @@
 import { useAppContext } from 'providers/AppProvider';
 import { useEffect, useState } from 'react';
 import is from 'is_js';
+import { REFRESH } from 'reducers/ConfigReducer';
 
 const publicUrl = process.env.PUBLIC_URL;
 
@@ -63,7 +64,7 @@ const useToggleStyle = () => {
       'dark'
     );
     configDispatch({
-      type: 'REFRESH'
+      type: REFRESH
     });
   }, [theme]);
 

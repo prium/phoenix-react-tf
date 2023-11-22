@@ -1,4 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faHourglassHalf } from '@fortawesome/free-regular-svg-icons';
 import {
   Icon,
   UilChartPie,
@@ -45,7 +46,6 @@ export const routes: RouteItems[] = [
         name: 'home',
         icon: 'pie-chart',
         active: true,
-        hasNew: true,
         flat: true,
         pages: [
           {
@@ -67,8 +67,7 @@ export const routes: RouteItems[] = [
             path: '/dashboard/crm',
             pathName: 'crm',
             topNavIcon: 'phone',
-            active: true,
-            new: true
+            active: true
           },
           {
             name: 'social-feed',
@@ -216,7 +215,7 @@ export const routes: RouteItems[] = [
         name: 'CRM',
         icon: 'phone',
         active: true,
-        new: true,
+        hasNew: true,
         pages: [
           {
             name: 'analytics',
@@ -227,7 +226,9 @@ export const routes: RouteItems[] = [
           {
             name: 'deals',
             path: '/apps/crm/deals',
-            pathName: 'crm-deals'
+            pathName: 'crm-deals',
+            active: true,
+            new: true
           },
           {
             name: 'deal-details',
@@ -362,6 +363,32 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'kanban',
+        icon: 'trello',
+        new: true,
+        active: true,
+        pages: [
+          {
+            name: 'Kanban',
+            path: '/apps/kanban/kanban',
+            pathName: 'app-kanban',
+            active: true
+          },
+          {
+            name: 'boards',
+            path: '/apps/kanban/boards',
+            pathName: 'kanban-boards',
+            active: true
+          },
+          {
+            name: 'create board',
+            path: '/apps/kanban/create-board',
+            pathName: 'create-kanban-board',
+            active: true
+          }
+        ]
+      },
+      {
         name: 'social',
         icon: 'share-2',
         active: true,
@@ -384,7 +411,9 @@ export const routes: RouteItems[] = [
         name: 'calendar',
         icon: 'calendar',
         path: 'apps/calendar',
-        pathName: 'app-calendar'
+        pathName: 'app-calendar',
+        active: true,
+        new: true
       }
     ]
   },
@@ -403,6 +432,7 @@ export const routes: RouteItems[] = [
         name: 'faq',
         icon: 'help-circle',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'faq-accordion',
@@ -412,8 +442,10 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'faq-tab',
-            path: 'pages/faq/faq-tab',
-            pathName: 'faq-tab'
+            path: '/pages/faq/faq-tab',
+            pathName: 'faq-tab',
+            active: true,
+            new: true
           }
         ]
       },
@@ -421,6 +453,7 @@ export const routes: RouteItems[] = [
         name: 'landing',
         icon: 'globe',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'default',
@@ -431,7 +464,9 @@ export const routes: RouteItems[] = [
           {
             name: 'alternate',
             path: '/pages/landing/alternate',
-            pathName: 'landing-alternate'
+            pathName: 'landing-alternate',
+            active: true,
+            new: true
           }
         ]
       },
@@ -439,7 +474,6 @@ export const routes: RouteItems[] = [
         name: 'pricing',
         icon: 'tag',
         active: true,
-        hasNew: true,
         pages: [
           {
             name: 'pricing-column',
@@ -451,8 +485,7 @@ export const routes: RouteItems[] = [
             name: 'pricing-grid',
             path: 'pages/pricing/pricing-grid',
             pathName: 'pricing-grid',
-            active: true,
-            new: true
+            active: true
           }
         ]
       },
@@ -474,7 +507,18 @@ export const routes: RouteItems[] = [
         name: 'timeline',
         icon: 'clock',
         path: '/pages/timeline',
-        pathName: 'timeline-page'
+        pathName: 'timeline-page',
+        active: true,
+        new: true
+      },
+      {
+        name: 'coming-soon',
+        iconSet: 'font-awesome',
+        icon: faHourglassHalf,
+        path: '/pages/coming-soon',
+        pathName: 'coming-soon',
+        active: true,
+        new: true
       },
       {
         name: 'errors',
@@ -505,7 +549,6 @@ export const routes: RouteItems[] = [
         name: 'authentication',
         icon: 'lock',
         active: true,
-        hasNew: true,
         pages: [
           {
             name: 'simple',
@@ -558,7 +601,6 @@ export const routes: RouteItems[] = [
           {
             name: 'split',
             active: true,
-            new: true,
             pages: [
               {
                 name: 'sign-in',
@@ -607,7 +649,6 @@ export const routes: RouteItems[] = [
           {
             name: 'Card',
             active: true,
-            new: true,
             pages: [
               {
                 name: 'sign-in',
@@ -740,6 +781,7 @@ export const routes: RouteItems[] = [
         name: 'forms',
         icon: 'file-text',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'basic',
@@ -836,6 +878,13 @@ export const routes: RouteItems[] = [
             path: '/modules/forms/validation',
             pathName: 'forms-validation',
             active: true
+          },
+          {
+            name: 'wizard',
+            path: '/modules/forms/wizard',
+            pathName: 'forms-wizard',
+            active: true,
+            new: true
           }
         ]
       },
@@ -907,6 +956,7 @@ export const routes: RouteItems[] = [
         name: 'components',
         icon: 'package',
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'accordion',
@@ -943,6 +993,13 @@ export const routes: RouteItems[] = [
             pathName: 'components-buttons',
             path: '/modules/components/button',
             active: true
+          },
+          {
+            name: 'calendar',
+            pathName: 'components-calendar',
+            path: '/modules/components/calendar',
+            active: true,
+            new: true
           },
           {
             name: 'card',
@@ -991,6 +1048,13 @@ export const routes: RouteItems[] = [
             pathName: 'components-countup',
             path: '/modules/components/countup',
             active: true
+          },
+          {
+            name: 'draggable',
+            pathName: 'components-draggable',
+            path: '/modules/components/draggable',
+            active: true,
+            new: true
           },
           {
             name: 'modals',
@@ -1200,6 +1264,13 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'widgets',
+        icon: 'server',
+        path: '/widgets',
+        active: true,
+        new: true
+      },
+      {
         name: 'multi-level',
         icon: 'layers',
         active: true,
@@ -1352,8 +1423,7 @@ export const routes: RouteItems[] = [
         icon: 'fast-forward',
         path: '/migrations',
         pathName: 'migrations',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'showcase',

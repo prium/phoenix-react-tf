@@ -1,5 +1,42 @@
 export default [
   {
+    version: '1.2.0',
+    title: 'Demetra',
+    publishDate: '22 Nov, 2023',
+    logs: {
+      new: [
+        'PAGE : <code>Apps/CRM/Deals</code>',
+        'PAGE : <code>Apps/Kanban/Kanban</code>',
+        'PAGE : <code>Apps/Kanban/Boards</code>',
+        'PAGE : <code>Apps/Kanban/Create-Board</code>',
+        'PAGE : <code>Apps/Calendar</code>',
+        'PAGE : <code>Pages/Faq/Faq-Tab</code>',
+        'PAGE : <code>Pages/Landing/Alternate</code>',
+        'PAGE : <code>Pages/Timeline</code>',
+        'PAGE : <code>Pages/Coming-Soon</code>',
+        'PAGE : <code>Modules/Forms/Wizard</code>',
+        'PAGE : <code>Modules/Components/Calendar</code>',
+        'PAGE : <code>Modules/Components/Draggable</code>',
+        'PAGE : <code>Modules/Widgets</code>',
+        'COMPONENT : <code>FullCalendar</code>',
+        'COMPONENT : <code>PhoenixDroppable</code>',
+        'COMPONENT : <code>PhoenixFloatingLabel</code>',
+        'COMPONENT : <code>ScrollSpy</code>',
+        'FEATURE : <code>Chat Demo (floating widget)</code>',
+        'FEATURE : <code>Chat file and image attachments</code>'
+      ],
+      update: [
+        'PACKAGE: typescript to v5.2.2',
+        'PACKAGE: swiper to v11.0.3',
+        'PACKAGE: @iconscout/react-unicons to v2.0.2',
+        'PACKAGE: eslint-config-prettier to v9.0.0',
+        'PACKAGE: eslint-plugin-prettier to v5.0.1',
+        'PACKAGE: prettier to v3.0.3'
+      ],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.1.0',
     title: 'Theseus',
     publishDate: '12 October, 2023',

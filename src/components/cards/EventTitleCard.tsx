@@ -5,9 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarPlus } from '@fortawesome/free-regular-svg-icons';
 import { faHeart, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 
-const EventTitleCard = () => {
+const EventTitleCard = ({ className }: { className?: string }) => {
   return (
-    <Card className="mb-9">
+    <Card className={className}>
       <Card.Body>
         <h1 className="lh-sm fs-6 fs-xxl-4 mb-2">
           Brandmyth presents- Shironamhin 25 years celebration with symphony

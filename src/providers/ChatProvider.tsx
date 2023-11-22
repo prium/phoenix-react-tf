@@ -6,7 +6,7 @@ import React, {
   useContext,
   useReducer
 } from 'react';
-import { ACTIONTYPE, chatReducer } from 'reducers/ChatReducer';
+import { ACTIONTYPE, SET_CHAT_STATE, chatReducer } from 'reducers/ChatReducer';
 
 export type ConversationFilterType = 'all' | 'read' | 'unread';
 interface ChatProviderInterface {
@@ -46,14 +46,14 @@ const ChatProvider = ({
 
   const setShowConversationDetails = (value: boolean) => {
     chatDispatch({
-      type: 'SET_CHAT_STATE',
+      type: SET_CHAT_STATE,
       payload: { showConversationDetails: value }
     });
   };
 
   const setShowUserListOffcanvas = (value: boolean) => {
     chatDispatch({
-      type: 'SET_CHAT_STATE',
+      type: SET_CHAT_STATE,
       payload: { showUserListOffcanvas: value }
     });
   };

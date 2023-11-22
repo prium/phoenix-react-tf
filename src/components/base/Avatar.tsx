@@ -32,7 +32,8 @@ const Avatar = ({
   className,
   imageClassName,
   thumbnail,
-  children
+  children,
+  placeholder
 }: PropsWithChildren<AvatarProps>) => {
   return (
     <div
@@ -46,7 +47,7 @@ const Avatar = ({
           alt="avatar"
           className={classNames(imageClassName, {
             'img-thumbnail bg-white': thumbnail,
-            'avatar-placeholder': !src,
+            'avatar-placeholder': !src || placeholder,
             'rounded-circle': rounded === 'circle',
             'rounded-soft': rounded === 'soft'
           })}

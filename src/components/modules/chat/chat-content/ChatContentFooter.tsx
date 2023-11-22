@@ -16,6 +16,7 @@ import {
   faPaperPlane,
   faPaperclip
 } from '@fortawesome/free-solid-svg-icons';
+import { SENT_MESSAGE } from 'reducers/ChatReducer';
 
 const ChatContentFooter = () => {
   const { currentConversation, chatDispatch } = useChatContext();
@@ -25,15 +26,28 @@ const ChatContentFooter = () => {
   const [imageAttachments, setImageAttachments] = useState<File[]>([]);
 
   const sentMessage = () => {
-    if (currentConversation) {
+    if (
+      currentConversation &&
+      (messageText || fileAttachment || imageAttachments.length > 0)
+    ) {
       chatDispatch({
-        type: 'SENT_MESSAGE',
+        type: SENT_MESSAGE,
         payload: {
           conversationId: currentConversation.id,
-          message: messageText
+          message: messageText,
+          attachments: {
+            images: imageAttachments.map(imageAttachment =>
+              URL.createObjectURL(imageAttachment)
+            ),
+            file: fileAttachment
+              ? convertFileToAttachment(fileAttachment)
+              : undefined
+          }
         }
       });
       setMessageText('');
+      setImageAttachments([]);
+      setFileAttachment(null);
     }
   };
 
@@ -114,9 +128,12 @@ const ChatContentFooter = () => {
             className="d-none"
             type="file"
             id="attachments"
-            onChange={({ target: { files } }: ChangeEvent<HTMLInputElement>) =>
-              files && setFileAttachment(files[0])
-            }
+            accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip,.rar"
+            onChange={({
+              target: { files }
+            }: ChangeEvent<HTMLInputElement>) => {
+              files && setFileAttachment(files[0]);
+            }}
           />
         </div>
 

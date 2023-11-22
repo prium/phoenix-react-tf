@@ -209,3 +209,33 @@ export const getProgressColorVariant = (value: number) => {
     return 'success';
   }
 };
+
+export const getPriorityColor = (priority: string) => {
+  switch (priority.toLowerCase()) {
+    case 'urgent':
+      return 'danger';
+    case 'high':
+      return 'warning';
+    case 'medium':
+      return 'success';
+    case 'low':
+      return 'info';
+    default:
+      return 'primary';
+  }
+};
+
+export const invertHex = (hex: string) =>
+  `#${(Number(`0x1${hex.slice(1)}`) ^ 0xffffff)
+    .toString(16)
+    .substring(1)
+    .toUpperCase()}`;
+
+export const getColorByBgColor = (bgColor: string) => {
+  const rgba = hexToRgb(bgColor);
+  if (rgba[0] * 0.299 + rgba[1] * 0.587 + rgba[2] * 0.114 > 186) {
+    return 'black';
+  } else {
+    return 'white';
+  }
+};

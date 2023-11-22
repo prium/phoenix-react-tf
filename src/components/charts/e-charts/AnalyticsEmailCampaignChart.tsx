@@ -17,8 +17,8 @@ const tooltipFormatter = (params: any) => {
       el.color
     }"></span>
         ${el.axisValue} : ${
-    typeof el.value === 'object' ? el.value[1] : el.value
-  }
+          typeof el.value === 'object' ? el.value[1] : el.value
+        }
       </h6>
     </div>`;
 
@@ -225,7 +225,6 @@ const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
     getThemeColor,
     config: { theme }
   } = useAppContext();
-
   return (
     <ReactEChartsCore
       ref={chartRef}

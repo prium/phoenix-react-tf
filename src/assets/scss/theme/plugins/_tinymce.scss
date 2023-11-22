@@ -18,13 +18,6 @@
     background-color: transparent !important;
     @extend .scrollbar;
   }
-  &:not([dir='rtl']) {
-    .tox-toolbar__group {
-      &:not(:last-of-type) {
-        border: none !important;
-      }
-    }
-  }
   .tox-toolbar__group {
     &:first-child {
       padding-left: 0 !important;
@@ -39,6 +32,7 @@
       background-color: transparent !important;
       .tox-toolbar__primary {
         background-color: transparent !important;
+        /*rtl:ignore*/
         [dir='rtl'] & {
           justify-content: flex-end;
         }

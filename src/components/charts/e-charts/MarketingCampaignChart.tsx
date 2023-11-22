@@ -56,12 +56,10 @@ const getDefaultOptions = (
         color: getThemeColor('gray-200')
       }
     },
-    name: {
-      textStyle: {
-        color: getThemeColor('gray-700'),
-        fontWeight: 800,
-        fontSize: 10.2
-      }
+    axisName: {
+      color: getThemeColor('gray-700'),
+      fontWeight: 800,
+      fontSize: 10.2
     },
     indicator: [
       { name: 'SAT', max: 5000 },

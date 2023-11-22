@@ -14,11 +14,16 @@ import {
 interface SocialProfileCardProps {
   showAbout?: boolean;
   avatar: string;
+  className?: string;
 }
 
-const SocialProfileCard = ({ showAbout, avatar }: SocialProfileCardProps) => {
+const SocialProfileCard = ({
+  showAbout,
+  avatar,
+  className
+}: SocialProfileCardProps) => {
   return (
-    <Card className="mb-5">
+    <Card className={className}>
       <Card.Header
         className="position-relative mb-6"
         style={{ minHeight: '130px' }}

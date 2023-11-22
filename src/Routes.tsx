@@ -57,7 +57,6 @@ import ChangeLog from 'pages/documentation/ChangeLog';
 import NavsExample from 'pages/modules/components/NavsExample';
 import TabsExample from 'pages/modules/components/TabsExample';
 import NavbarExample from 'pages/modules/components/NavbarExample';
-import ComingSoon from 'pages/ComingSoon';
 import Ecommerce from 'pages/dashboard/ecommerce';
 import EcommerceLayout from 'layouts/EcommerceLayout';
 import Homepage from 'pages/apps/e-commerce/customer/Homepage';
@@ -163,6 +162,19 @@ import SplitTwoFA from 'pages/pages/authentication/split/TwoFA';
 import { Suspense, lazy } from 'react';
 import PhoenixLoader from 'components/common/PhoenixLoader';
 import Migrations from 'pages/documentation/Migrations';
+import Kanban from 'pages/apps/kanban/Kanban';
+import Boards from 'pages/apps/kanban/Boards';
+import CreateBoard from 'pages/apps/kanban/CreateBoard';
+import WizardExample from 'pages/modules/forms/WizardExample';
+import Deals from 'pages/apps/crm/Deals';
+import FaqTab from 'pages/faq/FaqTab';
+import Alternate from 'pages/pages/landing/Alternate';
+import Calendar from 'pages/apps/calendar/Calendar';
+import Timeline from 'pages/pages/Timeline';
+import CalendarExample from 'pages/modules/components/CalendarExample';
+import DraggableExample from 'pages/modules/components/DraggableExample';
+import Widgets from 'pages/modules/Widgets';
+import ComingSoon from 'pages/ComingSoon';
 
 const FontAwesomeExample = lazy(
   () => import('pages/modules/components/FontAwesomeExample')
@@ -250,7 +262,7 @@ const routes: RouteObject[] = [
                   },
                   {
                     path: 'deals',
-                    element: <ComingSoon />
+                    element: <Deals />
                   },
                   {
                     path: 'deal-details',
@@ -321,6 +333,23 @@ const routes: RouteObject[] = [
                 ]
               },
               {
+                path: 'kanban',
+                children: [
+                  {
+                    path: 'kanban',
+                    element: <Kanban />
+                  },
+                  {
+                    path: 'boards',
+                    element: <Boards />
+                  },
+                  {
+                    path: 'create-board',
+                    element: <CreateBoard />
+                  }
+                ]
+              },
+              {
                 path: 'chat',
                 element: <Chat />,
                 children: [
@@ -352,6 +381,10 @@ const routes: RouteObject[] = [
                 ]
               },
               {
+                path: 'calendar',
+                element: <Calendar />
+              },
+              {
                 path: 'email',
                 children: [
                   {
@@ -367,10 +400,6 @@ const routes: RouteObject[] = [
                     element: <Compose />
                   }
                 ]
-              },
-              {
-                path: 'calendar',
-                element: <ComingSoon />
               }
             ]
           },
@@ -390,7 +419,7 @@ const routes: RouteObject[] = [
                   },
                   {
                     path: 'faq-tab',
-                    element: <ComingSoon />
+                    element: <FaqTab />
                   }
                 ]
               },
@@ -417,6 +446,10 @@ const routes: RouteObject[] = [
               },
               {
                 path: 'timeline',
+                element: <Timeline />
+              },
+              {
+                path: 'coming-soon',
                 element: <ComingSoon />
               },
               {
@@ -584,6 +617,10 @@ const routes: RouteObject[] = [
                     element: <CountupExample />
                   },
                   {
+                    path: 'draggable',
+                    element: <DraggableExample />
+                  },
+                  {
                     path: 'modal',
                     element: <ModalExample />
                   },
@@ -618,6 +655,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'tooltips',
                     element: <TooltipExample />
+                  },
+                  {
+                    path: 'calendar',
+                    element: <CalendarExample />
                   },
                   {
                     path: 'navs-and-tabs/navs',
@@ -695,6 +736,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'validation',
                     element: <FormValidationExample />
+                  },
+                  {
+                    path: 'wizard',
+                    element: <WizardExample />
                   }
                 ]
               },
@@ -814,6 +859,10 @@ const routes: RouteObject[] = [
           {
             path: 'migrations',
             element: <Migrations />
+          },
+          {
+            path: 'widgets',
+            element: <Widgets />
           }
         ]
       },
@@ -877,7 +926,7 @@ const routes: RouteObject[] = [
           },
           {
             path: 'alternate',
-            element: <ComingSoon />
+            element: <Alternate />
           }
         ]
       },

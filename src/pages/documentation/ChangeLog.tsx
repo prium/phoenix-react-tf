@@ -42,12 +42,16 @@ const ChangeLog = () => {
               ))}
             </ul>
             {/* Update */}
-            <h6 className="d-inline-block">Update</h6>
-            <ul>
-              {changelog.logs.update.map(file => (
-                <li dangerouslySetInnerHTML={{ __html: file }} key={file} />
-              ))}
-            </ul>
+            {changelog.logs.update && (
+              <>
+                <h6 className="d-inline-block">Update</h6>
+                <ul>
+                  {changelog.logs.update.map(file => (
+                    <li dangerouslySetInnerHTML={{ __html: file }} key={file} />
+                  ))}
+                </ul>
+              </>
+            )}
 
             {/* Fix */}
             <h6 className="d-inline-block">Fix</h6>

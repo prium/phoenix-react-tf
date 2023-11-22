@@ -159,6 +159,7 @@ $utilities: map_merge(
       values: (
         top: $border-radius,
         top-lg: $border-radius-lg,
+        top-xl: $border-radius-xl,
         top-0: 0
       )
     ),
@@ -169,6 +170,7 @@ $utilities: map_merge(
       values: (
         end: $border-radius,
         end-lg: $border-radius-lg,
+        end-xl: $border-radius-xl,
         end-0: 0
       )
     ),
@@ -179,6 +181,7 @@ $utilities: map_merge(
       values: (
         bottom: $border-radius,
         bottom-lg: $border-radius-lg,
+        bottom-xl: $border-radius-xl,
         bottom-0: 0
       )
     ),
@@ -189,6 +192,7 @@ $utilities: map_merge(
       values: (
         start: $border-radius,
         start-lg: $border-radius-lg,
+        start-xl: $border-radius-xl,
         start-0: 0
       )
     ),

@@ -5,6 +5,7 @@
   background: linear-gradient(350.65deg, #35479f -9.32%, #9528ea 113.71%);
   .product-bg {
     background-size: 50%;
+    /*rtl:ignore*/
     [dir='rtl'] & {
       transform: scaleX(-1);
     }
@@ -15,6 +16,7 @@
   }
   .shape-bg {
     background-size: 50%;
+    /*rtl:ignore*/
     [dir='rtl'] & {
       transform: scaleX(-1);
     }

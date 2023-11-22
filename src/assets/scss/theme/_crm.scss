@@ -138,74 +138,14 @@
   }
 }
 
-.deals {
-  width: 146.06rem;
+.deals-column {
+  width: 22.875rem;
+  height: 100%;
   white-space: nowrap;
-  height: calc(100vh - $navbar-top-height - 15.625rem - $footer-height);
-  @include media-breakpoint-up(xl) {
-    height: calc(100vh - $navbar-top-height - 12.375rem - $footer-height);
-  }
-  .deals-col {
-    width: 22.875rem;
-    display: inline-block;
-    vertical-align: top;
-    height: 100%;
-    white-space: nowrap;
-    .deals-items-container {
-      .sortable-ghost {
-        position: relative;
-        &::before {
-          content: '';
-          height: 100%;
-          width: 100%;
-          background-color: var(--#{$prefix}ghost-bg);
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1000;
-          border-radius: $border-radius;
-          .dark & {
-            background-color: $gray-1100;
-          }
-        }
-      }
-      .sortable-drag {
-        .card {
-          border: 0 !important;
-          transform: rotate(-5deg) !important;
-          background-color: var(--#{$prefix}drag-bg);
-          top: 5px;
-        }
-      }
-      .dropdown-indicator-icon {
-        right: 1.5rem;
-        top: 1.25rem;
-        .fa-angle-down {
-          transition: 0.5s ease transform;
-        }
-      }
-      height: calc(100% - 5.18rem);
-      [aria-expanded='true'] {
-        &.dropdown-indicator-icon {
-          .fa-angle-down {
-            transform: rotate(180deg);
-          }
-        }
-        & ~ .deals-company-agent {
-          display: none !important;
-        }
-        & ~ .deals-items-head {
-          .deals-revenue {
-            display: none !important;
-          }
-          .deals-category {
-            display: flex !important;
-          }
-        }
-      }
-    }
-  }
+  display: flex;
+  flex-direction: column;
 }
+
 .kanban-deals-content {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -219,5 +159,13 @@
   @include media-breakpoint-up(lg) {
     padding-left: map-get($spacers, 6);
     padding-right: map-get($spacers, 6);
+  }
+}
+.deal-collapse-btn {
+  .fa-angle-down {
+    transition: 0.3s;
+  }
+  .fa-angle-down.show {
+    transform: rotate(180deg);
   }
 }

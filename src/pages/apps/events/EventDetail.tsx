@@ -25,7 +25,7 @@ const EventDetail = () => {
       />
       <Row className="gx-lg-9">
         <Col xl={8} className="border-end-xl border-300">
-          <EventTitleCard />
+          <EventTitleCard className="mb-9" />
           <h2 className="mb-3">About this event</h2>
           <p className="text-justify text-800 mb-6 mb-xxl-8">
             The Festival Season hopes to continue its rescheduled events in 2023

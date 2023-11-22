@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import FilterTab, { FilterTabItem } from 'components/common/FilterTab';
 import SearchBox from 'components/common/SearchBox';
 import LeadEmailsTable, {
@@ -9,7 +8,7 @@ import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
 import React, { ChangeEvent, useMemo } from 'react';
 
-const LeadEmails = ({ className }: { className?: string }) => {
+const LeadEmails = () => {
   const table = useAdvanceTable({
     data: dealEmailsTableData,
     columns: leadEmailsColumns,
@@ -64,10 +63,7 @@ const LeadEmails = ({ className }: { className?: string }) => {
   };
 
   return (
-    <div
-      className={classNames(className, 'lead-details-scrollspy')}
-      id="emails"
-    >
+    <div>
       <h2 className="mb-2">Emails</h2>
       <AdvanceTableProvider {...table}>
         <FilterTab tabItems={tabItems} />

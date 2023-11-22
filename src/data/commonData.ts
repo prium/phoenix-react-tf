@@ -30,6 +30,16 @@ export const monthsShort = [
   'Dec'
 ];
 
+export const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+];
+
 export const defaultBreadcrumbItems: PageBreadcrumbItem[] = [
   {
     label: 'Page 1',

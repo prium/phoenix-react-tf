@@ -54,7 +54,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
                 {route.iconSet === 'font-awesome' ? (
                   <FontAwesomeIcon
                     icon={route.icon as IconProp}
-                    className="fs-8 mx-1"
+                    transform={{ size: 16 }}
                   />
                 ) : (
                   <FeatherIcon icon={route.icon} size={16} />
@@ -71,7 +71,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
             </>
           ) : (
             <>
-              <span className="nav-link-text ">{capitalize(route.name)}</span>
+              <span className="nav-link-text">{capitalize(route.name)}</span>
               {route.new && (
                 <Badge variant="phoenix" bg="info" className="ms-2">
                   New

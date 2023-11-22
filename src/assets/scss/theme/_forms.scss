@@ -6,7 +6,13 @@
   .form-check & {
     padding-left: 0 !important;
   }
-  &.form-label-bold {
+  &.form-label-header {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    padding-left: 0 !important;
+    line-height: $line-height-base !important;
+    color: var(--#{$prefix}gray-1000) !important;
+    text-transform: none !important;
   }
 }
 .form-control {
@@ -228,5 +234,19 @@ select:-webkit-autofill:focus {
         border-color: #{map-get($dark-grays, '300')};
       }
     }
+  }
+}
+
+.phoenix-form-floating {
+  .form-floating-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .form-floating-start-icon {
+    left: 1rem;
+  }
+  .form-floating-end-icon {
+    right: 0.5rem;
   }
 }

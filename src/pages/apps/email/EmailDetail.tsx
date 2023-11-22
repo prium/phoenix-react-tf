@@ -135,7 +135,6 @@ const EmailDetail = () => {
                       format: 'pdf'
                     }}
                     size="xl"
-                    type="secondary"
                   />
                 </Col>
                 <Col xs="auto" className="me-3">
@@ -147,7 +146,6 @@ const EmailDetail = () => {
                       preview: generic41
                     }}
                     size="xl"
-                    type="secondary"
                   />
                 </Col>
               </Row>

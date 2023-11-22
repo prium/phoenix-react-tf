@@ -5,15 +5,19 @@ import { Message as MessageType, User, actions } from 'data/chat';
 import useLightbox from 'hooks/useLightbox';
 import MessageActionButtons from './MessageActionButtons';
 import MessageAttachments from './MessageAttachments';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
+import AttachmentPreview from 'components/common/AttachmentPreview';
 
 interface MessageProps {
   message: MessageType;
   user: User;
+  showActions?: boolean;
 }
 
-const Message = ({ message, user }: MessageProps) => {
+const Message = ({ message, user, showActions = true }: MessageProps) => {
   const { lightboxProps, openLightbox } = useLightbox(
-    message.attachments || []
+    message.attachments?.images || []
   );
 
   return (
@@ -23,7 +27,11 @@ const Message = ({ message, user }: MessageProps) => {
           'justify-content-end': message.type === 'sent'
         })}
       >
-        <div className="w-100 w-xxl-75">
+        <div
+          className={classNames('w-100', {
+            'w-xxl-75': showActions
+          })}
+        >
           <div
             className={classNames('d-flex hover-actions-trigger', {
               'flex-end-center': message.type === 'sent'
@@ -37,7 +45,7 @@ const Message = ({ message, user }: MessageProps) => {
               />
             )}
 
-            {message.type === 'sent' && (
+            {message.type === 'sent' && showActions && (
               <MessageActionButtons actions={actions} variant="sent" />
             )}
 
@@ -51,19 +59,29 @@ const Message = ({ message, user }: MessageProps) => {
                   'sent-message-content light': message.type === 'sent',
                   'received-message-content border':
                     message.type === 'received',
-                  attachments: message.attachments && !message.message
+                  attachments:
+                    Number(message.attachments?.images?.length) > 0 &&
+                    !message.message
                 })}
               >
                 {message.message && <p className="mb-0">{message.message}</p>}
-                {message.attachments && (
+                {message.attachments?.images && (
                   <MessageAttachments
-                    attachments={message.attachments}
+                    attachments={message.attachments.images}
                     openLightbox={openLightbox}
+                  />
+                )}
+                {message.attachments?.file && (
+                  <AttachmentPreview
+                    attachment={message.attachments.file}
+                    variant={
+                      message.type === 'received' ? 'primary' : 'secondary'
+                    }
                   />
                 )}
               </div>
             </div>
-            {message.type === 'received' && (
+            {message.type === 'received' && showActions && (
               <MessageActionButtons
                 actions={actions.slice(1)}
                 variant="received"
@@ -71,12 +89,15 @@ const Message = ({ message, user }: MessageProps) => {
             )}
           </div>
           <div
-            className={classNames({
+            className={classNames('d-flex gap-1 fs-10', {
               'ms-7': message.type === 'received',
-              'text-end': message.type === 'sent'
+              'justify-content-end': message.type === 'sent'
             })}
           >
-            <p className="mb-0 fs-10 text-600 fw-semi-bold">{message.time}</p>
+            <p className="mb-0 text-600 fw-semi-bold">{message.time}</p>
+            {message.readAt && (
+              <FontAwesomeIcon icon={faCheckDouble} className="text-success" />
+            )}
           </div>
           <Lightbox {...lightboxProps} />
         </div>

@@ -12,6 +12,7 @@ import ConversationStarter from './ConversationStarter';
 import ChatContentFooter from './ChatContentFooter';
 import Message from '../message';
 import Scrollbar from 'components/base/Scrollbar';
+import { SET_CHAT_STATE } from 'reducers/ChatReducer';
 
 const ChatContent = () => {
   const {
@@ -28,7 +29,7 @@ const ChatContent = () => {
 
   useEffect(() => {
     chatDispatch({
-      type: 'SET_CHAT_STATE',
+      type: SET_CHAT_STATE,
       payload: {
         showConversationDetails: false,
         showUserListOffcanvas: false

@@ -14,6 +14,8 @@ import {
   faPalette,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
+import ChatWidgetVisibility from './ChatWidgetVisibility';
+import { RESET } from 'reducers/ConfigReducer';
 
 const SettingsPanel = () => {
   const { configDispatch } = useAppContext();
@@ -30,7 +32,7 @@ const SettingsPanel = () => {
   };
   const handleResetToDefault = () => {
     configDispatch({
-      type: 'RESET'
+      type: RESET
     });
   };
 
@@ -69,6 +71,7 @@ const SettingsPanel = () => {
       <Offcanvas.Body className="px-card scrollbar">
         <ColorScheme />
         <RTLMode />
+        <ChatWidgetVisibility />
         <NavigationType />
         <VerticalNavbarAppearance />
         <HorizontalNavbarShape />
