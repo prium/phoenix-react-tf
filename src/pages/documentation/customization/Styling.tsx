@@ -130,7 +130,7 @@ const usingCssVariablesCode = `
         ...
         ...
       }
-      .dark{
+      [data-bs-theme="dark"]{
         --phoenix-primary: #{$danger};
         --phoenix-primary-rgb: #{to-rgb($danger)};
         .card{

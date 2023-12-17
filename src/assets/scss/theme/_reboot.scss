@@ -105,28 +105,14 @@ samp {
   top: 1px;
 }
 
-.dark {
+[data-bs-theme="dark"] {
   .d-dark-none {
     display: none;
   }
 }
 
-html:not(.dark) {
+html:not([data-bs-theme="dark"]) {
   .d-light-none {
     display: none;
   }
 }
-
-// .dark{
-//   ::-webkit-scrollbar{
-//     @extend .scrollbar;
-//     &-thumb{
-//       background-color: var(--#{$prefix}500);
-//       border-radius: $border-radius-lg;
-//     }
-//   }
-// }
-
-// .fa-li {
-//   left: calc(var(--fa-li-width, 2em) * -1) !important;
-// }

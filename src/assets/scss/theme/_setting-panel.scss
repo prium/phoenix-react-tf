@@ -3,18 +3,18 @@
 /* -------------------------------------------------------------------------- */
 .settings-panel {
   .img-prototype {
-    &.dark {
+    &[data-bs-theme="dark"] {
       display: none;
     }
   }
 }
-.dark {
+[data-bs-theme="dark"] {
   .settings-panel {
     .img-prototype {
-      &.light {
+      &[data-bs-theme="light"] {
         display: none;
       }
-      &.dark {
+      &[data-bs-theme="dark"] {
         display: block;
       }
     }

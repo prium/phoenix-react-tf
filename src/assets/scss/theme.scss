@@ -6,7 +6,11 @@
 @import 'theme/functions';
 
 @import 'user-variables';
+@import 'theme/colors';
 @import 'theme/variables';
+@import 'theme/variables-dark';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/variables-dark';
 
 @import 'theme/maps';
 @import '~bootstrap/scss/maps';
@@ -15,8 +19,9 @@
 @import 'theme/mixins';
 
 @import 'theme/_utilities';
-@import '~bootstrap/scss/variables';
-// @import '~bootstrap/scss/root';
+@import '~bootstrap/scss/utilities';
+
+@import '~bootstrap/scss/root';
 @import 'theme/root';
 
 /*-----------------------------------------------

@@ -14,13 +14,13 @@
   --category-tab-color: var(--#{$prefix}gray-900);
   --text-color: var(--#{$prefix}body-color);
   --emoji-size: 1.8rem !important;
-  .dark & {
+  [data-bs-theme="dark"] & {
     color-scheme: dark;
     --background-color: #{$gray-1100};
   }
   .picmo__searchField {
     --search-background-color: var(--#{$prefix}white);
-    .dark & {
+    [data-bs-theme="dark"] & {
       --search-focus-background-color: #{$gray-1100};
     }
   }
@@ -34,13 +34,13 @@
   }
   .picmo__header {
     --secondary-background-color: #{$gray-soft};
-    .dark & {
+    [data-bs-theme="dark"] & {
       --secondary-background-color: #{$gray-1000};
     }
   }
   .picmo__preview {
     --preview-background-color: #{$gray-soft};
-    .dark & {
+    [data-bs-theme="dark"] & {
       --preview-background-color: #{$gray-1000};
     }
   }
@@ -50,7 +50,7 @@
       --category-name-text-color: var(--#{$prefix}gray-600);
       font-size: map-get($font-sizes, '-2');
       font-weight: 600;
-      .dark & {
+      [data-bs-theme="dark"] & {
         --category-name-background-color: transparent;
       }
     }

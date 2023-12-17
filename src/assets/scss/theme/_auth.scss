@@ -3,7 +3,7 @@
 }
 .auth-card {
   background-color: $white;
-  .dark & {
+  [data-bs-theme="dark"] & {
     background-color: $dark-gray-soft;
   }
   @include media-breakpoint-between(sm, md) {

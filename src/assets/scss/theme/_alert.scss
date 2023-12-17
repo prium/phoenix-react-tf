@@ -58,7 +58,7 @@
   $alert-border: $value;
   $alert-color: map-get($theme-colors-dark, $state);
   .alert-soft-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    // @include alert-variant($alert-background, $alert-border, $alert-color);
   }
 }
 // scss-docs-end alert-soft-modifiers
@@ -69,7 +69,7 @@
   $alert-border: $value;
   $alert-color: $value;
   .alert-outline-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    // @include alert-variant($alert-background, $alert-border, $alert-color);
   }
 }
 // scss-docs-end alert-outline-modifiers
@@ -80,7 +80,7 @@
   $alert-border: var(--#{$prefix}gray-300);
   $alert-color: $value;
   .alert-phoenix-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    // @include alert-variant($alert-background, $alert-border, $alert-color);
   }
 }
 // scss-docs-end alert-phoenix-modifiers
@@ -91,7 +91,7 @@
   $alert-border: $value;
   $alert-color: $gray-300;
   .alert-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    // @include alert-variant($alert-background, $alert-border, $alert-color);
   }
 }
 // scss-docs-end alert-solid-modifiers

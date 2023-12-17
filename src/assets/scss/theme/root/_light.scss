@@ -1,6 +1,5 @@
 :root,
-:root.light,
-:root .light {
+[data-bs-theme="light"] {
   @each $color, $value in $grays {
     --#{$prefix}gray-#{$color}: #{$value};
   }
@@ -110,12 +109,12 @@
     --#{$prefix}navbar-top-menu-margin: 1.3rem;
   }
 
-  &:not(.dark) {
+  &:not([data-bs-theme="dark"]) {
     .navbar-darker {
       --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
       --#{$prefix}navbar-top-dropdown-color: #{$gray-400};
     }
-    .navbar-darker:not(.dark) {
+    .navbar-darker:not([data-bs-theme="dark"]) {
       .navbar-top-collapse {
         &.show {
           --#{$prefix}navbar-top-link-color: #{$gray-400}; //
@@ -136,7 +135,7 @@
   --#{$prefix}dual-nav-first-layer-bg: #{$dual-nav-first-layer-bg};
 
   &.dual-nav {
-    &:not(.dark) {
+    &:not([data-bs-theme="dark"]) {
       .navbar-darker {
         --#{$prefix}dual-nav-border-color: #{$gray-900};
         --#{$prefix}dual-nav-first-layer-bg: #{map-get($dark-grays, 'soft')};
@@ -276,7 +275,7 @@
 
   /* ------------------------------- navbar-vertical light dark ------------------------------- */
 
-  &:not(.dark) {
+  &:not([data-bs-theme="dark"]) {
     .navbar-darker {
       --#{$prefix}navbar-vertical-border-color: #{map-get($dark-grays, '200')};
 
