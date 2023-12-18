@@ -2,41 +2,41 @@
 /*                                    Badge                                   */
 /* -------------------------------------------------------------------------- */
 
-@mixin badge-light-variant($color, $borderColor) {
-  color: map-get($theme-colors-dark, $color);
-  background-color: map-get($theme-colors-light, $color);
+// @mixin badge-light-variant($color, $borderColor) {
+//   color: map-get($theme-colors-dark, $color);
+//   background-color: map-get($theme-colors-light, $color);
 
-  &[href] {
-    @include hover-focus {
-      text-decoration: none;
-      color: map-get($theme-colors-dark, $color);
-    }
-  }
-}
+//   &[href] {
+//     @include hover-focus {
+//       text-decoration: none;
+//       color: map-get($theme-colors-dark, $color);
+//     }
+//   }
+// }
 
-@mixin badge-phoenix-variant($color, $borderColor) {
-  color: map-get($theme-colors-dark, $color);
-  background-color: map-get($theme-colors-light, $color);
-  text-transform: uppercase;
-  border: 1px solid $borderColor;
-  padding: 2px 4px;
-  img {
-    margin-bottom: 2px;
-  }
+// @mixin badge-phoenix-variant($color, $borderColor) {
+//   color: map-get($theme-colors-dark, $color);
+//   background-color: map-get($theme-colors-light, $color);
+//   text-transform: uppercase;
+//   border: 1px solid $borderColor;
+//   padding: 2px 4px;
+//   img {
+//     margin-bottom: 2px;
+//   }
 
-  &[href] {
-    @include hover-focus {
-      text-decoration: none;
-      color: map-get($theme-colors-dark, $color);
-    }
-  }
-}
+//   &[href] {
+//     @include hover-focus {
+//       text-decoration: none;
+//       color: map-get($theme-colors-dark, $color);
+//     }
+//   }
+// }
 
-@each $color, $value in $theme-colors-light {
-  .badge-light-#{$color} {
-    @include badge-light-variant($color, map-get($light-badge-borders, $color));
-  }
-}
+// @each $color, $value in $theme-colors-light {
+//   .badge-light-#{$color} {
+//     @include badge-light-variant($color, map-get($light-badge-borders, $color));
+//   }
+// }
 
 .badge-phoenix {
   text-transform: uppercase;
@@ -61,7 +61,26 @@
   }
 }
 
-@each $color, $value in $theme-colors-light {
+// @each $color, $value in $theme-colors-light {
+//   .badge-phoenix-#{$color} {
+//     &[href] {
+//       @include hover-focus {
+//         color: map-get($theme-colors-dark, $color);
+//       }
+//     }
+//   }
+// }
+
+// new 
+@each $color, $value in $theme-colors {
+  .badge-phoenix-#{$color} {
+    --#{$prefix}badge-bg: var(--#{$prefix}#{$color}-bg-subtle);
+    --#{$prefix}badge-color: var(--#{$prefix}#{$color}-text-emphasis);
+    --#{$prefix}badge-border-color: var(--#{$prefix}#{$color}-border-subtle);
+  }
+}
+
+@each $color, $value in map-remove($theme-colors, 'secondary', 'light', 'dark') {
   .badge-phoenix-#{$color} {
     &[href] {
       @include hover-focus {
@@ -70,6 +89,7 @@
     }
   }
 }
+// new end
 
 .badge-phoenix-warning {
   img {

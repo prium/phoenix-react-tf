@@ -53,14 +53,14 @@
 }
 
 // scss-docs-start alert-soft-modifiers
-@each $state, $value in $theme-colors-soft {
-  $alert-background: $value;
-  $alert-border: $value;
-  $alert-color: map-get($theme-colors-dark, $state);
-  .alert-soft-#{$state} {
-    // @include alert-variant($alert-background, $alert-border, $alert-color);
-  }
-}
+// @each $state, $value in $theme-colors-soft {
+//   $alert-background: $value;
+//   $alert-border: $value;
+//   $alert-color: map-get($theme-colors-dark, $state);
+//   .alert-soft-#{$state} {
+//     @include alert-variant($alert-background, $alert-border, $alert-color);
+//   }
+// }
 // scss-docs-end alert-soft-modifiers
 
 // scss-docs-start alert-outline-modifiers

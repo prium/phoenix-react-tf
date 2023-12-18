@@ -7,7 +7,7 @@
 }
 .picmo__picker.picmo__picker {
   width: 300px;
-  --background-color: #{$gray-soft};
+  --background-color: #{$body-bg};
   --border-color: var(--#{$prefix}gray-300);
   --category-tab-active-color: var(--#{$prefix}gray-300);
   --category-tab-highlight-background-color: var(--#{$prefix}gray-200);
@@ -33,13 +33,13 @@
     padding-bottom: 0;
   }
   .picmo__header {
-    --secondary-background-color: #{$gray-soft};
+    --secondary-background-color: #{$body-bg};
     [data-bs-theme="dark"] & {
       --secondary-background-color: #{$gray-1000};
     }
   }
   .picmo__preview {
-    --preview-background-color: #{$gray-soft};
+    --preview-background-color: #{$body-bg};
     [data-bs-theme="dark"] & {
       --preview-background-color: #{$gray-1000};
     }

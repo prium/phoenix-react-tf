@@ -30,7 +30,7 @@
     @include hover-focus {
       .btn-reveal {
         // box-shadow: $btn-reveal-hover-shadow;
-        background: $gray-soft;
+        background: $body-bg;
         border: 1px solid $gray-200;
         &:hover,
         &:focus,
@@ -184,12 +184,12 @@
   }
 }
 
-//soft buttons
+//subtle buttons
 @each $color, $value in $button-colors {
-  $text-color: map-get($theme-colors-dark, $color);
-  $background: map-get($theme-colors-soft, $color);
-  $hover-background: map-get($theme-colors-light, $color);
-  .btn-soft-#{$color} {
+  $text-color: map-get($theme-colors-text, $color);
+  $background: map-get($theme-colors-bg-subtle, $color);
+  $hover-background: var(--#{$prefix}#{$color}-lighter);
+  .btn-subtle-#{$color} {
     @include button-variant(
       $background: $background,
       $border: $background,
@@ -205,7 +205,7 @@
   $hover-color: map-get($theme-hover-colors, $color);
   .btn-phoenix-#{$color} {
     @include button-variant(
-      $background: $gray-soft,
+      $background: $body-bg,
       $border: $gray-200,
       $hover-background: $gray-200,
       $color: $value,

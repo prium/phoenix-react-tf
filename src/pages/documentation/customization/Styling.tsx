@@ -23,19 +23,19 @@ const darkThemeColorCode = `
     //|   Dark theme colors
     //-----------------------------------------------*/
 
-    $dark-theme-colors: (
+    $theme-colors-dark: (
         'primary': $blue-300,
         'secondary': $secondary,
         'success': $green-300,
         'info': $cyan-300,
         'warning': $orange-300,
         'danger': $red-300,
-        'light': rgba(map-get($dark-grays, '200'), 0.25),
+        'light': rgba(map-get($grays-dark, '200'), 0.25),
         'dark': $light
     ) !default;
 
-    $dark-grays: (
-      'soft': $dark-gray-soft,
+    $grays-dark: (
+      'soft': $body-bg-dark,
       '100': $gray-1000,
       '200': $gray-900,
       '300': #373e53,
@@ -199,8 +199,8 @@ const Styling = () => {
 
             <p className="mt-3">
               If you want to update any theme colors for dark mode, update{' '}
-              <code>$dark-theme-colors</code> variable and to update the grays
-              colors you have to update the <code>$dark-grays </code>variable.
+              <code>$theme-colors-dark</code> variable and to update the grays
+              colors you have to update the <code>$grays-dark </code>variable.
             </p>
             <PhoenixLiveEditor code={darkThemeColorCode} />
 

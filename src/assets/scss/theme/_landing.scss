@@ -171,11 +171,11 @@
 .alternate-landing {
   background-color: $white;
   [data-bs-theme="dark"] & {
-    background-color: $dark-gray-soft;
+    background-color: $body-bg-dark;
   }
   .landing-navbar {
     [data-bs-theme="dark"] & {
-      background-color: $dark-gray-soft !important;
+      background-color: $body-bg-dark !important;
     }
   }
 }
@@ -208,7 +208,7 @@
       left: unset;
     }
     [data-bs-theme="dark"] & {
-      background-color: $dark-gray-soft;
+      background-color: $body-bg-dark;
     }
   }
   .hero-image-container-bg {

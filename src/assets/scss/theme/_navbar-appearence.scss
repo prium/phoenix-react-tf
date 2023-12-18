@@ -1,0 +1,98 @@
+:root,
+[data-bs-theme="light"]{
+  /* ------------------------------- navbar-vertical light dark ------------------------------- */
+
+  &:not([data-bs-theme="dark"]) {
+    .navbar-darker {
+      --#{$prefix}navbar-vertical-border-color: #{map-get($grays-dark, '200')};
+
+      --#{$prefix}navbar-vertical-bg-color: #{$gray-1000};
+      --#{$prefix}navbar-vertical-label-color: #{$gray-600};
+      --#{$prefix}navbar-vertical-link-color: #{$gray-400};
+      --#{$prefix}navbar-vertical-link-hover-color: #{$gray-100};
+      --#{$prefix}navbar-vertical-link-hover-bg: #{$gray-900};
+      --#{$prefix}navbar-vertical-link-active-color: #{$white};
+      --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500};
+
+      --#{$prefix}navbar-vertical-link-icon-color: #{$gray-400}; //
+      // ----------- collapsed colors ----------------
+      --#{$prefix}navbar-vertical-hr-color: #{map-get($grays-dark, '400')};
+      --#{$prefix}navbar-vertical-collapsed-menu-bg: #{$gray-1000};
+      --#{$prefix}navbar-vertical-collapsed-menu-color: #{$gray-400};
+      // ----------- collapsed colors ----------------
+      --#{$prefix}logo-text: #{$gray-100};
+      --#{$prefix}navbar-footer-border-color: #{map-get($grays-dark, '200')};
+
+      //--------------- navbar top ---------------------------------
+      --#{$prefix}navbar-top-bg-color: #{$gray-1100};
+      --#{$prefix}nav-link-color: #{$gray-500};
+
+      .form-control {
+        color: #{$gray-600};
+      }
+      .search-box {
+        --#{$prefix}input-bg: #{$gray-1000};
+        --#{$prefix}input-border-color: #{map-get($grays-dark, '300')};
+        &.search-box-icon {
+          color: #{map-get($grays-dark, '500')};
+        }
+      }
+      ///-------------
+      --#{$prefix}theme-control-toggle-bg: #{rgba($orange-300,0.18)};
+      --#{$prefix}theme-control-toggle-hover-bg: #{rgba(map-get($theme-colors, 'warning'),0.7)};
+      --#{$prefix}theme-control-toggle-color: var(--#{$prefix}warning-light);
+      --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-bg-subtle,'warning')};
+
+      &.navbar-slim {
+        .navbar-brand span {
+          color: #{map-get($grays-dark, '1000')} !important;
+        }
+      }
+    }
+  }
+
+  &:not([data-bs-theme="dark"]) {
+    .navbar-darker {
+      --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
+      --#{$prefix}navbar-top-dropdown-color: #{$gray-400};
+    }
+    .navbar-darker:not([data-bs-theme="dark"]) {
+      .navbar-top-collapse {
+        &.show {
+          --#{$prefix}navbar-top-link-color: #{$gray-400}; //
+          --#{$prefix}navbar-top-menu-bg-color: #{$gray-1100};
+          --#{$prefix}navbar-top-border-color: #{map-get($grays-dark, '300')};
+          --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
+          --#{$prefix}navbar-top-link-hover-bg: #{$gray-1000};
+
+          --#{$prefix}navbar-top-link-active-color: #{$gray-300};
+        }
+      }
+    }
+  }
+
+  &.dual-nav {
+    &:not([data-bs-theme="dark"]) {
+      .navbar-darker {
+        --#{$prefix}dual-nav-border-color: #{$gray-900};
+        --#{$prefix}dual-nav-first-layer-bg: #{map-get($grays-dark, 'soft')};
+        // --#{$prefix}navbar-top-bg-color: #{$gray-1000};
+
+        .search-box {
+          --#{$prefix}input-bg: #{$gray-1100};
+          --#{$prefix}input-border-color: #{map-get($grays-dark, '300')};
+          &.search-box-icon {
+            color: #{map-get($grays-dark, '500')};
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+
+  }
+}

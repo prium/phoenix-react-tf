@@ -154,7 +154,7 @@
   font-weight: $font-weight-bold;
   .bg-auth-card & {
     [data-bs-theme="dark"] & {
-      background-color: $dark-gray-soft !important;
+      background-color: $body-bg-dark !important;
     }
   }
 }

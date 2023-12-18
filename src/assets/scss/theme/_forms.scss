@@ -231,7 +231,7 @@ select:-webkit-autofill:focus {
     &[data-bs-theme="light"] {
       .form-control {
         background-color: #{map-get($grays, '1100')};
-        border-color: #{map-get($dark-grays, '300')};
+        border-color: #{map-get($grays-dark, '300')};
       }
     }
   }

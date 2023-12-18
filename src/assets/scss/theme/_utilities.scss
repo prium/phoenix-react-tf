@@ -209,16 +209,66 @@ $utilities: map_merge(
       class: text,
       values: lowercase uppercase capitalize none
     ),
-    'background-soft-color': (
-      property: background-color,
-      class: bg-soft,
-      values: $theme-colors-soft
+    "color": (
+      property: color,
+      class: text,
+      local-vars: (
+        "text-opacity": 1
+      ),
+      values: map-merge(
+        $utilities-text-colors,
+        (
+          "muted": var(--#{$prefix}secondary-color), // deprecated
+          "black-50": rgba($black, .5), // deprecated
+          "white-50": rgba($white, .5), // deprecated
+          "body-secondary": rgba(var(--#{$prefix}secondary-color-rgb), var(--#{$prefix}text-opacity)),
+          "body-tertiary": rgba(var(--#{$prefix}tertiary-color-rgb), var(--#{$prefix}text-opacity)),
+          "body-quaternary": rgba(var(--#{$prefix}quaternary-color-rgb), var(--#{$prefix}text-opacity)),
+          "body-emphasis": var(--#{$prefix}emphasis-color),
+          "reset": inherit,
+          "body-highlight": rgba(var(--#{$prefix}body-highlight-color-rgb), var(--#{$prefix}text-opacity)),
+
+        )
+      )
     ),
-    'background-light-color': (
-      property: background-color,
-      class: bg-light,
-      values: $theme-colors-light
+    "text-opacity": (
+      css-var: true,
+      class: text-opacity,
+      values: $text-opacities
     ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      local-vars: (
+        "bg-opacity": 1
+      ),
+      values: map-merge(
+        $utilities-bg-colors,
+        (
+          "transparent": transparent,
+          "body-emphasis": rgba(var(--#{$prefix}emphasis-bg-rgb), var(--#{$prefix}bg-opacity)),
+          "body-secondary": rgba(var(--#{$prefix}secondary-bg-rgb), var(--#{$prefix}bg-opacity)),
+          "body-tertiary": rgba(var(--#{$prefix}tertiary-bg-rgb), var(--#{$prefix}bg-opacity)),
+          "body-quaternary": rgba(var(--#{$prefix}quaternary-bg-rgb), var(--#{$prefix}bg-opacity)),
+          "body-highlight": rgba(var(--#{$prefix}body-highlight-bg-rgb), var(--#{$prefix}bg-opacity)),
+        )
+      )
+    ),
+    "bg-opacity": (
+      css-var: true,
+      class: bg-opacity,
+      values: $bg-opacities
+    ),
+    // 'background-soft-color': (
+    //   property: background-color,
+    //   class: bg-soft,
+    //   values: $theme-colors-soft
+    // ),
+    // 'background-light-color': (
+    //   property: background-color,
+    //   class: bg-light,
+    //   values: $theme-colors-light
+    // ),
     'translate-middle': (
       property: transform,
       class: translate,
