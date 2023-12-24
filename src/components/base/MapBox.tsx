@@ -21,6 +21,7 @@ interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
 
 const styles = {
   default: 'mapbox://styles/mapbox/light-v11',
+  auto: 'mapbox://styles/mapbox/light-v11', // not reviewed
   light: 'mapbox://styles/themewagon/clj57pads001701qo25756jtw',
   dark: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew'
 };

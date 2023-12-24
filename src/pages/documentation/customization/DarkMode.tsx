@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import ThemeToggler from 'components/common/ThemeToggler';
 import PhoenixDocProvider from 'providers/PhoenixDocProvider';
+import ThemeDropdown from 'components/docs/ThemeDropdown';
 
 const darkModeExampleCode = `
 import { useAppContext } from 'providers/AppProvider';
@@ -19,8 +20,8 @@ const DarkModeExample = () => {
   } = useAppContext(); // import AppContext from 'src/context/Context.js'
   
   return (
-    <Row>
-      <Col sm={6} lg={3}>
+    <Row className='g-3'>
+      <Col>
         <h5 className="fs-0 mb-2">Checkbox </h5>
         <Form.Check
           type="checkbox"
@@ -31,7 +32,7 @@ const DarkModeExample = () => {
         />
       </Col>
 
-      <Col sm={6} lg={3}>
+      <Col>
         <h5 className="fs-0 mb-2">Switch Input</h5>
         <Form.Check
           type="switch"
@@ -42,9 +43,18 @@ const DarkModeExample = () => {
         />
       </Col>
 
-      <Col sm={6} lg={3}>
+      <Col>
+        <h5 className="fs-0 mb-2">Custom Icon</h5>
+        <ThemeToggler />
+      </Col>
+
+      <Col>
+        <h5 className="fs-0 mb-2">Dropdown</h5>
+        <ThemeDropdown />
+      </Col>
+      <Col-12>
         <h5 className="fs-0 mb-2">Radio Button</h5>
-        <Form.Group>
+        <Form.Group className="d-flex">
           <Form.Check
             inline
             type="radio"
@@ -63,13 +73,17 @@ const DarkModeExample = () => {
             checked={theme === 'dark'}
             onChange={() => setConfig({ theme: 'dark' })}
           />
+          <Form.Check
+            inline
+            type="radio"
+            id="autoRadioButton"
+            label="Auto"
+            name="themeToggleRadio"
+            checked={theme === 'auto'}
+            onChange={() => setConfig({ theme: 'auto' })}
+          />
         </Form.Group>
-      </Col>
-
-      <Col sm={6} lg={3}>
-        <h5 className="fs-0 mb-2">Custom Icon</h5>
-        <ThemeToggler />
-      </Col>
+      </Col-12>
     </Row>
   );
 };
@@ -131,7 +145,7 @@ const DarkMode = () => {
           <PhoenixDocCard.Body
             code={darkModeExampleCode}
             noInline
-            scope={{ FeatherIcon, useAppContext, ThemeToggler }}
+            scope={{ FeatherIcon, useAppContext, ThemeToggler, ThemeDropdown }}
           />
         </PhoenixDocCard>
 
