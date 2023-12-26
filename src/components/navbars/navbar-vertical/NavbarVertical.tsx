@@ -7,7 +7,6 @@ import {
   UilLeftArrowToLeft
 } from '@iconscout/react-unicons';
 import { useAppContext } from 'providers/AppProvider';
-import classNames from 'classnames';
 import Button from 'components/base/Button';
 import NavbarTopNav from '../navbar-horizontal/NavbarTopNav';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
@@ -29,11 +28,12 @@ const NavbarVerical = () => {
   return (
     <NavbarVerticalCollapseProvider>
       <Navbar
-        className={classNames('navbar-vertical', {
-          'navbar-darker': navbarVerticalAppearance === 'darker'
-        })}
+        className="navbar-vertical"
         expand="lg"
         variant=""
+        data-navbar-appearence={
+          navbarVerticalAppearance === 'darker' ? 'darker' : ''
+        }
       >
         <Navbar.Collapse id="navbarVerticalCollapse" in={openNavbarVertical}>
           <div className="navbar-vertical-content">

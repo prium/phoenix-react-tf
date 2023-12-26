@@ -308,7 +308,7 @@
     --#{$prefix}navbar-top-dropdown-hover-bg: #{map-get($grays-dark, '100')};
     --#{$prefix}navbar-top-dropdown-color: #{map-get($grays-dark, '600')};
 
-    .navbar-darker {
+    [data-navbar-appearence="darker"]{
       --#{$prefix}navbar-top-dropdown-hover-bg: #{map-get($grays-dark, '200')};
     }
 
@@ -338,7 +338,7 @@
         '900'
       )};
 
-    .navbar-darker {
+    [data-navbar-appearence="darker"]{
       --#{$prefix}navbar-vertical-bg-color: #{map-get($grays-dark, '100')};
       --#{$prefix}navbar-vertical-label-color: #{$gray-600};
       --#{$prefix}navbar-vertical-link-color: #{map-get($grays-dark, '900')};

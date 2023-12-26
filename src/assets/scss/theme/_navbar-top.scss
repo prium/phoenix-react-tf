@@ -347,7 +347,7 @@
       padding-left: 0rem !important;
     }
   }
-  .navbar-darker {
+  [data-navbar-appearence="darker"]{
     .move-container {
       .navbar-vertical-hr {
         color: var(--#{$prefix}navbar-vertical-hr-color);

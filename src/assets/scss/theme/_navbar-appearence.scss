@@ -3,7 +3,7 @@
   /* ------------------------------- navbar-vertical light dark ------------------------------- */
 
   &:not([data-bs-theme="dark"]) {
-    .navbar-darker {
+    [data-navbar-appearence="darker"]{
       --#{$prefix}navbar-vertical-border-color: #{map-get($grays-dark, '200')};
 
       --#{$prefix}navbar-vertical-bg-color: #{$gray-1000};
@@ -52,11 +52,11 @@
   }
 
   &:not([data-bs-theme="dark"]) {
-    .navbar-darker {
+    [data-navbar-appearence="darker"]{
       --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-900};
       --#{$prefix}navbar-top-dropdown-color: #{$gray-400};
     }
-    .navbar-darker:not([data-bs-theme="dark"]) {
+    [data-navbar-appearence="darker"]:not([data-bs-theme="dark"]) {
       .navbar-top-collapse {
         &.show {
           --#{$prefix}navbar-top-link-color: #{$gray-400}; //
@@ -73,7 +73,7 @@
 
   &.dual-nav {
     &:not([data-bs-theme="dark"]) {
-      .navbar-darker {
+      [data-navbar-appearence="darker"]{
         --#{$prefix}dual-nav-border-color: #{$gray-900};
         --#{$prefix}dual-nav-first-layer-bg: #{map-get($grays-dark, 'soft')};
         // --#{$prefix}navbar-top-bg-color: #{$gray-1000};

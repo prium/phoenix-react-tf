@@ -18,11 +18,12 @@ const NavbarTopDefault = () => {
   return (
     <Navbar
       className={classNames('navbar-top fixed-top', {
-        'navbar-slim': navbarTopShape === 'slim',
-        'navbar-darker': navbarTopAppearance === 'darker'
+        'navbar-slim': navbarTopShape === 'slim'
+        // 'navbar-darker': navbarTopAppearance === 'darker'
       })}
       expand
       variant=""
+      data-navbar-appearence={navbarTopAppearance === 'darker' ? 'darker' : ''}
     >
       <div className="navbar-collapse justify-content-between">
         <NavbarBrand />
