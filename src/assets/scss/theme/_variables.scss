@@ -687,16 +687,6 @@ $viewport-heights: map-merge(
   $viewport-heights
 );
 
-$viewport-widths: () !default;
-$viewport-widths: map-merge(
-  (
-    25: 25vw,
-    50: 50vw,
-    75: 75vw,
-    100: 100vw
-  ),
-  $viewport-widths
-);
 
 $sizes: () !default;
 $sizes: map-merge(
