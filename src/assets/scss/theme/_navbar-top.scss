@@ -1,9 +1,9 @@
 /* -------------------------------------------------------------------------- */
 /*                                 Navbar Top                                 */
 /* -------------------------------------------------------------------------- */
-.navbar-horizontal,
-.dual-nav,
-.navbar-combo {
+[data-navigation-type="horizontal"],
+[data-navigation-type="dual"],
+[data-navigation-type="combo"] {
   .navbar-nav-top {
     .dropdown {
       .dropdown-toggle {
@@ -219,9 +219,10 @@
 /*                       Navbar horizontal || combo                           */
 /* -------------------------------------------------------------------------- */
 
-.navbar-horizontal,
-.dual-nav,
-.navbar-combo {
+[data-navigation-type="horizontal"],
+[data-navigation-type="dual"],
+[data-navigation-type="combo"] {
+
   .dropdown-item-group {
     display: flex;
     align-items: center;
@@ -337,7 +338,7 @@
 /*                            Navbar Combo                                    */
 /* -------------------------------------------------------------------------- */
 
-.navbar-combo {
+[data-navigation-type="combo"] {
   .move-container {
     .navbar-nav-top {
       padding-left: 1.5rem;
@@ -385,9 +386,9 @@
   }
 }
 
-.navbar-horizontal,
-.dual-nav,
-.navbar-combo {
+[data-navigation-type="horizontal"],
+[data-navigation-type="dual"],
+[data-navigation-type="combo"]{
   .navbar-nav-top {
     max-height: calc(100vh - $navbar-top-height);
     overflow: auto;
@@ -398,25 +399,6 @@
       }
     }
 
-    // ------- dropdown menu, toggle active color ---------
-    // .dropdown{
-    //   &.active{
-    //     &.nav-item{
-    //       >{
-    //         .dropdown-toggle{
-    //           color: var(--#{$prefix}navbar-top-link-active-color);
-    //         }
-    //       }
-    //     }
-    //     &:not(.nav-item){
-    //       > {
-    //         .dropdown-toggle{
-    //           background-color: var(--#{$prefix}gray-100);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
 
     .dropdown-menu {
       &.navbar-dropdown-caret::after {
@@ -661,7 +643,7 @@
 /* -------------------------------------------------------------------------- */
 /*                             Dual Navbar                                    */
 /* -------------------------------------------------------------------------- */
-.dual-nav {
+[data-navigation-type="dual"]{
   .navbar-top {
     border-bottom: 1px solid var(--#{$prefix}dual-nav-border-color);
 

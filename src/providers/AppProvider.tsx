@@ -51,7 +51,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     )
   };
 
-  const [config, configDispatch] = useReducer(configReducer, configState);
+  const [config, configDispatch] = useReducer(configReducer, configState); // initail
 
   const setConfig = (payload: Partial<Config>) => {
     configDispatch({
@@ -75,31 +75,25 @@ const AppProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     if (config.navbarTopShape === 'slim') {
-      document.body.classList.add('nav-slim');
+      // document.body.classList.add('nav-slim');
+      document.documentElement.setAttribute(
+        'data-navbar-horizontal-shape',
+        'slim'
+      );
     } else {
-      document.body.classList.remove('nav-slim');
-    }
-
-    if (config.navbarPosition === 'combo') {
-      document.documentElement.classList.add('navbar-combo');
-    } else {
-      document.documentElement.classList.remove('navbar-combo');
+      document.documentElement.removeAttribute('data-navbar-horizontal-shape');
     }
 
     if (config.navbarPosition === 'dual') {
       setConfig({
         navbarTopShape: 'default'
       });
-      document.documentElement.classList.add('dual-nav');
-    } else {
-      document.documentElement.classList.remove('dual-nav');
     }
 
-    if (config.navbarPosition === 'horizontal') {
-      document.documentElement.classList.add('navbar-horizontal');
-    } else {
-      document.documentElement.classList.remove('navbar-horizontal');
-    }
+    document.documentElement.setAttribute(
+      'data-navigation-type',
+      config.navbarPosition
+    );
 
     if (config.isNavbarVerticalCollapsed) {
       document.documentElement.classList.add('navbar-vertical-collapsed');
