@@ -14,12 +14,10 @@
       --#{$prefix}navbar-vertical-link-active-color: #{$white};
       --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500};
 
-      --#{$prefix}navbar-vertical-link-icon-color: #{$gray-400}; //
       // ----------- collapsed colors ----------------
       --#{$prefix}navbar-vertical-hr-color: #{map-get($grays-dark, '400')};
       --#{$prefix}navbar-vertical-collapsed-menu-bg: #{$gray-1000};
-      --#{$prefix}navbar-vertical-collapsed-menu-color: #{$gray-400};
-      // ----------- collapsed colors ----------------
+
       --#{$prefix}logo-text: #{$gray-100};
       --#{$prefix}navbar-footer-border-color: #{map-get($grays-dark, '200')};
 
@@ -75,7 +73,7 @@
     &:not([data-bs-theme="dark"]) {
       [data-navbar-appearence="darker"]{
         --#{$prefix}dual-nav-border-color: #{$gray-900};
-        --#{$prefix}dual-nav-first-layer-bg: #{map-get($grays-dark, 'soft')};
+        --#{$prefix}dual-nav-first-layer-bg: #{map-get($grays-dark, '50')};
         // --#{$prefix}navbar-top-bg-color: #{$gray-1000};
 
         .search-box {
@@ -93,6 +91,36 @@
 
 @if $enable-dark-mode {
   @include color-mode(dark, true) {
+
+    [data-navbar-appearence="darker"]{
+      --#{$prefix}navbar-top-dropdown-hover-bg: #{map-get($grays-dark, '200')};
+    }
+
+    [data-navbar-appearence="darker"]{
+      --#{$prefix}navbar-vertical-bg-color: #{map-get($grays-dark, '100')};
+      --#{$prefix}navbar-vertical-label-color: #{$gray-600};
+      --#{$prefix}navbar-vertical-link-color: #{map-get($grays-dark, '900')};
+      --#{$prefix}navbar-vertical-link-hover-color: #{$gray-100};
+      --#{$prefix}navbar-vertical-link-hover-bg: #{map-get($grays-dark, '200')};
+      --#{$prefix}navbar-vertical-link-active-color: #{$white};
+      --#{$prefix}navbar-vertical-link-disable-color: #{map-get($grays-dark,'600')};
+      // ----------- collapsed colors ----------------
+      // --#{$prefix}navbar-vertical-hr-color: #{map-get($grays-dark, '400')};
+      --#{$prefix}navbar-vertical-collapsed-menu-bg: #{map-get($grays-dark, '100')};
+
+      //--------------- navbar top ---------------------------------
+      --#{$prefix}navbar-top-bg-color: #{map-get($grays-dark, '100')};
+      --#{$prefix}nav-link-color: #{map-get($grays-dark, '600')};
+      //input
+      --#{$prefix}input-bg: #{map-get($grays-dark, '100')};
+      --#{$prefix}input-border-color: #{map-get($grays-dark, '300')};
+      .form-control {
+        color: #{$gray-600};
+      }
+      .search-box .search-box-icon {
+        color: #{map-get($grays-dark, '500')};
+      }
+    }
 
   }
 }

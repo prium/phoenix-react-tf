@@ -67,7 +67,7 @@
     // dragging item
     .sortable-item {
       &.card {
-        background-color: var(--#{$prefix}drag-bg);
+        background-color: var(--#{$prefix}kanban-drag-bg);
       }
     }
   }

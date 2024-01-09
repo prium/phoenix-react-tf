@@ -52,14 +52,14 @@
   /* -------------------------------------------------------------------------- */
 
   /* ------------------------------- navbar-top  ------------------------------- */
-  --#{$prefix}navbar-top-link-color: var(--#{$prefix}gray-900);
-  --#{$prefix}navbar-top-menu-bg-color: #{$white};
+  --#{$prefix}navbar-top-link-color: var(--#{$prefix}body-color);
+  --#{$prefix}navbar-top-menu-bg-color: var(--#{$prefix}emphasis-bg);
   --#{$prefix}navbar-top-border-color: #{$gray-300};
-  --#{$prefix}navbar-top-link-hover-color: #{$gray-1000};
-  --#{$prefix}navbar-top-link-hover-bg: #{$gray-100};
+  --#{$prefix}navbar-top-link-hover-color: var(--#{$prefix}body-highlight-color);
+  --#{$prefix}navbar-top-link-hover-bg: var(--#{$prefix}body-highlight-bg);
   --#{$prefix}navbar-top-link-active-color: var(--#{$prefix}primary);
-  --#{$prefix}navbar-top-dropdown-color: var(--#{$prefix}gray-900);
-  --#{$prefix}navbar-top-dropdown-hover-bg: #{$gray-100};
+  --#{$prefix}navbar-top-dropdown-color: var(--#{$prefix}body-color);
+  --#{$prefix}navbar-top-dropdown-hover-bg: var(--#{$prefix}body-highlight-bg);
 
 
   /* ------------------------------- dual-nav ------------------------------- */
@@ -69,11 +69,12 @@
 
 
   /* ------------------------------- navbar-vertical light ------------------------------- */
+
   --#{$prefix}navbar-vertical-border-color: #{$gray-300};
-  --#{$prefix}navbar-vertical-bg-color: #{$white};
+  --#{$prefix}navbar-vertical-bg-color: var(--#{$prefix}emphasis-bg);
   --#{$prefix}navbar-vertical-label-color: #{$gray-600};
   --#{$prefix}navbar-vertical-link-color: #{$gray-700};
-  --#{$prefix}navbar-vertical-link-hover-color: #{$gray-800};
+  --#{$prefix}navbar-vertical-link-hover-color: #{$body-secondary-color};
   --#{$prefix}navbar-vertical-link-hover-bg: #{$gray-100};
   --#{$prefix}navbar-vertical-link-active-color: #{$primary};
   --#{$prefix}navbar-vertical-link-disable-color: #{$gray-500}; //need to check
@@ -82,41 +83,23 @@
 
   // --#{$prefix}navbar-vertical-link-text-active-color: #{$primary};
 
-  --#{$prefix}navbar-vertical-link-icon-color: #{$gray-800};
   --#{$prefix}navbar-vertical-dropdown-indicator-color: #{$gray-500};
 
-  --#{$prefix}navbar-footer-border-color: #{$gray-300};
-  --#{$prefix}navbar-footer-border-color: #{map-get($grays, '300')};
+  --#{$prefix}navbar-footer-border-color: var(--#{$prefix}border-color);
 
   // ----------- collapsed colors ----------------
   --#{$prefix}navbar-vertical-hr-color: #{$gray-200};
   --#{$prefix}navbar-vertical-collapsed-menu-bg: #{$white};
-  --#{$prefix}navbar-vertical-collapsed-menu-color: #{$gray-1000};
 
   --#{$prefix}hamburger-menu-color: #{$gray-600};
 
   /* ------------------------------- navbar-top ------------------------------- */
-  --#{$prefix}navbar-top-bg-color: #{$white};
-
+  --#{$prefix}navbar-top-bg-color: var(--#{$prefix}emphasis-bg);
+  
   /* --------------------------------- buttons -------------------------------- */
 
   --#{$prefix}btn-hover-border-color: transparent;
   --#{$prefix}btn-active-border-color: transparent;
-
-  /* ------------------------------- List Group ------------------------------- */
-  --#{$prefix}list-group-bg: #{$white};
-  --#{$prefix}list-group-action-hover-color: #{map-get($grays, '700')};
-  --#{$prefix}list-group-hover-bg: #{map-get($grays, '100')};
-
-  --#{$prefix}body-bg: #{$body-bg};
-  --#{$prefix}body-color: #{$body-color};
-  --#{$prefix}headings-color: #{map-get($grays, '900')};
-
-  --#{$prefix}link-hover-color: #{$link-hover-color};
-
-  /* ------------------------------- link-color ------------------------------- */
-  --#{$prefix}link-color: #{map-get($theme-colors, 'primary')};
-  // --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
 
   /* --------------------------------- choices -------------------------------- */
   --#{$prefix}choices-inner-min-height: auto;
@@ -125,47 +108,86 @@
   /* -------------------------------- Flatpickr ------------------------------- */
   --#{$prefix}flatpickr-calendar-input-bg: #{$input-bg};
   --#{$prefix}flatpickr-calendar-bg: #{$gray-200};
-  --#{$prefix}flatpickr-current-month-color: #{$gray-900};
-  --#{$prefix}flatpickr-weekday-color: #{$gray-900};
-  --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba($gray-300, 0.5)};
+  --#{$prefix}flatpickr-current-month-color: #{$body-color};;
+  --#{$prefix}flatpickr-weekday-color: #{$body-color};;
+  --#{$prefix}flatpickr-calendar-day-hover-bg: #{rgba(var(--#{$prefix}tertiary-bg-rgb), 0.5)};
   --#{$prefix}flatpickr-weekend-days-color: #{$orange-500};
   --#{$prefix}flatpickr-today-color: #{$white};
-  --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba($primary, 0.2)};
+  --#{$prefix}flatpickr-calendar-day-selected-bg: #{rgba(var(--#{$prefix}primary-rgb), 0.2)};
 
   /* -------------------------------- Fullcalendar ------------------------------- */
-  --#{$prefix}calendar-bg: #{$gray-200};
-  --#{$prefix}calendar-border-color: #{$body-bg};
-  // --#{$prefix}calendar-border-color: #{$white};
+  --#{$prefix}calendar-bg: #{$body-secondary-bg};
+  --#{$prefix}calendar-border-color: var(--#{$prefix}body-bg);
 
   /* --------------------------------- wizard --------------------------------- */
-  --#{$prefix}theme-wizard-nav-item-circle-bg: #{map-get($grays, '100')};
+  --#{$prefix}theme-wizard-nav-item-circle-bg: var(--#{$prefix}body-highlight-bg);
   --#{$prefix}theme-wizard-complete-color: #{map-get($theme-colors, 'success')};
   --#{$prefix}theme-wizard-active-color: #{map-get($theme-colors, 'primary')};
-  --#{$prefix}border-opacity: 1;
+
   /* --------------------------------- tinymce -------------------------------- */
   --#{$prefix}tinymce-bg: var(--#{$prefix}input-bg);
-  --#{$prefix}tinymce-tox-tbtn-enabled-icon-color: var(--#{$prefix}gray-800);
+  --#{$prefix}tinymce-tox-tbtn-enabled-icon-color: var(--#{$prefix}secondary-color);
+
   /* -------------------------------- choices -------------------------------- */
-  --#{$prefix}choices-item-bg: #{$blue-100};
-  --#{$prefix}choices-item-color: #{$gray-1000};
+  --#{$prefix}choices-item-bg: var(--#{$prefix}primary-bg-subtle);
+  --#{$prefix}choices-item-color: var(--#{$prefix}body-highlight-color);
 
-
-  /* ------------------------------- form select ------------------------------ */
-  --#{$prefix}form-select-indicator: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik03NS4zNDggMTI3LjE5MkM3Mi40MzgxIDEyNy4xOTIgNjkuODUxNCAxMjYuMjIyIDY3LjkxMTUgMTI0LjI4Mkw1LjgzMjE1IDYyLjIwMjNDMS42Mjg4NyA1OC4zMjIzIDEuNjI4ODcgNTEuNTMyNCA1LjgzMjE1IDQ3LjY1MjVDOS43MTIxMSA0My40NDkyIDE2LjUwMiA0My40NDkyIDIwLjM4MiA0Ny42NTI1TDc1LjM0OCAxMDIuMjk1TDEyOS45OTEgNDcuNjUyNUMxMzMuODcxIDQzLjQ0OTIgMTQwLjY2MSA0My40NDkyIDE0NC41NDEgNDcuNjUyNUMxNDguNzQ0IDUxLjUzMjQgMTQ4Ljc0NCA1OC4zMjIzIDE0NC41NDEgNjIuMjAyM0w4Mi40NjEzIDEyNC4yODJDODAuNTIxMyAxMjYuMjIyIDc3LjkzNDcgMTI3LjE5MiA3NS4zNDggMTI3LjE5MloiIGZpbGw9IiMzMTM3NEEiLz4KPC9zdmc+Cg==');
   /* --------------------------------- Avatar --------------------------------- */
-  --#{$prefix}avatar-name-color: #{$blue-500};
-
-  /* ---------------------------------- link ---------------------------------- */
-  --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
+  --#{$prefix}avatar-name-color: var(--#{$prefix}primary-dark);
 
   /* ---------------------------------- logo ---------------------------------- */
-  --#{$prefix}logo-text: #{$gray-600};
+  --#{$prefix}logo-text: rgba(var(--#{$prefix}tertiary-color-rgb),0.8);
 
   /* -------------------------- theme-control-toggle -------------------------- */
   --#{$prefix}theme-control-toggle-bg: #{rgba($orange-300,0.24)};
   --#{$prefix}theme-control-toggle-hover-bg: var(--#{$prefix}warning);
   --#{$prefix}theme-control-toggle-color: var(--#{$prefix}warning);
   --#{$prefix}theme-control-toggle-hover-color: #{map-get($theme-colors-bg-subtle,'warning')};
+  
+
+  /* -------------------------------- Kanban ------------------------------- */
+  --#{$prefix}kanban-bg: #{$body-secondary-bg};
+  --#{$prefix}kanban-column-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}kanban-ghost-bg: var(--#{$prefix}body-highlight-bg);
+  --#{$prefix}kanban-drag-bg: var(--#{$prefix}white);
+  --#{$prefix}kanban-column-hover-bg: var(--#{$prefix}white);
+
+
+  /* -------------------------------- Leaflet ------------------------------- */
+  --#{$prefix}leaflet-bar-bg: var(--#{$prefix}body-highlight-bg);
+  --#{$prefix}leaflet-popup-content-wrapper-bg: #{$white};
+
+
+  // not organized  --------------------
+  // not organized  --------------------
+  // not organized  --------------------
+
+
+
+
+
+  /* ------------------------------- List Group ------------------------------- */
+  // --#{$prefix}list-group-bg: #{$white};
+  // --#{$prefix}list-group-action-hover-color: #{map-get($grays, '700')};
+  // --#{$prefix}list-group-hover-bg: #{map-get($grays, '100')};
+
+
+  // --#{$prefix}headings-color: #{map-get($grays, '900')};
+
+  // --#{$prefix}link-hover-color: #{$link-hover-color};
+
+  /* ------------------------------- link-color ------------------------------- */
+  // --#{$prefix}link-color: #{map-get($theme-colors, 'primary')};
+  // --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
+
+  // --#{$prefix}border-opacity: 1;
+
+  /* ------------------------------- form select ------------------------------ */
+  // --#{$prefix}form-select-indicator: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik03NS4zNDggMTI3LjE5MkM3Mi40MzgxIDEyNy4xOTIgNjkuODUxNCAxMjYuMjIyIDY3LjkxMTUgMTI0LjI4Mkw1LjgzMjE1IDYyLjIwMjNDMS42Mjg4NyA1OC4zMjIzIDEuNjI4ODcgNTEuNTMyNCA1LjgzMjE1IDQ3LjY1MjVDOS43MTIxMSA0My40NDkyIDE2LjUwMiA0My40NDkyIDIwLjM4MiA0Ny42NTI1TDc1LjM0OCAxMDIuMjk1TDEyOS45OTEgNDcuNjUyNUMxMzMuODcxIDQzLjQ0OTIgMTQwLjY2MSA0My40NDkyIDE0NC41NDEgNDcuNjUyNUMxNDguNzQ0IDUxLjUzMjQgMTQ4Ljc0NCA1OC4zMjIzIDE0NC41NDEgNjIuMjAyM0w4Mi40NjEzIDEyNC4yODJDODAuNTIxMyAxMjYuMjIyIDc3LjkzNDcgMTI3LjE5MiA3NS4zNDggMTI3LjE5MloiIGZpbGw9IiMzMTM3NEEiLz4KPC9zdmc+Cg==');
+
+
+  /* ---------------------------------- link ---------------------------------- */
+  // --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
 
   /* ---------------------------------- Badge --------------------------------- */
 
@@ -177,17 +199,6 @@
   //   }
   // }
 
-
-  /* -------------------------------- Kanban ------------------------------- */
-  --#{$prefix}kanban-bg: #{map-get($grays, '200')};
-  --#{$prefix}kanban-column-bg: #{map-get($grays, 'soft')};
-  --#{$prefix}ghost-bg: var(--#{$prefix}gray-100);
-  --#{$prefix}drag-bg: var(--#{$prefix}white);
-  --#{$prefix}kanban-column-hover-bg: var(--#{$prefix}white);
-
-  /* -------------------------------- Leaflet ------------------------------- */
-  --#{$prefix}leaflet-bar-bg: #{$white};
-  --#{$prefix}leaflet-popup-content-wrapper-bg: #{$white};
 
   // .table-primary {
   //   --#{$prefix}table-bg: var(--#{$prefix}primary-soft);

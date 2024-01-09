@@ -132,7 +132,6 @@ html:not(.navbar-vertical-collapsed) {
     }
     .nav-link-icon {
       margin-right: 0.625rem;
-      // color: $navbar-vertical-link-icon-color;
       min-width: 16px !important;
       text-align: center;
     }
@@ -325,30 +324,7 @@ html:not(.navbar-vertical-collapsed) {
       }
     }
   }
-  // move container
-  // .move-container {
-  //   padding-left: 1.5rem;
-  //   padding-right: 1.5rem;
-  //   .nav-link {
-  //     &.dropdown-toggle {
-  //       padding-left: 0;
-  //     }
-  //     &:hover {
-  //       background-color: transparent;
-  //     }
-  //   }
-  //   .navbar-dropdown-caret {
-  //     &::after {
-  //       display: none;
-  //     }
-  //   }
-  //   .dropdown-menu-content {
-  //     .nav-link {
-  //       padding: $navbar-vertical-dropdown-link-padding-y
-  //         $navbar-vertical-dropdown-link-padding-x !important;
-  //     }
-  //   }
-  // }
+  
   .new-page-indicator {
     margin-top: -10px;
     font-size: 6px;
