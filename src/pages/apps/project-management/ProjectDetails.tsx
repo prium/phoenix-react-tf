@@ -74,7 +74,7 @@ const ProjectDetails = () => {
           </Row>
           <div>
             <h3 className="text-1100 mb-4">Project overview</h3>
-            <p className="text-800 mb-4">
+            <p className="text-body-secondary mb-4">
               The new redirection team is happy to announce that we’ve fixed all
               our unresponsive URLs and redirected them to new URLs. The
               tremendous assistance from our support team and the dev team, as
@@ -82,7 +82,7 @@ const ProjectDetails = () => {
               possible within a week. They didn’t stop for a moment, and we got
               our pages working again for all the valuable users.{' '}
             </p>
-            <p className="text-800 mb-0">
+            <p className="text-body-secondary mb-0">
               Join us in celebrating the massive success of data transferring
               and getting us a huge revenue by eating out. Free public viewing
               and a buffet is offered for the great team as well as for the

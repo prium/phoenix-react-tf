@@ -20,7 +20,7 @@ const EcomProfileCard = () => {
             </Col>
             <Col xs={12} sm="auto" className="flex-1">
               <h3>Ansolo Lazinatov</h3>
-              <p className="text-800">Joined 3 months ago</p>
+              <p className="text-body-secondary">Joined 3 months ago</p>
               <div>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
@@ -46,15 +46,15 @@ const EcomProfileCard = () => {
         </div>
         <div className="d-flex flex-between-center pt-4">
           <div>
-            <h6 className="mb-2 text-800">Total Spent</h6>
+            <h6 className="mb-2 text-body-secondary">Total Spent</h6>
             <h4 className="fs-7 text-1000 mb-0">$894</h4>
           </div>
           <div className="text-end">
-            <h6 className="mb-2 text-800">Last Order</h6>
+            <h6 className="mb-2 text-body-secondary">Last Order</h6>
             <h4 className="fs-7 text-1000 mb-0">1 week ago</h4>
           </div>
           <div className="text-end">
-            <h6 className="mb-2 text-800">Total Orders</h6>
+            <h6 className="mb-2 text-body-secondary">Total Orders</h6>
             <h4 className="fs-7 text-1000 mb-0">97</h4>
           </div>
         </div>

@@ -46,7 +46,7 @@ const getDefaultOptions = (
         interval: 3,
         showMinLabel: true,
         showMaxLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'left',
         fontFamily: 'Nunito Sans',
         fontWeight: 700,

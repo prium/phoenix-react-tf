@@ -152,7 +152,7 @@ const DarkMode = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Modify Dark colors" noPreview />
           <PhoenixDocCard.Body>
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               You can find all the variables used to create the dark mode in
               <code> src/assets/scss/theme/root/_dark.scss </code> file. If you
               want to override a variable, copy that variable to{' '}

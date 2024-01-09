@@ -164,9 +164,9 @@ span.flatpickr-weekday,
 .flatpickr-months {
   .flatpickr-prev-month,
   .flatpickr-next-month {
-    fill: var(--#{$prefix}gray-700);
+    fill: var(--#{$prefix}tertiary-color);
     &:hover svg {
-      fill: var(--#{$prefix}gray-800);
+      fill: var(--#{$prefix}secondary-color);
     }
   }
 }

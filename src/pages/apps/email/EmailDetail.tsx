@@ -35,7 +35,7 @@ const EmailDetail = () => {
                 as={Link}
                 to="/apps/email/inbox"
                 variant="link"
-                className="p-0 text-800 me-3"
+                className="p-0 text-body-secondary me-3"
               >
                 <FontAwesomeIcon
                   icon={faAngleLeft}
@@ -84,7 +84,7 @@ const EmailDetail = () => {
                   </div>
                   <p className="mb-0 fs-9">
                     <span className="text-600 me-1">to</span>
-                    <span className="fw-bold text-800 me-1">Me</span>
+                    <span className="fw-bold text-body-secondary me-1">Me</span>
                     <span className="text-1000 fw-semi-bold fs-10 me-1">
                       28 Aug, 2021
                     </span>

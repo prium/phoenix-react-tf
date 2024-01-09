@@ -55,7 +55,7 @@ const NotificationItem = ({
                 {notification.ago}
               </span>
             </p>
-            <p className="text-800 fs-9 mb-0">
+            <p className="text-body-secondary fs-9 mb-0">
               <FontAwesomeIcon icon={faClock} className="me-1" />
               <span className="fw-bold">{notification.time}</span>
               {notification.date}

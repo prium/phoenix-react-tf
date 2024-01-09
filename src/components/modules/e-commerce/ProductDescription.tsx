@@ -76,7 +76,7 @@ const ProductDescription = () => {
               <p className="text-warning-500 fw-bolder fs-6 mb-0">10% off</p>
             </div>
             <p className="text-success fw-semi-bold fs-7 mb-2"> In stock</p>
-            <p className="mb-2 text-800">
+            <p className="mb-2 text-body-secondary">
               <strong className="text-1000">
                 Do you want it on Saturday, July 29th?
               </strong>{' '}

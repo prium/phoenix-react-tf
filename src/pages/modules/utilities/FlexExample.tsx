@@ -361,7 +361,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code> .flex-row </code> to set a horizontal direction (the
               browser default), or .flex-row-reverse to start the horizontal
               direction from the opposite side.
@@ -372,7 +372,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code> .flex-row </code> to set a horizontal direction (the
               browser default), or .flex-row-reverse to start the horizontal
               direction from the opposite side.
@@ -383,7 +383,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Column">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use
               <code> .flex-column </code>
               to set a vertical direction, or
@@ -412,7 +412,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align items">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-items </code>utilities on flexbox containers to
               change the alignment of flex items on the cross axis (the y-axis
               to start, x-axis if <code>flex-direction: column </code>). Choose
@@ -426,7 +426,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align self">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-self </code>utilities on flexbox items to
               individually change their alignment on the cross axis (the y-axis
               to start, x-axis if <code>flex-direction: column </code>). Choose
@@ -440,7 +440,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Fill">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use the <code>.flex-fill</code> class on a series of sibling
               elements to force them into widths equal to their content (or
               equal widths if their content does not surpass their border-boxes)
@@ -452,7 +452,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Grow">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>.flex-grow-* </code>utilities to toggle a flex item’s
               ability to grow to fill available space. In the example below, the
               <code>.flex-grow-1 </code>elements uses all available space it
@@ -465,7 +465,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Shrink">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s
               ability to shrink if necessary. In the example below, the second
               flex item with <code>.flex-shrink-1</code> is forced to wrap its
@@ -479,7 +479,7 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Auto margins">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Flexbox can do some pretty awesome things when you mix flex
                 alignments with auto margins. Shown below are three examples of
                 controlling flex items via auto margins: default (no auto
@@ -494,7 +494,7 @@ const FlexExample = () => {
               title="With align-items"
               className="border-bottom-0"
             >
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Vertically move one flex item to the top or bottom of a
                 container by mixing <code>align-items</code>,{' '}
                 <code>flex-direction: column</code>, and{' '}
@@ -508,7 +508,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Wrap">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Change how flex items wrap in a flex container. Choose from no
               wrapping at all (the browser default) with{' '}
               <code>.flex-nowrap </code>, wrapping with
@@ -522,7 +522,7 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4" noProvider>
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Order">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Change the <em>visual</em> order of specific flex items with a
                 handful of <code>order</code> utilities. We only provide options
                 for making an item first or last, as well as a reset to use the
@@ -535,7 +535,7 @@ const FlexExample = () => {
 
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Responsive variations also exist for <code>order</code>. Use{' '}
                 <code>
                   order-{`{breakpoint}`}-{`{value}`}
@@ -552,7 +552,7 @@ const FlexExample = () => {
             title="Align content"
             className="border-bottom-0"
           >
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-content</code> utilities on flexbox containers to
               align flex items <em>together</em> on the cross axis. Choose from{' '}
               <code>start</code> (browser default), <code>end</code>,{' '}

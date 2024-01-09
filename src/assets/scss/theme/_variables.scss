@@ -473,7 +473,7 @@ $pagination-bg: transparent !default;
 $pagination-border-width: 0 !default;
 $pagination-padding-y: 0.5rem !default;
 $pagination-padding-x: 0.75rem !default;
-$pagination-color: var(--#{$prefix}gray-800) !default;
+$pagination-color: var(--#{$prefix}secondary-color) !default;
 $pagination-hover-color: $primary !default;
 $pagination-hover-bg: $gray-200 !default;
 $pagination-font-size: map-get($font-sizes, 9) !default;
@@ -605,7 +605,7 @@ $progress-box-shadow: 0 0 0 transparent !default;
 //|   List Group
 //-----------------------------------------------*/
 
-$list-group-color: var(--#{$prefix}800);
+$list-group-color: var(--#{$prefix}secondary-color);
 $list-group-bg: var(--#{$prefix}list-group-bg) !default;
 $list-group-border-color: var(--#{$prefix}border-color) !default;
 $list-group-action-hover-color: var(

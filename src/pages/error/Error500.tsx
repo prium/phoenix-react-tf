@@ -45,7 +45,9 @@ const Error500 = () => {
                   className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
-                <h2 className="text-800 fw-bolder mb-3">Unknow error!</h2>
+                <h2 className="text-body-secondary fw-bolder mb-3">
+                  Unknow error!
+                </h2>
                 <p className="text-900 mb-5">
                   But relax! Our cat is here to play you some music.
                 </p>

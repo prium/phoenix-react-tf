@@ -60,7 +60,7 @@ const CardViewModal = ({
                 variant={variant}
               />
             </div>
-            <h6 className="text-800 mb-2">Due date</h6>
+            <h6 className="text-body-secondary mb-2">Due date</h6>
             <div className="mb-3">
               <div className="w-50">
                 <DatePicker
@@ -73,7 +73,7 @@ const CardViewModal = ({
             </div>
 
             <div className="mb-3">
-              <h6 className="text-800 mb-2">Assigness</h6>
+              <h6 className="text-body-secondary mb-2">Assigness</h6>
               <div className="d-flex gap-1">
                 {project.assigness.slice(0, 5).map(member => (
                   <AvatarDropdown user={member} size="m" key={member.id} />
@@ -89,7 +89,7 @@ const CardViewModal = ({
             </div>
 
             <div className="mb-5">
-              <h6 className="text-800 mb-2">Labels</h6>
+              <h6 className="text-body-secondary mb-2">Labels</h6>
               <div className="d-flex gap-2 align-items-center">
                 <Badge variant="phoenix" bg="info" className="fs-10">
                   Info
@@ -215,7 +215,7 @@ const CardViewModal = ({
           </Col>
 
           <Col xs={12} xl={3}>
-            <h5 className="text-800 mb-3">Add to card</h5>
+            <h5 className="text-body-secondary mb-3">Add to card</h5>
             <div className="mb-6 d-flex flex-column gap-2">
               {addToCardItems.map(item => (
                 <Button
@@ -231,7 +231,7 @@ const CardViewModal = ({
                 </Button>
               ))}
             </div>
-            <h5 className="text-800 mb-3">Actions</h5>
+            <h5 className="text-body-secondary mb-3">Actions</h5>
             <div className="d-flex flex-column gap-2">
               {actionItems.map(item => (
                 <Button

@@ -48,14 +48,14 @@ const EcommerceFooter = () => {
                   icon={faFacebookSquare}
                   className="text-primary me-2 fs-8"
                 />
-                <span className="text-800">Facebook</span>
+                <span className="text-body-secondary">Facebook</span>
               </Link>
               <Link to="#!" className="mb-1 fw-semi-bold fs-9">
                 <FontAwesomeIcon
                   icon={faTwitterSquare}
                   className="text-info me-2 fs-8"
                 />
-                <span className="text-800">Twitter</span>
+                <span className="text-body-secondary">Twitter</span>
               </Link>
             </Stack>
           </Col>

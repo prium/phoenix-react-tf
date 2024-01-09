@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <hr className="text-800" />
+        <hr className="text-body-secondary" />
         <div className="d-sm-flex flex-between-center text-center">
           <p className="text-600 mb-0">Copyright © Company Name</p>
           <p className="text-600 mb-0">

@@ -31,7 +31,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
       />
       <div className="pricing-column-title-box mb-sm-5">
         <h3 className="mb-2">{pricing.title}</h3>
-        <p className="text-800 mb-0 pe-3">{pricing.description}</p>
+        <p className="text-body-secondary mb-0 pe-3">{pricing.description}</p>
       </div>
       <div className="d-flex align-items-center mb-4">
         {pricing.price === 0 ? (
@@ -57,7 +57,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
         className="fa-ul"
         style={{ '--fa-li-margin': '1.5em' } as CSSProperties}
       >
-        <li className="text-800 mb-2">
+        <li className="text-body-secondary mb-2">
           <span className="fa-li">
             <FontAwesomeIcon icon={faCheck} className="text-primary" />
           </span>

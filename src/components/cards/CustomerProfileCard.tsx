@@ -18,7 +18,7 @@ const CustomerProfileCard = () => {
           </Col>
           <Col xs={12} sm="auto" className="flex-1">
             <h3>Ansolo Lazinatov</h3>
-            <p className="text-800">Joined 3 months ago</p>
+            <p className="text-body-secondary">Joined 3 months ago</p>
             <div className="d-inline-flex gap-2">
               <a href="#!">
                 <FontAwesomeIcon
@@ -45,15 +45,15 @@ const CustomerProfileCard = () => {
         <div className="d-flex flex-between-center border-top border-dashed border-300 pt-4">
           <div>
             <h6>Following</h6>
-            <p className="fs-7 text-800 mb-0">297</p>
+            <p className="fs-7 text-body-secondary mb-0">297</p>
           </div>
           <div className="">
             <h6>Projects</h6>
-            <p className="fs-7 text-800 mb-0">56</p>
+            <p className="fs-7 text-body-secondary mb-0">56</p>
           </div>
           <div className="">
             <h6>Completion</h6>
-            <p className="fs-7 text-800 mb-0">97</p>
+            <p className="fs-7 text-body-secondary mb-0">97</p>
           </div>
         </div>
       </Card.Body>

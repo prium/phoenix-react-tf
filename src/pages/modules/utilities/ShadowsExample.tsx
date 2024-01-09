@@ -20,7 +20,7 @@ const ShadowsExample = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Example">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               While shadows on components are disabled by default in Bootstrap
               and can be enabled via <code>$enable-shadows</code>, you can also
               quickly add or remove a shadow with our <code>box-shadow</code>{' '}

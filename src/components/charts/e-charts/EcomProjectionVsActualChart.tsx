@@ -57,7 +57,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     type: 'category',
     // boundaryGap: false,
     axisLabel: {
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: Date) => dayjs(value).format('MMM DD'),
       interval: 3,
       fontFamily: 'Nunito Sans',
@@ -87,7 +87,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
       fontSize: 12.8,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       margin: 20,
       verticalAlign: 'bottom',
       formatter: (value: number) => `$${value.toLocaleString()}`

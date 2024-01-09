@@ -18,7 +18,7 @@ const EcoimDefaultAddressCard = () => {
         <div className="pb-7 pb-lg-4 pb-xl-7 mb-4 border-bottom border-300 border-dashed">
           <div className="d-flex flex-wrap justify-content-between">
             <h5 className="text-1000">Address</h5>
-            <p className="text-800">
+            <p className="text-body-secondary">
               Vancouver, British Columbia
               <br />
               Canada
@@ -34,7 +34,7 @@ const EcoimDefaultAddressCard = () => {
           </div>
           <div className="d-flex justify-content-between gap-2">
             <h5 className="text-1000 mb-0">Phone</h5>
-            <a className="text-800" href="tel:+1234567890">
+            <a className="text-body-secondary" href="tel:+1234567890">
               +1234567890
             </a>
           </div>

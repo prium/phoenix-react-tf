@@ -55,7 +55,7 @@ const BoardViewModal = ({
                 />
               </div>
               <div className="mb-4">
-                <h6 className="text-800 mb-2">Assigness</h6>
+                <h6 className="text-body-secondary mb-2">Assigness</h6>
                 <div className="d-flex gap-1">
                   {project.assigness.slice(0, 5).map(member => (
                     <AvatarDropdown user={member} size="m" key={member.id} />
@@ -70,7 +70,7 @@ const BoardViewModal = ({
                 </div>
               </div>
               <div className="mb-5">
-                <h6 className="text-800 mb-2">Labels</h6>
+                <h6 className="text-body-secondary mb-2">Labels</h6>
                 <div className="d-flex gap-2 align-items-center">
                   <Badge variant="phoenix" bg="info" className="fs-10">
                     Info

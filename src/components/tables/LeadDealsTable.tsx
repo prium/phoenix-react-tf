@@ -83,7 +83,7 @@ const columns: ColumnDef<LeadDeal>[] = [
       const variant = getProgressColorVariant(probability);
       return (
         <>
-          <p className="text-800 fs-10 mb-0">{probability}%</p>
+          <p className="text-body-secondary fs-10 mb-0">{probability}%</p>
           <ProgressBar
             now={probability}
             style={{ height: 3 }}

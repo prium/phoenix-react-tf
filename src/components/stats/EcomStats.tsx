@@ -83,7 +83,7 @@ const Stat = ({ stat }: { stat: StatType }) => {
 
       <div className="ms-3">
         <h4 className="mb-0">{stat.title}</h4>
-        <p className="text-800 fs-9 mb-0">{stat.subTitle}</p>
+        <p className="text-body-secondary fs-9 mb-0">{stat.subTitle}</p>
       </div>
     </Stack>
   );

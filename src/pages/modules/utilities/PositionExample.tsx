@@ -53,7 +53,7 @@ const PositionExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Arrange Elements">
-            <p className="mb-0 mt-2 text-800">
+            <p className="mb-0 mt-2 text-body-secondary">
               Arrange elements easily with the edge positioning utilities. The
               format is <code>{`{property}-{position}`}</code> has special
               utility class <code>.all-0 </code>
@@ -65,7 +65,7 @@ const PositionExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Center Elements">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               In addition, you can also center the elements with the transform
               utility classes <code>.translate-middle</code>,{' '}
               <code>.translate-middle-x </code>,{' '}

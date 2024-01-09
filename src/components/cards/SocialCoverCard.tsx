@@ -78,7 +78,7 @@ const SocialCoverCard = () => {
                 </div>
               </div>
             </div>
-            <p className="fs-6 text-800">
+            <p className="fs-6 text-body-secondary">
               “Whenever you find yourself on the side of the majority, it is
               time to pause and reflect.”
             </p>
@@ -125,7 +125,7 @@ const SocialCoverCard = () => {
                         >
                           <FontAwesomeIcon
                             icon={item.icon}
-                            className="text-800 me-2"
+                            className="text-body-secondary me-2"
                           />
                           {item.label}
                         </Dropdown.Item>

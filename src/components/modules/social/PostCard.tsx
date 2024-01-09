@@ -73,7 +73,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 </RevealDropdown>
               </RevealDropdownTrigger>
             </div>
-            <p className="text-800">{post.caption}</p>
+            <p className="text-body-secondary">{post.caption}</p>
             {post.images && <PostGallery images={post.images} />}
           </div>
           <div className="d-flex">

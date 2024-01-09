@@ -104,7 +104,9 @@ const PhoenixDocCardHeader = ({
               </Link>
             </h4>
           )}
-          {description && <p className="mb-0 text-800">{description}</p>}
+          {description && (
+            <p className="mb-0 text-body-secondary">{description}</p>
+          )}
           {children}
         </Col>
         {showPreviewBtn && (

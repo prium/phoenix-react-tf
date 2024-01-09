@@ -41,12 +41,12 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                   <Dropdown align={isRTL ? 'end' : 'start'}>
                     <Dropdown.Toggle
                       variant="link"
-                      className="text-800 text-decoration-none dropdown-caret-none p-0 fs-8 fw-normal"
+                      className="text-body-secondary text-decoration-none dropdown-caret-none p-0 fs-8 fw-normal"
                     >
                       Owner
                       <FontAwesomeIcon
                         icon={faCaretDown}
-                        className="text-800 fs-9 ms-2"
+                        className="text-body-secondary fs-9 ms-2"
                       />
                     </Dropdown.Toggle>
 

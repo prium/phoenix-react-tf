@@ -27,7 +27,7 @@ const EventDetail = () => {
         <Col xl={8} className="border-end-xl border-300">
           <EventTitleCard className="mb-9" />
           <h2 className="mb-3">About this event</h2>
-          <p className="text-justify text-800 mb-6 mb-xxl-8">
+          <p className="text-justify text-body-secondary mb-6 mb-xxl-8">
             The Festival Season hopes to continue its rescheduled events in 2023
             during the spring block. This will be a continuation of the
             tradition for the loyal fanbase to watch a jam-packed day full of

@@ -15,7 +15,7 @@ const FaqCategoryCard = ({ category }: { category: FaqCategory }) => {
     >
       <FontAwesomeIcon
         icon={category.icon}
-        className="category-icon text-800 fs-6"
+        className="category-icon text-body-secondary fs-6"
       />
       <span className="d-block fs-6 fw-bolder lh-1 text-900 mt-3 mb-2">
         {category.name}

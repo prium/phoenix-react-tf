@@ -36,7 +36,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   xAxis: {
     type: 'category',
     axisLabel: {
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: string) => dayjs(value).format('D MMM, YY'),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,

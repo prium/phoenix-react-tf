@@ -23,7 +23,7 @@ const LeadInfoItem = ({
         <Unicon icon={icon} className="me-2" size={16} />
         <h5 className="text-1000 mb-0">{label}</h5>
       </div>
-      {value && <p className="mb-0 text-800">{value}</p>}
+      {value && <p className="mb-0 text-body-secondary">{value}</p>}
       {children}
     </div>
   );

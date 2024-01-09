@@ -53,8 +53,8 @@ const CustomerDetails = () => {
                         />
                       </Button>
                     </div>
-                    <h5 className="text-800">Address</h5>
-                    <p className="text-800">
+                    <h5 className="text-body-secondary">Address</h5>
+                    <p className="text-body-secondary">
                       Shatinon Mekalan
                       <br />
                       Vancouver, British Columbia
@@ -62,13 +62,13 @@ const CustomerDetails = () => {
                       Canada
                     </p>
                     <div className="mb-3">
-                      <h5 className="text-800">Email</h5>
+                      <h5 className="text-body-secondary">Email</h5>
                       <a href="mailto:shatinon@jeemail.com">
                         shatinon@jeemail.com
                       </a>
                     </div>
-                    <h5 className="text-800">Phone</h5>
-                    <a className="text-800" href="tel:+1234567890">
+                    <h5 className="text-body-secondary">Phone</h5>
+                    <a className="text-body-secondary" href="tel:+1234567890">
                       +1234567890
                     </a>
                   </Card.Body>

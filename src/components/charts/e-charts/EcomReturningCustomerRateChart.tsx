@@ -76,7 +76,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       // interval: 1,
       showMinLabel: false,
       showMaxLabel: false,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: string) => value.slice(0, 3),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
@@ -93,7 +93,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisLabel: {
       showMinLabel: true,
       showMaxLabel: true,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: number) => `${value}%`,
       fontFamily: 'Nunito Sans',
       fontWeight: 600,

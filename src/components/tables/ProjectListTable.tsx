@@ -85,7 +85,7 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
 
       return (
         <>
-          <p className="text-800 fs-10 mb-0">
+          <p className="text-body-secondary fs-10 mb-0">
             {progress.min} / {progress.max}
           </p>
           <ProgressBar

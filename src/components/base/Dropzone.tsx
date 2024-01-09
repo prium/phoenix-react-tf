@@ -89,7 +89,7 @@ const Dropzone = ({
         ) : (
           <div className="text-600 fw-bold fs-9">
             Drag your {imageOnly ? 'photo' : 'files'} here{' '}
-            <span className="text-800">or </span>
+            <span className="text-body-secondary">or </span>
             <Button variant="link" className="p-0">
               Browse from device
             </Button>

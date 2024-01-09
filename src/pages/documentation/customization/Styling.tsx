@@ -149,7 +149,7 @@ const Styling = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Edit SCSS" />
-          <PhoenixDocCard.Body className="text-800">
+          <PhoenixDocCard.Body className="text-body-secondary">
             <p>
               You can add your own SCSS and override the theme style in the{' '}
               <code>user.scss</code> file.
@@ -181,7 +181,7 @@ const Styling = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Changing theme colors" />
-          <PhoenixDocCard.Body className="text-800">
+          <PhoenixDocCard.Body className="text-body-secondary">
             <p>
               You can bring your necessary variable colors form{' '}
               <code>src/scss/theme/_colors.scss </code> and paste it into{' '}

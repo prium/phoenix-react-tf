@@ -42,7 +42,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       interval: 6,
       showMinLabel: true,
       showMaxLabel: true,
-      color: getThemeColor('gray-800')
+      color: getThemeColor('secondary-color')
     }
   },
   yAxis: {

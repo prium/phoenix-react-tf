@@ -120,7 +120,7 @@ const getDefaultOptions = (
         interval: 13,
         showMinLabel: true,
         showMaxLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'left',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,
@@ -156,7 +156,7 @@ const getDefaultOptions = (
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'right',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,
@@ -276,7 +276,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   xAxis: {
     type: 'category',
     axisLabel: {
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: Date) => dayjs(value).format('MMM DD'),
       interval: 3,
       fontFamily: 'Nunito Sans',
@@ -305,7 +305,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
       fontSize: 12.8,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       margin: 20,
       verticalAlign: 'bottom'
     }

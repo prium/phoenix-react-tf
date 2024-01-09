@@ -186,7 +186,7 @@ const InventoryTab = () => {
                       </Form.Check.Label>
                     </Form.Check>
                     <div className="ps-4">
-                      <p className="text-800 fs-9 mb-0">
+                      <p className="text-body-secondary fs-9 mb-0">
                         You’ll be responsible for product delivery. <br />
                         Any damage or delay during shipping may cost you a
                         Damage fee.
@@ -204,7 +204,7 @@ const InventoryTab = () => {
                       </Form.Check.Label>
                     </Form.Check>
                     <div className="ps-4">
-                      <p className="text-800 fs-9 mb-0">
+                      <p className="text-body-secondary fs-9 mb-0">
                         Your product, Our responsibility.
                         <br />
                         For a measly fee, we will handle the delivery process
@@ -233,7 +233,7 @@ const InventoryTab = () => {
                   </Form.Check.Label>
                 </Form.Check>
                 <div className="ps-4">
-                  <p className="fs-9 mb-0 text-800">
+                  <p className="fs-9 mb-0 text-body-secondary">
                     Only available with Shipping method:{' '}
                     <Link to="#!">Fullfilled by Phoenix</Link>
                   </p>
@@ -262,7 +262,7 @@ const InventoryTab = () => {
                   </Form.Check.Label>
                 </Form.Check>
                 <div className="ps-4">
-                  <p className="fs-9 mb-0 text-800">
+                  <p className="fs-9 mb-0 text-body-secondary">
                     Deliver to your country of residence{' '}
                     <Link to="#!">Change profile address</Link>
                   </p>

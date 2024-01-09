@@ -179,7 +179,7 @@ const GridExample = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Container">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Containers provide a means to center and horizontally pad your
               site’s contents. Use <code>Container</code> for a responsive pixel
               width.
@@ -191,7 +191,7 @@ const GridExample = () => {
         <PhoenixDocCard noProvider className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Fluid Container">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 You can use <code>&lt;Container fluid /&gt;</code> for width:
                 100% across all viewport and device sizes.
               </p>
@@ -200,7 +200,7 @@ const GridExample = () => {
           </PhoenixDocProvider>
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 You can set breakpoints for the <code>fluid</code> prop. Setting
                 it to a breakpoint (<code>sm, md, lg, xl, xxl</code>) will set
                 the
@@ -214,7 +214,7 @@ const GridExample = () => {
         <PhoenixDocCard noProvider className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Column Width">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 When no column widths are specified the <code>Col</code>{' '}
                 component will render equal width columns.you can set the width
                 of columns and have the sibling columns automatically resize
@@ -225,7 +225,7 @@ const GridExample = () => {
           </PhoenixDocProvider>
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Set the column value (for any breakpoint size) to{' '}
                 <code>"auto"</code> to size columns based on the natural width
                 of their content.
@@ -238,7 +238,7 @@ const GridExample = () => {
         <PhoenixDocCard noProvider className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Responsive grids">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 The <code>Col</code> lets you specify column widths across 6
                 breakpoint sizes (<code>xs, sm, md, lg, xl and xxl</code>). For
                 every breakpoint, you can specify the amount of columns to span,
@@ -259,7 +259,7 @@ const GridExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Order">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               You can use the <code>order</code> property to control the visual
               order of your content.
             </p>
@@ -269,7 +269,7 @@ const GridExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Offset">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               For offsetting grid columns you can set an <code>offset</code>{' '}
               value or for a more general layout, use the margin class
               utilities.
@@ -280,7 +280,7 @@ const GridExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Setting column widths in Row">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               The <code>Row</code> lets you specify column widths across 5
               breakpoint sizes (<code>xs, sm, md, lg, xl and xxl</code>). For
               every breakpoint, you can specify the amount of columns that will

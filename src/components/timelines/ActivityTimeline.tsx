@@ -45,7 +45,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
                   </Link>
                 </p>
                 <p
-                  className={classNames('fs-9 text-800', {
+                  className={classNames('fs-9 text-body-secondary', {
                     'mb-5': index !== data.length - 1,
                     'mb-0': index === data.length - 1
                   })}

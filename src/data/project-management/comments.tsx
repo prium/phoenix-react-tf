@@ -57,7 +57,7 @@ export const comments: Comment[] = [
     },
     date: 'Oct 5 at 9:59 am',
     details: (
-      <div className="d-flex text-800 fs-9">
+      <div className="d-flex text-body-secondary fs-9">
         <p className="mb-0 fw-semi-bold text-1000">
           <FontAwesomeIcon
             icon={faCircle}

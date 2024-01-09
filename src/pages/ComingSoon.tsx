@@ -45,7 +45,7 @@ const ComingSoon = () => {
                   style={{ maxWidth: 415 }}
                 />
 
-                <h2 className="text-gray-800 fs-xl-6 mb-3">
+                <h2 className="text-body-secondary fs-xl-6 mb-3">
                   Get notified when we launch
                 </h2>
                 <p className="mb-6 w-xxl-75">

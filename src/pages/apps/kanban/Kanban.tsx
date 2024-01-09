@@ -68,9 +68,12 @@ const KanbanContent = () => {
                 });
               }}
             >
-              <FontAwesomeIcon icon={faPlus} className="text-800 fs-8" />
+              <FontAwesomeIcon
+                icon={faPlus}
+                className="text-body-secondary fs-8"
+              />
             </Button>
-            <h5 className="text-800">Add another list</h5>
+            <h5 className="text-body-secondary">Add another list</h5>
           </div>
         </div>
       </DragDropContext>

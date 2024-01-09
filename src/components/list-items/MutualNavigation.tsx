@@ -18,7 +18,7 @@ const MutualNavigation = () => {
           <Col xs={12} key={item.label} className="border-1 border-bottom py-2">
             <Button
               variant="link"
-              className="ps-2 fs-8 text-800 hover-primary fw-semi-bold"
+              className="ps-2 fs-8 text-body-secondary hover-primary fw-semi-bold"
               startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
             >
               {item.label}

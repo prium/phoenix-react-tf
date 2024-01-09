@@ -48,7 +48,7 @@
 // Floating Labels
 .form-floating {
   > label {
-    color: var(--#{$prefix}gray-800);
+    color: var(--#{$prefix}secondary-color);
     font-weight: $font-weight-bold;
     font-size: map-get($font-sizes, '10');
     text-transform: uppercase;

@@ -42,7 +42,7 @@ const PricingItem = ({ pricing }: PricingItemProps) => {
               </span>
             )}
             <span
-              className="text-800"
+              className="text-body-secondary"
               style={
                 pricing.features.includes(feature.id)
                   ? ({ '--phoenix-text-opacity': 1 } as CSSProperties)

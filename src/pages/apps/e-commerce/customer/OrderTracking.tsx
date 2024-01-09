@@ -17,7 +17,7 @@ const OrderTracking = () => {
         <div className="d-flex gap-3 flex-wrap justify-content-between align-items-end mb-5">
           <div>
             <h2>Order #234 Status</h2>
-            <p className="text-800 mb-0">
+            <p className="text-body-secondary mb-0">
               Payment Via{' '}
               <a className="fw-bold" href="#!">
                 Cash on delivery

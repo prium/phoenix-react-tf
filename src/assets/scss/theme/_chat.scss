@@ -42,7 +42,7 @@
             font-weight: $font-weight-bold !important;
           }
           .message {
-            color: var(--#{$prefix}800) !important;
+            color: var(--#{$prefix}secondary-color) !important;
             font-weight: $font-weight-semi-bold !important;
           }
         }

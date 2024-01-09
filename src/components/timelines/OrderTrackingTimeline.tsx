@@ -39,7 +39,9 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
             <div className="col">
               <Timeline.Content>
                 <h4>{item.content.title}</h4>
-                <p className="fs-9 text-800 mb-0">{item.content.subtitle}</p>
+                <p className="fs-9 text-body-secondary mb-0">
+                  {item.content.subtitle}
+                </p>
               </Timeline.Content>
             </div>
           </div>

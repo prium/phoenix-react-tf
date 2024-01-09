@@ -34,7 +34,7 @@ const EventItem = ({ event }: EventItemProps) => {
       >
         {event.title}
       </Link>
-      <p className="text-800 fs-9 mb-2">
+      <p className="text-body-secondary fs-9 mb-2">
         Organized by <br />{' '}
         <Link to="#!" className="fw-bold">
           {event.organization}
@@ -42,11 +42,14 @@ const EventItem = ({ event }: EventItemProps) => {
       </p>
       <p className="fs-10 text-600">{event.people} people going</p>
       <p className="fs-9 text-700 fw-bold mb-1">
-        <FontAwesomeIcon icon={faClock} className="text-800 me-1" />
+        <FontAwesomeIcon icon={faClock} className="text-body-secondary me-1" />
         {event.time}
       </p>
       <p className="fs-9 text-700 fw-bold mb-0">
-        <FontAwesomeIcon icon={faMapMarkerAlt} className="text-800 me-1" />
+        <FontAwesomeIcon
+          icon={faMapMarkerAlt}
+          className="text-body-secondary me-1"
+        />
         {event.place}
       </p>
     </div>

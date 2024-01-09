@@ -17,7 +17,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
         <Button
           variant="link"
           href="#!"
-          className="text-decoration-none text-800 d-flex align-items-center me-3 fs-10 p-0"
+          className="text-decoration-none text-body-secondary d-flex align-items-center me-3 fs-10 p-0"
           startIcon={<FontAwesomeIcon icon={faEye} className="fs-9" />}
         >
           {blog.views}
@@ -25,7 +25,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
         <Button
           variant="link"
           href="#!"
-          className="text-decoration-none text-800 d-flex align-items-center me-3 fs-10 p-0"
+          className="text-decoration-none text-body-secondary d-flex align-items-center me-3 fs-10 p-0"
           startIcon={<FontAwesomeIcon icon={faHeart} className="fs-9" />}
         >
           {blog.like}
@@ -33,7 +33,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
         <Button
           variant="link"
           href="#!"
-          className="text-decoration-none text-800 d-flex align-items-center fs-10 p-0"
+          className="text-decoration-none text-body-secondary d-flex align-items-center fs-10 p-0"
           startIcon={<FontAwesomeIcon icon={faComment} className="fs-9" />}
         >
           {blog.comments}

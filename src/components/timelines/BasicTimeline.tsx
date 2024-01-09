@@ -31,7 +31,7 @@ const BasicTimeline = ({ data }: { data: TimelineItem[] }) => {
                 <div className="d-flex justify-content-between">
                   <div className="d-flex mb-2">
                     <h6
-                      className="lh-sm mb-0 me-2 text-800 timeline-item-title"
+                      className="lh-sm mb-0 me-2 text-body-secondary timeline-item-title"
                       dangerouslySetInnerHTML={{ __html: item.title }}
                     ></h6>
                     {item.file && (
@@ -60,9 +60,12 @@ const BasicTimeline = ({ data }: { data: TimelineItem[] }) => {
                   </Link>
                 </h6>
                 <p
-                  className={classNames('fs-9 text-800 w-sm-60 mb-0', {
-                    'mb-5': index !== data.length - 1
-                  })}
+                  className={classNames(
+                    'fs-9 text-body-secondary w-sm-60 mb-0',
+                    {
+                      'mb-5': index !== data.length - 1
+                    }
+                  )}
                 >
                   {item.content}
                 </p>
