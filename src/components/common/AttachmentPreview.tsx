@@ -33,7 +33,7 @@ const AttachmentPreview = ({
           `btn-icon btn-icon-${size} rounded-3 flex-column me-2 position-relative`,
           {
             border: !attachment.preview,
-            'text-500 border-500': variant === 'primary',
+            'text-body-quaternary border-500': variant === 'primary',
             'border-white text-white': variant === 'secondary'
           }
         )}
@@ -84,7 +84,7 @@ const AttachmentPreview = ({
             <>
               <FontAwesomeIcon
                 icon={faCircle}
-                className="text-500"
+                className="text-body-quaternary"
                 transform="shrink-12"
               />
               <p className="mb-0 text-nowrap">{attachment.date}</p>

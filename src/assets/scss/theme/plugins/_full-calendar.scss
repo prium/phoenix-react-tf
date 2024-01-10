@@ -226,7 +226,7 @@
   .fc-daygrid-more-link {
     display: block;
     text-align: center;
-    color: var(--#{$prefix}gray-500) !important;
+    color: var(--#{$prefix}quaternary-color) !important;
     font-size: map-get($font-sizes, '10');
     @include hover-focus {
       text-decoration: none;
@@ -234,7 +234,7 @@
     }
   }
   .fc-daygrid-dot-event {
-    color: $gray-500 !important;
+    color: var(--#{$prefix}quaternary-color) !important;
     @include hover-focus {
       background-color: var(--#{$prefix}gray-100) !important;
     }

@@ -68,7 +68,7 @@ const IconCard = ({
         <div className="d-flex">
           <Toast.Body className="P-3">
             <span className="fw-black">
-              Copied: <code className="text-500">{text}</code>
+              Copied: <code className="text-body-quaternary">{text}</code>
             </span>
           </Toast.Body>
         </div>

@@ -27,7 +27,10 @@ const FormCollapse = ({
       >
         <div className="d-flex align-items-center justify-content-between w-100">
           <div className="fs-8 text-body-highlight">{title}</div>
-          <FontAwesomeIcon icon={faAngleUp} className="toggle-icon text-500" />
+          <FontAwesomeIcon
+            icon={faAngleUp}
+            className="toggle-icon text-body-quaternary"
+          />
         </div>
       </Button>
       <Collapse in={open}>

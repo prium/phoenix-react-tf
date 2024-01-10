@@ -41,7 +41,8 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
           <FeatherIcon icon="clock" size={16} className="me-2" />
 
           <p className="mb-0 fs-9 fw-semi-bold text-700 flex-1">
-            {deal.date} . <span className="text-500">{deal.time}</span>
+            {deal.date} .{' '}
+            <span className="text-body-quaternary">{deal.time}</span>
           </p>
           <button
             className="btn p-0 deal-collapse-btn"
@@ -67,7 +68,11 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
               'd-none': !deal.openDetails
             })}
           >
-            <FeatherIcon icon="grid" size={12} className="text-500 me-1" />
+            <FeatherIcon
+              icon="grid"
+              size={12}
+              className="text-body-quaternary me-1"
+            />
             {deal.category}
           </p>
           <p

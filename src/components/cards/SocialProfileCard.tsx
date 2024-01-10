@@ -78,7 +78,7 @@ const SocialProfileCard = ({
                   <Link to="#!">
                     <FontAwesomeIcon
                       icon={faPencil}
-                      className="fs-10 text-500 ms-3"
+                      className="fs-10 text-body-quaternary ms-3"
                     />
                   </Link>
                 </p>

@@ -100,7 +100,7 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
         <Button
           size="sm"
           variant="link"
-          className="text-500 hover-text-600 me-2"
+          className="text-body-quaternary hover-text-600 me-2"
         >
           <FontAwesomeIcon icon={faTrash} />
         </Button>

@@ -49,7 +49,7 @@ const CustomerDetails = () => {
                       <Button variant="link" className="p-0">
                         <FontAwesomeIcon
                           icon={faPen}
-                          className="fs-8 ms-3 text-500"
+                          className="fs-8 ms-3 text-body-quaternary"
                         />
                       </Button>
                     </div>

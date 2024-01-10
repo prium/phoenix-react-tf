@@ -208,7 +208,7 @@ $lead-font-weight: $font-weight-semi-bold !default;
 
 $small-font-size: 75% !default;
 
-$text-muted: $gray-500 !default;
+// $text-muted: $gray-500 !default;
 
 $blockquote-font-size: $font-size-lg !default;
 
@@ -307,7 +307,7 @@ $input-padding-x: 1rem;
 $input-padding-x-lg: 1rem;
 
 $input-disabled-bg: rgba(var(--#{$prefix}gray-100-rgb), 0.7) !default;
-$input-disabled-color: var(--#{$prefix}gray-500) !default;
+$input-disabled-color: var(--#{$prefix}quaternary-color) !default;
 $input-group-addon-bg: $gray-100 !default;
 $input-disabled-group-addon-bg: $input-disabled-bg !default;
 $input-disabled-group-addon-color: $input-disabled-color !default;

@@ -70,7 +70,7 @@ const ProductDescription = () => {
             </div>
             <div className="d-flex flex-wrap align-items-center">
               <h1 className="me-3">{currencyFormat(1349.99)}</h1>
-              <p className="text-500 text-decoration-line-through fs-6 mb-0 me-3">
+              <p className="text-body-quaternary text-decoration-line-through fs-6 mb-0 me-3">
                 {currencyFormat(1499.99)}
               </p>
               <p className="text-warning-500 fw-bolder fs-6 mb-0">10% off</p>

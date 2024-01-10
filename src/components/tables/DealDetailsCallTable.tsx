@@ -91,7 +91,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         <div className="d-flex align-items-center flex-1">
           <FontAwesomeIcon
             icon={faClock}
-            className={classNames('me-1 text-500', {
+            className={classNames('me-1 text-body-quaternary', {
               'text-success': original.activity === 'Active'
             })}
             transform="shrink-2 up-1"

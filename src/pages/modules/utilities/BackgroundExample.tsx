@@ -38,7 +38,9 @@ const BackgroundExample = () => {
                     <div className="text-center">
                       <code
                         className={
-                          variant === 'secondary' ? 'text-500' : 'text-white'
+                          variant === 'secondary'
+                            ? 'text-body-quaternary'
+                            : 'text-white'
                         }
                       >
                         .bg-{variant}
@@ -46,7 +48,9 @@ const BackgroundExample = () => {
                       <br />
                       <code
                         className={
-                          variant === 'secondary' ? 'text-500' : 'text-white'
+                          variant === 'secondary'
+                            ? 'text-body-quaternary'
+                            : 'text-white'
                         }
                       >
                         {getThemeColor(variant)}

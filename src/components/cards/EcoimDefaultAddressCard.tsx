@@ -11,7 +11,7 @@ const EcoimDefaultAddressCard = () => {
           <h4 className="mb-3 lh-sm lh-xl-1">
             Default Address
             <Button variant="link" className="p-0 ms-3" type="button">
-              <FontAwesomeIcon icon={faEdit} className="text-500" />
+              <FontAwesomeIcon icon={faEdit} className="text-body-quaternary" />
             </Button>
           </h4>
         </div>

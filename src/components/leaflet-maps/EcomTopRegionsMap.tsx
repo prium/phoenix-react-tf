@@ -62,7 +62,7 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
           >
             <Popup>
               <h6 className="mb-1">{marker.name}</h6>
-              <p className="m-0 text-500">
+              <p className="m-0 text-body-quaternary">
                 {marker.street} {marker.location}
               </p>
             </Popup>

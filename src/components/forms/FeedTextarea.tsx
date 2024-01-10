@@ -44,7 +44,10 @@ const FeedTextarea = ({ className }: { className?: string }) => {
             >
               <FontAwesomeIcon icon={faGlobeAsia} className="fs-8 me-1" />
               <span className="me-1 lh-base d-none d-sm-block">{privacy}</span>
-              <FontAwesomeIcon icon={faCaretDown} className="fs-10 text-500" />
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="fs-10 text-body-quaternary"
+              />
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => setPrivacy('Public')}>

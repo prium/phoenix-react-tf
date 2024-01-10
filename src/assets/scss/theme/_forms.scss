@@ -165,7 +165,7 @@
     transition: $transition-base;
   }
   &:checked + label {
-    color: var(--#{$prefix}gray-500);
+    color: var(--#{$prefix}quaternary-color);
     text-decoration: line-through;
   }
 }
@@ -219,7 +219,7 @@ select:-webkit-autofill:focus {
     + {
       div {
         label {
-          color: var(--#{$prefix}gray-500);
+          color: var(--#{$prefix}quaternary-color);
           text-decoration: line-through;
         }
       }

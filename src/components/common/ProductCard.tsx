@@ -45,7 +45,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <p className="fs-9">
               <Rating readonly initialValue={product.rating} />
               {product.rated && (
-                <span className="text-500 fw-semi-bold ms-1">
+                <span className="text-body-quaternary fw-semi-bold ms-1">
                   ({product.rated} people rated)
                 </span>
               )}

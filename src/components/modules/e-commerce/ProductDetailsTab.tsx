@@ -105,7 +105,9 @@ const ProductDetailsTab = () => {
                       <div className="d-flex align-items-center flex-wrap">
                         <h2 className="fw-bolder me-3">
                           4.9
-                          <span className="fs-8 text-500 fw-bold">/5</span>
+                          <span className="fs-8 text-body-quaternary fw-bold">
+                            /5
+                          </span>
                         </h2>
                         <div className="me-3">
                           <Rating

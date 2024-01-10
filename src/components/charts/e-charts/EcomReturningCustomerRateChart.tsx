@@ -39,7 +39,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     itemHeight: 8,
     itemGap: 20,
     top: 3,
-    inactiveColor: getThemeColor('gray-500'),
+    inactiveColor: getThemeColor('quaternary-color'),
     inactiveBorderWidth: 0,
     textStyle: {
       color: getThemeColor('body-color'),

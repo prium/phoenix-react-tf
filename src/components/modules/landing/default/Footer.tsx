@@ -28,7 +28,7 @@ const FooterList = ({
       <ul className="list-unstyled mb-1">
         {items.map((item, index) => (
           <li className="mb-1" key={index}>
-            <Link className="text-500 hover-text-100 light" to="#!">
+            <Link className="text-body-quaternary hover-text-100 light" to="#!">
               {item}
             </Link>
           </li>

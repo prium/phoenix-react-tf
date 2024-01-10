@@ -64,7 +64,7 @@ const KanbanHeader = () => {
                 <span className="fs-7 me-2">Phoenix</span>
                 <FontAwesomeIcon
                   icon={faAngleDown}
-                  className="text-500 d-inline-block"
+                  className="text-body-quaternary d-inline-block"
                 />
               </Dropdown.Toggle>
 

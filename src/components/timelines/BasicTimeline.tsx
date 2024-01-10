@@ -44,7 +44,7 @@ const BasicTimeline = ({ data }: { data: TimelineItem[] }) => {
                       </h6>
                     )}
                   </div>
-                  <div className="text-500 fs-9 text-nowrap timeline-time">
+                  <div className="text-body-quaternary fs-9 text-nowrap timeline-time">
                     <FontAwesomeIcon icon={faClock} className="me-1" />
                     {item.time}
                   </div>

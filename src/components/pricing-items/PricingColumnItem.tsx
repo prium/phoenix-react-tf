@@ -66,7 +66,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
         {pricingColumnFeatures.map(item => (
           <li
             key={item.id}
-            className={classNames('mb-2 text-500', {
+            className={classNames('mb-2 text-body-quaternary', {
               'text-body': pricing.features.includes(item.id)
             })}
           >

@@ -93,7 +93,10 @@ const EmailDetail = () => {
                     <span className="fw-semi-bold text-body fs-10 me-1">
                       6:32 PM
                     </span>
-                    <FontAwesomeIcon icon={farStar} className="text-500" />
+                    <FontAwesomeIcon
+                      icon={farStar}
+                      className="text-body-quaternary"
+                    />
                   </p>
                 </Col>
               </Row>

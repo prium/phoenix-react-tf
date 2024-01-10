@@ -155,7 +155,7 @@ const PhoenixDocCardHeader = ({
         <div className="d-flex">
           <Toast.Body className="P-3">
             <span className="fw-black">
-              <code className="text-500">
+              <code className="text-body-quaternary">
                 Code has been copied to clipboard.
               </code>
             </span>

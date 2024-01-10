@@ -35,7 +35,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       interval: 3,
       showMinLabel: true,
       showMaxLabel: false,
-      color: getThemeColor('gray-500'),
+      color: getThemeColor('quaternary-color'),
       align: 'left',
       fontFamily: 'Nunito Sans',
       fontWeight: 400,

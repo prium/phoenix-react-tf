@@ -45,7 +45,10 @@ const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
             <span className="text-body">205</span>
           </p>
           <Button className="p-0" type="button">
-            <FontAwesomeIcon icon={faAngleLeft} className="text-500 fs-10" />
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              className="text-body-quaternary fs-10"
+            />
           </Button>
           <Button className="p-0" type="button">
             <FontAwesomeIcon
