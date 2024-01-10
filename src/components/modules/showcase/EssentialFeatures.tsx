@@ -182,7 +182,7 @@ const EssentialFeatures = () => {
       <Container fluid="lg">
         <Row className="justify-content-center">
           <Col xs={12} lg={9} xl={8} xxl={6} className="text-center">
-            <h2 className="text-1000 fw-normal mb-13 lh-sm">
+            <h2 className="text-body-highlight fw-normal mb-13 lh-sm">
               Packed with{' '}
               <span className="text-primary ms-2 position-relative fw-bolder d-inline-flex">
                 essential features

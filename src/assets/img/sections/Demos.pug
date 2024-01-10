@@ -75,7 +75,7 @@ mixin Demo(config)
 					.layout-thumb
 						img.img-fluid.rounded(src=`${CWD}assets/img/sections/${config.mainThumb}.webp` alt="")
 				
-				h5.py-4.text-1000=config.variantName
+				h5.py-4.text-body-highlight=config.variantName
 		a(href=config.link data-showcase-demo=config.value target='_blank').stretched-link
 
 mixin Demos

@@ -119,7 +119,7 @@ export const topDealsProducts: Product[] = [
     salePrice: 89.0,
     colors: 2,
     extra: 'dbrand skin available',
-    extraClass: 'text-1000 fw-bold mb-2'
+    extraClass: 'text-body-highlight fw-bold mb-2'
   },
   {
     id: 2,
@@ -142,7 +142,7 @@ export const topDealsProducts: Product[] = [
     salePrice: 850.99,
     colors: 5,
     extra: 'Stock limited',
-    extraClass: 'text-1000 fw-bold mb-2'
+    extraClass: 'text-body-highlight fw-bold mb-2'
   },
   {
     id: 4,
@@ -154,7 +154,7 @@ export const topDealsProducts: Product[] = [
     salePrice: 1149.0,
     colors: 2,
     extra: 'Apple care included',
-    extraClass: 'text-1000 fw-bold mb-2'
+    extraClass: 'text-body-highlight fw-bold mb-2'
   },
   {
     id: 5,
@@ -166,7 +166,7 @@ export const topDealsProducts: Product[] = [
     salePrice: 1399,
     colors: 7,
     extra: 'Exchange with kidney',
-    extraClass: 'text-1000 fw-bold mb-2'
+    extraClass: 'text-body-highlight fw-bold mb-2'
   },
   {
     id: 6,
@@ -207,7 +207,7 @@ export const topElectronicProducts: Product[] = [
     salePrice: 299,
     colors: 1,
     extra: 'Leather cover add-on available',
-    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'supports Windows 11',
     extra2Class: 'text-700 fs--1 mb-2'
   },
@@ -231,7 +231,7 @@ export const topElectronicProducts: Product[] = [
     salePrice: 59,
     colors: 3,
     extra: 'Free with iPhone 5s',
-    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'Ships to Canada',
     extra2Class: 'text-700 fs--1 mb-2'
   },
@@ -244,7 +244,7 @@ export const topElectronicProducts: Product[] = [
     salePrice: 89,
     colors: 2,
     extra: 'Bundle available',
-    extraClass: 'text-1000 fs--1 mb-0 fw-bold',
+    extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'Charger not included',
     extra2Class: 'text-700 fs--1 mb-2'
   },

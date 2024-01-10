@@ -110,7 +110,7 @@ const Orders = () => {
                 <FilterButtonGroup menus={filterMenus} />
               </div>
               <div className="ms-xxl-auto">
-                <Button variant="link" className="text-900 me-4 px-0">
+                <Button variant="link" className="text-body me-4 px-0">
                   <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                   Export
                 </Button>

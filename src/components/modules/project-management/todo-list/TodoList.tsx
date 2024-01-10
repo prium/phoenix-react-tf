@@ -59,7 +59,7 @@ const TodoList = () => {
               className={classNames({
                 'border-top': index === 0
               })}
-              labelClassName="text-900"
+              labelClassName="text-body"
               fullLayoutBreakpoints={['md', 'xxl']}
               halfLayoutBreakpoints={['xl']}
               onClick={setSelectedItem}

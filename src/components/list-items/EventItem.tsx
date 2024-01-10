@@ -30,7 +30,7 @@ const EventItem = ({ event }: EventItemProps) => {
       </div>
       <Link
         to="#!"
-        className="hover-primary text-1000 fw-bold mb-2 line-clamp-1 me-5 lh-base"
+        className="hover-primary text-body-highlight fw-bold mb-2 line-clamp-1 me-5 lh-base"
       >
         {event.title}
       </Link>

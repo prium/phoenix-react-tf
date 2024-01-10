@@ -126,7 +126,7 @@ const EcommerceNavbar = () => {
         <Dropdown ref={otherElsRef}>
           <Dropdown.Toggle
             variant=""
-            className="text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
+            className="text-body ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
           >
             <FontAwesomeIcon icon={faBars} className="me-2" />
             Category
@@ -146,7 +146,7 @@ const EcommerceNavbar = () => {
                             style={{ strokeWidth: 3 }}
                             size={16}
                           />
-                          <h6 className="text-1000 mb-0 text-nowrap">
+                          <h6 className="text-body-highlight mb-0 text-nowrap">
                             {category.title}
                           </h6>
                         </div>

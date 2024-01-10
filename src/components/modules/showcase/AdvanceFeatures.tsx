@@ -40,7 +40,7 @@ const AdvanceFeatures = () => {
         <Container fluid="lg" className="gsap">
           <Row className="justify-content-center mb-11">
             <Col xs={12} xl={7} className="text-center">
-              <h2 className="text-1000 fw-normal lh-sm">
+              <h2 className="text-body-highlight fw-normal lh-sm">
                 Beautiful blending of <br />
                 card and cardless designs of{' '}
                 <span className="text-primary position-relative fw-bolder d-inline-flex ms-2">

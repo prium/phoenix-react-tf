@@ -35,7 +35,7 @@ const PostComments = ({ comments }: PostCommentsProps) => {
               <div className="mb-3">
                 <Button
                   variant="link"
-                  className="p-0 text-900 mb-2 fs-10"
+                  className="p-0 text-body mb-2 fs-10"
                   startIcon={
                     <FontAwesomeIcon icon={faReply} className="me-1" />
                   }

@@ -17,10 +17,10 @@ const FaqCategoryCard = ({ category }: { category: FaqCategory }) => {
         icon={category.icon}
         className="category-icon text-body-secondary fs-6"
       />
-      <span className="d-block fs-6 fw-bolder lh-1 text-900 mt-3 mb-2">
+      <span className="d-block fs-6 fw-bolder lh-1 text-body mt-3 mb-2">
         {category.name}
       </span>
-      <span className="d-block text-900 fw-normal mb-0 fs-9">
+      <span className="d-block text-body fw-normal mb-0 fs-9">
         {category.description}
       </span>
     </Nav.Link>

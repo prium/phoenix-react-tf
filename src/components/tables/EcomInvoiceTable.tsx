@@ -4,7 +4,7 @@ import React from 'react';
 const EcomInvoiceTable = () => {
   return (
     <Scrollbar autoHeight autoHeightMax="100%">
-      <table className="table fs-9 text-900 mb-0">
+      <table className="table fs-9 text-body mb-0">
         <thead className="bg-200">
           <tr>
             <th scope="col" style={{ width: 24 }} />
@@ -54,7 +54,9 @@ const EcomInvoiceTable = () => {
             </td>
             <td className="align-middle ps-5">Glossy black</td>
             <td className="align-middle text-700 fw-semi-bold">XL</td>
-            <td className="align-middle text-end text-1000 fw-semi-bold">2</td>
+            <td className="align-middle text-end text-body-highlight fw-semi-bold">
+              2
+            </td>
             <td className="align-middle text-end fw-semi-bold">$299</td>
             <td className="align-middle text-end">2.5%</td>
             <td className="align-middle text-center fw-semi-bold">VAT</td>
@@ -72,7 +74,9 @@ const EcomInvoiceTable = () => {
             </td>
             <td className="align-middle ps-5">Black</td>
             <td className="align-middle text-700 fw-semi-bold">Pro</td>
-            <td className="align-middle text-end text-1000 fw-semi-bold">1</td>
+            <td className="align-middle text-end text-body-highlight fw-semi-bold">
+              1
+            </td>
             <td className="align-middle text-end fw-semi-bold">$199</td>
             <td className="align-middle text-end">2.75%</td>
             <td className="align-middle text-center fw-semi-bold">VAT</td>
@@ -92,7 +96,7 @@ const EcomInvoiceTable = () => {
             <td className="align-middle text-700 fw-semi-bold border-0">
               Regular
             </td>
-            <td className="align-middle text-end text-1000 fw-semi-bold border-0">
+            <td className="align-middle text-end text-body-highlight fw-semi-bold border-0">
               1
             </td>
             <td className="align-middle text-end fw-semi-bold border-0">
@@ -144,10 +148,16 @@ const EcomInvoiceTable = () => {
             <td />
           </tr>
           <tr className="bg-200">
-            <td className="align-middle ps-4 fw-bold text-1000" colSpan={3}>
+            <td
+              className="align-middle ps-4 fw-bold text-body-highlight"
+              colSpan={3}
+            >
               Grand Total
             </td>
-            <td className="align-middle fw-bold text-1000" colSpan={7}>
+            <td
+              className="align-middle fw-bold text-body-highlight"
+              colSpan={7}
+            >
               Three Hundred and Ninenty Eight USD
             </td>
             <td className="align-middle text-end fw-bold">$398</td>

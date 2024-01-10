@@ -90,7 +90,7 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
               </Button>
               <Link
                 to="#!"
-                className="btn btn-link p-0 text-900 order-1 order-lg-0"
+                className="btn btn-link p-0 text-body order-1 order-lg-0"
               >
                 Sign in
               </Link>

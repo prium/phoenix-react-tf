@@ -41,7 +41,7 @@ const CalendarEventModal = () => {
     >
       <Modal.Header className="ps-card border-bottom">
         <div>
-          <Modal.Title className="modal-title text-1000 mb-0">
+          <Modal.Title className="modal-title text-body-highlight mb-0">
             {selectedEvent?.title}
           </Modal.Title>
           {selectedEvent?.extendedProps.organizer && (

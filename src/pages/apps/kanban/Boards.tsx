@@ -65,7 +65,7 @@ const Boards = () => {
         </Button>
         <Button
           variant="phoenix-primary"
-          className="px-3 px-sm-4 d-flex text-900"
+          className="px-3 px-sm-4 d-flex text-body"
           as={Link}
           to="#!"
         >
@@ -76,7 +76,7 @@ const Boards = () => {
         </Button>
         <Button
           variant="phoenix-primary"
-          className="px-3 px-sm-4 d-flex text-900"
+          className="px-3 px-sm-4 d-flex text-body"
           as={Link}
           to="#!"
         >

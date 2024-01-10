@@ -48,8 +48,8 @@ const ReportsFilterModal = ({ show, onHide }: ReportsFilterModalProps) => {
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header className="p-4">
-        <h5 className="modal-title text-1000 fs-6 lh-sm">Filter</h5>
-        <Button className="p-1 text-900" onClick={onHide}>
+        <h5 className="modal-title text-body-highlight fs-6 lh-sm">Filter</h5>
+        <Button className="p-1 text-body" onClick={onHide}>
           <FontAwesomeIcon icon={faTimes} className="fs-9" />
         </Button>
       </Modal.Header>

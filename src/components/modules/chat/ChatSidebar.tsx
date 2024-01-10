@@ -49,7 +49,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
             placeholder="People, Groups and Messages"
             className="form-icon-input"
           />
-          <FontAwesomeIcon icon={faUser} className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faUser} className="text-body fs-9 form-icon" />
         </Form.Group>
         <ChatFilterTab />
       </Card>

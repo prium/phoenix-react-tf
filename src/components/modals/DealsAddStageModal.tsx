@@ -40,7 +40,9 @@ const DealsAddStageModal = ({ show, handleClose }: DealsAddStageModalProps) => {
     <Modal show={show} onHide={handleClose} centered contentClassName="border">
       <Form onSubmit={handleSubmit}>
         <Modal.Header className="border-0 p-5">
-          <h5 className="modal-title text-1000 fs-6 lh-sm">Create New Stage</h5>
+          <h5 className="modal-title text-body-highlight fs-6 lh-sm">
+            Create New Stage
+          </h5>
           <Button variant="phoenix-secondary" onClick={handleClose} size="sm">
             <FontAwesomeIcon icon={faTimes} className="text-danger" />
           </Button>

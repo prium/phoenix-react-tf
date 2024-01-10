@@ -74,7 +74,7 @@ const getDefaultOptions = (
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         align: 'right',
         fontFamily: 'Nunito Sans',
         fontWeight: 700,
@@ -114,7 +114,7 @@ const getDefaultOptions = (
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 25,
       // verticalAlign: 'bottom',
       formatter: (value: number) => `${value / 1000}k`

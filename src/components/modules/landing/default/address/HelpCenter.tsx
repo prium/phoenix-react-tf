@@ -39,7 +39,7 @@ const HelpCenter = () => {
           <div className="flex-1 ms-3">
             <Link
               to="mailto:phoenix@email.com"
-              className="fw-semi-bold text-900"
+              className="fw-semi-bold text-body"
             >
               phoenix@email.com
             </Link>
@@ -53,7 +53,7 @@ const HelpCenter = () => {
             />
           </div>
           <div className="flex-1 ms-3">
-            <Link to="#!" className="fw-semi-bold text-900">
+            <Link to="#!" className="fw-semi-bold text-body">
               39163 Amir Drive Suite 802
             </Link>
           </div>

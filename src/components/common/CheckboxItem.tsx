@@ -26,7 +26,7 @@ const CheckboxItem = ({
         name={name}
         className="mt-0"
       />
-      <Form.Check.Label className="d-block lh-sm fs-8 text-900 fw-normal mb-0">
+      <Form.Check.Label className="d-block lh-sm fs-8 text-body fw-normal mb-0">
         {label}
       </Form.Check.Label>
     </Form.Check>

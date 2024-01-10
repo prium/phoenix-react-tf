@@ -49,7 +49,7 @@ const Error403 = () => {
                 <h2 className="text-body-secondary fw-bolder mb-3">
                   Access Forbidden!
                 </h2>
-                <p className="text-900 mb-5">
+                <p className="text-body mb-5">
                   Halt! Thou art endeavouring to trespass upon a realm not
                   <br className="d-none d-sm-block" /> granted unto thee.
                 </p>

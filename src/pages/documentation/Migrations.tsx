@@ -35,7 +35,7 @@ const Migrations = () => {
         <PhoenixDocCard className="mb-4" key={migration.from}>
           <PhoenixDocCard.Header noPreview>
             <div className="d-flex align-items-center">
-              <p className="text-900 text-nowrap mb-0">
+              <p className="text-body text-nowrap mb-0">
                 <code className="fs-7 opacity-50">{migration.from}</code>
                 <span className="mx-3">to</span>
                 <code className="fs-7">{migration.to}</code>

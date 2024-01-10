@@ -2,7 +2,7 @@
   top: var(--#{$prefix}navbar-top-height);
   padding: map-get($spacers, 5);
   .nav-link {
-    color: var(--#{$prefix}gray-900);
+    color: var(--#{$prefix}body-color);
     font-weight: $font-weight-semi-bold;
     &:hover {
       color: var(--#{$prefix}gray-1100);

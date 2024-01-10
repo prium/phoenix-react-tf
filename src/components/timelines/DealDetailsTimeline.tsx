@@ -27,7 +27,9 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
             <div className="flex-1">
               <div className="d-flex justify-content-between flex-column flex-xl-row mb-2 mb-sm-0">
                 <div className="flex-1 me-2">
-                  <h5 className="text-1000 lh-sm">{activity.title}</h5>
+                  <h5 className="text-body-highlight lh-sm">
+                    {activity.title}
+                  </h5>
                   <p className="fs-9 mb-0">
                     by <Link to="#!">{activity.name}</Link>
                   </p>

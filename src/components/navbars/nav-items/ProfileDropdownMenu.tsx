@@ -64,9 +64,9 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
                       <FeatherIcon
                         icon={item.icon}
                         size={16}
-                        className="me-2 text-900"
+                        className="me-2 text-body"
                       />
-                      <span className="text-1000">{item.label}</span>
+                      <span className="text-body-highlight">{item.label}</span>
                     </Nav.Link>
                   </Nav.Item>
                 ))}
@@ -81,7 +81,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
                 <FeatherIcon
                   icon="user-plus"
                   size={16}
-                  className="me-2 text-900"
+                  className="me-2 text-body"
                 />
                 <span>Add another account</span>
               </Nav.Link>

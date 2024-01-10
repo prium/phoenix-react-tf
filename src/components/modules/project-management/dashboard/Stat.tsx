@@ -9,7 +9,7 @@ const Stat = ({ stat }: { stat: ProjectManagementStat }) => {
       <div className="ms-2">
         <div className="d-flex align-items-end">
           <h2 className="mb-0 me-2">{stat.count}</h2>
-          <span className="fs-7 fw-semi-bold text-900">{stat.title}</span>
+          <span className="fs-7 fw-semi-bold text-body">{stat.title}</span>
         </div>
         <p className="text-body-secondary fs-9 mb-0">{stat.subtitle}</p>
       </div>

@@ -77,7 +77,7 @@
       border-radius: 0 2px 2px 0 !important;
       &:hover {
         background-color: unset !important;
-        color: var(--#{$prefix}gray-900) !important;
+        color: var(--#{$prefix}body-color) !important;
       }
     }
   }
@@ -98,7 +98,7 @@
     background: var(--#{$prefix}gray-200) !important;
   }
   .react-select__option {
-    color: var(--#{$prefix}gray-900) !important;
+    color: var(--#{$prefix}body-color) !important;
     padding: 0.5rem 1rem;
     font-size: map-get($font-sizes, '9');
     &:hover {

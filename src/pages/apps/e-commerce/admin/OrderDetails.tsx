@@ -36,14 +36,14 @@ const OrderDetails = () => {
           <div className="d-flex gap-5">
             <Button
               variant="link"
-              className="p-0 text-900 text-decoration-none"
+              className="p-0 text-body text-decoration-none"
               startIcon={<FontAwesomeIcon icon={faPrint} className="me-2" />}
             >
               Print
             </Button>
             <Button
               variant="link"
-              className="p-0 text-900 text-decoration-none"
+              className="p-0 text-body text-decoration-none"
               startIcon={<FontAwesomeIcon icon={faUndo} className="me-2" />}
             >
               Refund

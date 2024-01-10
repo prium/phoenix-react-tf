@@ -47,15 +47,15 @@ const EcomProfileCard = () => {
         <div className="d-flex flex-between-center pt-4">
           <div>
             <h6 className="mb-2 text-body-secondary">Total Spent</h6>
-            <h4 className="fs-7 text-1000 mb-0">$894</h4>
+            <h4 className="fs-7 text-body-highlight mb-0">$894</h4>
           </div>
           <div className="text-end">
             <h6 className="mb-2 text-body-secondary">Last Order</h6>
-            <h4 className="fs-7 text-1000 mb-0">1 week ago</h4>
+            <h4 className="fs-7 text-body-highlight mb-0">1 week ago</h4>
           </div>
           <div className="text-end">
             <h6 className="mb-2 text-body-secondary">Total Orders</h6>
-            <h4 className="fs-7 text-1000 mb-0">97</h4>
+            <h4 className="fs-7 text-body-highlight mb-0">97</h4>
           </div>
         </div>
       </Card.Body>

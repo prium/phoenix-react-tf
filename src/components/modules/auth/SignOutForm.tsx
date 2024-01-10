@@ -11,7 +11,7 @@ const SignOutForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
       <img className="mb-7 d-dark-none" src={lightImg} alt="phoenix" />
       <img className="mb-7 d-light-none" src={darkImg} alt="phoenix" />
       <div className="mb-6">
-        <h4 className="text-1000">Come back soon!</h4>
+        <h4 className="text-body-highlight">Come back soon!</h4>
         <p className="text-700">
           Thanks for using Phoenix. <br className="d-lg-none" />
           You are now successfully signed out.

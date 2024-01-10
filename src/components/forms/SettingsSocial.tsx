@@ -31,7 +31,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faFacebook}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -50,7 +50,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faTwitter}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -69,7 +69,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -88,7 +88,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faYoutube}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -107,7 +107,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faArtstation}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -126,7 +126,7 @@ const SettingsSocial = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faBehance}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>

@@ -7,7 +7,7 @@ const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
     <>
       <div className="text-center mb-7">
-        <h3 className="text-1000">Sign Up</h3>
+        <h3 className="text-body-highlight">Sign Up</h3>
         <p className="text-700">Create your account today</p>
       </div>
       <AuthSocialButtons title="Sign up" />

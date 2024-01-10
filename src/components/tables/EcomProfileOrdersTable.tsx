@@ -78,7 +78,7 @@ const columns: ColumnDef<CustomerOrder>[] = [
         style: { width: '15%', minWidth: 160 },
         className: 'text-end'
       },
-      cellProps: { className: 'fw-semi-bold text-end text-1000' }
+      cellProps: { className: 'fw-semi-bold text-end text-body-highlight' }
     }
   },
   {

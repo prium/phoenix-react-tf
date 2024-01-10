@@ -21,7 +21,7 @@ const LeadInfoItem = ({
     <div className={classNames(className)}>
       <div className="d-flex align-items-center mb-1">
         <Unicon icon={icon} className="me-2" size={16} />
-        <h5 className="text-1000 mb-0">{label}</h5>
+        <h5 className="text-body-highlight mb-0">{label}</h5>
       </div>
       {value && <p className="mb-0 text-body-secondary">{value}</p>}
       {children}

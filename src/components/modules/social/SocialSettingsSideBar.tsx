@@ -5,7 +5,9 @@ const SocialSettingsSideBar = () => {
   return (
     <>
       <div className="border-bottom border-dashed pb-3 mb-4">
-        <h5 className="text-900 mb-3">Who will be able to see your profile?</h5>
+        <h5 className="text-body mb-3">
+          Who will be able to see your profile?
+        </h5>
         <Form.Check type="radio" id="onlyMe">
           <Form.Check.Input
             type="radio"
@@ -39,7 +41,7 @@ const SocialSettingsSideBar = () => {
         </Form.Check>
       </div>
       <div className="border-bottom border-dashed pb-3 mb-4">
-        <h5 className="text-900 mb-3">Who can tag you?</h5>
+        <h5 className="text-body mb-3">Who can tag you?</h5>
         <Form.Check type="radio" id="tagGroupMembers">
           <Form.Check.Input
             type="radio"

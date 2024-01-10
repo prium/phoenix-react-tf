@@ -23,7 +23,7 @@ const CalendarTop = () => {
       <Col xs={7} md={6} className="d-flex justify-content-end">
         <Button
           variant="link"
-          className="text-900 px-0 me-2 me-md-4"
+          className="text-body px-0 me-2 me-md-4"
           startIcon={<FontAwesomeIcon icon={faSync} className="fs-10 me-2" />}
         >
           <span className="d-none d-md-inline">Sync Now</span>

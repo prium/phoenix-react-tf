@@ -16,37 +16,37 @@ const ShippingInfo = () => {
             <Row className="g-4">
               <Col xs={12}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Full name</h5>
+                  <h5 className="text-body-highlight mb-2">Full name</h5>
                   <Form.Control type="text" placeholder="Full name" />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Email</h5>
+                  <h5 className="text-body-highlight mb-2">Email</h5>
                   <Form.Control type="email" placeholder="Email" />
                 </Form.Group>
               </Col>
               <Col md={6}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Phone</h5>
+                  <h5 className="text-body-highlight mb-2">Phone</h5>
                   <Form.Control type="tel" placeholder="+1234567890" />
                 </Form.Group>
               </Col>
               <Col md={12}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Address line 1</h5>
+                  <h5 className="text-body-highlight mb-2">Address line 1</h5>
                   <Form.Control type="text" placeholder="Address line 1" />
                 </Form.Group>
               </Col>
               <Col md={12}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Address line 2</h5>
+                  <h5 className="text-body-highlight mb-2">Address line 2</h5>
                   <Form.Control type="text" placeholder="Address line 2" />
                 </Form.Group>
               </Col>
               <Col md={4}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">City</h5>
+                  <h5 className="text-body-highlight mb-2">City</h5>
                   <Form.Select defaultValue="van-nuys">
                     <option value="van-nuys">Van Nuys</option>
                     <option value="los-angeles">Los Angeles</option>
@@ -57,7 +57,7 @@ const ShippingInfo = () => {
               </Col>
               <Col md={4}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">State</h5>
+                  <h5 className="text-body-highlight mb-2">State</h5>
                   <Form.Select defaultValue="california">
                     <option value="california">California</option>
                     <option value="Alaska">Alaska</option>
@@ -68,13 +68,13 @@ const ShippingInfo = () => {
               </Col>
               <Col md={4}>
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Zip code</h5>
+                  <h5 className="text-body-highlight mb-2">Zip code</h5>
                   <Form.Control type="text" placeholder="Zip code" />
                 </Form.Group>
               </Col>
               <Col md={4} className="mb-3">
                 <Form.Group>
-                  <h5 className="text-1000 mb-2">Country</h5>
+                  <h5 className="text-body-highlight mb-2">Country</h5>
                   <Form.Select defaultValue="usa">
                     <option value="usa">USA</option>
                     <option value="uk">UK</option>

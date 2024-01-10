@@ -21,10 +21,10 @@ const Location = () => {
       <Row className="flex-between-center gx-0 gy-3">
         <Col xs={12} sm="auto" className="me-1">
           <div className="d-flex">
-            <h5 className="fw-bold text-1000 me-2 mb-0">
+            <h5 className="fw-bold text-body-highlight me-2 mb-0">
               James Tiberius Auditorium
             </h5>
-            <p className="mb-0 text-1000 fs-9">Vancouver</p>
+            <p className="mb-0 text-body-highlight fs-9">Vancouver</p>
           </div>
         </Col>
         <Col xs={12} sm="auto" xl={12}>

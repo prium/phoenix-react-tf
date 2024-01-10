@@ -57,7 +57,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: true,
       align: 'left',
       margin: 100,
-      color: getThemeColor('gray-900')
+      color: getThemeColor('body-color')
     }
   },
   series: {

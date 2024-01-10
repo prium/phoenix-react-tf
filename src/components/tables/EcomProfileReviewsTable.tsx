@@ -51,7 +51,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+        <p className="fs--1 fw-semi-bold text-body-highlight mb-0 line-clamp-3">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>

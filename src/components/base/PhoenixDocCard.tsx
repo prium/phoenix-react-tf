@@ -93,7 +93,7 @@ const PhoenixDocCardHeader = ({
         <Col xs={12} md>
           {title && (
             <h4
-              className={classNames('text-900 text-nowrap', {
+              className={classNames('text-body text-nowrap', {
                 'mb-0': !children && !description,
                 'mb-2': children || description
               })}
@@ -115,7 +115,7 @@ const PhoenixDocCardHeader = ({
               <Button
                 variant="link"
                 size="sm"
-                className="px-2 text-900 copy-code-btn me-2"
+                className="px-2 text-body copy-code-btn me-2"
                 onClick={handleCopyCode}
               >
                 <FontAwesomeIcon icon={faCopy} className="me-1" />

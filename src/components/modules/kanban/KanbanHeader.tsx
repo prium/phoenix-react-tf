@@ -100,7 +100,7 @@ const KanbanHeader = () => {
             <Nav className="w-100 fs-9">
               {navItems.map(item => (
                 <Nav.Item key={item.title}>
-                  <Nav.Link className="d-flex gap-2 align-items-center text-900 px-2 px-xl-3 fw-bold">
+                  <Nav.Link className="d-flex gap-2 align-items-center text-body px-2 px-xl-3 fw-bold">
                     <FontAwesomeIcon icon={item.icon} transform="up-2" />
                     <span className="d-none d-xxl-inline">{item.title}</span>
                   </Nav.Link>
@@ -108,7 +108,7 @@ const KanbanHeader = () => {
               ))}
               <Nav.Item className="my-auto ms-auto">
                 <Nav.Link
-                  className="d-flex gap-2 align-items-center text-900 px-2 px-xl-3 fw-bold"
+                  className="d-flex gap-2 align-items-center text-body px-2 px-xl-3 fw-bold"
                   onClick={() => {
                     kanbanDispatch({
                       type: TOGGLE_DETAILS_OFFCANVAS,

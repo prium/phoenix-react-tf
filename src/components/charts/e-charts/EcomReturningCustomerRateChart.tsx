@@ -42,7 +42,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     inactiveColor: getThemeColor('gray-500'),
     inactiveBorderWidth: 0,
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontWeight: 600,
       fontFamily: 'Nunito Sans'
     }

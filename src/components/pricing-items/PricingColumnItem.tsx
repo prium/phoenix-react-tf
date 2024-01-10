@@ -67,7 +67,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
           <li
             key={item.id}
             className={classNames('mb-2 text-500', {
-              'text-900': pricing.features.includes(item.id)
+              'text-body': pricing.features.includes(item.id)
             })}
           >
             <span className="fa-li me-2 stack-icon-item">

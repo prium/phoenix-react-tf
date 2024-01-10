@@ -48,7 +48,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Orders',
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end px-1' },
-      cellProps: { className: 'fw-semi-bold text-1000 text-end px-1' }
+      cellProps: { className: 'fw-semi-bold text-body-highlight text-end px-1' }
     }
   },
   {
@@ -65,7 +65,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'City',
     meta: {
       headerProps: { style: { width: '25%' }, className: 'ps-7' },
-      cellProps: { className: 'ps-7 text-1000 white-space-nowrap' }
+      cellProps: { className: 'ps-7 text-body-highlight white-space-nowrap' }
     }
   },
   {

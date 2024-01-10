@@ -14,7 +14,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
       return (
         <Link
           to="#!"
-          className=" d-flex align-items-center text-900 text-hover-1000"
+          className=" d-flex align-items-center text-body text-hover-1000"
         >
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 text-1100 fw-semi-bold">{name}</p>
@@ -70,7 +70,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     header: 'City',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-900' }
+      cellProps: { className: 'text-body' }
     }
   },
   {

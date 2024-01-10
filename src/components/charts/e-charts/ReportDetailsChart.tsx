@@ -34,7 +34,7 @@ const getDefaultOptions = (
     type: 'category',
     data: sellersReportData.map(data => data.reportStage),
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
       fontSize: 12.8,
@@ -56,7 +56,7 @@ const getDefaultOptions = (
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,

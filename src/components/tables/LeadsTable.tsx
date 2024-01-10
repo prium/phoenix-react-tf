@@ -32,7 +32,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
               {name}
             </Link>
             <div className="d-flex align-items-center">
-              <p className="mb-0 text-1000 fw-semi-bold fs-9 me-2">
+              <p className="mb-0 text-body-highlight fw-semi-bold fs-9 me-2">
                 {designation}
               </p>
               <Badge variant="phoenix" bg={type}>
@@ -67,7 +67,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link className="text-1000" to={`mailto:${email}`}>
+        <Link className="text-body-highlight" to={`mailto:${email}`}>
           {email}
         </Link>
       );
@@ -101,7 +101,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     cell: ({ row: { original } }) => {
       const { phone } = original;
       return (
-        <Link className="text-1000" to={`tel:${phone}`}>
+        <Link className="text-body-highlight" to={`tel:${phone}`}>
           {phone}
         </Link>
       );
@@ -139,7 +139,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
         className: 'ps-4 pe-5 border-end'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 border-end fw-semi-bold text-1000'
+        className:
+          'white-space-nowrap ps-4 border-end fw-semi-bold text-body-highlight'
       }
     }
   },
@@ -166,7 +167,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
         className: 'ps-4 pe-5 border-end'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 border-end fw-semi-bold text-1000'
+        className:
+          'white-space-nowrap ps-4 border-end fw-semi-bold text-body-highlight'
       }
     }
   },

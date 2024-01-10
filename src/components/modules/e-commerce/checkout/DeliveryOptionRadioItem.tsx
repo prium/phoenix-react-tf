@@ -14,7 +14,9 @@ const DeliveryOptionRadioItem = ({
       <div className="d-flex flex-wrap align-items-center mb-3">
         <Form.Check type="radio" id={id} className="mb-0">
           <Form.Check.Input type="radio" name="delivery_type" />
-          <Form.Check.Label className="fs-8 text-900">{label}</Form.Check.Label>
+          <Form.Check.Label className="fs-8 text-body">
+            {label}
+          </Form.Check.Label>
         </Form.Check>
         <span className="d-inline-block text-1100 fw-bold ms-2">
           {currencyFormat(price, { minimumFractionDigits: 2 })}

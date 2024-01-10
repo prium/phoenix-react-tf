@@ -11,7 +11,7 @@
   --border-color: var(--#{$prefix}gray-300);
   --category-tab-active-color: var(--#{$prefix}gray-300);
   --category-tab-highlight-background-color: var(--#{$prefix}gray-200);
-  --category-tab-color: var(--#{$prefix}gray-900);
+  --category-tab-color: var(--#{$prefix}body-color);
   --text-color: var(--#{$prefix}body-color);
   --emoji-size: 1.8rem !important;
   [data-bs-theme="dark"] & {
@@ -35,13 +35,13 @@
   .picmo__header {
     --secondary-background-color: #{$body-bg};
     [data-bs-theme="dark"] & {
-      --secondary-background-color: #{$gray-1000};
+      --secondary-background-color: #{$body-highlight-color};
     }
   }
   .picmo__preview {
     --preview-background-color: #{$body-bg};
     [data-bs-theme="dark"] & {
-      --preview-background-color: #{$gray-1000};
+      --preview-background-color: #{$body-highlight-color};
     }
   }
   .picmo__emojiCategory {

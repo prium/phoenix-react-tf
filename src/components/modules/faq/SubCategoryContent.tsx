@@ -51,7 +51,7 @@ const FaqItem = ({ item, type }: { item: FaqType; type?: string }) => {
         className={classNames({ 'fs-8 text-primary me-2': type === 'topFaq' })}
       />
       <div>
-        <h4 className="mb-3 text-1000">{item.question}</h4>
+        <h4 className="mb-3 text-body-highlight">{item.question}</h4>
         <p className="mb-0 text-700">{item.answer}</p>
       </div>
     </li>

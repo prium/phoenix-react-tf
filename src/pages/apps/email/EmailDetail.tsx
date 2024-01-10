@@ -77,7 +77,9 @@ const EmailDetail = () => {
                 </Col>
                 <Col xs="auto" className="flex-1">
                   <div className="d-flex mb-1">
-                    <h5 className="mb-0 text-1000 me-2">Jessica Ball</h5>
+                    <h5 className="mb-0 text-body-highlight me-2">
+                      Jessica Ball
+                    </h5>
                     <p className="mb-0 lh-sm text-600 fs-9 d-none d-md-block text-nowrap">
                       &lt; jessica.ball@email.com &gt;
                     </p>
@@ -85,17 +87,17 @@ const EmailDetail = () => {
                   <p className="mb-0 fs-9">
                     <span className="text-600 me-1">to</span>
                     <span className="fw-bold text-body-secondary me-1">Me</span>
-                    <span className="text-1000 fw-semi-bold fs-10 me-1">
+                    <span className="text-body-highlight fw-semi-bold fs-10 me-1">
                       28 Aug, 2021
                     </span>
-                    <span className="fw-semi-bold text-900 fs-10 me-1">
+                    <span className="fw-semi-bold text-body fs-10 me-1">
                       6:32 PM
                     </span>
                     <FontAwesomeIcon icon={farStar} className="text-500" />
                   </p>
                 </Col>
               </Row>
-              <div className="text-1000 fs-9 w-100 w-md-75 mb-8">
+              <div className="text-body-highlight fs-9 w-100 w-md-75 mb-8">
                 <p>Dear Simp sons,</p>
                 <p>
                   Something in a thirty-acre thermal thicket of thorns and
@@ -117,7 +119,7 @@ const EmailDetail = () => {
               <div className="d-flex align-items-center mb-5">
                 <Button
                   variant="link"
-                  className="text-1000 fs-8 text-decoration-none p-0"
+                  className="text-body-highlight fs-8 text-decoration-none p-0"
                   type="button"
                   startIcon={
                     <FontAwesomeIcon icon={faPaperclip} className="me-2" />

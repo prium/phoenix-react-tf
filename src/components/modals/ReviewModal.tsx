@@ -19,7 +19,7 @@ const ReviewModal = ({ show, handleClose }: ReviewModalProps) => {
         </div>
         <Rating iconClass="fs-5" className="mb-3" />
         <div className="mb-3">
-          <h5 className="text-1000 mb-3">Your review</h5>
+          <h5 className="text-body-highlight mb-3">Your review</h5>
           <Form.Control as="textarea" rows={5} />
         </div>
         <Dropzone

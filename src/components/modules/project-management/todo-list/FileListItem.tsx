@@ -33,7 +33,7 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
                 }
                 className="me-2 fs-9 text-700"
               />
-              <p className="text-1000 mb-0 lh-1">{attachment.name}</p>
+              <p className="text-body-highlight mb-0 lh-1">{attachment.name}</p>
             </div>
             <div
               className={classNames('d-flex fs-9 text-700 flex-wrap', {

@@ -69,7 +69,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisLabel: {
       show: true,
       margin: 21,
-      color: getThemeColor('gray-900')
+      color: getThemeColor('body-color')
     }
   },
   series: [

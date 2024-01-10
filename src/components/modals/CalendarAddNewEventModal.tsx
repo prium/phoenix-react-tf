@@ -57,7 +57,7 @@ const CalendarAddNewEventModal = () => {
         <Modal.Header className="px-card border-0">
           <div className="w-100 d-flex justify-content-between align-items-start">
             <div>
-              <h5 className="mb-0 lh-sm text-1000">Add new</h5>
+              <h5 className="mb-0 lh-sm text-body-highlight">Add new</h5>
               <div className="mt-2">
                 <Form.Check
                   type="radio"
@@ -81,7 +81,7 @@ const CalendarAddNewEventModal = () => {
                 </Form.Check>
               </div>
             </div>
-            <Button className="p-1 fs-10 text-900" onClick={handleClose}>
+            <Button className="p-1 fs-10 text-body" onClick={handleClose}>
               DISCARD
             </Button>
           </div>
@@ -219,7 +219,7 @@ const CalendarAddNewEventModal = () => {
         <Modal.Footer className="d-flex justify-content-between align-items-center border-0">
           <Link
             to="/apps/events/create-an-event"
-            className="me-3 fs-9 text-900"
+            className="me-3 fs-9 text-body"
           >
             More options
             <FontAwesomeIcon icon={faAngleRight} className="ms-1 fs-10" />

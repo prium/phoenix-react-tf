@@ -24,7 +24,7 @@ const EditableDetailsField = ({
   return (
     <div className={className}>
       <div className="d-flex align-items-center mb-2">
-        <h4 className="text-900 me-4">Description</h4>
+        <h4 className="text-body me-4">Description</h4>
         {!editMode && (
           <Button
             variant="link"
@@ -68,7 +68,11 @@ const EditableDetailsField = ({
           </div>
         </>
       ) : (
-        <SeeMoreText link="#!" className="text-1000 mb-0" maxChars={300}>
+        <SeeMoreText
+          link="#!"
+          className="text-body-highlight mb-0"
+          maxChars={300}
+        >
           {value}
         </SeeMoreText>
       )}

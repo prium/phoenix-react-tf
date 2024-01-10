@@ -45,7 +45,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
           <Link
             to="#!"
             className={classNames('fs-9 inbox-link', {
-              'text-900 fw-semi-bold': email.read_at,
+              'text-body fw-semi-bold': email.read_at,
               'text-1100 fw-bold': !email.read_at
             })}
           >
@@ -95,7 +95,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
         <Link to="/apps/email/email-detail" className="d-block inbox-link">
           <span
             className={classNames('fs-9 line-clamp-1', {
-              'text-1000': email.read_at,
+              'text-body-highlight': email.read_at,
               'text-1100': !email.read_at
             })}
           >
@@ -119,7 +119,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
                 'text-primary': ['music'].includes(attachment.format)
               })}
             />
-            <span className="ms-2 fw-bold fs-10 text-900">
+            <span className="ms-2 fw-bold fs-10 text-body">
               {attachment.fileName}
             </span>
           </a>

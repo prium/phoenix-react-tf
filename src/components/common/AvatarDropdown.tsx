@@ -123,18 +123,20 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
               <FeatherIcon
                 icon="clipboard"
                 size={16}
-                className="me-2 text-900 d-inline-block"
+                className="me-2 text-body d-inline-block"
               />
-              <span className="text-1000 flex-1">Assigned Projects</span>
+              <span className="text-body-highlight flex-1">
+                Assigned Projects
+              </span>
               <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
             <Nav.Link className="">
               <FeatherIcon
                 icon="pie-chart"
                 size={16}
-                className="me-2 text-900 d-inline-block"
+                className="me-2 text-body d-inline-block"
               />
-              <span className="text-1000 flex-1">View activiy</span>
+              <span className="text-body-highlight flex-1">View activiy</span>
               <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
           </Nav>

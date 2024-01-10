@@ -48,7 +48,7 @@ const Error500 = () => {
                 <h2 className="text-body-secondary fw-bolder mb-3">
                   Unknow error!
                 </h2>
-                <p className="text-900 mb-5">
+                <p className="text-body mb-5">
                   But relax! Our cat is here to play you some music.
                 </p>
                 <Button variant="primary" size="lg" as={Link} to="/">

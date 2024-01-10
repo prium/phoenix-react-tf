@@ -53,7 +53,7 @@ const getDefaultOptions = (
     data: ['Total Emails', 'Sent', 'Bounce', 'Delivered'],
     splitLine: { show: false },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 400,
       fontSize: 12.8,
@@ -77,7 +77,7 @@ const getDefaultOptions = (
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,

@@ -9,7 +9,7 @@ const FaqCta = () => {
     <div>
       <div className="text-center py-11">
         <h3 className="text-black">Still can’t find your answer?</h3>
-        <p className="text-900">We are happy to help</p>
+        <p className="text-body">We are happy to help</p>
         <Button
           onClick={() => setIsOpenChat(!isOpenChat)}
           variant="outline-primary"

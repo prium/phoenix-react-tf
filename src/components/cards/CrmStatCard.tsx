@@ -42,7 +42,7 @@ const CrmStatCard = ({
               <p className="text-700 fs-9 mb-0 ms-2 mt-3">{label}</p>
             </div>
             <p className={`text-${color} mt-2 fs-6 fw-bold mb-0 mb-sm-4`}>
-              {value} <span className="fs-8 text-900 lh-lg">{title}</span>
+              {value} <span className="fs-8 text-body lh-lg">{title}</span>
             </p>
           </div>
           <div className="d-flex flex-column justify-content-center flex-between-end d-sm-block text-end text-sm-start">

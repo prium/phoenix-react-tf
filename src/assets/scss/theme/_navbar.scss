@@ -63,7 +63,7 @@
     font-weight: $font-weight-medium;
     @include hover-focus {
       background-color: var(--#{$prefix}gray-200);
-      color: var(--#{$prefix}gray-1000);
+      color: var(--#{$prefix}body-highlight-color);
     }
   }
 }

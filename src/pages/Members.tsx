@@ -46,7 +46,7 @@ const Members = () => {
                 className="scrollbar overflow-hidden-y flex-grow-1"
               ></Col>
               <Col xs="auto">
-                <Button variant="link" className="text-900 me-4 px-0">
+                <Button variant="link" className="text-body me-4 px-0">
                   <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                   Export
                 </Button>

@@ -47,7 +47,9 @@ const BoardViewModal = ({
             <div className="px-5 px-lg-6 py-4 bg-white">
               <h3 className="fw-bolder lh-sm mb-5">{project.name}</h3>
               <div className="d-flex align-items-center mb-5">
-                <p className="text-1000 fw-700 mb-0 me-2">{progress}%</p>
+                <p className="text-body-highlight fw-700 mb-0 me-2">
+                  {progress}%
+                </p>
                 <ProgressBar
                   now={progress}
                   className={classNames('flex-1', bgClassName)}
@@ -83,7 +85,7 @@ const BoardViewModal = ({
                   </Badge>
                   <Button
                     variant="link"
-                    className="p-0 fs-9 text-900 fw-bolder text-decoration-none lh-1"
+                    className="p-0 fs-9 text-body fw-bolder text-decoration-none lh-1"
                     startIcon={<FontAwesomeIcon icon={faPlus} />}
                   >
                     Add another

@@ -77,16 +77,21 @@ const ProductDescription = () => {
             </div>
             <p className="text-success fw-semi-bold fs-7 mb-2"> In stock</p>
             <p className="mb-2 text-body-secondary">
-              <strong className="text-1000">
+              <strong className="text-body-highlight">
                 Do you want it on Saturday, July 29th?
               </strong>{' '}
-              Choose <strong className="text-1000">Saturday Delivery </strong>at
-              checkout if you want your order delivered within 12 hours 43
+              Choose{' '}
+              <strong className="text-body-highlight">
+                Saturday Delivery{' '}
+              </strong>
+              at checkout if you want your order delivered within 12 hours 43
               minutes,{' '}
               <Link className="fw-bold" to="#!">
                 Details.{' '}
               </Link>
-              <strong className="text-1000">Gift wrapping is available.</strong>
+              <strong className="text-body-highlight">
+                Gift wrapping is available.
+              </strong>
             </p>
             <p className="text-danger-500 fw-bold mb-5 mb-lg-0">
               Special offer ends in 23:00:45 hours
@@ -95,7 +100,7 @@ const ProductDescription = () => {
 
           <div>
             <div className="mb-3">
-              <p className="fw-semi-bold mb-2 text-900">
+              <p className="fw-semi-bold mb-2 text-body">
                 Color :{' '}
                 <span className="text-1100">{selectedVariant?.name}</span>
               </p>
@@ -106,7 +111,7 @@ const ProductDescription = () => {
             </div>
             <div className="row g-3 g-sm-5 align-items-end">
               <div className="col-12 col-sm-auto">
-                <p className="fw-semi-bold mb-2 text-900">Size : </p>
+                <p className="fw-semi-bold mb-2 text-body">Size : </p>
                 <div className="d-flex align-items-center">
                   <select className="form-select w-auto">
                     <option value="44">44</option>
@@ -119,7 +124,7 @@ const ProductDescription = () => {
                 </div>
               </div>
               <div className="col-12 col-sm">
-                <p className="fw-semi-bold mb-2 text-900">Quantity : </p>
+                <p className="fw-semi-bold mb-2 text-body">Quantity : </p>
                 <div className="d-flex justify-content-between align-items-end">
                   <QuantityButtons
                     quantity={quantity}

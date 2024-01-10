@@ -15,7 +15,7 @@ const ForgotPasswordForm = ({
       <div
         className={classNames('text-center', { 'mb-6': !(layout === 'split') })}
       >
-        <h4 className="text-1000">Forgot your password?</h4>
+        <h4 className="text-body-highlight">Forgot your password?</h4>
         <p className="text-700 mb-5">
           Enter your email below and we will send <br className="d-sm-none" />
           you a reset link

@@ -19,7 +19,7 @@ const SettingsChangePassword = () => {
             OLD PASSWORD
           </label>
         </Form.Floating>
-        <FontAwesomeIcon icon={faLock} className="text-900 fs-9 form-icon" />
+        <FontAwesomeIcon icon={faLock} className="text-body fs-9 form-icon" />
       </div>
       <div className="form-icon-container mb-3">
         <Form.Floating>
@@ -33,7 +33,7 @@ const SettingsChangePassword = () => {
             NEW PASSWORD
           </label>
         </Form.Floating>
-        <FontAwesomeIcon icon={faKey} className="text-900 fs-9 form-icon" />
+        <FontAwesomeIcon icon={faKey} className="text-body fs-9 form-icon" />
       </div>
       <div className="form-icon-container">
         <Form.Floating>
@@ -47,7 +47,7 @@ const SettingsChangePassword = () => {
             CONFIRM NEW PASSWORD
           </label>
         </Form.Floating>
-        <FontAwesomeIcon icon={faKey} className="text-900 fs-9 form-icon" />
+        <FontAwesomeIcon icon={faKey} className="text-body fs-9 form-icon" />
       </div>
     </>
   );

@@ -22,7 +22,7 @@ const ChatHomepageCard = () => {
             width={320}
             className="mb-15 d-light-none"
           />
-          <h3 className="text-900 fw-semi-bold mb-3 fs-7 fs-sm-6">
+          <h3 className="text-body fw-semi-bold mb-3 fs-7 fs-sm-6">
             Click to select a Conversation or,
           </h3>
           <h3 className="text-primary fw-semi-bold fs-7 fs-sm-6">

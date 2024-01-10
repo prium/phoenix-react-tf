@@ -13,7 +13,7 @@ import { faClockRotateLeft, faLink } from '@fortawesome/free-solid-svg-icons';
 
 const ResultSectionHeader = ({ title }: { title: string }) => {
   return (
-    <h6 className="text-1000 fs-9 border-y border-200 py-2 lh-sm mb-0 px-3">
+    <h6 className="text-body-highlight fs-9 border-y border-200 py-2 lh-sm mb-0 px-3">
       {title}
     </h6>
   );
@@ -60,7 +60,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
 
   return (
     <Scrollbar autoHeight autoHeightMax={'30rem'}>
-      <h6 className="text-1000 fs-10 py-2 mb-0 px-3">
+      <h6 className="text-body-highlight fs-10 py-2 mb-0 px-3">
         {results.length} <span className="text-500">Results</span>{' '}
       </h6>
       {recentlySearchedItems.length > 0 && (
@@ -69,7 +69,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
           <div className="py-2">
             {recentlySearchedItems.map(item => (
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
-                <div className="d-flex align-items-center fw-normal gap-1 text-1000">
+                <div className="d-flex align-items-center fw-normal gap-1 text-body-highlight">
                   <FontAwesomeIcon
                     icon={faClockRotateLeft}
                     transform="shrink-2"
@@ -102,7 +102,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
                   />
                 </div>
                 <div className="flex-1">
-                  <h6 className="mb-0 text-1000">{item.label}</h6>
+                  <h6 className="mb-0 text-body-highlight">{item.label}</h6>
                   <p className="fs-10 mb-0 d-flex text-700">
                     <span className="fw-medium text-600">{item.details}</span>
                   </p>
@@ -118,11 +118,11 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
           <div className="py-2">
             {quickLinks.map(item => (
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
-                <div className="d-flex align-items-center fw-normal gap-1 text-1000">
+                <div className="d-flex align-items-center fw-normal gap-1 text-body-highlight">
                   <FontAwesomeIcon
                     icon={faLink}
                     transform="shrink-2"
-                    className="text-900"
+                    className="text-body"
                   />
                   {item.label}
                 </div>
@@ -137,11 +137,11 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
           <div className="py-2">
             {suggestionFiles.map(item => (
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
-                <div className="d-flex align-items-center fw-normal gap-1 text-1000">
+                <div className="d-flex align-items-center fw-normal gap-1 text-body-highlight">
                   <FontAwesomeIcon
                     icon={getFileIcon(item.format || '')}
                     transform="shrink-2"
-                    className="text-900"
+                    className="text-body"
                   />
                   {item.label}
                 </div>
@@ -156,14 +156,16 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
           <div className="py-2">
             {members.map(item => (
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
-                <div className="d-flex align-items-center fw-normal gap-1 text-1000">
+                <div className="d-flex align-items-center fw-normal gap-1 text-body-highlight">
                   <Avatar
                     src={item.avatar}
                     size="l"
                     status={item.status as Status}
                   />
                   <div className="flex-1">
-                    <h6 className="mb-0 text-1000 title">{item.label}</h6>
+                    <h6 className="mb-0 text-body-highlight title">
+                      {item.label}
+                    </h6>
                     <p className="fs-10 mb-0 d-flex text-700">{item.details}</p>
                   </div>
                 </div>
@@ -178,11 +180,11 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
           <div className="py-2">
             {relatedSearchedItems.map(item => (
               <Dropdown.Item as={Link} to={item.url} key={item.label}>
-                <div className="d-flex align-items-center fw-normal gap-1 text-1000">
+                <div className="d-flex align-items-center fw-normal gap-1 text-body-highlight">
                   <FontAwesomeIcon
                     icon={item.icon as IconProp}
                     transform="shrink-2"
-                    className="text-900"
+                    className="text-body"
                   />
                   {item.label}
                 </div>

@@ -5,7 +5,7 @@ import { Form } from 'react-bootstrap';
 const ResetPasswordForm = () => {
   return (
     <div className="text-center mb-6">
-      <h4 className="text-1000">Reset new password</h4>
+      <h4 className="text-body-highlight">Reset new password</h4>
       <p className="text-700">Type your new password</p>
       <Form className="mt-5">
         <Form.Control

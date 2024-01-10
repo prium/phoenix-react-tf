@@ -19,7 +19,7 @@ const ZeroRoadMap = () => {
               className="d-flex min-h-auto mb-0 align-items-end ps-0"
               id="progress"
             >
-              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
+              <Form.Check.Label className="mb-0 me-2 lh-1 text-body">
                 Progress
               </Form.Check.Label>
               <Form.Check
@@ -35,7 +35,7 @@ const ZeroRoadMap = () => {
               className="d-flex min-h-auto mb-0 align-items-end ps-0"
               id="links"
             >
-              <Form.Check.Label className="mb-0 me-2 lh-1 text-900">
+              <Form.Check.Label className="mb-0 me-2 lh-1 text-body">
                 Links
               </Form.Check.Label>
               <Form.Check

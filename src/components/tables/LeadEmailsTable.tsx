@@ -69,7 +69,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
     meta: {
       headerProps: { style: { minWidth: 165 } },
       cellProps: {
-        className: 'text-900'
+        className: 'text-body'
       }
     }
   },

@@ -39,7 +39,7 @@ const EventDetail = () => {
           </p>
           <EventsSingersSection photos={SingerPhotos} />
           <EventsTopicCovered />
-          <h4 className="mb-3 text-1000 fs-xxl-6">Refund Policy:</h4>
+          <h4 className="mb-3 text-body-highlight fs-xxl-6">Refund Policy:</h4>
           <ul className="mb-6 ps-4">
             <li>Contact the organizer to request a refund.</li>
             <li>Eventbrite’s fee is nonrefundable.</li>

@@ -38,7 +38,7 @@ const TodoItemDetailsOffcanvas = ({
         <>
           <div className="p-5 p-md-6">
             <div className="d-flex flex-between-center mb-4 gap-3">
-              <h2 className="fw-bold fs-6 mb-0 text-1000 line-clamp-1">
+              <h2 className="fw-bold fs-6 mb-0 text-body-highlight line-clamp-1">
                 {item.task}
               </h2>
               <Button
@@ -51,12 +51,12 @@ const TodoItemDetailsOffcanvas = ({
             </div>
             <div className="mb-6">
               <div className="d-flex align-items-center mb-3">
-                <h4 className="text-900 me-3">Description</h4>
+                <h4 className="text-body me-3">Description</h4>
                 <Button variant="link" className="text-decoration-none p-0">
                   <FontAwesomeIcon icon={faPen} />
                 </Button>
               </div>
-              <p className="text-1000 mb-0">
+              <p className="text-body-highlight mb-0">
                 The female circus horse-rider is a recurring subject in
                 Chagall’s work. In 1926 the art dealer Ambroise Vollard invited
                 Chagall to make a project based on the circus. They visited
@@ -113,18 +113,18 @@ const TodoItemDetailsOffcanvas = ({
             </div>
             <div className="mb-4">
               <h4 className="mb-4 text-black">Others Information</h4>
-              <h5 className="text-1000 mb-2">Status</h5>
+              <h5 className="text-body-highlight mb-2">Status</h5>
               <Form.Select className="mb-4">
                 <option>Select</option>
                 <option value="pending">Pending</option>
                 <option value="completed">Completed</option>
                 <option value="closed">Closed</option>
               </Form.Select>
-              <h5 className="text-1000 mb-2">Due Date</h5>
+              <h5 className="text-body-highlight mb-2">Due Date</h5>
               <div className="mb-4">
                 <DatePicker placeholder="Set the due date" />
               </div>
-              <h5 className="text-1000 mb-2">Reminder</h5>
+              <h5 className="text-body-highlight mb-2">Reminder</h5>
               <div className="mb-4">
                 <DatePicker
                   placeholder="Set the due date"
@@ -141,7 +141,7 @@ const TodoItemDetailsOffcanvas = ({
                   }
                 />
               </div>
-              <h5 className="text-1000 mb-2">Tag</h5>
+              <h5 className="text-body-highlight mb-2">Tag</h5>
               <ReactSelect
                 menuPlacement="top"
                 options={[

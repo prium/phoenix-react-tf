@@ -50,7 +50,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
         className: 'text-end px-3 text-700'
       },
       cellProps: {
-        className: 'text-end fw-semi-bold text-900 py-2 px-3'
+        className: 'text-end fw-semi-bold text-body py-2 px-3'
       },
       footerProps: {
         className: 'text-end px-3 border-bottom-0'
@@ -82,7 +82,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
         className: 'text-end px-3 text-700'
       },
       cellProps: {
-        className: 'text-end fw-semi-bold text-900 py-2 px-3'
+        className: 'text-end fw-semi-bold text-body py-2 px-3'
       },
       footerProps: {
         className: 'text-end px-3 py-2'
@@ -114,7 +114,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
         className: 'text-end px-3 text-700'
       },
       cellProps: {
-        className: 'text-end fw-semi-bold text-900 py-2 px-3'
+        className: 'text-end fw-semi-bold text-body py-2 px-3'
       },
       footerProps: {
         className: 'text-end px-3'
@@ -146,7 +146,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
         className: 'text-end text-700'
       },
       cellProps: {
-        className: 'text-end fw-semi-bold text-900 py-2 ps-3'
+        className: 'text-end fw-semi-bold text-body py-2 ps-3'
       },
       footerProps: {
         className: 'text-end ps-3 pe-0 border-bottom-0'

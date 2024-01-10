@@ -28,7 +28,7 @@ const ContactSourceItem = ({
           className={`fs-11 me-2 text-${color}`}
           transform="up-2"
         />
-        <span className="mb-0 fs-9 text-900">{label}</span>
+        <span className="mb-0 fs-9 text-body">{label}</span>
       </div>
       <h3 className="fw-semi-bold ms-xl-3 ms-xxl-0 pe-md-2 pe-xxl-0 mb-0 mb-sm-3">
         {value}

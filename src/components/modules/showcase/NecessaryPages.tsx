@@ -11,7 +11,7 @@ const NecessaryPages = () => {
       <Container fluid>
         <Row className="justify-content-center">
           <Col xs={12} lg={9} xl={8} xxl={6} className="text-center">
-            <h2 className="mb-6 text-1000 fw-normal">
+            <h2 className="mb-6 text-body-highlight fw-normal">
               Smartly designed
               <span className="text-primary position-relative fw-bolder ms-2">
                 necessary pages
@@ -48,7 +48,7 @@ const NecessaryPages = () => {
                       className="img-fluid page-thumb rounded z-index-2"
                     />
                   </div>
-                  <h5 className="py-4 text-1000">{page.pageName}</h5>
+                  <h5 className="py-4 text-body-highlight">{page.pageName}</h5>
                 </div>
               </div>
               <Link

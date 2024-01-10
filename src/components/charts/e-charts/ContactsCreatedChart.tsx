@@ -75,7 +75,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 20,
       verticalAlign: 'bottom',
       formatter: (value: string) => `${value.toLocaleString()}`
@@ -91,7 +91,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       label: {
         show: false,
         position: 'top',
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         fontWeight: 'bold',
         fontSize: '10.24px'
       },

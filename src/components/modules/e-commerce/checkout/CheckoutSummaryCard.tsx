@@ -26,7 +26,7 @@ const CheckoutSummaryCard = () => {
                       width={40}
                       alt={item.name}
                     />
-                    <h6 className="fw-semi-bold text-1000 lh-base line-clamp-2">
+                    <h6 className="fw-semi-bold text-body-highlight lh-base line-clamp-2">
                       {item.name}
                     </h6>
                   </div>
@@ -46,24 +46,24 @@ const CheckoutSummaryCard = () => {
 
         <div className="border-dashed border-bottom mb-3">
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Items subtotal: </h5>
-            <h5 className="text-900 fw-semi-bold">$691</h5>
+            <h5 className="text-body fw-semi-bold">Items subtotal: </h5>
+            <h5 className="text-body fw-semi-bold">$691</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Discount: </h5>
+            <h5 className="text-body fw-semi-bold">Discount: </h5>
             <h5 className="text-danger fw-semi-bold">-$59</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Tax: </h5>
-            <h5 className="text-900 fw-semi-bold">$126.20</h5>
+            <h5 className="text-body fw-semi-bold">Tax: </h5>
+            <h5 className="text-body fw-semi-bold">$126.20</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Subtotal </h5>
-            <h5 className="text-900 fw-semi-bold">$665</h5>
+            <h5 className="text-body fw-semi-bold">Subtotal </h5>
+            <h5 className="text-body fw-semi-bold">$665</h5>
           </div>
           <div className="d-flex justify-content-between mb-3">
-            <h5 className="text-900 fw-semi-bold">Shipping Cost </h5>
-            <h5 className="text-900 fw-semi-bold">$30 </h5>
+            <h5 className="text-body fw-semi-bold">Shipping Cost </h5>
+            <h5 className="text-body fw-semi-bold">$30 </h5>
           </div>
         </div>
 

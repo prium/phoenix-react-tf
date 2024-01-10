@@ -40,9 +40,9 @@ const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
         <div className="d-flex gap-3">
           <p className="text-600 fs-9 fw-semi-bold mb-0">
             {size === 'lg' ? 'Showing : ' : ' '}
-            <span className="text-900">1-7</span>
+            <span className="text-body">1-7</span>
             {' of '}
-            <span className="text-900">205</span>
+            <span className="text-body">205</span>
           </p>
           <Button className="p-0" type="button">
             <FontAwesomeIcon icon={faAngleLeft} className="text-500 fs-10" />

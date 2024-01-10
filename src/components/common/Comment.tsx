@@ -26,7 +26,7 @@ const Comment = ({ comment, className }: CommentProps) => {
           <Link
             to={comment.user.url}
             className={classNames('fw-semi-bold', {
-              'text-1000 text-decoration-none': comment.own
+              'text-body-highlight text-decoration-none': comment.own
             })}
           >
             {comment.own ? 'You' : comment.user.name}

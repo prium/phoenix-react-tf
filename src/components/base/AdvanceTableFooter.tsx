@@ -54,7 +54,7 @@ const AdvanceTableFooter = ({
   return (
     <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex fs-9">
-        <p className="mb-0 d-none d-sm-block me-3 fw-semi-bold text-900">
+        <p className="mb-0 d-none d-sm-block me-3 fw-semi-bold text-body">
           {pageSize * pageIndex + 1} to{' '}
           {pageSize * pageIndex + getPaginationRowModel().rows.length}
           <span className="text-600"> items of </span>

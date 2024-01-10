@@ -56,15 +56,15 @@ const AttachmentPreview = ({
 
         {handleRemove && (
           <button className="btn btn-x" onClick={handleRemove}>
-            <FontAwesomeIcon icon={faXmark} className="text-900" />
+            <FontAwesomeIcon icon={faXmark} className="text-body" />
           </button>
         )}
       </div>
 
       <div className="flex-1">
         <h6
-          className={classNames('text-900 line-clamp-1 text-break', {
-            'text-900': variant === 'primary',
+          className={classNames('text-body line-clamp-1 text-break', {
+            'text-body': variant === 'primary',
             'text-white': variant === 'secondary'
           })}
         >

@@ -9,12 +9,12 @@
       // box-shadow: $btn-reveal-hover-shadow;
       background: var(--#{$prefix}gray-soft);
       border: 1px solid var(--#{$prefix}gray-200);
-      color: var(--#{$prefix}gray-900);
+      color: var(--#{$prefix}body-color);
       &:hover,
       &:focus,
       &:active {
         background: var(--#{$prefix}gray-200);
-        color: var(--#{$prefix}gray-1000) !important;
+        color: var(--#{$prefix}body-highlight-color) !important;
       }
     }
   }

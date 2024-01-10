@@ -26,13 +26,13 @@ const ReportCard = ({ report }: { report: Report }) => {
                   transform="shrink-6 up-1"
                   className={`me-1 text-${report.priority.type}`}
                 />
-                <span className="fw-bold fs-9 text-900 lh-2">
+                <span className="fw-bold fs-9 text-body lh-2">
                   {report.priority.label}
                 </span>
               </div>
             </div>
           </div>
-          <p className="fs-9 fw-semi-bold text-900 ms-4 text mb-4 ps-2">
+          <p className="fs-9 fw-semi-bold text-body ms-4 text mb-4 ps-2">
             {report.subTitle}
           </p>
         </div>

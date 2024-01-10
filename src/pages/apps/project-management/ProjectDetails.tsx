@@ -100,7 +100,9 @@ const ProjectDetails = () => {
         <div className="h-100">
           <div className="bg-light dark__bg-1100 h-100">
             <div className="p-4 p-lg-6">
-              <h3 className="text-1000 mb-4 fw-bold">Recent activity</h3>
+              <h3 className="text-body-highlight mb-4 fw-bold">
+                Recent activity
+              </h3>
               <ActivityTimeline data={activityTimelineData} />
             </div>
             <div>

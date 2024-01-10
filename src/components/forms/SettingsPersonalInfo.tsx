@@ -27,7 +27,7 @@ const SettingsPersonalInfo = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faUser}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -46,7 +46,7 @@ const SettingsPersonalInfo = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faUser}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -65,7 +65,7 @@ const SettingsPersonalInfo = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faEnvelope}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -84,7 +84,7 @@ const SettingsPersonalInfo = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faPhone}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -105,7 +105,7 @@ const SettingsPersonalInfo = () => {
             </Form.Floating>
             <FontAwesomeIcon
               icon={faCircleInfo}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>

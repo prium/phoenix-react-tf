@@ -65,7 +65,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
         </div>
         <div className="flex-1 d-sm-none d-xl-block">
           <div className="d-flex justify-content-between align-items-center">
-            <h5 className="text-900 fw-normal name text-nowrap">
+            <h5 className="text-body fw-normal name text-nowrap">
               {conversation.user.name}
             </h5>
             <p className="fs-10 text-600 mb-0 text-nowrap">

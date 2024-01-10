@@ -39,7 +39,7 @@ const getDefaultOptions = (
     type: 'category',
     data: dates,
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       formatter: (value: number) => dayjs(value).format('ddd'),
       fontFamily: 'Nunito Sans',
       fontWeight: 400,
@@ -61,7 +61,7 @@ const getDefaultOptions = (
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,

@@ -45,7 +45,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Color',
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4' },
-      cellProps: { className: 'white-space-nowrap text-900 ps-4' }
+      cellProps: { className: 'white-space-nowrap text-body ps-4' }
     }
   },
   {
@@ -62,7 +62,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'text-900 fw-semi-bold text-end ps-4' }
+      cellProps: { className: 'text-body fw-semi-bold text-end ps-4' }
     }
   },
   {
@@ -81,7 +81,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       currencyFormat(original.price * original.quantity),
     meta: {
       headerProps: { style: { width: 250 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'fw-bold text-1000 text-end ps-4' }
+      cellProps: { className: 'fw-bold text-body-highlight text-end ps-4' }
     }
   }
 ];

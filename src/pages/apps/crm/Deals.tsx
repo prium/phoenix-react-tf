@@ -66,7 +66,7 @@ const Deals = () => {
             </Button>
             <Button
               variant="link"
-              className="text-900 px-0"
+              className="text-body px-0"
               startIcon={
                 <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
               }

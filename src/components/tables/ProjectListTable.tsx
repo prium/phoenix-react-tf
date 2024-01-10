@@ -57,7 +57,7 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
     header: 'Start date',
     accessorKey: 'start',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap py-4' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap py-4' },
       headerProps: { style: { width: '10%' }, className: 'ps-3' }
     }
   },
@@ -65,7 +65,7 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
     header: 'Deadline',
     accessorKey: 'deadline',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap py-4' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap py-4' },
       headerProps: { style: { width: '15%' }, className: 'ps-3' }
     }
   },
@@ -73,7 +73,7 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
     accessorKey: 'task',
     header: 'Task',
     meta: {
-      cellProps: { className: 'ps-3 text-900 py-4' },
+      cellProps: { className: 'ps-3 text-body py-4' },
       headerProps: { style: { width: '12%' }, className: 'ps-3' }
     }
   },

@@ -26,7 +26,10 @@ const NavbarBrand = () => {
         >
           {navbarTopShape === 'slim' ? (
             <>
-              phoenix <span className="text-1000 d-none d-sm-inline">slim</span>
+              phoenix{' '}
+              <span className="text-body-highlight d-none d-sm-inline">
+                slim
+              </span>
             </>
           ) : (
             <div className="d-flex align-items-center">

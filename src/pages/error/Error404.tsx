@@ -48,7 +48,7 @@ const Error404 = () => {
                 <h2 className="text-body-secondary fw-bolder mb-3">
                   Page Missing!
                 </h2>
-                <p className="text-900 mb-5">
+                <p className="text-body mb-5">
                   But no worries! Our ostrich is looking everywhere
                   <br className="d-none d-sm-block" />
                   while you wait safely.

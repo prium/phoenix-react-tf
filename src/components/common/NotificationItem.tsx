@@ -44,7 +44,7 @@ const NotificationItem = ({
             })}
           >
             <h4 className="fs-9 text-black">{notification.name}</h4>
-            <p className="fs-9 text-1000 mb-2 mb-sm-3">
+            <p className="fs-9 text-body-highlight mb-2 mb-sm-3">
               <span className="me-1">{notification.interactionIcon}</span>
               <span>{notification.interaction}</span>
               {type === 'pageItem' && (

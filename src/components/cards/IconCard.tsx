@@ -41,13 +41,13 @@ const IconCard = ({
   return (
     <div className="border border-300 rounded-2 p-3 mb-4 text-center bg-white dark__bg-1000 shadow-sm">
       {iconFamily === 'font-awesome' && (
-        <FontAwesomeIcon icon={icon as IconProp} className="text-900 fs-5" />
+        <FontAwesomeIcon icon={icon as IconProp} className="text-body fs-5" />
       )}
       {iconFamily === 'unicons' && (
-        <Unicon icon={icon as Icon} className="text-900 fs-5" />
+        <Unicon icon={icon as Icon} className="text-body fs-5" />
       )}
       {iconFamily === 'feather' && (
-        <FeatherIcon icon={icon} className="text-900" size={16} />
+        <FeatherIcon icon={icon} className="text-body" size={16} />
       )}
       {children}
       <Form.Control

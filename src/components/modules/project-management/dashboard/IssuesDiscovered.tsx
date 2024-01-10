@@ -29,10 +29,10 @@ const IssuesDiscovered = () => {
             <span
               className={`d-inline-block bg-${issue.bg} bullet-item me-2`}
             />
-            <p className="mb-0 fw-semi-bold text-900 lh-sm flex-1">
+            <p className="mb-0 fw-semi-bold text-body lh-sm flex-1">
               {issue.type}
             </p>
-            <h5 className="mb-0 text-900">{issue.value}</h5>
+            <h5 className="mb-0 text-body">{issue.value}</h5>
           </div>
         ))}
         <Button variant="outline-primary" className="mt-5">

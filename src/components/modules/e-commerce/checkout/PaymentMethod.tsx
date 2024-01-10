@@ -22,7 +22,7 @@ export const PaymentMethod = () => {
                     type="radio"
                     name="paymentMethod"
                   />
-                  <Form.Check.Label className="fs-8 text-900">
+                  <Form.Check.Label className="fs-8 text-body">
                     Credit card
                   </Form.Check.Label>
                 </Form.Check>
@@ -43,7 +43,7 @@ export const PaymentMethod = () => {
                   type="radio"
                   name="paymentMethod"
                 />
-                <Form.Check.Label className="fs-8 text-900">
+                <Form.Check.Label className="fs-8 text-body">
                   Paypal
                 </Form.Check.Label>
               </Form.Check>
@@ -55,7 +55,7 @@ export const PaymentMethod = () => {
                   value="coupon"
                   name="paymentMethod"
                 />
-                <Form.Check.Label className="fs-8 text-900">
+                <Form.Check.Label className="fs-8 text-body">
                   Coupon
                 </Form.Check.Label>
               </Form.Check>
@@ -64,7 +64,7 @@ export const PaymentMethod = () => {
         </Col>
         <Col md={6}>
           <Form.Group as={Col}>
-            <Form.Label className="fs-8 text-1000 ps-0 text-none">
+            <Form.Label className="fs-8 text-body-highlight ps-0 text-none">
               Select card
             </Form.Label>
             <Form.Select className="text-1100">
@@ -78,7 +78,7 @@ export const PaymentMethod = () => {
         </Col>
         <Col md={6}>
           <Form.Group>
-            <h5 className="text-1000 mb-2"> Card number</h5>
+            <h5 className="text-body-highlight mb-2"> Card number</h5>
             <Form.Control
               className="text-1100"
               type="number"
@@ -88,7 +88,7 @@ export const PaymentMethod = () => {
         </Col>
         <Col xs={12}>
           <Form.Group as={Col}>
-            <h5 className="text-1000 mb-2">Full name</h5>
+            <h5 className="text-body-highlight mb-2">Full name</h5>
             <Form.Control
               name="full_name"
               type="text"
@@ -97,7 +97,7 @@ export const PaymentMethod = () => {
           </Form.Group>
         </Col>
         <Col md={6}>
-          <h5 className="text-1000 mb-2">Expires on</h5>
+          <h5 className="text-body-highlight mb-2">Expires on</h5>
           <div className="d-flex gap-3">
             <Form.Select className="text-1100" name="month">
               <option>Month</option>
@@ -120,7 +120,7 @@ export const PaymentMethod = () => {
         </Col>
         <Col md={6}>
           <Form.Group as={Col}>
-            <h5 className="text-1000 mb-2">CVC</h5>
+            <h5 className="text-body-highlight mb-2">CVC</h5>
             <Form.Control
               className="text-1100 input-spin-none"
               type="number"

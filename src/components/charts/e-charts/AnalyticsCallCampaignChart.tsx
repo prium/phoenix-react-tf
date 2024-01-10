@@ -44,7 +44,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         // interval: 1,
         showMaxLabel: false,
         showMinLabel: true,
@@ -73,7 +73,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
@@ -106,7 +106,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,

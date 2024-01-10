@@ -16,7 +16,7 @@ const Note = ({ note, date, isLast }: NoteProps) => {
         'border-bottom border-dashed border-300 pb-3 mb-4': !isLast
       })}
     >
-      <p className="text-1000 mb-1">{note}</p>
+      <p className="text-body-highlight mb-1">{note}</p>
       <div className="text-end">
         <p className="text-600 mb-0">{date}</p>
       </div>

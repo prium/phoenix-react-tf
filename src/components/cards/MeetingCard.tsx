@@ -53,7 +53,7 @@ const MeetingCard = ({ meeting }: { meeting: Meeting }) => {
               transform="shrink-6 up-1"
               className={`text-${meeting.priority.color} me-1`}
             />
-            <span className="fw-bold fs-9 text-900">
+            <span className="fw-bold fs-9 text-body">
               {meeting.priority.label}
             </span>
           </div>

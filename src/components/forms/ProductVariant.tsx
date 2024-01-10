@@ -7,7 +7,7 @@ const ProductVariant = ({ className }: { className?: string }) => {
   return (
     <div className={className}>
       <div className="d-flex gap-2 mb-2">
-        <h5 className="mb-0 text-1000">Option 1</h5>
+        <h5 className="mb-0 text-body-highlight">Option 1</h5>
         <Link className="fw-bold fs-9" to="#!">
           Remove
         </Link>

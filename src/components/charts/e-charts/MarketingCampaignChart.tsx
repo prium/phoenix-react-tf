@@ -20,7 +20,7 @@ const getDefaultOptions = (
     backgroundColor: getThemeColor('gray-100'),
     borderColor: getThemeColor('gray-300'),
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontSize: 12.8,
       fontFamily: 'Nunito Sans'
     },

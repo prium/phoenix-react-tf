@@ -18,7 +18,7 @@ const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
             'mb-4 pb-4 border-bottom': index !== notes.length - 1
           })}
         >
-          <p className="mb-1 text-1000">{note.description}</p>
+          <p className="mb-1 text-body-highlight">{note.description}</p>
           <div className="d-sm-flex">
             <div className="fs-9 text-600">
               <FontAwesomeIcon icon={faClock} className="me-2" />

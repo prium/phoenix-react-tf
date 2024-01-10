@@ -38,7 +38,9 @@ const Demos = () => {
                       />
                     </div>
                   </div>
-                  <h5 className="py-4 text-1000">{demo.variantName}</h5>
+                  <h5 className="py-4 text-body-highlight">
+                    {demo.variantName}
+                  </h5>
                 </div>
               </div>
               <Link

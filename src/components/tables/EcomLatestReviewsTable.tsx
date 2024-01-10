@@ -68,7 +68,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/admin/customer-details"
-          className="d-flex align-items-center text-900"
+          className="d-flex align-items-center text-body"
         >
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
@@ -77,7 +77,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
           ) : (
             <Avatar src={customer.avatar} size="l" variant={customer.variant} />
           )}
-          <h6 className="mb-0 ms-3 text-900">{customer.name}</h6>
+          <h6 className="mb-0 ms-3 text-body">{customer.name}</h6>
         </Link>
       );
     },
@@ -102,7 +102,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+        <p className="fs--1 fw-semi-bold text-body-highlight mb-0 line-clamp-3">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>
@@ -148,7 +148,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       const { time } = original;
       return (
         <div className="hover-hide">
-          <h6 className="text-1000 mb-0">{time}</h6>
+          <h6 className="text-body-highlight mb-0">{time}</h6>
         </div>
       );
     },

@@ -22,7 +22,7 @@ const ToggleViewButton = ({
         <Button
           variant="phoenix-primary"
           className={classNames('px-3', {
-            'text-900 border-0': active
+            'text-body border-0': active
           })}
           onClick={onClick}
         >

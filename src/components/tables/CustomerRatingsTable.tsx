@@ -51,7 +51,7 @@ const columns: ColumnDef<CustomerReview>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fw-semi-bold text-1000 mb-0 line-clamp-2">
+        <p className="fw-semi-bold text-body-highlight mb-0 line-clamp-2">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>
@@ -95,7 +95,7 @@ const columns: ColumnDef<CustomerReview>[] = [
     header: 'Date',
     cell: ({ row: { original } }) => {
       const { time } = original;
-      return <p className="text-1000 mb-0">{time}</p>;
+      return <p className="text-body-highlight mb-0">{time}</p>;
     },
     meta: {
       headerProps: { className: 'text-end', style: { width: '10%' } },

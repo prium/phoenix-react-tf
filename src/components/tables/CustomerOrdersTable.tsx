@@ -35,7 +35,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.total),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end pe-7' },
-      cellProps: { className: 'text-end fw-semi-bold text-1000 pe-7' }
+      cellProps: { className: 'text-end fw-semi-bold text-body-highlight pe-7' }
     }
   },
   {
@@ -99,7 +99,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Delivery type',
     meta: {
       headerProps: { style: { width: '30%' } },
-      cellProps: { className: 'text-900 fs-9' }
+      cellProps: { className: 'text-body fs-9' }
     }
   },
   {

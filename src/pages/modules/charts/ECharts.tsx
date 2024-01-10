@@ -268,7 +268,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     top: 3,
     inactiveColor: getThemeColor('gray-500'),
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontWeight: 600,
       fontFamily: 'Nunito Sans'
     }
@@ -499,7 +499,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     inactiveColor: getThemeColor('gray-500'),
     inactiveBorderWidth: 0,
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontWeight: 600,
       fontSize: 16,
       fontFamily: 'Nunito Sans'
@@ -516,7 +516,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         formatter: (data: string) => dayjs(data).format('D MMM'),
         interval: 5,
         align: 'left',
@@ -573,7 +573,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 20,
       fontSize: 12.8,
       interval: 0

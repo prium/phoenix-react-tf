@@ -90,7 +90,9 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
           setQuantity={setQuantity}
         />
       </td>
-      <td className="fw-bold text-1000 text-end">{currencyFormat(total)}</td>
+      <td className="fw-bold text-body-highlight text-end">
+        {currencyFormat(total)}
+      </td>
       <td className="text-end ps-3">
         <Button
           size="sm"

@@ -63,7 +63,7 @@ const columns: ColumnDef<Project>[] = [
     header: 'Start date',
     accessorKey: 'start',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap' },
       headerProps: { style: { width: '10%' }, className: 'ps-3' }
     }
   },
@@ -71,7 +71,7 @@ const columns: ColumnDef<Project>[] = [
     header: 'Deadline',
     accessorKey: 'deadline',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap' },
       headerProps: { style: { width: '15%' }, className: 'ps-3' }
     }
   },

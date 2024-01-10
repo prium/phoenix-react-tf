@@ -105,7 +105,7 @@
   min-width: 18.3125rem;
   .nav {
     .nav-link {
-      --#{$prefix}nav-link-color: var(--#{$prefix}gray-1000);
+      --#{$prefix}nav-link-color: var(--#{$prefix}body-highlight-color);
       --#{$prefix}nav-link-hover-color: var(--#{$prefix}black);
       padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2)
         map-get($spacers, 6);

@@ -28,6 +28,7 @@
       .form-control {
         color: #{$gray-600};
       }
+      // need to check
       .search-box {
         --#{$prefix}input-bg: #{$gray-1000};
         --#{$prefix}input-border-color: #{map-get($grays-dark, '300')};
@@ -61,7 +62,7 @@
           --#{$prefix}navbar-top-menu-bg-color: #{$gray-1100};
           --#{$prefix}navbar-top-border-color: #{map-get($grays-dark, '300')};
           --#{$prefix}navbar-top-link-hover-color: #{$gray-300};
-          --#{$prefix}navbar-top-link-hover-bg: #{$gray-1000};
+          --#{$prefix}navbar-top-link-hover-bg: #{$body-highlight-color};
 
           --#{$prefix}navbar-top-link-active-color: #{$gray-300};
         }
