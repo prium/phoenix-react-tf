@@ -68,7 +68,9 @@ const KanbanTaskDetailsModal = ({
                   <h6 className="text-600 fw-bolder lh-sm mt-1">TITLE</h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <h4 className="mb-0 text-1100 lh-sm">{task.title}</h4>
+                  <h4 className="mb-0 text-body-emphasis lh-sm">
+                    {task.title}
+                  </h4>
                 </Col>
 
                 <Col xs={4} sm={3}>
@@ -86,7 +88,9 @@ const KanbanTaskDetailsModal = ({
                   <h6 className="text-600 fw-bolder lh-sm mt-1">BOARD</h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-1100 fw-semi-bold">Phoenix</p>
+                  <p className="mb-0 text-body-emphasis fw-semi-bold">
+                    Phoenix
+                  </p>
                 </Col>
 
                 <Col xs={4} sm={3}>
@@ -94,7 +98,7 @@ const KanbanTaskDetailsModal = ({
                 </Col>
                 <Col xs={8} sm={9}>
                   <p
-                    className={`mb-0 text-1100 fw-semi-bold d-inline-block kanban-column-underline-${list.borderColor}`}
+                    className={`mb-0 text-body-emphasis fw-semi-bold d-inline-block kanban-column-underline-${list.borderColor}`}
                   >
                     {list.title}
                   </p>
@@ -123,7 +127,7 @@ const KanbanTaskDetailsModal = ({
                   <h6 className="text-600 fw-bolder lh-sm mt-1">PRIORITY</h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-1100 fw-semi-bold">
+                  <p className="mb-0 text-body-emphasis fw-semi-bold">
                     <FontAwesomeIcon
                       icon={faCircle}
                       transform="shrink-6 down-1"

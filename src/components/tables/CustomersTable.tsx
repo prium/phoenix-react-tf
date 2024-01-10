@@ -15,7 +15,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
       return (
         <Link
           to="/apps/e-commerce/admin/customer-details"
-          className="d-flex align-items-center text-1100"
+          className="d-flex align-items-center text-body-emphasis"
         >
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 fw-bold">{name}</p>
@@ -57,7 +57,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.totalSpent),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end ps-3 pe-1' },
-      cellProps: { className: 'fw-bold text-1100 ps-3 text-end pe-1' }
+      cellProps: { className: 'fw-bold text-body-emphasis ps-3 text-end pe-1' }
     }
   },
   {

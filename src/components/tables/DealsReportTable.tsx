@@ -49,7 +49,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
           className=" d-flex align-items-center text-body text-hover-1000"
         >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-bold">{name}</p>
         </Link>
       );
     },

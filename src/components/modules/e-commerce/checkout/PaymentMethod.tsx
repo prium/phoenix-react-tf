@@ -67,7 +67,7 @@ export const PaymentMethod = () => {
             <Form.Label className="fs-8 text-body-highlight ps-0 text-none">
               Select card
             </Form.Label>
-            <Form.Select className="text-1100">
+            <Form.Select className="text-body-emphasis">
               <option>Select a card</option>
               <option value="visa">Visa</option>
               <option value="discover">Discover</option>
@@ -80,7 +80,7 @@ export const PaymentMethod = () => {
           <Form.Group>
             <h5 className="text-body-highlight mb-2"> Card number</h5>
             <Form.Control
-              className="text-1100"
+              className="text-body-emphasis"
               type="number"
               placeholder="Enter card number"
             />
@@ -99,7 +99,7 @@ export const PaymentMethod = () => {
         <Col md={6}>
           <h5 className="text-body-highlight mb-2">Expires on</h5>
           <div className="d-flex gap-3">
-            <Form.Select className="text-1100" name="month">
+            <Form.Select className="text-body-emphasis" name="month">
               <option>Month</option>
               {dayjs.months().map(month => (
                 <option value={month} key={month}>
@@ -122,7 +122,7 @@ export const PaymentMethod = () => {
           <Form.Group as={Col}>
             <h5 className="text-body-highlight mb-2">CVC</h5>
             <Form.Control
-              className="text-1100 input-spin-none"
+              className="text-body-emphasis input-spin-none"
               type="number"
               placeholder="Enter a valid CVC"
             />

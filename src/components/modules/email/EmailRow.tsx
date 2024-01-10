@@ -46,7 +46,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
             to="#!"
             className={classNames('fs-9 inbox-link', {
               'text-body fw-semi-bold': email.read_at,
-              'text-1100 fw-bold': !email.read_at
+              'text-body-emphasis fw-bold': !email.read_at
             })}
           >
             {email.sender.name}
@@ -96,7 +96,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
           <span
             className={classNames('fs-9 line-clamp-1', {
               'text-body-highlight': email.read_at,
-              'text-1100': !email.read_at
+              'text-body-emphasis': !email.read_at
             })}
           >
             {email.subject}

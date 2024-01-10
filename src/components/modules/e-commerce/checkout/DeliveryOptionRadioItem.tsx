@@ -18,7 +18,7 @@ const DeliveryOptionRadioItem = ({
             {label}
           </Form.Check.Label>
         </Form.Check>
-        <span className="d-inline-block text-1100 fw-bold ms-2">
+        <span className="d-inline-block text-body-emphasis fw-bold ms-2">
           {currencyFormat(price, { minimumFractionDigits: 2 })}
         </span>
         {popular && (

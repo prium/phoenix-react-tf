@@ -18,7 +18,7 @@ const NewUsersAndLeads = () => {
           <div className="d-flex gap-2 align-items-center">
             <FeatherIcon icon="users" className="text-info" />{' '}
             <h4 className="text-600 mb-0">
-              New Users : <span className="text-1100">42</span>
+              New Users : <span className="text-body-emphasis">42</span>
             </h4>
             <Badge
               bg="success"
@@ -48,7 +48,7 @@ const NewUsersAndLeads = () => {
           <div className="d-flex gap-2 align-items-center">
             <FeatherIcon icon="zap" className="text-primary" />{' '}
             <h4 className="text-600 mb-0">
-              New Leads : <span className="text-1100">45</span>
+              New Leads : <span className="text-body-emphasis">45</span>
             </h4>
             <Badge
               bg="success"

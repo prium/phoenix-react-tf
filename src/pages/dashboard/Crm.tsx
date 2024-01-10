@@ -15,7 +15,7 @@ const Crm = () => {
     <>
       <Row className="mb-4 gy-3 justify-content-between">
         <Col xxl={6}>
-          <h2 className="mb-2 text-1100">CRM Dashboard</h2>
+          <h2 className="mb-2 text-body-emphasis">CRM Dashboard</h2>
           <h5 className="text-700 fw-semi-bold mb-4">
             Check your business growth in one place
           </h5>

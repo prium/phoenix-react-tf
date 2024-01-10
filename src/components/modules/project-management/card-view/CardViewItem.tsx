@@ -66,14 +66,14 @@ const CardViewItem = ({ project }: { project: Project }) => {
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Budget :{' '}
-              <span className="text-1100 ms-1">
+              <span className="text-body-emphasis ms-1">
                 {currencyFormat(project.budget)}
               </span>
             </p>
           </div>
           <div className="d-flex justify-content-between text-700 fw-semi-bold">
             <p className="mb-2"> Progress</p>
-            <p className="mb-2 text-1100">{progress}%</p>
+            <p className="mb-2 text-body-emphasis">{progress}%</p>
           </div>
           <ProgressBar
             now={progress}

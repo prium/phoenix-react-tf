@@ -8,7 +8,7 @@ const ProjectActivityCard = () => {
     <Card className="h-100">
       <Card.Body>
         <Card.Title className="mb-1">
-          <h3 className="text-1100">Activity</h3>
+          <h3 className="text-body-emphasis">Activity</h3>
         </Card.Title>
         <p className="text-700 mb-4">Recent activity across all projects</p>
         <ActivityTimeline data={activityTimelineData} />

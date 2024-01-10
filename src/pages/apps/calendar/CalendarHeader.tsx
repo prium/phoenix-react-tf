@@ -61,18 +61,18 @@ const CalendarHeader = () => {
         >
           <Button
             onClick={() => handleCalendarUpdate('prev')}
-            className="icon-item icon-item-sm shadow-none text-1100 p-0"
+            className="icon-item icon-item-sm shadow-none text-body-emphasis p-0"
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </Button>
           {calendarApi && (
-            <h3 className="px-3 text-1100 fw-semi-bold mb-0">
+            <h3 className="px-3 text-body-emphasis fw-semi-bold mb-0">
               {title || calendarApi.view.title}
             </h3>
           )}
           <Button
             onClick={() => handleCalendarUpdate('next')}
-            className="icon-item icon-item-sm shadow-none text-1100 p-0"
+            className="icon-item icon-item-sm shadow-none text-body-emphasis p-0"
           >
             <FontAwesomeIcon icon={faChevronRight} />
           </Button>

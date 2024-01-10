@@ -71,7 +71,7 @@ const ActionSection = () => {
               </Dropdown>
               <Dropdown align="end">
                 <Dropdown.Toggle
-                  className="btn-icon btn-icon-lg bg-100 text-1100 hover-bg-200 rounded-2 me-2 dropdown-caret-none"
+                  className="btn-icon btn-icon-lg bg-100 text-body-emphasis hover-bg-200 rounded-2 me-2 dropdown-caret-none"
                   variant=""
                 >
                   <FontAwesomeIcon icon={faEllipsisVertical} />

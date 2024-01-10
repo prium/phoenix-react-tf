@@ -32,7 +32,7 @@ const ReviewModal = ({ show, handleClose }: ReviewModalProps) => {
         <div className="d-flex flex-between-center">
           <Form.Check type="checkbox" id="confirmCheck" className="flex-1">
             <Form.Check.Input type="checkbox" />
-            <Form.Check.Label className="text-1100">
+            <Form.Check.Label className="text-body-emphasis">
               Review anonymously
             </Form.Check.Label>
           </Form.Check>

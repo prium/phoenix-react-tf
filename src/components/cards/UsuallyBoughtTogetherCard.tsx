@@ -53,7 +53,9 @@ const UsuallyBoughtTogetherCard = ({
         <div className="d-flex align-items-end justify-content-between">
           <div>
             <h5 className="mb-2 text-600">Total</h5>
-            <h4 className="mb-0 text-1100">{currencyFormat(958.99)}</h4>
+            <h4 className="mb-0 text-body-emphasis">
+              {currencyFormat(958.99)}
+            </h4>
           </div>
           <Button variant="outline-warning">
             Add 3 items to cart

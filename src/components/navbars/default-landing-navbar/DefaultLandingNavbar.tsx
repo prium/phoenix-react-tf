@@ -83,7 +83,7 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
             <div className="d-grid d-lg-flex gap-4 align-items-center">
               <ThemeToggler className="d-none d-lg-block" />
               <Button
-                className="p-0 text-700 hover-text-1100 d-none d-lg-inline lh-sm"
+                className="p-0 text-700 hover-text-body-emphasis d-none d-lg-inline lh-sm"
                 onClick={() => setOpenSearchModal(!openSearchModal)}
               >
                 <FeatherIcon icon="search" size={20} />

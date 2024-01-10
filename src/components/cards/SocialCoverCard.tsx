@@ -37,7 +37,9 @@ const SocialCoverCard = () => {
           <Col xs="auto">
             <div className="d-flex flex-wrap mb-3 align-items-center">
               <h2 className="me-2">Erza Bridgest</h2>
-              <span className="fw-semi-bold fs-7 text-1100">u/hansolo</span>
+              <span className="fw-semi-bold fs-7 text-body-emphasis">
+                u/hansolo
+              </span>
             </div>
             <div className="mb-5">
               <div className="d-md-flex align-items-center">
@@ -46,8 +48,8 @@ const SocialCoverCard = () => {
                     icon={faUserGroup}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
                       1297
                       <span className="fw-semi-bold ms-2 me-4">Followers</span>
                     </span>
@@ -58,8 +60,8 @@ const SocialCoverCard = () => {
                     icon={faUserCheck}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
                       3971
                       <span className="fw-semi-bold ms-2 me-4">Following</span>
                     </span>
@@ -70,8 +72,8 @@ const SocialCoverCard = () => {
                     icon={faLocationDot}
                     className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-semi-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-semi-bold text-600 hover-text-body-emphasis">
                       Vancouver, Lothal
                     </span>
                   </Link>

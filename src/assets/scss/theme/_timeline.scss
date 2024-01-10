@@ -41,10 +41,10 @@
         }
       }
       .timeline-item-title {
-        color: var(--#{$prefix}gray-1100) !important;
+        color: var(--#{$prefix}emphasis-color) !important;
       }
       .timeline-time {
-        color: var(--#{$prefix}gray-1100) !important;
+        color: var(--#{$prefix}emphasis-color) !important;
       }
     }
     &:not(:last-child) {

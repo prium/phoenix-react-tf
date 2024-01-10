@@ -40,7 +40,7 @@ const ProductDetailsTab = () => {
             <Tab.Content>
               <Tab.Pane
                 eventKey="description"
-                className="text-1100 pe-lg-6 pe-xl-12"
+                className="text-body-emphasis pe-lg-6 pe-xl-12"
               >
                 <p className="mb-5">
                   CUPERTINO, CA , The M1 CPU allows Apple to deliver an all-new

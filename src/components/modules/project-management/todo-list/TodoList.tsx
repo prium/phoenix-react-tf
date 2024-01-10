@@ -17,7 +17,7 @@ const TodoList = () => {
         <Card.Header className="border-bottom-0 pb-0">
           <Row className="justify-content-between align-items-center mb-4 gy-2">
             <Col xs="auto">
-              <h3 className="text-1100">To do</h3>
+              <h3 className="text-body-emphasis">To do</h3>
               <p className="mb-0 text-700">Task assigned to me</p>
             </Col>
             <Col xs="auto" className="w-100 w-md-auto">

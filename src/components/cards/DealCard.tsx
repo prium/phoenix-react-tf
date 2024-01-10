@@ -71,9 +71,12 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
             {deal.category}
           </p>
           <p
-            className={classNames('ms-auto fs-9 text-1100 fw-semi-bold mb-0', {
-              'd-none': deal.openDetails
-            })}
+            className={classNames(
+              'ms-auto fs-9 text-body-emphasis fw-semi-bold mb-0',
+              {
+                'd-none': deal.openDetails
+              }
+            )}
           >
             {currencyFormat(deal.revenue, { minimumFractionDigits: 2 })}
           </p>
@@ -123,7 +126,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
                       {currencyFormat(deal.revenue, {
                         minimumFractionDigits: 2
                       })}
@@ -137,8 +140,8 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
-                      <p className="align-items-center d-flex fs-9 fw-semi-bold gap-2 mb-0 text-1100">
+                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
+                      <p className="align-items-center d-flex fs-9 fw-semi-bold gap-2 mb-0 text-body-emphasis">
                         {deal.company}
                         <Link to="#!">
                           <FontAwesomeIcon
@@ -173,7 +176,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
                       {deal.closingDate} . <span>{deal.closingTime}</span>
                     </td>
                   </tr>
@@ -189,7 +192,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
                       <Form.Select
                         size="sm"
                         className="py-0 ms-n3 border-0 shadow-none"

@@ -24,7 +24,7 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: var(--#{$prefix}gray-1100);
+    color: var(--#{$prefix}emphasis-color);
     background-color: transparent;
   }
 }
@@ -119,7 +119,7 @@
     font-weight: $font-weight-bold;
     font-size: map-get($font-sizes, '9');
     &.active {
-      color: var(--#{$prefix}gray-1100);
+      color: var(--#{$prefix}emphasis-color);
     }
   }
 }

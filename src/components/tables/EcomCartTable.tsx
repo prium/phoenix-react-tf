@@ -47,10 +47,13 @@ const EcomCartTable = ({ products }: EcomCartTableProps) => {
           ))}
 
           <tr className="cart-table-row">
-            <td className="text-1100 fw-semi-bold ps-0 fs-8" colSpan={6}>
+            <td
+              className="text-body-emphasis fw-semi-bold ps-0 fs-8"
+              colSpan={6}
+            >
               Items subtotal :
             </td>
-            <td className="text-1100 fw-bold text-end fs-8">$691</td>
+            <td className="text-body-emphasis fw-bold text-end fs-8">$691</td>
             <td />
           </tr>
         </tbody>

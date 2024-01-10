@@ -5,7 +5,7 @@
     color: var(--#{$prefix}body-color);
     font-weight: $font-weight-semi-bold;
     &:hover {
-      color: var(--#{$prefix}gray-1100);
+      color: var(--#{$prefix}emphasis-color);
     }
     .nav-item-count {
       margin-bottom: 0;

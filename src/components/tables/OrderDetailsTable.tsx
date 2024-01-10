@@ -108,10 +108,10 @@ const OrderDetailsTable = () => {
         <div className="border-y">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <div className="d-flex flex-between-center py-3">
-            <p className="text-1100 fw-semi-bold lh-sm mb-0">
+            <p className="text-body-emphasis fw-semi-bold lh-sm mb-0">
               Items subtotal :
             </p>
-            <p className="text-1100 fw-bold lh-sm mb-0">
+            <p className="text-body-emphasis fw-bold lh-sm mb-0">
               {currencyFormat(subtotal)}
             </p>
           </div>

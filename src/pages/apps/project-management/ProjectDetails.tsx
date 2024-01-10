@@ -73,7 +73,7 @@ const ProjectDetails = () => {
             </Col>
           </Row>
           <div>
-            <h3 className="text-1100 mb-4">Project overview</h3>
+            <h3 className="text-body-emphasis mb-4">Project overview</h3>
             <p className="text-body-secondary mb-4">
               The new redirection team is happy to announce that we’ve fixed all
               our unresponsive URLs and redirected them to new URLs. The

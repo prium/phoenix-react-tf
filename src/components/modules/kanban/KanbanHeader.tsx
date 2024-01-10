@@ -59,7 +59,7 @@ const KanbanHeader = () => {
             <Dropdown>
               <Dropdown.Toggle
                 variant="link"
-                className="text-decoration-none dropdown-caret-none text-1100 fs-8 ps-0"
+                className="text-decoration-none dropdown-caret-none text-body-emphasis fs-8 ps-0"
               >
                 <span className="fs-7 me-2">Phoenix</span>
                 <FontAwesomeIcon

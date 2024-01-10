@@ -46,7 +46,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           className="d-flex align-items-center"
         >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-bold">{name}</p>
         </Link>
       );
     },

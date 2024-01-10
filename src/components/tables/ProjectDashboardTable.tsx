@@ -83,7 +83,9 @@ const columns: ColumnDef<Project>[] = [
       if (calculation) {
         return (
           <>
-            <p className="fw-bold text-1100 fs-9 mb-0">{calculation?.amount}</p>
+            <p className="fw-bold text-body-emphasis fs-9 mb-0">
+              {calculation?.amount}
+            </p>
             <p className="fw-semi-bold fs-10 text-700 mb-0">
               {calculation?.label}
             </p>

@@ -12,7 +12,7 @@ const CalendarTop = () => {
   return (
     <Row className="g-0 mb-4 align-items-center">
       <Col xs={5} md={6}>
-        <h4 className="mb-0 text-1100 fw-bold fs-md-6">
+        <h4 className="mb-0 text-body-emphasis fw-bold fs-md-6">
           <span className="calendar-day d-block d-md-inline mb-1">
             {dayjs().format('dddd')}
           </span>

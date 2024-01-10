@@ -82,7 +82,7 @@ const ProjectDetailsSummary = () => {
       <div>
         <div className="d-flex align-items-center">
           <FontAwesomeIcon icon={faListCheck} className="me-2 text-700 fs-9" />
-          <h5 className="text-1100 mb-0 me-2">
+          <h5 className="text-body-emphasis mb-0 me-2">
             91<span className="text-body fw-normal ms-2">tasks</span>
           </h5>
           <Link className="fw-bold fs-9 mt-1" to="#!">

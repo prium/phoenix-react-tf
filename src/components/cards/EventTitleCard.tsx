@@ -28,7 +28,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                           size={16}
                         />
                       </div>
-                      <h5 className="ms-2 text-1100 mb-0">Location</h5>
+                      <h5 className="ms-2 text-body-emphasis mb-0">Location</h5>
                     </div>
                   </div>
                   <p className="lh-sm mb-0 text-700">

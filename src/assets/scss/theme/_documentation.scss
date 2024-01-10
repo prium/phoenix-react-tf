@@ -14,7 +14,7 @@
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  // background-color: var(--#{$prefix}gray-1100);
+  // background-color: var(--#{$prefix}emphasis-color);
   background-color: var(--#{$prefix}docs-language-bg);
 }
 code.language-html:first-child {

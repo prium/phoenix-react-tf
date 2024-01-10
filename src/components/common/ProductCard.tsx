@@ -71,12 +71,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
                   <p className="me-2 text-body text-decoration-line-through mb-0">
                     {currencyFormat(product.price)}
                   </p>
-                  <h3 className="text-1100 mb-0">
+                  <h3 className="text-body-emphasis mb-0">
                     {currencyFormat(product.salePrice)}
                   </h3>
                 </div>
               ) : (
-                <h3 className="text-1100">
+                <h3 className="text-body-emphasis">
                   {currencyFormat(product.salePrice)}
                 </h3>
               )}

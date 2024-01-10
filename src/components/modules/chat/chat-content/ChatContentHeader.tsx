@@ -38,7 +38,7 @@ const ChatContentHeader = () => {
               </Button>
               <div className="d-flex flex-column flex-md-row align-items-md-center">
                 <Button
-                  className="fs-7 fw-semi-bold text-1100 d-flex align-items-center p-0 me-3 text-start"
+                  className="fs-7 fw-semi-bold text-body-emphasis d-flex align-items-center p-0 me-3 text-start"
                   onClick={() => setShowConversationDetails(true)}
                 >
                   <span>{firstName}</span>

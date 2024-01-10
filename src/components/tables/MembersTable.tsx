@@ -17,7 +17,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
           className=" d-flex align-items-center text-body text-hover-1000"
         >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-semi-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-semi-bold">{name}</p>
         </Link>
       );
     },
@@ -53,7 +53,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { mobile } = original;
       return (
-        <Link to={`tel:${mobile}`} className="fw-bold text-1100">
+        <Link to={`tel:${mobile}`} className="fw-bold text-body-emphasis">
           {mobile}
         </Link>
       );

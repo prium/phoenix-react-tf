@@ -102,7 +102,9 @@ const ProductDescription = () => {
             <div className="mb-3">
               <p className="fw-semi-bold mb-2 text-body">
                 Color :{' '}
-                <span className="text-1100">{selectedVariant?.name}</span>
+                <span className="text-body-emphasis">
+                  {selectedVariant?.name}
+                </span>
               </p>
               <ProductColorNav
                 selectedVariantKey={selectedVariantKey}
