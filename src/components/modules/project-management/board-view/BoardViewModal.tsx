@@ -123,7 +123,9 @@ const BoardViewModal = ({
               <div className="mb-7">
                 <h4 className="mb-4">
                   To do list{' '}
-                  <span className="text-700 fw-normal fs-6">(23)</span>
+                  <span className="text-body-tertiary fw-normal fs-6">
+                    (23)
+                  </span>
                 </h4>
                 <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
                   <SearchBox
@@ -133,7 +135,7 @@ const BoardViewModal = ({
                   <div>
                     <Button
                       variant="link"
-                      className="p-0 fs-9 text-700 text-decoration-none me-3"
+                      className="p-0 fs-9 text-body-tertiary text-decoration-none me-3"
                       startIcon={
                         <FontAwesomeIcon
                           icon={faFilter}

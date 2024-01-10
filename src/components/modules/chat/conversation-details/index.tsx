@@ -37,7 +37,10 @@ const ConversationDetails = ({
       <div className="border-bottom p-4">
         <div className="d-flex flex-between-center">
           <Button className="p-0" onClick={handleClose}>
-            <FontAwesomeIcon icon={faChevronLeft} className="text-700" />
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              className="text-body-tertiary"
+            />
           </Button>
           <Dropdown align="end">
             <Dropdown.Toggle
@@ -45,7 +48,10 @@ const ConversationDetails = ({
               size="sm"
               className="p-0 btn-reveal dropdown-toggle dropdown-caret-none transition-none"
             >
-              <FontAwesomeIcon icon={faEllipsisV} className="text-700" />
+              <FontAwesomeIcon
+                icon={faEllipsisV}
+                className="text-body-tertiary"
+              />
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="py-2">
               <ActionDropdownItems />

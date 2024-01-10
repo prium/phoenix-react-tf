@@ -32,7 +32,7 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
           <ActionDropdownItems />
         </RevealDropdown>
       </div>
-      <p className="text-700 fs-9 mb-1">{review.date}</p>
+      <p className="text-body-tertiary fs-9 mb-1">{review.date}</p>
       <p
         className={classNames('text-body-highlight', {
           'mb-3': review.images,
@@ -69,7 +69,9 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
           <div>
             <h5>
               Respond from {review.reply.from}
-              <span className="text-700 fs-9 ms-2">{review.reply.time} </span>
+              <span className="text-body-tertiary fs-9 ms-2">
+                {review.reply.time}{' '}
+              </span>
             </h5>
             <p className="text-body-highlight mb-0">{review.reply.text}</p>
           </div>

@@ -15,7 +15,10 @@ const SettingsCompanyInfo = () => {
             placeholder="Company Name"
             className="form-icon-input"
           />
-          <label htmlFor="companyName" className="form-icon-label text-700">
+          <label
+            htmlFor="companyName"
+            className="form-icon-label text-body-tertiary"
+          >
             COMPANY NAME
           </label>
         </Form.Floating>
@@ -32,7 +35,10 @@ const SettingsCompanyInfo = () => {
             placeholder="Website"
             className="form-icon-input"
           />
-          <label htmlFor="website" className="form-icon-label text-700">
+          <label
+            htmlFor="website"
+            className="form-icon-label text-body-tertiary"
+          >
             WEBSITE
           </label>
         </Form.Floating>

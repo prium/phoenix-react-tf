@@ -59,7 +59,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-700 fw-semi-bold' }
+      cellProps: { className: 'text-body-tertiary fw-semi-bold' }
     }
   },
   {

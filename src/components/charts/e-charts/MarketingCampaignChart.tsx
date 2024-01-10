@@ -57,7 +57,7 @@ const getDefaultOptions = (
       }
     },
     axisName: {
-      color: getThemeColor('gray-700'),
+      color: getThemeColor('tertiary-color'),
       fontWeight: 800,
       fontSize: 10.2
     },

@@ -31,7 +31,7 @@ const ChatContentHeader = () => {
           <Card.Header className="p-3 p-md-4 d-flex flex-between-center">
             <div className="d-flex align-items-center">
               <Button
-                className="ps-0 pe-2 text-700 d-sm-none"
+                className="ps-0 pe-2 text-body-tertiary d-sm-none"
                 onClick={() => setShowUserListOffcanvas(true)}
               >
                 <FontAwesomeIcon icon={faChevronLeft} />

@@ -60,7 +60,9 @@ const columns: ColumnDef<LeadDeal>[] = [
         style: { minWidth: 100, width: '15%' },
         className: 'text-end pe-6'
       },
-      cellProps: { className: 'text-start fw-bold text-700 text-end pe-6' }
+      cellProps: {
+        className: 'text-start fw-bold text-body-tertiary text-end pe-6'
+      }
     }
   },
   {
@@ -95,7 +97,7 @@ const columns: ColumnDef<LeadDeal>[] = [
     },
     meta: {
       headerProps: { style: { minWidth: 100, width: '20%' } },
-      cellProps: { className: 'text-700 fw-semi-bold' }
+      cellProps: { className: 'text-body-tertiary fw-semi-bold' }
     }
   },
   {
@@ -106,7 +108,7 @@ const columns: ColumnDef<LeadDeal>[] = [
         style: { minWidth: 120, width: '15%' },
         className: 'text-end'
       },
-      cellProps: { className: 'text-700 text-center' }
+      cellProps: { className: 'text-body-tertiary text-center' }
     }
   },
   {

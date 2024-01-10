@@ -10,7 +10,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
     <>
       <div className="text-center mb-7">
         <h3 className="text-body-highlight">Sign In</h3>
-        <p className="text-700">Get access to your account</p>
+        <p className="text-body-tertiary">Get access to your account</p>
       </div>
       <AuthSocialButtons title="Sign in" />
       <div className="position-relative">

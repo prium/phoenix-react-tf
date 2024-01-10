@@ -40,7 +40,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
         <div className="d-flex align-items-center justify-content-between mb-3">
           <FeatherIcon icon="clock" size={16} className="me-2" />
 
-          <p className="mb-0 fs-9 fw-semi-bold text-700 flex-1">
+          <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary flex-1">
             {deal.date} .{' '}
             <span className="text-body-quaternary">{deal.time}</span>
           </p>
@@ -50,7 +50,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
           >
             <FontAwesomeIcon
               icon={faAngleDown}
-              className={classNames('text-700 fs-8', {
+              className={classNames('text-body-tertiary fs-8', {
                 show: deal.openDetails
               })}
             />
@@ -124,9 +124,9 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="dollar-sign"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
                         Expected Revenue
                       </p>
                     </td>
@@ -139,8 +139,12 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                   </tr>
                   <tr>
                     <td className="d-flex gap-2 align-items-center">
-                      <FeatherIcon icon="user" size={16} className="text-700" />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <FeatherIcon
+                        icon="user"
+                        size={16}
+                        className="text-body-tertiary"
+                      />
+                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
                         Company Name
                       </p>
                     </td>
@@ -151,19 +155,19 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faSquarePhone}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faSquareEnvelope}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faWhatsappSquare}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                       </p>
@@ -174,9 +178,9 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="calendar"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
                         Closing Date & Time
                       </p>
                     </td>
@@ -190,9 +194,9 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="headphones"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
                         Assigned Agent
                       </p>
                     </td>

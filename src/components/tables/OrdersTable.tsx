@@ -127,7 +127,9 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Date',
     meta: {
       headerProps: { className: 'text-end' },
-      cellProps: { className: 'text-700 fs-9 ps-4 text-end white-space-nowrap' }
+      cellProps: {
+        className: 'text-body-tertiary fs-9 ps-4 text-end white-space-nowrap'
+      }
     }
   }
 ];

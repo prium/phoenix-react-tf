@@ -32,7 +32,9 @@ const DeliveryOptionRadioItem = ({
         )}
       </div>
       <div className="ps-4">
-        <h6 className="text-700 mb-2">Est. delivery: ${estDelivery}</h6>
+        <h6 className="text-body-tertiary mb-2">
+          Est. delivery: ${estDelivery}
+        </h6>
         <h6 className="text-info lh-base mb-0">{description}</h6>
       </div>
     </div>

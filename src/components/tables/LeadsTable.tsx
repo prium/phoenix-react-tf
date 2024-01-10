@@ -182,7 +182,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
         className: 'ps-4 pe-5'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 text-700'
+        className: 'white-space-nowrap ps-4 text-body-tertiary'
       }
     }
   },

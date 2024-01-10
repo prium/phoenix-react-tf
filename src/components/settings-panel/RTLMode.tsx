@@ -27,7 +27,7 @@ const RTLMode = () => {
           className="text-end"
         />
       </div>
-      <p className="mb-0 text-700">Change text direction</p>
+      <p className="mb-0 text-body-tertiary">Change text direction</p>
     </div>
   );
 };

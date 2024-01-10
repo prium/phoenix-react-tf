@@ -38,7 +38,7 @@ const BasicTimeline = ({ data }: { data: TimelineItem[] }) => {
                       <h6 className="mb-0 fs-9">
                         <FontAwesomeIcon
                           icon={faFilePdf}
-                          className="me-1 text-700"
+                          className="me-1 text-body-tertiary"
                         />
                         <Link to="#!">{item.file}</Link>
                       </h6>

@@ -31,7 +31,8 @@ const Boards = () => {
         <Row className="justify-content-between gy-4">
           <Col xs="auto">
             <h2>
-              Kanban Boards <span className="text-700 fw-semi-bold">(8)</span>
+              Kanban Boards{' '}
+              <span className="text-body-tertiary fw-semi-bold">(8)</span>
             </h2>
           </Col>
           <Col xs="auto" className="d-flex flex-wrap gap-2">

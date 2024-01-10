@@ -75,7 +75,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 </h6>
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="text-700 mx-1 fs-9"
+                  className="text-body-tertiary mx-1 fs-9"
                   transform="shrink-10 up-2"
                 />
                 <h6 className="text-white light mb-0">

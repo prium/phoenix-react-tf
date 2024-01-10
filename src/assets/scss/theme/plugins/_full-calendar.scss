@@ -22,8 +22,9 @@
     background-color: var(--#{$prefix}calendar-bg);
   }
 
+  
   .fc-highlight {
-    background: rgba(var(--#{$prefix}gray-700-rgb), 0.1) !important;
+    background: rgba(var(--#{$prefix}tertiary-color-rgb), 0.1) !important;
   }
 
   &.fc-theme-standard {
@@ -55,7 +56,7 @@
     th {
       border-bottom-width: 1px;
       font-weight: $font-weight-semi-bold;
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
   }
   .fc-col-header-cell-cushion {
@@ -265,7 +266,7 @@
     }
     .fc-v-event .fc-event-main {
       padding-left: 1rem;
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
       &:after {
         content: '';
         position: absolute;

@@ -82,7 +82,7 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
         </Link>
       </td>
       <td className="white-space-nowrap">{product.color}</td>
-      <td className="white-space-nowrap text-700 fw-semi-bold">
+      <td className="white-space-nowrap text-body-tertiary fw-semi-bold">
         {product.size}
       </td>
       <td className="fw-semi-bold text-end">{currencyFormat(product.price)}</td>

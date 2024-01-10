@@ -16,7 +16,7 @@ const AddProduct = () => {
         <div className="d-flex flex-wrap gap-3 flex-between-end mb-5">
           <div>
             <h2 className="mb-2">Add a product</h2>
-            <h5 className="text-700 fw-semi-bold">
+            <h5 className="text-body-tertiary fw-semi-bold">
               Orders placed across your store
             </h5>
           </div>

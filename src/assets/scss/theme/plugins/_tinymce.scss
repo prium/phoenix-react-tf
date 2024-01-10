@@ -164,9 +164,9 @@
   height: 24px !important;
   width: 24px !important;
   span svg {
-    fill: var(--#{$prefix}gray-700) !important;
+    fill: var(--#{$prefix}tertiary-color) !important;
     @include hover-focus {
-      fill: var(--#{$prefix}gray-700) !important;
+      fill: var(--#{$prefix}tertiary-color) !important;
     }
   }
   @include hover-focus {

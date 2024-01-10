@@ -101,7 +101,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
           >
             {email.subject}
           </span>
-          <p className="fs-9 ps-0 text-700 mb-0 line-clamp-2">
+          <p className="fs-9 ps-0 text-body-tertiary mb-0 line-clamp-2">
             {email.details}
           </p>
         </Link>

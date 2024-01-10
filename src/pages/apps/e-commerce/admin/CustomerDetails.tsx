@@ -83,20 +83,22 @@ const CustomerDetails = () => {
             <div className="d-flex flex-column gap-6">
               <div>
                 <h3 className="mb-4">
-                  Orders <span className="text-700 fw-normal">(97)</span>
+                  Orders{' '}
+                  <span className="text-body-tertiary fw-normal">(97)</span>
                 </h3>
                 <CustomerOrdersTable />
               </div>
               <div>
                 <h3 className="mb-4">
-                  Wishlist <span className="text-700 fw-normal">(43)</span>
+                  Wishlist{' '}
+                  <span className="text-body-tertiary fw-normal">(43)</span>
                 </h3>
                 <CustomerWishlistTable />
               </div>
               <div>
                 <h3 className="mb-4">
                   Ratings & reviews{' '}
-                  <span className="text-700 fw-normal">(43)</span>
+                  <span className="text-body-tertiary fw-normal">(43)</span>
                 </h3>
                 <CustomerRatingsTable />
               </div>

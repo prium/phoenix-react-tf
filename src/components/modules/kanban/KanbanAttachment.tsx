@@ -47,15 +47,17 @@ const KanbanAttachment = ({ attachment }: KanbanAttachmentProps) => {
       )}
       <div className="flex-1 ms-3 d-flex flex-column">
         <h5 className="lh-sm">{attachment.name}</h5>
-        <p className="lh-1 fs-9 text-700 fw-medium mb-0">{attachment.date}</p>
+        <p className="lh-1 fs-9 text-body-tertiary fw-medium mb-0">
+          {attachment.date}
+        </p>
         <div className="d-flex gap-3 mt-auto">
-          <Button className="p-0 text-700">
+          <Button className="p-0 text-body-tertiary">
             <FontAwesomeIcon icon={faComment} />
           </Button>
-          <Button className="p-0 text-700">
+          <Button className="p-0 text-body-tertiary">
             <FontAwesomeIcon icon={faTrash} />
           </Button>
-          <Button className="p-0 text-700">
+          <Button className="p-0 text-body-tertiary">
             <FontAwesomeIcon icon={faPencil} />
           </Button>
         </div>

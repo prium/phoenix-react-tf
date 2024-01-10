@@ -37,7 +37,7 @@ const LeadDetails = () => {
               <div className="flex-1 d-md-none">
                 <Button
                   variant="phoenix-secondary"
-                  className="px-3 text-700"
+                  className="px-3 text-body-tertiary"
                   onClick={() => setOpenOffcanvas(true)}
                 >
                   <FontAwesomeIcon icon={faBars} />

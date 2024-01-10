@@ -9,7 +9,9 @@ const SalesTrends = () => {
       <Row className="justify-content-between mb-4">
         <Col xs={12}>
           <h3>Sales Trends</h3>
-          <p className="text-700">Updated inventory &amp; the sales report.</p>
+          <p className="text-body-tertiary">
+            Updated inventory &amp; the sales report.
+          </p>
         </Col>
         <Col xs={12} className="d-flex">
           <div className="d-flex">

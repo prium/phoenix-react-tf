@@ -43,19 +43,28 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
       <Card.Body className="d-flex flex-column rounded-bottom-lg justify-content-between">
         <div>
           <h3 className="text-body">{board.title}</h3>
-          <p className="text-700 mb-4">{board.category}</p>
+          <p className="text-body-tertiary mb-4">{board.category}</p>
         </div>
         <div className="d-flex gap-4">
           <h5 className="text-body">
-            <FontAwesomeIcon icon={faListCheck} className="text-700 me-1" />
+            <FontAwesomeIcon
+              icon={faListCheck}
+              className="text-body-tertiary me-1"
+            />
             {board.totalTasks}
           </h5>
           <h5 className="text-body">
-            <FontAwesomeIcon icon={faComment} className="text-700 me-1" />
+            <FontAwesomeIcon
+              icon={faComment}
+              className="text-body-tertiary me-1"
+            />
             {board.comments}
           </h5>
           <h5 className="text-body">
-            <FontAwesomeIcon icon={faCalendarXmark} className="text-700 me-1" />
+            <FontAwesomeIcon
+              icon={faCalendarXmark}
+              className="text-body-tertiary me-1"
+            />
             {board.deadlines}
           </h5>
         </div>

@@ -35,7 +35,9 @@ const FilterTab = ({ tabItems, className }: FilterTabProps) => {
             })}
           >
             {item.label}{' '}
-            <span className="text-700 fw-semi-bold">({item.count})</span>
+            <span className="text-body-tertiary fw-semi-bold">
+              ({item.count})
+            </span>
           </Nav.Link>
         </Nav.Item>
       ))}

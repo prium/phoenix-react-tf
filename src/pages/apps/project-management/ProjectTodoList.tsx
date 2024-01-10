@@ -22,14 +22,14 @@ const ProjectTodoList = () => {
   return (
     <div className="mb-9">
       <h2 className="mb-4">
-        Todo list<span className="text-700 fw-normal">(23)</span>
+        Todo list<span className="text-body-tertiary fw-normal">(23)</span>
       </h2>
       <div className="d-flex align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
         <SearchBox placeholder="Search tasks" style={{ maxWidth: '30rem' }} />
         <div>
           <Button
             variant="link"
-            className="p-0 fs-9 text-700 text-decoration-none me-3"
+            className="p-0 fs-9 text-body-tertiary text-decoration-none me-3"
             startIcon={
               <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
             }

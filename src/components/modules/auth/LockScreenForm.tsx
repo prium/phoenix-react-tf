@@ -13,7 +13,9 @@ const LockScreenForm = () => {
           <span className="fw-normal">Hello </span>
           John Smith
         </h2>
-        <p className="text-700">Enter your password to access the admin</p>
+        <p className="text-body-tertiary">
+          Enter your password to access the admin
+        </p>
       </div>
       <Form>
         <Form.Control

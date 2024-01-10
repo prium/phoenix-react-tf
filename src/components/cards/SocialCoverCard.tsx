@@ -46,7 +46,7 @@ const SocialCoverCard = () => {
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faUserGroup}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
                     <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
@@ -58,7 +58,7 @@ const SocialCoverCard = () => {
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faUserCheck}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
                     <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
@@ -70,7 +70,7 @@ const SocialCoverCard = () => {
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faLocationDot}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
                     <span className="fs-7 fw-semi-bold text-600 hover-text-body-emphasis">

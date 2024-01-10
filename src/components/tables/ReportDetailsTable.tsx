@@ -15,7 +15,7 @@ const columns: ColumnDef<SellerReport>[] = [
       },
       headerProps: {
         style: { width: '35%' },
-        className: 'fs-10 text-700 fw-bold text-nowrap'
+        className: 'fs-10 text-body-tertiary fw-bold text-nowrap'
       }
     }
   },
@@ -29,7 +29,7 @@ const columns: ColumnDef<SellerReport>[] = [
       headerProps: {
         style: { width: '35%' },
         className:
-          'text-end ps-4 text-700 fw-bold fs-10 text-uppercase text-nowrap'
+          'text-end ps-4 text-body-tertiary fw-bold fs-10 text-uppercase text-nowrap'
       }
     }
   },
@@ -45,7 +45,7 @@ const columns: ColumnDef<SellerReport>[] = [
     meta: {
       headerProps: {
         style: { width: '30%' },
-        className: 'text-end ps-4 text-700 fw-bold fs-10 text-nowrap'
+        className: 'text-end ps-4 text-body-tertiary fw-bold fs-10 text-nowrap'
       },
       cellProps: {
         className: 'text-end ps-4 text-body-highlight'

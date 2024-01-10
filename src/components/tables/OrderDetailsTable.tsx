@@ -53,7 +53,9 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: 300 }, className: 'ps-4' },
-      cellProps: { className: 'white-space-nowrap text-700 fw-semi-bold ps-4' }
+      cellProps: {
+        className: 'white-space-nowrap text-body-tertiary fw-semi-bold ps-4'
+      }
     }
   },
   {
@@ -70,7 +72,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Quantity',
     meta: {
       headerProps: { style: { width: 200 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'text-end ps-4 text-700' }
+      cellProps: { className: 'text-end ps-4 text-body-tertiary' }
     }
   },
   {

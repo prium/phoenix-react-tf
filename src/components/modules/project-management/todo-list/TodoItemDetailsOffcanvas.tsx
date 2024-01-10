@@ -135,7 +135,7 @@ const TodoItemDetailsOffcanvas = ({
                   }}
                   icon={
                     <UilBellSchool
-                      className="flatpickr-icon text-700"
+                      className="flatpickr-icon text-body-tertiary"
                       size={16}
                     />
                   }
@@ -166,7 +166,10 @@ const TodoItemDetailsOffcanvas = ({
                 isMulti
                 placeholder="Select organizer"
                 icon={
-                  <UilTagAlt className="react-select-icon text-700" size={16} />
+                  <UilTagAlt
+                    className="react-select-icon text-body-tertiary"
+                    size={16}
+                  />
                 }
               />
 

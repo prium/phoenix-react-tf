@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const LinkItem = ({ children, to }: PropsWithChildren<{ to: string }>) => {
   return (
-    <Link to={to} className="text-700 fw-semi-bold fs-9 mb-1">
+    <Link to={to} className="text-body-tertiary fw-semi-bold fs-9 mb-1">
       {children}
     </Link>
   );
@@ -23,7 +23,7 @@ const EcommerceFooter = () => {
         <Row className="justify-content-between gy-4">
           <Col xs={12} lg={4}>
             <Logo className="mb-3" />
-            <p className="text-700 mb-1 fw-semi-bold lh-sm fs-9">
+            <p className="text-body-tertiary mb-1 fw-semi-bold lh-sm fs-9">
               Phoenix is an admin dashboard template with fascinating features
               and amazing layout. The template is responsive to all major
               browsers and is compatible with all available devices and screen

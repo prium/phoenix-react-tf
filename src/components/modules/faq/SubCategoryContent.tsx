@@ -52,7 +52,7 @@ const FaqItem = ({ item, type }: { item: FaqType; type?: string }) => {
       />
       <div>
         <h4 className="mb-3 text-body-highlight">{item.question}</h4>
-        <p className="mb-0 text-700">{item.answer}</p>
+        <p className="mb-0 text-body-tertiary">{item.answer}</p>
       </div>
     </li>
   );

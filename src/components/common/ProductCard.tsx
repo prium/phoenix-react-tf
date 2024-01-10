@@ -85,9 +85,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 
           {product.colors && (
             <p
-              className={classNames('text-700 fw-semi-bold fs-9 lh-1', {
-                'mb-0': !product.dealEndTime
-              })}
+              className={classNames(
+                'text-body-tertiary fw-semi-bold fs-9 lh-1',
+                {
+                  'mb-0': !product.dealEndTime
+                }
+              )}
             >
               {product.colors} colors
             </p>

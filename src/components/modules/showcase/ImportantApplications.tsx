@@ -86,7 +86,9 @@ const ImportantApplications = () => {
                     <h4 className="text-body-highlight mb-3">
                       {application.title}
                     </h4>
-                    <p className="text-700 lh-sm pb-4">{application.details}</p>
+                    <p className="text-body-tertiary lh-sm pb-4">
+                      {application.details}
+                    </p>
                     <Button
                       as={Link}
                       target="_blank"

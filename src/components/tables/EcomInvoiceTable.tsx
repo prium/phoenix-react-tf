@@ -53,7 +53,7 @@ const EcomInvoiceTable = () => {
               </p>
             </td>
             <td className="align-middle ps-5">Glossy black</td>
-            <td className="align-middle text-700 fw-semi-bold">XL</td>
+            <td className="align-middle text-body-tertiary fw-semi-bold">XL</td>
             <td className="align-middle text-end text-body-highlight fw-semi-bold">
               2
             </td>
@@ -73,7 +73,9 @@ const EcomInvoiceTable = () => {
               </p>
             </td>
             <td className="align-middle ps-5">Black</td>
-            <td className="align-middle text-700 fw-semi-bold">Pro</td>
+            <td className="align-middle text-body-tertiary fw-semi-bold">
+              Pro
+            </td>
             <td className="align-middle text-end text-body-highlight fw-semi-bold">
               1
             </td>
@@ -93,7 +95,7 @@ const EcomInvoiceTable = () => {
               </p>
             </td>
             <td className="align-middle ps-5 border-0">White</td>
-            <td className="align-middle text-700 fw-semi-bold border-0">
+            <td className="align-middle text-body-tertiary fw-semi-bold border-0">
               Regular
             </td>
             <td className="align-middle text-end text-body-highlight fw-semi-bold border-0">

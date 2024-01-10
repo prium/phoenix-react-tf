@@ -27,7 +27,7 @@ const ChatWidgetVisibility = () => {
           className="text-end"
         />
       </div>
-      <p className="mb-0 text-700">Toggle support chat</p>
+      <p className="mb-0 text-body-tertiary">Toggle support chat</p>
     </div>
   );
 };

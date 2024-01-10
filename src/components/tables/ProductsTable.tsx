@@ -65,7 +65,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     },
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'fw-bold ps-4 text-700 text-end' }
+      cellProps: { className: 'fw-bold ps-4 text-body-tertiary text-end' }
     }
   },
   {

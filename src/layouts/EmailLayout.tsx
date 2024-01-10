@@ -47,7 +47,7 @@ const EmailLayout = ({
           </Button>
           <Button
             variant="phoenix-secondary"
-            className="px-3 text-700 d-lg-none"
+            className="px-3 text-body-tertiary d-lg-none"
             onClick={() => setOpenSidebar(true)}
           >
             <FontAwesomeIcon icon={faBars} />

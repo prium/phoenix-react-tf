@@ -17,7 +17,9 @@ const ActionSection = () => {
         <Row className="h-100 align-items-center px-xl-6 justify-content-between justify-content-xl-start">
           <Col xs="auto">
             <div>
-              <p className="text-700 fs-10 fw-semi-bold mb-0">Created</p>
+              <p className="text-body-tertiary fs-10 fw-semi-bold mb-0">
+                Created
+              </p>
               <p className="text-body-highlight fs-9 mb-0">Jan 3, 3:24 pm</p>
             </div>
           </Col>

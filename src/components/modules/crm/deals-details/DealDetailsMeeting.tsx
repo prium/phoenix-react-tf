@@ -16,7 +16,7 @@ const DealDetailsMeeting = ({ meetings }: { meetings: Meeting[] }) => {
         </Col>
         <Col xs="auto" className="flex-md-grow-1">
           <div className="d-flex">
-            <p className="mb-0 fs-9 text-700 fw-bold">
+            <p className="mb-0 fs-9 text-body-tertiary fw-bold">
               <FontAwesomeIcon
                 icon={faFilter}
                 className="me-1 fw-extra-bold fs-10"

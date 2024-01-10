@@ -40,7 +40,7 @@ const UsuallyBoughtTogetherCard = ({
       <Card.Body>
         <h5 className="text-black">Usually Bought Together</h5>
         <div className="w-75">
-          <p className="text-700 fs-9 fw-bold line-clamp-1">
+          <p className="text-body-tertiary fs-9 fw-bold line-clamp-1">
             with 24" iMac® with Retina 4.5K display - Apple M1 8GB Memory -
             256GB SSD - w/Touch ID (Latest Model) - Blue
           </p>

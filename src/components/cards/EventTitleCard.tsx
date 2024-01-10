@@ -31,7 +31,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                       <h5 className="ms-2 text-body-emphasis mb-0">Location</h5>
                     </div>
                   </div>
-                  <p className="lh-sm mb-0 text-700">
+                  <p className="lh-sm mb-0 text-body-tertiary">
                     36/4A, James Tiberius Auditorium, <br />
                     Vancouver, British Columbia, Canada
                   </p>
@@ -51,7 +51,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                     <h5 className="ms-2 mb-0">Date &amp; Time</h5>
                   </div>
                 </div>
-                <p className="lh-sm mb-0 text-700">
+                <p className="lh-sm mb-0 text-body-tertiary">
                   28th June - 2nd July 2022, <br />
                   10 am - 4 pm Eastern Daylight Time
                 </p>

@@ -39,7 +39,7 @@ const CrmStatCard = ({
                   className={`text-${color} fs-7 z-index-1 ms-2`}
                 />
               </div>
-              <p className="text-700 fs-9 mb-0 ms-2 mt-3">{label}</p>
+              <p className="text-body-tertiary fs-9 mb-0 ms-2 mt-3">{label}</p>
             </div>
             <p className={`text-${color} mt-2 fs-6 fw-bold mb-0 mb-sm-4`}>
               {value} <span className="fs-8 text-body lh-lg">{title}</span>
@@ -49,7 +49,7 @@ const CrmStatCard = ({
             <Badge variant="phoenix" bg={badgeBg} className="fs-10 mb-2">
               {badgeLabel}
             </Badge>
-            <p className="mb-0 fs-9 text-700">{footerText}</p>
+            <p className="mb-0 fs-9 text-body-tertiary">{footerText}</p>
           </div>
         </div>
       </Card.Body>

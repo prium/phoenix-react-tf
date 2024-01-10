@@ -74,7 +74,7 @@ const AttachmentPreview = ({
           className={classNames(
             'd-flex align-items-center lh-1 fw-semi-bold fs-10',
             {
-              'text-700': variant == 'primary',
+              'text-body-tertiary': variant == 'primary',
               'text-200': variant == 'secondary'
             }
           )}

@@ -209,7 +209,7 @@ export const topElectronicProducts: Product[] = [
     extra: 'Leather cover add-on available',
     extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'supports Windows 11',
-    extra2Class: 'text-700 fs--1 mb-2'
+    extra2Class: 'text-body-tertiary fs--1 mb-2'
   },
   {
     id: 10,
@@ -233,7 +233,7 @@ export const topElectronicProducts: Product[] = [
     extra: 'Free with iPhone 5s',
     extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'Ships to Canada',
-    extra2Class: 'text-700 fs--1 mb-2'
+    extra2Class: 'text-body-tertiary fs--1 mb-2'
   },
   {
     id: 12,
@@ -246,7 +246,7 @@ export const topElectronicProducts: Product[] = [
     extra: 'Bundle available',
     extraClass: 'text-body-highlight fs--1 mb-0 fw-bold',
     extra2: 'Charger not included',
-    extra2Class: 'text-700 fs--1 mb-2'
+    extra2Class: 'text-body-tertiary fs--1 mb-2'
   },
   {
     id: 13,

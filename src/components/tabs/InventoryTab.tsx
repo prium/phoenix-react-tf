@@ -136,7 +136,7 @@ const InventoryTab = () => {
                       <td className="text-body-highlight fw-bold py-1">
                         Product in stock now:
                       </td>
-                      <td className="text-700 fw-semi-bold py-1">
+                      <td className="text-body-tertiary fw-semi-bold py-1">
                         $1,090
                         <Button className="p-0 ms-1" type="button">
                           <FontAwesomeIcon
@@ -153,13 +153,15 @@ const InventoryTab = () => {
                       <td className="text-body-highlight fw-bold py-1">
                         Product in transit:
                       </td>
-                      <td className="text-700 fw-semi-bold py-1">5000</td>
+                      <td className="text-body-tertiary fw-semi-bold py-1">
+                        5000
+                      </td>
                     </tr>
                     <tr>
                       <td className="text-body-highlight fw-bold py-1">
                         Last time restocked:
                       </td>
-                      <td className="text-700 fw-semi-bold py-1">
+                      <td className="text-body-tertiary fw-semi-bold py-1">
                         30th June, 2021
                       </td>
                     </tr>
@@ -167,7 +169,9 @@ const InventoryTab = () => {
                       <td className="text-body-highlight fw-bold py-1">
                         Total stock over lifetime:
                       </td>
-                      <td className="text-700 fw-semi-bold py-1">20,000</td>
+                      <td className="text-body-tertiary fw-semi-bold py-1">
+                        20,000
+                      </td>
                     </tr>
                   </tbody>
                 </table>

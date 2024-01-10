@@ -49,7 +49,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
           <div className="d-flex align-items-center mb-2">
             <FontAwesomeIcon
               icon={faUser}
-              className="me-2 text-700 fs-9 fw-extra-bold"
+              className="me-2 text-body-tertiary fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Client :{' '}
@@ -62,7 +62,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
           <div className="d-flex align-items-center mb-4">
             <FontAwesomeIcon
               icon={faCreditCard}
-              className="me-2 text-700 fs-9 fw-extra-bold"
+              className="me-2 text-body-tertiary fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Budget :{' '}
@@ -71,7 +71,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
               </span>
             </p>
           </div>
-          <div className="d-flex justify-content-between text-700 fw-semi-bold">
+          <div className="d-flex justify-content-between text-body-tertiary fw-semi-bold">
             <p className="mb-2"> Progress</p>
             <p className="mb-2 text-body-emphasis">{progress}%</p>
           </div>

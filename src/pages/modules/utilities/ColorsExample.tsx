@@ -63,7 +63,7 @@ const ColorsExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="How it works" noPreview>
-            <p className="text-700 mb-0">
+            <p className="text-body-tertiary mb-0">
               Consider our default <code>.text-primary </code>utility.
             </p>
           </PhoenixDocCard.Header>

@@ -93,7 +93,7 @@ render(<DarkModeExample />);
 const lightCode = `
   <Card bg='100' className="light">
     <Card.Body>
-      <p className="mb-0 text-700">
+      <p className="mb-0 text-body-tertiary">
         <b>This element will retain it's color if you switch between light and dark mode.</b>
       </p>
     </Card.Body>
@@ -103,7 +103,7 @@ const lightCode = `
 const darkCode = `
   <Card bg='100' className="dark">
     <Card.Body>
-      <p className="mb-0 text-700">
+      <p className="mb-0 text-body-tertiary">
         <b>This element will retain it's color if you switch between light and dark mode.</b>
       </p>
     </Card.Body>
@@ -126,7 +126,7 @@ const DarkMode = () => {
   return (
     <div>
       <DocPageHeader title="Dark Mode">
-        <p className="lead text-700">
+        <p className="lead text-body-tertiary">
           It’s effortless to switch Dark Mode in {process.env.REACT_APP_TITLE}
           -React. You can enable Dark Mode by default or create a Dark/Light
           switch if you want. To set the default mode "Dark", please see the

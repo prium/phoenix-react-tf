@@ -9,7 +9,7 @@ const EcomPayingVsNonPayingCard = () => {
         <div className="d-flex justify-content-between">
           <div>
             <h5 className="mb-2">Paying vs non paying</h5>
-            <h6 className="text-700">Last 7 days</h6>
+            <h6 className="text-body-tertiary">Last 7 days</h6>
           </div>
         </div>
         <div className="d-flex justify-content-center pt-3 flex-1">

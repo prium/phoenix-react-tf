@@ -44,7 +44,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {users.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          <span className="text-body-tertiary fw-semi-bold ms-2">
             ({users.percantage})
           </span>
         </h6>
@@ -63,7 +63,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {transactions.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          <span className="text-body-tertiary fw-semi-bold ms-2">
             ({transactions.percantage})
           </span>
         </h6>
@@ -85,7 +85,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {revenue.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          <span className="text-body-tertiary fw-semi-bold ms-2">
             ({revenue.percantage})
           </span>
         </h6>

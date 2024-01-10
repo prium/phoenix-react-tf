@@ -82,7 +82,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
         className: 'text-end'
       },
       cellProps: {
-        className: 'text-end text-700'
+        className: 'text-end text-body-tertiary'
       }
     }
   },
@@ -95,7 +95,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
         className: 'text-end pe-0'
       },
       cellProps: {
-        className: 'text-700 text-end'
+        className: 'text-body-tertiary text-end'
       }
     }
   }

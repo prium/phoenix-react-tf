@@ -10,7 +10,7 @@ const SimilarProducts = ({ products }: { products: Product[] }) => {
       <div className="d-flex flex-between-center mb-3">
         <div>
           <h3>Similar Products</h3>
-          <p className="mb-0 text-700 fw-semi-bold">
+          <p className="mb-0 text-body-tertiary fw-semi-bold">
             Essential for a better life
           </p>
         </div>

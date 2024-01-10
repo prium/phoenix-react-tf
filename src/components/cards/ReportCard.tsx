@@ -51,7 +51,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 height={16}
                 className="me-2"
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-700">
+              <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary">
                 {report.category}
               </p>
             </div>
@@ -64,7 +64,9 @@ const ReportCard = ({ report }: { report: Report }) => {
                 width={16}
                 height={16}
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-700">{report.date}</p>
+              <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary">
+                {report.date}
+              </p>
             </div>
           </Col>
         </Row>

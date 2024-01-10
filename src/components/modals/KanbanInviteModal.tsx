@@ -24,7 +24,7 @@ const KanbanInviteModal = ({
         </Button>
       </Modal.Header>
       <Modal.Body className="p-4 pt-0">
-        <p className="text-700 fw-semi-bold fs-9">
+        <p className="text-body-tertiary fw-semi-bold fs-9">
           Add the <strong className="fw-bolder">Members</strong> or{' '}
           <strong className="fw-bolder">Guests</strong> to your Kanban board.
           They can add, edit, or move tasks in your board. Tasks can also be

@@ -330,7 +330,7 @@ $form-check-margin-bottom: 0.34375rem !default;
 $form-label-font-size: map-get($font-sizes, 10) !default;
 $form-label-font-style: null !default;
 $form-label-font-weight: $font-weight-bold !default;
-$form-label-color: var(--#{$prefix}gray-700) !default;
+$form-label-color: var(--#{$prefix}tertiary-color) !default;
 
 $form-select-color: var(--#{$prefix}900) !default;
 $form-select-disabled-bg: var(--#{$prefix}200) !default;

@@ -30,7 +30,7 @@
     margin: 0;
     @include hover-focus {
       background-color: var(--#{$prefix}white);
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
   }
   .swiper-button-prev,

@@ -21,7 +21,10 @@ const SettingsPersonalInfo = () => {
                 placeholder="First Name"
                 className="form-icon-input"
               />
-              <label htmlFor="firstName" className="form-icon-label text-700">
+              <label
+                htmlFor="firstName"
+                className="form-icon-label text-body-tertiary"
+              >
                 FIRST NAME
               </label>
             </Form.Floating>
@@ -40,7 +43,10 @@ const SettingsPersonalInfo = () => {
                 placeholder="Last Name"
                 className="form-icon-input"
               />
-              <label htmlFor="lastName" className="form-icon-label text-700">
+              <label
+                htmlFor="lastName"
+                className="form-icon-label text-body-tertiary"
+              >
                 LAST NAME
               </label>
             </Form.Floating>
@@ -59,7 +65,10 @@ const SettingsPersonalInfo = () => {
                 placeholder="Enter your email"
                 className="form-icon-input"
               />
-              <label htmlFor="email" className="form-icon-label text-700">
+              <label
+                htmlFor="email"
+                className="form-icon-label text-body-tertiary"
+              >
                 ENTER YOUR EMAIL
               </label>
             </Form.Floating>
@@ -78,7 +87,10 @@ const SettingsPersonalInfo = () => {
                 placeholder="Enter your phone"
                 className="form-icon-input"
               />
-              <label htmlFor="phone" className="form-icon-label text-700">
+              <label
+                htmlFor="phone"
+                className="form-icon-label text-body-tertiary"
+              >
                 ENTER YOUR PHONE
               </label>
             </Form.Floating>
@@ -99,7 +111,10 @@ const SettingsPersonalInfo = () => {
                 placeholder="info"
                 className="form-icon-input"
               />
-              <label htmlFor="lastName" className="form-icon-label text-700">
+              <label
+                htmlFor="lastName"
+                className="form-icon-label text-body-tertiary"
+              >
                 INFO
               </label>
             </Form.Floating>

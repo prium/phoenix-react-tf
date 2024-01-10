@@ -211,7 +211,7 @@ const EcomLatestReviewsTable = () => {
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
-            <p className="text-700 lh-sm mb-0">
+            <p className="text-body-tertiary lh-sm mb-0">
               Payment received across all channels
             </p>
           </Col>

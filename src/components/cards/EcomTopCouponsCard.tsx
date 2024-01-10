@@ -8,7 +8,7 @@ const EcomTopCouponsCard = () => {
         <div className="d-flex justify-content-between">
           <div>
             <h5 className="mb-2">Top coupons</h5>
-            <h6 className="text-700">Last 7 days</h6>
+            <h6 className="text-body-tertiary">Last 7 days</h6>
           </div>
         </div>
         <div className="pb-4 pt-3">

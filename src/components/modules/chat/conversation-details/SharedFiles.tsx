@@ -28,7 +28,7 @@ const SharedFiles = () => {
               <button className="btn p-0">
                 <FontAwesomeIcon
                   icon={faArrowAltCircleDown}
-                  className="fs-0 text-700"
+                  className="fs-0 text-body-tertiary"
                 />
               </button>
             </div>

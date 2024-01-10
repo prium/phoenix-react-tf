@@ -7,7 +7,9 @@ const RevenueTarget = () => {
     <Card className="h-100">
       <Card.Body>
         <h3>Revenue Target</h3>
-        <p className="text-700 mb-0">Country-wise target fulfilment</p>
+        <p className="text-body-tertiary mb-0">
+          Country-wise target fulfilment
+        </p>
         <RevenueTargetChart style={{ height: 250, width: '100%' }} />
       </Card.Body>
     </Card>

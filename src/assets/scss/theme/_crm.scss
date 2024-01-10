@@ -10,7 +10,7 @@
     color: var(--#{$prefix}emphasis-color);
     font-weight: $font-weight-semi-bold;
     .tab-icon-color {
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
     &.active {
       color: var(--#{$prefix}primary);

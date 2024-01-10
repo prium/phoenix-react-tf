@@ -9,7 +9,7 @@ export const tooltipFormatterDefault = (
   let tooltipItem = ``;
   params.forEach(el => {
     tooltipItem += `<div class='ms-1'>
-        <h6 class="text-700">
+        <h6 class="text-body-tertiary">
         <span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${el[colorProperty]}"></span>
           ${el.seriesName} : ${el.value}
         </h6>
@@ -48,7 +48,7 @@ export const tooltipFormatterList = (params: CallbackDataParams[]) => {
 
   let tooltipItem = ``;
   result.forEach((el, index: number) => {
-    tooltipItem += `<h6 class="text-700 ${
+    tooltipItem += `<h6 class="text-body-tertiary ${
       (result.length === 1 || index > 0) && 'mb-0'
     }"><span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${
       el.color

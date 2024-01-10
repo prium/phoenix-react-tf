@@ -15,7 +15,9 @@ const IssuesDiscovered = () => {
     <Row className="g-3 mb-3">
       <Col xs={12} md={6}>
         <h3 className="text-body-emphasis text-nowrap">Issues Discovered</h3>
-        <p className="text-700 mb-md-7">Newly found and yet to be solved</p>
+        <p className="text-body-tertiary mb-md-7">
+          Newly found and yet to be solved
+        </p>
         <div className="d-flex align-items-center justify-content-between">
           <p className="mb-0 fw-bold">Issue type </p>
           <p className="mb-0 fs-9">

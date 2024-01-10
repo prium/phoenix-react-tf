@@ -59,7 +59,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
         className: 'pe-3'
       },
       cellProps: {
-        className: 'fw-bold text-700'
+        className: 'fw-bold text-body-tertiary'
       }
     }
   },

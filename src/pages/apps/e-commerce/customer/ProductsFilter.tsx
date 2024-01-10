@@ -37,7 +37,7 @@ const ProductsFilter = () => {
         <Button
           variant="phoenix-secondary"
           size="sm"
-          className="text-700 mb-5 d-lg-none"
+          className="text-body-tertiary mb-5 d-lg-none"
           onClick={handleShow}
         >
           <FontAwesomeIcon icon={faFilter} className="me-2" />

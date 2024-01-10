@@ -73,7 +73,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Last seen',
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end px-1' },
-      cellProps: { className: 'text-700 text-end px-1' }
+      cellProps: { className: 'text-body-tertiary text-end px-1' }
     }
   },
   {
@@ -84,7 +84,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
         style: { width: '10%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-700 text-end pe-0' }
+      cellProps: { className: 'text-body-tertiary text-end pe-0' }
     }
   }
 ];

@@ -402,12 +402,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           x: {
             fontSize: 31.25,
             fontWeight: 800,
-            color: getThemeColor('gray-700'),
+            color: getThemeColor('tertiary-color'),
             padding: [0, 0, 5, 15]
           },
           y: {
             fontSize: 12.8,
-            color: getThemeColor('gray-700'),
+            color: getThemeColor('tertiary-color'),
             fontWeight: 600
           }
         }

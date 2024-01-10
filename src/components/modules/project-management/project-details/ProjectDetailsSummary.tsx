@@ -20,7 +20,7 @@ const ProjectDetailsSummary = () => {
                 <div className="d-flex">
                   <FontAwesomeIcon
                     icon={faEarthAmericas}
-                    className="me-2 text-700 fs-9"
+                    className="me-2 text-body-tertiary fs-9"
                   />
                   <h5 className="text-body">Public project</h5>
                 </div>
@@ -31,7 +31,7 @@ const ProjectDetailsSummary = () => {
                 <div className="d-flex">
                   <FontAwesomeIcon
                     icon={faUser}
-                    className="me-2 text-700 fs-9"
+                    className="me-2 text-body-tertiary fs-9"
                   />
                   <h5 className="text-body mb-0 text-nowrap">Client :</h5>
                 </div>
@@ -47,7 +47,7 @@ const ProjectDetailsSummary = () => {
                 <div className="d-flex">
                   <FontAwesomeIcon
                     icon={faCreditCard}
-                    className="me-2 text-700 fs-9"
+                    className="me-2 text-body-tertiary fs-9"
                   />
                   <h5 className="text-body mb-0 text-nowrap">Budget : </h5>
                 </div>
@@ -81,7 +81,10 @@ const ProjectDetailsSummary = () => {
       </div>
       <div>
         <div className="d-flex align-items-center">
-          <FontAwesomeIcon icon={faListCheck} className="me-2 text-700 fs-9" />
+          <FontAwesomeIcon
+            icon={faListCheck}
+            className="me-2 text-body-tertiary fs-9"
+          />
           <h5 className="text-body-emphasis mb-0 me-2">
             91<span className="text-body fw-normal ms-2">tasks</span>
           </h5>

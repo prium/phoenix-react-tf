@@ -9,7 +9,7 @@ const WidgetsScrollspyNav = () => {
         <Nav className="px-4 flex-nowrap">
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#stats"
             >
               Number Stats and Charts
@@ -17,7 +17,7 @@ const WidgetsScrollspyNav = () => {
           </Nav.Item>
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#tables"
             >
               Tables, Files, and Lists
@@ -25,7 +25,7 @@ const WidgetsScrollspyNav = () => {
           </Nav.Item>
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#e-commerce"
             >
               E-commerce
@@ -33,7 +33,7 @@ const WidgetsScrollspyNav = () => {
           </Nav.Item>
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#users-and-feed"
             >
               Users & Feed
@@ -41,7 +41,7 @@ const WidgetsScrollspyNav = () => {
           </Nav.Item>
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#forms"
             >
               Forms
@@ -49,7 +49,7 @@ const WidgetsScrollspyNav = () => {
           </Nav.Item>
           <Nav.Item>
             <ScrollSpy.NavLink
-              className="text-700 fw-bold p-3 lh-1 text-nowrap fs-8"
+              className="text-body-tertiary fw-bold p-3 lh-1 text-nowrap fs-8"
               href="#others"
             >
               Others

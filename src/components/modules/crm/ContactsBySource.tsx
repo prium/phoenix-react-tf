@@ -14,7 +14,9 @@ const ContactsBySource = () => {
     <Row>
       <Col xs={12} sm={7} md={8} xxl={8} className="mb-md-3 mb-lg-0">
         <h3>New Contacts by Source</h3>
-        <p className="text-700">Payment received across all channels</p>
+        <p className="text-body-tertiary">
+          Payment received across all channels
+        </p>
         <Row className="g-0">
           {contactSourceData.map((item, index) => (
             <Col xs={6} xl={4} key={item.name}>

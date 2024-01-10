@@ -9,7 +9,9 @@ const MyFavoriteStores = () => {
       <div className="d-flex flex-between-center mb-5">
         <div>
           <h3 className="text-body-emphasis mb-2">My Favorite Stores</h3>
-          <h5 className="text-700 fw-semi-bold">Essential for a better life</h5>
+          <h5 className="text-body-tertiary fw-semi-bold">
+            Essential for a better life
+          </h5>
         </div>
         <Button variant="phoenix-primary">View all</Button>
       </div>

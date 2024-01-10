@@ -153,8 +153,8 @@
     right: map-get($spacers, 3);
     height: 0.4rem;
     width: 0.4rem;
-    border-right: 1px solid var(--#{$prefix}gray-700);
-    border-bottom: 1px solid var(--#{$prefix}gray-700);
+    border-right: 1px solid var(--#{$prefix}tertiary-color);
+    border-bottom: 1px solid var(--#{$prefix}tertiary-color);
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
     transition: $transition-base;

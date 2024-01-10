@@ -51,7 +51,8 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'pe-6'
       },
       cellProps: {
-        className: 'white-space-nowrap text-start fw-bold text-700 py-2 pe-6'
+        className:
+          'white-space-nowrap text-start fw-bold text-body-tertiary py-2 pe-6'
       }
     }
   },

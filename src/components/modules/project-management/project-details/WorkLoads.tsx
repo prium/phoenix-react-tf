@@ -7,7 +7,7 @@ const WorkLoads = () => {
     <div>
       <div className="mb-5">
         <h4 className="text-black">Work loads</h4>
-        <h6 className="text-700">Last 7 days</h6>
+        <h6 className="text-body-tertiary">Last 7 days</h6>
       </div>
       <div className="mb-5">
         <EcomTopCouponsChart />

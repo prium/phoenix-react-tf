@@ -49,7 +49,7 @@ const AuthCardLayout = ({
                     <h3 className="mb-3 text-black fs-7">
                       Phoenix Authentication
                     </h3>
-                    <p className="text-700">
+                    <p className="text-body-tertiary">
                       Give yourself some hassle-free development process with
                       the uniqueness of Phoenix!
                     </p>
@@ -60,7 +60,9 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-700 fw-semi-bold">Fast</span>
+                        <span className="text-body-tertiary fw-semi-bold">
+                          Fast
+                        </span>
                       </li>
                       <li className="d-flex align-items-center gap-2">
                         <Unicon
@@ -68,7 +70,9 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-700 fw-semi-bold">Simple</span>
+                        <span className="text-body-tertiary fw-semi-bold">
+                          Simple
+                        </span>
                       </li>
                       <li className="d-flex align-items-center gap-2">
                         <Unicon
@@ -76,7 +80,7 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-700 fw-semi-bold">
+                        <span className="text-body-tertiary fw-semi-bold">
                           Responsive
                         </span>
                       </li>

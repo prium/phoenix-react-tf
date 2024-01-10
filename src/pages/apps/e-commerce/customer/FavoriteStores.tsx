@@ -13,7 +13,7 @@ const FavoriteStores = () => {
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="mb-5">
           <h2>My Favorite Stores</h2>
-          <p className="mb-0 text-700 fw-semi-bold">
+          <p className="mb-0 text-body-tertiary fw-semi-bold">
             Essential for a better life
           </p>
         </div>

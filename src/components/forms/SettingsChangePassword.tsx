@@ -15,7 +15,10 @@ const SettingsChangePassword = () => {
             placeholder="Old Password"
             className="form-icon-input"
           />
-          <label htmlFor="oldPassword" className="form-icon-label text-700">
+          <label
+            htmlFor="oldPassword"
+            className="form-icon-label text-body-tertiary"
+          >
             OLD PASSWORD
           </label>
         </Form.Floating>
@@ -29,7 +32,10 @@ const SettingsChangePassword = () => {
             placeholder="New password"
             className="form-icon-input"
           />
-          <label htmlFor="newPassword" className="form-icon-label text-700">
+          <label
+            htmlFor="newPassword"
+            className="form-icon-label text-body-tertiary"
+          >
             NEW PASSWORD
           </label>
         </Form.Floating>
@@ -43,7 +49,10 @@ const SettingsChangePassword = () => {
             placeholder="Confirm New password"
             className="form-icon-input"
           />
-          <label htmlFor="newPassword2" className="form-icon-label text-700">
+          <label
+            htmlFor="newPassword2"
+            className="form-icon-label text-body-tertiary"
+          >
             CONFIRM NEW PASSWORD
           </label>
         </Form.Floating>

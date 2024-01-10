@@ -41,11 +41,11 @@ const EventItem = ({ event }: EventItemProps) => {
         </Link>
       </p>
       <p className="fs-10 text-600">{event.people} people going</p>
-      <p className="fs-9 text-700 fw-bold mb-1">
+      <p className="fs-9 text-body-tertiary fw-bold mb-1">
         <FontAwesomeIcon icon={faClock} className="text-body-secondary me-1" />
         {event.time}
       </p>
-      <p className="fs-9 text-700 fw-bold mb-0">
+      <p className="fs-9 text-body-tertiary fw-bold mb-0">
         <FontAwesomeIcon
           icon={faMapMarkerAlt}
           className="text-body-secondary me-1"

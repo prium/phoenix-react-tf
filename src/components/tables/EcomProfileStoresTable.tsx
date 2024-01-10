@@ -84,7 +84,7 @@ const columns: ColumnDef<StoreProductType>[] = [
         style: { width: '15%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end text-700' }
+      cellProps: { className: 'text-end text-body-tertiary' }
     }
   },
   {

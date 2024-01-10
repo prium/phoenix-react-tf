@@ -38,7 +38,7 @@ const Settings = () => {
           <Row className="gy-5">
             <Col xs={12} md={6}>
               <h4 className="text-black">Transfer Ownership</h4>
-              <p className="text-700">
+              <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.
               </p>
@@ -46,7 +46,7 @@ const Settings = () => {
             </Col>
             <Col xs={12} md={6}>
               <h4 className="text-black">Account Deletion</h4>
-              <p className="text-700">
+              <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.
               </p>

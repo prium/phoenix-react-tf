@@ -13,7 +13,7 @@ const tooltipFormatter = (params: any) => {
   const el = params[1];
 
   const tooltipItem = `<div class='ms-1'>
-    <h6 class="text-700"><span class="d-inline-block rounded-circle me-2" style="height: 0.6rem; width: 0.6rem; background:${
+    <h6 class="text-body-tertiary"><span class="d-inline-block rounded-circle me-2" style="height: 0.6rem; width: 0.6rem; background:${
       el.color
     }"></span>
         ${el.axisValue} : ${

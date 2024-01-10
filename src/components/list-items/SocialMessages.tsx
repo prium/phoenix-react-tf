@@ -16,7 +16,7 @@ const SocialMessages = ({ messages }: SocialMessagesProps) => {
       <div className="d-flex flex-between-center pb-3 border-bottom border-dashed border-300">
         <h3 className="mb-0">
           Messages
-          <span className="text-700 ms-2 fw-normal">(97)</span>
+          <span className="text-body-tertiary ms-2 fw-normal">(97)</span>
         </h3>
         <RevealDropdownTrigger>
           <RevealDropdown>
@@ -43,7 +43,7 @@ const SocialMessages = ({ messages }: SocialMessagesProps) => {
           </div>
           <Link to="/apps/chat" className="text-decoration-none flex-1">
             <h5>{message.name}</h5>
-            <p className="text-700 fw-semi-bold fs-9 mb-0 lh-sm line-clamp-1">
+            <p className="text-body-tertiary fw-semi-bold fs-9 mb-0 lh-sm line-clamp-1">
               {message.message}
             </p>
           </Link>

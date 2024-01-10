@@ -66,7 +66,7 @@ const columns: ColumnDef<CustomerOrder>[] = [
         style: { width: '15%', minWidth: 160 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-700 text-end' }
+      cellProps: { className: 'text-body-tertiary text-end' }
     }
   },
   {

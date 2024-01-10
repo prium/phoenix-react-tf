@@ -11,7 +11,9 @@ const NewUsersAndLeads = () => {
     <>
       <div className="mb-3">
         <h3>New Users &amp; Leads</h3>
-        <p className="text-700 mb-0">Payment received across all channels</p>
+        <p className="text-body-tertiary mb-0">
+          Payment received across all channels
+        </p>
       </div>
       <Row className="g-6">
         <Col md={6} className="mb-2 mb-sm-0">

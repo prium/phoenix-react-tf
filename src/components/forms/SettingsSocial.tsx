@@ -25,7 +25,10 @@ const SettingsSocial = () => {
                 placeholder="Facebook"
                 className="form-icon-input"
               />
-              <label htmlFor="facebook" className="form-icon-label text-700">
+              <label
+                htmlFor="facebook"
+                className="form-icon-label text-body-tertiary"
+              >
                 FACEBOOK
               </label>
             </Form.Floating>
@@ -44,7 +47,10 @@ const SettingsSocial = () => {
                 placeholder="Twitter"
                 className="form-icon-input"
               />
-              <label htmlFor="twitter" className="form-icon-label text-700">
+              <label
+                htmlFor="twitter"
+                className="form-icon-label text-body-tertiary"
+              >
                 TWITTER
               </label>
             </Form.Floating>
@@ -63,7 +69,10 @@ const SettingsSocial = () => {
                 placeholder="Linkedin"
                 className="form-icon-input"
               />
-              <label htmlFor="linkedin" className="form-icon-label text-700">
+              <label
+                htmlFor="linkedin"
+                className="form-icon-label text-body-tertiary"
+              >
                 LINKEDIN
               </label>
             </Form.Floating>
@@ -82,7 +91,10 @@ const SettingsSocial = () => {
                 placeholder="youtube"
                 className="form-icon-input"
               />
-              <label htmlFor="youtube" className="form-icon-label text-700">
+              <label
+                htmlFor="youtube"
+                className="form-icon-label text-body-tertiary"
+              >
                 YOUTUBE
               </label>
             </Form.Floating>
@@ -101,7 +113,10 @@ const SettingsSocial = () => {
                 placeholder="Artstation"
                 className="form-icon-input"
               />
-              <label htmlFor="artstation" className="form-icon-label text-700">
+              <label
+                htmlFor="artstation"
+                className="form-icon-label text-body-tertiary"
+              >
                 ARTSTATION
               </label>
             </Form.Floating>
@@ -120,7 +135,10 @@ const SettingsSocial = () => {
                 placeholder="Behance"
                 className="form-icon-input"
               />
-              <label htmlFor="behance" className="form-icon-label text-700">
+              <label
+                htmlFor="behance"
+                className="form-icon-label text-body-tertiary"
+              >
                 BEHANCE
               </label>
             </Form.Floating>

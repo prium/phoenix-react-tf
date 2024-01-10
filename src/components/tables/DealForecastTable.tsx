@@ -26,7 +26,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     meta: {
       headerProps: {
         style: { width: '15%', minWidth: '100px' },
-        className: 'text-start text-700'
+        className: 'text-start text-body-tertiary'
       },
       cellProps: { className: 'pe-3 white-space-nowrap py-2' },
       footerProps: {
@@ -47,7 +47,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     meta: {
       headerProps: {
         style: { width: '15%', minWidth: '95px' },
-        className: 'text-end px-3 text-700'
+        className: 'text-end px-3 text-body-tertiary'
       },
       cellProps: {
         className: 'text-end fw-semi-bold text-body py-2 px-3'
@@ -79,7 +79,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     meta: {
       headerProps: {
         style: { width: '20%', minWidth: '100px' },
-        className: 'text-end px-3 text-700'
+        className: 'text-end px-3 text-body-tertiary'
       },
       cellProps: {
         className: 'text-end fw-semi-bold text-body py-2 px-3'
@@ -111,7 +111,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     meta: {
       headerProps: {
         style: { width: '20%', minWidth: '100px' },
-        className: 'text-end px-3 text-700'
+        className: 'text-end px-3 text-body-tertiary'
       },
       cellProps: {
         className: 'text-end fw-semi-bold text-body py-2 px-3'
@@ -143,7 +143,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     meta: {
       headerProps: {
         style: { width: '20%', minWidth: '100px' },
-        className: 'text-end text-700'
+        className: 'text-end text-body-tertiary'
       },
       cellProps: {
         className: 'text-end fw-semi-bold text-body py-2 ps-3'

@@ -100,7 +100,7 @@ const TodoListItem = ({
               <h5
                 className={classNames(
                   labelClassName,
-                  'mb-0 line-clamp-1 fw-semi-bold text-700 cursor-pointer',
+                  'mb-0 line-clamp-1 fw-semi-bold text-body-tertiary cursor-pointer',
                   {
                     'text-decoration-line-through': selected
                   }
@@ -139,7 +139,7 @@ const TodoListItem = ({
           >
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
-                <Button className="p-0 text-700 fs-10 me-2">
+                <Button className="p-0 text-body-tertiary fs-10 me-2">
                   <FontAwesomeIcon icon={faPaperclip} className="me-1" />
                   {todo.attachment}
                 </Button>
@@ -153,7 +153,7 @@ const TodoListItem = ({
               <p
                 className={classNames(
                   getBreakpointClasses('me', [2, 3]),
-                  'text-700 fs-10 me-2 mb-0'
+                  'text-body-tertiary fs-10 me-2 mb-0'
                 )}
               >
                 {todo.date}
@@ -166,7 +166,7 @@ const TodoListItem = ({
                 <p
                   className={classNames(
                     getBreakpointClasses('ps', [0, 3]),
-                    'text-700 fs-10 ps-lg-3 border-start-lg border-300 fw-bold mb-md-0 mb-0'
+                    'text-body-tertiary fs-10 ps-lg-3 border-start-lg border-300 fw-bold mb-md-0 mb-0'
                   )}
                 >
                   {todo.time}

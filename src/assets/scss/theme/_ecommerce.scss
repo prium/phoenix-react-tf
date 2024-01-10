@@ -181,7 +181,7 @@
     flex: 1;
     .nav-icons {
       stroke-width: 1.7px;
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
     &.active {
       &::after {

@@ -31,14 +31,17 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
                     ? faFileZipper
                     : faFileLines
                 }
-                className="me-2 fs-9 text-700"
+                className="me-2 fs-9 text-body-tertiary"
               />
               <p className="text-body-highlight mb-0 lh-1">{attachment.name}</p>
             </div>
             <div
-              className={classNames('d-flex fs-9 text-700 flex-wrap', {
-                'mb-3': attachment.thumbnail
-              })}
+              className={classNames(
+                'd-flex fs-9 text-body-tertiary flex-wrap',
+                {
+                  'mb-3': attachment.thumbnail
+                }
+              )}
             >
               <span>{attachment.size}</span>
               <span className="text-400 mx-1">| </span>

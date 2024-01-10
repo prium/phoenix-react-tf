@@ -103,7 +103,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
                 </div>
                 <div className="flex-1">
                   <h6 className="mb-0 text-body-highlight">{item.label}</h6>
-                  <p className="fs-10 mb-0 d-flex text-700">
+                  <p className="fs-10 mb-0 d-flex text-body-tertiary">
                     <span className="fw-medium text-600">{item.details}</span>
                   </p>
                 </div>
@@ -166,7 +166,9 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
                     <h6 className="mb-0 text-body-highlight title">
                       {item.label}
                     </h6>
-                    <p className="fs-10 mb-0 d-flex text-700">{item.details}</p>
+                    <p className="fs-10 mb-0 d-flex text-body-tertiary">
+                      {item.details}
+                    </p>
                   </div>
                 </div>
               </Dropdown.Item>

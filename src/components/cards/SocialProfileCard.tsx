@@ -82,7 +82,7 @@ const SocialProfileCard = ({
                     />
                   </Link>
                 </p>
-                <p className="text-700 mb-0">
+                <p className="text-body-tertiary mb-0">
                   “Le capitalisme exploite. Et le capitalisme exploite les gens
                   de couleur. Comme il exploite les hommes. Ou comme il exploite
                   les femmes.”
