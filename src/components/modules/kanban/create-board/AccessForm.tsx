@@ -73,7 +73,7 @@ const AccessForm = () => {
                 className="flex-1"
                 endComponent={
                   <Button
-                    className="fs-8 text-400 end-0"
+                    className="fs-8 text-body-quaternary end-0"
                     onClick={handleCopyShareableLink}
                   >
                     <OverlayTrigger

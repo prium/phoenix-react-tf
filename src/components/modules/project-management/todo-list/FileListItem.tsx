@@ -44,9 +44,9 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
               )}
             >
               <span>{attachment.size}</span>
-              <span className="text-400 mx-1">| </span>
+              <span className="text-body-quaternary mx-1">| </span>
               <a href="#!">{attachment.user}</a>
-              <span className="text-400 mx-1">| </span>
+              <span className="text-body-quaternary mx-1">| </span>
               <span className="text-nowrap">{attachment.date}</span>
             </div>
             {attachment.thumbnail && (

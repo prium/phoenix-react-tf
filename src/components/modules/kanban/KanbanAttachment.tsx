@@ -41,7 +41,7 @@ const KanbanAttachment = ({ attachment }: KanbanAttachmentProps) => {
         >
           <FontAwesomeIcon
             icon={getFileIcon(attachment.format)}
-            className="fa-2x text-400"
+            className="fa-2x text-body-quaternary"
           />
         </div>
       )}

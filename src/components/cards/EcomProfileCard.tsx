@@ -25,19 +25,19 @@ const EcomProfileCard = () => {
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={faFacebook}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
                 <a href="#!">
                   <FontAwesomeIcon
                     icon={faTwitter}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
               </div>

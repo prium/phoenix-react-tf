@@ -16,7 +16,9 @@ const CalendarTop = () => {
           <span className="calendar-day d-block d-md-inline mb-1">
             {dayjs().format('dddd')}
           </span>
-          <span className="px-3 fw-thin text-400 d-none d-md-inline">|</span>
+          <span className="px-3 fw-thin text-body-quaternary d-none d-md-inline">
+            |
+          </span>
           <span> {dayjs().format('D MMM, YYYY')}</span>
         </h4>
       </Col>

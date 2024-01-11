@@ -23,19 +23,19 @@ const CustomerProfileCard = () => {
               <a href="#!">
                 <FontAwesomeIcon
                   icon={faLinkedinIn}
-                  className="text-400 hover-primary"
+                  className="text-body-quaternary text-opacity-75 text-primary-hover"
                 />
               </a>
               <a href="#!">
                 <FontAwesomeIcon
                   icon={faFacebook}
-                  className="text-400 hover-primary"
+                  className="text-body-quaternary text-opacity-75 text-primary-hover"
                 />
               </a>
               <a href="#!">
                 <FontAwesomeIcon
                   icon={faTwitter}
-                  className="text-400 hover-primary"
+                  className="text-body-quaternary text-opacity-75 text-primary-hover"
                 />
               </a>
             </div>
