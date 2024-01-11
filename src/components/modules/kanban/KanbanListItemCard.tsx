@@ -150,7 +150,7 @@ const KanbanListItemCard = ({
           </p>
           <div className="d-flex mt-2 align-items-center">
             {task.date && (
-              <p className="mb-0 text-600 fs-9 lh-1 me-3 white-space-nowrap">
+              <p className="mb-0 text-body-tertiary text-opactity-85 fs-9 lh-1 me-3 white-space-nowrap">
                 <FontAwesomeIcon
                   icon={faCalendarXmark}
                   className="fs-0 me-2 d-inline-block"
@@ -159,7 +159,7 @@ const KanbanListItemCard = ({
               </p>
             )}
             {task.attachments && (
-              <p className="mb-0 text-600 fs-9 lh-1">
+              <p className="mb-0 text-body-tertiary text-opactity-85 fs-9 lh-1">
                 <FontAwesomeIcon
                   icon={faPaperclip}
                   className="fs-0 me-2 d-inline-block"
@@ -168,7 +168,7 @@ const KanbanListItemCard = ({
               </p>
             )}
             {task.completedTasks && (
-              <p className="mb-0 text-600 fs-9 lh-1">
+              <p className="mb-0 text-body-tertiary text-opactity-85 fs-9 lh-1">
                 <FontAwesomeIcon
                   icon={faPaperclip}
                   className="fs-0 me-2 d-inline-block"

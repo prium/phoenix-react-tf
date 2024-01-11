@@ -81,7 +81,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
                 <FontAwesomeIcon
                   icon={pricing.features.includes(item.id) ? faCheck : faTimes}
                   inverse
-                  className={classNames('text-600 fs-11', {
+                  className={classNames('text-body-tertiary fs-11', {
                     'text-white': pricing.features.includes(item.id)
                   })}
                 />

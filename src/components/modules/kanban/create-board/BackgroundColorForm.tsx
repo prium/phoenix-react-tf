@@ -178,7 +178,7 @@ const BackgroundColorForm = () => {
                     });
                   }}
                 >
-                  <div className="text-600">
+                  <div className="text-body-tertiary text-opacity-85">
                     or, Add a custom background
                     <br />
                     <img className="mt-3" src={imageIcon} width={30} alt="" />

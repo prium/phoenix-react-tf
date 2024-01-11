@@ -85,7 +85,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-4">
               <p className="mb-0 fw-bold fs-9">
                 Started :
-                <span className="fw-semi-bold text-600 ms-1">
+                <span className="fw-semi-bold text-body-tertiary text-opactity-85 ms-1">
                   {project.start}
                 </span>
               </p>
@@ -93,7 +93,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-2">
               <p className="mb-0 fw-bold fs-9">
                 Deadline :{' '}
-                <span className="fw-semi-bold text-600 ms-1">
+                <span className="fw-semi-bold text-body-tertiary text-opactity-85 ms-1">
                   {project.deadline}
                 </span>
               </p>

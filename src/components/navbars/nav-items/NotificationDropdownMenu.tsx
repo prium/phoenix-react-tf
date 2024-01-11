@@ -41,7 +41,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
           </Scrollbar>
         </Card.Body>
         <Card.Footer className="p-0 border-top">
-          <div className="my-2 text-center fw-bold fs-10 text-600">
+          <div className="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85">
             <Link to="/pages/notifications" className="fw-bolder">
               Notification history
             </Link>

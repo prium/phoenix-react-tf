@@ -62,13 +62,17 @@ const ProjectDetailsSummary = () => {
               <td className="align-top py-1 text-body text-nowrap fw-bold">
                 Started :{' '}
               </td>
-              <td className="text-600 fw-semi-bold ps-3">17th Nov, 2020</td>
+              <td className="text-body-tertiary text-opacity-85 fw-semi-bold ps-3">
+                17th Nov, 2020
+              </td>
             </tr>
             <tr>
               <td className="align-top py-1 text-body text-nowrap fw-bold">
                 Deadline :
               </td>
-              <td className="text-600 fw-semi-bold ps-3">21st May, 2028</td>
+              <td className="text-body-tertiary text-opacity-85 fw-semi-bold ps-3">
+                21st May, 2028
+              </td>
             </tr>
             <tr>
               <td className="align-top py-1 text-body text-nowrap fw-bold">

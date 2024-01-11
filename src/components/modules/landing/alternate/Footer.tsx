@@ -54,8 +54,8 @@ const Footer = () => {
         </Row>
         <hr className="text-body-secondary" />
         <div className="d-sm-flex flex-between-center text-center">
-          <p className="text-600 mb-0">Copyright © Company Name</p>
-          <p className="text-600 mb-0">
+          <p className="text-body-tertiary mb-0">Copyright © Company Name</p>
+          <p className="text-body-tertiary mb-0">
             Made with love by{' '}
             <Link to="https://themewagon.com">ThemeWagon</Link>
           </p>

@@ -80,12 +80,12 @@ const EmailDetail = () => {
                     <h5 className="mb-0 text-body-highlight me-2">
                       Jessica Ball
                     </h5>
-                    <p className="mb-0 lh-sm text-600 fs-9 d-none d-md-block text-nowrap">
+                    <p className="mb-0 lh-sm text-body-tertiary fs-9 d-none d-md-block text-nowrap">
                       &lt; jessica.ball@email.com &gt;
                     </p>
                   </div>
                   <p className="mb-0 fs-9">
-                    <span className="text-600 me-1">to</span>
+                    <span className="text-body-tertiary me-1">to</span>
                     <span className="fw-bold text-body-secondary me-1">Me</span>
                     <span className="text-body-highlight fw-semi-bold fs-10 me-1">
                       28 Aug, 2021

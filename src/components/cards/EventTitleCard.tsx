@@ -13,7 +13,9 @@ const EventTitleCard = ({ className }: { className?: string }) => {
           Brandmyth presents- Shironamhin 25 years celebration with symphony
           orchestra
         </h1>
-        <p className="fs-0 mb-4 text-600">Tavern on the Greend, New York</p>
+        <p className="fs-0 mb-4 text-body-tertiary">
+          Tavern on the Greend, New York
+        </p>
         <Card className="mb-5 mb-xxl-7">
           <Card.Body>
             <Row className="gy-5">

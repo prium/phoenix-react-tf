@@ -49,7 +49,7 @@ const SocialCoverCard = () => {
                     className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
-                    <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
+                    <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 hover-text-body-emphasis">
                       1297
                       <span className="fw-semi-bold ms-2 me-4">Followers</span>
                     </span>
@@ -61,7 +61,7 @@ const SocialCoverCard = () => {
                     className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
-                    <span className="fs-7 fw-bold text-600 hover-text-body-emphasis">
+                    <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 hover-text-body-emphasis">
                       3971
                       <span className="fw-semi-bold ms-2 me-4">Following</span>
                     </span>
@@ -73,7 +73,7 @@ const SocialCoverCard = () => {
                     className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
-                    <span className="fs-7 fw-semi-bold text-600 hover-text-body-emphasis">
+                    <span className="fs-7 fw-semi-bold text-body-tertiary text-opacity-85 hover-text-body-emphasis">
                       Vancouver, Lothal
                     </span>
                   </Link>

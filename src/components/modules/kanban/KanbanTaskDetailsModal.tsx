@@ -65,7 +65,9 @@ const KanbanTaskDetailsModal = ({
             <Col xs={12} lg={8} className="h-100 scrollbar">
               <Row className="mt-0 top-0 gy-4 pb-3 gx-0 px-3">
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">TITLE</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    TITLE
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <h4 className="mb-0 text-body-emphasis lh-sm">
@@ -74,7 +76,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">DESCRIPTION</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    DESCRIPTION
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p className="fs-9 mb-0">
@@ -85,7 +89,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">BOARD</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    BOARD
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p className="mb-0 text-body-emphasis fw-semi-bold">
@@ -94,7 +100,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">COLUMN</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    COLUMN
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p
@@ -107,7 +115,7 @@ const KanbanTaskDetailsModal = ({
                 {task.members && (
                   <>
                     <Col xs={4} sm={3}>
-                      <h6 className="text-600 fw-bolder lh-sm mt-1">
+                      <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
                         ASSAIGNED TO
                       </h6>
                     </Col>
@@ -124,7 +132,9 @@ const KanbanTaskDetailsModal = ({
                 )}
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">PRIORITY</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    PRIORITY
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p className="mb-0 text-body-emphasis fw-semi-bold">
@@ -138,7 +148,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">CATEGORY</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    CATEGORY
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <Badge
@@ -157,7 +169,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">ATTACHMENTS</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    ATTACHMENTS
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <div className="d-flex flex-column gap-3 mb-2">

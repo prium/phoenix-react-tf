@@ -97,16 +97,16 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
               Sign out
             </Link>
           </div>
-          <div className="my-2 text-center fw-bold fs-10 text-600">
-            <Link className="text-600 me-1" to="#!">
+          <div className="my-2 text-center fw-bold fs-10 text-body-quaternary">
+            <Link className="text-body-quaternary me-1" to="#!">
               Privacy policy
             </Link>
             •
-            <Link className="text-600 mx-1" to="#!">
+            <Link className="text-body-quaternary mx-1" to="#!">
               Terms
             </Link>
             •
-            <Link className="text-600 ms-1" to="#!">
+            <Link className="text-body-quaternary ms-1" to="#!">
               Cookies
             </Link>
           </div>

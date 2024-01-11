@@ -65,7 +65,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 className="border border-white rounded-circle mx-auto mb-2"
               />
               <h6 className="text-white light">{user.name}</h6>
-              <p className="text-600 fw-semi-bold fs-10 mb-2">
+              <p className="text-light.text-opacity-50 fw-semi-bold fs-10 mb-2">
                 @{user.username}
               </p>
               <div className="d-flex flex-center mb-3">
