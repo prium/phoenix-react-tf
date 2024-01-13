@@ -118,7 +118,7 @@ const EcommerceNavbar = () => {
   }, [updateItems]);
 
   return (
-    <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
+    <Navbar className="ecommerce-navbar bg-body-emphasis justify-content-between p-0">
       <div
         className="container-small d-flex flex-between-center flex-nowrap w-100"
         ref={containerRef}

@@ -6,7 +6,7 @@
 }
 
 // <div
-// className="bg-white position-absolute h-100 w-100 top-0"
+// className="bg-body-emphasis position-absolute h-100 w-100 top-0"
 // style={{ transform: 'skew(0,-10deg)' }}
 // />
 .skew-section {
@@ -14,7 +14,7 @@
   height: 100%;
   width: 100%;
   top: 0;
-  background: var(--#{$prefix}white);
+  background: var(--#{$prefix}emphasis-bg);
   transform: skew(0, -10deg);
 }
 
@@ -197,7 +197,7 @@
     transform: skewY(-7.5deg);
     transform-origin: right;
     bottom: -44.3%;
-    background-color: var(--#{$prefix}white);
+    background-color: var(--#{$prefix}emphasis-bg);
     width: 150%;
     height: 90%;
     left: -25%;

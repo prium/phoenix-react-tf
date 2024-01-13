@@ -43,7 +43,7 @@
       padding-top: 0.25rem;
       padding-bottom: 0.25rem;
       &.active {
-        background: var(--#{$prefix}white);
+        background: var(--#{$prefix}emphasis-bg);
         color: var(--#{$prefix}primary);
         border-left: 1px solid var(--#{$prefix}gray-300);
         border-right: 1px solid var(--#{$prefix}gray-300);

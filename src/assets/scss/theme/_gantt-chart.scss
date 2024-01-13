@@ -142,6 +142,6 @@
   .gantt_task_scale,
   .gantt_row_task,
   .gantt_task_row {
-    background: var(--#{$prefix}white) !important;
+    background: var(--#{$prefix}emphasis-bg) !important;
   }
 }

@@ -4,7 +4,7 @@ import { Nav } from 'react-bootstrap';
 
 const WidgetsScrollspyNav = () => {
   return (
-    <div className="widgets-scrollspy-nav mt-n5 bg-white mx-n4 mx-lg-n6 border-bottom border-300">
+    <div className="widgets-scrollspy-nav mt-n5 bg-body-emphasis mx-n4 mx-lg-n6 border-bottom border-300">
       <Scrollbar autoHeight>
         <Nav className="px-4 flex-nowrap">
           <Nav.Item>

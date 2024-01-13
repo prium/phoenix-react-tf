@@ -154,7 +154,7 @@ const Styling = () => {
               You can add your own SCSS and override the theme style in the{' '}
               <code>user.scss</code> file.
             </p>
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>user.scss</code>
             </div>
             <p>
@@ -166,14 +166,14 @@ const Styling = () => {
               overridden with your own value.
             </p>
 
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>_user-variables.scss</code>
             </div>
             <p>
               To remove bootstrap components, update{' '}
               <code>src/scss/_bootstrap.scss</code> file.
             </p>
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>_bootstrap.scss</code>
             </div>
           </PhoenixDocCard.Body>

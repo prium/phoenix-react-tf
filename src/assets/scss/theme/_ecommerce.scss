@@ -242,7 +242,7 @@
     top: -10px;
     left: map_get($spacers, 4);
     transform: rotate(45deg);
-    background: var(--#{$prefix}white);
+    background: var(--#{$prefix}emphasis-bg);
     border-radius: 0.25rem;
     border-width: 1px 0 0 1px;
     border-style: solid;

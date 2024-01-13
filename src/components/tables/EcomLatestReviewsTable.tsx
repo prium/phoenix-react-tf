@@ -228,7 +228,7 @@ const EcomLatestReviewsTable = () => {
                 <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100"
+                  className="bg-body-emphasis hover-bg-100"
                 >
                   All products
                 </Button>
@@ -236,7 +236,7 @@ const EcomLatestReviewsTable = () => {
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"
-                    className="bg-white hover-bg-100 dropdown-caret-none"
+                    className="bg-body-emphasis hover-bg-100 dropdown-caret-none"
                   >
                     <FontAwesomeIcon icon={faEllipsisH} className="10" />
                   </Dropdown.Toggle>

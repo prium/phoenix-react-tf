@@ -19,7 +19,7 @@
     --background-color: #{$gray-1100};
   }
   .picmo__searchField {
-    --search-background-color: var(--#{$prefix}white);
+    --search-background-color: var(--#{$prefix}emphasis-bg);
     [data-bs-theme="dark"] & {
       --search-focus-background-color: #{$gray-1100};
     }

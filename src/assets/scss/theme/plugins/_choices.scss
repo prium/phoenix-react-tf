@@ -38,7 +38,7 @@
     // box-shadow: var(--#{$prefix}box-shadow) !important;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
-    background-color: var(--#{$prefix}white);
+    background-color: var(--#{$prefix}emphasis-bg);
     // border-radius: $border-radius;
     .choices__item--selectable {
       padding: 2px $form-select-padding-x;

@@ -136,7 +136,7 @@
   }
   .fc-h-event,
   .fc-daygrid-event {
-    background-color: var(--#{$prefix}white) !important;
+    background-color: var(--#{$prefix}emphasis-bg) !important;
     .fc-event-main {
       padding-left: 15px;
 
@@ -204,7 +204,7 @@
   .fc-popover {
     border-color: $border-color;
     box-shadow: $box-shadow;
-    background-color: var(--#{$prefix}white);
+    background-color: var(--#{$prefix}emphasis-bg);
     z-index: 1000;
     .fc-popover-title {
       font-family: $font-family-sans-serif;

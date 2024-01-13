@@ -45,7 +45,7 @@ const KanbanList = ({ list }: KanbanListProps) => {
                       list={list}
                       task={task}
                       className={classNames({
-                        'bg-white': snapshot.isDragging
+                        'bg-body-emphasis': snapshot.isDragging
                       })}
                     />
                   </div>

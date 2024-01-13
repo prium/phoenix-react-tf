@@ -27,7 +27,7 @@ const ChatWidget = () => {
           'show-chat': isOpenChat
         })}
       >
-        <Card className="bg-white chat">
+        <Card className="bg-body-emphasis chat">
           <Card.Header className="d-flex flex-between-center px-4 py-2 border-bottom">
             <h5 className="mb-0 d-flex align-items-center gap-2">
               Demo widget

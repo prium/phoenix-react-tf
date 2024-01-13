@@ -29,7 +29,7 @@
     z-index: 10;
     margin: 0;
     @include hover-focus {
-      background-color: var(--#{$prefix}white);
+      background-color: var(--#{$prefix}emphasis-bg);
       color: var(--#{$prefix}tertiary-color);
     }
   }

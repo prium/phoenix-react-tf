@@ -76,7 +76,7 @@
 
 // scss-docs-start alert-phoenix-modifiers
 @each $state, $value in $theme-colors {
-  $alert-background: var(--#{$prefix}white);
+  $alert-background: var(--#{$prefix}emphasis-bg);
   $alert-border: var(--#{$prefix}gray-300);
   $alert-color: $value;
   .alert-phoenix-#{$state} {

@@ -492,11 +492,11 @@ $card-spacer-y: map-get($spacers, 4) !default;
 $card-spacer-x: map-get($spacers, 4) !default;
 $card-title-spacer-y: $spacer !default;
 $card-border-radius: $border-radius-lg !default;
-$card-border-color: $border-color !default;
+$card-border-color: $border-color-translucent !default;
 $card-cap-bg: var(--#{$prefix}card-cap-bg) !default;
 $card-cap-padding-y: $card-spacer-y !default;
 // $card-cap-padding-x: 1.25rem !default;
-$card-bg: $white;
+$card-bg: var(--#{$prefix}emphasis-bg) !default;
 
 
 //*-----------------------------------------------

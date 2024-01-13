@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 const Invoice = () => {
   return (
-    <div className="pt-5 pb-9 bg-white dark__bg-1200 border-top border-300">
+    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-1200 border-top border-300">
       <Section small className="py-0">
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">

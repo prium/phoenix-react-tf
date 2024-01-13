@@ -58,7 +58,7 @@ const Members = () => {
             </Row>
           </div>
 
-          <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
+          <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-200 position-relative top-1">
             <MembersTable />
           </div>
         </AdvanceTableProvider>

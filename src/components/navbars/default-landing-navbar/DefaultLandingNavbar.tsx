@@ -52,7 +52,10 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
   return (
     <>
       <div
-        className={classNames(className, 'bg-white sticky-top landing-navbar')}
+        className={classNames(
+          className,
+          'bg-body-emphasis sticky-top landing-navbar'
+        )}
         ref={containerRef}
       >
         <Navbar className="px-3 px-lg-7 px-xxl-3 container-small" expand="lg">

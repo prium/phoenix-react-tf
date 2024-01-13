@@ -61,7 +61,7 @@ const ChatContent = () => {
           open={showConversationDetails}
           placement="top"
           noBackdrop
-          className="bg-white w-100 z-index-0 rounded-3"
+          className="bg-body-emphasis w-100 z-index-0 rounded-3"
         >
           <Scrollbar>
             <ConversationDetails

@@ -215,7 +215,7 @@
   &.unread {
     background-color: var(--#{$prefix}gray-100);
     [data-bs-theme="dark"] & {
-      background-color: var(--#{$prefix}white);
+      background-color: var(--#{$prefix}emphasis-bg);
     }
   }
 }

@@ -9,7 +9,7 @@ const FaqCategoryCard = ({ category }: { category: FaqCategory }) => {
   return (
     <Nav.Link
       eventKey={category.id}
-      className={`btn bg-white w-100 px-3 pt-4 pb-3 fs-8 ${
+      className={`btn bg-body-emphasis w-100 px-3 pt-4 pb-3 fs-8 ${
         subCategoryActiveKey === category.id && 'active'
       }`}
     >

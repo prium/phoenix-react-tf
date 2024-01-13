@@ -39,7 +39,7 @@ const IconCard = ({
   }, []);
 
   return (
-    <div className="border border-300 rounded-2 p-3 mb-4 text-center bg-white dark__bg-1000 shadow-sm">
+    <div className="border border-300 rounded-2 p-3 mb-4 text-center bg-body-emphasis dark__bg-1000 shadow-sm">
       {iconFamily === 'font-awesome' && (
         <FontAwesomeIcon icon={icon as IconProp} className="text-body fs-5" />
       )}

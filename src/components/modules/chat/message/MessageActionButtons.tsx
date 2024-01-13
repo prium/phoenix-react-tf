@@ -16,7 +16,7 @@ const MessageActionButtons = ({
   return (
     <>
       <div className="d-sm-none hover-actions align-self-center me-2 start-0">
-        <div className="bg-white rounded-pill d-flex align-items-center border border-300 px-2 actions">
+        <div className="bg-body-emphasis rounded-pill d-flex align-items-center border border-300 px-2 actions">
           {actions.map(action => (
             <Button key={action.label} className="btn p-2" type="button">
               <FontAwesomeIcon

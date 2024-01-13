@@ -80,7 +80,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
             </div>
           </div>
         </div>
-        <div className="bg-white">
+        <div className="bg-body-emphasis">
           <div className="p-3 border-bottom">
             <div className="d-flex gap-2">
               <Button
