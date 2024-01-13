@@ -10,21 +10,21 @@
   .btn-group {
     .btn-check:checked {
       + .btn {
-        border-color: var(--#{$prefix}gray-soft) transparent;
+        border-color: var(--#{$prefix}body-bg) transparent;
       }
     }
   }
   .gantt_container {
     position: relative;
     border: 0;
-    background: var(--#{$prefix}gray-soft);
+    background: var(--#{$prefix}body-bg);
     .gantt_layout_cell,
     .gantt_grid_scale,
     .gantt_task_scale,
     .gantt_row_task,
     .gantt_task_row {
       border-bottom: 0;
-      background: var(--#{$prefix}gray-soft);
+      background: var(--#{$prefix}body-bg);
     }
     .gantt_tree_content {
       color: var(--#{$prefix}body-color);
@@ -37,8 +37,8 @@
       background: var(--#{$prefix}info-100);
       // margin: 0 2px;
       border-radius: 2px;
-      border-left: 2px solid var(--#{$prefix}gray-soft);
-      border-right: 2px solid var(--#{$prefix}gray-soft);
+      border-left: 2px solid var(--#{$prefix}-body-bg);
+      border-right: 2px solid var(--#{$prefix}-body-bg);
 
       .gantt_task_progress {
         border-radius: 2px;

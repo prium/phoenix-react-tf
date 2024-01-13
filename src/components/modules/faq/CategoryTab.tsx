@@ -7,7 +7,7 @@ const CategoryTab = () => {
     <Col md={6} xl={5} xxl={4} className="faq-category-tab">
       <Nav
         variant="underline"
-        className="mb-2 mb-md-5 pb-3 pt-2 w-100 w-sm-75 w-md-100 mx-auto bg-soft"
+        className="mb-2 mb-md-5 pb-3 pt-2 w-100 w-sm-75 w-md-100 mx-auto bg-body"
       >
         <Nav.Item>
           <Nav.Link

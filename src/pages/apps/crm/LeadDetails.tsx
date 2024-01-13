@@ -79,7 +79,7 @@ const LeadDetails = () => {
         <Row className="g-0 g-md-4 g-xl-6">
           <Col md={5} xl={4} className="d-none d-md-block">
             <div className="sticky-leads-sidebar">
-              <div className="lead-details-offcanvas bg-soft scrollbar">
+              <div className="lead-details-offcanvas bg-body scrollbar">
                 <div className="d-flex justify-content-between align-items-center mb-2 d-md-none">
                   <h3 className="mb-0">Lead Details</h3>
                 </div>

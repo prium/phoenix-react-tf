@@ -65,7 +65,7 @@ const ProgressTabExample = () => {
   return (
     <WizardFormProvider {...form}>
       <Card className="theme-wizard">
-        <Card.Header className="bg-100 pt-3 pb-2 border-bottom-0">
+        <Card.Header className="bg-body-highlight pt-3 pb-2 border-bottom-0">
           <WizardNav />
         </Card.Header>
         <Card.Body>
@@ -138,7 +138,7 @@ const WithValidationExample = () => {
   return (
     <WizardFormProvider {...form}>
       <Card className="theme-wizard">
-        <Card.Header className="bg-100 pt-3 pb-2 border-bottom-0">
+        <Card.Header className="bg-body-highlight pt-3 pb-2 border-bottom-0">
           <WizardNav />
         </Card.Header>
         <Card.Body>
@@ -211,7 +211,7 @@ const ProgressTabExample = () => {
   return (
     <WizardFormProvider {...form}>
       <Card className="theme-wizard">
-        <Card.Header className="bg-100 pt-3 pb-2 border-bottom-0">
+        <Card.Header className="bg-body-highlight pt-3 pb-2 border-bottom-0">
           <WizardNav />
         </Card.Header>
         <Card.Body className="pb-0">
@@ -254,7 +254,7 @@ const WithValidationExample = () => {
   return (
     <WizardFormProvider {...form}>
       <Card className="theme-wizard">
-        <Card.Header className="bg-100 pt-3 pb-2 border-bottom-0">
+        <Card.Header className="bg-body-highlight pt-3 pb-2 border-bottom-0">
           <WizardNav />
         </Card.Header>
         <Card.Body className="pb-0">

@@ -166,6 +166,6 @@
   height: 60px;
   position: sticky;
   top: var(--#{$prefix}navbar-top-height);
-  background-color: var(--#{$prefix}gray-soft);
+  background-color: var(--#{$prefix}body-bg);
   z-index: 1;
 }

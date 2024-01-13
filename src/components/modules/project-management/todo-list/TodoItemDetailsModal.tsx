@@ -37,7 +37,7 @@ const TodoItemDetailsModal = ({
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </Modal.Header>
-          <Modal.Body className="bg-100 px-5 px-sm-6 py-0 rounded-bottom">
+          <Modal.Body className="bg-body-highlight px-5 px-sm-6 py-0 rounded-bottom">
             <Row className="gx-14">
               <Col xs={12} lg={7} className="border-end-lg border-300">
                 <div className="mt-6 mb-7">

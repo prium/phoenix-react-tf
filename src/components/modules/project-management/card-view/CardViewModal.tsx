@@ -120,7 +120,7 @@ const CardViewModal = ({
               private box seats. Chagall completed 19 gouaches
             </EditableDetailsField>
 
-            <div className="bg-100 rounded-2 px-4 mb-3">
+            <div className="bg-body-highlight rounded-2 px-4 mb-3">
               <div className="mb-1">
                 {comments.map((comment, index) => (
                   <Comment

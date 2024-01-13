@@ -22,7 +22,7 @@ const exampleCode = `
 `;
 
 const horizontalCenteringcode = `
-  <div className="mx-auto bg-100" style={{ width: '200px' }}>Centered element</div>
+  <div className="mx-auto bg-body-highlight" style={{ width: '200px' }}>Centered element</div>
 `;
 
 const negativeMargincode = `

@@ -6,7 +6,7 @@ import bg13 from 'assets/img/bg/13.png';
 
 const Testimonial = () => {
   return (
-    <div className="bg-soft position-relative py-18">
+    <div className="bg-body position-relative py-18">
       <div
         className="position-absolute h-100 w-100 top-0 bg-body-emphasis"
         style={{ transform: 'skew(0,-10deg)' }}

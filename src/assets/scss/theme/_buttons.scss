@@ -7,7 +7,7 @@
   @include hover-focus {
     .btn-reveal {
       // box-shadow: $btn-reveal-hover-shadow;
-      background: var(--#{$prefix}gray-soft);
+      background: var(--#{$prefix}body-bg);
       border: 1px solid var(--#{$prefix}gray-200);
       color: var(--#{$prefix}body-color);
       &:hover,

@@ -178,7 +178,7 @@ export const featureItems = [
 
 const EssentialFeatures = () => {
   return (
-    <section className="bg-100 pt-14">
+    <section className="bg-body-highlight pt-14">
       <Container fluid="lg">
         <Row className="justify-content-center">
           <Col xs={12} lg={9} xl={8} xxl={6} className="text-center">

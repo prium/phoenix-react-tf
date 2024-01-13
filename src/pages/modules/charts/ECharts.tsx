@@ -468,7 +468,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   ],
   tooltip: {
     trigger: 'axis',
-    backgroundColor: getThemeColor('gray-soft'),
+    backgroundColor: getThemeColor('body-bg'),
     borderColor: getThemeColor('gray-200'),
     formatter: tooltipFormatterDefault,
     axisPointer: {

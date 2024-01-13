@@ -46,7 +46,7 @@
   }
   .picmo__emojiCategory {
     .picmo__categoryName {
-      --category-name-background-color: var(--#{$prefix}gray-soft);
+      --category-name-background-color: var(--#{$prefix}body-bg);
       --category-name-text-color: var(--#{$prefix}gray-600);
       font-size: map-get($font-sizes, '-2');
       font-weight: 600;

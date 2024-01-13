@@ -85,7 +85,7 @@ const PhoenixDocCardHeader = ({
     <Card.Header
       className={classNames(
         className,
-        'p-4 border-bottom border-300 bg-soft hover-actions-trigger'
+        'p-4 border-bottom border-300 bg-body hover-actions-trigger'
       )}
       id={headerId}
     >

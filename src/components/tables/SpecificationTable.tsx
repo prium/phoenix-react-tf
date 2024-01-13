@@ -27,7 +27,7 @@ const SpecificationTable = ({ title, data }: SpecificationTableProps) => {
           {data.map(item => (
             <tr key={item.key}>
               <td
-                className={classNames('bg-100', {
+                className={classNames('bg-body-highlight', {
                   'align-middle': !Array.isArray(item.value)
                 })}
               >

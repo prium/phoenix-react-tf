@@ -26,7 +26,7 @@ const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
       <div
         className={classNames(
           className,
-          'd-flex align-items-center flex-wrap position-sticky pb-2 bg-soft z-index-2 email-toolbar'
+          'd-flex align-items-center flex-wrap position-sticky pb-2 bg-body z-index-2 email-toolbar'
         )}
       >
         <div className="d-flex align-items-center flex-1 me-2">

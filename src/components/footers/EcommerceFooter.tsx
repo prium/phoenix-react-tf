@@ -18,7 +18,7 @@ const LinkItem = ({ children, to }: PropsWithChildren<{ to: string }>) => {
 
 const EcommerceFooter = () => {
   return (
-    <section className="bg-100 dark__bg-1100 py-9">
+    <section className="bg-body-highlight dark__bg-1100 py-9">
       <div className="container-small">
         <Row className="justify-content-between gy-4">
           <Col xs={12} lg={4}>

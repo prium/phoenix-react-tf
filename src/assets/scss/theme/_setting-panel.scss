@@ -27,7 +27,7 @@
 }
 .setting-panel-item {
   border-radius: $border-radius-lg;
-  background-color: var(--#{$prefix}gray-soft);
+  background-color: var(--#{$prefix}body-bg);
   margin-top: 1rem;
   border: 1px solid var(--#{$prefix}border-color);
   padding: 1rem 1rem 0 1rem;
@@ -144,9 +144,10 @@
   @include media-breakpoint-down(sm) {
     transform: rotate(-90deg);
     outline: none;
-    .bg-soft-primary {
-      background-color: transparent !important;
-    }
+    // need to check
+    // .bg-primary-subtle {
+    //   background-color: transparent !important;
+    // }
     small {
       display: none;
     }

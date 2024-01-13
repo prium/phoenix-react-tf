@@ -34,7 +34,7 @@ const AuthCardLayout = ({
               <Row className="align-items-center gx-0 gy-7">
                 <Col
                   xs="auto"
-                  className="bg-100 dark__bg-1100 rounded-3 position-relative overflow-hidden auth-title-box"
+                  className="bg-body-highlight dark__bg-1100 rounded-3 position-relative overflow-hidden auth-title-box"
                 >
                   <div
                     className="bg-holder"

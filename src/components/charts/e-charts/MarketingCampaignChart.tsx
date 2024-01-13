@@ -45,7 +45,7 @@ const getDefaultOptions = (
             ? getThemeColor('gray-100')
             : getThemeColor('gray-100'),
           theme == 'light'
-            ? getThemeColor('gray-soft')
+            ? getThemeColor('body-bg')
             : getThemeColor('gray-200')
         ]
       }

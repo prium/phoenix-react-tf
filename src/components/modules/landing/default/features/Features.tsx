@@ -10,7 +10,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Features = () => {
   return (
-    <section className="bg-soft pt-15 pb-18" id="features">
+    <section className="bg-body pt-15 pb-18" id="features">
       <div className="container-small px-lg-7 px-xxl-3">
         <div className="position-relative z-index-2">
           <Row className="mb-12">

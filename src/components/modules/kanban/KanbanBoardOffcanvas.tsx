@@ -57,7 +57,7 @@ const KanbanBoardOffcanvas = () => {
     <PhoenixOffcanvas
       open={openBoardDetailsOffcanvas}
       onHide={handleClose}
-      className="bg-100"
+      className="bg-body-highlight"
       placement="end"
       fixed
       style={{ maxWidth: 445 }}

@@ -33,7 +33,7 @@ const ProjectDetails = () => {
 
   return (
     <Row className="g-0">
-      <Col xs={12} xxl={8} className="px-0 bg-soft">
+      <Col xs={12} xxl={8} className="px-0 bg-body">
         <div className="px-4 px-lg-6 pt-6 pb-9">
           <div className="mb-5">
             <div className="d-flex justify-content-between">

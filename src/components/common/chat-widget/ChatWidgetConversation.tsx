@@ -37,7 +37,7 @@ const ChatWidgetConversation = () => {
               key={message}
               onClick={() => sentMessage({ message })}
               className={classNames(
-                'd-inline-flex align-items-center text-body-emphasis hover-bg-soft rounded-pill border border-primary py-2 ps-4 pe-3 lh-base',
+                'd-inline-flex align-items-center text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3 lh-base',
                 { 'mb-2': index !== suggestions.length - 1 }
               )}
             >

@@ -31,7 +31,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       startAngle: 90,
       avoidLabelOverlap: false,
       itemStyle: {
-        borderColor: getThemeColor('gray-soft'),
+        borderColor: getThemeColor('body-bg'),
         borderWidth: 3
       },
 

@@ -49,7 +49,7 @@ const PhoenixOffcanvas = ({
   return (
     <>
       <div
-        className={classNames(className, 'phoenix-offcanvas bg-soft', {
+        className={classNames(className, 'phoenix-offcanvas bg-body', {
           show: open,
           'phoenix-offcanvas-fixed': fixed,
           [`phoenix-offcanvas-${placement}`]: placement

@@ -100,7 +100,7 @@ const PostCard = ({ post }: PostCardProps) => {
             </Button>
           </div>
         </Card.Body>
-        <div className="bg-100 border-top p-3 p-sm-4">
+        <div className="bg-body-highlight border-top p-3 p-sm-4">
           {post.comments && <PostComments comments={post.comments} />}
           <CommentField />
         </div>

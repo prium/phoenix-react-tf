@@ -327,8 +327,6 @@
   @each $color, $value in $theme-colors {
     .fc-timegrid {
       .text-#{$color} {
-        // border: 0 !important;
-        // @extend .bg-soft-#{$color};
         .fc-event-main:after {
           background-color: $value !important;
         }

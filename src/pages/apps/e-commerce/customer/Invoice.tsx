@@ -29,7 +29,7 @@ const Invoice = () => {
           </Button>
         </div>
 
-        <div className="bg-soft dark__bg-1100 p-4 mb-4 rounded-2">
+        <div className="bg-body dark__bg-1100 p-4 mb-4 rounded-2">
           <Row className="g-4">
             <Col xs={12} lg={3}>
               <Row className="g-4 g-lg-2">
