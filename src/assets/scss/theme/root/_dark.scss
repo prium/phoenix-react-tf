@@ -266,11 +266,11 @@
     
 
     /* ------------------------------ Badge ----------------------------- */
-    .badge {
-      &:not([data-bs-theme="light"]) {
-        --#{$prefix}badge-color: var(--#{$prefix}white);
-      }
-    }
+    // .badge {
+    //   &:not([data-bs-theme="light"]) {
+    //     --#{$prefix}badge-color: var(--#{$prefix}white);
+    //   }
+    // }
 
 
     // /* ------------------------------ phoenix badge ----------------------------- */

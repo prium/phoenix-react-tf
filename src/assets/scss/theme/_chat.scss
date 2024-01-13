@@ -91,7 +91,7 @@
           top: 0px;
           bottom: auto;
           border: 10px solid;
-          border-color: var(--#{$prefix}white) transparent transparent
+          border-color: var(--#{$prefix}emphasis-bg) transparent transparent
             transparent;
         }
         &:before {
@@ -113,7 +113,7 @@
       &:not(&.attachments) {
         border-radius: $border-radius;
         padding: map-get($spacers, 3);
-        color: var(--#{$prefix}white);
+        color: var(--#{$prefix}emphasis-bg);
         background: var(--#{$prefix}primary);
         &:after {
           content: ' ';

@@ -48,7 +48,7 @@
   &:hover {
     // text-decoration: none;
     .icon-container {
-      color: var(--#{$prefix}white);
+      color: var(--#{$prefix}emphasis-bg);
       background: var(--#{$prefix}primary);
     }
     .nav-label {

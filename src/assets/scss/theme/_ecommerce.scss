@@ -48,8 +48,8 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       &::selection {
-        -webkit-text-fill-color: var(--#{$prefix}white);
-        color: var(--#{$prefix}white);
+        -webkit-text-fill-color: var(--#{$prefix}emphasis-bg);
+        color: var(--#{$prefix}emphasis-bg);
         background: var(--#{$prefix}$primary);
       }
     }
@@ -101,8 +101,8 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       &::selection {
-        -webkit-text-fill-color: var(--#{$prefix}white);
-        color: var(--#{$prefix}white);
+        -webkit-text-fill-color: var(--#{$prefix}emphasis-bg);
+        color: var(--#{$prefix}emphasis-bg);
         background: var(--#{$prefix}primary);
       }
     }

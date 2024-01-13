@@ -48,7 +48,7 @@
       color: var(--#{$prefix}body-color);
       &.is-highlighted {
         background-color: var(--#{$prefix}primary);
-        color: var(--#{$prefix}white);
+        color: var(--#{$prefix}emphasis-bg);
       }
     }
   }

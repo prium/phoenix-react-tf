@@ -103,7 +103,7 @@
     font-size: map-get($font-sizes, '9');
     &:hover {
       background-color: var(--#{$prefix}primary) !important;
-      color: var(--#{$prefix}white) !important;
+      color: var(--#{$prefix}emphasis-bg) !important;
     }
   }
 }
