@@ -21,7 +21,7 @@ const textWrappingCode = `
   <Badge bg="primary" className="text-wrap mb-3" style={{ width: '6rem' }}>
       This text should wrap.
   </Badge>
-  <div className="text-nowrap bg-300" style={{ width: '8rem' }}>
+  <div className="text-nowrap bg-body-tertiary" style={{ width: '8rem' }}>
       This text should overflow the parent.
   </div>
 </>

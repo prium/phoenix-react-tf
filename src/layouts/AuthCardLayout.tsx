@@ -21,7 +21,7 @@ const AuthCardLayout = ({
   children
 }: PropsWithChildren<AuthCardLayoutProps>) => {
   return (
-    <Container fluid className="bg-300 dark__bg-1200">
+    <Container fluid className="bg-body-tertiary dark__bg-1200">
       <div
         className="bg-holder bg-auth-card-overlay"
         style={{ backgroundImage: `url(${bg37})` }}

@@ -56,7 +56,7 @@ const KanbanList = ({ list }: KanbanListProps) => {
         ))}
       </div>
       <div className="py-3 px-4 kanban-add-task">
-        <Button className="bg-300 me-2 px-0">
+        <Button className="bg-body-tertiary me-2 px-0">
           <FontAwesomeIcon
             icon={faPlus}
             className="text-white dark__text-400"
