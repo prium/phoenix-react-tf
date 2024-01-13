@@ -10,7 +10,7 @@ import { tooltipFormatterDefault } from 'helpers/echart-utils';
 echarts.use([TooltipComponent, BarChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: getThemeColor('gray-100'),
+  color: getThemeColor('body-highlight-bg'),
   legend: {
     data: [
       {
@@ -53,7 +53,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       type: 'none'
     },
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
+    backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,

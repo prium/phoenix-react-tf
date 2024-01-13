@@ -49,7 +49,7 @@
     border-radius: 50%;
     color: var(--#{$prefix}primary);
     &:hover {
-      background-color: var(--#{$prefix}gray-100);
+      background-color: var(--#{$prefix}body-highlight-bg);
       color: var(--#{$prefix}primary-500);
     }
     &:active {
@@ -99,7 +99,7 @@
     }
   }
   &:hover {
-    background-color: var(--#{$prefix}gray-100) !important;
+    background-color: var(--#{$prefix}body-highlight-bg) !important;
   }
   .fa-chevron-down {
     display: none;

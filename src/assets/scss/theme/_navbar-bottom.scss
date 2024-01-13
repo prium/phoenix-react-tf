@@ -48,7 +48,7 @@
           display: inline-block;
         }
         border-radius: 50rem;
-        background: var(--#{$prefix}gray-100);
+        background: var(--#{$prefix}body-highlight-bg);
         color: var(--#{$prefix}primary);
         @include media-breakpoint-up(sm) {
           &:not(:last-child) {

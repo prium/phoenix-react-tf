@@ -36,7 +36,7 @@
     &:hover {
       .timeline-separator {
         .icon-item {
-          background: var(--#{$prefix}gray-100) !important;
+          background: var(--#{$prefix}body-highlight-bg) !important;
           border-color: var(--#{$prefix}gray-300) !important;
         }
       }

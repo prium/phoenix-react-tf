@@ -27,7 +27,7 @@ const getDefaultOptions = (
   tooltip: {
     trigger: 'axis',
     padding: 10,
-    backgroundColor: getThemeColor('gray-100'),
+    backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
@@ -104,7 +104,7 @@ const getDefaultOptions = (
       lineStyle: {
         color:
           theme === 'dark'
-            ? getThemeColor('gray-100')
+            ? getThemeColor('body-highlight-bg')
             : getThemeColor('gray-200')
       }
     },

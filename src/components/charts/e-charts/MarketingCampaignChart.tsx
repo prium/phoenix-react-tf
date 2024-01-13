@@ -17,7 +17,7 @@ const getDefaultOptions = (
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
+    backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
     textStyle: {
       color: getThemeColor('body-color'),
@@ -42,8 +42,8 @@ const getDefaultOptions = (
         shadowBlur: 0.5,
         color: [
           theme == 'light'
-            ? getThemeColor('gray-100')
-            : getThemeColor('gray-100'),
+            ? getThemeColor('body-highlight-bg')
+            : getThemeColor('body-highlight-bg'),
           theme == 'light'
             ? getThemeColor('body-bg')
             : getThemeColor('gray-200')

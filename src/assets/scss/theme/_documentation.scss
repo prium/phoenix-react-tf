@@ -65,7 +65,7 @@ pre[class*='language-'] {
     width: 8rem;
     height: 8rem;
     margin: 0.75rem;
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
   }
 }
 
@@ -82,7 +82,7 @@ pre[class*='language-'] {
   }
 
   [class^='border'] {
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
   }
 
   [class^='rounded-'] {
@@ -126,7 +126,7 @@ pre[class*='language-'] {
   [class^='overflow-'] {
     max-height: 70px;
     max-width: 22%;
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
     display: inline-block;
     padding: map-get($spacers, 3);
     margin-right: map-get($spacers, 2);

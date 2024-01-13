@@ -52,7 +52,7 @@
     }
   }
   .fc-col-header {
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
     th {
       border-bottom-width: 1px;
       font-weight: $font-weight-semi-bold;
@@ -111,7 +111,7 @@
   .fc-daygrid-day-number {
     width: 1.875rem;
     height: 1.875rem;
-    // background-color: var(--#{$prefix}gray-100);
+    // background-color: var(--#{$prefix}body-highlight-bg);
     text-align: center;
     text-decoration: none !important;
     border-radius: 50%;
@@ -237,7 +237,7 @@
   .fc-daygrid-dot-event {
     color: var(--#{$prefix}quaternary-color) !important;
     @include hover-focus {
-      background-color: var(--#{$prefix}gray-100) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
     }
   }
   .fc-day:not(.fc-popover) .fc-daygrid-dot-event {
@@ -293,7 +293,7 @@
     .fc-timegrid-slot-lane {
       cursor: pointer;
       &:active {
-        background-color: var(--#{$prefix}gray-100);
+        background-color: var(--#{$prefix}body-highlight-bg);
       }
     }
     // .fc-timegrid-col {
@@ -318,7 +318,7 @@
     }
   }
   .fc-list-empty {
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
   }
   .fc-list-event-dot {
     border-color: var(--#{$prefix}gray-300);
@@ -339,7 +339,7 @@
       }
       &.fc-v-event {
         border: 1px solid var(--#{$prefix}gray-300) !important;
-        background-color: var(--#{$prefix}gray-100) !important;
+        background-color: var(--#{$prefix}body-highlight-bg) !important;
       }
     }
 

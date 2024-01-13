@@ -60,7 +60,7 @@
   input {
     color: var(--#{$prefix}gray-400);
     @include hover-focus {
-      background-color: var(--#{$prefix}gray-100) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
     }
   }
 }

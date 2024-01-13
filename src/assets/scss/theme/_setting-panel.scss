@@ -73,7 +73,7 @@
         border-radius: $border-radius-lg;
         transition: border 0.2s ease;
         margin-bottom: 0.5rem;
-        background-color: var(--#{$prefix}gray-100);
+        background-color: var(--#{$prefix}body-highlight-bg);
       }
       .label-text {
         position: relative;

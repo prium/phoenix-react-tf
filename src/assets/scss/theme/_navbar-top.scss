@@ -111,7 +111,7 @@
         map-get($spacers, 6);
       font-weight: $font-weight-semi-bold;
       &:hover {
-        background: var(--#{$prefix}gray-100);
+        background: var(--#{$prefix}body-highlight-bg);
       }
     }
   }

@@ -17,7 +17,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
+    backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
@@ -84,7 +84,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       showBackground: true,
       backgroundStyle: {
-        color: getThemeColor('gray-100')
+        color: getThemeColor('body-highlight-bg')
       },
       barWidth: '30px',
       barGap: '-100%',
@@ -111,7 +111,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           `$${value.value.toLocaleString()}`
       },
       backgroundStyle: {
-        color: getThemeColor('gray-100')
+        color: getThemeColor('body-highlight-bg')
       },
       barWidth: '30px',
       data: data2,

@@ -268,7 +268,7 @@
   .nav {
     .nav-link {
       &:hover {
-        background: var(--#{$prefix}gray-100);
+        background: var(--#{$prefix}body-highlight-bg);
       }
     }
   }

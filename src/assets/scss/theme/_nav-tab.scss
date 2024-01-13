@@ -30,7 +30,7 @@
 }
 
 .nav-phoenix-pills {
-  background: var(--#{$prefix}gray-100);
+  background: var(--#{$prefix}body-highlight-bg);
   border: 1px solid var(--#{$prefix}gray-300);
   border-radius: 0.5rem;
   .nav-item {

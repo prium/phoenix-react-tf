@@ -213,7 +213,7 @@
 
 .notification-card {
   &.unread {
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
     [data-bs-theme="dark"] & {
       background-color: var(--#{$prefix}emphasis-bg);
     }
