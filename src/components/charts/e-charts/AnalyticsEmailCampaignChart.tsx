@@ -64,7 +64,7 @@ const getDefaultOptions = (
     axisLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false

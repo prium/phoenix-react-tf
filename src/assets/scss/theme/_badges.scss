@@ -105,6 +105,6 @@
   padding: map-get($spacers, 1) map-get($spacers, 2);
   text-transform: uppercase;
   @include hover-focus {
-    background-color: var(--#{$prefix}gray-300);
+    background-color: var(--#{$prefix}tertiary-bg);
   }
 }

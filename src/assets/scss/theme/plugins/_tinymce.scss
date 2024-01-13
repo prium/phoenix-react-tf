@@ -175,7 +175,7 @@
 }
 
 .tox .tox-tbtn--enabled {
-  background: var(--#{$prefix}gray-300) !important;
+  background: var(--#{$prefix}tertiary-bg) !important;
   span svg {
     fill: var(--#{$prefix}tinymce-tox-tbtn-enabled-icon-color) !important;
   }

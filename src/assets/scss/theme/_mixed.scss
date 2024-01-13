@@ -89,7 +89,7 @@
     content: '';
     height: 75%;
     width: 1px;
-    background: var(--#{$prefix}gray-300);
+    background: var(--#{$prefix}tertiary-bg);
     right: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -427,7 +427,7 @@
   position: absolute;
   top: -6px;
   right: -6px;
-  background: var(--#{$prefix}gray-300) !important;
+  background: var(--#{$prefix}tertiary-bg) !important;
   display: flex;
   justify-content: center;
   align-items: center;

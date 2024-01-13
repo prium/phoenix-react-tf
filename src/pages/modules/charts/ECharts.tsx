@@ -286,7 +286,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     data: dates,
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false
@@ -512,7 +512,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       axisLine: {
         lineStyle: {
           type: 'solid',
-          color: getThemeColor('gray-300')
+          color: getThemeColor('tertiary-bg')
         }
       },
       axisLabel: {
@@ -531,7 +531,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         interval: 0,
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300'),
+          color: getThemeColor('tertiary-bg'),
           type: 'dashed'
         }
       },
@@ -555,7 +555,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         interval: 1,
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300'),
+          color: getThemeColor('tertiary-bg'),
           type: 'solid'
         }
       },
@@ -569,7 +569,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisLine: {
       lineStyle: {
         type: 'solid',
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisLabel: {
@@ -581,7 +581,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-300'),
+        color: getThemeColor('tertiary-bg'),
         type: 'solid'
       }
     },
@@ -590,7 +590,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       length: 15,
       alignWithLabel: true,
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     }
   },

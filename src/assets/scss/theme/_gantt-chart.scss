@@ -84,7 +84,7 @@
 
     .gantt_task_link .gantt_line_wrapper {
       [class*='gantt_link_line_'] {
-        background-color: var(--#{$prefix}gray-300);
+        background-color: var(--#{$prefix}tertiary-bg);
       }
     }
     .gantt_grid_data {

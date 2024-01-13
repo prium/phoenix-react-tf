@@ -23,7 +23,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     trigger: 'axis',
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    borderColor: getThemeColor('gray-300'),
+    bordercolor: getThemeColor('tertiary-bg'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
@@ -47,7 +47,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: true,
       interval: '10',
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     show: true,
@@ -55,7 +55,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     data: dates,
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false
@@ -103,7 +103,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       z: 10,
       itemStyle: {
         borderRadius: [2, 2, 0, 0],
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     {

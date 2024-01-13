@@ -49,7 +49,7 @@ const getDefaultOptions = (
     trigger: 'axis',
     padding: 10,
     backgroundColor: getThemeColor('body-highlight-bg'),
-    borderColor: getThemeColor('gray-300'),
+    bordercolor: getThemeColor('tertiary-bg'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,

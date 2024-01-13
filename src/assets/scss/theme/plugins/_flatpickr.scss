@@ -117,7 +117,7 @@
     }
   }
   &.selected {
-    background-color: var(--#{$prefix}gray-300);
+    background-color: var(--#{$prefix}tertiary-bg);
     color: var(--#{$prefix}body-color);
     border: 0;
     @include hover-focus {

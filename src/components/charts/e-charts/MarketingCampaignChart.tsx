@@ -18,7 +18,7 @@ const getDefaultOptions = (
     trigger: 'item',
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    borderColor: getThemeColor('gray-300'),
+    bordercolor: getThemeColor('tertiary-bg'),
     textStyle: {
       color: getThemeColor('body-color'),
       fontSize: 12.8,

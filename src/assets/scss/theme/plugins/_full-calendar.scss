@@ -101,7 +101,7 @@
     transition: $transition-base;
     cursor: pointer;
     &:active {
-      background-color: var(--#{$prefix}gray-300) !important;
+      background-color: var(--#{$prefix}tertiary-bg) !important;
     }
   }
   .fc-daygrid-day-top {

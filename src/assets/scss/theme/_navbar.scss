@@ -78,7 +78,7 @@
   border: 0;
   margin-right: 0.6125rem;
   @include hover-focus {
-    background-color: var(--#{$prefix}gray-300);
+    background-color: var(--#{$prefix}tertiary-bg);
   }
 }
 .navbar-toggle-icon {
