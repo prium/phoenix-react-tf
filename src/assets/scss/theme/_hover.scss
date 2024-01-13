@@ -83,28 +83,47 @@ a[href] {
   }
 }
 
-.hover-bg {
-  @each $color, $value in $grays {
-    &-#{$color} {
+// .hover-bg {
+//   @each $color, $value in $grays {
+//     &-#{$color} {
+//       &:hover {
+//         background-color: var(--#{$prefix}gray-#{$color}) !important;
+//       }
+//     }
+//   }
+// }
+
+.bg {
+  @each $color, $value in $hover-bg-colors {
+    &-#{$color}-hover {
       &:hover {
-        background-color: var(--#{$prefix}gray-#{$color}) !important;
+        background-color: #{$value} !important;
       }
     }
   }
 }
 
-.hover-text {
-  @each $color, $value in $grays {
-    &-#{$color} {
+// .hover-text {
+//   @each $color, $value in $grays {
+//     &-#{$color} {
+//       &:hover {
+//         color: var(--#{$prefix}gray-#{$color}) !important;
+//       }
+//     }
+//   }
+//   @each $color, $value in $theme-colors {
+//     &-#{$color} {
+//       &:hover {
+//         color: var(--#{$prefix}-#{$color}) !important;
+//       }
+//     }
+//   }
+// }
+.text {
+  @each $color, $value in $hover-text-colors {
+    &-#{$color}-hover {
       &:hover {
-        color: var(--#{$prefix}gray-#{$color}) !important;
-      }
-    }
-  }
-  @each $color, $value in $theme-colors {
-    &-#{$color} {
-      &:hover {
-        color: var(--#{$prefix}-#{$color}) !important;
+        color: #{$value} !important;
       }
     }
   }

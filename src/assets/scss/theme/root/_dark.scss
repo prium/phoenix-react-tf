@@ -341,10 +341,7 @@
     }
 
     // not in phoenix html 
-    /* ---------------------------------- Card ---------------------------------- */
-    .card {
-      --#{$prefix}card-bg: var(--#{$prefix}white);
-    }
+
     /* --------------------------------- table --------------------------------- */
     .table {
       --#{$prefix}table-border-color: #{map-get($grays-dark, '200')};

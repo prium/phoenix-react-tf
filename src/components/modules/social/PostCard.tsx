@@ -45,13 +45,13 @@ const PostCard = ({ post }: PostCardProps) => {
                     <>
                       <FontAwesomeIcon
                         icon={faCircle}
-                        className="text-300"
+                        className="text-light"
                         transform="shrink-10 down-2"
                       />
                       {post.location}
                       <FontAwesomeIcon
                         icon={faCircle}
-                        className="text-300"
+                        className="text-light"
                         transform="shrink-10 down-2"
                       />
                       <FontAwesomeIcon

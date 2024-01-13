@@ -82,7 +82,7 @@ const TopNavMegaMenuIitemsLooper = ({ page }: { page: Route }) => {
             <Link
               to={page.path || '#!'}
               className={classNames('dropdown-link', {
-                'text-300': !page.active,
+                'text-light': !page.active,
                 active: pathname === page.path
               })}
             >

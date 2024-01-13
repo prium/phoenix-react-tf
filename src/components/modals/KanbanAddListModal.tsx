@@ -83,7 +83,7 @@ const KanbanAddListModal = () => {
                 endComponent={
                   <button className="btn p-0 lh-1">
                     <FontAwesomeIcon
-                      className="text-300"
+                      className="text-light"
                       icon={faCircleXmark}
                     />
                   </button>

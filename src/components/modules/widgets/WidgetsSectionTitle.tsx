@@ -23,7 +23,7 @@ const WidgetsSectionTitle = ({
         <FontAwesomeIcon icon={faCircle} className="text-primary fa-stack-2x" />
         <FontAwesomeIcon
           icon={icon}
-          className="text-primary-soft fa-inverse fa-stack-1x"
+          className="text-primary-subtle fa-inverse fa-stack-1x"
         />
       </span>
       <div className="w-100">

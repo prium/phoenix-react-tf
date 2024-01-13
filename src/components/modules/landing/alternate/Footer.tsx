@@ -31,7 +31,7 @@ const Footer = () => {
                 'FAQ'
               ].map(item => (
                 <li key={item}>
-                  <a href="#!" className="text-300 dark__text-300">
+                  <a href="#!" className="text-light">
                     {item}
                   </a>
                 </li>

@@ -74,7 +74,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
               <span className="fa-layers fa-fw">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className={classNames('text-300', {
+                  className={classNames('text-light', {
                     'text-success': pricing.features.includes(item.id)
                   })}
                 />

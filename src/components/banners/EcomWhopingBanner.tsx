@@ -25,7 +25,7 @@ const EcomWhopingBanner = () => {
           <h2 className="text-warning-300 fw-bolder fs-lg-3 fs-xxl-2">
             Whooping <span className="gradient-text">60%</span> Off
           </h2>
-          <h3 className="fw-bolder fs-lg-5 fs-xxl-3 text-white light">
+          <h3 className="fw-bolder fs-lg-5 fs-xxl-3 text-white">
             on everyday items
           </h3>
         </div>

@@ -12,10 +12,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original;
       return (
-        <Link
-          to="#!"
-          className=" d-flex align-items-center text-body text-hover-1000"
-        >
+        <Link to="#!" className=" d-flex align-items-center text-body">
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 text-body-emphasis fw-semi-bold">{name}</p>
         </Link>

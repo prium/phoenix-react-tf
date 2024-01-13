@@ -53,7 +53,8 @@ const ChatContentHeader = () => {
                     className={classNames('fs-11 me-2', {
                       'text-success':
                         currentConversation.user.status === 'online',
-                      'text-300': currentConversation.user.status === 'offline'
+                      'text-light':
+                        currentConversation.user.status === 'offline'
                     })}
                   />
                   {currentConversation.user.status === 'online'

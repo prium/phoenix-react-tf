@@ -38,9 +38,7 @@ const BoardViewItem = ({ project }: { project: Project }) => {
               </RevealDropdown>
             </div>
           </div>
-          <h3 className="text-white light fw-bold line-clamp-2">
-            {project.name}
-          </h3>
+          <h3 className="text-white fw-bold line-clamp-2">{project.name}</h3>
         </div>
       </RevealDropdownTrigger>
 
