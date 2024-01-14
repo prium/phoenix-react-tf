@@ -3,8 +3,8 @@ import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const flexCode = `<>
-  <Stack className="p-2 bg-200 mb-2">Flexbox container!</Stack>
-  <Stack className="d-inline-flex p-2 bg-200">
+  <Stack className="p-2 bg-body-secondary mb-2">Flexbox container!</Stack>
+  <Stack className="d-inline-flex p-2 bg-body-secondary">
     Inline flexbox container!
   </Stack>
 </>`;

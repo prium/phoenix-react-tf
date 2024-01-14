@@ -40,7 +40,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       splitLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisLabel: {
@@ -57,7 +57,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       axisLine: {
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: false
@@ -69,7 +69,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       splitLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisLabel: {
@@ -87,7 +87,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       position: 'bottom',
       axisLine: {
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: false
@@ -97,12 +97,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     type: 'value',
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {

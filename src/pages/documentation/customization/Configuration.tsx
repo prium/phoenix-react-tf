@@ -51,7 +51,7 @@ const Configuration = () => {
         <PhoenixDocCard.Header title="Available Options" noPreview />
         <PhoenixDocCard.Body>
           <table className="fs--1 mb-0 table table-bordered">
-            <thead className="bg-200 text-body">
+            <thead className="bg-body-secondary text-body">
               <tr>
                 <th className="white-space-nowrap" style={{ width: '20%' }}>
                   Option

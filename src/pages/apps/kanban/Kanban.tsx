@@ -60,7 +60,7 @@ const KanbanContent = () => {
 
           <div className="kanban-column scrollbar position-relative bg-transparent d-flex flex-column h-100 flex-center hover-bg-100">
             <Button
-              className="stretched-link btn-icon btn-icon bg-200 rounded-circle mb-1"
+              className="stretched-link btn-icon btn-icon bg-body-secondary rounded-circle mb-1"
               onClick={() => {
                 kanbanDispatch({
                   type: TOGGLE_ADD_LIST_MODAL,

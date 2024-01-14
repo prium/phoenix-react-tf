@@ -119,7 +119,7 @@
     padding: 0 !important;
     transition: $transition-base;
     @include hover-focus {
-      // background-color: var(--#{$prefix}gray-200);
+      // background-color: var(--#{$prefix}secondary-bg);
     }
   }
   .fc-daygrid-bg-harness {
@@ -284,7 +284,7 @@
       border: 0;
       border-radius: $border-radius-lg;
       @include hover-focus {
-        background-color: var(--#{$prefix}gray-200);
+        background-color: var(--#{$prefix}secondary-bg);
       }
     }
     .fc-timegrid-slot {
@@ -371,7 +371,7 @@
       height: 0.625rem;
       width: 0.625rem;
       border-radius: 50%;
-      background: var(--#{$prefix}gray-200);
+      background: var(--#{$prefix}secondary-bg);
       left: 0;
       top: 50%;
       transform: translateY(-50%);
@@ -381,7 +381,7 @@
       content: '';
       height: 100%;
       width: 1px;
-      background-color: var(--#{$prefix}gray-200);
+      background-color: var(--#{$prefix}secondary-bg);
       top: 50%;
       left: 0.3125rem;
     }

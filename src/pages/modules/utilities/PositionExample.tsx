@@ -12,7 +12,7 @@ const exampleCode = `
 `;
 
 const arrangElementsCode = `<>
-  <div className="position-relative bg-200 mb-4" style={{ height: '200px' }}>
+  <div className="position-relative bg-body-secondary mb-4" style={{ height: '200px' }}>
     <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-0 start-0"></div>
     <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-0 end-0"></div>
     <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-50 start-50"></div>
@@ -26,7 +26,7 @@ const arrangElementsCode = `<>
     </div>
   </div>
 </>`;
-const centerElementsCode = `<div className="position-relative bg-200" style={{height: '200px'}}>
+const centerElementsCode = `<div className="position-relative bg-body-secondary" style={{height: '200px'}}>
   <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-0 start-50 translate-middle-x"></div>
   <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-50 start-0 translate-middle-y"></div>
   <div className="p-3 bg-body-quaternary rounded-1 position-absolute top-50 start-50 translate-middle"></div>

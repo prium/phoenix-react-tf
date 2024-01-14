@@ -55,7 +55,7 @@ const IconCard = ({
         type="text"
         readOnly
         value={text}
-        className="text-center text-dark bg-200 dark__bg-1100 border-300 mt-3"
+        className="text-center text-dark bg-body-secondary dark__bg-1100 border-300 mt-3"
       />
 
       <Toast

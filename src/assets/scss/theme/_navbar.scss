@@ -62,7 +62,7 @@
   .dropdown-item {
     font-weight: $font-weight-medium;
     @include hover-focus {
-      background-color: var(--#{$prefix}gray-200);
+      background-color: var(--#{$prefix}secondary-bg);
       color: var(--#{$prefix}body-highlight-color);
     }
   }
@@ -130,14 +130,14 @@
     &:active,
     &:focus,
     &:hover {
-      background-color: var(--#{$prefix}gray-200);
+      background-color: var(--#{$prefix}secondary-bg);
       color: var(--#{$prefix}dark);
     }
   }
   &.doc-nav {
     .nav-link {
       &.active {
-        background-color: var(--#{$prefix}gray-200);
+        background-color: var(--#{$prefix}secondary-bg);
       }
     }
   }

@@ -13,7 +13,7 @@
       &:hover,
       &:focus,
       &:active {
-        background: var(--#{$prefix}gray-200);
+        background: var(--#{$prefix}secondary-bg);
         color: var(--#{$prefix}body-highlight-color) !important;
       }
     }

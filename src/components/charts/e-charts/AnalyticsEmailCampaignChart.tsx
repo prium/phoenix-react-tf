@@ -73,7 +73,7 @@ const getDefaultOptions = (
     type: 'value',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {
@@ -132,7 +132,7 @@ const getDefaultOptions = (
         color:
           theme === 'light'
             ? getThemeColor('gray-1100')
-            : getThemeColor('gray-200'),
+            : getThemeColor('secondary-bg'),
         fontWeight: 'normal',
         fontSize: '12.8px',
         formatter: (value: { value: string }) =>

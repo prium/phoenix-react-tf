@@ -16,7 +16,7 @@
       border-bottom-color: var(--#{$prefix}border-color);
     }
     &.leaflet-disabled {
-      background-color: var(--#{$prefix}gray-200);
+      background-color: var(--#{$prefix}secondary-bg);
     }
   }
 }

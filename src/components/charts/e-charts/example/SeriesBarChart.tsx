@@ -23,7 +23,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     trigger: 'axis',
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    bordercolor: getThemeColor('tertiary-bg'),
+    borderColor: getThemeColor('tertiary-bg'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
@@ -71,7 +71,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       interval: 5,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },

@@ -98,7 +98,7 @@
 }
 
 .badge-tag {
-  background-color: var(--#{$prefix}gray-200);
+  background-color: var(--#{$prefix}secondary-bg);
   color: var(--#{$prefix}body-highlight-color);
   font-weight: $font-weight-bold;
   font-size: map-get($font-sizes, '10');

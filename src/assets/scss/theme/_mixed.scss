@@ -220,7 +220,7 @@
   }
 }
 .notification-card:hover {
-  background-color: var(--#{$prefix}gray-200) !important;
+  background-color: var(--#{$prefix}secondary-bg) !important;
 }
 .notification-dropdown-toggle {
   &:hover {

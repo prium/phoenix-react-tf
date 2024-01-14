@@ -86,7 +86,7 @@ pre[class*='language-'] {
   }
 
   [class^='rounded-'] {
-    background-color: var(--#{$prefix}gray-200);
+    background-color: var(--#{$prefix}secondary-bg);
   }
 }
 

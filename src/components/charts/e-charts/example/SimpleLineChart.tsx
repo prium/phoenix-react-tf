@@ -49,7 +49,7 @@ const getDefaultOptions = (
     trigger: 'axis',
     padding: 10,
     backgroundColor: getThemeColor('body-highlight-bg'),
-    bordercolor: getThemeColor('tertiary-bg'),
+    borderColor: getThemeColor('tertiary-bg'),
     textStyle: { color: getThemeColor('dark') },
     borderWidth: 1,
     transitionDuration: 0,
@@ -76,7 +76,7 @@ const getDefaultOptions = (
       axisLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: {
@@ -89,7 +89,7 @@ const getDefaultOptions = (
           color:
             theme === 'dark'
               ? getThemeColor('body-highlight-bg')
-              : getThemeColor('gray-200')
+              : getThemeColor('secondary-bg')
         }
       },
       boundaryGap: false

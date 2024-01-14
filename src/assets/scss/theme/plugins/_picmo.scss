@@ -10,7 +10,7 @@
   --background-color: #{$body-bg};
   --border-color: var(--#{$prefix}gray-300);
   --category-tab-active-color: var(--#{$prefix}gray-300);
-  --category-tab-highlight-background-color: var(--#{$prefix}gray-200);
+  --category-tab-highlight-background-color: var(--#{$prefix}secondary-bg);
   --category-tab-color: var(--#{$prefix}body-color);
   --text-color: var(--#{$prefix}body-color);
   --emoji-size: 1.8rem !important;
@@ -57,7 +57,7 @@
   }
 
   .picmo__emojiButton:hover {
-    --hover-background-color: var(--#{$prefix}gray-200);
+    --hover-background-color: var(--#{$prefix}secondary-bg);
   }
 
   .picmo__content {
@@ -80,6 +80,6 @@
     border: unset;
     background: unset;
     color: $primary;
-    --category-tab-active-background-color: var(--#{$prefix}gray-200);
+    --category-tab-active-background-color: var(--#{$prefix}secondary-bg);
   }
 }

@@ -5,7 +5,7 @@ const EcomInvoiceTable = () => {
   return (
     <Scrollbar autoHeight autoHeightMax="100%">
       <table className="table fs-9 text-body mb-0">
-        <thead className="bg-200">
+        <thead className="bg-body-secondary">
           <tr>
             <th scope="col" style={{ width: 24 }} />
             <th scope="col" style={{ minWidth: 60 }}>
@@ -116,7 +116,7 @@ const EcomInvoiceTable = () => {
             </td>
             <td className="border-0" />
           </tr>
-          <tr className="bg-200">
+          <tr className="bg-body-secondary">
             <td />
             <td className="align-middle fw-semi-bold" colSpan={9}>
               Subtotal
@@ -149,7 +149,7 @@ const EcomInvoiceTable = () => {
             </td>
             <td />
           </tr>
-          <tr className="bg-200">
+          <tr className="bg-body-secondary">
             <td
               className="align-middle ps-4 fw-bold text-body-highlight"
               colSpan={3}

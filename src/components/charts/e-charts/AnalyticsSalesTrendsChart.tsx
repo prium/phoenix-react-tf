@@ -48,7 +48,7 @@ const getDefaultOptions = (
     },
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisTick: false
@@ -57,7 +57,7 @@ const getDefaultOptions = (
     type: 'value',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {

@@ -59,7 +59,7 @@
 
   .tox-collection__item--active,
   .tox-collection__item-accessory {
-    background-color: var(--#{$prefix}gray-200) !important;
+    background-color: var(--#{$prefix}secondary-bg) !important;
     color: var(--#{$prefix}body-color) !important;
   }
 
@@ -105,14 +105,14 @@
       color: var(--#{$prefix}secondary-color) !important;
     }
     .tox-collection__item--active {
-      background-color: var(--#{$prefix}gray-200) !important;
+      background-color: var(--#{$prefix}secondary-bg) !important;
     }
   }
 
   .tox-button--naked {
     color: var(--#{$prefix}body-color) !important;
     &:hover:not(:disabled) {
-      background-color: var(--#{$prefix}gray-200) !important;
+      background-color: var(--#{$prefix}secondary-bg) !important;
       border-color: var(--#{$prefix}border-color) !important;
     }
   }
@@ -170,7 +170,7 @@
     }
   }
   @include hover-focus {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}secondary-bg) !important;
   }
 }
 
@@ -180,7 +180,7 @@
     fill: var(--#{$prefix}tinymce-tox-tbtn-enabled-icon-color) !important;
   }
   @include hover-focus {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}secondary-bg) !important;
   }
 }
 

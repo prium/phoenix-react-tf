@@ -23,7 +23,7 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
             />
           </>
         ) : (
-          <div className="bg-200" style={{ height: '128px' }} />
+          <div className="bg-body-secondary" style={{ height: '128px' }} />
         )}
         <Avatar.Group
           total={board.users.length}

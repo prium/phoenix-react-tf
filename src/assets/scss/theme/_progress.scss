@@ -20,7 +20,7 @@
   .progress-bar-rail {
     stroke-dasharray: 340px;
     stroke-dashoffset: 150;
-    stroke: var(--#{$prefix}gray-200);
+    stroke: var(--#{$prefix}secondary-bg);
   }
 
   .progress-bar-top {

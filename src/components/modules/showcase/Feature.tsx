@@ -44,7 +44,7 @@ const Feature = () => {
                 <img src={thumbsUpIcon} alt="" className="mb-2 ms-2" />
               </span>
             </h1>
-            <p className="text-200 text-center text-lg-start">
+            <p className="text-light text-center text-lg-start">
               Built with all top-notch technologies, this admin dashboard is
               fully responsive, and the clean codebase helps it to stay intact
               without breaking down the layout around any device or screen size

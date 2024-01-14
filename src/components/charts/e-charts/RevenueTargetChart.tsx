@@ -62,7 +62,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       interval: 5,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },
@@ -91,8 +91,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       data: data1,
       itemStyle: {
         borderWidth: 4,
-        color: getThemeColor('gray-200'),
-        borderColor: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg'),
+        bordercolor: getThemeColor('secondary-bg')
       }
     },
     {
@@ -118,7 +118,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       itemStyle: {
         borderWidth: 4,
         color: getThemeColor('primary-300'),
-        borderColor: getThemeColor('gray-200')
+        bordercolor: getThemeColor('secondary-bg')
       }
     }
   ],

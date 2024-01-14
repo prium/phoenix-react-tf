@@ -14,7 +14,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
       </div>
       <AuthSocialButtons title="Sign in" />
       <div className="position-relative">
-        <hr className="bg-200 mt-5 mb-4" />
+        <hr className="bg-body-secondary mt-5 mb-4" />
         <div className="divider-content-center">or use email</div>
       </div>
       <Form.Group className="mb-3 text-start">

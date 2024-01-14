@@ -18,7 +18,7 @@ const getDefaultOptions = (
     trigger: 'item',
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    bordercolor: getThemeColor('tertiary-bg'),
+    borderColor: getThemeColor('tertiary-bg'),
     textStyle: {
       color: getThemeColor('body-color'),
       fontSize: 12.8,
@@ -33,7 +33,7 @@ const getDefaultOptions = (
     radius: '87%',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     splitArea: {
@@ -46,14 +46,14 @@ const getDefaultOptions = (
             : getThemeColor('body-highlight-bg'),
           theme == 'light'
             ? getThemeColor('body-bg')
-            : getThemeColor('gray-200')
+            : getThemeColor('secondary-bg')
         ]
       }
     },
     axisLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisName: {

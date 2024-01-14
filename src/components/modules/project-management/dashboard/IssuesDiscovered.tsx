@@ -24,7 +24,7 @@ const IssuesDiscovered = () => {
             Total count <span className="fw-bold">257</span>
           </p>
         </div>
-        <hr className="bg-200 mb-2 mt-2" />
+        <hr className="bg-body-secondary mb-2 mt-2" />
 
         {issueStats.map(issue => (
           <div className="d-flex align-items-center mb-1" key={issue.type}>

@@ -142,6 +142,7 @@ const EmailDetail = () => {
                     size="xl"
                   />
                 </Col>
+
                 <Col xs="auto" className="me-3">
                   <AttachmentPreview
                     attachment={{

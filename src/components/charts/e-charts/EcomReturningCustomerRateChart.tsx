@@ -84,7 +84,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     },
     splitLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200'), type: 'dashed' }
+      lineStyle: { color: getThemeColor('secondary-bg'), type: 'dashed' }
     }
   },
   yAxis: {
@@ -101,7 +101,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     },
     splitLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200') }
+      lineStyle: { color: getThemeColor('secondary-bg') }
     }
   },
   series: [

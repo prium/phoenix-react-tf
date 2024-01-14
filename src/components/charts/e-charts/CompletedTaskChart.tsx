@@ -75,7 +75,7 @@ const getDefaultOptions = (
       axisLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: {
@@ -85,7 +85,7 @@ const getDefaultOptions = (
         show: true,
         interval: 0,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       boundaryGap: false

@@ -12,7 +12,7 @@ const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
       </div>
       <AuthSocialButtons title="Sign up" />
       <div className="position-relative mt-4">
-        <hr className="bg-200" />
+        <hr className="bg-body-secondary" />
         <div className="divider-content-center">or use email</div>
       </div>
       <Form>

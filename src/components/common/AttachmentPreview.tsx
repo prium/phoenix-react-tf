@@ -63,7 +63,7 @@ const AttachmentPreview = ({
 
       <div className="flex-1">
         <h6
-          className={classNames('text-body line-clamp-1 text-break', {
+          className={classNames('line-clamp-1 text-break', {
             'text-body': variant === 'primary',
             'text-white': variant === 'secondary'
           })}
@@ -75,7 +75,7 @@ const AttachmentPreview = ({
             'd-flex align-items-center lh-1 fw-semi-bold fs-10',
             {
               'text-body-tertiary': variant == 'primary',
-              'text-200': variant == 'secondary'
+              'text-light': variant == 'secondary'
             }
           )}
         >

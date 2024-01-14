@@ -18,7 +18,7 @@
 }
 
 a[href] {
-  &.bg-200 {
+  &.bg-body-secondary {
     @include hover-focus {
       background-color: var(--#{$prefix}tertiary-bg) !important;
     }

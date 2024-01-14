@@ -108,7 +108,7 @@
 
   .kanban-title-badge {
     border-radius: var(--#{$prefix}border-radius-pill);
-    background-color: var(--#{$prefix}gray-200);
+    background-color: var(--#{$prefix}secondary-bg);
     font-size: map-get($font-sizes, '9');
     font-weight: $font-weight-semi-bold;
     // padding: $badge-padding-y $badge-padding-x;

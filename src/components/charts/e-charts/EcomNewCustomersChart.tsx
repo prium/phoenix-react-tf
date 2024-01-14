@@ -35,7 +35,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       boundaryGap: false,
       axisLine: {
         show: true,
-        lineStyle: { color: getThemeColor('gray-200') }
+        lineStyle: { color: getThemeColor('secondary-bg') }
       },
       axisTick: {
         show: false
@@ -97,15 +97,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       symbol: 'circle',
       lineStyle: {
         width: 2,
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       },
       emphasis: {
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       itemStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     {

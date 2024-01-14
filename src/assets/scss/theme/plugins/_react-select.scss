@@ -95,7 +95,7 @@
   background-color: $input-bg !important;
   z-index: $zindex-modal !important;
   .react-select__menu-list {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}secondary-bg) !important;
   }
   .react-select__option {
     color: var(--#{$prefix}body-color) !important;

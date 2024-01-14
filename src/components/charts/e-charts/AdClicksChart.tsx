@@ -105,7 +105,7 @@ const getDefaultOptions = (
         color:
           theme === 'dark'
             ? getThemeColor('body-highlight-bg')
-            : getThemeColor('gray-200')
+            : getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },

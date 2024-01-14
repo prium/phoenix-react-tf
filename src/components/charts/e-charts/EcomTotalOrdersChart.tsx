@@ -32,7 +32,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     boundaryGap: false,
     axisLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200') }
+      lineStyle: { color: getThemeColor('secondary-bg') }
     },
     axisTick: {
       show: false
