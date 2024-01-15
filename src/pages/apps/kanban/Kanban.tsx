@@ -58,7 +58,7 @@ const KanbanContent = () => {
             </PhoenixDroppable>
           ))}
 
-          <div className="kanban-column scrollbar position-relative bg-transparent d-flex flex-column h-100 flex-center hover-bg-100">
+          <div className="kanban-column scrollbar position-relative bg-transparent d-flex flex-column h-100 flex-center bg-body-hover">
             <Button
               className="stretched-link btn-icon btn-icon bg-body-secondary rounded-circle mb-1"
               onClick={() => {

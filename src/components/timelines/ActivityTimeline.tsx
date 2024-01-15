@@ -24,7 +24,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
                 </p>
               </Timeline.OppositeContent>
               <Timeline.Separator className="position-md-relative">
-                <Timeline.Dot className="bg-primary-100">
+                <Timeline.Dot className="bg-primary-subtle">
                   <FontAwesomeIcon
                     icon={item.separator.icon}
                     className="text-primary-600 fs-10 dark__text-primary-300"

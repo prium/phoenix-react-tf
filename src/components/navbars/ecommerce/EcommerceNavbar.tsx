@@ -155,7 +155,7 @@ const EcommerceNavbar = () => {
                             <Link
                               key={section.label}
                               to={section.url}
-                              className="text-black d-block mb-1 text-decoration-none hover-bg-body-highlight px-2 py-1 rounded-2"
+                              className="text-black d-block mb-1 text-decoration-none bg-body-highlight-hover px-2 py-1 rounded-2"
                             >
                               {section.label}
                             </Link>

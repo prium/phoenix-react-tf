@@ -26,7 +26,7 @@ const SharedMedia = () => {
                   alt=""
                   height={100}
                   width={100}
-                  className="fit-cover rounded-2 hover-bg-body-secondary"
+                  className="fit-cover rounded-2 bg-body-secondary-hover"
                 />
               </Button>
             </Col>

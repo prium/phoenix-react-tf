@@ -35,7 +35,10 @@ const FunFacts = () => {
         />
 
         <section className="overflow-hidden z-index-2">
-          <div className="container-small light px-lg-7 px-xxl-3">
+          <div
+            className="container-small px-lg-7 px-xxl-3"
+            data-bs-theme="light"
+          >
             <div className="position-relative">
               <Row className="row mb-6">
                 <div className="col-xl-6 text-center text-md-start">

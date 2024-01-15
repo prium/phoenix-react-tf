@@ -30,7 +30,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
         ></Form.Label>
         <Card
           className={classNames('h-100 overflow-hidden cursor-pointer', {
-            'bg-warning-soft border-warning warning-boxshadow pricing-business-plus':
+            'bg-warning-subtle border-warning warning-boxshadow pricing-business-plus':
               item.badge?.label === 'recommended'
           })}
         >

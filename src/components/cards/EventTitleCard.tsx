@@ -23,7 +23,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                 <div>
                   <div className="mb-3">
                     <div className="d-flex align-items-center">
-                      <div className="px-2 py-1 bg-info-100 rounded">
+                      <div className="px-2 py-1 bg-info-subtle rounded">
                         <FeatherIcon
                           icon="map-pin"
                           className="text-info"
@@ -43,7 +43,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
               <Col md={6}>
                 <div className="mb-3">
                   <div className="d-flex align-items-center">
-                    <div className="px-2 py-1 bg-primary-100 rounded">
+                    <div className="px-2 py-1 bg-primary-subtle rounded">
                       <FeatherIcon
                         icon="clock"
                         className="text-primary"

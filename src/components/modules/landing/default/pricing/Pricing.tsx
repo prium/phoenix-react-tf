@@ -66,7 +66,7 @@ const Pricing = () => {
                   })}
                 >
                   {item.popular && (
-                    <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
+                    <div className="position-absolute d-flex flex-center bg-primary-subtle rounded-top py-1 end-0 start-0 badge-pricing">
                       <p className="text-primary-600 mb-0 dark__text-primary-200">
                         Most popular
                       </p>

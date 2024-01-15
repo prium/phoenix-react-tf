@@ -90,7 +90,7 @@ const columns: ColumnDef<LeadDeal>[] = [
             now={probability}
             style={{ height: 3 }}
             variant={variant}
-            className="bg-primary-100"
+            className="bg-primary-subtle"
           />
         </>
       );

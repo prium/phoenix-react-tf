@@ -53,7 +53,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-success-100 rounded me-2">
+          <div className="px-1 py-1 bg-success-subtle rounded me-2">
             <FeatherIcon
               icon="mail"
               size={16}
@@ -87,7 +87,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-primary-100 rounded me-2">
+          <div className="px-1 py-1 bg-primary-subtle rounded me-2">
             <FeatherIcon
               icon="phone"
               size={16}
@@ -121,7 +121,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-info-100 rounded me-2">
+          <div className="px-1 py-1 bg-info-subtle rounded me-2">
             <FeatherIcon
               icon="user"
               size={16}
@@ -149,7 +149,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-warning-100 rounded me-2">
+          <div className="px-1 py-1 bg-warning-subtle rounded me-2">
             <FeatherIcon
               icon="grid"
               size={16}

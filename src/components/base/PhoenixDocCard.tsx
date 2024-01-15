@@ -148,8 +148,9 @@ const PhoenixDocCardHeader = ({
       <Toast
         show={showToast}
         onClose={() => setShowToast(false)}
-        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        className="align-items-center bg-dark border-0 bottom-0 end-0 mb-3 me-3 position-fixed text-white z-index-5"
         delay={3000}
+        data-bs-theme="light"
         autohide
       >
         <div className="d-flex">

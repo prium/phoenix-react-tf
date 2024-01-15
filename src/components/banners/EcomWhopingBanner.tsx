@@ -21,7 +21,7 @@ const EcomWhopingBanner = () => {
       />
 
       <div className="position-relative">
-        <div className="banner-text light">
+        <div className="banner-text" data-bs-theme="light">
           <h2 className="text-warning-300 fw-bolder fs-lg-3 fs-xxl-2">
             Whooping <span className="gradient-text">60%</span> Off
           </h2>

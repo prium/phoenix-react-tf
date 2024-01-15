@@ -27,7 +27,7 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
         </div>
       </Col>
       <Col lg={6} xl={7} className="text-center text-lg-start">
-        <div className="mb-4 light">
+        <div className="mb-4" data-bs-theme="light">
           <Rating
             readonly
             initialValue={testimonial.rating}

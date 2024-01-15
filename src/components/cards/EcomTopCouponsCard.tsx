@@ -23,14 +23,14 @@ const EcomTopCouponsCard = () => {
             <h6 className="text-body fw-semi-bold mb-0">72%</h6>
           </div>
           <div className="d-flex align-items-center mb-2">
-            <div className="bullet-item bg-primary-200 me-2"></div>
+            <div className="bullet-item bg-primary-lighter me-2"></div>
             <h6 className="text-body fw-semi-bold flex-1 mb-0">
               Fixed card discount
             </h6>
             <h6 className="text-body fw-semi-bold mb-0">18%</h6>
           </div>
           <div className="d-flex align-items-center">
-            <div className="bullet-item bg-info-500 me-2"></div>
+            <div className="bullet-item bg-info-dark me-2"></div>
             <h6 className="text-body fw-semi-bold flex-1 mb-0">
               Fixed product discount
             </h6>

@@ -50,7 +50,7 @@ const NineDotMenu = () => {
                 <Col xs={4} key={item.title}>
                   <Link
                     to="#!"
-                    className="d-block hover-bg-body-secondary p-2 rounded-3 text-center text-decoration-none mb-3"
+                    className="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
                   >
                     <img
                       src={item.img}

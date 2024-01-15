@@ -28,7 +28,8 @@ const BoardViewItem = ({ project }: { project: Project }) => {
             <Badge
               variant="phoenix"
               bg={project.status.type}
-              className="fs-10 light"
+              className="fs-10"
+              data-bs-theme="light"
             >
               {project.status.label}
             </Badge>

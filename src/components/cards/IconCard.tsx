@@ -61,7 +61,8 @@ const IconCard = ({
       <Toast
         show={showCopyToast}
         onClose={() => setShowCopyToast(false)}
-        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        className="align-items-center bg-dark border-0 bottom-0 end-0 mb-3 me-3 position-fixed text-white z-index-5"
+        data-bs-theme="light"
         delay={3000}
         autohide
       >

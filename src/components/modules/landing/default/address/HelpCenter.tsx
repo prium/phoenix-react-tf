@@ -20,7 +20,8 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilPhone
               size={40}
-              className="text-primary fs-4 light z-index-1 ms-2"
+              className="text-primary fs-4 z-index-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">
@@ -33,7 +34,8 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilEnvelope
               size={40}
-              className="text-primary light z-index-1 ms-2"
+              className="text-primary z-index-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">
@@ -49,7 +51,8 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilMapMarker
               size={40}
-              className="text-primary light z-index-1 ms-2"
+              className="text-primary z-index-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">

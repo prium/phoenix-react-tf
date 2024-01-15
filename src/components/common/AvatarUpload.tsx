@@ -51,7 +51,8 @@ const AvatarUpload = ({
           thumbnail={thumbnail}
         />
         <div
-          className="h-100 w-100 bg-black light position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
+          className="h-100 w-100 bg-black position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"
+          data-bs-theme="light"
           style={{ '--phoenix-bg-opacity': 0.56 } as CSSProperties}
         >
           <FontAwesomeIcon icon={faCamera} className="text-light w-30 h-30" />

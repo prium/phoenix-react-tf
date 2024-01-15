@@ -25,7 +25,7 @@ const DealForecasrProgressBar = () => {
           key={1}
         />
         <ProgressBar
-          className="bg-primary-300 border-end border-white border-2"
+          className="bg-primary-light border-end border-white border-2"
           now={35.76}
           key={2}
         />

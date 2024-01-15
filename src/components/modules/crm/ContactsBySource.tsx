@@ -41,7 +41,7 @@ const ContactsBySource = () => {
         <div className="position-relative d-flex flex-center mb-sm-4 mb-xl-0 echart-contact-by-source-container mt-sm-7 mt-lg-4 mt-xl-0">
           <ContactsBySourceChart style={{ height: 245, width: '100%' }} />
           <div
-            className="position-absolute rounded-circle bg-primary-100 top-50 start-50 translate-middle d-flex flex-center"
+            className="position-absolute rounded-circle bg-primary-subtle top-50 start-50 translate-middle d-flex flex-center"
             style={{ height: '100px', width: '100px' }}
           >
             <h3 className="mb-0 text-primary-600 dark__text-primary-300 fw-bolder">
