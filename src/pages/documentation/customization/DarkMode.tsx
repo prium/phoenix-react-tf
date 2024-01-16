@@ -113,7 +113,7 @@ const darkCode = `
 const dark__Code = `
   <Card bg='light' className="dark__bg-primary">
     <Card.Body>
-      <p className="mb-0 dark__text-white">
+      <p className="mb-0 dark__text-gray-100">
         <span className="fw-bold">
           The background will be primary and text color will be white in dark mode.
         </span>

@@ -44,7 +44,7 @@ const darkCode = `
       <Nav.Link className='text-white' href="#action1">Home</Nav.Link>
       <Nav.Link className='text-white' href="#action2">Link</Nav.Link>
       <NavDropdown title="Dropdown" id="navbarScrollingDropdown" className='text-white'>
-        <div className='py-2 bg-light dark__bg-1000 rounded-3'>
+        <div className='py-2 bg-light dark__bg-gray-1000 rounded-3'>
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
           <NavDropdown.Divider />

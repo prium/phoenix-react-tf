@@ -21,7 +21,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
             >
               <FontAwesomeIcon
                 icon={activity.icon}
-                className={`text-${activity.variant}-600 dark__text-${activity.variant}-300 fs-9`}
+                className={`text-${activity.variant}-600 fs-9`}
               />
             </div>
             <div className="flex-1">

@@ -25,7 +25,7 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
                 <Timeline.Dot className={item.separator.dotClass}>
                   <FontAwesomeIcon
                     icon={item.separator.icon}
-                    className="text-white dark__text-white fs-10"
+                    className="text-white fs-10"
                   />
                 </Timeline.Dot>
                 {item.separator.barClass && (

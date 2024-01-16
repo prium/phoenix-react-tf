@@ -80,7 +80,7 @@ const SettingsPanel = () => {
           as="a"
           target="_blank"
           href={`${process.env.REACT_APP_PURCHASE_LINK}`}
-          className="w-100 mb-3 text-white dark__text-100"
+          className="w-100 mb-3 text-white"
           variant="primary"
         >
           Purchase template

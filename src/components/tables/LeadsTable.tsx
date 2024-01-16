@@ -54,11 +54,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-success-subtle rounded me-2">
-            <FeatherIcon
-              icon="mail"
-              size={16}
-              className="text-success-600 dark__text-success-300"
-            />
+            <FeatherIcon icon="mail" size={16} className="text-success-600" />
           </div>
           <span>Email</span>
         </div>
@@ -88,11 +84,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-primary-subtle rounded me-2">
-            <FeatherIcon
-              icon="phone"
-              size={16}
-              className="text-primary-600 dark__text-primary-300"
-            />
+            <FeatherIcon icon="phone" size={16} className="text-primary-600" />
           </div>
           <span>Phone</span>
         </div>
@@ -122,11 +114,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-info-subtle rounded me-2">
-            <FeatherIcon
-              icon="user"
-              size={16}
-              className="text-info-600 dark__text-info-300"
-            />
+            <FeatherIcon icon="user" size={16} className="text-info-600" />
           </div>
           <span>Contact name</span>
         </div>
@@ -150,11 +138,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-warning-subtle rounded me-2">
-            <FeatherIcon
-              icon="grid"
-              size={16}
-              className="text-warning-600 dark__text-warning-300"
-            />
+            <FeatherIcon icon="grid" size={16} className="text-warning-600" />
           </div>
           <span>Company name</span>
         </div>

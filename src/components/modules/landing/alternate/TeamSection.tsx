@@ -7,7 +7,7 @@ const TeamSection = () => {
   return (
     <section className="alternate-landing-team" id="team">
       <div
-        className="position-absolute w-100 h-100 start-0 end-0 top-0 bg-primary-subtle dark__bg-1000"
+        className="position-absolute w-100 h-100 start-0 end-0 top-0 bg-primary-subtle dark__bg-gray-1000"
         style={{ transform: 'skewY(-6deg)', transformOrigin: 'right' }}
       />
       <div

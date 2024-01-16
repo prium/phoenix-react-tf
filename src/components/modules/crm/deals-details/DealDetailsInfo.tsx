@@ -73,7 +73,7 @@ const InfoItem = ({
           >
             <FeatherIcon
               icon={data.icon}
-              className={`text-${data.color}-600 dark__text-${data.color}-300`}
+              className={`text-${data.color}-600`}
               width={16}
               height={16}
             />

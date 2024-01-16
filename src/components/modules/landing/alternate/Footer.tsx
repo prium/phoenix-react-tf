@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <section className="bg-1100 dark__bg-1000">
+    <section className="bg-1100 dark__bg-gray-1000">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="gx-xxl-8 gy-5 align-items-center mb-5">
           <Col xl="auto" className="text-center">
@@ -40,13 +40,13 @@ const Footer = () => {
           </Col>
           <Col xl="auto">
             <div className="d-flex align-items-center justify-content-center gap-8">
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faFacebook} />
               </Link>
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faTwitter} />
               </Link>
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </Link>
             </div>

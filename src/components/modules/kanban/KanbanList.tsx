@@ -59,7 +59,7 @@ const KanbanList = ({ list }: KanbanListProps) => {
         <Button className="bg-body-tertiary me-2 px-0">
           <FontAwesomeIcon
             icon={faPlus}
-            className="text-white dark__text-400"
+            className="text-white dark__text-gray-400"
             transform="grow-4 down-1"
           />
         </Button>

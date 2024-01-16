@@ -11,7 +11,7 @@ import bgRight from 'assets/img/bg/bg-right-24.png';
 
 const Cta = () => {
   return (
-    <section className="bg-primary-subtle dark__bg-1000 pb-10 overflow-hidden">
+    <section className="bg-primary-subtle dark__bg-gray-1000 pb-10 overflow-hidden">
       <div className="container-small px-lg-7 px-xxl-3">
         <div
           className="position-absolute w-100 h-100 start-0 end-0"

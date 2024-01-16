@@ -56,7 +56,7 @@ const CoverUpload = ({
           onChange={handleChange}
         />
         <label className="cover-image-file-input" htmlFor="coverFile"></label>
-        <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white dark__text-white">
+        <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white">
           <FontAwesomeIcon icon={faCamera} className="me-2 overlay-icon" />
         </div>
       </div>

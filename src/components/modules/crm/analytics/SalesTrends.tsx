@@ -21,7 +21,7 @@ const SalesTrends = () => {
           <div className="d-flex">
             <FontAwesomeIcon
               icon={faCircle}
-              className="text-primary-200 dark__text-primary-300 me-2"
+              className="text-primary-lighter me-2"
             />
             <h6 className="mb-0 me-3 lh-base">Revenue</h6>
           </div>
