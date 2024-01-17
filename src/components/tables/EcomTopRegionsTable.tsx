@@ -132,7 +132,7 @@ const EcomTopRegionsTable = () => {
     <AdvanceTableProvider {...table}>
       {/* <Scrollbar autoHeight autoHeightMax="100%"> */}
       <div className="scrollbar">
-        <Table className="fs-10 mb-0 border-top scrollbar">
+        <Table className="fs-10 mb-0 border-top border-translucent scrollbar">
           <thead>
             <tr>
               {getFlatHeaders().map(header => {

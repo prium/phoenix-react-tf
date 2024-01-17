@@ -22,7 +22,9 @@ const NavItem = ({
   return (
     <Nav.Item
       as="li"
-      className={classNames({ 'border-bottom border-bottom-lg-0': !isLast })}
+      className={classNames({
+        'border-bottom border-translucent border-bottom-lg-0': !isLast
+      })}
     >
       <Nav.Link href={url} className="lh-1 py-0 fs-9 fw-bold py-3">
         {label}
@@ -69,7 +71,7 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
           <ThemeToggler className="mx-2 d-lg-none" />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
-            <div className="border-bottom d-lg-none mb-2">
+            <div className="border-bottom border-translucent d-lg-none mb-2">
               <SearchBox
                 placeholder="Search"
                 className="w-100"

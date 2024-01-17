@@ -21,7 +21,7 @@ const DealsPrintingDimensionsCard = ({
               <div
                 className={classNames(
                   'd-sm-block d-inline-flex d-md-flex flex-xl-column flex-xxl-row align-items-center align-items-xl-start align-items-xxl-center',
-                  { 'border-start-sm ps-sm-5': index !== 0 }
+                  { 'border-start-sm border-translucent ps-sm-5': index !== 0 }
                 )}
               >
                 <div

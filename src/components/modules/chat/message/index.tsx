@@ -58,7 +58,7 @@ const Message = ({ message, user, showActions = true }: MessageProps) => {
                 data-bs-theme="light"
                 className={classNames('mb-1', {
                   'sent-message-content ': message.type === 'sent',
-                  'received-message-content border':
+                  'received-message-content border border-translucent':
                     message.type === 'received',
                   attachments:
                     Number(message.attachments?.images?.length) > 0 &&

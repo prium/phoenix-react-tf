@@ -96,7 +96,7 @@ const KanbanListHeader = ({
   return (
     <div className="kanban-column-header px-4 hover-actions-trigger">
       <div
-        className={`d-flex align-items-center border-bottom border-3 py-3`}
+        className={`d-flex align-items-center border-bottom border-translucent border-3 py-3`}
         style={
           {
             '--phoenix-border-color': list.borderColor

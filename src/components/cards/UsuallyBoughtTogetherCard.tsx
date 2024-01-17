@@ -17,7 +17,12 @@ const ProductListItem = ({ product }: { product: SuggestedProductType }) => {
           setChecked(e.target.checked);
         }}
       />
-      <img className="border rounded" src={product.img} width="53" alt="" />
+      <img
+        className="border border-translucent rounded"
+        src={product.img}
+        width="53"
+        alt=""
+      />
       <div className="ms-2">
         <Link className="fs-9 fw-bold line-clamp-2 mb-2" to="#!">
           {product.name}
@@ -45,7 +50,7 @@ const UsuallyBoughtTogetherCard = ({
             256GB SSD - w/Touch ID (Latest Model) - Blue
           </p>
         </div>
-        <Stack className="border-dashed border-y py-4 gap-5 mb-3">
+        <Stack className="border-dashed border-y border-translucent py-4 gap-5 mb-3">
           {products.map(product => (
             <ProductListItem product={product} key={product.id} />
           ))}

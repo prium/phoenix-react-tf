@@ -127,7 +127,7 @@ const CardViewModal = ({
                     comment={comment}
                     className={
                       index !== comments.length - 1
-                        ? 'border-bottom'
+                        ? 'border-bottom border-translucent'
                         : undefined
                     }
                     key={comment.id}
@@ -135,7 +135,7 @@ const CardViewModal = ({
                 ))}
               </div>
             </div>
-            <div className="pb-3 border-bottom mb-6">
+            <div className="pb-3 border-bottom border-translucent mb-6">
               <CommentForm />
             </div>
 
@@ -176,7 +176,7 @@ const CardViewModal = ({
                     key={todo.task}
                     todo={todo}
                     className={classNames('py-3', {
-                      'border-top': index === 0
+                      'border-top border-translucent': index === 0
                     })}
                     // fullLayoutBreakpoints={['lg']}
                     // onClick={setSelectedItem}

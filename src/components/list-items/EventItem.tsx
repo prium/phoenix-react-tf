@@ -14,7 +14,10 @@ interface EventItemProps {
 
 const EventItem = ({ event }: EventItemProps) => {
   return (
-    <div key={event.title} className="py-3 border-bottom border-dashed">
+    <div
+      key={event.title}
+      className="py-3 border-bottom border-translucent border-dashed"
+    >
       <div className="d-flex flex-between-center">
         <p className="text-warning fs-10 mb-0 fw-bold mb-1">{event.date}</p>
         <RevealDropdownTrigger>

@@ -43,7 +43,7 @@ const stats: StatType[] = [
 
 const EcomStats = () => {
   return (
-    <Row className="align-items-center g-4 border-bottom pb-4 mb-6">
+    <Row className="align-items-center g-4 border-bottom border-translucent pb-4 mb-6">
       {stats.map(stat => (
         <Col xs={12} md="auto" key={stat.id}>
           <Stat stat={stat} />

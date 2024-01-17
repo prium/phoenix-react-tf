@@ -28,7 +28,10 @@ const KanbanList = ({ list }: KanbanListProps) => {
       />
       <div className="kanban-items-container">
         {list.tasks.map((task, index) => (
-          <div className="py-2 px-2 border-bottom" key={task.id}>
+          <div
+            className="py-2 px-2 border-bottom border-translucent"
+            key={task.id}
+          >
             <Draggable
               key={`${list.id}-${task.id}`}
               draggableId={`${list.id}-${task.id}`}

@@ -71,10 +71,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold ps-4 border-end'
+        className:
+          'white-space-nowrap fw-semi-bold ps-4 border-end border-translucent'
       }
     }
   },
@@ -101,10 +102,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%', minWidth: '180px' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold ps-4 border-end'
+        className:
+          'white-space-nowrap fw-semi-bold ps-4 border-end border-translucent'
       }
     }
   },
@@ -124,11 +126,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
         className:
-          'white-space-nowrap ps-4 border-end fw-semi-bold text-body-highlight'
+          'white-space-nowrap ps-4 border-end border-translucent fw-semi-bold text-body-highlight'
       }
     }
   },
@@ -148,11 +150,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
         className:
-          'white-space-nowrap ps-4 border-end fw-semi-bold text-body-highlight'
+          'white-space-nowrap ps-4 border-end border-translucent fw-semi-bold text-body-highlight'
       }
     }
   },
@@ -199,7 +201,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
 
 const LeadsTable = () => {
   return (
-    <div className="border-top">
+    <div className="border-top border-translucent">
       <AdvanceTable
         tableProps={{ className: 'phoenix-table fs-9' }}
         rowClassName="hover-actions-trigger btn-reveal-trigger"

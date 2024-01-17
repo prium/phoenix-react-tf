@@ -81,7 +81,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
           </div>
         </div>
         <div className="bg-body-emphasis">
-          <div className="p-3 border-bottom">
+          <div className="p-3 border-bottom border-translucent">
             <div className="d-flex gap-2">
               <Button
                 variant="phoenix-secondary"
@@ -112,7 +112,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
               </Button>
             </div>
           </div>
-          <Nav className="flex-column py-3 border-bottom">
+          <Nav className="flex-column py-3 border-bottom border-translucent">
             <Nav.Link className="">
               <FeatherIcon
                 icon="clipboard"

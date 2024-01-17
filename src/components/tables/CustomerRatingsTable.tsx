@@ -132,7 +132,7 @@ const CustomerRatingsTable = () => {
   return (
     <>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable
             tableProps={{ className: 'phoenix-table fs-9 mb-0' }}
             rowClassName="hover-actions-trigger btn-reveal-trigger position-static"

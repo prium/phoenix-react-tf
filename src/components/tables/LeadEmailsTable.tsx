@@ -120,7 +120,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
 
 const LeadEmailsTable = () => {
   return (
-    <div className="border-y">
+    <div className="border-y border-translucent">
       <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
       <AdvanceTableFooter pagination showViewAllBtn={false} />
     </div>

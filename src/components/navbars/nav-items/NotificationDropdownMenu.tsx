@@ -33,7 +33,8 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
                 notification={notification}
                 type="dropdownItem"
                 className={classNames({
-                  'border-bottom': index !== notifications.length - 1
+                  'border-bottom border-translucent':
+                    index !== notifications.length - 1
                 })}
                 key={notification.id}
               />

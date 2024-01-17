@@ -113,7 +113,10 @@ const BackgroundColorForm = () => {
       </p>
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Nav variant="underline" className="border-bottom mb-10">
+        <Nav
+          variant="underline"
+          className="border-bottom border-translucent mb-10"
+        >
           <Nav.Item>
             <Nav.Link eventKey="first">
               <FontAwesomeIcon icon={faPalette} className="me-1" /> Solid Color

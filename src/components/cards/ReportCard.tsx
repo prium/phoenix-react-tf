@@ -10,7 +10,7 @@ const ReportCard = ({ report }: { report: Report }) => {
   return (
     <Card>
       <Card.Body>
-        <div className="border-bottom">
+        <div className="border-bottom border-translucent">
           <div className="d-flex align-items-start mb-1">
             <Form.Check type="checkbox" />
             <div className="d-sm-flex align-items-center ps-3">

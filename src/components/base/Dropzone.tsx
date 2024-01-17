@@ -108,7 +108,7 @@ const Dropzone = ({
           <div
             key={index}
             className={classNames(
-              'border-bottom d-flex align-items-center justify-content-between py-3'
+              'border-bottom border-translucent d-flex align-items-center justify-content-between py-3'
             )}
           >
             <AttachmentPreview attachment={file} />

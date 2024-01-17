@@ -18,7 +18,7 @@ const DealDetailsInfo = ({ data, className }: DealDetailsInfoProps) => {
             key={index}
             sm={12}
             xxl={6}
-            className={classNames('py-3', {
+            className={classNames('py-3 border-translucent', {
               'col-sm-12 col-xxl-6 border-bottom border-end-xxl': index === 0,
               'border-bottom': index === 1,
               'border-end-xxl border-bottom border-bottom-xxl-0 py-3':

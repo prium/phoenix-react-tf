@@ -74,7 +74,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
             </Scrollbar>
           </div>
         </Card.Body>
-        <Card.Footer className="p-0 border-top">
+        <Card.Footer className="p-0 border-top border-translucent">
           <Nav className="nav flex-column my-3">
             <Nav.Item>
               <Nav.Link href="#!" className="px-3">

@@ -14,7 +14,7 @@ const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
       {notes.map((note, index) => (
         <div
           key={note.id}
-          className={classNames('border-2 border-dashed', {
+          className={classNames('border-2 border-dashed border-translucent', {
             'mb-4 pb-4 border-bottom': index !== notes.length - 1
           })}
         >

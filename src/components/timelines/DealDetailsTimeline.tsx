@@ -10,7 +10,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
       {activities.map((activity, index) => (
         <div
           key={activity.id}
-          className={classNames('border-bottom py-4', {
+          className={classNames('border-bottom border-translucent py-4', {
             'pb-0 border-bottom-0': index === activities.length - 1
           })}
         >

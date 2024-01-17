@@ -193,7 +193,11 @@ const KanbanTaskDetailsModal = ({
               </Row>
             </Col>
 
-            <Col xs={12} lg={4} className="border-start-lg h-100 scrollbar">
+            <Col
+              xs={12}
+              lg={4}
+              className="border-start-lg border-translucent h-100 scrollbar"
+            >
               <div>
                 <div className="px-3">
                   <div>
@@ -222,15 +226,18 @@ const KanbanTaskDetailsModal = ({
                     <div className="d-flex flex-column gap-3">
                       {kanbanActivities.map((activity, index) => (
                         <div
-                          className={classNames('d-flex gap-2 pb-3', {
-                            'border-bottom':
-                              index !== kanbanActivities.length - 1
-                          })}
+                          className={classNames(
+                            'd-flex gap-2 pb-3 border-translucent',
+                            {
+                              'border-bottom':
+                                index !== kanbanActivities.length - 1
+                            }
+                          )}
                           key={activity.id}
                         >
                           <FontAwesomeIcon
                             icon={activity.icon}
-                            className={`border rounded-pill p-1 text-${activity.iconColor}`}
+                            className={`border border-translucent rounded-pill p-1 text-${activity.iconColor}`}
                             transform="shrink-4"
                           />
                           <div className="activity-item">

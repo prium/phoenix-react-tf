@@ -16,7 +16,7 @@ interface EcomCartTableProps {
 const EcomCartTable = ({ products }: EcomCartTableProps) => {
   return (
     <Scrollbar autoHeight autoHeightMax="100%" className="table-scrollbar">
-      <Table className="phoenix-table fs-9 mb-0 border-top">
+      <Table className="phoenix-table fs-9 mb-0 border-top border-translucent">
         <thead>
           <tr>
             <th scope="col" />
@@ -72,7 +72,7 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
   return (
     <tr className="cart-table-row" key={product.id}>
       <td className="py-0">
-        <div className="border rounded-2">
+        <div className="border border-translucent rounded-2">
           <img src={product.image} alt={product.name} width={53} />
         </div>
       </td>

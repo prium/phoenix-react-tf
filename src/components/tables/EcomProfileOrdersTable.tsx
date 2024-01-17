@@ -109,7 +109,7 @@ const EcomProfileOrdersTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable
             tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
           />

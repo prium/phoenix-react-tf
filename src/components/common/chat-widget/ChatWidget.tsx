@@ -54,9 +54,12 @@ const ChatWidget = () => {
         </Card>
       </div>
       <Button
-        className={classNames('p-0 border border-200 btn-support-chat', {
-          'btn-chat-close': isOpenChat
-        })}
+        className={classNames(
+          'p-0 border border-translucent btn-support-chat',
+          {
+            'btn-chat-close': isOpenChat
+          }
+        )}
         onClick={() => setIsOpenChat(!isOpenChat)}
       >
         <span className="fs-8 btn-text text-primary text-nowrap">

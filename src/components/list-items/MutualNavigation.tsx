@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const MutualNavigation = () => {
   return (
     <>
-      <div className="d-flex pb-4 align-items-end border-bottom border-dashed">
+      <div className="d-flex pb-4 align-items-end border-bottom border-translucent border-dashed">
         <h3 className="flex-1 mb-0">You and Erza</h3>
         <Link to="#!" className="fw-bold fs-9">
           See details
@@ -15,7 +15,11 @@ const MutualNavigation = () => {
       </div>
       <Row className="g-0 mb-5 mb-lg-0">
         {mutualData.map(item => (
-          <Col xs={12} key={item.label} className="border-1 border-bottom py-2">
+          <Col
+            xs={12}
+            key={item.label}
+            className="border-1 border-bottom border-translucent py-2"
+          >
             <Button
               variant="link"
               className="ps-2 fs-8 text-body-secondary hover-primary fw-semi-bold"

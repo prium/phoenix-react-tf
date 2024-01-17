@@ -74,7 +74,7 @@ const TodoItemDetailsOffcanvas = ({
                     key={subTask.task}
                     task={subTask}
                     className={classNames({
-                      'border-top': index === 0
+                      'border-top border-translucent': index === 0
                     })}
                   />
                 ))}
@@ -96,7 +96,7 @@ const TodoItemDetailsOffcanvas = ({
                     key={attachment.name}
                     attachment={attachment}
                     className={classNames('px-5 px-md-6', {
-                      'border-top': index === 0
+                      'border-top border-translucent': index === 0
                     })}
                   />
                 ))}

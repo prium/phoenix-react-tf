@@ -132,7 +132,7 @@ const EcommerceNavbar = () => {
             Category
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className="border py-0 category-dropdown-menu ms-2">
+          <Dropdown.Menu className="border border-translucent py-0 category-dropdown-menu ms-2">
             <Card className="border-0">
               <Scrollbar autoHeight autoHeightMax={657}>
                 <Card.Body className="p-6 pb-3">
@@ -164,7 +164,7 @@ const EcommerceNavbar = () => {
                       </Col>
                     ))}
                   </Row>
-                  <div className="text-center border-top pt-3">
+                  <div className="text-center border-top border-translucent pt-3">
                     <Link className="fw-bold" to="#!">
                       See all Categories
                       <FontAwesomeIcon icon={faAngleRight} className="ms-1" />

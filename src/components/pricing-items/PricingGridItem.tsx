@@ -110,7 +110,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                 <div className="d-sm-flex d-md-block d-lg-flex justify-content-end align-items-end h-100">
                   <ul
                     className={classNames(
-                      'list-unstyled mb-0 border-start-sm border-start-md-0 border-start-lg ps-sm-5 ps-md-0 ps-lg-5',
+                      'list-unstyled mb-0 border-start-sm border-start-md-0 border-start-lg border-translucent ps-sm-5 ps-md-0 ps-lg-5',
                       {
                         'border-warning-300':
                           item.badge?.label === 'recommended'

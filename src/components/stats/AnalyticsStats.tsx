@@ -12,19 +12,22 @@ const AnalyticsStats = ({ stats }: { stats: StatType[] }) => {
           xs={6}
           md={4}
           xxl={2}
-          className={classNames('text-center border-start-xxl', {
-            'border-end-xxl-0 border-bottom-xxl-0 border-end border-bottom pb-4 pb-xxl-0':
-              index === 0,
-            'border-end-xxl-0 border-bottom-xxl-0 border-end-md border-bottom pb-4 pb-xxl-0':
-              index === 1,
-            'border-bottom-xxl-0 border-bottom border-end border-end-md-0 pb-4 pb-xxl-0 pt-4 pt-md-0':
-              index === 2,
-            'border-end-md border-end-xxl-0 border-bottom border-bottom-md-0 pb-4 pb-xxl-0 pt-4 pt-xxl-0':
-              index === 3,
-            'border-end border-end-xxl-0 pb-md-4 pb-xxl-0 pt-4 pt-xxl-0':
-              index === 4,
-            'border-end-xxl pb-md-4 pb-xxl-0 pt-4 pt-xxl-0': index === 5
-          })}
+          className={classNames(
+            'text-center border-start-xxl border-translucent',
+            {
+              'border-end-xxl-0 border-bottom-xxl-0 border-end border-bottom pb-4 pb-xxl-0':
+                index === 0,
+              'border-end-xxl-0 border-bottom-xxl-0 border-end-md border-bottom pb-4 pb-xxl-0':
+                index === 1,
+              'border-bottom-xxl-0 border-bottom border-end border-end-md-0 pb-4 pb-xxl-0 pt-4 pt-md-0':
+                index === 2,
+              'border-end-md border-end-xxl-0 border-bottom border-bottom-md-0 pb-4 pb-xxl-0 pt-4 pt-xxl-0':
+                index === 3,
+              'border-end border-end-xxl-0 pb-md-4 pb-xxl-0 pt-4 pt-xxl-0':
+                index === 4,
+              'border-end-xxl pb-md-4 pb-xxl-0 pt-4 pt-xxl-0': index === 5
+            }
+          )}
         >
           <Stat data={stat} />
         </Col>

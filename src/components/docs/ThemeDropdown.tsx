@@ -48,7 +48,7 @@ const ThemeDropdown = () => {
         />
       </Dropdown.Toggle>
       <Dropdown.Menu
-        className="dropdown-caret border py-0 mt-2"
+        className="dropdown-caret border border-translucent py-0 mt-2"
         aria-labelledby="themeSwitchDropdown"
       >
         <div className="rounded-2 py-2">

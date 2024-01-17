@@ -43,7 +43,7 @@ const SettingsPanel = () => {
       onHide={handleClose}
       placement="end"
     >
-      <Offcanvas.Header className="align-items-start border-bottom flex-column">
+      <Offcanvas.Header className="align-items-start border-bottom border-translucent flex-column">
         <div className="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
           <div>
             <h5 className="mb-2 me-2 lh-sm">

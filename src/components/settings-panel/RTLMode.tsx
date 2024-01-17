@@ -16,7 +16,7 @@ const RTLMode = () => {
   };
 
   return (
-    <div className="border rounded-3 p-4 setting-panel-item bg-body-emphasis">
+    <div className="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
       <div className="d-flex justify-content-between align-items-center">
         <h5 className="setting-panel-item-title mb-1">RTL </h5>
         <Form.Check

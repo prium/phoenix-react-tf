@@ -34,7 +34,7 @@ const ConversationDetails = ({
 }: ConversationDetailsProps) => {
   return (
     <>
-      <div className="border-bottom p-4">
+      <div className="border-bottom border-translucent p-4">
         <div className="d-flex flex-between-center">
           <Button className="p-0" onClick={handleClose}>
             <FontAwesomeIcon

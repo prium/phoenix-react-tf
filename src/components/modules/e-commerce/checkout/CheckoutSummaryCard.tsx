@@ -14,7 +14,7 @@ const CheckoutSummaryCard = () => {
             Edit cart
           </Button>
         </div>
-        <div className="border-dashed border-bottom mb-4">
+        <div className="border-dashed border-bottom border-translucent mb-4">
           <div className="mx-n2 d-flex flex-column gap-2 mb-5">
             {cartItems.map(item => (
               <Row className="align-items-center g-3" key={item.id}>
@@ -44,7 +44,7 @@ const CheckoutSummaryCard = () => {
           </div>
         </div>
 
-        <div className="border-dashed border-bottom mb-3">
+        <div className="border-dashed border-bottom border-translucent mb-3">
           <div className="d-flex justify-content-between mb-2">
             <h5 className="text-body fw-semi-bold">Items subtotal: </h5>
             <h5 className="text-body fw-semi-bold">$691</h5>

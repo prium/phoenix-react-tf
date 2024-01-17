@@ -29,7 +29,7 @@ const EcomCartSummaryCard = () => {
             Apply
           </Button>
         </InputGroup>
-        <div className="d-flex justify-content-between border-y border-dashed py-3 mb-4">
+        <div className="d-flex justify-content-between border-y border-dashed border-translucent py-3 mb-4">
           <h4 className="mb-0">Total :</h4>
           <h4 className="mb-">
             {currencyFormat(695.2, { minimumFractionDigits: 2 })}

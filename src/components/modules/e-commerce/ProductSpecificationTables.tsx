@@ -119,12 +119,22 @@ const ProductSpecificationTables = () => {
       </div>
       <div>
         <h3 className="mb-3 mt-6 ms-4 fw-bold">In The Box</h3>
-        <p className="lh-sm border-top mb-0 py-3 px-4">iMac 24”</p>
-        <p className="lh-sm border-top mb-0 py-3 px-4">Magic Keyboard </p>
-        <p className="lh-sm border-top mb-0 py-3 px-4">Magic Mouse</p>
-        <p className="lh-sm border-top mb-0 py-3 px-4">143W power adapter</p>
-        <p className="lh-sm border-top mb-0 py-3 px-4">2m Power Cord</p>
-        <p className="lh-sm border-y mb-0 py-3 px-4">
+        <p className="lh-sm border-top border-translucent mb-0 py-3 px-4">
+          iMac 24”
+        </p>
+        <p className="lh-sm border-top border-translucent mb-0 py-3 px-4">
+          Magic Keyboard{' '}
+        </p>
+        <p className="lh-sm border-top border-translucent mb-0 py-3 px-4">
+          Magic Mouse
+        </p>
+        <p className="lh-sm border-top border-translucent mb-0 py-3 px-4">
+          143W power adapter
+        </p>
+        <p className="lh-sm border-top border-translucent mb-0 py-3 px-4">
+          2m Power Cord
+        </p>
+        <p className="lh-sm border-y border-translucent mb-0 py-3 px-4">
           USB-C to Lightning Cable
         </p>
       </div>

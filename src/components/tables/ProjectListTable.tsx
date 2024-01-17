@@ -136,9 +136,11 @@ export const projectListTableColumns: ColumnDef<Project>[] = [
 
 const ProjectListTable = () => {
   return (
-    <div className="border-bottom">
+    <div className="border-bottom border-translucent">
       <AdvanceTable
-        tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }}
+        tableProps={{
+          className: 'phoenix-table border-top border-translucent fs-9'
+        }}
       />
       <AdvanceTableFooter pagination className="py-3" />
     </div>

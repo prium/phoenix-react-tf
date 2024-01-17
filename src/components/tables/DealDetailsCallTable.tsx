@@ -143,7 +143,7 @@ const DealDetailsCallTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <AdvanceTableFooter pagination />
         </div>

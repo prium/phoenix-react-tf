@@ -139,7 +139,7 @@ const CustomerOrdersTable = () => {
 
   return (
     <AdvanceTableProvider {...table}>
-      <div className="border-y">
+      <div className="border-y border-translucent">
         <AdvanceTable
           tableProps={{ className: 'phoenix-table table-sm fs-9' }}
         />

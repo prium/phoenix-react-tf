@@ -19,7 +19,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="rounded-2 border d-inline-block"
+          className="rounded-2 border border-translucent d-inline-block"
         >
           <img src={productImage} alt="" width={40} height={40} />
         </Link>
@@ -101,7 +101,7 @@ const CustomerWishlistTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <AdvanceTableFooter pagination showViewAllBtn={false} />
         </div>

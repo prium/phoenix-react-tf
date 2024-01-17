@@ -12,7 +12,7 @@ const StoreItem = ({ store }: { store: StoreItemType }) => {
   return (
     <RevealDropdownTrigger className="hover-actions-trigger">
       <div
-        className="border d-flex flex-center rounded-3 mb-3 p-4"
+        className="border border-translucent d-flex flex-center rounded-3 mb-3 p-4"
         style={{ height: 180 }}
       >
         <img className="mw-100" src={store.logo} alt={store.name} />

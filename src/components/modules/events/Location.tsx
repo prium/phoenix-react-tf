@@ -8,7 +8,7 @@ const Location = () => {
   return (
     <div className="mb-8">
       <h3 className="mb-5 mb-xl-4">Location</h3>
-      <div className="mb-3 mb-xl-4 location-map border overflow-hidden">
+      <div className="mb-3 mb-xl-4 location-map border border-translucent overflow-hidden">
         <Mapbox
           className="border border-300 rounded-3"
           options={{

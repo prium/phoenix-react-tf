@@ -196,7 +196,12 @@ const EssentialFeatures = () => {
             <Row>
               {featureItems.map(item => (
                 <Col xs={12} sm={4} className="px-0" key={item.id}>
-                  <div className={classNames('mb-10 text-center', item.border)}>
+                  <div
+                    className={classNames(
+                      'mb-10 text-center border-translucent',
+                      item.border
+                    )}
+                  >
                     <img src={item.icon} alt="" className="img-fluid mb-4" />
                     <p>{item.title}</p>
                   </div>

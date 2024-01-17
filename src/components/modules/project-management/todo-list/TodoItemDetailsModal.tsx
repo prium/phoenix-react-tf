@@ -70,7 +70,7 @@ const TodoItemDetailsModal = ({
                           key={subTask.task}
                           task={subTask}
                           className={classNames({
-                            'border-top': index === 0
+                            'border-top border-translucent': index === 0
                           })}
                         />
                       ))}
@@ -89,7 +89,7 @@ const TodoItemDetailsModal = ({
                           key={attachment.name}
                           attachment={attachment}
                           className={classNames({
-                            'border-top': index === 0
+                            'border-top border-translucent': index === 0
                           })}
                         />
                       ))}

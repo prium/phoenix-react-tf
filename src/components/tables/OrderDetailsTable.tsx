@@ -107,7 +107,7 @@ const OrderDetailsTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <div className="d-flex flex-between-center py-3">
             <p className="text-body-emphasis fw-semi-bold lh-sm mb-0">

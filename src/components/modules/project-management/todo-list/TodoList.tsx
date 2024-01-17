@@ -57,7 +57,7 @@ const TodoList = () => {
               key={todo.task}
               todo={todo}
               className={classNames({
-                'border-top': index === 0
+                'border-top border-translucent': index === 0
               })}
               labelClassName="text-body"
               fullLayoutBreakpoints={['md', 'xxl']}
