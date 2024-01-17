@@ -10,7 +10,7 @@ const Location = () => {
       <h3 className="mb-5 mb-xl-4">Location</h3>
       <div className="mb-3 mb-xl-4 location-map border border-translucent overflow-hidden">
         <Mapbox
-          className="border border-300 rounded-3"
+          className="border rounded-3"
           options={{
             center: [-74.0020158, 40.7228022],
             zoom: 14,

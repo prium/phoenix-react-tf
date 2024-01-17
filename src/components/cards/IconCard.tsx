@@ -39,7 +39,7 @@ const IconCard = ({
   }, []);
 
   return (
-    <div className="border border-300 rounded-2 p-3 mb-4 text-center bg-body-emphasis dark__bg-gray-1000 shadow-sm">
+    <div className="border rounded-2 p-3 mb-4 text-center bg-body-emphasis dark__bg-gray-1000 shadow-sm">
       {iconFamily === 'font-awesome' && (
         <FontAwesomeIcon icon={icon as IconProp} className="text-body fs-5" />
       )}
@@ -55,7 +55,7 @@ const IconCard = ({
         type="text"
         readOnly
         value={text}
-        className="text-center text-dark bg-body-secondary dark__bg-1100 border-300 mt-3"
+        className="text-center text-dark bg-body-secondary dark__bg-1100 mt-3"
       />
 
       <Toast

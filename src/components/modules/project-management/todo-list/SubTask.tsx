@@ -18,7 +18,7 @@ const SubTask = ({
     <div
       className={classNames(
         className,
-        'd-flex flex-between-center hover-actions-trigger border-300 py-3 border-bottom'
+        'd-flex flex-between-center hover-actions-trigger py-3 border-bottom'
       )}
     >
       <Form.Check

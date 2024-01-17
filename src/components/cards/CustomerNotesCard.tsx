@@ -13,7 +13,7 @@ const Note = ({ note, date, isLast }: NoteProps) => {
   return (
     <div
       className={classNames('fs-9 fw-semi-bold', {
-        'border-bottom border-dashed border-300 pb-3 mb-4': !isLast
+        'border-bottom border-dashed pb-3 mb-4': !isLast
       })}
     >
       <p className="text-body-highlight mb-1">{note}</p>

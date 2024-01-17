@@ -52,7 +52,7 @@ const ChatWidgetConversation = () => {
       )}
       {conversation.messages.length > 0 && (
         <>
-          <hr className="my-4 border-dashed border-top border-300" />
+          <hr className="my-4 border-dashed border-top" />
           <div className="d-flex flex-column gap-2">
             {conversation.messages.map(message => (
               <Message

@@ -43,11 +43,7 @@ const BoardViewModal = ({
       <Modal.Body className="p-0">
         <ActionSection />
         <Row className="g-0">
-          <Col
-            xs={12}
-            xl={5}
-            className="border-end border-300 bg-body-highlight"
-          >
+          <Col xs={12} xl={5} className="border-end bg-body-highlight">
             <div className="px-5 px-lg-6 py-4 bg-body-emphasis">
               <h3 className="fw-bolder lh-sm mb-5">{project.name}</h3>
               <div className="d-flex align-items-center mb-5">

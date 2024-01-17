@@ -21,7 +21,7 @@ const NotificationItem = ({
     <div
       className={classNames(
         className,
-        'py-3 border-300 notification-card position-relative',
+        'py-3 notification-card position-relative',
         {
           unread: !notification.read,
           'px-4 px-lg-6': type === 'pageItem',

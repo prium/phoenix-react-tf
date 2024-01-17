@@ -39,7 +39,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
       align="end"
       className={classNames(
         className,
-        'navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border border-300'
+        'navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border'
       )}
     >
       <Card className="position-relative border-0">

@@ -37,7 +37,7 @@ const NineDotMenu = () => {
   return (
     <Dropdown.Menu
       align="end"
-      className="navbar-dropdown-caret py-0 dropdown-nine-dots shadow border border-300"
+      className="navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
     >
       <Card
         className="position-relative border-0"

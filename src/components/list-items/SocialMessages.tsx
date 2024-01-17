@@ -13,7 +13,7 @@ interface SocialMessagesProps {
 const SocialMessages = ({ messages }: SocialMessagesProps) => {
   return (
     <>
-      <div className="d-flex flex-between-center pb-3 border-bottom border-dashed border-300">
+      <div className="d-flex flex-between-center pb-3 border-bottom border-dashed">
         <h3 className="mb-0">
           Messages
           <span className="text-body-tertiary ms-2 fw-normal">(97)</span>

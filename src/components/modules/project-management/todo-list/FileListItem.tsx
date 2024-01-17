@@ -18,7 +18,7 @@ interface FileListItemProps {
 
 const FileListItem = ({ attachment, className }: FileListItemProps) => {
   return (
-    <div className={classNames(className, 'border-bottom border-300 py-4')}>
+    <div className={classNames(className, 'border-bottom py-4')}>
       <div>
         <div className="d-flex justify-content-between align-items-start">
           <div>

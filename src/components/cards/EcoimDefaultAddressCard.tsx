@@ -7,7 +7,7 @@ const EcoimDefaultAddressCard = () => {
   return (
     <Card className="h-100">
       <Card.Body>
-        <div className="border-bottom border-dashed border-300 mb-4">
+        <div className="border-bottom border-dashed mb-4">
           <h4 className="mb-3 lh-sm lh-xl-1">
             Default Address
             <Button variant="link" className="p-0 ms-3" type="button">
@@ -15,7 +15,7 @@ const EcoimDefaultAddressCard = () => {
             </Button>
           </h4>
         </div>
-        <div className="pb-7 pb-lg-4 pb-xl-7 mb-4 border-bottom border-300 border-dashed">
+        <div className="pb-7 pb-lg-4 pb-xl-7 mb-4 border-bottom border-dashed">
           <div className="d-flex flex-wrap justify-content-between">
             <h5 className="text-body-highlight">Address</h5>
             <p className="text-body-secondary">

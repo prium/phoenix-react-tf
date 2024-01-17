@@ -13,7 +13,7 @@ const EcomProfileCard = () => {
   return (
     <Card className="h-100">
       <Card.Body>
-        <div className="border-bottom border-dashed border-300 pb-4">
+        <div className="border-bottom border-dashed pb-4">
           <Row className="align-items-center g-3 g-sm-5 text-center text-sm-start">
             <Col xs={12} sm="auto">
               <AvatarUpload size="5xl" src={team15} />

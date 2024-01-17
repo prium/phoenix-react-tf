@@ -42,7 +42,7 @@ const CustomerProfileCard = () => {
           </Col>
         </Row>
 
-        <div className="d-flex flex-between-center border-top border-dashed border-300 pt-4">
+        <div className="d-flex flex-between-center border-top border-dashed pt-4">
           <div>
             <h6>Following</h6>
             <p className="fs-7 text-body-secondary mb-0">297</p>

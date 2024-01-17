@@ -29,7 +29,7 @@ const NavItem = ({ item, isLast }: { item: NavItemType; isLast?: boolean }) => {
       className={classNames(
         'text-center text-sm-start cursor-pointer outline-none d-sm-flex align-items-sm-center',
         {
-          'border-bottom-sm border-end border-end-sm-0 border-300': !isLast
+          'border-bottom-sm border-end border-end-sm-0': !isLast
         }
       )}
     >
@@ -75,9 +75,9 @@ const navItems: NavItemType[] = [
 const InventoryTab = () => {
   return (
     <Tab.Container id="left-tabs-example" defaultActiveKey="pricing">
-      <Row className="g-0 border-top border-bottom border-300">
+      <Row className="g-0 border-top border-bottom">
         <Col xs={12} sm={4}>
-          <Nav className="flex-sm-column border-bottom border-bottom-sm-0 border-end-sm border-300 fs-9 vertical-tab h-100 justify-content-between">
+          <Nav className="flex-sm-column border-bottom border-bottom-sm-0 border-end-sm fs-9 vertical-tab h-100 justify-content-between">
             {navItems.map((item, index) => (
               <NavItem
                 key={item.label}

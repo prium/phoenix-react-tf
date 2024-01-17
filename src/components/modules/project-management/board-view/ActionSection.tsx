@@ -12,8 +12,8 @@ import { Col, Dropdown, Row } from 'react-bootstrap';
 
 const ActionSection = () => {
   return (
-    <Row className="gx-0 gy-3 border-bottom border-300 px-5 px-lg-6 py-4 p-xl-0">
-      <Col xs={12} xl={5} className="border-end-xl border-300">
+    <Row className="gx-0 gy-3 border-bottom px-5 px-lg-6 py-4 p-xl-0">
+      <Col xs={12} xl={5} className="border-end-xl">
         <Row className="h-100 align-items-center px-xl-6 justify-content-between justify-content-xl-start">
           <Col xs="auto">
             <div>

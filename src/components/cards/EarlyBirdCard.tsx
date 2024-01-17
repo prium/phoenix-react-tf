@@ -9,7 +9,7 @@ import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 const EarlyBirdCard = () => {
   return (
-    <Card className="border-300 h-100 w-100 overflow-hidden">
+    <Card className="h-100 w-100 overflow-hidden">
       <div
         className="bg-card bg-holder d-block"
         style={{

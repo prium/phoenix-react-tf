@@ -166,7 +166,7 @@ const TodoListItem = ({
                 <p
                   className={classNames(
                     getBreakpointClasses('ps', [0, 3]),
-                    'text-body-tertiary fs-10 ps-lg-3 border-start-lg border-300 fw-bold mb-md-0 mb-0'
+                    'text-body-tertiary fs-10 ps-lg-3 border-start-lg fw-bold mb-md-0 mb-0'
                   )}
                 >
                   {todo.time}

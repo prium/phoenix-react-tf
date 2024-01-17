@@ -14,7 +14,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
       align="end"
       className={classNames(
         className,
-        'navbar-dropdown-caret py-0 notification-dropdown-menu shadow border border-300'
+        'navbar-dropdown-caret py-0 notification-dropdown-menu shadow border'
       )}
     >
       <Card className="position-relative border-0">

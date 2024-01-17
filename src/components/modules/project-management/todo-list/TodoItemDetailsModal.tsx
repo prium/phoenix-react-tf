@@ -27,7 +27,7 @@ const TodoItemDetailsModal = ({
     <Modal show={!!item} onHide={handleClose} size="xl">
       {item && (
         <>
-          <Modal.Header className="px-6 py-5 border-300 pe-sm-5 px-md-6 dark__bg-1100">
+          <Modal.Header className="px-6 py-5 pe-sm-5 px-md-6 dark__bg-1100">
             <h3 className="text-body-highlight fw-bolder mb-0">{item.task}</h3>
             <Button
               variant="phoenix-secondary"
@@ -39,7 +39,7 @@ const TodoItemDetailsModal = ({
           </Modal.Header>
           <Modal.Body className="bg-body-highlight px-5 px-sm-6 py-0 rounded-bottom">
             <Row className="gx-14">
-              <Col xs={12} lg={7} className="border-end-lg border-300">
+              <Col xs={12} lg={7} className="border-end-lg">
                 <div className="mt-6 mb-7">
                   <div className="mb-7">
                     <div className="d-flex align-items-center mb-3">
