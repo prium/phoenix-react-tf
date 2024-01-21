@@ -14,7 +14,7 @@ const WizardAccessDeniedModal = () => {
       centered
       onHide={() => setOpenDeniedModal(false)}
     >
-      <Modal.Header className="border-100 p-3">
+      <Modal.Header className="border-gray-100 p-3">
         <div className="h4 text-body-secondary mb-0">Access Denied!</div>
         <Button
           variant="link"

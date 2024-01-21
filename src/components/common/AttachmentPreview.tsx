@@ -34,7 +34,7 @@ const AttachmentPreview = ({
           {
             border: !attachment.preview,
             'text-body-quaternary border-500': variant === 'primary',
-            'border-white text-white': variant === 'secondary'
+            'border-light-subtle text-white': variant === 'secondary'
           }
         )}
       >

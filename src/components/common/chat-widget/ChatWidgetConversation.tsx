@@ -22,7 +22,7 @@ const ChatWidgetConversation = () => {
           src={conversation.user.avatar}
           size="3xl"
           status="online"
-          className="mx-auto border border-3 border-white"
+          className="mx-auto border border-3 border-light-subtle"
         />
         <h5 className="mt-2 mb-3">Eric</h5>
         <p className="text-center text-black mb-0">

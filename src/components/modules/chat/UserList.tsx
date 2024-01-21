@@ -52,7 +52,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
             src={conversation.user.avatar}
             size="xl"
             className="d-block"
-            imageClassName="border border-2 border-white"
+            imageClassName="border border-2 border-light-subtle"
           />
           {unseenMessageCount > 0 && (
             <span

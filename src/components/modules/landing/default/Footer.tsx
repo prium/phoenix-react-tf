@@ -20,7 +20,7 @@ const FooterList = ({
     <div
       className={classNames(
         className,
-        'border-dashed border-start border-primary-300 ps-3'
+        'border-dashed border-start border-primary-light ps-3'
       )}
       style={{ '--phoenix-border-opacity': '.2' } as CSSProperties}
     >

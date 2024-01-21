@@ -13,7 +13,7 @@ import { faClockRotateLeft, faLink } from '@fortawesome/free-solid-svg-icons';
 
 const ResultSectionHeader = ({ title }: { title: string }) => {
   return (
-    <h6 className="text-body-highlight fs-9 border-y border-200 py-2 lh-sm mb-0 px-3">
+    <h6 className="text-body-highlight fs-9 border-y border-translucent py-2 lh-sm mb-0 px-3">
       {title}
     </h6>
   );

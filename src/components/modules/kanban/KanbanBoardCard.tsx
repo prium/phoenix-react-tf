@@ -33,7 +33,7 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
           {board.users.map(user => (
             <Avatar
               size="m"
-              className="border rounded-circle border-white"
+              className="border rounded-circle border-light-subtle"
               src={user.avatar}
               key={user.id}
             />

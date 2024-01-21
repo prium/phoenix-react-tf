@@ -167,11 +167,6 @@
       --#{$prefix}offcanvas-bg: #{map-get($grays, '1100')};
     }
 
-    /* ------------------------------ dark classes ------------------------------ */
-    .dark__border-primary {
-      --phoenix-border-color: #{map-get($theme-colors, 'primary')} !important;
-    }
-
     /* ------------------------------- navbar-top ------------------------------- */
     --#{$prefix}navbar-top-bg-color: #{$gray-1100};
 

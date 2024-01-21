@@ -20,17 +20,17 @@ const DealForecasrProgressBar = () => {
 
       <ProgressBar className="mb-3 rounded-3" style={{ height: '10px' }}>
         <ProgressBar
-          className="border-end border-white border-2"
+          className="border-end border-light-subtle border-2"
           now={20.72}
           key={1}
         />
         <ProgressBar
-          className="bg-primary-light border-end border-white border-2"
+          className="bg-primary-light border-end border-light-subtle border-2"
           now={35.76}
           key={2}
         />
         <ProgressBar
-          className="bg-success border-end border-white border-2"
+          className="bg-success border-end border-light-subtle border-2"
           now={25.38}
           key={3}
         />

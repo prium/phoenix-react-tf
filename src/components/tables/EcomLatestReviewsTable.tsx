@@ -258,7 +258,7 @@ const EcomLatestReviewsTable = () => {
 
         <AdvanceTable
           tableProps={{
-            className: 'phoenix-table fs-9 mb-0 border-top border-200'
+            className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
           }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
