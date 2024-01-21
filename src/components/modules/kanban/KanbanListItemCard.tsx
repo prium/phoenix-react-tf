@@ -129,7 +129,7 @@ const KanbanListItemCard = ({
                       <Dropdown.Item
                         href="#!"
                         key={action.label}
-                        className="d-flex flex-between-center border-1"
+                        className="d-flex flex-between-center"
                       >
                         {action.label}
                         {action.isNested && (

@@ -18,7 +18,7 @@ const MutualNavigation = () => {
           <Col
             xs={12}
             key={item.label}
-            className="border-1 border-bottom border-translucent py-2"
+            className="border-bottom border-translucent py-2"
           >
             <Button
               variant="link"

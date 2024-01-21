@@ -14,7 +14,7 @@ const Brand = ({ image, className }: { image: string; className?: string }) => {
     <div
       className={classNames(
         className,
-        'p-2 p-lg-5 d-flex flex-center h-100 border-1 border-dashed border-translucent'
+        'p-2 p-lg-5 d-flex flex-center h-100 border-dashed border-translucent'
       )}
     >
       <img src={image} alt="" className="w-100" />
