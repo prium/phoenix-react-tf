@@ -18,7 +18,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     formatter: (params: CallbackDataParams) =>
@@ -46,7 +46,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         position: 'center',
         formatter: '{a}',
         fontSize: 23,
-        color: getThemeColor('dark')
+        color: getThemeColor('light-text-emphasis')
       },
       data: [
         { value: 7200000, name: 'Percentage discount' },

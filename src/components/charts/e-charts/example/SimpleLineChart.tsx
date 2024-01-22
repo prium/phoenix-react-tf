@@ -50,7 +50,7 @@ const getDefaultOptions = (
     padding: 10,
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('tertiary-bg'),
-    textStyle: { color: getThemeColor('dark') },
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {

@@ -6,7 +6,6 @@ import StackedLineChart from 'components/charts/e-charts/example/StackedLineChar
 import DocPageHeader from 'components/docs/DocPageHeader';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import DocPagesLayout from 'layouts/DocPagesLayout';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 const structureCode = `// import the core library.
@@ -103,7 +102,7 @@ const getDefaultOptions = (
     padding: 10,
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -250,7 +249,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {

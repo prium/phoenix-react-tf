@@ -26,7 +26,7 @@ const getDefaultOptions = (
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -96,7 +96,9 @@ const getDefaultOptions = (
       itemStyle: {
         color: getThemeColor('info-300'),
         borderColor:
-          theme === 'light' ? getThemeColor('white') : getThemeColor('dark'),
+          theme === 'light'
+            ? getThemeColor('white')
+            : getThemeColor('light-text-emphasis'),
         borderWidth: 2
       },
       areaStyle: {
