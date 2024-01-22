@@ -46,7 +46,7 @@ pre[class*='language-'] {
 }
 
 .components-nav {
-  font-family: $font-family-sans-serif;
+  font-family: var(--#{$prefix}font-sans-serif);
   font-size: 0.85rem;
 }
 
@@ -57,7 +57,7 @@ pre[class*='language-'] {
 |   Borders
 -----------------------------------------------*/
 .component-example {
-  font-family: $font-family-sans-serif;
+  font-family: var(--#{$prefix}font-sans-serif);
   [class^='border'] {
     display: inline-flex;
     align-items: center;

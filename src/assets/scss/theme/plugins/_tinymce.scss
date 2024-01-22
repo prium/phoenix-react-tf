@@ -12,7 +12,7 @@
     overflow: unset !important;
   }
   .tox-edit-area {
-    font-family: $font-family-sans-serif;
+    font-family: var(--#{$prefix}font-sans-serif);
   }
   .tox-toolbar--scrolling {
     background-color: transparent !important;

@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import defaultLight from 'assets/img/generic/default-light.png';
 import defaultDark from 'assets/img/generic/default-dark.png';
+import auto from 'assets/img/generic/auto.png';
 import RadioItem from './RadioItem';
 import { ThemeVariant } from 'config';
 
@@ -48,7 +49,7 @@ const ColorScheme = () => {
             label="Auto"
             name="theme"
             value="auto"
-            thumb={defaultDark}
+            thumb={auto}
             checked={theme === 'auto'}
             handleChange={handleThemeChange}
           />

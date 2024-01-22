@@ -133,7 +133,7 @@
   .nav-link {
     color: var(--#{$prefix}quaternary-color);
     font-weight: $font-weight-medium;
-    font-family: $font-family-sans-serif;
+    font-family: var(--#{$prefix}font-sans-serif);
     &.active {
       color: var(--#{$prefix}primary);
     }

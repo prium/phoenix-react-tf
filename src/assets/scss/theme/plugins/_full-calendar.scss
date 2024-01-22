@@ -207,7 +207,7 @@
     background-color: var(--#{$prefix}emphasis-bg);
     z-index: 1000;
     .fc-popover-title {
-      font-family: $font-family-sans-serif;
+      font-family: var(--#{$prefix}font-sans-serif);
     }
     .fc-daygrid-event {
       margin-left: 0 !important;

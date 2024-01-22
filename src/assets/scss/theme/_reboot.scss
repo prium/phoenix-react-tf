@@ -57,7 +57,7 @@ label,
 .pagination,
 .valid-feedback,
 .invalid-feedback {
-  font-family: $font-family-sans-serif;
+  font-family: var(--#{$prefix}font-sans-serif);
 }
 
 pre {

@@ -5,7 +5,7 @@
 // @import 'choices.js/src/styles/choices';
 
 .choices {
-  font-family: $font-family-sans-serif !important;
+  font-family: var(--#{$prefix}font-sans-serif) !important;
   .choices__inner {
     border-radius: $input-border-radius;
     line-height: 1.5rem !important;
