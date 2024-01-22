@@ -36,7 +36,7 @@ const CrmStatCard = ({
               >
                 <FontAwesomeIcon
                   icon={icon}
-                  className={`text-${color} fs-7 z-index-1 ms-2`}
+                  className={`text-${color} fs-7 z-1 ms-2`}
                 />
               </div>
               <p className="text-body-tertiary fs-9 mb-0 ms-2 mt-3">{label}</p>

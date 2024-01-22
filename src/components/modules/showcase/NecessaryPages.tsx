@@ -45,7 +45,7 @@ const NecessaryPages = () => {
                     <img
                       src={page.thumb}
                       alt=""
-                      className="img-fluid page-thumb rounded z-index-2"
+                      className="img-fluid page-thumb rounded z-2"
                     />
                   </div>
                   <h5 className="py-4 text-body-highlight">{page.pageName}</h5>

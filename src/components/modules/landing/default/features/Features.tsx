@@ -12,7 +12,7 @@ const Features = () => {
   return (
     <section className="bg-body pt-15 pb-18" id="features">
       <div className="container-small px-lg-7 px-xxl-3">
-        <div className="position-relative z-index-2">
+        <div className="position-relative z-2">
           <Row className="mb-12">
             <Col lg={6} className="text-center text-lg-start pe-xxl-3">
               <h4 className="text-primary fw-bolder mb-4">Features</h4>

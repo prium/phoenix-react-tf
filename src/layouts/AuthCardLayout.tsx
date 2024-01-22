@@ -86,7 +86,7 @@ const AuthCardLayout = ({
                       </li>
                     </ul>
                   </div>
-                  <div className="position-relative mb-6 d-none d-md-block text-center mt-md-15 z-index--1">
+                  <div className="position-relative mb-6 d-none d-md-block text-center mt-md-15 z-n1">
                     <img
                       className="auth-title-box-img d-dark-none"
                       src={authIllustrations}

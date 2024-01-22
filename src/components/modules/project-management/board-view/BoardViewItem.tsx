@@ -33,7 +33,7 @@ const BoardViewItem = ({ project }: { project: Project }) => {
             >
               {project.status.label}
             </Badge>
-            <div className="z-index-2">
+            <div className="z-2">
               <RevealDropdown btnClassName="btn-icon" icon={faEllipsisV}>
                 <ActionDropdownItems />
               </RevealDropdown>

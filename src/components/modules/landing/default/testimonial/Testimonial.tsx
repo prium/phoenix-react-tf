@@ -12,7 +12,7 @@ const Testimonial = () => {
         style={{ transform: 'skew(0,-10deg)' }}
       />
       <div
-        className="bg-holder z-index-2 d-none d-md-block"
+        className="bg-holder z-2 d-none d-md-block"
         style={{
           backgroundImage: `url(${bg13})`,
           backgroundSize: 'auto',
@@ -20,7 +20,7 @@ const Testimonial = () => {
         }}
       />
       <div
-        className="bg-holder z-index-2 d-none d-md-block d-lg-none d-xl-block"
+        className="bg-holder z-2 d-none d-md-block d-lg-none d-xl-block"
         style={{
           backgroundImage: `url(${bg12})`,
           backgroundSize: 'auto',
@@ -31,7 +31,7 @@ const Testimonial = () => {
       <section className="overflow-hidden position-static">
         <div className="container-small px-lg-7 px-xxl-3">
           <Row>
-            <Col lg={6} className="text-center text-lg-start z-index-2">
+            <Col lg={6} className="text-center text-lg-start z-2">
               <div>
                 <h4 className="text-primary fw-bolder mb-3">Testimonial</h4>
                 <h2 className="mb-3 text-black">
@@ -50,7 +50,7 @@ const Testimonial = () => {
                 </p>
               </div>
             </Col>
-            <Col lg={6} className="z-index-2">
+            <Col lg={6} className="z-2">
               <TestimonialCarousel />
             </Col>
           </Row>

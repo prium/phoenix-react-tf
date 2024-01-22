@@ -57,7 +57,7 @@ const EarlyBirdCard = () => {
           CRM related needs.{' '}
         </p>
       </Card.Body>
-      <Card.Footer className="border-0 py-0 px-5 z-index-1">
+      <Card.Footer className="border-0 py-0 px-5 z-1">
         <p className="text-body-tertiary fw-semibold">
           Follow{' '}
           <a href="https://themewagon.com/" target="_blank" rel="noreferrer">

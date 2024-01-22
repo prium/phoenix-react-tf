@@ -32,7 +32,7 @@ const Feature = () => {
       />
       <Container className="container-small position-relative py-8">
         <Row className="align-items-center gx-xxl-13">
-          <Col lg={6} className="mb-6 z-index-1">
+          <Col lg={6} className="mb-6 z-1">
             <img src={section63} alt="" className="mw-100" />
           </Col>
           <Col lg={6}>

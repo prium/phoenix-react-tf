@@ -13,7 +13,7 @@ const TeamSection = () => {
         style={{ transform: 'skew(0,-10deg)', top: '10%' }}
       />
       <div
-        className="bg-holder z-index-2"
+        className="bg-holder z-2"
         style={{
           backgroundImage: `url(${bgLeft17})`,
           backgroundSize: 'auto',
@@ -21,7 +21,7 @@ const TeamSection = () => {
         }}
       />
       <div
-        className="bg-holder z-index-2"
+        className="bg-holder z-2"
         style={{
           backgroundImage: `url(${bgRight17})`,
           backgroundSize: 'auto',

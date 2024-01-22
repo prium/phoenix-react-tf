@@ -29,7 +29,7 @@ const WidgetsSectionTitle = ({
       <div className="w-100">
         <h3 className="mb-0 text-primary position-relative fw-bold">
           <span className="bg-body pe-2">{title}</span>
-          <span className="border border-primary position-absolute top-50 translate-middle-y w-100 start-0 z-index--1"></span>
+          <span className="border border-primary position-absolute top-50 translate-middle-y w-100 start-0 z-n1"></span>
         </h3>
         <p className="mb-0">{subtitle}</p>
       </div>

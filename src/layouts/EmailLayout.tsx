@@ -35,7 +35,7 @@ const EmailLayout = ({
   }, []);
   return (
     <div className="email-container">
-      <Row className="gx-lg-4 gx-xl-6 gx-3 py-4 z-index-2 position-sticky bg-body email-header">
+      <Row className="gx-lg-4 gx-xl-6 gx-3 py-4 z-2 position-sticky bg-body email-header">
         <Col className="col-auto">
           <Button
             variant="primary"

@@ -35,7 +35,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
       >
         <div className="position-relative">
           <div
-            className="bg-holder z-index--1"
+            className="bg-holder z-n1"
             style={{
               backgroundImage: `url(${bg32})`,
               backgroundSize: 'auto'
