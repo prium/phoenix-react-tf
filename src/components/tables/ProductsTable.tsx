@@ -40,7 +40,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="fw-semi-bold line-clamp-3"
+          className="fw-semibold line-clamp-3"
         >
           {product}
         </Link>
@@ -73,7 +73,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Category',
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4' },
-      cellProps: { className: 'fs-9 fw-semi-bold ps-4 text-600' }
+      cellProps: { className: 'fs-9 fw-semibold ps-4 text-600' }
     }
   },
   {
@@ -117,7 +117,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     },
     meta: {
       headerProps: { style: { width: 200 }, className: 'ps-4' },
-      cellProps: { className: 'ps-4 fw-semi-bold text-start' }
+      cellProps: { className: 'ps-4 fw-semibold text-start' }
     }
   },
   {

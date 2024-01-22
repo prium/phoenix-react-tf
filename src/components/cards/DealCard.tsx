@@ -40,7 +40,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
         <div className="d-flex align-items-center justify-content-between mb-3">
           <FeatherIcon icon="clock" size={16} className="me-2" />
 
-          <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary flex-1">
+          <p className="mb-0 fs-9 fw-semibold text-body-tertiary flex-1">
             {deal.date} .{' '}
             <span className="text-body-quaternary">{deal.time}</span>
           </p>
@@ -77,7 +77,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
           </p>
           <p
             className={classNames(
-              'ms-auto fs-9 text-body-emphasis fw-semi-bold mb-0',
+              'ms-auto fs-9 text-body-emphasis fw-semibold mb-0',
               {
                 'd-none': deal.openDetails
               }
@@ -126,12 +126,12 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                         size={16}
                         className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Expected Revenue
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       {currencyFormat(deal.revenue, {
                         minimumFractionDigits: 2
                       })}
@@ -144,13 +144,13 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                         size={16}
                         className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Company Name
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
-                      <p className="align-items-center d-flex fs-9 fw-semi-bold gap-2 mb-0 text-body-emphasis">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
+                      <p className="align-items-center d-flex fs-9 fw-semibold gap-2 mb-0 text-body-emphasis">
                         {deal.company}
                         <Link to="#!">
                           <FontAwesomeIcon
@@ -180,12 +180,12 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                         size={16}
                         className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Closing Date & Time
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       {deal.closingDate} . <span>{deal.closingTime}</span>
                     </td>
                   </tr>
@@ -196,12 +196,12 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                         size={16}
                         className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-body-tertiary">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Assigned Agent
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-body-emphasis">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       <Form.Select
                         size="sm"
                         className="py-0 ms-n3 border-0 shadow-none"

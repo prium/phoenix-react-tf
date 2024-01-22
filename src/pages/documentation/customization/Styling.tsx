@@ -204,7 +204,7 @@ const Styling = () => {
             </p>
             <PhoenixLiveEditor code={darkThemeColorCode} />
 
-            <h6 className="mt-4 fs-7 mb-2 fw-semi-bold">All Colors</h6>
+            <h6 className="mt-4 fs-7 mb-2 fw-semibold">All Colors</h6>
             <p className="mb-1">
               All <strong>{process.env.REACT_APP_TITLE}</strong> colors are
               available as Sass variables and Sass map in{' '}

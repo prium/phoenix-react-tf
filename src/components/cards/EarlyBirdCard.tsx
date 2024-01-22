@@ -49,7 +49,7 @@ const EarlyBirdCard = () => {
           COMING SOON
         </Badge>
         <h3 className="mb-5">Early bird gets the warm leads!</h3>
-        <p className="text-body-tertiary fw-semi-bold">
+        <p className="text-body-tertiary fw-semibold">
           Phoenix CRM Dashboard is coming to{' '}
           <br className="d-none d-sm-block" />
           market soon for fulfilling your every{' '}
@@ -58,7 +58,7 @@ const EarlyBirdCard = () => {
         </p>
       </Card.Body>
       <Card.Footer className="border-0 py-0 px-5 z-index-1">
-        <p className="text-body-tertiary fw-semi-bold">
+        <p className="text-body-tertiary fw-semibold">
           Follow{' '}
           <a href="https://themewagon.com/" target="_blank" rel="noreferrer">
             ThemeWagon{' '}

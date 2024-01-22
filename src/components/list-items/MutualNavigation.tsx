@@ -22,7 +22,7 @@ const MutualNavigation = () => {
           >
             <Button
               variant="link"
-              className="ps-2 fs-8 text-body-secondary hover-primary fw-semi-bold"
+              className="ps-2 fs-8 text-body-secondary hover-primary fw-semibold"
               startIcon={<FontAwesomeIcon icon={item.icon} className="me-2" />}
             >
               {item.label}

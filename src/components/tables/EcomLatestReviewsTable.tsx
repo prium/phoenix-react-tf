@@ -51,7 +51,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="fw-semi-bold"
+          className="fw-semibold"
         >{`${product.slice(0, 46)}${product.length > 46 ? '...' : ''}`}</Link>
       );
     },
@@ -102,7 +102,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-body-highlight mb-0 line-clamp-3">
+        <p className="fs--1 fw-semibold text-body-highlight mb-0 line-clamp-3">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>

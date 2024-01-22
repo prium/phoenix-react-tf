@@ -37,7 +37,7 @@ const SocialCoverCard = () => {
           <Col xs="auto">
             <div className="d-flex flex-wrap mb-3 align-items-center">
               <h2 className="me-2">Erza Bridgest</h2>
-              <span className="fw-semi-bold fs-7 text-body-emphasis">
+              <span className="fw-semibold fs-7 text-body-emphasis">
                 u/hansolo
               </span>
             </div>
@@ -51,7 +51,7 @@ const SocialCoverCard = () => {
                   <Link to="#!" className="text-body-emphasis">
                     <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       1297
-                      <span className="fw-semi-bold ms-2 me-4">Followers</span>
+                      <span className="fw-semibold ms-2 me-4">Followers</span>
                     </span>
                   </Link>
                 </div>
@@ -63,7 +63,7 @@ const SocialCoverCard = () => {
                   <Link to="#!" className="text-body-emphasis">
                     <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       3971
-                      <span className="fw-semi-bold ms-2 me-4">Following</span>
+                      <span className="fw-semibold ms-2 me-4">Following</span>
                     </span>
                   </Link>
                 </div>
@@ -73,7 +73,7 @@ const SocialCoverCard = () => {
                     className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
                   <Link to="#!" className="text-body-emphasis">
-                    <span className="fs-7 fw-semi-bold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
+                    <span className="fs-7 fw-semibold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       Vancouver, Lothal
                     </span>
                   </Link>

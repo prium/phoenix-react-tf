@@ -25,7 +25,7 @@ const Comment = ({ comment, className }: CommentProps) => {
         >
           <Link
             to={comment.user.url}
-            className={classNames('fw-semi-bold', {
+            className={classNames('fw-semibold', {
               'text-body-highlight text-decoration-none': comment.own
             })}
           >
@@ -44,7 +44,7 @@ const Comment = ({ comment, className }: CommentProps) => {
         )}
       </Col>
       <Col xs={{ span: 12, order: 1 }} sm={{ span: 'auto', order: 0 }}>
-        <p className="text-body-secondary fw-semi-bold fs-10 mb-0">
+        <p className="text-body-secondary fw-semibold fs-10 mb-0">
           Oct 4 at 12:18 pm
         </p>
       </Col>

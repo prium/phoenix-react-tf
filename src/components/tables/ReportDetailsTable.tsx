@@ -11,7 +11,7 @@ const columns: ColumnDef<SellerReport>[] = [
     accessorKey: 'reportStage',
     meta: {
       cellProps: {
-        className: 'fw-semi-bold text-body-highlight py-2'
+        className: 'fw-semibold text-body-highlight py-2'
       },
       headerProps: {
         style: { width: '35%' },
@@ -24,7 +24,7 @@ const columns: ColumnDef<SellerReport>[] = [
     header: 'Total count',
     meta: {
       cellProps: {
-        className: 'text-end fw-semi-bold text-body-highlight ps-4 py-2'
+        className: 'text-end fw-semibold text-body-highlight ps-4 py-2'
       },
       headerProps: {
         style: { width: '35%' },

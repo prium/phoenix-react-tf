@@ -39,7 +39,7 @@ const Invoice = () => {
                       <h6 className="mb-0 me-3">Invoice No :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                      <p className="fs-9 text-body-secondary fw-semibold mb-0">
                         #FLR978282
                       </p>
                     </Col>
@@ -51,7 +51,7 @@ const Invoice = () => {
                       <h6 className="me-3">Invoice Date :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                      <p className="fs-9 text-body-secondary fw-semibold mb-0">
                         19.06.2019
                       </p>
                     </Col>
@@ -63,7 +63,7 @@ const Invoice = () => {
               <Row className="g-4 gy-lg-5">
                 <Col xs={12} lg={8}>
                   <h6 className="mb-2 me-3">Sold by :</h6>
-                  <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     PhoenixMart
                     <br />
                     36 greendowm road, California, Usa
@@ -71,25 +71,25 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> PAN No :</h6>
-                  <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     XVCJ963782008
                   </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> GST Reg No :</h6>
-                  <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     IX9878123TC
                   </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order No :</h6>
-                  <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     A-8934792734
                   </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order Date :</h6>
-                  <p className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     19.06.2019
                   </p>
                 </Col>
@@ -99,7 +99,7 @@ const Invoice = () => {
               <Row className="g-4">
                 <Col xs={12} lg={6}>
                   <h6 className="mb-2"> Billing Address :</h6>
-                  <div className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <div className="fs-9 text-body-secondary fw-semibold mb-0">
                     <p className="mb-2">John Doe,</p>
                     <p className="mb-2">
                       36, Gree Donwtonwn,
@@ -112,7 +112,7 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={6}>
                   <h6 className="mb-2"> Shipping Address :</h6>
-                  <div className="fs-9 text-body-secondary fw-semi-bold mb-0">
+                  <div className="fs-9 text-body-secondary fw-semibold mb-0">
                     <p className="mb-2">John Doe,</p>
                     <p className="mb-2">
                       36, Gree Donwtonwn,

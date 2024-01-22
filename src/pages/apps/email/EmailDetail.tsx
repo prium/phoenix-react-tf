@@ -87,10 +87,10 @@ const EmailDetail = () => {
                   <p className="mb-0 fs-9">
                     <span className="text-body-tertiary me-1">to</span>
                     <span className="fw-bold text-body-secondary me-1">Me</span>
-                    <span className="text-body-highlight fw-semi-bold fs-10 me-1">
+                    <span className="text-body-highlight fw-semibold fs-10 me-1">
                       28 Aug, 2021
                     </span>
-                    <span className="fw-semi-bold text-body fs-10 me-1">
+                    <span className="fw-semibold text-body fs-10 me-1">
                       6:32 PM
                     </span>
                     <FontAwesomeIcon

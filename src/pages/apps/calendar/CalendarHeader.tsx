@@ -66,7 +66,7 @@ const CalendarHeader = () => {
             <FontAwesomeIcon icon={faChevronLeft} />
           </Button>
           {calendarApi && (
-            <h3 className="px-3 text-body-emphasis fw-semi-bold mb-0">
+            <h3 className="px-3 text-body-emphasis fw-semibold mb-0">
               {title || calendarApi.view.title}
             </h3>
           )}

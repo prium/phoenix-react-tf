@@ -7,7 +7,7 @@ const ConversationStarter = () => {
     <div className="d-flex align-items-end justify-content-center text-center h-100">
       <div>
         This is the beginning of your private chat with{' '}
-        <a href="#!" className="fw-semi-bold">
+        <a href="#!" className="fw-semibold">
           {currentConversation?.user.name}
         </a>
         . You have 237 mutual connections.

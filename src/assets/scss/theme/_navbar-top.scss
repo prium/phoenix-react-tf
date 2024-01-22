@@ -42,7 +42,7 @@
 .navbar-top {
   width: 100%;
   font-size: map_get($font-sizes, '9');
-  font-weight: $font-weight-semi-bold;
+  font-weight: $font-weight-semibold;
   padding: 0;
   background: var(--#{$prefix}navbar-top-bg-color);
   min-height: $navbar-top-height;
@@ -109,7 +109,7 @@
       --#{$prefix}nav-link-hover-color: var(--#{$prefix}black);
       padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2)
         map-get($spacers, 6);
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
       &:hover {
         background: var(--#{$prefix}body-highlight-bg);
       }
@@ -480,7 +480,7 @@
 
     .dropdown-item {
       color: var(--#{$prefix}navbar-top-link-color);
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
       line-height: $line-height-sm;
       &:focus {
         background-color: transparent;

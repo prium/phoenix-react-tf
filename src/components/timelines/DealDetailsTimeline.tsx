@@ -39,7 +39,7 @@ const DealDetailsTimeline = ({ activities }: { activities: Activity[] }) => {
                     icon={faCalendarDays}
                     className="text-primary me-2"
                   />
-                  <span className="fw-semi-bold">{activity.date}</span>
+                  <span className="fw-semibold">{activity.date}</span>
                 </div>
               </div>
               {activity.description && (

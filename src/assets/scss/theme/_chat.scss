@@ -43,7 +43,7 @@
           }
           .message {
             color: var(--#{$prefix}secondary-color) !important;
-            font-weight: $font-weight-semi-bold !important;
+            font-weight: $font-weight-semibold !important;
           }
         }
       }
@@ -137,7 +137,7 @@
       content: attr(placeholder);
       pointer-events: none;
       color: var(--#{$prefix}quaternary-color);
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
     }
   }
 }

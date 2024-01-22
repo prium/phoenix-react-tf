@@ -28,7 +28,7 @@ const WizardAccessDeniedModal = () => {
         <div className="d-flex align-items-center">
           <img className="me-4" src={stopIcon} />
           <div className="flex-1">
-            <p className="mb-0 fw-semi-bold text-body-tertiary">
+            <p className="mb-0 fw-semibold text-body-tertiary">
               You do not have the link to access. Please start <br />
               over to get access for the next session.
               <br />

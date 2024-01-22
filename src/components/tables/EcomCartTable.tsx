@@ -48,7 +48,7 @@ const EcomCartTable = ({ products }: EcomCartTableProps) => {
 
           <tr className="cart-table-row">
             <td
-              className="text-body-emphasis fw-semi-bold ps-0 fs-8"
+              className="text-body-emphasis fw-semibold ps-0 fs-8"
               colSpan={6}
             >
               Items subtotal :
@@ -77,15 +77,15 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
         </div>
       </td>
       <td>
-        <Link className="fw-semi-bold line-clamp-2" to="#!">
+        <Link className="fw-semibold line-clamp-2" to="#!">
           {product.name}
         </Link>
       </td>
       <td className="white-space-nowrap">{product.color}</td>
-      <td className="white-space-nowrap text-body-tertiary fw-semi-bold">
+      <td className="white-space-nowrap text-body-tertiary fw-semibold">
         {product.size}
       </td>
-      <td className="fw-semi-bold text-end">{currencyFormat(product.price)}</td>
+      <td className="fw-semibold text-end">{currencyFormat(product.price)}</td>
       <td className="fs-8 ps-5">
         <QuantityButtons
           type="secondary"

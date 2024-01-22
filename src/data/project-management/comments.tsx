@@ -28,7 +28,7 @@ export const comments: Comment[] = [
     attachment: bg42,
     date: 'Oct 3 at 4:38 pm',
     details: (
-      <p className="text-body-highlight fw-semi-bold fs-9 mb-0">Fruit blast</p>
+      <p className="text-body-highlight fw-semibold fs-9 mb-0">Fruit blast</p>
     )
   },
   {
@@ -60,7 +60,7 @@ export const comments: Comment[] = [
     date: 'Oct 5 at 9:59 am',
     details: (
       <div className="d-flex text-body-secondary fs-9">
-        <p className="mb-0 fw-semi-bold text-body-highlight">
+        <p className="mb-0 fw-semibold text-body-highlight">
           <FontAwesomeIcon
             icon={faCircle}
             className="text-primary"
@@ -69,7 +69,7 @@ export const comments: Comment[] = [
           Doing
         </p>
         <span className="mx-2">to</span>
-        <p className="mb-0 fw-semi-bold text-body-highlight">
+        <p className="mb-0 fw-semibold text-body-highlight">
           <FontAwesomeIcon
             icon={faCircle}
             className="text-primary"

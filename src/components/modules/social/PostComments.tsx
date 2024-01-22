@@ -26,7 +26,7 @@ const PostComments = ({ comments }: PostCommentsProps) => {
               >
                 {comment.name}
               </Link>
-              <span className="text-body-tertiary text-opacity-85 fw-semi-bold fs-10 ms-2">
+              <span className="text-body-tertiary text-opacity-85 fw-semibold fs-10 ms-2">
                 {comment.time}
               </span>
             </div>

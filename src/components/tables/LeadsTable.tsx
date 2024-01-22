@@ -32,7 +32,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
               {name}
             </Link>
             <div className="d-flex align-items-center">
-              <p className="mb-0 text-body-highlight fw-semi-bold fs-9 me-2">
+              <p className="mb-0 text-body-highlight fw-semibold fs-9 me-2">
                 {designation}
               </p>
               <Badge variant="phoenix" bg={type}>
@@ -75,7 +75,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       },
       cellProps: {
         className:
-          'white-space-nowrap fw-semi-bold ps-4 border-end border-translucent'
+          'white-space-nowrap fw-semibold ps-4 border-end border-translucent'
       }
     }
   },
@@ -106,7 +106,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       },
       cellProps: {
         className:
-          'white-space-nowrap fw-semi-bold ps-4 border-end border-translucent'
+          'white-space-nowrap fw-semibold ps-4 border-end border-translucent'
       }
     }
   },
@@ -130,7 +130,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       },
       cellProps: {
         className:
-          'white-space-nowrap ps-4 border-end border-translucent fw-semi-bold text-body-highlight'
+          'white-space-nowrap ps-4 border-end border-translucent fw-semibold text-body-highlight'
       }
     }
   },
@@ -154,7 +154,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       },
       cellProps: {
         className:
-          'white-space-nowrap ps-4 border-end border-translucent fw-semi-bold text-body-highlight'
+          'white-space-nowrap ps-4 border-end border-translucent fw-semibold text-body-highlight'
       }
     }
   },

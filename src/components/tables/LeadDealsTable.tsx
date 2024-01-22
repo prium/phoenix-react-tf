@@ -42,7 +42,7 @@ const columns: ColumnDef<LeadDeal>[] = [
     header: 'deal name',
     accessorKey: 'name',
     cell: ({ row: { original } }) => (
-      <Link to="#!" className="fw-semi-bold">
+      <Link to="#!" className="fw-semibold">
         {original.name}
       </Link>
     ),
@@ -97,7 +97,7 @@ const columns: ColumnDef<LeadDeal>[] = [
     },
     meta: {
       headerProps: { style: { minWidth: 100, width: '20%' } },
-      cellProps: { className: 'text-body-tertiary fw-semi-bold' }
+      cellProps: { className: 'text-body-tertiary fw-semibold' }
     }
   },
   {
@@ -124,7 +124,7 @@ const columns: ColumnDef<LeadDeal>[] = [
         style: { minWidth: 140, width: '15%' },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {

@@ -43,7 +43,7 @@ const CardViewModal = ({
           <Col xs={12} xl={9}>
             <div className="mb-4">
               <h3 className="fw-bolder lh-sm">{project.name}</h3>
-              <p className="text-body-highlight fw-semi-bold mb-0">
+              <p className="text-body-highlight fw-semibold mb-0">
                 In list
                 <Link className="ms-1 fw-bold" to="#!">
                   Review

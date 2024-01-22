@@ -163,7 +163,7 @@
     .nav-link {
       color: var(--#{$prefix}tertiary-color);
       font-size: map-get($font-sizes, '9');
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
       padding: 0;
       &.active,
       &:hover {

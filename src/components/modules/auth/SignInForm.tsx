@@ -58,7 +58,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
         <Col xs="auto">
           <Link
             to={`/pages/authentication/${layout}/forgot-password`}
-            className="fs-9 fw-semi-bold"
+            className="fs-9 fw-semibold"
           >
             Forgot Password?
           </Link>

@@ -56,7 +56,7 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
           />
           {unseenMessageCount > 0 && (
             <span
-              className="bg-primary rounded-circle top-0 end-0 position-absolute text-white d-flex flex-center fs-10 fw-semi-bold d-none d-sm-flex d-xl-none lh-1"
+              className="bg-primary rounded-circle top-0 end-0 position-absolute text-white d-flex flex-center fs-10 fw-semibold d-none d-sm-flex d-xl-none lh-1"
               style={{ height: '1rem', width: '1rem' }}
             >
               {unseenMessageCount}

@@ -33,7 +33,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link to={`mailto:${email}`} className="fw-semi-bold">
+        <Link to={`mailto:${email}`} className="fw-semibold">
           {email}
         </Link>
       );
@@ -48,7 +48,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Orders',
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end px-1' },
-      cellProps: { className: 'fw-semi-bold text-body-highlight text-end px-1' }
+      cellProps: { className: 'fw-semibold text-body-highlight text-end px-1' }
     }
   },
   {

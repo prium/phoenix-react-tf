@@ -39,7 +39,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 >
                   {post.author.name}
                 </Link>
-                <p className="fs-10 mb-0 text-600 fw-semi-bold">
+                <p className="fs-10 mb-0 text-600 fw-semibold">
                   {post.time}
                   {post.location && (
                     <>

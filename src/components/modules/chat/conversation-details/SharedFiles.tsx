@@ -11,7 +11,7 @@ const SharedFiles = () => {
     <div className="d-flex gap-3 my-3">
       <FontAwesomeIcon icon={faFolder} className="fs-9" />
       <div className="flex-1">
-        <h6 className="fw-semi-bold mb-2">Shared Files</h6>
+        <h6 className="fw-semibold mb-2">Shared Files</h6>
         <div className="mb-2">
           {files.map((file, index) => (
             <div

@@ -45,7 +45,7 @@ const TeamSection = () => {
                       className="w-70 w-sm-100 rounded-4 mb-3"
                     />
                     <h4>{member.name}</h4>
-                    <h5 className="fw-semi-bold">{member.designation}</h5>
+                    <h5 className="fw-semibold">{member.designation}</h5>
                   </div>
                 </Col>
               ))}

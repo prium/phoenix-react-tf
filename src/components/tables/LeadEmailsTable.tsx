@@ -36,7 +36,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
       }
     }) => (
       <>
-        <Link to="#!" className="fw-semi-bold">
+        <Link to="#!" className="fw-semibold">
           {mail.subject}
         </Link>
         <p className="mb-0 fs-10">{mail.email}</p>
@@ -110,7 +110,7 @@ export const leadEmailsColumns: ColumnDef<LeadEmail>[] = [
         style: { minWidth: 100, width: '15%' },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {

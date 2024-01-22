@@ -55,7 +55,7 @@ const BasicTimeline = ({ data }: { data: TimelineItem[] }) => {
                   })}
                 >
                   by{' '}
-                  <Link to="#!" className="fw-semi-bold">
+                  <Link to="#!" className="fw-semibold">
                     {item.tasker}
                   </Link>
                 </h6>

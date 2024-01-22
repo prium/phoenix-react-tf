@@ -55,7 +55,7 @@ const PricingGrid = () => {
               <br className="d-none d-xl-block d-xxl-none" />
               maximum user limit for Enterprise plans.
             </p>
-            <p className="fw-semi-bold">
+            <p className="fw-semibold">
               Phoenix customers may have access to additional features for a
               limited <br className="d-none d-sm-block d-lg-none" />
               promotional period.
@@ -78,7 +78,7 @@ const PricingGrid = () => {
           </div>
         </Col>
         <Col xxl={3} className="mt-8">
-          <h3 className="fw-semi-bold mb-3">Included in our all packages</h3>
+          <h3 className="fw-semibold mb-3">Included in our all packages</h3>
           <PricingPackageList features={pricingGridFeatures} />
         </Col>
       </Row>

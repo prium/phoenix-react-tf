@@ -60,7 +60,7 @@ const ConversationDetails = ({
         </div>
         <div className="d-flex flex-column align-items-center text-center">
           <Avatar src={conversation.user.avatar} size="4xl" className="mb-2" />
-          <h4 className="fw-semi-bold mb-3">{conversation.user.name}</h4>
+          <h4 className="fw-semibold mb-3">{conversation.user.name}</h4>
           <div className="d-flex gap-1">
             <Button variant="primary" className="btn-icon fs-10">
               <FontAwesomeIcon icon={faPhone} />

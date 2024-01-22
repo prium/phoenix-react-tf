@@ -53,7 +53,7 @@ const Features = () => {
                   />
                   <div>
                     <h5 className="fw-bolder mb-2">Lightning Speed</h5>
-                    <p className="fw-semi-bold lh-sm">
+                    <p className="fw-semibold lh-sm">
                       Present everything you need in one place within minutes!
                       Grow with Phoenix!
                     </p>
@@ -77,7 +77,7 @@ const Features = () => {
                   />
                   <div>
                     <h5 className="fw-bolder mb-2">All-in-one solution</h5>
-                    <p className="fw-semi-bold lh-sm">
+                    <p className="fw-semibold lh-sm">
                       Show your production and growth graph in one place with
                       Phoenix!
                     </p>

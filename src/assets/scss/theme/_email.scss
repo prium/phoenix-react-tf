@@ -3,7 +3,7 @@
   padding: map-get($spacers, 5);
   .nav-link {
     color: var(--#{$prefix}body-color);
-    font-weight: $font-weight-semi-bold;
+    font-weight: $font-weight-semibold;
     &:hover {
       color: var(--#{$prefix}emphasis-color);
     }

@@ -9,7 +9,7 @@ const MyFavoriteStores = () => {
       <div className="d-flex flex-between-center mb-5">
         <div>
           <h3 className="text-body-emphasis mb-2">My Favorite Stores</h3>
-          <h5 className="text-body-tertiary fw-semi-bold">
+          <h5 className="text-body-tertiary fw-semibold">
             Essential for a better life
           </h5>
         </div>

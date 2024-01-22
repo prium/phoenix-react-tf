@@ -20,7 +20,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => {
       const { orderId } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">
+        <Link to="#!" className="fw-semibold">
           #{orderId}
         </Link>
       );
@@ -35,7 +35,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.total),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end pe-7' },
-      cellProps: { className: 'text-end fw-semi-bold text-body-highlight pe-7' }
+      cellProps: { className: 'text-end fw-semibold text-body-highlight pe-7' }
     }
   },
   {

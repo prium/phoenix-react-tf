@@ -84,16 +84,16 @@ const InfoItem = ({
       <td className="py-2 d-none d-sm-block pe-sm-2">:</td>
       <td className="py-2">
         {data.title === 'Email' ? (
-          <Link to={`mailto:${data.value}`} className="fw-semi-bold">
+          <Link to={`mailto:${data.value}`} className="fw-semibold">
             {data.value}
           </Link>
         ) : data.title === 'Phone' ? (
-          <Link to={`tel:${data.value}`} className="fw-semi-bold">
+          <Link to={`tel:${data.value}`} className="fw-semibold">
             {data.value}
           </Link>
         ) : (
           <p
-            className={classNames('ps-6 ps-sm-0 fw-semi-bold mb-0 py-0 pe-0', {
+            className={classNames('ps-6 ps-sm-0 fw-semibold mb-0 py-0 pe-0', {
               'pb-3 pb-sm-0': index === 0
             })}
           >

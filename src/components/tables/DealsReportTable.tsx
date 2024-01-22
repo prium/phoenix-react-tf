@@ -67,7 +67,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
         className: 'text-nowrap'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-body'
+        className: 'white-space-nowrap fw-semibold text-body'
       }
     }
   },

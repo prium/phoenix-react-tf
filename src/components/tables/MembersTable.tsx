@@ -14,7 +14,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
       return (
         <Link to="#!" className=" d-flex align-items-center text-body">
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-body-emphasis fw-semi-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-semibold">{name}</p>
         </Link>
       );
     },
@@ -32,7 +32,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link to={`mailto:${email}`} className="fw-semi-bold">
+        <Link to={`mailto:${email}`} className="fw-semibold">
           {email}
         </Link>
       );

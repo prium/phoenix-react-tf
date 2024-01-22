@@ -10,7 +10,7 @@ const DealForecast = () => {
         <Col xs="auto">
           <h3>
             Deal Forecast
-            <span className="fw-semi-bold">- $90,303</span>
+            <span className="fw-semibold">- $90,303</span>
           </h3>
           <p className="text-body-tertiary mb-1">Show what you offer here</p>
         </Col>

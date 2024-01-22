@@ -23,7 +23,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
             </h3>
             <div className="d-flex align-items-center mb-4">
               <h5 className="mb-0 me-4">USD $12,000.00</h5>
-              <h5 className="fw-semi-bold">
+              <h5 className="fw-semibold">
                 <FeatherIcon
                   icon="grid"
                   className="d-inline-block lh-sm me-1"

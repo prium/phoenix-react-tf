@@ -36,7 +36,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">
+        <Link to="#!" className="fw-semibold line-clamp-1">
           {product}
         </Link>
       );
@@ -59,7 +59,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-body-tertiary fw-semi-bold' }
+      cellProps: { className: 'text-body-tertiary fw-semibold' }
     }
   },
   {
@@ -68,7 +68,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end' },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {

@@ -41,7 +41,7 @@ const ChatWidgetConversation = () => {
                 { 'mb-2': index !== suggestions.length - 1 }
               )}
             >
-              <p className="mb-0 fw-semi-bold fs-9">{message}</p>
+              <p className="mb-0 fw-semibold fs-9">{message}</p>
               <FontAwesomeIcon
                 icon={faPaperPlane}
                 className="text-primary fs-9 ms-3"

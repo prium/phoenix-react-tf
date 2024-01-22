@@ -57,7 +57,7 @@ const SocialProfileCard = ({
                 />
                 <h6 className="mb-0">
                   1297
-                  <span className="fw-semi-bold ms-1">Followers</span>
+                  <span className="fw-semibold ms-1">Followers</span>
                 </h6>
               </div>
               <div className="d-flex">
@@ -67,13 +67,13 @@ const SocialProfileCard = ({
                 />
                 <h6 className="mb-0">
                   3971
-                  <span className="fw-semi-bold ms-1">Following</span>
+                  <span className="fw-semibold ms-1">Following</span>
                 </h6>
               </div>
             </div>
             {showAbout && (
               <div className="mt-4">
-                <p className="fw-semi-bold mb-0">
+                <p className="fw-semibold mb-0">
                   About me
                   <Link to="#!">
                     <FontAwesomeIcon

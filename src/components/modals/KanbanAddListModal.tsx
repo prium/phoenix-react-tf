@@ -65,7 +65,7 @@ const KanbanAddListModal = () => {
     <Modal show={openAddListModal} centered onHide={handleClose}>
       <Modal.Header className="p-4 d-flex gap-2 border-0">
         <img src={boardIcon} height={24} width={18} />
-        <h3 className="mb-0 text-body-emphasis fw-semi-bold flex-1">
+        <h3 className="mb-0 text-body-emphasis fw-semibold flex-1">
           Phoenix Kanban
         </h3>
         <Button className="p-0" onClick={handleClose}>

@@ -82,7 +82,7 @@ html:not(.navbar-vertical-collapsed) {
     .navbar-nav {
       flex-direction: column;
       font-size: $navbar-vertical-link-font-size;
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
 
       .nav-link {
         word-break: break-word;

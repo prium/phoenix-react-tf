@@ -72,7 +72,7 @@ const AttachmentPreview = ({
         </h6>
         <div
           className={classNames(
-            'd-flex align-items-center lh-1 fw-semi-bold fs-10',
+            'd-flex align-items-center lh-1 fw-semibold fs-10',
             {
               'text-body-tertiary': variant == 'primary',
               'text-light': variant == 'secondary'

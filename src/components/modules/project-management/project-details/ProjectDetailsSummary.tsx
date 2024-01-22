@@ -37,7 +37,7 @@ const ProjectDetailsSummary = () => {
                 </div>
               </td>
               <td className="ps-1 py-1">
-                <Link className="fw-semi-bold d-block lh-sm" to="#!">
+                <Link className="fw-semibold d-block lh-sm" to="#!">
                   Gobble the Bleep Inc
                 </Link>
               </td>
@@ -62,7 +62,7 @@ const ProjectDetailsSummary = () => {
               <td className="align-top py-1 text-body text-nowrap fw-bold">
                 Started :{' '}
               </td>
-              <td className="text-body-tertiary text-opacity-85 fw-semi-bold ps-3">
+              <td className="text-body-tertiary text-opacity-85 fw-semibold ps-3">
                 17th Nov, 2020
               </td>
             </tr>
@@ -70,7 +70,7 @@ const ProjectDetailsSummary = () => {
               <td className="align-top py-1 text-body text-nowrap fw-bold">
                 Deadline :
               </td>
-              <td className="text-body-tertiary text-opacity-85 fw-semi-bold ps-3">
+              <td className="text-body-tertiary text-opacity-85 fw-semibold ps-3">
                 21st May, 2028
               </td>
             </tr>
@@ -78,7 +78,7 @@ const ProjectDetailsSummary = () => {
               <td className="align-top py-1 text-body text-nowrap fw-bold">
                 Progress :
               </td>
-              <td className="text-warning fw-semi-bold ps-3">80%</td>
+              <td className="text-warning fw-semibold ps-3">80%</td>
             </tr>
           </tbody>
         </table>

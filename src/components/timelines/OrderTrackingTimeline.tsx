@@ -15,7 +15,7 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
           >
             <div className="col-12 col-md-auto d-flex">
               <Timeline.OppositeContent>
-                <p className="fs-10 fw-semi-bold text-body-tertiary mb-0 text-end">
+                <p className="fs-10 fw-semibold text-body-tertiary mb-0 text-end">
                   {item.oppositeContent.date}
                   <br className="d-none d-md-block" />{' '}
                   {item.oppositeContent.time}

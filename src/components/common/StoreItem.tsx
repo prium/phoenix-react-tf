@@ -21,7 +21,7 @@ const StoreItem = ({ store }: { store: StoreItemType }) => {
       <div className="mb-1 fs-9">
         <Rating initialValue={store.rating} readonly />
       </div>
-      <p className="text-body-quaternary fs-9 mb-2 fw-semi-bold">
+      <p className="text-body-quaternary fs-9 mb-2 fw-semibold">
         ({store.rated} people rated)
       </p>
       <Link className="p-0 fs-9 fw-bold" to="#!">

@@ -53,7 +53,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Client :{' '}
-              <span className="fw-semi-bold text-primary ms-1">
+              <span className="fw-semibold text-primary ms-1">
                 {' '}
                 Gusteau’s Restaurant
               </span>
@@ -71,7 +71,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
               </span>
             </p>
           </div>
-          <div className="d-flex justify-content-between text-body-tertiary fw-semi-bold">
+          <div className="d-flex justify-content-between text-body-tertiary fw-semibold">
             <p className="mb-2"> Progress</p>
             <p className="mb-2 text-body-emphasis">{progress}%</p>
           </div>
@@ -85,7 +85,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-4">
               <p className="mb-0 fw-bold fs-9">
                 Started :
-                <span className="fw-semi-bold text-body-tertiary text-opactity-85 ms-1">
+                <span className="fw-semibold text-body-tertiary text-opactity-85 ms-1">
                   {project.start}
                 </span>
               </p>
@@ -93,7 +93,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-2">
               <p className="mb-0 fw-bold fs-9">
                 Deadline :{' '}
-                <span className="fw-semi-bold text-body-tertiary text-opactity-85 ms-1">
+                <span className="fw-semibold text-body-tertiary text-opactity-85 ms-1">
                   {project.deadline}
                 </span>
               </p>

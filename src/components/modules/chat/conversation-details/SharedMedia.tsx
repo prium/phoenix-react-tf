@@ -16,7 +16,7 @@ const SharedMedia = () => {
     <div className="d-flex gap-3 my-3">
       <FontAwesomeIcon icon={faPhotoFilm} className="fs-9" />
       <div>
-        <h6 className="fw-semi-bold mb-2">Shared Media</h6>
+        <h6 className="fw-semibold mb-2">Shared Media</h6>
         <Row className="g-2">
           {attachments.map((attachment, index) => (
             <Col xs="auto" key={attachment.image}>

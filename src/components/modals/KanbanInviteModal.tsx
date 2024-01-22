@@ -16,7 +16,7 @@ const KanbanInviteModal = ({
     <Modal show={show} centered onHide={handleClose}>
       <Modal.Header className="p-4 d-flex gap-2 border-0">
         <img src={boardIcon} height={24} width={18} />
-        <h3 className="mb-0 text-body-emphasis fw-semi-bold flex-1">
+        <h3 className="mb-0 text-body-emphasis fw-semibold flex-1">
           Phoenix Kanban
         </h3>
         <Button className="p-0" onClick={handleClose}>
@@ -24,12 +24,12 @@ const KanbanInviteModal = ({
         </Button>
       </Modal.Header>
       <Modal.Body className="p-4 pt-0">
-        <p className="text-body-tertiary fw-semi-bold fs-9">
+        <p className="text-body-tertiary fw-semibold fs-9">
           Add the <strong className="fw-bolder">Members</strong> or{' '}
           <strong className="fw-bolder">Guests</strong> to your Kanban board.
           They can add, edit, or move tasks in your board. Tasks can also be
           assigned to them.{' '}
-          <Link to="#!" className="fw-semi-bold">
+          <Link to="#!" className="fw-semibold">
             Learn more
           </Link>
         </p>
@@ -55,7 +55,7 @@ const KanbanInviteModal = ({
           </Col>
         </Row>
         <div className="py-2 border-bottom border-translucent border-dashed position-relative mb-4">
-          <span className="bg-body-emphasis px-1 position-absolute top-50 start-50 translate-x-50 fs-9 fw-semi-bold">
+          <span className="bg-body-emphasis px-1 position-absolute top-50 start-50 translate-x-50 fs-9 fw-semibold">
             Or,
           </span>
         </div>

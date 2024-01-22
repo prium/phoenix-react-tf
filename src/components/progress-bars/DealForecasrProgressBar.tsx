@@ -5,16 +5,16 @@ const DealForecasrProgressBar = () => {
     <div className="w-100">
       <div className="d-flex flex-start">
         <div style={{ width: '20.72%' }}>
-          <p className="mb-2 text-body-tertiary fw-semi-bold fs-9">$21.0k</p>
+          <p className="mb-2 text-body-tertiary fw-semibold fs-9">$21.0k</p>
         </div>
         <div style={{ width: '35.76%' }}>
-          <p className="mb-2 text-body-tertiary fw-semi-bold fs-9">$3.4k</p>
+          <p className="mb-2 text-body-tertiary fw-semibold fs-9">$3.4k</p>
         </div>
         <div style={{ width: '25.38%' }}>
-          <p className="mb-2 text-body-tertiary fw-semi-bold fs-9">$15.1k</p>
+          <p className="mb-2 text-body-tertiary fw-semibold fs-9">$15.1k</p>
         </div>
         <div style={{ width: '25.14%' }}>
-          <p className="mb-2 text-body-tertiary fw-semi-bold fs-9">$4.6k</p>
+          <p className="mb-2 text-body-tertiary fw-semibold fs-9">$4.6k</p>
         </div>
       </div>
 

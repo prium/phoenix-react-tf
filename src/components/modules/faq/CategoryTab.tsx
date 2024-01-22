@@ -12,7 +12,7 @@ const CategoryTab = () => {
         <Nav.Item>
           <Nav.Link
             eventKey="popular"
-            className="fw-semi-bold me-3 fs-8 pe-2 text-center"
+            className="fw-semibold me-3 fs-8 pe-2 text-center"
             onClick={() => setActiveKey('popular')}
           >
             Popular Categories
@@ -21,7 +21,7 @@ const CategoryTab = () => {
         <Nav.Item>
           <Nav.Link
             eventKey="all"
-            className="fw-semi-bold me-3 fs-8 pe-2 text-center"
+            className="fw-semibold me-3 fs-8 pe-2 text-center"
             onClick={() => setActiveKey('all')}
           >
             All Categories

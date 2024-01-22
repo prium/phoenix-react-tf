@@ -60,7 +60,7 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-body-tertiary fw-semi-bold">
+                        <span className="text-body-tertiary fw-semibold">
                           Fast
                         </span>
                       </li>
@@ -70,7 +70,7 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-body-tertiary fw-semi-bold">
+                        <span className="text-body-tertiary fw-semibold">
                           Simple
                         </span>
                       </li>
@@ -80,7 +80,7 @@ const AuthCardLayout = ({
                           className="text-success"
                           size={16}
                         />
-                        <span className="text-body-tertiary fw-semi-bold">
+                        <span className="text-body-tertiary fw-semibold">
                           Responsive
                         </span>
                       </li>

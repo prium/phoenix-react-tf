@@ -17,7 +17,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
           <Row className="g-md-3">
             <Col xs={12} md="auto" className="d-flex">
               <Timeline.OppositeContent>
-                <p className="fs-10 fw-semi-bold text-600 text-end">
+                <p className="fs-10 fw-semibold text-600 text-end">
                   {item.oppositeContent.date}
                   <br className="d-none d-md-block" />{' '}
                   {item.oppositeContent.time}
@@ -40,7 +40,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
                 <h5 className="fs-9 lh-sm">{item.content.title}</h5>
                 <p className="fs-9">
                   by{' '}
-                  <Link className="fw-semi-bold" to="#!">
+                  <Link className="fw-semibold" to="#!">
                     {item.content.user}
                   </Link>
                 </p>

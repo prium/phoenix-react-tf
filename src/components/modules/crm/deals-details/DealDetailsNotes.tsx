@@ -22,11 +22,11 @@ const DealDetailsNotes = ({ notes }: { notes: Note[] }) => {
           <div className="d-sm-flex">
             <div className="fs-9 text-600">
               <FontAwesomeIcon icon={faClock} className="me-2" />
-              <span className="fw-semi-bold me-1">{note.date}</span>
+              <span className="fw-semibold me-1">{note.date}</span>
             </div>
             <p className="fs-9 mb-0 text-600">
               by
-              <Link to="#!" className="ms-1 fw-semi-bold">
+              <Link to="#!" className="ms-1 fw-semibold">
                 {note.name}
               </Link>
             </p>

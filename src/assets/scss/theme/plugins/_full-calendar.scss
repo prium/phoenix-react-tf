@@ -55,7 +55,7 @@
     background-color: var(--#{$prefix}body-highlight-bg);
     th {
       border-bottom-width: 1px;
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-semibold;
       color: var(--#{$prefix}tertiary-color);
     }
   }
@@ -157,7 +157,7 @@
     }
     .fc-event-time,
     .fc-event-title {
-      font-weight: $font-weight-semi-bold !important;
+      font-weight: $font-weight-semibold !important;
     }
   }
   .fc-event {
@@ -219,7 +219,7 @@
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     font-size: 0.875rem;
-    font-weight: $font-weight-semi-bold;
+    font-weight: $font-weight-semibold;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
     background: var(--#{$prefix}popover-header-bg);

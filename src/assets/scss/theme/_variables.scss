@@ -161,7 +161,7 @@ $font-weight-lighter: 200 !default;
 $font-weight-light: 300 !default;
 $font-weight-normal: 400 !default;
 $font-weight-medium: 500 !default;
-$font-weight-semi-bold: 600 !default;
+$font-weight-semibold: 600 !default;
 $font-weight-bold: 700 !default;
 $font-weight-bolder: 800 !default;
 $font-weight-black: 900 !default;
@@ -204,7 +204,7 @@ $display-font-weight: $font-weight-normal !default;
 
 // scss-docs-start type-variables
 $lead-font-size: map-get($font-sizes, 7) !default;
-$lead-font-weight: $font-weight-semi-bold !default;
+$lead-font-weight: $font-weight-semibold !default;
 
 $small-font-size: 75% !default;
 
@@ -281,7 +281,7 @@ $input-btn-font-size: map-get($font-sizes, 9);
 $input-btn-font-size-sm: map-get($font-sizes, 9);
 $input-btn-font-size-lg: map-get($font-sizes, 8);
 $input-btn-line-height: $line-height-base;
-$input-font-weight: $font-weight-semi-bold;
+$input-font-weight: $font-weight-semibold;
 
 $input-btn-padding-y-sm: 0.5rem !default;
 $input-btn-padding-x-sm: 1rem !default;

@@ -18,7 +18,7 @@ const columns: ColumnDef<CustomerOrder>[] = [
     accessorKey: 'orderId',
     header: 'Order',
     cell: ({ row: { original } }) => (
-      <Link to="#!" className="fw-semi-bold text-primary">
+      <Link to="#!" className="fw-semibold text-primary">
         {original.orderId}
       </Link>
     ),
@@ -78,7 +78,7 @@ const columns: ColumnDef<CustomerOrder>[] = [
         style: { width: '15%', minWidth: 160 },
         className: 'text-end'
       },
-      cellProps: { className: 'fw-semi-bold text-end text-body-highlight' }
+      cellProps: { className: 'fw-semibold text-end text-body-highlight' }
     }
   },
   {

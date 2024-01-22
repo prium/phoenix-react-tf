@@ -45,7 +45,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <p className="fs-9">
               <Rating readonly initialValue={product.rating} />
               {product.rated && (
-                <span className="text-body-quaternary fw-semi-bold ms-1">
+                <span className="text-body-quaternary fw-semibold ms-1">
                   ({product.rated} people rated)
                 </span>
               )}
@@ -86,7 +86,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           {product.colors && (
             <p
               className={classNames(
-                'text-body-tertiary fw-semi-bold fs-9 lh-1',
+                'text-body-tertiary fw-semibold fs-9 lh-1',
                 {
                   'mb-0': !product.dealEndTime
                 }

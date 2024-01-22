@@ -45,7 +45,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
           <Link
             to="#!"
             className={classNames('fs-9 inbox-link', {
-              'text-body fw-semi-bold': email.read_at,
+              'text-body fw-semibold': email.read_at,
               'text-body-emphasis fw-bold': !email.read_at
             })}
           >

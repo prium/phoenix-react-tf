@@ -30,7 +30,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-2">
+        <Link to="#!" className="fw-semibold line-clamp-2">
           {product}
         </Link>
       );
@@ -54,7 +54,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     meta: {
       headerProps: { style: { width: 300 }, className: 'ps-4' },
       cellProps: {
-        className: 'white-space-nowrap text-body-tertiary fw-semi-bold ps-4'
+        className: 'white-space-nowrap text-body-tertiary fw-semibold ps-4'
       }
     }
   },
@@ -64,7 +64,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'text-body fw-semi-bold text-end ps-4' }
+      cellProps: { className: 'text-body fw-semibold text-end ps-4' }
     }
   },
   {
@@ -110,7 +110,7 @@ const OrderDetailsTable = () => {
         <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <div className="d-flex flex-between-center py-3">
-            <p className="text-body-emphasis fw-semi-bold lh-sm mb-0">
+            <p className="text-body-emphasis fw-semibold lh-sm mb-0">
               Items subtotal :
             </p>
             <p className="text-body-emphasis fw-bold lh-sm mb-0">

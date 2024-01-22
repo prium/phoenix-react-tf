@@ -116,7 +116,7 @@ const ProductDetailsTab = () => {
                             iconClass="fs-6"
                           />
                         </div>
-                        <p className="text-body mb-0 fw-semi-bold fs-7">
+                        <p className="text-body mb-0 fw-semibold fs-7">
                           6548 ratings and 567 reviews
                         </p>
                       </div>

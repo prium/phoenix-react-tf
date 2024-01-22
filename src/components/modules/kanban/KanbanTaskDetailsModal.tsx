@@ -94,9 +94,7 @@ const KanbanTaskDetailsModal = ({
                   </h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-body-emphasis fw-semi-bold">
-                    Phoenix
-                  </p>
+                  <p className="mb-0 text-body-emphasis fw-semibold">Phoenix</p>
                 </Col>
 
                 <Col xs={4} sm={3}>
@@ -106,7 +104,7 @@ const KanbanTaskDetailsModal = ({
                 </Col>
                 <Col xs={8} sm={9}>
                   <p
-                    className={`mb-0 text-body-emphasis fw-semi-bold d-inline-block kanban-column-underline-${list.borderColor}`}
+                    className={`mb-0 text-body-emphasis fw-semibold d-inline-block kanban-column-underline-${list.borderColor}`}
                   >
                     {list.title}
                   </p>
@@ -137,7 +135,7 @@ const KanbanTaskDetailsModal = ({
                   </h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-body-emphasis fw-semi-bold">
+                  <p className="mb-0 text-body-emphasis fw-semibold">
                     <FontAwesomeIcon
                       icon={faCircle}
                       transform="shrink-6 down-1"

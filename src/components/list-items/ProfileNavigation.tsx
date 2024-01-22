@@ -23,7 +23,7 @@ const ProfileNavigation = ({ className }: { className?: string }) => {
             to="#!"
             variant="link"
             className={classNames(
-              'fs-8 text-body-secondary hover-primary fw-semi-bold d-flex flex-column d-xxl-inline-block align-items-center align-items-xxl-start',
+              'fs-8 text-body-secondary hover-primary fw-semibold d-flex flex-column d-xxl-inline-block align-items-center align-items-xxl-start',
               {
                 'ps-2': index % 2 === 0
               }

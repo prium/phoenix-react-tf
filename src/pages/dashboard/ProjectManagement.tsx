@@ -16,7 +16,7 @@ const ProjectManagement = () => {
       <Row className="gy-3 mb-6 justify-content-between">
         <Col md={9} xs="auto">
           <h2 className="mb-2 text-body-emphasis">Projects Dashboard</h2>
-          <h5 className="text-body-tertiary fw-semi-bold">
+          <h5 className="text-body-tertiary fw-semibold">
             Here’s what’s going on at your business right now
           </h5>
         </Col>

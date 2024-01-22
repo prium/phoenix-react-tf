@@ -32,7 +32,7 @@ const Boards = () => {
           <Col xs="auto">
             <h2>
               Kanban Boards{' '}
-              <span className="text-body-tertiary fw-semi-bold">(8)</span>
+              <span className="text-body-tertiary fw-semibold">(8)</span>
             </h2>
           </Col>
           <Col xs="auto" className="d-flex flex-wrap gap-2">

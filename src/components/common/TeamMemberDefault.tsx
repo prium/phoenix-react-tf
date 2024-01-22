@@ -20,7 +20,7 @@ const TeamMemberDefault = ({ member }: { member: TeamMember }) => {
         />
       </div>
       <h4>{member.name}</h4>
-      <h6 className="mb-3 fw-semi-bold">{member.designation}</h6>
+      <h6 className="mb-3 fw-semibold">{member.designation}</h6>
       <div>
         {/* <a href="#!" className="text-primary me-3">
           <FontAwesomeIcon icon="facebook" />

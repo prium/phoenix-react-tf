@@ -28,7 +28,7 @@
 .icon-nav-item {
   text-align: center;
   color: var(--#{$prefix}body-color);
-  font-weight: $font-weight-semi-bold;
+  font-weight: $font-weight-semibold;
   font-size: map-get($font-sizes, '9');
   &:not(:first-child) {
     margin-left: 15px;

@@ -32,7 +32,7 @@ const columns: ColumnDef<StoreProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">
+        <Link to="#!" className="fw-semibold line-clamp-1">
           {product}
         </Link>
       );
@@ -73,7 +73,7 @@ const columns: ColumnDef<StoreProductType>[] = [
         style: { width: '15%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {

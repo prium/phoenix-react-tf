@@ -100,7 +100,7 @@ const TodoListItem = ({
               <h5
                 className={classNames(
                   labelClassName,
-                  'mb-0 line-clamp-1 fw-semi-bold text-body-tertiary cursor-pointer',
+                  'mb-0 line-clamp-1 fw-semibold text-body-tertiary cursor-pointer',
                   {
                     'text-decoration-line-through': selected
                   }

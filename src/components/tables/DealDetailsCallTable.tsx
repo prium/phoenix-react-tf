@@ -80,7 +80,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'text-start'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-body-highlight'
+        className: 'white-space-nowrap fw-semibold text-body-highlight'
       }
     }
   },
@@ -107,7 +107,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'ps-0 text-end'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-body-highlight'
+        className: 'white-space-nowrap fw-semibold text-body-highlight'
       }
     }
   },

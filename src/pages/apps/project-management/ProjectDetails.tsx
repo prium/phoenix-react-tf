@@ -89,7 +89,7 @@ const ProjectDetails = () => {
               other teams working with us. We’ll be checking out places for the
               best option available at hands and we’ll let you know the schedule
               once we decide on one...
-              <Link className="fw-semi-bold" to="#!">
+              <Link className="fw-semibold" to="#!">
                 read more
               </Link>
             </p>

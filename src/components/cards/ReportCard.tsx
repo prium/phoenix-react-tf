@@ -32,13 +32,13 @@ const ReportCard = ({ report }: { report: Report }) => {
               </div>
             </div>
           </div>
-          <p className="fs-9 fw-semi-bold text-body ms-4 text mb-4 ps-2">
+          <p className="fs-9 fw-semibold text-body ms-4 text mb-4 ps-2">
             {report.subTitle}
           </p>
         </div>
         <Row className="g-1 g-sm-3 mt-2 lh-1">
           <Col sm="auto" className="flex-1 text-truncate">
-            <Link to="#!" className="fw-semi-bold fs-9">
+            <Link to="#!" className="fw-semibold fs-9">
               <FontAwesomeIcon icon={faFolder} className="me-2" />
               {report.reportsby}
             </Link>
@@ -51,7 +51,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 height={16}
                 className="me-2"
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary">
+              <p className="mb-0 fs-9 fw-semibold text-body-tertiary">
                 {report.category}
               </p>
             </div>
@@ -64,7 +64,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 width={16}
                 height={16}
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-body-tertiary">
+              <p className="mb-0 fs-9 fw-semibold text-body-tertiary">
                 {report.date}
               </p>
             </div>

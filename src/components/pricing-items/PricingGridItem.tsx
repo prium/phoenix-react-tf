@@ -132,7 +132,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                           size={16}
                         />
                         <span
-                          className="text-body-tertiary fw-semi-bold lh-1"
+                          className="text-body-tertiary fw-semibold lh-1"
                           dangerouslySetInnerHTML={{ __html: feature }}
                         />
                       </li>

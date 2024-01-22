@@ -46,79 +46,71 @@ const EcomInvoiceTable = () => {
             <td className="border-0" />
             <td className="align-middle">1</td>
             <td className="align-middle">
-              <p className="line-clamp-1 mb-0 fw-semi-bold">
+              <p className="line-clamp-1 mb-0 fw-semibold">
                 Fitbit Sense Advanced Smartwatch with Tools for Heart Health,
                 Stress Management &amp; Skin Temperature Trends,
                 Carbon/Graphite, One Size (S &amp; L Bands)
               </p>
             </td>
             <td className="align-middle ps-5">Glossy black</td>
-            <td className="align-middle text-body-tertiary fw-semi-bold">XL</td>
-            <td className="align-middle text-end text-body-highlight fw-semi-bold">
+            <td className="align-middle text-body-tertiary fw-semibold">XL</td>
+            <td className="align-middle text-end text-body-highlight fw-semibold">
               2
             </td>
-            <td className="align-middle text-end fw-semi-bold">$299</td>
+            <td className="align-middle text-end fw-semibold">$299</td>
             <td className="align-middle text-end">2.5%</td>
-            <td className="align-middle text-center fw-semi-bold">VAT</td>
-            <td className="align-middle text-end fw-semi-bold">$199</td>
-            <td className="align-middle text-end fw-semi-bold">$398</td>
+            <td className="align-middle text-center fw-semibold">VAT</td>
+            <td className="align-middle text-end fw-semibold">$199</td>
+            <td className="align-middle text-end fw-semibold">$398</td>
             <td className="border-0" />
           </tr>
           <tr>
             <td className="border-0" />
             <td className="align-middle">2</td>
             <td className="align-middle">
-              <p className="line-clamp-1 mb-0 fw-semi-bold">
+              <p className="line-clamp-1 mb-0 fw-semibold">
                 2021 Apple 12.9-inch iPad Pro (Wi‑Fi, 128GB) - Space Gray
               </p>
             </td>
             <td className="align-middle ps-5">Black</td>
-            <td className="align-middle text-body-tertiary fw-semi-bold">
-              Pro
-            </td>
-            <td className="align-middle text-end text-body-highlight fw-semi-bold">
+            <td className="align-middle text-body-tertiary fw-semibold">Pro</td>
+            <td className="align-middle text-end text-body-highlight fw-semibold">
               1
             </td>
-            <td className="align-middle text-end fw-semi-bold">$199</td>
+            <td className="align-middle text-end fw-semibold">$199</td>
             <td className="align-middle text-end">2.75%</td>
-            <td className="align-middle text-center fw-semi-bold">VAT</td>
-            <td className="align-middle text-end fw-semi-bold">$199</td>
-            <td className="align-middle text-end fw-semi-bold">$398</td>
+            <td className="align-middle text-center fw-semibold">VAT</td>
+            <td className="align-middle text-end fw-semibold">$199</td>
+            <td className="align-middle text-end fw-semibold">$398</td>
             <td className="border-0" />
           </tr>
           <tr>
             <td className="border-0" />
             <td className="align-middle border-0">1</td>
             <td className="align-middle border-0">
-              <p className="line-clamp-1 mb-0 fw-semi-bold">
+              <p className="line-clamp-1 mb-0 fw-semibold">
                 PlayStation 5 DualSense Wireless Controller
               </p>
             </td>
             <td className="align-middle ps-5 border-0">White</td>
-            <td className="align-middle text-body-tertiary fw-semi-bold border-0">
+            <td className="align-middle text-body-tertiary fw-semibold border-0">
               Regular
             </td>
-            <td className="align-middle text-end text-body-highlight fw-semi-bold border-0">
+            <td className="align-middle text-end text-body-highlight fw-semibold border-0">
               1
             </td>
-            <td className="align-middle text-end fw-semi-bold border-0">
-              $185
-            </td>
+            <td className="align-middle text-end fw-semibold border-0">$185</td>
             <td className="align-middle text-end border-0">3.5%</td>
-            <td className="align-middle text-center fw-semi-bold border-0">
+            <td className="align-middle text-center fw-semibold border-0">
               VAT
             </td>
-            <td className="align-middle text-end fw-semi-bold border-0">
-              $199
-            </td>
-            <td className="align-middle text-end fw-semi-bold border-0">
-              $398
-            </td>
+            <td className="align-middle text-end fw-semibold border-0">$199</td>
+            <td className="align-middle text-end fw-semibold border-0">$398</td>
             <td className="border-0" />
           </tr>
           <tr className="bg-body-secondary">
             <td />
-            <td className="align-middle fw-semi-bold" colSpan={9}>
+            <td className="align-middle fw-semibold" colSpan={9}>
               Subtotal
             </td>
             <td className="align-middle text-end fw-bold">$398</td>
@@ -130,7 +122,7 @@ const EcomInvoiceTable = () => {
             <td className="align-middle fw-bold ps-15" colSpan={2}>
               Shipping Cost
             </td>
-            <td className="align-middle text-end fw-semi-bold" colSpan={2}>
+            <td className="align-middle text-end fw-semibold" colSpan={2}>
               $50
             </td>
             <td className="border-0" />
@@ -142,7 +134,7 @@ const EcomInvoiceTable = () => {
               Discount/Voucher
             </td>
             <td
-              className="align-middle text-end fw-semi-bold text-danger"
+              className="align-middle text-end fw-semibold text-danger"
               colSpan={2}
             >
               -$50
