@@ -21,7 +21,7 @@ const WorkLoads = () => {
               value="72%"
             />
             <ChartLegend
-              bulletBg="primary-200"
+              bulletBg="primary-lither"
               label="Makena Zikonn"
               value="18%"
             />

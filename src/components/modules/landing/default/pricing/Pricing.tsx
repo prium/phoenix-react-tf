@@ -66,7 +66,7 @@ const Pricing = () => {
                 >
                   {item.popular && (
                     <div className="position-absolute d-flex flex-center bg-primary-subtle rounded-top py-1 end-0 start-0 badge-pricing">
-                      <p className="text-primary-600 mb-0">Most popular</p>
+                      <p className="text-primary-dark mb-0">Most popular</p>
                     </div>
                   )}
                   <Card.Body className="px-6">

@@ -50,11 +50,11 @@
     color: var(--#{$prefix}primary);
     &:hover {
       background-color: var(--#{$prefix}body-highlight-bg);
-      color: var(--#{$prefix}primary-500);
+      color: var(--#{$prefix}primary-light);
     }
     &:active {
       background-color: var(--#{$prefix}secondary-bg);
-      color: var(--#{$prefix}primary-500);
+      color: var(--#{$prefix}primary-light);
     }
   }
   .chat-message-content {

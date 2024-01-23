@@ -27,7 +27,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
                 <Timeline.Dot className="bg-primary-subtle">
                   <FontAwesomeIcon
                     icon={item.separator.icon}
-                    className="text-primary-600 fs-10"
+                    className="text-primary-dark fs-10"
                   />
                 </Timeline.Dot>
                 {index !== data.length - 1 && (

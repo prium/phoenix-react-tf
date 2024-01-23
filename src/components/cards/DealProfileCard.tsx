@@ -96,7 +96,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                 </Badge>
               </div>
             </div>
-            <ProgressBar variant="primary-200" now={40} className="mb-2" />
+            <ProgressBar variant="primary-lighter" now={40} className="mb-2" />
             <div className="d-flex align-items-center justify-content-between">
               <p className="mb-0">New</p>
               <div>

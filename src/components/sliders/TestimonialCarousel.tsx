@@ -32,7 +32,7 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
             readonly
             initialValue={testimonial.rating}
             fillIconColor="primary"
-            emptyIconColor="primary-300"
+            emptyIconColor="primary-light"
           />
         </div>
         <h3 className="fs-7 fs-xl-6 mb-5 lh-sm me-md-7 me-lg-0">

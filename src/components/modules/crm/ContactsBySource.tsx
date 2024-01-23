@@ -44,7 +44,7 @@ const ContactsBySource = () => {
             className="position-absolute rounded-circle bg-primary-subtle top-50 start-50 translate-middle d-flex flex-center"
             style={{ height: '100px', width: '100px' }}
           >
-            <h3 className="mb-0 text-primary-600 fw-bolder">{total}</h3>
+            <h3 className="mb-0 text-primary-dark fw-bolder">{total}</h3>
           </div>
         </div>
       </Col>

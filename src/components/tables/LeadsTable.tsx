@@ -85,7 +85,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-primary-subtle rounded me-2">
-            <FeatherIcon icon="phone" size={16} className="text-primary-600" />
+            <FeatherIcon icon="phone" size={16} className="text-primary-dark" />
           </div>
           <span>Phone</span>
         </div>

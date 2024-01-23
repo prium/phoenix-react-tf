@@ -70,7 +70,7 @@ const columns: ColumnDef<ForecastTableData>[] = [
     id: 'qualified',
     header: () => (
       <div className="d-inline-flex flex-center gap-2">
-        <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary-300" />
+        <FontAwesomeIcon icon={faSquare} className="fs-11 text-primary-light" />
         Qualified
       </div>
     ),

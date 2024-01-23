@@ -39,7 +39,7 @@ const Feature = () => {
             <h1 className="text-soft fw-normal mb-4 text-center text-lg-start">
               Coded for
               <br className="d-none d-lg-block d-xl-none" />
-              <span className="text-primary-300 ms-2 fw-bolder">
+              <span className="text-primary-light ms-2 fw-bolder">
                 any screen size
                 <img src={thumbsUpIcon} alt="" className="mb-2 ms-2" />
               </span>

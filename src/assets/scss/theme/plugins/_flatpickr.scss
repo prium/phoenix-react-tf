@@ -112,7 +112,7 @@
   }
   &.today {
     @include hover-focus {
-      background: var(--#{$prefix}primary-600) !important;
+      background: var(--#{$prefix}primary-dark) !important;
       color: $white;
     }
   }
