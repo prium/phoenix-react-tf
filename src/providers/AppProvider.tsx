@@ -45,6 +45,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
       initialConfig.navbarTopShape
     ),
     isRTL: getItemFromStore('isRTL', initialConfig.isRTL),
+    isDark: getItemFromStore('isDark', initialConfig.isDark),
     isChatWidgetVisible: getItemFromStore(
       'isChatWidgetVisible',
       initialConfig.isChatWidgetVisible
@@ -64,7 +65,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     configDispatch({
       type: SET_CONFIG,
       payload: {
-        theme: config.theme === 'dark' ? 'light' : 'dark'
+        theme: config.isDark !== false ? 'light' : 'dark'
       }
     });
   };

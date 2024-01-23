@@ -17,7 +17,7 @@ interface TopNavbarAppearanceProps {
 
 const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
   const {
-    config: { theme, navbarTopAppearance },
+    config: { isDark, navbarTopAppearance },
     setConfig
   } = useAppContext();
 
@@ -41,7 +41,7 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
             label="Default"
             name="top-navbar-appearance"
             value="default"
-            thumb={theme === 'light' ? topDefault : topDefaultDarker}
+            thumb={isDark === false ? topDefault : topDefaultDarker}
             checked={navbarTopAppearance === 'default'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarAppearance}
@@ -49,10 +49,10 @@ const TopNavbarAppearance = ({ className }: TopNavbarAppearanceProps) => {
         </Col>
         <Col xs={6}>
           <RadioItem
-            label={theme === 'light' ? 'Darker' : 'Lighter'}
+            label={isDark === false ? 'Darker' : 'Lighter'}
             name="top-navbar-appearance"
             value="darker"
-            thumb={theme === 'light' ? navTopLight : navTopLighter}
+            thumb={isDark === false ? navTopLight : navTopLighter}
             checked={navbarTopAppearance === 'darker'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarAppearance}

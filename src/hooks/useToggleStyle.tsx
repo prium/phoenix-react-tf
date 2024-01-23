@@ -1,7 +1,7 @@
 import { useAppContext } from 'providers/AppProvider';
 import { useEffect, useState } from 'react';
 import is from 'is_js';
-import { REFRESH } from 'reducers/ConfigReducer';
+import { REFRESH, SET_CONFIG } from 'reducers/ConfigReducer';
 import { getSystemTheme } from 'helpers/utils';
 
 const publicUrl = process.env.PUBLIC_URL;
@@ -62,7 +62,12 @@ const useToggleStyle = () => {
 
   useEffect(() => {
     const mode = theme === 'auto' ? getSystemTheme() : theme;
-
+    configDispatch({
+      type: SET_CONFIG,
+      payload: {
+        isDark: mode === 'dark' ? true : false
+      }
+    });
     document.documentElement.setAttribute('data-bs-theme', mode);
     configDispatch({
       type: REFRESH

@@ -16,7 +16,7 @@ import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const NavigationType = () => {
   const {
-    config: { theme, navbarPosition },
+    config: { navbarPosition, isDark },
     setConfig
   } = useAppContext();
 
@@ -40,7 +40,7 @@ const NavigationType = () => {
             label="Vertical"
             name="nav-type"
             value="vertical"
-            thumb={theme === 'light' ? defaultLight : defaultDark}
+            thumb={isDark === false ? defaultLight : defaultDark}
             checked={navbarPosition === 'vertical'}
             handleChange={handleChange}
             disabled={disableNavigationType}
@@ -51,7 +51,7 @@ const NavigationType = () => {
             label="Horizontal"
             name="nav-type"
             value="horizontal"
-            thumb={theme === 'light' ? topDefault : topDefaultDark}
+            thumb={isDark === false ? topDefault : topDefaultDark}
             checked={navbarPosition === 'horizontal'}
             handleChange={handleChange}
             disabled={disableNavigationType}
@@ -62,7 +62,7 @@ const NavigationType = () => {
             label="Combo"
             name="nav-type"
             value="combo"
-            thumb={theme === 'light' ? navComboLight : navComboDark}
+            thumb={isDark === false ? navComboLight : navComboDark}
             checked={navbarPosition === 'combo'}
             handleChange={handleChange}
             disabled={disableNavigationType}
@@ -73,7 +73,7 @@ const NavigationType = () => {
             label="Dual nav"
             name="nav-type"
             value="dual"
-            thumb={theme === 'light' ? dualLight : dualDark}
+            thumb={isDark === false ? dualLight : dualDark}
             checked={navbarPosition === 'dual'}
             handleChange={handleChange}
             disabled={disableNavigationType}

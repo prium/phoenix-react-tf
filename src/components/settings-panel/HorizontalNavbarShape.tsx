@@ -12,7 +12,7 @@ import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const HorizontalNavbarShape = () => {
   const {
-    config: { theme, navbarTopShape },
+    config: { isDark, navbarTopShape },
     setConfig
   } = useAppContext();
 
@@ -36,7 +36,7 @@ const HorizontalNavbarShape = () => {
             label="Default"
             name="top-nav-shape"
             value="default"
-            thumb={theme === 'light' ? topDefault : topDefaultDark}
+            thumb={isDark === false ? topDefault : topDefaultDark}
             checked={navbarTopShape === 'default'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarShape}
@@ -47,7 +47,7 @@ const HorizontalNavbarShape = () => {
             label="Slim"
             name="top-nav-shape"
             value="slim"
-            thumb={theme === 'light' ? topSlim : topSlimDark}
+            thumb={isDark === false ? topSlim : topSlimDark}
             checked={navbarTopShape === 'slim'}
             handleChange={handleChange}
             disabled={disableHorizontalNavbarShape}
