@@ -59,9 +59,9 @@ const Pricing = () => {
                 <Card
                   className={classNames('h-100', {
                     'border border-2 border-primary mt-5 mt-md-0': item.popular,
-                    'rounded-xl-end-0 rounded-start': index === 0,
+                    'rounded-end-xl-0 rounded-start': index === 0,
                     'rounded-top-0 rounded-xl-0': index === 1,
-                    'rounded-start rounded-xl-start-0 mt-5 mt-md-0': index === 2
+                    'rounded-start rounded-start-xl-0 mt-5 mt-md-0': index === 2
                   })}
                 >
                   {item.popular && (

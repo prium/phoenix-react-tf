@@ -46,7 +46,7 @@ const KanbanTaskDetailsModal = ({
         fullscreen="md-down"
         centered
         className="modal-md p-0"
-        contentClassName="rounded-md-top-xl rounded-md-bottom-xl overflow-hidden h-100"
+        contentClassName="rounded-top-md-4 rounded-bottom-md-4 overflow-hidden h-100"
         scrollable
       >
         <Modal.Header className="position-relative p-0" style={{ height: 200 }}>
