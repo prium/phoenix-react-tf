@@ -13,8 +13,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     getThemeColor('success'),
     getThemeColor('info'),
     getThemeColor('info-light'),
-    getThemeColor('danger-200'),
-    getThemeColor('warning-300')
+    getThemeColor('danger-lighter'),
+    getThemeColor('warning-light')
   ],
   tooltip: {
     trigger: 'item',

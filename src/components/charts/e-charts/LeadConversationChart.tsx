@@ -72,12 +72,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1060,
         itemStyle: {
-          color: getThemeColor('success-200'),
+          color: getThemeColor('success-lighter'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('success-300')
+            color: getThemeColor('success-light')
           },
           label: {
             formatter: () => `{b| 53% }`,
@@ -94,7 +94,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 53%}`,
           rich: {
             b: {
-              color: getThemeColor('success-600'),
+              color: getThemeColor('success-dark'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -168,12 +168,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1800,
         itemStyle: {
-          color: getThemeColor('warning-200'),
+          color: getThemeColor('warning-lighter'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('warning-300')
+            color: getThemeColor('warning-light')
           },
           label: {
             formatter: () => `{b| 90% }`,
@@ -190,7 +190,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b|90%}`,
           rich: {
             b: {
-              color: getThemeColor('warning-600'),
+              color: getThemeColor('warning-dark'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -200,7 +200,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 2000,
         itemStyle: {
-          color: getThemeColor('danger-200'),
+          color: getThemeColor('danger-lighter'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
@@ -222,7 +222,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{a|100%}`,
           rich: {
             a: {
-              color: getThemeColor('danger-600'),
+              color: getThemeColor('danger-dark'),
               fontWeight: 500
             }
           }
