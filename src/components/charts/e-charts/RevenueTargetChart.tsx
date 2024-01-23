@@ -117,7 +117,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       data: data2,
       itemStyle: {
         borderWidth: 4,
-        color: getThemeColor('primary-300'),
+        color: getThemeColor('primary-light'),
         bordercolor: getThemeColor('secondary-bg')
       }
     }

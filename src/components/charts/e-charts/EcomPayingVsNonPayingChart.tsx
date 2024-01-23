@@ -49,7 +49,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         roundCap: true,
         lineStyle: {
           width: 12,
-          color: [[1, getThemeColor('primary-100')]]
+          color: [[1, getThemeColor('primary-bg-subtle')]]
         }
       },
       axisTick: {

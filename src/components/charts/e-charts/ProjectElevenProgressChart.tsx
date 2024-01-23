@@ -157,7 +157,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         width: 0
       },
       areaStyle: {
-        color: getThemeColor('primary-300'),
+        color: getThemeColor('primary-light'),
         opacity: 0.075
       },
       tooltip: {

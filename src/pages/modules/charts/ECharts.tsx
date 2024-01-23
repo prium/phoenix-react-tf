@@ -332,7 +332,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       z: 10,
       itemStyle: {
         borderRadius: [2, 2, 0, 0],
-        color: getThemeColor('info-100')
+        color: getThemeColor('info-bg-subtle')
       }
     }
   ],
@@ -373,7 +373,7 @@ echarts.use([TooltipComponent, PieChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   color: [
-    getThemeColor('info-300'),
+    getThemeColor('info-light'),
     getThemeColor('warning-300'),
     getThemeColor('danger-300'),
     getThemeColor('success-300'),

@@ -7,7 +7,7 @@ echarts.use([TooltipComponent, PieChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   color: [
-    getThemeColor('info-300'),
+    getThemeColor('info-light'),
     getThemeColor('warning-300'),
     getThemeColor('danger-300'),
     getThemeColor('success-300'),

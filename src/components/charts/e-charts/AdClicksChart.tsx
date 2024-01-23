@@ -130,13 +130,13 @@ const getDefaultOptions = (
       lineStyle: {
         type: 'line',
         width: 3,
-        color: getThemeColor('info-200')
+        color: getThemeColor('info-lighter')
       },
       showSymbol: false,
       symbol: 'emptyCircle',
       symbolSize: 6,
       itemStyle: {
-        color: getThemeColor('info-200'),
+        color: getThemeColor('info-lighter'),
         borderWidth: 3
       }
     },

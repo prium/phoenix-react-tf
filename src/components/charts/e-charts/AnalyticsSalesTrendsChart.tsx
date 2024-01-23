@@ -20,7 +20,7 @@ const getDefaultOptions = (
   getThemeColor: (name: string) => string,
   theme: string
 ) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
@@ -81,7 +81,7 @@ const getDefaultOptions = (
       itemStyle: {
         color:
           theme === 'light'
-            ? getThemeColor('primary-200')
+            ? getThemeColor('primary-lighter')
             : getThemeColor('primary'),
 
         borderRadius: [4, 4, 0, 0]
@@ -94,7 +94,7 @@ const getDefaultOptions = (
       symbol: 'circle',
       symbolSize: 11,
       itemStyle: {
-        color: getThemeColor('info-300'),
+        color: getThemeColor('info-light'),
         borderColor:
           theme === 'light'
             ? getThemeColor('white')
@@ -111,11 +111,11 @@ const getDefaultOptions = (
           colorStops: [
             {
               offset: 0,
-              color: rgbaColor(getThemeColor('info-300'), 0.2)
+              color: rgbaColor(getThemeColor('info-light'), 0.2)
             },
             {
               offset: 1,
-              color: rgbaColor(getThemeColor('info-300'), 0.2)
+              color: rgbaColor(getThemeColor('info-light'), 0.2)
             }
           ]
         }

@@ -13,7 +13,7 @@ const getDefaultOptions = (
   getThemeColor: (name: string) => string,
   theme: string
 ) => ({
-  color: [getThemeColor('primary-300'), getThemeColor('warning-300')],
+  color: [getThemeColor('primary-light'), getThemeColor('warning-300')],
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
@@ -83,10 +83,10 @@ const getDefaultOptions = (
           value: [2100, 2300, 1600, 3700, 3000, 2500, 2500],
           name: 'Offline Marketing',
           itemStyle: {
-            color: getThemeColor('primary-300')
+            color: getThemeColor('primary-light')
           },
           areaStyle: {
-            color: rgbaColor(getThemeColor('primary-300'), 0.3)
+            color: rgbaColor(getThemeColor('primary-light'), 0.3)
           }
         },
         {

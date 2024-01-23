@@ -17,7 +17,7 @@ const dates = getPastDates(7);
 const data1 = [8000, 7700, 5900, 10100, 5100, 6000, 4300];
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
@@ -134,11 +134,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           colorStops: [
             {
               offset: 0,
-              color: rgbaColor(getThemeColor('primary-300'), 0.2)
+              color: rgbaColor(getThemeColor('primary-light'), 0.2)
             },
             {
               offset: 1,
-              color: rgbaColor(getThemeColor('primary-300'), 0.2)
+              color: rgbaColor(getThemeColor('primary-light'), 0.2)
             }
           ]
         }

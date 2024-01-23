@@ -116,7 +116,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       z: 10,
       itemStyle: {
         borderRadius: [2, 2, 0, 0],
-        color: getThemeColor('info-100')
+        color: getThemeColor('info-bg-subtle')
       }
     }
   ],

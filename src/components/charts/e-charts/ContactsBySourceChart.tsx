@@ -12,7 +12,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     getThemeColor('primary'),
     getThemeColor('success'),
     getThemeColor('info'),
-    getThemeColor('info-300'),
+    getThemeColor('info-light'),
     getThemeColor('danger-200'),
     getThemeColor('warning-300')
   ],

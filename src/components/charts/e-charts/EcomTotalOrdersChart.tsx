@@ -62,7 +62,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       backgroundStyle: {
         borderRadius: 10,
-        color: getThemeColor('primary-100')
+        color: getThemeColor('primary-bg-subtle')
       }
     }
   ],

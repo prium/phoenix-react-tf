@@ -12,7 +12,7 @@
   }
   .avatar-name {
     color: var(--#{$prefix}avatar-name-color);
-    background-color: var(--#{$prefix}primary-100);
+    background-color: var(--#{$prefix}primary-bg-subtle);
     font-weight: bold;
     text-transform: uppercase;
     display: flex;

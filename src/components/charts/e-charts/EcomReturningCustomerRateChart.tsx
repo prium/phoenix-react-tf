@@ -17,14 +17,14 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         name: 'Fourth time',
         icon: 'roundRect',
         itemStyle: {
-          color: getThemeColor('primary-300'),
+          color: getThemeColor('primary-light'),
           borderWidth: 0
         }
       },
       {
         name: 'Third time',
         icon: 'roundRect',
-        itemStyle: { color: getThemeColor('info-200'), borderWidth: 0 }
+        itemStyle: { color: getThemeColor('info-lighter'), borderWidth: 0 }
       },
       {
         name: 'Second time',
@@ -120,10 +120,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       lineStyle: {
         type: 'dashed',
         width: 1,
-        color: getThemeColor('primary-300')
+        color: getThemeColor('primary-light')
       },
       itemStyle: {
-        borderColor: getThemeColor('primary-300'),
+        borderColor: getThemeColor('primary-light'),
         borderWidth: 3
       }
     },
@@ -141,10 +141,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       lineStyle: {
         width: 1,
-        color: getThemeColor('info-200')
+        color: getThemeColor('info-lighter')
       },
       itemStyle: {
-        borderColor: getThemeColor('info-200'),
+        borderColor: getThemeColor('info-lighter'),
         borderWidth: 3
       }
     },

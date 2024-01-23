@@ -104,12 +104,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1200,
         itemStyle: {
-          color: getThemeColor('info-200'),
+          color: getThemeColor('info-lighter'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('info-300')
+            color: getThemeColor('info-light')
           },
           label: {
             formatter: () => `{b| 60% }`,
@@ -126,7 +126,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 60%}`,
           rich: {
             b: {
-              color: getThemeColor('info-600'),
+              color: getThemeColor('info-darker'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -136,12 +136,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1600,
         itemStyle: {
-          color: getThemeColor('primary-200'),
+          color: getThemeColor('primary-lighter'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('primary-300')
+            color: getThemeColor('primary-light')
           },
           label: {
             formatter: () => `{b| 80% }`,
@@ -158,7 +158,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 80% }`,
           rich: {
             b: {
-              color: getThemeColor('primary-600'),
+              color: getThemeColor('primary-dark'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }

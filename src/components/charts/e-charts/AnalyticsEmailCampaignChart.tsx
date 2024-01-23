@@ -113,13 +113,13 @@ const getDefaultOptions = (
       type: 'bar',
       stack: 'Total',
       itemStyle: {
-        color: getThemeColor('primary-200')
+        color: getThemeColor('primary-lighter')
       },
       data: [
         {
           value: 2832,
           itemStyle: {
-            color: getThemeColor('primary-300')
+            color: getThemeColor('primary-light')
           }
         },
         1366,

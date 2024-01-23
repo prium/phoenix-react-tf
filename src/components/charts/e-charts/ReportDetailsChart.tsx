@@ -15,7 +15,7 @@ const getDefaultOptions = (
   getThemeColor: (name: string) => string,
   theme: ThemeVariant
 ) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
@@ -83,7 +83,7 @@ const getDefaultOptions = (
       itemStyle: {
         color:
           theme === 'light'
-            ? getThemeColor('primary-300')
+            ? getThemeColor('primary-light')
             : getThemeColor('primary')
       },
       data: sellersReportData.map(data => data.totalCount)
