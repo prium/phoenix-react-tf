@@ -45,7 +45,7 @@ const MarketingCampaign = () => {
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="text-warning-300 me-2"
+                  className="text-warning-light me-2"
                 />
                 <h6 className="mb-0">Online Campaign</h6>
               </div>

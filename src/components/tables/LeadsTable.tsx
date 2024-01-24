@@ -140,7 +140,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
       return (
         <div className="d-inline-flex flex-center">
           <div className="px-1 py-1 bg-warning-subtle rounded me-2">
-            <FeatherIcon icon="grid" size={16} className="text-warning-600" />
+            <FeatherIcon icon="grid" size={16} className="text-warning-dark" />
           </div>
           <span>Company name</span>
         </div>

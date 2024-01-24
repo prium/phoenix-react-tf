@@ -205,7 +205,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('danger-300')
+            color: getThemeColor('danger-light')
           },
           label: {
             formatter: () => `{a|100%}`,

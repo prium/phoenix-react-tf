@@ -46,7 +46,7 @@ export const featureItems = [
     title: (
       <>
         Developed with{' '}
-        <span className="text-info-300 me-1 fw-bold">ReactJs</span>
+        <span className="text-info-light me-1 fw-bold">ReactJs</span>
       </>
     )
   },
@@ -57,7 +57,7 @@ export const featureItems = [
     title: (
       <>
         Built with{' '}
-        <span className="text-info-300 me-1 fw-bold">React Bootstrap</span>
+        <span className="text-info-light me-1 fw-bold">React Bootstrap</span>
       </>
     )
   },

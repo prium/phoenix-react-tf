@@ -30,7 +30,7 @@ const DealsPrintingDimensionsCard = ({
                 >
                   <FeatherIcon
                     icon={stat.icon}
-                    className={`text-${stat.color}-600`}
+                    className={`text-${stat.color}-dark`}
                   />
                 </div>
                 <div>

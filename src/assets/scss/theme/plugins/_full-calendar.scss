@@ -47,7 +47,7 @@
       }
       &.fc-day-fri,
       &.fc-day-sat {
-        color: var(--#{$prefix}warning-500) !important;
+        color: var(--#{$prefix}warning-dark) !important;
       }
     }
   }

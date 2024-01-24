@@ -73,7 +73,7 @@ const ProductDescription = () => {
               <p className="text-body-quaternary text-decoration-line-through fs-6 mb-0 me-3">
                 {currencyFormat(1499.99)}
               </p>
-              <p className="text-warning-500 fw-bolder fs-6 mb-0">10% off</p>
+              <p className="text-warning-dark fw-bolder fs-6 mb-0">10% off</p>
             </div>
             <p className="text-success fw-semibold fs-7 mb-2"> In stock</p>
             <p className="mb-2 text-body-secondary">
@@ -93,7 +93,7 @@ const ProductDescription = () => {
                 Gift wrapping is available.
               </strong>
             </p>
-            <p className="text-danger-500 fw-bold mb-5 mb-lg-0">
+            <p className="text-danger-dark fw-bold mb-5 mb-lg-0">
               Special offer ends in 23:00:45 hours
             </p>
           </div>
