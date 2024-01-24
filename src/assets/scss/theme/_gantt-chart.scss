@@ -34,7 +34,7 @@
     }
     .gantt_task_line {
       border: none;
-      background: var(--#{$prefix}info-100);
+      background: var(--#{$prefix}info-bg-subtle);
       // margin: 0 2px;
       border-radius: 2px;
       border-left: 2px solid var(--#{$prefix}-body-bg);
@@ -45,12 +45,12 @@
       }
       &.research {
         .gantt_task_progress {
-          background: var(--#{$prefix}info-200);
+          background: var(--#{$prefix}info-lighter);
         }
       }
       &.planning {
         .gantt_task_progress {
-          background: var(--#{$prefix}info-200);
+          background: var(--#{$prefix}info-lighter);
         }
       }
       &.design {
@@ -60,7 +60,7 @@
       }
       &.review {
         .gantt_task_progress {
-          background: var(--#{$prefix}info-300);
+          background: var(--#{$prefix}info-light);
         }
       }
       &.develop {
@@ -70,7 +70,7 @@
       }
       &.review-2 {
         .gantt_task_progress {
-          background: var(--#{$prefix}info-300);
+          background: var(--#{$prefix}info-light);
         }
       }
       &.gantt_selected {

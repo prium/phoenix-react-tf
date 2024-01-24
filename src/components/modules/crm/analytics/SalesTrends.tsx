@@ -15,7 +15,7 @@ const SalesTrends = () => {
         </Col>
         <Col xs={12} className="d-flex">
           <div className="d-flex">
-            <FontAwesomeIcon icon={faCircle} className="text-info-300 me-2" />
+            <FontAwesomeIcon icon={faCircle} className="text-info-light me-2" />
             <h6 className="mb-0 me-3 lh-base">Profit</h6>
           </div>
           <div className="d-flex">

@@ -3,10 +3,10 @@ import IssuesDiscoveredChart from 'components/charts/e-charts/IssuesDiscoveredCh
 import { Col, Row } from 'react-bootstrap';
 
 const issueStats = [
-  { type: 'Product design', value: 78, bg: 'info-300' },
-  { type: 'Development', value: 63, bg: 'warning-300' },
-  { type: 'QA & Testing', value: 56, bg: 'danger-300' },
-  { type: 'Customer queries', value: 36, bg: 'success-300' },
+  { type: 'Product design', value: 78, bg: 'info-light' },
+  { type: 'Development', value: 63, bg: 'warning-light' },
+  { type: 'QA & Testing', value: 56, bg: 'danger-light' },
+  { type: 'Customer queries', value: 36, bg: 'success-light' },
   { type: 'R & D', value: 24, bg: 'primary' }
 ];
 
