@@ -48,7 +48,7 @@ const FaqTab = () => {
             backgroundSize: 'cover'
           }}
         />
-        <div className="faq-title-box position-relative bg-body-emphasis border border-200 p-6 rounded-3 text-center mx-auto">
+        <div className="faq-title-box position-relative bg-body-emphasis border border-tranlucent p-6 rounded-3 text-center mx-auto">
           <h1>How can we help?</h1>
           <p className="my-3">
             Search for the topic you need help with or

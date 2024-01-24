@@ -42,7 +42,7 @@ const CalendarHeader = () => {
   };
 
   return (
-    <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 border-y border-200">
+    <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 border-y border-tranlucent">
       <Row className="py-3 gy-3 gx-0 justify-content-between">
         <Col xs={6} md="auto" className="order-1 d-flex align-items-center">
           <Button
