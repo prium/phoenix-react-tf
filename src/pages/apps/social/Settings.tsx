@@ -17,7 +17,7 @@ const Settings = () => {
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>
-          <div className="border-bottom border-300 mb-4">
+          <div className="border-bottom mb-4">
             <SettingsPersonalInfo />
             <Row className="gx-3 mb-6 gy-6 gy-sm-3">
               <Col xs={12} sm={6}>

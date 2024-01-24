@@ -96,7 +96,7 @@ const ProjectDetails = () => {
           </div>
         </div>
       </Col>
-      <Col xs={12} xxl={4} className="px-0 border-start-xxl border-300">
+      <Col xs={12} xxl={4} className="px-0 border-start-xxl">
         <div className="h-100">
           <div className="bg-light dark__bg-1100 h-100">
             <div className="p-4 p-lg-6">

@@ -24,7 +24,7 @@ const EventDetail = () => {
         style={{ minHeight: '250px' }}
       />
       <Row className="gx-lg-9">
-        <Col xl={8} className="border-end-xl border-300">
+        <Col xl={8} className="border-end-xl">
           <EventTitleCard className="mb-9" />
           <h2 className="mb-3">About this event</h2>
           <p className="text-justify text-body-secondary mb-6 mb-xxl-8">

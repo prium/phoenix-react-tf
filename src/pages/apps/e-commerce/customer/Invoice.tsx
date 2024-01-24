@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 const Invoice = () => {
   return (
-    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-1200 border-top border-300">
+    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-1200 border-top">
       <Section small className="py-0">
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">
@@ -130,7 +130,7 @@ const Invoice = () => {
 
         <EcomInvoiceTable />
 
-        <div className="text-end py-9 border-bottom border-300">
+        <div className="text-end py-9 border-bottom">
           <img className="mb-3" src={phoenixMart} alt="phoenix-mart" />
           <h4>Authorized Signatory</h4>
         </div>

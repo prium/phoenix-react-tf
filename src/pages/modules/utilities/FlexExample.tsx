@@ -177,14 +177,14 @@ const autoMarginWithAlignItemsCode = `
 `;
 
 const wrapCode = `<>
-  <div className="d-flex flex-nowrap mb-3 bg-body-secondary border border-300 py-3" style={{width: '8rem'}}>
+  <div className="d-flex flex-nowrap mb-3 bg-body-secondary border py-3" style={{width: '8rem'}}>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap mb-3 bg-body-secondary border border-300">
+  <div className="d-flex flex-wrap mb-3 bg-body-secondary border">
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
@@ -200,7 +200,7 @@ const wrapCode = `<>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap-reverse mb-3 bg-body-secondary border border-300">
+  <div className="d-flex flex-wrap-reverse mb-3 bg-body-secondary border">
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>
     <div className="p-2 bg-body-secondary border border-400">Flex item</div>

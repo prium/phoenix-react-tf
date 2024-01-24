@@ -53,7 +53,7 @@ const ProjectManagement = () => {
           <EarlyBirdCard />
         </Col>
       </Row>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 pb-3 border-y border-300 mb-3">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 pb-3 border-y mb-3">
         <Row>
           <Col xs={12} xl={7} xxl={6}>
             <IssuesDiscovered />
@@ -74,7 +74,7 @@ const ProjectManagement = () => {
         </Row>
       </div>
 
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 border-top border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 border-top">
         <ProjectDashboard />
       </div>
     </>

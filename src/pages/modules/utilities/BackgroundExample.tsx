@@ -88,7 +88,7 @@ const BackgroundExample = () => {
                     className={classNames(
                       `d-flex flex-center p-3 bg-${variant} `,
                       {
-                        'border border-300': index > 7
+                        border: index > 7
                       }
                     )}
                     style={{ height: '180px' }}
@@ -126,7 +126,7 @@ const BackgroundExample = () => {
                     className={classNames(
                       `d-flex flex-center p-3 bg-${variant} bg-gradient `,
                       {
-                        'border border-300': index > 7
+                        border: index > 7
                       }
                     )}
                     style={{ height: '180px' }}

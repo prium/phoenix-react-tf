@@ -45,7 +45,7 @@ const Ecommerce = () => {
           </Col>
         </Row>
       </div>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 border-y border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 border-y">
         <EcomLatestReviewsTable />
       </div>
       <Row className="gx-6">
@@ -60,7 +60,7 @@ const Ecommerce = () => {
           </div>
         </Col>
       </Row>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 pb-9 border-top border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 pb-9 border-top">
         <Row className="g-6">
           <Col xs={12} xl={6}>
             <EcomProjectionVsActual />

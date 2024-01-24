@@ -25,7 +25,7 @@ const FaqAccordion = () => {
         {faqs.map((faq, index) => (
           <Accordion.Item
             className={classNames({
-              'border-top border-300': index === 0
+              'border-top': index === 0
             })}
             eventKey={String(index)}
             key={faq.id}
