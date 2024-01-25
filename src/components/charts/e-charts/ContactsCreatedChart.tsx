@@ -18,7 +18,7 @@ const data1 = [24, 14, 30, 24, 32, 32, 18, 12, 32];
 const data2 = [36, 28, 36, 39, 54, 38, 22, 34, 52];
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary'), getThemeColor('gray-300')],
+  color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],

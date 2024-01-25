@@ -54,7 +54,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     },
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    borderColor: getThemeColor('gray-300'),
+    borderColor: getThemeColor('border-color'),
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,

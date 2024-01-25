@@ -12,12 +12,12 @@ echarts.use([TooltipComponent, BarChart]);
 const dates = getPastDates(4);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary'), getThemeColor('gray-300')],
+  color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
-    borderColor: getThemeColor('gray-300'),
+    borderColor: getThemeColor('border-color'),
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
