@@ -31,7 +31,7 @@ const ActivityTimeline = ({ data }: ActivityTimelineProps) => {
                   />
                 </Timeline.Dot>
                 {index !== data.length - 1 && (
-                  <Timeline.Bar className="h-100 border-dashed border-400" />
+                  <Timeline.Bar className="h-100 border-dashed" />
                 )}
               </Timeline.Separator>
             </Col>

@@ -20,7 +20,7 @@ const Footer = () => {
             </Link>
           </Col>
           <Col xl="auto" className="flex-1">
-            <ul className="list-unstyled d-flex justify-content-center flex-wrap mb-0 border-end-xl border-dashed border-800 gap-3 gap-xl-8 pe-xl-5 pe-xxl-8 w-75 w-md-100 mx-auto">
+            <ul className="list-unstyled d-flex justify-content-center flex-wrap mb-0 border-end-xl border-dashed gap-3 gap-xl-8 pe-xl-5 pe-xxl-8 w-75 w-md-100 mx-auto">
               {[
                 'Contact us',
                 'Newsroom',

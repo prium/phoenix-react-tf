@@ -33,7 +33,7 @@ const AttachmentPreview = ({
           `btn-icon btn-icon-${size} rounded-3 flex-column me-2 position-relative`,
           {
             border: !attachment.preview,
-            'text-body-quaternary border-500': variant === 'primary',
+            'text-body-quaternary': variant === 'primary',
             'border-light-subtle text-white': variant === 'secondary'
           }
         )}

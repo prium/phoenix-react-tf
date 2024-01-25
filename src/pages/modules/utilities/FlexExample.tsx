@@ -13,17 +13,17 @@ const flexCode = `
 
 const flexDirectionRowCode = `<>
   <div className="d-flex p-2 bg-body-secondary mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item 1</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 2</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-row-reverse p-2 bg-body-secondary mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item 1</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 2</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-lg-row-reverse p-2 bg-body-secondary mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">
+    <div className="p-2 bg-body-secondary border">
       Flex Item (<code>flex-direction:row-reverse</code> in <code>lg</code> screen )
     </div>
   </div>
@@ -31,132 +31,132 @@ const flexDirectionRowCode = `<>
 
 const flexDirectionColumnCode = `<>
   <div className="d-flex flex-column p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item 1</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 2</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-column-reverse p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item 1</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 2</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-column flex-lg-column-reverse p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item 1 (<code>column-reverse</code> in <code>lg</code> screen )</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 2 (<code>column-reverse</code> in <code>lg</code> screen )</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item 3 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3 (<code>column-reverse</code> in <code>lg</code> screen )</div>
   </div>
 </>`;
 
 const justifyCode = `
 <>
   <div justifyContent='start' className="d-flex justify-content-start bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div justifyContent='end' className="d-flex justify-content-end bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div justifyContent='center' className="d-flex justify-content-center bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div justifyContent='between' className="d-flex justify-content-between bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div justifyContent='around' className="d-flex justify-content-around bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div justifyContent='lg-center' className="d-flex justify-content-lg-center bg-body-secondary p-2 mb-2">  
-    <div className="p-2 bg-body-secondary border border-400">Flex item (<code>justify-content:center</code> in <code>lg</code> screen)</div>
+    <div className="p-2 bg-body-secondary border">Flex item (<code>justify-content:center</code> in <code>lg</code> screen)</div>
   </div>
 </>`;
 
 const alignItemsCode = `<>
   <div className="d-flex align-items-start bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex align-items-end bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex align-items-center bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex align-items-baseline bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex align-items-stretch bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex align-items-lg-center bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-body-secondary border border-400">Flex item (<code>align-items:center</code> in <code>lg</code> screen)</div>
+    <div className="p-2 bg-body-secondary border">Flex item (<code>align-items:center</code> in <code>lg</code> screen)</div>
   </div>
 </>`;
 
 const alignSelfCode = `<>
   <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
-    <div className="border border-400 p-2 bg-body-secondary align-self-start">Align self start</div>
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-start">Align self start</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
-    <div className="border border-400 p-2 bg-body-secondary align-self-end">Align self end</div>
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-end">Align self end</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
-    <div className="border border-400 p-2 bg-body-secondary align-self-center">Align self center</div>
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-center">Align self center</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
-    <div className="border border-400 p-2 bg-body-secondary align-self-baseline">Align self baseline</div>
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-baseline">Align self baseline</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
-    <div className="border border-400 p-2 bg-body-secondary align-self-stretch">Align self stretch</div>
-    <div className="border border-400 p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-stretch">Align self stretch</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
 </>`;
 
 const fillCode = `<>
   <div className="d-flex bg-body-secondary">
-    <div className="p-2 flex-fill bg-body-secondary border border-400">Flex item with a lot of content</div>
-    <div className="p-2 flex-fill bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 flex-fill bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item with a lot of content</div>
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item</div>
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
 const growCode = `
   <div className="d-flex bg-body-secondary">
-    <div className="p-2 flex-grow-1 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Third flex item</div>
+    <div className="p-2 flex-grow-1 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Third flex item</div>
   </div>
 `;
 
 const shrinkCode = `
   <div className="d-flex bg-body-secondary">
-    <div className="p-2 w-100 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 flex-shrink-1 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 w-100 bg-body-secondary border">Flex item</div>
+    <div className="p-2 flex-shrink-1 bg-body-secondary border">Flex item</div>
   </div>
 `;
 
 const autoMarginCode = `
 <>
   <div className="d-flex bg-body-secondary mb-2">
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2">
-    <div className="me-auto p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="me-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex bg-body-secondary mb-2">
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="ms-auto p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="ms-auto p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>
 `;
@@ -164,76 +164,76 @@ const autoMarginCode = `
 const autoMarginWithAlignItemsCode = `
 <>
   <div className="d-flex flex-column bg-body-secondary mb-3 align-items-start" style={{height: '200px'}}>
-    <div className="mb-auto p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="mb-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-column bg-body-secondary mb-3 align-items-end" style={{height: '200px'}}>
-    <div className="mb-auto p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="mb-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>
 `;
 
 const wrapCode = `<>
   <div className="d-flex flex-nowrap mb-3 bg-body-secondary border py-3" style={{width: '8rem'}}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap mb-3 bg-body-secondary border">
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap-reverse mb-3 bg-body-secondary border">
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
 const orderCode = `
   <div className="d-flex bg-body-secondary p-2 mb-2">  
-    <div className="order-3 p-2 bg-body-secondary border border-400">First flex item</div>
-    <div className="order-2 p-2 bg-body-secondary border border-400">Second flex item</div>
-    <div className="order-1 p-2 bg-body-secondary border border-400">Third flex item</div>
+    <div className="order-3 p-2 bg-body-secondary border">First flex item</div>
+    <div className="order-2 p-2 bg-body-secondary border">Second flex item</div>
+    <div className="order-1 p-2 bg-body-secondary border">Third flex item</div>
   </div>
 `;
 
 const responsiveOrderCode = `
   <div className="d-flex bg-body-secondary p-2 mb-2">  
-    <div className="order-sm-3 p-2 bg-body-secondary border border-400">
+    <div className="order-sm-3 p-2 bg-body-secondary border">
       First flex item (<code>order:3</code> in <code>sm</code> screen)</div>
-    <div className="order-md-2 p-2 bg-body-secondary border border-400">
+    <div className="order-md-2 p-2 bg-body-secondary border">
       Second flex item (<code>order:2</code> in <code>md</code> screen)
     </div>
-    <div className="order-lg-1 p-2 bg-body-secondary border border-400">
+    <div className="order-lg-1 p-2 bg-body-secondary border">
       Third flex item (<code>order:1</code> in <code>lg</code> screen)
     </div>
   </div>
@@ -241,100 +241,100 @@ const responsiveOrderCode = `
 
 const alignContentCode = `<>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-start" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-end" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-center" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-between" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-around" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
   <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-stretch" style={{ height: '300px' }}>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
-    <div className="p-2 bg-body-secondary border border-400">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
