@@ -68,12 +68,12 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
             <h5 className="text-body fw-normal name text-nowrap">
               {conversation.user.name}
             </h5>
-            <p className="fs-10 text-600 mb-0 text-nowrap">
+            <p className="fs-10 text-body-tertiary text-opacity-85 mb-0 text-nowrap">
               {lastMessage.time}
             </p>
           </div>
           <div className="d-flex justify-content-between">
-            <p className="fs-9 mb-0 line-clamp-1 text-600 message">
+            <p className="fs-9 mb-0 line-clamp-1 text-body-tertiary text-opacity-85 message">
               {lastMessage.message}
             </p>
             {unseenMessageCount > 0 && (

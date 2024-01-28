@@ -24,7 +24,7 @@ const MeetingCard = ({ meeting }: { meeting: Meeting }) => {
               <span className="fw-semibold text-body-secondary fs-9">
                 {meeting.date.from}
               </span>
-              <span className="text-600"> to </span>
+              <span className="text-body-teritary text-opacity-85"> to </span>
               <span className="fw-semibold text-body-secondary fs-9">
                 {meeting.date.to}
               </span>

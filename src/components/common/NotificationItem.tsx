@@ -51,7 +51,7 @@ const NotificationItem = ({
                 <span className="fw-bold">{notification.detail}</span>
               )}
 
-              <span className="ms-2 text-600 fw-bold fs-10">
+              <span className="ms-2 text-body-tertiary text-opactity-85 fw-bold fs-10">
                 {notification.ago}
               </span>
             </p>

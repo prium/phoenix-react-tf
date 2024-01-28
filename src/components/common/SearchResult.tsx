@@ -104,7 +104,9 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
                 <div className="flex-1">
                   <h6 className="mb-0 text-body-highlight">{item.label}</h6>
                   <p className="fs-10 mb-0 d-flex text-body-tertiary">
-                    <span className="fw-medium text-600">{item.details}</span>
+                    <span className="fw-medium text-body-tertiary text-opacity-85">
+                      {item.details}
+                    </span>
                   </p>
                 </div>
               </Dropdown.Item>

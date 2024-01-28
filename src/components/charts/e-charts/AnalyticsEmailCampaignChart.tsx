@@ -23,7 +23,7 @@ const tooltipFormatter = (params: any) => {
     </div>`;
 
   return `<div>
-            <p class='mb-2 text-600'>
+            <p class='mb-2 text-body-tertiary'>
               ${el.seriesName}
             </p>
             ${tooltipItem}

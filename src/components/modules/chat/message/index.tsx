@@ -95,7 +95,9 @@ const Message = ({ message, user, showActions = true }: MessageProps) => {
               'justify-content-end': message.type === 'sent'
             })}
           >
-            <p className="mb-0 text-600 fw-semibold">{message.time}</p>
+            <p className="mb-0 text-body-tertiary text-opacity-85 fw-semibold">
+              {message.time}
+            </p>
             {message.readAt && (
               <FontAwesomeIcon icon={faCheckDouble} className="text-success" />
             )}

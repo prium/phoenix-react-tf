@@ -41,7 +41,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
     <div>
       <div className="email-content scrollbar">
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-body-tertiary.text-opacity-85 mb-0 fw-bold">
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
             Mailbox
           </p>
           {hideSidebar && (
@@ -61,7 +61,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
         </Nav>
 
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-body-tertiary.text-opacity-85 mb-0 fw-bold">
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
             Filtered
           </p>
           <Button
@@ -80,7 +80,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
         </Nav>
 
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-body-tertiary.text-opacity-85 mb-0 fw-bold">
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
             Labels
           </p>
           <Button

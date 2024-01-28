@@ -43,7 +43,9 @@ const EventItem = ({ event }: EventItemProps) => {
           {event.organization}
         </Link>
       </p>
-      <p className="fs-10 text-600">{event.people} people going</p>
+      <p className="fs-10 text-body-tertiary text-opacity-85">
+        {event.people} people going
+      </p>
       <p className="fs-9 text-body-tertiary fw-bold mb-1">
         <FontAwesomeIcon icon={faClock} className="text-body-secondary me-1" />
         {event.time}

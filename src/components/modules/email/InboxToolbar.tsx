@@ -33,12 +33,12 @@ const InboxToolbar = ({ size = 'lg', className }: InboxToolbarProps) => {
           <Button className="p-0 me-2" onClick={() => location.reload()}>
             <FontAwesomeIcon icon={faRedo} className="text-primary fs-10" />
           </Button>
-          <p className="fw-semibold fs-10 text-600 mb-0 lh-sm text-nowrap">
+          <p className="fw-semibold fs-10 text-body-tertiary text-opacity-85 mb-0 lh-sm text-nowrap">
             Last refreshed 1m ago
           </p>
         </div>
         <div className="d-flex gap-3">
-          <p className="text-600 fs-9 fw-semibold mb-0">
+          <p className="text-body-tertiary text-opacity-85 fs-9 fw-semibold mb-0">
             {size === 'lg' ? 'Showing : ' : ' '}
             <span className="text-body">1-7</span>
             {' of '}

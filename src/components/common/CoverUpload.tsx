@@ -30,7 +30,7 @@ const CoverUpload = ({
   return (
     <>
       {!src && (
-        <div className="text-600 fw-bold d-flex flex-center flex-column gap-3 fs-9 w-100 h-100">
+        <div className="text-body-tertiary fw-bold d-flex flex-center flex-column gap-3 fs-9 w-100 h-100">
           <img className="mt-3" src={imageIcon} width={40} alt="" />
           <Button variant="link" className="p-0">
             Add cover image

@@ -73,7 +73,9 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Category',
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4' },
-      cellProps: { className: 'fs-9 fw-semibold ps-4 text-600' }
+      cellProps: {
+        className: 'fs-9 fw-semibold ps-4 text-body-tertiary text-opacity-85'
+      }
     }
   },
   {
@@ -125,7 +127,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Published on',
     meta: {
       headerProps: { style: { width: 50 }, className: 'ps-4' },
-      cellProps: { className: 'text-600 ps-4' }
+      cellProps: { className: 'text-body-tertiary text-opacity-85 ps-4' }
     }
   },
   {

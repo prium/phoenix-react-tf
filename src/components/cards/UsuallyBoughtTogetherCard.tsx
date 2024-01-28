@@ -57,7 +57,7 @@ const UsuallyBoughtTogetherCard = ({
         </Stack>
         <div className="d-flex align-items-end justify-content-between">
           <div>
-            <h5 className="mb-2 text-body-tertiary.text-opacity-85">Total</h5>
+            <h5 className="mb-2 text-body-tertiary text-opacity-85">Total</h5>
             <h4 className="mb-0 text-body-emphasis">
               {currencyFormat(958.99)}
             </h4>

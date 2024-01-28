@@ -39,7 +39,7 @@ const AvatarDropzone = ({ className, onDrop, ...rest }: DropzoneProps) => {
             <FontAwesomeIcon icon={faUpload} className="me-2" />
             Upload Profile Picture
           </h5>
-          <p className="mb-0 fs-9 text-600 lh-sm">
+          <p className="mb-0 fs-9 text-body-tertiary text-opacity-85 lh-sm">
             Upload a 300x300 jpg image with <br />a maximum size of 400KB
           </p>
         </div>

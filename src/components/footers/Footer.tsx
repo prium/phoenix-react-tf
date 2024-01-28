@@ -22,7 +22,9 @@ const Footer = ({ className }: FooterProps) => {
           </p>
         </Col>
         <Col xs={12} sm="auto" className="text-center">
-          <p className="mb-0 text-600">v{process.env.REACT_APP_VERSION}</p>
+          <p className="mb-0 text-body-tertiary text-opacity-85">
+            v{process.env.REACT_APP_VERSION}
+          </p>
         </Col>
       </Row>
     </footer>

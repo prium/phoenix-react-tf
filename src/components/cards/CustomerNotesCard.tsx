@@ -18,7 +18,7 @@ const Note = ({ note, date, isLast }: NoteProps) => {
     >
       <p className="text-body-highlight mb-1">{note}</p>
       <div className="text-end">
-        <p className="text-600 mb-0">{date}</p>
+        <p className="text-body-tertiary text-opacity-85 mb-0">{date}</p>
       </div>
     </div>
   );
