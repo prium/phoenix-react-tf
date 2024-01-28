@@ -41,7 +41,7 @@
   }
   .tox-sidebar-wrap {
     overflow: hidden;
-    border: 1px solid var(--#{$prefix}input-border-color);
+    border: 1px solid $input-border-color;
     border-radius: $border-radius;
   }
 
@@ -78,7 +78,7 @@
   .tox-textfield {
     background-color: var(--#{$prefix}input-bg) !important;
     color: var(--#{$prefix}body-color) !important;
-    border-color: var(--#{$prefix}input-border-color) !important;
+    border-color: $input-border-color !important;
     padding: 0.5rem 1rem !important;
     &:focus {
       border-color: $primary !important;

@@ -16,7 +16,7 @@ const NavbarDual = () => {
       className="navbar-top fixed-top"
       expand="lg"
       variant=""
-      data-navbar-appearence={navbarTopAppearance === 'darker' ? 'darker' : ''}
+      data-navbar-appearance={navbarTopAppearance === 'darker' ? 'darker' : ''}
     >
       <div className="w-100">
         <div className="d-flex flex-between-center dual-nav-first-layer">

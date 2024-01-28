@@ -31,7 +31,7 @@ const NavbarVerical = () => {
         className="navbar-vertical"
         expand="lg"
         variant=""
-        data-navbar-appearence={
+        data-navbar-appearance={
           navbarVerticalAppearance === 'darker' ? 'darker' : ''
         }
       >

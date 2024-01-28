@@ -38,7 +38,7 @@
         }
         &.unread {
           .name {
-            color: var(--#{$prefix}1100) !important;
+            color: var(--#{$prefix}gray-1100) !important;
             font-weight: $font-weight-bold !important;
           }
           .message {
@@ -104,7 +104,7 @@
           top: -1px;
           bottom: auto;
           border: 11px solid;
-          border-color: var(--#{$prefix}200) transparent transparent transparent;
+          border-color: var(--#{$prefix}border-translucent) transparent transparent transparent;
         }
       }
     }

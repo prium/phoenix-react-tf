@@ -310,7 +310,7 @@ $input-disabled-color: var(--#{$prefix}quaternary-color) !default;
 $input-group-addon-bg: $gray-100 !default;
 $input-disabled-group-addon-bg: $input-disabled-bg !default;
 $input-disabled-group-addon-color: $input-disabled-color !default;
-$input-border-color: var(--#{$prefix}input-border-color) !default;
+$input-border-color: var(--#{$prefix}border-color) !default;
 $input-color: var(--#{$prefix}body-color) !default;
 $input-placeholder-color: $gray-400;
 
@@ -331,8 +331,8 @@ $form-label-font-style: null !default;
 $form-label-font-weight: $font-weight-bold !default;
 $form-label-color: var(--#{$prefix}tertiary-color) !default;
 
-$form-select-color: var(--#{$prefix}900) !default;
-$form-select-disabled-bg: var(--#{$prefix}200) !default;
+$form-select-color: var(--#{$prefix}900) !default; // not in html
+$form-select-disabled-bg: var(--#{$prefix}quaternary-bg) !default;
 $form-select-indicator-padding: 2.5rem;
 $form-select-box-shadow: $input-box-shadow;
 $form-select-indicator: var(--#{$prefix}form-select-indicator);
@@ -347,7 +347,7 @@ $input-bg: var(--#{$prefix}input-bg) !default;
 
 $input-focus-border-color: $primary !default;
 
-$form-check-input-border: 1px solid var(--#{$prefix}400) !default;
+$form-check-input-border: 1px solid var(--#{$prefix}border-color) !default;
 $form-check-input-width-lg: 1.5rem !default;
 $form-check-padding-start-lg: $form-check-input-width-lg + 0.5rem;
 $form-check-label-color: $form-label-color;
@@ -609,7 +609,7 @@ $list-group-action-hover-color: var(
   --#{$prefix}list-group-action-hover-color
 ) !default;
 $list-group-hover-bg: var(--#{$prefix}list-group-hover-bg) !default;
-$list-group-action-active-bg: var(--#{$prefix}200);
+$list-group-action-active-bg: var(--#{$prefix}200); // not in html
 
 
 //*-----------------------------------------------

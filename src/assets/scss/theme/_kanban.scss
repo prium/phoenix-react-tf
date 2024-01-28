@@ -249,7 +249,7 @@
   background: var(--#{$prefix}emphasis-bg);
   height: 100%;
   width: 100%;
-  border: 1px solid var(--#{$prefix}input-border-color);
+  border: 1px solid $input-border-color;
   border-radius: var(--#{$prefix}border-radius);
   position: relative;
   background-image: var(--phoenix-form-select-indicator);
@@ -304,7 +304,7 @@
 
     &:hover {
       // border-color: var(--#{$prefix}border-color);
-      background-color: var(--#{$prefix}100) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
     }
   }
   &:hover {
@@ -348,7 +348,7 @@
             top: 48% !important;
             width: 100% !important;
             position: absolute !important;
-            background-color: var(--#{$prefix}300) !important ;
+            background-color: var(--#{$prefix}tertiary-bg) !important ;
           }
         }
       }

@@ -26,7 +26,7 @@ const NavbarTopHorizontal = () => {
       })}
       expand="lg"
       variant=""
-      data-navbar-appearence={navbarTopAppearance === 'darker' ? 'darker' : ''}
+      data-navbar-appearance={navbarTopAppearance === 'darker' ? 'darker' : ''}
     >
       <NavbarBrand />
       {!(navbarPosition === 'combo' && breakpoints.down('lg')) && (

@@ -23,7 +23,7 @@ const NavbarTopDefault = () => {
       })}
       expand
       variant=""
-      data-navbar-appearence={navbarTopAppearance === 'darker' ? 'darker' : ''}
+      data-navbar-appearance={navbarTopAppearance === 'darker' ? 'darker' : ''}
     >
       <div className="navbar-collapse justify-content-between">
         <NavbarBrand />

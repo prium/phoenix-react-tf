@@ -105,7 +105,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
     },
     separator: {
       icon: faTruck,
-      dotClass: 'bg-400',
+      dotClass: 'bg-body-quaternary',
       barClass: 'border-dashed'
     }
   },
@@ -120,7 +120,7 @@ export const orderTrackingTimelineData: TimelineData[] = [
     },
     separator: {
       icon: faTruckFast,
-      dotClass: 'bg-400'
+      dotClass: 'bg-body-quaternary'
     }
   }
 ];
