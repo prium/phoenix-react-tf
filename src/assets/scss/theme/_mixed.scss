@@ -527,3 +527,32 @@
     }
   }
 }
+
+
+
+.fill-body-bg{
+  fill: var(--#{$prefix}body-bg);
+}
+.fill-emphasis-bg{
+  fill: var(--#{$prefix}emphasis-bg);
+}
+
+
+.text-stats-circle-success{
+  color: var(--#{$prefix}success-bg-subtle) !important;
+  [data-bs-theme="dark"] & {
+    color: #134207 !important;
+  }
+}
+.text-stats-circle-warning{
+  color: var(--#{$prefix}warning-bg-subtle) !important;
+  [data-bs-theme="dark"] & {
+    color: #52310B !important;
+  }
+}
+.text-stats-circle-danger{
+  color: var(--#{$prefix}danger-bg-subtle) !important;
+  [data-bs-theme="dark"] & {
+    color: #612017 !important;
+  }
+}

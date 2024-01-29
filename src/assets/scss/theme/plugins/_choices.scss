@@ -10,7 +10,7 @@
     border-radius: $input-border-radius;
     line-height: 1.5rem !important;
     font-size: 1rem;
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     min-height: var(--#{$prefix}choices-inner-min-height) !important;
     background-size: $form-select-bg-size;
     border: 1px solid $input-border-color;
@@ -28,7 +28,7 @@
     padding: 0;
     font-size: 0.8rem;
     color: var(--#{$prefix}-input-color);
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     // margin-top: 5px !important;
     vertical-align: top;
     margin-bottom: 0;

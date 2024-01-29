@@ -125,7 +125,7 @@
   --#{$prefix}theme-wizard-active-color: #{map-get($theme-colors, 'primary')};
 
   /* --------------------------------- tinymce -------------------------------- */
-  --#{$prefix}tinymce-bg: var(--#{$prefix}input-bg);
+  --#{$prefix}tinymce-bg: #{$input-bg};
   --#{$prefix}tinymce-tox-tbtn-enabled-icon-color: var(--#{$prefix}secondary-color);
 
   /* -------------------------------- choices -------------------------------- */

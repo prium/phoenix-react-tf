@@ -76,7 +76,7 @@
   }
 
   .tox-textfield {
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     color: var(--#{$prefix}body-color) !important;
     border-color: $input-border-color !important;
     padding: 0.5rem 1rem !important;
@@ -87,7 +87,7 @@
   }
 
   .tox-listbox {
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     color: var(--#{$prefix}body-color) !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;

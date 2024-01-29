@@ -41,7 +41,7 @@
 }
 .navbar-top {
   width: 100%;
-  font-size: map_get($font-sizes, '9');
+  font-size: map_get($font-sizes, 9);
   font-weight: $font-weight-semibold;
   padding: 0;
   background: var(--#{$prefix}navbar-top-bg-color);

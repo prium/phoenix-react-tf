@@ -70,7 +70,7 @@ const Stat = ({ stat }: { stat: StatType }) => {
         <FontAwesomeIcon
           icon={faCircle}
           size="2x"
-          className={`text-${stat.color}-100 fa-layers-circle`}
+          className={`text-stats-circle-${stat.color} fa-layers-circle`}
           transform="up-4 right-3 grow-2"
         />
         <FontAwesomeIcon
