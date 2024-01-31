@@ -1,19 +1,42 @@
-@each $color, $value in $theme-colors {
-  .link-#{$color} {
-    color: var(--#{$prefix}#{$color});
-    &:hover,
-    &:focus {
-      color: var(--#{$prefix}colored-link-#{$color}-hover-color);
-    }
-  }
-}
+$body-link-colors: (
+  'quaternary': var(--#{$prefix}tertiary-color-rgb),
+  'tertiary': var(--#{$prefix}secondary-color-rgb),
+  'secondary': var(--#{$prefix}body-color-rgb),
+  'body': var(--#{$prefix}body-highlight-color-rgb),
+  'highlight': var(--#{$prefix}emphasis-color-rgb)
+  ) !default;
+  
 
-@each $color, $value in $grays {
-  .link-#{$color} {
-    color: var(--#{$prefix}#{$color}) !important;
-    &:hover,
-    &:focus {
-      color: var(--#{$prefix}colored-link-#{$color}-hover-color) !important;
+@each $key, $value in $body-link-colors {
+  @if $key == 'body' {
+    .link-#{$key} {
+      color: rgba( var(--#{$prefix}#{$key}-color-rgb), var(--#{$prefix}link-opacity, 1)) !important;
+      text-decoration-color: rgba( var(--#{$prefix}#{$key}-color-rgb), var(--#{$prefix}link-underline-opacity, 1)) !important;
+      &:hover,
+      &:focus {
+        color: rgba(#{$value}, var(--#{$prefix}link-opacity, 1)) !important;
+        text-decoration-color: rgba( #{$value} , var(--#{$prefix}link-underline-opacity, 1)) !important;
+      }
+    }
+  } @else {
+    .link-body-#{$key} {
+      @if $key == 'highlight'{
+        color: rgba( var(--#{$prefix}body-#{$key}-color-rgb), var(--#{$prefix}link-opacity, 1)) !important;
+        text-decoration-color: rgba( var(--#{$prefix}body-#{$key}-color-rgb), var(--#{$prefix}link-underline-opacity, 1)) !important;
+        &:hover,
+        &:focus {
+          color: rgba(#{$value}, var(--#{$prefix}link-opacity, 1)) !important;
+          text-decoration-color: rgba( #{$value} , var(--#{$prefix}link-underline-opacity, 1)) !important;
+        }
+      } @else {
+        color: rgba( var(--#{$prefix}#{$key}-color-rgb), var(--#{$prefix}link-opacity, 1)) !important;
+        text-decoration-color: rgba( var(--#{$prefix}#{$key}-color-rgb), var(--#{$prefix}link-underline-opacity, 1)) !important;
+        &:hover,
+        &:focus {
+          color: rgba(#{$value}, var(--#{$prefix}link-opacity, 1)) !important;
+          text-decoration-color: rgba( #{$value} , var(--#{$prefix}link-underline-opacity, 1)) !important;
+        }
+      }
     }
   }
 }
