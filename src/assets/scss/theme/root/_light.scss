@@ -30,8 +30,8 @@
 
   // globals
   --#{$prefix}input-group-addon-bg-global: #{$gray-100};
-  --#{$prefix}dropdonw-link-color-global: #{$gray-700};
-  --#{$prefix}dropdonw-link-hover-color-global: shade-color($gray-700, 50%);
+  --#{$prefix}dropdown-link-color-global: #{$gray-700};
+  --#{$prefix}dropdown-link-hover-color-global: #{shade-color($gray-700, 50%)};
   --#{$prefix}nav-vertical-color-global: #{$gray-1100};
 
 

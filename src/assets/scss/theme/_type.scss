@@ -45,9 +45,10 @@ h3,
     color: var(--#{$prefix}#{$key}-bg-subtle) !important;
   }
 }
+
 [data-bs-theme="dark"]{
   @each $key, $value in $theme-colors{
-    .text-bg-#{$key}{
+    .text-bg-#{$key}, .badge.bg-#{$key}{
       @if $key == 'secondary' {
         color: $gray-100 !important;
       } @else{

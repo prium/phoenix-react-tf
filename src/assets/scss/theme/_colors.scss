@@ -392,3 +392,12 @@ $hover-bg-colors: (
   'body-highlight': var(--#{$prefix}body-highlight-bg),
   'body-emphasis': var(--#{$prefix}emphasis-bg),
 ) !default;
+
+// $body-link-colors variable’s key used as text color and value as hover text color.
+$body-link-colors: (
+  'quaternary': var(--#{$prefix}tertiary-color-rgb),
+  'tertiary': var(--#{$prefix}secondary-color-rgb),
+  'secondary': var(--#{$prefix}body-color-rgb),
+  'body': var(--#{$prefix}body-highlight-color-rgb),
+  'highlight': var(--#{$prefix}emphasis-color-rgb)
+) !default;
