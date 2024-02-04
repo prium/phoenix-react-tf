@@ -6,9 +6,9 @@ const exampleCode = `
 () => {
   return (
     <>
-      {['primary', 'secondary', 'success', 'danger', 'warning', 'info'].map(
+      {['primary', 'success', 'danger', 'warning', 'info'].map(
         variant => (
-          <Alert key={variant} variant={"soft-" + variant}>
+          <Alert key={variant} variant={"subtle-" + variant}>
             This is a {variant} alert—check it out!
           </Alert>
         )
@@ -22,7 +22,7 @@ const outlineCode = `
 () => {
   return (
     <>
-      {['primary', 'secondary', 'success', 'danger', 'warning', 'info'].map(
+      {['primary', 'success', 'danger', 'warning', 'info'].map(
         variant => (
           <Alert key={variant} variant={"outline-" + variant}>
             This is a {variant} alert—check it out!
@@ -38,7 +38,7 @@ const phoenixAlertCode = `
 () => {
   return (
     <>
-      {['primary', 'secondary', 'success', 'danger', 'warning', 'info'].map(
+      {['primary', 'success', 'danger', 'warning', 'info'].map(
         variant => (
           <Alert key={variant} variant={"phoenix-" + variant}>
             This is a {variant} alert—check it out!
@@ -54,9 +54,9 @@ const solidAlertCode = `
 () => {
   return (
     <>
-      {['primary', 'secondary', 'success', 'danger', 'warning', 'info'].map(
+      {['primary', 'success', 'danger', 'warning', 'info'].map(
         variant => (
-          <Alert key={variant} variant={variant} className='text-white'>
+          <Alert key={variant} variant={variant}>
             This is a {variant} alert—check it out!
           </Alert>
         )
@@ -86,7 +86,7 @@ const dismissCode = `
 }`;
 
 const additionalContentCode = `
-<Alert variant="success" className='text-white'>
+<Alert variant="subtle-success">
   <Alert.Heading>Hey, nice to see you</Alert.Heading>
   <p>
     Aww yeah, you successfully read this important alert message. This example
