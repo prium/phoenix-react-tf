@@ -296,16 +296,6 @@
 
    
 
-    /* -------------------------------- dropdown -------------------------------- */
-    .dropdown-menu {
-      // --#{$prefix}dropdown-bg: #{map-get($dark-common, 'white')};
-      --#{$prefix}dropdown-border-color: #{map-get($grays-dark, '300')};
-      --#{$prefix}dropdown-divider-bg: #{map-get($grays-dark, '300')};
-      --#{$prefix}dropdown-link-hover-bg: #{map-get($grays-dark, '100')};
-      --#{$prefix}dropdown-link-color: #{map-get($grays-dark, '1000')};
-      // --#{$prefix}dropdown-link-hover-color: #{map-get($dark-common, 'black')};
-    }
-
     /* ---------------------------------- modal --------------------------------- */
     .modal-content {
       // --#{$prefix}modal-bg: #{map-get($dark-common, 'white')};

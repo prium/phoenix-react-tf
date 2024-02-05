@@ -3,15 +3,15 @@ import DocPageHeader from 'components/docs/DocPageHeader';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const lightCode = `
-<Navbar bg="light" expand="lg">
+<Navbar bg="light" data-bs-theme="light" expand="lg">
   <Navbar.Brand href="#">Navbar</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav className="me-auto my-2 my-lg-0">
-      <Nav.Link href="#action1">Home</Nav.Link>
+      <Nav.Link className="active" href="#action1">Home</Nav.Link>
       <Nav.Link href="#action2">Link</Nav.Link>
       <NavDropdown title="Dropdown" id="navbarScrollingDropdown">
-        <div className='py-2 bg-light rounded-3'>
+        <div className='py-2 rounded-3'>
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
           <NavDropdown.Divider />
@@ -29,29 +29,29 @@ const lightCode = `
         className="me-2"
         aria-label="Search"
       />
-      <Button variant="light">Search</Button>
+      <Button variant="outline-primary">Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>
 `;
 
 const darkCode = `
-<Navbar bg="dark" variant="dark" expand="lg" className='light'>
-  <Navbar.Brand className='text-white' href="#">Navbar</Navbar.Brand>
+<Navbar bg="dark" variant="dark" expand="lg" data-bs-theme="dark">
+  <Navbar.Brand href="#">Navbar</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav className="me-auto my-2 my-lg-0">
-      <Nav.Link className='text-white' href="#action1">Home</Nav.Link>
-      <Nav.Link className='text-white' href="#action2">Link</Nav.Link>
-      <NavDropdown title="Dropdown" id="navbarScrollingDropdown" className='text-white'>
-        <div className='py-2 bg-light dark__bg-gray-1000 rounded-3'>
+      <Nav.Link className='active' href="#action1">Home</Nav.Link>
+      <Nav.Link href="#action2">Link</Nav.Link>
+      <NavDropdown title="Dropdown" id="navbarScrollingDropdown">
+        <div className='py-2 rounded-3'>
           <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action5">Something else here</NavDropdown.Item>
         </div>
       </NavDropdown>
-      <Nav.Link href="#" className='text-white' disabled>
+      <Nav.Link href="#" disabled>
         Disabled
       </Nav.Link>
     </Nav>

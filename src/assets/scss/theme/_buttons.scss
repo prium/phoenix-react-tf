@@ -6,7 +6,6 @@
 .btn-reveal-trigger {
   @include hover-focus {
     .btn-reveal {
-      // box-shadow: $btn-reveal-hover-shadow;
       background: var(--#{$prefix}body-bg);
       border: 1px solid var(--#{$prefix}gray-200);
       color: var(--#{$prefix}body-color);
@@ -29,7 +28,6 @@
   @include media-breakpoint-up(sm) {
     @include hover-focus {
       .btn-reveal {
-        // box-shadow: $btn-reveal-hover-shadow;
         background: $body-bg;
         border: 1px solid $gray-200;
         &:hover,
