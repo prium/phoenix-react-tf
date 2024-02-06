@@ -498,36 +498,40 @@ $accordion-button-active-icon: url("data:image/svg+xml,%3Csvg aria-hidden='true'
 //|   Tooltip
 //-----------------------------------------------*/
 
-$tooltip-padding-y: 0.5rem !default;
 $tooltip-font-size: map-get($font-sizes, 9) !default;
-$tooltip-padding-y: map-get($spacers, 1) !default;
-$tooltip-padding-x: map-get($spacers, 2) !default;
-$tooltip-bg: $gray-1000 !default;
-$tooltip-border-radius: $border-radius-sm !default;
+$tooltip-padding-y: 0.5rem !default;
 
+$tooltip-color: $white;
+$tooltip-bg: $gray-1000 !default;
+
+$tooltip-border-radius: $border-radius-sm !default;
+// $tooltip-padding-x: map-get($spacers, 2) !default;
 
 //*-----------------------------------------------
 //|   Popover
 //-----------------------------------------------*/
-$popover-bg: $white !default;
-$popover-border-color: $gray-200 !default;
-$popover-header-bg: $light !default;
-$popover-header-border-bottom-color: shade-color($white, 16%) !default;
-$popover-header-color: $headings-color !default;
+$popover-bg: var(--#{$prefix}emphasis-bg) !default;
+$popover-border-color: var(--#{$prefix}border-color) !default;
+
+// $popover-header-bg: $light !default;
+// $popover-header-border-bottom-color: shade-color($white, 16%) !default;
+// $popover-header-color: $headings-color !default;
 
 
 //*-----------------------------------------------
 //|   Toast
 //-----------------------------------------------*/
-$toast-header-color: $gray-800 !default;
-$toast-header-background-color: $white !default;
+
 $toast-font-size: $font-size-base !default;
-$toast-padding-x: 0;
-$toast-padding-y: map-get($spacers, 3);
-$toast-box-shadow: $box-shadow-gray-400;
-$toast-header-background-color: transparent;
-// $toast-border-color: transparent;
-$toast-header-border-color: $gray-300;
+$toast-padding-x: 0 !default;
+$toast-padding-y: map-get($spacers, 3) !default;
+$toast-box-shadow: $box-shadow-gray-400 !default;
+$toast-background-color: rgba(var(--#{$prefix}emphasis-bg-rgb), .85) !default;
+$toast-border-color: var(--#{$prefix}border-color) !default;
+
+$toast-header-color: var(--#{$prefix}secondary-color) !default;
+$toast-header-background-color: transparent !default;
+$toast-header-border-color: var(--#{$prefix}border-color-translucent) !default;
 
 
 //*-----------------------------------------------
@@ -574,6 +578,8 @@ $alert-color-scale: 40% !default;
 $progress-border-radius: $border-radius-lg !default;
 $progress-height: 0.313rem !default;
 $progress-box-shadow: 0 0 0 transparent !default;
+$progress-bg: var(--#{$prefix}secondary-bg) !default;
+
 
 
 ///*-----------------------------------------------
@@ -581,11 +587,9 @@ $progress-box-shadow: 0 0 0 transparent !default;
 //-----------------------------------------------*/
 
 $list-group-color: var(--#{$prefix}secondary-color);
-$list-group-bg: var(--#{$prefix}list-group-bg) !default;
+$list-group-bg: var(--#{$prefix}emphasis-bg) !default;
 $list-group-border-color: var(--#{$prefix}border-color) !default;
-$list-group-action-hover-color: var(
-  --#{$prefix}list-group-action-hover-color
-) !default;
+$list-group-action-hover-color: var(--#{$prefix}list-group-action-hover-color) !default;
 $list-group-hover-bg: var(--#{$prefix}list-group-hover-bg) !default;
 $list-group-action-active-bg: var(--#{$prefix}200); // not in html
 
@@ -593,9 +597,8 @@ $list-group-action-active-bg: var(--#{$prefix}200); // not in html
 //*-----------------------------------------------
 //|   Thumbnail
 //-----------------------------------------------*/
-$thumbnail-bg: var(--#{$prefix}thumbnail-bg) !default;
+$thumbnail-bg: var(--#{$prefix}emphasis-bg) !default;
 $thumbnail-border-width: 3px !default;
-$thumbnail-border-color: var(--#{$prefix}thumbnail-bg) !default;
 
 // /*-----------------------------------------------
 //|   Breadcrumbs
@@ -640,7 +643,6 @@ $gutters: map-merge(
     card: $card-spacer-x * 2
   )
 );
-
 
 
 //*---------------------------------------------------------------------------
@@ -803,19 +805,8 @@ $dual-nav-first-layer-bg: map-get($grays, '100') !default;
 //|   Phoenix specific components ends
 //----------------------------------------------------------------------------*/
 
-
 $btn-phoenix-border-color: var(--#{$prefix}gray-200); // react specifiq
 
-// //*-----------------------------------------------
-// //|   Treeview
-// //----------------------------------------------
-
-// $treeview-transition-collapse: height 0.15s ease !default;
-// $treeview-row-bg-odd: var(--#{$prefix}200) !default;
-// $treeview-row-bg-even: var(--#{$prefix}100) !default;
-// $treeview-text-color: var(--#{$prefix}600) !default;
-
-// $responsive-footer-height: 0.625rem !default;
 
 //*-----------------------------------------------
 //|   Navbar Slim

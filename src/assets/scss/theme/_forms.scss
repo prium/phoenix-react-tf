@@ -28,7 +28,7 @@
     }
   }
   &::file-selector-button {
-    background-color: var(--#{$prefix}input-group-addon-bg) !important;
+    background-color: $input-group-addon-bg !important;
   }
   &:disabled {
     &::file-selector-button {
@@ -194,7 +194,7 @@
 
 .input-group {
   .input-group-text {
-    background-color: var(--#{$prefix}input-group-addon-bg) !important;
+    background-color: $input-group-addon-bg !important;
   }
 }
 

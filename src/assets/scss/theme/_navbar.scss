@@ -131,7 +131,7 @@
     &:focus,
     &:hover {
       background-color: var(--#{$prefix}secondary-bg);
-      color: var(--#{$prefix}dark);
+      color: var(--#{$prefix}nav-vertical-color-global);
     }
   }
   &.doc-nav {

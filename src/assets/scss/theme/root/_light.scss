@@ -162,16 +162,6 @@
   // not organized  --------------------
   // not organized  --------------------
 
-
-
-
-
-  /* ------------------------------- List Group ------------------------------- */
-  // --#{$prefix}list-group-bg: #{$white};
-  // --#{$prefix}list-group-action-hover-color: #{map-get($grays, '700')};
-  // --#{$prefix}list-group-hover-bg: #{map-get($grays, '100')};
-
-
   // --#{$prefix}headings-color: #{map-get($grays, '900')};
 
   // --#{$prefix}link-hover-color: #{$link-hover-color};
@@ -189,15 +179,6 @@
   /* ---------------------------------- link ---------------------------------- */
   // --#{$prefix}colored-link-100-hover-color: #{map-get($grays, '200')};
 
-  /* ---------------------------------- Badge --------------------------------- */
-
-  // @each $color, $value in $theme-colors-light {
-  //   .badge-phoenix-#{$color} {
-  //     --#{$prefix}badge-bg: #{map-get($theme-colors-light, $color)};
-  //     --#{$prefix}badge-color: #{map-get($theme-colors-dark, $color)};
-  //     --#{$prefix}badge-border-color: #{map-get($light-badge-borders, $color)};
-  //   }
-  // }
 
 
   // .table-primary {

@@ -5,6 +5,7 @@ import DocPagesLayout from 'layouts/DocPagesLayout';
 const exampleCode = `
 <div className='opacity-docs'>
   <div className="opacity-100 text-white">100%</div>
+  <div className="opacity-85 text-white">85%</div>
   <div className="opacity-75 text-white">75%</div>
   <div className="opacity-50 text-white">50%</div>
   <div className="opacity-25 text-white">25%</div>

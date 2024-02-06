@@ -28,20 +28,21 @@ const borderColorCode = `
   <span className="border border-success"></span>
   <span className="border border-warning"></span>
   <span className="border border-danger"></span>
+  <span className="border border-tranlucent"></span>
   <div className="w-100"></div>
   <span className="border border-black"></span>
   <span className="border border-dark"></span>
-  <span className="border border-1100"></span>
-  <span className="border border-1000"></span>
-  <span className="border border-900"></span>
-  <span className="border border-800"></span>
-  <span className="border border-700"></span>
-  <span className="border border-600"></span>
-  <span className="border border-500"></span>
-  <span className="border border-400"></span>
-  <span className="border border-300"></span>
-  <span className="border border-tranlucent"></span>
-  <span className="border border-100"></span>
+  <span className="border border-gray-1100"></span>
+  <span className="border border-gray-1000"></span>
+  <span className="border border-gray-900"></span>
+  <span className="border border-gray-800"></span>
+  <span className="border border-gray-700"></span>
+  <span className="border border-gray-600"></span>
+  <span className="border border-gray-500"></span>
+  <span className="border border-gray-400"></span>
+  <span className="border border-gray-300"></span>
+  <span className="border border-gray-200"></span>
+  <span className="border border-gray-100"></span>
   <span className="border border-light"></span>
   <span className="border border-white"></span>
 </div>`;
@@ -139,12 +140,12 @@ const BorderExample = () => {
                 <code>*-bottom</code>
               </li>
               <li>
-                blank - for classes that set the<code>border</code> style on all
-                4 side of the element.
+                blank - for classes that set the <code>border</code> style on
+                all 4 side of the element.
               </li>
             </ul>
             <p className="mb-0">
-              Use border utilities to quickly style the<code>border </code> of
+              Use border utilities to quickly style the <code>border </code> of
               an element. Great for images, buttons, or any other element.
             </p>
           </PhoenixDocCard.Body>

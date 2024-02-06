@@ -254,82 +254,10 @@
     // 
     // -------------------------------------------------------------------------
 
-
-
-
-
-    
-
-    /* ------------------------------ Badge ----------------------------- */
-    // .badge {
-    //   &:not([data-bs-theme="light"]) {
-    //     --#{$prefix}badge-color: var(--#{$prefix}white);
-    //   }
-    // }
-
-
-    // /* ------------------------------ phoenix badge ----------------------------- */
-    // @each $color, $value in map-remove($theme-colors-300, 'secondary') {
-    //   .badge-phoenix-#{$color} {
-    //     &:not([data-bs-theme="light"]) {
-    //       --#{$prefix}badge-bg: rgba(var(--#{$prefix}#{$color}-rgb), 0.08);
-    //       --#{$prefix}badge-color: #{$value};
-    //       --#{$prefix}badge-border-color: rgba(
-    //         var(--#{$prefix}#{$color}-rgb),
-    //         0.2
-    //       );
-    //       &[href] {
-    //         @include hover-focus {
-    //           color: map-get($theme-colors-dark, $color);
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-    // .badge-phoenix-secondary {
-    //   &:not([data-bs-theme="light"]) {
-    //     --#{$prefix}badge-bg: rgba(var(--phoenix-200-rgb), 0.08);
-    //     --#{$prefix}badge-color: #{$gray-300};
-    //     --#{$prefix}badge-border-color: rgba(var(--phoenix-1000-rgb), 0.2);
-    //   }
-    // }
-
-   
-
-    /* ---------------------------------- modal --------------------------------- */
-    .modal-content {
-      // --#{$prefix}modal-bg: #{map-get($dark-common, 'white')};
-    }
-    /* -------------------------------- accordion ------------------------------- */
-    .accordion {
-      --#{$prefix}accordion-color: #{map-get($grays-dark, '1000')};
-    }
-    .accordion-button {
-      --#{$prefix}accordion-active-color: #{map-get($grays-dark, '1100')};
-    }
-
-    /* ---------------------------------- docs ---------------------------------- */
-    --#{$prefix}docs-language-bg: #{map-get($grays-dark, '100')};
-
     /* ------------------------------- form-select ------------------------------ */
     --#{$prefix}form-select-indicator: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDE1MCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik03NS4zNDggMTI3LjE5MkM3Mi40MzgxIDEyNy4xOTIgNjkuODUxNCAxMjYuMjIyIDY3LjkxMTUgMTI0LjI4Mkw1LjgzMjE1IDYyLjIwMjNDMS42Mjg4NyA1OC4zMjIzIDEuNjI4ODcgNTEuNTMyNCA1LjgzMjE1IDQ3LjY1MjVDOS43MTIxMSA0My40NDkyIDE2LjUwMiA0My40NDkyIDIwLjM4MiA0Ny42NTI1TDc1LjM0OCAxMDIuMjk1TDEyOS45OTEgNDcuNjUyNUMxMzMuODcxIDQzLjQ0OTIgMTQwLjY2MSA0My40NDkyIDE0NC41NDEgNDcuNjUyNUMxNDguNzQ0IDUxLjUzMjQgMTQ4Ljc0NCA1OC4zMjIzIDE0NC41NDEgNjIuMjAyM0w4Mi40NjEzIDEyNC4yODJDODAuNTIxMyAxMjYuMjIyIDc3LjkzNDcgMTI3LjE5MiA3NS4zNDggMTI3LjE5MloiIGZpbGw9IiM5RkE2QkMiLz4KPC9zdmc+Cg==');
 
-
-    
-
-    /* ------------------------------- list-group ------------------------------- */
-    // --#{$prefix}list-group-bg: #{map-get($dark-common, 'white')};
-
-    /* -------------------------------- progress -------------------------------- */
-    .progress {
-      --#{$prefix}progress-bg: #{map-get($grays-dark, '300')};
-    }
-
     // not in phoenix html 
-
-    /* ---------------------------------- input --------------------------------- */
-
-    --#{$prefix}input-group-addon-bg: #{map-get($grays-dark, '200')};
 
     /* --------------------------------- popover -------------------------------- */
     .popover {
