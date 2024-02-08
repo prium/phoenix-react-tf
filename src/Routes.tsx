@@ -187,6 +187,7 @@ const FeatherIconsExample = lazy(
 const UniconsExample = lazy(
   () => import('pages/modules/components/UniconsExample')
 );
+import Color from './pages/documentation/customization/Color';
 
 const routes: RouteObject[] = [
   {
@@ -839,6 +840,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'configuration',
                     element: <Configuration />
+                  },
+                  {
+                    path: 'color',
+                    element: <Color />
                   },
                   {
                     path: 'styling',

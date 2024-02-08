@@ -1386,6 +1386,12 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'color',
+            path: '/documentation/customization/color',
+            pathName: 'doc-color',
+            active: true
+          },
+          {
             name: 'styling',
             path: '/documentation/customization/styling',
             pathName: 'doc-styling',
