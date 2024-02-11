@@ -18,7 +18,7 @@ const data2 = [10500, 9000, 7000, 9000, 10400, 7500, 9300];
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
   color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
@@ -79,10 +79,9 @@ const getDefaultOptions = (
         show: false
       },
       itemStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-lighter')
-            : getThemeColor('primary'),
+        color: !isDark
+          ? getThemeColor('primary-lighter')
+          : getThemeColor('primary'),
 
         borderRadius: [4, 4, 0, 0]
       },
@@ -95,10 +94,9 @@ const getDefaultOptions = (
       symbolSize: 11,
       itemStyle: {
         color: getThemeColor('info-light'),
-        borderColor:
-          theme === 'light'
-            ? getThemeColor('white')
-            : getThemeColor('light-text-emphasis'),
+        borderColor: !isDark
+          ? getThemeColor('white')
+          : getThemeColor('light-text-emphasis'),
         borderWidth: 2
       },
       areaStyle: {
@@ -136,12 +134,12 @@ const getDefaultOptions = (
 const AnalyticsSalesTrendsChart = ({ style }: { style: CSSProperties }) => {
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

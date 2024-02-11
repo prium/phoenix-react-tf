@@ -11,7 +11,7 @@ echarts.use([TooltipComponent, RadarChart]);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
   color: [getThemeColor('primary-light'), getThemeColor('warning-light')],
   tooltip: {
@@ -41,12 +41,10 @@ const getDefaultOptions = (
       areaStyle: {
         shadowBlur: 0.5,
         color: [
-          theme == 'light'
+          !isDark
             ? getThemeColor('body-highlight-bg')
             : getThemeColor('body-highlight-bg'),
-          theme == 'light'
-            ? getThemeColor('body-bg')
-            : getThemeColor('secondary-bg')
+          !isDark ? getThemeColor('body-bg') : getThemeColor('secondary-bg')
         ]
       }
     },
@@ -135,14 +133,14 @@ const MarketingCampaignChart = ({ style }: { style: CSSProperties }) => {
 
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
 
   return (
     <ReactEChartsCore
       ref={chartRef}
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

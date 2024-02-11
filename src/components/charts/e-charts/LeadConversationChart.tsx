@@ -11,7 +11,10 @@ echarts.use([TooltipComponent, BarChart]);
 
 const dates = getPastDates(4);
 
-const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  getThemeColor: (name: string) => string,
+  isDark: boolean
+) => ({
   color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
@@ -72,12 +75,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1060,
         itemStyle: {
-          color: getThemeColor('success-lighter'),
+          color: !isDark
+            ? getThemeColor('success-lighter')
+            : getThemeColor('success-dark'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('success-light')
+            color: !isDark
+              ? getThemeColor('success-light')
+              : getThemeColor('success-dark')
           },
           label: {
             formatter: () => `{b| 53% }`,
@@ -94,7 +101,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 53%}`,
           rich: {
             b: {
-              color: getThemeColor('success-dark'),
+              color: !isDark
+                ? getThemeColor('success-dark')
+                : getThemeColor('success-subtle'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -104,12 +113,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1200,
         itemStyle: {
-          color: getThemeColor('info-lighter'),
+          color: !isDark
+            ? getThemeColor('info-lighter')
+            : getThemeColor('info-dark'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('info-light')
+            color: !isDark
+              ? getThemeColor('info-light')
+              : getThemeColor('info-dark')
           },
           label: {
             formatter: () => `{b| 60% }`,
@@ -126,7 +139,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 60%}`,
           rich: {
             b: {
-              color: getThemeColor('info-darker'),
+              color: !isDark
+                ? getThemeColor('info-dark')
+                : getThemeColor('info-bg-subtle'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -136,12 +151,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1600,
         itemStyle: {
-          color: getThemeColor('primary-lighter'),
+          color: !isDark
+            ? getThemeColor('primary-lighter')
+            : getThemeColor('primary-dark'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('primary-light')
+            color: !isDark
+              ? getThemeColor('primary-light')
+              : getThemeColor('primary-dark')
           },
           label: {
             formatter: () => `{b| 80% }`,
@@ -158,7 +177,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b| 80% }`,
           rich: {
             b: {
-              color: getThemeColor('primary-dark'),
+              color: !isDark
+                ? getThemeColor('primary-dark')
+                : getThemeColor('primary-bg-subtle'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -168,12 +189,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 1800,
         itemStyle: {
-          color: getThemeColor('warning-lighter'),
+          color: !isDark
+            ? getThemeColor('warning-lighter')
+            : getThemeColor('warning-dark'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('warning-light')
+            color: !isDark
+              ? getThemeColor('warning-light')
+              : getThemeColor('warning-dark')
           },
           label: {
             formatter: () => `{b| 90% }`,
@@ -190,7 +215,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{b|90%}`,
           rich: {
             b: {
-              color: getThemeColor('warning-dark'),
+              color: !isDark
+                ? getThemeColor('warning-dark')
+                : getThemeColor('warning-bg-subtle'),
               fontWeight: 500,
               padding: [0, 5, 0, 0]
             }
@@ -200,12 +227,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       {
         value: 2000,
         itemStyle: {
-          color: getThemeColor('danger-lighter'),
+          color: !isDark
+            ? getThemeColor('danger-lighter')
+            : getThemeColor('danger-dark'),
           borderRadius: [4, 0, 0, 4]
         },
         emphasis: {
           itemStyle: {
-            color: getThemeColor('danger-light')
+            color: !isDark
+              ? getThemeColor('danger-light')
+              : getThemeColor('danger-dark')
           },
           label: {
             formatter: () => `{a|100%}`,
@@ -222,7 +253,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           formatter: () => `{a|100%}`,
           rich: {
             a: {
-              color: getThemeColor('danger-dark'),
+              color: !isDark
+                ? getThemeColor('danger-dark')
+                : getThemeColor('danger-bg-subtle'),
               fontWeight: 500
             }
           }
@@ -242,12 +275,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
 });
 
 const LeadConversationChart = ({ style }: { style: CSSProperties }) => {
-  const { getThemeColor } = useAppContext();
+  const {
+    getThemeColor,
+    config: { isDark }
+  } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

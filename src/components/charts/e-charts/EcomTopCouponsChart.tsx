@@ -39,7 +39,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       itemStyle: {
         borderWidth: 2,
-        borderColor: getThemeColor('white')
+        borderColor: getThemeColor('body-bg')
       },
       label: {
         show: true,

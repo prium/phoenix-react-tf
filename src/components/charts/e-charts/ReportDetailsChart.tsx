@@ -4,7 +4,6 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import { ThemeVariant } from 'config';
 import { sellersReportData } from 'data/crm/reportsData';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
@@ -13,7 +12,7 @@ echarts.use([TooltipComponent, BarChart]);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: ThemeVariant
+  isDark: boolean
 ) => ({
   color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
@@ -72,19 +71,17 @@ const getDefaultOptions = (
       barGap: '48%',
       showBackground: true,
       backgroundStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-soft')
-            : getThemeColor('body-highlight-bg')
+        color: !isDark
+          ? getThemeColor('primary-bg-subtle')
+          : getThemeColor('body-highlight-bg')
       },
       label: {
         show: false
       },
       itemStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-light')
-            : getThemeColor('primary')
+        color: !isDark
+          ? getThemeColor('primary-light')
+          : getThemeColor('primary')
       },
       data: sellersReportData.map(data => data.totalCount)
     }
@@ -101,14 +98,14 @@ const getDefaultOptions = (
 
 const ReportDetailsChart = ({ style }: { style: CSSProperties }) => {
   const {
-    config: { theme },
+    config: { isDark },
     getThemeColor
   } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

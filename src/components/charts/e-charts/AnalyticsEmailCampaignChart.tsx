@@ -32,7 +32,7 @@ const tooltipFormatter = (params: any) => {
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
   color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
@@ -113,13 +113,17 @@ const getDefaultOptions = (
       type: 'bar',
       stack: 'Total',
       itemStyle: {
-        color: getThemeColor('primary-lighter')
+        color: !isDark
+          ? getThemeColor('primary-lighter')
+          : getThemeColor('primary-darker')
       },
       data: [
         {
           value: 2832,
           itemStyle: {
-            color: getThemeColor('primary-light')
+            color: !isDark
+              ? getThemeColor('primary-light')
+              : getThemeColor('primary-dark')
           }
         },
         1366,
@@ -129,10 +133,10 @@ const getDefaultOptions = (
       label: {
         show: true,
         position: 'inside',
-        color:
-          theme === 'light'
-            ? getThemeColor('gray-1100')
-            : getThemeColor('secondary-bg'),
+        color: !isDark
+          ? getThemeColor('emphasis-color')
+          : getThemeColor('white'),
+
         fontWeight: 'normal',
         fontSize: '12.8px',
         formatter: (value: { value: string }) =>
@@ -223,13 +227,13 @@ const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
 
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
   return (
     <ReactEChartsCore
       ref={chartRef}
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       className={className}
     />
   );
