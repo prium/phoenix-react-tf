@@ -50,7 +50,7 @@
   > label {
     color: var(--#{$prefix}secondary-color);
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '10');
+    font-size: map-get($font-sizes, 10);
     text-transform: uppercase;
   }
   // .form-control {
@@ -65,7 +65,7 @@
 
 .form-check-label {
   font-weight: $font-weight-semibold;
-  font-size: map-get($font-sizes, '9');
+  font-size: map-get($font-sizes, 9);
 }
 
 .form-check-light {

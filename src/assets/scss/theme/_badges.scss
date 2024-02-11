@@ -101,7 +101,7 @@
   background-color: var(--#{$prefix}secondary-bg);
   color: var(--#{$prefix}body-highlight-color);
   font-weight: $font-weight-bold;
-  font-size: map-get($font-sizes, '10');
+  font-size: map-get($font-sizes, 10);
   padding: map-get($spacers, 1) map-get($spacers, 2);
   text-transform: uppercase;
   @include hover-focus {

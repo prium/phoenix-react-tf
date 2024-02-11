@@ -148,7 +148,7 @@
   padding-left: map-get($spacers, 2);
   padding-right: map-get($spacers, 2);
   background-color: var(--#{$prefix}body-bg);
-  font-size: map-get($font-sizes, '9');
+  font-size: map-get($font-sizes, 9);
   color: var(--#{$prefix}gray-600);
   white-space: nowrap;
   font-weight: $font-weight-bold;

@@ -38,7 +38,7 @@
       > tr {
         > th {
           vertical-align: middle !important;
-          font-size: map-get($font-sizes, '9');
+          font-size: map-get($font-sizes, 9);
           text-transform: uppercase;
           &:first-child {
             padding-left: 0;

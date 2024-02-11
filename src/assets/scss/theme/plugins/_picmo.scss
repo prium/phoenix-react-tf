@@ -48,7 +48,7 @@
     .picmo__categoryName {
       --category-name-background-color: var(--#{$prefix}body-bg);
       --category-name-text-color: var(--#{$prefix}gray-600);
-      font-size: map-get($font-sizes, '-2');
+      font-size: map-get($font-sizes, 10);
       font-weight: 600;
       [data-bs-theme="dark"] & {
         --category-name-background-color: transparent;

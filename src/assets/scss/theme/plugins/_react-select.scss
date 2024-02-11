@@ -26,7 +26,7 @@
 
   .react-select__placeholder {
     color: $input-placeholder-color;
-    font-size: map-get($font-sizes, '9');
+    font-size: map-get($font-sizes, 9);
     font-weight: $font-weight-semibold;
     margin: 0;
   }
@@ -37,7 +37,7 @@
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: map-get($font-sizes, '10');
+    font-size: map-get($font-sizes, 10);
   }
   .react-select__value-container {
     &.react-select__value-container--has-value {
@@ -83,7 +83,7 @@
   }
   .react-select__multi-value__label {
     color: var(--#{$prefix}body-color) !important;
-    font-size: map-get($font-sizes, '10') !important;
+    font-size: map-get($font-sizes, 10) !important;
     padding: 0 !important;
   }
   .react-select__single-value {
@@ -100,7 +100,7 @@
   .react-select__option {
     color: var(--#{$prefix}body-color) !important;
     padding: 0.5rem 1rem;
-    font-size: map-get($font-sizes, '9');
+    font-size: map-get($font-sizes, 9);
     &:hover {
       background-color: var(--#{$prefix}primary) !important;
       color: var(--#{$prefix}emphasis-bg) !important;

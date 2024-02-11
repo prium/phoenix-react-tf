@@ -25,7 +25,7 @@
     @extend .btn;
     padding: $pagination-padding-y $pagination-padding-x;
     color: $pagination-color;
-    font-size: map-get($font-sizes, '10');
+    font-size: map-get($font-sizes, 10);
     // @extend .btn-sm;
     // @extend .btn-falcon-default;
     margin-left: map-get($spacers, 1);

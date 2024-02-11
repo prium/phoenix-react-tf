@@ -10,7 +10,7 @@
     .nav-item-count {
       margin-bottom: 0;
       margin-top: map-get($spacers, 1);
-      font-size: map-get($font-sizes, '11');
+      font-size: map-get($font-sizes, 11);
       font-weight: $font-weight-bold;
       color: var(--#{$prefix}tertiary-color);
     }
