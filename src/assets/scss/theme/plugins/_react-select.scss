@@ -120,5 +120,5 @@
 }
 .react-select__option--is-selected {
   background-color: var(--#{$prefix}primary) !important;
-  color: var(--#{$prefix}black) !important;
+  color: var(--#{$prefix}emphasis-color) !important;
 }

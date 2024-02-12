@@ -106,7 +106,7 @@
   .nav {
     .nav-link {
       --#{$prefix}nav-link-color: var(--#{$prefix}body-highlight-color);
-      --#{$prefix}nav-link-hover-color: var(--#{$prefix}black);
+      --#{$prefix}nav-link-hover-color: var(--#{$prefix}emphasis-color);
       padding: map-get($spacers, 2) map-get($spacers, 6) map-get($spacers, 2)
         map-get($spacers, 6);
       font-weight: $font-weight-semibold;

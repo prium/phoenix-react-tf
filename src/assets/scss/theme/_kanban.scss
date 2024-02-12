@@ -103,7 +103,7 @@
   }
   .kanban-column-title {
     font-weight: $font-weight-bold;
-    color: var(--#{$prefix}black);
+    color: var(--#{$prefix}emphasis-color);
   }
 
   .kanban-title-badge {
@@ -114,7 +114,7 @@
     // padding: $badge-padding-y $badge-padding-x;
     padding: 4px 9px;
     margin-left: 0.5rem;
-    color: var(--#{$prefix}black);
+    color: var(--#{$prefix}emphasis-color);
     line-height: 1;
     display: inline;
   }

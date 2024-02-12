@@ -8,7 +8,7 @@
     background-color: transparent;
     @include border-top-radius($nav-tabs-border-radius);
     &.disabled {
-      color: var(--#{$prefix}black);
+      color: var(--#{$prefix}emphasis-color);
       background-color: transparent;
       border-color: transparent;
     }
