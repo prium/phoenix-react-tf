@@ -16,7 +16,7 @@ const Features = () => {
           <Row className="mb-12">
             <Col lg={6} className="text-center text-lg-start pe-xxl-3">
               <h4 className="text-primary fw-bolder mb-4">Features</h4>
-              <h2 className="mb-3 text-black lh-base">
+              <h2 className="mb-3 text-body-emphasis lh-base">
                 A fully integrated suite
                 <br />
                 of payments products

@@ -37,7 +37,7 @@ const ProjectDetails = () => {
         <div className="px-4 px-lg-6 pt-6 pb-9">
           <div className="mb-5">
             <div className="d-flex justify-content-between">
-              <h2 className="text-black fw-bolder mb-2">
+              <h2 className="text-body-emphasis fw-bolder mb-2">
                 Retrieving Old Repos to Redirect to a new URL
               </h2>
               <RevealDropdownTrigger>

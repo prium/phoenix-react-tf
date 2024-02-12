@@ -37,7 +37,7 @@ const Settings = () => {
           </div>
           <Row className="gy-5">
             <Col xs={12} md={6}>
-              <h4 className="text-black">Transfer Ownership</h4>
+              <h4 className="text-body-emphasis">Transfer Ownership</h4>
               <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.
@@ -45,7 +45,7 @@ const Settings = () => {
               <Button variant="phoenix-warning">Transfer</Button>
             </Col>
             <Col xs={12} md={6}>
-              <h4 className="text-black">Account Deletion</h4>
+              <h4 className="text-body-emphasis">Account Deletion</h4>
               <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.

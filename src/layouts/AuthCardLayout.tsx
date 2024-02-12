@@ -46,7 +46,7 @@ const AuthCardLayout = ({
                       'position-relative px-4 px-lg-7 py-7 pb-sm-5 text-center text-md-start pb-lg-7'
                     )}
                   >
-                    <h3 className="mb-3 text-black fs-7">
+                    <h3 className="mb-3 text-body-emphasis fs-7">
                       Phoenix Authentication
                     </h3>
                     <p className="text-body-tertiary">

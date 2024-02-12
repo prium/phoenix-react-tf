@@ -20,7 +20,7 @@ const PricingItem = ({ pricing }: PricingItemProps) => {
         <div className="text-center">
           <h1 className="fw-semibold text-primary mb-4">
             $<span className="fw-bolder">{pricing.price}</span>
-            <span className="text-black fs-7 ms-1 fw-bolder">USD</span>
+            <span className="text-body-emphasis fs-7 ms-1 fw-bolder">USD</span>
           </h1>
           <Button
             variant={pricing.popular ? 'primary' : 'outline-primary'}

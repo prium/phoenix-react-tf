@@ -33,10 +33,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 <Avatar size="xl" src={post.author.avatar} className="me-2" />
               </Link>
               <div className="flex-1">
-                <Link
-                  to="/apps/social/profile"
-                  className="fw-bold mb-0 text-black"
-                >
+                <Link to="/apps/social/profile" className="fw-bold mb-0">
                   {post.author.name}
                 </Link>
                 <p className="fs-10 mb-0 text-body-tertiary text-opacity-85 fw-semibold">

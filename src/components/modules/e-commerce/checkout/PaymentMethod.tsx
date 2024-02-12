@@ -108,7 +108,7 @@ export const PaymentMethod = () => {
               ))}
             </Form.Select>
 
-            <select className="form-select text-black">
+            <select className="form-select text-body-emphasis">
               <option>Year</option>
               <option value={2022}>2022</option>
               <option value={2023}>2023</option>
@@ -135,7 +135,7 @@ export const PaymentMethod = () => {
               value="save"
               name="paymentMethod"
             />
-            <Form.Check.Label className="fs-8 text-black">
+            <Form.Check.Label className="fs-8 text-body-emphasis">
               Save Card Details
             </Form.Check.Label>
           </Form.Check>

@@ -22,7 +22,7 @@ const PostComments = ({ comments }: PostCommentsProps) => {
             <div className="d-flex align-items-center">
               <Link
                 to="/apps/social/profile"
-                className="fw-bold mb-0 text-black"
+                className="fw-bold mb-0 text-body-emphasis"
               >
                 {comment.name}
               </Link>

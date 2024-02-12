@@ -34,7 +34,7 @@ const Testimonial = () => {
             <Col lg={6} className="text-center text-lg-start z-2">
               <div>
                 <h4 className="text-primary fw-bolder mb-3">Testimonial</h4>
-                <h2 className="mb-3 text-black">
+                <h2 className="mb-3 text-body-emphasis">
                   More than 2 Millions happy
                   <br />
                   Customers and counting

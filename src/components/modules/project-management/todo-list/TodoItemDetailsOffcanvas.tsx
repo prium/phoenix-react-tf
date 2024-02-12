@@ -112,7 +112,7 @@ const TodoItemDetailsOffcanvas = ({
               </div>
             </div>
             <div className="mb-4">
-              <h4 className="mb-4 text-black">Others Information</h4>
+              <h4 className="mb-4 text-body-emphasis">Others Information</h4>
               <h5 className="text-body-highlight mb-2">Status</h5>
               <Form.Select className="mb-4">
                 <option>Select</option>

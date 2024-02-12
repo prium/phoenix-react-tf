@@ -20,7 +20,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
       <Card className="position-relative border-0">
         <Card.Header className="p-2">
           <div className="d-flex justify-content-between align-items-center">
-            <h5 className="text-black mb-0">Notifications</h5>
+            <h5 className="text-body-emphasis mb-0">Notifications</h5>
             <Button variant="link" className="p-0 fs-9 fw-normal">
               Mark all as read
             </Button>

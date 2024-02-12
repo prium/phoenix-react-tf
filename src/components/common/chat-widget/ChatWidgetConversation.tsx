@@ -25,7 +25,7 @@ const ChatWidgetConversation = () => {
           className="mx-auto border border-3 border-light-subtle"
         />
         <h5 className="mt-2 mb-3">Eric</h5>
-        <p className="text-center text-black mb-0">
+        <p className="text-center text-body-emphasis mb-0">
           Ask us anything – we’ll get back to you here or by email within 24
           hours.
         </p>

@@ -57,7 +57,7 @@ const NineDotMenu = () => {
                       alt="behance"
                       width={item.width || 30}
                     />
-                    <p className="mb-0 text-black text-truncate fs-10 mt-1 pt-1">
+                    <p className="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">
                       {item.title}
                     </p>
                   </Link>

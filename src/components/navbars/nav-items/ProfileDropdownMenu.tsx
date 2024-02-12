@@ -46,7 +46,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
         <Card.Body className="p-0">
           <div className="d-flex flex-column align-items-center justify-content-center gap-2 pt-4 pb-3">
             <Avatar src={avatar} size="xl" />
-            <h6 className="text-black">Jerry Seinfield</h6>
+            <h6 className="text-body-emphasis">Jerry Seinfield</h6>
           </div>
           <div className="mb-3 mx-3">
             <Form.Control
