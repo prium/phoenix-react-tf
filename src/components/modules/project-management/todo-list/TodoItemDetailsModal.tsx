@@ -27,7 +27,7 @@ const TodoItemDetailsModal = ({
     <Modal show={!!item} onHide={handleClose} size="xl">
       {item && (
         <>
-          <Modal.Header className="px-6 py-5 pe-sm-5 px-md-6 dark__bg-1100">
+          <Modal.Header className="px-6 py-5 pe-sm-5 px-md-6 dark__bg-gray-1100">
             <h3 className="text-body-highlight fw-bolder mb-0">{item.task}</h3>
             <Button
               variant="phoenix-secondary"

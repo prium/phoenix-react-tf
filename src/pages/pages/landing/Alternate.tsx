@@ -22,8 +22,8 @@ const Alternate = () => {
     disableHorizontalNavbarShape: true
   });
   return (
-    <div className="bg-body-emphasis dark__bg-1200">
-      <DefaultLandingNavbar className="dark__bg-1200" />
+    <div className="bg-body-emphasis dark__bg-gray-1200">
+      <DefaultLandingNavbar className="dark__bg-gray-1200" />
       <HeroHeader />
       <Brands />
       <Features />

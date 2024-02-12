@@ -555,11 +555,10 @@ $light-badge-borders: (
 //|   Modal
 //-----------------------------------------------*/
 $modal-content-border-radius: $border-radius !default;
-$modal-content-bg: $white !default;
-$modal-inner-padding: 1rem;
-// $modal-content-border-width: 0;
-$modal-content-border-color: transparent;
+$modal-content-bg: var(--#{$prefix}emphasis-bg) !default;
+$modal-content-border-color: transparent !default;
 
+$modal-inner-padding: 1rem;
 
 
 //*-----------------------------------------------

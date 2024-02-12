@@ -98,7 +98,7 @@ const ProjectDetails = () => {
       </Col>
       <Col xs={12} xxl={4} className="px-0 border-start-xxl">
         <div className="h-100">
-          <div className="bg-light dark__bg-1100 h-100">
+          <div className="bg-light dark__bg-gray-1100 h-100">
             <div className="p-4 p-lg-6">
               <h3 className="text-body-highlight mb-4 fw-bold">
                 Recent activity

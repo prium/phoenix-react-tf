@@ -30,7 +30,7 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const AlternateTestimonialCarousel = () => {
   return (
-    <div className="testimonial-carousel position-relative dark__bg-1100">
+    <div className="testimonial-carousel position-relative dark__bg-gray-1100">
       <div
         className="bg-holder d-none d-xl-block"
         style={{

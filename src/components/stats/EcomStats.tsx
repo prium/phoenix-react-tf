@@ -64,7 +64,7 @@ const Stat = ({ stat }: { stat: StatType }) => {
         <FontAwesomeIcon
           icon={faSquare}
           size="2x"
-          className={`text-${stat.color}-light`}
+          className={`text-${stat.color}-light dark__text-opacity-50`}
           transform="down-4 rotate--10 left-4"
         />
         <FontAwesomeIcon

@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 const Invoice = () => {
   return (
-    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-1200 border-top">
+    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-gray-1200 border-top">
       <Section small className="py-0">
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">
@@ -29,7 +29,7 @@ const Invoice = () => {
           </Button>
         </div>
 
-        <div className="bg-body dark__bg-1100 p-4 mb-4 rounded-2">
+        <div className="bg-body dark__bg-gray-1100 p-4 mb-4 rounded-2">
           <Row className="g-4">
             <Col xs={12} lg={3}>
               <Row className="g-4 g-lg-2">

@@ -24,7 +24,7 @@ type Category = {
 const categories: Category[] = [
   {
     label: 'Deals',
-    bgClass: 'bg-warning-subtle light',
+    bgClass: 'bg-warning-subtle',
     url: '#!',
     icon: <UilStar className="text-warning" size={39} />
   },
