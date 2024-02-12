@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <section className="bg-1100 dark__bg-gray-1000">
+    <section data-bs-theme="dark" className="bg-dark dark__bg-gray-1000">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="gx-xxl-8 gy-5 align-items-center mb-5">
           <Col xl="auto" className="text-center">
@@ -31,7 +31,7 @@ const Footer = () => {
                 'FAQ'
               ].map(item => (
                 <li key={item}>
-                  <a href="#!" className="text-light">
+                  <a href="#!" className="text-light text-opacity-75">
                     {item}
                   </a>
                 </li>
@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <hr className="text-body-secondary" />
+        <hr className="border-top" />
         <div className="d-sm-flex flex-between-center text-center">
           <p className="text-body-tertiary mb-0">Copyright © Company Name</p>
           <p className="text-body-tertiary mb-0">

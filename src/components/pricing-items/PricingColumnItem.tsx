@@ -74,16 +74,30 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
               <span className="fa-layers fa-fw">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className={classNames('text-light', {
-                    'text-success': pricing.features.includes(item.id)
-                  })}
+                  className={classNames(
+                    {
+                      'text-body-quaternary text-opacity-50':
+                        !pricing.features.includes(item.id)
+                    },
+                    {
+                      'text-success': pricing.features.includes(item.id)
+                    }
+                  )}
                 />
                 <FontAwesomeIcon
                   icon={pricing.features.includes(item.id) ? faCheck : faTimes}
                   inverse
-                  className={classNames('text-body-tertiary fs-11', {
-                    'text-white': pricing.features.includes(item.id)
-                  })}
+                  className={classNames(
+                    'fs-11',
+                    {
+                      'text-body-tertiary': !pricing.features.includes(item.id)
+                    },
+                    {
+                      'text-white dark__text-dark': pricing.features.includes(
+                        item.id
+                      )
+                    }
+                  )}
                 />
               </span>
             </span>

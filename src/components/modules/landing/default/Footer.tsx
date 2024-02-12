@@ -68,7 +68,7 @@ const Footer = () => {
 
       <div className="position-relative">
         <svg
-          className="w-100 text-white"
+          className="w-100 text-white dark__text-gray-1100"
           preserveAspectRatio="none"
           viewBox="0 0 1920 368"
           fill="none"

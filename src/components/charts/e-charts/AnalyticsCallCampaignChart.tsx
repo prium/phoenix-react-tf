@@ -122,8 +122,13 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       smooth: 0.4,
       symbolSize: 11,
       itemStyle: {
+        color: getThemeColor('body-highlight-bg'),
+        borderColor: getThemeColor('primary')
+      },
+      lineStyle: {
         color: getThemeColor('primary')
       },
+      symbol: 'circle',
       areaStyle: {
         color: {
           type: 'linear',

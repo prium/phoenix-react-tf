@@ -64,7 +64,10 @@ const ColumnItem = ({
         startComponent={<FontAwesomeIcon icon={faBars} />}
         endComponent={
           <button className="btn p-0 lh-1" onClick={handleClear}>
-            <FontAwesomeIcon className="text-light" icon={faCircleXmark} />
+            <FontAwesomeIcon
+              className="text-body-quaternary text-opacity-50"
+              icon={faCircleXmark}
+            />
           </button>
         }
       >

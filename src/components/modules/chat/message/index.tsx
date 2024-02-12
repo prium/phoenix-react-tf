@@ -55,7 +55,6 @@ const Message = ({ message, user, showActions = true }: MessageProps) => {
               })}
             >
               <div
-                data-bs-theme="light"
                 className={classNames('mb-1', {
                   'sent-message-content ': message.type === 'sent',
                   'received-message-content border border-translucent':
