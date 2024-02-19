@@ -15,9 +15,9 @@ const CheckoutSummaryCard = () => {
           </Button>
         </div>
         <div className="border-dashed border-bottom border-translucent mb-4">
-          <div className="mx-n2 d-flex flex-column gap-2 mb-5">
+          <div className="ms-n2 mb-5">
             {cartItems.map(item => (
-              <Row className="align-items-center g-3" key={item.id}>
+              <Row className="align-items-center g-3 mb-2" key={item.id}>
                 <Col xs={8} md={7} lg={8}>
                   <div className="d-flex align-items-center">
                     <img
@@ -35,7 +35,7 @@ const CheckoutSummaryCard = () => {
                   <h6 className="fs-10 mb-0">x1</h6>
                 </Col>
                 <Col xs={2} className="ps-0">
-                  <h5 className="mb-0 fw-semibold text-end text-lg-start">
+                  <h5 className="mb-0 fw-semibold text-end">
                     {currencyFormat(item.price * item.quantity)}
                   </h5>
                 </Col>

@@ -139,7 +139,7 @@
     align-items: center;
     line-height: 1;
     &:hover {
-      background-color: var(--#{$prefix}primary-soft);
+      background-color: var(--#{$prefix}primary-bg-subtle);
     }
   }
 }

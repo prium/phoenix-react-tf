@@ -34,7 +34,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="d-block rounded-2 border"
+          className="d-block rounded-2 border border-translucent"
         >
           <img src={productImage} alt="" width={53} />
         </Link>

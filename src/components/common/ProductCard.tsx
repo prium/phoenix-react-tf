@@ -14,7 +14,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     <div className="position-relative text-decoration-none product-card h-100">
       <div className="d-flex flex-column justify-content-between h-100">
         <div>
-          <div className="borde border-translucent rounded-3 position-relative mb-3">
+          <div className="border border-translucent rounded-3 position-relative mb-3">
             <Button
               variant={product.wishListed ? 'primary' : 'outline-primary'}
               className="rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container"

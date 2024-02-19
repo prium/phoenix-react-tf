@@ -84,10 +84,7 @@ export const TimelineDot = ({
 export const TimelineBar = ({ className, ...rest }: TimelineBarProps) => {
   return (
     <span
-      className={classNames(
-        className,
-        'timeline-bar border-end border-translucent'
-      )}
+      className={classNames(className, 'timeline-bar border-end')}
       {...rest}
     />
   );

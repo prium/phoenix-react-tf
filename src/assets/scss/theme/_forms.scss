@@ -64,7 +64,7 @@
 }
 
 .form-check-label {
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   font-size: map-get($font-sizes, 9);
 }
 
@@ -104,7 +104,7 @@
     background-color: var(--#{$prefix}gray-400);
 
     &:checked {
-      background-color: $primary;
+      background-color: var(--#{$prefix}primary);
     }
   }
 }

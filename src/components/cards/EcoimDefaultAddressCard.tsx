@@ -32,11 +32,9 @@ const EcoimDefaultAddressCard = () => {
               shatinon@jeemail.com
             </a>
           </div>
-          <div className="d-flex justify-content-between gap-2">
+          <div className="d-flex justify-content-between align-items-center gap-2">
             <h5 className="text-body-highlight mb-0">Phone</h5>
-            <a className="text-body-secondary" href="tel:+1234567890">
-              +1234567890
-            </a>
+            <a href="tel:+1234567890">+1234567890</a>
           </div>
         </div>
       </Card.Body>

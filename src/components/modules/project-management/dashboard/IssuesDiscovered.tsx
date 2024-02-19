@@ -1,3 +1,5 @@
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import IssuesDiscoveredChart from 'components/charts/e-charts/IssuesDiscoveredChart';
 import { Col, Row } from 'react-bootstrap';
@@ -39,6 +41,10 @@ const IssuesDiscovered = () => {
         ))}
         <Button variant="outline-primary" className="mt-5">
           See Details
+          <FontAwesomeIcon
+            icon={faAngleRight}
+            className="text-primary ms-2 fs-10"
+          />
         </Button>
       </Col>
       <Col xs={12} md={6}>

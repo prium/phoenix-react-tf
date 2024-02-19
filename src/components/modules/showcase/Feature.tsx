@@ -36,7 +36,7 @@ const Feature = () => {
             <img src={section63} alt="" className="mw-100" />
           </Col>
           <Col lg={6}>
-            <h1 className="text-soft fw-normal mb-4 text-center text-lg-start">
+            <h1 className="text-light fw-normal mb-4 text-center text-lg-start">
               Coded for
               <br className="d-none d-lg-block d-xl-none" />
               <span className="text-primary-light ms-2 fw-bolder">

@@ -97,3 +97,19 @@
     }
   }
 }
+
+
+.table {
+  > tbody {
+    > tr {
+      > td {
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

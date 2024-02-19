@@ -84,7 +84,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       const { revenue } = original;
       return (
         <h6 className="mb-0">
-          {revenue.number}
+          ${revenue.number}
           <span className="text-body-tertiary fw-semibold ms-2">
             ({revenue.percantage})
           </span>

@@ -25,6 +25,7 @@ const Ecommerce = () => {
               </h5>
             </div>
             <EcomStats />
+            <hr className="bg-body-secondary mb-6 mt-4" />
             <EcomTotalSells />
           </Col>
           <Col xs={12} xxl={6}>

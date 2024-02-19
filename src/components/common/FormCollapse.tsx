@@ -21,7 +21,7 @@ const FormCollapse = ({
     <>
       <Button
         onClick={() => setOpen(!open)}
-        className={classNames('px-0 d-block collapse-indicator w-100', {
+        className={classNames('px-0 d-block collapse-indicator w-100 mt-3', {
           collapsed: !open
         })}
       >

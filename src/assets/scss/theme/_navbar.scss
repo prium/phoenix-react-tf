@@ -172,3 +172,17 @@
     }
   }
 }
+
+.nav-link{
+  &:hover,
+  &:focus{
+    color: var(--#{$prefix}nav-link-color);
+  }
+}
+.navbar-nav{
+  .nav-link{
+    &.show{
+      color: var(--#{$prefix}nav-link-color);
+    }
+  }
+}

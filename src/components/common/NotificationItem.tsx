@@ -35,7 +35,7 @@ const NotificationItem = ({
             src={notification.avatar}
             placeholder={!notification.avatar}
             size={type === 'pageItem' ? 'xl' : 'm'}
-            className="me-3"
+            className="me-3 status-online"
           />
           <div
             className={classNames('flex-1', {
@@ -44,14 +44,16 @@ const NotificationItem = ({
             })}
           >
             <h4 className="fs-9 text-body-emphasis">{notification.name}</h4>
-            <p className="fs-9 text-body-highlight mb-2 mb-sm-3">
-              <span className="me-1">{notification.interactionIcon}</span>
+            <p className="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal">
+              <span className="me-1 fw-bold fs-10">
+                {notification.interactionIcon}
+              </span>
               <span>{notification.interaction}</span>
               {type === 'pageItem' && (
                 <span className="fw-bold">{notification.detail}</span>
               )}
 
-              <span className="ms-2 text-body-tertiary text-opactity-85 fw-bold fs-10">
+              <span className="ms-2 text-body-quaternary text-opactity-75 fw-bold fs-10">
                 {notification.ago}
               </span>
             </p>

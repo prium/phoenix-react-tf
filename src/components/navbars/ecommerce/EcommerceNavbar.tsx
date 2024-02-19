@@ -132,7 +132,7 @@ const EcommerceNavbar = () => {
             Category
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className="border border-translucent py-0 category-dropdown-menu ms-2">
+          <Dropdown.Menu className="border border-translucent py-0 category-dropdown-menu">
             <Card className="border-0">
               <Scrollbar autoHeight autoHeightMax={657}>
                 <Card.Body className="p-6 pb-3">
