@@ -132,7 +132,12 @@ $utilities: map_merge(
     'text-transform': (
       property: text-transform,
       class: text,
-      values: lowercase uppercase capitalize none
+      values: (
+        lowercase: lowercase,
+        uppercase: uppercase,
+        capitalize: capitalize,
+        transform-none: none
+      )
     ),
     "color": (
       property: color,
