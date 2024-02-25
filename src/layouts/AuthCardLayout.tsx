@@ -29,7 +29,7 @@ const AuthCardLayout = ({
 
       <Row className="flex-center position-relative min-vh-100 g-0 py-5">
         <Col xs={11} sm={10} xl={8}>
-          <Card className="border border-tranlucent auth-card">
+          <Card className="border border-translucent auth-card">
             <Card.Body className="pe-md-0">
               <Row className="align-items-center gx-0 gy-7">
                 <Col

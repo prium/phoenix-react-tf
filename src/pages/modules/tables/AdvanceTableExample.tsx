@@ -344,7 +344,7 @@ const Example = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -372,7 +372,7 @@ const PaginationExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -414,7 +414,7 @@ const SearchExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -645,7 +645,7 @@ const FilterByColumnExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -978,7 +978,7 @@ const Example = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -1001,7 +1001,7 @@ const PaginationExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -1035,7 +1035,7 @@ const SearchExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />
@@ -1175,7 +1175,7 @@ const FilterByColumnExample = () => {
       <AdvanceTable
         tableProps={{
           size: 'sm',
-          className: 'phoenix-table fs-9 mb-0 border-top border-tranlucent'
+          className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />

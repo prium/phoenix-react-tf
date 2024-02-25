@@ -59,7 +59,7 @@ const EventDetail = () => {
             </Badge>
             <Badge variant="tag">Greatest show on earth</Badge>
           </div>
-          <div className="border-top border-tranlucent">
+          <div className="border-top border-translucent">
             <Events events={events} title="Upcoming events" />
           </div>
         </Col>
