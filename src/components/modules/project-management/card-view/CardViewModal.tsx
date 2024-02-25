@@ -223,7 +223,7 @@ const CardViewModal = ({
               {addToCardItems.map(item => (
                 <Button
                   key={item.label}
-                  variant="soft-secondary"
+                  variant="subtle-secondary"
                   startIcon={
                     <FontAwesomeIcon icon={item.icon} className="me-2" />
                   }
@@ -238,7 +238,7 @@ const CardViewModal = ({
             <div className="d-flex flex-column gap-2">
               {actionItems.map(item => (
                 <Button
-                  variant="soft-secondary"
+                  variant="subtle-secondary"
                   startIcon={
                     <FontAwesomeIcon icon={item.icon} className="me-2" />
                   }

@@ -102,7 +102,8 @@ const TodoListItem = ({
                   labelClassName,
                   'mb-0 line-clamp-1 fw-semibold text-body-tertiary cursor-pointer',
                   {
-                    'text-decoration-line-through': selected
+                    'text-decoration-line-through text-body-quaternary':
+                      selected
                   }
                 )}
                 onClick={() => handleClick(todo)}

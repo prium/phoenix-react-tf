@@ -113,8 +113,8 @@
       &:not(&.attachments) {
         border-radius: $border-radius;
         padding: map-get($spacers, 3);
-        color: var(--#{$prefix}emphasis-bg);
-        background: var(--#{$prefix}primary);
+        color: var(--#{$prefix}white);
+        background: $primary;
         &:after {
           content: ' ';
           position: absolute;

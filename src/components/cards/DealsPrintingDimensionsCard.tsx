@@ -25,7 +25,7 @@ const DealsPrintingDimensionsCard = ({
                 )}
               >
                 <div
-                  className={`d-flex bg-${stat.color}-100 rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0`}
+                  className={`d-flex bg-${stat.color}-subtle rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0`}
                   style={{ width: '32px', height: '32px' }}
                 >
                   <FeatherIcon

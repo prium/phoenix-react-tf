@@ -203,7 +203,7 @@ const KanbanTaskDetailsModal = ({
                     <div className="d-flex flex-wrap flex-column gap-2 flex-sm-row flex-lg-column">
                       {kanbanActions.map(action => (
                         <Button
-                          variant="soft-secondary"
+                          variant="subtle-secondary"
                           startIcon={
                             <FontAwesomeIcon
                               icon={action.icon}

@@ -39,15 +39,15 @@ const ActionSection = () => {
             <div className="d-flex gap-2">
               <Dropdown align="end">
                 <Dropdown.Toggle
-                  className="d-none d-sm-block btn btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center"
-                  variant="soft-secondary"
+                  className="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center"
+                  variant="subtle-secondary"
                 >
                   Add to card
                   <FontAwesomeIcon icon={faPlus} className="ms-2" />
                 </Dropdown.Toggle>
                 <Dropdown.Toggle
-                  className="d-sm-none btn btn-icon btn-icon-lg btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
-                  variant="soft-secondary"
+                  className="d-sm-none btn btn-icon btn-icon-lg btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
+                  variant="subtle-secondary"
                 >
                   <FontAwesomeIcon icon={faPlus} />
                 </Dropdown.Toggle>
@@ -58,7 +58,7 @@ const ActionSection = () => {
                       <Dropdown.Item
                         key={item.label}
                         as={Button}
-                        variant="soft-secondary"
+                        variant="subtle-secondary"
                         startIcon={
                           <FontAwesomeIcon icon={item.icon} className="me-2" />
                         }
@@ -83,7 +83,7 @@ const ActionSection = () => {
                     {actionItems.map(item => (
                       <Dropdown.Item
                         as={Button}
-                        variant="soft-secondary"
+                        variant="subtle-secondary"
                         startIcon={
                           <FontAwesomeIcon icon={item.icon} className="me-2" />
                         }
@@ -102,7 +102,7 @@ const ActionSection = () => {
               <Dropdown align="end">
                 <Dropdown.Toggle
                   className="dropdown-caret-none d-flex align-items-center"
-                  variant="soft-info"
+                  variant="subtle-info"
                 >
                   Review
                   <FontAwesomeIcon icon={faAngleDown} className="ms-2" />
@@ -117,7 +117,10 @@ const ActionSection = () => {
                 </Dropdown.Menu>
               </Dropdown>
 
-              <Button className="btn-icon btn-icon-lg" variant="soft-secondary">
+              <Button
+                className="btn-icon btn-icon-lg"
+                variant="subtle-secondary"
+              >
                 <FontAwesomeIcon icon={faCheck} />
               </Button>
             </div>

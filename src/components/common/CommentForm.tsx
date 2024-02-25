@@ -13,7 +13,7 @@ const CommentForm = () => {
   return (
     <>
       <Form.Group className="mb-3" controlId="commentForm">
-        <Form.Control as="textarea" rows={3} />
+        <Form.Control placeholder="Add comment" as="textarea" rows={3} />
       </Form.Group>
       <div className="d-flex align-items-center gap-3">
         <Button size="sm" className="p-0">

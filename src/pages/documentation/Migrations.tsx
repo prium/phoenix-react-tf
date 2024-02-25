@@ -12,7 +12,7 @@ const Migrations = () => {
 
       <Card className="mb-4">
         <Card.Body>
-          <Alert variant="soft-warning" className="mb-0">
+          <Alert variant="subtle-warning" className="mb-0">
             <div className="d-flex">
               <FontAwesomeIcon icon={faExclamationTriangle} className="fs-5" />
               <div className="ms-3 flex-1">

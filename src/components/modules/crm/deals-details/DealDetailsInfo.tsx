@@ -68,12 +68,12 @@ const InfoItem = ({
           })}
         >
           <div
-            className={`d-flex bg-${data.color}-100 rounded-circle flex-center me-3`}
+            className={`d-flex bg-${data.color}-subtle rounded-circle flex-center me-3`}
             style={{ width: '24px', height: '24px' }}
           >
             <FeatherIcon
               icon={data.icon}
-              className={`text-${data.color}-600`}
+              className={`text-${data.color}-dark`}
               width={16}
               height={16}
             />

@@ -17,7 +17,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border d-inline-block">
+        <div className="rounded-2 border border-translucent d-inline-block">
           <img src={productImage} alt="" width={53} />
         </div>
       );

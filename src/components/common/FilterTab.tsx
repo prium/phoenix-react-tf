@@ -30,7 +30,7 @@ const FilterTab = ({ tabItems, className }: FilterTabProps) => {
         <Nav.Item key={item.label}>
           <Nav.Link
             onClick={() => handleClick(item)}
-            className={classNames('px-2', {
+            className={classNames('px-2 py-1', {
               active: activeItem === item.value
             })}
           >

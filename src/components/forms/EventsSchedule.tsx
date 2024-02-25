@@ -92,7 +92,7 @@ const EventsSchedule = () => {
         />
       </Col>
       <Col sm={6}>
-        <FloatingLabel controlId="floatingSelectTimeZone" label="city">
+        <FloatingLabel controlId="floatingSelectTimeZone" label="TIME ZONE">
           <Form.Select>
             <option>Select time zone</option>
             <option value="1">Time zone One</option>
