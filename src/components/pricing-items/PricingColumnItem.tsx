@@ -66,8 +66,9 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
         {pricingColumnFeatures.map(item => (
           <li
             key={item.id}
-            className={classNames('mb-2 text-body-quaternary', {
-              'text-body': pricing.features.includes(item.id)
+            className={classNames('mb-2', {
+              'text-body': pricing.features.includes(item.id),
+              'text-body-quaternary': !pricing.features.includes(item.id)
             })}
           >
             <span className="fa-li me-2 stack-icon-item">

@@ -31,7 +31,7 @@ const SubCategoryContent = () => {
               <FaqItem key={item.question} item={item} type="topFaq" />
             ))}
           </ul>
-          <hr className="text-light mt-6" />
+          <hr className="border-top mt-6" />
           <ul className="faq-list list-inline">
             {category.faqs.map(item => (
               <FaqItem key={item.question} item={item} />

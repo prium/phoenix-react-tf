@@ -52,7 +52,11 @@ const CalendarAddNewEventModal = () => {
   }, [selectedEndDate, selectedStartDate]);
 
   return (
-    <Modal show={openNewEventModal} onHide={handleClose}>
+    <Modal
+      show={openNewEventModal}
+      contentClassName="border-translucent"
+      onHide={handleClose}
+    >
       <Form onSubmit={handleSubmit}>
         <Modal.Header className="px-card border-0">
           <div className="w-100 d-flex justify-content-between align-items-start">

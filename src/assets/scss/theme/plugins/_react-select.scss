@@ -95,14 +95,14 @@
   background-color: $input-bg !important;
   z-index: $zindex-modal !important;
   .react-select__menu-list {
-    background: var(--#{$prefix}secondary-bg) !important;
+    background: var(--#{$prefix}quatenary-bg) !important;
   }
   .react-select__option {
     color: var(--#{$prefix}body-highlight-color) !important;
     padding: 0.5rem 1rem;
     font-size: map-get($font-sizes, 9);
     &:hover {
-      background-color: var(--#{$prefix}primary) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
       color: var(--#{$prefix}emphasis-color) !important;
     }
   }
@@ -116,9 +116,9 @@
 }
 
 .react-select__option--is-focused {
-  background-color: var(--#{$prefix}primary-bg-subtle) !important;
+  background-color: var(--#{$prefix}body-highlight-bg) !important;
 }
 .react-select__option--is-selected {
-  background-color: var(--#{$prefix}primary) !important;
+  background-color: var(--#{$prefix}body-highlight-bg) !important;
   color: var(--#{$prefix}emphasis-color) !important;
 }

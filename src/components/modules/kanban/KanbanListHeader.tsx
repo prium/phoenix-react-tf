@@ -96,7 +96,7 @@ const KanbanListHeader = ({
   return (
     <div className="kanban-column-header px-4 hover-actions-trigger">
       <div
-        className={`d-flex align-items-center border-bottom border-translucent border-3 py-3`}
+        className={`d-flex align-items-center border-bottom border-3 py-3`}
         style={
           {
             '--phoenix-border-color': list.borderColor
@@ -116,7 +116,10 @@ const KanbanListHeader = ({
             <FontAwesomeIcon icon={faEllipsisH} />
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className="py-2" style={{ width: '15rem' }}>
+          <Dropdown.Menu
+            className="py-2 border-translucent"
+            style={{ width: '15rem' }}
+          >
             {kanbanHeaderActions.map(action => (
               <Fragment key={action.id}>
                 {action.hr ? (
