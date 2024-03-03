@@ -116,3 +116,9 @@
     }
   }
 }
+
+.widget-gap-large{
+  .btn-support-chat {
+    bottom: map-get($spacers, 10);
+  }
+}

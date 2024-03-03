@@ -16,7 +16,7 @@ const WizardAccountForm = ({ id }: { id: string }) => {
           type="text"
           name="name"
           placeholder="John Smith"
-          value={formData.name}
+          value={formData.name || ''}
           onChange={onChange}
           required={validation}
         />
@@ -30,7 +30,7 @@ const WizardAccountForm = ({ id }: { id: string }) => {
           type="email"
           name="email"
           placeholder="Email address"
-          value={formData.email}
+          value={formData.email || ''}
           onChange={onChange}
           required={validation}
         />
@@ -46,7 +46,7 @@ const WizardAccountForm = ({ id }: { id: string }) => {
               type="password"
               name="password"
               placeholder="Password"
-              value={formData.password}
+              value={formData.password || ''}
               onChange={onChange}
               required={validation}
             />{' '}
@@ -62,7 +62,7 @@ const WizardAccountForm = ({ id }: { id: string }) => {
               type="password"
               name="confirm_password"
               placeholder="Confirm Password"
-              value={formData.confirm_password}
+              value={formData.confirm_password || ''}
               onChange={onChange}
               required={validation}
             />{' '}

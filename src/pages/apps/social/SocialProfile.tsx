@@ -10,10 +10,11 @@ import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect } from 'react';
 
 const SocialProfile = () => {
-  const { setFooterClass } = useMainLayoutContext();
+  const { setFooterClass, setContentClass } = useMainLayoutContext();
 
   useEffect(() => {
     setFooterClass('d-none d-lg-block');
+    setContentClass('widget-gap-large');
     return () => {
       setFooterClass('');
     };
