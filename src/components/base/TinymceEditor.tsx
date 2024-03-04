@@ -35,8 +35,8 @@ const TinymceEditor = ({
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
         `.mce-content-body{
-          color: ${getColor(isDark ? 'white' : 'black')} !important;
-          background-color: ${getColor(isDark ? 'black' : 'white')} !important;
+          color: ${getColor('emphasis-color')} !important;
+          background-color: ${getColor('tinymce-bg')} !important;
         }
         `
       );
@@ -60,10 +60,10 @@ const TinymceEditor = ({
         menubar: false,
         content_style: `
         body { 
-          color: ${getColor('black')} 
+          color: ${getColor('emphasis-color')};
         }
         .mce-content-body{
-          background-color: ${getColor(isDark ? 'black' : 'white')};
+          background-color: ${getColor('tinymce-bg')};
         }
         .mce-content-body[data-mce-placeholder]:not(.mce-visualblocks)::before {
           color: ${getColor('gray-400')};
