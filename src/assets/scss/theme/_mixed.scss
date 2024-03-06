@@ -149,7 +149,7 @@
   padding-right: map-get($spacers, 2);
   background-color: var(--#{$prefix}body-bg);
   font-size: map-get($font-sizes, 9);
-  color: var(--#{$prefix}gray-600);
+  color: rgba(var(--#{$prefix}tertiary-color-rgb), 0.85);
   white-space: nowrap;
   font-weight: $font-weight-bold;
   .bg-auth-card & {
@@ -332,8 +332,7 @@
 .todolist-offcanvas {
   width: 35rem;
   top: var(--phoenix-navbar-top-height) !important;
-  border-left: 1px solid var(--#{$prefix}gray-300);
-  background: 1px solid var(--#{$prefix}gray-100);
+  border-left: 1px solid var(--#{$prefix}border-color);
   @include media-breakpoint-up(sm) {
     bottom: 4rem !important;
   }

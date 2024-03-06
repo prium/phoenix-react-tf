@@ -23,7 +23,6 @@ code.language-html:first-child {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  // color: var(--#{$prefix}gray-600);
   font-family: $font-family-monospace;
   font-size: map-get($font-sizes, 9);
   border-radius: 0;

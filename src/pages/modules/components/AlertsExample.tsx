@@ -114,7 +114,7 @@ const AlertsExample = () => {
 
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Alert Soft" />
+          <PhoenixDocCard.Header title="Alert Subtle" />
           <PhoenixDocCard.Body code={exampleCode} />
         </PhoenixDocCard>
 

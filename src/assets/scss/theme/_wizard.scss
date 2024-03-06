@@ -34,10 +34,10 @@
       padding-right: 0;
       width: 100%;
       // text-align: center;
-      color: var(--#{$prefix}gray-600);
+      color: var(--#{$prefix}tertiary-color);
       display: block;
       .nav-item-circle {
-        color: var(--#{$prefix}gray-600);
+        color: var(--#{$prefix}tertiary-color);
         background-color: var(--#{$prefix}theme-wizard-nav-item-circle-bg);
         border: 2px solid var(--#{$prefix}gray-300);
         height: 2.375rem;

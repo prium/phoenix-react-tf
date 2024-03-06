@@ -11,6 +11,7 @@ interface AvatarUploadProps {
   status?: Status;
   thumbnail?: boolean;
   onChange?: () => void;
+  imageClassName?: string;
 }
 
 const AvatarUpload = ({
@@ -19,7 +20,8 @@ const AvatarUpload = ({
   status,
   thumbnail,
   onChange,
-  className
+  className,
+  imageClassName
 }: AvatarUploadProps) => {
   const [image, setImage] = useState<File | null>(null);
 
@@ -49,6 +51,7 @@ const AvatarUpload = ({
           status={status}
           src={image ? URL.createObjectURL(image) : src}
           thumbnail={thumbnail}
+          imageClassName={imageClassName}
         />
         <div
           className="h-100 w-100 bg-black position-absolute top-0 rounded-circle justify-content-center align-items-center hover-actions"

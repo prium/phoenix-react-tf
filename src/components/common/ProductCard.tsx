@@ -36,7 +36,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </Badge>
             )}
           </div>
-          <Link to="#!" className="stretched-link text-decoration-none">
+          <Link to="#!" className="stretched-link">
             <h6 className="mb-2 lh-sm line-clamp-3 product-name">
               {product.name}
             </h6>

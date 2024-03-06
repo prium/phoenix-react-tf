@@ -40,6 +40,7 @@ const SocialProfileCard = ({
           status="online"
           thumbnail
           className="feed-avatar-profile"
+          imageClassName="border-0"
         />
       </Card.Header>
       <Card.Body>

@@ -231,7 +231,7 @@
     font-size: map-get($font-sizes, 10);
     @include hover-focus {
       text-decoration: none;
-      color: var(--#{$prefix}gray-600) !important;
+      color: var(--#{$prefix}tertiary-color) !important;
     }
   }
   .fc-daygrid-dot-event {

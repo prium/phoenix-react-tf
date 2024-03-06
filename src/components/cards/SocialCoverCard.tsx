@@ -30,6 +30,7 @@ const SocialCoverCard = () => {
           src={profileImage}
           thumbnail={true}
           className="feed-profile"
+          imageClassName="border-0"
         />
       </Card.Header>
       <Card.Body>
