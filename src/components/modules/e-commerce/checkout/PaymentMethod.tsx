@@ -64,7 +64,7 @@ export const PaymentMethod = () => {
         </Col>
         <Col md={6}>
           <Form.Group as={Col}>
-            <Form.Label className="fs-8 text-body-highlight ps-0 text-none">
+            <Form.Label className="fs-8 text-body-highlight ps-0 text-transform-none">
               Select card
             </Form.Label>
             <Form.Select className="text-body-emphasis">

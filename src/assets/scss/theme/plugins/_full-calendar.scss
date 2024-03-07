@@ -185,7 +185,7 @@
 
     .fc-daygrid-day-number {
       background-color: var(--#{$prefix}primary) !important;
-      color: #fff;
+      color: var(--#{$prefix}white);
       @include hover-focus {
         background-color: darken($primary, 10%) !important;
       }

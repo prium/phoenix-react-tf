@@ -46,10 +46,11 @@ const Error500 = () => {
                   alt=""
                 />
                 <h2 className="text-body-secondary fw-bolder mb-3">
-                  Unknow error!
+                  Internal Error!
                 </h2>
                 <p className="text-body mb-5">
-                  But relax! Our cat is here to play you some music.
+                  Uh-oh! It seems like our server is taking an unexpected coffee
+                  break.
                 </p>
                 <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home

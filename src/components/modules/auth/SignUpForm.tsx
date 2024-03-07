@@ -54,7 +54,10 @@ const SignUpForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             name="termsService"
             id="termsService"
           />
-          <Form.Check.Label htmlFor="termsService" className="fs-9 text-none">
+          <Form.Check.Label
+            htmlFor="termsService"
+            className="fs-9 text-transform-none"
+          >
             I accept the <Link to="#!">terms </Link>and{' '}
             <Link to="#!">privacy policy</Link>
           </Form.Check.Label>

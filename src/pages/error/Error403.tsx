@@ -50,8 +50,7 @@ const Error403 = () => {
                   Access Forbidden!
                 </h2>
                 <p className="text-body mb-5">
-                  Halt! Thou art endeavouring to trespass upon a realm not
-                  <br className="d-none d-sm-block" /> granted unto thee.
+                  You don’t have permission to access this resource.
                 </p>
                 <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home

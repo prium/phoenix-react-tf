@@ -4,7 +4,19 @@ import DocPagesLayout from 'layouts/DocPagesLayout';
 import CountUp from 'react-countup';
 
 const countupCode = `
+
   <Row className='gy-5'>
+  <CountUp
+  start={0}
+  end={2000}
+  duration={3}
+  separator="."
+  decimal="."
+  suffix="+"
+  delay={0}
+  >
+  {({ countUpRef }) => <h4 className="" ref={countUpRef} />}
+  </CountUp>
     <Col xxl xs={6} md={4} className='text-center'>
       <CountUp
         end={41251}
@@ -19,6 +31,7 @@ const countupCode = `
           </div>
         )}
       </CountUp>
+
     </Col>
     <Col xxl xs={6} md={4} className='text-center'>
       <CountUp
