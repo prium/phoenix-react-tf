@@ -20,6 +20,7 @@ const countupCode = `
     <Col xxl xs={6} md={4} className='text-center'>
       <CountUp
         end={41251}
+        delay={0}
       >
         {({ countUpRef }) => (
           <div>
