@@ -386,7 +386,7 @@ $zindex-levels: (
 //|   Nav-tabs
 //-----------------------------------------------*/
 $nav-tabs-border-width: 2px;
-$nav-underline-link-active-color: var(--#{$prefix}primary) !default;  // new
+$nav-underline-link-active-color: var(--#{$prefix}primary) !default;
 
 
 //*-----------------------------------------------
@@ -426,7 +426,6 @@ $standard-nav-height: 3.5625rem !default;
 $dropdown-padding-y: map_get($spacers, 3) !default;
 $dropdown-font-size: $navbar-font-size !default;
 
-// $dropdown-color: $gray-700 !default; // need to find use case
 $dropdown-bg: var(--#{$prefix}emphasis-bg) !default;
 $dropdown-border-color: var(--#{$prefix}border-color) !default;
 $dropdown-divider-bg: var(--#{$prefix}border-color) !default;
@@ -622,7 +621,7 @@ $carousel-indicator-active-bg: $primary !default;
 $spinner-width-sm: 1.35rem !default;
 $spinner-height-sm: $spinner-width-sm !default;
 
-// close  // new 
+// close  
 // phoenix specific variable
 $btn-close-darken-nav-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#ffffff'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default;
 $btn-close-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#ffffff'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>") !default; // need to check

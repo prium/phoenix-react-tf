@@ -76,7 +76,6 @@
     }
   }
 
-  // need to check table hover bg color,this css not found in html
   // table varient
   @each $color, $value in $theme-colors {
     @if $color == 'dark' {

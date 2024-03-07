@@ -6,17 +6,7 @@ import CountUp from 'react-countup';
 const countupCode = `
 
   <Row className='gy-5'>
-  <CountUp
-  start={0}
-  end={2000}
-  duration={3}
-  separator="."
-  decimal="."
-  suffix="+"
-  delay={0}
-  >
-  {({ countUpRef }) => <h4 className="" ref={countUpRef} />}
-  </CountUp>
+
     <Col xxl xs={6} md={4} className='text-center'>
       <CountUp
         end={41251}
@@ -39,6 +29,8 @@ const countupCode = `
         end={22112} 
         duration={10} 
         separator=","
+        delay={0}
+
       >
         {({ countUpRef }) => (
           <div>
@@ -56,6 +48,8 @@ const countupCode = `
         end={35200} 
         duration={2.75}
         separator=""
+        delay={0}
+
       >
         {({ countUpRef }) => (
           <div>
@@ -73,6 +67,8 @@ const countupCode = `
         end={50250} 
         duration={2.75} 
         separator=" "
+        delay={0}
+
       >
         {({ countUpRef }) => (
           <div>
@@ -91,6 +87,7 @@ const countupCode = `
         duration={2.75} 
         suffix="k" 
         decimals={2}
+        delay={0}
       >
         {({ countUpRef }) => (
           <div>
@@ -109,6 +106,7 @@ const countupCode = `
         duration={2.75} 
         prefix="$" 
         separator=","
+        delay={0}
       >
         {({ countUpRef }) => (
           <div>

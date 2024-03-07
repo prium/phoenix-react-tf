@@ -233,7 +233,7 @@ html:not(.navbar-vertical-collapsed) {
         // height: $navbar-vertical-height;
         border-right: 1px solid var(--#{$prefix}navbar-vertical-border-color);
         margin: 0;
-        transition: width 0.2s ease; //new
+        transition: width 0.2s ease;
         + .navbar .navbar-vertical-toggle {
           display: flex;
         }

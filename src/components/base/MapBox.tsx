@@ -19,16 +19,22 @@ interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   options: Omit<MapboxOptions, 'container'>;
 }
 
-const styles = {
-  default: 'mapbox://styles/mapbox/light-v11',
-  auto: 'mapbox://styles/mapbox/light-v11', // not reviewed
-  light: 'mapbox://styles/themewagon/clj57pads001701qo25756jtw',
-  dark: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew'
-};
-
 const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
+  const {
+    config: { isDark }
+  } = useAppContext();
+
+  const styles = {
+    default: 'mapbox://styles/mapbox/light-v11',
+    auto: isDark
+      ? 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew'
+      : 'mapbox://styles/themewagon/clj57pads001701qo25756jtw',
+    light: 'mapbox://styles/themewagon/clj57pads001701qo25756jtw',
+    dark: 'mapbox://styles/themewagon/cljzg9juf007x01pk1bepfgew'
+  };
+
   const {
     config: { theme }
   } = useAppContext();
