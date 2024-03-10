@@ -5,6 +5,8 @@ export default [
     version: '1.3.0',
     title: 'Elpis',
     publishDate: '22 Nov, 2023',
+    alertText:
+      'This is a major update. Please backup your project before upgrading to the latest version',
     logs: {
       new: [
         'New theme color shades.',
