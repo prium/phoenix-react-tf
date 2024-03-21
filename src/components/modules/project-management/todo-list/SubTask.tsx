@@ -18,7 +18,7 @@ const SubTask = ({
     <div
       className={classNames(
         className,
-        'd-flex flex-between-center hover-actions-trigger border-300 py-3 border-bottom'
+        'd-flex flex-between-center hover-actions-trigger py-3 border-bottom'
       )}
     >
       <Form.Check
@@ -34,10 +34,14 @@ const SubTask = ({
       </Form.Check>
 
       <div className="hover-actions end-0">
-        <Button variant="" size="sm" className="me-1 text-700 px-0 me-3">
+        <Button
+          variant=""
+          size="sm"
+          className="me-1 text-body-tertiary px-0 me-3"
+        >
           <FontAwesomeIcon icon={faPencil} className="fs-10" />
         </Button>
-        <Button size="sm" className="text-700 px-0">
+        <Button size="sm" className="text-body-tertiary px-0">
           <FontAwesomeIcon icon={faXmark} className="fs-8" />
         </Button>
       </div>

@@ -9,16 +9,16 @@ echarts.use([TooltipComponent, PieChart]);
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   color: [
     getThemeColor('primary'),
-    getThemeColor('primary-200'),
-    getThemeColor('info-500')
+    getThemeColor('primary-lighter'),
+    getThemeColor('info-dark')
   ],
 
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     formatter: (params: CallbackDataParams) =>
@@ -39,14 +39,14 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       itemStyle: {
         borderWidth: 2,
-        borderColor: getThemeColor('white')
+        borderColor: getThemeColor('body-bg')
       },
       label: {
         show: true,
         position: 'center',
         formatter: '{a}',
         fontSize: 23,
-        color: getThemeColor('dark')
+        color: getThemeColor('light-text-emphasis')
       },
       data: [
         { value: 7200000, name: 'Percentage discount' },

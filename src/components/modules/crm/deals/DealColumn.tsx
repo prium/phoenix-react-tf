@@ -16,10 +16,10 @@ const DealColumn = ({
 }) => {
   return (
     <div className="deals-column">
-      <div className="d-flex align-items-center justify-content-between position-sticky top-0 z-index-1 bg-soft">
+      <div className="d-flex align-items-center justify-content-between position-sticky top-0 z-1 bg-body">
         <div>
           <h5 className="mb-2">{column.title}</h5>
-          <p className="fs-9 text-700 mb-1">Forecast Revenue:</p>
+          <p className="fs-9 text-body-tertiary mb-1">Forecast Revenue:</p>
           <h4 className="mb-3">
             {currencyFormat(column.revenue, {
               minimumFractionDigits: 2

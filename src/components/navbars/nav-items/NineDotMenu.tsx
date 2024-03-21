@@ -37,7 +37,7 @@ const NineDotMenu = () => {
   return (
     <Dropdown.Menu
       align="end"
-      className="navbar-dropdown-caret py-0 dropdown-nine-dots shadow border border-300"
+      className="navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
     >
       <Card
         className="position-relative border-0"
@@ -50,14 +50,14 @@ const NineDotMenu = () => {
                 <Col xs={4} key={item.title}>
                   <Link
                     to="#!"
-                    className="d-block hover-bg-200 p-2 rounded-3 text-center text-decoration-none mb-3"
+                    className="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
                   >
                     <img
                       src={item.img}
                       alt="behance"
                       width={item.width || 30}
                     />
-                    <p className="mb-0 text-black text-truncate fs-10 mt-1 pt-1">
+                    <p className="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">
                       {item.title}
                     </p>
                   </Link>

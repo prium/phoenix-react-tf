@@ -22,11 +22,11 @@ const NavbarTopHorizontal = () => {
   return (
     <Navbar
       className={classNames('navbar-top fixed-top', {
-        'navbar-slim': navbarTopShape === 'slim',
-        'navbar-darker': navbarTopAppearance === 'darker'
+        'navbar-slim': navbarTopShape === 'slim'
       })}
       expand="lg"
       variant=""
+      data-navbar-appearance={navbarTopAppearance === 'darker' ? 'darker' : ''}
     >
       <NavbarBrand />
       {!(navbarPosition === 'combo' && breakpoints.down('lg')) && (

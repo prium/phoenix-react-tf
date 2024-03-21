@@ -7,7 +7,9 @@ const AdClicks = () => {
       <Row className="align-items-start justify-content-between mb-4 g-3">
         <Col xs="auto">
           <h3>Ad Clicks</h3>
-          <p className="text-700 lh-sm mb-0">Check effectiveness of your ads</p>
+          <p className="text-body-tertiary lh-sm mb-0">
+            Check effectiveness of your ads
+          </p>
         </Col>
         <Col xs={12} sm={4}>
           <Form.Select size="sm">

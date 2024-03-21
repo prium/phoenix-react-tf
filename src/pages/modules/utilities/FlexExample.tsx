@@ -5,25 +5,25 @@ import PhoenixDocProvider from 'providers/PhoenixDocProvider';
 
 const flexCode = `
 <>
-  <div className="d-flex p-2 bg-200 mb-2">Flexbox container!</div>
-  <div className="d-inline-flex p-2 bg-200">
+  <div className="d-flex p-2 bg-body-secondary mb-2">Flexbox container!</div>
+  <div className="d-inline-flex p-2 bg-body-secondary">
     Inline flexbox container!
   </div>
 </>`;
 
 const flexDirectionRowCode = `<>
-  <div className="d-flex p-2 bg-200 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item 1</div>
-    <div className="p-2 bg-200 border border-400">Flex item 2</div>
-    <div className="p-2 bg-200 border border-400">Flex item 3</div>
+  <div className="d-flex p-2 bg-body-secondary mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
-  <div className="d-flex flex-row-reverse p-2 bg-200 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item 1</div>
-    <div className="p-2 bg-200 border border-400">Flex item 2</div>
-    <div className="p-2 bg-200 border border-400">Flex item 3</div>
+  <div className="d-flex flex-row-reverse p-2 bg-body-secondary mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
-  <div className="d-flex flex-lg-row-reverse p-2 bg-200 mb-2">  
-    <div className="p-2 bg-200 border border-400">
+  <div className="d-flex flex-lg-row-reverse p-2 bg-body-secondary mb-2">  
+    <div className="p-2 bg-body-secondary border">
       Flex Item (<code>flex-direction:row-reverse</code> in <code>lg</code> screen )
     </div>
   </div>
@@ -31,310 +31,310 @@ const flexDirectionRowCode = `<>
 
 const flexDirectionColumnCode = `<>
   <div className="d-flex flex-column p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item 1</div>
-    <div className="p-2 bg-200 border border-400">Flex item 2</div>
-    <div className="p-2 bg-200 border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-column-reverse p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item 1</div>
-    <div className="p-2 bg-200 border border-400">Flex item 2</div>
-    <div className="p-2 bg-200 border border-400">Flex item 3</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3</div>
   </div>
   <div className="d-flex flex-column flex-lg-column-reverse p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item 1 (<code>column-reverse</code> in <code>lg</code> screen )</div>
-    <div className="p-2 bg-200 border border-400">Flex item 2 (<code>column-reverse</code> in <code>lg</code> screen )</div>
-    <div className="p-2 bg-200 border border-400">Flex item 3 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 1 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 2 (<code>column-reverse</code> in <code>lg</code> screen )</div>
+    <div className="p-2 bg-body-secondary border">Flex item 3 (<code>column-reverse</code> in <code>lg</code> screen )</div>
   </div>
 </>`;
 
 const justifyCode = `
 <>
-  <div justifyContent='start' className="d-flex justify-content-start bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div justifyContent='start' className="d-flex justify-content-start bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div justifyContent='end' className="d-flex justify-content-end bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div justifyContent='end' className="d-flex justify-content-end bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div justifyContent='center' className="d-flex justify-content-center bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div justifyContent='center' className="d-flex justify-content-center bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div justifyContent='between' className="d-flex justify-content-between bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div justifyContent='between' className="d-flex justify-content-between bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div justifyContent='around' className="d-flex justify-content-around bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div justifyContent='around' className="d-flex justify-content-around bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div justifyContent='lg-center' className="d-flex justify-content-lg-center bg-200 p-2 mb-2">  
-    <div className="p-2 bg-200 border border-400">Flex item (<code>justify-content:center</code> in <code>lg</code> screen)</div>
+  <div justifyContent='lg-center' className="d-flex justify-content-lg-center bg-body-secondary p-2 mb-2">  
+    <div className="p-2 bg-body-secondary border">Flex item (<code>justify-content:center</code> in <code>lg</code> screen)</div>
   </div>
 </>`;
 
 const alignItemsCode = `<>
-  <div className="d-flex align-items-start bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex align-items-start bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex align-items-end bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex align-items-end bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex align-items-center bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex align-items-center bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex align-items-baseline bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex align-items-baseline bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex align-items-stretch bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex align-items-stretch bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex align-items-lg-center bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="p-2 bg-200 border border-400">Flex item (<code>align-items:center</code> in <code>lg</code> screen)</div>
+  <div className="d-flex align-items-lg-center bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="p-2 bg-body-secondary border">Flex item (<code>align-items:center</code> in <code>lg</code> screen)</div>
   </div>
 </>`;
 
 const alignSelfCode = `<>
-  <div className="d-flex bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
-    <div className="border border-400 p-2 bg-200 align-self-start">Align self start</div>
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
+  <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-start">Align self start</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
-  <div className="d-flex bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
-    <div className="border border-400 p-2 bg-200 align-self-end">Align self end</div>
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
+  <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-end">Align self end</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
-  <div className="d-flex bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
-    <div className="border border-400 p-2 bg-200 align-self-center">Align self center</div>
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
+  <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-center">Align self center</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
-  <div className="d-flex bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
-    <div className="border border-400 p-2 bg-200 align-self-baseline">Align self baseline</div>
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
+  <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-baseline">Align self baseline</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
-  <div className="d-flex bg-200 mb-2" style={{height:'5rem'}}>  
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
-    <div className="border border-400 p-2 bg-200 align-self-stretch">Align self stretch</div>
-    <div className="border border-400 p-2 bg-200">Flex Item</div>
+  <div className="d-flex bg-body-secondary mb-2" style={{height:'5rem'}}>  
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
+    <div className="border p-2 bg-body-secondary align-self-stretch">Align self stretch</div>
+    <div className="border p-2 bg-body-secondary">Flex Item</div>
   </div>
 </>`;
 
 const fillCode = `<>
-  <div className="d-flex bg-200">
-    <div className="p-2 flex-fill bg-200 border border-400">Flex item with a lot of content</div>
-    <div className="p-2 flex-fill bg-200 border border-400">Flex item</div>
-    <div className="p-2 flex-fill bg-200 border border-400">Flex item</div>
+  <div className="d-flex bg-body-secondary">
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item with a lot of content</div>
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item</div>
+    <div className="p-2 flex-fill bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
 const growCode = `
-  <div className="d-flex bg-200">
-    <div className="p-2 flex-grow-1 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Third flex item</div>
+  <div className="d-flex bg-body-secondary">
+    <div className="p-2 flex-grow-1 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Third flex item</div>
   </div>
 `;
 
 const shrinkCode = `
-  <div className="d-flex bg-200">
-    <div className="p-2 w-100 bg-200 border border-400">Flex item</div>
-    <div className="p-2 flex-shrink-1 bg-200 border border-400">Flex item</div>
+  <div className="d-flex bg-body-secondary">
+    <div className="p-2 w-100 bg-body-secondary border">Flex item</div>
+    <div className="p-2 flex-shrink-1 bg-body-secondary border">Flex item</div>
   </div>
 `;
 
 const autoMarginCode = `
 <>
-  <div className="d-flex bg-200 mb-2">
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex bg-body-secondary mb-2">
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex bg-200 mb-2">
-    <div className="me-auto p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex bg-body-secondary mb-2">
+    <div className="me-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex bg-200 mb-2">
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="ms-auto p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex bg-body-secondary mb-2">
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="ms-auto p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>
 `;
 
 const autoMarginWithAlignItemsCode = `
 <>
-  <div className="d-flex flex-column bg-200 mb-3 align-items-start" style={{height: '200px'}}>
-    <div className="mb-auto p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-column bg-body-secondary mb-3 align-items-start" style={{height: '200px'}}>
+    <div className="mb-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-column bg-200 mb-3 align-items-end" style={{height: '200px'}}>
-    <div className="mb-auto p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-column bg-body-secondary mb-3 align-items-end" style={{height: '200px'}}>
+    <div className="mb-auto p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>
 `;
 
 const wrapCode = `<>
-  <div className="d-flex flex-nowrap mb-3 bg-200 border border-300 py-3" style={{width: '8rem'}}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-nowrap mb-3 bg-body-secondary border py-3" style={{width: '8rem'}}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap mb-3 bg-200 border border-300">
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap mb-3 bg-body-secondary border">
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap-reverse mb-3 bg-200 border border-300">
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap-reverse mb-3 bg-body-secondary border">
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
 const orderCode = `
-  <div className="d-flex bg-200 p-2 mb-2">  
-    <div className="order-3 p-2 bg-200 border border-400">First flex item</div>
-    <div className="order-2 p-2 bg-200 border border-400">Second flex item</div>
-    <div className="order-1 p-2 bg-200 border border-400">Third flex item</div>
+  <div className="d-flex bg-body-secondary p-2 mb-2">  
+    <div className="order-3 p-2 bg-body-secondary border">First flex item</div>
+    <div className="order-2 p-2 bg-body-secondary border">Second flex item</div>
+    <div className="order-1 p-2 bg-body-secondary border">Third flex item</div>
   </div>
 `;
 
 const responsiveOrderCode = `
-  <div className="d-flex bg-200 p-2 mb-2">  
-    <div className="order-sm-3 p-2 bg-200 border border-400">
+  <div className="d-flex bg-body-secondary p-2 mb-2">  
+    <div className="order-sm-3 p-2 bg-body-secondary border">
       First flex item (<code>order:3</code> in <code>sm</code> screen)</div>
-    <div className="order-md-2 p-2 bg-200 border border-400">
+    <div className="order-md-2 p-2 bg-body-secondary border">
       Second flex item (<code>order:2</code> in <code>md</code> screen)
     </div>
-    <div className="order-lg-1 p-2 bg-200 border border-400">
+    <div className="order-lg-1 p-2 bg-body-secondary border">
       Third flex item (<code>order:1</code> in <code>lg</code> screen)
     </div>
   </div>
 `;
 
 const alignContentCode = `<>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-start" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-start" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-end" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-end" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-center" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-center" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-between" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-between" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-around" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-around" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
-  <div className="d-flex flex-wrap bg-200 mb-3 align-content-stretch" style={{ height: '300px' }}>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
-    <div className="p-2 bg-200 border border-400">Flex item</div>
+  <div className="d-flex flex-wrap bg-body-secondary mb-3 align-content-stretch" style={{ height: '300px' }}>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
+    <div className="p-2 bg-body-secondary border">Flex item</div>
   </div>
 </>`;
 
@@ -361,7 +361,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code> .flex-row </code> to set a horizontal direction (the
               browser default), or .flex-row-reverse to start the horizontal
               direction from the opposite side.
@@ -372,7 +372,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Row">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code> .flex-row </code> to set a horizontal direction (the
               browser default), or .flex-row-reverse to start the horizontal
               direction from the opposite side.
@@ -383,7 +383,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Direction Column">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use
               <code> .flex-column </code>
               to set a vertical direction, or
@@ -412,7 +412,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align items">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-items </code>utilities on flexbox containers to
               change the alignment of flex items on the cross axis (the y-axis
               to start, x-axis if <code>flex-direction: column </code>). Choose
@@ -426,7 +426,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Align self">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-self </code>utilities on flexbox items to
               individually change their alignment on the cross axis (the y-axis
               to start, x-axis if <code>flex-direction: column </code>). Choose
@@ -440,7 +440,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Fill">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use the <code>.flex-fill</code> class on a series of sibling
               elements to force them into widths equal to their content (or
               equal widths if their content does not surpass their border-boxes)
@@ -452,7 +452,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Grow">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>.flex-grow-* </code>utilities to toggle a flex item’s
               ability to grow to fill available space. In the example below, the
               <code>.flex-grow-1 </code>elements uses all available space it
@@ -465,7 +465,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Flex Shrink">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>.flex-shrink-*</code> utilities to toggle a flex item’s
               ability to shrink if necessary. In the example below, the second
               flex item with <code>.flex-shrink-1</code> is forced to wrap its
@@ -479,7 +479,7 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4">
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Auto margins">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Flexbox can do some pretty awesome things when you mix flex
                 alignments with auto margins. Shown below are three examples of
                 controlling flex items via auto margins: default (no auto
@@ -494,7 +494,7 @@ const FlexExample = () => {
               title="With align-items"
               className="border-bottom-0"
             >
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Vertically move one flex item to the top or bottom of a
                 container by mixing <code>align-items</code>,{' '}
                 <code>flex-direction: column</code>, and{' '}
@@ -508,7 +508,7 @@ const FlexExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Wrap">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Change how flex items wrap in a flex container. Choose from no
               wrapping at all (the browser default) with{' '}
               <code>.flex-nowrap </code>, wrapping with
@@ -522,7 +522,7 @@ const FlexExample = () => {
         <PhoenixDocCard className="mb-4" noProvider>
           <PhoenixDocProvider>
             <PhoenixDocCard.Header title="Order">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Change the <em>visual</em> order of specific flex items with a
                 handful of <code>order</code> utilities. We only provide options
                 for making an item first or last, as well as a reset to use the
@@ -535,7 +535,7 @@ const FlexExample = () => {
 
           <PhoenixDocProvider>
             <PhoenixDocCard.Header className="border-bottom-0">
-              <p className="mb-0 text-800">
+              <p className="mb-0 text-body-secondary">
                 Responsive variations also exist for <code>order</code>. Use{' '}
                 <code>
                   order-{`{breakpoint}`}-{`{value}`}
@@ -552,7 +552,7 @@ const FlexExample = () => {
             title="Align content"
             className="border-bottom-0"
           >
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Use <code>align-content</code> utilities on flexbox containers to
               align flex items <em>together</em> on the cross axis. Choose from{' '}
               <code>start</code> (browser default), <code>end</code>,{' '}

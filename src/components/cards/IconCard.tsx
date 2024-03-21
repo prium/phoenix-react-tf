@@ -39,15 +39,15 @@ const IconCard = ({
   }, []);
 
   return (
-    <div className="border border-300 rounded-2 p-3 mb-4 text-center bg-white dark__bg-1000 shadow-sm">
+    <div className="border rounded-2 p-3 mb-4 text-center bg-body-emphasis dark__bg-gray-1000 shadow-sm">
       {iconFamily === 'font-awesome' && (
-        <FontAwesomeIcon icon={icon as IconProp} className="text-900 fs-5" />
+        <FontAwesomeIcon icon={icon as IconProp} className="text-body fs-5" />
       )}
       {iconFamily === 'unicons' && (
-        <Unicon icon={icon as Icon} className="text-900 fs-5" />
+        <Unicon icon={icon as Icon} className="text-body fs-5" />
       )}
       {iconFamily === 'feather' && (
-        <FeatherIcon icon={icon} className="text-900" size={16} />
+        <FeatherIcon icon={icon} className="text-body" size={16} />
       )}
       {children}
       <Form.Control
@@ -55,20 +55,21 @@ const IconCard = ({
         type="text"
         readOnly
         value={text}
-        className="text-center text-dark bg-200 dark__bg-1100 border-300 mt-3"
+        className="text-center text-dark bg-body-secondary dark__bg-gray-1100 mt-3"
       />
 
       <Toast
         show={showCopyToast}
         onClose={() => setShowCopyToast(false)}
-        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        className="align-items-center bg-dark border-0 bottom-0 end-0 mb-3 me-3 position-fixed text-white z-5"
+        data-bs-theme="light"
         delay={3000}
         autohide
       >
         <div className="d-flex">
           <Toast.Body className="P-3">
             <span className="fw-black">
-              Copied: <code className="text-500">{text}</code>
+              Copied: <code className="text-body-quaternary">{text}</code>
             </span>
           </Toast.Body>
         </div>

@@ -10,9 +10,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     formatter: (params: CallbackDataParams) => {
@@ -49,7 +49,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         roundCap: true,
         lineStyle: {
           width: 12,
-          color: [[1, getThemeColor('primary-100')]]
+          color: [[1, getThemeColor('primary-bg-subtle')]]
         }
       },
       axisTick: {

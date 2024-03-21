@@ -60,7 +60,9 @@ const useAdvanceTable = <T,>({
   initialState
 }: PropsWithChildren<UseAdvanceTableProps<T>>) => {
   const state = {
-    pagination: { pageSize: pagination ? pageSize : data.length },
+    pagination: pagination
+      ? { pageSize: pagination ? pageSize : data.length }
+      : undefined,
     ...initialState
   };
   const table = useReactTable<T>({

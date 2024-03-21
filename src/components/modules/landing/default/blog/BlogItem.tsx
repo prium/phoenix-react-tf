@@ -28,8 +28,11 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon={faEye} className="text-500 me-1" />
-              <span className="text-900 fs-10 lh-1">{blog.views}</span>
+              <FontAwesomeIcon
+                icon={faEye}
+                className="text-body-quaternary me-1"
+              />
+              <span className="text-body fs-10 lh-1">{blog.views}</span>
             </Link>
           </div>
           <div className="d-flex align-items-center me-3">
@@ -37,8 +40,11 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon={faHeart} className="text-500 me-1" />
-              <span className="text-900 fs-10 lh-1">{blog.likes}</span>
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="text-body-quaternary me-1"
+              />
+              <span className="text-body fs-10 lh-1">{blog.likes}</span>
             </Link>
           </div>
           <div className="d-flex align-items-center">
@@ -46,8 +52,11 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
               to="#!"
               className="btn-link text-decoration-none d-flex align-items-center"
             >
-              <FontAwesomeIcon icon={faComment} className="text-500 me-1" />
-              <span className="text-900 fs-10 lh-1">{blog.comments}</span>
+              <FontAwesomeIcon
+                icon={faComment}
+                className="text-body-quaternary me-1"
+              />
+              <span className="text-body fs-10 lh-1">{blog.comments}</span>
             </Link>
           </div>
         </div>

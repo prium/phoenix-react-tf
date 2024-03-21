@@ -32,7 +32,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
               {name}
             </Link>
             <div className="d-flex align-items-center">
-              <p className="mb-0 text-1000 fw-semi-bold fs-9 me-2">
+              <p className="mb-0 text-body-highlight fw-semibold fs-9 me-2">
                 {designation}
               </p>
               <Badge variant="phoenix" bg={type}>
@@ -53,12 +53,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-success-100 rounded me-2">
-            <FeatherIcon
-              icon="mail"
-              size={16}
-              className="text-success-600 dark__text-success-300"
-            />
+          <div className="px-1 py-1 bg-success-subtle rounded me-2">
+            <FeatherIcon icon="mail" size={16} className="text-success-dark" />
           </div>
           <span>Email</span>
         </div>
@@ -67,7 +63,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link className="text-1000" to={`mailto:${email}`}>
+        <Link className="text-body-highlight" to={`mailto:${email}`}>
           {email}
         </Link>
       );
@@ -75,10 +71,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold ps-4 border-end'
+        className:
+          'white-space-nowrap fw-semibold ps-4 border-end border-translucent'
       }
     }
   },
@@ -87,12 +84,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-primary-100 rounded me-2">
-            <FeatherIcon
-              icon="phone"
-              size={16}
-              className="text-primary-600 dark__text-primary-300"
-            />
+          <div className="px-1 py-1 bg-primary-subtle rounded me-2">
+            <FeatherIcon icon="phone" size={16} className="text-primary-dark" />
           </div>
           <span>Phone</span>
         </div>
@@ -101,7 +94,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     cell: ({ row: { original } }) => {
       const { phone } = original;
       return (
-        <Link className="text-1000" to={`tel:${phone}`}>
+        <Link className="text-body-highlight" to={`tel:${phone}`}>
           {phone}
         </Link>
       );
@@ -109,10 +102,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%', minWidth: '180px' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold ps-4 border-end'
+        className:
+          'white-space-nowrap fw-semibold ps-4 border-end border-translucent'
       }
     }
   },
@@ -121,12 +115,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-info-100 rounded me-2">
-            <FeatherIcon
-              icon="user"
-              size={16}
-              className="text-info-600 dark__text-info-300"
-            />
+          <div className="px-1 py-1 bg-info-subtle rounded me-2">
+            <FeatherIcon icon="user" size={16} className="text-info-dark" />
           </div>
           <span>Contact name</span>
         </div>
@@ -136,10 +126,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 border-end fw-semi-bold text-1000'
+        className:
+          'white-space-nowrap ps-4 border-end border-translucent fw-semibold text-body-highlight'
       }
     }
   },
@@ -148,12 +139,8 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     header: () => {
       return (
         <div className="d-inline-flex flex-center">
-          <div className="px-1 py-1 bg-warning-100 rounded me-2">
-            <FeatherIcon
-              icon="grid"
-              size={16}
-              className="text-warning-600 dark__text-warning-300"
-            />
+          <div className="px-1 py-1 bg-warning-subtle rounded me-2">
+            <FeatherIcon icon="grid" size={16} className="text-warning-dark" />
           </div>
           <span>Company name</span>
         </div>
@@ -163,10 +150,11 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
     meta: {
       headerProps: {
         style: { width: '15%' },
-        className: 'ps-4 pe-5 border-end'
+        className: 'ps-4 pe-5 border-end border-translucent'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 border-end fw-semi-bold text-1000'
+        className:
+          'white-space-nowrap ps-4 border-end border-translucent fw-semibold text-body-highlight'
       }
     }
   },
@@ -180,7 +168,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
         className: 'ps-4 pe-5'
       },
       cellProps: {
-        className: 'white-space-nowrap ps-4 text-700'
+        className: 'white-space-nowrap ps-4 text-body-tertiary'
       }
     }
   },
@@ -213,7 +201,7 @@ export const leadsTableColumns: ColumnDef<LeadDataType>[] = [
 
 const LeadsTable = () => {
   return (
-    <div className="border-top">
+    <div className="border-top border-translucent">
       <AdvanceTable
         tableProps={{ className: 'phoenix-table fs-9' }}
         rowClassName="hover-actions-trigger btn-reveal-trigger"

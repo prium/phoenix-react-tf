@@ -23,7 +23,7 @@ const WizardNavItem = ({
   return (
     <Nav.Item as="li" className="nav-item">
       <Nav.Link
-        className={classNames('fw-semi-bold', {
+        className={classNames('fw-semibold', {
           done: selectedStep > step && step !== totalStep,
           complete: selectedStep > step && step !== totalStep - 1
         })}

@@ -13,7 +13,9 @@ const EventTitleCard = ({ className }: { className?: string }) => {
           Brandmyth presents- Shironamhin 25 years celebration with symphony
           orchestra
         </h1>
-        <p className="fs-0 mb-4 text-600">Tavern on the Greend, New York</p>
+        <p className="fs-0 mb-4 text-body-tertiary">
+          Tavern on the Greend, New York
+        </p>
         <Card className="mb-5 mb-xxl-7">
           <Card.Body>
             <Row className="gy-5">
@@ -21,27 +23,27 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                 <div>
                   <div className="mb-3">
                     <div className="d-flex align-items-center">
-                      <div className="px-2 py-1 bg-info-100 rounded">
+                      <div className="px-2 py-1 bg-info-subtle rounded">
                         <FeatherIcon
                           icon="map-pin"
                           className="text-info"
                           size={16}
                         />
                       </div>
-                      <h5 className="ms-2 text-1100 mb-0">Location</h5>
+                      <h5 className="ms-2 text-body-emphasis mb-0">Location</h5>
                     </div>
                   </div>
-                  <p className="lh-sm mb-0 text-700">
+                  <p className="lh-sm mb-0 text-body-tertiary">
                     36/4A, James Tiberius Auditorium, <br />
                     Vancouver, British Columbia, Canada
                   </p>
                 </div>
-                <div className="my-4 mx-3 border-start d-none d-md-block"></div>
+                <div className="my-4 mx-3 border-start border-translucent d-none d-md-block"></div>
               </Col>
               <Col md={6}>
                 <div className="mb-3">
                   <div className="d-flex align-items-center">
-                    <div className="px-2 py-1 bg-primary-100 rounded">
+                    <div className="px-2 py-1 bg-primary-subtle rounded">
                       <FeatherIcon
                         icon="clock"
                         className="text-primary"
@@ -51,7 +53,7 @@ const EventTitleCard = ({ className }: { className?: string }) => {
                     <h5 className="ms-2 mb-0">Date &amp; Time</h5>
                   </div>
                 </div>
-                <p className="lh-sm mb-0 text-700">
+                <p className="lh-sm mb-0 text-body-tertiary">
                   28th June - 2nd July 2022, <br />
                   10 am - 4 pm Eastern Daylight Time
                 </p>

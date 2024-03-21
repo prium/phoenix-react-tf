@@ -28,7 +28,10 @@ const KanbanList = ({ list }: KanbanListProps) => {
       />
       <div className="kanban-items-container">
         {list.tasks.map((task, index) => (
-          <div className="py-2 px-2 border-bottom" key={task.id}>
+          <div
+            className="py-2 px-2 border-bottom border-translucent"
+            key={task.id}
+          >
             <Draggable
               key={`${list.id}-${task.id}`}
               draggableId={`${list.id}-${task.id}`}
@@ -45,7 +48,7 @@ const KanbanList = ({ list }: KanbanListProps) => {
                       list={list}
                       task={task}
                       className={classNames({
-                        'bg-white': snapshot.isDragging
+                        'bg-body-emphasis': snapshot.isDragging
                       })}
                     />
                   </div>
@@ -56,10 +59,10 @@ const KanbanList = ({ list }: KanbanListProps) => {
         ))}
       </div>
       <div className="py-3 px-4 kanban-add-task">
-        <Button className="bg-300 me-2 px-0">
+        <Button className="bg-body-tertiary me-2 px-0">
           <FontAwesomeIcon
             icon={faPlus}
-            className="text-white dark__text-400"
+            className="text-white dark__text-gray-400"
             transform="grow-4 down-1"
           />
         </Button>

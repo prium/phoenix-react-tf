@@ -11,3 +11,11 @@
 .border-dashed {
   --#{$prefix}border-style: dashed;
 }
+
+@each $key, $utility in $border-color-utilities {
+  @include generate-utility($utility, '');
+}
+
+.border-translucent{
+  border-color: var(--#{$prefix}border-color-translucent) !important;
+}

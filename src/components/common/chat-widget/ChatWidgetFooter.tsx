@@ -83,7 +83,7 @@ const ChatWidgetFooter = () => {
           <div>
             <Button className="p-0">
               <label
-                className="text-500 fs-9 cursor-pointer"
+                className="text-body-quaternary fs-9 cursor-pointer"
                 htmlFor="widgetImages"
               >
                 <FontAwesomeIcon icon={faImage} transform="down-1" />
@@ -105,7 +105,7 @@ const ChatWidgetFooter = () => {
           <div>
             <Button className="p-0">
               <label
-                className="text-500 fs-9 cursor-pointer"
+                className="text-body-quaternary fs-9 cursor-pointer"
                 htmlFor="widgetAttachments"
               >
                 <FontAwesomeIcon icon={faPaperclip} transform="down-1" />

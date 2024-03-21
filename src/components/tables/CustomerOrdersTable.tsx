@@ -20,7 +20,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => {
       const { orderId } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">
+        <Link to="#!" className="fw-semibold">
           #{orderId}
         </Link>
       );
@@ -35,7 +35,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.total),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end pe-7' },
-      cellProps: { className: 'text-end fw-semi-bold text-1000 pe-7' }
+      cellProps: { className: 'text-end fw-semibold text-body-highlight pe-7' }
     }
   },
   {
@@ -99,7 +99,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Delivery type',
     meta: {
       headerProps: { style: { width: '30%' } },
-      cellProps: { className: 'text-900 fs-9' }
+      cellProps: { className: 'text-body fs-9' }
     }
   },
   {
@@ -107,7 +107,9 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Date',
     meta: {
       headerProps: { className: 'text-end' },
-      cellProps: { className: 'text-700 fs-9 ps-4 text-end white-space-nowrap' }
+      cellProps: {
+        className: 'text-body-tertiary fs-9 ps-4 text-end white-space-nowrap'
+      }
     }
   },
   {
@@ -137,7 +139,7 @@ const CustomerOrdersTable = () => {
 
   return (
     <AdvanceTableProvider {...table}>
-      <div className="border-y">
+      <div className="border-y border-translucent">
         <AdvanceTable
           tableProps={{ className: 'phoenix-table table-sm fs-9' }}
         />

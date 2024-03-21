@@ -460,7 +460,7 @@ export const yourBoards: KanbanBoard[] = [
     id: 7,
     title: 'Phoenix Kanban',
     category: 'Project Management',
-    // boardClass: 'bg-200',
+    // boardClass: 'bg-body-secondary',
     totalTasks: 43,
     comments: 22,
     deadlines: 17,

@@ -34,10 +34,13 @@ const ConversationDetails = ({
 }: ConversationDetailsProps) => {
   return (
     <>
-      <div className="border-bottom p-4">
+      <div className="border-bottom border-translucent p-4">
         <div className="d-flex flex-between-center">
           <Button className="p-0" onClick={handleClose}>
-            <FontAwesomeIcon icon={faChevronLeft} className="text-700" />
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              className="text-body-tertiary"
+            />
           </Button>
           <Dropdown align="end">
             <Dropdown.Toggle
@@ -45,7 +48,10 @@ const ConversationDetails = ({
               size="sm"
               className="p-0 btn-reveal dropdown-toggle dropdown-caret-none transition-none"
             >
-              <FontAwesomeIcon icon={faEllipsisV} className="text-700" />
+              <FontAwesomeIcon
+                icon={faEllipsisV}
+                className="text-body-tertiary"
+              />
             </Dropdown.Toggle>
             <Dropdown.Menu align="end" className="py-2">
               <ActionDropdownItems />
@@ -54,7 +60,7 @@ const ConversationDetails = ({
         </div>
         <div className="d-flex flex-column align-items-center text-center">
           <Avatar src={conversation.user.avatar} size="4xl" className="mb-2" />
-          <h4 className="fw-semi-bold mb-3">{conversation.user.name}</h4>
+          <h4 className="fw-semibold mb-3">{conversation.user.name}</h4>
           <div className="d-flex gap-1">
             <Button variant="primary" className="btn-icon fs-10">
               <FontAwesomeIcon icon={faPhone} />

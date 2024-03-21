@@ -1378,12 +1378,20 @@ export const routes: RouteItems[] = [
         icon: 'settings',
         dropdownInside: true,
         active: true,
+        hasNew: true,
         pages: [
           {
             name: 'configuration',
             path: '/documentation/customization/configuration',
             pathName: 'doc-configuration',
             active: true
+          },
+          {
+            name: 'color',
+            path: '/documentation/customization/color',
+            pathName: 'doc-color',
+            active: true,
+            new: true
           },
           {
             name: 'styling',

@@ -35,7 +35,7 @@ const EmailLayout = ({
   }, []);
   return (
     <div className="email-container">
-      <Row className="gx-lg-4 gx-xl-6 gx-3 py-4 z-index-2 position-sticky bg-soft email-header">
+      <Row className="gx-lg-4 gx-xl-6 gx-3 py-4 z-2 position-sticky bg-body email-header">
         <Col className="col-auto">
           <Button
             variant="primary"
@@ -47,7 +47,7 @@ const EmailLayout = ({
           </Button>
           <Button
             variant="phoenix-secondary"
-            className="px-3 text-700 d-lg-none"
+            className="px-3 text-body-tertiary d-lg-none"
             onClick={() => setOpenSidebar(true)}
           >
             <FontAwesomeIcon icon={faBars} />
@@ -68,7 +68,7 @@ const EmailLayout = ({
       <Row className="g-lg-4 g-xl-6 mb-8">
         <Col lg="auto">
           <div
-            className="email-sidebar email-sidebar-width bg-soft d-none d-lg-block"
+            className="email-sidebar email-sidebar-width bg-body d-none d-lg-block"
             id="emailSidebarColumn"
           >
             <EmailSidebar />
@@ -78,7 +78,7 @@ const EmailLayout = ({
               open={openSidebar}
               fixed
               placement="start"
-              className="email-sidebar email-sidebar-width bg-soft"
+              className="email-sidebar email-sidebar-width bg-body"
               backdropClassName="top-0"
               onHide={() => setOpenSidebar(false)}
             >

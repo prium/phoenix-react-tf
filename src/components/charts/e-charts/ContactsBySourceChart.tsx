@@ -7,14 +7,17 @@ import { contactSourceData } from 'data/crm/dashboardData';
 
 echarts.use([TooltipComponent]);
 
-const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  getThemeColor: (name: string) => string,
+  isDark: boolean
+) => ({
   color: [
     getThemeColor('primary'),
     getThemeColor('success'),
     getThemeColor('info'),
-    getThemeColor('info-300'),
-    getThemeColor('danger-200'),
-    getThemeColor('warning-300')
+    !isDark ? getThemeColor('info-light') : getThemeColor('info-dark'),
+    !isDark ? getThemeColor('danger-lighter') : getThemeColor('danger-darker'),
+    !isDark ? getThemeColor('warning-light') : getThemeColor('warning-dark')
   ],
   tooltip: {
     trigger: 'item',
@@ -31,7 +34,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       startAngle: 90,
       avoidLabelOverlap: false,
       itemStyle: {
-        borderColor: getThemeColor('gray-soft'),
+        borderColor: getThemeColor('body-bg'),
         borderWidth: 3
       },
 
@@ -59,12 +62,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
 });
 
 const ContactsBySourceChart = ({ style }: { style: CSSProperties }) => {
-  const { getThemeColor } = useAppContext();
+  const {
+    getThemeColor,
+    config: { isDark }
+  } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

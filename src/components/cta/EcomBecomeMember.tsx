@@ -20,11 +20,11 @@ const EcomBecomeMember = () => {
       </Col>
       <Col xs="auto">
         <div className="text-center text-lg-start">
-          <h3 className="text-1000 mb-2">
-            <span className="fw-semi-bold">Want to have the</span> ultimate
+          <h3 className="text-body-highlight mb-2">
+            <span className="fw-semibold">Want to have the</span> ultimate
             customer experience?
           </h3>
-          <h1 className="display-3 fw-semi-bold mb-4">
+          <h1 className="display-3 fw-semibold mb-4">
             Become a <span className="text-primary fw-bolder">member</span>{' '}
             today!
           </h1>

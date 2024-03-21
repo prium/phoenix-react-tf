@@ -22,10 +22,10 @@ const ChatWidgetConversation = () => {
           src={conversation.user.avatar}
           size="3xl"
           status="online"
-          className="mx-auto border border-3 border-white"
+          className="mx-auto"
         />
         <h5 className="mt-2 mb-3">Eric</h5>
-        <p className="text-center text-black mb-0">
+        <p className="text-center text-body-emphasis mb-0">
           Ask us anything – we’ll get back to you here or by email within 24
           hours.
         </p>
@@ -37,11 +37,11 @@ const ChatWidgetConversation = () => {
               key={message}
               onClick={() => sentMessage({ message })}
               className={classNames(
-                'd-inline-flex align-items-center text-1100 hover-bg-soft rounded-pill border border-primary py-2 ps-4 pe-3 lh-base',
+                'd-inline-flex align-items-center text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3 lh-base',
                 { 'mb-2': index !== suggestions.length - 1 }
               )}
             >
-              <p className="mb-0 fw-semi-bold fs-9">{message}</p>
+              <p className="mb-0 fw-semibold fs-9">{message}</p>
               <FontAwesomeIcon
                 icon={faPaperPlane}
                 className="text-primary fs-9 ms-3"
@@ -52,7 +52,7 @@ const ChatWidgetConversation = () => {
       )}
       {conversation.messages.length > 0 && (
         <>
-          <hr className="my-4 border-dashed border-top border-300" />
+          <hr className="my-4 border-dashed border-top" />
           <div className="d-flex flex-column gap-2">
             {conversation.messages.map(message => (
               <Message

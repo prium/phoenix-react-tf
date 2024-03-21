@@ -21,16 +21,16 @@ const DealsPrintingDimensionsCard = ({
               <div
                 className={classNames(
                   'd-sm-block d-inline-flex d-md-flex flex-xl-column flex-xxl-row align-items-center align-items-xl-start align-items-xxl-center',
-                  { 'border-start-sm ps-sm-5': index !== 0 }
+                  { 'border-start-sm border-translucent ps-sm-5': index !== 0 }
                 )}
               >
                 <div
-                  className={`d-flex bg-${stat.color}-100 rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0`}
+                  className={`d-flex bg-${stat.color}-subtle rounded flex-center me-3 mb-sm-3 mb-md-0 mb-xl-3 mb-xxl-0`}
                   style={{ width: '32px', height: '32px' }}
                 >
                   <FeatherIcon
                     icon={stat.icon}
-                    className={`text-${stat.color}-600 dark__text-${stat.color}-300`}
+                    className={`text-${stat.color}-dark`}
                   />
                 </div>
                 <div>

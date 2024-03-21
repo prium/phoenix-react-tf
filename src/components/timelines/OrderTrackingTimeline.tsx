@@ -15,7 +15,7 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
           >
             <div className="col-12 col-md-auto d-flex">
               <Timeline.OppositeContent>
-                <p className="fs-10 fw-semi-bold text-700 mb-0 text-end">
+                <p className="fs-10 fw-semibold text-body-tertiary mb-0 text-end">
                   {item.oppositeContent.date}
                   <br className="d-none d-md-block" />{' '}
                   {item.oppositeContent.time}
@@ -25,7 +25,7 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
                 <Timeline.Dot className={item.separator.dotClass}>
                   <FontAwesomeIcon
                     icon={item.separator.icon}
-                    className="text-white dark__text-white fs-10"
+                    className="text-white fs-10"
                   />
                 </Timeline.Dot>
                 {item.separator.barClass && (
@@ -39,7 +39,9 @@ const OrderTrackingTimeline = ({ data }: { data: TimelineData[] }) => {
             <div className="col">
               <Timeline.Content>
                 <h4>{item.content.title}</h4>
-                <p className="fs-9 text-800 mb-0">{item.content.subtitle}</p>
+                <p className="fs-9 text-body-secondary mb-0">
+                  {item.content.subtitle}
+                </p>
               </Timeline.Content>
             </div>
           </div>

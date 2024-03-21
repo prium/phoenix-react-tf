@@ -22,11 +22,11 @@ const PostComments = ({ comments }: PostCommentsProps) => {
             <div className="d-flex align-items-center">
               <Link
                 to="/apps/social/profile"
-                className="fw-bold mb-0 text-black"
+                className="fw-bold mb-0 text-body-emphasis"
               >
                 {comment.name}
               </Link>
-              <span className="text-600 fw-semi-bold fs-10 ms-2">
+              <span className="text-body-tertiary text-opacity-85 fw-semibold fs-10 ms-2">
                 {comment.time}
               </span>
             </div>
@@ -35,7 +35,7 @@ const PostComments = ({ comments }: PostCommentsProps) => {
               <div className="mb-3">
                 <Button
                   variant="link"
-                  className="p-0 text-900 mb-2 fs-10"
+                  className="p-0 text-body mb-2 fs-10"
                   startIcon={
                     <FontAwesomeIcon icon={faReply} className="me-1" />
                   }

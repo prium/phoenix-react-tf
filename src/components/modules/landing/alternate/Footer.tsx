@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <section className="bg-1100 dark__bg-1000">
+    <section data-bs-theme="dark" className="bg-dark dark__bg-gray-1000">
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="gx-xxl-8 gy-5 align-items-center mb-5">
           <Col xl="auto" className="text-center">
@@ -20,7 +20,7 @@ const Footer = () => {
             </Link>
           </Col>
           <Col xl="auto" className="flex-1">
-            <ul className="list-unstyled d-flex justify-content-center flex-wrap mb-0 border-end-xl border-dashed border-800 gap-3 gap-xl-8 pe-xl-5 pe-xxl-8 w-75 w-md-100 mx-auto">
+            <ul className="list-unstyled d-flex justify-content-center flex-wrap mb-0 border-end-xl border-dashed gap-3 gap-xl-8 pe-xl-5 pe-xxl-8 w-75 w-md-100 mx-auto">
               {[
                 'Contact us',
                 'Newsroom',
@@ -31,7 +31,7 @@ const Footer = () => {
                 'FAQ'
               ].map(item => (
                 <li key={item}>
-                  <a href="#!" className="text-300 dark__text-300">
+                  <a href="#!" className="text-light text-opacity-75">
                     {item}
                   </a>
                 </li>
@@ -40,22 +40,22 @@ const Footer = () => {
           </Col>
           <Col xl="auto">
             <div className="d-flex align-items-center justify-content-center gap-8">
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faFacebook} />
               </Link>
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faTwitter} />
               </Link>
-              <Link to="#!" className="text-white dark__text-white">
+              <Link to="#!" className="text-white">
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </Link>
             </div>
           </Col>
         </Row>
-        <hr className="text-800" />
+        <hr className="border-top" />
         <div className="d-sm-flex flex-between-center text-center">
-          <p className="text-600 mb-0">Copyright © Company Name</p>
-          <p className="text-600 mb-0">
+          <p className="text-body-tertiary mb-0">Copyright © Company Name</p>
+          <p className="text-body-tertiary mb-0">
             Made with love by{' '}
             <Link to="https://themewagon.com">ThemeWagon</Link>
           </p>

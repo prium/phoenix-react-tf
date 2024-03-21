@@ -41,7 +41,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
       >
         <div
           className={classNames('d-flex align-items-center', {
-            'text-300': !route.active
+            'text-light': !route.active
           })}
         >
           {route.icon ? (
@@ -132,7 +132,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
         className={classNames('dropdown-indicator', {
           'label-1': level === 1,
           collapsed: openItems[level] !== route.name,
-          'text-300': !route.active
+          'text-light': !route.active
         })}
         aria-expanded={openItems[level] === route.name}
       >
@@ -141,7 +141,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
             <FontAwesomeIcon
               icon={faCaretRight}
               className={classNames({
-                'text-300': !route.active
+                'text-light': !route.active
               })}
             />
           </div>

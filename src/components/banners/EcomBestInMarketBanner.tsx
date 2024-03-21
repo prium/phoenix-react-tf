@@ -16,7 +16,7 @@ const EcomBestInMarketBanner = () => {
       />
       <Row className="position-relative align-items-center w-sm-100">
         <Col xs={8}>
-          <div className="banner-text light">
+          <div className="banner-text" data-bs-theme="light">
             <h2 className="text-white fw-bolder fs-sm-4 mb-5">
               MI 11 Pro <br />{' '}
               <span className="fs-7 fs-sm-6">Best in the market</span>

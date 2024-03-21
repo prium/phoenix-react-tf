@@ -57,7 +57,7 @@ const KanbanBoardOffcanvas = () => {
     <PhoenixOffcanvas
       open={openBoardDetailsOffcanvas}
       onHide={handleClose}
-      className="bg-100"
+      className="bg-body-highlight"
       placement="end"
       fixed
       style={{ maxWidth: 445 }}
@@ -70,38 +70,40 @@ const KanbanBoardOffcanvas = () => {
       </Offcanvas.Header>
 
       <Offcanvas.Body>
-        <h4 className="text-1000 fw-semi-bold mb-3">Admins</h4>
+        <h4 className="text-body-highlight fw-semibold mb-3">Admins</h4>
         <div className="d-flex align-items-center gap-3 mb-5">
           <AvatarDropdown user={kanbanBoardMembers.admin} size="xl" />
           <div className="flex-1">
             <Link
               to="#!"
-              className="text-decoration-none text-1000 lh-1 fw-semi-bold"
+              className="text-decoration-none text-body-highlight lh-1 fw-semibold"
             >
               Sasha Blaus
             </Link>
-            <h6 className="mb-0 lh-1 text-1000 fw-semi-bold">@potatogirl</h6>
+            <h6 className="mb-0 lh-1 text-body-highlight fw-semibold">
+              @potatogirl
+            </h6>
           </div>
         </div>
 
-        <h4 className="text-1000 fw-semi-bold mb-3">Members</h4>
+        <h4 className="text-body-highlight fw-semibold mb-3">Members</h4>
         <div className="d-flex align-items-center gap-2 mb-3">
           {kanbanBoardMembers.members.map(member => (
             <AvatarDropdown user={member} size="m" key={member.id} />
           ))}
         </div>
 
-        <h4 className="text-1000 fw-semi-bold mb-3">Guests</h4>
+        <h4 className="text-body-highlight fw-semibold mb-3">Guests</h4>
         <div className="d-flex align-items-center gap-2 mb-7">
           {kanbanBoardMembers.guests.map(member => (
             <AvatarDropdown user={member} size="m" key={member.id} />
           ))}
         </div>
 
-        <div className="d-flex mb-3 border-bottom pb-3 gap-3">
-          <h4 className="text-1000 fw-semi-bold mb-0">Description</h4>
+        <div className="d-flex mb-3 border-bottom border-translucent pb-3 gap-3">
+          <h4 className="text-body-highlight fw-semibold mb-0">Description</h4>
           <Button className="p-0">
-            <FontAwesomeIcon icon={faPencil} className="text-900 fs-9" />
+            <FontAwesomeIcon icon={faPencil} className="text-body fs-9" />
           </Button>
         </div>
         <p>
@@ -117,7 +119,7 @@ const KanbanBoardOffcanvas = () => {
               <Link
                 to="#!"
                 className={classNames(
-                  'text-1000 fw-semi-bold text-decoration-none d-flex flex-between-center py-3 border-bottom'
+                  'text-body-highlight fw-semibold text-decoration-none d-flex flex-between-center py-3 border-bottom border-translucent'
                 )}
               >
                 <span>{action.label}</span>
@@ -129,7 +131,7 @@ const KanbanBoardOffcanvas = () => {
             <Link
               to="#!"
               className={classNames(
-                'text-1000 fw-semi-bold text-decoration-none d-flex flex-between-center text-danger pt-3'
+                'text-body-highlight fw-semibold text-decoration-none d-flex flex-between-center text-danger pt-3'
               )}
             >
               Leave Board

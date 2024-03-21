@@ -7,10 +7,10 @@
 
 .deal-details {
   .nav-link {
-    color: var(--#{$prefix}gray-1100);
-    font-weight: $font-weight-semi-bold;
+    color: var(--#{$prefix}emphasis-color);
+    font-weight: $font-weight-semibold;
     .tab-icon-color {
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
     &.active {
       color: var(--#{$prefix}primary);

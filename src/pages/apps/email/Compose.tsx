@@ -42,7 +42,7 @@ const Compose = () => {
                   <div>
                     <Button className="p-0">
                       <label
-                        className="text-900 fs-9 cursor-pointer"
+                        className="text-body fs-9 cursor-pointer"
                         htmlFor="attachments"
                       >
                         <FontAwesomeIcon icon={faPaperclip} />
@@ -58,7 +58,7 @@ const Compose = () => {
                   <div>
                     <Button className="p-0">
                       <label
-                        className="text-900 fs-9 cursor-pointer"
+                        className="text-body fs-9 cursor-pointer"
                         htmlFor="images"
                       >
                         <FontAwesomeIcon icon={faImage} />
@@ -75,7 +75,7 @@ const Compose = () => {
                 <div className="d-flex">
                   <Button
                     variant="link"
-                    className="text-900 fs-10 text-decoration-none"
+                    className="text-body fs-10 text-decoration-none"
                   >
                     Discard
                   </Button>

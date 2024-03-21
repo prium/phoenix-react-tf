@@ -19,7 +19,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="rounded-2 border d-inline-block"
+          className="rounded-2 border border-translucent d-inline-block"
         >
           <img src={productImage} alt="" width={40} height={40} />
         </Link>
@@ -38,7 +38,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="fw-semi-bold line-clamp-1"
+          className="fw-semibold line-clamp-1"
         >
           {product}
         </Link>
@@ -54,7 +54,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Color',
     meta: {
       headerProps: { style: { width: '15%' } },
-      cellProps: { className: 'white-space-nowrap text-900' }
+      cellProps: { className: 'white-space-nowrap text-body' }
     }
   },
   {
@@ -62,7 +62,9 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'white-space-nowrap text-700 fw-semi-bold' }
+      cellProps: {
+        className: 'white-space-nowrap text-body-tertiary fw-semibold'
+      }
     }
   },
   {
@@ -71,7 +73,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'text-900 fw-semi-bold text-end' }
+      cellProps: { className: 'text-body fw-semibold text-end' }
     }
   },
   {
@@ -82,7 +84,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       currencyFormat(original.price * original.quantity),
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end' },
-      cellProps: { className: 'fw-bold text-1000 text-end' }
+      cellProps: { className: 'fw-bold text-body-highlight text-end' }
     }
   }
 ];
@@ -99,7 +101,7 @@ const CustomerWishlistTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <AdvanceTableFooter pagination showViewAllBtn={false} />
         </div>

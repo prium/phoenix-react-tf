@@ -20,15 +20,19 @@ const FooterList = ({
     <div
       className={classNames(
         className,
-        'border-dashed border-start border-primary-300 ps-3'
+        'border-dashed border-start border-primary-light ps-3'
       )}
       style={{ '--phoenix-border-opacity': '.2' } as CSSProperties}
     >
-      <h5 className="lh-lg fw-bolder mb-2 text-light light">{label}</h5>
+      <h5 className="lh-lg fw-bolder mb-2 text-light">{label}</h5>
       <ul className="list-unstyled mb-1">
         {items.map((item, index) => (
           <li className="mb-1" key={index}>
-            <Link className="text-500 hover-text-100 light" to="#!">
+            <Link
+              className="text-body-quaternary"
+              data-bs-theme="light"
+              to="#!"
+            >
               {item}
             </Link>
           </li>
@@ -64,7 +68,7 @@ const Footer = () => {
 
       <div className="position-relative">
         <svg
-          className="w-100 text-white"
+          className="w-100 text-white dark__text-gray-1100"
           preserveAspectRatio="none"
           viewBox="0 0 1920 368"
           fill="none"
@@ -79,8 +83,8 @@ const Footer = () => {
                 <Link to="#!">
                   <img className="mb-3" src={logoWhite} height="48" alt="" />
                 </Link>
-                <h3 className="text-white light">Phoenix</h3>
-                <p className="text-white opacity-50 light">
+                <h3 className="text-white">Phoenix</h3>
+                <p className="text-white opacity-50">
                   All over the world. Alice in
                   <br />
                   wonderland and other places.

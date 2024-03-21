@@ -69,7 +69,7 @@ const TodoListItem = ({
       <div
         className={classNames(
           className,
-          'd-flex align-items-center hover-actions-trigger border-bottom gap-2 todolist-item'
+          'd-flex align-items-center hover-actions-trigger border-bottom border-translucent gap-2 todolist-item'
         )}
       >
         <Form.Check.Input
@@ -78,7 +78,7 @@ const TodoListItem = ({
           className={classNames('flex-shrink-0 my-0 align-self-start')}
           onChange={handleSelectionChange}
         />
-        <Row className="justify-content-between align-items-center btn-reveal-trigger border-200 gx-0 flex-1 gy-1">
+        <Row className="justify-content-between align-items-center btn-reveal-trigger border-translucent gx-0 flex-1 gy-1">
           <Col
             xs={12}
             {...fullLayoutBreakpoints?.reduce(
@@ -100,9 +100,10 @@ const TodoListItem = ({
               <h5
                 className={classNames(
                   labelClassName,
-                  'mb-0 line-clamp-1 fw-semi-bold text-700 cursor-pointer',
+                  'mb-0 line-clamp-1 fw-semibold text-body-tertiary cursor-pointer',
                   {
-                    'text-decoration-line-through': selected
+                    'text-decoration-line-through text-body-quaternary':
+                      selected
                   }
                 )}
                 onClick={() => handleClick(todo)}
@@ -139,7 +140,7 @@ const TodoListItem = ({
           >
             <div className="d-flex lh-1 align-items-center">
               {todo.attachment && (
-                <Button className="p-0 text-700 fs-10 me-2">
+                <Button className="p-0 text-body-tertiary fs-10 me-2">
                   <FontAwesomeIcon icon={faPaperclip} className="me-1" />
                   {todo.attachment}
                 </Button>
@@ -153,7 +154,7 @@ const TodoListItem = ({
               <p
                 className={classNames(
                   getBreakpointClasses('me', [2, 3]),
-                  'text-700 fs-10 me-2 mb-0'
+                  'text-body-tertiary fs-10 me-2 mb-0'
                 )}
               >
                 {todo.date}
@@ -166,7 +167,7 @@ const TodoListItem = ({
                 <p
                   className={classNames(
                     getBreakpointClasses('ps', [0, 3]),
-                    'text-700 fs-10 ps-lg-3 border-start-lg border-300 fw-bold mb-md-0 mb-0'
+                    'text-body-tertiary fs-10 ps-lg-3 border-start-lg fw-bold mb-md-0 mb-0'
                   )}
                 >
                   {todo.time}

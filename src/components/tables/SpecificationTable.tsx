@@ -27,13 +27,13 @@ const SpecificationTable = ({ title, data }: SpecificationTableProps) => {
           {data.map(item => (
             <tr key={item.key}>
               <td
-                className={classNames('bg-100', {
+                className={classNames('bg-body-highlight', {
                   'align-middle': !Array.isArray(item.value)
                 })}
               >
                 <h6
                   className={classNames(
-                    'mb-0 text-900 text-uppercase fw-bolder px-4 fs--1 lh-sm',
+                    'mb-0 text-body text-uppercase fw-bolder px-4 fs--1 lh-sm',
                     {
                       'mt-1': Array.isArray(item.value)
                     }

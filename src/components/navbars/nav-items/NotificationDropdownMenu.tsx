@@ -14,13 +14,13 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
       align="end"
       className={classNames(
         className,
-        'navbar-dropdown-caret py-0 notification-dropdown-menu shadow border border-300'
+        'navbar-dropdown-caret py-0 notification-dropdown-menu shadow border'
       )}
     >
       <Card className="position-relative border-0">
         <Card.Header className="p-2">
           <div className="d-flex justify-content-between align-items-center">
-            <h5 className="text-black mb-0">Notifications</h5>
+            <h5 className="text-body-emphasis mb-0">Notifications</h5>
             <Button variant="link" className="p-0 fs-9 fw-normal">
               Mark all as read
             </Button>
@@ -33,7 +33,8 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
                 notification={notification}
                 type="dropdownItem"
                 className={classNames({
-                  'border-bottom': index !== notifications.length - 1
+                  'border-bottom border-translucent':
+                    index !== notifications.length - 1
                 })}
                 key={notification.id}
               />
@@ -41,7 +42,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
           </Scrollbar>
         </Card.Body>
         <Card.Footer className="p-0 border-top">
-          <div className="my-2 text-center fw-bold fs-10 text-600">
+          <div className="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85">
             <Link to="/pages/notifications" className="fw-bolder">
               Notification history
             </Link>

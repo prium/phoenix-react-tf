@@ -40,7 +40,7 @@ const ProductDetailsTab = () => {
             <Tab.Content>
               <Tab.Pane
                 eventKey="description"
-                className="text-1100 pe-lg-6 pe-xl-12"
+                className="text-body-emphasis pe-lg-6 pe-xl-12"
               >
                 <p className="mb-5">
                   CUPERTINO, CA , The M1 CPU allows Apple to deliver an all-new
@@ -105,7 +105,9 @@ const ProductDetailsTab = () => {
                       <div className="d-flex align-items-center flex-wrap">
                         <h2 className="fw-bolder me-3">
                           4.9
-                          <span className="fs-8 text-500 fw-bold">/5</span>
+                          <span className="fs-8 text-body-quaternary fw-bold">
+                            /5
+                          </span>
                         </h2>
                         <div className="me-3">
                           <Rating
@@ -114,7 +116,7 @@ const ProductDetailsTab = () => {
                             iconClass="fs-6"
                           />
                         </div>
-                        <p className="text-900 mb-0 fw-semi-bold fs-7">
+                        <p className="text-body mb-0 fw-semibold fs-7">
                           6548 ratings and 567 reviews
                         </p>
                       </div>

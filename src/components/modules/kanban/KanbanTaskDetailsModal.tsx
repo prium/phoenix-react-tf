@@ -46,7 +46,7 @@ const KanbanTaskDetailsModal = ({
         fullscreen="md-down"
         centered
         className="modal-md p-0"
-        contentClassName="rounded-md-top-xl rounded-md-bottom-xl overflow-hidden h-100"
+        contentClassName="rounded-top-md-4 rounded-bottom-md-4 overflow-hidden h-100"
         scrollable
       >
         <Modal.Header className="position-relative p-0" style={{ height: 200 }}>
@@ -65,14 +65,20 @@ const KanbanTaskDetailsModal = ({
             <Col xs={12} lg={8} className="h-100 scrollbar">
               <Row className="mt-0 top-0 gy-4 pb-3 gx-0 px-3">
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">TITLE</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    TITLE
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <h4 className="mb-0 text-1100 lh-sm">{task.title}</h4>
+                  <h4 className="mb-0 text-body-emphasis lh-sm">
+                    {task.title}
+                  </h4>
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">DESCRIPTION</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    DESCRIPTION
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p className="fs-9 mb-0">
@@ -83,18 +89,22 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">BOARD</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    BOARD
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-1100 fw-semi-bold">Phoenix</p>
+                  <p className="mb-0 text-body-emphasis fw-semibold">Phoenix</p>
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">COLUMN</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    COLUMN
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <p
-                    className={`mb-0 text-1100 fw-semi-bold d-inline-block kanban-column-underline-${list.borderColor}`}
+                    className={`mb-0 text-body-emphasis fw-semibold d-inline-block kanban-column-underline-${list.borderColor}`}
                   >
                     {list.title}
                   </p>
@@ -103,7 +113,7 @@ const KanbanTaskDetailsModal = ({
                 {task.members && (
                   <>
                     <Col xs={4} sm={3}>
-                      <h6 className="text-600 fw-bolder lh-sm mt-1">
+                      <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
                         ASSAIGNED TO
                       </h6>
                     </Col>
@@ -120,10 +130,12 @@ const KanbanTaskDetailsModal = ({
                 )}
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">PRIORITY</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    PRIORITY
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
-                  <p className="mb-0 text-1100 fw-semi-bold">
+                  <p className="mb-0 text-body-emphasis fw-semibold">
                     <FontAwesomeIcon
                       icon={faCircle}
                       transform="shrink-6 down-1"
@@ -134,7 +146,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">CATEGORY</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    CATEGORY
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <Badge
@@ -153,7 +167,9 @@ const KanbanTaskDetailsModal = ({
                 </Col>
 
                 <Col xs={4} sm={3}>
-                  <h6 className="text-600 fw-bolder lh-sm mt-1">ATTACHMENTS</h6>
+                  <h6 className="text-body-tertiary fw-bolder lh-sm mt-1">
+                    ATTACHMENTS
+                  </h6>
                 </Col>
                 <Col xs={8} sm={9}>
                   <div className="d-flex flex-column gap-3 mb-2">
@@ -175,7 +191,11 @@ const KanbanTaskDetailsModal = ({
               </Row>
             </Col>
 
-            <Col xs={12} lg={4} className="border-start-lg h-100 scrollbar">
+            <Col
+              xs={12}
+              lg={4}
+              className="border-start-lg border-translucent h-100 scrollbar"
+            >
               <div>
                 <div className="px-3">
                   <div>
@@ -183,7 +203,7 @@ const KanbanTaskDetailsModal = ({
                     <div className="d-flex flex-wrap flex-column gap-2 flex-sm-row flex-lg-column">
                       {kanbanActions.map(action => (
                         <Button
-                          variant="soft-secondary"
+                          variant="subtle-secondary"
                           startIcon={
                             <FontAwesomeIcon
                               icon={action.icon}
@@ -204,15 +224,18 @@ const KanbanTaskDetailsModal = ({
                     <div className="d-flex flex-column gap-3">
                       {kanbanActivities.map((activity, index) => (
                         <div
-                          className={classNames('d-flex gap-2 pb-3', {
-                            'border-bottom':
-                              index !== kanbanActivities.length - 1
-                          })}
+                          className={classNames(
+                            'd-flex gap-2 pb-3 border-translucent',
+                            {
+                              'border-bottom':
+                                index !== kanbanActivities.length - 1
+                            }
+                          )}
                           key={activity.id}
                         >
                           <FontAwesomeIcon
                             icon={activity.icon}
-                            className={`border rounded-pill p-1 text-${activity.iconColor}`}
+                            className={`border border-translucent rounded-pill p-1 text-${activity.iconColor}`}
                             transform="shrink-4"
                           />
                           <div className="activity-item">

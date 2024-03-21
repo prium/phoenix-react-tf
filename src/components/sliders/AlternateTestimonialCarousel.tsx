@@ -10,7 +10,7 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div className="text-center py-8 px-5 px-xl-15">
       <Rating initialValue={testimonial.rating} readonly />
-      <h3 className="fw-semi-bold fst-italic mt-3 mb-8 w-xl-70 mx-auto lh-base">
+      <h3 className="fw-semibold fst-italic mt-3 mb-8 w-xl-70 mx-auto lh-base">
         {testimonial.comment}
       </h3>
       <div className="d-flex align-items-center justify-content-center gap-3 mx-auto">
@@ -30,7 +30,7 @@ const TestimonialItem = ({ testimonial }: { testimonial: Testimonial }) => {
 
 const AlternateTestimonialCarousel = () => {
   return (
-    <div className="testimonial-carousel position-relative dark__bg-1100">
+    <div className="testimonial-carousel position-relative dark__bg-gray-1100">
       <div
         className="bg-holder d-none d-xl-block"
         style={{

@@ -7,7 +7,9 @@ const LeadConversion = () => {
     <Card className="h-100">
       <Card.Body>
         <h3>Lead Conversion</h3>
-        <p className="text-700 mb-0">Stages of deals &amp; conversion</p>
+        <p className="text-body-tertiary mb-0">
+          Stages of deals &amp; conversion
+        </p>
         <LeadConversationChart style={{ height: 250, width: '100%' }} />
       </Card.Body>
     </Card>

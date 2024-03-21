@@ -11,16 +11,16 @@ echarts.use([TooltipComponent, RadarChart]);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
-  color: [getThemeColor('primary-300'), getThemeColor('warning-300')],
+  color: [getThemeColor('primary-light'), getThemeColor('warning-light')],
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('tertiary-bg'),
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontSize: 12.8,
       fontFamily: 'Nunito Sans'
     },
@@ -33,7 +33,7 @@ const getDefaultOptions = (
     radius: '87%',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     splitArea: {
@@ -41,23 +41,21 @@ const getDefaultOptions = (
       areaStyle: {
         shadowBlur: 0.5,
         color: [
-          theme == 'light'
-            ? getThemeColor('gray-100')
-            : getThemeColor('gray-100'),
-          theme == 'light'
-            ? getThemeColor('gray-soft')
-            : getThemeColor('gray-200')
+          !isDark
+            ? getThemeColor('body-highlight-bg')
+            : getThemeColor('body-highlight-bg'),
+          !isDark ? getThemeColor('body-bg') : getThemeColor('secondary-bg')
         ]
       }
     },
     axisLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisName: {
-      color: getThemeColor('gray-700'),
+      color: getThemeColor('tertiary-color'),
       fontWeight: 800,
       fontSize: 10.2
     },
@@ -83,20 +81,20 @@ const getDefaultOptions = (
           value: [2100, 2300, 1600, 3700, 3000, 2500, 2500],
           name: 'Offline Marketing',
           itemStyle: {
-            color: getThemeColor('primary-300')
+            color: getThemeColor('primary-light')
           },
           areaStyle: {
-            color: rgbaColor(getThemeColor('primary-300'), 0.3)
+            color: rgbaColor(getThemeColor('primary-light'), 0.3)
           }
         },
         {
           value: [3000, 1600, 3700, 500, 3700, 3000, 3200],
           name: 'Online Marketing',
           areaStyle: {
-            color: rgbaColor(getThemeColor('warning-300'), 0.3)
+            color: rgbaColor(getThemeColor('warning-light'), 0.3)
           },
           itemStyle: {
-            color: getThemeColor('warning-300')
+            color: getThemeColor('warning-light')
           }
         }
       ]
@@ -135,14 +133,14 @@ const MarketingCampaignChart = ({ style }: { style: CSSProperties }) => {
 
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
 
   return (
     <ReactEChartsCore
       ref={chartRef}
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

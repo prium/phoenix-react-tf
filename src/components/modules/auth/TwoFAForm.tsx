@@ -44,8 +44,8 @@ const TwoFAForm = ({ layout }: { layout?: 'simple' | 'card' | 'split' }) => {
             'mb-6': !(layout === 'split')
           })}
         >
-          <h4 className="text-1000">Enter the verification code</h4>
-          <p className="text-700 mb-0">
+          <h4 className="text-body-highlight">Enter the verification code</h4>
+          <p className="text-body-tertiary mb-0">
             An email containing a 6-digit verification code has been sent to the
             email address - exa*********.com
           </p>

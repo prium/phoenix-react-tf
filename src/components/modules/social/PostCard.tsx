@@ -27,36 +27,33 @@ const PostCard = ({ post }: PostCardProps) => {
     <div className="mb-5">
       <Card className="mb-4 overflow-hidden">
         <Card.Body className="p-3 p-sm-4">
-          <div className="border-bottom mb-3">
+          <div className="border-bottom border-translucent mb-3">
             <div className="d-flex align-items-center mb-3">
               <Link to="/apps/social/profile" style={{ lineHeight: 0 }}>
                 <Avatar size="xl" src={post.author.avatar} className="me-2" />
               </Link>
               <div className="flex-1">
-                <Link
-                  to="/apps/social/profile"
-                  className="fw-bold mb-0 text-black"
-                >
+                <Link to="/apps/social/profile" className="fw-bold mb-0">
                   {post.author.name}
                 </Link>
-                <p className="fs-10 mb-0 text-600 fw-semi-bold">
+                <p className="fs-10 mb-0 text-body-tertiary text-opacity-85 fw-semibold">
                   {post.time}
                   {post.location && (
                     <>
                       <FontAwesomeIcon
                         icon={faCircle}
-                        className="text-300"
+                        className="text-light"
                         transform="shrink-10 down-2"
                       />
                       {post.location}
                       <FontAwesomeIcon
                         icon={faCircle}
-                        className="text-300"
+                        className="text-light"
                         transform="shrink-10 down-2"
                       />
                       <FontAwesomeIcon
                         icon={faEarthAmericas}
-                        className="text-900"
+                        className="text-body"
                       />
                     </>
                   )}
@@ -73,7 +70,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 </RevealDropdown>
               </RevealDropdownTrigger>
             </div>
-            <p className="text-800">{post.caption}</p>
+            <p className="text-body-secondary">{post.caption}</p>
             {post.images && <PostGallery images={post.images} />}
           </div>
           <div className="d-flex">
@@ -87,20 +84,20 @@ const PostCard = ({ post }: PostCardProps) => {
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon={faComment} />}
-              className="p-0 me-3 fs-10 fw-bolder text-900"
+              className="p-0 me-3 fs-10 fw-bolder text-body"
             >
               {post.interactions.comments} Comments
             </Button>
             <Button
               variant="link"
               startIcon={<FontAwesomeIcon icon={faShare} />}
-              className="p-0 me-3 fs-10 fw-bolder text-900"
+              className="p-0 me-3 fs-10 fw-bolder text-body"
             >
               {post.interactions.shares} Shares
             </Button>
           </div>
         </Card.Body>
-        <div className="bg-100 border-top p-3 p-sm-4">
+        <div className="bg-body-highlight border-top border-translucent p-3 p-sm-4">
           {post.comments && <PostComments comments={post.comments} />}
           <CommentField />
         </div>

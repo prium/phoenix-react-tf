@@ -13,7 +13,7 @@ interface IsotopeNavProps extends NavProps {
 const IsotopeNav = ({ navItems, className, onSelect }: IsotopeNavProps) => {
   return (
     <Nav
-      className={classNames(className, 'font-sans-serif')}
+      className={classNames(className)}
       defaultActiveKey="1"
       onSelect={onSelect}
     >

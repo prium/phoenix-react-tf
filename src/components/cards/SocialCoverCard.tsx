@@ -30,6 +30,7 @@ const SocialCoverCard = () => {
           src={profileImage}
           thumbnail={true}
           className="feed-profile"
+          imageClassName="border-0"
         />
       </Card.Header>
       <Card.Body>
@@ -37,48 +38,50 @@ const SocialCoverCard = () => {
           <Col xs="auto">
             <div className="d-flex flex-wrap mb-3 align-items-center">
               <h2 className="me-2">Erza Bridgest</h2>
-              <span className="fw-semi-bold fs-7 text-1100">u/hansolo</span>
+              <span className="fw-semibold fs-7 text-body-emphasis">
+                u/hansolo
+              </span>
             </div>
             <div className="mb-5">
               <div className="d-md-flex align-items-center">
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faUserGroup}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       1297
-                      <span className="fw-semi-bold ms-2 me-4">Followers</span>
+                      <span className="fw-semibold ms-2 me-4">Followers</span>
                     </span>
                   </Link>
                 </div>
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faUserCheck}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-bold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       3971
-                      <span className="fw-semi-bold ms-2 me-4">Following</span>
+                      <span className="fw-semibold ms-2 me-4">Following</span>
                     </span>
                   </Link>
                 </div>
                 <div className="d-flex align-items-center">
                   <FontAwesomeIcon
                     icon={faLocationDot}
-                    className="fs-9 text-700 me-2 me-lg-1 me-xl-2"
+                    className="fs-9 text-body-tertiary me-2 me-lg-1 me-xl-2"
                   />
-                  <Link to="#!" className="text-1100">
-                    <span className="fs-7 fw-semi-bold text-600 hover-text-1100">
+                  <Link to="#!" className="text-body-emphasis">
+                    <span className="fs-7 fw-semibold text-body-tertiary text-opacity-85 text-body-emphasis-hover">
                       Vancouver, Lothal
                     </span>
                   </Link>
                 </div>
               </div>
             </div>
-            <p className="fs-6 text-800">
+            <p className="fs-6 text-body-secondary">
               “Whenever you find yourself on the side of the majority, it is
               time to pause and reflect.”
             </p>
@@ -125,7 +128,7 @@ const SocialCoverCard = () => {
                         >
                           <FontAwesomeIcon
                             icon={item.icon}
-                            className="text-800 me-2"
+                            className="text-body-secondary me-2"
                           />
                           {item.label}
                         </Dropdown.Item>

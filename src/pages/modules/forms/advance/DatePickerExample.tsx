@@ -86,12 +86,6 @@ function RangeCalender() {
         mode: "range",
         minDate: "today",
         dateFormat: "Y-m-d",
-        disable: [
-            function(date) {
-                // disable every multiple of 8
-                return !(date.getDate() % 8);
-            }
-        ]
       }}
       placeholder="Select date"
     />

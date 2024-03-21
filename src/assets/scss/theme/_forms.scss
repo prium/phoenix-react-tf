@@ -11,7 +11,7 @@
     font-weight: $font-weight-bold;
     padding-left: 0 !important;
     line-height: $line-height-base !important;
-    color: var(--#{$prefix}gray-1000) !important;
+    color: var(--#{$prefix}body-highlight-color) !important;
     text-transform: none !important;
   }
 }
@@ -28,7 +28,7 @@
     }
   }
   &::file-selector-button {
-    background-color: var(--#{$prefix}input-group-addon-bg) !important;
+    background-color: $input-group-addon-bg !important;
   }
   &:disabled {
     &::file-selector-button {
@@ -48,10 +48,13 @@
 // Floating Labels
 .form-floating {
   > label {
-    color: var(--#{$prefix}gray-800);
+    color: var(--#{$prefix}secondary-color);
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '10');
+    font-size: map-get($font-sizes, 10);
     text-transform: uppercase;
+    &::after {
+      background-color: transparent !important;
+    }
   }
   // .form-control {
   //   box-shadow: none;
@@ -64,8 +67,8 @@
 }
 
 .form-check-label {
-  font-weight: $font-weight-semi-bold;
-  font-size: map-get($font-sizes, '9');
+  font-weight: $font-weight-bold;
+  font-size: map-get($font-sizes, 9);
 }
 
 .form-check-light {
@@ -104,7 +107,7 @@
     background-color: var(--#{$prefix}gray-400);
 
     &:checked {
-      background-color: $primary;
+      background-color: var(--#{$prefix}primary);
     }
   }
 }
@@ -165,7 +168,7 @@
     transition: $transition-base;
   }
   &:checked + label {
-    color: var(--#{$prefix}gray-500);
+    color: var(--#{$prefix}quaternary-color);
     text-decoration: line-through;
   }
 }
@@ -194,24 +197,8 @@
 
 .input-group {
   .input-group-text {
-    background-color: var(--#{$prefix}input-group-addon-bg) !important;
+    background-color: $input-group-addon-bg !important;
   }
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  // border: 1px solid green;
-  // -webkit-text-fill-color: green;
-  // color: white !important;
-  // -webkit-box-shadow: 0 0 0px 1000px var(--#{$prefix}input-bg) inset;
-  // transition: all 5000s ease-in-out 0s;
 }
 
 .form-check-input-todolist {
@@ -219,19 +206,19 @@ select:-webkit-autofill:focus {
     + {
       div {
         label {
-          color: var(--#{$prefix}gray-500);
+          color: var(--#{$prefix}quaternary-color);
           text-decoration: line-through;
         }
       }
     }
   }
 }
-.dark {
+[data-bs-theme="dark"] {
   .navbar-dark {
-    &.light {
+    &[data-bs-theme="light"] {
       .form-control {
         background-color: #{map-get($grays, '1100')};
-        border-color: #{map-get($dark-grays, '300')};
+        border-color: #{map-get($grays-dark, '300')};
       }
     }
   }

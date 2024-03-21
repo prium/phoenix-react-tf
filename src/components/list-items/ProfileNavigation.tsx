@@ -12,7 +12,7 @@ const ProfileNavigation = ({ className }: { className?: string }) => {
         <Col
           key={index}
           xs={6}
-          className={classNames('border-1 py-2', {
+          className={classNames('py-2 border-translucent', {
             'border-bottom border-end': index === 0 || index === 2,
             'border-bottom': index === 1 || index === 3,
             'border-end': index === 4
@@ -23,7 +23,7 @@ const ProfileNavigation = ({ className }: { className?: string }) => {
             to="#!"
             variant="link"
             className={classNames(
-              'fs-8 text-800 hover-primary fw-semi-bold d-flex flex-column d-xxl-inline-block align-items-center align-items-xxl-start',
+              'fs-8 text-body-secondary hover-primary fw-semibold d-flex flex-column d-xxl-inline-block align-items-center align-items-xxl-start',
               {
                 'ps-2': index % 2 === 0
               }

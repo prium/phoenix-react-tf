@@ -21,7 +21,7 @@ const NotificationItem = ({
     <div
       className={classNames(
         className,
-        'py-3 border-300 notification-card position-relative',
+        'py-3 notification-card position-relative',
         {
           unread: !notification.read,
           'px-4 px-lg-6': type === 'pageItem',
@@ -35,7 +35,7 @@ const NotificationItem = ({
             src={notification.avatar}
             placeholder={!notification.avatar}
             size={type === 'pageItem' ? 'xl' : 'm'}
-            className="me-3"
+            className="me-3 status-online"
           />
           <div
             className={classNames('flex-1', {
@@ -43,19 +43,21 @@ const NotificationItem = ({
               'mt-2 me-2': type === 'pageItem'
             })}
           >
-            <h4 className="fs-9 text-black">{notification.name}</h4>
-            <p className="fs-9 text-1000 mb-2 mb-sm-3">
-              <span className="me-1">{notification.interactionIcon}</span>
+            <h4 className="fs-9 text-body-emphasis">{notification.name}</h4>
+            <p className="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal">
+              <span className="me-1 fw-bold fs-10">
+                {notification.interactionIcon}
+              </span>
               <span>{notification.interaction}</span>
               {type === 'pageItem' && (
                 <span className="fw-bold">{notification.detail}</span>
               )}
 
-              <span className="ms-2 text-600 fw-bold fs-10">
+              <span className="ms-2 text-body-quaternary text-opactity-75 fw-bold fs-10">
                 {notification.ago}
               </span>
             </p>
-            <p className="text-800 fs-9 mb-0">
+            <p className="text-body-secondary fs-9 mb-0">
               <FontAwesomeIcon icon={faClock} className="me-1" />
               <span className="fw-bold">{notification.time}</span>
               {notification.date}

@@ -13,7 +13,7 @@ const Cta = () => {
       <div className="container-small px-lg-7 px-xxl-3">
         <Row className="justify-content-center">
           <Col xs={12} className="text-center">
-            <Card className="py-md-9 px-md-13 border-0 z-index-1 shadow-lg cta-card">
+            <Card className="py-md-9 px-md-13 border-0 z-1 shadow-lg cta-card">
               <div
                 className="bg-holder"
                 style={{

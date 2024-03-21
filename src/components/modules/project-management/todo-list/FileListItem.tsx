@@ -18,7 +18,7 @@ interface FileListItemProps {
 
 const FileListItem = ({ attachment, className }: FileListItemProps) => {
   return (
-    <div className={classNames(className, 'border-bottom border-300 py-4')}>
+    <div className={classNames(className, 'border-bottom py-4')}>
       <div>
         <div className="d-flex justify-content-between align-items-start">
           <div>
@@ -31,19 +31,22 @@ const FileListItem = ({ attachment, className }: FileListItemProps) => {
                     ? faFileZipper
                     : faFileLines
                 }
-                className="me-2 fs-9 text-700"
+                className="me-2 fs-9 text-body-tertiary"
               />
-              <p className="text-1000 mb-0 lh-1">{attachment.name}</p>
+              <p className="text-body-highlight mb-0 lh-1">{attachment.name}</p>
             </div>
             <div
-              className={classNames('d-flex fs-9 text-700 flex-wrap', {
-                'mb-3': attachment.thumbnail
-              })}
+              className={classNames(
+                'd-flex fs-9 text-body-tertiary flex-wrap',
+                {
+                  'mb-3': attachment.thumbnail
+                }
+              )}
             >
               <span>{attachment.size}</span>
-              <span className="text-400 mx-1">| </span>
+              <span className="text-body-quaternary mx-1">| </span>
               <a href="#!">{attachment.user}</a>
-              <span className="text-400 mx-1">| </span>
+              <span className="text-body-quaternary mx-1">| </span>
               <span className="text-nowrap">{attachment.date}</span>
             </div>
             {attachment.thumbnail && (

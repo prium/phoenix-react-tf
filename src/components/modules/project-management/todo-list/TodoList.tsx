@@ -17,8 +17,8 @@ const TodoList = () => {
         <Card.Header className="border-bottom-0 pb-0">
           <Row className="justify-content-between align-items-center mb-4 gy-2">
             <Col xs="auto">
-              <h3 className="text-1100">To do</h3>
-              <p className="mb-0 text-700">Task assigned to me</p>
+              <h3 className="text-body-emphasis">To do</h3>
+              <p className="mb-0 text-body-tertiary">Task assigned to me</p>
             </Col>
             <Col xs="auto" className="w-100 w-md-auto">
               <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-3 gap-y-3">
@@ -29,7 +29,7 @@ const TodoList = () => {
                 <div>
                   <Button
                     variant="link"
-                    className="p-0 fs-9 text-700 text-decoration-none me-3"
+                    className="p-0 fs-9 text-body-tertiary text-decoration-none me-3"
                     startIcon={
                       <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
                     }
@@ -57,9 +57,9 @@ const TodoList = () => {
               key={todo.task}
               todo={todo}
               className={classNames({
-                'border-top': index === 0
+                'border-top border-translucent': index === 0
               })}
-              labelClassName="text-900"
+              labelClassName="text-body"
               fullLayoutBreakpoints={['md', 'xxl']}
               halfLayoutBreakpoints={['xl']}
               onClick={setSelectedItem}

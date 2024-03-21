@@ -20,7 +20,9 @@ const Starter = () => {
           className="img-fluid mb-7 d-light-none"
           alt="starter"
         />
-        <h1 className="text-800 fw-normal mb-5">Create Something Beautiful.</h1>
+        <h1 className="text-body-secondary fw-normal mb-5">
+          Create Something Beautiful.
+        </h1>
         <Button
           as={Link}
           className="btn btn-lg btn-primary"

@@ -12,7 +12,7 @@ import { useSettingsPanelContext } from 'providers/SettingsPanelProvider';
 
 const VerticalNavbarAppearance = () => {
   const {
-    config: { theme, navbarVerticalAppearance },
+    config: { isDark, navbarVerticalAppearance },
     setConfig
   } = useAppContext();
 
@@ -36,7 +36,7 @@ const VerticalNavbarAppearance = () => {
             label="Default"
             name="vertical-navbar-appearance"
             value="default"
-            thumb={theme === 'light' ? defaultLight : defaultDark}
+            thumb={isDark === false ? defaultLight : defaultDark}
             checked={navbarVerticalAppearance === 'default'}
             handleChange={handleChange}
             disabled={disableVerticalNavbarAppearance}
@@ -44,10 +44,10 @@ const VerticalNavbarAppearance = () => {
         </Col>
         <Col xs={6}>
           <RadioItem
-            label={theme === 'light' ? 'Darker' : 'Lighter'}
+            label={isDark === false ? 'Darker' : 'Lighter'}
             name="vertical-navbar-appearance"
             value="darker"
-            thumb={theme === 'light' ? verticalDarker : verticalLighter}
+            thumb={isDark === false ? verticalDarker : verticalLighter}
             checked={navbarVerticalAppearance === 'darker'}
             handleChange={handleChange}
             disabled={disableVerticalNavbarAppearance}

@@ -11,7 +11,7 @@ const OrderDetailsSummaryCard = ({ className }: { className?: string }) => {
           Summary
         </Card.Title>
 
-        <div className="border-bottom border-dashed mb-4">
+        <div className="border-bottom border-translucent border-dashed mb-4">
           <OrderSummaryDetails />
         </div>
         <div className="d-flex justify-content-between">

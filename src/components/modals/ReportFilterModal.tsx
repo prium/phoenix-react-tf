@@ -46,15 +46,15 @@ const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
 
   return (
     <Modal show={show} onHide={handleClose} className="p-0" centered>
-      <Modal.Header className="border-200 p-4">
-        <h5 className="modal-title text-1000 fs-6 lh-sm">Filter</h5>
+      <Modal.Header className="border-translucent p-4">
+        <h5 className="modal-title text-body-highlight fs-6 lh-sm">Filter</h5>
         <Button className="p-1" onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} className="fs-9 text-danger" />
         </Button>
       </Modal.Header>
       <Modal.Body className="pt-4 pb-2 px-4">
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Priority</label>
+          <label className="fw-bold mb-2 text-body-highlight">Priority</label>
           <Form.Select
             value={formData.priority}
             onChange={e => handleFilter('priority', e.target.value)}
@@ -68,7 +68,7 @@ const ReportFilterModal = ({ show, handleClose }: ReportFilterModalProps) => {
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Category</label>
+          <label className="fw-bold mb-2 text-body-highlight">Category</label>
           <Form.Select
             value={formData.category}
             onChange={e => handleFilter('category', e.target.value)}

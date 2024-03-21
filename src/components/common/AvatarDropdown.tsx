@@ -35,7 +35,7 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
       >
         <div className="position-relative">
           <div
-            className="bg-holder z-index--1"
+            className="bg-holder z-n1"
             style={{
               backgroundImage: `url(${bg32})`,
               backgroundSize: 'auto'
@@ -45,16 +45,10 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
           <div className="p-3">
             <div className="text-end">
               <button className="btn p-0 me-2">
-                <FontAwesomeIcon
-                  icon={faUserPlus}
-                  className="text-white light"
-                />
+                <FontAwesomeIcon icon={faUserPlus} className="text-white" />
               </button>
               <button className="btn p-0">
-                <FontAwesomeIcon
-                  icon={faEllipsis}
-                  className="text-white light"
-                />
+                <FontAwesomeIcon icon={faEllipsis} className="text-white" />
               </button>
             </div>
             <div className="text-center">
@@ -62,32 +56,32 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
                 src={user.avatar}
                 size="xl"
                 status="online"
-                className="border border-white rounded-circle mx-auto mb-2"
+                className="border border-light-subtle rounded-circle mx-auto mb-2"
               />
-              <h6 className="text-white light">{user.name}</h6>
-              <p className="text-600 fw-semi-bold fs-10 mb-2">
+              <h6 className="text-white">{user.name}</h6>
+              <p className="text-light text-opacity-50 fw-semibold fs-10 mb-2">
                 @{user.username}
               </p>
               <div className="d-flex flex-center mb-3">
-                <h6 className="text-white light mb-0">
+                <h6 className="text-white mb-0">
                   {user.connections}{' '}
-                  <span className="fw-normal text-300">connections</span>
+                  <span className="fw-normal text-light">connections</span>
                 </h6>
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="text-700 mx-1 fs-9"
+                  className="text-body-tertiary mx-1 fs-9"
                   transform="shrink-10 up-2"
                 />
-                <h6 className="text-white light mb-0">
+                <h6 className="text-white mb-0">
                   {user.mutual}{' '}
-                  <span className="fw-normal text-300">mutual</span>
+                  <span className="fw-normal text-light">mutual</span>
                 </h6>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-white">
-          <div className="p-3 border-bottom">
+        <div className="bg-body-emphasis">
+          <div className="p-3 border-bottom border-translucent">
             <div className="d-flex gap-2">
               <Button
                 variant="phoenix-secondary"
@@ -118,23 +112,25 @@ const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
               </Button>
             </div>
           </div>
-          <Nav className="flex-column py-3 border-bottom">
+          <Nav className="flex-column py-3 border-bottom border-translucent">
             <Nav.Link className="">
               <FeatherIcon
                 icon="clipboard"
                 size={16}
-                className="me-2 text-900 d-inline-block"
+                className="me-2 text-body d-inline-block"
               />
-              <span className="text-1000 flex-1">Assigned Projects</span>
+              <span className="text-body-highlight flex-1">
+                Assigned Projects
+              </span>
               <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
             <Nav.Link className="">
               <FeatherIcon
                 icon="pie-chart"
                 size={16}
-                className="me-2 text-900 d-inline-block"
+                className="me-2 text-body d-inline-block"
               />
-              <span className="text-1000 flex-1">View activiy</span>
+              <span className="text-body-highlight flex-1">View activiy</span>
               <FontAwesomeIcon icon={faChevronRight} className="fs-11" />
             </Nav.Link>
           </Nav>

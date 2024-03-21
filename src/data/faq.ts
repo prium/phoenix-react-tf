@@ -36,11 +36,8 @@ export const faqs: Faq[] = [
 	of defects in materials and workmanship and will conform to the
 	specifications outlined on the lot-specific datasheet included
 	with the product. Please contact our technical support services if
-	you have a technical issue with a product: Email:
-	<a href="mailto:phoenix@email.com">
-		phoenix@support.com.
-	</a>
-	If the team concludes that the product does not adhere to the
+	you have a technical issue with a product: Email: 
+	<a href="mailto:phoenix@email.com">phoenix@support.com</a>. If the team concludes that the product does not adhere to the
 	requirements mentioned on the datasheet, we will provide a free
 	replacement or a full refund of the product's invoice price.`
   },

@@ -19,14 +19,14 @@ const Comment = ({ comment, className }: CommentProps) => {
     >
       <Col xs={12} sm>
         <p
-          className={classNames('fs-9 text-800 mb-0', {
+          className={classNames('fs-9 text-body-secondary mb-0', {
             'mb-2': comment.attachment
           })}
         >
           <Link
             to={comment.user.url}
-            className={classNames('fw-semi-bold', {
-              'text-1000 text-decoration-none': comment.own
+            className={classNames('fw-semibold', {
+              'text-body-highlight text-decoration-none': comment.own
             })}
           >
             {comment.own ? 'You' : comment.user.name}
@@ -44,7 +44,9 @@ const Comment = ({ comment, className }: CommentProps) => {
         )}
       </Col>
       <Col xs={{ span: 12, order: 1 }} sm={{ span: 'auto', order: 0 }}>
-        <p className="text-800 fw-semi-bold fs-10 mb-0">Oct 4 at 12:18 pm</p>
+        <p className="text-body-secondary fw-semibold fs-10 mb-0">
+          Oct 4 at 12:18 pm
+        </p>
       </Col>
       {comment.details && <Col xs={12}>{comment.details}</Col>}
     </Row>

@@ -6,7 +6,10 @@ const EcomTopRegions = () => {
     <>
       <div className="mb-5 mt-7">
         <h3> Top regions by revenue</h3>
-        <p className="text-700"> Where you generated most of the revenue</p>
+        <p className="text-body-tertiary">
+          {' '}
+          Where you generated most of the revenue
+        </p>
       </div>
       <EcomTopRegionsTable />
     </>

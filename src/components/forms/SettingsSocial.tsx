@@ -25,13 +25,16 @@ const SettingsSocial = () => {
                 placeholder="Facebook"
                 className="form-icon-input"
               />
-              <label htmlFor="facebook" className="form-icon-label text-700">
+              <label
+                htmlFor="facebook"
+                className="form-icon-label text-body-tertiary"
+              >
                 FACEBOOK
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faFacebook}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -44,13 +47,16 @@ const SettingsSocial = () => {
                 placeholder="Twitter"
                 className="form-icon-input"
               />
-              <label htmlFor="twitter" className="form-icon-label text-700">
+              <label
+                htmlFor="twitter"
+                className="form-icon-label text-body-tertiary"
+              >
                 TWITTER
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faTwitter}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -63,13 +69,16 @@ const SettingsSocial = () => {
                 placeholder="Linkedin"
                 className="form-icon-input"
               />
-              <label htmlFor="linkedin" className="form-icon-label text-700">
+              <label
+                htmlFor="linkedin"
+                className="form-icon-label text-body-tertiary"
+              >
                 LINKEDIN
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faLinkedin}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -82,13 +91,16 @@ const SettingsSocial = () => {
                 placeholder="youtube"
                 className="form-icon-input"
               />
-              <label htmlFor="youtube" className="form-icon-label text-700">
+              <label
+                htmlFor="youtube"
+                className="form-icon-label text-body-tertiary"
+              >
                 YOUTUBE
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faYoutube}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -101,13 +113,16 @@ const SettingsSocial = () => {
                 placeholder="Artstation"
                 className="form-icon-input"
               />
-              <label htmlFor="artstation" className="form-icon-label text-700">
+              <label
+                htmlFor="artstation"
+                className="form-icon-label text-body-tertiary"
+              >
                 ARTSTATION
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faArtstation}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>
@@ -120,13 +135,16 @@ const SettingsSocial = () => {
                 placeholder="Behance"
                 className="form-icon-input"
               />
-              <label htmlFor="behance" className="form-icon-label text-700">
+              <label
+                htmlFor="behance"
+                className="form-icon-label text-body-tertiary"
+              >
                 BEHANCE
               </label>
             </Form.Floating>
             <FontAwesomeIcon
               icon={faBehance}
-              className="text-900 fs-9 form-icon"
+              className="text-body fs-9 form-icon"
             />
           </div>
         </Col>

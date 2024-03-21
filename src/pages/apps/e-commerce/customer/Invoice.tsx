@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 const Invoice = () => {
   return (
-    <div className="pt-5 pb-9 bg-white dark__bg-1200 border-top border-300">
+    <div className="pt-5 pb-9 bg-body-emphasis dark__bg-gray-1200 border-top">
       <Section small className="py-0">
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <div className="d-flex gap-2 justify-content-between align-items-end mb-4">
@@ -29,7 +29,7 @@ const Invoice = () => {
           </Button>
         </div>
 
-        <div className="bg-soft dark__bg-1100 p-4 mb-4 rounded-2">
+        <div className="bg-body dark__bg-gray-1100 p-4 mb-4 rounded-2">
           <Row className="g-4">
             <Col xs={12} lg={3}>
               <Row className="g-4 g-lg-2">
@@ -39,7 +39,7 @@ const Invoice = () => {
                       <h6 className="mb-0 me-3">Invoice No :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                      <p className="fs-9 text-body-secondary fw-semibold mb-0">
                         #FLR978282
                       </p>
                     </Col>
@@ -51,7 +51,7 @@ const Invoice = () => {
                       <h6 className="me-3">Invoice Date :</h6>
                     </Col>
                     <Col xs="auto" lg={6} xl={7}>
-                      <p className="fs-9 text-800 fw-semi-bold mb-0">
+                      <p className="fs-9 text-body-secondary fw-semibold mb-0">
                         19.06.2019
                       </p>
                     </Col>
@@ -63,7 +63,7 @@ const Invoice = () => {
               <Row className="g-4 gy-lg-5">
                 <Col xs={12} lg={8}>
                   <h6 className="mb-2 me-3">Sold by :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     PhoenixMart
                     <br />
                     36 greendowm road, California, Usa
@@ -71,23 +71,27 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> PAN No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     XVCJ963782008
                   </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> GST Reg No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">IX9878123TC</p>
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
+                    IX9878123TC
+                  </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order No :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
                     A-8934792734
                   </p>
                 </Col>
                 <Col xs={12} lg={4}>
                   <h6 className="mb-2"> Order Date :</h6>
-                  <p className="fs-9 text-800 fw-semi-bold mb-0">19.06.2019</p>
+                  <p className="fs-9 text-body-secondary fw-semibold mb-0">
+                    19.06.2019
+                  </p>
                 </Col>
               </Row>
             </Col>
@@ -95,7 +99,7 @@ const Invoice = () => {
               <Row className="g-4">
                 <Col xs={12} lg={6}>
                   <h6 className="mb-2"> Billing Address :</h6>
-                  <div className="fs-9 text-800 fw-semi-bold mb-0">
+                  <div className="fs-9 text-body-secondary fw-semibold mb-0">
                     <p className="mb-2">John Doe,</p>
                     <p className="mb-2">
                       36, Gree Donwtonwn,
@@ -108,7 +112,7 @@ const Invoice = () => {
                 </Col>
                 <Col xs={12} lg={6}>
                   <h6 className="mb-2"> Shipping Address :</h6>
-                  <div className="fs-9 text-800 fw-semi-bold mb-0">
+                  <div className="fs-9 text-body-secondary fw-semibold mb-0">
                     <p className="mb-2">John Doe,</p>
                     <p className="mb-2">
                       36, Gree Donwtonwn,
@@ -126,7 +130,7 @@ const Invoice = () => {
 
         <EcomInvoiceTable />
 
-        <div className="text-end py-9 border-bottom border-300">
+        <div className="text-end py-9 border-bottom">
           <img className="mb-3" src={phoenixMart} alt="phoenix-mart" />
           <h4>Authorized Signatory</h4>
         </div>

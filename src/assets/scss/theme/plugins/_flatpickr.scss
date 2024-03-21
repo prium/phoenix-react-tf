@@ -60,7 +60,7 @@
   input {
     color: var(--#{$prefix}gray-400);
     @include hover-focus {
-      background-color: var(--#{$prefix}gray-100) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
     }
   }
 }
@@ -69,7 +69,7 @@
   margin: 4px !important;
   // margin-right: 4px;
   // margin-left: 4px;
-  color: var(--#{$prefix}gray-900);
+  color: var(--#{$prefix}body-color);
   font-size: 1rem;
   font-weight: $font-weight-bold;
   display: flex;
@@ -112,17 +112,17 @@
   }
   &.today {
     @include hover-focus {
-      background: var(--#{$prefix}primary-600) !important;
+      background: var(--#{$prefix}primary-dark) !important;
       color: $white;
     }
   }
   &.selected {
-    background-color: var(--#{$prefix}gray-300);
-    color: var(--#{$prefix}gray-900);
+    background-color: var(--#{$prefix}tertiary-bg);
+    color: var(--#{$prefix}body-color);
     border: 0;
     @include hover-focus {
       background-color: rgba($primary, 0.35);
-      color: var(--#{$prefix}gray-900);
+      color: var(--#{$prefix}body-color);
     }
   }
   &.inRange {
@@ -164,9 +164,9 @@ span.flatpickr-weekday,
 .flatpickr-months {
   .flatpickr-prev-month,
   .flatpickr-next-month {
-    fill: var(--#{$prefix}gray-700);
+    fill: var(--#{$prefix}tertiary-color);
     &:hover svg {
-      fill: var(--#{$prefix}gray-800);
+      fill: var(--#{$prefix}secondary-color);
     }
   }
 }

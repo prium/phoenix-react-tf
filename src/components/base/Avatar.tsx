@@ -46,7 +46,7 @@ const Avatar = ({
           src={src ? src : avatar}
           alt="avatar"
           className={classNames(imageClassName, {
-            'img-thumbnail bg-white': thumbnail,
+            'img-thumbnail bg-body-emphasis': thumbnail,
             'avatar-placeholder': !src || placeholder,
             'rounded-circle': rounded === 'circle',
             'rounded-soft': rounded === 'soft'

@@ -52,11 +52,11 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
             src={conversation.user.avatar}
             size="xl"
             className="d-block"
-            imageClassName="border border-2 border-white"
+            imageClassName="border border-2 border-light-subtle"
           />
           {unseenMessageCount > 0 && (
             <span
-              className="bg-primary rounded-circle top-0 end-0 position-absolute text-white d-flex flex-center fs-10 fw-semi-bold d-none d-sm-flex d-xl-none lh-1"
+              className="bg-primary rounded-circle top-0 end-0 position-absolute text-white d-flex flex-center fs-10 fw-semibold d-none d-sm-flex d-xl-none lh-1"
               style={{ height: '1rem', width: '1rem' }}
             >
               {unseenMessageCount}
@@ -65,15 +65,15 @@ const UserListitem = ({ conversation }: { conversation: Conversation }) => {
         </div>
         <div className="flex-1 d-sm-none d-xl-block">
           <div className="d-flex justify-content-between align-items-center">
-            <h5 className="text-900 fw-normal name text-nowrap">
+            <h5 className="text-body fw-normal name text-nowrap">
               {conversation.user.name}
             </h5>
-            <p className="fs-10 text-600 mb-0 text-nowrap">
+            <p className="fs-10 text-body-tertiary text-opacity-85 mb-0 text-nowrap">
               {lastMessage.time}
             </p>
           </div>
           <div className="d-flex justify-content-between">
-            <p className="fs-9 mb-0 line-clamp-1 text-600 message">
+            <p className="fs-9 mb-0 line-clamp-1 text-body-tertiary text-opacity-85 message">
               {lastMessage.message}
             </p>
             {unseenMessageCount > 0 && (

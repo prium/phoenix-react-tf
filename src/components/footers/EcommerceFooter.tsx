@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 const LinkItem = ({ children, to }: PropsWithChildren<{ to: string }>) => {
   return (
-    <Link to={to} className="text-700 fw-semi-bold fs-9 mb-1">
+    <Link to={to} className="text-body-tertiary fw-semibold fs-9 mb-1">
       {children}
     </Link>
   );
@@ -18,12 +18,12 @@ const LinkItem = ({ children, to }: PropsWithChildren<{ to: string }>) => {
 
 const EcommerceFooter = () => {
   return (
-    <section className="bg-100 dark__bg-1100 py-9">
+    <section className="bg-body-highlight dark__bg-gray-1100 py-9">
       <div className="container-small">
         <Row className="justify-content-between gy-4">
           <Col xs={12} lg={4}>
             <Logo className="mb-3" />
-            <p className="text-700 mb-1 fw-semi-bold lh-sm fs-9">
+            <p className="text-body-tertiary mb-1 fw-semibold lh-sm fs-9">
               Phoenix is an admin dashboard template with fascinating features
               and amazing layout. The template is responsive to all major
               browsers and is compatible with all available devices and screen
@@ -43,19 +43,19 @@ const EcommerceFooter = () => {
             <h5 className="fw-bolder mb-3">Stay Connected</h5>
             <Stack>
               <LinkItem to="#!">Blogs</LinkItem>
-              <Link to="#!" className="mb-1 fw-semi-bold fs-9">
+              <Link to="#!" className="mb-1 fw-semibold fs-9">
                 <FontAwesomeIcon
                   icon={faFacebookSquare}
                   className="text-primary me-2 fs-8"
                 />
-                <span className="text-800">Facebook</span>
+                <span className="text-body-secondary">Facebook</span>
               </Link>
-              <Link to="#!" className="mb-1 fw-semi-bold fs-9">
+              <Link to="#!" className="mb-1 fw-semibold fs-9">
                 <FontAwesomeIcon
                   icon={faTwitterSquare}
                   className="text-info me-2 fs-8"
                 />
-                <span className="text-800">Twitter</span>
+                <span className="text-body-secondary">Twitter</span>
               </Link>
             </Stack>
           </Col>

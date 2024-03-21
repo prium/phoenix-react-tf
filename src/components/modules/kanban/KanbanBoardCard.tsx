@@ -23,7 +23,7 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
             />
           </>
         ) : (
-          <div className="bg-200" style={{ height: '128px' }} />
+          <div className="bg-body-secondary" style={{ height: '128px' }} />
         )}
         <Avatar.Group
           total={board.users.length}
@@ -33,7 +33,7 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
           {board.users.map(user => (
             <Avatar
               size="m"
-              className="border rounded-circle border-white"
+              className="border rounded-circle border-light-subtle"
               src={user.avatar}
               key={user.id}
             />
@@ -42,20 +42,29 @@ const KanbanBoardCard = ({ board }: { board: KanbanBoard }) => {
       </div>
       <Card.Body className="d-flex flex-column rounded-bottom-lg justify-content-between">
         <div>
-          <h3 className="text-900">{board.title}</h3>
-          <p className="text-700 mb-4">{board.category}</p>
+          <h3 className="text-body">{board.title}</h3>
+          <p className="text-body-tertiary mb-4">{board.category}</p>
         </div>
         <div className="d-flex gap-4">
-          <h5 className="text-900">
-            <FontAwesomeIcon icon={faListCheck} className="text-700 me-1" />
+          <h5 className="text-body">
+            <FontAwesomeIcon
+              icon={faListCheck}
+              className="text-body-tertiary me-1"
+            />
             {board.totalTasks}
           </h5>
-          <h5 className="text-900">
-            <FontAwesomeIcon icon={faComment} className="text-700 me-1" />
+          <h5 className="text-body">
+            <FontAwesomeIcon
+              icon={faComment}
+              className="text-body-tertiary me-1"
+            />
             {board.comments}
           </h5>
-          <h5 className="text-900">
-            <FontAwesomeIcon icon={faCalendarXmark} className="text-700 me-1" />
+          <h5 className="text-body">
+            <FontAwesomeIcon
+              icon={faCalendarXmark}
+              className="text-body-tertiary me-1"
+            />
             {board.deadlines}
           </h5>
         </div>

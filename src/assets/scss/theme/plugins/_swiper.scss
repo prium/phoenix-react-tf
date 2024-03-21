@@ -23,14 +23,14 @@
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    color: var(--#{$prefix}gray-900);
-    background-color: var(--#{$prefix}gray-soft) !important;
+    color: var(--#{$prefix}body-color);
+    background-color: var(--#{$prefix}body-bg) !important;
     box-shadow: 0px 8px 24px -4px rgba(36, 40, 46, 0.12);
     z-index: 10;
     margin: 0;
     @include hover-focus {
-      background-color: var(--#{$prefix}white);
-      color: var(--#{$prefix}gray-700);
+      background-color: var(--#{$prefix}emphasis-bg);
+      color: var(--#{$prefix}tertiary-color);
     }
   }
   .swiper-button-prev,

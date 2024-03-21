@@ -44,7 +44,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {users.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          <span className="text-body-tertiary fw-semibold ms-2">
             ({users.percantage})
           </span>
         </h6>
@@ -63,7 +63,7 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       return (
         <h6 className="mb-0">
           {transactions.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          <span className="text-body-tertiary fw-semibold ms-2">
             ({transactions.percantage})
           </span>
         </h6>
@@ -84,8 +84,8 @@ const columns: ColumnDef<TopRegionsTableDataType>[] = [
       const { revenue } = original;
       return (
         <h6 className="mb-0">
-          {revenue.number}
-          <span className="text-700 fw-semi-bold ms-2">
+          ${revenue.number}
+          <span className="text-body-tertiary fw-semibold ms-2">
             ({revenue.percantage})
           </span>
         </h6>
@@ -132,7 +132,7 @@ const EcomTopRegionsTable = () => {
     <AdvanceTableProvider {...table}>
       {/* <Scrollbar autoHeight autoHeightMax="100%"> */}
       <div className="scrollbar">
-        <Table className="fs-10 mb-0 border-top scrollbar">
+        <Table className="fs-10 mb-0 border-top border-translucent scrollbar">
           <thead>
             <tr>
               {getFlatHeaders().map(header => {

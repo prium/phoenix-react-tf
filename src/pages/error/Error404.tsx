@@ -45,8 +45,10 @@ const Error404 = () => {
                   className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
-                <h2 className="text-800 fw-bolder mb-3">Page Missing!</h2>
-                <p className="text-900 mb-5">
+                <h2 className="text-body-secondary fw-bolder mb-3">
+                  Page Missing!
+                </h2>
+                <p className="text-body mb-5">
                   But no worries! Our ostrich is looking everywhere
                   <br className="d-none d-sm-block" />
                   while you wait safely.

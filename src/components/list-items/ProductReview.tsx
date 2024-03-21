@@ -24,7 +24,7 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
         <div className="d-flex align-items-center">
           <Rating readonly initialValue={review.star} />
           <h5 className="mb-0 ms-2 line-clamp-1">
-            <span className="text-800 me-1">by</span>
+            <span className="text-body-secondary me-1">by</span>
             {review.customer}
           </h5>
         </div>
@@ -32,9 +32,9 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
           <ActionDropdownItems />
         </RevealDropdown>
       </div>
-      <p className="text-700 fs-9 mb-1">{review.date}</p>
+      <p className="text-body-tertiary fs-9 mb-1">{review.date}</p>
       <p
-        className={classNames('text-1000', {
+        className={classNames('text-body-highlight', {
           'mb-3': review.images,
           'mb-1': !review.images
         })}
@@ -69,9 +69,11 @@ const ProductReview = ({ review }: { review: ProductReviewType }) => {
           <div>
             <h5>
               Respond from {review.reply.from}
-              <span className="text-700 fs-9 ms-2">{review.reply.time} </span>
+              <span className="text-body-tertiary fs-9 ms-2">
+                {review.reply.time}{' '}
+              </span>
             </h5>
-            <p className="text-1000 mb-0">{review.reply.text}</p>
+            <p className="text-body-highlight mb-0">{review.reply.text}</p>
           </div>
         </div>
       )}

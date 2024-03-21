@@ -16,7 +16,7 @@ export interface RatingProps extends ReactRatingProps {
 const Rating = ({
   iconClass,
   fillIconColor = 'warning',
-  emptyIconColor = 'warning-300',
+  emptyIconColor = 'warning-light',
   ...rest
 }: RatingProps) => {
   return (

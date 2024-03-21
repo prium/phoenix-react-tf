@@ -26,8 +26,8 @@
 
   .react-select__placeholder {
     color: $input-placeholder-color;
-    font-size: map-get($font-sizes, '9');
-    font-weight: $font-weight-semi-bold;
+    font-size: map-get($font-sizes, 9);
+    font-weight: $font-weight-semibold;
     margin: 0;
   }
   @include hover-focus {
@@ -37,7 +37,7 @@
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: map-get($font-sizes, '10');
+    font-size: map-get($font-sizes, 10);
   }
   .react-select__value-container {
     &.react-select__value-container--has-value {
@@ -77,13 +77,13 @@
       border-radius: 0 2px 2px 0 !important;
       &:hover {
         background-color: unset !important;
-        color: var(--#{$prefix}gray-900) !important;
+        color: var(--#{$prefix}body-color) !important;
       }
     }
   }
   .react-select__multi-value__label {
     color: var(--#{$prefix}body-color) !important;
-    font-size: map-get($font-sizes, '10') !important;
+    font-size: map-get($font-sizes, 10) !important;
     padding: 0 !important;
   }
   .react-select__single-value {
@@ -95,15 +95,15 @@
   background-color: $input-bg !important;
   z-index: $zindex-modal !important;
   .react-select__menu-list {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}quatenary-bg) !important;
   }
   .react-select__option {
-    color: var(--#{$prefix}gray-900) !important;
+    color: var(--#{$prefix}body-highlight-color) !important;
     padding: 0.5rem 1rem;
-    font-size: map-get($font-sizes, '9');
+    font-size: map-get($font-sizes, 9);
     &:hover {
-      background-color: var(--#{$prefix}primary) !important;
-      color: var(--#{$prefix}white) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
+      color: var(--#{$prefix}emphasis-color) !important;
     }
   }
 }
@@ -116,9 +116,9 @@
 }
 
 .react-select__option--is-focused {
-  background-color: var(--#{$prefix}soft-primary) !important;
+  background-color: var(--#{$prefix}body-highlight-bg) !important;
 }
 .react-select__option--is-selected {
-  background-color: var(--#{$prefix}primary) !important;
-  color: var(--#{$prefix}black) !important;
+  background-color: var(--#{$prefix}body-highlight-bg) !important;
+  color: var(--#{$prefix}emphasis-color) !important;
 }

@@ -24,7 +24,10 @@ const ChatSidebar = ({ className }: { className?: string }) => {
           className="d-none d-sm-block d-xl-none mb-2"
           onClick={() => setOpenSearchModal(true)}
         >
-          <FontAwesomeIcon icon={faMagnifyingGlass} className="text-600 fs-7" />
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="text-body-tertiary text-opacity-85 fs-7"
+          />
         </Button>
         <Dropdown
           className="d-none d-sm-block d-xl-none mb-5"
@@ -35,7 +38,10 @@ const ChatSidebar = ({ className }: { className?: string }) => {
             size="sm"
             className="w-100 mx-auto dropdown-caret-none"
           >
-            <FontAwesomeIcon icon={faBars} className="fs-7 text-600" />
+            <FontAwesomeIcon
+              icon={faBars}
+              className="fs-7 text-body-tertiary text-opacity-85"
+            />
           </Dropdown.Toggle>
           <Dropdown.Menu className="p-0">
             <Dropdown.Item eventKey="1">All</Dropdown.Item>
@@ -49,7 +55,7 @@ const ChatSidebar = ({ className }: { className?: string }) => {
             placeholder="People, Groups and Messages"
             className="form-icon-input"
           />
-          <FontAwesomeIcon icon={faUser} className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faUser} className="text-body fs-9 form-icon" />
         </Form.Group>
         <ChatFilterTab />
       </Card>

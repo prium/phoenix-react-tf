@@ -1,5 +1,12 @@
 import { TeamMember } from 'data/users';
 import bg21 from 'assets/img/bg/bg-21.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import {
+  faFacebook,
+  faLinkedinIn,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
 
 const TeamMemberDefault = ({ member }: { member: TeamMember }) => {
   return (
@@ -20,17 +27,17 @@ const TeamMemberDefault = ({ member }: { member: TeamMember }) => {
         />
       </div>
       <h4>{member.name}</h4>
-      <h6 className="mb-3 fw-semi-bold">{member.designation}</h6>
+      <h6 className="mb-3 fw-semibold">{member.designation}</h6>
       <div>
-        {/* <a href="#!" className="text-primary me-3">
-          <FontAwesomeIcon icon="facebook" />
+        <a href="#!" className="text-primary me-3">
+          <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a href="#!" className="text-primary me-3">
-          <FontAwesomeIcon icon="twitter" />
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
         <a href="#!" className="text-primary">
-          <FontAwesomeIcon icon="linkedin-in" />
-        </a> */}
+          <FontAwesomeIcon icon={faLinkedinIn} />
+        </a>
       </div>
     </div>
   );

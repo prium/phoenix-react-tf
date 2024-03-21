@@ -9,7 +9,7 @@ import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 const EarlyBirdCard = () => {
   return (
-    <Card className="border-300 h-100 w-100 overflow-hidden">
+    <Card className="border h-100 w-100 overflow-hidden">
       <div
         className="bg-card bg-holder d-block"
         style={{
@@ -49,7 +49,7 @@ const EarlyBirdCard = () => {
           COMING SOON
         </Badge>
         <h3 className="mb-5">Early bird gets the warm leads!</h3>
-        <p className="text-700 fw-semi-bold">
+        <p className="text-body-tertiary fw-semibold">
           Phoenix CRM Dashboard is coming to{' '}
           <br className="d-none d-sm-block" />
           market soon for fulfilling your every{' '}
@@ -57,8 +57,8 @@ const EarlyBirdCard = () => {
           CRM related needs.{' '}
         </p>
       </Card.Body>
-      <Card.Footer className="border-0 py-0 px-5 z-index-1">
-        <p className="text-700 fw-semi-bold">
+      <Card.Footer className="border-0 py-0 px-5 z-1">
+        <p className="text-body-tertiary fw-semibold">
           Follow{' '}
           <a href="https://themewagon.com/" target="_blank" rel="noreferrer">
             ThemeWagon{' '}

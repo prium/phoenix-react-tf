@@ -10,7 +10,7 @@ const ReportCard = ({ report }: { report: Report }) => {
   return (
     <Card>
       <Card.Body>
-        <div className="border-bottom">
+        <div className="border-bottom border-translucent">
           <div className="d-flex align-items-start mb-1">
             <Form.Check type="checkbox" />
             <div className="d-sm-flex align-items-center ps-3">
@@ -26,19 +26,19 @@ const ReportCard = ({ report }: { report: Report }) => {
                   transform="shrink-6 up-1"
                   className={`me-1 text-${report.priority.type}`}
                 />
-                <span className="fw-bold fs-9 text-900 lh-2">
+                <span className="fw-bold fs-9 text-body lh-2">
                   {report.priority.label}
                 </span>
               </div>
             </div>
           </div>
-          <p className="fs-9 fw-semi-bold text-900 ms-4 text mb-4 ps-2">
+          <p className="fs-9 fw-semibold text-body ms-4 text mb-4 ps-2">
             {report.subTitle}
           </p>
         </div>
         <Row className="g-1 g-sm-3 mt-2 lh-1">
           <Col sm="auto" className="flex-1 text-truncate">
-            <Link to="#!" className="fw-semi-bold fs-9">
+            <Link to="#!" className="fw-semibold fs-9">
               <FontAwesomeIcon icon={faFolder} className="me-2" />
               {report.reportsby}
             </Link>
@@ -51,7 +51,7 @@ const ReportCard = ({ report }: { report: Report }) => {
                 height={16}
                 className="me-2"
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-700">
+              <p className="mb-0 fs-9 fw-semibold text-body-tertiary">
                 {report.category}
               </p>
             </div>
@@ -64,7 +64,9 @@ const ReportCard = ({ report }: { report: Report }) => {
                 width={16}
                 height={16}
               />
-              <p className="mb-0 fs-9 fw-semi-bold text-700">{report.date}</p>
+              <p className="mb-0 fs-9 fw-semibold text-body-tertiary">
+                {report.date}
+              </p>
             </div>
           </Col>
         </Row>

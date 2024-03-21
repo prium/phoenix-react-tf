@@ -20,7 +20,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border d-inline-block">
+        <div className="rounded-2 border border-translucent d-inline-block">
           <img src={productImage} alt="" width={53} />
         </div>
       );
@@ -36,7 +36,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">
+        <Link to="#!" className="fw-semibold line-clamp-1">
           {product}
         </Link>
       );
@@ -59,7 +59,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-700 fw-semi-bold' }
+      cellProps: { className: 'text-body-tertiary fw-semibold' }
     }
   },
   {
@@ -68,14 +68,17 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end' },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {
     id: 'action',
     cell: () => (
       <div className="d-flex gap-2 justify-content-end">
-        <Button size="sm" className="text-500 hover-text-600">
+        <Button
+          size="sm"
+          className="text-body-quaternary text-body-tertiary-hover"
+        >
           <FontAwesomeIcon icon={faTrash} />
         </Button>
         <Button
@@ -105,7 +108,7 @@ const EcomWishlistTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <AdvanceTableFooter pagination />
         </div>

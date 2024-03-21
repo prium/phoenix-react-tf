@@ -19,7 +19,7 @@ const EmailSidebarItem = ({ item }: { item: SidebarItem }) => {
       <Nav.Link
         as={Link}
         className={classNames(
-          'py-2 ps-0 pe-3 border-end border-bottom text-start outline-none',
+          'py-2 ps-0 pe-3 border-end border-bottom border-translucent text-start outline-none',
           {
             active: item.active
           }
@@ -41,7 +41,9 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
     <div>
       <div className="email-content scrollbar">
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-600 mb-0 fw-bold">Mailbox</p>
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
+            Mailbox
+          </p>
           {hideSidebar && (
             <Button
               className="d-lg-none p-0 mb-1"
@@ -52,14 +54,16 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
           )}
         </div>
 
-        <Nav className="flex-column border-top fs-9 vertical-nav mb-4">
+        <Nav className="flex-column border-top border-translucent fs-9 vertical-nav mb-4">
           {mailboxItems.map(item => (
             <EmailSidebarItem item={item} key={item.label} />
           ))}
         </Nav>
 
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-600 mb-0 fw-bold">Filtered</p>
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
+            Filtered
+          </p>
           <Button
             variant="link"
             className="fs-10 fw-bold p-0"
@@ -69,14 +73,16 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
           </Button>
         </div>
 
-        <Nav className="flex-column border-top fs-9 vertical-nav mb-4">
+        <Nav className="flex-column border-top border-translucent fs-9 vertical-nav mb-4">
           {filteredItems.map(item => (
             <EmailSidebarItem item={item} key={item.label} />
           ))}
         </Nav>
 
         <div className="d-flex flex-between-center mb-2">
-          <p className="text-uppercase fs-10 text-600 mb-0 fw-bold">Labels</p>
+          <p className="text-uppercase fs-10 text-body-tertiary text-opacity-85 mb-0 fw-bold">
+            Labels
+          </p>
           <Button
             variant="link"
             className="fs-10 fw-bold p-0"
@@ -86,7 +92,7 @@ const EmailSidebar = ({ hideSidebar }: { hideSidebar?: () => void }) => {
           </Button>
         </div>
 
-        <Nav className="flex-column border-top fs-9 vertical-nav">
+        <Nav className="flex-column border-top border-translucent fs-9 vertical-nav">
           {labelItems.map(item => (
             <EmailSidebarItem item={item} key={item.label} />
           ))}

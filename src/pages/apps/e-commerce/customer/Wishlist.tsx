@@ -10,7 +10,7 @@ const Wishlist = () => {
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="mb-5">
           Wishlist
-          <span className="text-700 fw-normal ms-2">(43)</span>
+          <span className="text-body-tertiary fw-normal ms-2">(43)</span>
         </h2>
         <EcomWishlistTable />
       </Section>

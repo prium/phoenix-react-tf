@@ -93,7 +93,7 @@ export const labelItems: SidebarItem[] = [
     icon: (
       <FontAwesomeIcon
         icon={faCircle}
-        className="text-primary-600 ms-n1"
+        className="text-primary-dark ms-n1"
         transform="shrink-10"
       />
     ),

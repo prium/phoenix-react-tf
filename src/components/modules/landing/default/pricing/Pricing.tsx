@@ -58,18 +58,15 @@ const Pricing = () => {
               <>
                 <Card
                   className={classNames('h-100', {
-                    'border border-2 border-primary dark__border-primary mt-5 mt-md-0':
-                      item.popular,
-                    'rounded-xl-end-0 rounded-start': index === 0,
+                    'border border-2 border-primary mt-5 mt-md-0': item.popular,
+                    'rounded-end-xl-0 rounded-start': index === 0,
                     'rounded-top-0 rounded-xl-0': index === 1,
-                    'rounded-start rounded-xl-start-0 mt-5 mt-md-0': index === 2
+                    'rounded-start rounded-start-xl-0 mt-5 mt-md-0': index === 2
                   })}
                 >
                   {item.popular && (
-                    <div className="position-absolute d-flex flex-center bg-primary-100 rounded-top py-1 end-0 start-0 badge-pricing">
-                      <p className="text-primary-600 mb-0 dark__text-primary-200">
-                        Most popular
-                      </p>
+                    <div className="position-absolute d-flex flex-center bg-primary-subtle rounded-top py-1 end-0 start-0 badge-pricing">
+                      <p className="text-primary-dark mb-0">Most popular</p>
                     </div>
                   )}
                   <Card.Body className="px-6">

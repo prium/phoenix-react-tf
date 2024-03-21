@@ -10,6 +10,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ts, { transpile } from 'typescript';
 
+export const getSystemTheme = () =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
 export const getItemFromStore = (
   key: string,
   defaultValue?: string | boolean,

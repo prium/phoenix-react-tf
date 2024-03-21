@@ -16,7 +16,7 @@ const PricingItem = ({ pricing }: { pricing: PricingAlternate }) => {
         className={classNames('bg-transparent', {
           'border border-2 border-info rounded-4':
             pricing.category === 'Business',
-          'border-0': pricing.category !== 'Business'
+          'border-0 border-translucent': pricing.category !== 'Business'
         })}
       >
         <Card.Body className="p-7">

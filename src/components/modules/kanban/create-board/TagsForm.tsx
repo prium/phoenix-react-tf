@@ -48,7 +48,7 @@ const TagsForm = () => {
         <Button
           variant="phoenix-secondary"
           startIcon={<FontAwesomeIcon icon={faPlus} className="me-2" />}
-          className="w-100 bg-100 fs-9"
+          className="w-100 bg-body-highlight fs-9"
         >
           Create Custom Tag
         </Button>

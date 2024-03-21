@@ -46,7 +46,7 @@ export const featureItems = [
     title: (
       <>
         Developed with{' '}
-        <span className="text-info-300 me-1 fw-bold">ReactJs</span>
+        <span className="text-info-light me-1 fw-bold">ReactJs</span>
       </>
     )
   },
@@ -57,7 +57,7 @@ export const featureItems = [
     title: (
       <>
         Built with{' '}
-        <span className="text-info-300 me-1 fw-bold">React Bootstrap</span>
+        <span className="text-info-light me-1 fw-bold">React Bootstrap</span>
       </>
     )
   },
@@ -178,11 +178,11 @@ export const featureItems = [
 
 const EssentialFeatures = () => {
   return (
-    <section className="bg-100 pt-14">
+    <section className="bg-body-highlight pt-14">
       <Container fluid="lg">
         <Row className="justify-content-center">
           <Col xs={12} lg={9} xl={8} xxl={6} className="text-center">
-            <h2 className="text-1000 fw-normal mb-13 lh-sm">
+            <h2 className="text-body-highlight fw-normal mb-13 lh-sm">
               Packed with{' '}
               <span className="text-primary ms-2 position-relative fw-bolder d-inline-flex">
                 essential features
@@ -196,7 +196,12 @@ const EssentialFeatures = () => {
             <Row>
               {featureItems.map(item => (
                 <Col xs={12} sm={4} className="px-0" key={item.id}>
-                  <div className={classNames('mb-10 text-center', item.border)}>
+                  <div
+                    className={classNames(
+                      'mb-10 text-center border-translucent',
+                      item.border
+                    )}
+                  >
                     <img src={item.icon} alt="" className="img-fluid mb-4" />
                     <p>{item.title}</p>
                   </div>

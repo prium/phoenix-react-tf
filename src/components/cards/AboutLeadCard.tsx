@@ -39,7 +39,7 @@ const AboutLeadCard = ({ className }: { className?: string }) => {
         </LeadInfoItem>
 
         <LeadInfoItem className="mb-4" label="Industry" icon={UilBuilding}>
-          <p className="mb-0 text-800">Large Enterprise</p>
+          <p className="mb-0 text-body-secondary">Large Enterprise</p>
         </LeadInfoItem>
 
         <LeadInfoItem
@@ -47,7 +47,7 @@ const AboutLeadCard = ({ className }: { className?: string }) => {
           label="Number of employees"
           icon={UilPostcard}
         >
-          <p className="mb-0 text-800">126</p>
+          <p className="mb-0 text-body-secondary">126</p>
         </LeadInfoItem>
 
         <LeadInfoItem
@@ -55,11 +55,11 @@ const AboutLeadCard = ({ className }: { className?: string }) => {
           label="Annual Revenue"
           icon={UilDollarAlt}
         >
-          <p className="mb-0 text-800">{currencyFormat(12000)}</p>
+          <p className="mb-0 text-body-secondary">{currencyFormat(12000)}</p>
         </LeadInfoItem>
 
         <LeadInfoItem className="mb-4" label="Last contacted" icon={UilClock}>
-          <p className="mb-0 text-800">12 November 2021, 10:54 AM</p>
+          <p className="mb-0 text-body-secondary">12 November 2021, 10:54 AM</p>
         </LeadInfoItem>
 
         <LeadInfoItem
@@ -67,7 +67,7 @@ const AboutLeadCard = ({ className }: { className?: string }) => {
           label="Lead source"
           icon={UilFileCheckAlt}
         >
-          <p className="mb-0 text-800">Advertisement</p>
+          <p className="mb-0 text-body-secondary">Advertisement</p>
         </LeadInfoItem>
 
         <LeadInfoItem label="Lead status" icon={UilCheckCircle}>

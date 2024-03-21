@@ -18,13 +18,13 @@ const data1 = [24, 14, 30, 24, 32, 32, 18, 12, 32];
 const data2 = [36, 28, 36, 39, 54, 38, 22, 34, 52];
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary'), getThemeColor('gray-300')],
+  color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('tertiary-bg'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -36,7 +36,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   xAxis: {
     type: 'category',
     axisLabel: {
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: string) => dayjs(value).format('D MMM, YY'),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
@@ -47,7 +47,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: true,
       interval: '10',
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     show: true,
@@ -55,7 +55,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     data: dates,
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false
@@ -67,7 +67,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       interval: 5,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },
@@ -75,7 +75,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 20,
       verticalAlign: 'bottom',
       formatter: (value: string) => `${value.toLocaleString()}`
@@ -91,7 +91,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       label: {
         show: false,
         position: 'top',
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         fontWeight: 'bold',
         fontSize: '10.24px'
       },
@@ -103,7 +103,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       z: 10,
       itemStyle: {
         borderRadius: [2, 2, 0, 0],
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     {

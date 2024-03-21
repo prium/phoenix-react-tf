@@ -30,7 +30,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
         ></Form.Label>
         <Card
           className={classNames('h-100 overflow-hidden cursor-pointer', {
-            'bg-warning-soft border-warning warning-boxshadow pricing-business-plus':
+            'bg-warning-subtle border-warning warning-boxshadow pricing-business-plus':
               item.badge?.label === 'recommended'
           })}
         >
@@ -66,7 +66,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                   )}
                 </div>
                 <p
-                  className="fs-9 text-700"
+                  className="fs-9 text-body-tertiary"
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
                 <div className="d-flex align-items-end mb-md-5 mb-lg-0">
@@ -80,9 +80,11 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                     }`}</h4>
                   )}
                   {item.monthlyPrice === 0 || item.yearlyPrice === 0 ? (
-                    <h5 className="fs-9 fw-normal text-700 ms-1">Forever</h5>
+                    <h5 className="fs-9 fw-normal text-body-tertiary ms-1">
+                      Forever
+                    </h5>
                   ) : (
-                    <h5 className="fs-9 fw-normal text-700 ms-1">
+                    <h5 className="fs-9 fw-normal text-body-tertiary ms-1">
                       {pricingType === 'monthly' ? 'Per month' : 'Per year'}
                     </h5>
                   )}
@@ -110,8 +112,10 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                     className={classNames(
                       'list-unstyled mb-0 border-start-sm border-start-md-0 border-start-lg ps-sm-5 ps-md-0 ps-lg-5',
                       {
-                        'border-warning-300':
-                          item.badge?.label === 'recommended'
+                        'border-warning-subtle':
+                          item.badge?.label === 'recommended',
+                        'border-translucent':
+                          item.badge?.label !== 'recommended'
                       }
                     )}
                   >
@@ -128,7 +132,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
                           size={16}
                         />
                         <span
-                          className="text-700 fw-semi-bold lh-1"
+                          className="text-body-tertiary fw-semibold lh-1"
                           dangerouslySetInnerHTML={{ __html: feature }}
                         />
                       </li>

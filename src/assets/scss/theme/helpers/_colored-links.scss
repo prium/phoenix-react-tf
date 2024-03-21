@@ -1,19 +1,14 @@
-@each $color, $value in $theme-colors {
-  .link-#{$color} {
-    color: var(--#{$prefix}#{$color});
-    &:hover,
-    &:focus {
-      color: var(--#{$prefix}colored-link-#{$color}-hover-color);
-    }
-  }
-}
+@each $key, $value in $body-link-colors {
+  $class: if($key==body,'body','body-'+$key);
+  $color: if($key==highlight,'body-highlight',$key);
 
-@each $color, $value in $grays {
-  .link-#{$color} {
-    color: var(--#{$prefix}#{$color}) !important;
+  .link-#{$class} {
+    color: rgba( var(--#{$prefix}#{$color}-color-rgb), var(--#{$prefix}link-opacity, 1)) !important;
+    text-decoration-color: rgba( var(--#{$prefix}#{$color}-color-rgb), var(--#{$prefix}link-underline-opacity, 1)) !important;
     &:hover,
     &:focus {
-      color: var(--#{$prefix}colored-link-#{$color}-hover-color) !important;
+      color: rgba(#{$value}, var(--#{$prefix}link-opacity, 1)) !important;
+      text-decoration-color: rgba( #{$value} , var(--#{$prefix}link-underline-opacity, 1)) !important;
     }
   }
 }

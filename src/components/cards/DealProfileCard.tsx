@@ -23,7 +23,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
             </h3>
             <div className="d-flex align-items-center mb-4">
               <h5 className="mb-0 me-4">USD $12,000.00</h5>
-              <h5 className="fw-semi-bold">
+              <h5 className="fw-semibold">
                 <FeatherIcon
                   icon="grid"
                   className="d-inline-block lh-sm me-1"
@@ -41,12 +41,12 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                   <Dropdown align={isRTL ? 'end' : 'start'}>
                     <Dropdown.Toggle
                       variant="link"
-                      className="text-800 text-decoration-none dropdown-caret-none p-0 fs-8 fw-normal"
+                      className="text-body-secondary text-decoration-none dropdown-caret-none p-0 fs-8 fw-normal"
                     >
                       Owner
                       <FontAwesomeIcon
                         icon={faCaretDown}
-                        className="text-800 fs-9 ms-2"
+                        className="text-body-secondary fs-9 ms-2"
                       />
                     </Dropdown.Toggle>
 
@@ -96,7 +96,7 @@ const DealProfileCard = ({ className }: { className?: string }) => {
                 </Badge>
               </div>
             </div>
-            <ProgressBar variant="primary-200" now={40} className="mb-2" />
+            <ProgressBar variant="primary-lighter" now={40} className="mb-2" />
             <div className="d-flex align-items-center justify-content-between">
               <p className="mb-0">New</p>
               <div>

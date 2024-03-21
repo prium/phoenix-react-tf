@@ -39,14 +39,14 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
       align="end"
       className={classNames(
         className,
-        'navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border border-300'
+        'navbar-top-dropdown-menu navbar-dropdown-caret py-0 dropdown-profile shadow border'
       )}
     >
       <Card className="position-relative border-0">
         <Card.Body className="p-0">
           <div className="d-flex flex-column align-items-center justify-content-center gap-2 pt-4 pb-3">
             <Avatar src={avatar} size="xl" />
-            <h6 className="text-black">Jerry Seinfield</h6>
+            <h6 className="text-body-emphasis">Jerry Seinfield</h6>
           </div>
           <div className="mb-3 mx-3">
             <Form.Control
@@ -64,9 +64,9 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
                       <FeatherIcon
                         icon={item.icon}
                         size={16}
-                        className="me-2 text-900"
+                        className="me-2 text-body"
                       />
-                      <span className="text-1000">{item.label}</span>
+                      <span className="text-body-highlight">{item.label}</span>
                     </Nav.Link>
                   </Nav.Item>
                 ))}
@@ -74,14 +74,14 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
             </Scrollbar>
           </div>
         </Card.Body>
-        <Card.Footer className="p-0 border-top">
+        <Card.Footer className="p-0 border-top border-translucent">
           <Nav className="nav flex-column my-3">
             <Nav.Item>
               <Nav.Link href="#!" className="px-3">
                 <FeatherIcon
                   icon="user-plus"
                   size={16}
-                  className="me-2 text-900"
+                  className="me-2 text-body"
                 />
                 <span>Add another account</span>
               </Nav.Link>
@@ -97,16 +97,16 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
               Sign out
             </Link>
           </div>
-          <div className="my-2 text-center fw-bold fs-10 text-600">
-            <Link className="text-600 me-1" to="#!">
+          <div className="my-2 text-center fw-bold fs-10 text-body-quaternary">
+            <Link className="text-body-quaternary me-1" to="#!">
               Privacy policy
             </Link>
             •
-            <Link className="text-600 mx-1" to="#!">
+            <Link className="text-body-quaternary mx-1" to="#!">
               Terms
             </Link>
             •
-            <Link className="text-600 ms-1" to="#!">
+            <Link className="text-body-quaternary ms-1" to="#!">
               Cookies
             </Link>
           </div>

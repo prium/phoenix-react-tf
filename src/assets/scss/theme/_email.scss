@@ -2,17 +2,17 @@
   top: var(--#{$prefix}navbar-top-height);
   padding: map-get($spacers, 5);
   .nav-link {
-    color: var(--#{$prefix}gray-900);
-    font-weight: $font-weight-semi-bold;
+    color: var(--#{$prefix}body-color);
+    font-weight: $font-weight-semibold;
     &:hover {
-      color: var(--#{$prefix}gray-1100);
+      color: var(--#{$prefix}emphasis-color);
     }
     .nav-item-count {
       margin-bottom: 0;
       margin-top: map-get($spacers, 1);
-      font-size: map-get($font-sizes, '11');
+      font-size: map-get($font-sizes, 11);
       font-weight: $font-weight-bold;
-      color: var(--#{$prefix}gray-700);
+      color: var(--#{$prefix}tertiary-color);
     }
     &.active {
       color: var(--#{$prefix}primary);

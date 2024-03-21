@@ -16,7 +16,7 @@ const ChatWidgetVisibility = () => {
   };
 
   return (
-    <div className="border rounded-3 p-4 setting-panel-item bg-white">
+    <div className="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
       <div className="d-flex justify-content-between align-items-center">
         <h5 className="setting-panel-item-title mb-1">Support Chat</h5>
         <Form.Check
@@ -27,7 +27,7 @@ const ChatWidgetVisibility = () => {
           className="text-end"
         />
       </div>
-      <p className="mb-0 text-700">Toggle support chat</p>
+      <p className="mb-0 text-body-tertiary">Toggle support chat</p>
     </div>
   );
 };

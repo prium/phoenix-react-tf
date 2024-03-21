@@ -94,13 +94,13 @@ const ChatContentFooter = () => {
             setMessageText(messageText => messageText + selection.emoji);
           }}
         >
-          <Button variant="link" className="p-0 text-900 fs-9 btn-emoji">
+          <Button variant="link" className="p-0 text-body fs-9 btn-emoji">
             <FontAwesomeIcon icon={faFaceSmile} />
           </Button>
         </EmojiPicker>
         <div>
           <Button className="p-0">
-            <label className="text-900 fs-9 cursor-pointer" htmlFor="images">
+            <label className="text-body fs-9 cursor-pointer" htmlFor="images">
               <FontAwesomeIcon icon={faImage} />
             </label>
           </Button>
@@ -118,7 +118,7 @@ const ChatContentFooter = () => {
         <div>
           <Button className="p-0">
             <label
-              className="text-900 fs-9 cursor-pointer"
+              className="text-body fs-9 cursor-pointer"
               htmlFor="attachments"
             >
               <FontAwesomeIcon icon={faPaperclip} />
@@ -137,10 +137,10 @@ const ChatContentFooter = () => {
           />
         </div>
 
-        <Button className="p-0 text-900 fs-9">
+        <Button className="p-0 text-body fs-9">
           <FontAwesomeIcon icon={faMicrophone} />
         </Button>
-        <Button className="p-0 text-900 fs-9">
+        <Button className="p-0 text-body fs-9">
           <FontAwesomeIcon icon={faEllipsis} />
         </Button>
 

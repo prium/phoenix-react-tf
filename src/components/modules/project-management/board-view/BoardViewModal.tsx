@@ -43,11 +43,13 @@ const BoardViewModal = ({
       <Modal.Body className="p-0">
         <ActionSection />
         <Row className="g-0">
-          <Col xs={12} xl={5} className="border-end border-300 bg-100">
-            <div className="px-5 px-lg-6 py-4 bg-white">
+          <Col xs={12} xl={5} className="border-end bg-body-highlight">
+            <div className="px-5 px-lg-6 py-4 bg-body-emphasis">
               <h3 className="fw-bolder lh-sm mb-5">{project.name}</h3>
               <div className="d-flex align-items-center mb-5">
-                <p className="text-1000 fw-700 mb-0 me-2">{progress}%</p>
+                <p className="text-body-highlight fw-700 mb-0 me-2">
+                  {progress}%
+                </p>
                 <ProgressBar
                   now={progress}
                   className={classNames('flex-1', bgClassName)}
@@ -55,7 +57,7 @@ const BoardViewModal = ({
                 />
               </div>
               <div className="mb-4">
-                <h6 className="text-800 mb-2">Assigness</h6>
+                <h6 className="text-body-secondary mb-2">Assigness</h6>
                 <div className="d-flex gap-1">
                   {project.assigness.slice(0, 5).map(member => (
                     <AvatarDropdown user={member} size="m" key={member.id} />
@@ -70,7 +72,7 @@ const BoardViewModal = ({
                 </div>
               </div>
               <div className="mb-5">
-                <h6 className="text-800 mb-2">Labels</h6>
+                <h6 className="text-body-secondary mb-2">Labels</h6>
                 <div className="d-flex gap-2 align-items-center">
                   <Badge variant="phoenix" bg="info" className="fs-10">
                     Info
@@ -83,7 +85,7 @@ const BoardViewModal = ({
                   </Badge>
                   <Button
                     variant="link"
-                    className="p-0 fs-9 text-900 fw-bolder text-decoration-none lh-1"
+                    className="p-0 fs-9 text-body fw-bolder text-decoration-none lh-1"
                     startIcon={<FontAwesomeIcon icon={faPlus} />}
                   >
                     Add another
@@ -105,7 +107,7 @@ const BoardViewModal = ({
                     comment={comment}
                     className={
                       index !== comments.length - 1
-                        ? 'border-bottom'
+                        ? 'border-bottom border-translucent'
                         : undefined
                     }
                     key={comment.id}
@@ -121,7 +123,9 @@ const BoardViewModal = ({
               <div className="mb-7">
                 <h4 className="mb-4">
                   To do list{' '}
-                  <span className="text-700 fw-normal fs-6">(23)</span>
+                  <span className="text-body-tertiary fw-normal fs-6">
+                    (23)
+                  </span>
                 </h4>
                 <div className="d-flex justify-content-between align-items-center flex-wrap gap-x-5 gap-y-3 mb-3">
                   <SearchBox
@@ -131,7 +135,7 @@ const BoardViewModal = ({
                   <div>
                     <Button
                       variant="link"
-                      className="p-0 fs-9 text-700 text-decoration-none me-3"
+                      className="p-0 fs-9 text-body-tertiary text-decoration-none me-3"
                       startIcon={
                         <FontAwesomeIcon
                           icon={faFilter}
@@ -181,7 +185,7 @@ const BoardViewModal = ({
                       key={attachment.name}
                       attachment={attachment}
                       className={classNames({
-                        'border-top': index === 0
+                        'border-top border-translucent': index === 0
                       })}
                     />
                   ))}

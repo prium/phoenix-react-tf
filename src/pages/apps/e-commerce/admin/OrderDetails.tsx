@@ -26,7 +26,7 @@ const OrderDetails = () => {
           Order <span>#349</span>
         </h2>
         <div className="d-flex flex-wrap flex-between-center mb-4 gap-2">
-          <p className="text-800 lh-sm mb-0">
+          <p className="text-body-secondary lh-sm mb-0">
             Customer ID :{' '}
             <Link className="fw-bold" to="#!">
               {' '}
@@ -36,14 +36,14 @@ const OrderDetails = () => {
           <div className="d-flex gap-5">
             <Button
               variant="link"
-              className="p-0 text-900 text-decoration-none"
+              className="p-0 text-body text-decoration-none"
               startIcon={<FontAwesomeIcon icon={faPrint} className="me-2" />}
             >
               Print
             </Button>
             <Button
               variant="link"
-              className="p-0 text-900 text-decoration-none"
+              className="p-0 text-body text-decoration-none"
               startIcon={<FontAwesomeIcon icon={faUndo} className="me-2" />}
             >
               Refund

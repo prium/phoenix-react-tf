@@ -4,7 +4,7 @@ import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const exampleCode = `
   <Accordion defaultActiveKey="0">
-  <Accordion.Item eventKey="0" className="border-top border-300">
+  <Accordion.Item eventKey="0" className="border-top">
     <Accordion.Header>How long does it take to ship my order?</Accordion.Header>
     <Accordion.Body className="pt-0">
       <strong>This is the first item's accordion body.</strong>

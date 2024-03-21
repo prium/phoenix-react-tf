@@ -13,7 +13,7 @@ const tooltipFormatter = (params: any) => {
   const el = params[1];
 
   const tooltipItem = `<div class='ms-1'>
-    <h6 class="text-700"><span class="d-inline-block rounded-circle me-2" style="height: 0.6rem; width: 0.6rem; background:${
+    <h6 class="text-body-tertiary"><span class="d-inline-block rounded-circle me-2" style="height: 0.6rem; width: 0.6rem; background:${
       el.color
     }"></span>
         ${el.axisValue} : ${
@@ -23,7 +23,7 @@ const tooltipFormatter = (params: any) => {
     </div>`;
 
   return `<div>
-            <p class='mb-2 text-600'>
+            <p class='mb-2 text-body-tertiary'>
               ${el.seriesName}
             </p>
             ${tooltipItem}
@@ -32,15 +32,15 @@ const tooltipFormatter = (params: any) => {
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
-  color: [getThemeColor('primary'), getThemeColor('gray-300')],
+  color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -53,7 +53,7 @@ const getDefaultOptions = (
     data: ['Total Emails', 'Sent', 'Bounce', 'Delivered'],
     splitLine: { show: false },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 400,
       fontSize: 12.8,
@@ -64,7 +64,7 @@ const getDefaultOptions = (
     axisLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false
@@ -73,11 +73,11 @@ const getDefaultOptions = (
     type: 'value',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
@@ -113,13 +113,17 @@ const getDefaultOptions = (
       type: 'bar',
       stack: 'Total',
       itemStyle: {
-        color: getThemeColor('primary-200')
+        color: !isDark
+          ? getThemeColor('primary-lighter')
+          : getThemeColor('primary-darker')
       },
       data: [
         {
           value: 2832,
           itemStyle: {
-            color: getThemeColor('primary-300')
+            color: !isDark
+              ? getThemeColor('primary-light')
+              : getThemeColor('primary-dark')
           }
         },
         1366,
@@ -129,10 +133,10 @@ const getDefaultOptions = (
       label: {
         show: true,
         position: 'inside',
-        color:
-          theme === 'light'
-            ? getThemeColor('gray-1100')
-            : getThemeColor('gray-200'),
+        color: !isDark
+          ? getThemeColor('emphasis-color')
+          : getThemeColor('white'),
+
         fontWeight: 'normal',
         fontSize: '12.8px',
         formatter: (value: { value: string }) =>
@@ -223,13 +227,13 @@ const AnalyticsEmailCampaignChart = ({ className }: { className: string }) => {
 
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
   return (
     <ReactEChartsCore
       ref={chartRef}
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       className={className}
     />
   );

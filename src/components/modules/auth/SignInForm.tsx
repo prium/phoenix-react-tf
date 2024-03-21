@@ -9,12 +9,12 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
   return (
     <>
       <div className="text-center mb-7">
-        <h3 className="text-1000">Sign In</h3>
-        <p className="text-700">Get access to your account</p>
+        <h3 className="text-body-highlight">Sign In</h3>
+        <p className="text-body-tertiary">Get access to your account</p>
       </div>
       <AuthSocialButtons title="Sign in" />
       <div className="position-relative">
-        <hr className="bg-200 mt-5 mb-4" />
+        <hr className="bg-body-secondary mt-5 mb-4" />
         <div className="divider-content-center">or use email</div>
       </div>
       <Form.Group className="mb-3 text-start">
@@ -26,7 +26,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             className="form-icon-input"
             placeholder="name@example.com"
           />
-          <FontAwesomeIcon icon={faUser} className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faUser} className="text-body fs-9 form-icon" />
         </div>
       </Form.Group>
       <Form.Group className="mb-3 text-start">
@@ -38,7 +38,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
             className="form-icon-input"
             placeholder="Password"
           />
-          <FontAwesomeIcon icon={faKey} className="text-900 fs-9 form-icon" />
+          <FontAwesomeIcon icon={faKey} className="text-body fs-9 form-icon" />
         </div>
       </Form.Group>
       <Row className="flex-between-center mb-7">
@@ -58,7 +58,7 @@ const SignInForm = ({ layout }: { layout: 'simple' | 'card' | 'split' }) => {
         <Col xs="auto">
           <Link
             to={`/pages/authentication/${layout}/forgot-password`}
-            className="fs-9 fw-semi-bold"
+            className="fs-9 fw-semibold"
           >
             Forgot Password?
           </Link>

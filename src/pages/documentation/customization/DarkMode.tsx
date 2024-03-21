@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import ThemeToggler from 'components/common/ThemeToggler';
 import PhoenixDocProvider from 'providers/PhoenixDocProvider';
+import ThemeDropdown from 'components/docs/ThemeDropdown';
 
 const darkModeExampleCode = `
 import { useAppContext } from 'providers/AppProvider';
@@ -19,8 +20,8 @@ const DarkModeExample = () => {
   } = useAppContext(); // import AppContext from 'src/context/Context.js'
   
   return (
-    <Row>
-      <Col sm={6} lg={3}>
+    <Row className='g-3'>
+      <Col>
         <h5 className="fs-0 mb-2">Checkbox </h5>
         <Form.Check
           type="checkbox"
@@ -31,7 +32,7 @@ const DarkModeExample = () => {
         />
       </Col>
 
-      <Col sm={6} lg={3}>
+      <Col>
         <h5 className="fs-0 mb-2">Switch Input</h5>
         <Form.Check
           type="switch"
@@ -42,9 +43,18 @@ const DarkModeExample = () => {
         />
       </Col>
 
-      <Col sm={6} lg={3}>
+      <Col>
+        <h5 className="fs-0 mb-2">Custom Icon</h5>
+        <ThemeToggler />
+      </Col>
+
+      <Col>
+        <h5 className="fs-0 mb-2">Dropdown</h5>
+        <ThemeDropdown />
+      </Col>
+      <Col-12>
         <h5 className="fs-0 mb-2">Radio Button</h5>
-        <Form.Group>
+        <Form.Group className="d-flex">
           <Form.Check
             inline
             type="radio"
@@ -63,13 +73,17 @@ const DarkModeExample = () => {
             checked={theme === 'dark'}
             onChange={() => setConfig({ theme: 'dark' })}
           />
+          <Form.Check
+            inline
+            type="radio"
+            id="autoRadioButton"
+            label="Auto"
+            name="themeToggleRadio"
+            checked={theme === 'auto'}
+            onChange={() => setConfig({ theme: 'auto' })}
+          />
         </Form.Group>
-      </Col>
-
-      <Col sm={6} lg={3}>
-        <h5 className="fs-0 mb-2">Custom Icon</h5>
-        <ThemeToggler />
-      </Col>
+      </Col-12>
     </Row>
   );
 };
@@ -79,7 +93,7 @@ render(<DarkModeExample />);
 const lightCode = `
   <Card bg='100' className="light">
     <Card.Body>
-      <p className="mb-0 text-700">
+      <p className="mb-0 text-body-tertiary">
         <b>This element will retain it's color if you switch between light and dark mode.</b>
       </p>
     </Card.Body>
@@ -89,7 +103,7 @@ const lightCode = `
 const darkCode = `
   <Card bg='100' className="dark">
     <Card.Body>
-      <p className="mb-0 text-700">
+      <p className="mb-0 text-body-tertiary">
         <b>This element will retain it's color if you switch between light and dark mode.</b>
       </p>
     </Card.Body>
@@ -99,7 +113,7 @@ const darkCode = `
 const dark__Code = `
   <Card bg='light' className="dark__bg-primary">
     <Card.Body>
-      <p className="mb-0 dark__text-white">
+      <p className="mb-0 dark__text-gray-100">
         <span className="fw-bold">
           The background will be primary and text color will be white in dark mode.
         </span>
@@ -112,7 +126,7 @@ const DarkMode = () => {
   return (
     <div>
       <DocPageHeader title="Dark Mode">
-        <p className="lead text-700">
+        <p className="lead text-body-tertiary">
           It’s effortless to switch Dark Mode in {process.env.REACT_APP_TITLE}
           -React. You can enable Dark Mode by default or create a Dark/Light
           switch if you want. To set the default mode "Dark", please see the
@@ -131,14 +145,14 @@ const DarkMode = () => {
           <PhoenixDocCard.Body
             code={darkModeExampleCode}
             noInline
-            scope={{ FeatherIcon, useAppContext, ThemeToggler }}
+            scope={{ FeatherIcon, useAppContext, ThemeToggler, ThemeDropdown }}
           />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Modify Dark colors" noPreview />
           <PhoenixDocCard.Body>
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               You can find all the variables used to create the dark mode in
               <code> src/assets/scss/theme/root/_dark.scss </code> file. If you
               want to override a variable, copy that variable to{' '}

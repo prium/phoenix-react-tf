@@ -34,7 +34,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="d-block rounded-2 border"
+          className="d-block rounded-2 border border-translucent"
         >
           <img src={productImage} alt="" width={53} />
         </Link>
@@ -51,7 +51,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="fw-semi-bold"
+          className="fw-semibold"
         >{`${product.slice(0, 46)}${product.length > 46 ? '...' : ''}`}</Link>
       );
     },
@@ -68,7 +68,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       return (
         <Link
           to="/apps/e-commerce/admin/customer-details"
-          className="d-flex align-items-center text-900"
+          className="d-flex align-items-center text-body"
         >
           {customer.variant === 'name' ? (
             <Avatar src={customer.avatar} size="l" variant={customer.variant}>
@@ -77,7 +77,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
           ) : (
             <Avatar src={customer.avatar} size="l" variant={customer.variant} />
           )}
-          <h6 className="mb-0 ms-3 text-900">{customer.name}</h6>
+          <h6 className="mb-0 ms-3 text-body">{customer.name}</h6>
         </Link>
       );
     },
@@ -102,7 +102,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
     cell: ({ row: { original } }) => {
       const { review } = original;
       return (
-        <p className="fs--1 fw-semi-bold text-1000 mb-0 line-clamp-3">
+        <p className="fs--1 fw-semibold text-body-highlight mb-0 line-clamp-3">
           {review.slice(0, 134)}
           {review.length > 134 && (
             <>
@@ -148,7 +148,7 @@ const columns: ColumnDef<LatestReviewsTableDataType>[] = [
       const { time } = original;
       return (
         <div className="hover-hide">
-          <h6 className="text-1000 mb-0">{time}</h6>
+          <h6 className="text-body-highlight mb-0">{time}</h6>
         </div>
       );
     },
@@ -211,7 +211,7 @@ const EcomLatestReviewsTable = () => {
         <Row className="align-items-end justify-content-between pb-5 g-3">
           <Col xs="auto">
             <h3>Latest reviews</h3>
-            <p className="text-700 lh-sm mb-0">
+            <p className="text-body-tertiary lh-sm mb-0">
               Payment received across all channels
             </p>
           </Col>
@@ -228,7 +228,7 @@ const EcomLatestReviewsTable = () => {
                 <Button
                   variant="phoenix-secondary"
                   size="sm"
-                  className="bg-white hover-bg-100"
+                  className="bg-body-emphasis bg-body-hover"
                 >
                   All products
                 </Button>
@@ -236,7 +236,7 @@ const EcomLatestReviewsTable = () => {
                   <Dropdown.Toggle
                     variant="phoenix-secondary"
                     size="sm"
-                    className="bg-white hover-bg-100 dropdown-caret-none"
+                    className="bg-body-emphasis bg-body-hover dropdown-caret-none"
                   >
                     <FontAwesomeIcon icon={faEllipsisH} className="10" />
                   </Dropdown.Toggle>
@@ -258,7 +258,7 @@ const EcomLatestReviewsTable = () => {
 
         <AdvanceTable
           tableProps={{
-            className: 'phoenix-table fs-9 mb-0 border-top border-200'
+            className: 'phoenix-table fs-9 mb-0 border-top border-translucent'
           }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />

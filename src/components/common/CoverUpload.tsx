@@ -30,7 +30,7 @@ const CoverUpload = ({
   return (
     <>
       {!src && (
-        <div className="text-600 fw-bold d-flex flex-center flex-column gap-3 fs-9 w-100 h-100">
+        <div className="text-body-tertiary fw-bold d-flex flex-center flex-column gap-3 fs-9 w-100 h-100">
           <img className="mt-3" src={imageIcon} width={40} alt="" />
           <Button variant="link" className="p-0">
             Add cover image
@@ -56,7 +56,7 @@ const CoverUpload = ({
           onChange={handleChange}
         />
         <label className="cover-image-file-input" htmlFor="coverFile"></label>
-        <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white dark__text-white">
+        <div className="hover-actions end-0 bottom-0 pe-1 pb-2 text-white">
           <FontAwesomeIcon icon={faCamera} className="me-2 overlay-icon" />
         </div>
       </div>

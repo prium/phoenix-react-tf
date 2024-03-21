@@ -9,11 +9,11 @@ const TeamSection = () => {
   return (
     <section id="team">
       <div
-        className="position-absolute h-70 w-100 bg-soft"
+        className="position-absolute h-70 w-100 bg-body"
         style={{ transform: 'skew(0,-10deg)', top: '10%' }}
       />
       <div
-        className="bg-holder z-index-2"
+        className="bg-holder z-2"
         style={{
           backgroundImage: `url(${bgLeft17})`,
           backgroundSize: 'auto',
@@ -21,7 +21,7 @@ const TeamSection = () => {
         }}
       />
       <div
-        className="bg-holder z-index-2"
+        className="bg-holder z-2"
         style={{
           backgroundImage: `url(${bgRight17})`,
           backgroundSize: 'auto',

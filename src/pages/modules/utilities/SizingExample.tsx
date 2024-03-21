@@ -44,10 +44,6 @@ const sizingHeightCode = `<>
 
 const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vw-100 { width: 100vw; }
-.max-vh-100 { maxHeight: 100vh; }
-.max-vh-75 { maxHeight: 75vh; }
-.max-vh-50 { maxHeight: 50vh; }
-.max-vh-25 { maxHeight: 25vh; }
 .min-vh-100 { minHeight: 100vh; }
 .min-vh-75 { minHeight: 75vh; }
 .min-vh-50 { minHeight: 50vh; }
@@ -56,10 +52,7 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-75 { height: 75vh !important; }
 .vh-50 { height: 50vh !important; }
 .vh-25 { height: 25vh !important; }
-.max-vh-sm-100 { maxHeight: 100vh; }
-.max-vh-sm-75 { maxHeight: 75vh; }
-.max-vh-sm-50 { maxHeight: 50vh; }
-.max-vh-sm-25 { maxHeight: 25vh; }
+
 .min-vh-sm-100 { minHeight: 100vh; }
 .min-vh-sm-75 { minHeight: 75vh; }
 .min-vh-sm-50 { minHeight: 50vh; }
@@ -68,10 +61,7 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-sm-75 { height: 75vh !important; }
 .vh-sm-50 { height: 50vh !important; }
 .vh-sm-25 { height: 25vh !important; }
-.max-vh-md-100 { maxHeight: 100vh; }
-.max-vh-md-75 { maxHeight: 75vh; }
-.max-vh-md-50 { maxHeight: 50vh; }
-.max-vh-md-25 { maxHeight: 25vh; }
+
 .min-vh-md-100 { minHeight: 100vh; }
 .min-vh-md-75 { minHeight: 75vh; }
 .min-vh-md-50 { minHeight: 50vh; }
@@ -80,10 +70,7 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-md-75 { height: 75vh !important; }
 .vh-md-50 { height: 50vh !important; }
 .vh-md-25 { height: 25vh !important; }
-.max-vh-lg-100 { maxHeight: 100vh; }
-.max-vh-lg-75 { maxHeight: 75vh; }
-.max-vh-lg-50 { maxHeight: 50vh; }
-.max-vh-lg-25 { maxHeight: 25vh; }
+
 .min-vh-lg-100 { minHeight: 100vh; }
 .min-vh-lg-75 { minHeight: 75vh; }
 .min-vh-lg-50 { minHeight: 50vh; }
@@ -92,10 +79,7 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-lg-75 { height: 75vh !important; }
 .vh-lg-50 { height: 50vh !important; }
 .vh-lg-25 { height: 25vh !important; }
-.max-vh-xl-100 { maxHeight: 100vh; }
-.max-vh-xl-75 { maxHeight: 75vh; }
-.max-vh-xl-50 { maxHeight: 50vh; }
-.max-vh-xl-25 { maxHeight: 25vh; }
+
 .min-vh-xl-100 { minHeight: 100vh; }
 .min-vh-xl-75 { minHeight: 75vh; }
 .min-vh-xl-50 { minHeight: 50vh; }
@@ -104,10 +88,6 @@ const specialClassesCode = `.min-vw-100 { minWidth: 100vw; }
 .vh-xl-75 { height: 75vh !important; }
 .vh-xl-50 { height: 50vh !important; }
 .vh-xl-25 { height: 25vh !important; }
-.max-vh-xxl-100 { maxHeight: 100vh; }
-.max-vh-xxl-75 { maxHeight: 75vh; }
-.max-vh-xxl-50 { maxHeight: 50vh; }
-.max-vh-xxl-25 { maxHeight: 25vh; }
 .min-vh-xxl-100 { minHeight: 100vh; }
 .min-vh-xxl-75 { minHeight: 75vh; }
 .min-vh-xxl-50 { minHeight: 50vh; }

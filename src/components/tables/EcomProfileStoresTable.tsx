@@ -32,7 +32,7 @@ const columns: ColumnDef<StoreProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-1">
+        <Link to="#!" className="fw-semibold line-clamp-1">
           {product}
         </Link>
       );
@@ -73,7 +73,7 @@ const columns: ColumnDef<StoreProductType>[] = [
         style: { width: '15%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end fw-semi-bold' }
+      cellProps: { className: 'text-end fw-semibold' }
     }
   },
   {
@@ -84,7 +84,7 @@ const columns: ColumnDef<StoreProductType>[] = [
         style: { width: '15%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-end text-700' }
+      cellProps: { className: 'text-end text-body-tertiary' }
     }
   },
   {
@@ -117,7 +117,7 @@ const EcomProfileStoresTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y mb-6">
+        <div className="border-y border-translucent mb-6">
           <AdvanceTable
             tableProps={{ className: 'phoenix-table table-sm fs-9' }}
           />

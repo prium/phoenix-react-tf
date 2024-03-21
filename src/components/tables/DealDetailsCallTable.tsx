@@ -26,10 +26,10 @@ const columns: ColumnDef<CallTableDataType>[] = [
       return (
         <Link
           to="/pages/members"
-          className="d-flex align-items-center text-1000"
+          className="d-flex align-items-center text-body-highlight"
         >
           <Avatar src={avatar} size="m" className="me-3" status={status} />
-          <h6 className="mb-0 text-1000 fw-bold">{name}</h6>
+          <h6 className="mb-0 text-body-highlight fw-bold">{name}</h6>
         </Link>
       );
     },
@@ -51,7 +51,8 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'pe-6'
       },
       cellProps: {
-        className: 'white-space-nowrap text-start fw-bold text-700 py-2 pe-6'
+        className:
+          'white-space-nowrap text-start fw-bold text-body-tertiary py-2 pe-6'
       }
     }
   },
@@ -65,7 +66,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'text-start'
       },
       cellProps: {
-        className: 'white-space-nowrap text-900 text-end'
+        className: 'white-space-nowrap text-body text-end'
       }
     }
   },
@@ -79,7 +80,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'text-start'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-1000'
+        className: 'white-space-nowrap fw-semibold text-body-highlight'
       }
     }
   },
@@ -91,12 +92,13 @@ const columns: ColumnDef<CallTableDataType>[] = [
         <div className="d-flex align-items-center flex-1">
           <FontAwesomeIcon
             icon={faClock}
-            className={classNames('me-1 text-500', {
-              'text-success': original.activity === 'Active'
+            className={classNames('me-1 ', {
+              'text-success': original.activity === 'Active',
+              'text-body-quaternary': original.activity !== 'Active'
             })}
             transform="shrink-2 up-1"
           />
-          <span className="fw-bold fs-9 text-900">{original.activity}</span>
+          <span className="fw-bold fs-9 text-body">{original.activity}</span>
         </div>
       );
     },
@@ -106,7 +108,7 @@ const columns: ColumnDef<CallTableDataType>[] = [
         className: 'ps-0 text-end'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-1000'
+        className: 'white-space-nowrap fw-semibold text-body-highlight'
       }
     }
   },
@@ -142,7 +144,7 @@ const DealDetailsCallTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <AdvanceTableFooter pagination />
         </div>

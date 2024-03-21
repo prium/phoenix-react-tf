@@ -57,15 +57,17 @@ const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
   );
   return (
     <Modal show={show} onHide={handleClose} className="p-0" centered>
-      <Modal.Header className="border-200 p-4">
-        <h5 className="modal-title text-1000 fs-6 lh-sm">Filter</h5>
+      <Modal.Header className="border-translucent p-4">
+        <h5 className="modal-title text-body-highlight fs-6 lh-sm">Filter</h5>
         <Button className="p-1" onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} className="fs-9" />
         </Button>
       </Modal.Header>
       <Modal.Body className="pt-4 pb-2 px-4">
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Lead Status</label>
+          <label className="fw-bold mb-2 text-body-highlight">
+            Lead Status
+          </label>
           <Form.Select
             value={formData.status}
             onChange={e => handleFilter('status', e.target.value)}
@@ -79,7 +81,9 @@ const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Company name</label>
+          <label className="fw-bold mb-2 text-body-highlight">
+            Company name
+          </label>
           <Form.Select
             value={formData.company}
             onChange={e => handleFilter('company', e.target.value)}
@@ -93,7 +97,9 @@ const LeadsFilterModal = ({ show, handleClose }: LeadsFilterModalProps) => {
           </Form.Select>
         </div>
         <div className="mb-3">
-          <label className="fw-bold mb-2 text-1000">Designation</label>
+          <label className="fw-bold mb-2 text-body-highlight">
+            Designation
+          </label>
           <Form.Select
             value={formData.designation}
             onChange={e => handleFilter('designation', e.target.value)}

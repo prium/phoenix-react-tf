@@ -13,9 +13,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   tooltip: {
     trigger: 'item',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     formatter: (params: CallbackDataParams) =>
@@ -32,7 +32,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     boundaryGap: false,
     axisLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200') }
+      lineStyle: { color: getThemeColor('secondary-bg') }
     },
     axisTick: {
       show: false
@@ -42,7 +42,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       interval: 6,
       showMinLabel: true,
       showMaxLabel: true,
-      color: getThemeColor('gray-800')
+      color: getThemeColor('secondary-color')
     }
   },
   yAxis: {
@@ -62,7 +62,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       backgroundStyle: {
         borderRadius: 10,
-        color: getThemeColor('primary-100')
+        color: getThemeColor('primary-bg-subtle')
       }
     }
   ],

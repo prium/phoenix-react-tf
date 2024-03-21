@@ -46,10 +46,11 @@ const Error403 = () => {
                   className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
-                <h2 className="text-800 fw-bolder mb-3">Access Forbidden!</h2>
-                <p className="text-900 mb-5">
-                  Halt! Thou art endeavouring to trespass upon a realm not
-                  <br className="d-none d-sm-block" /> granted unto thee.
+                <h2 className="text-body-secondary fw-bolder mb-3">
+                  Access Forbidden!
+                </h2>
+                <p className="text-body mb-5">
+                  You don’t have permission to access this resource.
                 </p>
                 <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home

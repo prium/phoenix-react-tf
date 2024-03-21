@@ -44,12 +44,9 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar, profileLink } = original.dealOwner;
       return (
-        <Link
-          to={profileLink}
-          className=" d-flex align-items-center text-900 text-hover-1000"
-        >
+        <Link to={profileLink} className="d-flex align-items-center text-body">
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-bold">{name}</p>
         </Link>
       );
     },
@@ -70,7 +67,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
         className: 'text-nowrap'
       },
       cellProps: {
-        className: 'white-space-nowrap fw-semi-bold text-900'
+        className: 'white-space-nowrap fw-semibold text-body'
       }
     }
   },
@@ -87,7 +84,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
           >
             <CircleProgress color={getColor(getProgressColorVariant(value))} />
           </div>
-          <h6 className="mb-0 text-900">{label}</h6>
+          <h6 className="mb-0 text-body">{label}</h6>
         </div>
       );
     },
@@ -98,7 +95,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
       },
       cellProps: {
         style: { paddingTop: 1, paddingBottom: 1 },
-        className: 'white-space-nowrap fw-bold text-900 pe-5 overflow-hidden'
+        className: 'white-space-nowrap fw-bold text-body pe-5 overflow-hidden'
       }
     }
   },
@@ -127,7 +124,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
         style: { minWidth: 50 },
         className: 'ps-4 pe-5'
       },
-      cellProps: { className: 'white-space-nowrap fw-bold ps-4 text-900' }
+      cellProps: { className: 'white-space-nowrap fw-bold ps-4 text-body' }
     }
   },
 
@@ -152,7 +149,7 @@ export const dealsReportColumns: ColumnDef<DealsReport>[] = [
 const DealsReportTable = () => {
   return (
     <div>
-      <div className="border-top">
+      <div className="border-top border-translucent">
         <AdvanceTable
           tableProps={{ size: 'sm', className: 'phoenix-table fs-9' }}
         />

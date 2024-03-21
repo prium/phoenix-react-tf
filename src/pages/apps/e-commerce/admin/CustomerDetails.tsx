@@ -49,12 +49,12 @@ const CustomerDetails = () => {
                       <Button variant="link" className="p-0">
                         <FontAwesomeIcon
                           icon={faPen}
-                          className="fs-8 ms-3 text-500"
+                          className="fs-8 ms-3 text-body-quaternary"
                         />
                       </Button>
                     </div>
-                    <h5 className="text-800">Address</h5>
-                    <p className="text-800">
+                    <h5 className="text-body-secondary">Address</h5>
+                    <p className="text-body-secondary">
                       Shatinon Mekalan
                       <br />
                       Vancouver, British Columbia
@@ -62,13 +62,13 @@ const CustomerDetails = () => {
                       Canada
                     </p>
                     <div className="mb-3">
-                      <h5 className="text-800">Email</h5>
+                      <h5 className="text-body-secondary">Email</h5>
                       <a href="mailto:shatinon@jeemail.com">
                         shatinon@jeemail.com
                       </a>
                     </div>
-                    <h5 className="text-800">Phone</h5>
-                    <a className="text-800" href="tel:+1234567890">
+                    <h5 className="text-body-secondary">Phone</h5>
+                    <a className="text-body-secondary" href="tel:+1234567890">
                       +1234567890
                     </a>
                   </Card.Body>
@@ -83,20 +83,22 @@ const CustomerDetails = () => {
             <div className="d-flex flex-column gap-6">
               <div>
                 <h3 className="mb-4">
-                  Orders <span className="text-700 fw-normal">(97)</span>
+                  Orders{' '}
+                  <span className="text-body-tertiary fw-normal">(97)</span>
                 </h3>
                 <CustomerOrdersTable />
               </div>
               <div>
                 <h3 className="mb-4">
-                  Wishlist <span className="text-700 fw-normal">(43)</span>
+                  Wishlist{' '}
+                  <span className="text-body-tertiary fw-normal">(43)</span>
                 </h3>
                 <CustomerWishlistTable />
               </div>
               <div>
                 <h3 className="mb-4">
                   Ratings & reviews{' '}
-                  <span className="text-700 fw-normal">(43)</span>
+                  <span className="text-body-tertiary fw-normal">(43)</span>
                 </h3>
                 <CustomerRatingsTable />
               </div>

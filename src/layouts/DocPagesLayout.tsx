@@ -71,7 +71,7 @@ const DocPagesLayout = ({
       <Col xs={12} xl={2}>
         <div className="position-sticky" style={{ top: 80 }}>
           <h5>On this page</h5>
-          <hr className="text-300" />
+          <hr />
           <Nav as="ul" className="flex-column nav-vertical doc-nav">
             {navItems.map(item => (
               <NavItem item={item} key={item.label} />

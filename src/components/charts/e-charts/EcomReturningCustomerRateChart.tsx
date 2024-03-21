@@ -10,21 +10,21 @@ import { tooltipFormatterDefault } from 'helpers/echart-utils';
 echarts.use([TooltipComponent, BarChart]);
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: getThemeColor('gray-100'),
+  color: getThemeColor('body-highlight-bg'),
   legend: {
     data: [
       {
         name: 'Fourth time',
         icon: 'roundRect',
         itemStyle: {
-          color: getThemeColor('primary-300'),
+          color: getThemeColor('primary-light'),
           borderWidth: 0
         }
       },
       {
         name: 'Third time',
         icon: 'roundRect',
-        itemStyle: { color: getThemeColor('info-200'), borderWidth: 0 }
+        itemStyle: { color: getThemeColor('info-lighter'), borderWidth: 0 }
       },
       {
         name: 'Second time',
@@ -39,10 +39,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     itemHeight: 8,
     itemGap: 20,
     top: 3,
-    inactiveColor: getThemeColor('gray-500'),
+    inactiveColor: getThemeColor('quaternary-color'),
     inactiveBorderWidth: 0,
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontWeight: 600,
       fontFamily: 'Nunito Sans'
     }
@@ -53,9 +53,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       type: 'none'
     },
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     formatter: (params: CallbackDataParams[]) => tooltipFormatterDefault(params)
@@ -67,7 +67,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     boundaryGap: false,
     axisLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-300') }
+      lineStyle: { color: getThemeColor('tertiary-bg') }
     },
     axisTick: {
       show: false
@@ -76,7 +76,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       // interval: 1,
       showMinLabel: false,
       showMaxLabel: false,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: string) => value.slice(0, 3),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
@@ -84,7 +84,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     },
     splitLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200'), type: 'dashed' }
+      lineStyle: { color: getThemeColor('secondary-bg'), type: 'dashed' }
     }
   },
   yAxis: {
@@ -93,7 +93,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisLabel: {
       showMinLabel: true,
       showMaxLabel: true,
-      color: getThemeColor('gray-800'),
+      color: getThemeColor('secondary-color'),
       formatter: (value: number) => `${value}%`,
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
@@ -101,7 +101,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     },
     splitLine: {
       show: true,
-      lineStyle: { color: getThemeColor('gray-200') }
+      lineStyle: { color: getThemeColor('secondary-bg') }
     }
   },
   series: [
@@ -120,10 +120,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       lineStyle: {
         type: 'dashed',
         width: 1,
-        color: getThemeColor('primary-300')
+        color: getThemeColor('primary-light')
       },
       itemStyle: {
-        borderColor: getThemeColor('primary-300'),
+        borderColor: getThemeColor('primary-light'),
         borderWidth: 3
       }
     },
@@ -141,10 +141,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       lineStyle: {
         width: 1,
-        color: getThemeColor('info-200')
+        color: getThemeColor('info-lighter')
       },
       itemStyle: {
-        borderColor: getThemeColor('info-200'),
+        borderColor: getThemeColor('info-lighter'),
         borderWidth: 3
       }
     },
