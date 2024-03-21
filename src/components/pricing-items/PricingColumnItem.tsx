@@ -31,7 +31,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
       />
       <div className="pricing-column-title-box mb-sm-5">
         <h3 className="mb-2">{pricing.title}</h3>
-        <p className="text-800 mb-0 pe-3">{pricing.description}</p>
+        <p className="text-body-secondary mb-0 pe-3">{pricing.description}</p>
       </div>
       <div className="d-flex align-items-center mb-4">
         {pricing.price === 0 ? (
@@ -57,7 +57,7 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
         className="fa-ul"
         style={{ '--fa-li-margin': '1.5em' } as CSSProperties}
       >
-        <li className="text-800 mb-2">
+        <li className="text-body-secondary mb-2">
           <span className="fa-li">
             <FontAwesomeIcon icon={faCheck} className="text-primary" />
           </span>
@@ -66,24 +66,39 @@ const PricingColumnItem = ({ pricing }: PricingColumnItemProps) => {
         {pricingColumnFeatures.map(item => (
           <li
             key={item.id}
-            className={classNames('mb-2 text-500', {
-              'text-900': pricing.features.includes(item.id)
+            className={classNames('mb-2', {
+              'text-body': pricing.features.includes(item.id),
+              'text-body-quaternary': !pricing.features.includes(item.id)
             })}
           >
             <span className="fa-li me-2 stack-icon-item">
               <span className="fa-layers fa-fw">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className={classNames('text-300', {
-                    'text-success': pricing.features.includes(item.id)
-                  })}
+                  className={classNames(
+                    {
+                      'text-body-quaternary text-opacity-50':
+                        !pricing.features.includes(item.id)
+                    },
+                    {
+                      'text-success': pricing.features.includes(item.id)
+                    }
+                  )}
                 />
                 <FontAwesomeIcon
                   icon={pricing.features.includes(item.id) ? faCheck : faTimes}
                   inverse
-                  className={classNames('text-600 fs-11', {
-                    'text-white': pricing.features.includes(item.id)
-                  })}
+                  className={classNames(
+                    'fs-11',
+                    {
+                      'text-body-tertiary': !pricing.features.includes(item.id)
+                    },
+                    {
+                      'text-white dark__text-dark': pricing.features.includes(
+                        item.id
+                      )
+                    }
+                  )}
                 />
               </span>
             </span>

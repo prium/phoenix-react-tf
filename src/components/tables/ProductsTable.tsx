@@ -20,7 +20,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="rounded-2 border d-inline-block"
+          className="rounded-2 border border-translucent d-inline-block"
         >
           <img src={productImage} alt="" width={53} />
         </Link>
@@ -40,7 +40,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
       return (
         <Link
           to="/apps/e-commerce/customer/product-details"
-          className="fw-semi-bold line-clamp-3"
+          className="fw-semibold line-clamp-3"
         >
           {product}
         </Link>
@@ -65,7 +65,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     },
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'fw-bold ps-4 text-700 text-end' }
+      cellProps: { className: 'fw-bold ps-4 text-body-tertiary text-end' }
     }
   },
   {
@@ -73,7 +73,9 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Category',
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4' },
-      cellProps: { className: 'fs-9 fw-semi-bold ps-4 text-600' }
+      cellProps: {
+        className: 'fs-9 fw-semibold ps-4 text-body-tertiary text-opacity-85'
+      }
     }
   },
   {
@@ -117,7 +119,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     },
     meta: {
       headerProps: { style: { width: 200 }, className: 'ps-4' },
-      cellProps: { className: 'ps-4 fw-semi-bold text-start' }
+      cellProps: { className: 'ps-4 fw-semibold text-start' }
     }
   },
   {
@@ -125,7 +127,7 @@ export const productsTablecolumns: ColumnDef<ProductsTableProductType>[] = [
     header: 'Published on',
     meta: {
       headerProps: { style: { width: 50 }, className: 'ps-4' },
-      cellProps: { className: 'text-600 ps-4' }
+      cellProps: { className: 'text-body-tertiary text-opacity-85 ps-4' }
     }
   },
   {

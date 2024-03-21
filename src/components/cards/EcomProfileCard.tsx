@@ -13,31 +13,31 @@ const EcomProfileCard = () => {
   return (
     <Card className="h-100">
       <Card.Body>
-        <div className="border-bottom border-dashed border-300 pb-4">
+        <div className="border-bottom border-dashed pb-4">
           <Row className="align-items-center g-3 g-sm-5 text-center text-sm-start">
             <Col xs={12} sm="auto">
               <AvatarUpload size="5xl" src={team15} />
             </Col>
             <Col xs={12} sm="auto" className="flex-1">
               <h3>Ansolo Lazinatov</h3>
-              <p className="text-800">Joined 3 months ago</p>
+              <p className="text-body-secondary">Joined 3 months ago</p>
               <div>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={faLinkedin}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
                 <a href="#!" className="me-2">
                   <FontAwesomeIcon
                     icon={faFacebook}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
                 <a href="#!">
                   <FontAwesomeIcon
                     icon={faTwitter}
-                    className="text-400 hover-primary"
+                    className="text-body-quaternary text-opacity-75 text-primary-hover"
                   />
                 </a>
               </div>
@@ -46,16 +46,16 @@ const EcomProfileCard = () => {
         </div>
         <div className="d-flex flex-between-center pt-4">
           <div>
-            <h6 className="mb-2 text-800">Total Spent</h6>
-            <h4 className="fs-7 text-1000 mb-0">$894</h4>
+            <h6 className="mb-2 text-body-secondary">Total Spent</h6>
+            <h4 className="fs-7 text-body-highlight mb-0">$894</h4>
           </div>
           <div className="text-end">
-            <h6 className="mb-2 text-800">Last Order</h6>
-            <h4 className="fs-7 text-1000 mb-0">1 week ago</h4>
+            <h6 className="mb-2 text-body-secondary">Last Order</h6>
+            <h4 className="fs-7 text-body-highlight mb-0">1 week ago</h4>
           </div>
           <div className="text-end">
-            <h6 className="mb-2 text-800">Total Orders</h6>
-            <h4 className="fs-7 text-1000 mb-0">97</h4>
+            <h6 className="mb-2 text-body-secondary">Total Orders</h6>
+            <h4 className="fs-7 text-body-highlight mb-0">97</h4>
           </div>
         </div>
       </Card.Body>

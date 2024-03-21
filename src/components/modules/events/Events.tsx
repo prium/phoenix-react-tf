@@ -16,7 +16,7 @@ const Events = ({ events, title, className }: EventsProps) => {
       <Row
         className={classNames(
           className,
-          'g-0 py-3 border-bottom border-dashed border-300 align-items-end justify-content-between'
+          'g-0 py-3 border-bottom border-dashed align-items-end justify-content-between'
         )}
       >
         <Col xs="auto">

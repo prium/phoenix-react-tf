@@ -28,11 +28,11 @@
       z-index: -1;
       width: 1.5rem;
       height: 1.5rem;
-      background: var(--#{$prefix}black);
+      background: var(--#{$prefix}emphasis-color);
       top: -10px;
       left: map_get($spacers, 4);
       transform: rotate(45deg);
-      background: var(--#{$prefix}white);
+      background: var(--#{$prefix}emphasis-bg);
       background: inherit;
       border-top-left-radius: 0.25rem;
       border-width: 1px 0 0 1px;
@@ -62,8 +62,8 @@
   .dropdown-item {
     font-weight: $font-weight-medium;
     @include hover-focus {
-      background-color: var(--#{$prefix}gray-200);
-      color: var(--#{$prefix}gray-1000);
+      background-color: var(--#{$prefix}secondary-bg);
+      color: var(--#{$prefix}body-highlight-color);
     }
   }
 }
@@ -78,7 +78,7 @@
   border: 0;
   margin-right: 0.6125rem;
   @include hover-focus {
-    background-color: var(--#{$prefix}gray-300);
+    background-color: var(--#{$prefix}tertiary-bg);
   }
 }
 .navbar-toggle-icon {
@@ -94,7 +94,6 @@
     height: 100%;
     border-radius: $border-radius;
     transition: $transition-base;
-    // background-color: var(--#{$prefix}gray-600);
     background-color: var(--#{$prefix}hamburger-menu-color);
   }
   &:after,
@@ -102,7 +101,6 @@
     content: '';
     position: absolute;
     height: 0.125rem;
-    // background-color: var(--#{$prefix}gray-600);
     background-color: var(--#{$prefix}hamburger-menu-color);
     left: 0;
     transition: $transition-base;
@@ -125,19 +123,19 @@
   .nav-link {
     padding: map-get($spacers, 2);
     border-radius: $border-radius;
-    color: var(--#{$prefix}gray-800);
+    color: var(--#{$prefix}secondary-color);
     &:visited,
     &:active,
     &:focus,
     &:hover {
-      background-color: var(--#{$prefix}gray-200);
-      color: var(--#{$prefix}dark);
+      background-color: var(--#{$prefix}secondary-bg);
+      color: var(--#{$prefix}nav-vertical-color-global);
     }
   }
   &.doc-nav {
     .nav-link {
       &.active {
-        background-color: var(--#{$prefix}gray-200);
+        background-color: var(--#{$prefix}secondary-bg);
       }
     }
   }
@@ -161,14 +159,28 @@
   .nav-item {
     white-space: nowrap;
     .nav-link {
-      color: var(--#{$prefix}gray-700);
-      font-size: map-get($font-sizes, '9');
-      font-weight: $font-weight-semi-bold;
+      color: var(--#{$prefix}tertiary-color);
+      font-size: map-get($font-sizes, 9);
+      font-weight: $font-weight-semibold;
       padding: 0;
       &.active,
       &:hover {
-        color: var(--#{$prefix}black);
+        color: var(--#{$prefix}emphasis-color);
       }
+    }
+  }
+}
+
+.nav-link{
+  &:hover,
+  &:focus{
+    color: var(--#{$prefix}nav-link-color);
+  }
+}
+.navbar-nav{
+  .nav-link{
+    &.show{
+      color: var(--#{$prefix}nav-link-color);
     }
   }
 }

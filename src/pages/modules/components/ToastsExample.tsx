@@ -26,14 +26,14 @@ const transcluentCode = `
   return (
     <div className='bg-dark p-3'>
       <Toast show={show} onClose={() => setShow(!show)}>
-        <Toast.Header className="text-bg-light" closeButton={false}>
+        <Toast.Header closeButton={false}>
           <strong className="me-auto">Bootstrap</strong>
           <small>11 mins ago</small>
           <Button className="ms-2 p-0 " onClick={() => setShow(false)} >
             <UilTimes className="fs-7"/>
           </Button>
         </Toast.Header>
-        <Toast.Body className="text-bg-light">Hello, world! This is a toast message.</Toast.Body>
+        <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
       </Toast>
     </div>
   );

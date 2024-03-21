@@ -16,7 +16,7 @@ const HeroHeader = () => {
           <Row className="align-items-center">
             <Col
               lg={6}
-              className="pt-8 pb-6 position-relative z-index-5 text-center text-lg-start"
+              className="pt-8 pb-6 position-relative z-5 text-center text-lg-start"
             >
               <h1 className="fs-3 fs-md-2 fs-xl-1 fw-black mb-4">
                 <span className="text-gradient-info me-3">Elegance</span> for{' '}

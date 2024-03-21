@@ -13,7 +13,7 @@ const FeatureFigma = () => {
 
   return (
     <section
-      className="py-12 position-relative overflow-hidden bg-100"
+      className="py-12 position-relative overflow-hidden bg-body-highlight"
       ref={containerRef}
     >
       <div

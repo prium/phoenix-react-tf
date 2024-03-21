@@ -45,9 +45,12 @@ const Error500 = () => {
                   className="img-fluid mb-6 w-50 w-lg-75 d-light-none"
                   alt=""
                 />
-                <h2 className="text-800 fw-bolder mb-3">Unknow error!</h2>
-                <p className="text-900 mb-5">
-                  But relax! Our cat is here to play you some music.
+                <h2 className="text-body-secondary fw-bolder mb-3">
+                  Internal Error!
+                </h2>
+                <p className="text-body mb-5">
+                  Uh-oh! It seems like our server is taking an unexpected coffee
+                  break.
                 </p>
                 <Button variant="primary" size="lg" as={Link} to="/">
                   Go Home

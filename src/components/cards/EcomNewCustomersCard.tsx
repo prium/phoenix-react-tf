@@ -14,7 +14,7 @@ const EcomNewCustomersCard = () => {
                 +26.5%
               </Badge>
             </h5>
-            <h6 className="text-700">Last 7 days</h6>
+            <h6 className="text-body-tertiary">Last 7 days</h6>
           </div>
           <h4>356</h4>
         </div>

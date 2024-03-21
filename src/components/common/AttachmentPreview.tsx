@@ -33,8 +33,8 @@ const AttachmentPreview = ({
           `btn-icon btn-icon-${size} rounded-3 flex-column me-2 position-relative`,
           {
             border: !attachment.preview,
-            'text-500 border-500': variant === 'primary',
-            'border-white text-white': variant === 'secondary'
+            'text-body-quaternary': variant === 'primary',
+            'border-light-subtle text-white': variant === 'secondary'
           }
         )}
       >
@@ -56,15 +56,15 @@ const AttachmentPreview = ({
 
         {handleRemove && (
           <button className="btn btn-x" onClick={handleRemove}>
-            <FontAwesomeIcon icon={faXmark} className="text-900" />
+            <FontAwesomeIcon icon={faXmark} className="text-body" />
           </button>
         )}
       </div>
 
       <div className="flex-1">
         <h6
-          className={classNames('text-900 line-clamp-1 text-break', {
-            'text-900': variant === 'primary',
+          className={classNames('line-clamp-1 text-break', {
+            'text-body': variant === 'primary',
             'text-white': variant === 'secondary'
           })}
         >
@@ -72,10 +72,10 @@ const AttachmentPreview = ({
         </h6>
         <div
           className={classNames(
-            'd-flex align-items-center lh-1 fw-semi-bold fs-10',
+            'd-flex align-items-center lh-1 fw-semibold fs-10',
             {
-              'text-700': variant == 'primary',
-              'text-200': variant == 'secondary'
+              'text-body-tertiary': variant == 'primary',
+              'text-light': variant == 'secondary'
             }
           )}
         >
@@ -84,7 +84,7 @@ const AttachmentPreview = ({
             <>
               <FontAwesomeIcon
                 icon={faCircle}
-                className="text-500"
+                className="text-body-quaternary"
                 transform="shrink-12"
               />
               <p className="mb-0 text-nowrap">{attachment.date}</p>

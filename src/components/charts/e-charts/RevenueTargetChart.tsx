@@ -13,13 +13,13 @@ const data1 = [42000, 35000, 35000, 40000];
 const data2 = [30644, 33644, 28644, 38644];
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary'), getThemeColor('gray-300')],
+  color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -35,7 +35,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       interval: 3,
       showMinLabel: true,
       showMaxLabel: false,
-      color: getThemeColor('gray-500'),
+      color: getThemeColor('quaternary-color'),
       align: 'left',
       fontFamily: 'Nunito Sans',
       fontWeight: 400,
@@ -46,7 +46,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     show: true,
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisTick: false,
@@ -62,14 +62,14 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       interval: 5,
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },
     axisLabel: {
       show: true,
       margin: 21,
-      color: getThemeColor('gray-900')
+      color: getThemeColor('body-color')
     }
   },
   series: [
@@ -84,15 +84,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       showBackground: true,
       backgroundStyle: {
-        color: getThemeColor('gray-100')
+        color: getThemeColor('body-highlight-bg')
       },
       barWidth: '30px',
       barGap: '-100%',
       data: data1,
       itemStyle: {
         borderWidth: 4,
-        color: getThemeColor('gray-200'),
-        borderColor: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg'),
+        bordercolor: getThemeColor('secondary-bg')
       }
     },
     {
@@ -111,14 +111,14 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           `$${value.value.toLocaleString()}`
       },
       backgroundStyle: {
-        color: getThemeColor('gray-100')
+        color: getThemeColor('body-highlight-bg')
       },
       barWidth: '30px',
       data: data2,
       itemStyle: {
         borderWidth: 4,
-        color: getThemeColor('primary-300'),
-        borderColor: getThemeColor('gray-200')
+        color: getThemeColor('primary-light'),
+        bordercolor: getThemeColor('secondary-bg')
       }
     }
   ],

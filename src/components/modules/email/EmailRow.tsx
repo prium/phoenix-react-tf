@@ -19,7 +19,7 @@ interface EmailRowProps {
 const EmailRow = ({ email, index }: EmailRowProps) => {
   const { getRowCheckboxProps } = useBulkSelect();
   return (
-    <div className="border-bottom hover-actions-trigger py-3">
+    <div className="border-bottom border-translucent hover-actions-trigger py-3">
       <Row className="gx-2">
         <Col xs="auto">
           <div className="d-flex flex-column flex-sm-row">
@@ -45,8 +45,8 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
           <Link
             to="#!"
             className={classNames('fs-9 inbox-link', {
-              'text-900 fw-semi-bold': email.read_at,
-              'text-1100 fw-bold': !email.read_at
+              'text-body fw-semibold': email.read_at,
+              'text-body-emphasis fw-bold': !email.read_at
             })}
           >
             {email.sender.name}
@@ -95,13 +95,13 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
         <Link to="/apps/email/email-detail" className="d-block inbox-link">
           <span
             className={classNames('fs-9 line-clamp-1', {
-              'text-1000': email.read_at,
-              'text-1100': !email.read_at
+              'text-body-highlight': email.read_at,
+              'text-body-emphasis': !email.read_at
             })}
           >
             {email.subject}
           </span>
-          <p className="fs-9 ps-0 text-700 mb-0 line-clamp-2">
+          <p className="fs-9 ps-0 text-body-tertiary mb-0 line-clamp-2">
             {email.details}
           </p>
         </Link>
@@ -109,7 +109,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
         {email.attachments?.map(attachment => (
           <a
             href="#!"
-            className="d-inline-flex align-items-center border rounded-pill px-3 py-1 me-2 mt-2 inbox-link"
+            className="d-inline-flex align-items-center border border-translucent rounded-pill px-3 py-1 me-2 mt-2 inbox-link"
             key={attachment.id}
           >
             <FontAwesomeIcon
@@ -119,7 +119,7 @@ const EmailRow = ({ email, index }: EmailRowProps) => {
                 'text-primary': ['music'].includes(attachment.format)
               })}
             />
-            <span className="ms-2 fw-bold fs-10 text-900">
+            <span className="ms-2 fw-bold fs-10 text-body">
               {attachment.fileName}
             </span>
           </a>

@@ -10,13 +10,13 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Features = () => {
   return (
-    <section className="bg-soft pt-15 pb-18" id="features">
+    <section className="bg-body pt-15 pb-18" id="features">
       <div className="container-small px-lg-7 px-xxl-3">
-        <div className="position-relative z-index-2">
+        <div className="position-relative z-2">
           <Row className="mb-12">
             <Col lg={6} className="text-center text-lg-start pe-xxl-3">
               <h4 className="text-primary fw-bolder mb-4">Features</h4>
-              <h2 className="mb-3 text-black lh-base">
+              <h2 className="mb-3 text-body-emphasis lh-base">
                 A fully integrated suite
                 <br />
                 of payments products
@@ -43,7 +43,7 @@ const Features = () => {
             </Col>
             <Col sm={6} lg={3} className="mt-7 text-center text-lg-start">
               <div className="h-100 d-flex flex-column justify-content-between">
-                <div className="border-start-lg border-dashed ps-4">
+                <div className="border-start-lg border-dashed border-translucent ps-4">
                   <img
                     className="mb-4"
                     src={boltIlls}
@@ -53,7 +53,7 @@ const Features = () => {
                   />
                   <div>
                     <h5 className="fw-bolder mb-2">Lightning Speed</h5>
-                    <p className="fw-semi-bold lh-sm">
+                    <p className="fw-semibold lh-sm">
                       Present everything you need in one place within minutes!
                       Grow with Phoenix!
                     </p>
@@ -67,7 +67,7 @@ const Features = () => {
             </Col>
             <Col sm={6} lg={3} className="mt-7 text-center text-lg-start">
               <div className="h-100 d-flex flex-column">
-                <div className="border-start-lg border-dashed ps-4">
+                <div className="border-start-lg border-dashed border-translucent ps-4">
                   <img
                     className="mb-4"
                     src={pie}
@@ -77,7 +77,7 @@ const Features = () => {
                   />
                   <div>
                     <h5 className="fw-bolder mb-2">All-in-one solution</h5>
-                    <p className="fw-semi-bold lh-sm">
+                    <p className="fw-semibold lh-sm">
                       Show your production and growth graph in one place with
                       Phoenix!
                     </p>

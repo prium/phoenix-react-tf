@@ -19,7 +19,7 @@ const TableRow = ({ rowData }: { rowData: AddressTableDataType }) => {
       </td>
       <td className="py-2 fw-bold lh-sm">:</td>
       <td className="py-2 px-3" style={{ maxWidth: 260 }}>
-        <h5 className="lh-lg fw-normal text-800">{rowData.value}</h5>
+        <h5 className="lh-lg fw-normal text-body-secondary">{rowData.value}</h5>
       </td>
     </tr>
   );

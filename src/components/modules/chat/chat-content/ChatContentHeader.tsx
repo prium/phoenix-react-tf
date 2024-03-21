@@ -31,14 +31,14 @@ const ChatContentHeader = () => {
           <Card.Header className="p-3 p-md-4 d-flex flex-between-center">
             <div className="d-flex align-items-center">
               <Button
-                className="ps-0 pe-2 text-700 d-sm-none"
+                className="ps-0 pe-2 text-body-tertiary d-sm-none"
                 onClick={() => setShowUserListOffcanvas(true)}
               >
                 <FontAwesomeIcon icon={faChevronLeft} />
               </Button>
               <div className="d-flex flex-column flex-md-row align-items-md-center">
                 <Button
-                  className="fs-7 fw-semi-bold text-1100 d-flex align-items-center p-0 me-3 text-start"
+                  className="fs-7 fw-semibold text-body-emphasis d-flex align-items-center p-0 me-3 text-start"
                   onClick={() => setShowConversationDetails(true)}
                 >
                   <span>{firstName}</span>
@@ -53,7 +53,8 @@ const ChatContentHeader = () => {
                     className={classNames('fs-11 me-2', {
                       'text-success':
                         currentConversation.user.status === 'online',
-                      'text-300': currentConversation.user.status === 'offline'
+                      'text-light':
+                        currentConversation.user.status === 'offline'
                     })}
                   />
                   {currentConversation.user.status === 'online'

@@ -11,14 +11,14 @@ const FunFacts = () => {
     <div className="pb-15">
       <div className="position-relative py-18">
         <div
-          className="bg-holder z-index-1 world-map-bg"
+          className="bg-holder z-1 world-map-bg"
           style={{
             transform: 'skew(0,-10deg)',
             backgroundImage: `url(${bg13})`
           }}
         />
         <div
-          className="bg-holder z-index-2 opacity-25"
+          className="bg-holder z-2 opacity-25"
           style={{
             backgroundImage: `url(${bgRight21})`,
             backgroundSize: 'auto',
@@ -26,7 +26,7 @@ const FunFacts = () => {
           }}
         />
         <div
-          className="bg-holder z-index-2 mt-9 opacity-25"
+          className="bg-holder z-2 mt-9 opacity-25"
           style={{
             backgroundImage: `url(${bgLeft21})`,
             backgroundSize: 'auto',
@@ -34,8 +34,11 @@ const FunFacts = () => {
           }}
         />
 
-        <section className="overflow-hidden z-index-2">
-          <div className="container-small light px-lg-7 px-xxl-3">
+        <section className="overflow-hidden z-2">
+          <div
+            className="container-small px-lg-7 px-xxl-3"
+            data-bs-theme="light"
+          >
             <div className="position-relative">
               <Row className="row mb-6">
                 <div className="col-xl-6 text-center text-md-start">

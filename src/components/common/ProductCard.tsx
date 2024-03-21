@@ -14,10 +14,10 @@ const ProductCard = ({ product }: { product: ProductType }) => {
     <div className="position-relative text-decoration-none product-card h-100">
       <div className="d-flex flex-column justify-content-between h-100">
         <div>
-          <div className="border border-1 rounded-3 position-relative mb-3">
+          <div className="border border-translucent rounded-3 position-relative mb-3">
             <Button
               variant={product.wishListed ? 'primary' : 'outline-primary'}
-              className="rounded-circle p-0 d-flex flex-center btn-wish z-index-2 d-toggle-container"
+              className="rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container"
             >
               {product.wishListed ? (
                 <FontAwesomeIcon icon={faHeart} />
@@ -36,7 +36,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </Badge>
             )}
           </div>
-          <Link to="#!" className="stretched-link text-decoration-none">
+          <Link to="#!" className="stretched-link">
             <h6 className="mb-2 lh-sm line-clamp-3 product-name">
               {product.name}
             </h6>
@@ -45,7 +45,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <p className="fs-9">
               <Rating readonly initialValue={product.rating} />
               {product.rated && (
-                <span className="text-500 fw-semi-bold ms-1">
+                <span className="text-body-quaternary fw-semibold ms-1">
                   ({product.rated} people rated)
                 </span>
               )}
@@ -68,15 +68,15 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             <>
               {product.price ? (
                 <div className="d-flex align-items-center mb-1">
-                  <p className="me-2 text-900 text-decoration-line-through mb-0">
+                  <p className="me-2 text-body text-decoration-line-through mb-0">
                     {currencyFormat(product.price)}
                   </p>
-                  <h3 className="text-1100 mb-0">
+                  <h3 className="text-body-emphasis mb-0">
                     {currencyFormat(product.salePrice)}
                   </h3>
                 </div>
               ) : (
-                <h3 className="text-1100">
+                <h3 className="text-body-emphasis">
                   {currencyFormat(product.salePrice)}
                 </h3>
               )}
@@ -85,9 +85,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 
           {product.colors && (
             <p
-              className={classNames('text-700 fw-semi-bold fs-9 lh-1', {
-                'mb-0': !product.dealEndTime
-              })}
+              className={classNames(
+                'text-body-tertiary fw-semibold fs-9 lh-1',
+                {
+                  'mb-0': !product.dealEndTime
+                }
+              )}
             >
               {product.colors} colors
             </p>

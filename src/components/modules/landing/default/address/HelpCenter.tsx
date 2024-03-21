@@ -20,7 +20,8 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilPhone
               size={40}
-              className="text-primary fs-4 light z-index-1 ms-2"
+              className="text-primary fs-4 z-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">
@@ -33,13 +34,14 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilEnvelope
               size={40}
-              className="text-primary light z-index-1 ms-2"
+              className="text-primary z-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">
             <Link
               to="mailto:phoenix@email.com"
-              className="fw-semi-bold text-900"
+              className="fw-semibold text-body"
             >
               phoenix@email.com
             </Link>
@@ -49,11 +51,12 @@ const HelpCenter = () => {
           <div className="icon-wrapper shadow-info">
             <UilMapMarker
               size={40}
-              className="text-primary light z-index-1 ms-2"
+              className="text-primary z-1 ms-2"
+              data-bs-theme="light"
             />
           </div>
           <div className="flex-1 ms-3">
-            <Link to="#!" className="fw-semi-bold text-900">
+            <Link to="#!" className="fw-semibold text-body">
               39163 Amir Drive Suite 802
             </Link>
           </div>

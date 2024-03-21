@@ -27,8 +27,8 @@ const TodoItemDetailsModal = ({
     <Modal show={!!item} onHide={handleClose} size="xl">
       {item && (
         <>
-          <Modal.Header className="px-6 py-5 border-300 pe-sm-5 px-md-6 dark__bg-1100">
-            <h3 className="text-1000 fw-bolder mb-0">{item.task}</h3>
+          <Modal.Header className="px-6 py-5 pe-sm-5 px-md-6 dark__bg-gray-1100">
+            <h3 className="text-body-highlight fw-bolder mb-0">{item.task}</h3>
             <Button
               variant="phoenix-secondary"
               onClick={handleClose}
@@ -37,13 +37,13 @@ const TodoItemDetailsModal = ({
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </Modal.Header>
-          <Modal.Body className="bg-100 px-5 px-sm-6 py-0 rounded-bottom">
+          <Modal.Body className="bg-body-highlight px-5 px-sm-6 py-0 rounded-bottom">
             <Row className="gx-14">
-              <Col xs={12} lg={7} className="border-end-lg border-300">
+              <Col xs={12} lg={7} className="border-end-lg">
                 <div className="mt-6 mb-7">
                   <div className="mb-7">
                     <div className="d-flex align-items-center mb-3">
-                      <h4 className="text-900 me-3">Description</h4>
+                      <h4 className="text-body me-3">Description</h4>
                       <Button
                         variant="link"
                         className="text-decoration-none p-0"
@@ -51,7 +51,7 @@ const TodoItemDetailsModal = ({
                         <FontAwesomeIcon icon={faPen} />
                       </Button>
                     </div>
-                    <p className="text-1000 mb-0">
+                    <p className="text-body-highlight mb-0">
                       The female circus horse-rider is a recurring subject in
                       Chagall’s work. In 1926 the art dealer Ambroise Vollard
                       invited Chagall to make a project based on the circus.
@@ -70,7 +70,7 @@ const TodoItemDetailsModal = ({
                           key={subTask.task}
                           task={subTask}
                           className={classNames({
-                            'border-top': index === 0
+                            'border-top border-translucent': index === 0
                           })}
                         />
                       ))}
@@ -89,7 +89,7 @@ const TodoItemDetailsModal = ({
                           key={attachment.name}
                           attachment={attachment}
                           className={classNames({
-                            'border-top': index === 0
+                            'border-top border-translucent': index === 0
                           })}
                         />
                       ))}
@@ -108,19 +108,21 @@ const TodoItemDetailsModal = ({
               </Col>
               <Col xs={12} lg={5}>
                 <div className="mt-lg-6 mb-5 mb-sm-6">
-                  <h4 className="mb-5 text-black">Others Information</h4>
-                  <h5 className="text-1000 mb-2">Status</h5>
+                  <h4 className="mb-5 text-body-emphasis">
+                    Others Information
+                  </h4>
+                  <h5 className="text-body-highlight mb-2">Status</h5>
                   <Form.Select className="mb-4">
                     <option>Select</option>
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
                     <option value="closed">Closed</option>
                   </Form.Select>
-                  <h5 className="text-1000 mb-2">Due Date</h5>
+                  <h5 className="text-body-highlight mb-2">Due Date</h5>
                   <div className="mb-4">
                     <DatePicker placeholder="Set the due date" />
                   </div>
-                  <h5 className="text-1000 mb-2">Reminder</h5>
+                  <h5 className="text-body-highlight mb-2">Reminder</h5>
                   <div className="mb-4">
                     <DatePicker
                       placeholder="Set the due date"
@@ -131,13 +133,13 @@ const TodoItemDetailsModal = ({
                       }}
                       icon={
                         <UilBellSchool
-                          className="flatpickr-icon text-700"
+                          className="flatpickr-icon text-body-tertiary"
                           size={16}
                         />
                       }
                     />
                   </div>
-                  <h5 className="text-1000 mb-2">Tag</h5>
+                  <h5 className="text-body-highlight mb-2">Tag</h5>
                   <ReactSelect
                     options={[
                       {
@@ -162,7 +164,7 @@ const TodoItemDetailsModal = ({
                     placeholder="Select organizer"
                     icon={
                       <UilTagAlt
-                        className="react-select-icon text-700"
+                        className="react-select-icon text-body-tertiary"
                         size={16}
                       />
                     }

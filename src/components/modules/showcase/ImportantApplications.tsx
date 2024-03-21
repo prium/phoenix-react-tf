@@ -51,7 +51,7 @@ const ImportantApplications = () => {
                   className="text-illustration-underline"
                 />
               </span>
-              <span className="text-1000 fw-normal ms-2">
+              <span className="text-body-highlight fw-normal ms-2">
                 you’re definitely gonna need
               </span>
             </h2>
@@ -83,8 +83,12 @@ const ImportantApplications = () => {
                         )}
                       </div>
                     </div>
-                    <h4 className="text-1000 mb-3">{application.title}</h4>
-                    <p className="text-700 lh-sm pb-4">{application.details}</p>
+                    <h4 className="text-body-highlight mb-3">
+                      {application.title}
+                    </h4>
+                    <p className="text-body-tertiary lh-sm pb-4">
+                      {application.details}
+                    </p>
                     <Button
                       as={Link}
                       target="_blank"

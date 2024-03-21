@@ -1,9 +1,9 @@
 .timeline-vertical {
   .timeline-item {
     .timeline-separator {
-      padding-left: map-get($spacers, 3);
+      margin-right: map-get($spacers, 3);
       @include media-breakpoint-up(md) {
-        padding-left: 0;
+        margin-right: 0;
       }
       .timeline-bar {
         position: absolute;
@@ -36,15 +36,15 @@
     &:hover {
       .timeline-separator {
         .icon-item {
-          background: var(--#{$prefix}gray-100) !important;
+          background: var(--#{$prefix}body-highlight-bg) !important;
           border-color: var(--#{$prefix}gray-300) !important;
         }
       }
       .timeline-item-title {
-        color: var(--#{$prefix}gray-1100) !important;
+        color: var(--#{$prefix}emphasis-color) !important;
       }
       .timeline-time {
-        color: var(--#{$prefix}gray-1100) !important;
+        color: var(--#{$prefix}emphasis-color) !important;
       }
     }
     &:not(:last-child) {

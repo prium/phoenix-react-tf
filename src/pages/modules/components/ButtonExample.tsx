@@ -33,16 +33,16 @@ import Button from 'components/base/Button';
 </div>
 `;
 
-const softButtonsCode = `
+const subtleButtonsCode = `
 import Button from 'components/base/Button';
 
 <div className="d-flex gap-2">
-  <Button variant="soft-primary"> Primary </Button>
-  <Button variant="soft-secondary"> Secondary </Button>
-  <Button variant="soft-success"> Success </Button>
-  <Button variant="soft-danger"> Danger </Button>
-  <Button variant="soft-warning"> Warning </Button>
-  <Button variant="soft-info"> Info </Button>
+  <Button variant="subtle-primary"> Primary </Button>
+  <Button variant="subtle-secondary"> Secondary </Button>
+  <Button variant="subtle-success"> Success </Button>
+  <Button variant="subtle-danger"> Danger </Button>
+  <Button variant="subtle-warning"> Warning </Button>
+  <Button variant="subtle-info"> Info </Button>
 </div>
 `;
 
@@ -404,8 +404,8 @@ const sideNavItems: SideNavItem[] = [
     label: 'Solid Buttons'
   },
   {
-    to: 'soft_buttons',
-    label: 'Soft Buttons'
+    to: 'subtle',
+    label: 'Subtle Buttons'
   },
   {
     to: 'outline_buttons',
@@ -497,8 +497,8 @@ const ButtonExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Soft Buttons" />
-          <PhoenixDocCard.Body code={softButtonsCode} />
+          <PhoenixDocCard.Header title="Subtle Buttons" />
+          <PhoenixDocCard.Body code={subtleButtonsCode} />
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">

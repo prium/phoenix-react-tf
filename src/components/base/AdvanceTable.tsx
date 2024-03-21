@@ -66,7 +66,7 @@ const AdvanceTable = ({
         {hasFooter && (
           <tfoot>
             {getFooterGroups().map(footerGroup => (
-              <tr key={footerGroup.id} className="border-0">
+              <tr key={footerGroup.id} className="border-0 border-translucent">
                 {footerGroup.headers.map(header => {
                   return (
                     <th

@@ -58,9 +58,9 @@ const KanbanContent = () => {
             </PhoenixDroppable>
           ))}
 
-          <div className="kanban-column scrollbar position-relative bg-transparent d-flex flex-column h-100 flex-center hover-bg-100">
+          <div className="kanban-column scrollbar position-relative bg-transparent d-flex flex-column h-100 flex-center bg-body-hover">
             <Button
-              className="stretched-link btn-icon btn-icon bg-200 rounded-circle mb-1"
+              className="stretched-link btn-icon btn-icon bg-body-secondary rounded-circle mb-1"
               onClick={() => {
                 kanbanDispatch({
                   type: TOGGLE_ADD_LIST_MODAL,
@@ -68,9 +68,12 @@ const KanbanContent = () => {
                 });
               }}
             >
-              <FontAwesomeIcon icon={faPlus} className="text-800 fs-8" />
+              <FontAwesomeIcon
+                icon={faPlus}
+                className="text-body-secondary fs-8"
+              />
             </Button>
-            <h5 className="text-800">Add another list</h5>
+            <h5 className="text-body-secondary">Add another list</h5>
           </div>
         </div>
       </DragDropContext>

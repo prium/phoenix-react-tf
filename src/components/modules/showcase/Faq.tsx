@@ -11,10 +11,13 @@ const Faq = () => {
             <h2 className="text-center mb-6 mb-sm-10">
               Frequently asked questions
             </h2>
-            <Accordion className="border-top" defaultActiveKey="0">
+            <Accordion
+              className="border-to border-translucentp"
+              defaultActiveKey="0"
+            >
               {showcaseFaqs.map((faq, index) => (
                 <Accordion.Item
-                  className={classNames('border-bottom border-200')}
+                  className={classNames('border-bottom border-translucent')}
                   eventKey={String(index)}
                   key={faq.id}
                 >

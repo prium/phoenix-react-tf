@@ -8,9 +8,9 @@ const Location = () => {
   return (
     <div className="mb-8">
       <h3 className="mb-5 mb-xl-4">Location</h3>
-      <div className="mb-3 mb-xl-4 location-map border overflow-hidden">
+      <div className="mb-3 mb-xl-4 location-map border border-translucent overflow-hidden">
         <Mapbox
-          className="border border-300 rounded-3"
+          className="border rounded-3"
           options={{
             center: [-74.0020158, 40.7228022],
             zoom: 14,
@@ -21,10 +21,10 @@ const Location = () => {
       <Row className="flex-between-center gx-0 gy-3">
         <Col xs={12} sm="auto" className="me-1">
           <div className="d-flex">
-            <h5 className="fw-bold text-1000 me-2 mb-0">
+            <h5 className="fw-bold text-body-highlight me-2 mb-0">
               James Tiberius Auditorium
             </h5>
-            <p className="mb-0 text-1000 fs-9">Vancouver</p>
+            <p className="mb-0 text-body-highlight fs-9">Vancouver</p>
           </div>
         </Col>
         <Col xs={12} sm="auto" xl={12}>

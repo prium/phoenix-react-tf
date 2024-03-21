@@ -17,7 +17,7 @@ const Settings = () => {
           <SocialSettingsSideBar />
         </Col>
         <Col xs={12} xl={8}>
-          <div className="border-bottom border-300 mb-4">
+          <div className="border-bottom mb-4">
             <SettingsPersonalInfo />
             <Row className="gx-3 mb-6 gy-6 gy-sm-3">
               <Col xs={12} sm={6}>
@@ -37,16 +37,16 @@ const Settings = () => {
           </div>
           <Row className="gy-5">
             <Col xs={12} md={6}>
-              <h4 className="text-black">Transfer Ownership</h4>
-              <p className="text-700">
+              <h4 className="text-body-emphasis">Transfer Ownership</h4>
+              <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.
               </p>
               <Button variant="phoenix-warning">Transfer</Button>
             </Col>
             <Col xs={12} md={6}>
-              <h4 className="text-black">Account Deletion</h4>
-              <p className="text-700">
+              <h4 className="text-body-emphasis">Account Deletion</h4>
+              <p className="text-body-tertiary">
                 Transfer this account to another person or to a company
                 repository.
               </p>

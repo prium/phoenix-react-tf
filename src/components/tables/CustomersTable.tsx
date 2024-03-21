@@ -15,7 +15,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
       return (
         <Link
           to="/apps/e-commerce/admin/customer-details"
-          className="d-flex align-items-center text-1100"
+          className="d-flex align-items-center text-body-emphasis"
         >
           <Avatar src={avatar} size="m" />
           <p className="mb-0 ms-3 fw-bold">{name}</p>
@@ -33,7 +33,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link to={`mailto:${email}`} className="fw-semi-bold">
+        <Link to={`mailto:${email}`} className="fw-semibold">
           {email}
         </Link>
       );
@@ -48,7 +48,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Orders',
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end px-1' },
-      cellProps: { className: 'fw-semi-bold text-1000 text-end px-1' }
+      cellProps: { className: 'fw-semibold text-body-highlight text-end px-1' }
     }
   },
   {
@@ -57,7 +57,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.totalSpent),
     meta: {
       headerProps: { style: { width: '10%' }, className: 'text-end ps-3 pe-1' },
-      cellProps: { className: 'fw-bold text-1100 ps-3 text-end pe-1' }
+      cellProps: { className: 'fw-bold text-body-emphasis ps-3 text-end pe-1' }
     }
   },
   {
@@ -65,7 +65,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'City',
     meta: {
       headerProps: { style: { width: '25%' }, className: 'ps-7' },
-      cellProps: { className: 'ps-7 text-1000 white-space-nowrap' }
+      cellProps: { className: 'ps-7 text-body-highlight white-space-nowrap' }
     }
   },
   {
@@ -73,7 +73,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
     header: 'Last seen',
     meta: {
       headerProps: { style: { width: '15%' }, className: 'text-end px-1' },
-      cellProps: { className: 'text-700 text-end px-1' }
+      cellProps: { className: 'text-body-tertiary text-end px-1' }
     }
   },
   {
@@ -84,7 +84,7 @@ export const customersTablecolumns: ColumnDef<Customer>[] = [
         style: { width: '10%', minWidth: 150 },
         className: 'text-end'
       },
-      cellProps: { className: 'text-700 text-end pe-0' }
+      cellProps: { className: 'text-body-tertiary text-end pe-0' }
     }
   }
 ];

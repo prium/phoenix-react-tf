@@ -51,7 +51,7 @@ const InteractionsExample = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Pointer events">
-            <p className="mb-0 text-800">
+            <p className="mb-0 text-body-secondary">
               Bootstrap provides <code>.pe-none</code> and <code>.pe-auto</code>{' '}
               classes to prevent or add element interactions.
             </p>

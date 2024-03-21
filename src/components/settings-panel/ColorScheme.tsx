@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import defaultLight from 'assets/img/generic/default-light.png';
 import defaultDark from 'assets/img/generic/default-dark.png';
+import auto from 'assets/img/generic/auto.png';
 import RadioItem from './RadioItem';
 import { ThemeVariant } from 'config';
 
@@ -23,7 +24,7 @@ const ColorScheme = () => {
     <div className="setting-panel-item mt-0">
       <h5 className="setting-panel-item-title">Color Scheme</h5>
       <Row className="gx-2">
-        <Col xs={6}>
+        <Col xs={4}>
           <RadioItem
             label="Light"
             name="theme"
@@ -33,13 +34,23 @@ const ColorScheme = () => {
             handleChange={handleThemeChange}
           />
         </Col>
-        <Col xs={6}>
+        <Col xs={4}>
           <RadioItem
             label="Dark"
             name="theme"
             value="dark"
             thumb={defaultDark}
             checked={theme === 'dark'}
+            handleChange={handleThemeChange}
+          />
+        </Col>
+        <Col xs={4}>
+          <RadioItem
+            label="Auto"
+            name="theme"
+            value="auto"
+            thumb={auto}
+            checked={theme === 'auto'}
             handleChange={handleThemeChange}
           />
         </Col>

@@ -14,7 +14,7 @@
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-  // background-color: var(--#{$prefix}gray-1100);
+  // background-color: var(--#{$prefix}emphasis-color);
   background-color: var(--#{$prefix}docs-language-bg);
 }
 code.language-html:first-child {
@@ -23,9 +23,8 @@ code.language-html:first-child {
 
 code[class*='language-'],
 pre[class*='language-'] {
-  // color: var(--#{$prefix}gray-600);
   font-family: $font-family-monospace;
-  font-size: map-get($font-sizes, '9');
+  font-size: map-get($font-sizes, 9);
   border-radius: 0;
 }
 pre[class*='language-'] {
@@ -46,7 +45,7 @@ pre[class*='language-'] {
 }
 
 .components-nav {
-  font-family: $font-family-sans-serif;
+  font-family: var(--#{$prefix}font-sans-serif);
   font-size: 0.85rem;
 }
 
@@ -57,7 +56,7 @@ pre[class*='language-'] {
 |   Borders
 -----------------------------------------------*/
 .component-example {
-  font-family: $font-family-sans-serif;
+  font-family: var(--#{$prefix}font-sans-serif);
   [class^='border'] {
     display: inline-flex;
     align-items: center;
@@ -65,7 +64,7 @@ pre[class*='language-'] {
     width: 8rem;
     height: 8rem;
     margin: 0.75rem;
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
   }
 }
 
@@ -82,11 +81,11 @@ pre[class*='language-'] {
   }
 
   [class^='border'] {
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
   }
 
   [class^='rounded-'] {
-    background-color: var(--#{$prefix}gray-200);
+    background-color: var(--#{$prefix}secondary-bg);
   }
 }
 
@@ -126,7 +125,7 @@ pre[class*='language-'] {
   [class^='overflow-'] {
     max-height: 70px;
     max-width: 22%;
-    background-color: var(--#{$prefix}gray-100);
+    background-color: var(--#{$prefix}body-highlight-bg);
     display: inline-block;
     padding: map-get($spacers, 3);
     margin-right: map-get($spacers, 2);

@@ -15,7 +15,7 @@ const Tasks = () => {
         <div>
           <Button
             variant="link"
-            className="p-0 fs-9 text-700 text-decoration-none me-3"
+            className="p-0 fs-9 text-body-tertiary text-decoration-none me-3"
             startIcon={
               <FontAwesomeIcon icon={faFilter} className="fs-10 me-1" />
             }
@@ -35,7 +35,7 @@ const Tasks = () => {
         <TodoListItem
           key={todo.task}
           todo={todo}
-          className={classNames({
+          className={classNames('border-translucent', {
             'border-top': index === 0,
             'border-bottom-0': index === leadTasks.length - 1
           })}

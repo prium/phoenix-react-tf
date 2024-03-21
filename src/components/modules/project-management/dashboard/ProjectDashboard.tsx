@@ -5,7 +5,9 @@ const ProjectDashboard = () => {
   return (
     <>
       <h3>Projects</h3>
-      <p className="text-700 lh-sm mb-4">Brief summary of all projects</p>
+      <p className="text-body-tertiary lh-sm mb-4">
+        Brief summary of all projects
+      </p>
       <ProjectDashboardTable />
     </>
   );

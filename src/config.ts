@@ -1,4 +1,4 @@
-export type ThemeVariant = 'light' | 'dark';
+export type ThemeVariant = 'light' | 'dark' | 'auto';
 export type NavPositionVariant = 'horizontal' | 'vertical' | 'combo' | 'dual';
 export type NavTopShapeVariant = 'default' | 'slim';
 export type NavbarAppearanceVariant = 'default' | 'darker';
@@ -11,6 +11,7 @@ export interface Config {
   navbarPosition: NavPositionVariant;
   navbarTopShape: NavTopShapeVariant;
   isRTL: boolean;
+  isDark: boolean;
   bodyClass?: string;
   isChatWidgetVisible: boolean;
 }
@@ -24,5 +25,6 @@ export const initialConfig: Config = {
   navbarPosition: 'vertical',
   navbarTopShape: 'default',
   isRTL: false,
+  isDark: false,
   isChatWidgetVisible: true
 };

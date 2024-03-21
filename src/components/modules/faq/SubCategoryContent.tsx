@@ -31,7 +31,7 @@ const SubCategoryContent = () => {
               <FaqItem key={item.question} item={item} type="topFaq" />
             ))}
           </ul>
-          <hr className="text-300 mt-6" />
+          <hr className="border-top mt-6" />
           <ul className="faq-list list-inline">
             {category.faqs.map(item => (
               <FaqItem key={item.question} item={item} />
@@ -51,8 +51,8 @@ const FaqItem = ({ item, type }: { item: FaqType; type?: string }) => {
         className={classNames({ 'fs-8 text-primary me-2': type === 'topFaq' })}
       />
       <div>
-        <h4 className="mb-3 text-1000">{item.question}</h4>
-        <p className="mb-0 text-700">{item.answer}</p>
+        <h4 className="mb-3 text-body-highlight">{item.question}</h4>
+        <p className="mb-0 text-body-tertiary">{item.answer}</p>
       </div>
     </li>
   );

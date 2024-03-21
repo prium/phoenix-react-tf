@@ -27,7 +27,7 @@ const ChatWidget = () => {
           'show-chat': isOpenChat
         })}
       >
-        <Card className="bg-white chat">
+        <Card className="bg-body-emphasis chat">
           <Card.Header className="d-flex flex-between-center px-4 py-2 border-bottom">
             <h5 className="mb-0 d-flex align-items-center gap-2">
               Demo widget
@@ -54,9 +54,12 @@ const ChatWidget = () => {
         </Card>
       </div>
       <Button
-        className={classNames('p-0 border border-200 btn-support-chat', {
-          'btn-chat-close': isOpenChat
-        })}
+        className={classNames(
+          'p-0 border border-translucent btn-support-chat',
+          {
+            'btn-chat-close': isOpenChat
+          }
+        )}
         onClick={() => setIsOpenChat(!isOpenChat)}
       >
         <span className="fs-8 btn-text text-primary text-nowrap">

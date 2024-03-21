@@ -1,4 +1,33 @@
+import changelogListElips from './changelogList';
+
 export default [
+  {
+    version: '1.3.0',
+    title: 'Elpis',
+    publishDate: '22 Nov, 2023',
+    alertText:
+      'This is a major update. Please backup your project before upgrading to the latest version',
+    logs: {
+      new: [
+        'New theme color shades.',
+        'DOC : Color page',
+        `Utility Classes ${changelogListElips}`
+      ],
+      update: [
+        'Bootstrap to 5.3.2',
+        'All SCSS files are updated',
+        'DOC: Styling documentation',
+        'DOC: Dark mode documentation',
+        'HTML: <code>bg-soft-{color}</code> to <code>bg-{color}-subtle</code>',
+        'HTML: <code>z-index-{values}</code> to <code>z-{values}</code>',
+        'HTML: <code>text-none</code> to <code>text-transform-none</code>',
+        'HTML: <code>{text/bg}-gray-{100 to 1100}</code> classes replaced with <code>{text/bg}-body-{color}</code>',
+        'HTML: <code>text-{themeColor}-{variant}</code> classes replaced with <code>text-{themeColor}-light/lighter/dark/darker</code>',
+        'HTML: <code>z-index-bg-{themeColor}-{variant}</code> classes replaced with <code>bg-{themeColor}-light/lighter/dark/darker</code>'
+      ],
+      fix: ['Minor Bugs']
+    }
+  },
   {
     version: '1.2.0',
     title: 'Demetra',

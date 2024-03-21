@@ -10,7 +10,9 @@ const CreateBoard = () => {
       <div className="mb-xl-8">
         <div className="d-flex align-items-center mb-3">
           <img src={boardIcon} alt="" className="me-3" />
-          <h1 className="mb-0 text-1100 fw-semi-bold">Phoenix Kanban</h1>
+          <h1 className="mb-0 text-body-emphasis fw-semibold">
+            Phoenix Kanban
+          </h1>
         </div>
         <p className="mb-0">
           Create a Kanban board by following the steps below

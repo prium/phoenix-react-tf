@@ -28,19 +28,18 @@ const BoardViewItem = ({ project }: { project: Project }) => {
             <Badge
               variant="phoenix"
               bg={project.status.type}
-              className="fs-10 light"
+              className="fs-10"
+              data-bs-theme="light"
             >
               {project.status.label}
             </Badge>
-            <div className="z-index-2">
+            <div className="z-2">
               <RevealDropdown btnClassName="btn-icon" icon={faEllipsisV}>
                 <ActionDropdownItems />
               </RevealDropdown>
             </div>
           </div>
-          <h3 className="text-white light fw-bold line-clamp-2">
-            {project.name}
-          </h3>
+          <h3 className="text-white fw-bold line-clamp-2">{project.name}</h3>
         </div>
       </RevealDropdownTrigger>
 

@@ -113,7 +113,10 @@ const BackgroundColorForm = () => {
       </p>
 
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-        <Nav variant="underline" className="border-bottom mb-10">
+        <Nav
+          variant="underline"
+          className="border-bottom border-translucent mb-10"
+        >
           <Nav.Item>
             <Nav.Link eventKey="first">
               <FontAwesomeIcon icon={faPalette} className="me-1" /> Solid Color
@@ -178,7 +181,7 @@ const BackgroundColorForm = () => {
                     });
                   }}
                 >
-                  <div className="text-600">
+                  <div className="text-body-tertiary text-opacity-85">
                     or, Add a custom background
                     <br />
                     <img className="mt-3" src={imageIcon} width={30} alt="" />

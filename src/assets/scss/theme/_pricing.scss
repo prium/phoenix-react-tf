@@ -10,9 +10,6 @@
       border-radius: 0.5rem;
       outline: 0;
     }
-    .border-warning-300 {
-      --#{$prefix}border-color: #{$orange-300};
-    }
   }
 }
 .pricing-plan-radio {
@@ -26,7 +23,7 @@
     + {
       div {
         .card {
-          border: 1px solid var(--#{$prefix}primary-300);
+          border: 1px solid var(--#{$prefix}primary-light);
           box-shadow: 0px 0px 0px 4px rgba(56, 116, 255, 0.2);
         }
       }
@@ -37,7 +34,7 @@
       + {
         div {
           .card {
-            border: 1px solid var(--#{$prefix}warning-300);
+            border: 1px solid var(--#{$prefix}warning-light);
             box-shadow: 0px 0px 0px 4px rgba(229, 120, 11, 0.2);
           }
         }
@@ -46,7 +43,7 @@
   }
 }
 .pricing-business-plus {
-  .dark & {
+  [data-bs-theme="dark"] & {
     background-color: rgba($warning, 0.08) !important;
     border: 1px solid rgba($warning, 0.2);
   }

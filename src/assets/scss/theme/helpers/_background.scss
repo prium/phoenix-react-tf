@@ -184,3 +184,9 @@
 .bg-product-hover {
   background-color: rgba(#000, 0.7);
 }
+
+@each $key, $value in $theme-colors-text{
+  .bg-#{$key}-emphasis{
+    background-color: var(--#{$prefix}#{$key}-text-emphasis);
+  }
+}

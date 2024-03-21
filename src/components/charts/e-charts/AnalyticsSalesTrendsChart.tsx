@@ -18,15 +18,15 @@ const data2 = [10500, 9000, 7000, 9000, 10400, 7500, 9300];
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: string
+  isDark: boolean
 ) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -39,7 +39,7 @@ const getDefaultOptions = (
     type: 'category',
     data: dates,
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       formatter: (value: number) => dayjs(value).format('ddd'),
       fontFamily: 'Nunito Sans',
       fontWeight: 400,
@@ -48,7 +48,7 @@ const getDefaultOptions = (
     },
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisTick: false
@@ -57,11 +57,11 @@ const getDefaultOptions = (
     type: 'value',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
@@ -79,10 +79,9 @@ const getDefaultOptions = (
         show: false
       },
       itemStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-200')
-            : getThemeColor('primary'),
+        color: !isDark
+          ? getThemeColor('primary-lighter')
+          : getThemeColor('primary'),
 
         borderRadius: [4, 4, 0, 0]
       },
@@ -94,9 +93,10 @@ const getDefaultOptions = (
       symbol: 'circle',
       symbolSize: 11,
       itemStyle: {
-        color: getThemeColor('info-300'),
-        borderColor:
-          theme === 'light' ? getThemeColor('white') : getThemeColor('dark'),
+        color: getThemeColor('info-light'),
+        borderColor: !isDark
+          ? getThemeColor('white')
+          : getThemeColor('light-text-emphasis'),
         borderWidth: 2
       },
       areaStyle: {
@@ -109,11 +109,11 @@ const getDefaultOptions = (
           colorStops: [
             {
               offset: 0,
-              color: rgbaColor(getThemeColor('info-300'), 0.2)
+              color: rgbaColor(getThemeColor('info-light'), 0.2)
             },
             {
               offset: 1,
-              color: rgbaColor(getThemeColor('info-300'), 0.2)
+              color: rgbaColor(getThemeColor('info-light'), 0.2)
             }
           ]
         }
@@ -134,12 +134,12 @@ const getDefaultOptions = (
 const AnalyticsSalesTrendsChart = ({ style }: { style: CSSProperties }) => {
   const {
     getThemeColor,
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

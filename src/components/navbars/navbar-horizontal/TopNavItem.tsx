@@ -74,7 +74,7 @@ const TopNavLooper = ({ page }: { page: Route }) => {
       >
         <div
           className={classNames('dropdown-item-wrapper', {
-            'text-300': !page.active
+            'text-light': !page.active
           })}
         >
           <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
@@ -109,7 +109,7 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
         as={Link}
         to={page.path || '#!'}
         className={classNames({
-          'text-300': !page.active,
+          'text-light': !page.active,
           active: pathname === page.path
         })}
       >

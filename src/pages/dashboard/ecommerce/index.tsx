@@ -20,11 +20,12 @@ const Ecommerce = () => {
           <Col xs={12} xxl={6}>
             <div className="mb-8">
               <h2 className="mb-2">Ecommerce Dashboard</h2>
-              <h5 className="text-700 fw-semi-bold">
+              <h5 className="text-body-tertiary fw-semibold">
                 Here’s what’s going on at your business right now
               </h5>
             </div>
             <EcomStats />
+            <hr className="bg-body-secondary mb-6 mt-4" />
             <EcomTotalSells />
           </Col>
           <Col xs={12} xxl={6}>
@@ -45,7 +46,7 @@ const Ecommerce = () => {
           </Col>
         </Row>
       </div>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-7 border-y border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-7 border-y">
         <EcomLatestReviewsTable />
       </div>
       <Row className="gx-6">
@@ -60,7 +61,7 @@ const Ecommerce = () => {
           </div>
         </Col>
       </Row>
-      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white pt-6 pb-9 border-top border-300">
+      <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 pb-9 border-top">
         <Row className="g-6">
           <Col xs={12} xl={6}>
             <EcomProjectionVsActual />

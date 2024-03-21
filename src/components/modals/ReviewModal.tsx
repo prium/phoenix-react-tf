@@ -19,7 +19,7 @@ const ReviewModal = ({ show, handleClose }: ReviewModalProps) => {
         </div>
         <Rating iconClass="fs-5" className="mb-3" />
         <div className="mb-3">
-          <h5 className="text-1000 mb-3">Your review</h5>
+          <h5 className="text-body-highlight mb-3">Your review</h5>
           <Form.Control as="textarea" rows={5} />
         </div>
         <Dropzone
@@ -32,7 +32,7 @@ const ReviewModal = ({ show, handleClose }: ReviewModalProps) => {
         <div className="d-flex flex-between-center">
           <Form.Check type="checkbox" id="confirmCheck" className="flex-1">
             <Form.Check.Input type="checkbox" />
-            <Form.Check.Label className="text-1100">
+            <Form.Check.Label className="text-body-emphasis">
               Review anonymously
             </Form.Check.Label>
           </Form.Check>

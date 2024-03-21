@@ -41,10 +41,7 @@ const PhoenixDocCard = ({
 }: PropsWithChildren<PhoenixDocCardProps>) => {
   return (
     <Card
-      className={classNames(
-        className,
-        'shadow-none border border-300 overflow-visible'
-      )}
+      className={classNames(className, 'shadow-none border overflow-visible')}
     >
       {noProvider ? (
         children
@@ -85,7 +82,7 @@ const PhoenixDocCardHeader = ({
     <Card.Header
       className={classNames(
         className,
-        'p-4 border-bottom border-300 bg-soft hover-actions-trigger'
+        'p-4 border-bottom bg-body hover-actions-trigger'
       )}
       id={headerId}
     >
@@ -93,7 +90,7 @@ const PhoenixDocCardHeader = ({
         <Col xs={12} md>
           {title && (
             <h4
-              className={classNames('text-900 text-nowrap', {
+              className={classNames('text-body text-nowrap', {
                 'mb-0': !children && !description,
                 'mb-2': children || description
               })}
@@ -104,7 +101,9 @@ const PhoenixDocCardHeader = ({
               </Link>
             </h4>
           )}
-          {description && <p className="mb-0 text-800">{description}</p>}
+          {description && (
+            <p className="mb-0 text-body-secondary">{description}</p>
+          )}
           {children}
         </Col>
         {showPreviewBtn && (
@@ -113,7 +112,7 @@ const PhoenixDocCardHeader = ({
               <Button
                 variant="link"
                 size="sm"
-                className="px-2 text-900 copy-code-btn me-2"
+                className="px-2 text-body copy-code-btn me-2"
                 onClick={handleCopyCode}
               >
                 <FontAwesomeIcon icon={faCopy} className="me-1" />
@@ -146,14 +145,15 @@ const PhoenixDocCardHeader = ({
       <Toast
         show={showToast}
         onClose={() => setShowToast(false)}
-        className="align-items-center bg-dark border-0 bottom-0 end-0 light mb-3 me-3 position-fixed text-white z-index-5"
+        className="align-items-center bg-dark border-0 bottom-0 end-0 mb-3 me-3 position-fixed text-white z-5"
         delay={3000}
+        data-bs-theme="light"
         autohide
       >
         <div className="d-flex">
           <Toast.Body className="P-3">
             <span className="fw-black">
-              <code className="text-500">
+              <code className="text-body-quaternary">
                 Code has been copied to clipboard.
               </code>
             </span>

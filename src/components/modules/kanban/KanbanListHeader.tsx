@@ -116,7 +116,10 @@ const KanbanListHeader = ({
             <FontAwesomeIcon icon={faEllipsisH} />
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className="py-2" style={{ width: '15rem' }}>
+          <Dropdown.Menu
+            className="py-2 border-translucent"
+            style={{ width: '15rem' }}
+          >
             {kanbanHeaderActions.map(action => (
               <Fragment key={action.id}>
                 {action.hr ? (
@@ -125,7 +128,7 @@ const KanbanListHeader = ({
                   <Dropdown.Item
                     href="#!"
                     key={action.label}
-                    className="d-flex flex-between-center border-1"
+                    className="d-flex flex-between-center"
                   >
                     {action.label}
                     {action.isNested && (

@@ -16,7 +16,7 @@ interface EcomCartTableProps {
 const EcomCartTable = ({ products }: EcomCartTableProps) => {
   return (
     <Scrollbar autoHeight autoHeightMax="100%" className="table-scrollbar">
-      <Table className="phoenix-table fs-9 mb-0 border-top">
+      <Table className="phoenix-table fs-9 mb-0 border-top border-translucent">
         <thead>
           <tr>
             <th scope="col" />
@@ -47,10 +47,13 @@ const EcomCartTable = ({ products }: EcomCartTableProps) => {
           ))}
 
           <tr className="cart-table-row">
-            <td className="text-1100 fw-semi-bold ps-0 fs-8" colSpan={6}>
+            <td
+              className="text-body-emphasis fw-semibold ps-0 fs-8"
+              colSpan={6}
+            >
               Items subtotal :
             </td>
-            <td className="text-1100 fw-bold text-end fs-8">$691</td>
+            <td className="text-body-emphasis fw-bold text-end fs-8">$691</td>
             <td />
           </tr>
         </tbody>
@@ -69,20 +72,20 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
   return (
     <tr className="cart-table-row" key={product.id}>
       <td className="py-0">
-        <div className="border rounded-2">
+        <div className="border border-translucent rounded-2">
           <img src={product.image} alt={product.name} width={53} />
         </div>
       </td>
       <td>
-        <Link className="fw-semi-bold line-clamp-2" to="#!">
+        <Link className="fw-semibold line-clamp-2" to="#!">
           {product.name}
         </Link>
       </td>
       <td className="white-space-nowrap">{product.color}</td>
-      <td className="white-space-nowrap text-700 fw-semi-bold">
+      <td className="white-space-nowrap text-body-tertiary fw-semibold">
         {product.size}
       </td>
-      <td className="fw-semi-bold text-end">{currencyFormat(product.price)}</td>
+      <td className="fw-semibold text-end">{currencyFormat(product.price)}</td>
       <td className="fs-8 ps-5">
         <QuantityButtons
           type="secondary"
@@ -90,12 +93,14 @@ const EcomCartTableRow = ({ product }: { product: CartItemType }) => {
           setQuantity={setQuantity}
         />
       </td>
-      <td className="fw-bold text-1000 text-end">{currencyFormat(total)}</td>
+      <td className="fw-bold text-body-highlight text-end">
+        {currencyFormat(total)}
+      </td>
       <td className="text-end ps-3">
         <Button
           size="sm"
           variant="link"
-          className="text-500 hover-text-600 me-2"
+          className="text-body-quaternary text-body-tertiary-hover me-2"
         >
           <FontAwesomeIcon icon={faTrash} />
         </Button>

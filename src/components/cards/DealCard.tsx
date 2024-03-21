@@ -40,8 +40,9 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
         <div className="d-flex align-items-center justify-content-between mb-3">
           <FeatherIcon icon="clock" size={16} className="me-2" />
 
-          <p className="mb-0 fs-9 fw-semi-bold text-700 flex-1">
-            {deal.date} . <span className="text-500">{deal.time}</span>
+          <p className="mb-0 fs-9 fw-semibold text-body-tertiary flex-1">
+            {deal.date} .{' '}
+            <span className="text-body-quaternary">{deal.time}</span>
           </p>
           <button
             className="btn p-0 deal-collapse-btn"
@@ -49,7 +50,7 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
           >
             <FontAwesomeIcon
               icon={faAngleDown}
-              className={classNames('text-700 fs-8', {
+              className={classNames('text-body-tertiary fs-8', {
                 show: deal.openDetails
               })}
             />
@@ -67,13 +68,20 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
               'd-none': !deal.openDetails
             })}
           >
-            <FeatherIcon icon="grid" size={12} className="text-500 me-1" />
+            <FeatherIcon
+              icon="grid"
+              size={12}
+              className="text-body-quaternary me-1"
+            />
             {deal.category}
           </p>
           <p
-            className={classNames('ms-auto fs-9 text-1100 fw-semi-bold mb-0', {
-              'd-none': deal.openDetails
-            })}
+            className={classNames(
+              'ms-auto fs-9 text-body-emphasis fw-semibold mb-0',
+              {
+                'd-none': deal.openDetails
+              }
+            )}
           >
             {currencyFormat(deal.revenue, { minimumFractionDigits: 2 })}
           </p>
@@ -86,11 +94,15 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
         >
           <div className="d-flex align-items-center">
             <UilUser className="me-2" size={16} />
-            <p className="text-800 fw-bold fs-9 mb-0">{deal.company}</p>
+            <p className="text-body-secondary fw-bold fs-9 mb-0">
+              {deal.company}
+            </p>
           </div>
           <div className="d-flex align-items-center">
             <UilHeadphones className="me-2" size={16} />
-            <p className="text-800 fw-bold fs-9 mb-0">{deal.agent}</p>
+            <p className="text-body-secondary fw-bold fs-9 mb-0">
+              {deal.agent}
+            </p>
           </div>
         </div>
 
@@ -112,14 +124,14 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="dollar-sign"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Expected Revenue
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       {currencyFormat(deal.revenue, {
                         minimumFractionDigits: 2
                       })}
@@ -127,31 +139,35 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                   </tr>
                   <tr>
                     <td className="d-flex gap-2 align-items-center">
-                      <FeatherIcon icon="user" size={16} className="text-700" />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <FeatherIcon
+                        icon="user"
+                        size={16}
+                        className="text-body-tertiary"
+                      />
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Company Name
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
-                      <p className="align-items-center d-flex fs-9 fw-semi-bold gap-2 mb-0 text-1100">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
+                      <p className="align-items-center d-flex fs-9 fw-semibold gap-2 mb-0 text-body-emphasis">
                         {deal.company}
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faSquarePhone}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faSquareEnvelope}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                         <Link to="#!">
                           <FontAwesomeIcon
                             icon={faWhatsappSquare}
-                            className="text-700"
+                            className="text-body-tertiary"
                           />
                         </Link>
                       </p>
@@ -162,14 +178,14 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="calendar"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Closing Date & Time
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       {deal.closingDate} . <span>{deal.closingTime}</span>
                     </td>
                   </tr>
@@ -178,14 +194,14 @@ const DealCard = ({ deal, columnId }: DealCardProps) => {
                       <FeatherIcon
                         icon="headphones"
                         size={16}
-                        className="text-700"
+                        className="text-body-tertiary"
                       />
-                      <p className="fw-semi-bold fs-9 mb-0 text-700">
+                      <p className="fw-semibold fs-9 mb-0 text-body-tertiary">
                         Assigned Agent
                       </p>
                     </td>
                     <td>:</td>
-                    <td className="fw-semi-bold fs-9 mb-0 text-1100">
+                    <td className="fw-semibold fs-9 mb-0 text-body-emphasis">
                       <Form.Select
                         size="sm"
                         className="py-0 ms-n3 border-0 shadow-none"

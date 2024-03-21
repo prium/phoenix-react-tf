@@ -67,7 +67,7 @@
     // dragging item
     .sortable-item {
       &.card {
-        background-color: var(--#{$prefix}drag-bg);
+        background-color: var(--#{$prefix}kanban-drag-bg);
       }
     }
   }
@@ -103,18 +103,18 @@
   }
   .kanban-column-title {
     font-weight: $font-weight-bold;
-    color: var(--#{$prefix}black);
+    color: var(--#{$prefix}emphasis-color);
   }
 
   .kanban-title-badge {
     border-radius: var(--#{$prefix}border-radius-pill);
-    background-color: var(--#{$prefix}gray-200);
-    font-size: map-get($font-sizes, '9');
-    font-weight: $font-weight-semi-bold;
+    background-color: var(--#{$prefix}secondary-bg);
+    font-size: map-get($font-sizes, 9);
+    font-weight: $font-weight-semibold;
     // padding: $badge-padding-y $badge-padding-x;
     padding: 4px 9px;
     margin-left: 0.5rem;
-    color: var(--#{$prefix}black);
+    color: var(--#{$prefix}emphasis-color);
     line-height: 1;
     display: inline;
   }
@@ -199,7 +199,7 @@
 }
 
 .kanban-action-item {
-  background-color: var(--#{$prefix}gray-soft);
+  background-color: var(--#{$prefix}body-bg);
   margin-bottom: 0.5rem;
   border-radius: $border-radius;
   position: relative;
@@ -246,16 +246,19 @@
 .kanban-color-picker {
   min-width: 128px;
   padding: 14px 48px 14px 16px;
-  background: var(--#{$prefix}white);
+  background: var(--#{$prefix}emphasis-bg);
   height: 100%;
   width: 100%;
-  border: 1px solid var(--#{$prefix}input-border-color);
+  border: 1px solid $input-border-color;
   border-radius: var(--#{$prefix}border-radius);
   position: relative;
-  background-image: var(--phoenix-form-select-indicator);
+  background-image: $form-select-indicator;
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 11px 12px;
+  &:focus{
+    box-shadow: none !important;
+  }
   &::-webkit-color-swatch {
     max-width: 50px;
     border: none;
@@ -304,7 +307,7 @@
 
     &:hover {
       // border-color: var(--#{$prefix}border-color);
-      background-color: var(--#{$prefix}100) !important;
+      background-color: var(--#{$prefix}body-highlight-bg) !important;
     }
   }
   &:hover {
@@ -348,7 +351,7 @@
             top: 48% !important;
             width: 100% !important;
             position: absolute !important;
-            background-color: var(--#{$prefix}300) !important ;
+            background-color: var(--#{$prefix}tertiary-bg) !important ;
           }
         }
       }

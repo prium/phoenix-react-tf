@@ -17,7 +17,7 @@ const TinymceEditor = ({
   options = { height: '50vh' }
 }: TinymceEditorProps) => {
   const {
-    config: { theme }
+    config: { isDark }
   } = useAppContext();
   const editorRef = useRef<TinyMCEEditor | null>(null);
 
@@ -31,15 +31,21 @@ const TinymceEditor = ({
     editorContainer?.classList.remove('editor-focused');
   };
 
-  useEffect(() => {
+  const handleEditorStyle = () => {
     if (editorRef.current) {
       editorRef.current.dom.addStyle(
-        `body{color: ${getColor(
-          theme === 'dark' ? 'white' : 'black'
-        )} !important;}`
+        `.mce-content-body{
+          color: ${getColor('emphasis-color')} !important;
+          background-color: ${getColor('tinymce-bg')} !important;
+        }
+        `
       );
     }
-  }, [theme]);
+  };
+
+  useEffect(() => {
+    handleEditorStyle();
+  }, [isDark]);
 
   return (
     <Editor
@@ -54,7 +60,10 @@ const TinymceEditor = ({
         menubar: false,
         content_style: `
         body { 
-          color: ${getColor('black')} 
+          color: ${getColor('emphasis-color')};
+        }
+        .mce-content-body{
+          background-color: ${getColor('tinymce-bg')};
         }
         .mce-content-body[data-mce-placeholder]:not(.mce-visualblocks)::before {
           color: ${getColor('gray-400')};

@@ -12,6 +12,7 @@
   --#{$prefix}alert-border-color: transparent;
   --#{$prefix}alert-border: #{$alert-border-width} solid var(--#{$prefix}alert-border-color);
   --#{$prefix}alert-border-radius: #{$alert-border-radius};
+  --#{$prefix}alert-link-color: inherit;
   // scss-docs-end alert-css-vars
 
   position: relative;
@@ -20,10 +21,7 @@
   color: var(--#{$prefix}alert-color);
   background-color: var(--#{$prefix}alert-bg);
   border: var(--#{$prefix}alert-border);
-  border-radius: var(
-    --#{$prefix}alert-border-radius,
-    0
-  ); // stylelint-disable-line property-disallowed-list
+  @include border-radius(var(--#{$prefix}alert-border-radius));
 }
 
 // Headings for larger alerts
@@ -35,6 +33,7 @@
 // Provide class for links that match alerts
 .alert-link {
   font-weight: $alert-link-font-weight;
+  color: var(--#{$prefix}alert-link-color);
 }
 
 // Dismissible alerts
@@ -53,45 +52,45 @@
 }
 
 // scss-docs-start alert-soft-modifiers
-@each $state, $value in $theme-colors-soft {
-  $alert-background: $value;
-  $alert-border: $value;
-  $alert-color: map-get($theme-colors-dark, $state);
-  .alert-soft-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+@each $state in map-keys($theme-colors) {
+  .alert-subtle-#{$state} {
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state}-bg-subtle);
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
   }
 }
 // scss-docs-end alert-soft-modifiers
 
 // scss-docs-start alert-outline-modifiers
-@each $state, $value in $theme-colors {
-  $alert-background: transparent;
-  $alert-border: $value;
-  $alert-color: $value;
+@each $state in map-keys($theme-colors) {
   .alert-outline-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-bg: transparent;
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
   }
 }
 // scss-docs-end alert-outline-modifiers
 
 // scss-docs-start alert-phoenix-modifiers
-@each $state, $value in $theme-colors {
-  $alert-background: var(--#{$prefix}white);
-  $alert-border: var(--#{$prefix}gray-300);
-  $alert-color: $value;
+@each $state in map-keys($theme-colors) {
   .alert-phoenix-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    --#{$prefix}alert-color: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-bg: transparent;
+    --#{$prefix}alert-border-color: var(--#{$prefix}border-color);
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
   }
 }
 // scss-docs-end alert-phoenix-modifiers
 
 // scss-docs-start alert-solid-modifiers
-@each $state, $value in $theme-colors {
-  $alert-background: $value;
-  $alert-border: $value;
-  $alert-color: $gray-300;
+@each $state in map-keys($theme-colors) {
   .alert-#{$state} {
-    @include alert-variant($alert-background, $alert-border, $alert-color);
+    --#{$prefix}alert-color: #{$white};
+    --#{$prefix}alert-bg: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-border-color: var(--#{$prefix}#{$state});
+    --#{$prefix}alert-link-color: var(--#{$prefix}#{$state}-text-emphasis);
   }
 }
 // scss-docs-end alert-solid-modifiers

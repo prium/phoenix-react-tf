@@ -9,7 +9,7 @@ const CallCampaignReport = () => {
       <Row className="justify-content-between mb-4">
         <Col xs={12}>
           <h3>Call Campaign Reports</h3>
-          <p className="text-700">All call campaigns succeeded.</p>
+          <p className="text-body-tertiary">All call campaigns succeeded.</p>
         </Col>
         <Col xs={12}>
           <div className="d-flex">

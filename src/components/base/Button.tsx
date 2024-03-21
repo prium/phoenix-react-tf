@@ -34,14 +34,14 @@ export type ButtonVariant =
   | 'phoenix-info'
   | 'phoenix-dark'
   | 'phoenix-light'
-  | 'soft-primary'
-  | 'soft-secondary'
-  | 'soft-success'
-  | 'soft-danger'
-  | 'soft-warning'
-  | 'soft-info'
-  | 'soft-dark'
-  | 'soft-light'
+  | 'subtle-primary'
+  | 'subtle-secondary'
+  | 'subtle-success'
+  | 'subtle-danger'
+  | 'subtle-warning'
+  | 'subtle-info'
+  | 'subtle-dark'
+  | 'subtle-light'
   | 'loading';
 
 export interface ButtonProps extends BsButtonProps {

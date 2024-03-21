@@ -17,7 +17,7 @@ const OrderTracking = () => {
         <div className="d-flex gap-3 flex-wrap justify-content-between align-items-end mb-5">
           <div>
             <h2>Order #234 Status</h2>
-            <p className="text-800 mb-0">
+            <p className="text-body-secondary mb-0">
               Payment Via{' '}
               <a className="fw-bold" href="#!">
                 Cash on delivery
@@ -34,7 +34,7 @@ const OrderTracking = () => {
         <Row className="gy-9 gx-5">
           <Col xs={12} lg={6}>
             <Mapbox
-              className="border border-300 rounded-3 min-vh-50"
+              className="border rounded-3 min-vh-50"
               options={{
                 center: [-74.0020158, 40.7228022],
                 zoom: 15,

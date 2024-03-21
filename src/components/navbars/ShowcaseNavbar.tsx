@@ -21,7 +21,7 @@ const ShowcaseNavbar = () => {
         </Navbar.Toggle>
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav className="ms-auto mb-2 mb-lg-0">
-            <Nav.Item className="border-bottom border-bottom-lg-0">
+            <Nav.Item className="border-bottom border-translucent border-bottom-lg-0">
               <Nav.Link
                 as={Link}
                 to="/documentation/getting-started"
@@ -31,7 +31,7 @@ const ShowcaseNavbar = () => {
                 Documentation
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item className="border-bottom border-bottom-lg-0">
+            <Nav.Item className="border-bottom border-translucent border-bottom-lg-0">
               <Nav.Link
                 className="fs-9 fw-bold pe-3"
                 href="mailto:support@themewagon.com"

@@ -52,7 +52,7 @@ const ProductDescription = () => {
               <div className="me-2">
                 <Rating readonly initialValue={5} />
               </div>
-              <p className="text-primary fw-semi-bold mb-2">
+              <p className="text-primary fw-semibold mb-2">
                 6548 People rated and reviewed
               </p>
             </div>
@@ -61,43 +61,50 @@ const ProductDescription = () => {
               SSD - w/Touch ID (Latest Model) - Blue
             </h3>
             <div className="d-flex flex-wrap align-items-start mb-3">
-              <span className="badge bg-success fs-9 rounded-pill me-2 fw-semi-bold">
+              <span className="badge bg-success fs-9 rounded-pill me-2 fw-semibold">
                 #1 Best seller
               </span>
-              <Link to="#!" className="fw-semi-bold">
+              <Link to="#!" className="fw-semibold">
                 in Phoenix sell analytics 2021
               </Link>
             </div>
             <div className="d-flex flex-wrap align-items-center">
               <h1 className="me-3">{currencyFormat(1349.99)}</h1>
-              <p className="text-500 text-decoration-line-through fs-6 mb-0 me-3">
+              <p className="text-body-quaternary text-decoration-line-through fs-6 mb-0 me-3">
                 {currencyFormat(1499.99)}
               </p>
-              <p className="text-warning-500 fw-bolder fs-6 mb-0">10% off</p>
+              <p className="text-warning-dark fw-bolder fs-6 mb-0">10% off</p>
             </div>
-            <p className="text-success fw-semi-bold fs-7 mb-2"> In stock</p>
-            <p className="mb-2 text-800">
-              <strong className="text-1000">
+            <p className="text-success fw-semibold fs-7 mb-2"> In stock</p>
+            <p className="mb-2 text-body-secondary">
+              <strong className="text-body-highlight">
                 Do you want it on Saturday, July 29th?
               </strong>{' '}
-              Choose <strong className="text-1000">Saturday Delivery </strong>at
-              checkout if you want your order delivered within 12 hours 43
+              Choose{' '}
+              <strong className="text-body-highlight">
+                Saturday Delivery{' '}
+              </strong>
+              at checkout if you want your order delivered within 12 hours 43
               minutes,{' '}
               <Link className="fw-bold" to="#!">
                 Details.{' '}
               </Link>
-              <strong className="text-1000">Gift wrapping is available.</strong>
+              <strong className="text-body-highlight">
+                Gift wrapping is available.
+              </strong>
             </p>
-            <p className="text-danger-500 fw-bold mb-5 mb-lg-0">
+            <p className="text-danger-dark fw-bold mb-5 mb-lg-0">
               Special offer ends in 23:00:45 hours
             </p>
           </div>
 
           <div>
             <div className="mb-3">
-              <p className="fw-semi-bold mb-2 text-900">
+              <p className="fw-semibold mb-2 text-body">
                 Color :{' '}
-                <span className="text-1100">{selectedVariant?.name}</span>
+                <span className="text-body-emphasis">
+                  {selectedVariant?.name}
+                </span>
               </p>
               <ProductColorNav
                 selectedVariantKey={selectedVariantKey}
@@ -106,20 +113,20 @@ const ProductDescription = () => {
             </div>
             <div className="row g-3 g-sm-5 align-items-end">
               <div className="col-12 col-sm-auto">
-                <p className="fw-semi-bold mb-2 text-900">Size : </p>
+                <p className="fw-semibold mb-2 text-body">Size : </p>
                 <div className="d-flex align-items-center">
                   <select className="form-select w-auto">
                     <option value="44">44</option>
                     <option value="22">22</option>
                     <option value="18">18</option>
                   </select>
-                  <a className="ms-2 fs-9 fw-semi-bold" href="#!">
+                  <a className="ms-2 fs-9 fw-semibold" href="#!">
                     Size chart
                   </a>
                 </div>
               </div>
               <div className="col-12 col-sm">
-                <p className="fw-semi-bold mb-2 text-900">Quantity : </p>
+                <p className="fw-semibold mb-2 text-body">Quantity : </p>
                 <div className="d-flex justify-content-between align-items-end">
                   <QuantityButtons
                     quantity={quantity}

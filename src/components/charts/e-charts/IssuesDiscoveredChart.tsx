@@ -5,12 +5,15 @@ import { TooltipComponent } from 'echarts/components';
 import { PieChart } from 'echarts/charts';
 echarts.use([TooltipComponent, PieChart]);
 
-const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  getThemeColor: (name: string) => string,
+  isDark: boolean
+) => ({
   color: [
-    getThemeColor('info-300'),
-    getThemeColor('warning-300'),
-    getThemeColor('danger-300'),
-    getThemeColor('success-300'),
+    !isDark ? getThemeColor('info-light') : getThemeColor('info-dark'),
+    !isDark ? getThemeColor('warning-light') : getThemeColor('warning-dark'),
+    !isDark ? getThemeColor('danger-light') : getThemeColor('danger-dark'),
+    !isDark ? getThemeColor('success-light') : getThemeColor('success-dark'),
     getThemeColor('primary')
   ],
   tooltip: {
@@ -39,12 +42,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           x: {
             fontSize: 31.25,
             fontWeight: 800,
-            color: getThemeColor('gray-700'),
+            color: getThemeColor('tertiary-color'),
             padding: [0, 0, 5, 15]
           },
           y: {
             fontSize: 12.8,
-            color: getThemeColor('gray-700'),
+            color: getThemeColor('tertiary-color'),
             fontWeight: 600
           }
         }
@@ -76,12 +79,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
 });
 
 const IssuesDiscoveredChart = () => {
-  const { getThemeColor } = useAppContext();
+  const {
+    getThemeColor,
+    config: { isDark }
+  } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={{ minHeight: '390px', width: '100%' }}
     />
   );

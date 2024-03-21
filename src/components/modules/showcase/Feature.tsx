@@ -32,19 +32,19 @@ const Feature = () => {
       />
       <Container className="container-small position-relative py-8">
         <Row className="align-items-center gx-xxl-13">
-          <Col lg={6} className="mb-6 z-index-1">
+          <Col lg={6} className="mb-6 z-1">
             <img src={section63} alt="" className="mw-100" />
           </Col>
           <Col lg={6}>
-            <h1 className="text-soft fw-normal mb-4 text-center text-lg-start">
+            <h1 className="text-light fw-normal mb-4 text-center text-lg-start">
               Coded for
               <br className="d-none d-lg-block d-xl-none" />
-              <span className="text-primary-300 ms-2 fw-bolder">
+              <span className="text-primary-light ms-2 fw-bolder">
                 any screen size
                 <img src={thumbsUpIcon} alt="" className="mb-2 ms-2" />
               </span>
             </h1>
-            <p className="text-200 text-center text-lg-start">
+            <p className="text-light text-center text-lg-start">
               Built with all top-notch technologies, this admin dashboard is
               fully responsive, and the clean codebase helps it to stay intact
               without breaking down the layout around any device or screen size

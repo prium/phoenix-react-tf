@@ -16,7 +16,7 @@ const DealDetailsAttachments = ({
           <FileListItem
             key={attachment.name}
             attachment={attachment}
-            className={classNames('border-dashed', {
+            className={classNames('border-dashed border-translucent', {
               'border-top': index === 0,
               'border-bottom-0': index === attachments.length - 1
             })}

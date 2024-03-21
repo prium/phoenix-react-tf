@@ -26,7 +26,7 @@ const ClearIndicator = (props: ClearIndicatorProps) => {
 const DropdownIndicator = (props: DropdownIndicatorProps) => {
   return (
     <components.DropdownIndicator {...props}>
-      <FontAwesomeIcon icon={faAngleDown} className="fs-9 text-900" />
+      <FontAwesomeIcon icon={faAngleDown} className="fs-9 text-body" />
     </components.DropdownIndicator>
   );
 };

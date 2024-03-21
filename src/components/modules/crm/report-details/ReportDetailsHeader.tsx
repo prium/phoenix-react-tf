@@ -41,7 +41,7 @@ const ReportDetailsHeader = () => {
             </Button>
             <Button
               variant="phoenix-secondary"
-              className="text-900"
+              className="text-body"
               startIcon={
                 <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
               }

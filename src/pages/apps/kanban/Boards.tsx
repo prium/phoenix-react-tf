@@ -27,11 +27,12 @@ const Boards = () => {
   }, []);
   return (
     <div className="mb-9">
-      <div className="border-bottom px-4 px-lg-6 pb-5">
+      <div className="border-bottom border-translucent px-4 px-lg-6 pb-5">
         <Row className="justify-content-between gy-4">
           <Col xs="auto">
             <h2>
-              Kanban Boards <span className="text-700 fw-semi-bold">(8)</span>
+              Kanban Boards{' '}
+              <span className="text-body-tertiary fw-semibold">(8)</span>
             </h2>
           </Col>
           <Col xs="auto" className="d-flex flex-wrap gap-2">
@@ -53,7 +54,7 @@ const Boards = () => {
           </Col>
         </Row>
       </div>
-      <div className="d-flex flex-wrap gap-3 border-bottom px-4 px-lg-6 py-5">
+      <div className="d-flex flex-wrap gap-3 border-bottom border-translucent px-4 px-lg-6 py-5">
         <Button
           variant="primary"
           className="px-3 px-sm-5 px-md-10"
@@ -65,7 +66,7 @@ const Boards = () => {
         </Button>
         <Button
           variant="phoenix-primary"
-          className="px-3 px-sm-4 d-flex text-900"
+          className="px-3 px-sm-4 d-flex text-body"
           as={Link}
           to="#!"
         >
@@ -76,7 +77,7 @@ const Boards = () => {
         </Button>
         <Button
           variant="phoenix-primary"
-          className="px-3 px-sm-4 d-flex text-900"
+          className="px-3 px-sm-4 d-flex text-body"
           as={Link}
           to="#!"
         >

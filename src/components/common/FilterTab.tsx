@@ -30,12 +30,14 @@ const FilterTab = ({ tabItems, className }: FilterTabProps) => {
         <Nav.Item key={item.label}>
           <Nav.Link
             onClick={() => handleClick(item)}
-            className={classNames('px-2', {
+            className={classNames('px-2 py-1', {
               active: activeItem === item.value
             })}
           >
             {item.label}{' '}
-            <span className="text-700 fw-semi-bold">({item.count})</span>
+            <span className="text-body-tertiary fw-semibold">
+              ({item.count})
+            </span>
           </Nav.Link>
         </Nav.Item>
       ))}

@@ -1,8 +1,12 @@
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronRight,
+  faCircleInfo
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import changelogs from 'data/changelog';
+import { Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const ChangeLog = () => {
@@ -34,6 +38,19 @@ const ChangeLog = () => {
             </div>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body>
+            {changelog.alertText && (
+              <Alert
+                variant={'subtle-warning'}
+                className="d-flex align-items-center"
+              >
+                <FontAwesomeIcon
+                  icon={faCircleInfo}
+                  className="text-warning fs-5 me-3"
+                />
+                {changelog.alertText}
+              </Alert>
+            )}
+
             {/* New */}
             <h6 className="d-inline-block">New</h6>
             <ul>
@@ -52,7 +69,6 @@ const ChangeLog = () => {
                 </ul>
               </>
             )}
-
             {/* Fix */}
             <h6 className="d-inline-block">Fix</h6>
             <ul>

@@ -17,13 +17,13 @@ const dates = getPastDates(7);
 const data1 = [8000, 7700, 5900, 10100, 5100, 6000, 4300];
 
 const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -40,11 +40,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       splitLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         // interval: 1,
         showMaxLabel: false,
         showMinLabel: true,
@@ -57,7 +57,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       axisLine: {
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: false
@@ -69,11 +69,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       splitLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
@@ -87,7 +87,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       position: 'bottom',
       axisLine: {
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: false
@@ -97,16 +97,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     type: 'value',
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
@@ -122,8 +122,13 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       smooth: 0.4,
       symbolSize: 11,
       itemStyle: {
+        color: getThemeColor('body-highlight-bg'),
+        borderColor: getThemeColor('primary')
+      },
+      lineStyle: {
         color: getThemeColor('primary')
       },
+      symbol: 'circle',
       areaStyle: {
         color: {
           type: 'linear',
@@ -134,11 +139,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           colorStops: [
             {
               offset: 0,
-              color: rgbaColor(getThemeColor('primary-300'), 0.2)
+              color: rgbaColor(getThemeColor('primary-light'), 0.2)
             },
             {
               offset: 1,
-              color: rgbaColor(getThemeColor('primary-300'), 0.2)
+              color: rgbaColor(getThemeColor('primary-light'), 0.2)
             }
           ]
         }

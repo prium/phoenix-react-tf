@@ -43,7 +43,7 @@ const stats: StatType[] = [
 
 const EcomStats = () => {
   return (
-    <Row className="align-items-center g-4 border-bottom pb-4 mb-6">
+    <Row className="align-items-center g-4">
       {stats.map(stat => (
         <Col xs={12} md="auto" key={stat.id}>
           <Stat stat={stat} />
@@ -64,13 +64,13 @@ const Stat = ({ stat }: { stat: StatType }) => {
         <FontAwesomeIcon
           icon={faSquare}
           size="2x"
-          className={`text-${stat.color}-300`}
+          className={`text-${stat.color}-light dark__text-opacity-50`}
           transform="down-4 rotate--10 left-4"
         />
         <FontAwesomeIcon
           icon={faCircle}
           size="2x"
-          className={`text-${stat.color}-100 fa-layers-circle`}
+          className={`text-stats-circle-${stat.color} fa-layers-circle`}
           transform="up-4 right-3 grow-2"
         />
         <FontAwesomeIcon
@@ -83,7 +83,7 @@ const Stat = ({ stat }: { stat: StatType }) => {
 
       <div className="ms-3">
         <h4 className="mb-0">{stat.title}</h4>
-        <p className="text-800 fs-9 mb-0">{stat.subTitle}</p>
+        <p className="text-body-secondary fs-9 mb-0">{stat.subTitle}</p>
       </div>
     </Stack>
   );

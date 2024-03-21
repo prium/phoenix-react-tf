@@ -4,7 +4,6 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import { ThemeVariant } from 'config';
 import { sellersReportData } from 'data/crm/reportsData';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
@@ -13,15 +12,15 @@ echarts.use([TooltipComponent, BarChart]);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  theme: ThemeVariant
+  isDark: boolean
 ) => ({
-  color: [getThemeColor('primary-200'), getThemeColor('info-300')],
+  color: [getThemeColor('primary-lighter'), getThemeColor('info-light')],
   tooltip: {
     trigger: 'axis',
     padding: [7, 10],
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -34,7 +33,7 @@ const getDefaultOptions = (
     type: 'category',
     data: sellersReportData.map(data => data.reportStage),
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 600,
       fontSize: 12.8,
@@ -43,7 +42,7 @@ const getDefaultOptions = (
     },
     axisLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisTick: false
@@ -52,11 +51,11 @@ const getDefaultOptions = (
     type: 'value',
     splitLine: {
       lineStyle: {
-        color: getThemeColor('gray-200')
+        color: getThemeColor('secondary-bg')
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
@@ -72,19 +71,17 @@ const getDefaultOptions = (
       barGap: '48%',
       showBackground: true,
       backgroundStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-soft')
-            : getThemeColor('gray-100')
+        color: !isDark
+          ? getThemeColor('primary-bg-subtle')
+          : getThemeColor('body-highlight-bg')
       },
       label: {
         show: false
       },
       itemStyle: {
-        color:
-          theme === 'light'
-            ? getThemeColor('primary-300')
-            : getThemeColor('primary')
+        color: !isDark
+          ? getThemeColor('primary-light')
+          : getThemeColor('primary')
       },
       data: sellersReportData.map(data => data.totalCount)
     }
@@ -101,14 +98,14 @@ const getDefaultOptions = (
 
 const ReportDetailsChart = ({ style }: { style: CSSProperties }) => {
   const {
-    config: { theme },
+    config: { isDark },
     getThemeColor
   } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor, theme)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

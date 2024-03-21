@@ -18,8 +18,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   ],
   tooltip: {
     trigger: 'axis',
-    backgroundColor: getThemeColor('gray-soft'),
-    borderColor: getThemeColor('gray-200'),
+    backgroundColor: getThemeColor('body-bg'),
+    bordercolor: getThemeColor('secondary-bg'),
     formatter: (params: CallbackDataParams[]) =>
       tooltipFormatterDefault(params, 'MMM DD, YYYY', 'color'),
     axisPointer: {
@@ -47,10 +47,10 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     itemWidth: 16,
     itemHeight: 8,
     itemGap: 10,
-    inactiveColor: getThemeColor('gray-500'),
+    inactiveColor: getThemeColor('quaternary-color'),
     inactiveBorderWidth: 0,
     textStyle: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       fontWeight: 600,
       fontSize: 16,
       fontFamily: 'Nunito Sans'
@@ -63,11 +63,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       axisLine: {
         lineStyle: {
           type: 'solid',
-          color: getThemeColor('gray-300')
+          color: getThemeColor('tertiary-bg')
         }
       },
       axisLabel: {
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         formatter: (data: string) => dayjs(data).format('D MMM'),
         interval: 5,
         align: 'left',
@@ -83,7 +83,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         interval: 0,
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300'),
+          color: getThemeColor('tertiary-bg'),
           type: 'dashed'
         }
       },
@@ -107,7 +107,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         interval: 1,
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300'),
+          color: getThemeColor('tertiary-bg'),
           type: 'solid'
         }
       },
@@ -121,11 +121,11 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     axisLine: {
       lineStyle: {
         type: 'solid',
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     },
     axisLabel: {
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 20,
       fontSize: 12.8,
       interval: 0
@@ -133,7 +133,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     splitLine: {
       show: true,
       lineStyle: {
-        color: getThemeColor('gray-300'),
+        color: getThemeColor('tertiary-bg'),
         type: 'solid'
       }
     },
@@ -142,7 +142,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       length: 15,
       alignWithLabel: true,
       lineStyle: {
-        color: getThemeColor('gray-300')
+        color: getThemeColor('tertiary-bg')
       }
     }
     // data: ['0', '10', '20']
@@ -157,7 +157,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
         width: 0
       },
       areaStyle: {
-        color: getThemeColor('primary-300'),
+        color: getThemeColor('primary-light'),
         opacity: 0.075
       },
       tooltip: {

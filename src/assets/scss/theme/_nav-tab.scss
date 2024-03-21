@@ -1,14 +1,13 @@
-.nav-tabs,
-.nav-underline {
+.nav-tabs {
   .nav-link {
     padding: 0.5rem;
     margin-bottom: -$nav-tabs-border-width;
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '9');
-    background-color: transparent;
+    font-size: map-get($font-sizes, 9);
+    // background-color: transparent;
     @include border-top-radius($nav-tabs-border-radius);
     &.disabled {
-      color: var(--#{$prefix}black);
+      color: var(--#{$prefix}emphasis-color);
       background-color: transparent;
       border-color: transparent;
     }
@@ -24,29 +23,29 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    color: var(--#{$prefix}gray-1100);
+    color: var(--#{$prefix}emphasis-color);
     background-color: transparent;
   }
 }
 
 .nav-phoenix-pills {
-  background: var(--#{$prefix}gray-100);
-  border: 1px solid var(--#{$prefix}gray-300);
+  background: var(--#{$prefix}body-highlight-bg);
+  border: 1px solid var(--#{$prefix}border-color);
   border-radius: 0.5rem;
   .nav-item {
     flex: 1;
     .nav-link {
-      color: var(--#{$prefix}gray-600);
-      font-weight: $font-weight-semi-bold;
+      color: var(--#{$prefix}tertiary-color);
+      font-weight: $font-weight-semibold;
       line-height: $line-height-sm;
       text-align: center;
       padding-top: 0.25rem;
       padding-bottom: 0.25rem;
       &.active {
-        background: var(--#{$prefix}white);
+        background: var(--#{$prefix}emphasis-bg);
         color: var(--#{$prefix}primary);
-        border-left: 1px solid var(--#{$prefix}gray-300);
-        border-right: 1px solid var(--#{$prefix}gray-300);
+        border-left: 1px solid var(--#{$prefix}border-color);
+        border-right: 1px solid var(--#{$prefix}border-color);
         border-radius: 0.5rem;
       }
     }
@@ -67,59 +66,25 @@
   }
 }
 
-// .nav-item {
-//   &:first-child {
-//     .nav-link {
-//       padding-left: 0;
-//     }
-//   }
-//   &:last-child {
-//     .nav-link {
-//       padding-right: 0;
-//     }
-//   }
-// }
-
 .nav-underline {
-  // .nav-item {
-  //   .nav-link {
-  //     &:last-child {
-  //       padding-right: 0;
-  //     }
-  //   }
-  // }
-  .nav-item {
-    &:first-child {
-      .nav-link {
-        padding-left: 0;
-      }
-    }
-    &:last-child {
-      .nav-link {
-        padding-right: 0;
-      }
-    }
-  }
-
-  // border-bottom: 1px solid var(--#{$prefix}border-color);
   .nav-link {
-    border: var(--#{$prefix}border-color);
-    color: var(--#{$prefix}gray-900);
-  }
-  .nav-link.active,
-  .nav-item.show .nav-link {
-    color: var(--#{$prefix}primary);
-    background-color: transparent;
-    border-bottom: 2px solid var(--#{$prefix}primary);
+    color: var(--#{$prefix}body-color);
+    font-weight: $font-weight-bold;
+    font-size: map-get($font-sizes, 9);
   }
 }
 
 .nav-links {
   .nav-link {
     font-weight: $font-weight-bold;
-    font-size: map-get($font-sizes, '9');
+    font-size: map-get($font-sizes, 9);
+    &:hover {
+      span:first-child {
+        text-decoration: underline !important;
+      }
+    }
     &.active {
-      color: var(--#{$prefix}gray-1100);
+      color: var(--#{$prefix}emphasis-color);
     }
   }
 }
@@ -166,6 +131,7 @@
   height: 60px;
   position: sticky;
   top: var(--#{$prefix}navbar-top-height);
-  background-color: var(--#{$prefix}gray-soft);
+  background-color: var(--#{$prefix}body-bg);
   z-index: 1;
 }
+

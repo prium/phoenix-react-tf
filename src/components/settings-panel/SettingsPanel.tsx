@@ -43,7 +43,7 @@ const SettingsPanel = () => {
       onHide={handleClose}
       placement="end"
     >
-      <Offcanvas.Header className="align-items-start border-bottom flex-column">
+      <Offcanvas.Header className="align-items-start border-bottom border-translucent flex-column">
         <div className="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
           <div>
             <h5 className="mb-2 me-2 lh-sm">
@@ -80,7 +80,7 @@ const SettingsPanel = () => {
           as="a"
           target="_blank"
           href={`${process.env.REACT_APP_PURCHASE_LINK}`}
-          className="w-100 mb-3 text-white dark__text-100"
+          className="w-100 mb-3 text-white"
           variant="primary"
         >
           Purchase template

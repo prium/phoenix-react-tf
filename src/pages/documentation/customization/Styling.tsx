@@ -18,101 +18,111 @@ const themeColorCode = `
     $dark: $gray-1100 !default;        
 `;
 
+const bodyColorCode = `
+    //*-----------------------------------------------
+    //|   Body Colors
+    //-----------------------------------------------*/
+
+    $body-color: $gray-900 !default;
+    $body-bg: $gray-50 !default;
+    
+    $body-secondary-color: $gray-800 !default;
+    $body-secondary-bg: $gray-200 !default;
+    
+    $body-tertiary-color: $gray-700 !default;
+    $body-tertiary-bg: $gray-300 !default;
+    
+    $body-quaternary-color: $gray-500 !default;
+    $body-quaternary-bg: $gray-400 !default;
+    
+    $body-emphasis-color: $gray-1100 !default;
+    $body-emphasis-bg: $white !default;
+    
+    $body-highlight-color: $gray-1000 !default;
+    $body-highlight-bg: $gray-100 !default;        
+`;
+
 const darkThemeColorCode = `
     //*-----------------------------------------------
     //|   Dark theme colors
     //-----------------------------------------------*/
 
-    $dark-theme-colors: (
+    $theme-colors-dark: (
         'primary': $blue-300,
         'secondary': $secondary,
         'success': $green-300,
         'info': $cyan-300,
         'warning': $orange-300,
         'danger': $red-300,
-        'light': rgba(map-get($dark-grays, '200'), 0.25),
+        'light': rgba(map-get($grays-dark, '200'), 0.25),
         'dark': $light
     ) !default;
 
-    $dark-grays: (
-      'soft': $dark-gray-soft,
-      '100': $gray-1000,
-      '200': $gray-900,
-      '300': #373e53,
-      '400': $gray-800,
-      '500': $gray-700,
-      '600': $gray-500,
-      '700': $gray-500,
-      '800': #949db5,
-      '900': $gray-400,
-      '1000': $gray-300,
-      '1100': $gray-200
-    ) !default;
 `;
 
 const themeUsedColorsCode = `
     // Theme used colors
 
-    $theme-used-colors: (
-        'primary-soft': $blue-soft,
-        'primary-100': $blue-100,
-        'primary-200': $blue-200,
-        'primary-300': $blue-300,
-        'primary-500': $blue-500,
-        'primary-600': $blue-600,
-        'warning-soft': $orange-soft,
-        'warning-100': $orange-100,
-        'warning-200': $orange-200,
-        'warning-300': $orange-300,
-        'warning-500': $orange-500,
-        'warning-600': $orange-600,
-        'danger-300': $red-300,
-        'danger-100': $red-100,
-        'danger-200': $red-200,
-        'danger-500': $red-500,
-        'danger-600': $red-600,
-        'success-100': $green-100,
-        'success-200': $green-200,
-        'success-300': $green-300,
-        'success-500': $green-500,
-        'success-600': $green-600,
-        'info-100': $cyan-100,
-        'info-200': $cyan-200,
-        'info-300': $cyan-300,
-        'info-500': $cyan-500,
-        'info-600': $cyan-600
+    $theme-color-shades: (
+      'primary-lighter': $blue-200,
+      'primary-light': $blue-300,
+      'primary-dark': $blue-600,
+      'primary-darker': $blue-700,
+    
+      'secondary-lighter': $gray-200,
+      'secondary-light': $gray-300,
+      'secondary-dark': $gray-1000,
+      'secondary-darker': $gray-700,
+    
+      'warning-lighter': $orange-200,
+      'warning-light': $orange-300,
+      'warning-dark': $orange-600,
+      'warning-darker': $orange-700,
+    
+      'danger-lighter': $red-200,
+      'danger-light': $red-300,
+      'danger-dark': $red-600,
+      'danger-darker': $red-700,
+    
+      'success-lighter': $green-200,
+      'success-light': $green-300,
+      'success-dark': $green-600,
+      'success-darker': $green-700,
+    
+      'info-lighter': $cyan-200,
+      'info-light': $cyan-300,
+      'info-dark': $cyan-600,
+      'info-darker': $cyan-700,
     ) !default;
+    
 
     // Dark theme used color
 
-    $dark-theme-used-colors: (
-        'primary-soft': $blue-soft,
-        'primary-100': #1d2332,
-        'primary-200': $blue-200,
-        'primary-300': $blue-300,
-        'primary-500': $blue-400,
-        'primary-600': $blue-600,
-        'warning-soft': $orange-soft,
-        'warning-100': #272528,
-        'warning-200': $orange-200,
-        'warning-300': $orange-300,
-        'warning-500': $orange-400,
-        'warning-600': $orange-600,
-        'danger-300': $red-300,
-        'danger-200': $red-200,
-        'danger-100': #262026,
-        'danger-500': $red-500,
-        'danger-600': $red-600,
-        'success-100': #1e2628,
-        'success-200': $green-200,
-        'success-300': $green-300,
-        'success-500': $green-400,
-        'success-600': $green-600,
-        'info-100': $dark-info-100,
-        'info-200': $cyan-200,
-        'info-300': $cyan-300,
-        'info-500': $cyan-400,
-        'info-600': $cyan-600
+    $theme-color-shades-dark: (
+      'primary-lighter': $blue-700,
+      'primary-light': $blue-500,
+      'primary-dark': $blue-300,
+      'primary-darker': $blue-300,
+
+      'warning-lighter': $orange-700,
+      'warning-light': $orange-500,
+      'warning-dark': $orange-300,
+      'warning-darker': $orange-300,
+
+      'danger-lighter': $red-700,
+      'danger-light': $red-500,
+      'danger-dark': $red-300,
+      'danger-darker': $red-300,
+
+      'success-lighter': $green-700,
+      'success-light': $green-500,
+      'success-dark': $green-300,
+      'success-darker': $green-300,
+
+      'info-lighter': $cyan-700,
+      'info-light': $cyan-500,
+      'info-dark': $cyan-300,
+      'info-darker': $cyan-300,
     ) !default;
     
 `;
@@ -130,7 +140,7 @@ const usingCssVariablesCode = `
         ...
         ...
       }
-      .dark{
+      [data-bs-theme="dark"]{
         --phoenix-primary: #{$danger};
         --phoenix-primary-rgb: #{to-rgb($danger)};
         .card{
@@ -149,12 +159,12 @@ const Styling = () => {
       <DocPagesLayout>
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Edit SCSS" />
-          <PhoenixDocCard.Body className="text-800">
+          <PhoenixDocCard.Body className="text-body-secondary">
             <p>
               You can add your own SCSS and override the theme style in the{' '}
               <code>user.scss</code> file.
             </p>
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>user.scss</code>
             </div>
             <p>
@@ -166,14 +176,14 @@ const Styling = () => {
               overridden with your own value.
             </p>
 
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>_user-variables.scss</code>
             </div>
             <p>
               To remove bootstrap components, update{' '}
               <code>src/scss/_bootstrap.scss</code> file.
             </p>
-            <div className="border rounded-1 bg-white px-3 py-2 mt-4 mb-3">
+            <div className="border rounded-1 bg-body-emphasis px-3 py-2 mt-4 mb-3">
               <code>_bootstrap.scss</code>
             </div>
           </PhoenixDocCard.Body>
@@ -181,10 +191,11 @@ const Styling = () => {
 
         <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Changing theme colors" />
-          <PhoenixDocCard.Body className="text-800">
+          <PhoenixDocCard.Body className="text-body-secondary">
             <p>
               You can bring your necessary variable colors form{' '}
-              <code>src/scss/theme/_colors.scss </code> and paste it into{' '}
+              <code>src/scss/theme/_colors.scss </code> and{' '}
+              <code>src/scss/theme/_variables-dark.scss</code>. Paste it into{' '}
               <code> src/scss/_user-variables.scss </code> then update variables
               as your necessity. We recommend to follow this approach.
             </p>
@@ -198,31 +209,38 @@ const Styling = () => {
             <PhoenixLiveEditor code={themeColorCode} />
 
             <p className="mt-3">
+              Most of the background and text colors used from body colors, to
+              update the colors change the corresponding variables.
+            </p>
+            <PhoenixLiveEditor code={bodyColorCode} />
+
+            <p className="mt-3">
               If you want to update any theme colors for dark mode, update{' '}
-              <code>$dark-theme-colors</code> variable and to update the grays
-              colors you have to update the <code>$dark-grays </code>variable.
+              <code>$theme-colors-dark</code> variable and to update the grays
+              colors you have to update the <code>$grays-dark </code>variable.
             </p>
             <PhoenixLiveEditor code={darkThemeColorCode} />
 
-            <h6 className="mt-4 fs-7 mb-2 fw-semi-bold">All Colors</h6>
+            <h6 className="mt-4 fs-7 mb-2 fw-semibold">Theme Color Shades</h6>
             <p className="mb-1">
               All <strong>{process.env.REACT_APP_TITLE}</strong> colors are
               available as Sass variables and Sass map in{' '}
-              <code>src/scss/theme/_colors.scss </code>file. To avoid increased
-              file sizes, we don’t create text or background color classes for
-              each of these variables. Instead, we choose a subset of these
-              colors for a theme palette.
+              <code>src/scss/theme/_colors.scss </code> &{' '}
+              <code>src/scss/theme/_variables-dark.scss </code>file. To avoid
+              increased file sizes, we don’t create text or background color
+              classes for each of these variables. Instead, we choose a subset
+              of these colors for a theme palette.
             </p>
             <p>
               You'll find all the colors used in the theme in a sass map name{' '}
-              <code>$theme-used-colors </code>in{' '}
+              <code>$theme-color-shades </code>in{' '}
               <code>src/scss/theme/_colors.scss </code>file. If you want to use
               any <strong>{process.env.REACT_APP_TITLE} </strong>color to
               generate <code>text/bg </code>
               utility class, Add the color variable in{' '}
-              <code>$theme-used-colors </code>map. If you want to add/change
+              <code>$theme-color-shades </code>map. If you want to add/change
               color for dark mode, update the{' '}
-              <code>$dark-theme-used-colors </code>map.{' '}
+              <code>$theme-color-shades-dark </code>map.{' '}
             </p>
             <PhoenixLiveEditor code={themeUsedColorsCode} />
             <h4 className="mt-4 mb-2">Using CSS variable:</h4>

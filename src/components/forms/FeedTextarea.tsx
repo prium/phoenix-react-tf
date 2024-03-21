@@ -18,7 +18,7 @@ const FeedTextarea = ({ className }: { className?: string }) => {
       <Card.Body className="p-0">
         <Form.Control
           as="textarea"
-          className="border-200 rounded-bottom-0 border-0 flex-1 fs-8"
+          className="border-translucent rounded-bottom-0 border-0 flex-1 fs-8"
           rows={7}
           placeholder="Write something..."
         />
@@ -44,7 +44,10 @@ const FeedTextarea = ({ className }: { className?: string }) => {
             >
               <FontAwesomeIcon icon={faGlobeAsia} className="fs-8 me-1" />
               <span className="me-1 lh-base d-none d-sm-block">{privacy}</span>
-              <FontAwesomeIcon icon={faCaretDown} className="fs-10 text-500" />
+              <FontAwesomeIcon
+                icon={faCaretDown}
+                className="fs-10 text-body-quaternary"
+              />
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item onClick={() => setPrivacy('Public')}>

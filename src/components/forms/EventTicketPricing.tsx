@@ -15,7 +15,7 @@ const EventTicketPricing = () => {
         <Form.Check.Input type="radio" name="pricingRadio" />
         <Form.Check.Label htmlFor="paidTicket">Paid</Form.Check.Label>
       </Form.Check>
-      <Row className="g-3 mb-7 mt-1 border-bottom pb-5">
+      <Row className="g-3 mb-7 mt-1 border-bottom border-translucent pb-5">
         <Col xs={6} xl={7}>
           <h6 className="fs--1">Option</h6>
         </Col>

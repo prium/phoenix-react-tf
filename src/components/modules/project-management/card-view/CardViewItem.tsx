@@ -49,11 +49,11 @@ const CardViewItem = ({ project }: { project: Project }) => {
           <div className="d-flex align-items-center mb-2">
             <FontAwesomeIcon
               icon={faUser}
-              className="me-2 text-700 fs-9 fw-extra-bold"
+              className="me-2 text-body-tertiary fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Client :{' '}
-              <span className="fw-semi-bold text-primary ms-1">
+              <span className="fw-semibold text-primary ms-1">
                 {' '}
                 Gusteau’s Restaurant
               </span>
@@ -62,18 +62,18 @@ const CardViewItem = ({ project }: { project: Project }) => {
           <div className="d-flex align-items-center mb-4">
             <FontAwesomeIcon
               icon={faCreditCard}
-              className="me-2 text-700 fs-9 fw-extra-bold"
+              className="me-2 text-body-tertiary fs-9 fw-extra-bold"
             />
             <p className="fw-bold mb-0 text-truncate lh-1">
               Budget :{' '}
-              <span className="text-1100 ms-1">
+              <span className="text-body-emphasis ms-1">
                 {currencyFormat(project.budget)}
               </span>
             </p>
           </div>
-          <div className="d-flex justify-content-between text-700 fw-semi-bold">
+          <div className="d-flex justify-content-between text-body-tertiary fw-semibold">
             <p className="mb-2"> Progress</p>
-            <p className="mb-2 text-1100">{progress}%</p>
+            <p className="mb-2 text-body-emphasis">{progress}%</p>
           </div>
           <ProgressBar
             now={progress}
@@ -85,7 +85,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-4">
               <p className="mb-0 fw-bold fs-9">
                 Started :
-                <span className="fw-semi-bold text-600 ms-1">
+                <span className="fw-semibold text-body-tertiary text-opactity-85 ms-1">
                   {project.start}
                 </span>
               </p>
@@ -93,7 +93,7 @@ const CardViewItem = ({ project }: { project: Project }) => {
             <div className="d-flex align-items-center mt-2">
               <p className="mb-0 fw-bold fs-9">
                 Deadline :{' '}
-                <span className="fw-semi-bold text-600 ms-1">
+                <span className="fw-semibold text-body-tertiary text-opactity-85 ms-1">
                   {project.deadline}
                 </span>
               </p>

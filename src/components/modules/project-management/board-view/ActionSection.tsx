@@ -12,13 +12,15 @@ import { Col, Dropdown, Row } from 'react-bootstrap';
 
 const ActionSection = () => {
   return (
-    <Row className="gx-0 gy-3 border-bottom border-300 px-5 px-lg-6 py-4 p-xl-0">
-      <Col xs={12} xl={5} className="border-end-xl border-300">
+    <Row className="gx-0 gy-3 border-bottom px-5 px-lg-6 py-4 p-xl-0">
+      <Col xs={12} xl={5} className="border-end-xl">
         <Row className="h-100 align-items-center px-xl-6 justify-content-between justify-content-xl-start">
           <Col xs="auto">
             <div>
-              <p className="text-700 fs-10 fw-semi-bold mb-0">Created</p>
-              <p className="text-1000 fs-9 mb-0">Jan 3, 3:24 pm</p>
+              <p className="text-body-tertiary fs-10 fw-semibold mb-0">
+                Created
+              </p>
+              <p className="text-body-highlight fs-9 mb-0">Jan 3, 3:24 pm</p>
             </div>
           </Col>
           <Col xs={7} lg={6}>
@@ -37,15 +39,15 @@ const ActionSection = () => {
             <div className="d-flex gap-2">
               <Dropdown align="end">
                 <Dropdown.Toggle
-                  className="d-none d-sm-block btn btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center"
-                  variant="soft-secondary"
+                  className="d-none d-sm-block btn btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center"
+                  variant="subtle-secondary"
                 >
                   Add to card
                   <FontAwesomeIcon icon={faPlus} className="ms-2" />
                 </Dropdown.Toggle>
                 <Dropdown.Toggle
-                  className="d-sm-none btn btn-icon btn-icon-lg btn-soft-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
-                  variant="soft-secondary"
+                  className="d-sm-none btn btn-icon btn-icon-lg btn-subtle-secondary dropdown-toggle dropdown-caret-none d-flex align-items-center show"
+                  variant="subtle-secondary"
                 >
                   <FontAwesomeIcon icon={faPlus} />
                 </Dropdown.Toggle>
@@ -56,7 +58,7 @@ const ActionSection = () => {
                       <Dropdown.Item
                         key={item.label}
                         as={Button}
-                        variant="soft-secondary"
+                        variant="subtle-secondary"
                         startIcon={
                           <FontAwesomeIcon icon={item.icon} className="me-2" />
                         }
@@ -71,7 +73,7 @@ const ActionSection = () => {
               </Dropdown>
               <Dropdown align="end">
                 <Dropdown.Toggle
-                  className="btn-icon btn-icon-lg bg-100 text-1100 hover-bg-200 rounded-2 me-2 dropdown-caret-none"
+                  className="btn-icon btn-icon-lg bg-body-highlight text-body-emphasis bg-body-secondary-hover rounded-2 me-2 dropdown-caret-none"
                   variant=""
                 >
                   <FontAwesomeIcon icon={faEllipsisVertical} />
@@ -81,7 +83,7 @@ const ActionSection = () => {
                     {actionItems.map(item => (
                       <Dropdown.Item
                         as={Button}
-                        variant="soft-secondary"
+                        variant="subtle-secondary"
                         startIcon={
                           <FontAwesomeIcon icon={item.icon} className="me-2" />
                         }
@@ -100,7 +102,7 @@ const ActionSection = () => {
               <Dropdown align="end">
                 <Dropdown.Toggle
                   className="dropdown-caret-none d-flex align-items-center"
-                  variant="soft-info"
+                  variant="subtle-info"
                 >
                   Review
                   <FontAwesomeIcon icon={faAngleDown} className="ms-2" />
@@ -115,7 +117,10 @@ const ActionSection = () => {
                 </Dropdown.Menu>
               </Dropdown>
 
-              <Button className="btn-icon btn-icon-lg" variant="soft-secondary">
+              <Button
+                className="btn-icon btn-icon-lg"
+                variant="subtle-secondary"
+              >
                 <FontAwesomeIcon icon={faCheck} />
               </Button>
             </div>

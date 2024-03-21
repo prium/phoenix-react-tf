@@ -12,12 +12,9 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { name, avatar } = original;
       return (
-        <Link
-          to="#!"
-          className=" d-flex align-items-center text-900 text-hover-1000"
-        >
+        <Link to="#!" className=" d-flex align-items-center text-body">
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-semi-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-semibold">{name}</p>
         </Link>
       );
     },
@@ -35,7 +32,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { email } = original;
       return (
-        <Link to={`mailto:${email}`} className="fw-semi-bold">
+        <Link to={`mailto:${email}`} className="fw-semibold">
           {email}
         </Link>
       );
@@ -53,7 +50,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     cell: ({ row: { original } }) => {
       const { mobile } = original;
       return (
-        <Link to={`tel:${mobile}`} className="fw-bold text-1100">
+        <Link to={`tel:${mobile}`} className="fw-bold text-body-emphasis">
           {mobile}
         </Link>
       );
@@ -70,7 +67,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
     header: 'City',
     meta: {
       headerProps: { style: { width: '10%' } },
-      cellProps: { className: 'text-900' }
+      cellProps: { className: 'text-body' }
     }
   },
   {
@@ -82,7 +79,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
         className: 'text-end'
       },
       cellProps: {
-        className: 'text-end text-700'
+        className: 'text-end text-body-tertiary'
       }
     }
   },
@@ -95,7 +92,7 @@ export const membersTablecolumns: ColumnDef<Member>[] = [
         className: 'text-end pe-0'
       },
       cellProps: {
-        className: 'text-700 text-end'
+        className: 'text-body-tertiary text-end'
       }
     }
   }

@@ -11,7 +11,7 @@ const DealsOtherInformation = () => {
           <Col xs={12}>
             <div className="mb-4">
               <div className="d-flex flex-wrap justify-content-between mb-2">
-                <h5 className="mb-0 text-1000 me-2">Category</h5>
+                <h5 className="mb-0 text-body-highlight me-2">Category</h5>
                 <Link to="#!" className="fw-bold fs-9">
                   Add new category
                 </Link>
@@ -25,7 +25,7 @@ const DealsOtherInformation = () => {
               </Form.Select>
             </div>
             <div className="mb-4">
-              <h5 className="mb-0 text-1000 mb-2">Priority</h5>
+              <h5 className="mb-0 text-body-highlight mb-2">Priority</h5>
               <Form.Select>
                 <option value="low">Low</option>
                 <option value="high">High</option>
@@ -34,7 +34,7 @@ const DealsOtherInformation = () => {
               </Form.Select>
             </div>
             <div className="mb-4">
-              <h5 className="mb-0 text-1000 mb-2">Stage</h5>
+              <h5 className="mb-0 text-body-highlight mb-2">Stage</h5>
               <Form.Select>
                 <option value="new">New</option>
                 <option value="in-progress">In Progress</option>
@@ -45,7 +45,7 @@ const DealsOtherInformation = () => {
             </div>
             <div className="mb-4">
               <div className="d-flex flex-wrap justify-content-between mb-2">
-                <h5 className="mb-0 text-1000 me-2">Lead Source</h5>
+                <h5 className="mb-0 text-body-highlight me-2">Lead Source</h5>
                 <Link to="#!" className="fw-bold fs-9">
                   Add new
                 </Link>
@@ -62,7 +62,9 @@ const DealsOtherInformation = () => {
             </div>
             <div>
               <div className="d-flex flex-wrap justify-content-between mb-2">
-                <h5 className="mb-0 text-1000 me-2">Campaign Source</h5>
+                <h5 className="mb-0 text-body-highlight me-2">
+                  Campaign Source
+                </h5>
                 <Link to="#!" className="fw-bold fs-9">
                   Add new
                 </Link>

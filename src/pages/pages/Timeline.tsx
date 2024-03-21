@@ -39,9 +39,7 @@ const Timeline = () => {
         <Col xl={7} className="scrollbar">
           {timelineData.map(timeline => (
             <div key={timeline.id}>
-              <h4 className="py-3 border-y border-300 mb-5 ms-8">
-                {timeline.date}
-              </h4>
+              <h4 className="py-3 border-y mb-5 ms-8">{timeline.date}</h4>
               <BasicTimeline data={timeline.items} />
             </div>
           ))}

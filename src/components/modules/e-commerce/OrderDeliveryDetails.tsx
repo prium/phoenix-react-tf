@@ -28,8 +28,8 @@ export const BillingDetails = () => {
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="home" label="Address" />
           <div className="ms-4">
-            <p className="text-800 mb-0 fs-9">Shatinon Mekalan</p>
-            <p className="text-800 mb-0 fs-9">
+            <p className="text-body-secondary mb-0 fs-9">Shatinon Mekalan</p>
+            <p className="text-body-secondary mb-0 fs-9">
               Vancouver, British Columbia,
               <br className="d-none d-sm-block" />
               Canada
@@ -60,13 +60,13 @@ export const ShippingDetails = () => {
         </Col>
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="calendar" label="Shipping Date" />
-          <p className="mb-0 text-800 fs-9 ms-4">12 Nov, 2021</p>
+          <p className="mb-0 text-body-secondary fs-9 ms-4">12 Nov, 2021</p>
         </Col>
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="home" label="Address" />
           <div className="ms-4">
-            <p className="text-800 mb-0 fs-9">Shatinon Mekalan</p>
-            <p className="text-800 mb-0 fs-9">
+            <p className="text-body-secondary mb-0 fs-9">Shatinon Mekalan</p>
+            <p className="text-body-secondary mb-0 fs-9">
               Vancouver, British Columbia,
               <br className="d-none d-sm-block" />
               Canada
@@ -85,24 +85,24 @@ export const OtherDetails = () => {
       <Row className="g-4 flex-sm-column">
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="shopping-bag" label="Gift order" />
-          <p className="mb-0 text-800 fs-9 ms-4">Yes</p>
+          <p className="mb-0 text-body-secondary fs-9 ms-4">Yes</p>
         </Col>
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="package" label="Wraping" />
-          <p className="mb-0 text-800 fs-9 ms-4">Magic wrapper</p>
+          <p className="mb-0 text-body-secondary fs-9 ms-4">Magic wrapper</p>
         </Col>
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="file-text" label="Recipient" />
-          <p className="mb-0 text-800 fs-9 ms-4">Recipient</p>
+          <p className="mb-0 text-body-secondary fs-9 ms-4">Recipient</p>
         </Col>
         <Col xs={6} sm={12}>
           <OrderInfoItem icon="mail" label="Gift Meassge" />
           <div className="ms-4">
-            <p className="text-800 fs-9 mb-0">
+            <p className="text-body-secondary fs-9 mb-0">
               Happy Birthday Shiniga <br />
               Lots of Love Buga Buga!!
             </p>
-            <p className="mb-0 text-800 fs-9">
+            <p className="mb-0 text-body-secondary fs-9">
               Yours, <br />
               Mekalan
             </p>

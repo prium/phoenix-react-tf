@@ -27,7 +27,9 @@ const ProjectListView = () => {
         <div className="d-flex flex-wrap mb-4 gap-3 gap-sm-6 align-items-center">
           <h2 className="mb-0">
             <span className="me-3">Projects</span>{' '}
-            <span className="fw-normal text-700">({projects.length})</span>
+            <span className="fw-normal text-body-tertiary">
+              ({projects.length})
+            </span>
           </h2>
           <Link className="btn btn-primary px-5" to="/">
             <FontAwesomeIcon icon={faPlus} className="me-2" />

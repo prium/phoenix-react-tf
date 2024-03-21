@@ -63,7 +63,7 @@ const columns: ColumnDef<Project>[] = [
     header: 'Start date',
     accessorKey: 'start',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap' },
       headerProps: { style: { width: '10%' }, className: 'ps-3' }
     }
   },
@@ -71,7 +71,7 @@ const columns: ColumnDef<Project>[] = [
     header: 'Deadline',
     accessorKey: 'deadline',
     meta: {
-      cellProps: { className: 'ps-3 fs-9 text-900 white-space-nowrap' },
+      cellProps: { className: 'ps-3 fs-9 text-body white-space-nowrap' },
       headerProps: { style: { width: '15%' }, className: 'ps-3' }
     }
   },
@@ -83,8 +83,10 @@ const columns: ColumnDef<Project>[] = [
       if (calculation) {
         return (
           <>
-            <p className="fw-bold text-1100 fs-9 mb-0">{calculation?.amount}</p>
-            <p className="fw-semi-bold fs-10 text-700 mb-0">
+            <p className="fw-bold text-body-emphasis fs-9 mb-0">
+              {calculation?.amount}
+            </p>
+            <p className="fw-semibold fs-10 text-body-tertiary mb-0">
               {calculation?.label}
             </p>
           </>
@@ -109,7 +111,7 @@ const columns: ColumnDef<Project>[] = [
 
       return (
         <>
-          <p className="text-800 fs-10 mb-0">
+          <p className="text-body-secondary fs-10 mb-0">
             {progress.min} / {progress.max}
           </p>
           <ProgressBar
@@ -182,7 +184,9 @@ const ProjectDashboardTable = () => {
     <div>
       <AdvanceTableProvider {...table}>
         <AdvanceTable
-          tableProps={{ className: 'phoenix-table border-top border-200 fs-9' }}
+          tableProps={{
+            className: 'phoenix-table border-top border-translucent fs-9'
+          }}
         />
         <AdvanceTableFooter pagination />
       </AdvanceTableProvider>

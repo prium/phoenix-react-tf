@@ -15,7 +15,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => {
       const { orderId } = original;
       return (
-        <Link to="#!" className="fw-semi-bold">
+        <Link to="#!" className="fw-semibold">
           #{orderId}
         </Link>
       );
@@ -31,7 +31,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.total),
     meta: {
       headerProps: { style: { width: '6%' }, className: 'text-end' },
-      cellProps: { className: 'text-end fw-semi-bold text-1000' }
+      cellProps: { className: 'text-end fw-semibold text-body-highlight' }
     }
   },
   {
@@ -46,7 +46,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
           className="d-flex align-items-center"
         >
           <Avatar src={avatar} size="m" />
-          <p className="mb-0 ms-3 text-1100 fw-bold">{name}</p>
+          <p className="mb-0 ms-3 text-body-emphasis fw-bold">{name}</p>
         </Link>
       );
     },
@@ -119,7 +119,7 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Delivery type',
     meta: {
       headerProps: { style: { width: '30%' } },
-      cellProps: { className: 'text-900 fs-9' }
+      cellProps: { className: 'text-body fs-9' }
     }
   },
   {
@@ -127,7 +127,9 @@ export const ordersTableColumns: ColumnDef<Order>[] = [
     header: 'Date',
     meta: {
       headerProps: { className: 'text-end' },
-      cellProps: { className: 'text-700 fs-9 ps-4 text-end white-space-nowrap' }
+      cellProps: {
+        className: 'text-body-tertiary fs-9 ps-4 text-end white-space-nowrap'
+      }
     }
   }
 ];

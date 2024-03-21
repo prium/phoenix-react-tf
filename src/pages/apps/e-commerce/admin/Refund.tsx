@@ -15,7 +15,7 @@ const Refund = () => {
       <div className="mb-9">
         <h2 className="mb-3">Refund</h2>
         <div className="d-flex flex-wrap align-items-center mb-4 gap-3">
-          <p className="text-800 lh-sm mb-0">
+          <p className="text-body-secondary lh-sm mb-0">
             Order :{' '}
             <Link className="fw-bold" to="#!">
               {' '}
@@ -23,7 +23,7 @@ const Refund = () => {
             </Link>
           </p>
           <div className="flex-1 d-flex flex-between-center gap-3">
-            <p className="text-800 lh-sm mb-0 flex-1 white-space-nowrap">
+            <p className="text-body-secondary lh-sm mb-0 flex-1 white-space-nowrap">
               Customer Id :{' '}
               <Link className="fw-bold" to="#!">
                 {' '}

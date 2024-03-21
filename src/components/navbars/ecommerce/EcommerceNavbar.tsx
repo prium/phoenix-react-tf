@@ -118,7 +118,7 @@ const EcommerceNavbar = () => {
   }, [updateItems]);
 
   return (
-    <Navbar className="ecommerce-navbar bg-white justify-content-between p-0">
+    <Navbar className="ecommerce-navbar bg-body-emphasis justify-content-between p-0">
       <div
         className="container-small d-flex flex-between-center flex-nowrap w-100"
         ref={containerRef}
@@ -126,13 +126,13 @@ const EcommerceNavbar = () => {
         <Dropdown ref={otherElsRef}>
           <Dropdown.Toggle
             variant=""
-            className="text-900 ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
+            className="text-body ps-0 pe-5 text-nowrap dropdown-toggle dropdown-caret-none"
           >
             <FontAwesomeIcon icon={faBars} className="me-2" />
             Category
           </Dropdown.Toggle>
 
-          <Dropdown.Menu className="border py-0 category-dropdown-menu ms-2">
+          <Dropdown.Menu className="border border-translucent py-0 category-dropdown-menu">
             <Card className="border-0">
               <Scrollbar autoHeight autoHeightMax={657}>
                 <Card.Body className="p-6 pb-3">
@@ -146,7 +146,7 @@ const EcommerceNavbar = () => {
                             style={{ strokeWidth: 3 }}
                             size={16}
                           />
-                          <h6 className="text-1000 mb-0 text-nowrap">
+                          <h6 className="text-body-highlight mb-0 text-nowrap">
                             {category.title}
                           </h6>
                         </div>
@@ -155,7 +155,7 @@ const EcommerceNavbar = () => {
                             <Link
                               key={section.label}
                               to={section.url}
-                              className="text-black d-block mb-1 text-decoration-none hover-bg-100 px-2 py-1 rounded-2"
+                              className="text-body-emphasis d-block mb-1 text-decoration-none bg-body-highlight-hover px-2 py-1 rounded-2"
                             >
                               {section.label}
                             </Link>
@@ -164,7 +164,7 @@ const EcommerceNavbar = () => {
                       </Col>
                     ))}
                   </Row>
-                  <div className="text-center border-top pt-3">
+                  <div className="text-center border-top border-translucent pt-3">
                     <Link className="fw-bold" to="#!">
                       See all Categories
                       <FontAwesomeIcon icon={faAngleRight} className="ms-1" />

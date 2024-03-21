@@ -46,7 +46,7 @@ const Members = () => {
                 className="scrollbar overflow-hidden-y flex-grow-1"
               ></Col>
               <Col xs="auto">
-                <Button variant="link" className="text-900 me-4 px-0">
+                <Button variant="link" className="text-body me-4 px-0">
                   <FontAwesomeIcon icon={faFileExport} className="fs-9 me-2" />
                   Export
                 </Button>
@@ -58,7 +58,7 @@ const Members = () => {
             </Row>
           </div>
 
-          <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-white border-top border-bottom border-200 position-relative top-1">
+          <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1">
             <MembersTable />
           </div>
         </AdvanceTableProvider>

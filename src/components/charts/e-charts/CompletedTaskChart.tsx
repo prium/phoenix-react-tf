@@ -47,9 +47,9 @@ const getDefaultOptions = (
   tooltip: {
     trigger: 'axis',
     padding: 10,
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -66,7 +66,7 @@ const getDefaultOptions = (
         interval: 13,
         showMinLabel: true,
         showMaxLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'left',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,
@@ -75,7 +75,7 @@ const getDefaultOptions = (
       axisLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       axisTick: {
@@ -85,7 +85,7 @@ const getDefaultOptions = (
         show: true,
         interval: 0,
         lineStyle: {
-          color: getThemeColor('gray-200')
+          color: getThemeColor('secondary-bg')
         }
       },
       boundaryGap: false
@@ -99,7 +99,7 @@ const getDefaultOptions = (
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'right',
         fontFamily: 'Nunito Sans',
         fontWeight: 600,

@@ -10,7 +10,9 @@ const MarketingCampaign = () => {
       <Row className="align-itms-center mb-5 mb-sm-2 mb-md-4">
         <Col sm={8} md={12} lg={8} xl={12} xxl={8} className="mb-xl-2 mb-xxl-0">
           <h3>Marketing Campaign Report</h3>
-          <p className="text-700 mb-lg-0">According to the sales data.</p>
+          <p className="text-body-tertiary mb-lg-0">
+            According to the sales data.
+          </p>
         </Col>
         <Col sm={4} md={12} lg={4} xl={12} xxl={4}>
           <Form.Select>
@@ -43,7 +45,7 @@ const MarketingCampaign = () => {
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="text-warning-300 me-2"
+                  className="text-warning-light me-2"
                 />
                 <h6 className="mb-0">Online Campaign</h6>
               </div>
@@ -58,7 +60,7 @@ const MarketingCampaign = () => {
               <div className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={faCircle}
-                  className="text-primary-300 me-2"
+                  className="text-primary-light me-2"
                 />
                 <h6 className="mb-0">Offline Campaign</h6>
               </div>

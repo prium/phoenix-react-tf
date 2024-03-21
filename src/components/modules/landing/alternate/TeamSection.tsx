@@ -7,7 +7,7 @@ const TeamSection = () => {
   return (
     <section className="alternate-landing-team" id="team">
       <div
-        className="position-absolute w-100 h-100 start-0 end-0 top-0 bg-soft-primary dark__bg-1000"
+        className="position-absolute w-100 h-100 start-0 end-0 top-0 bg-body dark__bg-gray-1000"
         style={{ transform: 'skewY(-6deg)', transformOrigin: 'right' }}
       />
       <div
@@ -45,7 +45,7 @@ const TeamSection = () => {
                       className="w-70 w-sm-100 rounded-4 mb-3"
                     />
                     <h4>{member.name}</h4>
-                    <h5 className="fw-semi-bold">{member.designation}</h5>
+                    <h5 className="fw-semibold">{member.designation}</h5>
                   </div>
                 </Col>
               ))}

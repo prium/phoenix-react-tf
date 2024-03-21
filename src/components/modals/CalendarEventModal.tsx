@@ -39,9 +39,9 @@ const CalendarEventModal = () => {
       onHide={handleClose}
       contentClassName="border"
     >
-      <Modal.Header className="ps-card border-bottom">
+      <Modal.Header className="ps-card border-bottom border-translucent">
         <div>
-          <Modal.Title className="modal-title text-1000 mb-0">
+          <Modal.Title className="modal-title text-body-highlight mb-0">
             {selectedEvent?.title}
           </Modal.Title>
           {selectedEvent?.extendedProps.organizer && (
@@ -56,8 +56,8 @@ const CalendarEventModal = () => {
       </Modal.Header>
       <Modal.Body className="px-card pb-card pt-1 fs-9">
         {selectedEvent?.extendedProps.description && (
-          <div className="mt-3 border-bottom pb-3">
-            <h5 className="mb-0 text-800">Description</h5>
+          <div className="mt-3 border-bottom border-translucent pb-3">
+            <h5 className="mb-0 text-body-secondary">Description</h5>
             <p className="mb-0 mt-2">
               {selectedEvent.extendedProps.description
                 .split(' ')
@@ -68,10 +68,11 @@ const CalendarEventModal = () => {
         )}
         <div
           className={classNames('mt-4', {
-            'border-bottom pb-3': selectedEvent?.extendedProps.location
+            'border-bottom border-translucent pb-3':
+              selectedEvent?.extendedProps.location
           })}
         >
-          <h5 className="mb-0 text-800">Date and Time</h5>
+          <h5 className="mb-0 text-body-secondary">Date and Time</h5>
           <p className="mb-1 mt-2">
             {dayjs(selectedEvent?.start).format('dddd, MMMM D, YYYY, h:mm A')}
             {selectedEvent?.end &&
@@ -85,7 +86,7 @@ const CalendarEventModal = () => {
         </div>
         {selectedEvent?.extendedProps.location && (
           <div className="mt-4 ">
-            <h5 className="mb-0 text-800">Location</h5>
+            <h5 className="mb-0 text-body-secondary">Location</h5>
             <p
               className="mb-0 mt-2"
               dangerouslySetInnerHTML={{
@@ -96,7 +97,7 @@ const CalendarEventModal = () => {
         )}
         {selectedEvent?.extendedProps.schedules && (
           <div className="mt-3">
-            <h5 className="mb-0 text-800">Schedule</h5>
+            <h5 className="mb-0 text-body-secondary">Schedule</h5>
             <ul className="list-unstyled timeline mt-2 mb-0">
               {selectedEvent.extendedProps.schedules.map(
                 (schedule: Schedule) => (

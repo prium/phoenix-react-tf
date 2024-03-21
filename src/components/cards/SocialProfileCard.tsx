@@ -40,6 +40,7 @@ const SocialProfileCard = ({
           status="online"
           thumbnail
           className="feed-avatar-profile"
+          imageClassName="border-0"
         />
       </Card.Header>
       <Card.Body>
@@ -57,7 +58,7 @@ const SocialProfileCard = ({
                 />
                 <h6 className="mb-0">
                   1297
-                  <span className="fw-semi-bold ms-1">Followers</span>
+                  <span className="fw-semibold ms-1">Followers</span>
                 </h6>
               </div>
               <div className="d-flex">
@@ -67,22 +68,22 @@ const SocialProfileCard = ({
                 />
                 <h6 className="mb-0">
                   3971
-                  <span className="fw-semi-bold ms-1">Following</span>
+                  <span className="fw-semibold ms-1">Following</span>
                 </h6>
               </div>
             </div>
             {showAbout && (
               <div className="mt-4">
-                <p className="fw-semi-bold mb-0">
+                <p className="fw-semibold mb-0">
                   About me
                   <Link to="#!">
                     <FontAwesomeIcon
                       icon={faPencil}
-                      className="fs-10 text-500 ms-3"
+                      className="fs-10 text-body-quaternary ms-3"
                     />
                   </Link>
                 </p>
-                <p className="text-700 mb-0">
+                <p className="text-body-tertiary mb-0">
                   “Le capitalisme exploite. Et le capitalisme exploite les gens
                   de couleur. Comme il exploite les hommes. Ou comme il exploite
                   les femmes.”

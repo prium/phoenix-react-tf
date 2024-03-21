@@ -22,7 +22,9 @@ const NavItem = ({
   return (
     <Nav.Item
       as="li"
-      className={classNames({ 'border-bottom border-bottom-lg-0': !isLast })}
+      className={classNames({
+        'border-bottom border-translucent border-bottom-lg-0': !isLast
+      })}
     >
       <Nav.Link href={url} className="lh-1 py-0 fs-9 fw-bold py-3">
         {label}
@@ -52,7 +54,10 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
   return (
     <>
       <div
-        className={classNames(className, 'bg-white sticky-top landing-navbar')}
+        className={classNames(
+          className,
+          'bg-body-emphasis sticky-top landing-navbar'
+        )}
         ref={containerRef}
       >
         <Navbar className="px-3 px-lg-7 px-xxl-3 container-small" expand="lg">
@@ -66,7 +71,7 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
           <ThemeToggler className="mx-2 d-lg-none" />
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse>
-            <div className="border-bottom d-lg-none mb-2">
+            <div className="border-bottom border-translucent d-lg-none mb-2">
               <SearchBox
                 placeholder="Search"
                 className="w-100"
@@ -83,14 +88,14 @@ const DefaultLandingNavbar = ({ className }: { className?: string }) => {
             <div className="d-grid d-lg-flex gap-4 align-items-center">
               <ThemeToggler className="d-none d-lg-block" />
               <Button
-                className="p-0 text-700 hover-text-1100 d-none d-lg-inline lh-sm"
+                className="p-0 text-body-tertiary text-body-emphasis-hover d-none d-lg-inline lh-sm"
                 onClick={() => setOpenSearchModal(!openSearchModal)}
               >
                 <FeatherIcon icon="search" size={20} />
               </Button>
               <Link
                 to="#!"
-                className="btn btn-link p-0 text-900 order-1 order-lg-0"
+                className="btn btn-link p-0 text-body order-1 order-lg-0"
               >
                 Sign in
               </Link>

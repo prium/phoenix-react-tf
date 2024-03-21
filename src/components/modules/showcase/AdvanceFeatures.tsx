@@ -40,7 +40,7 @@ const AdvanceFeatures = () => {
         <Container fluid="lg" className="gsap">
           <Row className="justify-content-center mb-11">
             <Col xs={12} xl={7} className="text-center">
-              <h2 className="text-1000 fw-normal lh-sm">
+              <h2 className="text-body-highlight fw-normal lh-sm">
                 Beautiful blending of <br />
                 card and cardless designs of{' '}
                 <span className="text-primary position-relative fw-bolder d-inline-flex ms-2">
@@ -63,7 +63,7 @@ const AdvanceFeatures = () => {
               <Row className="g-2">
                 <Col xs={12}>
                   <img
-                    className="w-100 z-index-3 layer-4"
+                    className="w-100 z-3 layer-4"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-480'
@@ -75,7 +75,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs={6}>
                   <img
-                    className="w-100 z-index-5 layer-6"
+                    className="w-100 z-5 layer-6"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-600'
@@ -87,7 +87,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs={6}>
                   <img
-                    className="w-100 z-index-2 layer-3"
+                    className="w-100 z-2 layer-3"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-420'
@@ -99,7 +99,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs={12} className="text-end">
                   <img
-                    className="w-100 z-index-3 layer-4"
+                    className="w-100 z-3 layer-4"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-480'
@@ -115,7 +115,7 @@ const AdvanceFeatures = () => {
               <Row className="g-2 align-items-end mb-2">
                 <Col xs="auto">
                   <img
-                    className="z-index-4 layer-5"
+                    className="z-4 layer-5"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-540'
@@ -127,7 +127,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-2 layer-3"
+                    className="z-2 layer-3"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-420'
@@ -139,7 +139,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-4 layer-5"
+                    className="z-4 layer-5"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-540'
@@ -165,7 +165,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-4 layer-5"
+                    className="z-4 layer-5"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-540'
@@ -177,7 +177,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-1 layer-2"
+                    className="z-1 layer-2"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-360'
@@ -189,7 +189,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-2 layer-3"
+                    className="z-2 layer-3"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-420'
@@ -203,7 +203,7 @@ const AdvanceFeatures = () => {
               <Row className="g-2 mb-2">
                 <Col xs="auto">
                   <img
-                    className="z-index-5 layer-6"
+                    className="z-5 layer-6"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-600'
@@ -225,7 +225,7 @@ const AdvanceFeatures = () => {
                     style={{ maxWidth: '355px' }}
                   />
                   <img
-                    className="z-index-2 layer-3"
+                    className="z-2 layer-3"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-420'
@@ -237,7 +237,7 @@ const AdvanceFeatures = () => {
                 </Col>
                 <Col xs="auto">
                   <img
-                    className="z-index-5 mb-2 d-block layer-6"
+                    className="z-5 mb-2 d-block layer-6"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-600'
@@ -247,7 +247,7 @@ const AdvanceFeatures = () => {
                     style={{ maxWidth: '137px' }}
                   />
                   <img
-                    className="z-index-5 layer-6"
+                    className="z-5 layer-6"
                     ref={el => parallaxElRef.current?.push(el)}
                     data-parallax={JSON.stringify({
                       y: '-600'

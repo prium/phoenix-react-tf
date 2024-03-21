@@ -27,9 +27,9 @@ const getDefaultOptions = (
   tooltip: {
     trigger: 'axis',
     padding: 10,
-    backgroundColor: getThemeColor('gray-100'),
-    borderColor: getThemeColor('gray-300'),
-    textStyle: { color: getThemeColor('dark') },
+    backgroundColor: getThemeColor('body-highlight-bg'),
+    borderColor: getThemeColor('border-color'),
+    textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
     axisPointer: {
@@ -46,7 +46,7 @@ const getDefaultOptions = (
         interval: 3,
         showMinLabel: true,
         showMaxLabel: false,
-        color: getThemeColor('gray-800'),
+        color: getThemeColor('secondary-color'),
         align: 'left',
         fontFamily: 'Nunito Sans',
         fontWeight: 700,
@@ -56,7 +56,7 @@ const getDefaultOptions = (
       axisLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300')
+          color: getThemeColor('tertiary-bg')
         }
       },
       axisTick: {
@@ -74,7 +74,7 @@ const getDefaultOptions = (
         interval: 130,
         showMaxLabel: true,
         showMinLabel: false,
-        color: getThemeColor('gray-900'),
+        color: getThemeColor('body-color'),
         align: 'right',
         fontFamily: 'Nunito Sans',
         fontWeight: 700,
@@ -84,7 +84,7 @@ const getDefaultOptions = (
       axisLine: {
         show: true,
         lineStyle: {
-          color: getThemeColor('gray-300')
+          color: getThemeColor('tertiary-bg')
         }
       },
       axisTick: {
@@ -104,8 +104,8 @@ const getDefaultOptions = (
       lineStyle: {
         color:
           theme === 'dark'
-            ? getThemeColor('gray-100')
-            : getThemeColor('gray-200')
+            ? getThemeColor('body-highlight-bg')
+            : getThemeColor('secondary-bg')
       }
     },
     axisLine: { show: false },
@@ -114,7 +114,7 @@ const getDefaultOptions = (
       fontFamily: 'Nunito Sans',
       fontWeight: 700,
       fontSize: 12.8,
-      color: getThemeColor('gray-900'),
+      color: getThemeColor('body-color'),
       margin: 25,
       // verticalAlign: 'bottom',
       formatter: (value: number) => `${value / 1000}k`
@@ -130,13 +130,13 @@ const getDefaultOptions = (
       lineStyle: {
         type: 'line',
         width: 3,
-        color: getThemeColor('info-200')
+        color: getThemeColor('info-lighter')
       },
       showSymbol: false,
       symbol: 'emptyCircle',
       symbolSize: 6,
       itemStyle: {
-        color: getThemeColor('info-200'),
+        color: getThemeColor('info-lighter'),
         borderWidth: 3
       }
     },

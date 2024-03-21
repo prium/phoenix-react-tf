@@ -17,7 +17,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { productImage } = original;
       return (
-        <div className="rounded-2 border d-inline-block">
+        <div className="rounded-2 border border-translucent d-inline-block">
           <img src={productImage} alt="" width={53} />
         </div>
       );
@@ -30,7 +30,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => {
       const { product } = original;
       return (
-        <Link to="#!" className="fw-semi-bold line-clamp-2">
+        <Link to="#!" className="fw-semibold line-clamp-2">
           {product}
         </Link>
       );
@@ -45,7 +45,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Color',
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4' },
-      cellProps: { className: 'white-space-nowrap text-900 ps-4' }
+      cellProps: { className: 'white-space-nowrap text-body ps-4' }
     }
   },
   {
@@ -53,7 +53,9 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Size',
     meta: {
       headerProps: { style: { width: 300 }, className: 'ps-4' },
-      cellProps: { className: 'white-space-nowrap text-700 fw-semi-bold ps-4' }
+      cellProps: {
+        className: 'white-space-nowrap text-body-tertiary fw-semibold ps-4'
+      }
     }
   },
   {
@@ -62,7 +64,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     cell: ({ row: { original } }) => currencyFormat(original.price),
     meta: {
       headerProps: { style: { width: 150 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'text-900 fw-semi-bold text-end ps-4' }
+      cellProps: { className: 'text-body fw-semibold text-end ps-4' }
     }
   },
   {
@@ -70,7 +72,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
     header: 'Quantity',
     meta: {
       headerProps: { style: { width: 200 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'text-end ps-4 text-700' }
+      cellProps: { className: 'text-end ps-4 text-body-tertiary' }
     }
   },
   {
@@ -81,7 +83,7 @@ const columns: ColumnDef<WishlistProductType>[] = [
       currencyFormat(original.price * original.quantity),
     meta: {
       headerProps: { style: { width: 250 }, className: 'ps-4 text-end' },
-      cellProps: { className: 'fw-bold text-1000 text-end ps-4' }
+      cellProps: { className: 'fw-bold text-body-highlight text-end ps-4' }
     }
   }
 ];
@@ -105,13 +107,13 @@ const OrderDetailsTable = () => {
   return (
     <div>
       <AdvanceTableProvider {...table}>
-        <div className="border-y">
+        <div className="border-y border-translucent">
           <AdvanceTable tableProps={{ className: 'phoenix-table fs-9' }} />
           <div className="d-flex flex-between-center py-3">
-            <p className="text-1100 fw-semi-bold lh-sm mb-0">
+            <p className="text-body-emphasis fw-semibold lh-sm mb-0">
               Items subtotal :
             </p>
-            <p className="text-1100 fw-bold lh-sm mb-0">
+            <p className="text-body-emphasis fw-bold lh-sm mb-0">
               {currencyFormat(subtotal)}
             </p>
           </div>

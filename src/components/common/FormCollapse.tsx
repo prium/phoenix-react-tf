@@ -21,13 +21,16 @@ const FormCollapse = ({
     <>
       <Button
         onClick={() => setOpen(!open)}
-        className={classNames('px-0 d-block collapse-indicator w-100', {
+        className={classNames('px-0 d-block collapse-indicator w-100 mt-3', {
           collapsed: !open
         })}
       >
         <div className="d-flex align-items-center justify-content-between w-100">
-          <div className="fs-8 text-1000">{title}</div>
-          <FontAwesomeIcon icon={faAngleUp} className="toggle-icon text-500" />
+          <div className="fs-8 text-body-highlight">{title}</div>
+          <FontAwesomeIcon
+            icon={faAngleUp}
+            className="toggle-icon text-body-quaternary"
+          />
         </div>
       </Button>
       <Collapse in={open}>

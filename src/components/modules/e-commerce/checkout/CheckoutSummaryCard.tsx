@@ -14,10 +14,10 @@ const CheckoutSummaryCard = () => {
             Edit cart
           </Button>
         </div>
-        <div className="border-dashed border-bottom mb-4">
-          <div className="mx-n2 d-flex flex-column gap-2 mb-5">
+        <div className="border-dashed border-bottom border-translucent mb-4">
+          <div className="ms-n2 mb-5">
             {cartItems.map(item => (
-              <Row className="align-items-center g-3" key={item.id}>
+              <Row className="align-items-center g-3 mb-2" key={item.id}>
                 <Col xs={8} md={7} lg={8}>
                   <div className="d-flex align-items-center">
                     <img
@@ -26,7 +26,7 @@ const CheckoutSummaryCard = () => {
                       width={40}
                       alt={item.name}
                     />
-                    <h6 className="fw-semi-bold text-1000 lh-base line-clamp-2">
+                    <h6 className="fw-semibold text-body-highlight lh-base line-clamp-2">
                       {item.name}
                     </h6>
                   </div>
@@ -35,7 +35,7 @@ const CheckoutSummaryCard = () => {
                   <h6 className="fs-10 mb-0">x1</h6>
                 </Col>
                 <Col xs={2} className="ps-0">
-                  <h5 className="mb-0 fw-semi-bold text-end text-lg-start">
+                  <h5 className="mb-0 fw-semibold text-end">
                     {currencyFormat(item.price * item.quantity)}
                   </h5>
                 </Col>
@@ -44,26 +44,26 @@ const CheckoutSummaryCard = () => {
           </div>
         </div>
 
-        <div className="border-dashed border-bottom mb-3">
+        <div className="border-dashed border-bottom border-translucent mb-3">
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Items subtotal: </h5>
-            <h5 className="text-900 fw-semi-bold">$691</h5>
+            <h5 className="text-body fw-semibold">Items subtotal: </h5>
+            <h5 className="text-body fw-semibold">$691</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Discount: </h5>
-            <h5 className="text-danger fw-semi-bold">-$59</h5>
+            <h5 className="text-body fw-semibold">Discount: </h5>
+            <h5 className="text-danger fw-semibold">-$59</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Tax: </h5>
-            <h5 className="text-900 fw-semi-bold">$126.20</h5>
+            <h5 className="text-body fw-semibold">Tax: </h5>
+            <h5 className="text-body fw-semibold">$126.20</h5>
           </div>
           <div className="d-flex justify-content-between mb-2">
-            <h5 className="text-900 fw-semi-bold">Subtotal </h5>
-            <h5 className="text-900 fw-semi-bold">$665</h5>
+            <h5 className="text-body fw-semibold">Subtotal </h5>
+            <h5 className="text-body fw-semibold">$665</h5>
           </div>
           <div className="d-flex justify-content-between mb-3">
-            <h5 className="text-900 fw-semi-bold">Shipping Cost </h5>
-            <h5 className="text-900 fw-semi-bold">$30 </h5>
+            <h5 className="text-body fw-semibold">Shipping Cost </h5>
+            <h5 className="text-body fw-semibold">$30 </h5>
           </div>
         </div>
 

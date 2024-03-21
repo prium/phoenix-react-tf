@@ -12,7 +12,7 @@
     overflow: unset !important;
   }
   .tox-edit-area {
-    font-family: $font-family-sans-serif;
+    font-family: var(--#{$prefix}font-sans-serif);
   }
   .tox-toolbar--scrolling {
     background-color: transparent !important;
@@ -41,7 +41,7 @@
   }
   .tox-sidebar-wrap {
     overflow: hidden;
-    border: 1px solid var(--#{$prefix}input-border-color);
+    border: 1px solid $input-border-color;
     border-radius: $border-radius;
   }
 
@@ -53,13 +53,13 @@
   }
   .tox-dialog__header,
   .tox-dialog__footer {
-    background: var(--#{$prefix}white) !important;
+    background: var(--#{$prefix}emphasis-bg) !important;
     padding: 8px 16px 32px !important;
   }
 
   .tox-collection__item--active,
   .tox-collection__item-accessory {
-    background-color: var(--#{$prefix}gray-200) !important;
+    background-color: var(--#{$prefix}secondary-bg) !important;
     color: var(--#{$prefix}body-color) !important;
   }
 
@@ -76,9 +76,9 @@
   }
 
   .tox-textfield {
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     color: var(--#{$prefix}body-color) !important;
-    border-color: var(--#{$prefix}input-border-color) !important;
+    border-color: $input-border-color !important;
     padding: 0.5rem 1rem !important;
     &:focus {
       border-color: $primary !important;
@@ -87,7 +87,7 @@
   }
 
   .tox-listbox {
-    background-color: var(--#{$prefix}input-bg) !important;
+    background-color: $input-bg !important;
     color: var(--#{$prefix}body-color) !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -102,17 +102,17 @@
   .tox-collection--list {
     .tox-collection__item {
       background-color: transparent !important;
-      color: var(--#{$prefix}gray-800) !important;
+      color: var(--#{$prefix}secondary-color) !important;
     }
     .tox-collection__item--active {
-      background-color: var(--#{$prefix}gray-200) !important;
+      background-color: var(--#{$prefix}secondary-bg) !important;
     }
   }
 
   .tox-button--naked {
     color: var(--#{$prefix}body-color) !important;
     &:hover:not(:disabled) {
-      background-color: var(--#{$prefix}gray-200) !important;
+      background-color: var(--#{$prefix}secondary-bg) !important;
       border-color: var(--#{$prefix}border-color) !important;
     }
   }
@@ -151,7 +151,7 @@
   }
   .tox-toolbar__overflow {
     padding-left: 1rem !important;
-    background-color: var(--#{$prefix}gray-100) !important;
+    background-color: var(--#{$prefix}body-highlight-bg) !important;
     background-image: none !important;
   }
   .tox-dialog-wrap__backdrop {
@@ -164,23 +164,23 @@
   height: 24px !important;
   width: 24px !important;
   span svg {
-    fill: var(--#{$prefix}gray-700) !important;
+    fill: var(--#{$prefix}tertiary-color) !important;
     @include hover-focus {
-      fill: var(--#{$prefix}gray-700) !important;
+      fill: var(--#{$prefix}tertiary-color) !important;
     }
   }
   @include hover-focus {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}secondary-bg) !important;
   }
 }
 
 .tox .tox-tbtn--enabled {
-  background: var(--#{$prefix}gray-300) !important;
+  background: var(--#{$prefix}tertiary-bg) !important;
   span svg {
     fill: var(--#{$prefix}tinymce-tox-tbtn-enabled-icon-color) !important;
   }
   @include hover-focus {
-    background: var(--#{$prefix}gray-200) !important;
+    background: var(--#{$prefix}secondary-bg) !important;
   }
 }
 

@@ -16,7 +16,7 @@ const SharedMedia = () => {
     <div className="d-flex gap-3 my-3">
       <FontAwesomeIcon icon={faPhotoFilm} className="fs-9" />
       <div>
-        <h6 className="fw-semi-bold mb-2">Shared Media</h6>
+        <h6 className="fw-semibold mb-2">Shared Media</h6>
         <Row className="g-2">
           {attachments.map((attachment, index) => (
             <Col xs="auto" key={attachment.image}>
@@ -26,7 +26,7 @@ const SharedMedia = () => {
                   alt=""
                   height={100}
                   width={100}
-                  className="fit-cover rounded-2 hover-bg-200"
+                  className="fit-cover rounded-2 bg-body-secondary-hover"
                 />
               </Button>
             </Col>

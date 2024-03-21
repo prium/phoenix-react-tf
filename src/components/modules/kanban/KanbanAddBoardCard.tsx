@@ -7,7 +7,7 @@ const KanbanAddBoardCard = () => {
   return (
     <Button
       variant="phoenix-primary"
-      className="d-flex flex-center h-100 w-100 fs-7 fw-semi-bold"
+      className="d-flex flex-center h-100 w-100 fs-7 fw-semibold"
       as={Link}
       to="/apps/kanban/create-board"
     >

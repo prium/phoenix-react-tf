@@ -14,8 +14,8 @@ const WizardAccessDeniedModal = () => {
       centered
       onHide={() => setOpenDeniedModal(false)}
     >
-      <Modal.Header className="border-100 p-3">
-        <div className="h4 text-800 mb-0">Access Denied!</div>
+      <Modal.Header className="border-gray-100 p-3">
+        <div className="h4 text-body-secondary mb-0">Access Denied!</div>
         <Button
           variant="link"
           className="text-danger px-1 position-absolute top-0 end-0 mt-2 me-2"
@@ -28,7 +28,7 @@ const WizardAccessDeniedModal = () => {
         <div className="d-flex align-items-center">
           <img className="me-4" src={stopIcon} />
           <div className="flex-1">
-            <p className="mb-0 fw-semi-bold text-700">
+            <p className="mb-0 fw-semibold text-body-tertiary">
               You do not have the link to access. Please start <br />
               over to get access for the next session.
               <br />

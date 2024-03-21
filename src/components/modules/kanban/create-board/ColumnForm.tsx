@@ -64,7 +64,10 @@ const ColumnItem = ({
         startComponent={<FontAwesomeIcon icon={faBars} />}
         endComponent={
           <button className="btn p-0 lh-1" onClick={handleClear}>
-            <FontAwesomeIcon className="text-300" icon={faCircleXmark} />
+            <FontAwesomeIcon
+              className="text-body-quaternary text-opacity-50"
+              icon={faCircleXmark}
+            />
           </button>
         }
       >
@@ -166,7 +169,7 @@ const ColumnForm = () => {
       <Button
         variant="phoenix-secondary"
         startIcon={<FontAwesomeIcon icon={faPlus} />}
-        className="w-100 bg-100 fs-9"
+        className="w-100 bg-body-highlight fs-9"
         size="lg"
         onClick={handleAddNewColumn}
       >

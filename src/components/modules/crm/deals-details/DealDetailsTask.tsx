@@ -22,7 +22,7 @@ const DealDetailsTask = ({ tasks }: { tasks: Task[] }) => {
         </Col>
         <Col xs="auto">
           <div className="d-flex ms-sm-3">
-            <p className="mb-0 fs-9 text-700 fw-bold">
+            <p className="mb-0 fs-9 text-body-tertiary fw-bold">
               <FontAwesomeIcon
                 icon={faFilter}
                 className="me-1 fw-extra-bold fs-10"
@@ -43,7 +43,7 @@ const DealDetailsTask = ({ tasks }: { tasks: Task[] }) => {
         <TodoListItem
           key={task.id}
           todo={task}
-          className={classNames({
+          className={classNames('border-translucent', {
             'border-top': index === 0,
             'border-bottom-0': index === tasks.length - 1
           })}
