@@ -1,9 +1,4 @@
-import React, {
-  CSSProperties,
-  MutableRefObject,
-  forwardRef,
-  useEffect
-} from 'react';
+import React, { MutableRefObject, forwardRef, useEffect } from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
@@ -145,10 +140,7 @@ const getDefaultOptions = (
   animation: false
 });
 
-const FinalcialActivitiesChart = forwardRef<
-  EChartsReactCore | null,
-  { style: CSSProperties }
->(({ style }, ref) => {
+const FinalcialActivitiesChart = forwardRef<EChartsReactCore | null>(ref => {
   const {
     getThemeColor,
     config: { isDark }
@@ -180,7 +172,7 @@ const FinalcialActivitiesChart = forwardRef<
           left: 3
         }
       });
-    } else if (window.innerWidth < 992) {
+    } else if (window.innerWidth <= 1440) {
       chartRef.current?.getEchartsInstance().setOption({
         yAxis: {
           axisLabel: {
@@ -191,7 +183,7 @@ const FinalcialActivitiesChart = forwardRef<
           left: 15
         }
       });
-    } else if (window.innerWidth > 992) {
+    } else {
       chartRef.current?.getEchartsInstance().setOption({
         yAxis: {
           axisLabel: {
@@ -204,6 +196,7 @@ const FinalcialActivitiesChart = forwardRef<
       });
     }
   };
+
   useEffect(() => {
     window.addEventListener('resize', updateDimensions);
     return () => window.removeEventListener('resize', updateDimensions);
@@ -219,7 +212,7 @@ const FinalcialActivitiesChart = forwardRef<
       echarts={echarts}
       ref={chartRef}
       option={getDefaultOptions(getThemeColor, isDark)}
-      style={style}
+      className="echart-financial-Activities"
     />
   );
 });

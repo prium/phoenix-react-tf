@@ -88,7 +88,8 @@ const columns: ColumnDef<Data>[] = [
     meta: {
       headerProps: {
         className: ' fs-10'
-      }
+      },
+      cellProps: { className: 'py-2' }
     }
   },
   {
@@ -97,14 +98,15 @@ const columns: ColumnDef<Data>[] = [
       <h6>
         {original.users.number}
         <span className="text-body-tertiary fw-semibold ms-2">
-          {original.users.percantage}
+          ({original.users.percantage})
         </span>
       </h6>
     ),
     meta: {
       headerProps: {
         className: ' fs-10'
-      }
+      },
+      cellProps: { className: 'py-2' }
     }
   },
   {
@@ -120,7 +122,7 @@ const columns: ColumnDef<Data>[] = [
         style: { minWidth: 100, width: '15%' },
         className: 'text-end fs-10'
       },
-      cellProps: { className: 'text-end fw-semibold' }
+      cellProps: { className: 'text-end fw-semibold py-2' }
     }
   }
 ];

@@ -108,7 +108,7 @@ export const FinancialActivitiesCard = () => {
           </div>
         </Col>
       </Row>
-      <FinalcialActivitiesChart ref={chartRef} style={{ width: '100%' }} />
+      <FinalcialActivitiesChart ref={chartRef} />
     </div>
   );
 };

@@ -100,7 +100,7 @@ export const TravelStatsCard = () => {
         xs={6}
         xl={12}
         xxl={6}
-        className="border-bottom py-4 ps-4 ps-sm-5 ps-xl-0 ps-xxl-5"
+        className="py-4 ps-4 ps-sm-5 ps-xl-0 ps-xxl-5"
       >
         <TravelStats
           title="Canceled Booking"
