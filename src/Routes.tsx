@@ -188,6 +188,7 @@ const UniconsExample = lazy(
   () => import('pages/modules/components/UniconsExample')
 );
 import Color from './pages/documentation/customization/Color';
+import TravelAgency from 'pages/dashboard/TravelAgency';
 
 const routes: RouteObject[] = [
   {
@@ -215,6 +216,10 @@ const routes: RouteObject[] = [
               {
                 path: 'crm',
                 element: <Crm />
+              },
+              {
+                path: 'travel-agency',
+                element: <TravelAgency />
               }
             ]
           },

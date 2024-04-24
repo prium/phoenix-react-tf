@@ -16,13 +16,15 @@ interface AdvanceTableFooterProps {
   pagination?: boolean;
   navBtn?: boolean;
   showViewAllBtn?: boolean;
+  viewAllBtnClass?: string;
 }
 
 const AdvanceTableFooter = ({
   className,
   pagination,
   navBtn,
-  showViewAllBtn = true
+  showViewAllBtn = true,
+  viewAllBtnClass
 }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
@@ -63,7 +65,7 @@ const AdvanceTableFooter = ({
         {showViewAllBtn && (
           <Button
             variant="link"
-            className="p-0 fw-semibold"
+            className={classNames(viewAllBtnClass, 'p-0 fw-semibold')}
             endIcon={
               <FontAwesomeIcon icon={faAngleRight} className="ms-1 fs-9" />
             }

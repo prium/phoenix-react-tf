@@ -70,6 +70,13 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'Travel Agency',
+            path: '/dashboard/travel-agency',
+            pathName: 'travel-agency',
+            topNavIcon: 'phone',
+            active: true
+          },
+          {
             name: 'social-feed',
             path: '/apps/social/feed',
             pathName: 'social-feed',
