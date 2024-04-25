@@ -1,4 +1,9 @@
-import React, { MutableRefObject, forwardRef, useEffect } from 'react';
+import React, {
+  CSSProperties,
+  MutableRefObject,
+  forwardRef,
+  useEffect
+} from 'react';
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
@@ -140,7 +145,10 @@ const getDefaultOptions = (
   animation: false
 });
 
-const FinalcialActivitiesChart = forwardRef<EChartsReactCore | null>(ref => {
+const FinalcialActivitiesChart = forwardRef<
+  EChartsReactCore | null,
+  { style: CSSProperties }
+>(({ style }, ref) => {
   const {
     getThemeColor,
     config: { isDark }
@@ -212,6 +220,7 @@ const FinalcialActivitiesChart = forwardRef<EChartsReactCore | null>(ref => {
       echarts={echarts}
       ref={chartRef}
       option={getDefaultOptions(getThemeColor, isDark)}
+      style={style}
       className="echart-financial-Activities"
     />
   );

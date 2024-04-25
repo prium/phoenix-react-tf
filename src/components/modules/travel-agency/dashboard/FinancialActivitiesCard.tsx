@@ -12,7 +12,6 @@ export const FinancialActivitiesCard = () => {
   const [toggleExpanses, setToggleExpenses] = useState(false);
 
   const handleLegend = (value: string, event: MouseEvent<HTMLElement>) => {
-    console.log(event);
     value == 'Profit' && setToggleProfit(!toggleProfit);
     value == 'Revenue' && setToggleRevenue(!toggleRevenue);
     value == 'Expanses' && setToggleExpenses(!toggleExpanses);
@@ -108,7 +107,7 @@ export const FinancialActivitiesCard = () => {
           </div>
         </Col>
       </Row>
-      <FinalcialActivitiesChart ref={chartRef} />
+      <FinalcialActivitiesChart ref={chartRef} style={{}} />
     </div>
   );
 };
