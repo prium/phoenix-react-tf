@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { VisitorsCard } from 'components/modules/travel-agency/dashboard/VisitorsCard';
 import { TravelStatsCard } from 'components/modules/travel-agency/dashboard/TravelStatsCard';
 import { FinancialActivitiesCard } from 'components/modules/travel-agency/dashboard/FinancialActivitiesCard';
+import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
+import { IntegrationsCard } from 'components/cta/IntegrationsCard';
 
 const TravelAgency = () => {
   return (
@@ -45,9 +47,11 @@ const TravelAgency = () => {
               <VisitorsCard />
             </Col>
             <Col xs={12} md={6} xxl={12}>
-              {/* +HolidaysNextMonth */}
+              <HolidaysCard />
             </Col>
-            <Col xs={12}>{/* +IntegrationsCard */}</Col>
+            <Col xs={12}>
+              <IntegrationsCard />
+            </Col>
           </Row>
         </Col>
       </Row>
