@@ -8,6 +8,7 @@ import { TravelStatsCard } from 'components/modules/travel-agency/dashboard/Trav
 import { FinancialActivitiesCard } from 'components/modules/travel-agency/dashboard/FinancialActivitiesCard';
 import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
+import GrossProfitCard from 'components/modules/travel-agency/dashboard/GrossProfitCard';
 
 const TravelAgency = () => {
   return (
@@ -58,6 +59,7 @@ const TravelAgency = () => {
       <Row className="g-3 mb-5">
         <Col xl={5} xxl={7}>
           {/* +GrossProfitCard */}
+          <GrossProfitCard />
         </Col>
         <Col xl={5} xxl={7}>
           {/* +BookingsCard */}
