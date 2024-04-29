@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { SimpleDropdown } from 'components/base/SimpleDropdown';
 import FinalcialActivitiesChart from 'components/charts/e-charts/FinalcialActivitiesChart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
-import React, { MouseEvent, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 
 export const FinancialActivitiesCard = () => {
@@ -11,7 +11,7 @@ export const FinancialActivitiesCard = () => {
   const [toggleRevenue, setToggleRevenue] = useState(false);
   const [toggleExpanses, setToggleExpenses] = useState(false);
 
-  const handleLegend = (value: string, event: MouseEvent<HTMLElement>) => {
+  const handleLegend = (value: string) => {
     value == 'Profit' && setToggleProfit(!toggleProfit);
     value == 'Revenue' && setToggleRevenue(!toggleRevenue);
     value == 'Expanses' && setToggleExpenses(!toggleExpanses);
@@ -53,7 +53,7 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="profile"
-              onClick={e => handleLegend('Profit', e)}
+              onClick={() => handleLegend('Profit')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
@@ -71,7 +71,7 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="revenue"
-              onClick={e => handleLegend('Revenue', e)}
+              onClick={() => handleLegend('Revenue')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
@@ -89,7 +89,7 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="expanses"
-              onClick={e => handleLegend('Expanses', e)}
+              onClick={() => handleLegend('Expanses')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {

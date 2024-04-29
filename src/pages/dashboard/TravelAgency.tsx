@@ -9,6 +9,7 @@ import { FinancialActivitiesCard } from 'components/modules/travel-agency/dashbo
 import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
 import GrossProfitCard from 'components/modules/travel-agency/dashboard/GrossProfitCard';
+import Bookings from 'components/modules/travel-agency/dashboard/Bookings';
 
 const TravelAgency = () => {
   return (
@@ -58,11 +59,10 @@ const TravelAgency = () => {
       </Row>
       <Row className="g-3 mb-5">
         <Col xl={5} xxl={7}>
-          {/* +GrossProfitCard */}
           <GrossProfitCard />
         </Col>
-        <Col xl={5} xxl={7}>
-          {/* +BookingsCard */}
+        <Col xl={7} xxl={5}>
+          <Bookings />
         </Col>
       </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 pb-9 bg-body-emphasis border-top">
