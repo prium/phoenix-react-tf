@@ -10,6 +10,7 @@ import { HolidaysCard } from 'components/modules/travel-agency/dashboard/Holiday
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
 import GrossProfitCard from 'components/modules/travel-agency/dashboard/GrossProfitCard';
 import Bookings from 'components/modules/travel-agency/dashboard/Bookings';
+import Flights from 'components/modules/travel-agency/dashboard/Flights';
 
 const TravelAgency = () => {
   return (
@@ -67,6 +68,7 @@ const TravelAgency = () => {
       </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 pb-9 bg-body-emphasis border-top">
         {/* Flights */}
+        <Flights />
       </div>
     </>
   );
