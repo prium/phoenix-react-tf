@@ -3,11 +3,16 @@
   position: relative;
   .swiper {
     .swiper-wrapper {
+      
+      &.swiper-continuous-autoplay {
+        transition-timing-function: linear;
+      }
       .swiper-slide {
         height: auto !important;
       }
     }
   }
+
 
   .swiper-button-prev,
   .swiper-button-next {

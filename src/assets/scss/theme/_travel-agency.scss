@@ -1,13 +1,14 @@
 .echart-financial-Activities {
-  height: 27.8rem !important;
-  width: 100% !important;
+  height: 27.8rem;
+  width: 100%;
   @include media-breakpoint-up(xxl) {
-    height: 46rem !important;
+    height: 46rem;
   }
 }
 .flight-desc-card {
   width: auto;
   position: absolute;
+  z-index: 1;
   bottom: map-get($spacers, 3);
   left: 50%;
   transform: translateX(-50%);
@@ -36,37 +37,38 @@
 }
 
 .marker-1 {
-  background-image: url('../img/icons/fly-map-marker.png');
+  background-image: url('../../img/icons/fly-map-marker.png');
   background-size: 100%;
   width: 1.875rem;
   height: 2.94rem;
   top: -1.125rem;
-  [data-bs-theme='dark'] &{
-    background-image: url('../img/icons/fly-map-marker_dark.png');
+  z-index: 1;
+  [data-bs-theme='dark'] & {
+    background-image: url('../../img/icons/fly-map-marker_dark.png');
   }
 }
 .marker-2 {
-  background-image: url('../img/icons/plane.png');
+  background-image: url('../../img/icons/plane.png');
   background-size: 100%;
   width: 2.125rem;
   height: 2.125rem;
-  [data-bs-theme='dark'] &{
-    background-image: url('../img/icons/plane_dark.png');
+  [data-bs-theme='dark'] & {
+    background-image: url('../../img/icons/plane_dark.png');
   }
 }
 .marker-3 {
-  background-image: url('../img/icons/land-map-marker.png');
+  background-image: url('../../img/icons/land-map-marker.png');
   background-size: 100%;
   width: 1.875rem;
   height: 2.94rem;
   top: -1.125rem;
   [data-bs-theme='dark'] & {
-    background-image: url('../img/icons/land-map-marker_dark.png');
+    background-image: url('../../img/icons/land-map-marker_dark.png');
   }
 }
 
 // add property
-.price-tier-form {
+.form-price-tier {
   .pricings {
     display: none;
   }
@@ -93,15 +95,64 @@
   }
 }
 
-.hotel-card{
-  max-width: 20.625rem;
-  .btn-wish{
+.hotel-card {
+  max-height: 27.5rem;
+  .btn-wish {
     opacity: 0;
     transition: opacity 0.2s ease;
   }
-  &:hover{
-    .btn-wish{
+  &:hover {
+    .btn-wish {
       opacity: 1 !important;
+    }
+  }
+}
+
+// Flight
+
+.flight-list-item-logo {
+  height: 64px;
+  @include media-breakpoint-up(sm) {
+    height: 100px;
+  }
+}
+
+.flight-filter-checkbox:checked {
+  + {
+    label {
+      border: 1px solid var(--#{$prefix}primary-light);
+      outline: 0;
+      background: var(--#{$prefix}primary) !important;
+      color: var(--#{$prefix}white) !important;
+    }
+  }
+}
+
+.coupon-card-sticky-top {
+  @include media-breakpoint-up(lg) {
+    position: sticky;
+    top: calc(var(--phoenix-navbar-top-height) + 3.725rem);
+  }
+}
+
+.flight-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-sticky;
+}
+
+.theme-wizard {
+  &.flight-booking-wizard {
+    .nav-item {
+      &:not(&:last-child) {
+        .nav-link {
+          &:before {
+            top: 35% !important;
+          }
+        }
+      }
     }
   }
 }

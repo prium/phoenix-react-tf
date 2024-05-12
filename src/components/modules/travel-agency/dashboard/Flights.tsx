@@ -37,6 +37,7 @@ import southKorea from 'assets/img/country/south-korea.png';
 import qatar from 'assets/img/country/qatar.png';
 import norway from 'assets/img/country/norway.png';
 import FlightsTableHeader from './FlightsHeader';
+import FlightMap from './FlightMap';
 
 interface FlightData {
   flightNo: string;
@@ -537,6 +538,15 @@ const Flights = () => {
             rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
           />
         </AdvanceTableProvider>
+      </div>
+      <div className="mb-3 mb-xl-4 overflow-hidden">
+        <FlightMap
+          className="border rounded-3"
+          options={{
+            center: [-73.102712, 7.102257],
+            zoom: 5
+          }}
+        />
       </div>
     </div>
   );
