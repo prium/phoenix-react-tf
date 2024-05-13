@@ -9,9 +9,9 @@ import Badge, { BadgeBg } from 'components/base/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import china from 'assets/img/country/china.png';
-import usa from 'assets/img/country/usa.png';
-import india from 'assets/img/country/india.png';
+import china from 'assets/img/country/china-2.png';
+import usa from 'assets/img/country/usa-2.png';
+import india from 'assets/img/country/india-2.png';
 
 type Data = {
   country: {
@@ -144,7 +144,11 @@ export const VisitorsCardTable = () => {
         }}
         headerClassName="fs-0"
       />
-      <AdvanceTableFooter className="py-3" viewAllBtnClass="ms-auto" />
+      <AdvanceTableFooter
+        className="py-3"
+        totalItemsClass="fs-8"
+        viewAllBtnClass="ms-auto fw-bold"
+      />
     </AdvanceTableProvider>
   );
 };

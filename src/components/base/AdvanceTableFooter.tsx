@@ -17,6 +17,7 @@ interface AdvanceTableFooterProps {
   navBtn?: boolean;
   showViewAllBtn?: boolean;
   viewAllBtnClass?: string;
+  totalItemsClass?: string;
 }
 
 const AdvanceTableFooter = ({
@@ -24,7 +25,8 @@ const AdvanceTableFooter = ({
   pagination,
   navBtn,
   showViewAllBtn = true,
-  viewAllBtnClass
+  viewAllBtnClass,
+  totalItemsClass
 }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
@@ -56,7 +58,12 @@ const AdvanceTableFooter = ({
   return (
     <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex fs-9">
-        <p className="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+        <p
+          className={classNames(
+            totalItemsClass,
+            'mb-0 d-none d-sm-block me-3 fw-semibold text-body'
+          )}
+        >
           {pageSize * pageIndex + 1} to{' '}
           {pageSize * pageIndex + getPaginationRowModel().rows.length}
           <span className="text-body-tertiary"> items of </span>

@@ -1,8 +1,8 @@
 .echart-financial-Activities {
-  height: 27.8rem;
+  height: 27.8rem !important;
   width: 100%;
   @include media-breakpoint-up(xxl) {
-    height: 46rem;
+    height: 46rem !important;
   }
 }
 .flight-desc-card {
