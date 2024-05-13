@@ -9,29 +9,17 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import { tooltipFormatterList } from 'helpers/echart-utils';
+import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, BarChart]);
-
-const profitData = [
-  [350000, 390000, 410700, 450000, 390000, 410700],
-  [245000, 310000, 420000, 480000, 530000, 580000],
-  [278450, 513220, 359890, 444567, 201345, 589000]
-];
-const revenueData = [
-  [-810000, -640000, -630000, -590000, -620000, -780000],
-  [-482310, -726590, -589120, -674832, -811245, -455678],
-  [-432567, -688921, -517389, -759234, -601876, -485112]
-];
-const expansesData = [
-  [-450000, -250000, -200000, -120000, -230000, -270000],
-  [-243567, -156789, -398234, -120456, -321890, -465678],
-  [-235678, -142345, -398765, -287456, -173890, -451234]
-];
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  isDark: boolean
+  isDark: boolean,
+  profitData: number[][],
+  revenueData: number[][],
+  expansesData: number[][]
 ) => ({
   color: [getThemeColor('primary'), getThemeColor('tertiary-bg')],
   tooltip: {
@@ -45,7 +33,8 @@ const getDefaultOptions = (
     axisPointer: {
       type: 'none'
     },
-    formatter: tooltipFormatterList
+    formatter: (params: CallbackDataParams[]) =>
+      tooltipFormatterDefault(params, 'MMM DD', 'color')
   },
   legend: {
     data: ['Profit', 'Revenue', 'Expanses'],
@@ -75,6 +64,7 @@ const getDefaultOptions = (
     },
     data: ['NOV-DEC', 'SEP-OCT', 'JUL-AUG', 'MAY-JUN', 'MAR-APR', 'JAN-FEB'],
     axisLabel: {
+      show: true,
       color: getThemeColor('secondary-text-emphasis'),
       margin: 8,
       fontFamily: 'Nunito Sans',
@@ -147,8 +137,13 @@ const getDefaultOptions = (
 
 const FinalcialActivitiesChart = forwardRef<
   EChartsReactCore | null,
-  { style: CSSProperties }
->(({ style }, ref) => {
+  {
+    style: CSSProperties;
+    profitData: number[][];
+    revenueData: number[][];
+    expansesData: number[][];
+  }
+>(({ style, profitData, revenueData, expansesData }, ref) => {
   const {
     getThemeColor,
     config: { isDark }
@@ -219,7 +214,13 @@ const FinalcialActivitiesChart = forwardRef<
     <ReactEChartsCore
       echarts={echarts}
       ref={chartRef}
-      option={getDefaultOptions(getThemeColor, isDark)}
+      option={getDefaultOptions(
+        getThemeColor,
+        isDark,
+        profitData,
+        revenueData,
+        expansesData
+      )}
       style={style}
       className="echart-financial-Activities"
     />
