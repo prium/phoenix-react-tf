@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const IntegrationsCard = () => {
   return (
-    <Card>
+    <Card className="mb-3">
       <div
         className="bg-holder"
         style={{
@@ -21,7 +21,7 @@ export const IntegrationsCard = () => {
         <div>
           <h3 className="text-body-highlight mb-3">Phoenix integrations</h3>
           <p className="text-body-tertiary mb-4 w-75 w-xl-100">
-            Phoenix improves efficiency instantly and effortlessly{' '}
+            Phoenix improves efficiency instantly and effortlessly
             <br className="d-none d-xxl-block" /> by allowing easy & simple
             connection <br className="d-none d-xxl-block" /> to other popular
             programs
@@ -33,7 +33,7 @@ export const IntegrationsCard = () => {
             to={`#!`}
             startIcon={<FontAwesomeIcon icon={faLink} className="me-1" />}
           >
-            Calender
+            Connect Now
           </Button>
         </div>
       </Card.Body>

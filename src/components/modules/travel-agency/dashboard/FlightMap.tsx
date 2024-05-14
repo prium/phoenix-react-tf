@@ -153,7 +153,7 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
 
       interface Destination {
         type: string;
-        features: Feature[] | Feature<LineString>[];
+        features: Feature[];
       }
       interface Destination2 {
         type: string;
@@ -255,17 +255,17 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
         ]
       };
 
-      // let count = 1;
-      // points.features.forEach(feature => {
-      //   const el = document.createElement('div');
-      //   el.className = `marker-${count}`;
-      //   new mapboxgl.Marker(el)
-      //     .setLngLat(feature.geometry.coordinates)
-      //     .addTo(map.current);
-      //   count += 1;
-      // });
+      let count = 1;
+      points.features.forEach(feature => {
+        const el = document.createElement('div');
+        el.className = `marker-${count}`;
+        new mapboxgl.Marker(el)
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map.current);
+        count += 1;
+      });
 
-      map.current.on('load', () => {});
+      // map.current.on('load', () => {});
 
       const lineDistance = length(originToCurrentRoute.features[0]);
       const lineDistance2 = length(originToCurrentRoute.features[0]);
@@ -339,7 +339,7 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
             </Button>
             <Button
               onClick={() => map.current?.getContainer().requestFullscreen()}
-              className="zoomOut"
+              className="zoomOut mt-md-3"
             >
               <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </Button>
@@ -376,26 +376,29 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
               >
                 {routes.map((route, index) => (
                   <SwiperSlide key={index} className="w-auto">
-                    <div>
-                      <div className="d-flex align-items-center">
-                        <h6 className="px-3 py-2 bg-primary-subtle mb-0 fs-10 rounded-1 me-2">
-                          {route.flightNo}
-                        </h6>
-                        <img src="" alt="" />
-                        <h6 className="mb-0 text-white fw-semibold me-3 text-nowrap">
-                          {route.airLine}
-                        </h6>
-                        <h6 className="mb-0 fw-semibold text-white">
-                          {route.from}
-                        </h6>
-                        <FontAwesomeIcon
-                          icon={faPlane}
-                          className="text-primary mx-2"
-                        />
-                        <h6 className="mb-0 fw-semibold text-white border-end pe-6">
-                          {route.to}
-                        </h6>
-                      </div>
+                    <div className="d-flex align-items-center">
+                      <h6 className="px-3 py-2 bg-primary-subtle mb-0 fs-10 rounded-1 me-2">
+                        {route.flightNo}
+                      </h6>
+                      <img
+                        className="me-1"
+                        src={route.logo}
+                        alt=""
+                        width={16}
+                      />
+                      <h6 className="mb-0 text-white fw-semibold me-3 text-nowrap">
+                        {route.airLine}
+                      </h6>
+                      <h6 className="mb-0 fw-semibold text-white">
+                        {route.from}
+                      </h6>
+                      <FontAwesomeIcon
+                        icon={faPlane}
+                        className="text-primary mx-2"
+                      />
+                      <h6 className="mb-0 fw-semibold text-white border-end pe-6">
+                        {route.to}
+                      </h6>
                     </div>
                   </SwiperSlide>
                 ))}

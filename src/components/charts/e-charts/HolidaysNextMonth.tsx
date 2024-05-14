@@ -9,6 +9,7 @@ import {
 } from 'echarts/components';
 
 import { ScatterChart } from 'echarts/charts';
+import { rgbaColor } from 'helpers/utils';
 
 echarts.use([
   TooltipComponent,
@@ -66,7 +67,10 @@ function getVirtualData(year: string) {
   return data;
 }
 
-const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
+const getDefaultOptions = (
+  getThemeColor: (name: string) => string,
+  isDark: boolean
+) => ({
   tooltip: {
     trigger: 'item',
     axisPointer: {
@@ -84,7 +88,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     max: 1000,
     calculable: true,
     show: false,
-    color: [getThemeColor('warning')]
+    color: [
+      getThemeColor('warning'),
+      isDark
+        ? rgbaColor(getThemeColor('warning'), 0.5)
+        : getThemeColor('warning-light'),
+      isDark
+        ? rgbaColor(getThemeColor('warning'), 0.75)
+        : getThemeColor('warning-light')
+    ]
   },
   calendar: {
     orient: 'vertical',
@@ -131,12 +143,15 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
 });
 
 const HolidaysNextMonth = ({ style }: { style: CSSProperties }) => {
-  const { getThemeColor } = useAppContext();
+  const {
+    getThemeColor,
+    config: { isDark }
+  } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
-      option={getDefaultOptions(getThemeColor)}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

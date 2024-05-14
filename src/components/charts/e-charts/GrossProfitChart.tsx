@@ -17,13 +17,14 @@ const getDefaultOptions = (
 ) => ({
   color: colors,
   tooltip: {
-    trigger: 'axis',
-    padding: 10,
+    trigger: 'item',
+    padding: [7, 10],
     backgroundColor: getThemeColor('body-highlight-bg'),
     borderColor: getThemeColor('border-color'),
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
-    transitionDuration: 0
+    transitionDuration: 0,
+    extraCssText: 'z-index: 1000'
   },
   series: [
     {

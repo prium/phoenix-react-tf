@@ -3,7 +3,7 @@ import { SimpleDropdown } from 'components/base/SimpleDropdown';
 import FinalcialActivitiesChart from 'components/charts/e-charts/FinalcialActivitiesChart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 export const FinancialActivitiesCard = () => {
   const chartRef = useRef<null | EChartsReactCore>(null);
@@ -70,14 +70,16 @@ export const FinancialActivitiesCard = () => {
           sm="auto"
           className="ms-auto order-1 order-sm-0 order-md-1 order-lg-0 order-xxl-1"
         >
-          <select
-            className="form-select form-select-sm pe-9 w-auto"
+          <Form.Select
+            size="sm"
+            className="pe-9 w-auto mt-3 mt-sm-0 mt-xl-3 mt-xxl-0"
+            value={selectedOption}
             onChange={e => setSelectedOption(parseInt(e.target.value))}
           >
-            <option value="0">Hotel</option>
-            <option value="1">Flight</option>
-            <option value="2">Trip</option>
-          </select>
+            <option value={0}>Hotel</option>
+            <option value={1}>Flight</option>
+            <option value={2}>Trip</option>
+          </Form.Select>
         </Col>
         <Col xs="auto" className="order-md-1 order-lg-0 order-xxl-1">
           <SimpleDropdown />

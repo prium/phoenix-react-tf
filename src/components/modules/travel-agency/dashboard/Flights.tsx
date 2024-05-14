@@ -18,7 +18,7 @@ import Button from 'components/base/Button';
 import SearchBox from 'components/common/SearchBox';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { Col, ProgressBar, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
@@ -492,54 +492,47 @@ const Flights = () => {
     sortable: true
   });
 
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    table.setGlobalFilter(e.target.value || undefined);
+  };
+
   return (
-    <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 pb-9 bg-body-emphasis border-top">
-      <div className="">
-        <AdvanceTableProvider {...table}>
-          <Row className="gx-0 gy-3 align-items-center py-4">
-            <Col xl="auto">
-              <h3 className="mb-0">Flights</h3>
-            </Col>
-            <Col xs="auto" className="flex-1">
-              <div className="d-flex flex-between-center">
-                <div className="d-flex align-items-center">
-                  <SearchBox
-                    placeholder="Search by Search no."
-                    className="ms-xl-6 w-auto"
-                    // onChange={handleSearchInputChange}
+    <>
+      <AdvanceTableProvider {...table}>
+        <Row className="gx-0 gy-3 align-items-center py-4">
+          <Col xl="auto">
+            <h3 className="mb-0">Flights</h3>
+          </Col>
+          <Col xs="auto" className="flex-1">
+            <div className="d-flex flex-between-center">
+              <div className="d-flex align-items-center">
+                <SearchBox
+                  placeholder="Search by Flight no."
+                  className="ms-xl-6 w-auto"
+                  onChange={handleSearchInputChange}
+                />
+                <Button variant="phoenix-secondary" className="px-3 ms-2 me-3">
+                  <FontAwesomeIcon
+                    icon={faFilter}
+                    data-fa-transform="down-2"
+                    className="text-body-secondary"
                   />
-                  <Button
-                    variant="phoenix-secondary"
-                    className="px-3 ms-2 me-3"
-                  >
-                    <FontAwesomeIcon
-                      icon={faFilter}
-                      data-fa-transform="down-2"
-                      className="text-body-secondary"
-                    />
-                  </Button>
-                </div>
-                {/* <AdvanceTableFooter /> */}
-                <div className="d-flex align-items-center">
-                  <div className="pagination d-none"></div>
-                  <p
-                    data-list-info
-                    className="mb-0 d-none d-md-block me-3 fw-semibold text-body text-nowrap"
-                  ></p>
-                  <FlightsTableHeader viewAllBtnClass="ms-auto" navBtn />
-                </div>
+                </Button>
               </div>
-            </Col>
-          </Row>
-          <AdvanceTable
-            tableProps={{
-              className: 'phoenix-table fs-9 mb-4 border-top border-translucent'
-            }}
-            rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-          />
-        </AdvanceTableProvider>
-      </div>
-      <div className="mb-3 mb-xl-4 overflow-hidden">
+              <div className="d-flex align-items-center">
+                <FlightsTableHeader viewAllBtnClass="ms-auto" navBtn />
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <AdvanceTable
+          tableProps={{
+            className: 'phoenix-table fs-9 mb-4 border-top border-translucent'
+          }}
+          rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+        />
+      </AdvanceTableProvider>
+      <div className="mt-4 mb-3 mb-xl-4 overflow-hidden">
         <FlightMap
           className="border rounded-3"
           options={{
@@ -548,7 +541,7 @@ const Flights = () => {
           }}
         />
       </div>
-    </div>
+    </>
   );
 };
 

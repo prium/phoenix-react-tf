@@ -1,5 +1,7 @@
+import { faPlane } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Col, Row, Table } from 'react-bootstrap';
+import { Col, ProgressBar, Row, Table } from 'react-bootstrap';
 
 const FlightTable = () => {
   return (
@@ -91,6 +93,21 @@ const FlightTable = () => {
             </Table>
           </Col>
         </Row>
+        <div className="d-flex align-items-center gap-2 mt-3">
+          <h6 className="mb-0 text-body-tertiary">GRU</h6>
+          <ProgressBar
+            style={{ height: 2 }}
+            className="position-relative overflow-visible align-middle flex-1"
+          >
+            <ProgressBar now={50} min={0} max={100} className="" />
+            <FontAwesomeIcon
+              className="text-info ms-0"
+              icon={faPlane}
+              transform={'up-7'}
+            />
+          </ProgressBar>
+          <h6 className="mb-0 text-body-tertiary">SJC</h6>
+        </div>
       </div>
     </>
   );

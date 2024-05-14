@@ -147,7 +147,7 @@ export const VisitorsCardTable = () => {
       <AdvanceTableFooter
         className="py-3"
         totalItemsClass="fs-8"
-        viewAllBtnClass="ms-auto fw-bold"
+        viewAllBtnClass="ms-auto"
       />
     </AdvanceTableProvider>
   );

@@ -36,7 +36,6 @@ export const VisitorsCard = () => {
       </Card.Header>
       <Card.Body className="py-0">
         <h4 className="d-flex align-items-center gap-2 text-body-highlight mb-3">
-          {/* <CountUp end={userCounter} delay={0} /> */}
           <span>{userCounter}</span>
           <span className="fs-9 fw-normal">User per second</span>
         </h4>
