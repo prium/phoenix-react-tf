@@ -286,6 +286,11 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
       }
 
       map.current.on('load', () => {
+        map.current.addSource('route', {
+          type: 'geojson',
+          data: originToCurrentRoute.features[0]
+        });
+
         map.current?.addSource('route2', {
           type: 'geojson',
           data: currentToDestinationRoute.features[0]
