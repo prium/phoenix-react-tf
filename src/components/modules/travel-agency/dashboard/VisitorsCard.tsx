@@ -25,7 +25,7 @@ export const VisitorsCard = () => {
             variant="phoenix-secondary"
             className="dropdown-caret-none px-3 bg-body-emphasis bg-body-hover"
           >
-            <FontAwesomeIcon data-fa-transform="shrink-2" icon={faEllipsisH} />
+            <FontAwesomeIcon transform="shrink-2" icon={faEllipsisH} />
           </Dropdown.Toggle>
           <Dropdown.Menu align="end">
             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

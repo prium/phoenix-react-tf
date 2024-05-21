@@ -189,6 +189,7 @@ const UniconsExample = lazy(
 );
 import Color from './pages/documentation/customization/Color';
 import TravelAgency from 'pages/dashboard/TravelAgency';
+import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 
 const routes: RouteObject[] = [
   {
@@ -937,6 +938,15 @@ const routes: RouteObject[] = [
           {
             path: 'alternate',
             element: <Alternate />
+          }
+        ]
+      },
+      {
+        path: 'apps/travel-agency',
+        children: [
+          {
+            path: 'landing',
+            element: <TravelLanding />
           }
         ]
       },

@@ -514,7 +514,7 @@ const Flights = () => {
                 <Button variant="phoenix-secondary" className="px-3 ms-2 me-3">
                   <FontAwesomeIcon
                     icon={faFilter}
-                    data-fa-transform="down-2"
+                    transform="down-2"
                     className="text-body-secondary"
                   />
                 </Button>

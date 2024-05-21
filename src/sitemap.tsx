@@ -319,6 +319,25 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'travel-agency',
+        icon: 'clipboard',
+        active: true,
+        pages: [
+          {
+            name: 'landing',
+            path: '/apps/travel-agency/landing',
+            pathName: 'travel-agency-landing',
+            active: true
+          },
+          {
+            name: 'project-list-view',
+            path: '/apps/project-management/project-list-view',
+            pathName: 'project-management-project-list-view',
+            active: true
+          }
+        ]
+      },
+      {
         name: 'chat',
         icon: 'message-square',
         path: '/apps/chat',

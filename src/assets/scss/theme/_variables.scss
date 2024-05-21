@@ -86,6 +86,13 @@ $container-small-max-widths: (
   lg: 960px,
   xl: 1216px
 );
+$container-medium-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1216px,
+  xxl: 1400px
+) !default;
 
 // phoenix specific variable
 $bg-opacities: (
