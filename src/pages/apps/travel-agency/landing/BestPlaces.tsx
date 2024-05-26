@@ -27,6 +27,7 @@ import gallery43 from 'assets/img/gallery/43.png';
 import gallery44 from 'assets/img/gallery/44.png';
 import gallery57 from 'assets/img/gallery/57.png';
 import gallery58 from 'assets/img/gallery/58.png';
+import { Container } from 'react-bootstrap';
 
 interface placesData {
   country: string;
@@ -124,7 +125,7 @@ const BestPlaces = () => {
       </div>
 
       {/* swiper  */}
-      <div className="container-fluid px-sm-0">
+      <Container fluid className="px-sm-0">
         <div className="swiper-theme-container swiper-slide-nav-top">
           <div className="swiper-nav">
             <div className="swiper-button-next">
@@ -206,7 +207,7 @@ const BestPlaces = () => {
             ))}
           </Swiper>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };

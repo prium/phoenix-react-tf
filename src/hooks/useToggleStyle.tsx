@@ -65,7 +65,7 @@ const useToggleStyle = () => {
     configDispatch({
       type: SET_CONFIG,
       payload: {
-        isDark: mode === 'dark' ? true : false
+        isDark: mode === 'dark'
       }
     });
     document.documentElement.setAttribute('data-bs-theme', mode);

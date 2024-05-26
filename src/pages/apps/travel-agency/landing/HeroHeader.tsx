@@ -1,6 +1,7 @@
 import React from 'react';
 
 import travelImg from 'assets/video/travel.png';
+//@ts-ignore
 import travelVideo from 'assets/video/travel.mp4';
 import { Dropdown, Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,13 +23,7 @@ const HeroHeader = () => {
           backgroundSize: 'auto'
         }}
       >
-        <video
-          className="bg-video"
-          autoPlay
-          loop
-          muted
-          src={travelVideo}
-        ></video>
+        <video className="bg-video" autoPlay loop muted src={travelVideo} />
       </div>
       <div className="container-medium position-relative z-5">
         <h2 className="text-secondary-lighter fs-5 fs-md-3 fw-normal mb-3">

@@ -2,32 +2,47 @@ import classNames from 'classnames';
 import { SimpleDropdown } from 'components/base/SimpleDropdown';
 import FinalcialActivitiesChart from 'components/charts/e-charts/FinalcialActivitiesChart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { capitalize } from 'helpers/utils';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
+
+const profitData = [
+  [350000, 390000, 410700, 450000, 390000, 410700],
+  [245000, 310000, 420000, 480000, 530000, 580000],
+  [278450, 513220, 359890, 444567, 201345, 589000]
+];
+const revenueData = [
+  [-810000, -640000, -630000, -590000, -620000, -780000],
+  [-482310, -726590, -589120, -674832, -811245, -455678],
+  [-432567, -688921, -517389, -759234, -601876, -485112]
+];
+const expansesData = [
+  [-450000, -250000, -200000, -120000, -230000, -270000],
+  [-243567, -156789, -398234, -120456, -321890, -465678],
+  [-235678, -142345, -398765, -287456, -173890, -451234]
+];
 
 export const FinancialActivitiesCard = () => {
   const chartRef = useRef<null | EChartsReactCore>(null);
   const [selectedOption, setSelectedOption] = useState<number>(0);
 
-  const profitData = [
-    [350000, 390000, 410700, 450000, 390000, 410700],
-    [245000, 310000, 420000, 480000, 530000, 580000],
-    [278450, 513220, 359890, 444567, 201345, 589000]
-  ];
-  const revenueData = [
-    [-810000, -640000, -630000, -590000, -620000, -780000],
-    [-482310, -726590, -589120, -674832, -811245, -455678],
-    [-432567, -688921, -517389, -759234, -601876, -485112]
-  ];
-  const expansesData = [
-    [-450000, -250000, -200000, -120000, -230000, -270000],
-    [-243567, -156789, -398234, -120456, -321890, -465678],
-    [-235678, -142345, -398765, -287456, -173890, -451234]
-  ];
+  const [legends, setlegends] = useState({
+    profit: true,
+    revenue: true,
+    expanses: true
+  });
 
-  const [toggleProfit, setToggleProfit] = useState(false);
-  const [toggleRevenue, setToggleRevenue] = useState(false);
-  const [toggleExpanses, setToggleExpenses] = useState(false);
+  const handleLegend = (value: 'profit' | 'revenue' | 'expanses') => {
+    setlegends({
+      ...legends,
+      [value]: !legends[value]
+    });
+
+    chartRef?.current?.getEchartsInstance().dispatchAction({
+      type: 'legendToggleSelect',
+      name: capitalize(value)
+    });
+  };
 
   useEffect(() => {
     const data1 = profitData[selectedOption];
@@ -48,16 +63,6 @@ export const FinancialActivitiesCard = () => {
     });
   }, [selectedOption]);
 
-  const handleLegend = (value: string) => {
-    value == 'Profit' && setToggleProfit(!toggleProfit);
-    value == 'Revenue' && setToggleRevenue(!toggleRevenue);
-    value == 'Expanses' && setToggleExpenses(!toggleExpanses);
-    chartRef?.current?.getEchartsInstance().dispatchAction({
-      type: 'legendToggleSelect',
-      name: value
-    });
-  };
-
   return (
     <div className="mt-5 mt-xl-0 mt-xxl-5 mb-5 mb-xxl-0">
       <Row className="flex-between-end gy-3 gx-2">
@@ -67,7 +72,11 @@ export const FinancialActivitiesCard = () => {
         </Col>
         <Col
           xs={12}
-          sm="auto"
+          sm={{
+            span: 'auto',
+            order: 0
+          }}
+          md={{ order: 1 }}
           className="ms-auto order-1 order-sm-0 order-md-1 order-lg-0 order-xxl-1"
         >
           <Form.Select
@@ -95,11 +104,11 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="profile"
-              onClick={() => handleLegend('Profit')}
+              onClick={() => handleLegend('profit')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
-                  'opacity-50': toggleProfit
+                  'opacity-50': !legends.profit
                 }
               )}
             >
@@ -113,11 +122,11 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="revenue"
-              onClick={() => handleLegend('Revenue')}
+              onClick={() => handleLegend('revenue')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
-                  'opacity-50': toggleRevenue
+                  'opacity-50': !legends.revenue
                 }
               )}
             >
@@ -131,11 +140,11 @@ export const FinancialActivitiesCard = () => {
             <Button
               variant="link"
               id="expanses"
-              onClick={() => handleLegend('Expanses')}
+              onClick={() => handleLegend('expanses')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
-                  'opacity-50': toggleExpanses
+                  'opacity-50': !legends.expanses
                 }
               )}
             >
@@ -154,7 +163,6 @@ export const FinancialActivitiesCard = () => {
         profitData={profitData}
         revenueData={revenueData}
         expansesData={expansesData}
-        style={{}}
       />
     </div>
   );

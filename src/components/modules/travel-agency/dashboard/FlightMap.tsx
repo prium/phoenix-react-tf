@@ -107,7 +107,7 @@ const routes: routes[] = [
 ];
 const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
-  const map: any = useRef<Map | null>(null);
+  const map = useRef<Map | null>(null);
   const {
     config: { isDark },
     getThemeColor
@@ -259,9 +259,11 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
       points.features.forEach(feature => {
         const el = document.createElement('div');
         el.className = `marker-${count}`;
-        new mapboxgl.Marker(el)
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map.current);
+        if (map.current) {
+          new mapboxgl.Marker(el)
+            .setLngLat(feature.geometry.coordinates)
+            .addTo(map.current);
+        }
         count += 1;
       });
 
@@ -286,13 +288,15 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
       }
 
       map.current.on('load', () => {
-        map.current.addSource('route', {
+        map.current?.addSource('route', {
           type: 'geojson',
+          //@ts-ignore
           data: originToCurrentRoute.features[0]
         });
 
         map.current?.addSource('route2', {
           type: 'geojson',
+          //@ts-ignore
           data: currentToDestinationRoute.features[0]
         });
 

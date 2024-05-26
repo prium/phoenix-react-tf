@@ -1,10 +1,8 @@
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
-
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import React from 'react';
 import Badge, { BadgeBg } from 'components/base/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +21,7 @@ type Data = {
     percantage: string;
   };
   status: {
-    type: BadgeBg | undefined;
+    type?: BadgeBg;
     label: string;
   };
 };
@@ -75,7 +73,8 @@ const visitorData: Data[] = [
 
 const columns: ColumnDef<Data>[] = [
   {
-    accessorKey: 'country name',
+    id: 'country_name',
+    accessorFn: ({ country }) => country.name,
     cell: ({ row: { original } }) => (
       <Link
         className="d-flex align-items-center text-primary py-md-1 py-xxl-0"

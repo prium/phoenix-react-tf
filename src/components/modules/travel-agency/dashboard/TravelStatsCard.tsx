@@ -4,8 +4,7 @@ import BaseLineChart from 'components/charts/e-charts/BaseLineChart';
 import BasicEcharts from 'components/charts/e-charts/BasicEcharts';
 import CommissionChart from 'components/charts/e-charts/CommissionChart';
 import TravelStats from 'components/stats/TravelStats';
-import { getDates } from 'helpers/utils';
-import React from 'react';
+import { currencyFormat, getDates } from 'helpers/utils';
 import { Col, Row } from 'react-bootstrap';
 
 export const TravelStatsCard = () => {
@@ -19,7 +18,9 @@ export const TravelStatsCard = () => {
       >
         <TravelStats
           title="Total Value"
-          amount="$2,345.00"
+          amount={currencyFormat(2345, {
+            minimumFractionDigits: 2
+          })}
           badgeLabel="23.33%"
           badgeBg="primary"
         >
