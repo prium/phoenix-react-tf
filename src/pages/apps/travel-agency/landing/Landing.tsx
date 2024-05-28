@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import TopNav from './TopNav';
 import NavbarMain from './NavbarMain';
 import HeroHeader from './HeroHeader';
 import SeasonOfTour from './SeasonOfTour';
 import BestPlaces from './BestPlaces';
+import BestHotel from './BestHotel';
+import Gallery from './Gallery';
 
 const Landing = () => {
   useSettingsMountEffect({
@@ -13,6 +15,20 @@ const Landing = () => {
     disableVerticalNavbarAppearance: true,
     disableHorizontalNavbarShape: true
   });
+  useEffect(() => {
+    document.body.classList.add('bg-body-emphasis');
+    document.body.setAttribute(
+      'style',
+      document.body.getAttribute('style')
+        ? document.body.getAttribute('style') +
+            '; --phoenix-scroll-margin-top: 1.2rem'
+        : '--phoenix-scroll-margin-top: 1.2rem'
+    );
+    return () => {
+      document.body.classList.remove('bg-body-emphasis');
+      document.body.removeAttribute('style');
+    };
+  }, []);
   return (
     <>
       <TopNav />
@@ -20,6 +36,8 @@ const Landing = () => {
       <HeroHeader />
       <SeasonOfTour />
       <BestPlaces />
+      <BestHotel />
+      <Gallery />
     </>
   );
 };
