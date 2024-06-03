@@ -1,7 +1,6 @@
 // @import 'swiper/css/bundle';
 .swiper-theme-container {
   position: relative;
-  .swiper {
     .swiper-wrapper {
       
       &.swiper-continuous-autoplay {
@@ -11,7 +10,7 @@
         height: auto !important;
       }
     }
-  }
+  
 
   .swiper-nav {
     margin-top: 0;

@@ -9,9 +9,9 @@ import { SunburstChart } from 'echarts/charts';
 import { rgbaColor } from 'helpers/utils';
 
 echarts.use([TooltipComponent, BarChart, SunburstChart]);
-
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   data: any,
   colors: string[]
 ) => ({
@@ -31,6 +31,7 @@ const getDefaultOptions = (
       type: 'sunburst',
       center: ['50%', '50%'],
       data,
+      // eslint-disable-next-line  @typescript-eslint/no-explicit-any
       sort(a: any, b: any) {
         if (a.depth === 1) {
           return b.getValue() - a.getValue();

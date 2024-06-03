@@ -1,7 +1,4 @@
-import React from 'react';
-
 import travelImg from 'assets/video/travel.png';
-//@ts-ignore
 import travelVideo from 'assets/video/travel.mp4';
 import { Dropdown, Form, InputGroup } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
