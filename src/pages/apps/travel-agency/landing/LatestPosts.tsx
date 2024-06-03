@@ -63,8 +63,8 @@ const LatestPosts = () => {
         className="bg-holder d-none d-xl-block"
         style={{
           backgroundImage: `url(${bgRight31})`,
-          backgroundPosition: 'left',
-          backgroundSize: '26%',
+          backgroundPosition: 'right bottom',
+          backgroundSize: '15%',
           zIndex: '1'
         }}
       />

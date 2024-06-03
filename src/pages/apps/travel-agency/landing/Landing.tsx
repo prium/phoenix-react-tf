@@ -8,6 +8,8 @@ import BestPlaces from './BestPlaces';
 import BestHotel from './BestHotel';
 import Gallery from './Gallery';
 import LatestPosts from './LatestPosts';
+import Cta from './Cta';
+import LatestPhotos from './LatestPhotos';
 
 const Landing = () => {
   useSettingsMountEffect({
@@ -40,6 +42,8 @@ const Landing = () => {
       <BestHotel />
       <Gallery />
       <LatestPosts />
+      <Cta />
+      <LatestPhotos />
     </>
   );
 };
