@@ -1,3 +1,5 @@
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import gallery51 from 'assets/img/gallery/51.png';
 import gallery52 from 'assets/img/gallery/52.png';
 import gallery53 from 'assets/img/gallery/53.png';
@@ -64,8 +66,12 @@ const LatestPhotos = () => {
                 <div className="backdrop-faded">
                   <Link
                     to="#!"
-                    className="fw-bold fs-7 text-white streched-link"
+                    className="w-semibold mb-0 text-secondary-lighter stretched-link"
                   >
+                    <FontAwesomeIcon
+                      icon={faLocationDot}
+                      className="text-secondary-lighter me-2"
+                    />
                     {item.location}
                   </Link>
                 </div>

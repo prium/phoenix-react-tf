@@ -10,6 +10,8 @@ import Gallery from './Gallery';
 import LatestPosts from './LatestPosts';
 import Cta from './Cta';
 import LatestPhotos from './LatestPhotos';
+import GetApp from './GetApp';
+import Footer from './Footer';
 
 const Landing = () => {
   useSettingsMountEffect({
@@ -44,6 +46,8 @@ const Landing = () => {
       <LatestPosts />
       <Cta />
       <LatestPhotos />
+      <GetApp />
+      <Footer />
     </>
   );
 };
