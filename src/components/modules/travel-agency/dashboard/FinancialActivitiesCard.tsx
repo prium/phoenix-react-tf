@@ -1,10 +1,10 @@
 import classNames from 'classnames';
-import { SimpleDropdown } from 'components/base/SimpleDropdown';
-import FinalcialActivitiesChart from 'components/charts/e-charts/FinalcialActivitiesChart';
+import BasicDropdown from 'components/base/basicDropdown';
+import FinancialActivitiesChart from 'components/charts/e-charts/FinancialActivitiesChart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { capitalize } from 'helpers/utils';
 import React, { useEffect, useRef, useState } from 'react';
-import { Button, Col, Form, Row } from 'react-bootstrap';
+import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap';
 
 const profitData = [
   [350000, 390000, 410700, 450000, 390000, 410700],
@@ -91,7 +91,11 @@ export const FinancialActivitiesCard = () => {
           </Form.Select>
         </Col>
         <Col xs="auto" className="order-md-1 order-lg-0 order-xxl-1">
-          <SimpleDropdown />
+          <BasicDropdown>
+            <Dropdown.Item href="#!">Action</Dropdown.Item>
+            <Dropdown.Item href="#!">Another action</Dropdown.Item>
+            <Dropdown.Item href="#!">Something else</Dropdown.Item>
+          </BasicDropdown>
         </Col>
         <Col
           xs={12}
@@ -158,7 +162,7 @@ export const FinancialActivitiesCard = () => {
           </div>
         </Col>
       </Row>
-      <FinalcialActivitiesChart
+      <FinancialActivitiesChart
         ref={chartRef}
         profitData={profitData}
         revenueData={revenueData}

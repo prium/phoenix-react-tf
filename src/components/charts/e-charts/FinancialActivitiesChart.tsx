@@ -16,7 +16,7 @@ import EChartsReactCore from 'echarts-for-react/lib/core';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
 echarts.use([TooltipComponent, BarChart]);
 
-const FinalcialActivitiesChart = forwardRef<
+const FinancialActivitiesChart = forwardRef<
   EChartsReactCore | null,
   {
     style?: CSSProperties;
@@ -225,4 +225,4 @@ const FinalcialActivitiesChart = forwardRef<
   );
 });
 
-export default FinalcialActivitiesChart;
+export default FinancialActivitiesChart;

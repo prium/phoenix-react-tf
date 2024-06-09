@@ -7,7 +7,7 @@ import TravelStats from 'components/stats/TravelStats';
 import { currencyFormat, getDates } from 'helpers/utils';
 import { Col, Row } from 'react-bootstrap';
 
-export const TravelStatsCard = () => {
+export const TravelStatistics = () => {
   return (
     <Row className="g-0">
       <Col

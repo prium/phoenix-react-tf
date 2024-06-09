@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { VisitorsCard } from 'components/modules/travel-agency/dashboard/VisitorsCard';
-import { TravelStatsCard } from 'components/modules/travel-agency/dashboard/TravelStatsCard';
+import { TravelStatistics } from 'components/modules/travel-agency/dashboard/TravelStatistics';
 import { FinancialActivitiesCard } from 'components/modules/travel-agency/dashboard/FinancialActivitiesCard';
 import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
@@ -37,7 +37,7 @@ const TravelAgency = () => {
         <Col xxl={7}>
           <Row className="gx-7 pe-xxl-3">
             <Col xs={12} xl={5} xxl={12}>
-              <TravelStatsCard />
+              <TravelStatistics />
             </Col>
             <Col xs={12} xl={7} xxl={12}>
               <FinancialActivitiesCard />
