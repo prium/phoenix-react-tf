@@ -5,7 +5,7 @@ import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { VisitorsCard } from 'components/modules/travel-agency/dashboard/VisitorsCard';
 import { TravelStatistics } from 'components/modules/travel-agency/dashboard/TravelStatistics';
-import { FinancialActivitiesCard } from 'components/modules/travel-agency/dashboard/FinancialActivitiesCard';
+import { FinancialActivities } from 'components/modules/travel-agency/dashboard/FinancialActivities';
 import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
 import GrossProfitCard from 'components/modules/travel-agency/dashboard/GrossProfitCard';
@@ -40,7 +40,7 @@ const TravelAgency = () => {
               <TravelStatistics />
             </Col>
             <Col xs={12} xl={7} xxl={12}>
-              <FinancialActivitiesCard />
+              <FinancialActivities />
             </Col>
           </Row>
         </Col>

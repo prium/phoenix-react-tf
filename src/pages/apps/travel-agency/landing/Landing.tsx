@@ -20,6 +20,7 @@ const Landing = () => {
     disableVerticalNavbarAppearance: true,
     disableHorizontalNavbarShape: true
   });
+
   useEffect(() => {
     document.body.classList.add('bg-body-emphasis');
     document.body.setAttribute(
@@ -34,6 +35,7 @@ const Landing = () => {
       document.body.removeAttribute('style');
     };
   }, []);
+
   return (
     <>
       <TopNav />

@@ -14,17 +14,15 @@ import { BarChart } from 'echarts/charts';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
+import { FinancialActivitiesData } from 'data/travel-agency/financialActivities';
 echarts.use([TooltipComponent, BarChart]);
 
 const FinancialActivitiesChart = forwardRef<
   EChartsReactCore | null,
   {
     style?: CSSProperties;
-    profitData: number[][];
-    revenueData: number[][];
-    expensesData: number[][];
   }
->(({ style, profitData, revenueData, expensesData }, ref) => {
+>(({ style }, ref) => {
   const {
     getThemeColor,
     config: { isDark }
@@ -112,7 +110,7 @@ const FinancialActivitiesChart = forwardRef<
               ? getThemeColor('primary')
               : getThemeColor('primary-light')
           },
-          data: profitData[0]
+          data: FinancialActivitiesData.profitData[0]
         },
         {
           name: 'Revenue',
@@ -129,7 +127,7 @@ const FinancialActivitiesChart = forwardRef<
               ? getThemeColor('success')
               : getThemeColor('success-light')
           },
-          data: revenueData[0]
+          data: FinancialActivitiesData.revenueData[0]
         },
         {
           name: 'Expenses',
@@ -142,7 +140,7 @@ const FinancialActivitiesChart = forwardRef<
             borderRadius: [4, 0, 0, 4],
             color: isDark ? getThemeColor('info') : getThemeColor('info-light')
           },
-          data: expensesData[0]
+          data: FinancialActivitiesData.expensesData[0]
         }
       ],
       grid: {
@@ -154,7 +152,7 @@ const FinancialActivitiesChart = forwardRef<
       },
       animation: false
     }),
-    [getThemeColor, isDark, profitData, revenueData, expensesData]
+    [getThemeColor, isDark]
   );
 
   const updateDimensions = useCallback(() => {

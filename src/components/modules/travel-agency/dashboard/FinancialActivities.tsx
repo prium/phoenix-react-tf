@@ -1,28 +1,13 @@
 import classNames from 'classnames';
 import BasicDropdown from 'components/base/basicDropdown';
 import FinancialActivitiesChart from 'components/charts/e-charts/FinancialActivitiesChart';
+import { FinancialActivitiesData } from 'data/travel-agency/financialActivities';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { capitalize } from 'helpers/utils';
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Col, Dropdown, Form, Row } from 'react-bootstrap';
 
-const profitData = [
-  [350000, 390000, 410700, 450000, 390000, 410700],
-  [245000, 310000, 420000, 480000, 530000, 580000],
-  [278450, 513220, 359890, 444567, 201345, 589000]
-];
-const revenueData = [
-  [-810000, -640000, -630000, -590000, -620000, -780000],
-  [-482310, -726590, -589120, -674832, -811245, -455678],
-  [-432567, -688921, -517389, -759234, -601876, -485112]
-];
-const expensesData = [
-  [-450000, -250000, -200000, -120000, -230000, -270000],
-  [-243567, -156789, -398234, -120456, -321890, -465678],
-  [-235678, -142345, -398765, -287456, -173890, -451234]
-];
-
-export const FinancialActivitiesCard = () => {
+export const FinancialActivities = () => {
   const chartRef = useRef<null | EChartsReactCore>(null);
   const [selectedOption, setSelectedOption] = useState<number>(0);
 
@@ -45,9 +30,9 @@ export const FinancialActivitiesCard = () => {
   };
 
   useEffect(() => {
-    const data1 = profitData[selectedOption];
-    const data2 = revenueData[selectedOption];
-    const data3 = expensesData[selectedOption];
+    const data1 = FinancialActivitiesData.profitData[selectedOption];
+    const data2 = FinancialActivitiesData.revenueData[selectedOption];
+    const data3 = FinancialActivitiesData.expensesData[selectedOption];
     chartRef?.current?.getEchartsInstance().setOption({
       series: [
         {
@@ -165,12 +150,7 @@ export const FinancialActivitiesCard = () => {
           </div>
         </Col>
       </Row>
-      <FinancialActivitiesChart
-        ref={chartRef}
-        profitData={profitData}
-        revenueData={revenueData}
-        expensesData={expensesData}
-      />
+      <FinancialActivitiesChart ref={chartRef} />
     </div>
   );
 };
