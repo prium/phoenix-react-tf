@@ -22,9 +22,9 @@ const FinancialActivitiesChart = forwardRef<
     style?: CSSProperties;
     profitData: number[][];
     revenueData: number[][];
-    expansesData: number[][];
+    expensesData: number[][];
   }
->(({ style, profitData, revenueData, expansesData }, ref) => {
+>(({ style, profitData, revenueData, expensesData }, ref) => {
   const {
     getThemeColor,
     config: { isDark }
@@ -50,7 +50,7 @@ const FinancialActivitiesChart = forwardRef<
           tooltipFormatterDefault(params, 'MMM DD', 'color')
       },
       legend: {
-        data: ['Profit', 'Revenue', 'Expanses'],
+        data: ['Profit', 'Revenue', 'Expenses'],
         show: false
       },
 
@@ -132,7 +132,7 @@ const FinancialActivitiesChart = forwardRef<
           data: revenueData[0]
         },
         {
-          name: 'Expanses',
+          name: 'Expenses',
           type: 'bar',
           barWidth: 8,
           emphasis: {
@@ -142,7 +142,7 @@ const FinancialActivitiesChart = forwardRef<
             borderRadius: [4, 0, 0, 4],
             color: isDark ? getThemeColor('info') : getThemeColor('info-light')
           },
-          data: expansesData[0]
+          data: expensesData[0]
         }
       ],
       grid: {
@@ -154,7 +154,7 @@ const FinancialActivitiesChart = forwardRef<
       },
       animation: false
     }),
-    [getThemeColor, isDark, profitData, revenueData, expansesData]
+    [getThemeColor, isDark, profitData, revenueData, expensesData]
   );
 
   const updateDimensions = useCallback(() => {

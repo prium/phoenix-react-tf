@@ -16,7 +16,7 @@ const revenueData = [
   [-482310, -726590, -589120, -674832, -811245, -455678],
   [-432567, -688921, -517389, -759234, -601876, -485112]
 ];
-const expansesData = [
+const expensesData = [
   [-450000, -250000, -200000, -120000, -230000, -270000],
   [-243567, -156789, -398234, -120456, -321890, -465678],
   [-235678, -142345, -398765, -287456, -173890, -451234]
@@ -29,10 +29,10 @@ export const FinancialActivitiesCard = () => {
   const [legends, setlegends] = useState({
     profit: true,
     revenue: true,
-    expanses: true
+    expenses: true
   });
 
-  const handleLegend = (value: 'profit' | 'revenue' | 'expanses') => {
+  const handleLegend = (value: 'profit' | 'revenue' | 'expenses') => {
     setlegends({
       ...legends,
       [value]: !legends[value]
@@ -47,7 +47,7 @@ export const FinancialActivitiesCard = () => {
   useEffect(() => {
     const data1 = profitData[selectedOption];
     const data2 = revenueData[selectedOption];
-    const data3 = expansesData[selectedOption];
+    const data3 = expensesData[selectedOption];
     chartRef?.current?.getEchartsInstance().setOption({
       series: [
         {
@@ -71,13 +71,15 @@ export const FinancialActivitiesCard = () => {
           <p className="mb-0 text-body-tertiary"> Yearly Balance</p>
         </Col>
         <Col
-          xs={12}
+          xs={{ span: 12, order: 1 }}
           sm={{
             span: 'auto',
             order: 0
           }}
           md={{ order: 1 }}
-          className="ms-auto order-1 order-sm-0 order-md-1 order-lg-0 order-xxl-1"
+          lg={{ order: 0 }}
+          xxl={{ order: 1 }}
+          className="ms-auto"
         >
           <Form.Select
             size="sm"
@@ -90,7 +92,7 @@ export const FinancialActivitiesCard = () => {
             <option value={2}>Trip</option>
           </Form.Select>
         </Col>
-        <Col xs="auto" className="order-md-1 order-lg-0 order-xxl-1">
+        <Col xs="auto" md={{ span: 1 }} lg={{ span: 0 }} xxl={{ span: 1 }}>
           <BasicDropdown>
             <Dropdown.Item href="#!">Action</Dropdown.Item>
             <Dropdown.Item href="#!">Another action</Dropdown.Item>
@@ -98,11 +100,12 @@ export const FinancialActivitiesCard = () => {
           </BasicDropdown>
         </Col>
         <Col
-          xs={12}
+          xs={{ span: 12, order: 1 }}
+          sm={{ order: 0 }}
           md="auto"
-          lg="12"
+          lg={12}
           xxl="auto"
-          className="mx-auto order-1 order-sm-0"
+          className="mx-auto"
         >
           <div className="d-flex justify-content-center gap-6 gap-xxl-4">
             <Button
@@ -143,12 +146,12 @@ export const FinancialActivitiesCard = () => {
             </Button>
             <Button
               variant="link"
-              id="expanses"
-              onClick={() => handleLegend('expanses')}
+              id="expenses"
+              onClick={() => handleLegend('expenses')}
               className={classNames(
                 'd-flex align-items-center p-0 shadow-none fw-semibold text-decoration-none',
                 {
-                  'opacity-50': !legends.expanses
+                  'opacity-50': !legends.expenses
                 }
               )}
             >
@@ -157,7 +160,7 @@ export const FinancialActivitiesCard = () => {
                 style={{ width: 16, height: 6, borderRadius: 1 }}
                 data-bs-theme="light"
               />
-              <span className="text-body-secondary"> Expanses </span>
+              <span className="text-body-secondary"> Expenses </span>
             </Button>
           </div>
         </Col>
@@ -166,7 +169,7 @@ export const FinancialActivitiesCard = () => {
         ref={chartRef}
         profitData={profitData}
         revenueData={revenueData}
-        expansesData={expansesData}
+        expensesData={expensesData}
       />
     </div>
   );

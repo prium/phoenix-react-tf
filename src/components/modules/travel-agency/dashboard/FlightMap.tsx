@@ -26,6 +26,7 @@ import { Autoplay } from 'swiper/modules';
 import { Feature, along, length, LineString } from '@turf/turf';
 // import { Feature as Feature2 } from '@turf/helpers';
 
+SwiperCore.use([Autoplay]);
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
 // @ts-ignore
 mapboxgl.workerClass = MapboxWorker;
@@ -187,16 +188,6 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
         ]
       };
 
-      // A simple line from origin to destination.
-      // const route = {
-      //   type: 'Feature',
-      //   properties: {},
-      //   geometry: {
-      //     type: 'LineString',
-      //     coordinates: [origin, currentPosition]
-      //   }
-      // };
-
       const currentToDestinationRoute: Destination = {
         type: 'FeatureCollection',
         features: [
@@ -326,8 +317,6 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
   useEffect(() => {
     map.current?.setStyle(styles[theme]);
   }, [theme]);
-
-  SwiperCore.use([Autoplay]);
 
   return (
     <>

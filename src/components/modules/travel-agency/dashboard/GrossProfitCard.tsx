@@ -101,10 +101,10 @@ const GrossProfitCard = () => {
         <Row className="align-items-center h-100 gy-5">
           <Col
             xs={12}
-            md="auto"
-            xl={12}
-            xxl="auto"
-            className="order-md-1 order-xl-0 order-xxl-1 px-md-8 px-xl-6"
+            md={{ span: 'auto', order: 1 }}
+            xl={{ span: 12, order: 0 }}
+            xxl={{ span: 'auto', order: 1 }}
+            className="px-md-8 px-xl-6"
           >
             {/* echart gross profit */}
             <GrossProfitChart style={{ height: 250, width: 250 }} />
