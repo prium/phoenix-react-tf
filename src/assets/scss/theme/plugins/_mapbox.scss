@@ -1,4 +1,5 @@
 .mapbox-container {
+  font-family: var(--#{$prefix}font-sans-serif);;
   position: relative;
   overflow: hidden;
   .mapboxgl-ctrl-logo {

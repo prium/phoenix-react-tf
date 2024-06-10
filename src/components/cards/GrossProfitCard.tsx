@@ -2,60 +2,13 @@ import React from 'react';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import GrossProfitChart from 'components/charts/e-charts/GrossProfitChart';
-
-interface Profit {
-  title: string;
-  bgColor: string;
-  profit: string;
-  percent: string;
-  icon: string;
-  color: string;
-}
-
-// interface GrossProfitTableProps {
-//   profit: Profit;
-// }
-
-const profitData: Profit[] = [
-  {
-    title: 'Flight',
-    bgColor: 'primary-light',
-    profit: '162,791,400',
-    percent: '15.50',
-    icon: 'trending-up',
-    color: 'primary'
-  },
-  {
-    title: 'Flight (Package)',
-    bgColor: 'info-light',
-    profit: '135,659,500',
-    percent: '11.09',
-    icon: 'trending-down',
-    color: 'danger'
-  },
-  {
-    title: 'Hotel',
-    bgColor: 'warning-light',
-    profit: '271,319,000',
-    percent: '29.98',
-    icon: 'trending-up',
-    color: 'success'
-  },
-  {
-    title: 'Hotel (Package)',
-    bgColor: 'success-light',
-    profit: '162,791,400',
-    percent: '03.90',
-    icon: 'trending-up',
-    color: 'warning'
-  }
-];
+import { profitData, profitInterface } from 'data/travel-agency/travelAgency';
 
 const GrossProfitTable = ({
   profit,
   index
 }: {
-  profit: Profit;
+  profit: profitInterface;
   index: number;
 }) => {
   const { bgColor, title, percent, icon, color } = profit;

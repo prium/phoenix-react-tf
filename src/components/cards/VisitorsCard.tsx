@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Card, Dropdown } from 'react-bootstrap';
 import CountryWiseVitorsChart from 'components/charts/e-charts/CountryWiseVisitorsChart';
-import { VisitorsCardTable } from './VisitorsCardTable';
+import { VisitorsTable } from 'components/tables/VisitorsTable';
 
 export const VisitorsCard = () => {
   const [userCounter, setUserCounter] = useState(119);
@@ -43,7 +43,7 @@ export const VisitorsCard = () => {
           updateUserCounder={updateUserCounder}
           style={{ height: '43px', width: '100%' }}
         />
-        <VisitorsCardTable />
+        <VisitorsTable />
       </Card.Body>
     </Card>
   );

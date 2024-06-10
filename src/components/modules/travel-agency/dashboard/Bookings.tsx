@@ -2,25 +2,15 @@ import BookingsChart from 'components/charts/e-charts/BookingsChart';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, Form } from 'react-bootstrap';
+import { bookingsData } from 'data/travel-agency/travelAgency';
 
 const Bookings = () => {
   const chartRef = useRef<null | EChartsReactCore>(null);
   const [selectedOption, setSelectedOption] = useState<number>(0);
-  const fullfilledData = [
-    [3500, 2500, 2600, 3400, 2300, 3200, 2800, 2800],
-    [2736, 3874, 4192, 1948, 3567, 4821, 2315, 3986],
-    [2789, 3895, 2147, 4658, 1723, 3210, 4386, 1974]
-  ];
-
-  const cencelledData = [
-    [-1500, -2700, -1100, -1400, -1600, -1400, -1100, -2700],
-    [-3874, -2631, -4422, -1765, -3198, -4910, -2087, -4675],
-    [-2789, -3895, -2147, -4658, -1723, -3210, -4386, -1974]
-  ];
 
   useEffect(() => {
-    const data1 = fullfilledData[selectedOption];
-    const data2 = cencelledData[selectedOption];
+    const data1 = bookingsData.fullfilledData[selectedOption];
+    const data2 = bookingsData.cencelledData[selectedOption];
     chartRef?.current?.getEchartsInstance().setOption({
       series: [
         {
@@ -53,8 +43,6 @@ const Bookings = () => {
       <Card.Body>
         <BookingsChart
           ref={chartRef}
-          fullfilledData={fullfilledData}
-          cencelledData={cencelledData}
           style={{ height: '100%', minHeight: 322, width: '100%' }}
         />
       </Card.Body>

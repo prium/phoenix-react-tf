@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import BasicDropdown from 'components/base/basicDropdown';
 import FinancialActivitiesChart from 'components/charts/e-charts/FinancialActivitiesChart';
-import { FinancialActivitiesData } from 'data/travel-agency/financialActivities';
+import { FinancialActivitiesData } from 'data/travel-agency/travelAgency';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { capitalize } from 'helpers/utils';
 import React, { useEffect, useRef, useState } from 'react';

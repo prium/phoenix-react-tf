@@ -3,77 +3,16 @@ import AdvanceTable from 'components/base/AdvanceTable';
 import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
-import Badge, { BadgeBg } from 'components/base/Badge';
+import Badge from 'components/base/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import china from 'assets/img/country/china-2.png';
-import usa from 'assets/img/country/usa-2.png';
-import india from 'assets/img/country/india-2.png';
+import { visitorData } from 'data/travel-agency/travelAgency';
 
-type Data = {
-  country: {
-    name: string;
-    flag: string; // path
-  };
-  users: {
-    number: string;
-    percantage: string;
-  };
-  status: {
-    type?: BadgeBg;
-    label: string;
-  };
-};
-
-const visitorData: Data[] = [
-  {
-    country: {
-      name: 'India',
-      flag: india
-    },
-    users: {
-      number: '92,896',
-      percantage: '41.6%'
-    },
-    status: {
-      type: 'info',
-      label: '15.21%'
-    }
-  },
-  {
-    country: {
-      name: 'China',
-      flag: china
-    },
-    users: {
-      number: '50,496',
-      percantage: '32.8%'
-    },
-    status: {
-      type: 'warning',
-      label: '05.21%'
-    }
-  },
-  {
-    country: {
-      name: 'USA',
-      flag: usa
-    },
-    users: {
-      number: '45,679',
-      percantage: '24.3%'
-    },
-    status: {
-      type: 'primary',
-      label: '22.12%'
-    }
-  }
-];
-
-const columns: ColumnDef<Data>[] = [
+const columns: ColumnDef<visitorData>[] = [
   {
     id: 'country_name',
+    header: 'Country name',
     accessorFn: ({ country }) => country.name,
     cell: ({ row: { original } }) => (
       <Link
@@ -86,7 +25,7 @@ const columns: ColumnDef<Data>[] = [
     ),
     meta: {
       headerProps: {
-        className: ' fs-10'
+        className: 'fs-10'
       },
       cellProps: { className: 'py-2' }
     }
@@ -103,7 +42,7 @@ const columns: ColumnDef<Data>[] = [
     ),
     meta: {
       headerProps: {
-        className: ' fs-10'
+        className: 'fs-10'
       },
       cellProps: { className: 'py-2' }
     }
@@ -126,7 +65,7 @@ const columns: ColumnDef<Data>[] = [
   }
 ];
 
-export const VisitorsCardTable = () => {
+export const VisitorsTable = () => {
   const table = useAdvanceTable({
     data: visitorData,
     columns,

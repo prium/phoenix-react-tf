@@ -14,7 +14,7 @@ import { BarChart } from 'echarts/charts';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
-import { FinancialActivitiesData } from 'data/travel-agency/financialActivities';
+import { FinancialActivitiesData } from 'data/travel-agency/travelAgency';
 echarts.use([TooltipComponent, BarChart]);
 
 const FinancialActivitiesChart = forwardRef<

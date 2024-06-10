@@ -9,14 +9,13 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import dayjs from 'dayjs';
 import EChartsReactCore from 'echarts-for-react/lib/core';
+import { bookingsData } from 'data/travel-agency/travelAgency';
 
 echarts.use([TooltipComponent, LineChart]);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
-  isDark: boolean,
-  fullfilledData: number[][],
-  cencelledData: number[][]
+  isDark: boolean
 ) => ({
   color: getThemeColor('body-highlight-bg'),
   legend: {
@@ -83,7 +82,7 @@ const getDefaultOptions = (
       name: 'Fulfilled',
       type: 'bar',
       stack: 'one',
-      data: fullfilledData[0],
+      data: bookingsData.fullfilledData[0],
       barWidth: '27%',
       itemStyle: {
         borderRadius: [4, 4, 0, 0],
@@ -95,7 +94,7 @@ const getDefaultOptions = (
       type: 'bar',
       stack: 'one',
       barWidth: '27%',
-      data: cencelledData[0],
+      data: bookingsData.cencelledData[0],
       itemStyle: {
         borderRadius: [0, 0, 4, 4],
         color: isDark
@@ -110,11 +109,9 @@ const getDefaultOptions = (
 const BookingsChart = forwardRef<
   EChartsReactCore | null,
   {
-    style: CSSProperties;
-    fullfilledData: number[][];
-    cencelledData: number[][];
+    style?: CSSProperties;
   }
->(({ style, fullfilledData, cencelledData }, ref) => {
+>(({ style }, ref) => {
   const {
     getThemeColor,
     config: { isDark }
@@ -125,12 +122,7 @@ const BookingsChart = forwardRef<
     <ReactEChartsCore
       echarts={echarts}
       ref={chartRef}
-      option={getDefaultOptions(
-        getThemeColor,
-        isDark,
-        fullfilledData,
-        cencelledData
-      )}
+      option={getDefaultOptions(getThemeColor, isDark)}
       style={style}
     />
   );

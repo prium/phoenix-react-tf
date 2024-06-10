@@ -3,14 +3,14 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { VisitorsCard } from 'components/modules/travel-agency/dashboard/VisitorsCard';
 import { TravelStatistics } from 'components/modules/travel-agency/dashboard/TravelStatistics';
 import { FinancialActivities } from 'components/modules/travel-agency/dashboard/FinancialActivities';
-import { HolidaysCard } from 'components/modules/travel-agency/dashboard/HolidaysCard';
+import { HolidaysCard } from 'components/cards/HolidaysCard';
 import { IntegrationsCard } from 'components/cta/IntegrationsCard';
-import GrossProfitCard from 'components/modules/travel-agency/dashboard/GrossProfitCard';
 import Bookings from 'components/modules/travel-agency/dashboard/Bookings';
 import Flights from 'components/modules/travel-agency/dashboard/Flights';
+import { VisitorsCard } from 'components/cards/VisitorsCard';
+import GrossProfitCard from 'components/cards/GrossProfitCard';
 
 const TravelAgency = () => {
   return (

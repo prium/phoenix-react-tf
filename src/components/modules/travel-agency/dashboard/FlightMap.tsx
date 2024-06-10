@@ -19,30 +19,15 @@ import FlightTable from './FlightTable';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 
-import phoenixFirelines from 'assets/img/brands/phoenix-firelines.png';
-import qatarAirways from 'assets/img/brands/qatar-airways.png';
-import japanAirlines from 'assets/img/brands/jal.png';
 import { Autoplay } from 'swiper/modules';
 import { Feature, along, length, LineString } from '@turf/turf';
+import { routes } from 'data/travel-agency/travelAgency';
 // import { Feature as Feature2 } from '@turf/helpers';
-
-SwiperCore.use([Autoplay]);
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
-// @ts-ignore
-mapboxgl.workerClass = MapboxWorker;
 
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   options: Omit<MapboxOptions, 'container'>;
 }
-interface routes {
-  flightNo: number;
-  airLine: string;
-  logo: string;
-  from: string;
-  to: string;
-}
-
 interface pointInterface {
   type: string;
   features: {
@@ -55,57 +40,20 @@ interface pointInterface {
   }[];
 }
 
-const routes: routes[] = [
-  {
-    flightNo: 1,
-    airLine: 'EK204 (AK98)',
-    logo: phoenixFirelines,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 2,
-    airLine: 'EK204 (AK98)',
-    logo: phoenixFirelines,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 3,
-    airLine: 'EK204 (AK98)',
-    logo: qatarAirways,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 4,
-    airLine: 'EK204 (AK98)',
-    logo: japanAirlines,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 5,
-    airLine: 'EK204 (AK98)',
-    logo: japanAirlines,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 5,
-    airLine: 'EK204 (AK98)',
-    logo: japanAirlines,
-    from: 'RIG',
-    to: 'LAX'
-  },
-  {
-    flightNo: 5,
-    airLine: 'EK204 (AK98)',
-    logo: japanAirlines,
-    from: 'RIG',
-    to: 'LAX'
-  }
-];
+interface Destination {
+  type: string;
+  features: Feature[];
+}
+interface Destination2 {
+  type: string;
+  features: Feature<LineString>[];
+}
+
+SwiperCore.use([Autoplay]);
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN || '';
+// @ts-ignore
+mapboxgl.workerClass = MapboxWorker;
+
 const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
@@ -138,28 +86,19 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
         ...options
       });
 
-      if (options.center) {
-        new mapboxgl.Marker({
-          color: '#ed2000'
-        })
-          .setLngLat(options.center)
-          .addTo(map.current);
-      }
+      // if (options.center) {
+      //   new mapboxgl.Marker({
+      //     color: '#ed2000'
+      //   })
+      //     .setLngLat(options.center)
+      //     .addTo(map.current);
+      // }
 
       const origin: LngLatLike = [-61.100583, 5.044713];
       const currentPosition: LngLatLike = [
         -74.2139449434892, 8.136553550752552
       ];
       const destination: LngLatLike = [-84.913785, 10.325774];
-
-      interface Destination {
-        type: string;
-        features: Feature[];
-      }
-      interface Destination2 {
-        type: string;
-        features: Feature<LineString>[];
-      }
 
       const originToCurrentRoute: Destination = {
         type: 'FeatureCollection',
@@ -262,7 +201,6 @@ const FlightMap = ({ className, options, ...rest }: MapboxProps) => {
 
       const lineDistance = length(originToCurrentRoute.features[0]);
       const lineDistance2 = length(originToCurrentRoute.features[0]);
-      // console.log(lineDistance);
 
       const arc = [];
       const arc2 = [];
