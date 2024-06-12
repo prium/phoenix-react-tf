@@ -99,11 +99,20 @@ const FlightTable = () => {
             style={{ height: 2 }}
             className="position-relative overflow-visible align-middle flex-1"
           >
-            <ProgressBar now={50} min={0} max={100} className="" />
+            <ProgressBar
+              now={50}
+              min={0}
+              max={100}
+              variant="info"
+              style={{
+                height: '2px',
+                transform: 'translateY(-75%)'
+              }}
+            />
             <FontAwesomeIcon
               className="text-info ms-0"
               icon={faPlane}
-              transform={'up-7'}
+              transform={'up-9'}
             />
           </ProgressBar>
           <h6 className="mb-0 text-body-tertiary">SJC</h6>

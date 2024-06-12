@@ -44,6 +44,7 @@ const TopNav = () => {
       icon: faWhatsapp
     }
   ];
+
   return (
     <div className="bg-primary-subtle py-2">
       <div className="container-medium d-flex align-items-center justify-content-between">
@@ -57,10 +58,14 @@ const TopNav = () => {
         </Button>
         <Dropdown>
           {/* <Button size="sm" className="p-0 d-md-none fs-8"></Button> */}
-          <Dropdown.Toggle size="sm" variant="" className="p-0 d-md-none fs-8">
+          <Dropdown.Toggle
+            size="sm"
+            variant=""
+            className="p-0 d-md-none fs-8 dropdown-caret-none"
+          >
             <FontAwesomeIcon icon={faEllipsisH} />
           </Dropdown.Toggle>
-          <Dropdown.Menu>
+          <Dropdown.Menu style={{ zIndex: 9999 }}>
             <Dropdown.Item href="">Become a Host</Dropdown.Item>
             <Dropdown.Item href="">Blog</Dropdown.Item>
             <Dropdown.Item href="">Career</Dropdown.Item>

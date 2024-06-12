@@ -83,7 +83,7 @@ export const VisitorsTable = () => {
         headerClassName="fs-0"
       />
       <AdvanceTableFooter
-        className="py-3"
+        className="pt-3 pb-4"
         totalItemsClass="fs-8"
         viewAllBtnClass="ms-auto"
       />

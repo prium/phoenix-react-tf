@@ -90,6 +90,10 @@
     }
     // --#{$prefix}btn-active-bg: #{map-get($theme-colors, 'primary')};
 
+    [class*='btn-phoenix-'] {
+      --#{$prefix}btn-disabled-border-color: var(--#{$prefix}border-color);
+    }
+
     .settings-panel .btn {
       --#{$prefix}btn-color: #{$gray-600};
     }

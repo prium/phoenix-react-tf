@@ -184,7 +184,7 @@ const BestPlaces = () => {
                           className="text-secondary-lighter"
                         />
                         <h6 className="mb-0 text-secondary-lighter fw-semibold">
-                          {data.hotels}
+                          {data.hotels} Hotels
                         </h6>
                       </div>
                       <div className="d-flex align-items-center gap-2">
@@ -193,7 +193,7 @@ const BestPlaces = () => {
                           className="text-secondary-lighter"
                         />
                         <h6 className="mb-0 text-secondary-lighter fw-semibold">
-                          {data.packages}
+                          {data.packages} Tour Package
                         </h6>
                       </div>
                     </div>

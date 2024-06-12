@@ -136,7 +136,7 @@ const columns: ColumnDef<FlightInterface>[] = [
               now={destination.percent}
               min={0}
               max={100}
-              className=""
+              variant="info-light"
             />
             <FontAwesomeIcon
               className="text-info ms-0"
@@ -289,7 +289,7 @@ const TravelFlightTable = () => {
       </Row>
       <AdvanceTable
         tableProps={{
-          className: 'phoenix-table fs-9 mb-4 border-top border-translucent'
+          className: 'phoenix-table fs-9 border-top border-translucent'
         }}
         rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
       />

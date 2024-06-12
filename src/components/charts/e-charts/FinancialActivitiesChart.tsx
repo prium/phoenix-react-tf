@@ -179,7 +179,7 @@ const FinancialActivitiesChart = forwardRef<
           left: 3
         }
       });
-    } else if (window.innerWidth <= 1440) {
+    } else if (window.innerWidth <= 1540) {
       chartRef.current?.getEchartsInstance().setOption({
         yAxis: {
           axisLabel: {

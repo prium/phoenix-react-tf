@@ -41,7 +41,7 @@ const Footer = () => {
   return (
     <section className="booking-footer pb-6 pb-md-11 pt-15">
       <div
-        className="bg-holder d-none d-xl-block"
+        className="bg-holder"
         style={{
           backgroundImage: `linear-gradient(
             0deg,
@@ -93,10 +93,10 @@ const Footer = () => {
           <Col xs="auto">
             <p className="mb-0 text-white">
               Thank you for creating with Phoenix | 2023 ©{' '}
+              <Link to="https://themewagon.com/" className="text-white">
+                Themewagon
+              </Link>
             </p>
-            <Link to="https://themewagon.com/" className="text-white">
-              Themewagon
-            </Link>
           </Col>
         </Row>
       </div>

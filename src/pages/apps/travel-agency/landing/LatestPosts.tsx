@@ -8,11 +8,14 @@ import gallery64 from 'assets/img/gallery/64.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import SwiperCore from 'swiper';
-import { Autoplay } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import Rating from 'components/base/Rating';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronLeft,
+  faChevronRight
+} from '@fortawesome/free-solid-svg-icons';
 
 SwiperCore.use([Autoplay]);
 interface posts {
@@ -55,7 +58,7 @@ const LatestPosts = () => {
         style={{
           backgroundImage: `url(${bgLeft31})`,
           backgroundPosition: 'left',
-          backgroundSize: '40%',
+          backgroundSize: '22%',
           zIndex: '1'
         }}
       />
@@ -78,8 +81,8 @@ const LatestPosts = () => {
           of what we do.
         </p>
       </div>
-      <div className="swiper-theme-container swiper-slide-nav-top">
-        <div className="swiper-theme-container swiper-zooming-slider">
+      <div className="swiper-theme-container swiper-zooming-slider">
+        <div className="swiper-container ">
           <Swiper
             loop
             centeredSlides
@@ -88,6 +91,11 @@ const LatestPosts = () => {
             spaceBetween={32}
             slidesPerView={1.3}
             speed={2000}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            }}
+            modules={[Navigation]}
             breakpoints={{
               540: {
                 slidesPerView: 1.5
@@ -140,6 +148,22 @@ const LatestPosts = () => {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+        <div className="swiper-nav">
+          <div className="swiper-button-next">
+            <FontAwesomeIcon
+              icon={faChevronRight}
+              className="text-primary"
+              transform="shrink-3"
+            />
+          </div>
+          <div className="swiper-button-prev">
+            <FontAwesomeIcon
+              icon={faChevronLeft}
+              className="text-primary"
+              transform="shrink-3"
+            />
+          </div>
         </div>
       </div>
       <div className="text-center mt-12 position-relative z-2">

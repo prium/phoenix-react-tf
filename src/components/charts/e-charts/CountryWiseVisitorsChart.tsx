@@ -4,7 +4,7 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { BarChart } from 'echarts/charts';
-import { tooltipFormatterList } from 'helpers/echart-utils';
+import { CallbackDataParams } from 'echarts/types/dist/shared';
 import EChartsReactCore from 'echarts-for-react/lib/core';
 import { getRandomNumber } from 'helpers/utils';
 
@@ -35,7 +35,13 @@ const getDefaultOptions = (
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
-    formatter: tooltipFormatterList
+    formatter: (params: CallbackDataParams[]) => {
+      return `<div>
+        <h6 class="fs-9 text-700 mb-0"><span class="fas fa-circle me-1 text-primary-light"></span>
+          Users : <span class="fw-normal">${params[0].value}</span>
+        </h6>
+    </div>`;
+    }
   },
   xAxis: {
     type: 'category',

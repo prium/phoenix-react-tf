@@ -77,7 +77,7 @@ export const FinancialActivities = () => {
             <option value={2}>Trip</option>
           </Form.Select>
         </Col>
-        <Col xs="auto" md={{ span: 1 }} lg={{ span: 0 }} xxl={{ span: 1 }}>
+        <Col xs="auto" md={{ order: 1 }} lg={{ order: 0 }} xxl={{ order: 1 }}>
           <BasicDropdown>
             <Dropdown.Item href="#!">Action</Dropdown.Item>
             <Dropdown.Item href="#!">Another action</Dropdown.Item>

@@ -1,8 +1,4 @@
-import {
-  faChevronRight,
-  faHeart,
-  faStar
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import bgLeft29 from 'assets/img/bg/bg-left-29.png';
 import gallery45 from 'assets/img/gallery/45.png';
@@ -13,6 +9,7 @@ import Button from 'components/base/Button';
 import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 interface hotelInterFace {
   name: string;

@@ -35,85 +35,87 @@ const ImageZoomHoverCard = ({ src, title, subTitle }: ImageZoomHoverCard) => {
 
 const SeasonOfTour = () => {
   return (
-    <section className="container-medium pt-6 pt-md-10 pb-10">
-      <div
-        className="bg-holder d-none d-xl-block"
-        style={{
-          backgroundImage: `url(${bgLeft27})`,
-          backgroundPosition: 'left',
-          backgroundSize: 'auto'
-        }}
-      />
-      <div
-        className="bg-holder d-none d-xl-block"
-        style={{
-          backgroundImage: `url(${bgRight27})`,
-          backgroundPosition: 'right',
-          backgroundSize: 'auto'
-        }}
-      />
-      <Row className="g-3 position-relative">
-        <Col lg={6}>
-          <Row className="g-3">
-            <Col md={7}>
-              <h4 className="fw-semibold mb-3">Season of </h4>
-              <h2 className="fs-4 fw-semibold mb-3 mb-md-4">
-                Tour &{' '}
-                <span className="text-primary-light fw-bold">Travel</span>
-              </h2>
-              <p className="mb-3 mb-md-0 text-body-tertiary">
-                This is the perfect season for tours and travels. At Phoenix,
-                you can easily select the best travel option for your next
-                vacation
-              </p>
-              <span className="d-none d-lg-inline-block d-xl-none">...</span>
-              <span className="d-lg-none d-xl-inline">
-                This will help you with the pricing that you’ll need, the
-                accommodation facilities, food and beverages, and water rides.
-              </span>
-            </Col>
+    <section className="pt-6 pt-md-10 pb-10">
+      <div className="container-medium">
+        <div
+          className="bg-holder d-none d-xl-bloc bg-left"
+          style={{
+            backgroundImage: `url(${bgLeft27})`,
+            backgroundPosition: 'left',
+            backgroundSize: 'auto'
+          }}
+        />
+        <div
+          className="bg-holder d-none d-xl-block bg-right"
+          style={{
+            backgroundImage: `url(${bgRight27})`,
+            backgroundPosition: 'right',
+            backgroundSize: 'auto'
+          }}
+        />
+        <Row className="g-3 position-relative">
+          <Col lg={6}>
+            <Row className="g-3">
+              <Col md={7}>
+                <h4 className="fw-semibold mb-3">Season of </h4>
+                <h2 className="fs-4 fw-semibold mb-3 mb-md-4">
+                  Tour &{' '}
+                  <span className="text-primary-light fw-bold">Travel</span>
+                </h2>
+                <p className="mb-3 mb-md-0 text-body-tertiary">
+                  This is the perfect season for tours and travels. At Phoenix,
+                  you can easily select the best travel option for your next
+                  vacation
+                </p>
+                <span className="d-none d-lg-inline-block d-xl-none">...</span>
+                <span className="d-lg-none d-xl-inline">
+                  This will help you with the pricing that you’ll need, the
+                  accommodation facilities, food and beverages, and water rides.
+                </span>
+              </Col>
 
-            <Col xs={6} md={5}>
+              <Col xs={6} md={5}>
+                <ImageZoomHoverCard
+                  src={gallery35}
+                  title="New Zealand"
+                  subTitle="17 Hotels"
+                />
+              </Col>
+              <Col xs={6} md={5}>
+                <ImageZoomHoverCard
+                  src={gallery36}
+                  title="London"
+                  subTitle="17 Hotels"
+                />
+              </Col>
+              <Col md={7}>
+                <ImageZoomHoverCard
+                  src={gallery37}
+                  title="Maui"
+                  subTitle="14 Hotels"
+                />
+              </Col>
+            </Row>
+          </Col>
+          <Col lg={6}>
+            <div className="d-flex flex-column gap-3 h-100">
               <ImageZoomHoverCard
-                src={gallery35}
-                title="New Zealand"
-                subTitle="17 Hotels"
+                src={gallery38}
+                title="Bali, Indonesia"
+                subTitle="51 Hotels"
               />
-            </Col>
-            <Col xs={6} md={5}>
-              <ImageZoomHoverCard
-                src={gallery36}
-                title="London"
-                subTitle="17 Hotels"
-              />
-            </Col>
-            <Col md={7}>
-              <ImageZoomHoverCard
-                src={gallery37}
-                title="Maui"
-                subTitle="14 Hotels"
-              />
-            </Col>
-          </Row>
-        </Col>
-        <Col lg={6}>
-          <div className="d-flex flex-column gap-3 h-100">
-            <ImageZoomHoverCard
-              src={gallery38}
-              title="Bali, Indonesia"
-              subTitle="51 Hotels"
-            />
-            <Button variant="primary" className="w-100 py-3 fs-8">
-              Explore more
-              <FontAwesomeIcon
-                className="ms-2"
-                icon={faChevronRight}
-                transform="down-2"
-              />
-            </Button>
-          </div>
-        </Col>
-      </Row>
+              <Button variant="primary" className="w-100 py-3 fs-8">
+                Explore more
+                <FontAwesomeIcon
+                  className="ms-2"
+                  icon={faChevronRight}
+                  transform="down-2"
+                />
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </div>
     </section>
   );
 };

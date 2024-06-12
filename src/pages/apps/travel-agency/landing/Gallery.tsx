@@ -153,7 +153,7 @@ const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItem }) => {
           <FontAwesomeIcon icon={faHeart} />
         </button>
         <div className="backdrop-faded">
-          <Link to="#!" className="fw-bold fs-7 text-white streched-link">
+          <Link to="#!" className="fw-bolder fs-7 text-white streched-link">
             {galleryItem.location}
           </Link>
           <h5 className="text-light mb-0">
