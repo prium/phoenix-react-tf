@@ -22,6 +22,7 @@ export interface Route {
   active?: boolean;
   new?: boolean;
   hasNew?: boolean;
+  next?: boolean;
 }
 
 export interface RouteItems {
@@ -333,63 +334,83 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'hotel',
-            pages: [
-              {
-                name: 'admin',
-                pages: [
-                  {
-                    name: 'add-property',
-                    path: 'apps/travel-agency/hotel/admin/add-property',
-                    pathName: 'travel-agency-add-property'
-                  },
-                  {
-                    name: 'add-room',
-                    path: 'apps/travel-agency/hotel/admin/add-room',
-                    pathName: 'travel-agency-add-room'
-                  },
-                  {
-                    name: 'room-listing',
-                    path: 'apps/travel-agency/hotel/admin/room-listing',
-                    pathName: 'travel-agency-room-listing'
-                  },
-                  {
-                    name: 'search-room',
-                    path: 'apps/travel-agency/hotel/admin/room-search',
-                    pathName: 'travel-agency-room-search'
-                  }
-                ]
-              },
-              {
-                name: 'customer',
-                pages: [
-                  {
-                    name: 'homepage',
-                    path: 'apps/travel-agency/hotel/customer/homepage',
-                    pathName: 'hotel-homepage'
-                  },
-                  {
-                    name: 'hotel-details',
-                    path: 'apps/travel-agency/hotel/customer/hotel-details',
-                    pathName: 'hotel-hotel-details'
-                  },
-                  {
-                    name: 'hotel-compare',
-                    path: 'apps/travel-agency/hotel/customer/hotel-compare',
-                    pathName: 'hotel-hotel-compare'
-                  },
-                  {
-                    name: 'checkout',
-                    path: 'apps/travel-agency/hotel/customer/checkout',
-                    pathName: 'hotel-checkout'
-                  },
-                  {
-                    name: 'payment',
-                    path: 'apps/travel-agency/hotel/customer/payment',
-                    pathName: 'hotel-payment'
-                  }
-                ]
-              }
-            ]
+            next: true,
+            path: '/pages/coming-soon',
+            pathName: 'travel-agency-hotel'
+            // pages: [
+            //   {
+            //     name: 'admin',
+            //     active: true,
+            //     pages: [
+            //       {
+            //         name: 'add-property',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-add-property',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'add-room',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-add-room',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'room-listing',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-room-listing',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'search-room',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-room-search',
+            //         active: false
+            //       }
+            //     ]
+            //   },
+            //   {
+            //     name: 'customer',
+            //     active: true,
+            //     pages: [
+            //       {
+            //         name: 'homepage',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-homepage',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'hotel-details',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-hotel-details',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'hotel-compare',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-hotel-compare',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'checkout',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-checkout',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'payment',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-payment',
+            //         active: false
+            //       }
+            //     ]
+            //   }
+            // ]
+          },
+          {
+            name: 'flight',
+            next: true,
+            path: '/pages/coming-soon',
+            pathName: 'travel-agency-flight'
           }
         ]
       },
