@@ -1,23 +1,17 @@
 .mapbox-container {
-  font-family: var(--#{$prefix}font-sans-serif);;
   position: relative;
+  height: 100%;
   overflow: hidden;
-  .mapboxgl-ctrl-logo {
-    display: none;
-  }
-  .map {
-    min-height: 36.875rem;
-    @include media-breakpoint-up(sm) {
-      min-height: 33.125rem;
-    }
+  font-family: var(--#{$prefix}font-sans-serif);
+  .map-container {
+    height: 100%;
   }
   .mapbox-control-btn {
     position: absolute;
-    bottom: 0;
+    top: 0;
     padding: map-get($spacers, 3);
     .zoomIn,
-    .zoomOut,
-    .fullScreen {
+    .zoomOut {
       @extend .btn;
       @extend .btn-phoenix-secondary;
       @extend .square-icon-btn;
@@ -34,14 +28,25 @@
     }
   }
 }
-
-.flight-map-control-btn{
-  top: 60px;
-  right: 0;
-  bottom: unset !important;
-  @include media-breakpoint-up(md){
-    top: unset;
-    right: unset;
-    bottom: 0 !important;
+.flight-map{
+  .mapboxgl-ctrl-logo {
+    display: none;
+  }
+  .map {
+    min-height: 36.875rem;
+    @include media-breakpoint-up(sm) {
+      min-height: 33.125rem;
+    }
+  }
+  .flight-map-control-btn{
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    bottom: unset !important;
+    @include media-breakpoint-up(md){
+      top: unset;
+      right: unset;
+      bottom: 0 !important;
+    }
   }
 }

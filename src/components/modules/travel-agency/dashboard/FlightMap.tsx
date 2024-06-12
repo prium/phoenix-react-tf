@@ -257,7 +257,7 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
 
   return (
     <>
-      <div className="mapbox-container mt-4" {...rest}>
+      <div className="mapbox-container flight-map mt-4" {...rest}>
         <div className="position-relative">
           <div
             ref={flightMap}

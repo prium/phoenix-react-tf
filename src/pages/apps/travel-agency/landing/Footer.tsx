@@ -9,6 +9,7 @@ import {
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 import bg41 from 'assets/img/bg/41.jpg';
+import classNames from 'classnames';
 
 interface footerItems {
   title: string;
@@ -65,7 +66,12 @@ const Footer = () => {
           <Col xs="auto">
             <ul className="mb-0 list-unstyled d-flex flex-wrap">
               {footerItems.map((item, index) => (
-                <li className="me-3 me-sm-5" key={index}>
+                <li
+                  key={index}
+                  className={classNames('', {
+                    'me-sm-5 me-3': index !== footerItems.length - 1
+                  })}
+                >
                   <Link to={item.link} className="fs-8 fw-bold text-white">
                     {item.title}
                   </Link>
