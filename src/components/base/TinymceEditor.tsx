@@ -50,9 +50,9 @@ const TinymceEditor = ({
   return (
     <Editor
       tinymceScriptSrc="/tinymce/tinymce.min.js"
+      // apiKey={process.env.REACT_APP_TINYMCE_APIKEY}
       onFocus={handleEditorFocus}
       onBlur={handleEditorBlur}
-      // @ts-expect-error not error
       onInit={(evt, editor) => (editorRef.current = editor)}
       value={value}
       onEditorChange={onChange}

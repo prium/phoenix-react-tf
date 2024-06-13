@@ -10,7 +10,7 @@ export const IntegrationsCard = () => {
   return (
     <Card className="mb-3">
       <div
-        className="bg-holder"
+        className="bg-holder bg-card"
         style={{
           backgroundImage: `url(${bgIllustrations})`,
           backgroundSize: 'auto',

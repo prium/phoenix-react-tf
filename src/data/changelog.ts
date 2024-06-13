@@ -9,8 +9,9 @@ export default [
       new: [
         'DASHBOARD : <code>TravelAgency</code>',
         'PAGE : <code>travel-agency/landing</code>',
+        'PACKAGE : <code>@turf/turf</code>',
         'PACKAGE : <code>tinymce</code>',
-        'PACKAGE : <code>@turf/turf</code>'
+        'PACKAGE : Hosted <strong>Tinymce</strong> to the public directory'
       ],
       update: [
         'PACKAGE: Bootstrap to 5.3.3',
