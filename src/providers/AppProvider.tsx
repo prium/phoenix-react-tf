@@ -65,7 +65,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
     configDispatch({
       type: SET_CONFIG,
       payload: {
-        theme: config.isDark !== false ? 'light' : 'dark'
+        theme: config.isDark ? 'light' : 'dark'
       }
     });
   };

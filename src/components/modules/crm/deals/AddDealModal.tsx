@@ -21,7 +21,12 @@ const AddDealModal = ({ show, handleClose }: AddDealModalProps) => {
     >
       <Modal.Header className="border-0 p-0 mb-2">
         <h3 className="mb-0">Deal Informations</h3>
-        <Button variant="phoenix-secondary" onClick={handleClose} size="sm">
+        <Button
+          variant="phoenix-secondary"
+          className="ms-auto"
+          onClick={handleClose}
+          size="sm"
+        >
           <FontAwesomeIcon icon={faTimes} className="text-danger" />
         </Button>
       </Modal.Header>

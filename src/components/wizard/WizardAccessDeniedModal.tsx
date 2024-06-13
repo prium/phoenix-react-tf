@@ -18,7 +18,7 @@ const WizardAccessDeniedModal = () => {
         <div className="h4 text-body-secondary mb-0">Access Denied!</div>
         <Button
           variant="link"
-          className="text-danger px-1 position-absolute top-0 end-0 mt-2 me-2"
+          className="text-danger px-1 position-absolute top-0 end-0 mt-2 me-2 ms-auto"
           onClick={() => setOpenDeniedModal(false)}
         >
           <FontAwesomeIcon icon={faTimes} />

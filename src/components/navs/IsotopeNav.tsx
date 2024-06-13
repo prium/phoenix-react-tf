@@ -14,7 +14,7 @@ const IsotopeNav = ({ navItems, className, onSelect }: IsotopeNavProps) => {
   return (
     <Nav
       className={classNames(className)}
-      defaultActiveKey="1"
+      defaultActiveKey={navItems[0].eventKey}
       onSelect={onSelect}
     >
       {navItems.map((navItem: IsotopeNavItem) => (

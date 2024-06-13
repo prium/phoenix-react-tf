@@ -79,7 +79,7 @@ const Footer = () => {
         <section className="footer-default">
           <div className="container-small px-lg-7 px-xxl-3">
             <Row className="position-relative">
-              <Col xs={12} lg={5} className="mb-4 order-0 order-sm-0">
+              <Col xs={{ span: 12, order: 0 }} lg={5} className="mb-4">
                 <Link to="#!">
                   <img className="mb-3" src={logoWhite} height="48" alt="" />
                 </Link>
@@ -92,7 +92,12 @@ const Footer = () => {
               </Col>
               <Col lg={7}>
                 <Row className="justify-content-between">
-                  <Col xs={6} sm={4} lg={3} className="mb-3 order-2 order-sm-1">
+                  <Col
+                    xs={{ span: 6, order: 2 }}
+                    sm={{ span: 4, order: 1 }}
+                    lg={3}
+                    className="mb-3"
+                  >
                     <FooterList
                       label="Help"
                       className="mb-4"
@@ -103,7 +108,12 @@ const Footer = () => {
                       items={['Facebook', 'Twitter', 'Linkedin']}
                     />
                   </Col>
-                  <Col xs={6} sm={4} lg={3} className="mb-3 order-3 order-sm-2">
+                  <Col
+                    xs={{ span: 6, order: 3 }}
+                    sm={{ span: 4, order: 2 }}
+                    lg={3}
+                    className="mb-3"
+                  >
                     <FooterList
                       label="Support"
                       items={[
@@ -117,7 +127,13 @@ const Footer = () => {
                       ]}
                     />
                   </Col>
-                  <Col xs={6} md={4} lg={3} className="mb-3 order-3 order-sm-2">
+                  <Col
+                    xs={{ span: 6, order: 3 }}
+                    sm={{ order: 2 }}
+                    md={4}
+                    lg={3}
+                    className="mb-3"
+                  >
                     <FooterList
                       label="Info"
                       items={[

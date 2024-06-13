@@ -64,7 +64,7 @@ const KanbanBoardOffcanvas = () => {
     >
       <Offcanvas.Header className="mb-6">
         <h3 className="offcanvas-title">Phoenix Kanban</h3>
-        <Button className="p-1 fw-bolder" onClick={handleClose}>
+        <Button className="p-1 fw-bolder ms-auto" onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} className="fs-8" />
         </Button>
       </Offcanvas.Header>
