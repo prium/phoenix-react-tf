@@ -50,7 +50,7 @@ const CalendarEventModal = () => {
             </p>
           )}
         </div>
-        <Button className="p-1" onClick={handleClose}>
+        <Button className="p-1 ms-auto" onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} className="fs-8" />
         </Button>
       </Modal.Header>

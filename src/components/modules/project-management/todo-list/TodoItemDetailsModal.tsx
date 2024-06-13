@@ -32,7 +32,7 @@ const TodoItemDetailsModal = ({
             <Button
               variant="phoenix-secondary"
               onClick={handleClose}
-              className="btn-icon btn-icon-xl flex-shrink-0"
+              className="btn-icon btn-icon-xl flex-shrink-0 ms-auto"
             >
               <FontAwesomeIcon icon={faXmark} />
             </Button>

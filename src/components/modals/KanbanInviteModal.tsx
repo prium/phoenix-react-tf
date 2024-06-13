@@ -19,7 +19,7 @@ const KanbanInviteModal = ({
         <h3 className="mb-0 text-body-emphasis fw-semibold flex-1">
           Phoenix Kanban
         </h3>
-        <Button className="p-0" onClick={handleClose}>
+        <Button className="p-0 ms-auto" onClick={handleClose}>
           <FontAwesomeIcon icon={faXmark} className="fs-7" />
         </Button>
       </Modal.Header>
