@@ -2,6 +2,24 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.4.0',
+    title: 'Apollo',
+    publishDate: '13 Jan, 2024',
+    logs: {
+      new: [
+        'DASHBOARD : <code>TravelAgency</code>',
+        'PAGE : <code>travel-agency/landing</code>',
+        'PACKAGE : <code>tinymce</code>',
+        'PACKAGE : <code>@turf/turf</code>'
+      ],
+      update: [
+        'PACKAGE: Bootstrap to 5.3.3',
+        'PACKAGE: React Bootstrap to 2.10.2'
+      ],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.3.0',
     title: 'Elpis',
     publishDate: '22 Nov, 2023',
