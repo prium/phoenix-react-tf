@@ -17,7 +17,7 @@ interface AdvanceTableFooterProps {
   navBtn?: boolean;
   showViewAllBtn?: boolean;
   viewAllBtnClass?: string;
-  totalItemsClass?: string;
+  tableInfo?: string;
 }
 
 const AdvanceTableFooter = ({
@@ -26,7 +26,7 @@ const AdvanceTableFooter = ({
   navBtn,
   showViewAllBtn = true,
   viewAllBtnClass,
-  totalItemsClass
+  tableInfo
 }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
@@ -60,7 +60,7 @@ const AdvanceTableFooter = ({
       <Col className="d-flex fs-9">
         <p
           className={classNames(
-            totalItemsClass,
+            tableInfo,
             'mb-0 d-none d-sm-block me-3 fw-semibold text-body'
           )}
         >

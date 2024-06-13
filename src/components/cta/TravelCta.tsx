@@ -7,7 +7,7 @@ import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const Cta = () => {
+const TravelCta = () => {
   return (
     <section className="pb-10 pt-3">
       <div
@@ -74,4 +74,4 @@ const Cta = () => {
   );
 };
 
-export default Cta;
+export default TravelCta;

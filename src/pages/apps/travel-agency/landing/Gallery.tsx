@@ -2,18 +2,6 @@ import bgLeft30 from 'assets/img/bg/bg-left-30.png';
 import bgRight30 from 'assets/img/bg/bg-right-30.png';
 import IsotopeNav from 'components/navs/IsotopeNav';
 import { useState } from 'react';
-import tokyo1 from 'assets/img/gallery/tokyo-1.png';
-import tokyo2 from 'assets/img/gallery/tokyo-2.png';
-import tokyo3 from 'assets/img/gallery/tokyo-3.png';
-import bali1 from 'assets/img/gallery/bali-1.png';
-import bali2 from 'assets/img/gallery/bali-2.png';
-import bali3 from 'assets/img/gallery/bali-3.png';
-import sydney1 from 'assets/img/gallery/sydney-1.png';
-import sydney2 from 'assets/img/gallery/sydney-2.png';
-import sydney3 from 'assets/img/gallery/sydney-3.png';
-import paris1 from 'assets/img/gallery/paris-1.png';
-import paris2 from 'assets/img/gallery/paris-2.png';
-import paris3 from 'assets/img/gallery/paris-3.png';
 
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -22,14 +10,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Rating from 'components/base/Rating';
 import Button from 'components/base/Button';
-
-interface GalleryItem {
-  img: string;
-  category: string;
-  location: string;
-  rating: number;
-  review: number;
-}
+import { GalleryInterface, galleryItems } from 'data/travel-agency/landing';
 
 const navItems = [
   {
@@ -50,94 +31,7 @@ const navItems = [
   }
 ];
 
-const galleryItems: GalleryItem[] = [
-  {
-    img: tokyo1,
-    category: 'tokyo',
-    location: 'King Power Mahanakhon',
-    rating: 4.8,
-    review: 1.4
-  },
-  {
-    img: tokyo2,
-    category: 'tokyo',
-    location: 'Meiji Jingu',
-    rating: 5.0,
-    review: 2.2
-  },
-  {
-    img: tokyo3,
-    category: 'tokyo',
-    location: 'Imperial Palace',
-    rating: 4.5,
-    review: 1.2
-  },
-  {
-    img: bali1,
-    category: 'bali',
-    location: 'Nusa Lembongan',
-    rating: 4.7,
-    review: 1.2
-  },
-  {
-    img: bali2,
-    category: 'bali',
-    location: 'Waterbom Bali',
-    rating: 4.5,
-    review: 1.8
-  },
-  {
-    img: bali3,
-    category: 'bali',
-    location: 'Kuta Beach',
-    rating: 5.0,
-    review: 4.1
-  },
-  {
-    img: sydney1,
-    category: 'sydney',
-    location: 'The Rocks',
-    rating: 4.8,
-    review: 1.9
-  },
-  {
-    img: sydney2,
-    category: 'sydney',
-    location: 'Manly Beach',
-    rating: 4.7,
-    review: 1.1
-  },
-  {
-    img: sydney3,
-    category: 'sydney',
-    location: 'Darling Harbour',
-    rating: 5.0,
-    review: 3.2
-  },
-  {
-    img: paris1,
-    category: 'paris',
-    location: 'Louvre Museum',
-    rating: 4.4,
-    review: 4.3
-  },
-  {
-    img: paris2,
-    category: 'paris',
-    location: 'Montmartre',
-    rating: 5.0,
-    review: 5.0
-  },
-  {
-    img: paris3,
-    category: 'paris',
-    location: 'Tuileries Garden',
-    rating: 4.1,
-    review: 4.5
-  }
-];
-
-const GalleryItem = ({ galleryItem }: { galleryItem: GalleryItem }) => {
+const GalleryItem = ({ galleryItem }: { galleryItem: GalleryInterface }) => {
   return (
     <Col xs={12} className="w-100">
       <div className="img-zoom-hover-lg rounded-2 overflow-hidden position-relative">

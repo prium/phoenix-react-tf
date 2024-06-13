@@ -84,7 +84,7 @@ export const VisitorsTable = () => {
       />
       <AdvanceTableFooter
         className="pt-3 pb-4"
-        totalItemsClass="fs-8"
+        tableInfo="fs-8"
         viewAllBtnClass="ms-auto"
       />
     </AdvanceTableProvider>

@@ -1,82 +1,14 @@
 import { faChevronRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import bgLeft29 from 'assets/img/bg/bg-left-29.png';
-import gallery45 from 'assets/img/gallery/45.png';
-import gallery46 from 'assets/img/gallery/46.png';
-import gallery47 from 'assets/img/gallery/47.png';
-import Badge, { BadgeBg } from 'components/base/Badge';
+
+import Badge from 'components/base/Badge';
 import Button from 'components/base/Button';
 import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-
-interface hotelInterFace {
-  name: string;
-  located: string;
-  price: string;
-  image: string;
-  rating: number;
-  stay: number;
-  status: {
-    label: string;
-    type: BadgeBg;
-  };
-  package: {
-    label: string;
-    type: BadgeBg;
-  };
-}
-const hotelsData: hotelInterFace[] = [
-  {
-    name: 'Royal Mansour Marrakech',
-    located: 'Morocco',
-    price: '60.00',
-    image: gallery45,
-    rating: 4.8,
-    stay: 1.4,
-    status: {
-      label: 'promoted',
-      type: 'warning'
-    },
-    package: {
-      label: 'Couple package',
-      type: 'info'
-    }
-  },
-  {
-    name: 'Mandarin Oriental Jumeira',
-    located: 'Abu dhabi',
-    price: '90.00',
-    image: gallery46,
-    rating: 4.8,
-    stay: 1.4,
-    status: {
-      label: 'promoted',
-      type: 'warning'
-    },
-    package: {
-      label: 'Couple package',
-      type: 'info'
-    }
-  },
-  {
-    name: 'Swissotel Bangkok',
-    located: 'Bangkok',
-    price: '70.00',
-    image: gallery47,
-    rating: 4.8,
-    stay: 1.4,
-    status: {
-      label: 'promoted',
-      type: 'warning'
-    },
-    package: {
-      label: 'Couple package',
-      type: 'info'
-    }
-  }
-];
+import { hotelInterFace, hotelsData } from 'data/travel-agency/landing';
 
 const HotelDetails = (data: hotelInterFace) => {
   const { image, rating, stay, name, located, price } = data;

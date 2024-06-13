@@ -12,88 +12,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import { Link } from 'react-router-dom';
-import thailand from 'assets/img/country/thailand.png';
-import switzerland from 'assets/img/country/switzerland.png';
-import turkey from 'assets/img/country/turkey.png';
-import newZealand from 'assets/img/country/new-zealand.png';
-import sweden from 'assets/img/country/sweden.png';
-import vietnam from 'assets/img/country/vietnam.png';
-import japan from 'assets/img/country/japan.png';
-import gallery39 from 'assets/img/gallery/39.png';
-import gallery40 from 'assets/img/gallery/40.png';
-import gallery41 from 'assets/img/gallery/41.png';
-import gallery42 from 'assets/img/gallery/42.png';
-import gallery43 from 'assets/img/gallery/43.png';
-import gallery44 from 'assets/img/gallery/44.png';
-import gallery57 from 'assets/img/gallery/57.png';
-import gallery58 from 'assets/img/gallery/58.png';
-import { Container } from 'react-bootstrap';
 
-interface placesData {
-  country: string;
-  flag: string;
-  img: string;
-  hotels: number;
-  packages: number;
-}
-const placesData: placesData[] = [
-  {
-    country: 'Thailand',
-    flag: thailand,
-    img: gallery39,
-    hotels: 17,
-    packages: 22
-  },
-  {
-    country: 'Switzerland',
-    flag: switzerland,
-    img: gallery40,
-    hotels: 15,
-    packages: 24
-  },
-  {
-    country: 'Turkey',
-    flag: turkey,
-    img: gallery42,
-    hotels: 44,
-    packages: 123
-  },
-  {
-    country: 'New Zealand',
-    flag: newZealand,
-    img: gallery41,
-    hotels: 55,
-    packages: 41
-  },
-  {
-    country: 'Sweden',
-    flag: sweden,
-    img: gallery43,
-    hotels: 17,
-    packages: 22
-  },
-  {
-    country: 'Turkey',
-    flag: turkey,
-    img: gallery44,
-    hotels: 44,
-    packages: 123
-  },
-  {
-    country: 'Vietnam',
-    flag: vietnam,
-    img: gallery58,
-    hotels: 54,
-    packages: 123
-  },
-  {
-    country: 'Japan',
-    flag: japan,
-    img: gallery57,
-    hotels: 17,
-    packages: 22
-  }
-];
+import { Container } from 'react-bootstrap';
+import { placesData } from 'data/travel-agency/landing';
 
 const BestPlaces = () => {
   SwiperCore.use([Autoplay]);

@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import TopNav from './TopNav';
-import NavbarMain from './NavbarMain';
 import HeroHeader from './HeroHeader';
 import SeasonOfTour from './SeasonOfTour';
 import BestPlaces from './BestPlaces';
 import BestHotel from './BestHotel';
 import Gallery from './Gallery';
 import LatestPosts from './LatestPosts';
-import Cta from './Cta';
 import LatestPhotos from './LatestPhotos';
 import GetApp from './GetApp';
 import Footer from './Footer';
+import NavbarMain from 'components/navbars/travel-landing/NavbarMain';
+import TravelCta from 'components/cta/TravelCta';
 
 const Landing = () => {
   useSettingsMountEffect({
@@ -46,7 +46,7 @@ const Landing = () => {
       <BestHotel />
       <Gallery />
       <LatestPosts />
-      <Cta />
+      <TravelCta />
       <LatestPhotos />
       <GetApp />
       <Footer />
