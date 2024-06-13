@@ -74,6 +74,111 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
     config: { theme }
   } = useAppContext();
 
+  const origin: LngLatLike = [-61.100583, 5.044713];
+  const currentPosition: LngLatLike = [-74.2139449434892, 8.136553550752552];
+  const destination: LngLatLike = [-84.913785, 10.325774];
+
+  const originToCurrentRoute: Destination = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: [origin, currentPosition]
+        }
+      }
+    ]
+  };
+  const originToCurrentRoute2: Destination2 = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: [origin, currentPosition]
+        }
+      }
+    ]
+  };
+
+  const currentToDestinationRoute: Destination = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: [currentPosition, destination]
+        }
+      }
+    ]
+  };
+
+  const currentToDestinationRoute2: Destination2 = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: [currentPosition, destination]
+        }
+      }
+    ]
+  };
+
+  const points: pointInterface = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Point',
+          coordinates: origin
+        }
+      },
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Point',
+          coordinates: currentPosition
+        }
+      },
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Point',
+          coordinates: destination
+        }
+      }
+    ]
+  };
+  const lineDistance = length(originToCurrentRoute.features[0]);
+  const lineDistance2 = length(originToCurrentRoute.features[0]);
+
+  const arc = [];
+  const arc2 = [];
+
+  const steps = 500;
+
+  for (let i = 0; i < lineDistance; i += lineDistance / steps) {
+    const segment = along(originToCurrentRoute2.features[0], i);
+    arc.push(segment.geometry.coordinates);
+  }
+  for (let i = 0; i < lineDistance2; i += lineDistance2 / steps) {
+    const segment = along(currentToDestinationRoute2.features[0], i);
+    arc2.push(segment.geometry.coordinates);
+  }
+
   useEffect(() => {
     if (map.current) return;
     if (flightMap.current) {
@@ -84,105 +189,6 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
         attributionControl: false,
         ...options
       });
-
-      // if (options.center) {
-      //   new mapboxgl.Marker({
-      //     color: '#ed2000'
-      //   })
-      //     .setLngLat(options.center)
-      //     .addTo(map.current);
-      // }
-
-      const origin: LngLatLike = [-61.100583, 5.044713];
-      const currentPosition: LngLatLike = [
-        -74.2139449434892, 8.136553550752552
-      ];
-      const destination: LngLatLike = [-84.913785, 10.325774];
-
-      const originToCurrentRoute: Destination = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [origin, currentPosition]
-            }
-          }
-        ]
-      };
-      const originToCurrentRoute2: Destination2 = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [origin, currentPosition]
-            }
-          }
-        ]
-      };
-
-      const currentToDestinationRoute: Destination = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [currentPosition, destination]
-            }
-          }
-        ]
-      };
-
-      const currentToDestinationRoute2: Destination2 = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'LineString',
-              coordinates: [currentPosition, destination]
-            }
-          }
-        ]
-      };
-
-      const points: pointInterface = {
-        type: 'FeatureCollection',
-        features: [
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: origin
-            }
-          },
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: currentPosition
-            }
-          },
-          {
-            type: 'Feature',
-            properties: {},
-            geometry: {
-              type: 'Point',
-              coordinates: destination
-            }
-          }
-        ]
-      };
 
       let count = 1;
       points.features.forEach(feature => {
@@ -197,23 +203,6 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
       });
 
       // map.current.on('load', () => {});
-
-      const lineDistance = length(originToCurrentRoute.features[0]);
-      const lineDistance2 = length(originToCurrentRoute.features[0]);
-
-      const arc = [];
-      const arc2 = [];
-
-      const steps = 500;
-
-      for (let i = 0; i < lineDistance; i += lineDistance / steps) {
-        const segment = along(originToCurrentRoute2.features[0], i);
-        arc.push(segment.geometry.coordinates);
-      }
-      for (let i = 0; i < lineDistance2; i += lineDistance2 / steps) {
-        const segment = along(currentToDestinationRoute2.features[0], i);
-        arc2.push(segment.geometry.coordinates);
-      }
 
       map.current.on('load', () => {
         map.current?.addSource('route', {

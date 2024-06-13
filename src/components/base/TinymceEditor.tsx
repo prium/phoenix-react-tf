@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect, useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Editor as TinyMCEEditor } from 'tinymce';
@@ -53,6 +54,7 @@ const TinymceEditor = ({
       // apiKey={process.env.REACT_APP_TINYMCE_APIKEY}
       onFocus={handleEditorFocus}
       onBlur={handleEditorBlur}
+      // @ts-ignore
       onInit={(evt, editor) => (editorRef.current = editor)}
       value={value}
       onEditorChange={onChange}
