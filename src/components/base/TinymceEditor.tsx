@@ -49,14 +49,16 @@ const TinymceEditor = ({
 
   return (
     <Editor
+      tinymceScriptSrc="/tinymce/tinymce.min.js"
       onFocus={handleEditorFocus}
       onBlur={handleEditorBlur}
+      // @ts-expect-error not error
       onInit={(evt, editor) => (editorRef.current = editor)}
       value={value}
       onEditorChange={onChange}
-      apiKey={process.env.REACT_APP_TINYMCE_APIKEY}
       init={{
         skin: 'oxide',
+        license_key: 'gpl',
         menubar: false,
         content_style: `
         body { 

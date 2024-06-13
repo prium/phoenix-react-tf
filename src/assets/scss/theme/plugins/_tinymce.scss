@@ -163,6 +163,7 @@
 .tox .tox-tbtn {
   height: 24px !important;
   width: 24px !important;
+  background-color: transparent !important;
   span svg {
     fill: var(--#{$prefix}tertiary-color) !important;
     @include hover-focus {
@@ -183,6 +184,9 @@
     background: var(--#{$prefix}secondary-bg) !important;
   }
 }
+.tox .tox-tbtn--disabled {
+  background: transparent !important;
+}
 
 .tox .tox-edit-area__iframe {
   background-color: var(--#{$prefix}tinymce-bg) !important;
@@ -190,6 +194,6 @@
 .editor-focused {
   .tox-sidebar-wrap {
     box-shadow: $input-focus-box-shadow !important;
-    border-color: $primary !important;
+    border-color: var(--#{$prefix}primary) !important;
   }
 }

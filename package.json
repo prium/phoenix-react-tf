@@ -2,6 +2,7 @@
   "name": "phoenix-react",
   "version": "1.4.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@changey/react-leaflet-markercluster": "^4.0.0-rc1",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
@@ -34,6 +35,7 @@
     "dhtmlx-gantt": "^8.0.1",
     "echarts-for-react": "^3.0.2",
     "feather-icons-react": "^0.6.2",
+    "fs-extra": "^11.2.0",
     "fslightbox-react": "^1.7.6",
     "gh-pages": "^6.0.0",
     "gsap": "^3.12.2",
@@ -63,6 +65,7 @@
     "react-typed": "^2.0.12",
     "react-visibility-sensor": "^5.1.1",
     "swiper": "^11.0.3",
+    "tinymce": "^7.1.1",
     "web-vitals": "^3.5.0",
     "worker-loader": "^3.0.8"
   },
