@@ -15,7 +15,8 @@ export default [
       ],
       update: [
         'PACKAGE: Bootstrap to 5.3.3',
-        'PACKAGE: React Bootstrap to 2.10.2'
+        'PACKAGE: React Bootstrap to 2.10.2',
+        'DOC: Tinymce documentation'
       ],
       fix: ['Minor Bugs']
     }

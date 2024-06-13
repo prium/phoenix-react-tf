@@ -48,6 +48,7 @@ export const routes: RouteItems[] = [
         icon: 'pie-chart',
         active: true,
         flat: true,
+        hasNew: true,
         pages: [
           {
             name: 'e-commerce',
@@ -468,7 +469,6 @@ export const routes: RouteItems[] = [
       {
         name: 'kanban',
         icon: 'trello',
-        new: true,
         active: true,
         pages: [
           {
@@ -515,8 +515,7 @@ export const routes: RouteItems[] = [
         icon: 'calendar',
         path: 'apps/calendar',
         pathName: 'app-calendar',
-        active: true,
-        new: true
+        active: true
       }
     ]
   },
@@ -611,8 +610,7 @@ export const routes: RouteItems[] = [
         icon: 'clock',
         path: '/pages/timeline',
         pathName: 'timeline-page',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'coming-soon',
@@ -620,8 +618,7 @@ export const routes: RouteItems[] = [
         icon: faHourglassHalf,
         path: '/pages/coming-soon',
         pathName: 'coming-soon',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'errors',
@@ -1370,8 +1367,7 @@ export const routes: RouteItems[] = [
         name: 'widgets',
         icon: 'server',
         path: '/widgets',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'multi-level',

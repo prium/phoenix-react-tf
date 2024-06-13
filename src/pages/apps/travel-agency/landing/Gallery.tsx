@@ -100,7 +100,7 @@ const Gallery = () => {
         className="bg-holder d-none d-xl-block"
         style={{
           backgroundImage: `url(${bgRight30})`,
-          backgroundPosition: 'left',
+          backgroundPosition: 'right 25px',
           backgroundSize: '26%',
           zIndex: '1'
         }}
