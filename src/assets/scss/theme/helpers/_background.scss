@@ -200,3 +200,9 @@
     background-color: var(--#{$prefix}#{$key}-text-emphasis);
   }
 }
+.bg-left{
+  background-position: left;
+}
+.bg-right{
+  background-position: right;
+}

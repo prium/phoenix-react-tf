@@ -38,18 +38,16 @@ const SeasonOfTour = () => {
     <section className="pt-6 pt-md-10 pb-10">
       <div className="container-medium">
         <div
-          className="bg-holder d-none d-xl-block"
+          className="bg-holder d-none d-xl-block bg-left"
           style={{
             backgroundImage: `url(${bgLeft27})`,
-            backgroundPosition: 'left',
             backgroundSize: 'auto'
           }}
         />
         <div
-          className="bg-holder d-none d-xl-block"
+          className="bg-holder d-none d-xl-block bg-right"
           style={{
             backgroundImage: `url(${bgRight27})`,
-            backgroundPosition: 'right',
             backgroundSize: 'auto'
           }}
         />

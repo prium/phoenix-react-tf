@@ -126,6 +126,7 @@ const LatestPosts = () => {
                       <FeatherIcon
                         icon="calendar"
                         className="text-secondary-lighter me-2"
+                        style={{ width: 16 }}
                       />
                       <h6 className="mb-0 fw-semibold text-secondary-lighter pe-3 me-3 border-end">
                         {data.date}
