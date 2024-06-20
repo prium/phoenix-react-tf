@@ -21,6 +21,7 @@ import SwiperCore from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import { Feature, along, length, LineString } from '@turf/turf';
 import { routes } from 'data/travel-agency/travelAgency';
+import { rgbaColor } from 'helpers/utils';
 // import { Feature as Feature2 } from '@turf/helpers';
 
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
@@ -167,7 +168,6 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
 
   const arc = [];
   const arc2 = [];
-
   const steps = 500;
 
   for (let i = 0; i < lineDistance; i += lineDistance / steps) {
@@ -178,6 +178,38 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
     const segment = along(currentToDestinationRoute2.features[0], i);
     arc2.push(segment.geometry.coordinates);
   }
+
+  const mapLayers = (mapCurrent: mapboxgl.Map | null) => {
+    mapCurrent?.addSource('route', {
+      type: 'geojson',
+      //@ts-ignore
+      data: originToCurrentRoute.features[0]
+    });
+
+    mapCurrent?.addSource('route2', {
+      type: 'geojson',
+      //@ts-ignore
+      data: currentToDestinationRoute.features[0]
+    });
+
+    mapCurrent?.addLayer({
+      id: 'route',
+      source: 'route',
+      type: 'line',
+      paint: {
+        'line-width': 2,
+        'line-color': rgbaColor(getThemeColor('primary'), 0.8)
+      }
+    });
+    mapCurrent?.addLayer({
+      id: 'route2',
+      source: 'route2',
+      type: 'line',
+      paint: {
+        'line-color': getThemeColor('warning')
+      }
+    });
+  };
 
   useEffect(() => {
     if (map.current) return;
@@ -202,40 +234,11 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
         count += 1;
       });
 
-      // map.current.on('load', () => {});
-
       map.current.on('load', () => {
-        map.current?.addSource('route', {
-          type: 'geojson',
-          //@ts-ignore
-          data: originToCurrentRoute.features[0]
-        });
-
-        map.current?.addSource('route2', {
-          type: 'geojson',
-          //@ts-ignore
-          data: currentToDestinationRoute.features[0]
-        });
-
-        map.current?.addLayer({
-          id: 'route',
-          source: 'route',
-          type: 'line',
-          paint: {
-            'line-width': 2,
-            'line-color': isDark
-              ? getThemeColor('primary')
-              : getThemeColor('primary-light')
-          }
-        });
-        map.current?.addLayer({
-          id: 'route2',
-          source: 'route2',
-          type: 'line',
-          paint: {
-            'line-color': getThemeColor('warning')
-          }
-        });
+        mapLayers(map.current);
+      });
+      map.current.on('style.load', () => {
+        mapLayers(map.current);
       });
     }
   }, []);

@@ -41,7 +41,7 @@ const SeasonOfTour = () => {
           className="bg-holder d-none d-xl-block"
           style={{
             backgroundImage: `url(${bgLeft27})`,
-            backgroundPosition: 'right',
+            backgroundPosition: 'left',
             backgroundSize: 'auto'
           }}
         />
@@ -49,7 +49,7 @@ const SeasonOfTour = () => {
           className="bg-holder d-none d-xl-block"
           style={{
             backgroundImage: `url(${bgRight27})`,
-            backgroundPosition: 'left',
+            backgroundPosition: 'right',
             backgroundSize: 'auto'
           }}
         />
