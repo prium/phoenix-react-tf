@@ -4,7 +4,7 @@ export default [
   {
     version: '1.4.0',
     title: 'Apollo',
-    publishDate: '20 Jun, 2024',
+    publishDate: '23 Jun, 2024',
     logs: {
       new: [
         'DASHBOARD : <code>TravelAgency</code>',
