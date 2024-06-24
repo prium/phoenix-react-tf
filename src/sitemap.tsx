@@ -22,6 +22,7 @@ export interface Route {
   active?: boolean;
   new?: boolean;
   hasNew?: boolean;
+  next?: boolean;
 }
 
 export interface RouteItems {
@@ -47,6 +48,7 @@ export const routes: RouteItems[] = [
         icon: 'pie-chart',
         active: true,
         flat: true,
+        hasNew: true,
         pages: [
           {
             name: 'e-commerce',
@@ -66,6 +68,14 @@ export const routes: RouteItems[] = [
             name: 'CRM',
             path: '/dashboard/crm',
             pathName: 'crm',
+            topNavIcon: 'phone',
+            active: true
+          },
+          {
+            name: 'Travel Agency',
+            new: true,
+            path: '/dashboard/travel-agency',
+            pathName: 'travel-agency',
             topNavIcon: 'phone',
             active: true
           },
@@ -312,6 +322,100 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'travel-agency',
+        new: true,
+        icon: 'clipboard',
+        active: true,
+        pages: [
+          {
+            name: 'landing',
+            path: '/apps/travel-agency/landing',
+            pathName: 'travel-agency-landing',
+            active: true
+          },
+          {
+            name: 'hotel',
+            next: true,
+            path: '/pages/coming-soon',
+            pathName: 'travel-agency-hotel'
+            // pages: [
+            //   {
+            //     name: 'admin',
+            //     active: true,
+            //     pages: [
+            //       {
+            //         name: 'add-property',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-add-property',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'add-room',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-add-room',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'room-listing',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-room-listing',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'search-room',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'travel-agency-room-search',
+            //         active: false
+            //       }
+            //     ]
+            //   },
+            //   {
+            //     name: 'customer',
+            //     active: true,
+            //     pages: [
+            //       {
+            //         name: 'homepage',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-homepage',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'hotel-details',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-hotel-details',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'hotel-compare',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-hotel-compare',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'checkout',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-checkout',
+            //         active: false
+            //       },
+            //       {
+            //         name: 'payment',
+            //         path: '/pages/coming-soon',
+            //         pathName: 'hotel-payment',
+            //         active: false
+            //       }
+            //     ]
+            //   }
+            // ]
+          },
+          {
+            name: 'flight',
+            next: true,
+            path: '/pages/coming-soon',
+            pathName: 'travel-agency-flight'
+          }
+        ]
+      },
+      {
         name: 'chat',
         icon: 'message-square',
         path: '/apps/chat',
@@ -365,7 +469,6 @@ export const routes: RouteItems[] = [
       {
         name: 'kanban',
         icon: 'trello',
-        new: true,
         active: true,
         pages: [
           {
@@ -412,8 +515,7 @@ export const routes: RouteItems[] = [
         icon: 'calendar',
         path: 'apps/calendar',
         pathName: 'app-calendar',
-        active: true,
-        new: true
+        active: true
       }
     ]
   },
@@ -508,8 +610,7 @@ export const routes: RouteItems[] = [
         icon: 'clock',
         path: '/pages/timeline',
         pathName: 'timeline-page',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'coming-soon',
@@ -517,8 +618,7 @@ export const routes: RouteItems[] = [
         icon: faHourglassHalf,
         path: '/pages/coming-soon',
         pathName: 'coming-soon',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'errors',
@@ -1267,8 +1367,7 @@ export const routes: RouteItems[] = [
         name: 'widgets',
         icon: 'server',
         path: '/widgets',
-        active: true,
-        new: true
+        active: true
       },
       {
         name: 'multi-level',

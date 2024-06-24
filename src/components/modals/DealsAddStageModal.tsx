@@ -43,7 +43,12 @@ const DealsAddStageModal = ({ show, handleClose }: DealsAddStageModalProps) => {
           <h5 className="modal-title text-body-highlight fs-6 lh-sm">
             Create New Stage
           </h5>
-          <Button variant="phoenix-secondary" onClick={handleClose} size="sm">
+          <Button
+            variant="phoenix-secondary"
+            className="ms-auto"
+            onClick={handleClose}
+            size="sm"
+          >
             <FontAwesomeIcon icon={faTimes} className="text-danger" />
           </Button>
         </Modal.Header>

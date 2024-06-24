@@ -2,9 +2,29 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.4.0',
+    title: 'Apollo',
+    publishDate: '23 Jun, 2024',
+    logs: {
+      new: [
+        'DASHBOARD : <code>TravelAgency</code>',
+        'PAGE : <code>travel-agency/landing</code>',
+        'PACKAGE : <code>@turf/turf</code>',
+        'PACKAGE : <code>tinymce</code>',
+        'PACKAGE : Hosted <strong>Tinymce</strong> to the public directory'
+      ],
+      update: [
+        'PACKAGE: Bootstrap to 5.3.3',
+        'PACKAGE: React Bootstrap to 2.10.2',
+        'DOC: Tinymce documentation'
+      ],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.3.0',
     title: 'Elpis',
-    publishDate: '22 Nov, 2023',
+    publishDate: '21 March, 2024',
     alertText:
       'This is a major update. Please backup your project before upgrading to the latest version',
     logs: {

@@ -41,7 +41,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
       >
         <div
           className={classNames('d-flex align-items-center', {
-            'text-light': !route.active
+            'text-body-quaternary': !route.active
           })}
         >
           {route.icon ? (
@@ -63,8 +63,13 @@ const NavItem = ({ route, level }: NavItemProps) => {
               <span className="nav-link-text-wrapper">
                 <span className="nav-link-text">{capitalize(route.name)}</span>
                 {route.new && !isNavbarVerticalCollapsed && (
-                  <Badge variant="phoenix" bg="info" className="ms-2">
+                  <Badge variant="phoenix" bg="warning" className="ms-2">
                     New
+                  </Badge>
+                )}
+                {route.next && !isNavbarVerticalCollapsed && (
+                  <Badge variant="phoenix" bg="primary" className="ms-2">
+                    next
                   </Badge>
                 )}
               </span>
@@ -73,8 +78,13 @@ const NavItem = ({ route, level }: NavItemProps) => {
             <>
               <span className="nav-link-text">{capitalize(route.name)}</span>
               {route.new && (
-                <Badge variant="phoenix" bg="info" className="ms-2">
+                <Badge variant="phoenix" bg="warning" className="ms-2">
                   New
+                </Badge>
+              )}
+              {route.next && (
+                <Badge variant="phoenix" bg="primary" className="ms-2">
+                  next
                 </Badge>
               )}
             </>
@@ -132,7 +142,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
         className={classNames('dropdown-indicator', {
           'label-1': level === 1,
           collapsed: openItems[level] !== route.name,
-          'text-light': !route.active
+          'text-body-quaternary': !route.active
         })}
         aria-expanded={openItems[level] === route.name}
       >
@@ -141,7 +151,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
             <FontAwesomeIcon
               icon={faCaretRight}
               className={classNames({
-                'text-light': !route.active
+                'text-body-quaternary': !route.active
               })}
             />
           </div>
@@ -161,8 +171,13 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
           >
             {capitalize(route.name)}
             {(!isNavbarVerticalCollapsed || level !== 1) && route.new && (
-              <Badge variant="phoenix" bg="info" className="ms-2">
+              <Badge variant="phoenix" bg="warning" className="ms-2">
                 New
+              </Badge>
+            )}
+            {(!isNavbarVerticalCollapsed || level !== 1) && route.next && (
+              <Badge variant="phoenix" bg="primary" className="ms-2">
+                Next
               </Badge>
             )}
           </span>
@@ -179,8 +194,13 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
               <div className="collapsed-nav-item-title d-none">
                 {capitalize(route.name)}
                 {isNavbarVerticalCollapsed && route.new && (
-                  <Badge variant="phoenix" bg="info" className="ms-2">
+                  <Badge variant="phoenix" bg="warning" className="ms-2">
                     New
+                  </Badge>
+                )}
+                {isNavbarVerticalCollapsed && route.next && (
+                  <Badge variant="phoenix" bg="primary" className="ms-2">
+                    Next
                   </Badge>
                 )}
               </div>

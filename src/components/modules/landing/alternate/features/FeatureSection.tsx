@@ -17,7 +17,11 @@ const FeatureSection = ({ feature, isLast }: FeatureSectionProps) => {
         'mb-10 mb-md-9': !isLast
       })}
     >
-      <Col md={6} className="order-1 order-md-0 text-center text-md-start">
+      <Col
+        xs={{ order: 1 }}
+        md={{ span: 6, order: 0 }}
+        className="text-center text-md-start"
+      >
         <h4 className="mb-3">{feature.title}</h4>
         <p className="mb-5">{feature.description}</p>
         <Button

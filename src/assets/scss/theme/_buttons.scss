@@ -336,3 +336,7 @@ button,
 [type='submit'] {
   -webkit-appearance: none;
 }
+
+.btn-link{
+  --#{$prefix}btn-font-weight: #{$font-weight-bold};
+}

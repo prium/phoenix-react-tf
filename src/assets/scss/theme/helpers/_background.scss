@@ -23,7 +23,7 @@
   &.overlay:before {
     position: absolute;
     content: '';
-    background: rgba(#000, 0.25);
+    background: rgba(#000, var(--#{$prefix}bg-opacity, 0.25));
     top: 0;
     bottom: 0;
     left: 0;
@@ -37,6 +37,16 @@
   }
   &.overlay-2:before {
     background: rgba(#000, 0.4);
+  }
+
+  &.overlay {
+    [data-bs-theme='dark'] & {
+      &.overlay-white{
+        &:before {
+          background: rgba(white, var(--#{$prefix}bg-opacity, 0.35));
+        }
+      }
+    }
   }
 
   .bg-video {
@@ -189,4 +199,10 @@
   .bg-#{$key}-emphasis{
     background-color: var(--#{$prefix}#{$key}-text-emphasis);
   }
+}
+.bg-left{
+  background-position: left;
+}
+.bg-right{
+  background-position: right;
 }

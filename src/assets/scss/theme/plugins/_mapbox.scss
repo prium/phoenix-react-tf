@@ -1,8 +1,8 @@
 .mapbox-container {
   position: relative;
   height: 100%;
-  // min-height: 300px;
   overflow: hidden;
+  font-family: var(--#{$prefix}font-sans-serif);
   .map-container {
     height: 100%;
   }
@@ -25,6 +25,28 @@
       margin-top: -2px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
+    }
+  }
+}
+.flight-map{
+  .mapboxgl-ctrl-logo {
+    display: none;
+  }
+  .map {
+    min-height: 36.875rem;
+    @include media-breakpoint-up(sm) {
+      min-height: 33.125rem;
+    }
+  }
+  .flight-map-control-btn{
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    bottom: unset !important;
+    @include media-breakpoint-up(md){
+      top: unset;
+      right: unset;
+      bottom: 0 !important;
     }
   }
 }

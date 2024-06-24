@@ -16,13 +16,17 @@ interface AdvanceTableFooterProps {
   pagination?: boolean;
   navBtn?: boolean;
   showViewAllBtn?: boolean;
+  viewAllBtnClass?: string;
+  tableInfo?: string;
 }
 
 const AdvanceTableFooter = ({
   className,
   pagination,
   navBtn,
-  showViewAllBtn = true
+  showViewAllBtn = true,
+  viewAllBtnClass,
+  tableInfo
 }: AdvanceTableFooterProps) => {
   const {
     setPageSize,
@@ -54,7 +58,12 @@ const AdvanceTableFooter = ({
   return (
     <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex fs-9">
-        <p className="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+        <p
+          className={classNames(
+            tableInfo,
+            'mb-0 d-none d-sm-block me-3 fw-semibold text-body'
+          )}
+        >
           {pageSize * pageIndex + 1} to{' '}
           {pageSize * pageIndex + getPaginationRowModel().rows.length}
           <span className="text-body-tertiary"> items of </span>
@@ -63,7 +72,7 @@ const AdvanceTableFooter = ({
         {showViewAllBtn && (
           <Button
             variant="link"
-            className="p-0 fw-semibold"
+            className={classNames(viewAllBtnClass, 'p-0 fw-semibold')}
             endIcon={
               <FontAwesomeIcon icon={faAngleRight} className="ms-1 fs-9" />
             }
