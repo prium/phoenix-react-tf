@@ -3,11 +3,7 @@ import React from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { AddPropertyWizardFormData } from './AddProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faLocationCrosshairs,
-  faSearch,
-  faStar
-} from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
@@ -59,24 +55,6 @@ const BasicInformationForm = () => {
           </FloatingLabel>
         </Col>
         <Col md={4} lg={12} xl={4}>
-          {/* <div className="form-icon-container">
-            <FloatingLabel
-              controlId="propertyRating"
-              onChange={onChange}
-              label="Rating"
-            >
-              <Form.Select
-                className="form-control form-icon-input"
-                name="propertyRating"
-              >
-                <option value="5">5 Star</option>
-                <option value="4">4 Star</option>
-                <option value="3">3 Star</option>
-                <option value="2">2 Star</option>
-                <option value="1">1 Star</option>
-              </Form.Select>
-            </FloatingLabel>
-          </div> */}
           <div className="form-icon-container">
             <Form.Floating>
               <Form.Select
@@ -137,6 +115,7 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainNo"
             className="me-4 me-sm-7 mb-0"
+            onChange={onChange}
           />
           <Form.Check
             inline
@@ -145,6 +124,7 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainYes"
             className="me-0 mb-0"
+            onChange={onChange}
           />
         </Col>
         <Col sm="auto" className="flex-1">
