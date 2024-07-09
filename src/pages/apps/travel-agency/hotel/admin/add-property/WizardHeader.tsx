@@ -1,7 +1,7 @@
 import {
   faCheck,
   faFile,
-  faImage,
+  faImages,
   faLocationDot,
   faMugSaucer,
   faShieldHalved,
@@ -57,7 +57,7 @@ const WizardHeader = () => {
         <WizardNavItem icon={faFile} step={1} label="Info" />
         <WizardNavItem icon={faLocationDot} step={2} label="Location" />
         <WizardNavItem icon={faMugSaucer} step={3} label="Amenities" />
-        <WizardNavItem icon={faImage} step={4} label="Photos" />
+        <WizardNavItem icon={faImages} step={4} label="Photos" />
         <WizardNavItem icon={faUsd} step={5} label="Finance" />
         <WizardNavItem icon={faShieldHalved} step={6} label="Policies" />
         <WizardNavItem icon={faCheck} step={7} label="Done" />

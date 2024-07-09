@@ -3,7 +3,11 @@ import React from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { AddPropertyWizardFormData } from './AddProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLocationCrosshairs,
+  faSearch,
+  faStar
+} from '@fortawesome/free-solid-svg-icons';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
@@ -11,7 +15,7 @@ const BasicInformationForm = () => {
   return (
     <>
       <h3 className="mb-6">Basic information</h3>
-      <h3 className="mb-4">Property information</h3>
+      <h4 className="mb-4">Property Information</h4>
       <FloatingLabel controlId="propertyName" label="Property Name">
         <Form.Control
           type="text"
@@ -21,9 +25,13 @@ const BasicInformationForm = () => {
         />
       </FloatingLabel>
       <h5 className="text-end text-body-quaternary fw-semibold mt-2">
-        <span className="text-primary">15</span>/ 60{' '}
+        <span className="text-primary">15 </span>/ 60{' '}
       </h5>
-      <FloatingLabel controlId="propertyDescription" label="Description">
+      <FloatingLabel
+        controlId="propertyDescription"
+        className="my-3"
+        label="Description"
+      >
         <textarea
           className="form-control"
           onChange={onChange}
@@ -31,10 +39,11 @@ const BasicInformationForm = () => {
           name="propertyDescription"
           style={{ height: '162px' }}
         />
+        <h5 className="text-end text-body-quaternary fw-semibold mt-2">
+          <span className="text-primary">0 </span>/ 360{' '}
+        </h5>
       </FloatingLabel>
-      <h5 className="text-end text-body-quaternary fw-semibold mt-2">
-        <span className="text-primary">0</span>/ 360{' '}
-      </h5>
+
       <Row className="g-3">
         <Col md={8} lg={12} xl={8}>
           <FloatingLabel
@@ -68,7 +77,7 @@ const BasicInformationForm = () => {
               </Form.Select>
             </FloatingLabel>
           </div> */}
-          <div className="form-icon-container mb-3">
+          <div className="form-icon-container">
             <Form.Floating>
               <Form.Select
                 className="form-icon-input"
@@ -185,6 +194,12 @@ const BasicInformationForm = () => {
               name="channelManagement"
               placeholder="CMS provider name"
               onChange={onChange}
+            />
+
+            <FontAwesomeIcon
+              icon={faSearch}
+              className="position-absolute text-body-quaternary fs-9 end-0 top-0 mt-3 me-3"
+              transform="down-2"
             />
           </FloatingLabel>
         </Col>

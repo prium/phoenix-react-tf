@@ -21,14 +21,14 @@ const LocationForm = () => {
             id="LacationAddress"
             name="LacationAddress"
             type="text"
-            placeholder="Search Address"
+            placeholder="Search Address..."
             className="form-icon-input"
           />
           <label
             htmlFor="LacationAddress"
             className="form-icon-label text-body-tertiary"
           >
-            Search Address
+            Search Address...
           </label>
         </Form.Floating>
         <FontAwesomeIcon
@@ -38,27 +38,31 @@ const LocationForm = () => {
         <FontAwesomeIcon
           icon={faLocationCrosshairs}
           className="position-absolute text-primary fs-9 end-0 top-0 mt-3 me-3"
+          transform="down-2"
         />
       </div>
-      <Mapbox
-        className="rounded-3 border overflow-hidden mt-3 mb-6"
-        options={{
-          attributionControl: false,
-          center: [-74.0020158, 40.7228022],
-          zoom: 14,
-          scrollZoom: false
-        }}
-        style={{ height: '250px' }}
-      />
+      <div className="mt-3 mb-6">
+        <Mapbox
+          className="rounded-3 border overflow-hidden"
+          options={{
+            attributionControl: false,
+            center: [-74.0020158, 40.7228022],
+            zoom: 14,
+            scrollZoom: false
+          }}
+          style={{ height: '250px' }}
+        />
+      </div>
+
       <FloatingLabel
         className="mb-3"
         controlId="lacationStreet"
-        label="Apartment/Street"
+        label="Apartment /Street"
       >
         <Form.Control
           type="text"
           name="lacationStreet"
-          placeholder="Apartment/Street"
+          placeholder="Apartment /Street"
           onChange={onChange}
         />
       </FloatingLabel>
@@ -78,11 +82,11 @@ const LocationForm = () => {
           </FloatingLabel>
         </Col>
         <Col md={6}>
-          <FloatingLabel controlId="lacationState" label="State(optional)">
+          <FloatingLabel controlId="lacationState" label="State (optional)">
             <Form.Control
               type="text"
               name="lacationState"
-              placeholder="State(optional)"
+              placeholder="State (optional)"
               onChange={onChange}
             />
           </FloatingLabel>
@@ -99,11 +103,11 @@ const LocationForm = () => {
           </FloatingLabel>
         </Col>
         <Col md={6}>
-          <FloatingLabel controlId="lacationCountry" label="Country/Region">
+          <FloatingLabel controlId="lacationCountry" label="Country /Region">
             <Form.Control
               type="text"
               name="lacationCountry"
-              placeholder="Country/Region"
+              placeholder="Country /Region"
               onChange={onChange}
             />
           </FloatingLabel>
@@ -117,6 +121,7 @@ const LocationForm = () => {
           type="switch"
           id="locationSwitchChecked"
           onChange={onChange}
+          defaultChecked={true}
         />
       </div>
     </>

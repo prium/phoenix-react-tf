@@ -12,6 +12,8 @@ import FinanceForm from './FinanceForm';
 import PoliciesForm from './PoliciesForm';
 import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
+import PageBreadcrumb from 'components/common/PageBreadcrumb';
+import { defaultBreadcrumbItems } from 'data/commonData';
 
 export interface AddPropertyWizardFormData {
   propertyName: string;
@@ -36,6 +38,7 @@ const AddProperty = () => {
   return (
     <>
       <div className="mb-9">
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="fs-5 mb-4 mb-xl-5">Add New Property </h2>
         <WizardFormProvider {...form}>
           <Row className="gx-0 gx-xl-5 theme-wizard">
