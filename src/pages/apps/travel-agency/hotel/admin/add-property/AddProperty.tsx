@@ -14,6 +14,7 @@ import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
+import Preview from './Preview';
 
 export interface AddPropertyWizardFormData {
   propertyName: string;
@@ -82,7 +83,7 @@ const AddProperty = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey={7}>
                       <WizardForm step={7}>
-                        <h1>last step</h1>
+                        <Preview />
                       </WizardForm>
                     </Tab.Pane>
                   </Tab.Content>
