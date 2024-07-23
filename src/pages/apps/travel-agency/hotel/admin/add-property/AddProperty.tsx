@@ -34,7 +34,7 @@ const AddProperty = () => {
     totalStep: 7
   });
 
-  console.log(form.formData);
+  // console.log(form.formData);
 
   return (
     <>

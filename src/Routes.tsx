@@ -191,6 +191,7 @@ import Color from './pages/documentation/customization/Color';
 import TravelAgency from 'pages/dashboard/TravelAgency';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/add-property/AddProperty';
+import RoomListing from 'pages/apps/travel-agency/hotel/admin/add-property/room-listing/RoomListing';
 
 const routes: RouteObject[] = [
   {
@@ -415,6 +416,15 @@ const routes: RouteObject[] = [
                   {
                     path: 'hotel/admin/add-property',
                     element: <AddProperty />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/room-listing',
+                    element: <RoomListing />
                   }
                 ]
               }
