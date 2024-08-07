@@ -3,18 +3,19 @@ import useWizardForm from 'hooks/useWizardForm';
 import WizardFormProvider from 'providers/WizardFormProvider';
 import React from 'react';
 import { Col, Row, Tab } from 'react-bootstrap';
-import WizardHeader from './WizardHeader';
-import BasicInformationForm from './BasicInformationForm';
-import LocationForm from './LocationForm';
-import GeneralAmenitiesForm from './GeneralAmenitiesForm';
-import AddPhotos from './AddPhotos';
-import FinanceForm from './FinanceForm';
-import PoliciesForm from './PoliciesForm';
 import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import Preview from './Preview';
+import WizardHeader from 'components/modules/travel-agency/dashboard/hotel/add-proterty/WizardHeader';
+import BasicInformationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/BasicInformationForm';
+import LocationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/LocationForm';
+import GeneralAmenitiesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/GeneralAmenitiesForm';
+import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
+import FinanceForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/FinanceForm';
+import PoliciesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/PoliciesForm';
+import Preview from 'components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
+// import Preview from '/components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
 
 export interface AddPropertyWizardFormData {
   propertyName: string;

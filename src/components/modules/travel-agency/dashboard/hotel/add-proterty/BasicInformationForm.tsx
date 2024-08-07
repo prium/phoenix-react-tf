@@ -1,9 +1,9 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from './AddProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
+import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();

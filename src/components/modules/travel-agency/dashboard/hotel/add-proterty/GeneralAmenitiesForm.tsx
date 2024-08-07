@@ -1,7 +1,7 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React from 'react';
 import { Accordion, Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from './AddProperty';
+import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';

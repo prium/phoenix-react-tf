@@ -1,7 +1,7 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { ChangeEvent } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from './AddProperty';
+import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import { Link } from 'react-router-dom';
 
 const FinanceForm = () => {
