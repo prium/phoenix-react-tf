@@ -205,3 +205,18 @@
     }
   }
 }
+
+.nav-home{
+  --#{$prefix}nav-link-color: var(--#{$prefix}body-highlight-color);
+  --#{$prefix}nav-link-hover-color: var(--#{$prefix}body-highlight-color);
+  --#{$prefix}nav-link-active-color: var(--#{$prefix}primary);
+  .nav-link {
+    &.active{
+      background: var(--#{$prefix}secondary-bg);
+      color: var(--#{$prefix}primary);
+    }
+    @include media-breakpoint-up(sm){
+      padding: map-get($spacers, 3) map-get($spacers, 5) !important;
+    }
+  }
+}

@@ -262,6 +262,14 @@
   );
 }
 
+// hover-bg-none
+.hover-bg-none{
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+  }
+}
+
 // ---- hover bg transparent
 .hover-bg-transparent {
   &:hover,

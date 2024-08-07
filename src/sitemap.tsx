@@ -368,43 +368,43 @@ export const routes: RouteItems[] = [
                     active: true
                   }
                 ]
+              },
+              {
+                name: 'customer',
+                active: true,
+                pages: [
+                  {
+                    name: 'homepage',
+                    path: '/apps/travel-agency/hotel/customer/homepage',
+                    pathName: 'hotel-homepage',
+                    active: true
+                  },
+                  {
+                    name: 'hotel-details',
+                    path: '/pages/coming-soon',
+                    pathName: 'hotel-hotel-details',
+                    active: false
+                  },
+                  {
+                    name: 'hotel-compare',
+                    path: '/pages/coming-soon',
+                    pathName: 'hotel-hotel-compare',
+                    active: false
+                  },
+                  {
+                    name: 'checkout',
+                    path: '/pages/coming-soon',
+                    pathName: 'hotel-checkout',
+                    active: false
+                  },
+                  {
+                    name: 'payment',
+                    path: '/pages/coming-soon',
+                    pathName: 'hotel-payment',
+                    active: false
+                  }
+                ]
               }
-              // {
-              //   name: 'customer',
-              //   active: true,
-              //   pages: [
-              //     {
-              //       name: 'homepage',
-              //       path: '/pages/coming-soon',
-              //       pathName: 'hotel-homepage',
-              //       active: false
-              //     },
-              //     {
-              //       name: 'hotel-details',
-              //       path: '/pages/coming-soon',
-              //       pathName: 'hotel-hotel-details',
-              //       active: false
-              //     },
-              //     {
-              //       name: 'hotel-compare',
-              //       path: '/pages/coming-soon',
-              //       pathName: 'hotel-hotel-compare',
-              //       active: false
-              //     },
-              //     {
-              //       name: 'checkout',
-              //       path: '/pages/coming-soon',
-              //       pathName: 'hotel-checkout',
-              //       active: false
-              //     },
-              //     {
-              //       name: 'payment',
-              //       path: '/pages/coming-soon',
-              //       pathName: 'hotel-payment',
-              //       active: false
-              //     }
-              //   ]
-              // }
             ]
           },
           {

@@ -9,8 +9,9 @@ import classNames from 'classnames';
 
 const NavbarMain = () => {
   const navItems: string[] = [
-    'Flight',
     'Hotel',
+    'Flight',
+    'Trip',
     'Event',
     'Package',
     'Trending'
