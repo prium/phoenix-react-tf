@@ -7,7 +7,6 @@ import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import WizardHeader from 'components/modules/travel-agency/dashboard/hotel/add-proterty/WizardHeader';
 import BasicInformationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/BasicInformationForm';
 import LocationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/LocationForm';
 import GeneralAmenitiesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/GeneralAmenitiesForm';
@@ -15,6 +14,8 @@ import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-prot
 import FinanceForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/FinanceForm';
 import PoliciesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/PoliciesForm';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
+import WizardHeader from 'components/modules/travel-agency/common/WizardHeader';
+import { addPropertyWizardHeader } from 'data/wizard/wizard';
 // import Preview from '/components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
 
 export interface AddPropertyWizardFormData {
@@ -45,7 +46,7 @@ const AddProperty = () => {
         <WizardFormProvider {...form}>
           <Row className="gx-0 gx-xl-5 theme-wizard">
             <Col xl={{ order: 1, span: 4 }}>
-              <WizardHeader />
+              <WizardHeader data={addPropertyWizardHeader} />
             </Col>
             <Col xl={8} className="flex-1">
               <Row>
@@ -53,7 +54,6 @@ const AddProperty = () => {
                   <Tab.Content>
                     <Tab.Pane eventKey={1}>
                       <WizardForm step={1}>
-                        {/* <WizardAccountForm id="progress" /> */}
                         <BasicInformationForm />
                       </WizardForm>
                     </Tab.Pane>

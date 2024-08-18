@@ -1,18 +1,11 @@
-import {
-  faCheck,
-  faFile,
-  faImages,
-  faLocationDot,
-  faMugSaucer,
-  faShieldHalved,
-  faUsd
-} from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import classNames from 'classnames';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
+import { wizardHeaderInterface } from 'data/wizard/wizard';
 
 const WizardNavItem = ({
   icon,
@@ -47,20 +40,21 @@ const WizardNavItem = ({
   );
 };
 
-const WizardHeader = () => {
+const WizardHeader = ({ data }: { data: wizardHeaderInterface[] }) => {
   return (
     <div className="scrollbar mb-4">
       <Nav
         as="ul"
         className="justify-content-between flex-nowrap nav-wizard nav-wizard-vertical-xl"
       >
-        <WizardNavItem icon={faFile} step={1} label="Info" />
-        <WizardNavItem icon={faLocationDot} step={2} label="Location" />
-        <WizardNavItem icon={faMugSaucer} step={3} label="Amenities" />
-        <WizardNavItem icon={faImages} step={4} label="Photos" />
-        <WizardNavItem icon={faUsd} step={5} label="Finance" />
-        <WizardNavItem icon={faShieldHalved} step={6} label="Policies" />
-        <WizardNavItem icon={faCheck} step={7} label="Done" />
+        {data.map((item, index) => (
+          <WizardNavItem
+            key={index}
+            icon={item.icon}
+            step={index + 1}
+            label={item.label}
+          />
+        ))}
       </Nav>
     </div>
   );
