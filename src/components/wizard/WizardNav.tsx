@@ -44,7 +44,7 @@ const WizardNavItem = ({
 
 const WizardNav = () => {
   return (
-    <Nav className="justify-content-between nav-wizard">
+    <Nav className="justify-content-between nav-wizard nav-wizard-success">
       <WizardNavItem icon={faLock} step={1} label="Account" />
       <WizardNavItem icon={faUser} step={2} label="Personal" />
       <WizardNavItem icon={faFileAlt} step={3} label="Billing" />

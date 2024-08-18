@@ -190,6 +190,10 @@ const UniconsExample = lazy(
 import Color from './pages/documentation/customization/Color';
 import TravelAgency from 'pages/dashboard/TravelAgency';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
+import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
+import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
+import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 
 const routes: RouteObject[] = [
   {
@@ -405,6 +409,33 @@ const routes: RouteObject[] = [
                   {
                     path: 'compose',
                     element: <Compose />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/add-property',
+                    element: <AddProperty />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/add-room',
+                    element: <AddRoom />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/room-listing',
+                    element: <RoomListing />
                   }
                 ]
               }
@@ -947,9 +978,18 @@ const routes: RouteObject[] = [
           {
             path: 'landing',
             element: <TravelLanding />
+          },
+          {
+            children: [
+              {
+                path: 'hotel/customer/homepage',
+                element: <HotelHomepage />
+              }
+            ]
           }
         ]
       },
+
       {
         path: '/pages/errors/',
         children: [

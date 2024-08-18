@@ -10,7 +10,7 @@ import LatestPosts from './LatestPosts';
 import LatestPhotos from './LatestPhotos';
 import GetApp from './GetApp';
 import Footer from './Footer';
-import NavbarMain from 'components/navbars/travel-landing/NavbarMain';
+import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
 import TravelCta from 'components/cta/TravelCta';
 
 const Landing = () => {
