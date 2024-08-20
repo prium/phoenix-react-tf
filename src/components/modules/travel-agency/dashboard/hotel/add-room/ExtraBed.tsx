@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import {
   Col,
   Collapse,
+  FloatingLabel,
   Form,
   FormControl,
   InputGroup,
@@ -23,6 +24,13 @@ const ExtraBed = () => {
     type === 'increase' && setValue(value + 1);
     type === 'decrease' && value >= 1 && setValue(value - 1);
   };
+
+  const extraBedOptions = [
+    '02-06 year olds',
+    '07-12 year olds',
+    '12-16 year olds',
+    'For adults'
+  ];
 
   return (
     <>
@@ -96,24 +104,39 @@ const ExtraBed = () => {
             Check the box(es) if you can accommodate the following guests in
             extra beds.
           </h5>
-          <div className="row gx-2 gy-0 align-items-center mb-3">
-            <Col xs={12} sm="auto">
-              <Form.Check
-                type="radio"
-                id="breakfastIncludedTab"
-                label="Yes, it's included in the price"
-                name="breakfastRadio"
-                inline
-              />
-              <Form.Check
-                type="radio"
-                id="breakfastNotIncludedTab"
-                label="No"
-                name="breakfastRadio"
-                inline
-              />
-            </Col>
-          </div>
+
+          {extraBedOptions.map((item, index) => (
+            <div key={index} className="row gx-2 gy-0 align-items-center mb-3">
+              <Col xs={12} sm="auto" style={{ minWidth: 120 }}>
+                <Form.Check
+                  type="checkbox"
+                  id={`ageRange${index}`}
+                  label={item}
+                  name={`ageRange${index}`}
+                />
+              </Col>
+              <Col xs="auto">
+                <FloatingLabel
+                  controlId={`roomPrice${index}`}
+                  label="Room Price"
+                >
+                  <Form.Control type="text" placeholder="Room Price" />
+                </FloatingLabel>
+              </Col>
+              <Col xs="auto">
+                <FloatingLabel
+                  controlId={`roomPriceCurrency${index}`}
+                  label="Currency"
+                >
+                  <Form.Select>
+                    <option value="1">USD</option>
+                    <option value="2">EUR</option>
+                    <option value="3">BDT</option>
+                  </Form.Select>
+                </FloatingLabel>
+              </Col>
+            </div>
+          ))}
         </div>
       </Collapse>
     </>

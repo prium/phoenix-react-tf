@@ -4,6 +4,7 @@ import React, { ChangeEvent, useState } from 'react';
 import { Col, FloatingLabel, Form, Row, Tab } from 'react-bootstrap';
 import WeeklyPricingCard from './WeeklyPricingCard';
 import ExtraBed from './ExtraBed';
+import Breakfast from './Breakfast';
 
 const Pricing = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
@@ -73,7 +74,11 @@ const Pricing = () => {
         <h5 className="mb-2 mt-5 lh-1 text-body-highlight fw-bold">
           How many people are included in the base rate?
         </h5>
-        <FloatingLabel controlId="peopleSelect" label="Select">
+        <FloatingLabel
+          controlId="peopleSelect"
+          label="Select"
+          className="w-sm-60"
+        >
           <Form.Select>
             <option value="1">05 People</option>
             <option value="2">10 People</option>
@@ -82,6 +87,7 @@ const Pricing = () => {
         </FloatingLabel>
       </>
       <ExtraBed />
+      <Breakfast />
     </>
   );
 };
