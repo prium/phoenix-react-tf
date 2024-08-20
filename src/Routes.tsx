@@ -125,6 +125,7 @@ import ComboNavSlim from 'pages/pages/layouts/ComboNavSlim';
 import LightboxExample from 'pages/modules/components/LightboxExample';
 import EmojiButtonExample from 'pages/modules/forms/advance/EmojiButtonExample';
 import RatingExample from 'pages/modules/forms/advance/RatingExample';
+import ReactRangeExample from 'pages/modules/forms/advance/RangeExample';
 import CountupExample from 'pages/modules/components/CountupExample';
 import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
@@ -766,6 +767,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'file-uploader',
                     element: <FileUploaderExample />
+                  },
+                  {
+                    path: 'advance/range',
+                    element: <ReactRangeExample />
                   },
                   {
                     path: 'rating',

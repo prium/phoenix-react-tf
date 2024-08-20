@@ -966,6 +966,12 @@ export const routes: RouteItems[] = [
                 active: true
               },
               {
+                name: 'range',
+                path: '/modules/forms/advance/range',
+                pathName: 'range',
+                active: true
+              },
+              {
                 name: 'rating',
                 path: '/modules/forms/rating',
                 pathName: 'rating',
