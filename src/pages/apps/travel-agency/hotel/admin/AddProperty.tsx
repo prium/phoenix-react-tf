@@ -69,7 +69,7 @@ const AddProperty = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey={4}>
                       <WizardForm step={4}>
-                        <AddPhotos />
+                        <AddPhotos title="Add property picture" />
                       </WizardForm>
                     </Tab.Pane>
                     <Tab.Pane eventKey={5}>

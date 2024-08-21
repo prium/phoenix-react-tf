@@ -11,6 +11,8 @@ import { addRoomWizardHeader } from 'data/wizard/wizard';
 import RoomWizardFooter from 'components/modules/travel-agency/dashboard/hotel/add-room/RoomWizardFooter';
 import Pricing from 'components/modules/travel-agency/dashboard/hotel/add-room/Pricing';
 import Amenities from 'components/modules/travel-agency/dashboard/hotel/add-room/Amenities';
+import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
+import Preview from 'components/modules/travel-agency/dashboard/hotel/add-room/Preview';
 
 const AddRoom = () => {
   const form = useWizardForm({
@@ -43,6 +45,16 @@ const AddRoom = () => {
                   <Tab.Pane eventKey={3}>
                     <WizardForm step={3}>
                       <Amenities />
+                    </WizardForm>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey={4}>
+                    <WizardForm step={4}>
+                      <AddPhotos title="Add room picture" />
+                    </WizardForm>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey={5}>
+                    <WizardForm step={5}>
+                      <Preview />
                     </WizardForm>
                   </Tab.Pane>
                 </Tab.Content>
