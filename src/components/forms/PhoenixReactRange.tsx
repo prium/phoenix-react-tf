@@ -48,14 +48,14 @@ const PhoenixReactRange = ({
   alwaysShowTooltip = false,
   values,
   onChange = () => {},
-  classNames = 'phoenix-react-range'
+  classNames
 }: PropsWithChildren<PhoenixReactRangeProps>) => {
   const { getThemeColor } = useAppContext();
   const Track = ({ props, children }: IRenderTrackParams): React.ReactNode => (
     <div
       onMouseDown={props.onMouseDown}
       onTouchStart={props.onTouchStart}
-      className={classNames}
+      className={`phoenix-react-range ${classNames ? classNames : ''}`}
       style={{
         ...props.style
       }}
@@ -71,11 +71,11 @@ const PhoenixReactRange = ({
             colors:
               values.length === 2
                 ? [
-                    getThemeColor('gray-300'),
+                    getThemeColor('gray-100'),
                     getThemeColor(variant),
-                    getThemeColor('gray-300')
+                    getThemeColor('gray-100')
                   ]
-                : [getThemeColor(variant), getThemeColor('gray-300')],
+                : [getThemeColor(variant), getThemeColor('gray-100')],
             min,
             max
           }),

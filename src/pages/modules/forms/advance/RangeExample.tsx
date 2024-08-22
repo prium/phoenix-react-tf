@@ -18,7 +18,7 @@ function DefaultExample() {
 `;
 
 const RangeConnectCode = `
-function DefaultExample() {
+function RangeConnectExample() {
   const [values, setValues] = useState([20,80]);
   return (
     <PhoenixReactRange
@@ -31,7 +31,7 @@ function DefaultExample() {
 `;
 
 const ColoredSliderCode = `
-function DefaultExample() {
+function ColoredSliderExample() {
   const [values, setValues] = useState({
     primary: [45],
     success: [35],
@@ -45,21 +45,25 @@ function DefaultExample() {
         values={values['primary']}
         variant="primary"
         onChange={val => setValues({...values, primary: val})}
+        classNames={'mb-4'}
       />
       <PhoenixReactRange
         values={values['success']}
         variant="success"
         onChange={val => setValues({...values, success: val})}
+        classNames={'mb-4'}
       />
       <PhoenixReactRange
       values={values['info']}
       variant="info"
       onChange={val => setValues({...values, info: val})}
+      classNames={'mb-4'}
       />
       <PhoenixReactRange
       values={values['warning']}
       variant="warning"
       onChange={val => setValues({...values, warning: val})}
+      classNames={'mb-4'}
       />
       <PhoenixReactRange
         values={values['danger']}
@@ -72,10 +76,10 @@ function DefaultExample() {
 `;
 
 const StylingCode = `
-function DefaultExample() {
+function StylingExample() {
   const [values, setValues] = useState({
     slim: [45],
-    medium: [35],
+    medium: [45],
     large: [20, 150],
   });
   return (
@@ -85,7 +89,7 @@ function DefaultExample() {
         variant="primary"
         onChange={val => setValues({...values, slim: val})}
         trackHeight={'4px'}
-        classNames= {'phoenix-react-range-slim mb-2'}
+        classNames= {'phoenix-react-range-slim mb-4'}
       />
       <PhoenixReactRange
         values={values['medium']}

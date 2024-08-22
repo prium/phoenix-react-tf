@@ -402,6 +402,12 @@ export const routes: RouteItems[] = [
                     path: '/pages/coming-soon',
                     pathName: 'hotel-payment',
                     active: false
+                  },
+                  {
+                    name: 'gallery',
+                    path: '/apps/travel-agency/hotel/customer/gallery',
+                    pathName: 'hotel-gallery',
+                    active: true
                   }
                 ]
               }

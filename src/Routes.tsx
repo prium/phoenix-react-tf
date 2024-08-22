@@ -193,6 +193,7 @@ import TravelAgency from 'pages/dashboard/TravelAgency';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
 import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
+import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 
@@ -989,6 +990,10 @@ const routes: RouteObject[] = [
               {
                 path: 'hotel/customer/homepage',
                 element: <HotelHomepage />
+              },
+              {
+                path: 'hotel/customer/gallery',
+                element: <HotelGallery />
               }
             ]
           }
