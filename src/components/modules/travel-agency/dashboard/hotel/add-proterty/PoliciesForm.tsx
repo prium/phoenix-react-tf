@@ -1,5 +1,5 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import DatePicker from 'components/base/DatePicker';
@@ -7,6 +7,8 @@ import PriceTierForm from './PriceTierForm';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import PhoenixReactRange from 'components/forms/PhoenixReactRange';
+
 interface SwitchForm {
   id: string;
   name: string;
@@ -40,7 +42,13 @@ const SwitchForm = ({
 const PoliciesForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange, formData, setFormData } = methods;
-  const handleFormCheckChnage = (e: ChangeEvent<HTMLInputElement>) => {
+  const [values, setValues] = useState({
+    segmentOne: [7],
+    segmentTwo: [8, 12],
+    segmentThree: [13, 18]
+  });
+
+  const handleFormCheckChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -55,7 +63,7 @@ const PoliciesForm = () => {
           defaultChecked
           name="policiesCheckIn"
           value="Limited check-in"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">Limited Check-in</Form.Check.Label>
       </Form.Check>
@@ -64,7 +72,7 @@ const PoliciesForm = () => {
           type="radio"
           name="policiesCheckIn"
           value="24hr Check-in"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">24hr Check-in</Form.Check.Label>
       </Form.Check>
@@ -184,7 +192,7 @@ const PoliciesForm = () => {
           defaultChecked
           name="refundPolicy"
           value="nonRefundable"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">Non Refundable</Form.Check.Label>
       </Form.Check>
@@ -193,7 +201,7 @@ const PoliciesForm = () => {
           type="radio"
           name="refundPolicy"
           value="optional Refund"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">Optional Refund</Form.Check.Label>
       </Form.Check>
@@ -216,7 +224,7 @@ const PoliciesForm = () => {
           defaultChecked
           name="petPolicy"
           value="Not Allowed"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">Not Allowed</Form.Check.Label>
       </Form.Check>
@@ -225,7 +233,7 @@ const PoliciesForm = () => {
           type="radio"
           name="petPolicy"
           value="Allowed"
-          onChange={handleFormCheckChnage}
+          onChange={handleFormCheckChange}
         />
         <Form.Check.Label className="fs-8">Allowed</Form.Check.Label>
       </Form.Check>
@@ -261,7 +269,15 @@ const PoliciesForm = () => {
           sm={{ order: 0, span: 'auto' }}
           className="flex-1"
         >
-          <Form.Range />
+          <PhoenixReactRange
+            values={values['segmentOne']}
+            variant="primary"
+            min={0}
+            max={18}
+            onChange={val => setValues({ ...values, segmentOne: val })}
+            trackHeight={'4px'}
+            classNames={'phoenix-react-range-slim'}
+          />
         </Col>
         <Col xs={6} sm="auto">
           <Form.Floating>
@@ -269,7 +285,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment1To"
               className="age-segment-input"
-              value={0}
+              value={values.segmentOne[0]}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>
           </Form.Floating>
@@ -283,8 +299,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment2Form"
               className="age-segment-input"
-              disabled
-              value={8}
+              value={values.segmentOne[0] + 1}
             />
             <label htmlFor="policiesFlexibleCheckout">From (Yrs)</label>
           </Form.Floating>
@@ -294,7 +309,15 @@ const PoliciesForm = () => {
           sm={{ order: 0, span: 'auto' }}
           className="flex-1"
         >
-          <Form.Range />
+          <PhoenixReactRange
+            values={values['segmentTwo']}
+            variant="primary"
+            min={0}
+            max={18}
+            onChange={val => setValues({ ...values, segmentTwo: val })}
+            trackHeight={'4px'}
+            classNames={'phoenix-react-range-slim'}
+          />
         </Col>
         <Col xs={6} sm="auto">
           <Form.Floating>
@@ -302,7 +325,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment2To"
               className="age-segment-input"
-              value={0}
+              value={values.segmentTwo[1]}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>
           </Form.Floating>
@@ -316,7 +339,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment3Form"
               className="age-segment-input"
-              value={13}
+              value={values.segmentTwo[1] + 1}
             />
             <label htmlFor="policiesFlexibleCheckout">From (Yrs)</label>
           </Form.Floating>
@@ -326,7 +349,15 @@ const PoliciesForm = () => {
           sm={{ order: 0, span: 'auto' }}
           className="flex-1"
         >
-          <Form.Range />
+          <PhoenixReactRange
+            values={values['segmentThree']}
+            variant="primary"
+            min={0}
+            max={18}
+            onChange={val => setValues({ ...values, segmentThree: val })}
+            trackHeight={'4px'}
+            classNames={'phoenix-react-range-slim'}
+          />
         </Col>
         <Col xs={6} sm="auto">
           <Form.Floating>
@@ -334,7 +365,8 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment3To"
               className="age-segment-input"
-              value={0}
+              value={values.segmentThree[1]}
+              disabled={values.segmentThree[1] >= 18}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>
           </Form.Floating>

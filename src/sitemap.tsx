@@ -402,6 +402,12 @@ export const routes: RouteItems[] = [
                     path: '/pages/coming-soon',
                     pathName: 'hotel-payment',
                     active: false
+                  },
+                  {
+                    name: 'gallery',
+                    path: '/apps/travel-agency/hotel/customer/gallery',
+                    pathName: 'hotel-gallery',
+                    active: true
                   }
                 ]
               }
@@ -963,6 +969,12 @@ export const routes: RouteItems[] = [
                 name: 'file-uploader',
                 path: '/modules/forms/file-uploader',
                 pathName: 'file-uploader',
+                active: true
+              },
+              {
+                name: 'range',
+                path: '/modules/forms/advance/range',
+                pathName: 'range',
                 active: true
               },
               {

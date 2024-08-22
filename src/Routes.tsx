@@ -125,6 +125,7 @@ import ComboNavSlim from 'pages/pages/layouts/ComboNavSlim';
 import LightboxExample from 'pages/modules/components/LightboxExample';
 import EmojiButtonExample from 'pages/modules/forms/advance/EmojiButtonExample';
 import RatingExample from 'pages/modules/forms/advance/RatingExample';
+import ReactRangeExample from 'pages/modules/forms/advance/RangeExample';
 import CountupExample from 'pages/modules/components/CountupExample';
 import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
@@ -192,6 +193,7 @@ import TravelAgency from 'pages/dashboard/TravelAgency';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
 import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
+import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 
@@ -768,6 +770,10 @@ const routes: RouteObject[] = [
                     element: <FileUploaderExample />
                   },
                   {
+                    path: 'advance/range',
+                    element: <ReactRangeExample />
+                  },
+                  {
                     path: 'rating',
                     element: <RatingExample />
                   },
@@ -984,6 +990,10 @@ const routes: RouteObject[] = [
               {
                 path: 'hotel/customer/homepage',
                 element: <HotelHomepage />
+              },
+              {
+                path: 'hotel/customer/gallery',
+                element: <HotelGallery />
               }
             ]
           }
