@@ -1,9 +1,9 @@
 import Dropzone from 'components/base/Dropzone';
 
-const AddPhotos = () => {
+const AddPhotos = ({ title }: { title: string }) => {
   return (
     <>
-      <h3 className="mb-6">Add property picture</h3>
+      <h3 className="mb-6">{title}</h3>
       <Dropzone
         accept={{
           'image/*': ['.png', '.gif', '.jpeg', '.jpg']

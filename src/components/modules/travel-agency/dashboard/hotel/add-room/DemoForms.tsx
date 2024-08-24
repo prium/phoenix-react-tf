@@ -1,3 +1,6 @@
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import DatePicker from 'components/base/DatePicker';
 import React from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 
@@ -29,6 +32,39 @@ const demoForms = () => {
             <option value="2">Single room</option>
           </Form.Select>
         </Form.Group>
+      </>
+      <>
+        {/* datepickr with custoom icon in end position */}
+        <DatePicker
+          render={(_, ref) => {
+            return (
+              <FloatingLabel
+                controlId="financeInvoiceEmail"
+                label="Select The Range"
+                className="mb-4"
+              >
+                <Form.Control
+                  type="text"
+                  placeholder="start date"
+                  ref={ref}
+                  id="startDatepicker"
+                  className="ps-3"
+                />
+
+                <FontAwesomeIcon
+                  icon={faCalendarAlt}
+                  className="position-absolute top-0 end-0 mt-3 me-3"
+                />
+              </FloatingLabel>
+            );
+          }}
+          hideIcon={true}
+          options={{
+            mode: 'range',
+            minDate: 'today',
+            dateFormat: 'Y-m-d'
+          }}
+        />
       </>
     </>
   );
