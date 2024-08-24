@@ -363,8 +363,8 @@ export const routes: RouteItems[] = [
                   },
                   {
                     name: 'search-room',
-                    path: 'apps/travel-agency/hotel/admin/room-search',
-                    pathName: 'travel-agency-room-search',
+                    path: 'apps/travel-agency/hotel/admin/search-room',
+                    pathName: 'travel-agency-search-room',
                     active: true
                   }
                 ]
