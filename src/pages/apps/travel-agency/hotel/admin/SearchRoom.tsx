@@ -10,11 +10,16 @@ import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import RoomCard from 'components/modules/travel-agency/dashboard/hotel/search-room/RoomCard';
+import RoomFilterOffcanvas from 'components/modules/travel-agency/dashboard/hotel/search-room/RoomFilterOffcanvas';
+import RoomFilterOffcanvasContent from 'components/modules/travel-agency/dashboard/hotel/search-room/RoomFilterOffcanvasContent';
 import { defaultBreadcrumbItems } from 'data/commonData';
+import { useState } from 'react';
 import { Row, Col, Form, FloatingLabel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const SearchRoom = () => {
+  const [openOffcanvas, setOpenOffcanvas] = useState(false);
+
   return (
     <div className="mb-9">
       <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
@@ -33,6 +38,7 @@ const SearchRoom = () => {
                 variant="phoenix-secondary"
                 size="lg"
                 className="text-body-tertiary w-100"
+                onClick={() => setOpenOffcanvas(true)}
               >
                 <FontAwesomeIcon icon={faFilter} className="me-2" />
                 Filter
@@ -96,7 +102,7 @@ const SearchRoom = () => {
       {/* header section end */}
       {/* offcanvas start */}
       <Row className="gx-6">
-        <Col xl="auto"> offcanvs goes hare </Col>
+        <Col xl="auto">{/* <RoomFilterOffcanvasContent /> */}</Col>
         <Col className="w-xl-25">
           <RoomCard />
         </Col>
@@ -114,6 +120,7 @@ const SearchRoom = () => {
           </Button>
         </Link>
       </div>
+      <RoomFilterOffcanvas open={openOffcanvas} setOpen={setOpenOffcanvas} />
     </div>
   );
 };
