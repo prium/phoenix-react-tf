@@ -141,7 +141,30 @@ export const hotels: hotelInterFace[] = [
   }
 ];
 
-export const roomsSearchData = [
+export interface roomSearchInterface {
+  name: string;
+  category: string;
+  price: string;
+  img: string;
+  bedRooms: string;
+  beds: string;
+  guest: string;
+  child: string;
+  bathrooms: string;
+  available: number;
+  total: number;
+  availableOnDates: {
+    date: string;
+    price: string;
+    units?: string;
+    priceUp?: boolean;
+    priceDown?: boolean;
+  }[];
+  amenities: string[];
+}
+[];
+
+export const roomsSearchData: roomSearchInterface[] = [
   {
     name: 'Double Bed',
     category: 'Presidential Suite',

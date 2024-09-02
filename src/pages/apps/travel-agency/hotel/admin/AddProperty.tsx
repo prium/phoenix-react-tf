@@ -36,8 +36,6 @@ const AddProperty = () => {
     totalStep: 7
   });
 
-  // console.log(form.formData);
-
   return (
     <>
       <div className="mb-9">

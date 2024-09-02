@@ -4,52 +4,27 @@ import Unicon from 'components/base/Unicon';
 import PhoenixReactRange from 'components/forms/PhoenixReactRange';
 import { Col, Form, Row } from 'react-bootstrap';
 import RoomFilterActions from './RoomFilterActions';
-import RoomFIlterCollapse from './RoomFIlterCollapse';
 import RoomFilterSearch from './RoomFilterSearch';
-const RoomCategoryOptions: string[] = [
-  'Any',
-  'Deluxe King Room',
-  'Deluxe Twin Room',
-  'Junior King Suite',
-  'One-Bedroom Deluxe Suite',
-  'One-Bedroom Executive Suite',
-  'Presidential Suite',
-  'Club King Room',
-  'Twin Room',
-  'Club Twin Room',
-  'Premium King Room',
-  'Deluxe King Suite',
-  'Executive King Suite'
-];
-const bedTypeOptions: string[] = [
-  'Cribs',
-  'Double beds',
-  'King bed',
-  'Queen bed',
-  'Rollaway bed',
-  'Sofa bed',
-  'Twin bed',
-  'Futon'
-];
-const amenitiesOption: string[] = [
-  'Wifi',
-  'Washer',
-  'Kitchen',
-  'Dryer',
-  'Air conditioning',
-  'Heating'
-];
+import {
+  amenitiesOptions,
+  bedTypeOptions,
+  RoomCategoryOptions
+} from 'data/travel-agency/admin/searchRoom';
+import { useState } from 'react';
+import RoomFilterCollapseItem from './RoomFilterCollapseItem';
 
 const RoomFilterOffcanvasContent = () => {
   const priceRange = [699, 1299];
+  const [isCollapseAll, setIsCollapseAll] = useState(false);
 
   return (
-    <>
-      <div className="d-flex align-items-center" style={{ width: 250 }}>
+    <div className="pe-1">
+      <div className="d-flex align-items-center">
         <h3 className="text-body-highlight">Filters</h3>
         <Button
           variant="phoenix-secondary"
           className="px-3 ms-auto me-2 me-xl-0"
+          onClick={() => setIsCollapseAll(true)}
         >
           Collapse all
         </Button>
@@ -61,7 +36,11 @@ const RoomFilterOffcanvasContent = () => {
         </Button>
       </div>
 
-      <RoomFIlterCollapse title="Price range">
+      <RoomFilterCollapseItem
+        title="Price Range"
+        isCollapseAll={isCollapseAll}
+        setIsCollapseAll={setIsCollapseAll}
+      >
         <PhoenixReactRange
           values={priceRange}
           variant="primary"
@@ -77,7 +56,7 @@ const RoomFilterOffcanvasContent = () => {
               <Form.Control
                 type="number"
                 id="priceRangeMin"
-                className="age-segment-input"
+                className="input-spin-none"
                 value={500}
               />
               <label htmlFor="priceRangeMin">Min</label>
@@ -88,39 +67,62 @@ const RoomFilterOffcanvasContent = () => {
               <Form.Control
                 type="number"
                 id="priceRangeMax"
-                className="age-segment-input"
+                className="input-spin-none"
                 value={1200}
               />
               <label htmlFor="priceRangeMax">Max</label>
             </Form.Floating>
           </Col>
         </Row>
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Adult">
-        <RoomFilterActions />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Child">
-        <RoomFilterActions />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Bedroom">
-        <RoomFilterActions />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Number of bed">
-        <RoomFilterActions />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Bathroom">
-        <RoomFilterActions />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Room Category">
+      </RoomFilterCollapseItem>
+
+      {['Adult', 'Child', 'Bedroom', 'Number of Bed', 'Bathroom'].map(
+        (item, index) => (
+          <RoomFilterCollapseItem
+            key={index}
+            title={item}
+            isCollapseAll={isCollapseAll}
+            setIsCollapseAll={setIsCollapseAll}
+          >
+            <RoomFilterActions />
+          </RoomFilterCollapseItem>
+        )
+      )}
+
+      <RoomFilterCollapseItem
+        title="Room Category"
+        defaultOpen={false}
+        isCollapseAll={isCollapseAll}
+        setIsCollapseAll={setIsCollapseAll}
+      >
         <RoomFilterSearch items={RoomCategoryOptions} />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Room Category">
+      </RoomFilterCollapseItem>
+      <RoomFilterCollapseItem
+        title="Bed Type"
+        defaultOpen={false}
+        isCollapseAll={isCollapseAll}
+        setIsCollapseAll={setIsCollapseAll}
+      >
         <RoomFilterSearch items={bedTypeOptions} />
-      </RoomFIlterCollapse>
-      <RoomFIlterCollapse title="Room Category">
-        <RoomFilterSearch items={amenitiesOption} />
-      </RoomFIlterCollapse>
-    </>
+      </RoomFilterCollapseItem>
+      <RoomFilterCollapseItem
+        title="Amenities"
+        defaultOpen={false}
+        hideBorderBottom
+        isCollapseAll={isCollapseAll}
+        setIsCollapseAll={setIsCollapseAll}
+      >
+        <RoomFilterSearch items={amenitiesOptions} />
+      </RoomFilterCollapseItem>
+      <div className="sticky-bottom bg-body pt-4 pb-4 pb-xl-0">
+        <Button variant="phoenix-secondary" className="me-2">
+          Reset
+        </Button>
+        <Button variant="primary" className="px-7">
+          Apply
+        </Button>
+      </div>
+    </div>
   );
 };
 
