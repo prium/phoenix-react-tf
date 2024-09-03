@@ -677,6 +677,35 @@
   }
 }
 
+.btn-wish {
+  width: 2rem;
+  height: 2rem;
+  color: var(--#{$prefix}white);
+  border: 1px solid var(--#{$prefix}white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: var(--#{$prefix}white) !important;
+    color: var(--#{$prefix}black) !important;
+  }
+  &.btn-wish-primary {
+    color: var(--#{$prefix}primary);
+    border: 1px solid var(--#{$prefix}primary);
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--#{$prefix}primary) !important;
+      color: var(--#{$prefix}white) !important;
+    }
+  }
+}
+
 // active icon
 .active-icon {
   position: relative;

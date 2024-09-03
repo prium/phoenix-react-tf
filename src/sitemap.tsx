@@ -387,9 +387,9 @@ export const routes: RouteItems[] = [
                   },
                   {
                     name: 'hotel-compare',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-hotel-compare',
-                    active: false
+                    path: '/apps/travel-agency/hotel/customer/hotel-compare',
+                    pathName: 'hotel-compare',
+                    active: true
                   },
                   {
                     name: 'checkout',
