@@ -212,7 +212,7 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     meta: {
       headerProps: {
         style: { width: 180 },
-        className: 'text-body-tertiary align-middle ps-4'
+        className: 'text-body-tertiary align-middle text-end ps-4'
       },
       cellProps: { className: 'align-middle text-end ps-4' }
     }
@@ -230,7 +230,6 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     },
     meta: {
       headerProps: {
-        style: { width: 180 },
         className: 'text-body-tertiary align-middle text-end ps-4 pe-0'
       },
       cellProps: { className: 'align-middle ps-4' }

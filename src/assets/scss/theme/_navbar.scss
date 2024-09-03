@@ -215,6 +215,9 @@
       background: var(--#{$prefix}secondary-bg);
       color: var(--#{$prefix}primary);
     }
+    &:hover{
+      background: var(--#{$prefix}secondary-bg);
+    }
     @include media-breakpoint-up(sm){
       padding: map-get($spacers, 3) map-get($spacers, 5) !important;
     }

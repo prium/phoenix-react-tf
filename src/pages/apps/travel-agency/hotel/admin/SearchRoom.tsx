@@ -46,13 +46,14 @@ const SearchRoom = () => {
                   Filter
                 </Button>
               </Col>
-              <Col sm={5} xxl={3}>
+              <Col xs sm={5} xxl={3}>
                 <DatePicker
                   render={(_, ref) => {
                     return (
                       <FloatingLabel
                         controlId="financeInvoiceEmail"
                         label="Select Time Range"
+                        className="w-auto"
                       >
                         <Form.Control
                           type="text"
@@ -77,7 +78,7 @@ const SearchRoom = () => {
                   }}
                 />
               </Col>
-              <Col sm="auto" className="flex-grow-0">
+              <Col xs sm="auto" className="flex-grow-0">
                 <Button
                   variant="phoenix-primary"
                   size="lg"
@@ -87,7 +88,7 @@ const SearchRoom = () => {
                   <FontAwesomeIcon icon={faSearch} className="fs-9 ms-xl-2" />
                 </Button>
               </Col>
-              <Col sm="auto" className="ms-auto flex-grow-0">
+              <Col xs sm="auto" className="ms-auto flex-grow-0">
                 <Button
                   variant="phoenix-secondary"
                   size="lg"

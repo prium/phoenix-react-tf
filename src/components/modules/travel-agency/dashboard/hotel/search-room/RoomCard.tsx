@@ -159,14 +159,16 @@ const RoomCard = ({
               aria-expanded={open}
               aria-controls={`collapseRoomAvailableOnDates`}
               className="me-2 px-3 d-xxl-block mb-xxl-2"
+              style={{ minWidth: 130 }}
             >
               <FontAwesomeIcon icon={faCalendar} className="me-2" />
-              {!open ? 'Show dates' : 'Hide dates'}
+              {!open ? 'Show Dates' : 'Hide Dates'}
             </Button>
             <Link to="#!">
               <Button
                 variant="primary"
                 className="px-5 px-md-7 px-xxl-5 flex-1"
+                style={{ minWidth: 130 }}
               >
                 Book now
               </Button>

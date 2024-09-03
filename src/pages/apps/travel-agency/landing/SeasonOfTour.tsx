@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import bgLeft27 from 'assets/img/bg/bg-left-27.png';
@@ -11,17 +11,29 @@ import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-interface ImageZoomHoverCard {
+interface ImageZoomHoverCard extends HTMLAttributes<HTMLDivElement> {
   src: string;
   title: string;
   subTitle: string;
+  imgClass?: string;
 }
 
-const ImageZoomHoverCard = ({ src, title, subTitle }: ImageZoomHoverCard) => {
+const ImageZoomHoverCard: FC<ImageZoomHoverCard> = ({
+  src,
+  title,
+  subTitle,
+  imgClass = 'h-100',
+  ...rest
+}: ImageZoomHoverCard) => {
   return (
     <div className="img-zoom-hover position-relative h-100 rounded-3 overflow-hidden">
       <Link to="#!">
-        <img className="w-100 h-100 object-fit-cover" src={src} alt="" />
+        <img
+          className={`w-100 object-fit-cover ${imgClass}`}
+          src={src}
+          alt=""
+          {...rest}
+        />
       </Link>
       <div className="backdrop-faded">
         <Link to="#!" className="fw-bold fs-7 text-white streched-link">
@@ -64,12 +76,15 @@ const SeasonOfTour = () => {
                   This is the perfect season for tours and travels. At Phoenix,
                   you can easily select the best travel option for your next
                   vacation
+                  <span className="d-none d-lg-inline-block d-xl-none">
+                    ...
+                  </span>
+                  <span className="d-lg-none d-xl-inline">
+                    This will help you with the pricing that you’ll need, the
+                    accommodation facilities, food and beverages, and water
+                    rides.
+                  </span>
                 </p>
-                <span className="d-none d-lg-inline-block d-xl-none">...</span>
-                <span className="d-lg-none d-xl-inline">
-                  This will help you with the pricing that you’ll need, the
-                  accommodation facilities, food and beverages, and water rides.
-                </span>
               </Col>
 
               <Col xs={6} md={5}>
@@ -91,6 +106,7 @@ const SeasonOfTour = () => {
                   src={gallery37}
                   title="Maui"
                   subTitle="14 Hotels"
+                  imgClass="h-md-100"
                 />
               </Col>
             </Row>
@@ -101,6 +117,8 @@ const SeasonOfTour = () => {
                 src={gallery38}
                 title="Bali, Indonesia"
                 subTitle="51 Hotels"
+                imgClass="h-lg-100"
+                style={{ height: 220 }}
               />
               <Button variant="primary" className="w-100 py-3 fs-8">
                 Explore more

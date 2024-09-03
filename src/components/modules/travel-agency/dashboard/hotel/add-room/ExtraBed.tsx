@@ -127,6 +127,7 @@ const ExtraBed = () => {
                 <FloatingLabel
                   controlId={`roomPriceCurrency${index}`}
                   label="Currency"
+                  style={{ minWidth: '8rem' }}
                 >
                   <Form.Select>
                     <option value="1">USD</option>
