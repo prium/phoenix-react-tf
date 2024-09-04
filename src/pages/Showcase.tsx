@@ -2,6 +2,7 @@ import Footer from 'components/footers/Footer';
 import AdvanceFeatures from 'components/modules/showcase/AdvanceFeatures';
 import Cta from 'components/modules/showcase/Cta';
 import Demos from 'components/modules/showcase/Demos';
+import DifferentModules from 'components/modules/showcase/DifferentModules';
 import EssentialFeatures from 'components/modules/showcase/EssentialFeatures';
 import Faq from 'components/modules/showcase/Faq';
 import Feature from 'components/modules/showcase/Feature';
@@ -44,6 +45,7 @@ const Showcase = () => {
       <ShowcaseNavbar />
       <Header />
       <Demos />
+      <DifferentModules />
       <AdvanceFeatures />
       <EssentialFeatures />
       <Feature />
