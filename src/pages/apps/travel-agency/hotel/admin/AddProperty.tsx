@@ -1,7 +1,6 @@
 import WizardForm from 'components/wizard/WizardForm';
 import useWizardForm from 'hooks/useWizardForm';
 import WizardFormProvider from 'providers/WizardFormProvider';
-import React from 'react';
 import { Col, Row, Tab } from 'react-bootstrap';
 import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
@@ -14,9 +13,8 @@ import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-prot
 import FinanceForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/FinanceForm';
 import PoliciesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/PoliciesForm';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
-import WizardHeader from 'components/modules/travel-agency/common/WizardHeader';
-import { addPropertyWizardHeader } from 'data/wizard/wizard';
-// import Preview from '/components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
+import { addPropertyWizardNav } from 'data/wizard/wizard';
+import WizardSideNav from 'components/wizard/WizardSideNav';
 
 export interface AddPropertyWizardFormData {
   propertyName: string;
@@ -44,7 +42,9 @@ const AddProperty = () => {
         <WizardFormProvider {...form}>
           <Row className="gx-0 gx-xl-5 theme-wizard">
             <Col xl={{ order: 1, span: 4 }}>
-              <WizardHeader data={addPropertyWizardHeader} />
+              <div className="scrollbar mb-4">
+                <WizardSideNav navItems={addPropertyWizardNav} />
+              </div>
             </Col>
             <Col xl={8} className="flex-1">
               <Row>

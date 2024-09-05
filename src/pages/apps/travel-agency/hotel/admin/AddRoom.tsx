@@ -6,13 +6,13 @@ import useWizardForm from 'hooks/useWizardForm';
 import WizardForm from 'components/wizard/WizardForm';
 import WizardFormProvider from 'providers/WizardFormProvider';
 import RoomDetailsForm from 'components/modules/travel-agency/dashboard/hotel/add-room/RoomDetailsForm';
-import WizardHeader from 'components/modules/travel-agency/common/WizardHeader';
-import { addRoomWizardHeader } from 'data/wizard/wizard';
+import { addRoomWizardNav } from 'data/wizard/wizard';
 import RoomWizardFooter from 'components/modules/travel-agency/dashboard/hotel/add-room/RoomWizardFooter';
 import Pricing from 'components/modules/travel-agency/dashboard/hotel/add-room/Pricing';
 import Amenities from 'components/modules/travel-agency/dashboard/hotel/add-room/Amenities';
 import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-room/Preview';
+import WizardSideNav from 'components/wizard/WizardSideNav';
 
 const AddRoom = () => {
   const form = useWizardForm({
@@ -26,7 +26,7 @@ const AddRoom = () => {
       <WizardFormProvider {...form}>
         <Row className="gx-0 gx-xl-5 theme-wizard">
           <Col xl={{ order: 1, span: 4 }}>
-            <WizardHeader data={addRoomWizardHeader} />
+            <WizardSideNav navItems={addRoomWizardNav} />
           </Col>
           <Col xl={8} className="flex-1">
             <Row>
