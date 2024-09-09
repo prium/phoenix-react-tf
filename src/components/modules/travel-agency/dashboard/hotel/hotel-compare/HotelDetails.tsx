@@ -10,7 +10,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faSearch, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from 'components/base/Button';
-import { Form } from 'react-bootstrap';
+import Badge from 'components/base/Badge';
+import { Form, ProgressBar } from 'react-bootstrap';
 
 type Props = {
   hotelPhotos: HotelPhoto[];
@@ -68,12 +69,14 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
                     </SwiperSlide>
                   ))}
                 </Swiper>
-                <span className="badge badge-phoenix badge-phoenix-warning fs-10 position-absolute top-0 start-0 ms-3 mt-3 z-1">
-                  <span>
-                    <FontAwesomeIcon icon={faStar} className="me-1" />
-                    {item.rating}
-                  </span>
-                </span>
+                <Badge
+                  variant="phoenix"
+                  bg="warning"
+                  className="fs-10 position-absolute top-0 start-0 ms-3 mt-3 z-1"
+                >
+                  <FontAwesomeIcon icon={faStar} className="me-1" />
+                  {item.rating}
+                </Badge>
                 <Button
                   variant=""
                   className="btn-wish position-absolute top-0 end-0 me-3 mt-3 z-1"
@@ -117,71 +120,38 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
             </td>
             <td className="px-3 border-end border-translucent">
               <div className="d-flex align-items-center gap-2">
-                <span className="badge text-bg-primary fs-8">
+                <Badge bg="primary" className="fs-8">
                   {item.ratings[0].toString()}
-                </span>
-                <div
-                  className="progress w-100 bg-body-highlight"
-                  role="progressbar"
-                  aria-label="review"
-                  aria-valuenow={0}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  style={{
-                    height: 8
-                  }}
-                >
-                  <div
-                    className="progress-bar rounded"
-                    style={{ width: `${parseFloat(item.ratings[0]) * 20}%` }}
-                  ></div>
-                </div>
+                </Badge>
+                <ProgressBar
+                  now={parseFloat(item.ratings[0]) * 20}
+                  style={{ height: '8px' }}
+                  className="bg-body-highlight w-100"
+                />
               </div>
             </td>
             <td className="px-3 border-end border-translucent">
               <div className="d-flex align-items-center gap-2">
-                <span className="badge text-bg-primary fs-8">
+                <Badge bg="primary" className="fs-8">
                   {item.ratings[1].toString()}
-                </span>
-                <div
-                  className="progress w-100 bg-body-highlight"
-                  role="progressbar"
-                  aria-label="review"
-                  aria-valuenow={0}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  style={{
-                    height: 8
-                  }}
-                >
-                  <div
-                    className="progress-bar rounded"
-                    style={{ width: `${parseFloat(item.ratings[1]) * 20}%` }}
-                  />
-                </div>
+                </Badge>
+                <ProgressBar
+                  now={parseFloat(item.ratings[1]) * 20}
+                  style={{ height: '8px' }}
+                  className="bg-body-highlight w-100"
+                />
               </div>
             </td>
             <td className="px-3 border-end border-translucent">
               <div className="d-flex align-items-center gap-2">
-                <span className="badge text-bg-primary fs-8">
+                <Badge bg="primary" className="fs-8">
                   {item.ratings[2].toString()}
-                </span>
-                <div
-                  className="progress w-100 bg-body-highlight"
-                  role="progressbar"
-                  aria-label="review"
-                  aria-valuenow={0}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
-                  style={{
-                    height: 8
-                  }}
-                >
-                  <div
-                    className="progress-bar rounded"
-                    style={{ width: `${parseFloat(item.ratings[2]) * 20}%` }}
-                  />
-                </div>
+                </Badge>
+                <ProgressBar
+                  now={parseFloat(item.ratings[2]) * 20}
+                  style={{ height: '8px' }}
+                  className="bg-body-highlight w-100"
+                />
               </div>
             </td>
           </tr>

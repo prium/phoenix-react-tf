@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react';
+import { Modal, Row, Col } from 'react-bootstrap';
+import Button from 'components/base/Button';
+import Badge from 'components/base/Badge';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBaby,
   faBath,
@@ -8,9 +12,6 @@ import {
   faTimes,
   faUser
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Button from 'components/base/Button';
-import { Modal, Row, Col } from 'react-bootstrap';
 import {
   roomTypes,
   type RoomTypes,
@@ -48,9 +49,9 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                     />
                     {room.type}
                   </h4>
-                  <span className="badge badge-phoenix badge-phoenix-info fs-10">
+                  <Badge variant="phoenix" bg="info" className="fs-10">
                     {room.discount}% OFF
-                  </span>
+                  </Badge>
                 </div>
                 <p className="mb-0">{room.desc}</p>
               </Col>

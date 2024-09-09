@@ -381,9 +381,9 @@ export const routes: RouteItems[] = [
                   },
                   {
                     name: 'hotel-details',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-hotel-details',
-                    active: false
+                    path: '/apps/travel-agency/hotel/customer/hotel-details',
+                    pathName: 'hotel-details',
+                    active: true
                   },
                   {
                     name: 'hotel-compare',
@@ -393,15 +393,15 @@ export const routes: RouteItems[] = [
                   },
                   {
                     name: 'checkout',
-                    path: '/pages/coming-soon',
+                    path: '/apps/travel-agency/hotel/customer/checkout',
                     pathName: 'hotel-checkout',
-                    active: false
+                    active: true
                   },
                   {
                     name: 'payment',
-                    path: '/pages/coming-soon',
+                    path: '/apps/travel-agency/hotel/customer/payment',
                     pathName: 'hotel-payment',
-                    active: false
+                    active: true
                   },
                   {
                     name: 'gallery',

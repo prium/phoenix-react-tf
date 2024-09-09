@@ -28,6 +28,17 @@
   }
 }
 
+.nav-pills {
+  .nav-link {
+    font-weight: $font-weight-bold;
+    color: var(--#{$prefix}body-secondary-color);
+    border: 1px solid transparent;
+    &.active {
+      border: 1px solid var(--#{$prefix}primary);
+    }
+  }
+}
+
 .nav-phoenix-pills {
   background: var(--#{$prefix}body-highlight-bg);
   border: 1px solid var(--#{$prefix}border-color);
@@ -134,4 +145,3 @@
   background-color: var(--#{$prefix}body-bg);
   z-index: 1;
 }
-

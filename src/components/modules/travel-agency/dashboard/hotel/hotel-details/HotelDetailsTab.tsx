@@ -1,0 +1,78 @@
+import React, { useState } from 'react';
+import { Tab, Nav } from 'react-bootstrap';
+import HotelDetailsAvailability from './HotelDetailsAvailability';
+import HotelDetailsDescription from './HotelDetailsDescription';
+import HotelDetailsPolicy from './HotelDetailsPolicy';
+import HotelDetailsFacilities from './HotelDetailsFacilities';
+import HotelDetailsReviews from './HotelDetailsReviews';
+import {
+  availableRooms,
+  facilities,
+  charges,
+  ratings,
+  reviews
+} from 'data/travel-agency/customer/hotelDetails';
+
+interface TabItem {
+  name: string;
+  content: JSX.Element;
+}
+
+const HotelDetailsTab = () => {
+  const [activeKey, setActiveKey] = useState<string>('availability');
+
+  const tabitems: TabItem[] = [
+    {
+      name: 'Availability',
+      content: <HotelDetailsAvailability availableRooms={availableRooms} />
+    },
+    {
+      name: 'Description',
+      content: <HotelDetailsDescription activeKey={activeKey} />
+    },
+    {
+      name: 'Policy',
+      content: <HotelDetailsPolicy />
+    },
+    {
+      name: 'Facilities',
+      content: (
+        <HotelDetailsFacilities facilities={facilities} charges={charges} />
+      )
+    },
+    {
+      name: 'Reviews',
+      content: <HotelDetailsReviews ratings={ratings} reviews={reviews} />
+    }
+  ];
+
+  const handleSelect = (key: string | null) => {
+    if (key) {
+      setActiveKey(key);
+    }
+  };
+  return (
+    <Tab.Container
+      activeKey={activeKey}
+      onSelect={handleSelect}
+      mountOnEnter={false}
+    >
+      <Nav variant="pills" className="scrollbar flex-nowrap mt-5 pb-3 mb-3">
+        {tabitems.map(item => (
+          <Nav.Item key={item.name} className="text-nowrap">
+            <Nav.Link eventKey={item.name.toLowerCase()}>{item.name}</Nav.Link>
+          </Nav.Item>
+        ))}
+      </Nav>
+      <Tab.Content>
+        {tabitems.map(item => (
+          <Tab.Pane key={item.name} eventKey={item.name.toLowerCase()}>
+            {item.content}
+          </Tab.Pane>
+        ))}
+      </Tab.Content>
+    </Tab.Container>
+  );
+};
+
+export default HotelDetailsTab;
