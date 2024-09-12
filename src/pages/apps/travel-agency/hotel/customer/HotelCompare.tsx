@@ -9,16 +9,10 @@ import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import { mapMarkerPoints } from 'data/mapMarkerPoints';
-import CollapsibleContainer from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/CollapsibleContainer';
-import HotelDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/HotelDetails';
-import {
-  hotelPhotos,
-  ratingData,
-  facilities,
-  amenities,
-  rooms
-} from 'data/travel-agency/customer/hotelCompare';
-import RoomDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/RoomDetails';
+import CollapsibleContainer from 'components/common/CollapsibleContainer';
+import CompareHotelDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/CompareHotelDetails';
+import { hotelInfo } from 'data/travel-agency/customer/hotelCompare';
+import CompareRoomDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/CompareRoomDetails';
 import HotelActions from 'components/modules/travel-agency/dashboard/hotel/HotelActions';
 import { Container } from 'react-bootstrap';
 
@@ -35,7 +29,7 @@ const HotelCompare = () => {
       <TopNav />
       <NavbarMain />
       <section className="pt-6 pb-9">
-        <Container fluid={'medium'}>
+        <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-4">Hotel Compare</h2>
           <HotelActions background={false} />
@@ -52,18 +46,14 @@ const HotelCompare = () => {
               collapseTitle="Hotel Details"
               id="hotelDetailsCollapse"
             >
-              <HotelDetails
-                hotelPhotos={hotelPhotos}
-                ratingData={ratingData}
-                facilities={facilities}
-              />
+              <CompareHotelDetails hotelInfo={hotelInfo} />
             </CollapsibleContainer>
             <CollapsibleContainer
               collapseTitle="Room Details"
               id="roomDetailsCollapse"
-              classNames="mt-8"
+              className="mt-8"
             >
-              <RoomDetails accommodation={rooms} amenities={amenities} />
+              <CompareRoomDetails hotelInfo={hotelInfo} />
             </CollapsibleContainer>
           </div>
         </Container>

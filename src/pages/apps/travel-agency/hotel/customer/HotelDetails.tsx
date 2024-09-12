@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import TopNav from 'pages/apps/travel-agency/landing/TopNav';
 import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
@@ -17,10 +18,11 @@ import {
   faMapMarkerAlt,
   faPhone
 } from '@fortawesome/free-solid-svg-icons';
-import SummaryCard from 'components/cards/SummaryCard';
-import DetailsGallery from 'components/image-gallery/DetailsGallery';
+import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { hotelImages } from 'data/travel-agency/customer/hotelDetails';
 import HotelDetailsTab from 'components/modules/travel-agency/dashboard/hotel/hotel-details/HotelDetailsTab';
+import HotelDetailsGallery from 'components/image-gallery/HotelDetailsGallery';
+import { numberFormat } from 'helpers/utils';
 
 const HotelDetails = () => {
   useSettingsMountEffect({
@@ -35,7 +37,7 @@ const HotelDetails = () => {
       <TopNav />
       <NavbarMain />
       <section className="pt-4 pb-9">
-        <Container fluid={'medium'}>
+        <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-4">Hotel Details</h2>
           <Row className="g-4 flex-between-end mb-5">
@@ -44,32 +46,32 @@ const HotelDetails = () => {
                 Radisson Blu Water Garden Hotel, Dhaka
               </h1>
               <div className="mb-1">
-                <a className="text-body-tertiary" href="#!">
+                <Link className="text-body-tertiary" to="#!">
                   <FontAwesomeIcon
                     icon={faMapMarkerAlt}
                     className="me-2 text-body"
                   />
                   Airport Rd, Dhaka Cantonment, Dhaka, 1206, Bangladesh
-                </a>
+                </Link>
               </div>
               <div className="mb-1">
-                <a className="text-body-tertiary" href="tel:+88029834555">
+                <Link className="text-body-tertiary" to="tel:+88029834555">
                   <FontAwesomeIcon icon={faPhone} className="me-2 text-body" />
                   +880 29834555
-                </a>
+                </Link>
               </div>
               <div className="mb-1">
-                <a
+                <Link
                   className="text-body-tertiary"
-                  href="mailto:sales.dhaka@radisson.com"
+                  to="mailto:sales.dhaka@radisson.com"
                 >
                   <FontAwesomeIcon
                     icon={faEnvelope}
                     className="me-2 text-body"
-                    transform={'down-1'}
+                    transform="down-1"
                   />
                   sales.dhaka@radisson.com
-                </a>
+                </Link>
               </div>
             </Col>
             <Col md={4} lg={3}>
@@ -79,7 +81,12 @@ const HotelDetails = () => {
                     Rated
                   </span>
                   <span className="text-primary me-2">Good</span>
-                  <Badge bg="primary">4.3</Badge>
+                  <Badge bg="primary">
+                    {numberFormat(4.3, 'standard', {
+                      minimumFractionDigits: 1,
+                      maximumFractionDigits: 1
+                    })}
+                  </Badge>
                 </h5>
                 <Button
                   variant="phoenix-primary"
@@ -93,11 +100,14 @@ const HotelDetails = () => {
           </Row>
           <Row className="g-3">
             <Col xl={8}>
-              <DetailsGallery images={hotelImages} />
+              <HotelDetailsGallery images={hotelImages} />
               <HotelDetailsTab />
             </Col>
             <Col xl={4}>
-              <SummaryCard page="hotel-details" classNames="mt-3 mt-xl-0" />
+              <HotelDetailsSummaryCard
+                isInfoShow={false}
+                className="mt-3 mt-xl-0"
+              />
             </Col>
           </Row>
         </Container>

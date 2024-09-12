@@ -5,13 +5,15 @@ import DatePicker from 'components/base/DatePicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
-import RoomInfo from './RoomInfo';
+import HotelDetailsAvailabilityRoomInfo from './HotelDetailsAvailabilityRoomInfo';
 
-type Props = {
+interface HotelDetailsAvailabilityProps {
   availableRooms: AvailableRoom[];
-};
+}
 
-const HotelDetailsAvailability = ({ availableRooms }: Props) => {
+const HotelDetailsAvailability = ({
+  availableRooms
+}: HotelDetailsAvailabilityProps) => {
   const [value, setValue] = useState(2);
 
   const handleCount = (type: string) => {
@@ -52,7 +54,6 @@ const HotelDetailsAvailability = ({ availableRooms }: Props) => {
                   }}
                   hideIcon={true}
                   options={{
-                    mode: 'range',
                     minDate: 'today',
                     dateFormat: 'Y-m-d'
                   }}
@@ -62,7 +63,7 @@ const HotelDetailsAvailability = ({ availableRooms }: Props) => {
             <Col sm={6} lg={3}>
               <label
                 className="fw-bold text-body-tertiary mb-1"
-                htmlFor="checkIn"
+                htmlFor="checkOut"
               >
                 Check out
               </label>
@@ -87,7 +88,6 @@ const HotelDetailsAvailability = ({ availableRooms }: Props) => {
                   }}
                   hideIcon={true}
                   options={{
-                    mode: 'range',
                     minDate: 'today',
                     dateFormat: 'Y-m-d'
                   }}
@@ -126,7 +126,7 @@ const HotelDetailsAvailability = ({ availableRooms }: Props) => {
                 </Button>
               </InputGroup>
             </Col>
-            <Col sm={'auto'} className="ms-auto align-self-end">
+            <Col sm="auto" className="ms-auto align-self-end">
               <Button variant="primary" className="w-100">
                 Update Results
               </Button>
@@ -135,10 +135,10 @@ const HotelDetailsAvailability = ({ availableRooms }: Props) => {
         </Card.Body>
       </Card>
 
-      {availableRooms.map((room: AvailableRoom) => (
+      {availableRooms.map(room => (
         <Fragment key={room.id}>
           <hr className="my-6" />
-          <RoomInfo room={room} />
+          <HotelDetailsAvailabilityRoomInfo room={room} />
         </Fragment>
       ))}
     </>

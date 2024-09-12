@@ -11,58 +11,61 @@ import {
   faMoon,
   faUser
 } from '@fortawesome/free-solid-svg-icons';
+import { currencyFormat } from 'helpers/utils';
 
-type Props = {
+interface HotelDetailsCardItemProps {
   item: CardItem;
   index: number;
-  page: string;
-  classNames?: string;
-};
+  className?: string;
+  clickHandler: (id: number) => void;
+}
 
-const HotelCardItem = ({ item, index, page, classNames }: Props) => {
+const HotelDetailsCardItem = ({
+  item,
+  index,
+  className,
+  clickHandler
+}: HotelDetailsCardItemProps) => {
   return (
-    <Card className={classNames}>
+    <Card className={className}>
       <Card.Body>
-        {page === 'hotel-details' && (
-          <>
-            <Button
-              variant=""
-              className="p-0 position-absolute end-0 fs-8 mt-n5 me-n2 text-body-tertiary"
-            >
-              <FontAwesomeIcon icon={faCircleXmark} />
-            </Button>
-          </>
-        )}
+        <Button
+          className="p-0 position-absolute end-0 fs-8 mt-n5 me-n2 text-body-tertiary"
+          onClick={() => clickHandler(item.id)}
+        >
+          <FontAwesomeIcon icon={faCircleXmark} />
+        </Button>
         <div className="d-flex justify-content-between gap-3 mb-4">
           <div>
             <h5 className="text-body-highlight"> Room {index + 1}</h5>
             <p className="mb-0 text-body-tertiary">{item.roomName}</p>
           </div>
-          <h4 className="mb-0">${item.price}</h4>
+          <h4 className="mb-0">
+            {currencyFormat(item.price, {
+              maximumFractionDigits: 2,
+              useGrouping: true
+            })}
+          </h4>
         </div>
 
         <Row className="align-items-center g-0">
           <Col xs={3}>
             <h5 className="text-body text-nowrap mb-0">Check in</h5>
           </Col>
-          <Col xs={'auto'}>
+          <Col xs="auto">
             <span className="px-2">:</span>
           </Col>
-          <Col xs={'auto'}>
-            <span>{item.checkIn}</span>
-          </Col>
+          <Col xs="auto">{item.checkIn}</Col>
         </Row>
 
         <Row className="align-items-center g-0 mb-4">
           <Col xs={3}>
             <h5 className="text-body text-nowrap mb-0">Check out</h5>
           </Col>
-          <Col xs={'auto'}>
+          <Col xs="auto">
             <span className="px-2">:</span>
           </Col>
-          <Col xs={'auto'}>
-            <span>{item.checkOut}</span>
-          </Col>
+          <Col xs="auto">{item.checkOut}</Col>
         </Row>
         <div className="d-flex flex-wrap gap-2">
           <Badge
@@ -107,4 +110,4 @@ const HotelCardItem = ({ item, index, page, classNames }: Props) => {
   );
 };
 
-export default HotelCardItem;
+export default HotelDetailsCardItem;

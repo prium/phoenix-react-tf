@@ -12,31 +12,34 @@ import {
   faTimes,
   faUser
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  roomTypes,
-  type RoomTypes,
-  type PopularAmenities
-} from 'data/travel-agency/customer/hotelCompare';
+import { numberFormat, currencyFormat } from 'helpers/utils';
+import type { RoomType } from 'data/travel-agency/customer/hotelCompare';
 import { SwiperSlide } from 'swiper/react';
 import RoomPictureSlider from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/RoomPictureSlider';
 import SelectRoomCollapsibleContainer from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/SelectRoomCollapsibleContainer';
+import classNames from 'classnames';
 
-type Props = {
+interface HotelChangeRoomModalProps {
   show: boolean;
   handleClose: () => void;
-};
+  roomTypes: RoomType[];
+}
 
-const ChangeRoomModal = ({ show, handleClose }: Props) => {
+const HotelChangeRoomModal = ({
+  show,
+  handleClose,
+  roomTypes
+}: HotelChangeRoomModalProps) => {
   return (
     <Modal show={show} onHide={handleClose} centered size="xl">
       <Modal.Header className="p-4 justify-content-between">
         <h3 className="mb-0 text-body-highlight">Select Room</h3>
         <Button variant="phoenix-danger" className="px-3" onClick={handleClose}>
-          <FontAwesomeIcon icon={faTimes} transform={'down-2'} />
+          <FontAwesomeIcon icon={faTimes} transform="down-2" />
         </Button>
       </Modal.Header>
       <Modal.Body className="p-4">
-        {roomTypes.map((room: RoomTypes, index: number) => (
+        {roomTypes.map((room, index) => (
           <Fragment key={room.id}>
             <Row className="g-3 mb-4">
               <Col lg={8} xxl={7}>
@@ -45,12 +48,15 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                     <FontAwesomeIcon
                       icon={faCircle}
                       className="fs-9 text-body-quaternary me-2"
-                      transform={'up-1'}
+                      transform="up-1"
                     />
                     {room.type}
                   </h4>
                   <Badge variant="phoenix" bg="info" className="fs-10">
-                    {room.discount}% OFF
+                    {numberFormat(room.discount, 'standard', {
+                      maximumSignificantDigits: 2
+                    })}
+                    % OFF
                   </Badge>
                 </div>
                 <p className="mb-0">{room.desc}</p>
@@ -58,9 +64,11 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
               <Col lg={4} xxl={5}>
                 <h3 className="mb-2 d-flex align-items-center justify-content-lg-end gap-2">
                   <span className="fs-9 text-body-quaternary fw-normal text-decoration-line-through">
-                    ${room.price}
+                    {currencyFormat(room.price, { maximumFractionDigits: 2 })}
                   </span>
-                  ${room.discountPrice}
+                  {currencyFormat(room.discountPrice, {
+                    maximumFractionDigits: 2
+                  })}
                   <span className="fs-9 text-body">/ night</span>
                 </h3>
                 <h5 className="text-body text-lg-end fw-normal">
@@ -73,10 +81,10 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                 <RoomPictureSlider
                   loop={true}
                   spaceBetween={8}
-                  slidesPerView={'auto'}
+                  slidesPerView="auto"
                   grabCursor={true}
                 >
-                  {room.images.map((img: string, index: number) => (
+                  {room.images.map((img, index) => (
                     <SwiperSlide key={index} className="w-auto">
                       <img src={img} alt="" className="rounded-2" width={158} />
                     </SwiperSlide>
@@ -92,7 +100,10 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                           icon={faBed}
                           className="text-info me-2"
                         />
-                        {room.beds} Double Bed
+                        {numberFormat(room.beds, 'standard', {
+                          minimumIntegerDigits: 2
+                        })}
+                        &nbsp;Double Bed
                       </h6>
                     </Col>
                     <Col xs={6}>
@@ -101,7 +112,10 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                           icon={faUser}
                           className="text-info me-2"
                         />
-                        {room.adults} Adult
+                        {numberFormat(room.adults, 'standard', {
+                          minimumIntegerDigits: 2
+                        })}
+                        &nbsp;Adult
                       </h6>
                     </Col>
                     <Col xs={6}>
@@ -110,7 +124,10 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                           icon={faBaby}
                           className="text-info me-2"
                         />
-                        {room.child} Child
+                        {numberFormat(room.child, 'standard', {
+                          minimumIntegerDigits: 2
+                        })}
+                        &nbsp;Child
                       </h6>
                     </Col>
                     <Col xs={6}>
@@ -119,7 +136,10 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                           icon={faBath}
                           className="text-info me-2"
                         />
-                        {room.bathrooms} Bathrooms
+                        {numberFormat(room.bathrooms, 'standard', {
+                          minimumIntegerDigits: 2
+                        })}
+                        &nbsp;Bathrooms
                       </h6>
                     </Col>
                   </Row>
@@ -130,16 +150,19 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
               </Col>
             </Row>
             <SelectRoomCollapsibleContainer
-              collapseTitle={'Room Amenities'}
+              collapseTitle="Room Amenities"
               id={`amenitiesCollapse-${index}`}
             >
               <div className="px-md-4 pt-4">
                 <h5 className="mb-3">Most popular</h5>
                 <Row className="g-0 mb-5">
-                  {room.popularAmenities.map((item: PopularAmenities) => (
+                  {room.popularAmenities.map(item => (
                     <Col sm={6} lg={4} key={item.id}>
                       <div
-                        className={`d-flex align-items-center gap-2 px-4 py-3 h-100 border-translucent ${item.classes}`}
+                        className={classNames(
+                          item.classes,
+                          'd-flex align-items-center gap-2 px-4 py-3 h-100 border-translucent'
+                        )}
                       >
                         <FontAwesomeIcon
                           icon={item.icon}
@@ -154,7 +177,7 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
                 </Row>
                 <h5 className="mb-3">Others Amenities</h5>
                 <Row className="g-2">
-                  {room.amenities.map((item: string, index: number) => (
+                  {room.amenities.map((item, index) => (
                     <Col lg={4} xl={3} key={index}>
                       <div className="p-3 border border-translucent rounded-2">
                         <h5 className="text-body-secondary fw-semibold mb-0">
@@ -178,4 +201,4 @@ const ChangeRoomModal = ({ show, handleClose }: Props) => {
   );
 };
 
-export default ChangeRoomModal;
+export default HotelChangeRoomModal;

@@ -3,28 +3,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import { Collapse } from 'react-bootstrap';
+import classNames from 'classnames';
 
-type Props = {
+interface CollapsibleContainerProps {
   collapseTitle: string;
   id: string;
   children: React.ReactElement;
-  classNames?: string;
-};
+  className?: string;
+}
 
 const CollapsibleContainer = ({
   collapseTitle,
   children,
   id,
-  classNames
-}: Props) => {
-  const [open, setOpen] = useState<boolean>(true);
+  className
+}: CollapsibleContainerProps) => {
+  const [open, setOpen] = useState(true);
   return (
     <>
       <Button
-        variant={''}
-        className={`p-4 d-flex flex-between-center collapse-indicator text-body-highlight bg-body-highlight w-100 position-sticky start-0 ${
-          open ? 'collapsed' : ''
-        } ${classNames ? classNames : ''}`}
+        variant=""
+        className={classNames(
+          className,
+          'p-4 d-flex flex-between-center collapse-indicator text-body-highlight bg-body-highlight w-100 position-sticky start-0',
+          {
+            collapsed: open
+          }
+        )}
         aria-controls={id}
         onClick={() => setOpen(!open)}
       >

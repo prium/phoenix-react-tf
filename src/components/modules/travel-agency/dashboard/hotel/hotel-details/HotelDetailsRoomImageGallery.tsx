@@ -3,16 +3,16 @@ import { Row, Col } from 'react-bootstrap';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
 
-type Props = {
+interface HotelDetailsRoomImageGalleryProps {
   images: string[];
-};
+}
 
-type RoomImageItem = {
+interface RoomImageItemProps {
   item: string;
   handleClick: () => void;
-};
+}
 
-const RoomImageItem = ({ item, handleClick }: RoomImageItem) => {
+const RoomImageItem = ({ item, handleClick }: RoomImageItemProps) => {
   return (
     <div className="cursor-pointer h-100" onClick={handleClick}>
       <img
@@ -24,7 +24,9 @@ const RoomImageItem = ({ item, handleClick }: RoomImageItem) => {
   );
 };
 
-const RoomImageGallery = ({ images }: Props) => {
+const HotelDetailsRoomImageGallery = ({
+  images
+}: HotelDetailsRoomImageGalleryProps) => {
   const [index, setIndex] = useState(1);
   const { lightboxProps, openLightbox } = useLightbox(images);
 
@@ -36,7 +38,7 @@ const RoomImageGallery = ({ images }: Props) => {
   return (
     <>
       <Row className="gx-2 h-100">
-        {images.map((imageItem: string, index: number) => (
+        {images.map((imageItem, index) => (
           <Col key={index}>
             <RoomImageItem
               item={imageItem}
@@ -52,4 +54,4 @@ const RoomImageGallery = ({ images }: Props) => {
   );
 };
 
-export default RoomImageGallery;
+export default HotelDetailsRoomImageGallery;

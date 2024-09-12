@@ -6,11 +6,12 @@ import type {
 import { Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 
-type Props = {
+interface HotelDetailsFacilitiesProps {
   facilities: Facility[];
   charges: Charge[];
-};
+}
 
 const CategoryView = ({
   category,
@@ -29,9 +30,10 @@ const CategoryView = ({
         <p className="mb-2 fs-9 text-body-tertiary">{category.desc}</p>
       )}
       <ul
-        className={`list-unstyled text-body-highlight ${
-          index !== 4 ? 'mb-5' : 'mb-sm-0'
-        }`}
+        className={classNames('list-unstyled text-body-highlight', {
+          'mb-5': index !== 4,
+          'mb-sm-0': index === 4
+        })}
       >
         {category.items.map((item, idx) => (
           <li key={idx}>
@@ -47,16 +49,22 @@ const CategoryView = ({
   );
 };
 
-const HotelDetailsFacilities = ({ facilities, charges }: Props) => {
+const HotelDetailsFacilities = ({
+  facilities,
+  charges
+}: HotelDetailsFacilitiesProps) => {
   return (
     <>
       <h3 className="mb-5 fw-bold">Facilities</h3>
       <h5 className="mb-3">Most popular</h5>
       <Row className="g-0">
-        {facilities.map((facility: Facility) => (
+        {facilities.map(facility => (
           <Col key={facility.id} sm={6} md={4}>
             <div
-              className={`d-flex align-items-center gap-2 px-4 py-3 h-100 border-translucent ${facility.classes}`}
+              className={classNames(
+                'd-flex align-items-center gap-2 px-4 py-3 h-100 border-translucent',
+                facility.classes
+              )}
             >
               <FontAwesomeIcon
                 icon={facility.icon}
@@ -74,18 +82,18 @@ const HotelDetailsFacilities = ({ facilities, charges }: Props) => {
         additional charges
       </h6>
       <Row className="g-3">
-        <Col xs={'auto'} md={4}>
-          {charges.slice(0, 5).map((category: Charge, index: number) => (
+        <Col xs="auto" md={4}>
+          {charges.slice(0, 5).map((category, index) => (
             <CategoryView key={index} category={category} index={index} />
           ))}
         </Col>
         <Col xs={6} md={4}>
-          {charges.slice(5, 10).map((category: Charge, index: number) => (
+          {charges.slice(5, 10).map((category, index) => (
             <CategoryView key={index} category={category} index={index} />
           ))}
         </Col>
-        <Col xs={'auto'} md={4}>
-          {charges.slice(10).map((category: Charge, index: number) => (
+        <Col xs="auto" md={4}>
+          {charges.slice(10).map((category, index) => (
             <CategoryView key={index} category={category} index={index} />
           ))}
         </Col>

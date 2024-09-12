@@ -1,4 +1,5 @@
 import React, { useRef, PropsWithChildren } from 'react';
+import classNames from 'classnames';
 import { Swiper, SwiperProps as ReactSwiperProps } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import { NavigationOptions } from 'swiper/types';
@@ -9,18 +10,18 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 interface SwiperProps extends ReactSwiperProps {
-  classNames?: string;
+  className?: string;
 }
 
 const RoomPictureSlider = ({
-  classNames,
+  className,
   children,
   ...props
 }: PropsWithChildren<SwiperProps>) => {
   const navigationNextRef = useRef(null);
   const navigationPrevRef = useRef(null);
   return (
-    <div className={`swiper-theme-container ${classNames}`}>
+    <div className={classNames('swiper-theme-container', className)}>
       <Swiper
         loop={true}
         grabCursor={true}

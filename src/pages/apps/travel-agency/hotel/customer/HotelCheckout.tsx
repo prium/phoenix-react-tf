@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import TopNav from 'pages/apps/travel-agency/landing/TopNav';
 import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
@@ -8,7 +9,7 @@ import Footer from 'components/footers/Footer';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import SummaryCard from 'components/cards/SummaryCard';
+import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,7 +26,7 @@ const HotelCheckout = () => {
       <TopNav />
       <NavbarMain />
       <section className="pt-6 pb-9">
-        <Container fluid={'medium'}>
+        <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-5">Check out</h2>
           <Row className="justify-content-between">
@@ -41,7 +42,7 @@ const HotelCheckout = () => {
                   <Form.Check.Input
                     type="radio"
                     name="tripTypeRadio"
-                    value={'no'}
+                    value="no"
                     defaultChecked
                   />
                   <Form.Check.Label htmlFor="tripTypeRadio">
@@ -52,7 +53,7 @@ const HotelCheckout = () => {
                   <Form.Check.Input
                     type="radio"
                     name="tripTypeRadio"
-                    value={'yes'}
+                    value="yes"
                   />
                   <Form.Check.Label htmlFor="tripTypeRadio">
                     Yes
@@ -123,7 +124,7 @@ const HotelCheckout = () => {
                     type="radio"
                     name="bookingPersonRadio"
                     id="me"
-                    value={'no'}
+                    value="no"
                     defaultChecked
                   />
                   <Form.Check.Label htmlFor="me">
@@ -137,7 +138,7 @@ const HotelCheckout = () => {
                   <Form.Check.Input
                     type="radio"
                     name="bookingPersonRadio"
-                    value={'yes'}
+                    value="yes"
                     id="else"
                   />
                   <Form.Check.Label htmlFor="else">
@@ -197,7 +198,7 @@ const HotelCheckout = () => {
                   <FontAwesomeIcon
                     icon={faCircle}
                     className="text-body-quaternary fs-10 me-2"
-                    transform={'up-2'}
+                    transform="up-2"
                   />
                   No smoking
                 </p>
@@ -205,7 +206,7 @@ const HotelCheckout = () => {
                   <FontAwesomeIcon
                     icon={faCircle}
                     className="text-body-quaternary fs-10 me-2"
-                    transform={'up-2'}
+                    transform="up-2"
                   />
                   Pets are not allowed
                 </p>
@@ -220,28 +221,31 @@ const HotelCheckout = () => {
                   request after your booking is complete!
                 </p>
                 <Form.Control
-                  as={'textarea'}
+                  as="textarea"
                   name="requestText"
                   rows={5}
                   id="requestText"
                   placeholder="Type your request"
                 />
                 <hr className="mt-7 mb-5" />
-                <a
-                  href="/apps/travel-agency/hotel/customer/payment"
+                <Link
+                  to="/apps/travel-agency/hotel/customer/payment"
                   className="btn btn-primary"
                 >
                   Final details
                   <FontAwesomeIcon
                     icon={faChevronRight}
                     className="ms-2"
-                    transform={'shrink-3'}
+                    transform="shrink-3"
                   />
-                </a>
+                </Link>
               </Form>
             </Col>
             <Col lg={5} xl={4}>
-              <SummaryCard page={'checkout'} classNames="mt-5 mt-lg-0" />
+              <HotelDetailsSummaryCard
+                isInfoShow={true}
+                className="mt-5 mt-lg-0"
+              />
             </Col>
           </Row>
         </Container>

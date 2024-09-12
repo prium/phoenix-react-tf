@@ -8,7 +8,7 @@ import Footer from 'components/footers/Footer';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import SummaryCard from 'components/cards/SummaryCard';
+import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import visaCardImage from 'assets/img/logos/visa.png';
@@ -16,6 +16,7 @@ import discoverImage from 'assets/img/logos/discover.png';
 import masterCardImage from 'assets/img/logos/mastercard.png';
 import americanExpressImage from 'assets/img/logos/american_express.png';
 import Button from 'components/base/Button';
+import { Link } from 'react-router-dom';
 
 const HotelPayment = () => {
   useSettingsMountEffect({
@@ -25,31 +26,31 @@ const HotelPayment = () => {
     disableHorizontalNavbarShape: true
   });
 
-  const START_YEAR = 1990;
-  const END_YEAR = new Date().getFullYear();
+  const start_year = 1990;
+  const end_year = new Date().getFullYear();
 
   return (
     <>
       <TopNav />
       <NavbarMain />
       <section className="pt-6 pb-9">
-        <Container fluid={'medium'}>
+        <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-5">Payment</h2>
           <Row className="justify-content-between">
             <Col lg={7} xl={6}>
               <Form onSubmit={e => e.preventDefault()}>
-                <a
-                  href="/apps/travel-agency/hotel/customer/checkout"
+                <Link
+                  to="/apps/travel-agency/hotel/customer/checkout"
                   className="btn btn-phoenix-primary"
                 >
                   <FontAwesomeIcon
                     icon={faChevronLeft}
                     className="me-2"
-                    transform={'shrink-3'}
+                    transform="shrink-3"
                   />
                   Go back
-                </a>
+                </Link>
                 <hr className="mt-5 mb-7" />
                 <h3 className="mb-5">Enter your address</h3>
                 <Row className="g-3 mb-5">
@@ -90,7 +91,7 @@ const HotelPayment = () => {
                       Email address
                     </label>
                     <Form.Control
-                      type="emai"
+                      type="email"
                       name="email"
                       placeholder="Enter email address"
                       id="email"
@@ -99,7 +100,7 @@ const HotelPayment = () => {
                 </Row>
                 <h3 className="mt-7 mb-5">Payment Method</h3>
                 <Row className="gx-xxl-6 mb-5">
-                  <Col md={'auto'}>
+                  <Col md="auto">
                     <div className="d-flex">
                       <Form.Check>
                         <Form.Check.Input
@@ -133,7 +134,7 @@ const HotelPayment = () => {
                       />
                     </div>
                   </Col>
-                  <Col md={'auto'}>
+                  <Col md="auto">
                     <Form.Check>
                       <Form.Check.Input
                         type="radio"
@@ -148,7 +149,7 @@ const HotelPayment = () => {
                       </Form.Check.Label>
                     </Form.Check>
                   </Col>
-                  <Col md={'auto'}>
+                  <Col md="auto">
                     <Form.Check>
                       <Form.Check.Input
                         type="radio"
@@ -175,7 +176,7 @@ const HotelPayment = () => {
                     <Form.Select
                       className="text-body-emphasis"
                       id="selectCard"
-                      defaultValue={''}
+                      defaultValue=""
                     >
                       <option value="">Select a card</option>
                       <option value="visa">Visa</option>
@@ -221,21 +222,21 @@ const HotelPayment = () => {
                     <div className="d-flex">
                       <Form.Select
                         className="text-body-emphasis me-3"
-                        defaultValue={''}
+                        defaultValue=""
                       >
-                        <option value={''}>Month</option>
+                        <option value="">Month</option>
                         <option value="january">January</option>
                         <option value="february">February</option>
                         <option value="march">March</option>
                       </Form.Select>
                       <Form.Select
                         className="text-body-emphasis"
-                        defaultValue={''}
+                        defaultValue=""
                       >
-                        <option value={''}>Year</option>
-                        {Array.from({ length: END_YEAR - START_YEAR + 1 }).map(
+                        <option value="">Year</option>
+                        {Array.from({ length: end_year - start_year + 1 }).map(
                           (_, index) => {
-                            const year = START_YEAR + index;
+                            const year = start_year + index;
                             return (
                               <option key={year} value={year}>
                                 {year}
@@ -275,24 +276,27 @@ const HotelPayment = () => {
                   </Col>
                 </Row>
                 <hr className="mt-6 mb-5" />
-                <a
-                  href="/apps/travel-agency/hotel/customer/checkout"
+                <Link
+                  to="/apps/travel-agency/hotel/customer/checkout"
                   className="btn btn-phoenix-primary me-3"
                 >
                   <FontAwesomeIcon
                     icon={faChevronLeft}
                     className="me-2"
-                    transform={'shrink-3'}
+                    transform="shrink-3"
                   />
                   Go back
-                </a>
+                </Link>
                 <Button variant="primary" className="px-sm-15">
                   Confirm booking
                 </Button>
               </Form>
             </Col>
             <Col lg={5} xl={4}>
-              <SummaryCard page={'checkout'} classNames="mt-5 mt-lg-0" />
+              <HotelDetailsSummaryCard
+                isInfoShow={true}
+                className="mt-5 mt-lg-0"
+              />
             </Col>
           </Row>
         </Container>

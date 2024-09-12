@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { GalleryItemType } from 'data/travel-agency/customer/gallery';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
-import GalleryItem from './GalleryItem';
+import GalleryItem from './HotelGalleryItem';
 
-type Props = {
+interface HotelGalleryImagesProps {
   galleryItems: GalleryItemType[];
-};
+}
 
-const GalleryItems = ({ galleryItems }: Props) => {
+const HotelGalleryImages = ({ galleryItems }: HotelGalleryImagesProps) => {
   const [items] = useState(galleryItems);
   const [index, setIndex] = useState(1);
 
@@ -41,4 +41,4 @@ const GalleryItems = ({ galleryItems }: Props) => {
   );
 };
 
-export default GalleryItems;
+export default HotelGalleryImages;

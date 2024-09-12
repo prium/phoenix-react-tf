@@ -1,31 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import {
-  type HotelPhoto,
-  type RatingData,
-  type Facilities
-} from 'data/travel-agency/customer/hotelCompare';
+import type { HotelInfo } from 'data/travel-agency/customer/hotelCompare';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faSearch, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from 'components/base/Button';
 import Badge from 'components/base/Badge';
-import { Form, ProgressBar } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
+import { numberFormat } from 'helpers/utils';
+import classNames from 'classnames';
+import HotelCompareRatingRow from 'components/tables/HotelCompareRatingRow';
 
-type Props = {
-  hotelPhotos: HotelPhoto[];
-  ratingData: RatingData[];
-  facilities: Facilities[];
-};
+interface CompareHotelDetailsProps {
+  hotelInfo: HotelInfo[];
+}
 
-const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
-  const [values, setValues] = useState<{ [key: string]: string }>({
-    bubbleHotel: 'Bubble Hotel Bali Ubud',
-    onayaResort: 'ONAYA Bali Resort',
-    gynandhaCottage: 'Gynandha Ubud Cottage'
-  });
-
+const CompareHotelDetails = ({ hotelInfo }: CompareHotelDetailsProps) => {
   return (
     <table className="table table-layout-fixed table-compare mb-0">
       <thead>
@@ -44,11 +35,12 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
         </tr>
         <tr>
           <td className="border-0 bg-body-highlight py-0"></td>
-          {hotelPhotos.map((item: HotelPhoto, index: number) => (
+          {hotelInfo.map((item, index) => (
             <td
-              className={`border-0 py-0 ${
-                index !== hotelPhotos.length - 1 ? 'ps-3 pe-0' : 'ps-3'
-              }`}
+              className={classNames('border-0 py-0', {
+                'ps-3 pe-0': index !== hotelInfo.length - 1,
+                'ps-3': index === hotelInfo.length - 1
+              })}
               key={index}
               style={{
                 minWidth: 250
@@ -63,7 +55,7 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
                   modules={[Autoplay, Pagination]}
                   className="theme-slider"
                 >
-                  {item.images.map((image: string, idx: number) => (
+                  {item.images.map((image, idx) => (
                     <SwiperSlide key={idx}>
                       <img src={image} alt="" className="w-100 h-100" />
                     </SwiperSlide>
@@ -75,32 +67,25 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
                   className="fs-10 position-absolute top-0 start-0 ms-3 mt-3 z-1"
                 >
                   <FontAwesomeIcon icon={faStar} className="me-1" />
-                  {item.rating}
+                  {numberFormat(item.overallRating, 'standard', {
+                    minimumFractionDigits: 1
+                  })}
                 </Badge>
-                <Button
-                  variant=""
-                  className="btn-wish position-absolute top-0 end-0 me-3 mt-3 z-1"
-                >
+                <Button className="btn-wish position-absolute top-0 end-0 me-3 mt-3 z-1">
                   <FontAwesomeIcon icon={faHeart} />
                 </Button>
               </div>
               <div className="position-relative">
                 <Form.Control
                   type="text"
+                  defaultValue={item.name}
                   placeholder="Enter hotel name"
-                  value={values[item.id] as string}
-                  onChange={e =>
-                    setValues(prevValues => ({
-                      ...prevValues,
-                      [item.id]: e.target.value
-                    }))
-                  }
                   className="form-control-lg mt-2 pe-5"
                 />
                 <FontAwesomeIcon
                   icon={faSearch}
                   className="fs-9 text-body-quaternary position-absolute top-0 end-0 me-3 mt-3"
-                  transform={'down-2'}
+                  transform="down-2"
                 />
               </div>
             </td>
@@ -111,51 +96,36 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
             Hotel Review
           </td>
         </tr>
-        {ratingData.map((item: RatingData, index: number) => (
-          <tr key={index}>
-            <td className="px-4 align-middle bg-body-highlight border-end-lg border-translucent">
-              <h6 className="text-body fw-bolder text-uppercase mb-0">
-                {item.name}
-              </h6>
-            </td>
-            <td className="px-3 border-end border-translucent">
-              <div className="d-flex align-items-center gap-2">
-                <Badge bg="primary" className="fs-8">
-                  {item.ratings[0].toString()}
-                </Badge>
-                <ProgressBar
-                  now={parseFloat(item.ratings[0]) * 20}
-                  style={{ height: '8px' }}
-                  className="bg-body-highlight w-100"
-                />
-              </div>
-            </td>
-            <td className="px-3 border-end border-translucent">
-              <div className="d-flex align-items-center gap-2">
-                <Badge bg="primary" className="fs-8">
-                  {item.ratings[1].toString()}
-                </Badge>
-                <ProgressBar
-                  now={parseFloat(item.ratings[1]) * 20}
-                  style={{ height: '8px' }}
-                  className="bg-body-highlight w-100"
-                />
-              </div>
-            </td>
-            <td className="px-3 border-end border-translucent">
-              <div className="d-flex align-items-center gap-2">
-                <Badge bg="primary" className="fs-8">
-                  {item.ratings[2].toString()}
-                </Badge>
-                <ProgressBar
-                  now={parseFloat(item.ratings[2]) * 20}
-                  style={{ height: '8px' }}
-                  className="bg-body-highlight w-100"
-                />
-              </div>
-            </td>
-          </tr>
-        ))}
+        <HotelCompareRatingRow
+          label="Staff"
+          items={hotelInfo}
+          ratingKey="staff"
+        />
+        <HotelCompareRatingRow
+          label="Comfort"
+          items={hotelInfo}
+          ratingKey="comfort"
+        />
+        <HotelCompareRatingRow
+          label="Facilities"
+          items={hotelInfo}
+          ratingKey="facilities"
+        />
+        <HotelCompareRatingRow
+          label="location"
+          items={hotelInfo}
+          ratingKey="location"
+        />
+        <HotelCompareRatingRow
+          label="Cleanliness"
+          items={hotelInfo}
+          ratingKey="cleanliness"
+        />
+        <HotelCompareRatingRow
+          label="Free wifi"
+          items={hotelInfo}
+          ratingKey="freeWifi"
+        />
         <tr>
           <td colSpan={4} className="ps-4 pt-4 pb-3 fw-bold">
             Facilities at a Glance
@@ -167,15 +137,16 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
               Hotel facilities
             </h6>
           </td>
-          {facilities.map((items: Facilities, index) => (
+          {hotelInfo.map((item, index) => (
             <td
-              className={`border-translucent px-3 ${
-                index === facilities.length - 1 ? 'border-end-lg' : 'border-end'
-              }`}
-              key={index}
+              className={classNames('border-translucent px-3', {
+                'border-end-lg': index === hotelInfo.length - 1,
+                'border-end': index !== hotelInfo.length - 1
+              })}
+              key={item.id}
             >
               <ul className="mb-0 list-unstyled">
-                {items.map((item, idx) => (
+                {item.facilities.map((facility, idx) => (
                   <li className="text-body-highlight fs-9" key={idx}>
                     <span>
                       <FontAwesomeIcon
@@ -183,7 +154,7 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
                         className="text-success me-2"
                       />
                     </span>
-                    {item}
+                    {facility}
                   </li>
                 ))}
               </ul>
@@ -195,4 +166,4 @@ const HotelDetails = ({ hotelPhotos, ratingData, facilities }: Props) => {
   );
 };
 
-export default HotelDetails;
+export default CompareHotelDetails;

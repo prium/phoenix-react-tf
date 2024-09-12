@@ -19,7 +19,7 @@ interface TabItem {
 }
 
 const HotelDetailsTab = () => {
-  const [activeKey, setActiveKey] = useState<string>('availability');
+  const [activeKey, setActiveKey] = useState('availability');
 
   const tabitems: TabItem[] = [
     {

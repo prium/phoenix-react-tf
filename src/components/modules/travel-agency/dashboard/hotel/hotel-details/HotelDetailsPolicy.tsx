@@ -8,7 +8,7 @@ import {
   faPaw
 } from '@fortawesome/free-solid-svg-icons';
 import masterCard from 'assets/img/logos/mastercard.png';
-import americanExperss from 'assets/img/logos/american_express.png';
+import americanExpress from 'assets/img/logos/american_express.png';
 import visa from 'assets/img/logos/visa.png';
 
 const HotelDetailsPolicy = () => {
@@ -23,7 +23,7 @@ const HotelDetailsPolicy = () => {
                 <FontAwesomeIcon
                   icon={faClock}
                   className="fs-9 me-1"
-                  transform={'up-1'}
+                  transform="up-1"
                 />
                 Check in
               </h5>
@@ -31,7 +31,7 @@ const HotelDetailsPolicy = () => {
             <Col sm={9}>
               <ProgressBar
                 className="position-relative align-middle overflow-visible"
-                style={{ height: '8px' }}
+                style={{ height: 8 }}
               >
                 <ProgressBar
                   now={50}
@@ -64,7 +64,7 @@ const HotelDetailsPolicy = () => {
                 <FontAwesomeIcon
                   icon={faClock}
                   className="fs-9 me-1"
-                  transform={'up-1'}
+                  transform="up-1"
                 />
                 Check out
               </h5>
@@ -72,7 +72,7 @@ const HotelDetailsPolicy = () => {
             <Col sm={9}>
               <ProgressBar
                 className="position-relative align-middle overflow-visible"
-                style={{ height: '8px' }}
+                style={{ height: 8 }}
               >
                 <ProgressBar
                   now={50}
@@ -105,7 +105,7 @@ const HotelDetailsPolicy = () => {
                 <FontAwesomeIcon
                   icon={faBaby}
                   className="fs-9 me-1"
-                  transform={'up-1'}
+                  transform="up-1"
                 />
                 Baby policy
               </h5>
@@ -132,7 +132,7 @@ const HotelDetailsPolicy = () => {
                 <FontAwesomeIcon
                   icon={faPaw}
                   className="fs-9 me-1"
-                  transform={'up-1'}
+                  transform="up-1"
                 />
                 Pet policy
               </h5>
@@ -151,14 +151,14 @@ const HotelDetailsPolicy = () => {
                 <FontAwesomeIcon
                   icon={faCreditCard}
                   className="fs-9 me-1"
-                  transform={'up-1'}
+                  transform="up-1"
                 />
                 Payment
               </h5>
             </Col>
             <Col xs={7} sm={9}>
               <img src={masterCard} alt="" className="me-3" />
-              <img src={americanExperss} alt="" className="me-3" />
+              <img src={americanExpress} alt="" className="me-3" />
               <img src={visa} alt="" />
             </Col>
           </Row>

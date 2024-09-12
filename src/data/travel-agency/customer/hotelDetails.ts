@@ -53,7 +53,7 @@ import {
 export interface CardItem {
   id: number;
   roomName: string;
-  price: string;
+  price: number;
   checkIn: string;
   checkOut: string;
   bedType: string;
@@ -66,7 +66,7 @@ export const cartItems: CardItem[] = [
   {
     id: 1,
     roomName: 'King-Super deluxe',
-    price: '2,056.75',
+    price: 2056.75,
     checkIn: '25 January, 2023',
     checkOut: '27 January, 2023',
     bedType: 'Double bed',
@@ -76,7 +76,7 @@ export const cartItems: CardItem[] = [
   {
     id: 2,
     roomName: 'Standard double queen',
-    price: '1,456.65',
+    price: 1456.65,
     checkIn: '25 January, 2023',
     checkOut: '28 January, 2023',
     bedType: 'Double bed',
@@ -152,9 +152,9 @@ export interface AvailableRoom {
   person: number;
   breakfast: boolean;
   discount: number;
-  price: string;
-  discountPrice: string;
-  tax: string;
+  price: number;
+  discountPrice: number;
+  tax: number;
   amenities: string[];
   images: string[];
 }
@@ -167,9 +167,9 @@ export const availableRooms: AvailableRoom[] = [
     person: 2,
     breakfast: true,
     discount: 10,
-    price: '1,456.65',
-    discountPrice: '1,256.65',
-    tax: '123',
+    price: 1456.65,
+    discountPrice: 1256.65,
+    tax: 123,
     amenities: [
       'wifi',
       'tv',
@@ -202,9 +202,9 @@ export const availableRooms: AvailableRoom[] = [
     person: 4,
     breakfast: true,
     discount: 15,
-    price: '1,456.65',
-    discountPrice: '1,856.65',
-    tax: '155',
+    price: 1456.65,
+    discountPrice: 1856.65,
+    tax: 155,
     amenities: [
       'wifi',
       'tv',
@@ -232,7 +232,7 @@ export const availableRooms: AvailableRoom[] = [
 ];
 
 export interface Facility {
-  id: string;
+  id: number;
   title: string;
   icon: IconDefinition;
   classes: string;
@@ -240,77 +240,77 @@ export interface Facility {
 
 export const facilities: Facility[] = [
   {
-    id: '1234',
+    id: 1234,
     title: 'Airport shuttle',
     icon: faCar,
     classes: 'border'
   },
   {
-    id: '1235',
+    id: 1235,
     title: 'Free wifi',
     icon: faWifi,
     classes:
       'border-bottom border-top-sm border-end border-start border-start-sm-0'
   },
   {
-    id: '1236',
+    id: 1236,
     title: 'Restaurant',
     icon: faUtensils,
     classes:
       'border-end border-start border-start-md-0 border-top-md border-bottom'
   },
   {
-    id: '1237',
+    id: 1237,
     title: 'Smoking zone',
     icon: faSmoking,
     classes:
       'border-end border-start border-start-sm-0 border-start-md border-bottom'
   },
   {
-    id: '1238',
+    id: 1238,
     title: 'Room service',
     icon: faUser,
     classes: 'border-bottom border-end border-start border-start-lg-0'
   },
   {
-    id: '1239',
+    id: 1239,
     title: 'Pet-Friendly',
     icon: faDog,
     classes: 'border-bottom border-end border-start border-start-sm-0'
   },
   {
-    id: '1240',
+    id: 1240,
     title: 'Free parking',
     icon: faSquareParking,
     classes: 'border-x border-bottom'
   },
   {
-    id: '1241',
+    id: 1241,
     title: 'Beach-front',
     icon: faUmbrellaBeach,
     classes: 'border-bottom border-end border-start border-start-sm-0'
   },
   {
-    id: '1242',
+    id: 1242,
     title: 'Facilities for disabled guests',
     icon: faWheelchair,
     classes: 'border-bottom border-end border-start border-start-lg-0'
   },
   {
-    id: '1243',
+    id: 1243,
     title: 'Bar',
     icon: faWineGlass,
     classes:
       'border-x border-bottom border-start border-start-sm-0 border-start-lg'
   },
   {
-    id: '1245',
+    id: 1245,
     title: 'Free Breakfast',
     icon: faUtensils,
     classes: 'border-bottom border-end border-start border-start-lg-0'
   },
   {
-    id: '1246',
+    id: 1246,
     title: '24-hour front desk',
     icon: faBellConcierge,
     classes: 'border-bottom border-end border-start border-start-sm-0'
@@ -323,7 +323,7 @@ export interface Item {
 }
 
 export interface Charge {
-  id: string;
+  id: number;
   title: string;
   icon: IconDefinition;
   desc?: string;
@@ -331,7 +331,7 @@ export interface Charge {
 }
 export const charges: Charge[] = [
   {
-    id: '1300',
+    id: 1300,
     title: 'Washroom',
     icon: faBath,
     items: [
@@ -344,7 +344,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1301',
+    id: 1301,
     title: 'Outdoors',
     icon: faTree,
     items: [
@@ -361,7 +361,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1302',
+    id: 1302,
     title: 'Activities',
     icon: faBicycle,
     items: [
@@ -386,7 +386,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1303',
+    id: 1303,
     title: 'Food & Drink',
     icon: faUtensils,
     items: [
@@ -410,7 +410,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1304',
+    id: 1304,
     title: 'Internet',
     icon: faWifi,
     items: [
@@ -420,7 +420,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1305',
+    id: 1305,
     title: 'Parking',
     icon: faSquareParking,
     desc: 'On-site, free private parking is possible (reservations are not needed).',
@@ -431,7 +431,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1306',
+    id: 1306,
     title: 'Reception Service',
     icon: faBellConcierge,
     items: [
@@ -447,7 +447,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1307',
+    id: 1307,
     title: 'Cleaning service',
     icon: faBroom,
     items: [
@@ -470,7 +470,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1307',
+    id: 1307,
     title: 'Business facilities',
     icon: faBriefcase,
     items: [
@@ -487,7 +487,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1308',
+    id: 1308,
     title: 'Safety and security',
     icon: faBriefcase,
     items: [
@@ -503,7 +503,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1309',
+    id: 1309,
     title: 'General',
     icon: faInfoCircle,
     items: [
@@ -541,7 +541,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1310',
+    id: 1310,
     title: 'Accessibility',
     icon: faWheelchair,
     items: [
@@ -551,7 +551,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1311',
+    id: 1311,
     title: 'Languages spoken',
     icon: faEarth,
     items: [
@@ -564,7 +564,7 @@ export const charges: Charge[] = [
     ]
   },
   {
-    id: '1312',
+    id: 1312,
     title: 'Ghosts haunting',
     icon: faGhost,
     items: [
@@ -577,32 +577,32 @@ export const charges: Charge[] = [
 
 export interface Rating {
   name: string;
-  rating: string;
+  rating: number;
 }
 export const ratings: Rating[] = [
   {
     name: 'Staff',
-    rating: '4.0'
+    rating: 4
   },
   {
     name: 'Comfort',
-    rating: '4.0'
+    rating: 4
   },
   {
     name: 'Facilities',
-    rating: '4.5'
+    rating: 4.5
   },
   {
     name: 'Location',
-    rating: '3.5'
+    rating: 3.5
   },
   {
     name: 'Cleanliness',
-    rating: '4.8'
+    rating: 4.8
   },
   {
     name: 'Free WiFi',
-    rating: '5.0'
+    rating: 5
   }
 ];
 
@@ -614,7 +614,7 @@ export interface Review {
   service: string;
   date: string;
   travelerType: string;
-  rating: string;
+  rating: number;
   liked: string;
   disLiked: string;
   hotelsReply: string;
@@ -628,7 +628,7 @@ export const reviews: Review[] = [
     service: 'Single Room with Private Bathroom',
     date: 'January, 2023',
     travelerType: 'Solo traveler',
-    rating: '4.5',
+    rating: 4.5,
     liked:
       'The amazing facilities at this hotel just left me speechless. Modern and equipped with everything I needed to maintain my workout schedule while on vacation, the fitness center was state-of-the-art. Another highlight was the indoor pool, which had crystal-clear water and lots of lounge couches for relaxation.',
     disLiked:
@@ -644,7 +644,7 @@ export const reviews: Review[] = [
     service: 'Double Room with Private Bathroom',
     date: 'February, 2023',
     travelerType: 'Couple traveler',
-    rating: '3.5',
+    rating: 3.5,
     liked:
       'The amenities at this hotel were excellent during my most recent time there. The gym was up-to-date and well-stocked, allowing me to continue my exercise regimen while I was away from home. The spa was another noteworthy aspect that offered a restful and revitalising experience.',
     disLiked:
@@ -660,7 +660,7 @@ export const reviews: Review[] = [
     service: 'Single Room with Private Bathroom',
     date: 'March, 2023',
     travelerType: 'Solo traveler',
-    rating: '4.6',
+    rating: 4.6,
     liked:
       "At this hotel, I had a fantastic time! The amenities were excellent, including a lovely pool, a cutting-edge gym, and a soothing spa. Also, the staff went above and beyond to make sure my stay was nice. They were really friendly. My stay was made comfortable and enjoyable by the room's size, comfort, and facilities. Also, the on-site restaurant was outstanding, with delectable fare and first-rate service.",
     disLiked:
