@@ -18,23 +18,27 @@ interface HotelDetailsCardItemProps {
   index: number;
   className?: string;
   clickHandler: (id: number) => void;
+  isInfoShow: boolean;
 }
 
 const HotelDetailsCardItem = ({
   item,
   index,
   className,
-  clickHandler
+  clickHandler,
+  isInfoShow
 }: HotelDetailsCardItemProps) => {
   return (
     <Card className={className}>
       <Card.Body>
-        <Button
-          className="p-0 position-absolute end-0 fs-8 mt-n5 me-n2 text-body-tertiary"
-          onClick={() => clickHandler(item.id)}
-        >
-          <FontAwesomeIcon icon={faCircleXmark} />
-        </Button>
+        {!isInfoShow && (
+          <Button
+            className="p-0 position-absolute end-0 fs-8 mt-n5 me-n2 text-body-tertiary"
+            onClick={() => clickHandler(item.id)}
+          >
+            <FontAwesomeIcon icon={faCircleXmark} />
+          </Button>
+        )}
         <div className="d-flex justify-content-between gap-3 mb-4">
           <div>
             <h5 className="text-body-highlight"> Room {index + 1}</h5>

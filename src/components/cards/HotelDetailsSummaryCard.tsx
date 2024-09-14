@@ -50,6 +50,7 @@ const HotelDetailsSummaryCard = ({
             index={index}
             className="mb-3"
             clickHandler={buttonClickHandler}
+            isInfoShow={isInfoShow}
           />
         ))}
         <div className="px-4 py-3 bg-body-highlight rounded-2">
