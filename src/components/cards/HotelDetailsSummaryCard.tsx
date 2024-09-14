@@ -80,12 +80,14 @@ const HotelDetailsSummaryCard = ({
             </h4>
           </div>
         </div>
-        <Link
-          to="/apps/travel-agency/hotel/customer/hotel-compare"
-          className="btn btn-primary mt-3 w-100"
-        >
-          Proceed with booking
-        </Link>
+        {!isInfoShow && (
+          <Link
+            to="/apps/travel-agency/hotel/customer/hotel-compare"
+            className="btn btn-primary mt-3 w-100"
+          >
+            Proceed with booking
+          </Link>
+        )}
       </Card.Body>
     </Card>
   );
