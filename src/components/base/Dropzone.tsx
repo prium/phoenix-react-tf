@@ -9,7 +9,7 @@ import {
 import Button from './Button';
 import imageIcon from 'assets/img/icons/image-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { PropsWithChildren, useMemo, useState } from 'react';
+import { PropsWithChildren, useEffect, useMemo, useState } from 'react';
 import AttachmentPreview, {
   FileAttachment
 } from 'components/common/AttachmentPreview';
@@ -23,6 +23,7 @@ interface DropzoneProps {
   reactDropZoneProps?: ReactDropZoneProps;
   accept?: Accept;
   noPreview?: boolean;
+  defaultFiles?: File[];
   onDrop?: <T extends File>(
     acceptedFiles: T[],
     fileRejections: FileRejection[],
@@ -35,6 +36,7 @@ const Dropzone = ({
   size,
   onDrop,
   accept,
+  defaultFiles = [],
   noPreview,
   reactDropZoneProps,
   children
@@ -63,6 +65,12 @@ const Dropzone = ({
   const imageOnly = useMemo(() => {
     return Boolean(accept && accept['image/*']);
   }, [accept]);
+
+  useEffect(() => {
+    if (defaultFiles.length > 0) {
+      setFiles(defaultFiles);
+    }
+  }, [defaultFiles]);
 
   return (
     <>

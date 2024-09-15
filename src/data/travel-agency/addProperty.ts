@@ -7,12 +7,111 @@ import {
   faUtensils,
   faVideo
 } from '@fortawesome/free-solid-svg-icons';
+import gallery59 from 'assets/img/gallery/59.png';
+import gallery60 from 'assets/img/gallery/60.png';
+import gallery61 from 'assets/img/gallery/61.png';
+import gallery62 from 'assets/img/gallery/62.png';
+import gallery63 from 'assets/img/gallery/63.png';
 
+export interface AddPropertyWizardFormData {
+  propertyName: string;
+  propertyDescription: string;
+  propertyType: string;
+  propertyRating: string;
+  contactEmail: string;
+  contactNumber: number;
+  isPropertyChain: string;
+  propertyChain: string;
+  isChannelManagement: string;
+  channelManagement: string;
+  apartment: string;
+  state: string;
+  country: string;
+  city: string;
+  zipCode: string;
+  wifi: string;
+  hotelBar: string;
+  restaurant: string;
+  commonAreas: string;
+  pool: string;
+  tennisCourts: string;
+  noSmoking: string;
+  parking: string;
+  bathtub: string;
+  beachView: string;
+  flatScreenTv: string;
+  balcony: string;
+  photos: File[];
+  paymentCurrency: string;
+  paymentMethod: string;
+  receivedPayment: string;
+  cardType: string;
+  cardNumber: string;
+  cardHolderName: string;
+  commissionPercentage: string;
+  invoiceEmail: string;
+  cashPayment: string;
+  cardPayment: string;
+  onlinePayment: string;
+
+  // policy
+  checkInType: string;
+  checkInStarts: Date;
+  checkInEnds: Date;
+  ageRegistration: string;
+  depositAtCheckin: string;
+  documentationAtCheckin: string;
+  lateCheckIn: boolean;
+
+  checkinEnd: string;
+  checkOutBefore: Date;
+  flexibleCheckout: string;
+  checkoutType: string;
+  checkoutAmount: string;
+
+  refundPolicy: string;
+  isFullRefand: string;
+  isPartialRefand: string;
+  petPolicyType: string;
+  petRestictedZone: string;
+  petAdditionalCharge: string;
+  ageSegment1: number[];
+  ageSegment2: number[];
+  ageSegment3: number[];
+  childDocPolicy: string;
+
+  vat: string;
+  taxType: string;
+  taxAmount: string;
+  DepositAtCheckIn: string;
+  gst: string;
+  hotelTax: string;
+  cityTax: string;
+  touristTax: string;
+  propertyRegNo: string;
+  businessRegNo: string;
+  taxpayeerIdNo: string;
+}
 interface PriceTierInterface {
   id: string;
   name: string;
   className?: string;
 }
+
+interface generalAmenitiesInterface {
+  title: string;
+  eventKey: string;
+  icon: IconDefinition;
+  innerItems: PriceTierInterface[];
+}
+
+export const pictures: string[] = [
+  gallery59,
+  gallery60,
+  gallery61,
+  gallery62,
+  gallery63
+];
 
 const popularAmenities: PriceTierInterface[] = [
   {
@@ -158,6 +257,7 @@ const MediaAndTechnology: PriceTierInterface[] = [
     className: 'mb-0'
   }
 ];
+
 const accessibility: PriceTierInterface[] = [
   {
     id: 'accessible-common-areas',
@@ -178,12 +278,7 @@ const accessibility: PriceTierInterface[] = [
     className: 'mb-0'
   }
 ];
-interface generalAmenitiesInterface {
-  title: string;
-  eventKey: string;
-  icon: IconDefinition;
-  innerItems: PriceTierInterface[];
-}
+
 export const generalAmenities: generalAmenitiesInterface[] = [
   {
     title: 'Popular amenities',
@@ -281,6 +376,7 @@ export const basicInfo: PropertyDetails[] = [
     value: 'Eagle Eye'
   }
 ];
+
 export const location: PropertyDetails[] = [
   {
     property: 'Apartment / Street',
@@ -303,6 +399,7 @@ export const location: PropertyDetails[] = [
     value: 'AZ 85001'
   }
 ];
+
 export const amenities: PropertyDetails[] = [
   {
     property: 'Wifi',
@@ -357,6 +454,7 @@ export const amenities: PropertyDetails[] = [
     value: 'Available'
   }
 ];
+
 export const financeData: PropertyDetailsWithTitle[] = [
   {
     name: 'Payment from PBM',

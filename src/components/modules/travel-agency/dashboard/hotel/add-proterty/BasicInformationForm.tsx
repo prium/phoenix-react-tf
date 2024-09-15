@@ -1,13 +1,21 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
-  const { formData, onChange } = methods;
+  const { formData, onChange, setFormData } = methods;
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <>
       <h3 className="mb-6">Basic information</h3>
@@ -16,7 +24,7 @@ const BasicInformationForm = () => {
         <Form.Control
           type="text"
           name="propertyName"
-          defaultValue={formData.propertyName || 'With help text'}
+          defaultValue={'With help text'}
           onChange={onChange}
         />
       </FloatingLabel>
@@ -89,7 +97,7 @@ const BasicInformationForm = () => {
             <Form.Control
               type="text"
               name="contactEmail"
-              placeholder={formData.contactEmail || ''}
+              placeholder=""
               onChange={onChange}
             />
           </FloatingLabel>
@@ -115,7 +123,8 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={onChange}
+            onChange={handleChange}
+            value="No"
           />
           <Form.Check
             inline
@@ -124,7 +133,8 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainYes"
             className="me-0 mb-0"
-            onChange={onChange}
+            onChange={handleChange}
+            value="yes"
           />
         </Col>
         <Col sm="auto" className="flex-1">
@@ -152,7 +162,8 @@ const BasicInformationForm = () => {
             type="radio"
             id="channelManagementNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={onChange}
+            onChange={handleChange}
+            value="No"
           />
           <Form.Check
             inline
@@ -162,6 +173,7 @@ const BasicInformationForm = () => {
             id="channelManagementYes"
             className="me-0 mb-0"
             onChange={onChange}
+            value="Yes"
           />
         </Col>
         <Col sm="auto" className="flex-1">

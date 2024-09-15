@@ -187,7 +187,7 @@ const Preview = () => {
           eventKey="4"
         >
           {financeData.map(({ name, data }, index) => (
-            <>
+            <div key={index}>
               <h5
                 className={classNames('mb-3 fw-bolder', {
                   'mt-4': index !== 0
@@ -196,7 +196,7 @@ const Preview = () => {
                 {name}
               </h5>
               <SummaryTable tableData={data} />
-            </>
+            </div>
           ))}
         </AccordionItem>
         <AccordionItem
@@ -206,7 +206,7 @@ const Preview = () => {
           eventKey="5"
         >
           {policiesData.map(({ name, data }, index) => (
-            <>
+            <div key={index}>
               <h5
                 className={classNames('mb-3 fw-bolder', {
                   'mt-4': index !== 0
@@ -215,7 +215,7 @@ const Preview = () => {
                 {name}
               </h5>
               <SummaryTable tableData={data} />
-            </>
+            </div>
           ))}
         </AccordionItem>
       </Accordion>

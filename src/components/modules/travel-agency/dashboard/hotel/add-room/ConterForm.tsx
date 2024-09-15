@@ -1,7 +1,7 @@
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { useState } from 'react';
 import { FormControl, InputGroup } from 'react-bootstrap';

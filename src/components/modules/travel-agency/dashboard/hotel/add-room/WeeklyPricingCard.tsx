@@ -2,7 +2,7 @@ import React from 'react';
 import DatePicker from 'components/base/DatePicker';
 import { Card, Col, Form, Row } from 'react-bootstrap';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 const WeeklyPricingCard = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange } = methods;

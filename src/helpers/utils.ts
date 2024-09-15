@@ -242,3 +242,22 @@ export const getColorByBgColor = (bgColor: string) => {
     return 'white';
   }
 };
+
+export const urlToFile = async (url: string) => {
+  const filename = url.substring(url.lastIndexOf('/') + 1);
+
+  // Extract the file extension and determine the MIME type
+  const extension = filename.split('.').pop();
+  const mimeType =
+    extension === 'png'
+      ? 'image/png'
+      : extension === 'jpg' || extension === 'jpeg'
+      ? 'image/jpeg'
+      : extension === 'gif'
+      ? 'image/gif'
+      : 'application/octet-stream'; // Fallback for unknown types
+
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return new File([blob], filename, { type: mimeType });
+};

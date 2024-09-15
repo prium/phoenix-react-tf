@@ -1,4 +1,4 @@
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { useState } from 'react';
 import {

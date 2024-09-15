@@ -1,7 +1,6 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
-
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import ConterForm from './ConterForm';
 
 const CounterFormGroup = ({ id, label }: { id: string; label: string }) => (

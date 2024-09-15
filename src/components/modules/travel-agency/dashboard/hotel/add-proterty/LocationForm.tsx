@@ -1,7 +1,6 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLocationCrosshairs,
@@ -12,6 +11,7 @@ import Mapbox from 'components/base/MapBox';
 const LocationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange } = methods;
+
   return (
     <>
       <h3 className="mb-6">Location</h3>
@@ -19,7 +19,7 @@ const LocationForm = () => {
         <Form.Floating>
           <Form.Control
             id="LacationAddress"
-            name="LacationAddress"
+            name="address"
             type="text"
             placeholder="Search Address..."
             className="form-icon-input"
@@ -56,12 +56,12 @@ const LocationForm = () => {
 
       <FloatingLabel
         className="mb-3"
-        controlId="lacationStreet"
+        controlId="street"
         label="Apartment /Street"
       >
         <Form.Control
           type="text"
-          name="lacationStreet"
+          name="street"
           placeholder="Apartment /Street"
           onChange={onChange}
         />
@@ -75,7 +75,7 @@ const LocationForm = () => {
           >
             <Form.Control
               type="text"
-              name="lacationCity"
+              name="city"
               placeholder="City"
               onChange={onChange}
             />
@@ -85,7 +85,7 @@ const LocationForm = () => {
           <FloatingLabel controlId="lacationState" label="State (optional)">
             <Form.Control
               type="text"
-              name="lacationState"
+              name="state"
               placeholder="State (optional)"
               onChange={onChange}
             />
@@ -96,7 +96,7 @@ const LocationForm = () => {
           <FloatingLabel controlId="lacationZipCode" label="Zip Code">
             <Form.Control
               type="text"
-              name="lacationZipCode"
+              name="zipCode"
               placeholder="Zip Code"
               onChange={onChange}
             />
@@ -106,7 +106,7 @@ const LocationForm = () => {
           <FloatingLabel controlId="lacationCountry" label="Country /Region">
             <Form.Control
               type="text"
-              name="lacationCountry"
+              name="country"
               placeholder="Country /Region"
               onChange={onChange}
             />
