@@ -50,7 +50,7 @@ const LocationForm = () => {
             zoom: 14,
             scrollZoom: false
           }}
-          style={{ height: '250px' }}
+          style={{ height: '250px', width: '100%' }}
         />
       </div>
 
@@ -61,7 +61,7 @@ const LocationForm = () => {
       >
         <Form.Control
           type="text"
-          name="street"
+          name="apartment"
           placeholder="Apartment /Street"
           onChange={onChange}
         />

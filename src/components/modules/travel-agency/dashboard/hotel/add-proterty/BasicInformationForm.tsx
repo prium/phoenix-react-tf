@@ -1,5 +1,5 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React, { ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -7,14 +7,9 @@ import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
-  const { formData, onChange, setFormData } = methods;
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  const { formData, onChange } = methods;
+  const [isPropertyChain, setIsPropertyChain] = useState(false);
+  const [isChannelManagement, setIsChannelManagement] = useState(true);
 
   return (
     <>
@@ -24,7 +19,7 @@ const BasicInformationForm = () => {
         <Form.Control
           type="text"
           name="propertyName"
-          defaultValue={'With help text'}
+          defaultValue={formData?.propertyName}
           onChange={onChange}
         />
       </FloatingLabel>
@@ -40,7 +35,7 @@ const BasicInformationForm = () => {
           className="form-control"
           onChange={onChange}
           placeholder="Description"
-          name="propertyDescription"
+          name="propertyInfo"
           style={{ height: '162px' }}
         />
         <h5 className="text-end text-body-quaternary fw-semibold mt-2">
@@ -118,13 +113,13 @@ const BasicInformationForm = () => {
         <Col sm="auto">
           <Form.Check
             inline
+            defaultChecked
             label="No"
             name="isPropertyChain"
             type="radio"
             id="propertyChainNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={handleChange}
-            value="No"
+            onChange={() => setIsPropertyChain(false)}
           />
           <Form.Check
             inline
@@ -133,7 +128,7 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainYes"
             className="me-0 mb-0"
-            onChange={handleChange}
+            onChange={() => setIsPropertyChain(true)}
             value="yes"
           />
         </Col>
@@ -146,7 +141,7 @@ const BasicInformationForm = () => {
               type="text"
               name="propertyChain"
               defaultValue="With help text"
-              disabled
+              disabled={!isPropertyChain}
               onChange={onChange}
             />
           </FloatingLabel>
@@ -162,17 +157,18 @@ const BasicInformationForm = () => {
             type="radio"
             id="channelManagementNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={handleChange}
+            onChange={() => setIsChannelManagement(false)}
             value="No"
           />
           <Form.Check
             inline
+            defaultChecked
             label="Yes"
             name="isChannelManagement"
             type="radio"
             id="channelManagementYes"
             className="me-0 mb-0"
-            onChange={onChange}
+            onChange={() => setIsChannelManagement(true)}
             value="Yes"
           />
         </Col>
@@ -186,6 +182,7 @@ const BasicInformationForm = () => {
               name="channelManagement"
               placeholder="CMS provider name"
               onChange={onChange}
+              disabled={!isChannelManagement}
             />
 
             <FontAwesomeIcon

@@ -6,33 +6,48 @@ import WizardFormFooter from 'components/wizard/WizardFormFooter';
 import classNames from 'classnames';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import BasicInformationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/BasicInformationForm';
+// import BasicInformationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/BasicInformationForm';
 import LocationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/LocationForm';
 import GeneralAmenitiesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/GeneralAmenitiesForm';
 import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
 import FinanceForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/FinanceForm';
-import PoliciesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/PoliciesForm';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-proterty/Preview';
 import { addPropertyWizardNav } from 'data/wizard/wizard';
 import WizardSideNav from 'components/wizard/WizardSideNav';
-
-export interface AddPropertyWizardFormData {
-  propertyName: string;
-  propertyDescription: string;
-  propertyType: string;
-  propertyRating: string;
-  contactEmail: string;
-  contactNumber: number;
-  isPropertyChain: string;
-  propertyChain: string;
-  isChannelManagement: boolean;
-  channelManagement: string;
-}
+import { useEffect, useState } from 'react';
+import { urlToFile } from 'helpers/utils';
+import {
+  addPropertyDefaultFormData,
+  pictures
+} from 'data/travel-agency/addProperty';
+import PoliciesForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/PoliciesForm';
+import BasicInformationForm from 'components/modules/travel-agency/dashboard/hotel/add-proterty/BasicInformationForm';
 
 const AddProperty = () => {
+  const [images, setImages] = useState<File[]>([]);
+
   const form = useWizardForm({
     totalStep: 7
   });
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const imageFiles = await Promise.all(
+        pictures.map(async picUrl => {
+          return await urlToFile(picUrl);
+        })
+      );
+      setImages(imageFiles);
+    };
+
+    loadImages();
+  }, []);
+
+  useEffect(() => {
+    form.setFormData({ ...addPropertyDefaultFormData, photos: images });
+  }, [images]);
+
+  console.log(form.formData);
 
   return (
     <>
@@ -67,7 +82,10 @@ const AddProperty = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey={4}>
                       <WizardForm step={4}>
-                        <AddPhotos title="Add property picture" />
+                        <AddPhotos
+                          title="Add property picture"
+                          images={images}
+                        />
                       </WizardForm>
                     </Tab.Pane>
                     <Tab.Pane eventKey={5}>

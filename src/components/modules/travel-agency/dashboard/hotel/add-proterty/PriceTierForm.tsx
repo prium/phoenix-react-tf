@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Form } from 'react-bootstrap';
 
 interface PriceTierFormProps {
@@ -16,8 +16,14 @@ const PriceTierForm = ({
   className = 'mb-3'
 }: PriceTierFormProps) => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
-  const { onChange } = methods;
+  const { formData, setFormData } = methods;
   const [active, setActive] = useState(false);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.checked ? 'available' : 'not-available'
+    });
+  };
 
   return (
     <div
@@ -31,7 +37,7 @@ const PriceTierForm = ({
             onClick={() => {
               setActive(!active);
             }}
-            onChange={onChange}
+            onChange={handleChange}
             name={id}
           />
           <Form.Check.Label className="fw-bold fs-8 text-body ms-2">

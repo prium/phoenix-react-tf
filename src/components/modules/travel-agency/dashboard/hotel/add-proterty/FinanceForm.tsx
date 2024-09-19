@@ -28,7 +28,7 @@ const FinanceForm = () => {
             <Form.Control
               type="text"
               name="paymentCurrency"
-              defaultValue={formData.paymentCurrency}
+              defaultValue={formData?.paymentCurrency}
               onChange={onChange}
               disabled
             />
@@ -172,7 +172,12 @@ const FinanceForm = () => {
         </Form.Check>
       </div>
       <div className="border p-3 mb-3 rounded-2">
-        <Form.Check type="switch" className="mb-0" id="isMFSPayment">
+        <Form.Check
+          type="switch"
+          className="mb-0"
+          id="isMFSPayment"
+          onChange={handleChange}
+        >
           <Form.Check.Input name="isMFSPayment" onChange={handleChange} />
           <Form.Check.Label className="fs-8 fw-bold text-body ms-2">
             MFS Payment
