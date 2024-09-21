@@ -1,11 +1,11 @@
 import classNames from 'classnames';
 import {
   PropertyDetails,
-  summaryTableProp
+  SummaryTableProp
 } from 'data/travel-agency/addProperty';
 import { Table } from 'react-bootstrap';
 
-const SummaryTable = (props: summaryTableProp) => {
+const SummaryTable = (props: SummaryTableProp) => {
   const tableItems: PropertyDetails[] = [...props.tableData];
 
   return (

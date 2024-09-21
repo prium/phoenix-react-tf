@@ -21,7 +21,7 @@ const PriceTierForm = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.checked ? 'available' : 'not-available'
+      [e.target.name]: e.target.checked
     });
   };
 
