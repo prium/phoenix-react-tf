@@ -58,7 +58,7 @@ const WeeklyPricingCard = () => {
                 </Form.Label>
                 <Form.Control
                   type="number"
-                  className="input-spine-none"
+                  className="input-spin-none"
                   onChange={onChange}
                   defaultValue={100}
                 />

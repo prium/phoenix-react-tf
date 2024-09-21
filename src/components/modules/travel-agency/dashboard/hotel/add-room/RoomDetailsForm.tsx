@@ -1,17 +1,17 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { Col, Form, FormControl, InputGroup, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import ConterForm from './ConterForm';
+import { AddRoomWizardFormData } from 'data/travel-agency/addRoom';
 
 const CounterFormGroup = ({ id, label }: { id: string; label: string }) => (
   <Form.Group controlId={id}>
     <Form.Label className="form-label-header mb-1">{label}</Form.Label>
-    <ConterForm />
+    <ConterForm name={id} />
   </Form.Group>
 );
 
 const RoomDetailsForm = () => {
-  const methods = useWizardFormContext<AddPropertyWizardFormData>();
+  const methods = useWizardFormContext<AddRoomWizardFormData>();
   const { onChange } = methods;
 
   return (
@@ -28,10 +28,10 @@ const RoomDetailsForm = () => {
             <Form.Label className="form-label-header mb-1">
               Room category
             </Form.Label>
-            <Form.Select onChange={onChange}>
-              <option>King</option>
-              <option value="1">Bridal suite</option>
-              <option value="2">Single room</option>
+            <Form.Select name="roomCategory" onChange={onChange}>
+              <option value="king">King</option>
+              <option value="bridalSuite">Bridal suite</option>
+              <option value="singleRoom">Single room</option>
             </Form.Select>
           </Form.Group>
         </Col>
@@ -44,6 +44,7 @@ const RoomDetailsForm = () => {
               type="text"
               placeholder="Enter name"
               onChange={onChange}
+              name="roomName"
             />
           </Form.Group>
         </Col>
@@ -52,7 +53,7 @@ const RoomDetailsForm = () => {
         <Col xs={6} sm={4}>
           <Form.Group controlId="bedType">
             <Form.Label className="form-label-header mb-1">Bed type</Form.Label>
-            <Form.Select onChange={onChange}>
+            <Form.Select name="bedType" onChange={onChange}>
               <option>Twin bed</option>
               <option>King bed</option>
               <option>Queen bed</option>

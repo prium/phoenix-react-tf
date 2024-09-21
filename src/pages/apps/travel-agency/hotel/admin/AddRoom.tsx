@@ -1,6 +1,6 @@
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Tab } from 'react-bootstrap';
 import useWizardForm from 'hooks/useWizardForm';
 import WizardForm from 'components/wizard/WizardForm';
@@ -13,11 +13,34 @@ import Amenities from 'components/modules/travel-agency/dashboard/hotel/add-room
 import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-room/Preview';
 import WizardSideNav from 'components/wizard/WizardSideNav';
+import { urlToFile } from 'helpers/utils';
+import { pictures } from 'data/travel-agency/addProperty';
+import { addRoomDefaultFormData } from 'data/travel-agency/addRoom';
 
 const AddRoom = () => {
+  const [images, setImages] = useState<File[]>([]);
+
   const form = useWizardForm({
     totalStep: 5
   });
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const imageFiles = await Promise.all(
+        pictures.map(async picUrl => {
+          return await urlToFile(picUrl);
+        })
+      );
+      setImages(imageFiles);
+    };
+
+    loadImages();
+  }, []);
+
+  useEffect(() => {
+    form.setFormData({ ...addRoomDefaultFormData, photos: images });
+  }, [images]);
+  console.log(form.formData);
 
   return (
     <div className="mb-9">
@@ -29,7 +52,7 @@ const AddRoom = () => {
             <WizardSideNav navItems={addRoomWizardNav} />
           </Col>
           <Col xl={8} className="flex-1">
-            <Row>
+            <Row className="mt-4 mt-xl-0">
               <Col xxl={8}>
                 <Tab.Content>
                   <Tab.Pane eventKey={1}>
@@ -49,7 +72,7 @@ const AddRoom = () => {
                   </Tab.Pane>
                   <Tab.Pane eventKey={4}>
                     <WizardForm step={4}>
-                      <AddPhotos title="Add room picture" />
+                      <AddPhotos title="Add room picture" images={images} />
                     </WizardForm>
                   </Tab.Pane>
                   <Tab.Pane eventKey={5}>

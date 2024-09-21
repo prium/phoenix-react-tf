@@ -95,19 +95,18 @@ export interface AddPropertyWizardFormData {
   businessRegNo: string;
   taxpayeerIdNo: string;
 }
-interface PriceTierInterface {
+interface PriceTier {
   id: string;
   name: string;
   className?: string;
 }
 
-interface generalAmenitiesInterface {
+interface GeneralAmenities {
   title: string;
   eventKey: string;
   icon: IconDefinition;
-  innerItems: PriceTierInterface[];
+  innerItems: PriceTier[];
 }
-
 export interface PropertyDetails {
   property: string;
   value: string | number;
@@ -122,7 +121,7 @@ export interface AccordionItemInterface {
   title: string;
   eventKey: string;
 }
-export interface summaryTableProp {
+export interface SummaryTableProp {
   tableData: PropertyDetails[];
 }
 
@@ -213,7 +212,7 @@ export const addPropertyDefaultFormData: AddPropertyWizardFormData = {
   taxpayeerIdNo: 'Null'
 };
 
-const popularAmenities: PriceTierInterface[] = [
+const popularAmenities: PriceTier[] = [
   {
     id: 'wifi',
     name: 'Wifi',
@@ -270,7 +269,7 @@ const popularAmenities: PriceTierInterface[] = [
   }
 ];
 
-const FoodAndDrink: PriceTierInterface[] = [
+const FoodAndDrink: PriceTier[] = [
   {
     id: 'restaurants',
     name: 'Restaurants',
@@ -295,7 +294,7 @@ const FoodAndDrink: PriceTierInterface[] = [
   }
 ];
 
-const OutdoorAndView: PriceTierInterface[] = [
+const OutdoorAndView: PriceTier[] = [
   {
     id: 'garden-or-courtyard',
     name: 'Garden Or Courtyard',
@@ -316,7 +315,7 @@ const OutdoorAndView: PriceTierInterface[] = [
   }
 ];
 
-const EntertainmentAndFamily: PriceTierInterface[] = [
+const EntertainmentAndFamily: PriceTier[] = [
   {
     id: 'game-room',
     name: 'Game Room',
@@ -337,7 +336,7 @@ const EntertainmentAndFamily: PriceTierInterface[] = [
   }
 ];
 
-const MediaAndTechnology: PriceTierInterface[] = [
+const MediaAndTechnology: PriceTier[] = [
   {
     id: 'high-speed-internet',
     name: 'High Speed Iinternet',
@@ -358,7 +357,7 @@ const MediaAndTechnology: PriceTierInterface[] = [
   }
 ];
 
-const accessibility: PriceTierInterface[] = [
+const accessibility: PriceTier[] = [
   {
     id: 'accessible-common-areas',
     name: 'Accessible Common Areas',
@@ -379,7 +378,7 @@ const accessibility: PriceTierInterface[] = [
   }
 ];
 
-export const generalAmenities: generalAmenitiesInterface[] = [
+export const generalAmenities: GeneralAmenities[] = [
   {
     title: 'Popular amenities',
     eventKey: '0',

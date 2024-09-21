@@ -1,4 +1,3 @@
-import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { useState } from 'react';
 import {
@@ -13,9 +12,10 @@ import {
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { AddRoomWizardFormData } from 'data/travel-agency/addRoom';
 
 const ExtraBed = () => {
-  const methods = useWizardFormContext<AddPropertyWizardFormData>();
+  const methods = useWizardFormContext<AddRoomWizardFormData>();
   const { onChange } = methods;
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(2);
@@ -85,7 +85,7 @@ const ExtraBed = () => {
                   <Form.Label className="form-label-header mb-1">
                     Bed type
                   </Form.Label>
-                  <Form.Select>
+                  <Form.Select name="bedType" onChange={onChange}>
                     <option>Twin bed</option>
                     <option>King bed</option>
                     <option>Queen bed</option>

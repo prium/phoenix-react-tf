@@ -262,15 +262,6 @@ export const urlToFile = async (url: string) => {
   return new File([blob], filename, { type: mimeType });
 };
 
-export const fileToImg = (file: File) => {
-  const img = document.createElement('img');
-  const url = URL.createObjectURL(file);
-  img.src = url;
-  // Optional: Revoke the object URL after the image has loaded
-  img.onload = () => URL.revokeObjectURL(url);
-  return img;
-};
-
 export const formatDateToTime = (date: Date) => {
   const formatter = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',

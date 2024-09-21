@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import { generalAmenities } from 'data/travel-agency/addProperty';
-import PriceTierForm from '../add-proterty/PriceTierForm';
+import PriceTierForm from './PriceTierForm';
 
 const Amenities = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
