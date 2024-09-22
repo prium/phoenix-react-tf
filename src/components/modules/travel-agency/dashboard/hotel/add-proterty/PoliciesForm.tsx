@@ -1,13 +1,13 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { ChangeEvent, useState } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import DatePicker from 'components/base/DatePicker';
-import PriceTierForm from './PriceTierForm';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import PhoenixReactRange from 'components/forms/PhoenixReactRange';
+import PriceTierForm from '../common/PriceTierForm';
 
 interface SwitchForm {
   id: string;
@@ -24,13 +24,17 @@ const SwitchForm = ({
   defaultChecked,
   className = ''
 }: SwitchForm) => {
+  const methods = useWizardFormContext<AddPropertyWizardFormData>();
+  const { onChange } = methods;
+
   return (
     <div className={`border p-3 rounded-2 ${className}`}>
       <Form.Check type="switch" className="mb-0" id={id}>
         <Form.Check.Input
           defaultChecked={defaultChecked}
           name={name}
-        ></Form.Check.Input>
+          onChange={onChange}
+        />
         <Form.Check.Label className="fs-8 fw-bold text-body ms-2">
           {label}
         </Form.Check.Label>
@@ -42,16 +46,17 @@ const SwitchForm = ({
 const PoliciesForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange, formData, setFormData } = methods;
+  const [lateCheckIn, setLeteCheckIn] = useState(true);
   const [values, setValues] = useState({
     segmentOne: [7],
     segmentTwo: [8, 12],
     segmentThree: [13, 18]
   });
 
-  const handleFormCheckChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value || e.target.checked
     });
   };
   return (
@@ -61,21 +66,22 @@ const PoliciesForm = () => {
         <Form.Check.Input
           type="radio"
           defaultChecked
-          name="policiesCheckIn"
+          name="checkInType"
           value="Limited check-in"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Limited Check-in</Form.Check.Label>
       </Form.Check>
       <Form.Check className="mb-3" inline id="policiesCheckIn24Hr">
         <Form.Check.Input
           type="radio"
-          name="policiesCheckIn"
+          name="checkInType"
           value="24hr Check-in"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">24hr Check-in</Form.Check.Label>
       </Form.Check>
+
       <Row className="g-3 mb-3 align-items-center">
         <Col xs={12} sm={6} md="auto" className="flex-md-grow-1">
           <DatePicker
@@ -84,12 +90,12 @@ const PoliciesForm = () => {
                 <Form.Floating>
                   <Form.Control
                     type="text"
+                    name="checkInStarts"
                     placeholder="H:i"
                     ref={ref}
                     id="policiesCheckInStarts"
                     className="ps-3"
                     defaultValue="12:00"
-                    onChange={onChange}
                   />
                   <label htmlFor="policiesCheckInStarts">Check-In Starts</label>
                 </Form.Floating>
@@ -101,6 +107,12 @@ const PoliciesForm = () => {
               noCalendar: true,
               dateFormat: 'H:i'
             }}
+            onChange={([date]) => {
+              setFormData({
+                ...formData,
+                checkInStarts: date
+              });
+            }}
           />
         </Col>
         <Col xs={12} sm={6} md="auto" className="flex-md-grow-1">
@@ -110,6 +122,7 @@ const PoliciesForm = () => {
                 <Form.Floating>
                   <Form.Control
                     type="text"
+                    name="checkInEnds"
                     placeholder="H:i"
                     ref={ref}
                     id="policiesCheckInEnds"
@@ -126,14 +139,27 @@ const PoliciesForm = () => {
               noCalendar: true,
               dateFormat: 'H:i'
             }}
+            onChange={([date]) => {
+              setFormData({
+                ...formData,
+                checkInEnds: date
+              });
+            }}
           />
         </Col>
         <Col xs={12} md="auto">
           <Form.Check id="policiesLateCheckIn" className="mb-0">
             <Form.Check.Input
               type="checkbox"
-              defaultChecked
-              name="policiesLateCheckIn"
+              defaultChecked={lateCheckIn}
+              name="lateCheckIn"
+              onChange={() => {
+                setLeteCheckIn(!lateCheckIn);
+                setFormData({
+                  ...formData,
+                  lateCheckIn: !lateCheckIn
+                });
+              }}
             />
             <Form.Check.Label className="fw-normal fs-8">
               Late Check-in
@@ -143,19 +169,19 @@ const PoliciesForm = () => {
       </Row>
       <SwitchForm
         id="policyAgeRegistration"
-        name="policyAgeRegistration"
+        name="ageRegistration"
         label="Age Registration"
         className="mb-3"
       />
       <SwitchForm
         id="policyDepositCheckIn"
-        name="policyDepositCheckIn"
+        name="depositAtCheckin"
         label="Deposit at Check-in"
         className="mb-3"
       />
       <SwitchForm
         id="policyDocumentCheckIn"
-        name="policyDocumentCheckIn"
+        name="documentationAtCheckin"
         label="Documentation at Check-in"
         className="mb-3"
       />
@@ -168,12 +194,11 @@ const PoliciesForm = () => {
                 type="text"
                 placeholder="H:i"
                 ref={ref}
-                id="policiesFlexibleCheckout"
+                id="checkoutBefore"
                 className="ps-3"
                 defaultValue="12:00"
-                onChange={onChange}
               />
-              <label htmlFor="policiesFlexibleCheckout">Check-In Starts</label>
+              <label htmlFor="checkoutBefore">Checkout before</label>
             </Form.Floating>
           );
         }}
@@ -183,8 +208,14 @@ const PoliciesForm = () => {
           noCalendar: true,
           dateFormat: 'H:i'
         }}
+        onChange={([date]) => {
+          setFormData({
+            ...formData,
+            checkOutBefore: date
+          });
+        }}
       />
-      <PriceTierForm id="policyFexibleCheckout" name="policyFexibleCheckout" />
+      <PriceTierForm id="flexibleCheckout" name="Flexible Checkout" />
       <h4 className="mb-4 mt-6">Cancellation Policy </h4>
       <Form.Check className="mb-3 me-5" inline id="nonRefundable">
         <Form.Check.Input
@@ -192,7 +223,7 @@ const PoliciesForm = () => {
           defaultChecked
           name="refundPolicy"
           value="nonRefundable"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Non Refundable</Form.Check.Label>
       </Form.Check>
@@ -201,19 +232,19 @@ const PoliciesForm = () => {
           type="radio"
           name="refundPolicy"
           value="optional Refund"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Optional Refund</Form.Check.Label>
       </Form.Check>
       <SwitchForm
         id="policyFullRefund"
-        name="fullRefund"
+        name="isFullRefand"
         label="Full Refund"
         className="mb-3"
       />
       <SwitchForm
         id="policyPertialRefund"
-        name="PertialRefund"
+        name="isPartialRefand"
         label="Pertial Refund"
         className="mb-3"
       />
@@ -224,28 +255,28 @@ const PoliciesForm = () => {
           defaultChecked
           name="petPolicy"
           value="Not Allowed"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Not Allowed</Form.Check.Label>
       </Form.Check>
       <Form.Check className="mb-3" inline id="PolicyAllowed">
         <Form.Check.Input
           type="radio"
-          name="petPolicy"
+          name="petPolicyType"
           value="Allowed"
-          onChange={handleFormCheckChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Allowed</Form.Check.Label>
       </Form.Check>
       <SwitchForm
-        id="policyPetZones"
-        name="policyPetZones"
+        id="petRestictedZone"
+        name="petRestictedZone"
         label="Pet Restricted Zones"
         className="mb-3"
       />
       <SwitchForm
-        id="policyAdditionalCharges"
-        name="policyAdditionalCharges"
+        id="petAdditionalCharge"
+        name="petAdditionalCharge"
         label="Additional Charges"
         className="mb-3"
       />
@@ -274,7 +305,13 @@ const PoliciesForm = () => {
             variant="primary"
             min={0}
             max={18}
-            onChange={val => setValues({ ...values, segmentOne: val })}
+            onChange={val => {
+              setValues({ ...values, segmentOne: val });
+              setFormData({
+                ...formData,
+                ageSegment1: val
+              });
+            }}
             trackHeight={'4px'}
             classNames={'phoenix-react-range-slim'}
           />
@@ -314,7 +351,13 @@ const PoliciesForm = () => {
             variant="primary"
             min={0}
             max={18}
-            onChange={val => setValues({ ...values, segmentTwo: val })}
+            onChange={val => {
+              setValues({ ...values, segmentTwo: val });
+              setFormData({
+                ...formData,
+                ageSegment2: val
+              });
+            }}
             trackHeight={'4px'}
             classNames={'phoenix-react-range-slim'}
           />
@@ -354,7 +397,13 @@ const PoliciesForm = () => {
             variant="primary"
             min={0}
             max={18}
-            onChange={val => setValues({ ...values, segmentThree: val })}
+            onChange={val => {
+              setValues({ ...values, segmentThree: val });
+              setFormData({
+                ...formData,
+                ageSegment3: val
+              });
+            }}
             trackHeight={'4px'}
             classNames={'phoenix-react-range-slim'}
           />
@@ -378,16 +427,16 @@ const PoliciesForm = () => {
       </Button>
       <SwitchForm
         id="policiesDocRequirment"
-        name="policiesDocRequirment"
+        name="childDocPolicy"
         label="Documentation Requirement"
         className="mt-3"
       />
       <h4 className="mb-4 mt-6">Included Taxes in your rate</h4>
-      <PriceTierForm id="policyVat" name="Vat" />
-      <PriceTierForm id="policyGst" name="Gst" />
-      <PriceTierForm id="policyHotelTax" name="Hotel tax" />
-      <PriceTierForm id="policyCityTax" name="City / District tax" />
-      <PriceTierForm id="policyTouristTax" name="Tourist tax" />
+      <PriceTierForm id="vat" name="Vat" />
+      <PriceTierForm id="gst" name="Gst" />
+      <PriceTierForm id="hotelTax" name="Hotel tax" />
+      <PriceTierForm id="cityTax" name="City / District tax" />
+      <PriceTierForm id="touristTax" name="Tourist tax" />
       <h4 className="mb-4 mt-6">Your Documentations</h4>
       <FloatingLabel
         className="mb-3"
@@ -396,7 +445,7 @@ const PoliciesForm = () => {
       >
         <Form.Control
           type="text"
-          name="policyPropertyRegNo"
+          name="propertyRegNo"
           placeholder=""
           onChange={onChange}
         />
@@ -408,7 +457,7 @@ const PoliciesForm = () => {
       >
         <Form.Control
           type="text"
-          name="policyBusinessRegNo"
+          name="businessRegNo"
           placeholder=""
           onChange={onChange}
         />
@@ -419,7 +468,7 @@ const PoliciesForm = () => {
       >
         <Form.Control
           type="text"
-          name="policyTaxpayerNo"
+          name="taxpayeerIdNo"
           placeholder=""
           onChange={onChange}
         />

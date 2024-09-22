@@ -43,11 +43,7 @@ const Demos = () => {
                   </h5>
                 </div>
               </div>
-              <Link
-                to={demo.link}
-                target="_blank"
-                className="stretched-link"
-              ></Link>
+              <Link to={demo.link} target="_blank" className="stretched-link" />
             </Col>
           ))}
         </Row>

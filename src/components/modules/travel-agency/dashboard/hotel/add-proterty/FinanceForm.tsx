@@ -1,17 +1,17 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React, { ChangeEvent } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { Link } from 'react-router-dom';
 
 const FinanceForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange, formData, setFormData } = methods;
 
-  const handlePaymentMethodChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.checked
     });
   };
   return (
@@ -22,13 +22,13 @@ const FinanceForm = () => {
         <Col md={6}>
           <FloatingLabel
             className="mb-3 mb-md-0"
-            controlId="financeCurrency"
+            controlId="paymentCurrency"
             label="Payment Currency"
           >
             <Form.Control
               type="text"
-              name="financeCurrency"
-              defaultValue="$ US Dollar"
+              name="paymentCurrency"
+              defaultValue={formData?.paymentCurrency}
               onChange={onChange}
               disabled
             />
@@ -36,13 +36,13 @@ const FinanceForm = () => {
         </Col>
         <Col md={6}>
           <FloatingLabel
-            controlId="financeCommission"
+            controlId="commisionPercentage"
             label="Commission Percentage"
           >
             <Form.Control
               type="text"
-              name="financeCommission"
-              defaultValue="Flat 10%"
+              name="commisionPercentage"
+              defaultValue={formData.commissionPercentage}
               onChange={onChange}
               disabled
             />
@@ -50,11 +50,11 @@ const FinanceForm = () => {
         </Col>
       </Row>
       <FloatingLabel
-        controlId="financePaymentMethod"
+        controlId="PaymentMethod"
         onChange={onChange}
         label="Select Payment Method"
       >
-        <Form.Select name="financePaymentMethod">
+        <Form.Select name="PaymentMethod">
           <option value="1">Electronic Funds Transfer (EFT)</option>
           <option value="2">option 2</option>
           <option value="3">option 3</option>
@@ -67,13 +67,13 @@ const FinanceForm = () => {
         </Form.Check.Label>
       </Form.Check>
       <FloatingLabel
-        controlId="financeInvoiceEmail"
+        controlId="invoiceEmail"
         label="Invoice Email"
         className="mb-4"
       >
         <Form.Control
           type="text"
-          name="financeInvoiceEmail"
+          name="invoiceEmail"
           placeholder="Invoice Email"
           onChange={onChange}
         />
@@ -89,50 +89,50 @@ const FinanceForm = () => {
         <Form.Check.Input
           type="radio"
           defaultChecked
-          name="financePaymentMethod"
+          name="paymentMethod"
           value="CreditCard"
-          onChange={handlePaymentMethodChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Credit Card</Form.Check.Label>
       </Form.Check>
       <Form.Check className="mb-3" inline id="financeBankAccount">
         <Form.Check.Input
           type="radio"
-          name="financePaymentMethod"
+          name="paymentMethod"
           value="BankAccount"
-          onChange={handlePaymentMethodChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Bank Account</Form.Check.Label>
       </Form.Check>
       <Form.Check className="mb-3" inline id="financeOnlinePayment">
         <Form.Check.Input
           type="radio"
-          name="financePaymentMethod"
+          name="paymentMethod"
           value="online"
-          onChange={handlePaymentMethodChange}
+          onChange={handleChange}
         />
         <Form.Check.Label className="fs-8">Online</Form.Check.Label>
       </Form.Check>
       <Row className="g-3 mb-3">
         <Col md={6}>
           <FloatingLabel
-            controlId="financeCardSelect"
+            controlId="cardType"
             onChange={onChange}
             label="Select Card"
           >
-            <Form.Select name="financeCardSelect">
+            <Form.Select name="cardType">
               <option value="1">Visa Debit Card</option>
-              <option value="2">option 2</option>
-              <option value="3">option 3</option>
+              <option value="2">Visa credit Card</option>
+              <option value="3">PayPal</option>
             </Form.Select>
           </FloatingLabel>
         </Col>
         <Col md={6}>
-          <FloatingLabel controlId="FinanceCardNumber" label="Card Number">
+          <FloatingLabel controlId="cardNumber" label="Card Number">
             <Form.Control
               type="number"
-              name="FinanceCardNumber"
-              placeholder="Phone Number"
+              name="cardNumber"
+              placeholder="Card Number"
               onChange={onChange}
             />
           </FloatingLabel>
@@ -140,39 +140,45 @@ const FinanceForm = () => {
       </Row>
       <FloatingLabel
         className="mb-3 mb-md-0"
-        controlId="FinanceCardHolder"
+        controlId="cardHolder"
         label="Card Holder Name"
       >
         <Form.Control
           type="text"
-          name="FinanceCardHolder"
+          name="cardHolder"
           placeholder=""
           onChange={onChange}
         />
       </FloatingLabel>
       <h4 className="mt-6 mb-4">Payment from Guests (On property)</h4>
       <div className="border p-3 mb-3 rounded-2">
-        <Form.Check type="switch" className="mb-0" id="IsFinanceCashPayment">
+        <Form.Check type="switch" className="mb-0" id="isCashPayment">
           <Form.Check.Input
             defaultChecked
-            name="IsFinanceCashPayment"
-          ></Form.Check.Input>
+            name="isCashPayment"
+            onChange={handleChange}
+          />
           <Form.Check.Label className="fs-8 fw-bold text-body ms-2">
             Cash Payment
           </Form.Check.Label>
         </Form.Check>
       </div>
       <div className="border p-3 mb-3 rounded-2">
-        <Form.Check type="switch" className="mb-0" id="IsFinanceCardPayment">
-          <Form.Check.Input name="IsFinanceCardPayment"></Form.Check.Input>
+        <Form.Check type="switch" className="mb-0" id="isCardPayment">
+          <Form.Check.Input name="isCardPayment" onChange={handleChange} />
           <Form.Check.Label className="fs-8 fw-bold text-body ms-2">
             Card Payment
           </Form.Check.Label>
         </Form.Check>
       </div>
       <div className="border p-3 mb-3 rounded-2">
-        <Form.Check type="switch" className="mb-0" id="IsFinanceMFSPayment">
-          <Form.Check.Input name="IsFinanceMFSPayment"></Form.Check.Input>
+        <Form.Check
+          type="switch"
+          className="mb-0"
+          id="isMFSPayment"
+          onChange={handleChange}
+        >
+          <Form.Check.Input name="isMFSPayment" onChange={handleChange} />
           <Form.Check.Label className="fs-8 fw-bold text-body ms-2">
             MFS Payment
           </Form.Check.Label>

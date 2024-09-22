@@ -1,16 +1,20 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import React from 'react';
 import { Accordion, Col, FloatingLabel, Form, Row } from 'react-bootstrap';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import {
+  AddPropertyWizardFormData,
+  generalAmenities
+} from 'data/travel-agency/addProperty';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import Button from 'components/base/Button';
-import PriceTierForm from './PriceTierForm';
-import { generalAmenities } from 'data/travel-agency/addProperty';
+import PriceTierForm from '../common/PriceTierForm';
 
 const GeneralAmenitiesForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
-  const { onChange, validation } = methods;
+  const { onChange } = methods;
+
   return (
     <>
       <div>
@@ -26,7 +30,6 @@ const GeneralAmenitiesForm = () => {
                   name="GeneralAmenitiesSearch"
                   type="text"
                   onChange={onChange}
-                  required={validation}
                   placeholder="Search amenities"
                 />
               </FloatingLabel>
@@ -69,6 +72,8 @@ const GeneralAmenitiesForm = () => {
                   id={item.id}
                   name={item.name}
                   className={item.className}
+                  methods={methods}
+                  // pass method to PriceTierForm
                 />
               ))}
             </Accordion.Body>

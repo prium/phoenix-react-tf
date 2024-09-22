@@ -1,6 +1,6 @@
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { Col, FloatingLabel, Form, Row, Tab } from 'react-bootstrap';
 import WeeklyPricingCard from './WeeklyPricingCard';
 import ExtraBed from './ExtraBed';
@@ -11,11 +11,6 @@ const Pricing = () => {
   const { onChange } = methods;
   const [selectedTab, setSelectedTab] = useState('allDayPricing');
 
-  const handleTabChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
-
-    setSelectedTab(e.target.value);
-  };
   return (
     <>
       <h3 className="mb-6">Pricing</h3>
@@ -30,10 +25,10 @@ const Pricing = () => {
             label="Across all days"
             id="allDayPricing"
             value="allDayPricing"
-            name="dayWeekPricing"
+            name="isAllDayPricing"
             inline
             checked={selectedTab === 'allDayPricing'}
-            onChange={handleTabChange}
+            onChange={e => setSelectedTab(e.target.value)}
           />
           <Form.Check
             inline
@@ -41,9 +36,9 @@ const Pricing = () => {
             id="weeklyPricing"
             value="weeklyPricing"
             label="By day of week"
-            name="dayWeekPricing"
+            name="isAllDayPricing"
             checked={selectedTab === 'weeklyPricing'}
-            onChange={handleTabChange}
+            onChange={e => setSelectedTab(e.target.value)}
           />
         </Form.Group>
         <Tab.Content>
@@ -51,12 +46,18 @@ const Pricing = () => {
             <Row className="gx-2 w-sm-60">
               <Col xs={8}>
                 <FloatingLabel controlId="roomPrice" label="Room Price">
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control
+                    type="number"
+                    placeholder=""
+                    name="roomPrice"
+                    onChange={onChange}
+                    className="input-spin-none"
+                  />
                 </FloatingLabel>
               </Col>
               <Col xs={4}>
                 <FloatingLabel controlId="currency" label="Currency">
-                  <Form.Select onChange={onChange}>
+                  <Form.Select name="currency" onChange={onChange}>
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="BDT">BDT</option>
@@ -79,7 +80,7 @@ const Pricing = () => {
           label="Select"
           className="w-sm-60"
         >
-          <Form.Select>
+          <Form.Select name="peopleInBaseRate" onChange={onChange}>
             <option value="1">05 People</option>
             <option value="2">10 People</option>
             <option value="3">15 People</option>

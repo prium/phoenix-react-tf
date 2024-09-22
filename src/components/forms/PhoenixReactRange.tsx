@@ -50,7 +50,10 @@ const PhoenixReactRange = ({
   onChange = () => {},
   classNames
 }: PropsWithChildren<PhoenixReactRangeProps>) => {
-  const { getThemeColor } = useAppContext();
+  const {
+    getThemeColor,
+    config: { isRTL }
+  } = useAppContext();
   const Track = ({ props, children }: IRenderTrackParams): React.ReactNode => (
     <div
       onMouseDown={props.onMouseDown}
@@ -77,7 +80,8 @@ const PhoenixReactRange = ({
                   ]
                 : [getThemeColor(variant), getThemeColor('gray-100')],
             min,
-            max
+            max,
+            rtl: isRTL
           }),
           alignSelf: 'center'
         }}
@@ -120,6 +124,7 @@ const PhoenixReactRange = ({
       onChange={onChange}
       renderTrack={Track}
       renderThumb={Thumb}
+      rtl={isRTL}
     />
   );
 };

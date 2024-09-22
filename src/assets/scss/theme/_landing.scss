@@ -527,7 +527,8 @@
     .swiper-button-next {
       right: 3rem;
       [dir='rtl'] & {
-        left: calc(100% - 3rem);
+        left: unset;
+        right: 3rem;
       }
     }
   }

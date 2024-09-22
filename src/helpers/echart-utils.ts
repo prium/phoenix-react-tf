@@ -10,7 +10,9 @@ export const tooltipFormatterDefault = (
   params.forEach(el => {
     tooltipItem += `<div class='ms-1'>
         <h6 class="text-body-tertiary">
-        <span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${el[colorProperty]}"></span>
+        <span class="d-inline-block rounded-circle me-2" style="height: 0.5rem; width: 0.5rem; background:${
+          el[colorProperty] || el.color
+        }"></span>
           ${el.seriesName} : ${el.value}
         </h6>
       </div>`;

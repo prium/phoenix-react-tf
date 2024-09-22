@@ -197,6 +197,8 @@ import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 import SearchRoom from 'pages/apps/travel-agency/hotel/admin/SearchRoom';
+import TravelAgencyLayout from 'layouts/TravelAgencyLayout';
+import TravelLandingLayout from 'layouts/TravelLandingLayout';
 
 const routes: RouteObject[] = [
   {
@@ -984,12 +986,19 @@ const routes: RouteObject[] = [
         ]
       },
       {
+        element: <TravelLandingLayout />,
         path: 'apps/travel-agency',
         children: [
           {
             path: 'landing',
             element: <TravelLanding />
-          },
+          }
+        ]
+      },
+      {
+        element: <TravelAgencyLayout />,
+        path: 'apps/travel-agency',
+        children: [
           {
             children: [
               {

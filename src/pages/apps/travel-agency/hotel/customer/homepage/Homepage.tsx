@@ -1,15 +1,11 @@
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import React from 'react';
-import TopNav from 'pages/apps/travel-agency/landing/TopNav';
-import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
 import { Col, Form, Row } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilter, faMap } from '@fortawesome/free-solid-svg-icons';
 import HotelCard from 'components/cards/HotelCard';
 import { hotels } from 'data/travel-agency/customer/hotel';
-import TravelFooter from 'components/footers/TravelFooter';
-import Footer from 'components/footers/Footer';
 import NavbarHome from 'components/navbars/travel-agency/NavbarHome';
 import HotelActions from 'components/modules/travel-agency/dashboard/hotel/HotelActions';
 
@@ -23,8 +19,6 @@ const HotelHomepage = () => {
 
   return (
     <>
-      <TopNav />
-      <NavbarMain />
       <section className="container-small py-0">
         <NavbarHome currentPage="Hotel" />
       </section>
@@ -59,8 +53,6 @@ const HotelHomepage = () => {
           ))}
         </Row>
       </section>
-      <TravelFooter />
-      <Footer />
     </>
   );
 };

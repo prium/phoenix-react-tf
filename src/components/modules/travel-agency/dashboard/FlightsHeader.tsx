@@ -56,7 +56,7 @@ const FlightsTableHeader = ({
   return (
     <Row className={classNames(className, 'align-items-center py-1')}>
       <Col className="d-flex">
-        <p className="mb-0 d-none d-sm-block me-3 fw-semibold text-body">
+        <p className="mb-0 d-none d-md-block me-3 fw-semibold text-body">
           {pageSize * pageIndex + 1} to{' '}
           {pageSize * pageIndex + getPaginationRowModel().rows.length}
           <span className="text-body-tertiary"> items of </span>
@@ -65,7 +65,10 @@ const FlightsTableHeader = ({
         {showViewAllBtn && (
           <Button
             variant="link"
-            className={classNames(viewAllBtnClass, 'p-0 fw-semibold fs-8')}
+            className={classNames(
+              viewAllBtnClass,
+              'p-0 fw-semibold fs-8 d-none d-sm-block'
+            )}
             endIcon={
               <FontAwesomeIcon icon={faAngleRight} className="ms-1 fs-9" />
             }

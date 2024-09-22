@@ -1,21 +1,43 @@
 import {
   faCheck,
   faFile,
+  faFileAlt,
   faGrip,
   faImages,
   faLocationDot,
+  faLock,
   faMugSaucer,
   faShieldHalved,
   faUsd,
+  faUser,
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 
-export interface wizardHeaderInterface {
+export interface WizardNav {
   icon: IconDefinition;
   label: string;
 }
 
-export const addPropertyWizardHeader: wizardHeaderInterface[] = [
+export const wizardNav: WizardNav[] = [
+  {
+    icon: faLock,
+    label: 'Account'
+  },
+  {
+    icon: faUser,
+    label: 'Personal'
+  },
+  {
+    icon: faFileAlt,
+    label: 'Billing'
+  },
+  {
+    icon: faCheck,
+    label: 'Done'
+  }
+];
+
+export const addPropertyWizardNav: WizardNav[] = [
   {
     icon: faFile,
     label: 'Info'
@@ -45,7 +67,7 @@ export const addPropertyWizardHeader: wizardHeaderInterface[] = [
     label: 'Done'
   }
 ];
-export const addRoomWizardHeader: wizardHeaderInterface[] = [
+export const addRoomWizardNav: WizardNav[] = [
   {
     icon: faFile,
     label: 'Details'

@@ -1,23 +1,45 @@
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Tab } from 'react-bootstrap';
 import useWizardForm from 'hooks/useWizardForm';
 import WizardForm from 'components/wizard/WizardForm';
 import WizardFormProvider from 'providers/WizardFormProvider';
 import RoomDetailsForm from 'components/modules/travel-agency/dashboard/hotel/add-room/RoomDetailsForm';
-import WizardHeader from 'components/modules/travel-agency/common/WizardHeader';
-import { addRoomWizardHeader } from 'data/wizard/wizard';
+import { addRoomWizardNav } from 'data/wizard/wizard';
 import RoomWizardFooter from 'components/modules/travel-agency/dashboard/hotel/add-room/RoomWizardFooter';
 import Pricing from 'components/modules/travel-agency/dashboard/hotel/add-room/Pricing';
 import Amenities from 'components/modules/travel-agency/dashboard/hotel/add-room/Amenities';
 import AddPhotos from 'components/modules/travel-agency/dashboard/hotel/add-proterty/AddPhotos';
 import Preview from 'components/modules/travel-agency/dashboard/hotel/add-room/Preview';
+import WizardSideNav from 'components/wizard/WizardSideNav';
+import { urlToFile } from 'helpers/utils';
+import { pictures } from 'data/travel-agency/addProperty';
+import { addRoomDefaultFormData } from 'data/travel-agency/addRoom';
 
 const AddRoom = () => {
+  const [images, setImages] = useState<File[]>([]);
+
   const form = useWizardForm({
     totalStep: 5
   });
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const imageFiles = await Promise.all(
+        pictures.map(async picUrl => {
+          return await urlToFile(picUrl);
+        })
+      );
+      setImages(imageFiles);
+    };
+
+    loadImages();
+  }, []);
+
+  useEffect(() => {
+    form.setFormData({ ...addRoomDefaultFormData, pictures: images });
+  }, [images]);
 
   return (
     <div className="mb-9">
@@ -26,10 +48,10 @@ const AddRoom = () => {
       <WizardFormProvider {...form}>
         <Row className="gx-0 gx-xl-5 theme-wizard">
           <Col xl={{ order: 1, span: 4 }}>
-            <WizardHeader data={addRoomWizardHeader} />
+            <WizardSideNav navItems={addRoomWizardNav} />
           </Col>
           <Col xl={8} className="flex-1">
-            <Row>
+            <Row className="mt-4 mt-xl-0">
               <Col xxl={8}>
                 <Tab.Content>
                   <Tab.Pane eventKey={1}>
@@ -49,7 +71,7 @@ const AddRoom = () => {
                   </Tab.Pane>
                   <Tab.Pane eventKey={4}>
                     <WizardForm step={4}>
-                      <AddPhotos title="Add room picture" />
+                      <AddPhotos title="Add room picture" images={images} />
                     </WizardForm>
                   </Tab.Pane>
                   <Tab.Pane eventKey={5}>

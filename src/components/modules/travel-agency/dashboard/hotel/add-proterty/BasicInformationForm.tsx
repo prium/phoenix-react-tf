@@ -1,13 +1,16 @@
 import { useWizardFormContext } from 'providers/WizardFormProvider';
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faStar } from '@fortawesome/free-solid-svg-icons';
-import { AddPropertyWizardFormData } from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
 
 const BasicInformationForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { formData, onChange } = methods;
+  const [isPropertyChain, setIsPropertyChain] = useState(false);
+  const [isChannelManagement, setIsChannelManagement] = useState(true);
+
   return (
     <>
       <h3 className="mb-6">Basic information</h3>
@@ -16,7 +19,7 @@ const BasicInformationForm = () => {
         <Form.Control
           type="text"
           name="propertyName"
-          defaultValue={formData.propertyName || 'With help text'}
+          defaultValue={formData?.propertyName}
           onChange={onChange}
         />
       </FloatingLabel>
@@ -32,7 +35,7 @@ const BasicInformationForm = () => {
           className="form-control"
           onChange={onChange}
           placeholder="Description"
-          name="propertyDescription"
+          name="propertyInfo"
           style={{ height: '162px' }}
         />
         <h5 className="text-end text-body-quaternary fw-semibold mt-2">
@@ -87,9 +90,9 @@ const BasicInformationForm = () => {
         <Col md={6}>
           <FloatingLabel controlId="contactEmail" label="Email Address">
             <Form.Control
-              type="text"
+              type="email"
               name="contactEmail"
-              placeholder={formData.contactEmail || ''}
+              placeholder=""
               onChange={onChange}
             />
           </FloatingLabel>
@@ -110,12 +113,13 @@ const BasicInformationForm = () => {
         <Col sm="auto">
           <Form.Check
             inline
+            defaultChecked
             label="No"
             name="isPropertyChain"
             type="radio"
             id="propertyChainNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={onChange}
+            onChange={() => setIsPropertyChain(false)}
           />
           <Form.Check
             inline
@@ -124,7 +128,8 @@ const BasicInformationForm = () => {
             type="radio"
             id="propertyChainYes"
             className="me-0 mb-0"
-            onChange={onChange}
+            onChange={() => setIsPropertyChain(true)}
+            value="yes"
           />
         </Col>
         <Col sm="auto" className="flex-1">
@@ -136,7 +141,7 @@ const BasicInformationForm = () => {
               type="text"
               name="propertyChain"
               defaultValue="With help text"
-              disabled
+              disabled={!isPropertyChain}
               onChange={onChange}
             />
           </FloatingLabel>
@@ -152,16 +157,19 @@ const BasicInformationForm = () => {
             type="radio"
             id="channelManagementNo"
             className="me-4 me-sm-7 mb-0"
-            onChange={onChange}
+            onChange={() => setIsChannelManagement(false)}
+            value="No"
           />
           <Form.Check
             inline
+            defaultChecked
             label="Yes"
             name="isChannelManagement"
             type="radio"
             id="channelManagementYes"
             className="me-0 mb-0"
-            onChange={onChange}
+            onChange={() => setIsChannelManagement(true)}
+            value="Yes"
           />
         </Col>
         <Col sm="auto" className="flex-1">
@@ -174,6 +182,7 @@ const BasicInformationForm = () => {
               name="channelManagement"
               placeholder="CMS provider name"
               onChange={onChange}
+              disabled={!isChannelManagement}
             />
 
             <FontAwesomeIcon
