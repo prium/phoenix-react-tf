@@ -73,7 +73,6 @@ const GeneralAmenitiesForm = () => {
                   name={item.name}
                   className={item.className}
                   methods={methods}
-                  // pass method to PriceTierForm
                 />
               ))}
             </Accordion.Body>

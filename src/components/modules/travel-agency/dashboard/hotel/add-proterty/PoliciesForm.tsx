@@ -215,7 +215,11 @@ const PoliciesForm = () => {
           });
         }}
       />
-      <PriceTierForm id="flexibleCheckout" name="Flexible Checkout" />
+      <PriceTierForm
+        id="flexibleCheckout"
+        name="Flexible Checkout"
+        methods={methods}
+      />
       <h4 className="mb-4 mt-6">Cancellation Policy </h4>
       <Form.Check className="mb-3 me-5" inline id="nonRefundable">
         <Form.Check.Input
@@ -432,11 +436,15 @@ const PoliciesForm = () => {
         className="mt-3"
       />
       <h4 className="mb-4 mt-6">Included Taxes in your rate</h4>
-      <PriceTierForm id="vat" name="Vat" />
-      <PriceTierForm id="gst" name="Gst" />
-      <PriceTierForm id="hotelTax" name="Hotel tax" />
-      <PriceTierForm id="cityTax" name="City / District tax" />
-      <PriceTierForm id="touristTax" name="Tourist tax" />
+      <PriceTierForm id="vat" name="Vat" methods={methods} />
+      <PriceTierForm id="gst" name="Gst" methods={methods} />
+      <PriceTierForm id="hotelTax" name="Hotel tax" methods={methods} />
+      <PriceTierForm
+        id="cityTax"
+        name="City / District tax"
+        methods={methods}
+      />
+      <PriceTierForm id="touristTax" name="Tourist tax" methods={methods} />
       <h4 className="mb-4 mt-6">Your Documentations</h4>
       <FloatingLabel
         className="mb-3"
