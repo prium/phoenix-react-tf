@@ -27,7 +27,7 @@ const PricingGridItem = ({ item, pricingType }: PricingGridItemProps) => {
         <Form.Label
           htmlFor={`${item.title.split(' ')[0]}-${pricingType}`}
           className="stretched-link"
-        ></Form.Label>
+        />
         <Card
           className={classNames('h-100 overflow-hidden cursor-pointer', {
             'bg-warning-subtle border-warning warning-boxshadow pricing-business-plus':

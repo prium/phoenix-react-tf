@@ -54,8 +54,6 @@ const Preview = () => {
   const [show, setShow] = useState(true);
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { formData } = methods;
-  console.log(formData);
-  console.log(formData.wifi ? 'Available' : 'Not-available');
 
   const basicInfo: PropertyDetails[] = [
     {

@@ -73,8 +73,9 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     }
   },
   {
-    accessorKey: 'beds',
     header: 'NO. of Beds',
+    accessorKey: 'beds',
+
     cell: ({ row: { original } }) => {
       const { beds, bedRooms } = original;
       return (
@@ -110,7 +111,7 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     }
   },
   {
-    accessorKey: 'guests',
+    accessorKey: 'guest',
     header: 'NO. of Guests',
     cell: ({ row: { original } }) => {
       const { guest, child } = original;
@@ -142,7 +143,7 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     }
   },
   {
-    accessorKey: 'bathroom',
+    accessorKey: 'bathrooms',
     header: 'Bathroom',
     cell: ({ row: { original } }) => {
       const { bathRooms } = original;
@@ -181,7 +182,7 @@ const columns: ColumnDef<RoomListingInterface>[] = [
               key={index}
               variant="phoenix"
               bg="primary"
-              className="text-body-highlight py-1 fs-10"
+              className="text-body-highlight py-1 fs-10 border-0"
             >
               {item}
             </Badge>
@@ -203,7 +204,7 @@ const columns: ColumnDef<RoomListingInterface>[] = [
     }
   },
   {
-    accessorKey: 'TotalRoom',
+    accessorKey: 'totalRooms',
     header: 'Total Room',
     cell: ({ row: { original } }) => {
       const { totalRooms } = original;

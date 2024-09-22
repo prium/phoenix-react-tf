@@ -2,6 +2,25 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.5.0',
+    title: 'Auxo',
+    publishDate: '22 Jun, 2024',
+    logs: {
+      new: [
+        'PAGE : <code>travel-agency/hotel/admin/add-property</code>',
+        'PAGE : <code>travel-agency/hotel/admin/add-room</code>',
+        'PAGE : <code>travel-agency/hotel/admin/room-listing</code>',
+        'PAGE : <code>travel-agency/hotel/admin/search-room</code>',
+        'PAGE : <code>travel-agency/hotel/customer/homepage</code>',
+        'PAGE : <code>travel-agency/hotel/customer/gallery</code>',
+        'PACKAGE : <code>react-range</code>',
+        'DOC : <code>React Range Documentation</code>'
+      ],
+      update: ['PACKAGE: React Bootstrap to 2.10.4'],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.4.0',
     title: 'Apollo',
     publishDate: '23 Jun, 2024',

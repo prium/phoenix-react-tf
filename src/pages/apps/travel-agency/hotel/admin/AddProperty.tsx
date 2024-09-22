@@ -25,7 +25,7 @@ import BasicInformationForm from 'components/modules/travel-agency/dashboard/hot
 
 const AddProperty = () => {
   const [images, setImages] = useState<File[]>([]);
-
+  const [tabEventKey, setTabEventKey] = useState(1);
   const form = useWizardForm({
     totalStep: 7
   });
@@ -47,8 +47,6 @@ const AddProperty = () => {
     form.setFormData({ ...addPropertyDefaultFormData, photos: images });
   }, [images]);
 
-  console.log(form.formData);
-
   return (
     <>
       <div className="mb-9">
@@ -58,7 +56,10 @@ const AddProperty = () => {
           <Row className="gx-0 gx-xl-5 theme-wizard">
             <Col xl={{ order: 1, span: 4 }}>
               <div className="scrollbar mb-4">
-                <WizardSideNav navItems={addPropertyWizardNav} />
+                <WizardSideNav
+                  navItems={addPropertyWizardNav}
+                  setTabEventKey={setTabEventKey}
+                />
               </div>
             </Col>
             <Col xl={8} className="flex-1">
@@ -72,7 +73,7 @@ const AddProperty = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey={2}>
                       <WizardForm step={2}>
-                        <LocationForm />
+                        <LocationForm tabEventKey={tabEventKey} />
                       </WizardForm>
                     </Tab.Pane>
                     <Tab.Pane eventKey={3}>

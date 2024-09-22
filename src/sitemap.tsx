@@ -323,7 +323,7 @@ export const routes: RouteItems[] = [
       },
       {
         name: 'travel-agency',
-        new: true,
+        hasNew: true,
         icon: 'clipboard',
         active: true,
         pages: [
@@ -336,8 +336,7 @@ export const routes: RouteItems[] = [
           {
             name: 'hotel',
             active: true,
-            // path: '/pages/coming-soon',
-            // pathName: 'travel-agency-hotel',
+            new: true,
             pages: [
               {
                 name: 'admin',

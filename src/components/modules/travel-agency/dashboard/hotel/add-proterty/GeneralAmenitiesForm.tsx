@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import Button from 'components/base/Button';
-import PriceTierForm from './PriceTierForm';
+import PriceTierForm from '../common/PriceTierForm';
 
 const GeneralAmenitiesForm = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
@@ -72,6 +72,8 @@ const GeneralAmenitiesForm = () => {
                   id={item.id}
                   name={item.name}
                   className={item.className}
+                  methods={methods}
+                  // pass method to PriceTierForm
                 />
               ))}
             </Accordion.Body>

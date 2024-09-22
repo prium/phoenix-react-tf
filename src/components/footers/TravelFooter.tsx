@@ -83,7 +83,7 @@ const TravelFooter = () => {
                 <div className="form-icon-container flex-1">
                   <Form.Control
                     id="PickPlace"
-                    type="text"
+                    type="email"
                     placeholder="Your email address"
                     className="form-icon-input"
                   />

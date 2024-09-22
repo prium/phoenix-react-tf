@@ -6,7 +6,7 @@ export interface roomFiltercheckbox {
 export const RoomCategoryOptions: roomFiltercheckbox[] = [
   {
     id: 1,
-    name: 'any'
+    name: 'Any'
   },
   {
     id: 2,

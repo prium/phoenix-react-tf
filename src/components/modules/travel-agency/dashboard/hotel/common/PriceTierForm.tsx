@@ -1,6 +1,4 @@
 import classNames from 'classnames';
-import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
-import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { ChangeEvent, useState } from 'react';
 import { Form } from 'react-bootstrap';
 
@@ -8,14 +6,16 @@ interface PriceTierFormProps {
   id: string;
   name: string;
   className?: string;
+  // eslint-disable-next-line
+  methods?: any;
 }
 
 const PriceTierForm = ({
   id,
   name,
-  className = 'mb-3'
+  className = 'mb-3',
+  methods
 }: PriceTierFormProps) => {
-  const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { formData, setFormData } = methods;
   const [active, setActive] = useState(false);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

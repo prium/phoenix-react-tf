@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Mapbox from 'components/base/MapBox';
 
-const LocationForm = () => {
+const LocationForm = ({ tabEventKey }: { tabEventKey: number }) => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange } = methods;
 
@@ -50,6 +50,8 @@ const LocationForm = () => {
             zoom: 14,
             scrollZoom: false
           }}
+          currentTabEventKey={tabEventKey}
+          targetTabEventKey={2}
           style={{ height: '250px', width: '100%' }}
         />
       </div>

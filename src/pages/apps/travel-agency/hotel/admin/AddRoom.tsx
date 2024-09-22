@@ -38,9 +38,8 @@ const AddRoom = () => {
   }, []);
 
   useEffect(() => {
-    form.setFormData({ ...addRoomDefaultFormData, photos: images });
+    form.setFormData({ ...addRoomDefaultFormData, pictures: images });
   }, [images]);
-  console.log(form.formData);
 
   return (
     <div className="mb-9">

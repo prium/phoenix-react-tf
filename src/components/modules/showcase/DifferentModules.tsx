@@ -19,6 +19,7 @@ import module15 from 'assets/img/sections/module-15.png';
 import module16 from 'assets/img/sections/module-16.png';
 import { BadgeBg } from 'components/base/Badge';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 interface Badge {
   label: string;
@@ -29,20 +30,24 @@ interface Module {
   name: string;
   images: string[];
   badge?: Badge;
+  path?: string;
 }
 
 const modules: Module[] = [
   {
     name: 'E commerce',
-    images: [module4, module3, module2, module1]
+    images: [module4, module3, module2, module1],
+    path: '/apps/e-commerce/customer/homepage'
   },
   {
     name: 'Project Management',
-    images: [module8, module7, module6, module5]
+    images: [module8, module7, module6, module5],
+    path: '/apps/project-management/create-new'
   },
   {
     name: 'CRM',
-    images: [module12, module11, module10, module9]
+    images: [module12, module11, module10, module9],
+    path: '/apps/crm/analytics'
   },
   {
     name: 'Booking',
@@ -50,7 +55,8 @@ const modules: Module[] = [
     badge: {
       bg: 'warning',
       label: 'New'
-    }
+    },
+    path: '/apps/travel-agency/hotel/customer/homepage'
   }
 ];
 
@@ -63,7 +69,8 @@ const ModulesItem = ({ item }: { item: Module }) => (
   >
     {item.badge && <h1 className="module-badge">{item.badge.label}</h1>}
     <h2 className="module-title position-relative">{item.name}</h2>
-    <div className="image-container">
+    <Link to={item.path || '#!'} className="stretched-link" />
+    <div className="image-container cursor-pointer">
       {item.images.map((image, idx) => (
         <div className="image" key={idx}>
           <img src={image} alt="" className="w-100" />

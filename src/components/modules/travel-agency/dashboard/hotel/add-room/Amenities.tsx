@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import { generalAmenities } from 'data/travel-agency/addProperty';
-import PriceTierForm from './PriceTierForm';
+import PriceTierForm from '../common/PriceTierForm';
 
 const Amenities = () => {
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
@@ -69,6 +69,7 @@ const Amenities = () => {
                   id={item.id}
                   name={item.name}
                   className={item.className}
+                  methods={methods}
                 />
               ))}
             </Accordion.Body>

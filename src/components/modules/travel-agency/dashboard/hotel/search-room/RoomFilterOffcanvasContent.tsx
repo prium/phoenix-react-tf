@@ -10,10 +10,16 @@ import {
   bedTypeOptions,
   RoomCategoryOptions
 } from 'data/travel-agency/admin/searchRoom';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import RoomFilterCollapseItem from './RoomFilterCollapseItem';
 
-const RoomFilterOffcanvasContent = () => {
+interface RoomFilterOffcanvasContentProps {
+  setOpen?: Dispatch<SetStateAction<boolean>>;
+}
+
+const RoomFilterOffcanvasContent = ({
+  setOpen
+}: RoomFilterOffcanvasContentProps) => {
   const priceRange = [699, 1299];
   const [isCollapseAll, setIsCollapseAll] = useState(false);
 
@@ -30,7 +36,7 @@ const RoomFilterOffcanvasContent = () => {
         </Button>
         <Button
           className="p-0 fw-bold d-xl-none"
-          // onClick={() => setOpen(false)}
+          onClick={() => setOpen && setOpen(false)}
         >
           <Unicon icon={UilTimes} size={16} />
         </Button>

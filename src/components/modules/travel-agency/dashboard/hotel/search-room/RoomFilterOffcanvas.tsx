@@ -20,7 +20,7 @@ const RoomFilterOffcanvas = ({ open, setOpen }: LeadDetailsOffcanvasProps) => {
           placement="start"
           fixed
         >
-          <RoomFilterOffcanvasContent />
+          <RoomFilterOffcanvasContent setOpen={setOpen} />
         </PhoenixOffcanvas>
       )}
     </>

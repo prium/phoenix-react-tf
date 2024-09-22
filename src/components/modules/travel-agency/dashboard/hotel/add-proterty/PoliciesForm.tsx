@@ -7,7 +7,7 @@ import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import PhoenixReactRange from 'components/forms/PhoenixReactRange';
-import PriceTierForm from './PriceTierForm';
+import PriceTierForm from '../common/PriceTierForm';
 
 interface SwitchForm {
   id: string;

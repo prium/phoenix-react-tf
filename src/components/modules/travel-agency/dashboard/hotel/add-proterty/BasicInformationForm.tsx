@@ -90,7 +90,7 @@ const BasicInformationForm = () => {
         <Col md={6}>
           <FloatingLabel controlId="contactEmail" label="Email Address">
             <Form.Control
-              type="text"
+              type="email"
               name="contactEmail"
               placeholder=""
               onChange={onChange}
