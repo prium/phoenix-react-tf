@@ -25,8 +25,7 @@ const RoomFilterActions = () => {
 
         <FormControl
           type="number"
-          defaultValue="2"
-          value={value}
+          defaultValue={value}
           size="lg"
           className="border-translucent input-spin-none text-center rounded"
         />

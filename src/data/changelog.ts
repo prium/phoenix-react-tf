@@ -4,9 +4,10 @@ export default [
   {
     version: '1.5.0',
     title: 'Auxo',
-    publishDate: '22 Jun, 2024',
+    publishDate: '23 September, 2024',
     logs: {
       new: [
+        '<b>Vite Starter Versiton</b> (Contact <a href="mailto:support@themewagon.com">support</a> with the purchase id)',
         'PAGE : <code>travel-agency/hotel/admin/add-property</code>',
         'PAGE : <code>travel-agency/hotel/admin/add-room</code>',
         'PAGE : <code>travel-agency/hotel/admin/room-listing</code>',

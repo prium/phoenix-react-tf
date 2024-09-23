@@ -181,7 +181,6 @@ const RoomCard = ({
                   <Swiper
                     spaceBetween={24}
                     slidesPerView="auto"
-                    centeredSlide={true}
                     grabCursor={true}
                     breakpoints={{
                       768: {

@@ -63,7 +63,7 @@ const RoomFilterOffcanvasContent = ({
                 type="number"
                 id="priceRangeMin"
                 className="input-spin-none"
-                value={500}
+                defaultValue={500}
               />
               <label htmlFor="priceRangeMin">Min</label>
             </Form.Floating>
@@ -74,7 +74,7 @@ const RoomFilterOffcanvasContent = ({
                 type="number"
                 id="priceRangeMax"
                 className="input-spin-none"
-                value={1200}
+                defaultValue={1200}
               />
               <label htmlFor="priceRangeMax">Max</label>
             </Form.Floating>

@@ -32,7 +32,7 @@ const ConterForm = ({ name }: { name: string }) => {
       <FormControl
         type="number"
         name={name}
-        value={value}
+        defaultValue={value}
         className="input-spin-none text-center"
       />
       <Button

@@ -37,7 +37,7 @@ const modules: Module[] = [
   {
     name: 'E commerce',
     images: [module4, module3, module2, module1],
-    path: '/apps/e-commerce/customer/homepage'
+    path: '/apps/e-commerce/admin/add-product'
   },
   {
     name: 'Project Management',

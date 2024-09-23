@@ -51,7 +51,6 @@ const SearchRoom = () => {
                   render={(_, ref) => {
                     return (
                       <FloatingLabel
-                        controlId="financeInvoiceEmail"
                         label="Select Time Range"
                         className="w-auto"
                       >
@@ -119,8 +118,6 @@ const SearchRoom = () => {
                 isLastItem={roomsSearchData.length - 1 === index}
               />
             ))}
-
-            {/* footer section */}
             <div className="border p-3 rounded-3 mt-5 d-flex flex-end-center gap-3 gap-sm-6 flex-wrap">
               <h2 className="text-body mb-0">
                 <span className="fs-9 text-body-tertiary fw-bold me-2">

@@ -294,7 +294,7 @@ const PoliciesForm = () => {
               id="policiesAgeSegment1Form"
               className="age-segment-input"
               disabled
-              value={0}
+              defaultValue={0}
             />
             <label htmlFor="policiesFlexibleCheckout">From (Yrs)</label>
           </Form.Floating>
@@ -326,7 +326,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment1To"
               className="age-segment-input"
-              value={values.segmentOne[0]}
+              defaultValue={values.segmentOne[0]}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>
           </Form.Floating>
@@ -340,7 +340,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment2Form"
               className="age-segment-input"
-              value={values.segmentOne[0] + 1}
+              defaultValue={values.segmentOne[0] + 1}
             />
             <label htmlFor="policiesFlexibleCheckout">From (Yrs)</label>
           </Form.Floating>
@@ -372,7 +372,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment2To"
               className="age-segment-input"
-              value={values.segmentTwo[1]}
+              defaultValue={values.segmentTwo[1]}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>
           </Form.Floating>
@@ -386,7 +386,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment3Form"
               className="age-segment-input"
-              value={values.segmentTwo[1] + 1}
+              defaultValue={values.segmentTwo[1] + 1}
             />
             <label htmlFor="policiesFlexibleCheckout">From (Yrs)</label>
           </Form.Floating>
@@ -418,7 +418,7 @@ const PoliciesForm = () => {
               type="number"
               id="policiesAgeSegment3To"
               className="age-segment-input"
-              value={values.segmentThree[1]}
+              defaultValue={values.segmentThree[1]}
               disabled={values.segmentThree[1] >= 18}
             />
             <label htmlFor="policiesFlexibleCheckout">To (Yrs)</label>

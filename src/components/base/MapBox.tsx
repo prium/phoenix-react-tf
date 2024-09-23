@@ -21,7 +21,13 @@ interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   targetTabEventKey?: number;
 }
 
-const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
+const Mapbox = ({
+  className,
+  options,
+  currentTabEventKey,
+  targetTabEventKey,
+  ...rest
+}: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
   const {
@@ -66,10 +72,10 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
   }, [theme]);
 
   useEffect(() => {
-    if (rest.currentTabEventKey === rest.targetTabEventKey) {
+    if (currentTabEventKey === targetTabEventKey) {
       map.current?.resize();
     }
-  }, [rest.currentTabEventKey]);
+  }, [currentTabEventKey]);
 
   return (
     <>

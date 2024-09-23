@@ -23,7 +23,7 @@ const Breakfast = () => {
           name="breakfastRadio"
           inline
           onClick={() => setOpen(true)}
-          checked
+          defaultChecked
         />
         <Form.Check
           inline
