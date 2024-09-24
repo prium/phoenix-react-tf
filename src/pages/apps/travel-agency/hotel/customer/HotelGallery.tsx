@@ -2,8 +2,9 @@ import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import React from 'react';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import GalleryItems from 'components/modules/travel-agency/dashboard/hotel/GalleryItems';
+import HotelGalleryImages from 'components/modules/travel-agency/dashboard/hotel/HotelGalleryImages';
 import { galleryItems } from 'data/travel-agency/customer/gallery';
+import { Container } from 'react-bootstrap';
 
 const HotelGallery = () => {
   useSettingsMountEffect({
@@ -16,11 +17,11 @@ const HotelGallery = () => {
   return (
     <>
       <section className="pt-6 pb-9">
-        <div className="container-medium">
+        <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-5">Gallery</h2>
-          <GalleryItems galleryItems={galleryItems} />
-        </div>
+          <HotelGalleryImages galleryItems={galleryItems} />
+        </Container>
       </section>
     </>
   );

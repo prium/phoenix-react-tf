@@ -115,10 +115,12 @@ export const getNumbersInRange = (startAt: number, endAt: number) => {
 
 export const numberFormat = (
   number: number,
-  notation: 'standard' | 'compact' = 'standard'
+  notation: 'standard' | 'compact' = 'standard',
+  options: Intl.NumberFormatOptions = {}
 ) =>
   new Intl.NumberFormat('en-US', {
-    notation
+    notation,
+    ...options
   }).format(number);
 
 /* Get Random Number */

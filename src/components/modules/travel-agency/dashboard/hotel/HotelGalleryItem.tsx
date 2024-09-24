@@ -2,14 +2,14 @@ import React, { useRef } from 'react';
 import { GalleryItemType } from 'data/travel-agency/customer/gallery';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 
-const GalleryItem = ({
-  galleryItem,
-  onClick
-}: {
+interface HotelGalleryItemProps {
   galleryItem: GalleryItemType;
   onClick: () => void;
-}) => {
+}
+
+const HotelGalleryItem = ({ galleryItem, onClick }: HotelGalleryItemProps) => {
   const ref = useRef<HTMLVideoElement | null>(null);
 
   const handleMouseEnter = () => {
@@ -21,7 +21,7 @@ const GalleryItem = ({
   };
   return (
     <div
-      className={`${galleryItem.classNames} cursor-pointer`}
+      className={classNames(galleryItem.classNames, 'cursor-pointer')}
       onClick={onClick}
     >
       {galleryItem.video ? (
@@ -42,11 +42,11 @@ const GalleryItem = ({
         <img
           src={galleryItem.img}
           alt=""
-          className="rounded-2 h-100 w-100 fit-cover"
+          className="rounded-2 h-100 w-100 object-fit-cover"
         />
       )}
     </div>
   );
 };
 
-export default GalleryItem;
+export default HotelGalleryItem;

@@ -194,11 +194,15 @@ import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
 import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
 import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
+import HotelCompare from 'pages/apps/travel-agency/hotel/customer/HotelCompare';
+import HotelDetails from 'pages/apps/travel-agency/hotel/customer/HotelDetails';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 import SearchRoom from 'pages/apps/travel-agency/hotel/admin/SearchRoom';
 import TravelAgencyLayout from 'layouts/TravelAgencyLayout';
 import TravelLandingLayout from 'layouts/TravelLandingLayout';
+import HotelCheckout from 'pages/apps/travel-agency/hotel/customer/HotelCheckout';
+import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
 
 const routes: RouteObject[] = [
   {
@@ -1004,6 +1008,22 @@ const routes: RouteObject[] = [
               {
                 path: 'hotel/customer/homepage',
                 element: <HotelHomepage />
+              },
+              {
+                path: 'hotel/customer/hotel-details',
+                element: <HotelDetails />
+              },
+              {
+                path: 'hotel/customer/hotel-compare',
+                element: <HotelCompare />
+              },
+              {
+                path: 'hotel/customer/checkout',
+                element: <HotelCheckout />
+              },
+              {
+                path: 'hotel/customer/payment',
+                element: <HotelPayment />
               },
               {
                 path: 'hotel/customer/gallery',
