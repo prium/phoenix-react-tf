@@ -15,6 +15,7 @@ import {
 
 interface SwiperProps extends ReactSwiperProps {
   navigationPosition?: CSSProperties;
+  centeredSlide?: boolean;
 }
 
 const Swiper = ({

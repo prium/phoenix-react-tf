@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import TopNav from './TopNav';
 import HeroHeader from './HeroHeader';
 import SeasonOfTour from './SeasonOfTour';
 import BestPlaces from './BestPlaces';
@@ -9,8 +8,6 @@ import Gallery from './Gallery';
 import LatestPosts from './LatestPosts';
 import LatestPhotos from './LatestPhotos';
 import GetApp from './GetApp';
-import Footer from './Footer';
-import NavbarMain from 'components/navbars/travel-landing/NavbarMain';
 import TravelCta from 'components/cta/TravelCta';
 
 const Landing = () => {
@@ -38,8 +35,6 @@ const Landing = () => {
 
   return (
     <>
-      <TopNav />
-      <NavbarMain />
       <HeroHeader />
       <SeasonOfTour />
       <BestPlaces />
@@ -49,7 +44,6 @@ const Landing = () => {
       <TravelCta />
       <LatestPhotos />
       <GetApp />
-      <Footer />
     </>
   );
 };

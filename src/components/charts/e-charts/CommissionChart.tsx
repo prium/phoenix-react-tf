@@ -20,10 +20,6 @@ const getDefaultOptions = (
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
-    // position: params => {
-    //   console.log({ params });
-    // },
-
     formatter: (params: CallbackDataParams) => {
       return `<strong>${params.seriesName}:</strong> ${params.value}%`;
     }

@@ -92,7 +92,7 @@ const CalendarEventModal = () => {
               dangerouslySetInnerHTML={{
                 __html: selectedEvent.extendedProps.location
               }}
-            ></p>
+            />
           </div>
         )}
         {selectedEvent?.extendedProps.schedules && (

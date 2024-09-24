@@ -38,9 +38,9 @@ const InfoCategory = ({ category }: { category: DealDetailsInfoType[] }) => {
     <Table borderless className="w-100 table-stats mb-0">
       <thead>
         <tr>
-          <th className="p-0"></th>
-          <th className="p-0"></th>
-          <th className="p-0"></th>
+          <th className="p-0" />
+          <th className="p-0" />
+          <th className="p-0" />
         </tr>
       </thead>
       <tbody>

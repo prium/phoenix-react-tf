@@ -8,13 +8,7 @@ interface LightBoxProps extends FsLightboxProps {
 
 const Lightbox = ({ toggler, slide = 1, sources, ...rest }: LightBoxProps) => {
   return (
-    <FsLightbox
-      toggler={toggler}
-      sources={sources}
-      slide={slide}
-      type="image"
-      {...rest}
-    />
+    <FsLightbox toggler={toggler} sources={sources} slide={slide} {...rest} />
   );
 };
 

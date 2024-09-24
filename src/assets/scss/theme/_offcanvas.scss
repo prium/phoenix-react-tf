@@ -69,3 +69,47 @@
 .faq-offcanvas {
   top: var(--#{$prefix}navbar-top-height);
 }
+
+// Filter offcanvas
+
+.phoenix-offcanvas-filter {
+  max-width: 300px;
+  top: var(--#{$prefix}navbar-top-height);
+  height: calc(100vh - 5rem);
+  padding: map-get($spacers, 5);
+  @include media-breakpoint-up(lg) {
+    position: sticky !important;
+    top: 1rem !important;
+    padding: 0 0 0 0.5rem !important;
+    transform: none !important;
+    height: calc(100vh - 2rem);
+    padding-left: 4px;
+  }
+}
+
+.phoenix-offcanvas-filter-xl{
+  width: 300px;
+  top: var(--#{$prefix}navbar-top-height);
+  padding: map-get($spacers, 4) map-get($spacers, 4) 0;
+  z-index: 9999;
+  @include media-breakpoint-up(xl) {
+    width: 250px;
+    position: sticky !important;
+    top: 1rem !important;
+    padding: 0 0 0 0.5rem !important;
+    transform: none !important;
+    height: 100vh;
+    z-index: 10;
+  }
+}
+
+// room search offcanvas
+.phoenix-room-filter-offcanvas{
+  
+  width: 300px;
+  padding-bottom: 0 !important;
+  background-color: var(--#{$prefix}body-bg) !important;
+  @include media-breakpoint-up(xl) {
+    width: 250px !important;
+  }
+}

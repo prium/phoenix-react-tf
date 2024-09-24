@@ -1,6 +1,6 @@
 {
   "name": "phoenix-react",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -48,7 +48,7 @@
     "picmo": "^5.8.5",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
-    "react-bootstrap": "^2.10.2",
+    "react-bootstrap": "^2.10.4",
     "react-countup": "^6.5.0",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.2.0",
@@ -56,6 +56,7 @@
     "react-flatpickr": "^3.10.13",
     "react-leaflet": "^4.2.1",
     "react-live": "^3.1.2",
+    "react-range": "^1.10.0",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.3",

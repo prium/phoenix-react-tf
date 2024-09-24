@@ -55,7 +55,7 @@ const NecessaryPages = () => {
                 className="stretched-link"
                 target="_blank"
                 to={page.pageLink}
-              ></Link>
+              />
             </Col>
           ))}
         </Row>

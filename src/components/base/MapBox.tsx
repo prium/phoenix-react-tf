@@ -17,9 +17,17 @@ mapboxgl.workerClass = MapboxWorker;
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   options: Omit<MapboxOptions, 'container'>;
+  currentTabEventKey?: number;
+  targetTabEventKey?: number;
 }
 
-const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
+const Mapbox = ({
+  className,
+  options,
+  currentTabEventKey,
+  targetTabEventKey,
+  ...rest
+}: MapboxProps) => {
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const map = useRef<Map | null>(null);
   const {
@@ -62,6 +70,12 @@ const Mapbox = ({ className, options, ...rest }: MapboxProps) => {
   useEffect(() => {
     map.current?.setStyle(styles[theme]);
   }, [theme]);
+
+  useEffect(() => {
+    if (currentTabEventKey === targetTabEventKey) {
+      map.current?.resize();
+    }
+  }, [currentTabEventKey]);
 
   return (
     <>

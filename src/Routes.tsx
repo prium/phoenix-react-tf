@@ -125,6 +125,7 @@ import ComboNavSlim from 'pages/pages/layouts/ComboNavSlim';
 import LightboxExample from 'pages/modules/components/LightboxExample';
 import EmojiButtonExample from 'pages/modules/forms/advance/EmojiButtonExample';
 import RatingExample from 'pages/modules/forms/advance/RatingExample';
+import ReactRangeExample from 'pages/modules/forms/advance/RangeExample';
 import CountupExample from 'pages/modules/components/CountupExample';
 import EditorExample from 'pages/modules/forms/advance/EditorExample';
 import SwiperCarousel from 'pages/modules/components/SwiperCarousel';
@@ -190,6 +191,14 @@ const UniconsExample = lazy(
 import Color from './pages/documentation/customization/Color';
 import TravelAgency from 'pages/dashboard/TravelAgency';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
+import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
+import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
+import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
+import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
+import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
+import SearchRoom from 'pages/apps/travel-agency/hotel/admin/SearchRoom';
+import TravelAgencyLayout from 'layouts/TravelAgencyLayout';
+import TravelLandingLayout from 'layouts/TravelLandingLayout';
 
 const routes: RouteObject[] = [
   {
@@ -405,6 +414,37 @@ const routes: RouteObject[] = [
                   {
                     path: 'compose',
                     element: <Compose />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/add-property',
+                    element: <AddProperty />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/add-room',
+                    element: <AddRoom />
+                  },
+                  {
+                    path: 'hotel/admin/search-room',
+                    element: <SearchRoom />
+                  }
+                ]
+              },
+              {
+                path: 'travel-agency',
+                children: [
+                  {
+                    path: 'hotel/admin/room-listing',
+                    element: <RoomListing />
                   }
                 ]
               }
@@ -737,6 +777,10 @@ const routes: RouteObject[] = [
                     element: <FileUploaderExample />
                   },
                   {
+                    path: 'advance/range',
+                    element: <ReactRangeExample />
+                  },
+                  {
                     path: 'rating',
                     element: <RatingExample />
                   },
@@ -942,6 +986,7 @@ const routes: RouteObject[] = [
         ]
       },
       {
+        element: <TravelLandingLayout />,
         path: 'apps/travel-agency',
         children: [
           {
@@ -950,6 +995,25 @@ const routes: RouteObject[] = [
           }
         ]
       },
+      {
+        element: <TravelAgencyLayout />,
+        path: 'apps/travel-agency',
+        children: [
+          {
+            children: [
+              {
+                path: 'hotel/customer/homepage',
+                element: <HotelHomepage />
+              },
+              {
+                path: 'hotel/customer/gallery',
+                element: <HotelGallery />
+              }
+            ]
+          }
+        ]
+      },
+
       {
         path: '/pages/errors/',
         children: [

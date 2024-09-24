@@ -121,7 +121,7 @@
 
   /* --------------------------------- wizard --------------------------------- */
   --#{$prefix}theme-wizard-nav-item-circle-bg: var(--#{$prefix}body-highlight-bg);
-  --#{$prefix}theme-wizard-complete-color: #{map-get($theme-colors, 'success')};
+  --#{$prefix}theme-wizard-complete-color: #{map-get($theme-colors, 'primary')};
   --#{$prefix}theme-wizard-active-color: #{map-get($theme-colors, 'primary')};
 
   /* --------------------------------- tinymce -------------------------------- */

@@ -165,7 +165,7 @@ const Gallery = () => {
           onSelect={handleNavItemSelect}
         />
 
-        <div className="d-grid grid-cols-4 gap-3">
+        <div className="d-grid grid-cols-12 gap-3">
           {images.map((gallery, index) => (
             <GalleryItem
               galleryItem={gallery}

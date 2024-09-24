@@ -15,7 +15,6 @@ export const HolidaysCard = () => {
           <h3 className="text-body-highlight">Holidays</h3>
           <p className="mb-sm-0 text-body-tertiary">Holidays next month</p>
         </div>
-        <Link to="#!"></Link>
         <Button
           variant="phoenix-secondary"
           size="sm"
