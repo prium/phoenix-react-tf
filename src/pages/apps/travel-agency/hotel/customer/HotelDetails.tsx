@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import TopNav from 'pages/apps/travel-agency/landing/TopNav';
-import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
-import TravelFooter from 'components/footers/TravelFooter';
-import Footer from 'components/footers/Footer';
 
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
@@ -34,8 +30,6 @@ const HotelDetails = () => {
 
   return (
     <>
-      <TopNav />
-      <NavbarMain />
       <section className="pt-4 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
@@ -112,8 +106,6 @@ const HotelDetails = () => {
           </Row>
         </Container>
       </section>
-      <TravelFooter />
-      <Footer />
     </>
   );
 };

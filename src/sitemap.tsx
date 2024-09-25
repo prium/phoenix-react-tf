@@ -379,12 +379,6 @@ export const routes: RouteItems[] = [
                     active: true
                   },
                   {
-                    name: 'gallery',
-                    path: '/apps/travel-agency/hotel/customer/gallery',
-                    pathName: 'hotel-gallery',
-                    active: true
-                  },
-                  {
                     name: 'hotel-details',
                     path: '/apps/travel-agency/hotel/customer/hotel-details',
                     pathName: 'hotel-details',
