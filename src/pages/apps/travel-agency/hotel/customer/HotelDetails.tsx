@@ -16,9 +16,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { hotelImages } from 'data/travel-agency/customer/hotelDetails';
-import HotelDetailsTab from 'components/modules/travel-agency/dashboard/hotel/hotel-details/HotelDetailsTab';
+import HotelDetailsTab from 'components/modules/travel-agency/hotel/hotel-details/HotelDetailsTab';
 import HotelDetailsGallery from 'components/image-gallery/HotelDetailsGallery';
 import { numberFormat } from 'helpers/utils';
+import TravelFooter from 'components/footers/TravelFooter';
 
 const HotelDetails = () => {
   useSettingsMountEffect({
@@ -106,6 +107,7 @@ const HotelDetails = () => {
           </Row>
         </Container>
       </section>
+      <TravelFooter />
     </>
   );
 };

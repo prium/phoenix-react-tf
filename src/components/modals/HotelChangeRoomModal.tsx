@@ -15,8 +15,8 @@ import {
 import { numberFormat, currencyFormat } from 'helpers/utils';
 import type { RoomType } from 'data/travel-agency/customer/hotelCompare';
 import { SwiperSlide } from 'swiper/react';
-import RoomPictureSlider from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/RoomPictureSlider';
-import SelectRoomCollapsibleContainer from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/SelectRoomCollapsibleContainer';
+import RoomPictureSlider from 'components/modules/travel-agency/hotel/hotel-compare/RoomPictureSlider';
+import SelectRoomCollapsibleContainer from 'components/modules/travel-agency/hotel/hotel-compare/SelectRoomCollapsibleContainer';
 import classNames from 'classnames';
 
 interface HotelChangeRoomModalProps {

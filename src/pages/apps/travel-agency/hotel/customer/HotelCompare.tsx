@@ -4,11 +4,12 @@ import { defaultBreadcrumbItems } from 'data/commonData';
 import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import { mapMarkerPoints } from 'data/mapMarkerPoints';
 import CollapsibleContainer from 'components/common/CollapsibleContainer';
-import CompareHotelDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/CompareHotelDetails';
+import CompareHotelDetails from 'components/modules/travel-agency/hotel/hotel-compare/CompareHotelDetails';
 import { hotelInfo } from 'data/travel-agency/customer/hotelCompare';
-import CompareRoomDetails from 'components/modules/travel-agency/dashboard/hotel/hotel-compare/CompareRoomDetails';
-import HotelActions from 'components/modules/travel-agency/dashboard/hotel/HotelActions';
+import CompareRoomDetails from 'components/modules/travel-agency/hotel/hotel-compare/CompareRoomDetails';
+import HotelActions from 'components/modules/travel-agency/hotel/HotelActions';
 import { Container } from 'react-bootstrap';
+import TravelFooter from 'components/footers/TravelFooter';
 
 const HotelCompare = () => {
   useSettingsMountEffect({
@@ -50,6 +51,7 @@ const HotelCompare = () => {
           </div>
         </Container>
       </section>
+      <TravelFooter />
     </>
   );
 };

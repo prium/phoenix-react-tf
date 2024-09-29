@@ -9,6 +9,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
+import TravelFooter from 'components/footers/TravelFooter';
 
 const HotelPayment = () => {
   useSettingsMountEffect({
@@ -112,6 +113,7 @@ const HotelPayment = () => {
           </Row>
         </Container>
       </section>
+      <TravelFooter />
     </>
   );
 };

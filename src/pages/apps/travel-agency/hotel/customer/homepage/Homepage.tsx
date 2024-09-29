@@ -7,7 +7,8 @@ import { faFilter, faMap } from '@fortawesome/free-solid-svg-icons';
 import HotelCard from 'components/cards/HotelCard';
 import { hotels } from 'data/travel-agency/customer/hotel';
 import NavbarHome from 'components/navbars/travel-agency/NavbarHome';
-import HotelActions from 'components/modules/travel-agency/dashboard/hotel/HotelActions';
+import HotelActions from 'components/modules/travel-agency/hotel/HotelActions';
+import TravelFooter from 'components/footers/TravelFooter';
 
 const HotelHomepage = () => {
   useSettingsMountEffect({
@@ -53,6 +54,7 @@ const HotelHomepage = () => {
           ))}
         </Row>
       </section>
+      <TravelFooter />
     </>
   );
 };

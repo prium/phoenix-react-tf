@@ -22,7 +22,7 @@ export interface Route {
   active?: boolean;
   new?: boolean;
   hasNew?: boolean;
-  next?: boolean;
+  isNext?: boolean;
 }
 
 export interface RouteItems {
@@ -414,9 +414,27 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'flight',
-            next: true,
-            path: '/pages/coming-soon',
-            pathName: 'travel-agency-flight'
+            active: true,
+            pages: [
+              {
+                name: 'homepage',
+                active: true,
+                path: '/apps/travel-agency/flight/homepage',
+                pathName: 'flight-homepage'
+              },
+              {
+                name: 'booking',
+                active: true,
+                path: '/apps/travel-agency/flight/homepage',
+                pathName: 'flight-homepage'
+              },
+              {
+                name: 'payment',
+                active: true,
+                path: '/apps/travel-agency/flight/homepage',
+                pathName: 'flight-homepage'
+              }
+            ]
           }
         ]
       },
