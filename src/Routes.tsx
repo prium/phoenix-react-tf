@@ -203,7 +203,7 @@ import TravelAgencyLayout from 'layouts/TravelAgencyLayout';
 import TravelLandingLayout from 'layouts/TravelLandingLayout';
 import HotelCheckout from 'pages/apps/travel-agency/hotel/customer/HotelCheckout';
 import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
-import FlightHomePage from 'pages/apps/travel-agency/hotel/Flight/HomePage';
+import FlightHomePage from 'pages/apps/travel-agency/Flight/HomePage';
 
 const routes: RouteObject[] = [
   {
