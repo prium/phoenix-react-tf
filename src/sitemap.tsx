@@ -425,14 +425,14 @@ export const routes: RouteItems[] = [
               {
                 name: 'booking',
                 active: true,
-                path: '/apps/travel-agency/flight/homepage',
-                pathName: 'flight-homepage'
+                path: '/apps/travel-agency/flight/booking',
+                pathName: 'flight-booking'
               },
               {
                 name: 'payment',
                 active: true,
-                path: '/apps/travel-agency/flight/homepage',
-                pathName: 'flight-homepage'
+                path: '/apps/travel-agency/flight/payment',
+                pathName: 'flight-payment'
               }
             ]
           }

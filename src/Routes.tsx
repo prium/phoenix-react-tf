@@ -204,6 +204,7 @@ import TravelLandingLayout from 'layouts/TravelLandingLayout';
 import HotelCheckout from 'pages/apps/travel-agency/hotel/customer/HotelCheckout';
 import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
 import FlightHomePage from 'pages/apps/travel-agency/Flight/HomePage';
+import FlightBooking from 'pages/apps/travel-agency/Flight/Booking';
 
 const routes: RouteObject[] = [
   {
@@ -1033,6 +1034,10 @@ const routes: RouteObject[] = [
               {
                 path: 'homepage',
                 element: <FlightHomePage />
+              },
+              {
+                path: 'booking',
+                element: <FlightBooking />
               }
             ]
           }
