@@ -205,6 +205,7 @@ import HotelCheckout from 'pages/apps/travel-agency/hotel/customer/HotelCheckout
 import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
 import FlightHomePage from 'pages/apps/travel-agency/Flight/HomePage';
 import FlightBooking from 'pages/apps/travel-agency/Flight/Booking';
+import FlightPayment from 'pages/apps/travel-agency/Flight/Payment';
 
 const routes: RouteObject[] = [
   {
@@ -1038,6 +1039,10 @@ const routes: RouteObject[] = [
               {
                 path: 'booking',
                 element: <FlightBooking />
+              },
+              {
+                path: 'payment',
+                element: <FlightPayment />
               }
             ]
           }

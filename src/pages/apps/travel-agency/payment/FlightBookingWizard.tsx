@@ -23,7 +23,7 @@ const wizardItems: WizardItem[] = [
   {
     name: 'Flight',
     icon: faPlane,
-    url: '/apps/travel-agency/hotel/customer/homepage'
+    url: '/apps/travel-agency/flight/homepage'
   },
   {
     name: 'Booking',
