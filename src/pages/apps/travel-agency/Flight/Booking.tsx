@@ -1,6 +1,5 @@
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
-import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import FlightBookingWizard from '../payment/FlightBookingWizard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

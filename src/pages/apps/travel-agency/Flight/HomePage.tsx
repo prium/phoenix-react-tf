@@ -5,8 +5,11 @@ import bgIllustrations from 'assets/img/bg/44.png';
 import FlightSearch from 'components/modules/travel-agency/flight/homepage/FlightSearch';
 import FlightListing from 'components/modules/travel-agency/flight/homepage/FlightListing';
 import FlightFooter from 'components/modules/travel-agency/flight/homepage/FlightFooter';
+import FlightPromoModal from 'components/modals/FlightPromoModal';
+import { useState } from 'react';
 
 const FlightHomePage = () => {
+  const [showPromoModal, setShowPromoModal] = useState(true);
   useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
@@ -42,6 +45,10 @@ const FlightHomePage = () => {
         </Container>
         <FlightFooter />
       </section>
+      <FlightPromoModal
+        show={showPromoModal}
+        handleClose={() => setShowPromoModal(false)}
+      />
     </>
   );
 };
