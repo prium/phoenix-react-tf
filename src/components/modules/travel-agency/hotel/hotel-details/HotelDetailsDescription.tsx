@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
-import HotelDetailsMapBox from './HotelDetailsMapBox';
+import Mapbox from 'components/base/MapBox';
+import { Map } from 'mapbox-gl';
 
 const HotelDetailsDescription = ({ activeKey }: { activeKey: string }) => {
+  const mapRef = useRef<Map | null>(null);
+  useEffect(() => {
+    if (activeKey === 'description') {
+      mapRef.current?.resize();
+    }
+  }, [activeKey]);
+
   return (
     <>
       <h3 className="mb-3 fw-bold">Description</h3>
@@ -25,27 +33,27 @@ const HotelDetailsDescription = ({ activeKey }: { activeKey: string }) => {
         <h5 className="mb-0">
           <span className="text-body-tertiary fw-normal">
             Number of rooms :
-          </span>
-          &nbsp;70
+          </span>{' '}
+          70
         </h5>
         <h5 className="mb-0">
           <span className="text-body-tertiary fw-normal">
             Number of floors :
-          </span>
-          &nbsp;14
+          </span>{' '}
+          14
         </h5>
         <h5 className="mb-0">
           <span className="text-body-tertiary fw-normal">
             Construction year :
-          </span>
-          &nbsp;2018
+          </span>{' '}
+          2018
         </h5>
       </div>
       <Card className="bg-body mt-5">
         <Card.Body>
           <div className="mb-4">
-            <HotelDetailsMapBox
-              currentTab={activeKey}
+            <Mapbox
+              ref={mapRef}
               className="rounded-2 border border-translucent overflow-hidden w-100"
               style={{ height: 300 }}
               options={{
@@ -63,9 +71,8 @@ const HotelDetailsDescription = ({ activeKey }: { activeKey: string }) => {
             Museum
           </p>
           <h5>
-            1.5 km&nbsp;
-            <span className="text-body-tertiary fw-normal">from</span>
-            &nbsp;Museum of Liberation War, Dhaka
+            1.5 km <span className="text-body-tertiary fw-normal">from</span>{' '}
+            Museum of Liberation War, Dhaka
           </h5>
           <hr className="my-4" />
           <p className="mb-2 text-body-tertiary text-uppercase">
@@ -76,9 +83,8 @@ const HotelDetailsDescription = ({ activeKey }: { activeKey: string }) => {
             Historical monument
           </p>
           <h5>
-            3.5 km&nbsp;
-            <span className="text-body-tertiary fw-normal">from</span>
-            &nbsp;Lalbagh Kella
+            3.5 km <span className="text-body-tertiary fw-normal">from</span>{' '}
+            Lalbagh Kella
           </h5>
         </Card.Body>
       </Card>

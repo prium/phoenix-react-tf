@@ -1,5 +1,5 @@
 import React from 'react';
-import { type CardItem } from 'data/travel-agency/customer/hotelDetails';
+import { type CartItem } from 'data/travel-agency/customer/hotelDetails';
 import { Card, Row, Col } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import Badge from 'components/base/Badge';
@@ -13,28 +13,28 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { currencyFormat } from 'helpers/utils';
 
-interface HotelDetailsCardItemProps {
-  item: CardItem;
+interface HotelDetailsCartItemProps {
+  cartItem: CartItem;
   index: number;
   className?: string;
-  clickHandler: (id: number) => void;
-  isInfoShow: boolean;
+  crossButtonClickHandler: (id: number) => void;
+  showHotelInfo: boolean;
 }
 
-const HotelDetailsCardItem = ({
-  item,
+const HotelDetailsCartItem = ({
+  cartItem,
   index,
   className,
-  clickHandler,
-  isInfoShow
-}: HotelDetailsCardItemProps) => {
+  crossButtonClickHandler,
+  showHotelInfo
+}: HotelDetailsCartItemProps) => {
   return (
     <Card className={className}>
       <Card.Body>
-        {!isInfoShow && (
+        {!showHotelInfo && (
           <Button
             className="p-0 position-absolute end-0 fs-8 mt-n5 me-n2 text-body-tertiary"
-            onClick={() => clickHandler(item.id)}
+            onClick={() => crossButtonClickHandler(cartItem.id)}
           >
             <FontAwesomeIcon icon={faCircleXmark} />
           </Button>
@@ -42,10 +42,10 @@ const HotelDetailsCardItem = ({
         <div className="d-flex justify-content-between gap-3 mb-4">
           <div>
             <h5 className="text-body-highlight"> Room {index + 1}</h5>
-            <p className="mb-0 text-body-tertiary">{item.roomName}</p>
+            <p className="mb-0 text-body-tertiary">{cartItem.roomName}</p>
           </div>
           <h4 className="mb-0">
-            {currencyFormat(item.price, {
+            {currencyFormat(cartItem.price, {
               maximumFractionDigits: 2,
               useGrouping: true
             })}
@@ -59,7 +59,7 @@ const HotelDetailsCardItem = ({
           <Col xs="auto">
             <span className="px-2">:</span>
           </Col>
-          <Col xs="auto">{item.checkIn}</Col>
+          <Col xs="auto">{cartItem.checkIn}</Col>
         </Row>
 
         <Row className="align-items-center g-0 mb-4">
@@ -69,7 +69,7 @@ const HotelDetailsCardItem = ({
           <Col xs="auto">
             <span className="px-2">:</span>
           </Col>
-          <Col xs="auto">{item.checkOut}</Col>
+          <Col xs="auto">{cartItem.checkOut}</Col>
         </Row>
         <div className="d-flex flex-wrap gap-2">
           <Badge
@@ -78,7 +78,7 @@ const HotelDetailsCardItem = ({
             className="py-1 border-0 text-capitalize"
           >
             <FontAwesomeIcon icon={faBed} className="fs-9 me-2" />
-            {item.bedType}
+            {cartItem.bedType}
           </Badge>
           <Badge
             variant="phoenix"
@@ -86,26 +86,26 @@ const HotelDetailsCardItem = ({
             className="py-1 border-0 text-capitalize"
           >
             <FontAwesomeIcon icon={faUser} className="fs-9 me-2" />
-            {item.adults} Adults
+            {cartItem.adults} Adults
           </Badge>
-          {item.child && (
+          {cartItem.child && (
             <Badge
               variant="phoenix"
               bg="secondary"
               className="py-1 border-0 text-capitalize"
             >
               <FontAwesomeIcon icon={faBaby} className="fs-9 me-2" />
-              {item.child} Childs
+              {cartItem.child} Childs
             </Badge>
           )}
-          {item.nights && (
+          {cartItem.nights && (
             <Badge
               variant="phoenix"
               bg="secondary"
               className="py-1 border-0 text-capitalize"
             >
               <FontAwesomeIcon icon={faMoon} className="fs-9 me-2" />
-              {item.nights} Nights
+              {cartItem.nights} Nights
             </Badge>
           )}
         </div>
@@ -114,4 +114,4 @@ const HotelDetailsCardItem = ({
   );
 };
 
-export default HotelDetailsCardItem;
+export default HotelDetailsCartItem;

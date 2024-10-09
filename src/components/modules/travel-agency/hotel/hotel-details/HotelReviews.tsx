@@ -17,12 +17,12 @@ import Button from 'components/base/Button';
 import classNames from 'classnames';
 import { numberFormat } from 'helpers/utils';
 
-interface HotelDetailsReviewProps {
+interface HotelReviewsProps {
   ratings: Rating[];
   reviews: Review[];
 }
 
-const HotelDetailsReviews = ({ ratings, reviews }: HotelDetailsReviewProps) => {
+const HotelReviews = ({ ratings, reviews }: HotelReviewsProps) => {
   return (
     <>
       <h3 className="mb-5">Reviews</h3>
@@ -130,4 +130,4 @@ const HotelDetailsReviews = ({ ratings, reviews }: HotelDetailsReviewProps) => {
   );
 };
 
-export default HotelDetailsReviews;
+export default HotelReviews;

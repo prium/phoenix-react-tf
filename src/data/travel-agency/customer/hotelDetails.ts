@@ -6,14 +6,14 @@ import img5 from 'assets/img/hotels/29_2.png';
 import img6 from 'assets/img/hotels/30_2.png';
 import img7 from 'assets/img/hotels/31_2.png';
 import img8 from 'assets/img/hotels/32_2.png';
-import largImg1 from 'assets/img/hotels/25.png';
-import largImg2 from 'assets/img/hotels/26.png';
-import largImg3 from 'assets/img/hotels/27.png';
-import largImg4 from 'assets/img/hotels/28.png';
-import largImg5 from 'assets/img/hotels/29.png';
-import largImg6 from 'assets/img/hotels/30.png';
-import largImg7 from 'assets/img/hotels/31.png';
-import largImg8 from 'assets/img/hotels/32.png';
+import largeImg1 from 'assets/img/hotels/25.png';
+import largeImg2 from 'assets/img/hotels/26.png';
+import largeImg3 from 'assets/img/hotels/27.png';
+import largeImg4 from 'assets/img/hotels/28.png';
+import largeImg5 from 'assets/img/hotels/29.png';
+import largeImg6 from 'assets/img/hotels/30.png';
+import largeImg7 from 'assets/img/hotels/31.png';
+import largeImg8 from 'assets/img/hotels/32.png';
 import img9 from 'assets/img/hotels/33.png';
 import img10 from 'assets/img/hotels/34.png';
 import img11 from 'assets/img/hotels/35.png';
@@ -50,7 +50,7 @@ import {
   IconDefinition
 } from '@fortawesome/free-solid-svg-icons';
 
-export interface CardItem {
+export interface CartItem {
   id: number;
   roomName: string;
   price: number;
@@ -62,7 +62,68 @@ export interface CardItem {
   nights: number;
 }
 
-export const cartItems: CardItem[] = [
+export interface Facility {
+  id: number;
+  title: string;
+  icon: IconDefinition;
+  classes: string;
+}
+
+export interface ChargeItem {
+  name: string;
+  required?: boolean;
+}
+
+export interface Charge {
+  id: number;
+  title: string;
+  icon: IconDefinition;
+  desc?: string;
+  items: ChargeItem[];
+}
+
+export interface Rating {
+  name: string;
+  rating: number;
+}
+
+export interface Review {
+  avatar: string;
+  name: string;
+  country: string;
+  flag: string;
+  service: string;
+  date: string;
+  travelerType: string;
+  rating: number;
+  liked: string;
+  disLiked: string;
+  hotelsReply: string;
+}
+
+export interface HotelImageType {
+  id: number;
+  img: string;
+  largeImg: string;
+  classNames: string;
+}
+
+export interface AvailableRoom {
+  id: number;
+  name: string;
+  desc: string;
+  beds: number;
+  person: number;
+  breakfast: boolean;
+  discount: number;
+  price: number;
+  discountPrice: number;
+  tax: number;
+  amenities: string[];
+  images: string[];
+}
+
+export const cartItems: CartItem[] = [
   {
     id: 1,
     roomName: 'King-Super deluxe',
@@ -86,78 +147,57 @@ export const cartItems: CardItem[] = [
   }
 ];
 
-export interface HotelImageType {
-  id: number;
-  img: string;
-  largeImg: string;
-  classNames: string;
-}
-
 export const hotelImages: HotelImageType[] = [
   {
     id: 1,
     img: img1,
-    largeImg: largImg1,
+    largeImg: largeImg1,
     classNames: 'col-span-12 col-span-md-6 row-span-md-2'
   },
   {
     id: 2,
     img: img2,
-    largeImg: largImg2,
+    largeImg: largeImg2,
     classNames: 'd-none d-md-block col-span-6 row-span-1'
   },
   {
     id: 3,
     img: img3,
-    largeImg: largImg3,
+    largeImg: largeImg3,
     classNames: 'd-none d-md-block col-span-3 row-span-1'
   },
   {
     id: 4,
     img: img4,
-    largeImg: largImg4,
+    largeImg: largeImg4,
     classNames: 'd-none d-md-block col-span-3 row-span-1'
   },
   {
     id: 5,
     img: img5,
-    largeImg: largImg5,
+    largeImg: largeImg5,
     classNames: 'd-none d-md-block col-span-3'
   },
   {
     id: 6,
     img: img6,
-    largeImg: largImg6,
+    largeImg: largeImg6,
     classNames: 'd-none d-md-block col-span-3'
   },
   {
     id: 7,
     img: img7,
-    largeImg: largImg7,
+    largeImg: largeImg7,
     classNames: 'd-none d-md-block col-span-3'
   },
   {
     id: 8,
     img: img8,
-    largeImg: largImg8,
+    largeImg: largeImg8,
     classNames: 'col-span-12 col-span-md-3'
   }
 ];
 
-export interface AvailableRoom {
-  id: number;
-  name: string;
-  desc: string;
-  beds: number;
-  person: number;
-  breakfast: boolean;
-  discount: number;
-  price: number;
-  discountPrice: number;
-  tax: number;
-  amenities: string[];
-  images: string[];
-}
 export const availableRooms: AvailableRoom[] = [
   {
     id: 1,
@@ -230,13 +270,6 @@ export const availableRooms: AvailableRoom[] = [
     images: [img12, img13, img14]
   }
 ];
-
-export interface Facility {
-  id: number;
-  title: string;
-  icon: IconDefinition;
-  classes: string;
-}
 
 export const facilities: Facility[] = [
   {
@@ -317,18 +350,6 @@ export const facilities: Facility[] = [
   }
 ];
 
-export interface Item {
-  name: string;
-  required?: boolean;
-}
-
-export interface Charge {
-  id: number;
-  title: string;
-  icon: IconDefinition;
-  desc?: string;
-  items: Item[];
-}
 export const charges: Charge[] = [
   {
     id: 1300,
@@ -575,10 +596,6 @@ export const charges: Charge[] = [
   }
 ];
 
-export interface Rating {
-  name: string;
-  rating: number;
-}
 export const ratings: Rating[] = [
   {
     name: 'Staff',
@@ -606,19 +623,6 @@ export const ratings: Rating[] = [
   }
 ];
 
-export interface Review {
-  avatar: string;
-  name: string;
-  country: string;
-  flag: string;
-  service: string;
-  date: string;
-  travelerType: string;
-  rating: number;
-  liked: string;
-  disLiked: string;
-  hotelsReply: string;
-}
 export const reviews: Review[] = [
   {
     avatar: img59,

@@ -106,7 +106,7 @@ const HotelPayment = () => {
             </Col>
             <Col lg={5} xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={true}
+                showHotelInfo={true}
                 className="mt-5 mt-lg-0"
               />
             </Col>

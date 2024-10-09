@@ -5,7 +5,11 @@ import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
 import { mapMarkerPoints } from 'data/mapMarkerPoints';
 import CollapsibleContainer from 'components/common/CollapsibleContainer';
 import CompareHotelDetails from 'components/modules/travel-agency/hotel/hotel-compare/CompareHotelDetails';
-import { hotelInfo } from 'data/travel-agency/customer/hotelCompare';
+import {
+  hotelInfo,
+  popularAmenitiesFields,
+  reviewFields
+} from 'data/travel-agency/customer/hotelCompare';
 import CompareRoomDetails from 'components/modules/travel-agency/hotel/hotel-compare/CompareRoomDetails';
 import HotelActions from 'components/modules/travel-agency/hotel/HotelActions';
 import { Container } from 'react-bootstrap';
@@ -39,14 +43,20 @@ const HotelCompare = () => {
               collapseTitle="Hotel Details"
               id="hotelDetailsCollapse"
             >
-              <CompareHotelDetails hotelInfo={hotelInfo} />
+              <CompareHotelDetails
+                hotelInfo={hotelInfo}
+                reviewFields={reviewFields}
+              />
             </CollapsibleContainer>
             <CollapsibleContainer
               collapseTitle="Room Details"
               id="roomDetailsCollapse"
               className="mt-8"
             >
-              <CompareRoomDetails hotelInfo={hotelInfo} />
+              <CompareRoomDetails
+                hotelInfo={hotelInfo}
+                reviewFields={popularAmenitiesFields}
+              />
             </CollapsibleContainer>
           </div>
         </Container>

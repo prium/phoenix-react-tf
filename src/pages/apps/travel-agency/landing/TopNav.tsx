@@ -76,7 +76,10 @@ const TopNav = () => {
         <ul className="d-none d-md-flex gap-5 list-unstyled mb-0">
           {navItems.map((item, index) => (
             <li key={index}>
-              <Link to="" className="lh-1 text-body-tertiary fw-semibold fs-9">
+              <Link
+                to={item.link}
+                className="lh-1 text-body-tertiary fw-semibold fs-9"
+              >
                 {item.icon && (
                   <FontAwesomeIcon
                     icon={item.icon}

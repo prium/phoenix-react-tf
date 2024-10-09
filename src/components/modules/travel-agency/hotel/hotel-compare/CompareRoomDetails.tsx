@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {
   roomTypes,
-  type HotelInfo
+  type HotelInfo,
+  ReviewField,
+  PopularAmenities
 } from 'data/travel-agency/customer/hotelCompare';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,9 +22,13 @@ import HotelCompareAmenityRow from 'components/tables/HotelCompareAmenityRow';
 
 interface CompareRoomDetailsProps {
   hotelInfo: HotelInfo[];
+  reviewFields: ReviewField[];
 }
 
-const CompareRoomDetails = ({ hotelInfo }: CompareRoomDetailsProps) => {
+const CompareRoomDetails = ({
+  hotelInfo,
+  reviewFields
+}: CompareRoomDetailsProps) => {
   const [showChangeRoomModal, setShowChangeRoomModal] = useState(false);
   return (
     <>
@@ -197,66 +203,16 @@ const CompareRoomDetails = ({ hotelInfo }: CompareRoomDetailsProps) => {
               Popular Amenities
             </td>
           </tr>
-          <HotelCompareAmenityRow
-            label="Airport shuttle"
-            items={hotelInfo}
-            aminityKey="airportShuttle"
-          />
-          <HotelCompareAmenityRow
-            label="Free wifi"
-            items={hotelInfo}
-            aminityKey="freeWifi"
-          />
-          <HotelCompareAmenityRow
-            label="Restaurant"
-            items={hotelInfo}
-            aminityKey="restaurant"
-          />
-          <HotelCompareAmenityRow
-            label="Smoking zone"
-            items={hotelInfo}
-            aminityKey="smokingZone"
-          />
-          <HotelCompareAmenityRow
-            label="Room service"
-            items={hotelInfo}
-            aminityKey="roomService"
-          />
-          <HotelCompareAmenityRow
-            label="Free parking"
-            items={hotelInfo}
-            aminityKey="freeParking"
-          />
-          <HotelCompareAmenityRow
-            label="Pet-Friendly"
-            items={hotelInfo}
-            aminityKey="petFriendly"
-          />
-          <HotelCompareAmenityRow
-            label="Beach-front"
-            items={hotelInfo}
-            aminityKey="beachFront"
-          />
-          <HotelCompareAmenityRow
-            label="Facilities for disabled guests"
-            items={hotelInfo}
-            aminityKey="disableGuest"
-          />
-          <HotelCompareAmenityRow
-            label="Bar"
-            items={hotelInfo}
-            aminityKey="bar"
-          />
-          <HotelCompareAmenityRow
-            label="Free Breakfast"
-            items={hotelInfo}
-            aminityKey="breakfast"
-          />
-          <HotelCompareAmenityRow
-            label="24-hour front desk"
-            items={hotelInfo}
-            aminityKey="frontDesk"
-          />
+          {reviewFields.map(review => (
+            <HotelCompareAmenityRow
+              key={review.id}
+              title={review.title}
+              reviewField={hotelInfo.map(
+                hotel =>
+                  hotel.popularAmenities[review.field as keyof PopularAmenities]
+              )}
+            />
+          ))}
           <tr>
             <td className="border-0 pb-0"></td>
             {hotelInfo.map(info => (
