@@ -5,6 +5,7 @@ import img1 from 'assets/img/hotels/39.png';
 import { cartItems } from 'data/travel-agency/customer/hotelDetails';
 import HotelDetailsCartItem from './HotelDetailsCartItem';
 import { currencyFormat } from 'helpers/utils';
+import Button from 'components/base/Button';
 
 const discount = 50;
 interface HotelDetailsSummaryCardProps {
@@ -79,11 +80,10 @@ const HotelDetailsSummaryCard = ({
           </div>
         </div>
         {!showHotelInfo && (
-          <Link
-            to="/apps/travel-agency/hotel/customer/hotel-compare"
-            className="btn btn-primary mt-3 w-100"
-          >
-            Proceed with booking
+          <Link to="/apps/travel-agency/hotel/customer/hotel-compare">
+            <Button variant="primary" className="mt-3 w-100">
+              Proceed with booking
+            </Button>
           </Link>
         )}
       </Card.Body>
