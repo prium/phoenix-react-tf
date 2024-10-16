@@ -20,7 +20,7 @@ interface RoomFilterOffcanvasContentProps {
 const RoomFilterOffcanvasContent = ({
   setOpen
 }: RoomFilterOffcanvasContentProps) => {
-  const priceRange = [699, 1299];
+  const [priceRange, setPriceRange] = useState([699, 1299]);
   const [isCollapseAll, setIsCollapseAll] = useState(false);
 
   return (
@@ -52,7 +52,7 @@ const RoomFilterOffcanvasContent = ({
           variant="primary"
           min={500}
           max={2000}
-          // onChange={val => setValues({ ...values, segmentTwo: val })}
+          onChange={val => setPriceRange([...val])}
           trackHeight={'4px'}
           classNames={'phoenix-react-range-slim px-2 pt-1 mb-3'}
         />
