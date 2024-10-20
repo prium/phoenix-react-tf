@@ -19,13 +19,15 @@ const RoomFilterActions = () => {
           variant="phoenix-primary"
           className="px-3 rounded"
           onClick={() => handleCount('decrease')}
+          disabled={value === 0}
         >
           <FontAwesomeIcon icon={faMinus} className="px-1" />
         </Button>
 
         <FormControl
           type="number"
-          defaultValue={value}
+          value={value}
+          onChange={e => setValue(parseInt(e.target.value))}
           size="lg"
           className="border-translucent input-spin-none text-center rounded"
         />

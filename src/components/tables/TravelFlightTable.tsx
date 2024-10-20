@@ -21,6 +21,7 @@ import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import FlightsTableHeader from 'components/modules/travel-agency/dashboard/FlightsHeader';
 import { FlightInterface, flightsData } from 'data/travel-agency/travelAgency';
+import classNames from 'classnames';
 
 const columns: ColumnDef<FlightInterface>[] = [
   {
@@ -115,7 +116,7 @@ const columns: ColumnDef<FlightInterface>[] = [
     },
     meta: {
       headerProps: {
-        className: 'align-middle text-body-tertiary',
+        className: 'align-middle text-body-tertiary px-0 py-1',
         style: { width: '180px' }
       },
       cellProps: { className: 'align-middle pe-5' }
@@ -139,7 +140,9 @@ const columns: ColumnDef<FlightInterface>[] = [
               variant="info-light"
             />
             <FontAwesomeIcon
-              className="text-info ms-0"
+              className={classNames('text-info ms-0 plane-icon', {
+                'd-none': status.label.toLowerCase() === 'cancelled'
+              })}
               icon={faPlane}
               transform={'up-7'}
             />

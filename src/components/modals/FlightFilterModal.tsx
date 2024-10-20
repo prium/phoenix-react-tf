@@ -10,16 +10,16 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
-  FilterFlightAircraft,
-  FilterFlightAirlines,
-  FilterFlightAirports,
-  FilterFlightBaggage,
-  FilterFlightCabin,
-  FilterFlightDuration,
-  FilterFlightPriceCalculator,
-  FilterFlightSchedule,
-  FilterFlightStops
+  FilterFormFlightAirlines,
+  FilterFormFlightCabin,
+  FilterFormFlightDuration,
+  FilterFormFlightPriceCalculator,
+  FilterFormFlightStops
 } from 'components/modules/travel-agency/flight/homepage/FlightFilterFormContent';
+import FilterFormFlightAircraft from 'components/modules/travel-agency/flight/homepage/FilterFormFlightAircraft';
+import FilterFormFlightAirports from 'components/modules/travel-agency/flight/homepage/FilterFormFlightAirports';
+import FilterFormFlightBaggage from 'components/modules/travel-agency/flight/homepage/FilterFormFlightBaggage';
+import FilterFormFlightSchedule from 'components/modules/travel-agency/flight/homepage/FilterFormFlightSchedule';
 
 interface FlightFilterModalProps {
   show: boolean;
@@ -59,35 +59,35 @@ const FlightFilterModal = ({
             <Col md={6}>
               <Row className="g-0">
                 <Col xs={12} className="mb-6">
-                  <FilterFlightStops />
+                  <FilterFormFlightStops />
                 </Col>
                 <Col xs={12} className="mb-6">
-                  <FilterFlightSchedule />
+                  <FilterFormFlightSchedule />
                 </Col>
                 <Col xs={12} className="mb-6">
-                  <FilterFlightAirlines />
+                  <FilterFormFlightAirlines />
                 </Col>
                 <Col xs={12}>
-                  <FilterFlightDuration />
+                  <FilterFormFlightDuration />
                 </Col>
               </Row>
             </Col>
             <Col md={6}>
               <Row className="g-0">
                 <Col xs={12} className="mb-6">
-                  <FilterFlightPriceCalculator />
+                  <FilterFormFlightPriceCalculator />
                 </Col>
                 <Col xs={12} className="mb-6">
-                  <FilterFlightAirports />
+                  <FilterFormFlightAirports />
                 </Col>
                 <Col xs={12} className="mb-6">
-                  <FilterFlightBaggage />
+                  <FilterFormFlightBaggage />
                 </Col>
                 <Col xs={12} className="mb-6">
-                  <FilterFlightCabin />
+                  <FilterFormFlightCabin />
                 </Col>
                 <Col xs={12}>
-                  <FilterFlightAircraft />
+                  <FilterFormFlightAircraft />
                 </Col>
               </Row>
             </Col>

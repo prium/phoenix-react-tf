@@ -1,6 +1,7 @@
 interface FlightStop {
   id: string;
   label: string;
+  className: string;
 }
 
 interface ScheduleCheck {
@@ -40,15 +41,18 @@ interface FlightAircraft {
 export const flightStops: FlightStop[] = [
   {
     id: 'fligtStopsDirect',
-    label: 'Direct'
+    label: 'Direct',
+    className: ''
   },
   {
     id: 'fligtStops1',
-    label: '1 stop'
+    label: '1 stop',
+    className: ''
   },
   {
     id: 'fligtStops2',
-    label: '2 stop'
+    label: '2 stop',
+    className: 'mb-0'
   }
 ];
 
