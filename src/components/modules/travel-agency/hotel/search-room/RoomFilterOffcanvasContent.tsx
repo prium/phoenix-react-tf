@@ -10,7 +10,7 @@ import {
   bedTypeOptions,
   RoomCategoryOptions
 } from 'data/travel-agency/admin/searchRoom';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import RoomFilterCollapseItem from './RoomFilterCollapseItem';
 
 interface RoomFilterOffcanvasContentProps {
@@ -20,8 +20,20 @@ interface RoomFilterOffcanvasContentProps {
 const RoomFilterOffcanvasContent = ({
   setOpen
 }: RoomFilterOffcanvasContentProps) => {
+  const [range, setRange] = useState({
+    priceRangeMin: 500,
+    priceRangeMax: 2000
+  });
   const [priceRange, setPriceRange] = useState([699, 1299]);
   const [isCollapseAll, setIsCollapseAll] = useState(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setRange(prevState => ({
+      ...prevState,
+      [name]: parseInt(value)
+    }));
+  };
 
   return (
     <div className="pe-1">
@@ -50,9 +62,9 @@ const RoomFilterOffcanvasContent = ({
         <PhoenixReactRange
           values={priceRange}
           variant="primary"
-          min={500}
-          max={2000}
-          onChange={val => setPriceRange([...val])}
+          min={range.priceRangeMin}
+          max={range.priceRangeMax}
+          onChange={val => setPriceRange(val)}
           trackHeight={'4px'}
           classNames={'phoenix-react-range-slim px-2 pt-1 mb-3'}
         />
@@ -62,8 +74,10 @@ const RoomFilterOffcanvasContent = ({
               <Form.Control
                 type="number"
                 id="priceRangeMin"
+                name="priceRangeMin"
                 className="input-spin-none"
-                defaultValue={500}
+                value={range.priceRangeMin}
+                onChange={handleChange}
               />
               <label htmlFor="priceRangeMin">Min</label>
             </Form.Floating>
@@ -73,8 +87,10 @@ const RoomFilterOffcanvasContent = ({
               <Form.Control
                 type="number"
                 id="priceRangeMax"
+                name="priceRangeMax"
                 className="input-spin-none"
-                defaultValue={1200}
+                value={range.priceRangeMax}
+                onChange={handleChange}
               />
               <label htmlFor="priceRangeMax">Max</label>
             </Form.Floating>

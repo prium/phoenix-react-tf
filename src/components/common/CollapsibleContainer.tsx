@@ -5,18 +5,23 @@ import Button from 'components/base/Button';
 import { Collapse } from 'react-bootstrap';
 import classNames from 'classnames';
 
+type ContainerSize = 'sm' | 'base' | 'large';
 interface CollapsibleContainerProps {
   collapseTitle: string;
+  titleClass?: string;
   id: string;
   children: React.ReactElement;
   className?: string;
+  containerSize?: ContainerSize;
 }
 
 const CollapsibleContainer = ({
   collapseTitle,
+  titleClass,
   children,
   id,
-  className
+  className,
+  containerSize = 'large'
 }: CollapsibleContainerProps) => {
   const [open, setOpen] = useState(true);
   return (
@@ -25,15 +30,18 @@ const CollapsibleContainer = ({
         variant=""
         className={classNames(
           className,
-          'p-4 d-flex flex-between-center collapse-indicator text-body-highlight bg-body-highlight w-100 position-sticky start-0',
+          'd-flex flex-between-center collapse-indicator text-body-highlight bg-body-highlight w-100 position-sticky start-0',
           {
-            collapsed: open
+            collapsed: open,
+            'py-2 px-3': containerSize === 'sm',
+            'p-3': containerSize === 'base',
+            'p-4': containerSize === 'large'
           }
         )}
         aria-controls={id}
         onClick={() => setOpen(!open)}
       >
-        <h4 className="mb-0">{collapseTitle}</h4>
+        <h4 className={classNames('mb-0', titleClass)}>{collapseTitle}</h4>
         <FontAwesomeIcon
           icon={faChevronDown}
           className="toggle-icon text-body"
