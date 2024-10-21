@@ -8,6 +8,7 @@ import { Container, Row, Col, Form } from 'react-bootstrap';
 import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faCircle } from '@fortawesome/free-solid-svg-icons';
+import Button from 'components/base/Button';
 
 const HotelCheckout = () => {
   useSettingsMountEffect({
@@ -28,7 +29,7 @@ const HotelCheckout = () => {
               <Form id="checkoutForm1" onSubmit={e => e.preventDefault()}>
                 <hr className="mt-0 mb-7" />
                 <h3 className="fw-bold mb-5">Enter your details</h3>
-                <h5 className="mb-3">Are you traveling for work?</h5>
+                <h5 className="mb-3">Are you travelling for work?</h5>
                 <Form.Check
                   id="tripTypeRadio"
                   className="form-check-inline me-4"
@@ -222,22 +223,25 @@ const HotelCheckout = () => {
                   placeholder="Type your request"
                 />
                 <hr className="mt-7 mb-5" />
-                <Link
-                  to="/apps/travel-agency/hotel/customer/payment"
-                  className="btn btn-primary"
-                >
-                  Final details
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="ms-2"
-                    transform="shrink-3"
-                  />
+                <Link to="/apps/travel-agency/hotel/customer/payment">
+                  <Button
+                    variant="primary"
+                    endIcon={
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        className="ms-2"
+                        transform="shrink-3"
+                      />
+                    }
+                  >
+                    Final details
+                  </Button>
                 </Link>
               </Form>
             </Col>
             <Col lg={5} xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={true}
+                showHotelInfo={true}
                 className="mt-5 mt-lg-0"
               />
             </Col>

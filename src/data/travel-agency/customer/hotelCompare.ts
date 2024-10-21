@@ -58,6 +58,11 @@ export interface Rating {
   freeWifi: number;
 }
 
+export interface ReviewField {
+  id: number;
+  title: string;
+  field: string;
+}
 interface Room {
   id: number;
   type: string;
@@ -94,6 +99,125 @@ export interface HotelInfo {
   rooms: Room[];
   popularAmenities: PopularAmenities;
 }
+
+export interface PopularAmenity {
+  id: number;
+  title: string;
+  icon: IconDefinition;
+  classes: string;
+}
+
+export interface RoomType {
+  id: number;
+  type: string;
+  discount: number;
+  price: number;
+  discountPrice: number;
+  desc: string;
+  beds: number;
+  adults: number;
+  child: number;
+  bathrooms: number;
+  images: string[];
+  popularAmenities: PopularAmenity[];
+  amenities: string[];
+}
+
+export const reviewFields: ReviewField[] = [
+  {
+    id: 1,
+    title: 'Staff',
+    field: 'staff'
+  },
+  {
+    id: 2,
+    title: 'Comfort',
+    field: 'comfort'
+  },
+  {
+    id: 3,
+    title: 'Facilities',
+    field: 'facilities'
+  },
+  {
+    id: 4,
+    title: 'Location',
+    field: 'location'
+  },
+  {
+    id: 5,
+    title: 'cleanliness',
+    field: 'cleanliness'
+  },
+  {
+    id: 6,
+    title: 'Free Wifi',
+    field: 'freeWifi'
+  }
+];
+
+export const popularAmenitiesFields: ReviewField[] = [
+  {
+    id: 1,
+    title: 'Airport Shuttle',
+    field: 'airportShuttle'
+  },
+  {
+    id: 2,
+    title: 'Free Wifi',
+    field: 'freeWifi'
+  },
+  {
+    id: 3,
+    title: 'Restaurant',
+    field: 'restaurant'
+  },
+  {
+    id: 4,
+    title: 'Smoking Zone',
+    field: 'smokingZone'
+  },
+  {
+    id: 5,
+    title: 'Room Service',
+    field: 'roomService'
+  },
+  {
+    id: 6,
+    title: 'Free Parking',
+    field: 'freeParking'
+  },
+  {
+    id: 7,
+    title: 'Pet-Friendly',
+    field: 'petFriendly'
+  },
+  {
+    id: 8,
+    title: 'Beach-Front',
+    field: 'beachFront'
+  },
+  {
+    id: 9,
+    title: 'Facilities for disabled guests',
+    field: 'disableGuest'
+  },
+  {
+    id: 10,
+    title: 'Bar',
+    field: 'bar'
+  },
+  {
+    id: 11,
+    title: 'Free Breakfast',
+    field: 'breakfast'
+  },
+  {
+    id: 12,
+    title: '24-hour front desk',
+    field: 'frontDesk'
+  }
+];
 
 export const hotelInfo: HotelInfo[] = [
   {
@@ -244,29 +368,6 @@ export const hotelInfo: HotelInfo[] = [
     }
   }
 ];
-
-export interface PopularAmenity {
-  id: number;
-  title: string;
-  icon: IconDefinition;
-  classes: string;
-}
-
-export interface RoomType {
-  id: number;
-  type: string;
-  discount: number;
-  price: number;
-  discountPrice: number;
-  desc: string;
-  beds: number;
-  adults: number;
-  child: number;
-  bathrooms: number;
-  images: string[];
-  popularAmenities: PopularAmenity[];
-  amenities: string[];
-}
 
 export const roomTypes: RoomType[] = [
   {

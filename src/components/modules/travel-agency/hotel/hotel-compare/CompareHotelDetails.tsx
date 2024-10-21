@@ -1,7 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
-import type { HotelInfo } from 'data/travel-agency/customer/hotelCompare';
+import type {
+  HotelInfo,
+  Rating,
+  ReviewField
+} from 'data/travel-agency/customer/hotelCompare';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faSearch, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -14,9 +18,13 @@ import HotelCompareRatingRow from 'components/tables/HotelCompareRatingRow';
 
 interface CompareHotelDetailsProps {
   hotelInfo: HotelInfo[];
+  reviewFields: ReviewField[];
 }
 
-const CompareHotelDetails = ({ hotelInfo }: CompareHotelDetailsProps) => {
+const CompareHotelDetails = ({
+  hotelInfo,
+  reviewFields
+}: CompareHotelDetailsProps) => {
   return (
     <table className="table table-layout-fixed table-compare mb-0">
       <thead>
@@ -51,7 +59,9 @@ const CompareHotelDetails = ({ hotelInfo }: CompareHotelDetailsProps) => {
                   slidesPerView={1}
                   loop
                   autoplay
-                  pagination
+                  pagination={{
+                    clickable: true
+                  }}
                   modules={[Autoplay, Pagination]}
                   className="theme-slider"
                 >
@@ -96,36 +106,15 @@ const CompareHotelDetails = ({ hotelInfo }: CompareHotelDetailsProps) => {
             Hotel Review
           </td>
         </tr>
-        <HotelCompareRatingRow
-          label="Staff"
-          items={hotelInfo}
-          ratingKey="staff"
-        />
-        <HotelCompareRatingRow
-          label="Comfort"
-          items={hotelInfo}
-          ratingKey="comfort"
-        />
-        <HotelCompareRatingRow
-          label="Facilities"
-          items={hotelInfo}
-          ratingKey="facilities"
-        />
-        <HotelCompareRatingRow
-          label="location"
-          items={hotelInfo}
-          ratingKey="location"
-        />
-        <HotelCompareRatingRow
-          label="Cleanliness"
-          items={hotelInfo}
-          ratingKey="cleanliness"
-        />
-        <HotelCompareRatingRow
-          label="Free wifi"
-          items={hotelInfo}
-          ratingKey="freeWifi"
-        />
+        {reviewFields.map(review => (
+          <HotelCompareRatingRow
+            key={review.id}
+            title={review.title}
+            ratingValues={hotelInfo.map(
+              hotel => hotel.ratings[review.field as keyof Rating]
+            )}
+          />
+        ))}
         <tr>
           <td colSpan={4} className="ps-4 pt-4 pb-3 fw-bold">
             Facilities at a Glance

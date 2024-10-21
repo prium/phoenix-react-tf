@@ -1,38 +1,37 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import img1 from 'assets/img/hotels/39.png';
 import { cartItems } from 'data/travel-agency/customer/hotelDetails';
-import HotelDetailsCardItem from './HotelDetailsCardItem';
+import HotelDetailsCartItem from './HotelDetailsCartItem';
 import { currencyFormat } from 'helpers/utils';
+import Button from 'components/base/Button';
 
+const discount = 50;
 interface HotelDetailsSummaryCardProps {
   className?: string;
-  isInfoShow: boolean;
+  showHotelInfo: boolean;
 }
 
 const HotelDetailsSummaryCard = ({
   className,
-  isInfoShow
+  showHotelInfo
 }: HotelDetailsSummaryCardProps) => {
   const [items, setItems] = useState(cartItems);
-  const [subTotal, setSubTotal] = useState(
-    cartItems.reduce((acc, item) => acc + item.price, 0)
-  );
 
-  const [discount] = useState(50);
+  const subTotal = useMemo(() => {
+    return items.reduce((acc, item) => acc + item.price, 0);
+  }, [items]);
 
-  const buttonClickHandler = (id: number) => {
+  const removeButtonClickHandler = (id: number) => {
     const newItems = items.filter(item => item.id !== id);
-    const newSubTotal = newItems.reduce((acc, item) => acc + item.price, 0);
     setItems(newItems);
-    setSubTotal(newSubTotal);
   };
   return (
     <Card className={className}>
       <Card.Body>
         <h5 className="mb-3">Summary</h5>
-        {isInfoShow && (
+        {showHotelInfo && (
           <>
             <img src={img1} alt="" width={208} className="rounded-2 mb-3" />
             <h4 className="text-body-highlight mb-2">
@@ -44,13 +43,13 @@ const HotelDetailsSummaryCard = ({
           </>
         )}
         {items.map((item, index) => (
-          <HotelDetailsCardItem
+          <HotelDetailsCartItem
             key={item.id}
-            item={item}
+            cartItem={item}
             index={index}
             className="mb-3"
-            clickHandler={buttonClickHandler}
-            isInfoShow={isInfoShow}
+            crossButtonClickHandler={removeButtonClickHandler}
+            showHotelInfo={showHotelInfo}
           />
         ))}
         <div className="px-4 py-3 bg-body-highlight rounded-2">
@@ -80,12 +79,11 @@ const HotelDetailsSummaryCard = ({
             </h4>
           </div>
         </div>
-        {!isInfoShow && (
-          <Link
-            to="/apps/travel-agency/hotel/customer/hotel-compare"
-            className="btn btn-primary mt-3 w-100"
-          >
-            Proceed with booking
+        {!showHotelInfo && (
+          <Link to="/apps/travel-agency/hotel/customer/hotel-compare">
+            <Button variant="primary" className="mt-3 w-100">
+              Proceed with booking
+            </Button>
           </Link>
         )}
       </Card.Body>

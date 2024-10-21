@@ -169,7 +169,7 @@ const ColumnForm = () => {
       <Button
         variant="phoenix-secondary"
         startIcon={<FontAwesomeIcon icon={faPlus} />}
-        className="w-100 bg-body-highlight fs-9"
+        className="w-100 fs-9"
         size="lg"
         onClick={handleAddNewColumn}
       >

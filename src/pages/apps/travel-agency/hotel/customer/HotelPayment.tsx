@@ -28,16 +28,19 @@ const HotelPayment = () => {
           <Row className="justify-content-between">
             <Col lg={7} xl={6}>
               <Form onSubmit={e => e.preventDefault()}>
-                <Link
-                  to="/apps/travel-agency/hotel/customer/checkout"
-                  className="btn btn-phoenix-primary"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronLeft}
-                    className="me-2"
-                    transform="shrink-3"
-                  />
-                  Go back
+                <Link to="/apps/travel-agency/hotel/customer/checkout">
+                  <Button
+                    variant="phoenix-primary"
+                    startIcon={
+                      <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        className="me-2"
+                        transform="shrink-3"
+                      />
+                    }
+                  >
+                    Go back
+                  </Button>
                 </Link>
                 <hr className="mt-5 mb-7" />
                 <h3 className="mb-5">Enter your address</h3>
@@ -88,16 +91,20 @@ const HotelPayment = () => {
                 </Row>
                 <PaymentMethodForm />
                 <hr className="mt-6 mb-5" />
-                <Link
-                  to="/apps/travel-agency/hotel/customer/checkout"
-                  className="btn btn-phoenix-primary me-3"
-                >
-                  <FontAwesomeIcon
-                    icon={faChevronLeft}
-                    className="me-2"
-                    transform="shrink-3"
-                  />
-                  Go back
+                <Link to="/apps/travel-agency/hotel/customer/checkout">
+                  <Button
+                    variant="phoenix-primary"
+                    className="me-3"
+                    startIcon={
+                      <FontAwesomeIcon
+                        icon={faChevronLeft}
+                        className="me-2"
+                        transform="shrink-3"
+                      />
+                    }
+                  >
+                    Go back
+                  </Button>
                 </Link>
                 <Button variant="primary" className="px-sm-15">
                   Confirm booking
@@ -106,7 +113,7 @@ const HotelPayment = () => {
             </Col>
             <Col lg={5} xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={true}
+                showHotelInfo={true}
                 className="mt-5 mt-lg-0"
               />
             </Col>

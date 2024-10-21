@@ -100,7 +100,7 @@ const HotelDetails = () => {
             </Col>
             <Col xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={false}
+                showHotelInfo={false}
                 className="mt-3 mt-xl-0"
               />
             </Col>

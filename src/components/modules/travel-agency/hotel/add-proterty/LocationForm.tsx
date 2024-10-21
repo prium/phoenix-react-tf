@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
 import { AddPropertyWizardFormData } from 'data/travel-agency/addProperty';
@@ -7,10 +8,18 @@ import {
   faLocationDot
 } from '@fortawesome/free-solid-svg-icons';
 import Mapbox from 'components/base/MapBox';
+import { Map } from 'mapbox-gl';
 
 const LocationForm = ({ tabEventKey }: { tabEventKey: number }) => {
+  const mapRef = useRef<Map | null>(null);
   const methods = useWizardFormContext<AddPropertyWizardFormData>();
   const { onChange } = methods;
+
+  useEffect(() => {
+    if (tabEventKey === 2) {
+      mapRef.current?.resize();
+    }
+  }, [tabEventKey]);
 
   return (
     <>
@@ -43,6 +52,7 @@ const LocationForm = ({ tabEventKey }: { tabEventKey: number }) => {
       </div>
       <div className="mt-3 mb-6">
         <Mapbox
+          ref={mapRef}
           className="rounded-3 border overflow-hidden"
           options={{
             attributionControl: false,
@@ -50,8 +60,6 @@ const LocationForm = ({ tabEventKey }: { tabEventKey: number }) => {
             zoom: 14,
             scrollZoom: false
           }}
-          currentTabEventKey={tabEventKey}
-          targetTabEventKey={2}
           style={{ height: '250px', width: '100%' }}
         />
       </div>

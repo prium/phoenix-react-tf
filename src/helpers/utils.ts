@@ -51,6 +51,18 @@ export const snakeCase = (string: string) => {
     .join('_');
 };
 
+export const camelCase = (string: string) => {
+  return string
+    .replace(/\W+/g, ' ')
+    .split(/ |\B(?=[A-Z])/)
+    .map((word, index) =>
+      index === 0
+        ? word.toLowerCase()
+        : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+    )
+    .join('');
+};
+
 export const getColor = (name: string) => {
   const dom = document.documentElement;
   return getComputedStyle(dom).getPropertyValue(`--phoenix-${name}`).trim();

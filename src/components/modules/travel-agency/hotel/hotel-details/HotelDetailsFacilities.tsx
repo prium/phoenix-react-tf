@@ -13,13 +13,12 @@ interface HotelDetailsFacilitiesProps {
   charges: Charge[];
 }
 
-const CategoryView = ({
-  category,
-  index
-}: {
+interface CategoryListProps {
   category: Charge;
   index: number;
-}) => {
+}
+
+const CategoryLists = ({ category, index }: CategoryListProps) => {
   return (
     <Fragment>
       <h5 className="mb-3">
@@ -84,17 +83,17 @@ const HotelDetailsFacilities = ({
       <Row className="g-3">
         <Col xs="auto" md={4}>
           {charges.slice(0, 5).map((category, index) => (
-            <CategoryView key={index} category={category} index={index} />
+            <CategoryLists key={index} category={category} index={index} />
           ))}
         </Col>
         <Col xs={6} md={4}>
           {charges.slice(5, 10).map((category, index) => (
-            <CategoryView key={index} category={category} index={index} />
+            <CategoryLists key={index} category={category} index={index} />
           ))}
         </Col>
         <Col xs="auto" md={4}>
           {charges.slice(10).map((category, index) => (
-            <CategoryView key={index} category={category} index={index} />
+            <CategoryLists key={index} category={category} index={index} />
           ))}
         </Col>
       </Row>

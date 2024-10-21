@@ -1,8 +1,3 @@
-import React from 'react';
-import {
-  HotelInfo,
-  PopularAmenities
-} from 'data/travel-agency/customer/hotelCompare';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCircleCheck,
@@ -10,27 +5,25 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 interface HotelCompareAmenityRowProps {
-  label: string;
-  items: HotelInfo[];
-  aminityKey: keyof PopularAmenities;
+  title: string;
+  reviewField: boolean[];
 }
 
 const HotelCompareAmenityRow = ({
-  label,
-  items,
-  aminityKey
+  title,
+  reviewField
 }: HotelCompareAmenityRowProps) => {
   return (
     <tr>
       <td className="px-4 align-middle border-end-lg border-translucent bg-body-highlight">
-        <h6 className="text-body fw-bolder text-uppercase mb-0">{label}</h6>
+        <h6 className="text-body fw-bolder text-uppercase mb-0">{title}</h6>
       </td>
-      {items.map(item => (
+      {reviewField.map((item, index) => (
         <td
-          key={item.id}
+          key={index}
           className="px-3 align-middle border-end-lg border-translucent"
         >
-          {item.popularAmenities[aminityKey] ? (
+          {item ? (
             <h6 className="text-body">
               <FontAwesomeIcon
                 icon={faCircleCheck}
