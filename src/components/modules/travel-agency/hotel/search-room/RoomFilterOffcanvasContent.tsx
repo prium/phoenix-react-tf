@@ -34,6 +34,7 @@ const RoomFilterOffcanvasContent = ({
       [name]: parseInt(value)
     }));
   };
+
   return (
     <div className="pe-1">
       <div className="d-flex align-items-center">
