@@ -162,7 +162,7 @@ const NavbarMain = () => {
         <Navbar.Brand
           as={Link}
           to="/"
-          className="flex-1 flex-lg-grow-0 me-lg-13"
+          className="flex-1 flex-lg-grow-0 me-lg-8 me-xl-13"
         >
           <Logo />
         </Navbar.Brand>
