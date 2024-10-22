@@ -21,6 +21,10 @@ interface FlightSchedule {
   };
   duration: string;
 }
+interface FlightScheduleProps {
+  schedule: FlightSchedule;
+}
+
 interface FlightInfo {
   airline: {
     name: string;
@@ -149,7 +153,7 @@ const FlightsInfo: FlightInfo[] = [
   }
 ];
 
-const FlightSchedule = ({ schedule }: any) => {
+const FlightSchedule = ({ schedule }: FlightScheduleProps) => {
   return (
     <div className="d-flex gap-4 justify-content-center">
       <div>
@@ -178,7 +182,7 @@ const FlightItem = ({ airline, schedules, price }: FlightInfo) => {
     <Row className="g-0 gap-6 align-items-center py-7 border-top">
       <Col lg>
         <div className="d-flex flex-column gap-md-3 gap-6">
-          {schedules.map((schedule: any, idx: number) => (
+          {schedules.map((schedule, idx) => (
             <Row
               key={idx}
               className="gy-md-0 gy-4 justify-content-sm-between justify-content-lg-start"
