@@ -4,32 +4,9 @@ import { Dropdown, Nav, NavItem, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { ResizeableNav } from 'data/travel-agency/ResizeableNav';
 
-type NavItemType = {
-  id: number;
-  label: string;
-  url: string;
-};
-
-const initNavItems: NavItemType[] = [
-  {
-    id: 1,
-    label: 'Homepage',
-    url: '/apps/travel-agency/flight/homepage'
-  },
-  {
-    id: 2,
-    label: 'Booking',
-    url: '/apps/travel-agency/flight/booking'
-  },
-  {
-    id: 3,
-    label: 'Payment',
-    url: '/apps/travel-agency/flight/payment'
-  }
-];
-
-const ResizeableNavbar = () => {
+const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
   const { pathname } = useLocation();
 
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -84,7 +61,7 @@ const ResizeableNavbar = () => {
         ref={containerRef}
       >
         <Nav as="ul" className="justify-content-end align-items-center gap-5">
-          {initNavItems.map((item, index) => (
+          {navItems.map((item, index) => (
             <Nav.Item
               className="gap-3"
               key={item.id}
@@ -112,7 +89,7 @@ const ResizeableNavbar = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu align="end" renderOnMount>
-              {initNavItems.map((item, index) => (
+              {navItems.map((item, index) => (
                 <Dropdown.Item
                   key={item.id}
                   as={Link}

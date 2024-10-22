@@ -9,6 +9,8 @@ import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faCircle } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelCheckout = () => {
   useSettingsMountEffect({
@@ -20,6 +22,7 @@ const HotelCheckout = () => {
 
   return (
     <>
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="pt-6 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />

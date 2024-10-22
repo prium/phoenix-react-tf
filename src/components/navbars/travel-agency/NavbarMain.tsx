@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
       },
       {
         label: 'Hotel details',
-        url: '/apps/travel-agency/hotel/customer/hotel-compare/'
+        url: '/apps/travel-agency/hotel/customer/hotel-details/'
       },
       {
         label: 'Hotel compare',
@@ -40,11 +40,11 @@ const navItems: NavItem[] = [
       },
       {
         label: 'Checkout',
-        url: '/apps/travel-agency/hotel/checkout/'
+        url: '/apps/travel-agency/hotel/customer/checkout/'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/hotel/payment/'
+        url: '/apps/travel-agency/hotel/customer/payment/'
       }
     ]
   },
@@ -57,30 +57,31 @@ const navItems: NavItem[] = [
       },
       {
         label: 'Booking',
-        url: '/apps/travel-agency/flight/homepage'
+        url: '/apps/travel-agency/flight/booking'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/flight/homepage'
+        url: '/apps/travel-agency/flight/payment'
       }
     ]
   },
   {
     label: 'Trip',
-    items: [
-      {
-        label: 'Homepage',
-        url: '/apps/travel-agency/flight/homepage'
-      },
-      {
-        label: 'Trip Details',
-        url: '/apps/travel-agency/flight/homepage'
-      },
-      {
-        label: 'Checkout',
-        url: '/apps/travel-agency/flight/homepage'
-      }
-    ]
+    url: '#!'
+    // items: [
+    //   {
+    //     label: 'Homepage',
+    //     url: '/apps/travel-agency/flight/homepage'
+    //   },
+    //   {
+    //     label: 'Trip Details',
+    //     url: '/apps/travel-agency/flight/homepage'
+    //   },
+    //   {
+    //     label: 'Checkout',
+    //     url: '/apps/travel-agency/flight/homepage'
+    //   }
+    // ]
   },
   {
     label: 'Event',
@@ -125,11 +126,10 @@ const NavDropdownItems = ({ label, items }: dropdownItemsProps) => {
       onToggle={() => setShow(!show)}
       show={show}
     >
-      <Dropdown.Toggle as={Link} className="nav-link fs-8 fw-bold " to="#!">
+      <Dropdown.Toggle as={Link} className="nav-link fs-8 fw-bold" to="#!">
         {label}
       </Dropdown.Toggle>
       <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3">
-        {/* @ts-ignore */}
         {items.map((dropdownItem, index) => (
           <Dropdown.Item as={Link} to={dropdownItem.url} key={index}>
             {dropdownItem.label}

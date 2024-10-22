@@ -9,41 +9,46 @@ import FlightDetails from 'components/modules/travel-agency/flight/booking/Fligh
 import CouponCard from 'components/cards/CuponCard';
 import PaymentSummary from 'components/modules/travel-agency/flight/booking/PaymentSummary';
 import TravelerDetails from 'components/modules/travel-agency/flight/booking/TravelerDetails';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { flightNavItems } from 'data/travel-agency/ResizeableNav';
 
 const FlightBooking = () => {
   return (
-    <Container fluid="small" className="pt-6 pb-9">
-      <PageBreadcrumb items={defaultBreadcrumbItems} />
-      <h2 className="mb-5">Booking</h2>
-      <Row className="g-3 align-items-sm-center justify-content-between mb-5">
-        <Col sm>
-          <FlightBookingWizard activeItem="Booking" />
-        </Col>
-        <Col sm className="text-sm-end">
-          <div>
-            <p className="mb-2 text-info">Book before time runs out</p>
-            <h3 className="mb-0 text-info fw-bold d-flex gap-2 align-items-center justify-content-sm-end">
-              <FontAwesomeIcon icon={faClock} className="fs-8" />
-              <span>29</span>
-              <span className="fs-9 fw-normal">min</span>
-              <span>50</span>
-              <span className="fs-9 fw-normal">sec</span>
-            </h3>
-          </div>
-        </Col>
-      </Row>
-      <FlightInfo />
-      <FlightDetails />
-      <Row className="justify-content-between">
-        <Col lg={8}>
-          <TravelerDetails />
-          <PaymentSummary />
-        </Col>
-        <Col lg={4}>
-          <CouponCard />
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <ResizeableNavbar navItems={flightNavItems} />
+      <Container fluid="small" className="pt-6 pb-9">
+        <PageBreadcrumb items={defaultBreadcrumbItems} />
+        <h2 className="mb-5">Booking</h2>
+        <Row className="g-3 align-items-sm-center justify-content-between mb-5">
+          <Col sm>
+            <FlightBookingWizard activeItem="Booking" />
+          </Col>
+          <Col sm className="text-sm-end">
+            <div>
+              <p className="mb-2 text-info">Book before time runs out</p>
+              <h3 className="mb-0 text-info fw-bold d-flex gap-2 align-items-center justify-content-sm-end">
+                <FontAwesomeIcon icon={faClock} className="fs-8" />
+                <span>29</span>
+                <span className="fs-9 fw-normal">min</span>
+                <span>50</span>
+                <span className="fs-9 fw-normal">sec</span>
+              </h3>
+            </div>
+          </Col>
+        </Row>
+        <FlightInfo />
+        <FlightDetails />
+        <Row className="justify-content-between">
+          <Col lg={8}>
+            <TravelerDetails />
+            <PaymentSummary />
+          </Col>
+          <Col lg={4}>
+            <CouponCard />
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 

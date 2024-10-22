@@ -6,6 +6,8 @@ import HotelGalleryImages from 'components/modules/travel-agency/hotel/HotelGall
 import { galleryItems } from 'data/travel-agency/customer/gallery';
 import { Container } from 'react-bootstrap';
 import TravelFooter from 'components/footers/TravelFooter';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelGallery = () => {
   useSettingsMountEffect({
@@ -17,6 +19,7 @@ const HotelGallery = () => {
 
   return (
     <>
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="pt-6 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />

@@ -7,6 +7,8 @@ import FlightListing from 'components/modules/travel-agency/flight/homepage/Flig
 import FlightFooter from 'components/modules/travel-agency/flight/homepage/FlightFooter';
 import FlightPromoModal from 'components/modals/FlightPromoModal';
 import { useState } from 'react';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { flightNavItems } from 'data/travel-agency/ResizeableNav';
 
 const FlightHomePage = () => {
   const [showPromoModal, setShowPromoModal] = useState(true);
@@ -19,6 +21,7 @@ const FlightHomePage = () => {
 
   return (
     <>
+      <ResizeableNavbar navItems={flightNavItems} />
       <section className="container-small py-0">
         <NavbarHome currentPage="Flight" />
       </section>

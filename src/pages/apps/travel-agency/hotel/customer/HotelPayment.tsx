@@ -10,6 +10,8 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
 import TravelFooter from 'components/footers/TravelFooter';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelPayment = () => {
   useSettingsMountEffect({
@@ -21,6 +23,7 @@ const HotelPayment = () => {
 
   return (
     <>
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="pt-6 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />

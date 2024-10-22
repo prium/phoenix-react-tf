@@ -9,6 +9,8 @@ import { hotels } from 'data/travel-agency/customer/hotel';
 import NavbarHome from 'components/navbars/travel-agency/NavbarHome';
 import HotelActions from 'components/modules/travel-agency/hotel/HotelActions';
 import TravelFooter from 'components/footers/TravelFooter';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelHomepage = () => {
   useSettingsMountEffect({
@@ -20,6 +22,7 @@ const HotelHomepage = () => {
 
   return (
     <>
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="container-small py-0">
         <NavbarHome currentPage="Hotel" />
       </section>

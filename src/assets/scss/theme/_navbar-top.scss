@@ -708,6 +708,11 @@
     @include media-breakpoint-up($item) {
       &.navbar-expand-#{$item} {
         .travel-nav-top{
+          .dropdown-toggle{
+            &::after{
+              display: none;
+            }
+          }
           .nav-link {
             &:hover,
             &.active {

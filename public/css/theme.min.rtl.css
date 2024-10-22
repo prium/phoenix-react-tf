@@ -22861,6 +22861,9 @@ pre[class*=language-] {
   background-color: #000000 !important;
   opacity: 0.5;
 }
+.tox .tox-edit-area::before {
+  border: none !important;
+}
 
 .tox .tox-tbtn {
   height: 24px !important;
@@ -22893,6 +22896,9 @@ pre[class*=language-] {
 
 .tox .tox-edit-area__iframe {
   background-color: var(--phoenix-tinymce-bg) !important;
+}
+.tox .tox-edit-area__iframe:before {
+  border: 2px solid red !important;
 }
 
 .editor-focused .tox-sidebar-wrap {
@@ -29478,6 +29484,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   display: none;
 }
 @media (min-width: 1540px) {
+  .navbar-landing.navbar-expand-xxl .travel-nav-top .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-landing.navbar-expand-xxl .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xxl .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29486,6 +29495,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   }
 }
 @media (min-width: 1200px) {
+  .navbar-landing.navbar-expand-xl .travel-nav-top .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-landing.navbar-expand-xl .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xl .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29494,6 +29506,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   }
 }
 @media (min-width: 992px) {
+  .navbar-landing.navbar-expand-lg .travel-nav-top .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-landing.navbar-expand-lg .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-lg .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29502,6 +29517,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   }
 }
 @media (min-width: 768px) {
+  .navbar-landing.navbar-expand-md .travel-nav-top .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-landing.navbar-expand-md .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-md .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29510,12 +29528,18 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   }
 }
 @media (min-width: 576px) {
+  .navbar-landing.navbar-expand-sm .travel-nav-top .dropdown-toggle::after {
+    display: none;
+  }
   .navbar-landing.navbar-expand-sm .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-sm .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
   .navbar-landing.navbar-expand-sm .dropdown-hoverable .navbar-dropdown-caret::after {
     display: block;
   }
+}
+.navbar-landing.navbar-expand-xs .travel-nav-top .dropdown-toggle::after {
+  display: none;
 }
 .navbar-landing.navbar-expand-xs .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xs .travel-nav-top .nav-link.active {
   background: var(--phoenix-secondary-bg);
@@ -30264,6 +30288,10 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 .modal-open .navbar-toggler {
   margin-left: 0.6125rem !important;
+}
+
+.modal-53w {
+  max-width: 53.313rem;
 }
 
 .accordion-button {
@@ -34806,4 +34834,8 @@ a[href].bg-body-secondary:hover, a[href].bg-body-secondary:focus {
 
 .theme-wizard.flight-booking-wizard .nav-item:not(.theme-wizard.flight-booking-wizard .nav-item:last-child) .nav-link:before {
   top: 35% !important;
+}
+
+[dir=rtl] .plane-icon {
+  transform: rotate(-180deg);
 }

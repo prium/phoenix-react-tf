@@ -6,10 +6,13 @@ import CountdownDisplay from '../payment/CountdownDisplay';
 import FlightPaymentInfo from './PaymentInfo';
 import PaymentMethodForm from 'components/forms/PaymentMethodForm';
 import FlightBottomBar from './BottomBar';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const FlightPayment = () => {
   return (
     <>
+      <ResizeableNavbar navItems={hotelNavItems} />
       <Container fluid="small" className="pt-6 pb-9">
         <PageBreadcrumb items={defaultBreadcrumbItems} />
         <h2 className="mb-5">Payment</h2>
