@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useLayoutEffect, useRef } from 'react';
-import { Dropdown, Nav, NavItem, Navbar } from 'react-bootstrap';
+import { Container, Dropdown, Nav, NavItem, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +27,7 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
     navItemsRef.current.forEach((item, index) => {
       const dropdownItem = dropdownItemsRef.current[index];
       if (item && dropdownItem && moreBtnRef.current) {
-        totalItemsWidth = totalItemsWidth + item.clientWidth + 32;
+        totalItemsWidth = totalItemsWidth + item.clientWidth + 52;
         if (
           otherElsWidth + totalItemsWidth + moreBtnWidth + 50 >
           containerWidth
@@ -55,9 +55,10 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
   }, [updateItems]);
 
   return (
-    <Navbar className="magic-navbar bg-body-emphasis border-y bg-body-emphasis border-translucent py-2">
-      <div
-        className="container-medium d-flex flex-between-center flex-nowrap w-100"
+    <Navbar className="resizeable-nav bg-body-emphasis border-y bg-body-emphasis border-translucent py-2">
+      <Container
+        fluid="medium"
+        className="d-flex flex-between-center flex-nowrap w-100"
         ref={containerRef}
       >
         <Nav as="ul" className="justify-content-end align-items-center gap-5">
@@ -104,7 +105,7 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
-      </div>
+      </Container>
     </Navbar>
   );
 };

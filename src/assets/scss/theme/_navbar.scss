@@ -171,7 +171,11 @@
   }
 }
 
-.magic-navbar {
+.resizeable-nav {
+  &.navbar{
+    padding-left: 0;
+    padding-right: 0;
+  }
   .nav-item {
     white-space: nowrap;
     .nav-link {

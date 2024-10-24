@@ -324,7 +324,7 @@ export const routes: RouteItems[] = [
       {
         name: 'travel-agency',
         hasNew: true,
-        icon: 'clipboard',
+        icon: 'briefcase',
         active: true,
         pages: [
           {
