@@ -1,10 +1,3 @@
-export interface hotelInterFace {
-  name: string;
-  location: string;
-  price: string;
-  rating: string;
-  img: string;
-}
 import hotel1 from 'assets/img/hotels/1.png';
 import hotel2 from 'assets/img/hotels/2.png';
 import hotel3 from 'assets/img/hotels/3.png';
@@ -25,6 +18,19 @@ import hotel70 from 'assets/img/hotels/70.png';
 import hotel71 from 'assets/img/hotels/71.png';
 import hotel72 from 'assets/img/hotels/72.png';
 import hotel73 from 'assets/img/hotels/73.png';
+
+export interface hotelInterFace {
+  name: string;
+  location: string;
+  price: string;
+  rating: string;
+  img: string;
+}
+
+interface SearchRoomCollapsibleItem {
+  title: string;
+  key: string;
+}
 
 export const hotels: hotelInterFace[] = [
   {
@@ -536,5 +542,28 @@ export const roomsSearchData: roomSearchInterface[] = [
       'Heating',
       'Telephone'
     ]
+  }
+];
+
+export const searchRoomCollapsibleItems: SearchRoomCollapsibleItem[] = [
+  {
+    title: 'Adult',
+    key: 'adult'
+  },
+  {
+    title: 'Child',
+    key: 'child'
+  },
+  {
+    title: 'Bedroom',
+    key: 'bedroom'
+  },
+  {
+    title: 'Number of Bed',
+    key: 'numberOfBed'
+  },
+  {
+    title: 'Bathroom',
+    key: 'bathroom'
   }
 ];
