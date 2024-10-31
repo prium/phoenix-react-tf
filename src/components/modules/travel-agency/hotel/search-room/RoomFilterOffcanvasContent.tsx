@@ -10,11 +10,30 @@ import {
   bedTypeOptions,
   RoomCategoryOptions
 } from 'data/travel-agency/admin/searchRoom';
-import { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useMemo,
+  useState
+} from 'react';
 import RoomFilterCollapseItem from './RoomFilterCollapseItem';
+import { searchRoomCollapsibleItems } from 'data/travel-agency/customer/hotel';
 
 interface RoomFilterOffcanvasContentProps {
   setOpen?: Dispatch<SetStateAction<boolean>>;
+}
+
+interface ExpandedStates {
+  priceRange: boolean;
+  adult: boolean;
+  child: boolean;
+  bedroom: boolean;
+  numberOfBed: boolean;
+  bathroom: boolean;
+  roomCategory: boolean;
+  bedType: boolean;
+  amenities: boolean;
 }
 
 const RoomFilterOffcanvasContent = ({
@@ -25,14 +44,37 @@ const RoomFilterOffcanvasContent = ({
     priceRangeMax: 2000
   });
   const [priceRange, setPriceRange] = useState([699, 1299]);
-  const [isCollapseAll, setIsCollapseAll] = useState(false);
+  const [expandedStates, setExpandedState] = useState<ExpandedStates>({
+    priceRange: true,
+    adult: true,
+    child: true,
+    bedroom: true,
+    numberOfBed: true,
+    bathroom: true,
+    roomCategory: false,
+    bedType: false,
+    amenities: false
+  });
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setRange(prevState => ({
-      ...prevState,
-      [name]: parseInt(value)
-    }));
+    setRange(prevState => ({ ...prevState, [name]: parseInt(value) }));
+  };
+
+  const allExpanded = useMemo(() => {
+    return Object.values(expandedStates).some(value => value) ? false : true;
+  }, [expandedStates]);
+
+  const handleToggleCollapse = (key: keyof ExpandedStates) => {
+    setExpandedState(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const toggleCollapseAll = () => {
+    const items = Object.keys(expandedStates).reduce((acc, key) => {
+      acc[key as keyof ExpandedStates] = allExpanded;
+      return acc;
+    }, {} as ExpandedStates);
+    setExpandedState(items);
   };
 
   return (
@@ -42,9 +84,9 @@ const RoomFilterOffcanvasContent = ({
         <Button
           variant="phoenix-secondary"
           className="px-3 ms-auto me-2 me-xl-0"
-          onClick={() => setIsCollapseAll(true)}
+          onClick={toggleCollapseAll}
         >
-          Collapse all
+          {allExpanded ? 'Expand' : 'Collapse'} all
         </Button>
         <Button
           className="p-0 fw-bold d-xl-none"
@@ -56,8 +98,8 @@ const RoomFilterOffcanvasContent = ({
 
       <RoomFilterCollapseItem
         title="Price Range"
-        isCollapseAll={isCollapseAll}
-        setIsCollapseAll={setIsCollapseAll}
+        onToggle={() => handleToggleCollapse('priceRange')}
+        collapseStatus={expandedStates.priceRange}
       >
         <PhoenixReactRange
           values={priceRange}
@@ -98,44 +140,44 @@ const RoomFilterOffcanvasContent = ({
         </Row>
       </RoomFilterCollapseItem>
 
-      {['Adult', 'Child', 'Bedroom', 'Number of Bed', 'Bathroom'].map(
-        (item, index) => (
-          <RoomFilterCollapseItem
-            key={index}
-            title={item}
-            isCollapseAll={isCollapseAll}
-            setIsCollapseAll={setIsCollapseAll}
-          >
-            <RoomFilterActions />
-          </RoomFilterCollapseItem>
-        )
-      )}
+      {searchRoomCollapsibleItems.map(item => (
+        <RoomFilterCollapseItem
+          key={item.key}
+          title={item.title}
+          collapseStatus={expandedStates[item.key as keyof ExpandedStates]}
+          onToggle={() =>
+            handleToggleCollapse(item.key as keyof ExpandedStates)
+          }
+        >
+          <RoomFilterActions />
+        </RoomFilterCollapseItem>
+      ))}
 
       <RoomFilterCollapseItem
         title="Room Category"
-        defaultOpen={false}
-        isCollapseAll={isCollapseAll}
-        setIsCollapseAll={setIsCollapseAll}
+        collapseStatus={expandedStates.roomCategory}
+        onToggle={() => handleToggleCollapse('roomCategory')}
       >
         <RoomFilterSearch items={RoomCategoryOptions} />
       </RoomFilterCollapseItem>
+
       <RoomFilterCollapseItem
         title="Bed Type"
-        defaultOpen={false}
-        isCollapseAll={isCollapseAll}
-        setIsCollapseAll={setIsCollapseAll}
+        collapseStatus={expandedStates.bedType}
+        onToggle={() => handleToggleCollapse('bedType')}
       >
         <RoomFilterSearch items={bedTypeOptions} />
       </RoomFilterCollapseItem>
+
       <RoomFilterCollapseItem
         title="Amenities"
-        defaultOpen={false}
+        collapseStatus={expandedStates.amenities}
         hideBorderBottom
-        isCollapseAll={isCollapseAll}
-        setIsCollapseAll={setIsCollapseAll}
+        onToggle={() => handleToggleCollapse('amenities')}
       >
         <RoomFilterSearch items={amenitiesOptions} />
       </RoomFilterCollapseItem>
+
       <div className="sticky-bottom bg-body pt-4 pb-4 pb-xl-0">
         <Button variant="phoenix-secondary" className="me-2">
           Reset

@@ -1,10 +1,11 @@
-import React from 'react';
-import { Card, Form } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Collapse, Card, Form } from 'react-bootstrap';
 import FlightSearchForm from './FlightSearchForm';
 import FlightPreviewForm from './FlightPreviewForm';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 
 interface FlightTypeCheckboxProps {
   name: string;
@@ -34,6 +35,7 @@ const FlightTypeCheckbox = ({
 };
 
 const FlightSearch = () => {
+  const [detailsVisible, setDetailsVisible] = useState(true);
   return (
     <Form>
       <Card className="position-relative mb-6">
@@ -44,13 +46,13 @@ const FlightSearch = () => {
               id="oneWay"
               value="oneway"
               label="One way"
-              defaultChecked
             />
             <FlightTypeCheckbox
               name="flightType"
               id="returnTrip"
               value="returnTrip"
               label="Return"
+              defaultChecked
             />
             <FlightTypeCheckbox
               name="flightType"
@@ -60,15 +62,29 @@ const FlightSearch = () => {
             />
           </div>
           <FlightSearchForm />
-          <FlightPreviewForm />
+          <Collapse in={detailsVisible}>
+            <div id="flight-preview-form">
+              <FlightPreviewForm />
+            </div>
+          </Collapse>
           <div className="d-flex flex-wrap gap-3 justify-content-between">
             <Button
               variant="link"
               to="#!"
-              className="fs-8 fw-semibold text-normal px-0"
+              className={classNames(
+                'fs-8 fw-semibold text-normal px-0 collapse-indicator',
+                {
+                  collapsed: detailsVisible
+                }
+              )}
+              onClick={() => setDetailsVisible(!detailsVisible)}
+              aria-controls="flight-preview-form"
             >
-              Close details
-              <FontAwesomeIcon icon={faAngleUp} className="ms-1" />
+              {!detailsVisible ? 'Show' : 'Close'} details
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className="ms-1 toggle-icon"
+              />
             </Button>
 
             <Button

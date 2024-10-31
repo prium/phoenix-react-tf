@@ -1,46 +1,29 @@
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
-import React, {
-  Dispatch,
-  PropsWithChildren,
-  SetStateAction,
-  useEffect,
-  useState
-} from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Collapse } from 'react-bootstrap';
 
 interface RoomFilterCollapseProps {
   title: string;
-  defaultOpen?: boolean;
   hideBorderBottom?: boolean;
-  isCollapseAll: boolean;
-  setIsCollapseAll: Dispatch<SetStateAction<boolean>>;
+  onToggle: () => void;
+  collapseStatus: boolean;
 }
 
 const RoomFilterCollapseItem = ({
   title,
-  defaultOpen = true,
   children,
   hideBorderBottom = false,
-  isCollapseAll = false,
-  setIsCollapseAll
+  onToggle,
+  collapseStatus
 }: PropsWithChildren<RoomFilterCollapseProps>) => {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
-  useEffect(() => {
-    if (isCollapseAll) {
-      setIsOpen(false);
-      setIsCollapseAll(false);
-    }
-  }, [isCollapseAll]);
-
   return (
     <>
       <Button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         aria-controls={title.split(' ').join('_')}
-        aria-expanded={isOpen}
+        aria-expanded={collapseStatus}
         className="px-0 py-2 d-flex align-items-center mt-3 collapse-indicator"
       >
         <FontAwesomeIcon
@@ -49,7 +32,7 @@ const RoomFilterCollapseItem = ({
         />
         <h5 className="text-body-highlight">{title}</h5>
       </Button>
-      <Collapse in={isOpen}>
+      <Collapse in={collapseStatus}>
         <div
           id={title.split(' ').join('_')}
           className={hideBorderBottom ? undefined : 'border-bottom'}

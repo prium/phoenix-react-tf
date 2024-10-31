@@ -21,7 +21,7 @@ import DatePicker from 'components/base/DatePicker';
 import Button from 'components/base/Button';
 import { useState } from 'react';
 
-const DropdownItem = ({
+export const DropdownItem = ({
   title,
   className
 }: {

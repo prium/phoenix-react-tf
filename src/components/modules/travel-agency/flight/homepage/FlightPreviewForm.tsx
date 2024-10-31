@@ -1,9 +1,9 @@
 import PhoenixReactRange from 'components/forms/PhoenixReactRange';
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 
 const FlightPreviewForm = () => {
-  const priceRange = [100, 186];
+  const [priceRange, setPriceRange] = useState([100, 186]);
 
   return (
     <div className="bg-body-highlight p-3 p-sm-4 rounded-2 mb-4">
@@ -29,9 +29,9 @@ const FlightPreviewForm = () => {
             variant="primary-lighter"
             min={100}
             max={200}
-            // onChange={val => setValues({ ...values, segmentTwo: val })}
             trackHeight={'4px'}
             classNames={'phoenix-react-range-slim px-2 pt-1 mb-3'}
+            onChange={val => setPriceRange(val)}
           />
           <div className="d-flex flex-between-center">
             <div>
