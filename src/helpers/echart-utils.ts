@@ -63,3 +63,27 @@ export const tooltipFormatterList = (params: CallbackDataParams[]) => {
             ${tooltipItem}
           </div>`;
 };
+
+export const rtlTooltipFormatter = (
+  params: CallbackDataParams,
+  isRTL: boolean
+) => {
+  const ltr = `<div class="text-black">
+    ${params.marker}
+    <span class="fw-normal" style="font-size:14px; margin-left: 2px">
+      ${params.name}
+    </span>
+    <span class="fw-black" style="float:right;margin-left:20px;font-size:14px;">${params.value}</span>
+  </div>`;
+
+  const rtl = `<div class="text-black">
+    <span class="fw-black" style="float:left;margin-right:20px;font-size:14px;">${params.value}</span>
+    <span class="fw-normal" style="font-size:14px; margin-right: 2px">
+      ${params.name}
+    </span>
+    <span class="d-inline-block ms-1" style="border-radius: 10px; width: 10px; height: 10px; background-color:${params.color}"></span>
+  </div>
+  `;
+
+  return isRTL ? rtl : ltr;
+};

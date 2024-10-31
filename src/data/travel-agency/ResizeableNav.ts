@@ -71,3 +71,21 @@ export const flightNavItems: ResizeableNavItem[] = [
     url: '/apps/travel-agency/flight/payment'
   }
 ];
+
+export const tripNavItems: ResizeableNavItem[] = [
+  {
+    id: 1,
+    label: 'Homepage',
+    url: '#!'
+  },
+  {
+    id: 2,
+    label: 'Trip Details',
+    url: '#!'
+  },
+  {
+    id: 3,
+    label: 'Checkout',
+    url: '#!'
+  }
+];
