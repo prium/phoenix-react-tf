@@ -2,7 +2,8 @@ import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
-import { Col, FloatingLabel, Form, Row } from 'react-bootstrap';
+import { Col, FloatingLabel, Form, Row, Dropdown } from 'react-bootstrap';
+import { DropdownItem } from '../../hotel/HotelActions';
 
 const FlightSearchForm = () => {
   return (
@@ -24,7 +25,7 @@ const FlightSearchForm = () => {
           </Col>
           <Col xs="auto">
             <Button variant="phoenix-secondary" className="circle-btn">
-              <FontAwesomeIcon icon={faArrowsRotate} className="fs-10" />
+              <FontAwesomeIcon icon={faArrowsRotate} />
             </Button>
           </Col>
           <Col sm>
@@ -94,18 +95,35 @@ const FlightSearchForm = () => {
         </Row>
       </Col>
       <Col lg="auto">
-        <FloatingLabel
-          controlId="travelerCount"
-          label="Traveler"
-          className="flex-1"
-          style={{ minWidth: '13rem' }}
-        >
-          <Form.Control
-            type="text"
-            name="travelerCount"
-            defaultValue="1 Traveler"
-          />
-        </FloatingLabel>
+        <Dropdown autoClose="outside">
+          <Dropdown.Toggle variant="" className="p-0 dropdown-caret-none w-100">
+            <FloatingLabel
+              controlId="travelerCount"
+              label="Traveler"
+              className="flex-1"
+              style={{ minWidth: '13rem' }}
+            >
+              <Form.Control
+                type="text"
+                name="travelerCount"
+                defaultValue="1 Traveler"
+                readOnly
+              />
+            </FloatingLabel>
+          </Dropdown.Toggle>
+          <Dropdown.Menu
+            className="p-4"
+            align="start"
+            style={{ maxWidth: 320 }}
+          >
+            <DropdownItem title="adults" className="pb-3 pt-0 border-bottom" />
+            <DropdownItem title="infants" className="py-3 border-bottom" />
+            <DropdownItem title="children" className="py-3" />
+            <Button variant="primary" className="w-100">
+              Complete
+            </Button>
+          </Dropdown.Menu>
+        </Dropdown>
       </Col>
     </Row>
   );

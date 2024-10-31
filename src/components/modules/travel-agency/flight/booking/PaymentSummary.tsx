@@ -20,7 +20,7 @@ const SummaryItem = ({
   className
 }: SummaryItemProps) => (
   <ListGroup.Item
-    className={`px-0 py-3 bg-body-highlight ${className || null}`}
+    className={classNames('px-0 py-3 bg-body-highlight', className)}
   >
     <div className="d-flex flex-between-center">
       <h6 className="mb-0">
@@ -45,7 +45,7 @@ const SummaryItem = ({
 
 const PaymentSummary = () => {
   return (
-    <div>
+    <div className="mb-4 mb-lg-9">
       <h3 className="mb-4">Payment Summary</h3>
       <Card className="bg-body-highlight">
         <Card.Body>

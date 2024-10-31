@@ -24,7 +24,7 @@ const FligthListHead = () => {
       <div className="d-flex flex-between-center mb-3">
         <IsotopeNav
           navItems={navItems}
-          className="mb-5 justify-content-center w-max-content"
+          className="justify-content-center w-max-content"
           defaultActiveKey={navItems[1].eventKey}
           // onSelect={handleSelect}
         />
