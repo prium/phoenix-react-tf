@@ -454,7 +454,7 @@ const Preview = () => {
         >
           <Row className="g-2 g-sm-3">
             {formData?.photos?.map((item, index) => (
-              <Col key={index} sm={4}>
+              <Col key={index} xs={6} sm={4}>
                 <img
                   src={URL.createObjectURL(item)}
                   alt="item"

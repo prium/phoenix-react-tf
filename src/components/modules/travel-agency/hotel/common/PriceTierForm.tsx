@@ -44,6 +44,32 @@ const PriceTierForm = ({
             {name}
           </Form.Check.Label>
         </Form.Check>
+        <div
+          className={classNames('ms-auto mt-2 mt-sm-0', {
+            'd-block': active,
+            'd-none': !active
+          })}
+        >
+          <Form.Check type="radio" className="form-check-inline me-3 mb-0">
+            <Form.Check.Input
+              type="radio"
+              id={`${name}-free`}
+              name={`${name}-radio`}
+              defaultValue="free"
+              checked
+            />
+            <Form.Check.Label htmlFor={`${name}-free`}>Free</Form.Check.Label>
+          </Form.Check>
+          <Form.Check type="radio" className="form-check-inline me-0 mb-0">
+            <Form.Check.Input
+              type="radio"
+              id={`${name}-paid`}
+              name={`${name}-radio`}
+              defaultValue="paid"
+            />
+            <Form.Check.Label htmlFor={`${name}-paid`}>Paid</Form.Check.Label>
+          </Form.Check>
+        </div>
       </div>
     </div>
   );

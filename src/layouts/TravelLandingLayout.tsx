@@ -2,8 +2,7 @@ import { Outlet } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
 import Footer from 'pages/apps/travel-agency/landing/Footer';
-import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
-import { landingNavItems } from 'data/travel-agency/ResizeableNav';
+import TopNav from 'pages/apps/travel-agency/landing/TopNav copy';
 
 const TravelLandingLayout = () => {
   useSettingsMountEffect({
@@ -14,8 +13,8 @@ const TravelLandingLayout = () => {
   });
   return (
     <>
+      <TopNav />
       <NavbarMain />
-      <ResizeableNavbar navItems={landingNavItems} />
       <Outlet />
       <Footer />
     </>

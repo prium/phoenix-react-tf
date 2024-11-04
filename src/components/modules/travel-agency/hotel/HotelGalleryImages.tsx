@@ -10,18 +10,12 @@ interface HotelGalleryImagesProps {
 
 const HotelGalleryImages = ({ galleryItems }: HotelGalleryImagesProps) => {
   const [items] = useState(galleryItems);
-  const [index, setIndex] = useState(1);
 
   const { lightboxProps, openLightbox } = useLightbox(
     items
       .map((el: GalleryItemType) => el.video || el.largeImg)
       .filter((item): item is string => !!item)
   );
-
-  const handleItemClick = (index: number) => {
-    openLightbox(index);
-    setIndex(index);
-  };
 
   return (
     <>
@@ -30,12 +24,12 @@ const HotelGalleryImages = ({ galleryItems }: HotelGalleryImagesProps) => {
           <GalleryItem
             galleryItem={gallery}
             key={gallery.id}
-            onClick={() => handleItemClick(index + 1)}
+            onClick={() => openLightbox(index + 1)}
           />
         ))}
       </div>
       <div>
-        <Lightbox {...lightboxProps} key={index} />
+        <Lightbox {...lightboxProps} />
       </div>
     </>
   );

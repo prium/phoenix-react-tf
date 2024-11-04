@@ -22,6 +22,14 @@ const RoomPictureSlider = ({
   const navigationPrevRef = useRef(null);
   return (
     <div className={classNames('swiper-theme-container', className)}>
+      <div className="swiper-nav swiper-nav-inside">
+        <button className="swiper-button-next" ref={navigationNextRef}>
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+        <button className="swiper-button-prev" ref={navigationPrevRef}>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+      </div>
       <Swiper
         loop={true}
         grabCursor={true}
@@ -42,14 +50,6 @@ const RoomPictureSlider = ({
       >
         {children}
       </Swiper>
-      <div className="swiper-nav swiper-nav-inside">
-        <button className="swiper-button-next" ref={navigationNextRef}>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-        <button className="swiper-button-prev" ref={navigationPrevRef}>
-          <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
-      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Collapse, Card, Form } from 'react-bootstrap';
 import FlightSearchForm from './FlightSearchForm';
 import FlightPreviewForm from './FlightPreviewForm';
+import FlightEditForm from './FlightEditForm';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -36,6 +37,15 @@ const FlightTypeCheckbox = ({
 
 const FlightSearch = () => {
   const [detailsVisible, setDetailsVisible] = useState(true);
+
+  const [formData, setFormData] = useState({
+    flightFareType: true,
+    priceRange: [100, 186],
+    flightClass: 'economy',
+    departTime: '12:00 - 18:00',
+    returnTime: '12:00 - 18:00'
+  });
+
   return (
     <Form>
       <Card className="position-relative mb-6">
@@ -62,9 +72,14 @@ const FlightSearch = () => {
             />
           </div>
           <FlightSearchForm />
+          <Collapse in={!detailsVisible}>
+            <div id="flight-edit-form">
+              <FlightEditForm formData={formData} setFormData={setFormData} />
+            </div>
+          </Collapse>
           <Collapse in={detailsVisible}>
             <div id="flight-preview-form">
-              <FlightPreviewForm />
+              <FlightPreviewForm formData={formData} />
             </div>
           </Collapse>
           <div className="d-flex flex-wrap gap-3 justify-content-between">
@@ -74,13 +89,13 @@ const FlightSearch = () => {
               className={classNames(
                 'fs-8 fw-semibold text-normal px-0 collapse-indicator',
                 {
-                  collapsed: detailsVisible
+                  collapsed: !detailsVisible
                 }
               )}
               onClick={() => setDetailsVisible(!detailsVisible)}
               aria-controls="flight-preview-form"
             >
-              {!detailsVisible ? 'Show' : 'Close'} details
+              {detailsVisible ? 'Edit' : 'Save'} details
               <FontAwesomeIcon
                 icon={faAngleDown}
                 className="ms-1 toggle-icon"
