@@ -336,7 +336,7 @@ export const routes: RouteItems[] = [
           {
             name: 'hotel',
             active: true,
-            new: true,
+            hasNew: true,
             pages: [
               {
                 name: 'admin',
@@ -382,25 +382,29 @@ export const routes: RouteItems[] = [
                     name: 'hotel-details',
                     path: '/apps/travel-agency/hotel/customer/hotel-details',
                     pathName: 'hotel-details',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'hotel-compare',
                     path: '/apps/travel-agency/hotel/customer/hotel-compare',
                     pathName: 'hotel-compare',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'checkout',
                     path: '/apps/travel-agency/hotel/customer/checkout',
                     pathName: 'hotel-checkout',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'payment',
                     path: '/apps/travel-agency/hotel/customer/payment',
                     pathName: 'hotel-payment',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'gallery',
@@ -415,6 +419,7 @@ export const routes: RouteItems[] = [
           {
             name: 'flight',
             active: true,
+            new: true,
             pages: [
               {
                 name: 'homepage',
