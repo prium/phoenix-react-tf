@@ -25,7 +25,7 @@ export const hotelNavItems: ResizeableNavItem[] = [
   {
     id: 1,
     label: 'Homepage',
-    url: '/apps/travel-agency/flight/homepage'
+    url: '/apps/travel-agency/hotel/customer/homepage'
   },
   {
     id: 2,

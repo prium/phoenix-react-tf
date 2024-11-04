@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
+import classNames from 'classnames';
 
 export const tooltipFormatterDefault = (
   params: CallbackDataParams[],
@@ -66,22 +67,35 @@ export const tooltipFormatterList = (params: CallbackDataParams[]) => {
 
 export const rtlTooltipFormatter = (
   params: CallbackDataParams,
-  isRTL: boolean
+  isRTL: boolean,
+  isDark: boolean
 ) => {
-  const ltr = `<div class="text-black">
+  const ltr = `<div class=${classNames({
+    'text-body-tertiary': isDark,
+    'text-black': !isDark
+  })}>
     ${params.marker}
-    <span class="fw-normal" style="font-size:14px; margin-left: 2px">
+    <span class="fw-semibold" style="font-size:14px; margin-left: 2px">
       ${params.name}
     </span>
-    <span class="fw-black" style="float:right;margin-left:20px;font-size:14px;">${params.value}</span>
+    <span class="fw-black" style="float:right;margin-left:20px;font-size:14px;">${
+      params.value
+    }</span>
   </div>`;
 
-  const rtl = `<div class="text-black">
-    <span class="fw-black" style="float:left;margin-right:20px;font-size:14px;">${params.value}</span>
-    <span class="fw-normal" style="font-size:14px; margin-right: 2px">
+  const rtl = `<div class=${classNames({
+    'text-body-tertiary': isDark,
+    'text-black': !isDark
+  })}>
+    <span class="fw-black" style="float:left;margin-right:20px;font-size:14px;">${
+      params.value
+    }</span>
+    <span class="fw-semibold" style="font-size:14px; margin-right: 2px">
       ${params.name}
     </span>
-    <span class="d-inline-block ms-1" style="border-radius: 10px; width: 10px; height: 10px; background-color:${params.color}"></span>
+    <span class="d-inline-block ms-1" style="border-radius: 10px; width: 10px; height: 10px; background-color:${
+      params.color
+    }"></span>
   </div>
   `;
 

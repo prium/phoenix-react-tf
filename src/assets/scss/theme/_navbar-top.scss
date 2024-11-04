@@ -730,4 +730,8 @@
       }
     }
   }
+  .active {
+    color: var(--#{$prefix}primary);
+    background: transparent !important;
+  }
 }

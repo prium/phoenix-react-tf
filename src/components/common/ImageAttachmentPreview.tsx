@@ -9,10 +9,7 @@ const ImageAttachmentPreview = ({
   handleClose: () => void;
 }) => {
   return (
-    <div
-      className="image-attachment-preview "
-      style={{ height: 140, width: 200 }}
-    >
+    <div className="image-attachment-preview ">
       <img src={image} className="w-100 h-100 object-fit-cover" alt="" />
       <button className="btn close-btn" onClick={handleClose}>
         <FontAwesomeIcon icon={faXmark} />

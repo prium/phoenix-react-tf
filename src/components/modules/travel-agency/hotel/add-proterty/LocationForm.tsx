@@ -78,11 +78,7 @@ const LocationForm = ({ tabEventKey }: { tabEventKey: number }) => {
       </FloatingLabel>
       <Row className="g-3">
         <Col md={6}>
-          <FloatingLabel
-            className="mb-3 mb-md-0"
-            controlId="lacationCity"
-            label="City"
-          >
+          <FloatingLabel controlId="lacationCity" label="City">
             <Form.Control
               type="text"
               name="city"

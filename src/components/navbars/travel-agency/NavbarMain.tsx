@@ -1,12 +1,12 @@
 import Button from 'components/base/Button';
 import Logo from 'components/common/Logo';
 import ThemeToggler from 'components/common/ThemeToggler';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Dropdown, Nav, Navbar } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
-import classNames from 'classnames';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
+import classNames from 'classnames';
 
 interface SubMenuItems {
   label: string;
@@ -20,6 +20,8 @@ interface NavItem {
 interface dropdownItemsProps {
   label: string;
   items: SubMenuItems[];
+  isActive: boolean;
+  pathName: string;
 }
 
 const navItems: NavItem[] = [
@@ -45,6 +47,10 @@ const navItems: NavItem[] = [
       {
         label: 'Payment',
         url: '/apps/travel-agency/hotel/customer/payment/'
+      },
+      {
+        label: 'Gallery',
+        url: '/apps/travel-agency/hotel/customer/gallery/'
       }
     ]
   },
@@ -93,10 +99,14 @@ const navItems: NavItem[] = [
   }
 ];
 
-const NavDropdownItems = ({ label, items }: dropdownItemsProps) => {
+const NavDropdownItems = ({
+  label,
+  items,
+  isActive,
+  pathName
+}: dropdownItemsProps) => {
   const [show, setShow] = useState(false);
   const { breakpoints } = useBreakpoints();
-  const { pathname } = useLocation();
 
   const handleMouseEnter = () => {
     if (breakpoints.up('lg')) {
@@ -114,7 +124,7 @@ const NavDropdownItems = ({ label, items }: dropdownItemsProps) => {
     if (show) {
       setShow(false);
     }
-  }, [pathname]);
+  }, [pathName]);
 
   return (
     <Dropdown
@@ -126,7 +136,13 @@ const NavDropdownItems = ({ label, items }: dropdownItemsProps) => {
       onToggle={() => setShow(!show)}
       show={show}
     >
-      <Dropdown.Toggle as={Link} className="nav-link fs-8 fw-bold" to="#!">
+      <Dropdown.Toggle
+        as={Link}
+        className={classNames('nav-link fs-8 fw-bold', {
+          active: isActive
+        })}
+        to="#!"
+      >
         {label}
       </Dropdown.Toggle>
       <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3">
@@ -142,6 +158,14 @@ const NavDropdownItems = ({ label, items }: dropdownItemsProps) => {
 
 const NavbarMain = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const { pathname } = useLocation();
+
+  const pathNameList = useMemo(() => {
+    return pathname
+      .split('/')
+      .filter(Boolean)
+      .map(part => part.toLowerCase());
+  }, [pathname]);
 
   useEffect(() => {
     const toggleShadowClass = () => {
@@ -158,7 +182,13 @@ const NavbarMain = () => {
   }, []);
   return (
     <div className="bg-body sticky-top" ref={containerRef}>
-      <Navbar expand="lg" className="navbar-landing container-medium">
+      <Navbar
+        expand="lg"
+        className="navbar-landing container-medium border-0 px-3 py-2"
+      >
+        <Navbar.Toggle className="fs-8 ps-2 me-sm-2 border-0 ms-n2">
+          <span className="navbar-toggler-icon" />
+        </Navbar.Toggle>
         <Navbar.Brand
           as={Link}
           to="/"
@@ -196,31 +226,32 @@ const NavbarMain = () => {
             to="#!"
             as={Link}
             variant="link"
-            className="text-body-tertiary p-0 me-2 me-lg-0"
+            className="text-body-tertiary p-0"
           >
             <FeatherIcon icon="user" size={20} />
           </Button>
         </div>
 
-        <Navbar.Toggle className="fs-8 ps-1 ps-sm-3 pe-0 border-0">
-          <span className="navbar-toggler-icon" />
-        </Navbar.Toggle>
         <Navbar.Collapse id="navbarSupportedContent">
           <Nav as="ul" className="me-auto mt-3 mt-lg-0 travel-nav-top">
             {navItems.map((item, index) => (
               <>
                 {item.items ? (
-                  <NavDropdownItems label={item.label} items={item.items} />
+                  <NavDropdownItems
+                    label={item.label}
+                    items={item.items}
+                    isActive={pathNameList.includes(item.label.toLowerCase())}
+                    pathName={pathname}
+                  />
                 ) : (
-                  <Nav.Item
-                    as="li"
-                    key={index}
-                    className={classNames({
-                      'border-bottom border-translucent border-bottom-lg-0':
-                        index !== navItems.length - 1
-                    })}
-                  >
-                    <Nav.Link as={Link} to="#!" className="fw-bold">
+                  <Nav.Item as="li" key={index}>
+                    <Nav.Link
+                      as={Link}
+                      to="#!"
+                      className={classNames('fw-bold', {
+                        active: pathNameList.includes(item.label.toLowerCase())
+                      })}
+                    >
                       {item.label}
                     </Nav.Link>
                   </Nav.Item>
