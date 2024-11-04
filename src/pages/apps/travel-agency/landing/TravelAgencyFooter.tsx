@@ -1,12 +1,11 @@
 import React from 'react';
-import { Navbar, Dropdown, Container } from 'react-bootstrap';
+import { Navbar, Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import Logo from 'components/common/Logo';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import Footer from 'components/footers/Footer';
 
@@ -51,46 +50,34 @@ const navItems: navItems[] = [
 const TravelAgencyFooter = ({ className }: TravelAgencyFooterProps) => {
   return (
     <Container fluid="medium">
-      <div className={classNames('d-flex flex-between-center mb-3', className)}>
-        <Navbar.Brand as={Link} to={'/'} className="flex-1 flex-grow-0">
-          <Logo />
-        </Navbar.Brand>
-        <Dropdown>
-          <Dropdown.Toggle
-            size="sm"
-            variant=""
-            className="p-0 d-md-none fs-8 dropdown-caret-none"
-          >
-            <FontAwesomeIcon icon={faEllipsis} />
-          </Dropdown.Toggle>
-          <Dropdown.Menu style={{ zIndex: 9999 }}>
-            <Dropdown.Item href="">Become a Host</Dropdown.Item>
-            <Dropdown.Item href="">Blog</Dropdown.Item>
-            <Dropdown.Item href="">Career</Dropdown.Item>
-            <Dropdown.Item href="">Support</Dropdown.Item>
-            <Dropdown.Item href="">+01 123 581321</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <ul className="d-none d-md-flex gap-5 list-unstyled mb-0">
-          {navItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                to={item.link}
-                className="lh-1 text-body-tertiary fw-semibold fs-9"
-              >
-                {item.icon && (
-                  <FontAwesomeIcon
-                    icon={item.icon}
-                    transform={item.transform || undefined}
-                    className="me-2"
-                  />
-                )}
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Row className={classNames('flex-between-center mb-3 gy-2', className)}>
+        <Col xs="auto">
+          <Navbar.Brand as={Link} to={'/'} className="flex-1 flex-grow-0">
+            <Logo />
+          </Navbar.Brand>
+        </Col>
+        <Col xs="auto">
+          <ul className="d-flex flex-wrap gap-x-5 gap-y-1 list-unstyled mb-0">
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  to={item.link}
+                  className="lh-1 text-body-tertiary fw-semibold fs-9"
+                >
+                  {item.icon && (
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      transform={item.transform || undefined}
+                      className="me-2"
+                    />
+                  )}
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Col>
+      </Row>
       <Footer className="px-0" />
     </Container>
   );

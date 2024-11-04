@@ -2,6 +2,24 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.6.0',
+    title: 'Aether',
+    publishDate: '04 Novembor, 2024',
+    logs: {
+      new: [
+        'PAGE : <code>travel-agency/hotel/customer/hotel-details</code>',
+        'PAGE : <code>travel-agency/hotel/customer/hotel-compare</code>',
+        'PAGE : <code>travel-agency/hotel/customer/checkout</code>',
+        'PAGE : <code>travel-agency/hotel/customer/payment</code>',
+        'PAGE : <code>travel-agency/flight/homepage</code>',
+        'PAGE : <code>travel-agency/flight/booking</code>',
+        'PAGE : <code>travel-agency/flight/payment</code>'
+      ],
+      update: ['DOC : <code>React Table Documentation</code>'],
+      fix: ['Minor Bugs']
+    }
+  },
+  {
     version: '1.5.0',
     title: 'Auxo',
     publishDate: '23 September, 2024',
