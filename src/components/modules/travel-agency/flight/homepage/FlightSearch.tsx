@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Card, Form } from 'react-bootstrap';
+import { Card, Form, Fade } from 'react-bootstrap';
 import FlightSearchForm from './FlightSearchForm';
 import FlightPreviewForm from './FlightPreviewForm';
 import FlightEditForm from './FlightEditForm';
@@ -72,22 +72,30 @@ const FlightSearch = () => {
             />
           </div>
           <FlightSearchForm />
-          <Collapse in={!detailsVisible}>
-            <div id="flight-edit-form">
-              <FlightEditForm formData={formData} setFormData={setFormData} />
-            </div>
-          </Collapse>
-          <Collapse in={detailsVisible}>
-            <div id="flight-preview-form">
-              <FlightPreviewForm formData={formData} />
-            </div>
-          </Collapse>
-          <div className="d-flex flex-wrap gap-3 justify-content-between">
+          <div className="bg-body-highlight p-3 p-sm-4 rounded-2">
+            <Fade in={detailsVisible} timeout={5000}>
+              <div
+                id="flight-preview-form"
+                style={{ display: detailsVisible ? 'block' : 'none' }}
+              >
+                <FlightPreviewForm formData={formData} />
+              </div>
+            </Fade>
+            <Fade in={!detailsVisible} timeout={5000}>
+              <div
+                id="flight-edit-form"
+                style={{ display: !detailsVisible ? 'block' : 'none' }}
+              >
+                <FlightEditForm formData={formData} setFormData={setFormData} />
+              </div>
+            </Fade>
+          </div>
+          <div className="d-flex flex-wrap gap-3 justify-content-between mt-4">
             <Button
               variant="link"
               to="#!"
               className={classNames(
-                'fs-8 fw-semibold text-normal px-0 collapse-indicator',
+                'd-flex fs-8 fw-semibold text-normal px-0 pt-0 collapse-indicator',
                 {
                   collapsed: !detailsVisible
                 }

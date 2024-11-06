@@ -68,6 +68,7 @@ const HotelDetailsFacilities = ({
               <FontAwesomeIcon
                 icon={facility.icon}
                 className="fs-9 text-warning"
+                transform="down-1"
               />
               <h5 className="text-body-tertiary mb-0 fw-normal">
                 {facility.title}

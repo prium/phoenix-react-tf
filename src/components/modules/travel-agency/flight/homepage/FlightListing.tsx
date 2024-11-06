@@ -7,6 +7,7 @@ import longArrow from 'assets/img/icons/long-arrow.svg';
 import { Col, Row } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { Link } from 'react-router-dom';
+import { currencyFormat } from 'helpers/utils';
 
 interface FlightSchedule {
   departure: {
@@ -210,12 +211,12 @@ const FlightItem = ({ airline, schedules, price }: FlightInfo) => {
         <div className="d-flex gap-3 flex-column flex-sm-row flex-lg-column flex-xl-row flex-end-center">
           <h3 className="mb-0 fs-5 fs-sm-6 d-flex gap-2 flex-column flex-sm-row align-items-center">
             <span className="fs-9 text-body-quaternary fw-normal text-decoration-line-through">
-              ${price.regular}.00
+              {currencyFormat(price.regular, { minimumFractionDigits: 2 })}
             </span>
-            ${price.discounted}.00
+            {currencyFormat(price.discounted, { minimumFractionDigits: 2 })}
           </h3>
 
-          <Link to="#!">
+          <Link to="/apps/travel-agency/flight/booking">
             <Button variant="primary" className="px-9">
               Select
             </Button>

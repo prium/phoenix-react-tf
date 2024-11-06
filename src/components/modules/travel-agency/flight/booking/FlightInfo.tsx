@@ -56,13 +56,13 @@ const FlightInfo = () => {
 
               <Col xs={12}>
                 <Row className="align-items-center">
-                  <Col md={3} className="text-md-end">
+                  <Col xs="auto" md={3} className="text-md-end">
                     <p className="mb-0 text-body-quaternary">0h 45m</p>
                   </Col>
-                  <Col md="auto" className="text-md-center">
+                  <Col xs="auto" className="text-md-center">
                     <img src={longArrowDown} alt="" />
                   </Col>
-                  <Col md="auto">
+                  <Col xs="auto">
                     <p className="mb-0 text-body-quaternary">Qatar Airways</p>
                   </Col>
                 </Row>
@@ -96,15 +96,15 @@ const FlightInfo = () => {
                   Qatar Airways
                 </h5>
               </Col>
-              <Col md="auto" lg={12}>
+              <Col xs="auto" lg={12}>
                 <h5 className="text-nowrap">Flight number</h5>
                 <p className="mb-0">VQ 935</p>
               </Col>
-              <Col md="auto" lg={12}>
+              <Col xs="auto" lg={12}>
                 <h5 className="text-nowrap">Flight model</h5>
                 <p className="mb-0">ATR735</p>
               </Col>
-              <Col md="auto" lg={12}>
+              <Col xs="auto" lg={12}>
                 <h5 className="mb-0 text-nowrap">
                   <FontAwesomeIcon icon={faCouch} className="me-2" />
                   Economy

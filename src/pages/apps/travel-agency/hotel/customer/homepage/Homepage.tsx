@@ -1,5 +1,5 @@
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,8 +11,10 @@ import HotelActions from 'components/modules/travel-agency/hotel/HotelActions';
 import TravelFooter from 'components/footers/TravelFooter';
 import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
 import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
+import HomepageFilterOffcanvas from 'components/modules/travel-agency/hotel/HomepageFilterOffcanvas';
 
 const HotelHomepage = () => {
+  const [isOpen, setIsOpen] = useState(false);
   useSettingsMountEffect({
     disableNavigationType: true,
     disableHorizontalNavbarAppearance: true,
@@ -43,7 +45,11 @@ const HotelHomepage = () => {
               <FontAwesomeIcon icon={faMap} className="me-md-2" />
               <span className="d-none d-md-inline-block">Show in map</span>
             </Button>
-            <Button variant="phoenix-secondary" className="text-nowrap px-3">
+            <Button
+              variant="phoenix-secondary"
+              className="text-nowrap px-3"
+              onClick={() => setIsOpen(true)}
+            >
               <FontAwesomeIcon icon={faFilter} className="me-md-2" />
               <span className="d-none d-md-inline-block">Filters</span>
             </Button>
@@ -58,6 +64,7 @@ const HotelHomepage = () => {
         </Row>
       </section>
       <TravelFooter />
+      <HomepageFilterOffcanvas isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };

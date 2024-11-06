@@ -50,7 +50,7 @@ const PaymentSummary = () => {
       <Card className="bg-body-highlight">
         <Card.Body>
           <ListGroup variant="flush">
-            <SummaryItem label="Base fare" value="4,074" />
+            <SummaryItem label="Base fare" value="4,074" className="pt-0" />
             <SummaryItem label="Tax" value="725" isPositive={true} />
             <SummaryItem
               label="Sub-total"
@@ -63,6 +63,7 @@ const PaymentSummary = () => {
               label="Convenience charge"
               value="95"
               isPositive={true}
+              className="pb-0"
             />
           </ListGroup>
         </Card.Body>

@@ -5,43 +5,52 @@ import visaCardImage from 'assets/img/logos/visa.png';
 import discoverImage from 'assets/img/logos/discover.png';
 import masterCardImage from 'assets/img/logos/mastercard.png';
 import americanExpressImage from 'assets/img/logos/american_express.png';
+import classNames from 'classnames';
+
+type marginTop = 'short' | 'default' | 'long';
 
 interface PaymentMethodFormProps {
   className?: string;
+  marginTop?: marginTop;
 }
 
-const PaymentMethodForm = ({ className }: PaymentMethodFormProps) => {
+const PaymentMethodForm = ({
+  className,
+  marginTop = 'default'
+}: PaymentMethodFormProps) => {
   const start_year = 1990;
   const end_year = new Date().getFullYear();
   return (
     <div className={className}>
-      <h3 className="mt-7 mb-5">Payment Method</h3>
+      <h3
+        className={classNames('mb-5', {
+          'mt-0': marginTop === 'short',
+          'mt-7': marginTop === 'default',
+          'mt-9': marginTop === 'long'
+        })}
+      >
+        Payment Method
+      </h3>
       <Row className="gx-xxl-6 mb-5">
         <Col md="auto">
-          <div className="d-flex">
-            <Form.Check>
-              <Form.Check.Input
-                type="radio"
-                name="paymentMethod"
-                id="creditCard"
-                defaultChecked
-              />
-              <Form.Check.Label
-                className="fs-8 text-body me-3"
-                htmlFor="creditCard"
-              >
-                Credit card
-              </Form.Check.Label>
-            </Form.Check>
-            <img
-              src={visaCardImage}
-              alt=""
-              className="h-100 me-2 ms-4 ms-md-0"
+          <Form.Check>
+            <Form.Check.Input
+              type="radio"
+              name="paymentMethod"
+              id="creditCard"
+              defaultChecked
             />
-            <img src={discoverImage} alt="" className="h-100 me-2" />
-            <img src={masterCardImage} alt="" className="h-100 me-2" />
-            <img src={americanExpressImage} alt="" className="h-100" />
-          </div>
+            <Form.Check.Label
+              className="d-flex gap-2 fs-8 text-body"
+              htmlFor="creditCard"
+            >
+              Credit card
+              <img src={visaCardImage} alt="" className="h-100" />
+              <img src={discoverImage} alt="" className="h-100" />
+              <img src={masterCardImage} alt="" className="h-100" />
+              <img src={americanExpressImage} alt="" className="h-100" />
+            </Form.Check.Label>
+          </Form.Check>
         </Col>
         <Col md="auto">
           <Form.Check>
