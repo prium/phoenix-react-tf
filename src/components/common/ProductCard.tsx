@@ -17,7 +17,12 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           <div className="border border-translucent rounded-3 position-relative mb-3">
             <Button
               variant={product.wishListed ? 'primary' : 'outline-primary'}
-              className="rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container"
+              className={classNames(
+                'rounded-circle p-0 d-flex flex-center btn-wish z-2 d-toggle-container',
+                {
+                  'btn-wish-primary active': product.wishListed
+                }
+              )}
             >
               {product.wishListed ? (
                 <FontAwesomeIcon icon={faHeart} />

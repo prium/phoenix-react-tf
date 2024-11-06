@@ -22,7 +22,7 @@ export interface Route {
   active?: boolean;
   new?: boolean;
   hasNew?: boolean;
-  next?: boolean;
+  isNext?: boolean;
 }
 
 export interface RouteItems {
@@ -324,7 +324,7 @@ export const routes: RouteItems[] = [
       {
         name: 'travel-agency',
         hasNew: true,
-        icon: 'clipboard',
+        icon: 'briefcase',
         active: true,
         pages: [
           {
@@ -336,7 +336,7 @@ export const routes: RouteItems[] = [
           {
             name: 'hotel',
             active: true,
-            new: true,
+            hasNew: true,
             pages: [
               {
                 name: 'admin',
@@ -379,34 +379,32 @@ export const routes: RouteItems[] = [
                     active: true
                   },
                   {
-                    name: 'gallery',
-                    path: '/apps/travel-agency/hotel/customer/gallery',
-                    pathName: 'hotel-gallery',
-                    active: true
-                  },
-                  {
                     name: 'hotel-details',
                     path: '/apps/travel-agency/hotel/customer/hotel-details',
                     pathName: 'hotel-details',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'hotel-compare',
                     path: '/apps/travel-agency/hotel/customer/hotel-compare',
                     pathName: 'hotel-compare',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'checkout',
                     path: '/apps/travel-agency/hotel/customer/checkout',
                     pathName: 'hotel-checkout',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'payment',
                     path: '/apps/travel-agency/hotel/customer/payment',
                     pathName: 'hotel-payment',
-                    active: true
+                    active: true,
+                    new: true
                   },
                   {
                     name: 'gallery',
@@ -420,9 +418,28 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'flight',
-            next: true,
-            path: '/pages/coming-soon',
-            pathName: 'travel-agency-flight'
+            active: true,
+            new: true,
+            pages: [
+              {
+                name: 'homepage',
+                active: true,
+                path: '/apps/travel-agency/flight/homepage',
+                pathName: 'flight-homepage'
+              },
+              {
+                name: 'booking',
+                active: true,
+                path: '/apps/travel-agency/flight/booking',
+                pathName: 'flight-booking'
+              },
+              {
+                name: 'payment',
+                active: true,
+                path: '/apps/travel-agency/flight/payment',
+                pathName: 'flight-payment'
+              }
+            ]
           }
         ]
       },

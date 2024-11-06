@@ -272,7 +272,7 @@ const FlightMap = ({ options, ...rest }: MapboxProps) => {
             </Button>
             <Button
               onClick={() => map.current?.getContainer().requestFullscreen()}
-              className="zoomOut mt-md-3"
+              className="zoomOut rounded mt-md-3"
             >
               <FontAwesomeIcon icon={faUpRightAndDownLeftFromCenter} />
             </Button>

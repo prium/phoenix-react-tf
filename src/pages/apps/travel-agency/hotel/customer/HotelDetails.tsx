@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import TopNav from 'pages/apps/travel-agency/landing/TopNav';
-import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
-import TravelFooter from 'components/footers/TravelFooter';
-import Footer from 'components/footers/Footer';
 
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
@@ -20,9 +16,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { hotelImages } from 'data/travel-agency/customer/hotelDetails';
-import HotelDetailsTab from 'components/modules/travel-agency/dashboard/hotel/hotel-details/HotelDetailsTab';
+import HotelDetailsTab from 'components/modules/travel-agency/hotel/hotel-details/HotelDetailsTab';
 import HotelDetailsGallery from 'components/image-gallery/HotelDetailsGallery';
 import { numberFormat } from 'helpers/utils';
+import TravelFooter from 'components/footers/TravelFooter';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelDetails = () => {
   useSettingsMountEffect({
@@ -34,8 +33,7 @@ const HotelDetails = () => {
 
   return (
     <>
-      <TopNav />
-      <NavbarMain />
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="pt-4 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
@@ -105,7 +103,7 @@ const HotelDetails = () => {
             </Col>
             <Col xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={false}
+                showHotelInfo={false}
                 className="mt-3 mt-xl-0"
               />
             </Col>
@@ -113,7 +111,6 @@ const HotelDetails = () => {
         </Container>
       </section>
       <TravelFooter />
-      <Footer />
     </>
   );
 };

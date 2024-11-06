@@ -38,7 +38,7 @@ const WizardNavItem = ({
             <span className="nav-item-circle">
               <FontAwesomeIcon
                 icon={icon}
-                className={` ${isHorizontal ? 'nav-item-icon' : null}`}
+                className={`${isHorizontal ? 'nav-item-icon' : null}`}
               />
               {isHorizontal && (
                 <FontAwesomeIcon className="check-icon" icon={faCheck} />

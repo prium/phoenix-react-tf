@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { HotelImageType } from 'data/travel-agency/customer/hotelDetails';
 import useLightbox from 'hooks/useLightbox';
@@ -53,15 +53,14 @@ const HotelDetailsGallery = ({
   images,
   className
 }: HotelDetailsGalleryProps) => {
-  const [index, setIndex] = useState(1);
   const { lightboxProps, openLightbox } = useLightbox(
     images.map((item: HotelImageType) => item.largeImg)
   );
 
-  const handleItemClick = (index: number) => {
-    openLightbox(index);
-    setIndex(index);
-  };
+  // const handleItemClick = (index: number) => {
+  //   openLightbox(index);
+  //   setIndex(index);
+  // };
 
   return (
     <>
@@ -70,13 +69,13 @@ const HotelDetailsGallery = ({
           <DetailsGalleryItem
             key={imageItem.id}
             item={imageItem}
-            handleClick={() => handleItemClick(index + 1)}
+            handleClick={() => openLightbox(index + 1)}
             isLast={index === images.length - 1}
           />
         ))}
       </div>
       <div>
-        <Lightbox {...lightboxProps} key={index} />
+        <Lightbox {...lightboxProps} />
       </div>
     </>
   );

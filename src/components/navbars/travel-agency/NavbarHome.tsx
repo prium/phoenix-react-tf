@@ -29,7 +29,7 @@ const nav: nav[] = [
   {
     label: 'Trip',
     icon: faSuitcaseRolling,
-    path: `/apps/travel-agency/trip/homepage`
+    path: `#!`
   }
 ];
 const NavbarHome = ({ currentPage }: { currentPage: string }) => {

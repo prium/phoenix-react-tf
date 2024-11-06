@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-import TopNav from 'pages/apps/travel-agency/landing/TopNav';
-import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
 import TravelFooter from 'components/footers/TravelFooter';
-import Footer from 'components/footers/Footer';
-
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import HotelDetailsSummaryCard from 'components/cards/HotelDetailsSummaryCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faCircle } from '@fortawesome/free-solid-svg-icons';
+import Button from 'components/base/Button';
+import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
+import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelCheckout = () => {
   useSettingsMountEffect({
@@ -23,8 +22,7 @@ const HotelCheckout = () => {
 
   return (
     <>
-      <TopNav />
-      <NavbarMain />
+      <ResizeableNavbar navItems={hotelNavItems} />
       <section className="pt-6 pb-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
@@ -34,7 +32,7 @@ const HotelCheckout = () => {
               <Form id="checkoutForm1" onSubmit={e => e.preventDefault()}>
                 <hr className="mt-0 mb-7" />
                 <h3 className="fw-bold mb-5">Enter your details</h3>
-                <h5 className="mb-3">Are you traveling for work?</h5>
+                <h5 className="mb-3">Are you travelling for work?</h5>
                 <Form.Check
                   id="tripTypeRadio"
                   className="form-check-inline me-4"
@@ -228,22 +226,25 @@ const HotelCheckout = () => {
                   placeholder="Type your request"
                 />
                 <hr className="mt-7 mb-5" />
-                <Link
-                  to="/apps/travel-agency/hotel/customer/payment"
-                  className="btn btn-primary"
-                >
-                  Final details
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className="ms-2"
-                    transform="shrink-3"
-                  />
+                <Link to="/apps/travel-agency/hotel/customer/payment">
+                  <Button
+                    variant="primary"
+                    endIcon={
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        className="ms-2"
+                        transform="shrink-3"
+                      />
+                    }
+                  >
+                    Final details
+                  </Button>
                 </Link>
               </Form>
             </Col>
             <Col lg={5} xl={4}>
               <HotelDetailsSummaryCard
-                isInfoShow={true}
+                showHotelInfo={true}
                 className="mt-5 mt-lg-0"
               />
             </Col>
@@ -251,7 +252,6 @@ const HotelCheckout = () => {
         </Container>
       </section>
       <TravelFooter />
-      <Footer />
     </>
   );
 };

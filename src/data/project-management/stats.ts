@@ -19,27 +19,27 @@ export const stats: ProjectManagementStat[] = [
     title: 'Projects',
     count: '32',
     icon: UilBooks,
-    iconColor: 'primary',
+    iconColor: 'primary-dark',
     subtitle: 'Awating processing'
   },
   {
     title: 'Members',
     icon: UilUsersAlt,
-    iconColor: 'success',
+    iconColor: 'success-dark',
     count: '94',
     subtitle: 'Working hard'
   },
   {
     title: 'Invoices',
     icon: UilInvoice,
-    iconColor: 'warning',
+    iconColor: 'warning-dark',
     count: '23',
     subtitle: 'Soon to be cleared'
   },
   {
     title: 'Refunds',
     icon: UilRefresh,
-    iconColor: 'danger',
+    iconColor: 'danger-dark',
     count: '3',
     subtitle: 'Fresh start'
   }
