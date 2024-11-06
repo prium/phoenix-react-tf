@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
@@ -27,13 +27,7 @@ const RoomImageItem = ({ item, handleClick }: RoomImageItemProps) => {
 const HotelDetailsRoomImageGallery = ({
   images
 }: HotelDetailsRoomImageGalleryProps) => {
-  const [index, setIndex] = useState(1);
   const { lightboxProps, openLightbox } = useLightbox(images);
-
-  const handleItemClick = (index: number) => {
-    openLightbox(index);
-    setIndex(index);
-  };
 
   return (
     <>
@@ -42,13 +36,13 @@ const HotelDetailsRoomImageGallery = ({
           <Col key={index}>
             <RoomImageItem
               item={imageItem}
-              handleClick={() => handleItemClick(index + 1)}
+              handleClick={() => openLightbox(index + 1)}
             />
           </Col>
         ))}
       </Row>
       <div>
-        <Lightbox {...lightboxProps} key={index} />
+        <Lightbox {...lightboxProps} />
       </div>
     </>
   );
