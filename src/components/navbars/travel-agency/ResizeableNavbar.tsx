@@ -19,7 +19,6 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
     const otherElsWidth = otherElsRef.current?.clientWidth || 0;
     const containerWidth = containerRef.current?.clientWidth || 0;
     const moreBtnWidth = moreBtnRef.current?.clientWidth || 0;
-
     let totalItemsWidth = 0;
     if (moreBtnRef.current) {
       moreBtnRef.current.style.display = 'none';
@@ -27,7 +26,7 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
     navItemsRef.current.forEach((item, index) => {
       const dropdownItem = dropdownItemsRef.current[index];
       if (item && dropdownItem && moreBtnRef.current) {
-        totalItemsWidth = totalItemsWidth + item.clientWidth + 62;
+        totalItemsWidth = totalItemsWidth + item.clientWidth + 32;
         if (
           otherElsWidth + totalItemsWidth + moreBtnWidth + 50 >
           containerWidth
@@ -48,9 +47,19 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
   }, []);
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', updateItems);
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateItems();
+      }, 100);
+    };
+
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', updateItems);
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
     };
   }, [updateItems]);
 
