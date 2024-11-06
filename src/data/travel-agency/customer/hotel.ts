@@ -32,6 +32,18 @@ interface SearchRoomCollapsibleItem {
   key: string;
 }
 
+interface AmenitiesCheckboxItem {
+  id: string;
+  label: string;
+  className?: string;
+}
+interface HomepageOffcanvasAmenitiesItem {
+  id: number;
+  title: string;
+  className?: string;
+  checkboxItems: AmenitiesCheckboxItem[];
+}
+
 export const hotels: hotelInterFace[] = [
   {
     name: 'Hotel Palace',
@@ -567,3 +579,56 @@ export const searchRoomCollapsibleItems: SearchRoomCollapsibleItem[] = [
     key: 'bathroom'
   }
 ];
+
+export const homepageOffcanvasAmenitiesItems: HomepageOffcanvasAmenitiesItem[] =
+  [
+    {
+      id: 1,
+      title: 'Essentials',
+      checkboxItems: [
+        {
+          id: 'wifi',
+          label: 'Wifi'
+        },
+        {
+          id: 'kitchen',
+          label: 'Kitchen'
+        },
+        {
+          id: 'airConditioning',
+          label: 'Air conditioning'
+        },
+        {
+          id: 'washer',
+          label: 'Washer'
+        },
+        {
+          id: 'dryer',
+          label: 'Dryer'
+        },
+        {
+          id: 'heating',
+          label: 'Heating'
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Location',
+      className: 'mt-3',
+      checkboxItems: [
+        {
+          id: 'beachFront',
+          label: 'Beach-front'
+        },
+        {
+          id: 'nearMarkets',
+          label: 'Near markets'
+        },
+        {
+          id: 'waterFront',
+          label: 'Water-front'
+        }
+      ]
+    }
+  ];

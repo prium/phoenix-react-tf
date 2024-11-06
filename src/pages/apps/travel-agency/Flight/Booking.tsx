@@ -11,13 +11,14 @@ import PaymentSummary from 'components/modules/travel-agency/flight/booking/Paym
 import TravelerDetails from 'components/modules/travel-agency/flight/booking/TravelerDetails';
 import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar';
 import { flightNavItems } from 'data/travel-agency/ResizeableNav';
+import FlightBottomBar from './BottomBar';
 
 const FlightBooking = () => {
   return (
     <>
       <ResizeableNavbar navItems={flightNavItems} />
       <Container fluid="small" className="pt-6 pb-6 pb-md-8 pb-lg-9">
-        <PageBreadcrumb items={defaultBreadcrumbItems} />
+        <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
         <h2 className="mb-5">Booking</h2>
         <Row className="g-3 align-items-sm-center justify-content-between mb-5">
           <Col sm>
@@ -48,6 +49,7 @@ const FlightBooking = () => {
           </Col>
         </Row>
       </Container>
+      <FlightBottomBar />
     </>
   );
 };

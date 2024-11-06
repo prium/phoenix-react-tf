@@ -19,6 +19,7 @@ import {
   IconDefinition
 } from '@fortawesome/free-brands-svg-icons';
 import classNames from 'classnames';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 interface SocialLink {
   icon: IconDefinition;
@@ -58,7 +59,7 @@ const footerNavs: FooterNav[] = [
     link: '#!'
   },
   {
-    title: 'Terms $ Condition',
+    title: 'Terms & Condition',
     link: '#!'
   }
 ];
@@ -85,7 +86,11 @@ const FlightFooter = () => {
                     placeholder="Your email address"
                     className="form-control form-icon-input"
                   />
-                  <FontAwesomeIcon icon="envelope" className="form-icon" />
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    className="form-icon"
+                    transform="up-2"
+                  />
                 </div>
                 <Button variant="primary" className="rounded">
                   Sign up

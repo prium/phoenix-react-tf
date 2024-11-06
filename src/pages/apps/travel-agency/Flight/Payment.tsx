@@ -14,7 +14,7 @@ const FlightPayment = () => {
     <>
       <ResizeableNavbar navItems={flightNavItems} />
       <Container fluid="small" className="pt-6 pb-9">
-        <PageBreadcrumb items={defaultBreadcrumbItems} />
+        <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
         <h2 className="mb-5">Payment</h2>
         <Row className="g-3 align-items-sm-center justify-content-between mb-5">
           <Col sm>
@@ -32,7 +32,7 @@ const FlightPayment = () => {
           <Col lg>
             <Card>
               <Card.Body>
-                <PaymentMethodForm />
+                <PaymentMethodForm marginTop="short" />
               </Card.Body>
             </Card>
           </Col>
