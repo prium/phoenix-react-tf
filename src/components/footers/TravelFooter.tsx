@@ -96,7 +96,7 @@ const TravelFooter = () => {
                     transform="up-2"
                   />
                 </div>
-                <Button variant="primary" className="rounded">
+                <Button variant="primary" className="rounded px-md-7">
                   Sign up
                 </Button>
               </div>

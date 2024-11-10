@@ -76,7 +76,7 @@ export const routes: RouteItems[] = [
             new: true,
             path: '/dashboard/travel-agency',
             pathName: 'travel-agency',
-            topNavIcon: 'phone',
+            topNavIcon: 'briefcase',
             active: true
           },
           {
@@ -225,7 +225,6 @@ export const routes: RouteItems[] = [
         name: 'CRM',
         icon: 'phone',
         active: true,
-        hasNew: true,
         pages: [
           {
             name: 'analytics',
@@ -237,8 +236,7 @@ export const routes: RouteItems[] = [
             name: 'deals',
             path: '/apps/crm/deals',
             pathName: 'crm-deals',
-            active: true,
-            new: true
+            active: true
           },
           {
             name: 'deal-details',
