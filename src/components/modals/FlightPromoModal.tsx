@@ -12,10 +12,19 @@ interface FlightPromoModalProps {
 
 const FlightPromoModal = ({ show, handleClose }: FlightPromoModalProps) => {
   return (
-    <Modal show={show} className="modal-md" onHide={handleClose} centered>
-      <Modal.Body className="position-relative p-6">
+    <Modal
+      show={show}
+      dialogClassName="modal-38w"
+      onHide={handleClose}
+      centered
+    >
+      <Modal.Body className="position-relative p-6" style={{ maxWidth: 620 }}>
         <div className="position-absolute end-0 top-0">
-          <Button className="px-3 text-danger" onClick={handleClose}>
+          <Button
+            variant="phoenix-secondary"
+            className="px-3 border-0 bg-transparent"
+            onClick={handleClose}
+          >
             <FontAwesomeIcon icon={faTimes} className="fs-9" />
           </Button>
         </div>

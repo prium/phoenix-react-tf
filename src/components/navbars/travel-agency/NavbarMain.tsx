@@ -30,7 +30,7 @@ const navItems: NavItem[] = [
     items: [
       {
         label: 'Homepage',
-        url: '/apps/travel-agency/hotel/customer/homepage'
+        url: '/apps/travel-agency/hotel/customer/homepage/'
       },
       {
         label: 'Hotel details',
@@ -59,15 +59,15 @@ const navItems: NavItem[] = [
     items: [
       {
         label: 'Homepage',
-        url: '/apps/travel-agency/flight/homepage'
+        url: '/apps/travel-agency/flight/homepage/'
       },
       {
         label: 'Booking',
-        url: '/apps/travel-agency/flight/booking'
+        url: '/apps/travel-agency/flight/booking/'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/flight/payment'
+        url: '/apps/travel-agency/flight/payment/'
       }
     ]
   },
@@ -147,7 +147,12 @@ const NavDropdownItems = ({
       </Dropdown.Toggle>
       <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3">
         {items.map((dropdownItem, index) => (
-          <Dropdown.Item as={Link} to={dropdownItem.url} key={index}>
+          <Dropdown.Item
+            as={Link}
+            to={dropdownItem.url}
+            key={index}
+            className={classNames({ active: pathName === dropdownItem.url })}
+          >
             {dropdownItem.label}
           </Dropdown.Item>
         ))}
@@ -159,7 +164,7 @@ const NavDropdownItems = ({
 const NavbarMain = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { pathname } = useLocation();
-
+  const [isNavItemOpen, setNavItemsOpen] = useState(false);
   const pathNameList = useMemo(() => {
     return pathname
       .split('/')
@@ -180,14 +185,23 @@ const NavbarMain = () => {
 
     return () => document.removeEventListener('scroll', toggleShadowClass);
   }, []);
+
+  useEffect(() => {
+    setNavItemsOpen(false);
+  }, [pathname]);
+
   return (
     <div className="bg-body sticky-top" ref={containerRef}>
       <Navbar
         expand="lg"
         className="navbar-landing container-medium border-0 px-3 py-2"
+        expanded={isNavItemOpen}
+        onToggle={() => setNavItemsOpen(!isNavItemOpen)}
       >
-        <Navbar.Toggle className="fs-8 ps-2 me-sm-2 border-0 ms-n2">
-          <span className="navbar-toggler-icon" />
+        <Navbar.Toggle className="fs-8 ps-2 me-sm-2 border-0 ms-n2 hover-bg-transparent navbar-toggler-humburger-icon">
+          <span className="navbar-toggle-icon">
+            <span className="toggle-line" />
+          </span>
         </Navbar.Toggle>
         <Navbar.Brand
           as={Link}
@@ -244,7 +258,7 @@ const NavbarMain = () => {
                     pathName={pathname}
                   />
                 ) : (
-                  <Nav.Item as="li" key={index}>
+                  <Nav.Item as="li" key={index} className="">
                     <Nav.Link
                       as={Link}
                       to="#!"

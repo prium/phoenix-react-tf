@@ -46,7 +46,7 @@ const WizardNavItem = ({
             </span>
           </span>
           <span
-            className={classNames('fs-9', {
+            className={classNames('fs-9 text-center', {
               'd-none d-md-block mt-1': !isHorizontal,
               'nav-item-title fs-xl-8': isHorizontal
             })}
