@@ -30,27 +30,27 @@ const navItems: NavItem[] = [
     items: [
       {
         label: 'Homepage',
-        url: '/apps/travel-agency/hotel/customer/homepage/'
+        url: '/apps/travel-agency/hotel/customer/homepage'
       },
       {
         label: 'Hotel details',
-        url: '/apps/travel-agency/hotel/customer/hotel-details/'
+        url: '/apps/travel-agency/hotel/customer/hotel-details'
       },
       {
         label: 'Hotel compare',
-        url: '/apps/travel-agency/hotel/customer/hotel-compare/'
+        url: '/apps/travel-agency/hotel/customer/hotel-compare'
       },
       {
         label: 'Checkout',
-        url: '/apps/travel-agency/hotel/customer/checkout/'
+        url: '/apps/travel-agency/hotel/customer/checkout'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/hotel/customer/payment/'
+        url: '/apps/travel-agency/hotel/customer/payment'
       },
       {
         label: 'Gallery',
-        url: '/apps/travel-agency/hotel/customer/gallery/'
+        url: '/apps/travel-agency/hotel/customer/gallery'
       }
     ]
   },
@@ -59,15 +59,15 @@ const navItems: NavItem[] = [
     items: [
       {
         label: 'Homepage',
-        url: '/apps/travel-agency/flight/homepage/'
+        url: '/apps/travel-agency/flight/homepage'
       },
       {
         label: 'Booking',
-        url: '/apps/travel-agency/flight/booking/'
+        url: '/apps/travel-agency/flight/booking'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/flight/payment/'
+        url: '/apps/travel-agency/flight/payment'
       }
     ]
   },
