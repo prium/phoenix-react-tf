@@ -64,6 +64,7 @@ const generateStars = (filledStars: number, totalStars = 5) => (
 );
 
 const HomepageFilterOffcanvasContent = () => {
+  const [range, setRange] = useState([110, 200]);
   return (
     <>
       <h4 className="text-body-highlight mb-4">Price Range</h4>
@@ -98,7 +99,8 @@ const HomepageFilterOffcanvasContent = () => {
       <PhoenixReactRange
         min={100}
         max={245}
-        values={[110, 200]}
+        values={range}
+        onChange={val => setRange(val)}
         trackHeight="1.5rem"
         variant="primary-lighter"
         classNames="phoenix-react-range-large mt-4 ps-5 pe-3"
