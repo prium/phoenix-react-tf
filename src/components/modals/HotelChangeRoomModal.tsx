@@ -34,7 +34,11 @@ const HotelChangeRoomModal = ({
     <Modal show={show} onHide={handleClose} centered size="xl">
       <Modal.Header className="p-4 justify-content-between">
         <h3 className="mb-0 text-body-highlight">Select Room</h3>
-        <Button variant="phoenix-danger" className="px-3" onClick={handleClose}>
+        <Button
+          variant="phoenix-secondary"
+          className="px-3"
+          onClick={handleClose}
+        >
           <FontAwesomeIcon icon={faTimes} transform="down-2" />
         </Button>
       </Modal.Header>

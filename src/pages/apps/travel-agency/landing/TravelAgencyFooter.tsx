@@ -50,14 +50,19 @@ const navItems: navItems[] = [
 const TravelAgencyFooter = ({ className }: TravelAgencyFooterProps) => {
   return (
     <Container fluid="medium">
-      <Row className={classNames('flex-between-center mb-3 gy-2', className)}>
+      <Row
+        className={classNames(
+          'flex-center justify-content-md-between align-items-md-center mb-3 gy-2',
+          className
+        )}
+      >
         <Col xs="auto">
           <Navbar.Brand as={Link} to={'/'} className="flex-1 flex-grow-0">
             <Logo />
           </Navbar.Brand>
         </Col>
         <Col xs="auto">
-          <ul className="d-flex flex-wrap gap-x-5 gap-y-1 list-unstyled mb-0">
+          <ul className="d-flex flex-center flex-wrap gap-x-5 gap-y-1 list-unstyled mb-0">
             {navItems.map((item, index) => (
               <li key={index}>
                 <Link

@@ -30,16 +30,16 @@ const AccordionItem = (props: PropsWithChildren<AccordionItemInterface>) => {
     <>
       <Accordion.Item
         eventKey={eventKey}
-        className="border rounded-3 bg-body-emphasis p-3 p-sm-4 mb-5"
+        className="border rounded-3 bg-body-emphasis p-3 p-sm-4 mb-5 scrollbar"
       >
         <Accordion.Button className="py-0 lh-1 text-body-highlight">
           <img src={img1} alt="" className="me-2 d-dark-none" />
           <img src={img2} alt="" className="me-2 d-light-none" />
           <span className="fs-sm-7">{title}</span>
         </Accordion.Button>
-        <Accordion.Collapse eventKey={eventKey}>
+        <Accordion.Collapse eventKey={eventKey} className="scrollbar">
           <div className="mt-4">
-            <Link to="" className="fs-9 fw-semibold mb-2 d-inline-block">
+            <Link to="#!" className="fs-9 fw-semibold mb-2 d-inline-block">
               Edit Info
             </Link>
             {children}

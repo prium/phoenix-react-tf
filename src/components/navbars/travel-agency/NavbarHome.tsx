@@ -35,7 +35,7 @@ const nav: nav[] = [
 const NavbarHome = ({ currentPage }: { currentPage: string }) => {
   return (
     <>
-      <Nav className="nav-home justify-content-center py-4 gap-2 mt-3 mt-lg-0">
+      <Nav className="nav-home justify-content-center py-4 gap-2">
         {nav.map((item, index) => (
           <Nav.Item key={index}>
             <Nav.Link
