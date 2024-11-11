@@ -1,7 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import ChatWidget from 'components/common/chat-widget/ChatWidget';
-// import TopNav from 'pages/apps/travel-agency/landing/TopNav';
 import NavbarMain from 'components/navbars/travel-agency/NavbarMain';
 import TravelAgencyFooter from 'pages/apps/travel-agency/landing/TravelAgencyFooter';
 

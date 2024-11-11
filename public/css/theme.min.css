@@ -23328,6 +23328,10 @@ span.flatpickr-weekday,
   margin-bottom: 1.5rem;
 }
 
+.leaflet-container {
+  background: var(--phoenix-emphasis-bg) !important;
+}
+
 .mapbox-container {
   position: relative;
   height: 100%;
@@ -26652,6 +26656,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   border-top: 1px solid var(--phoenix-navbar-footer-border-color);
   border-right: 1px solid var(--phoenix-navbar-footer-border-color);
   background: var(--phoenix-navbar-vertical-bg-color);
+  border-color: var(--phoenix-navbar-footer-border-color) !important;
   transition: width 0.2s ease;
 }
 .navbar-vertical .navbar-vertical-footer .btn, .navbar-vertical .navbar-vertical-footer [data-list] .page, [data-list] .navbar-vertical .navbar-vertical-footer .page, .navbar-vertical .navbar-vertical-footer .tox .tox-button, .tox .navbar-vertical .navbar-vertical-footer .tox-button, .navbar-vertical .navbar-vertical-footer .tox .tox-button-secondary, .tox .navbar-vertical .navbar-vertical-footer .tox-button-secondary, .navbar-vertical .navbar-vertical-footer .tox .tox-dialog__footer .tox-button--secondary, .tox .tox-dialog__footer .navbar-vertical .navbar-vertical-footer .tox-button--secondary, .navbar-vertical .navbar-vertical-footer .mapbox-container .mapbox-control-btn .zoomIn, .mapbox-container .mapbox-control-btn .navbar-vertical .navbar-vertical-footer .zoomIn,
@@ -27143,6 +27148,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     bottom: 0;
     width: calc(4rem - 1px);
     background-color: var(--phoenix-navbar-vertical-bg-color);
+    border-right: 0;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     transition: width 0.2s ease;
@@ -27300,6 +27306,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     bottom: 0;
     width: calc(4rem - 1px);
     background-color: var(--phoenix-navbar-vertical-bg-color);
+    border-right: 0;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     transition: width 0.2s ease;
@@ -27457,6 +27464,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     bottom: 0;
     width: calc(4rem - 1px);
     background-color: var(--phoenix-navbar-vertical-bg-color);
+    border-right: 0;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     transition: width 0.2s ease;
@@ -27614,6 +27622,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     bottom: 0;
     width: calc(4rem - 1px);
     background-color: var(--phoenix-navbar-vertical-bg-color);
+    border-right: 0;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     transition: width 0.2s ease;
@@ -27771,6 +27780,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
     bottom: 0;
     width: calc(4rem - 1px);
     background-color: var(--phoenix-navbar-vertical-bg-color);
+    border-right: 0;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
     transition: width 0.2s ease;
@@ -27927,6 +27937,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   bottom: 0;
   width: calc(4rem - 1px);
   background-color: var(--phoenix-navbar-vertical-bg-color);
+  border-right: 0;
   padding-left: 0rem !important;
   padding-right: 0rem !important;
   transition: width 0.2s ease;
@@ -29551,9 +29562,15 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .navbar-landing .dropdown-hoverable .navbar-dropdown-caret::after {
   display: none;
 }
+.navbar-landing .travel-nav-top .nav-link {
+  padding-left: 0 !important;
+}
 @media (min-width: 1540px) {
   .navbar-landing.navbar-expand-xxl .travel-nav-top .dropdown-toggle::after {
     display: none;
+  }
+  .navbar-landing.navbar-expand-xxl .travel-nav-top .nav-link {
+    padding-left: 1rem !important;
   }
   .navbar-landing.navbar-expand-xxl .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xxl .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
@@ -29566,6 +29583,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   .navbar-landing.navbar-expand-xl .travel-nav-top .dropdown-toggle::after {
     display: none;
   }
+  .navbar-landing.navbar-expand-xl .travel-nav-top .nav-link {
+    padding-left: 1rem !important;
+  }
   .navbar-landing.navbar-expand-xl .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xl .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29576,6 +29596,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 @media (min-width: 992px) {
   .navbar-landing.navbar-expand-lg .travel-nav-top .dropdown-toggle::after {
     display: none;
+  }
+  .navbar-landing.navbar-expand-lg .travel-nav-top .nav-link {
+    padding-left: 1rem !important;
   }
   .navbar-landing.navbar-expand-lg .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-lg .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
@@ -29588,6 +29611,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   .navbar-landing.navbar-expand-md .travel-nav-top .dropdown-toggle::after {
     display: none;
   }
+  .navbar-landing.navbar-expand-md .travel-nav-top .nav-link {
+    padding-left: 1rem !important;
+  }
   .navbar-landing.navbar-expand-md .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-md .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29599,6 +29625,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
   .navbar-landing.navbar-expand-sm .travel-nav-top .dropdown-toggle::after {
     display: none;
   }
+  .navbar-landing.navbar-expand-sm .travel-nav-top .nav-link {
+    padding-left: 1rem !important;
+  }
   .navbar-landing.navbar-expand-sm .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-sm .travel-nav-top .nav-link.active {
     background: var(--phoenix-secondary-bg);
   }
@@ -29608,6 +29637,9 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 }
 .navbar-landing.navbar-expand-xs .travel-nav-top .dropdown-toggle::after {
   display: none;
+}
+.navbar-landing.navbar-expand-xs .travel-nav-top .nav-link {
+  padding-left: 1rem !important;
 }
 .navbar-landing.navbar-expand-xs .travel-nav-top .nav-link:hover, .navbar-landing.navbar-expand-xs .travel-nav-top .nav-link.active {
   background: var(--phoenix-secondary-bg);
@@ -29924,6 +29956,14 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 .navbar-landing {
   --phoenix-navbar-hover-color: var(--phoenix-body-highlight-color);
   --phoenix-navbar-active-color: var(--phoenix-primary);
+}
+.navbar-landing .navbar-nav .nav-item:not(:last-child) {
+  border-bottom: 1px solid var(--phoenix-border-color-translucent);
+}
+@media (min-width: 992px) {
+  .navbar-landing .navbar-nav .nav-item:not(:last-child) {
+    border: 0;
+  }
 }
 .navbar-landing .nav-link {
   padding: 0.5rem 1rem !important;
@@ -30368,6 +30408,10 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 
 .modal-53w {
   max-width: 53.313rem;
+}
+
+.modal-38w {
+  max-width: 38.75rem;
 }
 
 .accordion-button {
@@ -31705,6 +31749,24 @@ a[href].bg-body-secondary:hover, a[href].bg-body-secondary:focus {
 .mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomOut {
   border-color: var(--phoenix-body-bg) transparent;
 }
+.gantt-zero-roadmap .btn-group .btn-check:checked + .btn:hover, .gantt-zero-roadmap .btn-group [data-list] .btn-check:checked + .page:hover, [data-list] .gantt-zero-roadmap .btn-group .btn-check:checked + .page:hover, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button:hover, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button:hover, .gantt-zero-roadmap .btn-group .tox .btn-check:checked + .tox-button-secondary:hover, .tox .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button-secondary:hover, .gantt-zero-roadmap .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary:hover, .tox .tox-dialog__footer .gantt-zero-roadmap .btn-group .btn-check:checked + .tox-button--secondary:hover, .gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn:hover, .mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomIn:hover,
+.gantt-zero-roadmap .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut:hover,
+.mapbox-container .mapbox-control-btn .gantt-zero-roadmap .btn-group .btn-check:checked + .zoomOut:hover,
+.gantt-chart-example .btn-group .btn-check:checked + .btn:hover,
+.gantt-chart-example .btn-group [data-list] .btn-check:checked + .page:hover,
+[data-list] .gantt-chart-example .btn-group .btn-check:checked + .page:hover,
+.gantt-chart-example .btn-group .tox .btn-check:checked + .tox-button:hover,
+.tox .gantt-chart-example .btn-group .btn-check:checked + .tox-button:hover,
+.gantt-chart-example .btn-group .tox .btn-check:checked + .tox-button-secondary:hover,
+.tox .gantt-chart-example .btn-group .btn-check:checked + .tox-button-secondary:hover,
+.gantt-chart-example .btn-group .tox .tox-dialog__footer .btn-check:checked + .tox-button--secondary:hover,
+.tox .tox-dialog__footer .gantt-chart-example .btn-group .btn-check:checked + .tox-button--secondary:hover,
+.gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomIn:hover,
+.mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomIn:hover,
+.gantt-chart-example .btn-group .mapbox-container .mapbox-control-btn .btn-check:checked + .zoomOut:hover,
+.mapbox-container .mapbox-control-btn .gantt-chart-example .btn-group .btn-check:checked + .zoomOut:hover {
+  border-color: var(--phoenix-btn-active-border-color);
+}
 .gantt-zero-roadmap .gantt_container,
 .gantt-chart-example .gantt_container {
   position: relative;
@@ -32849,6 +32911,12 @@ a[href].bg-body-secondary:hover, a[href].bg-body-secondary:focus {
 }
 .theme-wizard [class*=nav-wizard-vertical-] .nav-item .nav-link > div {
   min-width: 80px;
+}
+@media (max-width: 1199.98px) {
+  .theme-wizard [class*=nav-wizard-vertical-] .nav-item:first-child .nav-link > div {
+    min-width: 80px;
+    margin-left: -20px;
+  }
 }
 .theme-wizard .nav-wizard-success {
   --phoenix-theme-wizard-complete-color: var(--phoenix-success);

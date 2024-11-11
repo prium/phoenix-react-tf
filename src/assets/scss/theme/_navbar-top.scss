@@ -704,6 +704,12 @@
     }
   }
 
+  .travel-nav-top{
+    .nav-link{
+      padding-left: 0 !important;
+    }
+  }
+
   @each $item, $value in $navbar-vertical-breakpoints {
     @include media-breakpoint-up($item) {
       &.navbar-expand-#{$item} {
@@ -714,6 +720,7 @@
             }
           }
           .nav-link {
+            padding-left:  map-get($spacers, 3) !important;
             &:hover,
             &.active {
               background: var(--#{$prefix}secondary-bg);

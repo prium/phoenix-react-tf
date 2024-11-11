@@ -74,20 +74,6 @@ const navItems: NavItem[] = [
   {
     label: 'Trip',
     url: '#!'
-    // items: [
-    //   {
-    //     label: 'Homepage',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   },
-    //   {
-    //     label: 'Trip Details',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   },
-    //   {
-    //     label: 'Checkout',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   }
-    // ]
   },
   {
     label: 'Event',
@@ -145,7 +131,7 @@ const NavDropdownItems = ({
       >
         {label}
       </Dropdown.Toggle>
-      <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3">
+      <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3 mb-3 mb-lg-0">
         {items.map((dropdownItem, index) => (
           <Dropdown.Item
             as={Link}
@@ -210,7 +196,7 @@ const NavbarMain = () => {
         >
           <Logo />
         </Navbar.Brand>
-        <div className="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
+        <div className="d-flex align-items-center gap-3 gap-md-4 my-2 order-lg-1">
           <ThemeToggler />
           <Button
             to="#!"
@@ -247,7 +233,7 @@ const NavbarMain = () => {
         </div>
 
         <Navbar.Collapse id="navbarSupportedContent">
-          <Nav as="ul" className="me-auto mt-3 mt-lg-0 travel-nav-top">
+          <Nav as="ul" className="me-auto travel-nav-top">
             {navItems.map((item, index) => (
               <>
                 {item.items ? (
