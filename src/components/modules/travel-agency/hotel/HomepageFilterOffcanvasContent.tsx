@@ -103,7 +103,7 @@ const HomepageFilterOffcanvasContent = () => {
         onChange={val => setRange(val)}
         trackHeight="1.5rem"
         variant="primary-lighter"
-        classNames="phoenix-react-range-large mt-4 ps-5 pe-3"
+        classNames="phoenix-react-range-large mt-3 ps-5 pe-3"
       />
       <hr className="my-5" />
       <h4 className="text-body-highlight mb-4">Amenities</h4>
