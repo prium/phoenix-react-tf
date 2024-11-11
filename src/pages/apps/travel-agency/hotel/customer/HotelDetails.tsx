@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
-
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -24,13 +22,6 @@ import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar'
 import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelDetails = () => {
-  useSettingsMountEffect({
-    disableNavigationType: true,
-    disableHorizontalNavbarAppearance: true,
-    disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
-  });
-
   return (
     <>
       <ResizeableNavbar navItems={hotelNavItems} />

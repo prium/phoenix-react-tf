@@ -1,4 +1,3 @@
-import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import React from 'react';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
@@ -10,13 +9,6 @@ import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar'
 import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelGallery = () => {
-  useSettingsMountEffect({
-    disableNavigationType: true,
-    disableHorizontalNavbarAppearance: true,
-    disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
-  });
-
   return (
     <>
       <ResizeableNavbar navItems={hotelNavItems} />
