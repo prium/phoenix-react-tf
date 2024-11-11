@@ -95,7 +95,7 @@ const FlightSearch = () => {
               variant="link"
               to="#!"
               className={classNames(
-                'd-flex fs-8 fw-semibold text-normal px-0 pt-0 collapse-indicator',
+                'd-flex align-items-center fs-8 fw-semibold text-normal px-0 pt-0 collapse-indicator',
                 {
                   collapsed: !detailsVisible
                 }

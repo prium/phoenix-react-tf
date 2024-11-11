@@ -52,7 +52,7 @@ const HotelChangeRoomModal = ({
                     <FontAwesomeIcon
                       icon={faCircle}
                       className="fs-9 text-body-quaternary me-2"
-                      transform="up-1"
+                      transform="up-2"
                     />
                     {room.type}
                   </h4>
