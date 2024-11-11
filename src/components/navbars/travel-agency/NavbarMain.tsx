@@ -194,7 +194,7 @@ const NavbarMain = () => {
           to="/"
           className="flex-1 flex-lg-grow-0 me-lg-8 me-xl-13"
         >
-          <Logo />
+          <Logo textClass="d-none d-sm-block" />
         </Navbar.Brand>
         <div className="d-flex align-items-center gap-3 gap-md-4 my-2 order-lg-1">
           <ThemeToggler />
