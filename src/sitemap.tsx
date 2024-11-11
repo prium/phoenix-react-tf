@@ -369,6 +369,7 @@ export const routes: RouteItems[] = [
               {
                 name: 'customer',
                 active: true,
+                hasNew: true,
                 pages: [
                   {
                     name: 'homepage',

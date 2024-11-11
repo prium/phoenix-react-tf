@@ -56,7 +56,7 @@ const PriceTierForm = ({
               id={`${name}-free`}
               name={`${name}-radio`}
               defaultValue="free"
-              checked
+              defaultChecked
             />
             <Form.Check.Label htmlFor={`${name}-free`}>Free</Form.Check.Label>
           </Form.Check>

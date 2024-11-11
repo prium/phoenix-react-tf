@@ -4,7 +4,7 @@ export default [
   {
     version: '1.6.0',
     title: 'Aether',
-    publishDate: '10 Novembor, 2024',
+    publishDate: '11 Novembor, 2024',
     logs: {
       new: [
         'PAGE : <code>travel-agency/hotel/customer/hotel-details</code>',
