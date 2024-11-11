@@ -3,7 +3,7 @@ import { Card, InputGroup, Form, Button } from 'react-bootstrap';
 
 const CouponCard = () => {
   return (
-    <Card className="bg-info-subtle border-info-subtle coupon-card-sticky-top">
+    <Card className="bg-info-subtle border-info-subtle coupon-card-sticky-top mb-9 mb-lg-0">
       <Card.Body>
         <h4>Have a coupon?</h4>
         <p className="mb-4 fs-9 text-body-tertiary">
