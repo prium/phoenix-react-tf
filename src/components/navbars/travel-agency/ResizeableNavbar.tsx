@@ -25,6 +25,7 @@ const ResizeableNavbar = ({ navItems }: ResizeableNav) => {
     }
     navItemsRef.current.forEach((item, index) => {
       const dropdownItem = dropdownItemsRef.current[index];
+      item?.removeAttribute('style');
       if (item && dropdownItem && moreBtnRef.current) {
         totalItemsWidth = totalItemsWidth + item.clientWidth + 32;
         if (

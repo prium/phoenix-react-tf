@@ -9,8 +9,6 @@ import { useEffect } from 'react';
 const useSettingsMountEffect = (effects: Partial<SettingsPanelConfig>) => {
   const { settingsPanelConfig, setSettingsPanelConfig } =
     useSettingsPanelContext();
-  console.log({ settingsPanelConfig });
-
   useEffect(() => {
     setSettingsPanelConfig(effects);
     const undoEffects = Object.keys(effects).reduce((acc, effect) => {

@@ -116,9 +116,9 @@ const FlightSearchForm = () => {
             align="start"
             style={{ maxWidth: 320 }}
           >
-            <DropdownItem title="adults" className="pb-3 pt-0 border-bottom" />
-            <DropdownItem title="infants" className="py-3 border-bottom" />
-            <DropdownItem title="children" className="py-3" />
+            <DropdownItem title="Adults" className="pb-3 pt-0 border-bottom" />
+            <DropdownItem title="Infants" className="py-3 border-bottom" />
+            <DropdownItem title="Children" className="py-3" />
             <Button variant="primary" className="w-100">
               Complete
             </Button>
