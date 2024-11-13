@@ -34,23 +34,23 @@ const navItems: NavItem[] = [
       },
       {
         label: 'Hotel details',
-        url: '/apps/travel-agency/hotel/customer/hotel-details/'
+        url: '/apps/travel-agency/hotel/customer/hotel-details'
       },
       {
         label: 'Hotel compare',
-        url: '/apps/travel-agency/hotel/customer/hotel-compare/'
+        url: '/apps/travel-agency/hotel/customer/hotel-compare'
       },
       {
         label: 'Checkout',
-        url: '/apps/travel-agency/hotel/customer/checkout/'
+        url: '/apps/travel-agency/hotel/customer/checkout'
       },
       {
         label: 'Payment',
-        url: '/apps/travel-agency/hotel/customer/payment/'
+        url: '/apps/travel-agency/hotel/customer/payment'
       },
       {
         label: 'Gallery',
-        url: '/apps/travel-agency/hotel/customer/gallery/'
+        url: '/apps/travel-agency/hotel/customer/gallery'
       }
     ]
   },
@@ -74,20 +74,6 @@ const navItems: NavItem[] = [
   {
     label: 'Trip',
     url: '#!'
-    // items: [
-    //   {
-    //     label: 'Homepage',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   },
-    //   {
-    //     label: 'Trip Details',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   },
-    //   {
-    //     label: 'Checkout',
-    //     url: '/apps/travel-agency/flight/homepage'
-    //   }
-    // ]
   },
   {
     label: 'Event',
@@ -145,9 +131,14 @@ const NavDropdownItems = ({
       >
         {label}
       </Dropdown.Toggle>
-      <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3">
+      <Dropdown.Menu className="navbar-dropdown-caret mt-lg-3 mb-3 mb-lg-0">
         {items.map((dropdownItem, index) => (
-          <Dropdown.Item as={Link} to={dropdownItem.url} key={index}>
+          <Dropdown.Item
+            as={Link}
+            to={dropdownItem.url}
+            key={index}
+            className={classNames({ active: pathName === dropdownItem.url })}
+          >
             {dropdownItem.label}
           </Dropdown.Item>
         ))}
@@ -159,7 +150,7 @@ const NavDropdownItems = ({
 const NavbarMain = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const { pathname } = useLocation();
-
+  const [isNavItemOpen, setNavItemsOpen] = useState(false);
   const pathNameList = useMemo(() => {
     return pathname
       .split('/')
@@ -180,23 +171,32 @@ const NavbarMain = () => {
 
     return () => document.removeEventListener('scroll', toggleShadowClass);
   }, []);
+
+  useEffect(() => {
+    setNavItemsOpen(false);
+  }, [pathname]);
+
   return (
     <div className="bg-body sticky-top" ref={containerRef}>
       <Navbar
         expand="lg"
         className="navbar-landing container-medium border-0 px-3 py-2"
+        expanded={isNavItemOpen}
+        onToggle={() => setNavItemsOpen(!isNavItemOpen)}
       >
-        <Navbar.Toggle className="fs-8 ps-2 me-sm-2 border-0 ms-n2">
-          <span className="navbar-toggler-icon" />
+        <Navbar.Toggle className="fs-8 ps-2 me-sm-2 border-0 ms-n2 hover-bg-transparent navbar-toggler-humburger-icon">
+          <span className="navbar-toggle-icon">
+            <span className="toggle-line" />
+          </span>
         </Navbar.Toggle>
         <Navbar.Brand
           as={Link}
           to="/"
           className="flex-1 flex-lg-grow-0 me-lg-8 me-xl-13"
         >
-          <Logo />
+          <Logo textClass="d-none d-sm-block" />
         </Navbar.Brand>
-        <div className="d-flex align-items-center gap-2 gap-sm-3 gap-md-4 my-2 order-lg-1">
+        <div className="d-flex align-items-center gap-3 gap-md-4 my-2 order-lg-1">
           <ThemeToggler />
           <Button
             to="#!"
@@ -233,7 +233,7 @@ const NavbarMain = () => {
         </div>
 
         <Navbar.Collapse id="navbarSupportedContent">
-          <Nav as="ul" className="me-auto mt-3 mt-lg-0 travel-nav-top">
+          <Nav as="ul" className="me-auto travel-nav-top">
             {navItems.map((item, index) => (
               <>
                 {item.items ? (
@@ -244,7 +244,7 @@ const NavbarMain = () => {
                     pathName={pathname}
                   />
                 ) : (
-                  <Nav.Item as="li" key={index}>
+                  <Nav.Item as="li" key={index} className="">
                     <Nav.Link
                       as={Link}
                       to="#!"

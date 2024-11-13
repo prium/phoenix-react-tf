@@ -206,6 +206,7 @@ import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
 import FlightHomePage from 'pages/apps/travel-agency/Flight/HomePage';
 import FlightBooking from 'pages/apps/travel-agency/Flight/Booking';
 import FlightPayment from 'pages/apps/travel-agency/Flight/Payment';
+import FlightAlternateLayout from 'layouts/FlightAlternateLayout';
 
 const routes: RouteObject[] = [
   {
@@ -1035,7 +1036,17 @@ const routes: RouteObject[] = [
               {
                 path: 'homepage',
                 element: <FlightHomePage />
-              },
+              }
+            ]
+          }
+        ]
+      },
+      {
+        element: <FlightAlternateLayout />,
+        path: 'apps/travel-agency/flight',
+        children: [
+          {
+            children: [
               {
                 path: 'booking',
                 element: <FlightBooking />
@@ -1048,7 +1059,6 @@ const routes: RouteObject[] = [
           }
         ]
       },
-
       {
         path: '/pages/errors/',
         children: [

@@ -32,7 +32,7 @@ const PriceTierForm = ({
       })}
     >
       <div className="d-sm-flex align-items-center gap-3">
-        <Form.Check id={id} type="switch">
+        <Form.Check id={id} type="switch" className="mb-0">
           <Form.Check.Input
             onClick={() => {
               setActive(!active);
@@ -56,7 +56,7 @@ const PriceTierForm = ({
               id={`${name}-free`}
               name={`${name}-radio`}
               defaultValue="free"
-              checked
+              defaultChecked
             />
             <Form.Check.Label htmlFor={`${name}-free`}>Free</Form.Check.Label>
           </Form.Check>

@@ -13,6 +13,11 @@
         border-color: var(--#{$prefix}body-bg) transparent;
       }
     }
+    .btn-check:checked{
+     + .btn:hover{
+        border-color: var(--#{$prefix}btn-active-border-color);
+      }
+    }
   }
   .gantt_container {
     position: relative;

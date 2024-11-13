@@ -12,10 +12,19 @@ interface FlightPromoModalProps {
 
 const FlightPromoModal = ({ show, handleClose }: FlightPromoModalProps) => {
   return (
-    <Modal show={show} className="modal-md" onHide={handleClose} centered>
+    <Modal
+      show={show}
+      dialogClassName="modal-38w"
+      onHide={handleClose}
+      centered
+    >
       <Modal.Body className="position-relative p-6">
         <div className="position-absolute end-0 top-0">
-          <Button className="px-3 text-danger" onClick={handleClose}>
+          <Button
+            variant="phoenix-secondary"
+            className="px-3 border-0 bg-transparent"
+            onClick={handleClose}
+          >
             <FontAwesomeIcon icon={faTimes} className="fs-9" />
           </Button>
         </div>
@@ -38,8 +47,12 @@ const FlightPromoModal = ({ show, handleClose }: FlightPromoModalProps) => {
             Sign up now to save up to 20% on flights with our free membership
             program!
           </p>
-          <div className="d-flex gap-2 align-items-center mb-4">
-            <Form.Control type="email" placeholder="Your email address" />
+          <div className="d-flex gap-2 align-items-center mb-4 justify-content-center">
+            <Form.Control
+              type="email"
+              placeholder="Your email address"
+              style={{ maxWidth: 248 }}
+            />
             <Button variant="primary" className="rounded text-nowrap px-sm-6">
               Sign-up
             </Button>

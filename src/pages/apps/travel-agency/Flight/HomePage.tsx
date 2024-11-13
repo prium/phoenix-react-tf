@@ -1,4 +1,3 @@
-import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import NavbarHome from 'components/navbars/travel-agency/NavbarHome';
 import { Container } from 'react-bootstrap';
 import bgIllustrations from 'assets/img/bg/44.png';
@@ -12,12 +11,6 @@ import { flightNavItems } from 'data/travel-agency/ResizeableNav';
 
 const FlightHomePage = () => {
   const [showPromoModal, setShowPromoModal] = useState(true);
-  useSettingsMountEffect({
-    disableNavigationType: true,
-    disableHorizontalNavbarAppearance: true,
-    disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
-  });
 
   return (
     <>

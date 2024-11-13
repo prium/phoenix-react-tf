@@ -17,7 +17,7 @@ const FlightBooking = () => {
   return (
     <>
       <ResizeableNavbar navItems={flightNavItems} />
-      <Container fluid="small" className="pt-6 pb-6 pb-md-8 pb-lg-9">
+      <Container fluid="small" className="pt-6 pb-6 pb-9">
         <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
         <h2 className="mb-5">Booking</h2>
         <Row className="g-3 align-items-sm-center justify-content-between mb-5">

@@ -161,11 +161,11 @@ const HotelActions = ({ background }: { background: boolean }) => {
                 style={{ maxWidth: 320 }}
               >
                 <DropdownItem
-                  title="adults"
+                  title="Adults"
                   className="pb-3 pt-0 border-bottom"
                 />
-                <DropdownItem title="infants" className="py-3 border-bottom" />
-                <DropdownItem title="children" className="pt-3 pb-0" />
+                <DropdownItem title="Infants" className="py-3 border-bottom" />
+                <DropdownItem title="Children" className="pt-3 pb-0" />
               </Dropdown.Menu>
             </Dropdown>
           </Col>

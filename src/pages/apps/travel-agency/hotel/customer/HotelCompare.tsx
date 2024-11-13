@@ -1,4 +1,3 @@
-import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import EcomTopRegionsMap from 'components/leaflet-maps/EcomTopRegionsMap';
@@ -18,13 +17,6 @@ import ResizeableNavbar from 'components/navbars/travel-agency/ResizeableNavbar'
 import { hotelNavItems } from 'data/travel-agency/ResizeableNav';
 
 const HotelCompare = () => {
-  useSettingsMountEffect({
-    disableNavigationType: true,
-    disableHorizontalNavbarAppearance: true,
-    disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
-  });
-
   return (
     <>
       <ResizeableNavbar navItems={hotelNavItems} />

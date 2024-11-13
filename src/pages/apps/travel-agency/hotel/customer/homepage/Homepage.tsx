@@ -1,4 +1,3 @@
-import useSettingsMountEffect from 'hooks/useSettingsMountEffect';
 import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import Button from 'components/base/Button';
@@ -15,12 +14,6 @@ import HomepageFilterOffcanvas from 'components/modules/travel-agency/hotel/Home
 
 const HotelHomepage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  useSettingsMountEffect({
-    disableNavigationType: true,
-    disableHorizontalNavbarAppearance: true,
-    disableVerticalNavbarAppearance: true,
-    disableHorizontalNavbarShape: true
-  });
 
   return (
     <>

@@ -41,11 +41,11 @@ const PaymentMethodForm = ({
               defaultChecked
             />
             <Form.Check.Label
-              className="d-flex gap-2 fs-8 text-body"
+              className="d-flex gap-2 fs-8 text-body text-nowrap"
               htmlFor="creditCard"
             >
               Credit card
-              <img src={visaCardImage} alt="" className="h-100" />
+              <img src={visaCardImage} alt="" className="h-100 ms-2" />
               <img src={discoverImage} alt="" className="h-100" />
               <img src={masterCardImage} alt="" className="h-100" />
               <img src={americanExpressImage} alt="" className="h-100" />

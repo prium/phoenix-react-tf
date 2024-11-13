@@ -4,7 +4,7 @@ export default [
   {
     version: '1.6.0',
     title: 'Aether',
-    publishDate: '04 Novembor, 2024',
+    publishDate: '12 November, 2024',
     logs: {
       new: [
         'PAGE : <code>travel-agency/hotel/customer/hotel-details</code>',
@@ -15,8 +15,16 @@ export default [
         'PAGE : <code>travel-agency/flight/booking</code>',
         'PAGE : <code>travel-agency/flight/payment</code>'
       ],
-      update: ['DOC : <code>React Table Documentation</code>'],
-      fix: ['Minor Bugs']
+      update: [
+        'DOC : <code>React Table Documentation</code>',
+        'Header and footer style in flight module'
+      ],
+      fix: [
+        'Horizontal nav scrollbar issue in firefox',
+        'Multiple file select issue',
+        'Mapbox full screen issue',
+        'Minor Bugs'
+      ]
     }
   },
   {
@@ -25,7 +33,7 @@ export default [
     publishDate: '23 September, 2024',
     logs: {
       new: [
-        '<b>Vite Starter Versiton</b> (Contact <a href="mailto:support@themewagon.com">support</a> with the purchase id)',
+        '<b>Vite Starter version</b> (Contact <a href="mailto:support@themewagon.com">support</a> with the purchase id)',
         'PAGE : <code>travel-agency/hotel/admin/add-property</code>',
         'PAGE : <code>travel-agency/hotel/admin/add-room</code>',
         'PAGE : <code>travel-agency/hotel/admin/room-listing</code>',

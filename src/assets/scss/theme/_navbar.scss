@@ -211,6 +211,16 @@
   // --#{$prefix}navbar-color: var(--#{$prefix}body-highlight-color);
   --#{$prefix}navbar-hover-color: var(--#{$prefix}body-highlight-color);
   --#{$prefix}navbar-active-color: var(--#{$prefix}primary);
+  .navbar-nav {
+    .nav-item:not(:last-child){
+      border-bottom: 1px solid var(--#{$prefix}border-color-translucent);
+    }
+    @include media-breakpoint-up(lg) {
+      .nav-item:not(:last-child){
+        border: 0;
+      }
+    }
+  }
   .nav-link {
     padding: map-get($spacers, 2) map-get($spacers, 3) !important;
     border-radius: 6px;
