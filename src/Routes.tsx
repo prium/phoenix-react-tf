@@ -194,11 +194,19 @@ import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
 import RoomListing from 'pages/apps/travel-agency/hotel/admin/RoomListing';
 import HotelHomepage from 'pages/apps/travel-agency/hotel/customer/homepage/Homepage';
 import HotelGallery from 'pages/apps/travel-agency/hotel/customer/HotelGallery';
+import HotelCompare from 'pages/apps/travel-agency/hotel/customer/HotelCompare';
+import HotelDetails from 'pages/apps/travel-agency/hotel/customer/HotelDetails';
 import AddProperty from 'pages/apps/travel-agency/hotel/admin/AddProperty';
 import AddRoom from 'pages/apps/travel-agency/hotel/admin/AddRoom';
 import SearchRoom from 'pages/apps/travel-agency/hotel/admin/SearchRoom';
 import TravelAgencyLayout from 'layouts/TravelAgencyLayout';
 import TravelLandingLayout from 'layouts/TravelLandingLayout';
+import HotelCheckout from 'pages/apps/travel-agency/hotel/customer/HotelCheckout';
+import HotelPayment from 'pages/apps/travel-agency/hotel/customer/HotelPayment';
+import FlightHomePage from 'pages/apps/travel-agency/Flight/HomePage';
+import FlightBooking from 'pages/apps/travel-agency/Flight/Booking';
+import FlightPayment from 'pages/apps/travel-agency/Flight/Payment';
+import FlightAlternateLayout from 'layouts/FlightAlternateLayout';
 
 const routes: RouteObject[] = [
   {
@@ -418,33 +426,23 @@ const routes: RouteObject[] = [
                 ]
               },
               {
-                path: 'travel-agency',
+                path: 'travel-agency/hotel/admin',
                 children: [
                   {
-                    path: 'hotel/admin/add-property',
+                    path: 'add-property',
                     element: <AddProperty />
-                  }
-                ]
-              },
-              {
-                path: 'travel-agency',
-                children: [
+                  },
                   {
-                    path: 'hotel/admin/add-room',
+                    path: 'add-room',
                     element: <AddRoom />
                   },
                   {
-                    path: 'hotel/admin/search-room',
-                    element: <SearchRoom />
-                  }
-                ]
-              },
-              {
-                path: 'travel-agency',
-                children: [
-                  {
-                    path: 'hotel/admin/room-listing',
+                    path: 'room-listing',
                     element: <RoomListing />
+                  },
+                  {
+                    path: 'search-room',
+                    element: <SearchRoom />
                   }
                 ]
               }
@@ -997,23 +995,70 @@ const routes: RouteObject[] = [
       },
       {
         element: <TravelAgencyLayout />,
-        path: 'apps/travel-agency',
+        path: 'apps/travel-agency/hotel/customer',
         children: [
           {
             children: [
               {
-                path: 'hotel/customer/homepage',
+                path: 'homepage',
                 element: <HotelHomepage />
               },
               {
-                path: 'hotel/customer/gallery',
+                path: 'hotel-details',
+                element: <HotelDetails />
+              },
+              {
+                path: 'hotel-compare',
+                element: <HotelCompare />
+              },
+              {
+                path: 'checkout',
+                element: <HotelCheckout />
+              },
+              {
+                path: 'payment',
+                element: <HotelPayment />
+              },
+              {
+                path: 'gallery',
                 element: <HotelGallery />
               }
             ]
           }
         ]
       },
-
+      {
+        element: <TravelAgencyLayout />,
+        path: 'apps/travel-agency/flight',
+        children: [
+          {
+            children: [
+              {
+                path: 'homepage',
+                element: <FlightHomePage />
+              }
+            ]
+          }
+        ]
+      },
+      {
+        element: <FlightAlternateLayout />,
+        path: 'apps/travel-agency/flight',
+        children: [
+          {
+            children: [
+              {
+                path: 'booking',
+                element: <FlightBooking />
+              },
+              {
+                path: 'payment',
+                element: <FlightPayment />
+              }
+            ]
+          }
+        ]
+      },
       {
         path: '/pages/errors/',
         children: [

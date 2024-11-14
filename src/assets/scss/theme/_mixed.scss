@@ -677,6 +677,35 @@
   }
 }
 
+.btn-wish {
+  width: 2rem;
+  height: 2rem;
+  color: var(--#{$prefix}white);
+  border: 1px solid var(--#{$prefix}white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 0;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: var(--#{$prefix}white) !important;
+    color: var(--#{$prefix}black) !important;
+  }
+  &.btn-wish-primary {
+    color: var(--#{$prefix}primary);
+    border: 1px solid var(--#{$prefix}primary);
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: var(--#{$prefix}primary) !important;
+      color: var(--#{$prefix}white) !important;
+    }
+  }
+}
+
 // active icon
 .active-icon {
   position: relative;
@@ -726,5 +755,39 @@
     .video-icon {
       display: none;
     }
+  }
+}
+
+// ping icon
+.ping-icon-wrapper {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  .ping-icon-bg {
+    position: absolute;
+    background-color: var(--#{$prefix}success);
+    display: inline-flex;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    opacity: 0.75;
+    animation: animatePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  .ping-icon {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-flex;
+    color: var(--#{$prefix}success);
+  }
+}
+
+@keyframes animatePing {
+  75%,
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
   }
 }

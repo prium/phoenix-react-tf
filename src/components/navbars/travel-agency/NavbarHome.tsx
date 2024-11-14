@@ -29,13 +29,13 @@ const nav: nav[] = [
   {
     label: 'Trip',
     icon: faSuitcaseRolling,
-    path: `/apps/travel-agency/trip/homepage`
+    path: `#!`
   }
 ];
 const NavbarHome = ({ currentPage }: { currentPage: string }) => {
   return (
     <>
-      <Nav className="nav-home justify-content-center py-4 gap-2 mt-3 mt-lg-0">
+      <Nav className="nav-home justify-content-center py-4 gap-2">
         {nav.map((item, index) => (
           <Nav.Item key={index}>
             <Nav.Link

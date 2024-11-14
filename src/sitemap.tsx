@@ -22,7 +22,7 @@ export interface Route {
   active?: boolean;
   new?: boolean;
   hasNew?: boolean;
-  next?: boolean;
+  isNext?: boolean;
 }
 
 export interface RouteItems {
@@ -76,7 +76,7 @@ export const routes: RouteItems[] = [
             new: true,
             path: '/dashboard/travel-agency',
             pathName: 'travel-agency',
-            topNavIcon: 'phone',
+            topNavIcon: 'briefcase',
             active: true
           },
           {
@@ -225,7 +225,6 @@ export const routes: RouteItems[] = [
         name: 'CRM',
         icon: 'phone',
         active: true,
-        hasNew: true,
         pages: [
           {
             name: 'analytics',
@@ -237,8 +236,7 @@ export const routes: RouteItems[] = [
             name: 'deals',
             path: '/apps/crm/deals',
             pathName: 'crm-deals',
-            active: true,
-            new: true
+            active: true
           },
           {
             name: 'deal-details',
@@ -324,7 +322,7 @@ export const routes: RouteItems[] = [
       {
         name: 'travel-agency',
         hasNew: true,
-        icon: 'clipboard',
+        icon: 'briefcase',
         active: true,
         pages: [
           {
@@ -336,7 +334,7 @@ export const routes: RouteItems[] = [
           {
             name: 'hotel',
             active: true,
-            new: true,
+            hasNew: true,
             pages: [
               {
                 name: 'admin',
@@ -371,6 +369,7 @@ export const routes: RouteItems[] = [
               {
                 name: 'customer',
                 active: true,
+                hasNew: true,
                 pages: [
                   {
                     name: 'homepage',
@@ -379,34 +378,38 @@ export const routes: RouteItems[] = [
                     active: true
                   },
                   {
+                    name: 'hotel-details',
+                    path: '/apps/travel-agency/hotel/customer/hotel-details',
+                    pathName: 'hotel-details',
+                    active: true,
+                    new: true
+                  },
+                  {
+                    name: 'hotel-compare',
+                    path: '/apps/travel-agency/hotel/customer/hotel-compare',
+                    pathName: 'hotel-compare',
+                    active: true,
+                    new: true
+                  },
+                  {
+                    name: 'checkout',
+                    path: '/apps/travel-agency/hotel/customer/checkout',
+                    pathName: 'hotel-checkout',
+                    active: true,
+                    new: true
+                  },
+                  {
+                    name: 'payment',
+                    path: '/apps/travel-agency/hotel/customer/payment',
+                    pathName: 'hotel-payment',
+                    active: true,
+                    new: true
+                  },
+                  {
                     name: 'gallery',
                     path: '/apps/travel-agency/hotel/customer/gallery',
                     pathName: 'hotel-gallery',
                     active: true
-                  },
-                  {
-                    name: 'hotel-details',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-hotel-details',
-                    active: false
-                  },
-                  {
-                    name: 'hotel-compare',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-hotel-compare',
-                    active: false
-                  },
-                  {
-                    name: 'checkout',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-checkout',
-                    active: false
-                  },
-                  {
-                    name: 'payment',
-                    path: '/pages/coming-soon',
-                    pathName: 'hotel-payment',
-                    active: false
                   }
                 ]
               }
@@ -414,9 +417,28 @@ export const routes: RouteItems[] = [
           },
           {
             name: 'flight',
-            next: true,
-            path: '/pages/coming-soon',
-            pathName: 'travel-agency-flight'
+            active: true,
+            new: true,
+            pages: [
+              {
+                name: 'homepage',
+                active: true,
+                path: '/apps/travel-agency/flight/homepage',
+                pathName: 'flight-homepage'
+              },
+              {
+                name: 'booking',
+                active: true,
+                path: '/apps/travel-agency/flight/booking',
+                pathName: 'flight-booking'
+              },
+              {
+                name: 'payment',
+                active: true,
+                path: '/apps/travel-agency/flight/payment',
+                pathName: 'flight-payment'
+              }
+            ]
           }
         ]
       },

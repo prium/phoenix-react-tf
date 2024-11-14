@@ -67,7 +67,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
                     New
                   </Badge>
                 )}
-                {route.next && !isNavbarVerticalCollapsed && (
+                {route.isNext && !isNavbarVerticalCollapsed && (
                   <Badge variant="phoenix" bg="primary" className="ms-2">
                     next
                   </Badge>
@@ -82,7 +82,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
                   New
                 </Badge>
               )}
-              {route.next && (
+              {route.isNext && (
                 <Badge variant="phoenix" bg="primary" className="ms-2">
                   next
                 </Badge>
@@ -175,7 +175,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
                 New
               </Badge>
             )}
-            {(!isNavbarVerticalCollapsed || level !== 1) && route.next && (
+            {(!isNavbarVerticalCollapsed || level !== 1) && route.isNext && (
               <Badge variant="phoenix" bg="primary" className="ms-2">
                 Next
               </Badge>
@@ -198,7 +198,7 @@ const CollapsableNavItem = ({ route, level }: NavItemProps) => {
                     New
                   </Badge>
                 )}
-                {isNavbarVerticalCollapsed && route.next && (
+                {isNavbarVerticalCollapsed && route.isNext && (
                   <Badge variant="phoenix" bg="primary" className="ms-2">
                     Next
                   </Badge>

@@ -1,6 +1,6 @@
 {
   "name": "phoenix-react",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -19,7 +19,7 @@
     "@iconscout/react-unicons": "^2.0.2",
     "@picmo/popup-picker": "^5.8.5",
     "@react-leaflet/core": "^2.1.0",
-    "@tanstack/react-table": "^8.8.5",
+    "@tanstack/react-table": "^8.20.5",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.5.1",
@@ -44,7 +44,7 @@
     "leaflet.tilelayer.colorfilter": "^1.2.5",
     "lodash.merge": "^4.6.2",
     "lottie-react": "^2.4.0",
-    "mapbox-gl": "^2.14.1",
+    "mapbox-gl": "^2.15.0",
     "picmo": "^5.8.5",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
