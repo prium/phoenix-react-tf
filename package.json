@@ -1,6 +1,6 @@
 {
   "name": "phoenix-react",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -65,7 +65,7 @@
     "react-textarea-autosize": "^8.5.2",
     "react-typed": "^2.0.12",
     "react-visibility-sensor": "^5.1.1",
-    "swiper": "^11.0.3",
+    "swiper": "^11.1.15",
     "tinymce": "^7.1.1",
     "web-vitals": "^3.5.0",
     "worker-loader": "^3.0.8"

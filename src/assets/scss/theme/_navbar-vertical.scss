@@ -20,6 +20,8 @@ html:not(.navbar-vertical-collapsed) {
   }
 }
 .navbar-vertical {
+  $zindex-sticky : 1040;
+
   position: fixed;
   display: inline-block;
   z-index: $zindex-sticky;

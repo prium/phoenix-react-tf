@@ -439,6 +439,31 @@ export const routes: RouteItems[] = [
                 pathName: 'flight-payment'
               }
             ]
+          },
+          {
+            name: 'trip',
+            active: true,
+            new: true,
+            pages: [
+              {
+                name: 'homepage',
+                active: true,
+                path: '/apps/travel-agency/trip/homepage',
+                pathName: 'trip-homepage'
+              },
+              {
+                name: 'trip-details',
+                active: true,
+                path: '/apps/travel-agency/trip/trip-details',
+                pathName: 'trip-details'
+              },
+              {
+                name: 'checkout',
+                active: true,
+                path: '/apps/travel-agency/trip/checkout',
+                pathName: 'checkout'
+              }
+            ]
           }
         ]
       },

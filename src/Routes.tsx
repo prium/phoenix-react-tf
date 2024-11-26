@@ -208,6 +208,11 @@ import FlightBooking from 'pages/apps/travel-agency/Flight/Booking';
 import FlightPayment from 'pages/apps/travel-agency/Flight/Payment';
 import FlightAlternateLayout from 'layouts/FlightAlternateLayout';
 
+import TripHomepage from 'pages/apps/travel-agency/trip/Homepage';
+import TripDetails from 'pages/apps/travel-agency/trip/TripDetails';
+import TripCheckout from 'pages/apps/travel-agency/trip/Checkout';
+import TripLayout from 'layouts/TripLayout';
+
 const routes: RouteObject[] = [
   {
     element: <App />,
@@ -1054,6 +1059,28 @@ const routes: RouteObject[] = [
               {
                 path: 'payment',
                 element: <FlightPayment />
+              }
+            ]
+          }
+        ]
+      },
+      {
+        element: <TripLayout />,
+        path: 'apps/travel-agency/trip',
+        children: [
+          {
+            children: [
+              {
+                path: 'homepage',
+                element: <TripHomepage />
+              },
+              {
+                path: 'trip-details',
+                element: <TripDetails />
+              },
+              {
+                path: 'checkout',
+                element: <TripCheckout />
               }
             ]
           }
