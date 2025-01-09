@@ -99,11 +99,9 @@ const SummeryContent = ({ item, index }: SummeryContentProps) => {
 const TripDetailsSummery = ({ tourSummery }: TripDetailsSummeryProps) => {
   const { getThemeColor } = useAppContext();
   const [open, setOpen] = useState(true);
-  const mapData = useMemo(() => {
-    return getMapData(getThemeColor);
-  }, [getThemeColor]);
-  return (
-    <>
+  const map = useMemo(() => {
+    const mapData = getMapData(getThemeColor);
+    return (
       <MapboxCluster
         className="border border-translucent rounded-2"
         mapData={mapData}
@@ -117,6 +115,11 @@ const TripDetailsSummery = ({ tourSummery }: TripDetailsSummeryProps) => {
           height: 240
         }}
       />
+    );
+  }, [getThemeColor]);
+  return (
+    <>
+      {map}
       <h6 className="my-3 py-3 px-2 rounded-2 bg-body-secondary text-center">
         Day 1
       </h6>

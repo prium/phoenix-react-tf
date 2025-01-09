@@ -37,6 +37,12 @@ a[href] {
   }
 }
 
+.hover-body-highlight {
+  @include hover-focus {
+    color: var(--#{$prefix}body-highlight-color) !important;
+  }
+}
+
 .hover-shadow {
   @include hover-focus {
     box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.1);
