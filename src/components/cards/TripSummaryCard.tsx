@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faClock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { numberFormat } from 'helpers/utils';
 
-interface TripSummeryCardProps {
+interface TripSummaryCardProps {
   selectedTrip: SelectedTrip;
 }
-const TripSummeryCard = ({ selectedTrip }: TripSummeryCardProps) => {
+const TripSummaryCard = ({ selectedTrip }: TripSummaryCardProps) => {
   return (
     <Card>
       <Card.Body>
@@ -86,4 +86,4 @@ const TripSummeryCard = ({ selectedTrip }: TripSummeryCardProps) => {
   );
 };
 
-export default TripSummeryCard;
+export default TripSummaryCard;

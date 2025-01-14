@@ -10,28 +10,21 @@ import {
 import { Row } from 'react-bootstrap';
 import DatePicker from 'components/base/DatePicker';
 import InputGroupCounter from 'components/common/InputGroupCounter';
-import { TripDetailsModalPricingPlan } from 'data/travel-agency/customer/trip';
+import { tripDetailsModalPricingPlan } from 'data/travel-agency/customer/trip';
 import TripDetailsModalPricingPlanCard from 'components/cards/TripDetailsModalPricingPlanCard';
 import { Link } from 'react-router-dom';
 
 interface TripDetailsAvailabilityModalProps {
   show: boolean;
-  handleModalClose: () => void;
-  pricingPlans: TripDetailsModalPricingPlan[];
+  onHide: () => void;
 }
 
 const TripDetailsAvailabilityModal = ({
   show,
-  handleModalClose,
-  pricingPlans
+  onHide
 }: TripDetailsAvailabilityModalProps) => {
   return (
-    <Modal
-      show={show}
-      onHide={handleModalClose}
-      centered
-      dialogClassName="modal-md"
-    >
+    <Modal show={show} onHide={onHide} centered dialogClassName="modal-md">
       <Modal.Header className="border-0 justify-content-between align-items-start gap-5 px-4 pt-4 pb-3">
         <div>
           <h2 id="flightFilterModalLabel" className="mb-0">
@@ -40,7 +33,7 @@ const TripDetailsAvailabilityModal = ({
         </div>
         <Button
           className="ms-auto p-0 fs-6 text-body-quaternary"
-          onClick={handleModalClose}
+          onClick={onHide}
         >
           <FontAwesomeIcon icon={faXmark} />
         </Button>
@@ -95,7 +88,7 @@ const TripDetailsAvailabilityModal = ({
                     id="adults"
                     inputGap="gap-2"
                     buttonClasses="rounded px-3"
-                    iconClasses=""
+                    iconClasses="px-0"
                   />
                 </Col>
                 <Col xs="auto" sm={6}>
@@ -109,17 +102,16 @@ const TripDetailsAvailabilityModal = ({
                     id="children"
                     inputGap="gap-2"
                     buttonClasses="rounded px-3"
-                    iconClasses=""
+                    iconClasses="px-0"
                   />
                 </Col>
               </Row>
             </Col>
           </Row>
-          {pricingPlans.map((pricingPlan, index) => (
+          {tripDetailsModalPricingPlan.map(pricingPlan => (
             <TripDetailsModalPricingPlanCard
               key={pricingPlan.id}
               pricingPlan={pricingPlan}
-              index={index}
             />
           ))}
           <Link to="/apps/travel-agency/trip/checkout">

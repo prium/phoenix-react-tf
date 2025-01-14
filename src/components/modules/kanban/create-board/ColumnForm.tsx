@@ -11,14 +11,7 @@ import { useWizardFormContext } from 'providers/WizardFormProvider';
 import { ChangeEvent, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { CreateBoardFormData } from './CreateBoardWizardForm';
-import {
-  DndContext,
-  PointerSensor,
-  KeyboardSensor,
-  useSensor,
-  useSensors,
-  DragOverlay
-} from '@dnd-kit/core';
+import { DndContext, DragOverlay } from '@dnd-kit/core';
 import type {
   DragEndEvent,
   DragStartEvent,
@@ -28,11 +21,11 @@ import {
   SortableContext,
   useSortable,
   arrayMove,
-  sortableKeyboardCoordinates,
   verticalListSortingStrategy
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { getRandomNumber } from 'helpers/utils';
+import { useGetDndSensor } from 'hooks/useGetDndSensor';
 
 interface ColumnItemProps {
   className?: string;
@@ -159,12 +152,7 @@ const ColumnForm = () => {
     null
   );
 
-  const sensor = useSensors(
-    useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates
-    })
-  );
+  const sensor = useGetDndSensor();
 
   const handleAddNewColumn = () => {
     const updatedFormData = { ...formData };

@@ -1,5 +1,4 @@
-import React from 'react';
-import TripSummeryCard from 'components/cards/TripSummeryCard';
+import TripSummaryCard from 'components/cards/TripSummaryCard';
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import ResizableNavbar from 'components/navbars/travel-agency/ResizableNavbar';
 import { defaultBreadcrumbItems } from 'data/commonData';
@@ -26,10 +25,16 @@ const TripCheckout = () => {
                 <TripCheckoutForm />
               </Col>
               <Col lg={5} xl={4}>
-                <TripSummeryCard selectedTrip={selectedTrip} />
-                <Button type="submit" variant="primary" className="w-100 mt-3">
-                  Book now
-                </Button>
+                <div className="sticky-lg-top z-0" style={{ top: '10rem' }}>
+                  <TripSummaryCard selectedTrip={selectedTrip} />
+                  <Button
+                    type="submit"
+                    variant="primary"
+                    className="w-100 mt-3"
+                  >
+                    Book now
+                  </Button>
+                </div>
               </Col>
             </Row>
           </Form>

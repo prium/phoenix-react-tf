@@ -26,15 +26,21 @@ interface DealCardProps {
 const DealCard = ({ deal, columnId, cursor }: DealCardProps) => {
   const { dealColumns, setDealColumns } = useDealsContext();
 
-  const { setNodeRef, isDragging, transform, transition, listeners } =
-    useSortable({
-      id: deal.id,
-      data: {
-        type: 'deal',
-        item: deal,
-        columnId
-      }
-    });
+  const {
+    setNodeRef,
+    isDragging,
+    transform,
+    transition,
+    attributes,
+    listeners
+  } = useSortable({
+    id: deal.id,
+    data: {
+      type: 'deal',
+      item: deal,
+      columnId
+    }
+  });
 
   const handleOpenDetails = () => {
     const updatedColumns = structuredClone(dealColumns);
@@ -51,13 +57,12 @@ const DealCard = ({ deal, columnId, cursor }: DealCardProps) => {
   const styles = {
     transform: CSS.Transform.toString(transform),
     transition,
-    cursor: cursor ? 'grabbing' : 'pointer',
+    cursor: isDragging || cursor ? 'grabbing' : 'pointer',
     opacity: isDragging ? 0 : 1
   };
-
   return (
-    <div ref={setNodeRef} style={styles} {...listeners}>
-      <Card className="mb-3" style={{ minWidth: 364 }}>
+    <div ref={setNodeRef} style={styles} {...attributes} {...listeners}>
+      <Card className="mb-3">
         <Card.Body>
           <div className="d-flex align-items-center justify-content-between mb-3">
             <FeatherIcon icon="clock" size={16} className="me-2" />

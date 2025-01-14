@@ -63,18 +63,17 @@ const DealColumn = ({
         ref={setNodeRef}
         {...attributes}
         {...listeners}
+        className="scrollbar flex-1 d-flex flex-column"
         onClick={e => e.stopPropagation()}
       >
-        <div className="scrollbar flex-1 d-flex flex-column">
-          <SortableContext
-            items={column.deals.map(item => item.id)}
-            strategy={verticalListSortingStrategy}
-          >
-            {column.deals.map(item => (
-              <DealCard deal={item} key={item.id} columnId={column.id} />
-            ))}
-          </SortableContext>
-        </div>
+        <SortableContext
+          items={column.deals.map(item => item.id)}
+          strategy={verticalListSortingStrategy}
+        >
+          {column.deals.map(item => (
+            <DealCard deal={item} key={item.id} columnId={column.id} />
+          ))}
+        </SortableContext>
       </div>
     </div>
   );

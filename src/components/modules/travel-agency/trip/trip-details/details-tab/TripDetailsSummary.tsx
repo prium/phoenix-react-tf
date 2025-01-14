@@ -1,7 +1,6 @@
-import React, { useMemo, useState } from 'react';
-import { TourSummery } from 'data/travel-agency/customer/trip';
+import React, { useState } from 'react';
+import { TourSummary } from 'data/travel-agency/customer/trip';
 import { Col, Collapse, Row } from 'react-bootstrap';
-
 import Bg from 'assets/img/bg/bg-41.svg';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,69 +11,17 @@ import {
   faMapMarkerAlt
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import MapboxCluster from 'components/base/MapBoxCluster';
-import { CircleLayer, SymbolLayer } from 'mapbox-gl';
-import { useAppContext } from 'providers/AppProvider';
 
-interface TripDetailsSummeryProps {
-  tourSummery: TourSummery[];
+interface TripDetailsSummaryProps {
+  tourSummary: TourSummary[];
 }
 
-interface SummeryContentProps {
-  item: TourSummery;
+interface SummaryContentProps {
+  item: TourSummary;
   index?: number;
 }
 
-const getMapData = (getThemeColor: (name: string) => string) => {
-  return [
-    {
-      id: 'clusters',
-      type: 'circle',
-      source: 'earthquakes',
-      filter: ['has', 'point_count'],
-      paint: {
-        'circle-color': [
-          'step',
-          ['get', 'point_count'],
-          getThemeColor('secondary'),
-          100,
-          getThemeColor('info'),
-          750,
-          getThemeColor('warning')
-        ],
-        'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40]
-      }
-    } as CircleLayer,
-    {
-      id: 'cluster-count',
-      type: 'symbol',
-      source: 'earthquakes',
-      filter: ['has', 'point_count'],
-      layout: {
-        'text-field': '{point_count_abbreviated}',
-        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-        'text-size': 12
-      },
-      paint: {
-        'text-color': getThemeColor('white')
-      }
-    } as SymbolLayer,
-    {
-      id: 'unclustered-point',
-      type: 'circle',
-      source: 'earthquakes',
-      filter: ['!', ['has', 'point_count']],
-      paint: {
-        'circle-color': getThemeColor('primary-light'),
-        'circle-radius': 4,
-        'circle-stroke-width': 1,
-        'circle-stroke-color': getThemeColor('emphasis-bg')
-      }
-    } as CircleLayer
-  ];
-};
-
-const SummeryContent = ({ item, index }: SummeryContentProps) => {
+const SummaryContent = ({ item, index }: SummaryContentProps) => {
   return (
     <div className="p-2 rounded-2 bg-body-highlight d-flex align-items-center gap-2 mb-3 position-relative">
       <div
@@ -96,30 +43,10 @@ const SummeryContent = ({ item, index }: SummeryContentProps) => {
   );
 };
 
-const TripDetailsSummery = ({ tourSummery }: TripDetailsSummeryProps) => {
-  const { getThemeColor } = useAppContext();
+const TripDetailsSummary = ({ tourSummary }: TripDetailsSummaryProps) => {
   const [open, setOpen] = useState(true);
-  const map = useMemo(() => {
-    const mapData = getMapData(getThemeColor);
-    return (
-      <MapboxCluster
-        className="border border-translucent rounded-2"
-        mapData={mapData}
-        options={{
-          center: [-73.102712, 7.102257],
-          zoom: 3.5,
-          pitch: 40,
-          attributionControl: false
-        }}
-        style={{
-          height: 240
-        }}
-      />
-    );
-  }, [getThemeColor]);
   return (
     <>
-      {map}
       <h6 className="my-3 py-3 px-2 rounded-2 bg-body-secondary text-center">
         Day 1
       </h6>
@@ -173,13 +100,13 @@ const TripDetailsSummery = ({ tourSummery }: TripDetailsSummeryProps) => {
               </div>
             </Collapse>
           </div>
-          {tourSummery.slice(0, 3).map((item, index) => (
-            <SummeryContent key={item.id} item={item} index={index} />
+          {tourSummary.slice(0, 3).map((item, index) => (
+            <SummaryContent key={item.id} item={item} index={index} />
           ))}
         </Col>
         <Col sm={6}>
-          {tourSummery.slice(3).map(item => (
-            <SummeryContent key={item.id} item={item} />
+          {tourSummary.slice(3).map(item => (
+            <SummaryContent key={item.id} item={item} />
           ))}
           <div className="p-2 rounded-2 bg-body-highlight d-flex align-items-center gap-2 mb-2">
             <span
@@ -199,4 +126,4 @@ const TripDetailsSummery = ({ tourSummery }: TripDetailsSummeryProps) => {
   );
 };
 
-export default TripDetailsSummery;
+export default TripDetailsSummary;

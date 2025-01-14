@@ -6,10 +6,6 @@ import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {
   DndContext,
-  useSensors,
-  useSensor,
-  KeyboardSensor,
-  PointerSensor,
   closestCorners,
   DragStartEvent,
   DragOverEvent,
@@ -18,12 +14,12 @@ import {
 } from '@dnd-kit/core';
 import {
   SortableContext,
-  sortableKeyboardCoordinates,
   verticalListSortingStrategy,
   useSortable,
   arrayMove
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { useGetDndSensor } from 'hooks/useGetDndSensor';
 
 interface Task {
   id: number;
@@ -94,10 +90,6 @@ const exampleCode = `
 import { useState, PropsWithChildren } from 'react';
 import {
   DndContext,
-  useSensors,
-  useSensor,
-  KeyboardSensor,
-  PointerSensor,
   closestCorners,
   DragStartEvent,
   DragOverEvent,
@@ -106,7 +98,6 @@ import {
 } from '@dnd-kit/core';
 import {
   SortableContext,
-  sortableKeyboardCoordinates,
   verticalListSortingStrategy,
   useSortable,
   arrayMove
@@ -212,17 +203,7 @@ const Example = () => {
   const [columns, setColumns] = useState(data);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
 
-  const sensor = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        delay: 250,
-        distance: 0
-      }
-    }),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates
-    })
-  );
+  const sensor = useGetDndSensor()
 
   const findColumn = (id: number) => {
     return columns.find(
@@ -355,7 +336,7 @@ const Example = () => {
       </Row>
       <DragOverlay>
         {activeTask && (
-          <Card className="mb-3">
+          <Card className="mb-3" style={{ cursor: 'grabbing' }}>
             <Card.Body>
               <p className="mb-0 fw-medium">{activeTask?.title}</p>
             </Card.Body>
@@ -432,17 +413,7 @@ const Example = () => {
   const [columns, setColumns] = useState(data);
   const [activeTask, setActiveTask] = useState<Task | null>(null);
 
-  const sensor = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: {
-        delay: 250,
-        distance: 0
-      }
-    }),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates
-    })
-  );
+  const sensor = useGetDndSensor();
 
   const findColumn = (id: number) => {
     return columns.find(
@@ -575,7 +546,12 @@ const Example = () => {
       </Row>
       <DragOverlay>
         {activeTask && (
-          <Card className="mb-3">
+          <Card
+            className="mb-3"
+            style={{
+              cursor: 'grabbing'
+            }}
+          >
             <Card.Body>
               <p className="mb-0 fw-medium">{activeTask?.title}</p>
             </Card.Body>

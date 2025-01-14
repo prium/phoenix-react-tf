@@ -22,7 +22,6 @@ interface KanbanListProps {
 
 const KanbanList = ({ list, columnId }: KanbanListProps) => {
   const { kanbanDispatch } = useKanbanContext();
-
   const [collapsed, setCollapsed] = useState(!!list.isCollapsed);
   const [taskTitle, setTaskTitle] = useState('');
   const { setNodeRef, listeners, attributes } = useSortable({
@@ -31,7 +30,8 @@ const KanbanList = ({ list, columnId }: KanbanListProps) => {
       type: 'column'
     }
   });
-  const handleNewTaskAdd = () => {
+  const handleNewTaskAdd = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const randomNumber = parseInt(uuid().replace(/-/g, '').slice(0, 12), 16);
     const newTask = {
       id: randomNumber,
@@ -52,6 +52,7 @@ const KanbanList = ({ list, columnId }: KanbanListProps) => {
     }
     setTaskTitle('');
   };
+
   return (
     <div
       className={classNames('kanban-column scrollbar', {
@@ -68,7 +69,6 @@ const KanbanList = ({ list, columnId }: KanbanListProps) => {
         ref={setNodeRef}
         {...listeners}
         {...attributes}
-        onClick={e => e.stopPropagation()}
       >
         <SortableContext
           items={list.tasks.map(item => item.id)}
@@ -84,11 +84,8 @@ const KanbanList = ({ list, columnId }: KanbanListProps) => {
           ))}
         </SortableContext>
       </div>
-      <div className="py-3 px-4 kanban-add-task">
-        <Button
-          className="bg-body-tertiary me-2 px-0"
-          onClick={handleNewTaskAdd}
-        >
+      <Form onSubmit={handleNewTaskAdd} className="py-3 px-4 kanban-add-task">
+        <Button className="bg-body-tertiary me-2 px-0" type="submit">
           <FontAwesomeIcon
             icon={faPlus}
             className="text-white dark__text-gray-400"
@@ -101,7 +98,7 @@ const KanbanList = ({ list, columnId }: KanbanListProps) => {
           value={taskTitle}
           onChange={e => setTaskTitle(e.target.value)}
         />
-      </div>
+      </Form>
     </div>
   );
 };

@@ -1,24 +1,17 @@
-import React, { Dispatch, SetStateAction } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import TripHomepageFilterOffcanvasContent from './TripHomepageFilterOffcanvasContent';
 
 interface TripHomepageFilterOffcanvasProps {
-  isOpen: boolean;
-  setIsOffCanvasOpen: Dispatch<SetStateAction<boolean>>;
+  show: boolean;
+  onHide: () => void;
 }
 
 const TripHomepageFilterOffcanvas = ({
-  isOpen,
-  setIsOffCanvasOpen,
-  ...props
+  show,
+  onHide
 }: TripHomepageFilterOffcanvasProps) => {
   return (
-    <Offcanvas
-      show={isOpen}
-      onHide={() => setIsOffCanvasOpen(false)}
-      placement="end"
-      {...props}
-    >
+    <Offcanvas show={show} onHide={onHide} placement="end">
       <Offcanvas.Header className="p-4 bg-body-highlight" closeButton>
         <h5 className="mb-0 text-body-highlight">Filter</h5>
       </Offcanvas.Header>

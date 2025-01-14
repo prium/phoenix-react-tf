@@ -10,12 +10,9 @@ import Button from 'components/base/Button';
 import GenerateStar from 'components/common/GenerateStar';
 import TextTruncate from 'components/common/TextTruncate';
 import TripDetailsAvailabilityModal from 'components/modals/TripDetailsAvailabilityModal';
-import {
-  tripDetailsModalPricingPlan,
-  TripOverview
-} from 'data/travel-agency/customer/trip';
+import { TripOverview } from 'data/travel-agency/customer/trip';
 import { currencyFormat, numberFormat } from 'helpers/utils';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -97,8 +94,7 @@ const TripDetailsOverview = ({ tripOverview }: TripDetailsOverviewProps) => {
       </div>
       <TripDetailsAvailabilityModal
         show={modalShow}
-        handleModalClose={() => setModalShow(false)}
-        pricingPlans={tripDetailsModalPricingPlan}
+        onHide={() => setModalShow(false)}
       />
     </>
   );

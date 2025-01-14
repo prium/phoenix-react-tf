@@ -13,17 +13,14 @@ import { KanbanBoardItem, KanbanBoardTask } from 'data/kanban';
 import {
   DndContext,
   DragOverlay,
-  PointerSensor,
-  useSensor,
-  useSensors,
   DragStartEvent,
   DragOverEvent,
   DragEndEvent,
-  closestCorners,
-  KeyboardSensor
+  closestCorners
 } from '@dnd-kit/core';
-import { sortableKeyboardCoordinates, arrayMove } from '@dnd-kit/sortable';
+import { arrayMove } from '@dnd-kit/sortable';
 import KanbanListItemCard from 'components/modules/kanban/KanbanListItemCard';
+import { useGetDndSensor } from 'hooks/useGetDndSensor';
 
 const Kanban = () => {
   const { setContentClass } = useMainLayoutContext();
@@ -45,16 +42,9 @@ const Kanban = () => {
 
 const KanbanContent = () => {
   const { boardLists, kanbanDispatch } = useKanbanContext();
+  const sensors = useGetDndSensor();
   const [activeTask, setActiveTask] = useState<KanbanBoardTask | null>(null);
   const [activeList, setActiveList] = useState<KanbanBoardItem | null>(null);
-
-  const sensors = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: { delay: 300, distance: 0 }
-    }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-  );
-
   const findColumn = (id: number) => {
     return boardLists.find(
       col => col.tasks.some(task => task.id === id) || col.id === id

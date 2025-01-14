@@ -26,7 +26,7 @@ const TripDetails = () => {
   return (
     <>
       <ResizableNavbar navItems={tripNavItems} />
-      <section className="py-5">
+      <section className="pt-5 pb-5 pb-md-6 pb-lg-9">
         <Container fluid="medium">
           <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
           <h2 className="mb-5">Trip Details</h2>

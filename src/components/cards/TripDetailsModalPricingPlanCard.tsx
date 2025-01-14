@@ -5,15 +5,11 @@ import { currencyFormat } from 'helpers/utils';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 
-interface TripDetailsModalPricingPlanCardProps {
-  pricingPlan: TripDetailsModalPricingPlan;
-  index: number;
-}
-
 const TripDetailsModalPricingPlanCard = ({
-  pricingPlan,
-  index
-}: TripDetailsModalPricingPlanCardProps) => {
+  pricingPlan
+}: {
+  pricingPlan: TripDetailsModalPricingPlan;
+}) => {
   return (
     <>
       <input
@@ -21,13 +17,13 @@ const TripDetailsModalPricingPlanCard = ({
         name="availableOption"
         id={pricingPlan.name.split(' ').join('-')}
         className="card-form-check-input d-none"
-        defaultChecked={index === 0 ? true : false}
+        defaultChecked={pricingPlan.checked}
       />
       <div className="position-relative">
         <label
           htmlFor={pricingPlan.name.split(' ').join('-')}
           className="stretched-link"
-        ></label>
+        />
         <Card>
           <Card.Body>
             <h4 className="mb-4">
@@ -35,8 +31,8 @@ const TripDetailsModalPricingPlanCard = ({
               {pricingPlan.name}
             </h4>
             <ul className="list-unstyled mb-0">
-              {pricingPlan.facilities.map((facility, index) => (
-                <li key={index} className="d-flex mb-1">
+              {pricingPlan.facilities.map(item => (
+                <li key={item.id} className="d-flex mb-1">
                   <FontAwesomeIcon
                     icon={faCircle}
                     className="text-secondary-light me-3"
@@ -46,7 +42,7 @@ const TripDetailsModalPricingPlanCard = ({
                       height: 6
                     }}
                   />
-                  {facility}
+                  {item.facility}
                 </li>
               ))}
             </ul>

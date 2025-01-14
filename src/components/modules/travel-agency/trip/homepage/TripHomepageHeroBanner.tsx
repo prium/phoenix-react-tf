@@ -69,8 +69,8 @@ const TripHomepageHeroBanner = () => {
         </Container>
       </section>
       <TripHomepageFilterOffcanvas
-        isOpen={isOffCanvasOpen}
-        setIsOffCanvasOpen={setIsOffCanvasOpen}
+        show={isOffCanvasOpen}
+        onHide={() => setIsOffCanvasOpen(false)}
       />
     </>
   );

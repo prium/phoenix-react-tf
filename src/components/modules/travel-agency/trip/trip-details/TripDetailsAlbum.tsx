@@ -28,12 +28,7 @@ const LightBoxItem = ({
         'position-relative rounded-2 overflow-hidden': isLast
       })}
     >
-      <img
-        src={item.image}
-        alt=""
-        className="img-fluid rounded-2"
-        height={isLast ? 43 : undefined}
-      />
+      <img src={item.image} alt="" className="img-fluid rounded-2" />
       {isLast && (
         <div className="position-absolute w-100 h-100 left-0 top-0 d-flex flex-center bg-black bg-opacity-50">
           <Link

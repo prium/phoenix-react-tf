@@ -21,7 +21,7 @@ const TripShowcaseItem = ({ showcaseItem }: TripShowcaseItemProps) => {
         <Link to="/apps/travel-agency/trip/trip-details">
           <img src={showcaseItem.image} alt="" className="img-fluid" />
           <div className="backdrop-faded">
-            <h3 className="text-underline fs-7 fs-lg-6 text-white fw-bold mb-2">
+            <h3 className="text-underline fs-7 fs-lg-6 text-white fw-bold mb-2 pt-4">
               {showcaseItem.title}
             </h3>
             <h5 className="text-secondary-lighter fw-normal mb-3">
@@ -31,7 +31,7 @@ const TripShowcaseItem = ({ showcaseItem }: TripShowcaseItemProps) => {
               />
               {showcaseItem.location}
             </h5>
-            <div className="d-sm-flex d-md-block d-lg-flex flex-between-center">
+            <div className="d-sm-flex d-md-block d-lg-flex flex-between-center pb-4">
               <h3 className="text-white fw-bold mb-3 mb-sm-0 mb-md-3 mb-lg-0 fs-7 fs-lg-6">
                 $ {numberFormat(showcaseItem.price)}
               </h3>

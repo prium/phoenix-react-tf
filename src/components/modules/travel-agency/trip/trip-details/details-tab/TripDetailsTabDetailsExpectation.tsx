@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
-interface TripDetailsTabDetailsExpactationProps {
+interface TripDetailsTabDetailsExpectationProps {
   expectations: Expectation[];
 }
 
-const TripDetailsTabDetailsExpactation = ({
+const TripDetailsTabDetailsExpectation = ({
   expectations
-}: TripDetailsTabDetailsExpactationProps) => {
+}: TripDetailsTabDetailsExpectationProps) => {
   return (
     <div className="py-6 px-4">
       {expectations.map((expectation, index) => (
@@ -58,4 +58,4 @@ const TripDetailsTabDetailsExpactation = ({
   );
 };
 
-export default TripDetailsTabDetailsExpactation;
+export default TripDetailsTabDetailsExpectation;

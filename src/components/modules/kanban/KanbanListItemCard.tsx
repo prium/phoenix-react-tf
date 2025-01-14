@@ -78,19 +78,21 @@ const KanbanListItemCard = ({
 }: KanbanListItemCardProps) => {
   const [openModal, setOpenModal] = useState(false);
 
-  const { setNodeRef, listeners, isDragging, transform, transition } =
-    useSortable({
-      id: task.id,
-      data: {
-        type: 'task',
-        item: task,
-        columnId
-      },
-      transition: {
-        duration: 300,
-        easing: 'ease-in'
-      }
-    });
+  const {
+    setNodeRef,
+    listeners,
+    attributes,
+    isDragging,
+    transform,
+    transition
+  } = useSortable({
+    id: task.id,
+    data: {
+      type: 'task',
+      item: task,
+      columnId
+    }
+  });
 
   const styles = {
     transform: CSS.Transform.toString(transform),
@@ -100,7 +102,7 @@ const KanbanListItemCard = ({
   };
 
   return (
-    <div ref={setNodeRef} style={styles} {...listeners}>
+    <div ref={setNodeRef} style={styles} {...attributes} {...listeners}>
       <Card
         className={classNames(
           className,

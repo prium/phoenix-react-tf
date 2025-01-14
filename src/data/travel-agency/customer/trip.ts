@@ -95,9 +95,13 @@ export interface TripOverview {
 export interface TripDetailsModalPricingPlan {
   id: number;
   name: string;
-  facilities: string[];
+  facilities: {
+    id: number;
+    facility: string;
+  }[];
   total: number;
   additionalCharge: number;
+  checked: boolean;
 }
 
 export interface HighlightItem {
@@ -162,7 +166,7 @@ export interface Policy {
   policyItems: PolicyItem[];
 }
 
-export interface TourSummery {
+export interface TourSummary {
   id: number;
   serial: number;
   label: string;
@@ -175,7 +179,7 @@ export interface TripDetailsTabDetailItem {
   accessibility: Accessibility;
   additional: Additional[];
   policy: Policy[];
-  tourSummery: TourSummery[];
+  tourSummary: TourSummary[];
 }
 
 export interface ReviewStat {
@@ -547,16 +551,24 @@ export const tripDetailsModalPricingPlan: TripDetailsModalPricingPlan[] = [
   {
     id: 44,
     name: 'Economy Plan',
-    facilities: ['Non A/C transport', 'No extra luggage carrier'],
+    facilities: [
+      { id: 22, facility: 'Non A/C transport' },
+      { id: 23, facility: 'No extra luggage carrier' }
+    ],
     total: 87,
-    additionalCharge: 0
+    additionalCharge: 0,
+    checked: true
   },
   {
     id: 45,
     name: 'Business/Premium Plan',
-    facilities: ['A/C transport', 'Extra luggage carrier'],
+    facilities: [
+      { id: 32, facility: 'A/C transport' },
+      { id: 33, facility: 'Extra luggage carrier' }
+    ],
     total: 120,
-    additionalCharge: 0
+    additionalCharge: 0,
+    checked: false
   }
 ];
 
@@ -824,7 +836,7 @@ export const tripDetailsTabDetailItems: TripDetailsTabDetailItem = {
       ]
     }
   ],
-  tourSummery: [
+  tourSummary: [
     {
       id: 38,
       serial: 1,

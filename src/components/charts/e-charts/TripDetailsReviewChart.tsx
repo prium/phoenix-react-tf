@@ -3,7 +3,11 @@ import * as echarts from 'echarts/core';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { GaugeChart } from 'echarts/charts';
-import { CallbackDataParams } from 'echarts/types/dist/shared';
+import {
+  CallbackDataParams,
+  TooltipPositionCallbackParams
+} from 'echarts/types/dist/shared';
+import { type Size, handleTooltipPosition } from 'helpers/echart-utils';
 import classNames from 'classnames';
 echarts.use([TooltipComponent, GaugeChart]);
 
@@ -26,6 +30,13 @@ const getDefaultOptions = ({ getThemeColor, stat }: GetDefaultOptionProps) => ({
     textStyle: { color: getThemeColor('light-text-emphasis') },
     borderWidth: 1,
     transitionDuration: 0,
+    position: (
+      point: number[],
+      params: TooltipPositionCallbackParams,
+      el: HTMLDivElement,
+      rect: null,
+      size: Size
+    ) => handleTooltipPosition(point, params, el, rect, size),
     formatter: (params: CallbackDataParams) => {
       return `<strong>${params.seriesName}:</strong> ${params.value}%`;
     },

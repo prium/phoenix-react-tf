@@ -9,7 +9,7 @@ import { useState } from 'react';
 import ResizableNavbar from 'components/navbars/travel-agency/ResizableNavbar';
 import { flightNavItems } from 'data/travel-agency/resizableNav';
 
-const FlightHomePage = () => {
+const FlightHomepage = () => {
   const [showPromoModal, setShowPromoModal] = useState(true);
 
   return (
@@ -49,4 +49,4 @@ const FlightHomePage = () => {
   );
 };
 
-export default FlightHomePage;
+export default FlightHomepage;

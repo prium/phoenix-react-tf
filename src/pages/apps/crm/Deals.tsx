@@ -17,17 +17,9 @@ import AddDealModal from 'components/modules/crm/deals/AddDealModal';
 import FilterDealsModal from 'components/modals/FilterDealsModal';
 import DealsAddStageModal from 'components/modals/DealsAddStageModal';
 import DealsProvider, { useDealsContext } from 'providers/CrmDealsProvider';
-import {
-  DndContext,
-  useSensor,
-  useSensors,
-  closestCorners,
-  PointerSensor,
-  KeyboardSensor,
-  DragOverlay
-} from '@dnd-kit/core';
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable';
+import { DndContext, closestCorners, DragOverlay } from '@dnd-kit/core';
 import DealCard from 'components/cards/DealCard';
+import { useGetDndSensor } from 'hooks/useGetDndSensor';
 
 const index = () => {
   return (
@@ -53,14 +45,7 @@ const Deals = () => {
     handleDragOver,
     handleDragEnd
   } = useDealsContext();
-
-  const sensor = useSensors(
-    useSensor(PointerSensor, {
-      activationConstraint: { delay: 300, distance: 0 }
-    }),
-    useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
-  );
-
+  const sensors = useGetDndSensor();
   useEffect(() => {
     setContentClass('vh-100');
 
@@ -116,7 +101,7 @@ const Deals = () => {
         </Row>
       </div>
       <DndContext
-        sensors={sensor}
+        sensors={sensors}
         collisionDetection={closestCorners}
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}

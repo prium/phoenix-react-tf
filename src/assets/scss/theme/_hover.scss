@@ -183,6 +183,15 @@ a[href] {
     width: 100%;
     min-height: 100%;
   }
+  .backdrop-faded {
+    padding-top: 0;
+    padding-bottom: 0;
+    background: linear-gradient(
+      180deg, 
+      rgba(var(--#{$prefix}dark-rgb), 0) 0%,
+      var(--#{$prefix}dark) 70%
+    );
+  }
   @include hover-focus {
     .hover-box-content-initial {
       opacity: 0;
