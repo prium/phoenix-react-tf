@@ -212,6 +212,8 @@ import TripHomepage from 'pages/apps/travel-agency/trip/Homepage';
 import TripDetails from 'pages/apps/travel-agency/trip/TripDetails';
 import TripCheckout from 'pages/apps/travel-agency/trip/Checkout';
 import TripLayout from 'layouts/TripLayout';
+import GridView from 'pages/apps/file-manager/GridView';
+import ListView from 'pages/apps/file-manager/ListView';
 
 const routes: RouteObject[] = [
   {
@@ -448,6 +450,19 @@ const routes: RouteObject[] = [
                   {
                     path: 'search-room',
                     element: <SearchRoom />
+                  }
+                ]
+              },
+              {
+                path: 'file-manager',
+                children: [
+                  {
+                    path: 'grid-view',
+                    element: <GridView />
+                  },
+                  {
+                    path: 'list-view',
+                    element: <ListView />
                   }
                 ]
               }
@@ -990,7 +1005,7 @@ const routes: RouteObject[] = [
       },
       {
         element: <TravelLandingLayout />,
-        path: 'apps/travel-agency',
+        path: '/apps/travel-agency',
         children: [
           {
             path: 'landing',
@@ -1000,7 +1015,7 @@ const routes: RouteObject[] = [
       },
       {
         element: <TravelAgencyLayout />,
-        path: 'apps/travel-agency/hotel/customer',
+        path: '/apps/travel-agency/hotel/customer',
         children: [
           {
             children: [

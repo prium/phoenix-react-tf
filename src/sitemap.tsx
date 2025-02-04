@@ -558,6 +558,25 @@ export const routes: RouteItems[] = [
         ]
       },
       {
+        name: 'File manager',
+        icon: 'folder',
+        active: true,
+        pages: [
+          {
+            name: 'Grid view',
+            path: 'apps/file-manager/grid-view',
+            pathName: 'file-grid-view',
+            active: true
+          },
+          {
+            name: 'List view',
+            path: 'apps/file-manager/list-view',
+            pathName: 'file-list-view',
+            active: true
+          }
+        ]
+      },
+      {
         name: 'calendar',
         icon: 'calendar',
         path: 'apps/calendar',
