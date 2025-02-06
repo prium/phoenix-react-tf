@@ -238,6 +238,7 @@
   align-items: center;
 }
 
+
 .card-form-check-input {
   &:checked {
     + {
@@ -838,4 +839,22 @@
     transform: scale(2.5);
     opacity: 0;
   }
+}
+
+.btn-square-sm {
+  height: 1.875rem;
+  width: 1.875rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-square {
+  height: 2.375rem;
+  width: 2.375rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
 }

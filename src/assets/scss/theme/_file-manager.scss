@@ -35,40 +35,49 @@
   }
 }
 
-[data-collapse-filemanager-sidebar] {
-  .file-manager-sidebar {
-    padding: 0;
-    transition-property: width, opacity;
-    transition: 0.3s ease;
-    .phoenix-offcanvas {
-      top: calc(var(--#{$prefix}navbar-top-height));
-      padding: map-get($spacers, 4);
-      width: 300px;
+
+.data-collapse-file-manager-sidebar {
+  .phoenix-offcanvas {
+    top: calc(var(--#{$prefix}navbar-top-height));
+    padding: map-get($spacers, 4);
+    width: 300px;
+    .file-manager-sidebar {
+      padding: 0;
+      transition-property: width, opacity;
+      transition: 0.3s ease;
     }
   }
 
+
+
   @include media-breakpoint-up(lg) {
     .my-files {
-      max-width: calc(100% - 15.875rem);
+      max-width: calc(100% - 14.37rem);
     }
     .file-manager-sidebar {
-      .phoenix-offcanvas {
-        width: 100%;
-        position: sticky !important;
-        top: calc(var(--#{$prefix}navbar-top-height) + 1.5rem) !important;
-        transform: none !important;
-        height: 100vh;
-        z-index: 7;
-        padding: 0;
-      }
+      width: 100%;
+      position: sticky !important;
+      top: calc(var(--#{$prefix}navbar-top-height) + 1.5rem) !important;
+      transform: none !important;
+      height: 100vh;
+      // height: calc(100vh - var(--#{$prefix}navbar-top-height) - 12.25rem); //need to check height
+      z-index: 7;
+      padding: 0;
     }
   }
   @include media-breakpoint-up(xl) {
     .file-manager-sidebar {
-      width: 15.875rem;
-      padding: 0 12px;
+      width: 14.37rem;
+      padding-left: 0px;
+      padding-right: 0px;
+
     }
   }
+  // @include media-breakpoint-up(lg) {
+  //   .file-manager-sidebar {
+  //     padding: 0;
+  //   }
+  // }
   @include media-breakpoint-only(lg) {
     .file-manager-sidebar {
       padding: 0;
@@ -81,12 +90,12 @@
     }
     &.show-sidebar {
       .file-manager-sidebar {
-        padding: 0 12px;
-        width: 15.875rem;
+        padding: 0;
+        width: 14.37rem;
         opacity: 1;
       }
       .my-files {
-        max-width: calc(100% - 15.875rem);
+        max-width: calc(100% - 14.37rem);
       }
     }
   }
@@ -166,5 +175,13 @@
     mask-image: radial-gradient($white, $black);
     border-top: 1px solid var(--#{$prefix}border-color);
     margin-top: -1px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .show-sidebar{
+    .file-manager-sidebar-column{
+      display: block !important;
+    }
   }
 }
