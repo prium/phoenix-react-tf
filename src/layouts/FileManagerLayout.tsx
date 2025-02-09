@@ -22,7 +22,7 @@ const FileManagerLayout = ({
       <PageBreadcrumb items={defaultBreadcrumbItems} className="mb-3" />
       <h2 className="mb-4">File Manager</h2>
       <Row
-        className={`gx-4 data-collapse-file-manager-sidebar ${
+        className={`gx-4 data-collapse-file-manager-sidebar mb-9 ${
           showSidebar ? 'show-sidebar' : ''
         }`}
       >

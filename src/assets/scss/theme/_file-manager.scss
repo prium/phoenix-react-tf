@@ -60,7 +60,6 @@
       top: calc(var(--#{$prefix}navbar-top-height) + 1.5rem) !important;
       transform: none !important;
       height: 100vh;
-      // height: calc(100vh - var(--#{$prefix}navbar-top-height) - 12.25rem); //need to check height
       z-index: 7;
       padding: 0;
     }
@@ -73,11 +72,7 @@
 
     }
   }
-  // @include media-breakpoint-up(lg) {
-  //   .file-manager-sidebar {
-  //     padding: 0;
-  //   }
-  // }
+
   @include media-breakpoint-only(lg) {
     .file-manager-sidebar {
       padding: 0;
@@ -182,6 +177,29 @@
   .show-sidebar{
     .file-manager-sidebar-column{
       display: block !important;
+    }
+  }
+}
+
+.phoenix-offcanvas{
+  .file-manager-sidebar{
+    overflow: visible !important;
+  }
+}
+
+.file-manager-sidebar{
+  .toggle-icon {
+    height: .8rem;
+    width: .8rem;
+  }
+  .collapse-indicator:not(.collapsed) {
+    .toggle-icon {
+      transform: rotate(90deg);
+    }
+  }
+  .collapse-indicator.collapsed {
+    .toggle-icon {
+      transform: rotate(0deg);
     }
   }
 }

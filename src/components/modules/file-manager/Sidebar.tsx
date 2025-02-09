@@ -3,6 +3,8 @@ import TreeView from './TreeView';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import StorageDetails from './StorageDetails';
+
 interface SidebarProps {
   setOpenOffcanvas: Dispatch<SetStateAction<boolean>>;
 }
@@ -20,12 +22,7 @@ const Sidebar = ({ setOpenOffcanvas }: SidebarProps) => {
         </Button>
       </div>
       <TreeView />
-      <h5 className="mb-2">others </h5>
-      <h5 className="mb-2">others </h5>
-      <h5 className="mb-2">others </h5>
-      <h5 className="mb-2">others </h5>
-      <h5 className="mb-2">others </h5>
-      <h5 className="mb-2">others </h5>
+      <StorageDetails />
     </div>
   );
 };

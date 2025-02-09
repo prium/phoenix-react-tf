@@ -858,3 +858,12 @@
   align-items: center;
   flex-shrink: 0;
 }
+
+.square-icon-box {
+  width: 2rem;
+  height: 2rem;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
