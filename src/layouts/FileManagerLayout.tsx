@@ -28,11 +28,11 @@ const FileManagerLayout = ({
       >
         <Col
           xs="auto"
-          className="file-manager-sidebar-column d-none d-xl-block "
+          className="file-manager-sidebar-wrapper d-none d-lg-block "
         >
           <Sidebar setOpenOffcanvas={setOpenOffcanvas} />
         </Col>
-        <Col className="my-files bg-white">
+        <Col className="my-files">
           <FilesHeader
             showSidebar={showSidebar}
             setShowSidebar={setShowSidebar}

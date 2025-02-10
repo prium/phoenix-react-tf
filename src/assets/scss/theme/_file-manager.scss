@@ -41,7 +41,7 @@
     top: calc(var(--#{$prefix}navbar-top-height));
     padding: map-get($spacers, 4);
     width: 300px;
-    .file-manager-sidebar {
+    .file-manager-sidebar-wrapper {
       padding: 0;
       transition-property: width, opacity;
       transition: 0.3s ease;
@@ -49,10 +49,13 @@
   }
 
 
-
   @include media-breakpoint-up(lg) {
     .my-files {
-      max-width: calc(100% - 14.37rem);
+      max-width: calc(100% - 15.875rem);
+    }
+    .file-manager-sidebar-wrapper{
+      width: 100%;
+
     }
     .file-manager-sidebar {
       width: 100%;
@@ -65,32 +68,31 @@
     }
   }
   @include media-breakpoint-up(xl) {
-    .file-manager-sidebar {
-      width: 14.37rem;
-      padding-left: 0px;
-      padding-right: 0px;
-
+    .file-manager-sidebar-wrapper {
+      width: 15.875rem;
     }
   }
 
   @include media-breakpoint-only(lg) {
-    .file-manager-sidebar {
+    .file-manager-sidebar-wrapper {
       padding: 0;
       width: 0;
       opacity: 0;
+      transition-property: width, opacity;
+      transition: 0.3s ease !important;
     }
     .my-files {
       max-width: 100%;
       transition: 0.3s ease max-width;
     }
     &.show-sidebar {
-      .file-manager-sidebar {
-        padding: 0;
-        width: 14.37rem;
+      .file-manager-sidebar-wrapper {
+        padding: 0 12px;
+        width: 15.875rem;
         opacity: 1;
       }
       .my-files {
-        max-width: calc(100% - 14.37rem);
+        max-width: calc(100% - 15.875rem);
       }
     }
   }
@@ -175,7 +177,7 @@
 
 @include media-breakpoint-up(lg) {
   .show-sidebar{
-    .file-manager-sidebar-column{
+    .file-manager-sidebar-wrapper{
       display: block !important;
     }
   }
