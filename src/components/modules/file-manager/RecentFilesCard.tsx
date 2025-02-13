@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Card, Col, Collapse, Dropdown, Row } from 'react-bootstrap';
+import { Card, Col, Collapse, Row } from 'react-bootstrap';
 import fileManager1 from 'assets/img/file-manager/1.png';
 import fileManager2 from 'assets/img/file-manager/2.png';
 import fileManager6 from 'assets/img/file-manager/6.png';
@@ -17,11 +17,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronDown,
   faChevronUp,
-  faEllipsisVertical,
   faPause,
   faPlay
 } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
+import FilesDropdown from './FilesDropdown';
 
 interface RecentFiles {
   name: string;
@@ -100,16 +100,6 @@ const recentFiles: RecentFiles[] = [
     actionType: 'Upload',
     video: video4
   }
-];
-
-const dropdownItems: string[] = [
-  'Share',
-  'Download',
-  'Duplicate',
-  'Move',
-  'Rename',
-  'Move to Bin',
-  'Delete'
 ];
 
 const RecentFilesCardItem = ({
@@ -208,38 +198,7 @@ const RecentFilesCardItem = ({
                 {file.size}
               </h6>
             </div>
-            <Dropdown className="position-static">
-              <Dropdown.Toggle
-                variant=""
-                className="btn-square-sm position-relative mt-n1 dropdown-caret-none z-5"
-              >
-                <FontAwesomeIcon icon={faEllipsisVertical} />
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="py-2" style={{ zIndex: 6 }}>
-                {dropdownItems.map((item, idx) => (
-                  <React.Fragment key={idx}>
-                    {idx < dropdownItems.length - 1 ? (
-                      <Dropdown.Item
-                        href="#!"
-                        className="fw-semibold text-decoration-none"
-                      >
-                        {item}
-                      </Dropdown.Item>
-                    ) : (
-                      <>
-                        <hr className="dropdown-divider" />
-                        <Dropdown.Item
-                          href="#!"
-                          className="fw-semibold text-decoration-none text-danger"
-                        >
-                          Delete
-                        </Dropdown.Item>
-                      </>
-                    )}
-                  </React.Fragment>
-                ))}
-              </Dropdown.Menu>
-            </Dropdown>
+            <FilesDropdown />
           </div>
         </div>
       </div>
