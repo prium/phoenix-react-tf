@@ -9,6 +9,7 @@ import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faLink } from '@fortawesome/free-solid-svg-icons';
+import FileManagerTimeline from 'components/timelines/FileManagerTimeline';
 
 const FileDetails = ({ filesId }: { filesId: number[] }) => {
   const data = myFiles.find(file => file.id === filesId[0]);
@@ -113,7 +114,10 @@ const FileDetails = ({ filesId }: { filesId: number[] }) => {
                   Copy Link
                 </Button>
               </Tab.Pane>
-              <Tab.Pane eventKey="second">second</Tab.Pane>
+              <Tab.Pane eventKey="second">
+                <h4 className="mb-3">Today</h4>
+                <FileManagerTimeline data={data.activities} />
+              </Tab.Pane>
             </Tab.Content>
           </Tab.Container>
         </div>

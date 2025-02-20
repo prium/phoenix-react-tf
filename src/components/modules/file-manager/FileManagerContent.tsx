@@ -46,10 +46,17 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import team34 from 'assets/img/team/34.webp';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  faCloudArrowUp,
+  faEdit,
+  faShareNodes,
+  faSwatchbook
+} from '@fortawesome/free-solid-svg-icons';
 
 interface Activity {
   time: string;
-  icon: string;
+  icon: IconDefinition;
   iconColor: string;
   title: string;
   tasker: string;
@@ -156,7 +163,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -182,14 +189,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -264,7 +271,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -290,14 +297,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -375,7 +382,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -401,14 +408,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -479,7 +486,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -505,14 +512,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -590,7 +597,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -616,14 +623,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -699,7 +706,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -725,14 +732,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -806,7 +813,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -832,14 +839,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -917,7 +924,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -943,14 +950,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1025,7 +1032,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -1051,14 +1058,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1133,7 +1140,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -1159,14 +1166,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1233,7 +1240,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -1259,14 +1266,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1336,7 +1343,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -1362,14 +1369,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1443,7 +1450,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -1469,14 +1476,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1551,7 +1558,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-share-nodes',
+        icon: faShareNodes,
         iconColor: 'success',
         title: `You have shared this file.`,
         tasker: 'John N. Ward',
@@ -1577,14 +1584,14 @@ export const myFiles: File[] = [
       },
       {
         time: '12:30pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:33am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1658,7 +1665,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -1684,14 +1691,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1766,7 +1773,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -1792,14 +1799,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -1874,7 +1881,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -1900,7 +1907,7 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
@@ -1974,7 +1981,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -2000,14 +2007,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -2082,7 +2089,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -2108,7 +2115,7 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
@@ -2182,7 +2189,7 @@ export const myFiles: File[] = [
     activities: [
       {
         time: '4:33pm',
-        icon: 'fa-solid fa-swatchbook',
+        icon: faSwatchbook,
         iconColor: 'success',
         title: `Designing the dungeon`,
         tasker: 'Igor Borvibson',
@@ -2208,14 +2215,14 @@ export const myFiles: File[] = [
       },
       {
         time: '03:00pm',
-        icon: 'fa-solid fa-edit',
+        icon: faEdit,
         iconColor: 'danger',
         title: 'You have edited this file.',
         tasker: 'John N. Ward'
       },
       {
         time: '9:00am',
-        icon: 'fa-solid fa-cloud-arrow-up',
+        icon: faCloudArrowUp,
         iconColor: 'info',
         title: 'You have uploaded this file.',
         tasker: 'John N. Ward'
@@ -2262,7 +2269,9 @@ const FileManagerContent = () => {
                   }
                 )}
               >
-                <FileDetails filesId={filesId} />
+                <div className="file-details-wrapper">
+                  <FileDetails filesId={filesId} />
+                </div>
               </Col>
             )}
           </Row>
@@ -2272,7 +2281,7 @@ const FileManagerContent = () => {
         <PhoenixOffcanvas
           open={showFileDetails}
           onHide={() => setShowFileDetails(false)}
-          className="phoenix-offcanvas-content file-details-offcanvas scrollbar bg-body-emphasis overflow-x-hidden"
+          className="phoenix-offcanvas-content file-details-wrapper scrollbar bg-body-emphasis overflow-x-hidden"
           placement="end"
           fixed
         >

@@ -98,7 +98,7 @@
   }
 }
 
-.file-details-offcanvas {
+.file-details-wrapper {
   top: calc(var(--#{$prefix}navbar-top-height) + 1px);
   padding: 0;
   z-index: 1040;
