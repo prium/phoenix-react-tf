@@ -37,7 +37,7 @@
 
 
 .data-collapse-file-manager-sidebar {
-  .phoenix-offcanvas {
+  .phoenix-offcanvas.treeview-offcanvas {
     top: calc(var(--#{$prefix}navbar-top-height));
     padding: map-get($spacers, 4);
     width: 300px;
@@ -205,3 +205,17 @@
     }
   }
 }
+
+// react only
+// .file-details {
+//     @include media-breakpoint-up(sm) {
+//       width: 25rem;
+//     }
+//     @include media-breakpoint-up(xxl) {
+//       width: 21.875rem;
+//       position: static !important;
+//       transform: none !important;
+//       z-index: 0;
+//       padding: 0;
+//     }
+//   }

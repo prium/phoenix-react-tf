@@ -27,7 +27,6 @@ const FilesHeader = ({
   setOpenOffcanvas
 }: FileHeaderProps) => {
   const { breakpoints } = useBreakpoints();
-  console.log(showSidebar);
   const [addFolderModal, setAddFolderModal] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
 
@@ -76,7 +75,7 @@ const FilesHeader = ({
         <PhoenixOffcanvas
           open={openOffcanvas}
           onHide={() => setOpenOffcanvas(false)}
-          className="phoenix-offcanvas phoenix-offcanvas-content scrollbar bg-body overflow-x-hidden"
+          className="phoenix-offcanvas treeview-offcanvas phoenix-offcanvas-content scrollbar bg-body overflow-x-hidden"
           placement="start"
           fixed
         >
