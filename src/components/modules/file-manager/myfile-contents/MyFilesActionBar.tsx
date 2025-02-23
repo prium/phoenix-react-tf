@@ -9,7 +9,7 @@ import {
   faEllipsis,
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
-import { myFiles } from '../FileManagerContent';
+import { myFiles } from 'data/file-manager';
 
 interface ActionBarProps {
   showFileDetails: boolean;
@@ -24,8 +24,6 @@ const MyFilesActionBar = ({
   filesId,
   setFilesId
 }: ActionBarProps) => {
-  console.log(filesId.length);
-
   return (
     <div className="myfiles-action-bar mx-n4 mb-4">
       {filesId.length == 0 && (
@@ -48,7 +46,11 @@ const MyFilesActionBar = ({
             className="p-0 fs-8 me-2 me-sm-3"
             data-remove-bulk-check
           >
-            <FontAwesomeIcon icon={faXmark} transform="down-1" />
+            <FontAwesomeIcon
+              onClick={() => setFilesId([])}
+              icon={faXmark}
+              transform="down-1"
+            />
           </Button>
           <h6
             className="mb-0 me-4 text-nowrap text-body-tertiary"

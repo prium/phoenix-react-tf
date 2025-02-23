@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import TreeView from './TreeView';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import TreeView from './TreeView';
 import StorageDetails from './StorageDetails';
 
 interface SidebarProps {

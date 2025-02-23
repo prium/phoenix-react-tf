@@ -12,7 +12,7 @@ import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { Form, Row, Col, Modal } from 'react-bootstrap';
-import Sidebar from './Sidebar';
+import Sidebar from './sidebar/Sidebar';
 interface FileHeaderProps {
   showSidebar: boolean;
   setShowSidebar: Dispatch<SetStateAction<boolean>>;

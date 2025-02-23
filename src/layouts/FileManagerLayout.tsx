@@ -1,7 +1,7 @@
 import PageBreadcrumb from 'components/common/PageBreadcrumb';
 import FilesHeader from 'components/modules/file-manager/FilesHeader';
+import Sidebar from 'components/modules/file-manager/sidebar/Sidebar';
 import RecentFilesCard from 'components/modules/file-manager/RecentFilesCard';
-import Sidebar from 'components/modules/file-manager/Sidebar';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import React, { PropsWithChildren, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';

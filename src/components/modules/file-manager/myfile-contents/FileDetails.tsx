@@ -1,15 +1,15 @@
 import React from 'react';
 import lightImg from 'assets/img/spot-illustrations/46.png';
 import darkImg from 'assets/img/spot-illustrations/dark_46.png';
-import { myFiles } from '../FileManagerContent';
 import { Nav, Tab, Table } from 'react-bootstrap';
-import RenderFileIcon from '../common/RenderFileIcon';
 import AvatarDropdown from 'components/common/AvatarDropdown';
 import Avatar from 'components/base/Avatar';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faLink } from '@fortawesome/free-solid-svg-icons';
 import FileManagerTimeline from 'components/timelines/FileManagerTimeline';
+import { myFiles } from 'data/file-manager';
+import RenderFileIcon from './RenderFileIcon';
 
 const FileDetails = ({ filesId }: { filesId: number[] }) => {
   const data = myFiles.find(file => file.id === filesId[0]);
@@ -17,11 +17,16 @@ const FileDetails = ({ filesId }: { filesId: number[] }) => {
 
   return (
     <div className="file-details">
-      {filesId.length == 0 && (
+      {filesId.length !== 1 && (
         <div className="text-center px-4">
+          {filesId.length > 1 && (
+            <h5 className="mb-3">{filesId.length} items selected</h5>
+          )}
           <img src={lightImg} alt="" className="d-dark-none img-fluid" />
           <img src={darkImg} alt="" className="d-light-none img-fluid" />
-          <h5 className="mt-4">Select an item to view more information</h5>
+          {filesId.length < 1 && (
+            <h5 className="mt-4">Select an item to view more information</h5>
+          )}
         </div>
       )}
       {filesId.length == 1 && data && (

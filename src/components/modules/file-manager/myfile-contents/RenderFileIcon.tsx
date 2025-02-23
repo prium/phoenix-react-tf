@@ -9,7 +9,7 @@ import {
   faFileCsv
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
-import { File } from '../FileManagerContent';
+import { File } from 'data/file-manager';
 
 const RenderFileIcon = ({ file }: { file: File }) => {
   switch (file.type) {

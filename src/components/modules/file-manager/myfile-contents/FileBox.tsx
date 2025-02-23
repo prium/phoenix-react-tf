@@ -12,11 +12,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { File } from '../FileManagerContent';
 import { Link } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import FilesDropdown from '../FilesDropdown';
 import classNames from 'classnames';
+import { File } from 'data/file-manager';
 
 const FileBox = ({
   file,
