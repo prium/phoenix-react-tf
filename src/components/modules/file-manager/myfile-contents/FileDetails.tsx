@@ -8,28 +8,28 @@ import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faLink } from '@fortawesome/free-solid-svg-icons';
 import FileManagerTimeline from 'components/timelines/FileManagerTimeline';
-import { myFiles } from 'data/file-manager';
 import RenderFileIcon from './RenderFileIcon';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
-const FileDetails = ({ filesId }: { filesId: number[] }) => {
-  const data = myFiles.find(file => file.id === filesId[0]);
-  console.log(data);
+const FileDetails = () => {
+  const { fileCollection, checkedFileIds } = useFileManagerContext();
+  const data = fileCollection.find(file => file.id === checkedFileIds[0]);
 
   return (
     <div className="file-details">
-      {filesId.length !== 1 && (
+      {checkedFileIds.length !== 1 && (
         <div className="text-center px-4">
-          {filesId.length > 1 && (
-            <h5 className="mb-3">{filesId.length} items selected</h5>
+          {checkedFileIds.length > 1 && (
+            <h5 className="mb-3">{checkedFileIds.length} items selected</h5>
           )}
           <img src={lightImg} alt="" className="d-dark-none img-fluid" />
           <img src={darkImg} alt="" className="d-light-none img-fluid" />
-          {filesId.length < 1 && (
+          {checkedFileIds.length < 1 && (
             <h5 className="mt-4">Select an item to view more information</h5>
           )}
         </div>
       )}
-      {filesId.length == 1 && data && (
+      {checkedFileIds.length == 1 && data && (
         <div>
           <h3>{data.name}</h3>
           <Tab.Container id="file-details-tab" defaultActiveKey="first">

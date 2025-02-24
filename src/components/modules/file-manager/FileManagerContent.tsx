@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
 import MyFilesHeader from './myfile-contents/MyFilesHeader';
 import FileBox from './myfile-contents/FileBox';
@@ -7,15 +6,12 @@ import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
 import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
-import { myFiles } from 'data/file-manager';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
 const FileManagerContent = () => {
-  const [showFileDetails, setShowFileDetails] = useState(true);
-  const [filesId, setFilesId] = useState<number[]>([]);
-  console.log(filesId);
-
+  const { fileCollection, showFileDetails, setShowFileDetails } =
+    useFileManagerContext();
   const { breakpoints } = useBreakpoints();
-
   return (
     <>
       <Card className="mt-5">
@@ -23,17 +19,12 @@ const FileManagerContent = () => {
           <MyFilesHeader page="grid-view" />
         </Card.Header>
         <Card.Body className="pt-0">
-          <MyFilesActionBar
-            showFileDetails={showFileDetails}
-            setShowFileDetails={setShowFileDetails}
-            filesId={filesId}
-            setFilesId={setFilesId}
-          />
+          <MyFilesActionBar />
           <Row className="gx-xxl-9" id="bulk-select-body">
             <Col>
               <div className="files-container" data-files-container>
-                {myFiles.map(file => (
-                  <FileBox file={file} key={file.id} setFilesId={setFilesId} />
+                {fileCollection.map(file => (
+                  <FileBox file={file} key={file.id} />
                 ))}
               </div>
             </Col>
@@ -48,7 +39,7 @@ const FileManagerContent = () => {
                 )}
               >
                 <div className="file-details-wrapper">
-                  <FileDetails filesId={filesId} />
+                  <FileDetails />
                 </div>
               </Col>
             )}
@@ -63,7 +54,7 @@ const FileManagerContent = () => {
           placement="end"
           fixed
         >
-          <FileDetails filesId={filesId} />
+          <FileDetails />
         </PhoenixOffcanvas>
       )}
     </>

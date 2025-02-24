@@ -10,21 +10,17 @@ import {
   faPlay,
   faPause
 } from '@fortawesome/free-solid-svg-icons';
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Form } from 'react-bootstrap';
 import FilesDropdown from '../FilesDropdown';
 import classNames from 'classnames';
 import { File } from 'data/file-manager';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
-const FileBox = ({
-  file,
-  setFilesId
-}: {
-  file: File;
-  setFilesId: Dispatch<SetStateAction<number[]>>;
-}) => {
+const FileBox = ({ file }: { file: File }) => {
+  const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   useEffect(() => {
@@ -112,8 +108,9 @@ const FileBox = ({
           id={file.id.toString()}
           data-bulk-select-row
           data-file={file.id}
+          checked={checkedFileIds.includes(file.id)}
           onChange={e => {
-            setFilesId(
+            setCheckedFileIds(
               prevFilesId =>
                 e.target.checked
                   ? [...prevFilesId, file.id] // Add ID when checked

@@ -1,4 +1,3 @@
-import React, { Dispatch, SetStateAction } from 'react';
 import { Dropdown, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -9,36 +8,40 @@ import {
   faEllipsis,
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
-import { myFiles } from 'data/file-manager';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
-interface ActionBarProps {
-  showFileDetails: boolean;
-  setShowFileDetails: Dispatch<SetStateAction<boolean>>;
-  filesId: number[];
-  setFilesId: Dispatch<SetStateAction<number[]>>;
-}
+const MyFilesActionBar = () => {
+  const {
+    showFileDetails,
+    setShowFileDetails,
+    setCheckedFileIds,
+    checkedFileIds,
+    fileCollection,
+    setFileCollection
+  } = useFileManagerContext();
 
-const MyFilesActionBar = ({
-  showFileDetails,
-  setShowFileDetails,
-  filesId,
-  setFilesId
-}: ActionBarProps) => {
+  const handleDeleteFiles = () => {
+    const updatedFiles = fileCollection.filter(
+      file => !checkedFileIds.includes(file.id)
+    );
+    setFileCollection(updatedFiles);
+    setCheckedFileIds([]);
+  };
   return (
     <div className="myfiles-action-bar mx-n4 mb-4">
-      {filesId.length == 0 && (
+      {checkedFileIds.length == 0 && (
         <h6
           className="mb-0 text-body-tertiary"
           id="file-manager-replace-element"
         >
-          Total {myFiles.length} items
+          Total {fileCollection.length} items
         </h6>
       )}
 
       {/* -------- */}
       <div
         id="file-manager-actions"
-        className={filesId.length ? 'd-block' : 'd-none'}
+        className={checkedFileIds.length ? 'd-block' : 'd-none'}
       >
         <div className="d-flex align-items-center">
           <Button
@@ -47,7 +50,7 @@ const MyFilesActionBar = ({
             data-remove-bulk-check
           >
             <FontAwesomeIcon
-              onClick={() => setFilesId([])}
+              onClick={() => setCheckedFileIds([])}
               icon={faXmark}
               transform="down-1"
             />
@@ -56,7 +59,7 @@ const MyFilesActionBar = ({
             className="mb-0 me-4 text-nowrap text-body-tertiary"
             data-files-selected
           >
-            {filesId.length} item selected
+            {checkedFileIds.length} item selected
           </h6>
           <div className="d-flex gap-1 gap-sm-2">
             <Button
@@ -72,6 +75,7 @@ const MyFilesActionBar = ({
               className="fs-10 btn-square-sm d-none d-sm-block"
               data-bs-toggle="tooltip"
               title="Delete"
+              onClick={handleDeleteFiles}
             >
               <FontAwesomeIcon icon={faTrash} />
             </Button>

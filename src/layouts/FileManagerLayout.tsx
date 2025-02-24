@@ -5,6 +5,7 @@ import RecentFilesCard from 'components/modules/file-manager/RecentFilesCard';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import React, { PropsWithChildren, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import FileManagerProvider from 'providers/FileManagerProvider';
 interface FileManagerLayoutProps {
   page: 'grid-view' | 'list-view';
 }
@@ -40,7 +41,7 @@ const FileManagerLayout = ({
             setOpenOffcanvas={setOpenOffcanvas}
           />
           <RecentFilesCard />
-          {children}
+          <FileManagerProvider>{children}</FileManagerProvider>
         </Col>
       </Row>
     </div>

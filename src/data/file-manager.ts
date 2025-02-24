@@ -83,7 +83,7 @@ export interface File {
   more?: string;
 }
 
-export const myFiles: File[] = [
+export const fileCollection: File[] = [
   {
     id: 1,
     name: 'Illustrations',
