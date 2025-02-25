@@ -12,6 +12,7 @@ const FileManagerContent = () => {
   const { fileCollection, showFileDetails, setShowFileDetails } =
     useFileManagerContext();
   const { breakpoints } = useBreakpoints();
+
   return (
     <>
       <Card className="mt-5">

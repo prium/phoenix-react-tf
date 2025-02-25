@@ -207,42 +207,27 @@ const RecentFilesCardItem = ({
 };
 
 const RecentFilesCard = () => {
-  const [attachments] = useState([
-    <iframe
-      key="pdf"
-      src={generic67Pdf}
-      title="PDF Viewer"
-      width="1900px"
-      height="1920px"
-    />,
-    video2,
-    fileManager2,
-    video3
-  ]);
-  // const attachments = recentFiles
-  //   .map(file => {
-  //     if (file.type === 'pdf' && file.pdf) {
-  //       return (
-  //         <iframe
-  //           key={file.name}
-  //           src={file.pdf}
-  //           title="PDF Viewer"
-  //           width="1900px"
-  //           height="1920px"
-  //         />
-  //       );
-  //     }
-  //     if (file.type === 'video' && file.video) {
-  //       return file.video;
-  //     }
-  //     if (file.type === 'image' && file.img) {
-  //       return file.img;
-  //     }
-  //     return '';
-  //   })
-  //   .filter(attachment => attachment === ''); // Remove empty values
+  const attachments = recentFiles.map(file => {
+    if (file.type === 'pdf' && file.pdf) {
+      return (
+        <iframe
+          key={file.name}
+          src={file.pdf}
+          title="PDF Viewer"
+          width="1900px"
+          height="1920px"
+        />
+      );
+    }
+    if (file.type === 'video' && file.video) {
+      return file.video;
+    }
+    if (file.type === 'image' && file.img) {
+      return file.img;
+    }
+    return '';
+  });
 
-  attachments.length && console.log(attachments);
   const { lightboxProps, openLightbox } = useLightbox([...attachments]);
   const [isCollapsed, setIsCollapsed] = useState(true);
 

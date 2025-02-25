@@ -73,6 +73,7 @@ export interface File {
   size?: string;
   img?: string;
   video?: string;
+  pdf?: string;
   itemCount?: string;
   modified: string;
   details: FileDetails[];

@@ -8,6 +8,7 @@ import {
   useContext,
   useEffect
 } from 'react';
+import { gridBreakpoints } from './BreakpointsProvider';
 
 interface FileManagerContextInterface {
   fileCollection: File[];
@@ -24,7 +25,10 @@ export const FileManagerContext = createContext(
 
 const FileManagerProvider = ({ children }: PropsWithChildren) => {
   const [fileCollection, setFileCollection] = useState<File[]>([]);
-  const [showFileDetails, setShowFileDetails] = useState(true);
+  const [showFileDetails, setShowFileDetails] = useState(
+    window.innerWidth >= gridBreakpoints.xxl
+  );
+
   const [checkedFileIds, setCheckedFileIds] = useState<number[]>([]);
 
   useEffect(() => {

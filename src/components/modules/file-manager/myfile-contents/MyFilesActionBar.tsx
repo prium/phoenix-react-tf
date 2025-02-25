@@ -44,17 +44,13 @@ const MyFilesActionBar = () => {
         className={checkedFileIds.length ? 'd-block' : 'd-none'}
       >
         <div className="d-flex align-items-center">
-          <Button
-            variant="phoenix-secondary"
-            className="p-0 fs-8 me-2 me-sm-3"
-            data-remove-bulk-check
-          >
+          <button className="btn p-0 fs-8 me-2 me-sm-3">
             <FontAwesomeIcon
               onClick={() => setCheckedFileIds([])}
               icon={faXmark}
               transform="down-1"
             />
-          </Button>
+          </button>
           <h6
             className="mb-0 me-4 text-nowrap text-body-tertiary"
             data-files-selected

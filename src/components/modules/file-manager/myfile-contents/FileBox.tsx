@@ -18,9 +18,34 @@ import FilesDropdown from '../FilesDropdown';
 import classNames from 'classnames';
 import { File } from 'data/file-manager';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
+import Lightbox from 'components/base/LightBox';
+import useLightbox from 'hooks/useLightbox';
 
 const FileBox = ({ file }: { file: File }) => {
   const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
+  const attachment = () => {
+    if (file.type === 'pdf' && file.pdf) {
+      return (
+        <iframe
+          key={file.name}
+          src={file.pdf}
+          title="PDF Viewer"
+          width="1900px"
+          height="1920px"
+        />
+      );
+    }
+    if (file.type === 'video' && file.video) {
+      return file.video;
+    }
+    if (file.type === 'image' && file.img) {
+      return file.img;
+    }
+    return '';
+  };
+
+  const { lightboxProps, openLightbox } = useLightbox([attachment()]);
+
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   useEffect(() => {
@@ -92,100 +117,113 @@ const FileBox = ({ file }: { file: File }) => {
     }
   };
 
+  const handleDoubleClick = () => {
+    if (['image', 'video', 'pdf'].includes(file.type)) {
+      openLightbox(1);
+      setCheckedFileIds(prevFilesId =>
+        prevFilesId.includes(file.id) ? prevFilesId : [...prevFilesId, file.id]
+      );
+    }
+  };
+
   return (
-    <div
-      className="text-center"
-      {...(file.type === 'video' && {
-        onMouseEnter: () => setIsPlaying(true),
-        onMouseLeave: () => setIsPlaying(false)
-      })}
-    >
-      <div className="file-box-wrapper img-zoom-hover">
-        <Form.Check.Input
-          type="checkbox"
-          className="form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
-          name="fileManagerFiles"
-          id={file.id.toString()}
-          data-bulk-select-row
-          data-file={file.id}
-          checked={checkedFileIds.includes(file.id)}
-          onChange={e => {
-            setCheckedFileIds(
-              prevFilesId =>
-                e.target.checked
-                  ? [...prevFilesId, file.id] // Add ID when checked
-                  : prevFilesId.filter(id => id !== file.id) // Remove ID when unchecked
-            );
-          }}
-        />
-        <Form.Check.Label
-          htmlFor={file.id.toString()}
-          className="stretched-link position-absolute top-0 start-0 w-100 h-100"
-          data-file={file.id}
-          {...(file.type === 'video' || file.type === 'image'
-            ? {
-                'data-file-thumbnail':
-                  file.type === 'video' ? file.video : file.img
-              }
-            : {})}
-        />
-        <div className="position-relative h-100">
-          <div className="file-box overflow-hidden">
-            {file.type === 'image' && (
-              <img
-                src={file.img}
-                alt=""
-                className="w-100 h-100 object-fit-cover"
-              />
-            )}
-            {file.type === 'video' && (
-              <div className="video-container h-100">
-                <video
-                  className="video d-block h-100 w-100 overflow-hidden object-fit-cover"
-                  muted
-                  data-play-on-hover
-                  ref={videoRef}
-                  src={file.video}
+    <>
+      <Lightbox {...lightboxProps} />
+      <div
+        className="text-center"
+        onDoubleClick={() => handleDoubleClick()}
+        {...(file.type === 'video' && {
+          onMouseEnter: () => setIsPlaying(true),
+          onMouseLeave: () => setIsPlaying(false)
+        })}
+      >
+        <div className="file-box-wrapper img-zoom-hover">
+          <Form.Check.Input
+            type="checkbox"
+            className="form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
+            name="fileManagerFiles"
+            id={file.id.toString()}
+            data-bulk-select-row
+            data-file={file.id}
+            checked={checkedFileIds.includes(file.id)}
+            onChange={e => {
+              setCheckedFileIds(
+                prevFilesId =>
+                  e.target.checked
+                    ? [...prevFilesId, file.id] // Add ID when checked
+                    : prevFilesId.filter(id => id !== file.id) // Remove ID when unchecked
+              );
+            }}
+          />
+          <Form.Check.Label
+            htmlFor={file.id.toString()}
+            className="stretched-link position-absolute top-0 start-0 w-100 h-100"
+            data-file={file.id}
+            {...(file.type === 'video' || file.type === 'image'
+              ? {
+                  'data-file-thumbnail':
+                    file.type === 'video' ? file.video : file.img
+                }
+              : {})}
+          />
+          <div className="position-relative h-100">
+            <div className="file-box overflow-hidden">
+              {file.type === 'image' && (
+                <img
+                  src={file.img}
+                  alt=""
+                  className="w-100 h-100 object-fit-cover"
                 />
-              </div>
+              )}
+              {file.type === 'video' && (
+                <div className="video-container h-100">
+                  <video
+                    className="video d-block h-100 w-100 overflow-hidden object-fit-cover"
+                    muted
+                    data-play-on-hover
+                    ref={videoRef}
+                    src={file.video}
+                  />
+                </div>
+              )}
+              {renderFileIcon()}
+            </div>
+            {file.type === 'video' && (
+              <Button
+                className="p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
+                onClick={handlePlayPause}
+              >
+                <span className="play-icon pointer-events-none">
+                  {!isPlaying ? (
+                    <FontAwesomeIcon
+                      icon={faPlay}
+                      className="text-body-secondary fs-9"
+                      transform="down-1"
+                    />
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faPause}
+                      className="text-body-secondary fs-9"
+                      transform="down-1"
+                    />
+                  )}
+                </span>
+              </Button>
             )}
-            {renderFileIcon()}
           </div>
-          {file.type === 'video' && (
-            <Button
-              className="p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
-              onClick={handlePlayPause}
-            >
-              <span className="play-icon pointer-events-none">
-                {!isPlaying ? (
-                  <FontAwesomeIcon
-                    icon={faPlay}
-                    className="text-body-secondary fs-9"
-                    transform="down-1"
-                  />
-                ) : (
-                  <FontAwesomeIcon
-                    icon={faPause}
-                    className="text-body-secondary fs-9"
-                    transform="down-1"
-                  />
-                )}
-              </span>
-            </Button>
-          )}
+          <FilesDropdown className="lh-1 position-absolute top-0 end-0 mt-2 me-2" />
+          <Link
+            to="#!"
+            className="d-block fw-bold text-body-highlight mt-2 text-nowrap text-truncate fs-9 fs-sm-8"
+          >
+            {file.name}
+          </Link>
+          <h6 className="mb-0 fw-semibold text-body-tertiary fs-10 fs-sm-9">
+            {file.size || file.itemCount}
+          </h6>
         </div>
-        <FilesDropdown className="lh-1 position-absolute top-0 end-0 mt-2 me-2" />
-        <Link
-          to="#!"
-          className="d-block fw-bold text-body-highlight mt-2 text-nowrap text-truncate fs-9 fs-sm-8"
-        >
-          {file.name}
-        </Link>
-        <h6 className="mb-0 fw-semibold text-body-tertiary fs-10 fs-sm-9">
-          {file.size || file.itemCount}
-        </h6>
       </div>
-    </div>
+    </>
   );
 };
 

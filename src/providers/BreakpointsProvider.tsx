@@ -26,7 +26,7 @@ export const BreakpointContext = createContext(
   {} as BreakpointContextInterface
 );
 
-const gridBreakpoints: Breakpoints = {
+export const gridBreakpoints: Breakpoints = {
   xs: 0,
   sm: 576,
   md: 768,
