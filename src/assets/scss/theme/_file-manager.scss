@@ -121,9 +121,9 @@
 }
 
 .my-files-table {
-  @include media-breakpoint-up(xxl) {
-    width: calc(100% - 25.95rem);
-  }
+  // @include media-breakpoint-up(xxl) {
+  //   width: calc(100% - 25.95rem);
+  // }
   [data-bulk-select-row='data-bulk-select-row']:checked {
     + .square-icon-box {
       background-color: var(--#{$prefix}primary-bg-subtle);

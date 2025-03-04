@@ -35,7 +35,9 @@ import team24 from 'assets/img/team/24.webp';
 import teamR from 'assets/img/team/r.webp';
 import teamAvatar from 'assets/img/team/avatar.webp';
 import video2 from 'assets/video/2.mp4';
+import thumb2 from 'assets/video/2.png';
 import video3 from 'assets/video/3.mp4';
+import thumb3 from 'assets/video/3.png';
 import team34 from 'assets/img/team/34.webp';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -73,6 +75,7 @@ export interface File {
   size?: string;
   img?: string;
   video?: string;
+  thumb?: string;
   pdf?: string;
   itemCount?: string;
   modified: string;
@@ -420,6 +423,7 @@ export const fileCollection: File[] = [
     name: 'World in Motion.mp4',
     type: 'video',
     video: video2,
+    thumb: thumb2,
     size: '18 MB',
     modified: '15 July, 2023',
     details: [
@@ -1489,6 +1493,7 @@ export const fileCollection: File[] = [
     type: 'video',
     size: '12 MB',
     video: video3,
+    thumb: thumb3,
     modified: '4 hours ago',
     details: [
       {

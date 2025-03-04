@@ -8,14 +8,11 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
-interface MyFilesHeaderProps {
-  page: 'grid-view' | 'list-view';
-}
-
-const MyFilesHeader = ({ page }: MyFilesHeaderProps) => {
+const MyFilesHeader = () => {
+  const { isGridView, setIsGridView } = useFileManagerContext();
   return (
     <Row className="g-3 flex-between-center">
       <Col xs="auto">
@@ -25,11 +22,10 @@ const MyFilesHeader = ({ page }: MyFilesHeaderProps) => {
         {/* Grid view button */}
         <OverlayTrigger overlay={<Tooltip>Grid view</Tooltip>}>
           <Button
-            as={Link}
-            to="file-grid-view"
+            onClick={() => setIsGridView(true)}
             variant="phoenix-secondary"
             className={classNames('btn-square me-2', {
-              'border-primary text-primary': page === 'grid-view'
+              'border-primary text-primary': isGridView
             })}
           >
             <FontAwesomeIcon icon={faTableCellsLarge} />
@@ -39,11 +35,12 @@ const MyFilesHeader = ({ page }: MyFilesHeaderProps) => {
         {/* List view button */}
         <OverlayTrigger overlay={<Tooltip>List view</Tooltip>}>
           <Button
-            as={Link}
-            to="file-list-view"
+            onClick={() => {
+              setIsGridView(false);
+            }}
             variant="phoenix-secondary"
             className={classNames('btn-square', {
-              'border-primary text-primary': page === 'list-view'
+              'border-primary text-primary': !isGridView
             })}
           >
             <FontAwesomeIcon icon={faList} />

@@ -7,9 +7,10 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
+import ListViewTable from './ListViewTable';
 
 const FileManagerContent = () => {
-  const { fileCollection, showFileDetails, setShowFileDetails } =
+  const { fileCollection, showFileDetails, setShowFileDetails, isGridView } =
     useFileManagerContext();
   const { breakpoints } = useBreakpoints();
 
@@ -17,18 +18,27 @@ const FileManagerContent = () => {
     <>
       <Card className="mt-5">
         <Card.Header>
-          <MyFilesHeader page="grid-view" />
+          <MyFilesHeader />
         </Card.Header>
         <Card.Body className="pt-0">
           <MyFilesActionBar />
           <Row className="gx-xxl-9" id="bulk-select-body">
-            <Col>
-              <div className="files-container" data-files-container>
-                {fileCollection.map(file => (
-                  <FileBox file={file} key={file.id} />
-                ))}
-              </div>
-            </Col>
+            {isGridView ? (
+              <Col>
+                <div className="files-container" data-files-container>
+                  {fileCollection.map(file => (
+                    <FileBox file={file} key={file.id} />
+                  ))}
+                </div>
+              </Col>
+            ) : (
+              <Col>
+                <div className="my-files-table" data-files-container>
+                  <ListViewTable />
+                </div>
+              </Col>
+            )}
+
             {breakpoints.up('xxl') && (
               <Col
                 xs="auto"
