@@ -22,10 +22,9 @@ import RevealDropdown, {
   RevealDropdownTrigger
 } from 'components/base/RevealDropdown';
 import { Dropdown } from 'react-bootstrap';
-import AdvanceTableFooter from 'components/base/AdvanceTableFooter';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { File } from '../../../data/file-manager';
 
 const RenderFileIcon = ({ file }: { file: File }) => {
@@ -240,29 +239,36 @@ const columns: ColumnDef<File>[] = [
   }
 ];
 
-const ListViewTable = () => {
-  const { fileCollection, setCheckedFileIds } = useFileManagerContext();
-  const [data, setData] = useState<File[]>([]);
+const ListViewTable = ({
+  files,
+  initialState
+}: {
+  files: File[];
+  initialState: Record<number, boolean>;
+}) => {
+  const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
 
   const table = useAdvanceTable({
-    data: data,
+    data: files,
     columns,
     selection: true,
     selectionColumnWidth: '30px',
     sortable: true,
-    pageSize: 10,
-    pagination: true
-  });
-
-  useEffect(() => {
-    if (fileCollection) {
-      setData(fileCollection);
+    initialState: {
+      rowSelection: initialState
+    },
+    state: {
+      pagination: {
+        pageIndex: 0,
+        pageSize: files.length
+      }
     }
-  }, [fileCollection]);
+  });
 
   useEffect(() => {
     const allRows = table.getRowModel().rows.map(row => row.original);
     const selectedRows = table.getSelectedRowModel().flatRows;
+
     allRows.map(rows => {
       const isSelected = selectedRows
         .map(file => file.original.id)
@@ -277,6 +283,12 @@ const ListViewTable = () => {
     });
   }, [table.getSelectedRowModel().flatRows]);
 
+  useEffect(() => {
+    if (checkedFileIds.length === 0) {
+      table.setRowSelection({});
+    }
+  }, [checkedFileIds]);
+
   return (
     <>
       <AdvanceTableProvider {...table}>
@@ -286,7 +298,6 @@ const ListViewTable = () => {
           }}
           rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
         />
-        <AdvanceTableFooter className="mt-2" />
       </AdvanceTableProvider>
     </>
   );

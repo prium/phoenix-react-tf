@@ -8,11 +8,30 @@ import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import ListViewTable from './ListViewTable';
+import { useEffect, useState } from 'react';
 
 const FileManagerContent = () => {
-  const { fileCollection, showFileDetails, setShowFileDetails, isGridView } =
-    useFileManagerContext();
+  const {
+    fileCollection,
+    showFileDetails,
+    setShowFileDetails,
+    isGridView,
+    checkedFileIds
+  } = useFileManagerContext();
   const { breakpoints } = useBreakpoints();
+  const [initialState, setInitialState] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    const state = fileCollection.reduce(
+      (acc, file, index) => {
+        acc[index] = checkedFileIds.includes(file.id);
+        return acc;
+      },
+      {} as Record<number, boolean>
+    );
+
+    setInitialState(state);
+  }, [checkedFileIds]);
 
   return (
     <>
@@ -34,7 +53,10 @@ const FileManagerContent = () => {
             ) : (
               <Col>
                 <div className="my-files-table" data-files-container>
-                  <ListViewTable />
+                  <ListViewTable
+                    files={fileCollection}
+                    initialState={initialState}
+                  />
                 </div>
               </Col>
             )}

@@ -14,7 +14,6 @@ const FileManagerLayout = ({
   children,
   page
 }: PropsWithChildren<FileManagerLayoutProps>) => {
-  console.log({ page });
   const [showSidebar, setShowSidebar] = useState(false);
   const [openOffcanvas, setOpenOffcanvas] = useState(false);
 
