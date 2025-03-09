@@ -21,7 +21,7 @@ const FileManagerTimeline = ({ data }: { data: Activity[] }) => {
   return (
     <Timeline variant="basic">
       {data.map((item, index) => (
-        <Timeline.Item className="position-relative" key="">
+        <Timeline.Item className="position-relative" key={index}>
           <Row className="g-3">
             <Col xs="auto">
               <Timeline.Separator className="position-relative">
@@ -49,12 +49,12 @@ const FileManagerTimeline = ({ data }: { data: Activity[] }) => {
                 </div>
                 {item.assignees && (
                   <Avatar.Group size="m">
-                    {item.assignees.map(member => (
+                    {item.assignees.map((member, index) => (
                       <AvatarDropdown
-                        key=""
+                        key={index}
                         user={{
                           ...member,
-                          id: 1,
+                          id: index,
                           username: '',
                           connections: 23,
                           mutual: 4

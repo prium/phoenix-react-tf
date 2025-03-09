@@ -67,7 +67,6 @@ const TreeviewCollapseItem = ({
         <ul
           className="treeview-list treeview-border"
           id={`${treeviewId}-${item.id}`}
-          data-show={item.show || false}
         >
           {item.children?.map((child, index) =>
             child.children ? (

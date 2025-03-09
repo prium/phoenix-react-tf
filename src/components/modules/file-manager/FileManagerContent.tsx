@@ -8,7 +8,7 @@ import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import ListViewTable from './ListViewTable';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const FileManagerContent = () => {
   const {
@@ -16,10 +16,11 @@ const FileManagerContent = () => {
     showFileDetails,
     setShowFileDetails,
     isGridView,
-    checkedFileIds
+    checkedFileIds,
+    initialTableState,
+    setInitialTableState
   } = useFileManagerContext();
   const { breakpoints } = useBreakpoints();
-  const [initialState, setInitialState] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const state = fileCollection.reduce(
@@ -30,7 +31,7 @@ const FileManagerContent = () => {
       {} as Record<number, boolean>
     );
 
-    setInitialState(state);
+    setInitialTableState(state);
   }, [checkedFileIds]);
 
   return (
@@ -44,18 +45,18 @@ const FileManagerContent = () => {
           <Row className="gx-xxl-9" id="bulk-select-body">
             {isGridView ? (
               <Col>
-                <div className="files-container" data-files-container>
+                <div className="files-container">
                   {fileCollection.map(file => (
                     <FileBox file={file} key={file.id} />
                   ))}
                 </div>
               </Col>
             ) : (
-              <Col>
-                <div className="my-files-table" data-files-container>
+              <Col className="my-files-table">
+                <div>
                   <ListViewTable
                     files={fileCollection}
-                    initialState={initialState}
+                    initialState={initialTableState}
                   />
                 </div>
               </Col>

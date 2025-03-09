@@ -214,6 +214,7 @@ import TripCheckout from 'pages/apps/travel-agency/trip/Checkout';
 import TripLayout from 'layouts/TripLayout';
 import GridView from 'pages/apps/file-manager/GridView';
 import ListView from 'pages/apps/file-manager/ListView';
+import FileManagerProvider from 'providers/FileManagerProvider';
 
 const routes: RouteObject[] = [
   {
@@ -458,11 +459,19 @@ const routes: RouteObject[] = [
                 children: [
                   {
                     path: 'grid-view',
-                    element: <GridView />
+                    element: (
+                      <FileManagerProvider>
+                        <GridView />
+                      </FileManagerProvider>
+                    )
                   },
                   {
                     path: 'list-view',
-                    element: <ListView />
+                    element: (
+                      <FileManagerProvider>
+                        <ListView />
+                      </FileManagerProvider>
+                    )
                   }
                 ]
               }

@@ -23,11 +23,11 @@ import useLightbox from 'hooks/useLightbox';
 
 const FileBox = ({ file }: { file: File }) => {
   const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
+  const [isPlaying, setIsPlaying] = useState(false);
   const attachment = () => {
     if (file.type === 'pdf' && file.pdf) {
       return (
         <iframe
-          key={file.name}
           src={file.pdf}
           title="PDF Viewer"
           width="1900px"
@@ -43,10 +43,8 @@ const FileBox = ({ file }: { file: File }) => {
     }
     return '';
   };
-
   const { lightboxProps, openLightbox } = useLightbox([attachment()]);
 
-  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   useEffect(() => {
     if (videoRef.current) {
@@ -141,10 +139,8 @@ const FileBox = ({ file }: { file: File }) => {
           <Form.Check.Input
             type="checkbox"
             className="form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
-            name="fileManagerFiles"
+            name={file.id.toString()}
             id={file.id.toString()}
-            data-bulk-select-row
-            data-file={file.id}
             checked={checkedFileIds.includes(file.id)}
             onChange={e => {
               setCheckedFileIds(
@@ -158,13 +154,6 @@ const FileBox = ({ file }: { file: File }) => {
           <Form.Check.Label
             htmlFor={file.id.toString()}
             className="stretched-link position-absolute top-0 start-0 w-100 h-100"
-            data-file={file.id}
-            {...(file.type === 'video' || file.type === 'image'
-              ? {
-                  'data-file-thumbnail':
-                    file.type === 'video' ? file.video : file.img
-                }
-              : {})}
           />
           <div className="position-relative h-100">
             <div className="file-box overflow-hidden">
@@ -180,7 +169,6 @@ const FileBox = ({ file }: { file: File }) => {
                   <video
                     className="video d-block h-100 w-100 overflow-hidden object-fit-cover"
                     muted
-                    data-play-on-hover
                     ref={videoRef}
                     src={file.video}
                   />

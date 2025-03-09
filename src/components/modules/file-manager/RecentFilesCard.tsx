@@ -9,6 +9,10 @@ import video1 from 'assets/video/1.mp4';
 import video2 from 'assets/video/2.mp4';
 import video3 from 'assets/video/3.mp4';
 import video4 from 'assets/video/4.mp4';
+import videoThumb1 from 'assets/video/1.png';
+import videoThumb2 from 'assets/video/2.png';
+import videoThumb3 from 'assets/video/3.png';
+import videoThumb4 from 'assets/video/4.png';
 import Badge from 'components/base/Badge';
 import Lightbox from 'components/base/LightBox';
 import useLightbox from 'hooks/useLightbox';
@@ -32,6 +36,8 @@ interface RecentFiles {
   img?: string;
   pdf?: string;
   video?: string;
+  fileNo: number;
+  thumb?: string;
 }
 
 const recentFiles: RecentFiles[] = [
@@ -42,15 +48,18 @@ const recentFiles: RecentFiles[] = [
     createdAt: '5 min ago',
     actionType: 'Edited',
     img: fileManager1,
-    pdf: generic67Pdf
+    pdf: generic67Pdf,
+    fileNo: 1
   },
   {
     name: 'Travel Tales.mp4',
     type: 'video',
+    video: video2,
+    thumb: videoThumb2,
     size: '65 mb',
     createdAt: '6 min ago',
     actionType: 'Upload',
-    video: video2
+    fileNo: 2
   },
   {
     name: 'Mountain During.jpg',
@@ -58,7 +67,8 @@ const recentFiles: RecentFiles[] = [
     size: '5.8 mb',
     createdAt: '6 min ago',
     actionType: 'Upload',
-    img: fileManager2
+    img: fileManager2,
+    fileNo: 3
   },
   {
     name: 'Cinematic Adventures.mp4',
@@ -66,7 +76,9 @@ const recentFiles: RecentFiles[] = [
     size: '54 mb',
     createdAt: '8 min ago',
     actionType: 'Upload',
-    video: video3
+    video: video3,
+    thumb: videoThumb3,
+    fileNo: 4
   },
   {
     name: 'Travel Tales.mp4',
@@ -74,7 +86,9 @@ const recentFiles: RecentFiles[] = [
     size: '65 mb',
     createdAt: '6 min ago',
     actionType: 'Upload',
-    video: video1
+    video: video1,
+    thumb: videoThumb1,
+    fileNo: 5
   },
   {
     name: 'Hot air balloons.png',
@@ -82,7 +96,8 @@ const recentFiles: RecentFiles[] = [
     size: '5.8 mb',
     createdAt: '6 min ago',
     actionType: 'Upload',
-    img: fileManager6
+    img: fileManager6,
+    fileNo: 6
   },
   {
     name: 'Aurora Borealis.jpg',
@@ -90,7 +105,8 @@ const recentFiles: RecentFiles[] = [
     size: '10 mb',
     createdAt: '5 min ago',
     actionType: 'Edited',
-    img: fileManager7
+    img: fileManager7,
+    fileNo: 7
   },
   {
     name: 'Cinematic Adventures.mp4',
@@ -98,17 +114,17 @@ const recentFiles: RecentFiles[] = [
     size: '54 mb',
     createdAt: '8 min ago',
     actionType: 'Upload',
-    video: video4
+    video: video4,
+    thumb: videoThumb4,
+    fileNo: 8
   }
 ];
 
 const RecentFilesCardItem = ({
   file,
-  index,
   openLightbox
 }: {
   file: RecentFiles;
-  index: number;
   openLightbox: (index: number) => void;
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -125,7 +141,7 @@ const RecentFilesCardItem = ({
   };
 
   return (
-    <Col sm={6} xxl={3} key={index}>
+    <Col sm={6} xxl={3}>
       <div
         className="position-relative"
         {...(file.type === 'video' && {
@@ -152,6 +168,7 @@ const RecentFilesCardItem = ({
                       muted
                       src={file.video}
                       ref={videoRef}
+                      poster={file.thumb}
                     />
                     <Button
                       className="btn p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
@@ -190,7 +207,7 @@ const RecentFilesCardItem = ({
               <Link
                 to="#!"
                 className="stretched-link text-body-highlight fw-bold mb-2 d-block text-truncate"
-                onClick={() => openLightbox(index + 1)}
+                onClick={() => openLightbox(file.fileNo)}
               >
                 {file.name}
               </Link>
@@ -245,7 +262,6 @@ const RecentFilesCard = () => {
             <RecentFilesCardItem
               key={index}
               file={file}
-              index={index}
               openLightbox={openLightbox}
             />
           ))}
@@ -257,7 +273,6 @@ const RecentFilesCard = () => {
                 <RecentFilesCardItem
                   key={index}
                   file={file}
-                  index={index}
                   openLightbox={openLightbox}
                 />
               ))}

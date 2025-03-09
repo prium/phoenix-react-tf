@@ -1,4 +1,10 @@
-import { Dropdown, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import {
+  Dropdown,
+  Button,
+  OverlayTrigger,
+  Tooltip,
+  Placeholder
+} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faXmark,
@@ -9,6 +15,7 @@ import {
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
+import { useEffect, useState } from 'react';
 
 const MyFilesActionBar = () => {
   const {
@@ -27,6 +34,16 @@ const MyFilesActionBar = () => {
     setFileCollection(updatedFiles);
     setCheckedFileIds([]);
   };
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (checkedFileIds.length > 0) {
+      setLoading(true);
+      const timer = setTimeout(() => setLoading(false), 500);
+      return () => clearTimeout(timer);
+    }
+  }, [checkedFileIds]);
+
   return (
     <div className="myfiles-action-bar mx-n4 mb-4">
       {checkedFileIds.length == 0 && (
@@ -51,38 +68,57 @@ const MyFilesActionBar = () => {
               transform="down-1"
             />
           </button>
-          <h6
-            className="mb-0 me-4 text-nowrap text-body-tertiary"
-            data-files-selected
-          >
-            {checkedFileIds.length} item selected
-          </h6>
+          {loading ? (
+            <Placeholder
+              size="sm"
+              style={{
+                width: '97px'
+              }}
+              className="me-3 bg-body-secondary"
+            />
+          ) : (
+            <h6 className="mb-0 me-4 text-nowrap text-body-tertiary">
+              {checkedFileIds.length} item selected
+            </h6>
+          )}
+
           <div className="d-flex gap-1 gap-sm-2">
-            <Button
-              variant="phoenix-secondary"
-              className="fs-10 btn-square-sm d-none d-sm-block"
-              data-bs-toggle="tooltip"
-              title="Download"
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="file-download-tooltip">Download</Tooltip>}
             >
-              <FontAwesomeIcon icon={faDownload} />
-            </Button>
-            <Button
-              variant="phoenix-secondary"
-              className="fs-10 btn-square-sm d-none d-sm-block"
-              data-bs-toggle="tooltip"
-              title="Delete"
-              onClick={handleDeleteFiles}
+              <Button
+                variant="phoenix-secondary"
+                className="fs-10 btn-square-sm d-none d-sm-block"
+              >
+                <FontAwesomeIcon icon={faDownload} />
+              </Button>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="file-download-tooltip">Delete</Tooltip>}
             >
-              <FontAwesomeIcon icon={faTrash} />
-            </Button>
-            <Button
-              variant="phoenix-secondary"
-              className="fs-10 btn-square-sm d-none d-sm-block"
-              data-bs-toggle="tooltip"
-              title="Share"
+              <Button
+                variant="phoenix-secondary"
+                className="fs-10 btn-square-sm d-none d-sm-block"
+                onClick={handleDeleteFiles}
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </Button>
+            </OverlayTrigger>
+
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="file-download-tooltip">Share</Tooltip>}
             >
-              <FontAwesomeIcon icon={faShareNodes} />
-            </Button>
+              <Button
+                variant="phoenix-secondary"
+                className="fs-10 btn-square-sm d-none d-sm-block"
+              >
+                <FontAwesomeIcon icon={faShareNodes} />
+              </Button>
+            </OverlayTrigger>
+
             <Dropdown align="end">
               <Dropdown.Toggle
                 variant="phoenix-secondary"
@@ -117,23 +153,11 @@ const MyFilesActionBar = () => {
         <Button
           variant="phoenix-secondary"
           className="fs-10 btn-square-sm"
-          data-toggle-file-details
           onClick={() => setShowFileDetails(!showFileDetails)}
         >
           <FontAwesomeIcon icon={faInfoCircle} />
         </Button>
       </OverlayTrigger>
-      {/* <Button
-        variant="phoenix-secondary"
-        className="fs-10 btn-square-sm d-xxl-none"
-        data-toggle-file-details
-        data-bs-toggle="tooltip"
-        title="File Details"
-        data-phoenix-toggle="offcanvas"
-        data-phoenix-target="#showFileDetails"
-      >
-        <FontAwesomeIcon icon={faInfoCircle} />
-      </Button> */}
     </div>
   );
 };

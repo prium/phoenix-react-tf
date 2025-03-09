@@ -24,7 +24,7 @@ import RevealDropdown, {
 import { Dropdown } from 'react-bootstrap';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { File } from '../../../data/file-manager';
 
 const RenderFileIcon = ({ file }: { file: File }) => {
@@ -103,7 +103,8 @@ const RenderFileIcon = ({ file }: { file: File }) => {
 const columns: ColumnDef<File>[] = [
   {
     id: 'Name',
-    accessorKey: 'Name',
+    header: 'Name',
+    accessorFn: ({ name }) => name,
     cell: ({ row }: any) => {
       const { original } = row;
       const file = original;
@@ -128,22 +129,21 @@ const columns: ColumnDef<File>[] = [
         }
         return '';
       };
-
       const { lightboxProps, openLightbox } = useLightbox([attachment()]);
-      const { checkedFileIds } = useFileManagerContext();
 
       return (
         <>
           <Lightbox {...lightboxProps} />
           <Link
             to="#!"
-            className="d-flex align-items-center gap-3 fw-semibold text-body-highlight"
+            className={`d-flex align-items-center gap-3 fw-semibold text-body-highlight ${
+              row.getIsSelected() ? 'file-checked' : ''
+            }`}
             onClick={row.getToggleSelectedHandler()}
             onDoubleClick={e => {
               if (['image', 'video', 'pdf'].includes(file.type)) {
                 openLightbox(1);
-                !checkedFileIds.includes(original.id) &&
-                  row.getToggleSelectedHandler()(e);
+                row.getToggleSelectedHandler()(e);
               }
             }}
           >
@@ -162,21 +162,21 @@ const columns: ColumnDef<File>[] = [
         className: 'white-space-nowrap'
       }
     },
-    enableSorting: false
+    enableSorting: true
   },
   {
     accessorKey: 'shared',
-    header: () => 'shared',
+    header: 'Shared',
     cell: ({ row: { original } }) => {
       const data = original;
       return (
         <Avatar.Group size="s">
-          {data.assignees.map(member => (
+          {data.assignees.map((member, index) => (
             <AvatarDropdown
-              key=""
+              key={index}
               user={{
                 ...member,
-                id: 1,
+                id: index,
                 username: '',
                 connections: 23,
                 mutual: 4
@@ -187,13 +187,13 @@ const columns: ColumnDef<File>[] = [
         </Avatar.Group>
       );
     },
-    enableSorting: true,
+    enableSorting: false,
     meta: {
       headerProps: { style: { minWidth: 150 }, className: 'py-2' }
     }
   },
   {
-    // accessorFn: ({ customer: { name } }) => name,
+    accessorKey: 'modified',
     header: 'Last Modified',
     cell: ({ row: { original } }) => {
       const { modified } = original;
@@ -204,7 +204,7 @@ const columns: ColumnDef<File>[] = [
     }
   },
   {
-    // accessorKey: 'rating',
+    accessorKey: 'size',
     header: 'File Size',
     cell: ({ row: { original } }) => {
       const { size, itemCount } = original;
@@ -247,6 +247,7 @@ const ListViewTable = ({
   initialState: Record<number, boolean>;
 }) => {
   const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
+  const [shouldClearSelection, setShouldClearSelection] = useState(false);
 
   const table = useAdvanceTable({
     data: files,
@@ -281,13 +282,17 @@ const ListViewTable = ({
           : prevFilesId.filter(id => id !== rows.id)
       );
     });
-  }, [table.getSelectedRowModel().flatRows]);
+  }, [table.getState().rowSelection]);
 
   useEffect(() => {
-    if (checkedFileIds.length === 0) {
+    if (shouldClearSelection && checkedFileIds.length === 0) {
       table.setRowSelection({});
+      setShouldClearSelection(false);
     }
-  }, [checkedFileIds]);
+    if (checkedFileIds.length > 0 && !shouldClearSelection) {
+      setShouldClearSelection(true);
+    }
+  }, [checkedFileIds, shouldClearSelection]);
 
   return (
     <>

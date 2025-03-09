@@ -110,8 +110,18 @@ const StorageDetails = () => {
       </Collapse>
       <hr className="my-4" />
       <div className="text-center">
-        <img src={spotIllustration45} alt="" width="98" />
-        <img src={spotIllustrationDark45} alt="" width="98" />
+        <img
+          src={spotIllustration45}
+          className="d-dark-none"
+          alt=""
+          width="98"
+        />
+        <img
+          src={spotIllustrationDark45}
+          className="d-light-none"
+          alt=""
+          width="98"
+        />
         <h5 className="mt-3 text-body fw-bolder">Upgrade to Pro</h5>
         <h6 className="mb-3 text-body-tertiary fw-normal">
           Expand your storage capacity with our upgraded storage options.

@@ -9,7 +9,7 @@ import {
   useEffect
 } from 'react';
 import { gridBreakpoints } from './BreakpointsProvider';
-
+type InitialStateType = Record<number, boolean>;
 interface FileManagerContextInterface {
   fileCollection: File[];
   setFileCollection: Dispatch<SetStateAction<File[]>>;
@@ -19,6 +19,8 @@ interface FileManagerContextInterface {
   setCheckedFileIds: Dispatch<SetStateAction<number[]>>;
   isGridView: boolean;
   setIsGridView: Dispatch<SetStateAction<boolean>>;
+  initialTableState: InitialStateType;
+  setInitialTableState: Dispatch<SetStateAction<InitialStateType>>;
 }
 
 export const FileManagerContext = createContext(
@@ -31,7 +33,10 @@ const FileManagerProvider = ({ children }: PropsWithChildren) => {
     window.innerWidth >= gridBreakpoints.xxl
   );
   const [checkedFileIds, setCheckedFileIds] = useState<number[]>([]);
-  const [isGridView, setIsGridView] = useState(false);
+  const [isGridView, setIsGridView] = useState(true);
+  const [initialTableState, setInitialTableState] = useState<
+    Record<number, boolean>
+  >({});
 
   useEffect(() => {
     setFileCollection(filesData);
@@ -47,7 +52,9 @@ const FileManagerProvider = ({ children }: PropsWithChildren) => {
         checkedFileIds,
         setCheckedFileIds,
         isGridView,
-        setIsGridView
+        setIsGridView,
+        initialTableState,
+        setInitialTableState
       }}
     >
       {children}
