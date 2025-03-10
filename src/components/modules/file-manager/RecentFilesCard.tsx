@@ -171,7 +171,8 @@ const RecentFilesCardItem = ({
                       poster={file.thumb}
                     />
                     <Button
-                      className="btn p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
+                      data-bs-theme="light"
+                      className="p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
                       onClick={handlePlayPause}
                     >
                       <span className="play-icon pointer-events-none">
@@ -194,11 +195,11 @@ const RecentFilesCardItem = ({
                 )}
               </div>
               <Badge
-                bg="warning"
+                bg={file.actionType === 'Edited' ? 'warning' : 'info'}
                 variant="phoenix"
                 className="fs-10 position-absolute top-0 start-0 mt-3 ms-3"
               >
-                {file.actionType}
+                {file.actionType} {file.createdAt}
               </Badge>
             </div>
           </div>

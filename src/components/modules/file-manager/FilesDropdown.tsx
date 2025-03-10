@@ -23,7 +23,7 @@ const FilesDropdown = ({
       <Dropdown className={className}>
         <Dropdown.Toggle
           variant=""
-          className="btn-square-sm position-relative mt-n1 dropdown-caret-none z-5"
+          className="btn-square-sm position-relative dropdown-caret-none z-1"
         >
           <FontAwesomeIcon icon={faEllipsisVertical} />
         </Dropdown.Toggle>

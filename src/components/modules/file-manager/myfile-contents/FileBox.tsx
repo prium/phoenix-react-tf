@@ -178,7 +178,8 @@ const FileBox = ({ file }: { file: File }) => {
             </div>
             {file.type === 'video' && (
               <Button
-                className="p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-5"
+                data-bs-theme="light"
+                className="p-0 circle-icon-item-md position-absolute top-50 start-50 translate-middle bg-body-emphasis bg-opacity-50 z-1"
                 onClick={handlePlayPause}
               >
                 <span className="play-icon pointer-events-none">

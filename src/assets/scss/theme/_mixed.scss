@@ -876,3 +876,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.form-check-input-transparent {
+  background-color: transparent;
+  &:checked {
+    background-color: var(--#{$prefix}primary);
+  }
+}

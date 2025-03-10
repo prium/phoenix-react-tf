@@ -9,6 +9,9 @@ import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import ListViewTable from './ListViewTable';
 import { useEffect } from 'react';
+import Button from 'components/base/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const FileManagerContent = () => {
   const {
@@ -37,7 +40,7 @@ const FileManagerContent = () => {
   return (
     <>
       <Card className="mt-5">
-        <Card.Header>
+        <Card.Header className="py-3 px-4">
           <MyFilesHeader />
         </Card.Header>
         <Card.Body className="pt-0">
@@ -88,6 +91,12 @@ const FileManagerContent = () => {
           placement="end"
           fixed
         >
+          <Button className="fs-8 position-absolute top-0 end-0 mt-3">
+            <FontAwesomeIcon
+              icon={faXmark}
+              onClick={() => setShowFileDetails(false)}
+            />
+          </Button>
           <FileDetails />
         </PhoenixOffcanvas>
       )}

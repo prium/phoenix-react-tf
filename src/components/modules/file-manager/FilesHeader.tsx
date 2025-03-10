@@ -13,6 +13,7 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 import { Form, Row, Col, Modal } from 'react-bootstrap';
 import Sidebar from './sidebar/Sidebar';
+import SearchBox from 'components/common/SearchBox';
 interface FileHeaderProps {
   showSidebar: boolean;
   setShowSidebar: Dispatch<SetStateAction<boolean>>;
@@ -57,6 +58,7 @@ const FilesHeader = ({
           </Button>
         </Col>
         <Col xs="auto" className="d-flex gap-2">
+          <SearchBox placeholder="Search by name" />
           <Form.Select className="w-auto">
             <option value="1">Last 7 days</option>
             <option value="1">Last 15 days</option>
