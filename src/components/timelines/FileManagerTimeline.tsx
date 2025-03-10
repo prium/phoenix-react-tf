@@ -32,14 +32,14 @@ const FileManagerTimeline = ({ data }: { data: Activity[] }) => {
                   />
                 </Timeline.Dot>
                 {index !== data.length - 1 && (
-                  <Timeline.Bar className="h-100 border-dashed" />
+                  <Timeline.Bar className="border-dashed" />
                 )}
               </Timeline.Separator>
             </Col>
             <Col className="mb-5">
               <Timeline.Content>
-                <div className="d-flex justify-content-between mb-2">
-                  <h6 className="lh-sm mb-0 me-2 text-body-secondary timeline-item-title">
+                <div className="d-flex justify-content-between">
+                  <h6 className="lh-sm mb-2 me-2 text-body-secondary timeline-item-title">
                     {item.title}
                   </h6>
                   <p className="text-body-quaternary fs-9 mb-0 text-nowrap timeline-time">
@@ -47,6 +47,12 @@ const FileManagerTimeline = ({ data }: { data: Activity[] }) => {
                     {item.time}
                   </p>
                 </div>
+                <h6 className="fs-10 fw-normal mb-3">
+                  by{' '}
+                  <Link className="fw-semibold" to="#!">
+                    {item.tasker}
+                  </Link>
+                </h6>
                 {item.assignees && (
                   <Avatar.Group size="m">
                     {item.assignees.map((member, index) => (
@@ -64,12 +70,6 @@ const FileManagerTimeline = ({ data }: { data: Activity[] }) => {
                     ))}
                   </Avatar.Group>
                 )}
-                <p className="fs-9">
-                  by{' '}
-                  <Link className="fw-semibold" to="#!">
-                    {item.tasker}
-                  </Link>
-                </p>
               </Timeline.Content>
             </Col>
           </Row>

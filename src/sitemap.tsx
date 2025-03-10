@@ -561,6 +561,7 @@ export const routes: RouteItems[] = [
         name: 'File manager',
         icon: 'folder',
         active: true,
+        new: true,
         pages: [
           {
             name: 'Grid view',

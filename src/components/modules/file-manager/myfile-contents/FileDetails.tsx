@@ -126,7 +126,7 @@ const FileDetails = () => {
                               </td>
                               <td className="py-1 align-middle">:</td>
                               <td className="py-1 align-middle">
-                                {item.value}
+                                {item.value}{' '}
                                 {item.modifiedBy && (
                                   <>
                                     by{' '}
@@ -180,7 +180,7 @@ const FileDetails = () => {
                       <h6 className="fw-normal text-body">{data.fileLink}</h6>
                       <Button variant="phoenix-primary" className="mt-2">
                         <FontAwesomeIcon icon={faLink} className="me-2" />
-                        Copy Link
+                        Copy link
                       </Button>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
