@@ -18,6 +18,7 @@ import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { useEffect, useState } from 'react';
 
 const MyFilesActionBar = () => {
+  const [loading, setLoading] = useState(false);
   const {
     showFileDetails,
     setShowFileDetails,
@@ -34,7 +35,6 @@ const MyFilesActionBar = () => {
     setFileCollection(updatedFiles);
     setCheckedFileIds([]);
   };
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (checkedFileIds.length > 0) {
@@ -55,7 +55,6 @@ const MyFilesActionBar = () => {
         </h6>
       )}
 
-      {/* -------- */}
       <div
         id="file-manager-actions"
         className={checkedFileIds.length ? 'd-block' : 'd-none'}
@@ -145,7 +144,6 @@ const MyFilesActionBar = () => {
           </div>
         </div>
       </div>
-      {/* -------- */}
       <OverlayTrigger
         placement="top"
         overlay={<Tooltip id="file-details-tooltip">File Details</Tooltip>}

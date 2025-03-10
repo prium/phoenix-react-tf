@@ -34,11 +34,23 @@ import team22 from 'assets/img/team/22.webp';
 import team24 from 'assets/img/team/24.webp';
 import teamR from 'assets/img/team/r.webp';
 import teamAvatar from 'assets/img/team/avatar.webp';
-import video2 from 'assets/video/2.mp4';
 import thumb2 from 'assets/video/2.png';
-import video3 from 'assets/video/3.mp4';
 import thumb3 from 'assets/video/3.png';
 import team34 from 'assets/img/team/34.webp';
+import fileManager1 from 'assets/img/file-manager/1.png';
+import fileManager2 from 'assets/img/file-manager/2.png';
+import fileManager6 from 'assets/img/file-manager/6.png';
+import fileManager7 from 'assets/img/file-manager/7.png';
+import generic67Pdf from 'assets/img/generic/67.pdf';
+import video1 from 'assets/video/1.mp4';
+import video2 from 'assets/video/2.mp4';
+import video3 from 'assets/video/3.mp4';
+import video4 from 'assets/video/4.mp4';
+import videoThumb1 from 'assets/video/1.png';
+import videoThumb2 from 'assets/video/2.png';
+import videoThumb3 from 'assets/video/3.png';
+import videoThumb4 from 'assets/video/4.png';
+
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faCloudArrowUp,
@@ -2226,5 +2238,98 @@ export const fileCollection: File[] = [
         tasker: 'John N. Ward'
       }
     ]
+  }
+];
+
+export interface RecentFiles {
+  name: string;
+  type: 'image' | 'pdf' | 'video';
+  size: string;
+  createdAt: string;
+  actionType: string;
+  img?: string;
+  pdf?: string;
+  video?: string;
+  fileNo: number;
+  thumb?: string;
+}
+
+export const recentFiles: RecentFiles[] = [
+  {
+    name: 'Verification Letter.pdf',
+    type: 'pdf',
+    size: '8.8 mb',
+    createdAt: '5 min ago',
+    actionType: 'Edited',
+    img: fileManager1,
+    pdf: generic67Pdf,
+    fileNo: 1
+  },
+  {
+    name: 'Travel Tales.mp4',
+    type: 'video',
+    video: video2,
+    thumb: videoThumb2,
+    size: '65 mb',
+    createdAt: '6 min ago',
+    actionType: 'Upload',
+    fileNo: 2
+  },
+  {
+    name: 'Mountain During.jpg',
+    type: 'image',
+    size: '5.8 mb',
+    createdAt: '6 min ago',
+    actionType: 'Upload',
+    img: fileManager2,
+    fileNo: 3
+  },
+  {
+    name: 'Cinematic Adventures.mp4',
+    type: 'video',
+    size: '54 mb',
+    createdAt: '8 min ago',
+    actionType: 'Upload',
+    video: video3,
+    thumb: videoThumb3,
+    fileNo: 4
+  },
+  {
+    name: 'Travel Tales.mp4',
+    type: 'video',
+    size: '65 mb',
+    createdAt: '6 min ago',
+    actionType: 'Upload',
+    video: video1,
+    thumb: videoThumb1,
+    fileNo: 5
+  },
+  {
+    name: 'Hot air balloons.png',
+    type: 'image',
+    size: '5.8 mb',
+    createdAt: '6 min ago',
+    actionType: 'Upload',
+    img: fileManager6,
+    fileNo: 6
+  },
+  {
+    name: 'Aurora Borealis.jpg',
+    type: 'image',
+    size: '10 mb',
+    createdAt: '5 min ago',
+    actionType: 'Edited',
+    img: fileManager7,
+    fileNo: 7
+  },
+  {
+    name: 'Cinematic Adventures.mp4',
+    type: 'video',
+    size: '54 mb',
+    createdAt: '8 min ago',
+    actionType: 'Upload',
+    video: video4,
+    thumb: videoThumb4,
+    fileNo: 8
   }
 ];

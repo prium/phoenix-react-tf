@@ -7,7 +7,7 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
-import ListViewTable from './ListViewTable';
+import ListViewTable from '../../tables/ListViewTable';
 import { useEffect } from 'react';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

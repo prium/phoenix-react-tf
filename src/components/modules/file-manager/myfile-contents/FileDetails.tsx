@@ -11,6 +11,35 @@ import FileManagerTimeline from 'components/timelines/FileManagerTimeline';
 import RenderFileIcon from './RenderFileIcon';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 
+const FileDetailsPlaceHolder = () => {
+  return (
+    <div>
+      <Placeholder
+        as="h5"
+        animation="glow"
+        classNames="mb-2  bg-body-secondary"
+      >
+        <Placeholder xs={8} className="py-3 bg-body-secondary" />
+      </Placeholder>
+      <Placeholder animation="glow" className="mb-2 d-flex gap-2">
+        <Placeholder as="span" className="col-6 py-3 bg-body-secondary" />
+        <Placeholder as="span" className="col-6 py-3 bg-body-secondary" />
+      </Placeholder>
+      <Placeholder
+        as="span"
+        className="col-12 bg-body-secondary mb-3"
+        style={{ height: '150px' }}
+      />
+      <Placeholder as="p" animation="glow" className="card-text">
+        <Placeholder as="span" className="col-12 py-2 mb-2 bg-body-secondary" />
+        <Placeholder as="span" className="col-8 py-2 mb-2 bg-body-secondary" />
+        <Placeholder as="span" className="col-12 py-2 mb-2 bg-body-secondary" />
+        <Placeholder as="span" className="col-10 py-2 mb-2 bg-body-secondary" />
+      </Placeholder>
+    </div>
+  );
+};
+
 const FileDetails = () => {
   const { fileCollection, checkedFileIds } = useFileManagerContext();
   const data = fileCollection.find(file => file.id === checkedFileIds[0]);
@@ -28,66 +57,21 @@ const FileDetails = () => {
     <>
       <div className="file-details">
         {checkedFileIds.length !== 1 && (
-          <>
-            <div className="text-center px-4">
-              {checkedFileIds.length > 1 && (
-                <h5 className="mb-3">{checkedFileIds.length} items selected</h5>
-              )}
-              <img src={lightImg} alt="" className="d-dark-none img-fluid" />
-              <img src={darkImg} alt="" className="d-light-none img-fluid" />
-              {checkedFileIds.length < 1 && (
-                <h5 className="mt-4">
-                  Select an item to view more information
-                </h5>
-              )}
-            </div>
-          </>
+          <div className="text-center px-4">
+            {checkedFileIds.length > 1 && (
+              <h5 className="mb-3">{checkedFileIds.length} items selected</h5>
+            )}
+            <img src={lightImg} alt="" className="d-dark-none img-fluid" />
+            <img src={darkImg} alt="" className="d-light-none img-fluid" />
+            {checkedFileIds.length < 1 && (
+              <h5 className="mt-4">Select an item to view more information</h5>
+            )}
+          </div>
         )}
         {checkedFileIds.length == 1 && data && (
           <>
             {loading ? (
-              <div>
-                <Placeholder
-                  as="h5"
-                  animation="glow"
-                  classNames="mb-2  bg-body-secondary"
-                >
-                  <Placeholder xs={8} className="py-3 bg-body-secondary" />
-                </Placeholder>
-                <Placeholder animation="glow" className="mb-2 d-flex gap-2">
-                  <Placeholder
-                    as="span"
-                    className="col-6 py-3 bg-body-secondary"
-                  />
-                  <Placeholder
-                    as="span"
-                    className="col-6 py-3 bg-body-secondary"
-                  />
-                </Placeholder>
-                <Placeholder
-                  as="span"
-                  className="col-12 bg-body-secondary mb-3"
-                  style={{ height: '150px' }}
-                />
-                <Placeholder as="p" animation="glow" className="card-text">
-                  <Placeholder
-                    as="span"
-                    className="col-12 py-2 mb-2 bg-body-secondary"
-                  />
-                  <Placeholder
-                    as="span"
-                    className="col-8 py-2 mb-2 bg-body-secondary"
-                  />
-                  <Placeholder
-                    as="span"
-                    className="col-12 py-2 mb-2 bg-body-secondary"
-                  />
-                  <Placeholder
-                    as="span"
-                    className="col-10 py-2 mb-2 bg-body-secondary"
-                  />
-                </Placeholder>
-              </div>
+              <FileDetailsPlaceHolder />
             ) : (
               <div>
                 <h3>{data.name}</h3>

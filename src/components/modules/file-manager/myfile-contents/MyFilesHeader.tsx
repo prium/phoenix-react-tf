@@ -13,13 +13,13 @@ import { useFileManagerContext } from 'providers/FileManagerProvider';
 
 const MyFilesHeader = () => {
   const { isGridView, setIsGridView } = useFileManagerContext();
+
   return (
     <Row className="g-3 flex-between-center">
       <Col xs="auto">
         <h5 className="mb-0">My Files</h5>
       </Col>
       <Col xs="auto" className="d-flex">
-        {/* Grid view button */}
         <OverlayTrigger overlay={<Tooltip>Grid view</Tooltip>}>
           <Button
             onClick={() => setIsGridView(true)}
@@ -32,7 +32,6 @@ const MyFilesHeader = () => {
           </Button>
         </OverlayTrigger>
 
-        {/* List view button */}
         <OverlayTrigger overlay={<Tooltip>List view</Tooltip>}>
           <Button
             onClick={() => {
@@ -47,14 +46,12 @@ const MyFilesHeader = () => {
           </Button>
         </OverlayTrigger>
 
-        {/* Sort dropdown */}
         <Form.Select className="form-select mx-2 mx-sm-3">
           <option>Sort by - Date created</option>
           <option>Sort by - Name</option>
           <option>Sort by - Size</option>
         </Form.Select>
 
-        {/* View as group switch */}
         <OverlayTrigger overlay={<Tooltip>View as group</Tooltip>}>
           <Form.Check
             type="switch"

@@ -25,7 +25,7 @@ import { Dropdown } from 'react-bootstrap';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
 import { useEffect, useState } from 'react';
-import { File } from '../../../data/file-manager';
+import { File } from '../../data/file-manager';
 
 const RenderFileIcon = ({ file }: { file: File }) => {
   switch (file.type) {

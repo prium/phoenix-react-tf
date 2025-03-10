@@ -15,45 +15,47 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
+const categories = [
+  {
+    category: 'Images',
+    count: '22k',
+    storage: '13GB',
+    icon: faFilePdf,
+    type: 'primary'
+  },
+  {
+    category: 'Videos',
+    count: '534',
+    storage: '8.3GB',
+    icon: faVideo,
+    type: 'info'
+  },
+  {
+    category: 'Audio',
+    count: '55',
+    storage: '4GB',
+    icon: faMusic,
+    type: 'warning'
+  },
+  {
+    category: 'Documents',
+    count: '65k',
+    storage: '15.5GB',
+    icon: faFile,
+    type: 'danger'
+  },
+  {
+    category: 'Others',
+    count: '12k',
+    storage: '5GB',
+    icon: faRectangleList,
+    type: 'success'
+  }
+];
+
 const StorageDetails = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const categories = [
-    {
-      category: 'Images',
-      count: '22k',
-      storage: '13GB',
-      icon: faFilePdf,
-      type: 'primary'
-    },
-    {
-      category: 'Videos',
-      count: '534',
-      storage: '8.3GB',
-      icon: faVideo,
-      type: 'info'
-    },
-    {
-      category: 'Audio',
-      count: '55',
-      storage: '4GB',
-      icon: faMusic,
-      type: 'warning'
-    },
-    {
-      category: 'Documents',
-      count: '65k',
-      storage: '15.5GB',
-      icon: faFile,
-      type: 'danger'
-    },
-    {
-      category: 'Others',
-      count: '12k',
-      storage: '5GB',
-      icon: faRectangleList,
-      type: 'success'
-    }
-  ];
+
   return (
     <>
       <Link

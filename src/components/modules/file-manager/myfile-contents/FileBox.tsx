@@ -21,9 +21,65 @@ import { useFileManagerContext } from 'providers/FileManagerProvider';
 import Lightbox from 'components/base/LightBox';
 import useLightbox from 'hooks/useLightbox';
 
+const RenderFileIcon = ({ file }: { file: File }) => {
+  switch (file.type) {
+    case 'folder':
+      return (
+        <FontAwesomeIcon
+          icon={faFolder}
+          className={classNames(
+            'fs-3',
+            file.id === 3 ? 'text-info-light' : 'text-body-tertiary'
+          )}
+        />
+      );
+    case 'doc':
+      return (
+        <FontAwesomeIcon
+          icon={faFileWord}
+          className="fs-3 text-body-tertiary"
+        />
+      );
+    case 'xls':
+    case 'xlx':
+      return (
+        <FontAwesomeIcon
+          icon={faFileExcel}
+          className="fs-3 text-body-tertiary"
+        />
+      );
+    case 'source-code':
+    case 'html':
+      return (
+        <FontAwesomeIcon
+          icon={faFileInvoice}
+          className="fs-3 text-body-tertiary"
+        />
+      );
+    case 'zip':
+      return (
+        <FontAwesomeIcon
+          icon={faFileZipper}
+          className="fs-3 text-body-tertiary"
+        />
+      );
+    case 'pdf':
+      return (
+        <FontAwesomeIcon icon={faFilePdf} className="fs-3 text-body-tertiary" />
+      );
+    case 'csv':
+      return (
+        <FontAwesomeIcon icon={faFileCsv} className="fs-3 text-body-tertiary" />
+      );
+    default:
+      return null;
+  }
+};
+
 const FileBox = ({ file }: { file: File }) => {
   const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
   const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const attachment = () => {
     if (file.type === 'pdf' && file.pdf) {
       return (
@@ -45,75 +101,7 @@ const FileBox = ({ file }: { file: File }) => {
   };
   const { lightboxProps, openLightbox } = useLightbox([attachment()]);
 
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  useEffect(() => {
-    if (videoRef.current) {
-      isPlaying ? videoRef.current.play() : videoRef.current.pause();
-    }
-  }, [isPlaying]);
-
   const handlePlayPause = () => setIsPlaying(prev => !prev);
-
-  const renderFileIcon = () => {
-    switch (file.type) {
-      case 'folder':
-        return (
-          <FontAwesomeIcon
-            icon={faFolder}
-            className={classNames(
-              'fs-3',
-              file.id === 3 ? 'text-info-light' : 'text-body-tertiary'
-            )}
-          />
-        );
-      case 'doc':
-        return (
-          <FontAwesomeIcon
-            icon={faFileWord}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      case 'xls':
-      case 'xlx':
-        return (
-          <FontAwesomeIcon
-            icon={faFileExcel}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      case 'source-code':
-      case 'html':
-        return (
-          <FontAwesomeIcon
-            icon={faFileInvoice}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      case 'zip':
-        return (
-          <FontAwesomeIcon
-            icon={faFileZipper}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      case 'pdf':
-        return (
-          <FontAwesomeIcon
-            icon={faFilePdf}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      case 'csv':
-        return (
-          <FontAwesomeIcon
-            icon={faFileCsv}
-            className="fs-3 text-body-tertiary"
-          />
-        );
-      default:
-        return null;
-    }
-  };
 
   const handleDoubleClick = () => {
     if (['image', 'video', 'pdf'].includes(file.type)) {
@@ -123,6 +111,12 @@ const FileBox = ({ file }: { file: File }) => {
       );
     }
   };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      isPlaying ? videoRef.current.play() : videoRef.current.pause();
+    }
+  }, [isPlaying]);
 
   return (
     <>
@@ -174,7 +168,7 @@ const FileBox = ({ file }: { file: File }) => {
                   />
                 </div>
               )}
-              {renderFileIcon()}
+              <RenderFileIcon file={file} />
             </div>
             {file.type === 'video' && (
               <Button

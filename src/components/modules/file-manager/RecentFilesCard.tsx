@@ -1,18 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, Col, Collapse, Row } from 'react-bootstrap';
-import fileManager1 from 'assets/img/file-manager/1.png';
-import fileManager2 from 'assets/img/file-manager/2.png';
-import fileManager6 from 'assets/img/file-manager/6.png';
-import fileManager7 from 'assets/img/file-manager/7.png';
-import generic67Pdf from 'assets/img/generic/67.pdf';
-import video1 from 'assets/video/1.mp4';
-import video2 from 'assets/video/2.mp4';
-import video3 from 'assets/video/3.mp4';
-import video4 from 'assets/video/4.mp4';
-import videoThumb1 from 'assets/video/1.png';
-import videoThumb2 from 'assets/video/2.png';
-import videoThumb3 from 'assets/video/3.png';
-import videoThumb4 from 'assets/video/4.png';
 import Badge from 'components/base/Badge';
 import Lightbox from 'components/base/LightBox';
 import useLightbox from 'hooks/useLightbox';
@@ -26,99 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Button from 'components/base/Button';
 import FilesDropdown from './FilesDropdown';
-
-interface RecentFiles {
-  name: string;
-  type: 'image' | 'pdf' | 'video';
-  size: string;
-  createdAt: string;
-  actionType: string;
-  img?: string;
-  pdf?: string;
-  video?: string;
-  fileNo: number;
-  thumb?: string;
-}
-
-const recentFiles: RecentFiles[] = [
-  {
-    name: 'Verification Letter.pdf',
-    type: 'pdf',
-    size: '8.8 mb',
-    createdAt: '5 min ago',
-    actionType: 'Edited',
-    img: fileManager1,
-    pdf: generic67Pdf,
-    fileNo: 1
-  },
-  {
-    name: 'Travel Tales.mp4',
-    type: 'video',
-    video: video2,
-    thumb: videoThumb2,
-    size: '65 mb',
-    createdAt: '6 min ago',
-    actionType: 'Upload',
-    fileNo: 2
-  },
-  {
-    name: 'Mountain During.jpg',
-    type: 'image',
-    size: '5.8 mb',
-    createdAt: '6 min ago',
-    actionType: 'Upload',
-    img: fileManager2,
-    fileNo: 3
-  },
-  {
-    name: 'Cinematic Adventures.mp4',
-    type: 'video',
-    size: '54 mb',
-    createdAt: '8 min ago',
-    actionType: 'Upload',
-    video: video3,
-    thumb: videoThumb3,
-    fileNo: 4
-  },
-  {
-    name: 'Travel Tales.mp4',
-    type: 'video',
-    size: '65 mb',
-    createdAt: '6 min ago',
-    actionType: 'Upload',
-    video: video1,
-    thumb: videoThumb1,
-    fileNo: 5
-  },
-  {
-    name: 'Hot air balloons.png',
-    type: 'image',
-    size: '5.8 mb',
-    createdAt: '6 min ago',
-    actionType: 'Upload',
-    img: fileManager6,
-    fileNo: 6
-  },
-  {
-    name: 'Aurora Borealis.jpg',
-    type: 'image',
-    size: '10 mb',
-    createdAt: '5 min ago',
-    actionType: 'Edited',
-    img: fileManager7,
-    fileNo: 7
-  },
-  {
-    name: 'Cinematic Adventures.mp4',
-    type: 'video',
-    size: '54 mb',
-    createdAt: '8 min ago',
-    actionType: 'Upload',
-    video: video4,
-    thumb: videoThumb4,
-    fileNo: 8
-  }
-];
+import { RecentFiles, recentFiles } from 'data/file-manager';
 
 const RecentFilesCardItem = ({
   file,
@@ -130,15 +25,15 @@ const RecentFilesCardItem = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+  const handlePlayPause = () => {
+    setIsPlaying(!isPlaying);
+  };
+
   useEffect(() => {
     if (videoRef.current) {
       isPlaying ? videoRef.current.play() : videoRef.current.pause();
     }
   }, [isPlaying]);
-
-  const handlePlayPause = () => {
-    setIsPlaying(!isPlaying);
-  };
 
   return (
     <Col sm={6} xxl={3}>
