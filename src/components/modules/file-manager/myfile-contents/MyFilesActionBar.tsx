@@ -1,10 +1,4 @@
-import {
-  Dropdown,
-  Button,
-  OverlayTrigger,
-  Tooltip,
-  Placeholder
-} from 'react-bootstrap';
+import { Dropdown, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faXmark,
@@ -15,10 +9,8 @@ import {
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
-import { useEffect, useState } from 'react';
 
 const MyFilesActionBar = () => {
-  const [loading, setLoading] = useState(false);
   const {
     showFileDetails,
     setShowFileDetails,
@@ -35,14 +27,6 @@ const MyFilesActionBar = () => {
     setFileCollection(updatedFiles);
     setCheckedFileIds([]);
   };
-
-  useEffect(() => {
-    if (checkedFileIds.length > 0) {
-      setLoading(true);
-      const timer = setTimeout(() => setLoading(false), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [checkedFileIds]);
 
   return (
     <div className="myfiles-action-bar mx-n4 mb-4">
@@ -67,19 +51,9 @@ const MyFilesActionBar = () => {
               transform="down-1"
             />
           </button>
-          {loading ? (
-            <Placeholder
-              size="sm"
-              style={{
-                width: '97px'
-              }}
-              className="me-3 bg-body-secondary"
-            />
-          ) : (
-            <h6 className="mb-0 me-4 text-nowrap text-body-tertiary">
-              {checkedFileIds.length} item selected
-            </h6>
-          )}
+          <h6 className="mb-0 me-4 text-nowrap text-body-tertiary">
+            {checkedFileIds.length} item selected
+          </h6>
 
           <div className="d-flex gap-1 gap-sm-2">
             <OverlayTrigger

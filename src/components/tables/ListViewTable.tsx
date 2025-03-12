@@ -24,7 +24,7 @@ import RevealDropdown, {
 import { Dropdown } from 'react-bootstrap';
 import useLightbox from 'hooks/useLightbox';
 import Lightbox from 'components/base/LightBox';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { File } from '../../data/file-manager';
 
 const RenderFileIcon = ({ file }: { file: File }) => {
@@ -108,6 +108,7 @@ const columns: ColumnDef<File>[] = [
     cell: ({ row }: any) => {
       const { original } = row;
       const file = original;
+      const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
       const attachment = () => {
         if (file.type === 'pdf' && file.pdf) {
@@ -139,11 +140,19 @@ const columns: ColumnDef<File>[] = [
             className={`d-flex align-items-center gap-3 fw-semibold text-body-highlight ${
               row.getIsSelected() ? 'file-checked' : ''
             }`}
-            onClick={row.getToggleSelectedHandler()}
+            onClick={e => {
+              if (clickTimeoutRef.current)
+                clearTimeout(clickTimeoutRef.current);
+              clickTimeoutRef.current = setTimeout(() => {
+                row.getToggleSelectedHandler()(e);
+              }, 250);
+            }}
             onDoubleClick={e => {
+              if (clickTimeoutRef.current)
+                clearTimeout(clickTimeoutRef.current);
               if (['image', 'video', 'pdf'].includes(file.type)) {
                 openLightbox(1);
-                row.getToggleSelectedHandler()(e);
+                !row.getIsSelected() && row.getToggleSelectedHandler()(e);
               }
             }}
           >

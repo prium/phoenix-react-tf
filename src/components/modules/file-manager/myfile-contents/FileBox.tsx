@@ -80,6 +80,7 @@ const FileBox = ({ file }: { file: File }) => {
   const { checkedFileIds, setCheckedFileIds } = useFileManagerContext();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const clickTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const attachment = () => {
     if (file.type === 'pdf' && file.pdf) {
       return (
@@ -103,7 +104,25 @@ const FileBox = ({ file }: { file: File }) => {
 
   const handlePlayPause = () => setIsPlaying(prev => !prev);
 
+  const handleSingleClick = (event: React.MouseEvent) => {
+    if ((event.target as HTMLElement).closest('.dropdown')) return;
+
+    clickTimeoutRef.current && clearTimeout(clickTimeoutRef.current);
+
+    clickTimeoutRef.current = setTimeout(() => {
+      setCheckedFileIds(
+        prevFilesId =>
+          prevFilesId.includes(file.id)
+            ? prevFilesId.filter(id => id !== file.id) // Uncheck if already checked
+            : [...prevFilesId, file.id] // Check if not checked
+      );
+    }, 200);
+  };
+
   const handleDoubleClick = () => {
+    // Prevent single-click action from executing
+    if (clickTimeoutRef.current) clearTimeout(clickTimeoutRef.current);
+
     if (['image', 'video', 'pdf'].includes(file.type)) {
       openLightbox(1);
       setCheckedFileIds(prevFilesId =>
@@ -111,7 +130,6 @@ const FileBox = ({ file }: { file: File }) => {
       );
     }
   };
-
   useEffect(() => {
     if (videoRef.current) {
       isPlaying ? videoRef.current.play() : videoRef.current.pause();
@@ -123,6 +141,7 @@ const FileBox = ({ file }: { file: File }) => {
       <Lightbox {...lightboxProps} />
       <div
         className="text-center"
+        onClick={handleSingleClick}
         onDoubleClick={() => handleDoubleClick()}
         {...(file.type === 'video' && {
           onMouseEnter: () => setIsPlaying(true),
@@ -136,14 +155,14 @@ const FileBox = ({ file }: { file: File }) => {
             name={file.id.toString()}
             id={file.id.toString()}
             checked={checkedFileIds.includes(file.id)}
-            onChange={e => {
-              setCheckedFileIds(
-                prevFilesId =>
-                  e.target.checked
-                    ? [...prevFilesId, file.id] // Add ID when checked
-                    : prevFilesId.filter(id => id !== file.id) // Remove ID when unchecked
-              );
-            }}
+            // onChange={e => {
+            //   setCheckedFileIds(
+            //     prevFilesId =>
+            //       e.target.checked
+            //         ? [...prevFilesId, file.id] // Add ID when checked
+            //         : prevFilesId.filter(id => id !== file.id) // Remove ID when unchecked
+            //   );
+            // }}
           />
           <Form.Check.Label
             htmlFor={file.id.toString()}
