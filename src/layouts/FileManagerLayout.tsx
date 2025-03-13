@@ -5,6 +5,7 @@ import RecentFilesCard from 'components/modules/file-manager/RecentFilesCard';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import React, { PropsWithChildren, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
+import FileManagerTableWrapper from 'components/modules/file-manager/FileManagerTableWrapper';
 
 const FileManagerLayout = ({ children }: PropsWithChildren) => {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -26,14 +27,16 @@ const FileManagerLayout = ({ children }: PropsWithChildren) => {
           <Sidebar setOpenOffcanvas={setOpenOffcanvas} />
         </Col>
         <Col className="my-files">
-          <FilesHeader
-            showSidebar={showSidebar}
-            setShowSidebar={setShowSidebar}
-            openOffcanvas={openOffcanvas}
-            setOpenOffcanvas={setOpenOffcanvas}
-          />
-          <RecentFilesCard />
-          {children}
+          <FileManagerTableWrapper>
+            <FilesHeader
+              showSidebar={showSidebar}
+              setShowSidebar={setShowSidebar}
+              openOffcanvas={openOffcanvas}
+              setOpenOffcanvas={setOpenOffcanvas}
+            />
+            <RecentFilesCard />
+            {children}
+          </FileManagerTableWrapper>
         </Col>
       </Row>
     </div>

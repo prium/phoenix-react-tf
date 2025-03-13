@@ -10,10 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
 import PhoenixOffcanvas from 'components/base/PhoenixOffcanvas';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React, { ChangeEvent, Dispatch, SetStateAction, useState } from 'react';
 import { Form, Row, Col, Modal } from 'react-bootstrap';
 import Sidebar from './sidebar/Sidebar';
 import SearchBox from 'components/common/SearchBox';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { File } from 'data/file-manager';
 interface FileHeaderProps {
   showSidebar: boolean;
   setShowSidebar: Dispatch<SetStateAction<boolean>>;
@@ -30,6 +32,11 @@ const FilesHeader = ({
   const { breakpoints } = useBreakpoints();
   const [addFolderModal, setAddFolderModal] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
+  const { setGlobalFilter } = useAdvanceTableContext<File>();
+
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setGlobalFilter(e.target.value || undefined);
+  };
 
   return (
     <>
@@ -58,7 +65,10 @@ const FilesHeader = ({
           </Button>
         </Col>
         <Col xs="auto" className="d-flex gap-2">
-          <SearchBox placeholder="Search by name" />
+          <SearchBox
+            onChange={handleSearchInputChange}
+            placeholder="Search by name"
+          />
           <Form.Select className="w-auto">
             <option value="1">Last 7 days</option>
             <option value="1">Last 15 days</option>

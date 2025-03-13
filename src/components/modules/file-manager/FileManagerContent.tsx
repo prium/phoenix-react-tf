@@ -8,34 +8,14 @@ import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import ListViewTable from '../../tables/ListViewTable';
-import { useEffect } from 'react';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 const FileManagerContent = () => {
-  const {
-    fileCollection,
-    showFileDetails,
-    setShowFileDetails,
-    isGridView,
-    checkedFileIds,
-    initialTableState,
-    setInitialTableState
-  } = useFileManagerContext();
+  const { fileCollection, showFileDetails, setShowFileDetails, isGridView } =
+    useFileManagerContext();
   const { breakpoints } = useBreakpoints();
-
-  useEffect(() => {
-    const state = fileCollection.reduce(
-      (acc, file, index) => {
-        acc[index] = checkedFileIds.includes(file.id);
-        return acc;
-      },
-      {} as Record<number, boolean>
-    );
-
-    setInitialTableState(state);
-  }, [checkedFileIds]);
 
   return (
     <>
@@ -57,10 +37,7 @@ const FileManagerContent = () => {
             ) : (
               <Col className="my-files-table">
                 <div>
-                  <ListViewTable
-                    files={fileCollection}
-                    initialState={initialTableState}
-                  />
+                  <ListViewTable />
                 </div>
               </Col>
             )}
@@ -83,6 +60,7 @@ const FileManagerContent = () => {
           </Row>
         </Card.Body>
       </Card>
+
       {breakpoints.down('xxl') && (
         <PhoenixOffcanvas
           open={showFileDetails}
