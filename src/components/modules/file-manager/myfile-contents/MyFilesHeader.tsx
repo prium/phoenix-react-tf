@@ -10,9 +10,12 @@ import {
 } from 'react-bootstrap';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
+import { useState } from 'react';
 
 const MyFilesHeader = () => {
   const { isGridView, setIsGridView } = useFileManagerContext();
+  const [showGridTooltip, setShowGridTooltip] = useState(false);
+  const [showListTooltip, setShowListTooltip] = useState(false);
 
   return (
     <Row className="g-3 flex-between-center">
@@ -20,9 +23,16 @@ const MyFilesHeader = () => {
         <h5 className="mb-0">My Files</h5>
       </Col>
       <Col xs="auto" className="d-flex">
-        <OverlayTrigger overlay={<Tooltip>Grid view</Tooltip>}>
+        <OverlayTrigger
+          show={showGridTooltip}
+          onToggle={setShowGridTooltip}
+          overlay={<Tooltip>Grid view</Tooltip>}
+        >
           <Button
-            onClick={() => setIsGridView(true)}
+            onClick={() => {
+              setIsGridView(true);
+              setShowGridTooltip(!showGridTooltip);
+            }}
             variant="phoenix-secondary"
             className={classNames('btn-square me-2', {
               'border-primary text-primary': isGridView
@@ -32,10 +42,15 @@ const MyFilesHeader = () => {
           </Button>
         </OverlayTrigger>
 
-        <OverlayTrigger overlay={<Tooltip>List view</Tooltip>}>
+        <OverlayTrigger
+          show={showListTooltip}
+          onToggle={setShowListTooltip}
+          overlay={<Tooltip>List view</Tooltip>}
+        >
           <Button
             onClick={() => {
               setIsGridView(false);
+              setShowListTooltip(!showListTooltip);
             }}
             variant="phoenix-secondary"
             className={classNames('btn-square', {

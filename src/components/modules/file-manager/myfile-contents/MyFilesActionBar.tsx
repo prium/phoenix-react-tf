@@ -9,6 +9,7 @@ import {
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
+import { useState } from 'react';
 
 const MyFilesActionBar = () => {
   const {
@@ -19,6 +20,7 @@ const MyFilesActionBar = () => {
     fileCollection,
     setFileCollection
   } = useFileManagerContext();
+  const [deleteTooltip, setDeleteTooltip] = useState(false);
 
   const handleDeleteFiles = () => {
     const updatedFiles = fileCollection.filter(
@@ -26,6 +28,7 @@ const MyFilesActionBar = () => {
     );
     setFileCollection(updatedFiles);
     setCheckedFileIds([]);
+    setDeleteTooltip(!deleteTooltip);
   };
 
   return (
@@ -69,6 +72,8 @@ const MyFilesActionBar = () => {
             </OverlayTrigger>
             <OverlayTrigger
               placement="top"
+              show={deleteTooltip}
+              onToggle={setDeleteTooltip}
               overlay={<Tooltip id="file-download-tooltip">Delete</Tooltip>}
             >
               <Button

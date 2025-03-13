@@ -295,7 +295,7 @@ const ListViewTable = ({
 
   useEffect(() => {
     if (shouldClearSelection && checkedFileIds.length === 0) {
-      table.setRowSelection({});
+      table.setRowSelection({}); //Update rowSelection initial state to empty
       setShouldClearSelection(false);
     }
     if (checkedFileIds.length > 0 && !shouldClearSelection) {
