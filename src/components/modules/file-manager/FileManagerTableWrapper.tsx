@@ -22,7 +22,7 @@ import Lightbox from 'components/base/LightBox';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import { File } from 'data/file-manager';
 import { ColumnDef } from '@tanstack/react-table';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
@@ -248,13 +248,8 @@ const columns: ColumnDef<File>[] = [
 ];
 
 const FileManagerTableWrapper = ({ children }: PropsWithChildren) => {
-  const {
-    fileCollection,
-    checkedFileIds,
-    initialTableState,
-    setCheckedFileIds,
-    setInitialTableState
-  } = useFileManagerContext();
+  const { fileCollection, setCheckedFileIds, isGridView } =
+    useFileManagerContext();
 
   const table = useAdvanceTable({
     data: fileCollection,
@@ -262,9 +257,6 @@ const FileManagerTableWrapper = ({ children }: PropsWithChildren) => {
     selection: true,
     selectionColumnWidth: '30px',
     sortable: true,
-    initialState: {
-      rowSelection: initialTableState
-    },
     state: {
       pagination: {
         pageIndex: 0,
@@ -272,46 +264,26 @@ const FileManagerTableWrapper = ({ children }: PropsWithChildren) => {
       }
     }
   });
-  useEffect(() => {
-    const allRows = table.getRowModel().rows.map(row => row.original);
-    const selectedRows = table.getSelectedRowModel().flatRows;
 
-    allRows.map(rows => {
-      const isSelected = selectedRows
-        .map(file => file.original.id)
-        .includes(rows.id);
-      setCheckedFileIds(prevFilesId =>
-        isSelected
-          ? !prevFilesId.includes(rows.id)
-            ? [...prevFilesId, rows.id]
-            : [...prevFilesId]
-          : prevFilesId.filter(id => id !== rows.id)
-      );
-    });
+  useEffect(() => {
+    if (!isGridView) {
+      const allRows = table.getRowModel().rows.map(row => row.original);
+      const selectedRows = table.getSelectedRowModel().flatRows;
+
+      allRows.map(rows => {
+        const isSelected = selectedRows
+          .map(file => file.original.id)
+          .includes(rows.id);
+        setCheckedFileIds(prevFilesId =>
+          isSelected
+            ? !prevFilesId.includes(rows.id)
+              ? [...prevFilesId, rows.id]
+              : [...prevFilesId]
+            : prevFilesId.filter(id => id !== rows.id)
+        );
+      });
+    }
   }, [table.getState().rowSelection]);
-  const [shouldClearSelection, setShouldClearSelection] = useState(false);
-
-  useEffect(() => {
-    if (shouldClearSelection && checkedFileIds.length === 0) {
-      table.setRowSelection({}); //Update rowSelection initial state to empty
-      setShouldClearSelection(false);
-    }
-    if (checkedFileIds.length > 0 && !shouldClearSelection) {
-      setShouldClearSelection(true);
-    }
-  }, [checkedFileIds, shouldClearSelection]);
-
-  useEffect(() => {
-    const state = fileCollection.reduce(
-      (acc, file, index) => {
-        acc[index] = checkedFileIds.includes(file.id);
-        return acc;
-      },
-      {} as Record<number, boolean>
-    );
-
-    setInitialTableState(state);
-  }, [checkedFileIds]);
 
   return <AdvanceTableProvider {...table}>{children}</AdvanceTableProvider>;
 };

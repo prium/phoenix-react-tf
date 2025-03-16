@@ -4,11 +4,9 @@ import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { useEffect } from 'react';
 
 const GridView = () => {
-  const { setIsGridView, setInitialTableState, setCheckedFileIds } =
-    useFileManagerContext();
+  const { setIsGridView, setCheckedFileIds } = useFileManagerContext();
   useEffect(() => {
     setIsGridView(true);
-    setInitialTableState({});
     setCheckedFileIds([]);
   }, []);
 

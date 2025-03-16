@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Card, Row, Col } from 'react-bootstrap';
 import MyFilesHeader from './myfile-contents/MyFilesHeader';
 import FileBox from './myfile-contents/FileBox';
@@ -11,11 +12,38 @@ import ListViewTable from '../../tables/ListViewTable';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { useEffect, useState } from 'react';
+import { File } from 'data/file-manager';
 
 const FileManagerContent = () => {
-  const { fileCollection, showFileDetails, setShowFileDetails, isGridView } =
-    useFileManagerContext();
+  const {
+    showFileDetails,
+    setShowFileDetails,
+    isGridView,
+    checkedFileIds,
+    fileCollection
+  } = useFileManagerContext();
   const { breakpoints } = useBreakpoints();
+  const [data, setData] = useState<any>([]);
+  const table = useAdvanceTableContext();
+
+  useEffect(() => {
+    setData(table.getRowModel().rows.map(item => item.original));
+  }, [table]);
+
+  useEffect(() => {
+    if (isGridView) {
+      const state = fileCollection.reduce(
+        (acc, file, index) => {
+          acc[index] = checkedFileIds.includes(file.id);
+          return acc;
+        },
+        {} as Record<number, boolean>
+      );
+      table?.setRowSelection(state);
+    }
+  }, [checkedFileIds]);
 
   return (
     <>
@@ -29,7 +57,10 @@ const FileManagerContent = () => {
             {isGridView ? (
               <Col>
                 <div className="files-container">
-                  {fileCollection.map(file => (
+                  {/* {fileCollection.map(file => (
+                    <FileBox file={file} key={file.id} />
+                  ))} */}
+                  {data.map((file: File) => (
                     <FileBox file={file} key={file.id} />
                   ))}
                 </div>
