@@ -18,6 +18,8 @@ interface FileManagerContextInterface {
   setCheckedFileIds: Dispatch<SetStateAction<number[]>>;
   isGridView: boolean;
   setIsGridView: Dispatch<SetStateAction<boolean>>;
+  isGrouped: boolean;
+  setIsGrouped: Dispatch<SetStateAction<boolean>>;
 }
 
 export const FileManagerContext = createContext(
@@ -31,6 +33,7 @@ const FileManagerProvider = ({ children }: PropsWithChildren) => {
   );
   const [checkedFileIds, setCheckedFileIds] = useState<number[]>([]);
   const [isGridView, setIsGridView] = useState(true);
+  const [isGrouped, setIsGrouped] = useState(false);
 
   useEffect(() => {
     setFileCollection(filesData);
@@ -46,7 +49,9 @@ const FileManagerProvider = ({ children }: PropsWithChildren) => {
         checkedFileIds,
         setCheckedFileIds,
         isGridView,
-        setIsGridView
+        setIsGridView,
+        isGrouped,
+        setIsGrouped
       }}
     >
       {children}

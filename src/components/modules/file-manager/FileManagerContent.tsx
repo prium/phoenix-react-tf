@@ -15,6 +15,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { useEffect, useState } from 'react';
 import { File } from 'data/file-manager';
+import GridGroupView from './GridGroupView';
 
 const FileManagerContent = () => {
   const {
@@ -22,14 +23,15 @@ const FileManagerContent = () => {
     setShowFileDetails,
     isGridView,
     checkedFileIds,
-    fileCollection
+    fileCollection,
+    isGrouped
   } = useFileManagerContext();
   const { breakpoints } = useBreakpoints();
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<File[]>([]);
   const table = useAdvanceTableContext();
 
   useEffect(() => {
-    setData(table.getRowModel().rows.map(item => item.original));
+    setData(table.getRowModel().rows.map(item => item.original) as File[]);
   }, [table]);
 
   useEffect(() => {
@@ -55,16 +57,19 @@ const FileManagerContent = () => {
           <MyFilesActionBar />
           <Row className="gx-xxl-9" id="bulk-select-body">
             {isGridView ? (
-              <Col>
-                <div className="files-container">
-                  {/* {fileCollection.map(file => (
-                    <FileBox file={file} key={file.id} />
-                  ))} */}
-                  {data.map((file: File) => (
-                    <FileBox file={file} key={file.id} />
-                  ))}
-                </div>
-              </Col>
+              isGrouped ? (
+                <Col>
+                  <GridGroupView data={data} />
+                </Col>
+              ) : (
+                <Col>
+                  <div className="files-container">
+                    {data.map((file: File) => (
+                      <FileBox file={file} key={file.id} />
+                    ))}
+                  </div>
+                </Col>
+              )
             ) : (
               <Col className="my-files-table">
                 <div>

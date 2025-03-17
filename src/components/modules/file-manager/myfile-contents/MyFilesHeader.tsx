@@ -13,7 +13,8 @@ import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { useState } from 'react';
 
 const MyFilesHeader = () => {
-  const { isGridView, setIsGridView } = useFileManagerContext();
+  const { isGridView, setIsGridView, isGrouped, setIsGrouped } =
+    useFileManagerContext();
   const [showGridTooltip, setShowGridTooltip] = useState(false);
   const [showListTooltip, setShowListTooltip] = useState(false);
 
@@ -72,6 +73,8 @@ const MyFilesHeader = () => {
             type="switch"
             id="viewAsGroup"
             className="mb-0 d-flex align-items-center"
+            checked={isGrouped}
+            onChange={() => setIsGrouped(prev => !prev)}
           />
         </OverlayTrigger>
       </Col>
