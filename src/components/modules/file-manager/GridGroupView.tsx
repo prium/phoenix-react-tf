@@ -12,12 +12,8 @@ const GridGroupView = ({ data }: { data: File[] }) => {
   const folder = data.filter(file => file.type === 'folder');
   const images = data.filter(file => file.type === 'image');
   const videos = data.filter(file => file.type === 'video');
-  const files = data.filter(
-    file =>
-      file.type === 'doc' ||
-      file.type === 'zip' ||
-      file.type === 'csv' ||
-      file.type === 'xlx'
+  const files = data.filter(file =>
+    ['doc', 'zip', 'csc', 'xlx'].includes(file.type)
   );
   const others = data.filter(
     file => !fileTypes.some(type => file.type.includes(type))

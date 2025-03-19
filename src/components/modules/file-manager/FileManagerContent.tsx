@@ -16,6 +16,7 @@ import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { useEffect, useState } from 'react';
 import { File } from 'data/file-manager';
 import GridGroupView from './GridGroupView';
+import ListGroupViewTable from './ListGroupViewTable';
 
 const FileManagerContent = () => {
   const {
@@ -70,11 +71,19 @@ const FileManagerContent = () => {
                   </div>
                 </Col>
               )
+            ) : isGrouped ? (
+              <Col className="my-files-table">
+                <ListGroupViewTable
+                  tableProps={{
+                    className:
+                      'phoenix-table fs-9 mb-0 border-top border-translucent'
+                  }}
+                  rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+                />
+              </Col>
             ) : (
               <Col className="my-files-table">
-                <div>
-                  <ListViewTable />
-                </div>
+                <ListViewTable />
               </Col>
             )}
 

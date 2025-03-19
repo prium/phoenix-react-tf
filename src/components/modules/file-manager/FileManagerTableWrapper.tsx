@@ -251,7 +251,7 @@ const FileManagerTableWrapper = ({ children }: PropsWithChildren) => {
   const { fileCollection, setCheckedFileIds, isGridView } =
     useFileManagerContext();
 
-  const table = useAdvanceTable({
+  const table = useAdvanceTable<File>({
     data: fileCollection,
     columns,
     selection: true,
