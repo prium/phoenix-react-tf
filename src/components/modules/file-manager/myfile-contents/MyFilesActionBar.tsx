@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { useState } from 'react';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 
 const MyFilesActionBar = () => {
   const {
@@ -20,6 +21,8 @@ const MyFilesActionBar = () => {
     fileCollection,
     setFileCollection
   } = useFileManagerContext();
+  const table = useAdvanceTableContext();
+
   const [deleteTooltip, setDeleteTooltip] = useState(false);
 
   const handleDeleteFiles = () => {
@@ -49,7 +52,10 @@ const MyFilesActionBar = () => {
         <div className="d-flex align-items-center">
           <button className="btn p-0 fs-8 me-2 me-sm-3">
             <FontAwesomeIcon
-              onClick={() => setCheckedFileIds([])}
+              onClick={() => {
+                setCheckedFileIds([]);
+                table.setRowSelection({});
+              }}
               icon={faXmark}
               transform="down-1"
             />

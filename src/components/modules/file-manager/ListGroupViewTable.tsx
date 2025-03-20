@@ -93,11 +93,16 @@ const ListGroupViewTable = ({
               <React.Fragment key={title}>
                 <tr>
                   <td colSpan={table.getAllColumns().length}>
-                    <h4 className="mt-4 mb-2">{title}</h4>
+                    <h4 className="mt-2 mb-0">{title}</h4>
                   </td>
                 </tr>
-                {rows.map(row => (
-                  <tr key={row.id} className={rowClassName}>
+                {rows.map((row, index) => (
+                  <tr
+                    key={row.id}
+                    className={classNames(rowClassName, {
+                      'list-group-last-item': rows.length - 1 === index
+                    })}
+                  >
                     {row.getVisibleCells().map(cell => (
                       <td
                         key={cell.id}

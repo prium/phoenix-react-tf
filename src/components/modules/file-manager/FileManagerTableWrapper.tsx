@@ -167,7 +167,7 @@ const columns: ColumnDef<File>[] = [
       cellProps: { className: 'py-0' },
       headerProps: {
         style: { minWidth: 210 },
-        className: 'white-space-nowrap'
+        className: 'white-space-nowrap text-body-tertiary'
       }
     },
     enableSorting: true
@@ -197,7 +197,10 @@ const columns: ColumnDef<File>[] = [
     },
     enableSorting: false,
     meta: {
-      headerProps: { style: { minWidth: 150 }, className: 'py-2' }
+      headerProps: {
+        style: { minWidth: 150 },
+        className: 'py-2 text-body-tertiary'
+      }
     }
   },
   {
@@ -208,7 +211,7 @@ const columns: ColumnDef<File>[] = [
       return <div className="">{modified}</div>;
     },
     meta: {
-      headerProps: { style: { minWidth: 150 } }
+      headerProps: { style: { minWidth: 150 }, className: 'text-body-tertiary' }
     }
   },
   {
@@ -219,7 +222,10 @@ const columns: ColumnDef<File>[] = [
       return <div>{size || itemCount}</div>;
     },
     meta: {
-      headerProps: { style: { minWidth: 130 } }
+      headerProps: {
+        style: { minWidth: 130 },
+        className: 'text-body-tertiary'
+      }
     }
   },
   {

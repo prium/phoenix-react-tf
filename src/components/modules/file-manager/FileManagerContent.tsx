@@ -75,8 +75,7 @@ const FileManagerContent = () => {
               <Col className="my-files-table">
                 <ListGroupViewTable
                   tableProps={{
-                    className:
-                      'phoenix-table fs-9 mb-0 border-top border-translucent'
+                    className: 'phoenix-table fs-9 mb-0 border-translucent'
                   }}
                   rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
                 />
