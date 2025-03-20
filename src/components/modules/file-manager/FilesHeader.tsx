@@ -51,10 +51,14 @@ const FilesHeader = ({
           >
             <FontAwesomeIcon icon={faBars} />
           </Button>
-          <Button variant="primary" className="px-sm-6">
-            <FontAwesomeIcon icon={faCloudArrowUp} className="me-2" />
-            Upload
-          </Button>
+          <input type="file" id="fileUpload" className="d-none" />
+          <label htmlFor="fileUpload">
+            <Button as="span" variant="primary" className="px-sm-6">
+              <FontAwesomeIcon icon={faCloudArrowUp} className="me-2" />
+              Upload
+            </Button>
+          </label>
+
           <Button
             variant="link"
             className="text-body-secondary px-2"

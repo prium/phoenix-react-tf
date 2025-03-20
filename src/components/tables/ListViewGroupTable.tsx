@@ -13,7 +13,7 @@ interface AdvanceTableProps {
   hasFooter?: boolean;
 }
 
-const ListGroupViewTable = ({
+const ListViewGroupTable = ({
   headerClassName,
   bodyClassName,
   rowClassName,
@@ -125,4 +125,4 @@ const ListGroupViewTable = ({
   );
 };
 
-export default ListGroupViewTable;
+export default ListViewGroupTable;

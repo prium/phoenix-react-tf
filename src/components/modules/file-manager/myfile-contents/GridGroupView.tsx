@@ -1,6 +1,6 @@
 import React from 'react';
 import { File } from 'data/file-manager';
-import FileBox from './myfile-contents/FileBox';
+import FileBox from './FileBox';
 
 interface fileGroup {
   title: string;

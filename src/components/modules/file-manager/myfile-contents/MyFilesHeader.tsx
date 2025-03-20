@@ -17,6 +17,7 @@ const MyFilesHeader = () => {
     useFileManagerContext();
   const [showGridTooltip, setShowGridTooltip] = useState(false);
   const [showListTooltip, setShowListTooltip] = useState(false);
+  const [groupViewTooltip, setGroupViewTooltip] = useState(false);
 
   return (
     <Row className="g-3 flex-between-center">
@@ -68,13 +69,20 @@ const MyFilesHeader = () => {
           <option>Sort by - Size</option>
         </Form.Select>
 
-        <OverlayTrigger overlay={<Tooltip>View as group</Tooltip>}>
+        <OverlayTrigger
+          show={groupViewTooltip}
+          onToggle={setGroupViewTooltip}
+          overlay={<Tooltip>View as group</Tooltip>}
+        >
           <Form.Check
             type="switch"
             id="viewAsGroup"
             className="mb-0 d-flex align-items-center"
             checked={isGrouped}
-            onChange={() => setIsGrouped(prev => !prev)}
+            onChange={() => {
+              setIsGrouped(prev => !prev);
+              setGroupViewTooltip(!groupViewTooltip);
+            }}
           />
         </OverlayTrigger>
       </Col>

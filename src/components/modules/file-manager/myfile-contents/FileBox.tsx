@@ -110,11 +110,10 @@ const FileBox = ({ file }: { file: File }) => {
     clickTimeoutRef.current && clearTimeout(clickTimeoutRef.current);
 
     clickTimeoutRef.current = setTimeout(() => {
-      setCheckedFileIds(
-        prevFilesId =>
-          prevFilesId.includes(file.id)
-            ? prevFilesId.filter(id => id !== file.id) // Uncheck if already checked
-            : [...prevFilesId, file.id] // Check if not checked
+      setCheckedFileIds(prevFilesId =>
+        prevFilesId.includes(file.id)
+          ? prevFilesId.filter(id => id !== file.id)
+          : [...prevFilesId, file.id]
       );
     }, 200);
   };
@@ -154,15 +153,7 @@ const FileBox = ({ file }: { file: File }) => {
             className="form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
             name={file.id.toString()}
             id={file.id.toString()}
-            checked={checkedFileIds.includes(file.id)}
-            // onChange={e => {
-            //   setCheckedFileIds(
-            //     prevFilesId =>
-            //       e.target.checked
-            //         ? [...prevFilesId, file.id] // Add ID when checked
-            //         : prevFilesId.filter(id => id !== file.id) // Remove ID when unchecked
-            //   );
-            // }}
+            defaultChecked={checkedFileIds.includes(file.id)}
           />
           <Form.Check.Label
             htmlFor={file.id.toString()}

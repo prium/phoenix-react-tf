@@ -164,10 +164,10 @@ const columns: ColumnDef<File>[] = [
       );
     },
     meta: {
-      cellProps: { className: 'py-0' },
+      cellProps: { className: 'py-0 ps-0' },
       headerProps: {
         style: { minWidth: 210 },
-        className: 'white-space-nowrap text-body-tertiary'
+        className: 'white-space-nowrap text-body-tertiary ps-0'
       }
     },
     enableSorting: true

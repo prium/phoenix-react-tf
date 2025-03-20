@@ -8,15 +8,15 @@ import { useBreakpoints } from 'providers/BreakpointsProvider';
 import FileDetails from './myfile-contents/FileDetails';
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
-import ListViewTable from '../../tables/ListViewTable';
 import Button from 'components/base/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { useEffect, useState } from 'react';
 import { File } from 'data/file-manager';
-import GridGroupView from './GridGroupView';
-import ListGroupViewTable from './ListGroupViewTable';
+import GridGroupView from './myfile-contents/GridGroupView';
+import AdvanceTable from 'components/base/AdvanceTable';
+import ListViewGroupTable from '../../tables/ListViewGroupTable';
 
 const FileManagerContent = () => {
   const {
@@ -56,33 +56,37 @@ const FileManagerContent = () => {
         </Card.Header>
         <Card.Body className="pt-0">
           <MyFilesActionBar />
-          <Row className="gx-xxl-9" id="bulk-select-body">
+          <Row className="gx-xxl-9">
             {isGridView ? (
-              isGrouped ? (
-                <Col>
+              <Col>
+                {isGrouped ? (
                   <GridGroupView data={data} />
-                </Col>
-              ) : (
-                <Col>
+                ) : (
                   <div className="files-container">
                     {data.map((file: File) => (
                       <FileBox file={file} key={file.id} />
                     ))}
+                    x
                   </div>
-                </Col>
-              )
-            ) : isGrouped ? (
-              <Col className="my-files-table">
-                <ListGroupViewTable
-                  tableProps={{
-                    className: 'phoenix-table fs-9 mb-0 border-translucent'
-                  }}
-                  rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-                />
+                )}
               </Col>
             ) : (
               <Col className="my-files-table">
-                <ListViewTable />
+                {isGrouped ? (
+                  <ListViewGroupTable
+                    tableProps={{
+                      className: 'phoenix-table fs-9 mb-0 border-translucent'
+                    }}
+                    rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+                  />
+                ) : (
+                  <AdvanceTable
+                    tableProps={{
+                      className: 'phoenix-table fs-9 mb-0 border-translucent'
+                    }}
+                    rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+                  />
+                )}
               </Col>
             )}
 
