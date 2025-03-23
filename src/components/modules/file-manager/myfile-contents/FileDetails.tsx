@@ -41,7 +41,7 @@ const FileDetails = () => {
               <Tab.Container id="file-details-tab" defaultActiveKey="first">
                 <Nav
                   variant="underline"
-                  className="border-bottom border-translucent mt-4 mb-5 gap-0"
+                  className="file-details-tab mt-4 mb-5 gap-0"
                 >
                   <Nav.Item className="w-50 text-center">
                     <Nav.Link eventKey="first">File Details</Nav.Link>
@@ -54,7 +54,7 @@ const FileDetails = () => {
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <RenderFileIcon file={data} />
-                    <Table borderless>
+                    <Table className="mt-3" borderless>
                       <thead>
                         <tr>
                           <th className="p-0" style={{ width: '110px' }} />

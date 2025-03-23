@@ -17,56 +17,23 @@ const RenderFileIcon = ({ file }: { file: File }) => {
       return (
         <FontAwesomeIcon
           icon={faFolder}
-          className={classNames(
-            'fs-1',
-            file.id === 3 ? 'text-info-light' : 'text-body-tertiary'
-          )}
+          className={classNames('fs-1', file.id === 3 ? 'text-info-light' : '')}
         />
       );
     case 'doc':
-      return (
-        <FontAwesomeIcon
-          icon={faFileWord}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFileWord} className="fs-1 mb-3" />;
     case 'xls':
     case 'xlx':
-      return (
-        <FontAwesomeIcon
-          icon={faFileExcel}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFileExcel} className="fs-1 mb-3" />;
     case 'source-code':
     case 'html':
-      return (
-        <FontAwesomeIcon
-          icon={faFileInvoice}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFileInvoice} className="fs-1 mb-3" />;
     case 'zip':
-      return (
-        <FontAwesomeIcon
-          icon={faFileZipper}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFileZipper} className="fs-1 mb-3" />;
     case 'pdf':
-      return (
-        <FontAwesomeIcon
-          icon={faFilePdf}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFilePdf} className="fs-1 mb-3" />;
     case 'csv':
-      return (
-        <FontAwesomeIcon
-          icon={faFileCsv}
-          className="fs-1 mb-3 text-body-tertiary"
-        />
-      );
+      return <FontAwesomeIcon icon={faFileCsv} className="fs-1 mb-3" />;
     case 'image':
       return (
         <img

@@ -14,16 +14,18 @@ const dropdownItems: string[] = [
 ];
 
 const FilesDropdown = ({
-  className = 'position-static'
+  className = 'position-static',
+  toggleClass = ''
 }: {
   className?: string;
+  toggleClass?: string;
 }) => {
   return (
     <>
       <Dropdown className={className}>
         <Dropdown.Toggle
           variant=""
-          className="btn-square-sm position-relative dropdown-caret-none z-1"
+          className={`btn-square-sm position-relative dropdown-caret-none z-1 ${toggleClass}`}
         >
           <FontAwesomeIcon icon={faEllipsisVertical} />
         </Dropdown.Toggle>

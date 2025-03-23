@@ -111,7 +111,7 @@ const RecentFilesCardItem = ({
                 {file.size}
               </h6>
             </div>
-            <FilesDropdown />
+            <FilesDropdown toggleClass="mt-n1" />
           </div>
         </div>
       </div>
