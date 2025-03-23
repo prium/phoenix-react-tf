@@ -66,7 +66,6 @@ const FileManagerContent = () => {
                     {data.map((file: File) => (
                       <FileBox file={file} key={file.id} />
                     ))}
-                    x
                   </div>
                 )}
               </Col>
