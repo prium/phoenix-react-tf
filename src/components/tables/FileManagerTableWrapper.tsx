@@ -43,7 +43,7 @@ const RenderFileIcon = ({ file }: { file: File }) => {
       return (
         <FontAwesomeIcon
           icon={faFileWord}
-          className="fs-3 text-body-tertiary"
+          className="fs-9 text-body-tertiary"
         />
       );
     case 'xls':
@@ -51,7 +51,7 @@ const RenderFileIcon = ({ file }: { file: File }) => {
       return (
         <FontAwesomeIcon
           icon={faFileExcel}
-          className="fs-3 text-body-tertiary"
+          className="fs-9 text-body-tertiary"
         />
       );
     case 'source-code':
@@ -59,23 +59,23 @@ const RenderFileIcon = ({ file }: { file: File }) => {
       return (
         <FontAwesomeIcon
           icon={faFileInvoice}
-          className="fs-3 text-body-tertiary"
+          className="fs-9 text-body-tertiary"
         />
       );
     case 'zip':
       return (
         <FontAwesomeIcon
           icon={faFileZipper}
-          className="fs-3 text-body-tertiary"
+          className="fs-9 text-body-tertiary"
         />
       );
     case 'pdf':
       return (
-        <FontAwesomeIcon icon={faFilePdf} className="fs-3 text-body-tertiary" />
+        <FontAwesomeIcon icon={faFilePdf} className="fs-9 text-body-tertiary" />
       );
     case 'csv':
       return (
-        <FontAwesomeIcon icon={faFileCsv} className="fs-3 text-body-tertiary" />
+        <FontAwesomeIcon icon={faFileCsv} className="fs-9 text-body-tertiary" />
       );
     case 'image':
       return (

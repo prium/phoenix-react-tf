@@ -153,7 +153,8 @@ const FileBox = ({ file }: { file: File }) => {
             className="form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
             name={file.id.toString()}
             id={file.id.toString()}
-            defaultChecked={checkedFileIds.includes(file.id)}
+            checked={checkedFileIds.includes(file.id)}
+            onChange={() => {}} // Dummy handler to suppress the warning
           />
           <Form.Check.Label
             htmlFor={file.id.toString()}

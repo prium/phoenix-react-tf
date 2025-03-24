@@ -22,9 +22,7 @@ const MyFilesActionBar = () => {
     setFileCollection
   } = useFileManagerContext();
   const table = useAdvanceTableContext();
-
   const [deleteTooltip, setDeleteTooltip] = useState(false);
-
   const handleDeleteFiles = () => {
     const updatedFiles = fileCollection.filter(
       file => !checkedFileIds.includes(file.id)
@@ -41,7 +39,9 @@ const MyFilesActionBar = () => {
           className="mb-0 text-body-tertiary"
           id="file-manager-replace-element"
         >
-          Total {fileCollection.length} items
+          {table.getState().globalFilter
+            ? ` ${table.getRowCount()} items found`
+            : ` Total ${table.getRowCount()} items`}
         </h6>
       )}
 

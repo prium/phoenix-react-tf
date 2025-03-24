@@ -14,6 +14,8 @@ import {
 import Button from 'components/base/Button';
 import FilesDropdown from './FilesDropdown';
 import { RecentFiles, recentFiles } from 'data/file-manager';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
+import { useFileManagerContext } from 'providers/FileManagerProvider';
 
 const RecentFilesCardItem = ({
   file,
@@ -120,6 +122,8 @@ const RecentFilesCardItem = ({
 };
 
 const RecentFilesCard = () => {
+  const table = useAdvanceTableContext<File>();
+  const { setCheckedFileIds } = useFileManagerContext();
   const attachments = recentFiles.map(file => {
     if (file.type === 'pdf' && file.pdf) {
       return (
@@ -148,24 +152,20 @@ const RecentFilesCard = () => {
     setIsCollapsed(!isCollapsed);
   };
 
+  useEffect(() => {
+    setCheckedFileIds([]);
+    table.setRowSelection({});
+  }, [table.getState().globalFilter]);
+
   return (
-    <Card className="mt-4">
-      <Lightbox {...lightboxProps} />
-      <Card.Body className="pb-5">
-        <h4 className="mb-3">Recent Files</h4>
-        <Row className="g-3">
-          {recentFiles.slice(0, 4).map((file, index) => (
-            <RecentFilesCardItem
-              key={index}
-              file={file}
-              openLightbox={openLightbox}
-            />
-          ))}
-        </Row>
-        <Collapse in={!isCollapsed}>
-          <div className="mt-3">
+    <>
+      {table.getState().globalFilter === undefined && (
+        <Card className="mt-4">
+          <Lightbox {...lightboxProps} />
+          <Card.Body className="pb-5">
+            <h4 className="mb-3">Recent Files</h4>
             <Row className="g-3">
-              {recentFiles.slice(4, 8).map((file, index) => (
+              {recentFiles.slice(0, 4).map((file, index) => (
                 <RecentFilesCardItem
                   key={index}
                   file={file}
@@ -173,25 +173,38 @@ const RecentFilesCard = () => {
                 />
               ))}
             </Row>
-          </div>
-        </Collapse>
-        <Button
-          variant="phoenix-secondary"
-          className="btn collapse-indicator bg-body-emphasis fs-10 py-1 border rounded-1 px-3 position-absolute start-50 translate-middle-x"
-          style={{ bottom: '-11px' }}
-          role="button"
-          onClick={toggleCollapse}
-        >
-          <span className={isCollapsed ? 'collapse-show' : 'collapse-hide'}>
-            {isCollapsed ? 'VIEW MORE' : 'VIEW LESS'}
-          </span>
-          <FontAwesomeIcon
-            icon={isCollapsed ? faChevronDown : faChevronUp}
-            className="toggle-icon fs-10 ms-2"
-          />
-        </Button>
-      </Card.Body>
-    </Card>
+            <Collapse in={!isCollapsed}>
+              <div className="mt-3">
+                <Row className="g-3">
+                  {recentFiles.slice(4, 8).map((file, index) => (
+                    <RecentFilesCardItem
+                      key={index}
+                      file={file}
+                      openLightbox={openLightbox}
+                    />
+                  ))}
+                </Row>
+              </div>
+            </Collapse>
+            <Button
+              variant="phoenix-secondary"
+              className="btn collapse-indicator bg-body-emphasis fs-10 py-1 border rounded-1 px-3 position-absolute start-50 translate-middle-x"
+              style={{ bottom: '-11px' }}
+              role="button"
+              onClick={toggleCollapse}
+            >
+              <span className={isCollapsed ? 'collapse-show' : 'collapse-hide'}>
+                {isCollapsed ? 'VIEW MORE' : 'VIEW LESS'}
+              </span>
+              <FontAwesomeIcon
+                icon={isCollapsed ? faChevronDown : faChevronUp}
+                className="toggle-icon fs-10 ms-2"
+              />
+            </Button>
+          </Card.Body>
+        </Card>
+      )}
+    </>
   );
 };
 

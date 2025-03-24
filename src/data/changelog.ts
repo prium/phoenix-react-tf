@@ -4,7 +4,7 @@ export default [
   {
     version: '1.8.0',
     title: 'Dionysus',
-    publishDate: '23 March, 2025',
+    publishDate: '24 March, 2025',
     logs: {
       new: [
         'PAGE: <code>apps/file-manager/grid-view</code>',

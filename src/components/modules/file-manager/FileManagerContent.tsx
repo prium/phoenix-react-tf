@@ -17,6 +17,10 @@ import { File } from 'data/file-manager';
 import GridGroupView from './myfile-contents/GridGroupView';
 import AdvanceTable from 'components/base/AdvanceTable';
 import ListViewGroupTable from '../../tables/ListViewGroupTable';
+import illustration47 from 'assets/img/spot-illustrations/47.png';
+import illustration47Dark from 'assets/img/spot-illustrations/47_dark.png';
+import illustration48 from 'assets/img/spot-illustrations/48.png';
+import illustration48Dark from 'assets/img/spot-illustrations/48_dark.png';
 
 const FileManagerContent = () => {
   const {
@@ -50,62 +54,89 @@ const FileManagerContent = () => {
 
   return (
     <>
-      <Card className="mt-5">
-        <Card.Header className="py-3 px-4">
-          <MyFilesHeader />
-        </Card.Header>
-        <Card.Body className="pt-0">
-          <MyFilesActionBar />
-          <Row className="gx-xxl-9">
-            {isGridView ? (
-              <Col>
-                {isGrouped ? (
-                  <GridGroupView data={data} />
+      <Card className="mt-4">
+        {table.getRowCount() > 0 ? (
+          <>
+            <Card.Header className="py-3 px-4">
+              <MyFilesHeader />
+            </Card.Header>
+            <Card.Body className="pt-0">
+              <MyFilesActionBar />
+              <Row className="gx-xxl-9">
+                {isGridView ? (
+                  <Col>
+                    {isGrouped ? (
+                      <GridGroupView data={data} />
+                    ) : (
+                      <div className="files-container">
+                        {data.map((file: File) => (
+                          <FileBox file={file} key={file.id} />
+                        ))}
+                      </div>
+                    )}
+                  </Col>
                 ) : (
-                  <div className="files-container">
-                    {data.map((file: File) => (
-                      <FileBox file={file} key={file.id} />
-                    ))}
-                  </div>
+                  <Col className="my-files-table">
+                    {isGrouped ? (
+                      <ListViewGroupTable
+                        tableProps={{
+                          className:
+                            'phoenix-table fs-9 mb-0 border-translucent'
+                        }}
+                        rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+                      />
+                    ) : (
+                      <AdvanceTable
+                        tableProps={{
+                          className:
+                            'phoenix-table fs-9 mb-0 border-translucent'
+                        }}
+                        rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
+                      />
+                    )}
+                  </Col>
                 )}
-              </Col>
-            ) : (
-              <Col className="my-files-table">
-                {isGrouped ? (
-                  <ListViewGroupTable
-                    tableProps={{
-                      className: 'phoenix-table fs-9 mb-0 border-translucent'
-                    }}
-                    rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-                  />
-                ) : (
-                  <AdvanceTable
-                    tableProps={{
-                      className: 'phoenix-table fs-9 mb-0 border-translucent'
-                    }}
-                    rowClassName="hover-actions-trigger btn-reveal-trigger position-static"
-                  />
-                )}
-              </Col>
-            )}
 
-            {breakpoints.up('xxl') && (
-              <Col
-                xs="auto"
-                className={classNames(
-                  'px-0 px-xxl-5 border-start-xxl border-translucent',
-                  {
-                    'd-xxl-none': !showFileDetails
-                  }
+                {breakpoints.up('xxl') && (
+                  <Col
+                    xs="auto"
+                    className={classNames(
+                      'px-0 px-xxl-5 border-start-xxl border-translucent',
+                      {
+                        'd-xxl-none': !showFileDetails
+                      }
+                    )}
+                  >
+                    <div className="file-details-wrapper">
+                      <FileDetails />
+                    </div>
+                  </Col>
                 )}
-              >
-                <div className="file-details-wrapper">
-                  <FileDetails />
-                </div>
-              </Col>
+              </Row>
+            </Card.Body>
+          </>
+        ) : (
+          <Card.Body className="text-center my-9">
+            {table.getState().globalFilter ? (
+              <>
+                <img src={illustration47} className="d-dark-none" alt="" />
+                <img src={illustration47Dark} className="d-light-none" alt="" />
+                <h2 className="mt-5">Opps! No matches found.</h2>
+                <p>
+                  Try a different search or adjust the filters to find a file by
+                  type, owner, and other criteria.
+                </p>
+              </>
+            ) : (
+              <>
+                <img src={illustration48} className="d-dark-none" alt="" />
+                <img src={illustration48Dark} className="d-light-none" alt="" />
+                <h2 className="mt-5">Your file space is empty! </h2>
+                <p>Get started by clicking the ‘Upload’ button.</p>
+              </>
             )}
-          </Row>
-        </Card.Body>
+          </Card.Body>
+        )}
       </Card>
 
       {breakpoints.down('xxl') && (

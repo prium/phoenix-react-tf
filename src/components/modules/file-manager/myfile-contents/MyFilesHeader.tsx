@@ -11,8 +11,10 @@ import {
 import classNames from 'classnames';
 import { useFileManagerContext } from 'providers/FileManagerProvider';
 import { useState } from 'react';
+import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 
 const MyFilesHeader = () => {
+  const table = useAdvanceTableContext<File>();
   const { isGridView, setIsGridView, isGrouped, setIsGrouped } =
     useFileManagerContext();
   const [showGridTooltip, setShowGridTooltip] = useState(false);
@@ -22,7 +24,9 @@ const MyFilesHeader = () => {
   return (
     <Row className="g-3 flex-between-center">
       <Col xs="auto">
-        <h5 className="mb-0">My Files</h5>
+        <h5 className="mb-0">
+          {table.getState().globalFilter ? 'Top Results' : 'My Files'}
+        </h5>
       </Col>
       <Col xs="auto" className="d-flex">
         <OverlayTrigger
