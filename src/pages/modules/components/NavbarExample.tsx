@@ -76,7 +76,9 @@ const NavbarExample = () => {
         description="A powerful, responsive navigation header, the navbar. Includes support for branding, navigation, and more."
         link={{
           text: 'Navbar on react-bootstrap',
-          url: `${process.env.REACT_APP_RB_URL_PREFIX || ''}/components/navbar/`
+          url: `${
+            import.meta.env.REACT_APP_RB_URL_PREFIX || ''
+          }/components/navbar/`
         }}
       />
 

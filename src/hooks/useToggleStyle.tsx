@@ -4,7 +4,7 @@ import is from 'is_js';
 import { REFRESH, SET_CONFIG } from 'reducers/ConfigReducer';
 import { getSystemTheme } from 'helpers/utils';
 
-const publicUrl = process.env.PUBLIC_URL;
+const publicUrl = import.meta.env.VITE_PUBLIC_URL;
 
 const useToggleStyle = () => {
   const [isStylesheetLoaded, setIsStylesheetLoaded] = useState(false);
@@ -40,13 +40,13 @@ const useToggleStyle = () => {
       link => link.remove()
     );
     const link = document.createElement('link');
-    link.href = `${publicUrl}/css/theme.min${isRTL ? '.rtl' : ''}.css`;
+    link.href = `${publicUrl}css/theme${isRTL ? '.rtl' : ''}.css`;
     link.type = 'text/css';
     link.rel = 'stylesheet';
     link.className = 'theme-stylesheet';
 
     const userLink = document.createElement('link');
-    userLink.href = `${publicUrl}/css/user.min${isRTL ? '.rtl' : ''}.css`;
+    userLink.href = `${publicUrl}css/user${isRTL ? '.rtl' : ''}.css`;
     userLink.type = 'text/css';
     userLink.rel = 'stylesheet';
     userLink.className = 'theme-stylesheet';

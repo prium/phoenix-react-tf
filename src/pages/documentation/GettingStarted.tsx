@@ -19,10 +19,10 @@ const GettingStarted = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            original {process.env.REACT_APP_TITLE} theme{' '}
+            original {import.meta.env.REACT_APP_TITLE} theme{' '}
           </a>
           . This doc will guide you to understand how{' '}
-          <strong>{process.env.REACT_APP_TITLE}-React</strong> theme is
+          <strong>{import.meta.env.REACT_APP_TITLE}-React</strong> theme is
           organized, basics of how to customize, and how to compile from the
           source code if you want.
         </p>
@@ -58,16 +58,16 @@ const GettingStarted = () => {
                 if you do not already have it installed on your machine.
               </li>
               <li>
-                Open the “{process.env.REACT_APP_NAME}-react-v
-                {process.env.REACT_APP_VERSION}” directory with your cmd or
+                Open the “{import.meta.env.REACT_APP_NAME}-react-v
+                {import.meta.env.REACT_APP_VERSION}” directory with your cmd or
                 terminal
               </li>
               <li>
                 Run <code>npm i</code>
                 <br />
                 This command will download all the necessary dependencies for{' '}
-                {process.env.REACT_APP_NAME} in the <code>node_modules</code>{' '}
-                directory.
+                {import.meta.env.REACT_APP_NAME} in the{' '}
+                <code>node_modules</code> directory.
               </li>
               <li>
                 Run <code>npm start</code>. A local web server will start at{' '}

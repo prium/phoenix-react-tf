@@ -18,8 +18,9 @@ const Migrations = () => {
               <div className="ms-3 flex-1">
                 <h4 className="alert-heading">Before you update!</h4>
                 Backup your files and read the changelog before updating{' '}
-                {process.env.REACT_APP_TITLE}-React on your project. If you come
-                across with any problems with {process.env.REACT_APP_TITLE}
+                {import.meta.env.REACT_APP_TITLE}-React on your project. If you
+                come across with any problems with{' '}
+                {import.meta.env.REACT_APP_TITLE}
                 -React template during the update, feel free to contact us at{' '}
                 <a href="mailto:support@themewagon.com">
                   support@themewagon.com

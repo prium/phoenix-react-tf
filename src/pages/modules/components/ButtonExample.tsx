@@ -480,7 +480,7 @@ const ButtonExample = () => {
         link={{
           text: 'Buttons on react-bootstrap',
           url: `${
-            process.env.REACT_APP_RB_URL_PREFIX || ''
+            import.meta.env.REACT_APP_RB_URL_PREFIX || ''
           }/components/buttons/`
         }}
       />
@@ -594,7 +594,7 @@ const ButtonExample = () => {
           link={{
             text: 'Buttons on react-bootstrap',
             url: `${
-              process.env.REACT_APP_RB_URL_PREFIX || ''
+              import.meta.env.REACT_APP_RB_URL_PREFIX || ''
             }/components/button-group/`
           }}
         />

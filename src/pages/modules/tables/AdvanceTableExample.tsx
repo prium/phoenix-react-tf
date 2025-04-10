@@ -743,7 +743,7 @@ const AdvanceTableExample = () => {
         }}
       >
         <div>
-          {`${process.env.REACT_APP_TITLE || ''}`}-React uses{' '}
+          {`${import.meta.env.REACT_APP_TITLE || ''}`}-React uses{' '}
           <strong>TanStack Table</strong> for advance features of table.{' '}
           <strong>TanStack Table</strong> is a headless UI for building powerful
           tables & datagrids. <strong>TanStack Table's</strong> API and engine

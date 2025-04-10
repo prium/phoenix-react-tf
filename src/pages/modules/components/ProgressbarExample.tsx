@@ -62,7 +62,7 @@ const ProgressbarExample = () => {
         link={{
           text: 'Progress on react-bootstrap',
           url: `${
-            process.env.REACT_APP_RB_URL_PREFIX || ''
+            import.meta.env.VITE_APP_RB_URL_PREFIX || ''
           }/components/progress/`
         }}
       />

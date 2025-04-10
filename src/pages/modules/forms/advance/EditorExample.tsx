@@ -24,7 +24,9 @@ const EditorExample = () => {
     <div className="mb-9">
       <DocPageHeader
         title="Editor"
-        description={`${process.env.REACT_APP_TITLE}-React uses Tinymce React for rich text editor. TinyMCE React component integrates TinyMCE into React projects.`}
+        description={`${
+          import.meta.env.REACT_APP_TITLE
+        }-React uses Tinymce React for rich text editor. TinyMCE React component integrates TinyMCE into React projects.`}
         link={{
           text: 'Documentation for React Tinymce',
           url: 'https://github.com/tinymce/tinymce-react'
@@ -96,7 +98,7 @@ const EditorExample = () => {
               code={`
               <Editor 
                 . . .
-                apiKey={process.env.REACT_APP_TINYMCE_APIKEY} // your tinymce api key
+                apiKey={import.meta.env.REACT_APP_TINYMCE_APIKEY} // your tinymce api key
               />
                 
               `}
