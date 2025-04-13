@@ -22,7 +22,6 @@ import { Autoplay } from 'swiper/modules';
 import { Feature, along, length, LineString } from '@turf/turf';
 import { routes } from 'data/travel-agency/travelAgency';
 import { rgbaColor } from 'helpers/utils';
-// import { Feature as Feature2 } from '@turf/helpers';
 
 interface MapboxProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
