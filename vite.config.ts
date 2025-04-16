@@ -7,10 +7,17 @@ import compileSCSS from './compile-scss';
 export default defineConfig({
   base: '/',
   plugins: [tsconfigPaths(), react(), compileSCSS()],
+  build: {
+    rollupOptions: {
+      external: ['perf_hooks'],
+      onwarn(warning, warn) {
+        if (warning.code === 'EVAL') return;
+        warn(warning);
+      }
+    }
+  },
   server: {
-    // this ensures that the browser opens upon server start
     open: true,
-    // this sets a default port to 3000
     port: 3000
   }
 });
