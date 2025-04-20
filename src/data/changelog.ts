@@ -2,6 +2,18 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.9.0',
+    title: 'Helios',
+    alertText:
+      'This is a major update. Please backup your project before upgrading to the latest version',
+    publishDate: '20 April, 2025',
+    logs: {
+      update: [
+        'Migrated from Create React App (CRA) to Vite. See the migration guide.'
+      ]
+    }
+  },
+  {
     version: '1.8.0',
     title: 'Dionysus',
     publishDate: '24 March, 2025',

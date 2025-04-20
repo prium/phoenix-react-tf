@@ -1,4 +1,7 @@
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCircleInfo,
+  faExclamationTriangle
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
@@ -53,88 +56,23 @@ const Migrations = () => {
           <PhoenixDocCard.Body>
             {migration.to === 'v1.9.0' && (
               <>
-                {/* <p>
-                  In this version, we have converted our project from Create
-                  React App (CRA) to Vite. If you want to migrate from v1.8.0 to
-                  v1.9.0, please follow the steps below:
-                  <ul className="bullet-inside bg-body-highlight p-3 px">
-                    <li>
-                      <h6 className="d-inline-block">
-                        1. Install the following packages
-                      </h6>
-                      <ul>
-                        <li>vite</li>
-                        <li>vite-tsconfig-paths</li>
-                        <li>chokidar</li>
-                        <li>rtlcss</li>
-                        <li>@vitejs/plugin-react</li>
-                        <li>@types/rtlcss</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <h6 className="d-inline-block">
-                        2. UnInstall the following packages
-                      </h6>
-                      <ul>
-                        <li>react-scripts</li>
-                        <li>clean-webpack-plugin</li>
-                        <li>css-loader</li>
-                        <li>file-loader</li>
-                        <li>mini-css-extract-plugin</li>
-                        <li>sass-loader</li>
-                        <li>webp-converter</li>
-                        <li>webpack</li>
-                        <li>webpack-cli</li>
-                        <li>webpack-fix-style-only-entries</li>
-                        <li>@automattic/webpack-rtl-plugin</li>
-                        <li>@craco/craco</li>
-                        <li>@craco/types</li>
-                      </ul>
-                    </li>
-                    <li>
-                      <h6 className="d-inline-block">
-                        3. Replace the entry file <code>index.tsx</code> to{' '}
-                        <code>main.tsx</code> and update this file.
-                      </h6>
-                    </li>
-                    <li>
-                      <h6 className="d-inline-block">
-                        4. Move index.html file from src to root folder and
-                        update related paths. Add the following files.
-                      </h6>
-                      <ul>
-                        <li>compile-scss.ts</li>
-                        <li>eslint.config.js</li>
-                        <li>global.d.ts</li>
-                        <li>index.html</li>
-                        <li>src/vite-env.d.ts</li>
-                        <li>vite.config.ts</li>
-                        <li>tsconfig.app.json</li>
-                        <li>tsconfig.node.json</li>
-                      </ul>
-                    </li>
-
-                    <li>
-                      <h6 className="d-inline-block">
-                        5. Update vite.config.ts
-                      </h6>
-                    </li>
-                    <li>
-                      <import className="d-inline-block">
-                        6. Update environment variables. CRA uses REACT_APP_ ,
-                        Vite uses VITE_. CRA uses process.env and vite uses
-                        import.meta.env. Replace all process.evn with
-                        import.meta.env
-                      </import { classNames } from 'classnames';
-h6>
-                    </li>
-                  </ul>
-                </p> */}
                 <div className="bg-body-highlight p-3 py-5 mb-5">
+                  <Alert
+                    variant={'subtle-warning'}
+                    className="d-flex align-items-center"
+                  >
+                    <FontAwesomeIcon
+                      icon={faCircleInfo}
+                      className="text-warning fs-5 me-3"
+                    />
+                    This is a major update. Please backup your project before
+                    upgrading to the latest version
+                  </Alert>
                   <p>
                     In this version, we have migrated our project from Create
-                    React App (CRA) to Vite. If you're upgrading from v1.8.0 to
-                    v1.9.0, please follow the steps outlined below.
+                    React App (CRA) to Vite. If you're upgrading from{' '}
+                    <code>v1.8.0</code> to <code>v1.9.0</code>, please follow
+                    the steps outlined below.
                   </p>
                   <h5 className="mb-2">1. Install Required packages</h5>
                   <PhoenixLiveEditor
@@ -149,42 +87,55 @@ h6>
                   <h5 className="mt-3">3. Update Entry File</h5>
                   <ul>
                     <li>
-                      Rename index.tsx to main.tsx and update the changes.
+                      Rename <code>index.tsx</code> to <code>main.tsx</code> and
+                      update the changes.
                     </li>
                   </ul>
                   <h5 className="mt-3">4. Move and Add Files</h5>
                   <ul>
                     <li>
-                      Move <code>index.html</code> from src to root folder and
-                      update the changes.
+                      Move <code>index.html</code> from <code>src</code> to{' '}
+                      <code>root</code> folder and update the changes.
                     </li>
                     <li>
                       Make Sure you add these files
                       <ul>
-                        <li>compile-scss.ts</li>
-                        <li>eslint.config.js</li>
-                        <li>global.d.ts</li>
-                        <li>index.html</li>
-                        <li>src/vite-env.d.ts</li>
-                        <li>vite.config.ts</li>
-                        <li>tsconfig.app.json</li>
-                        <li>tsconfig.node.json</li>
+                        <li>
+                          <code>compile-scss.ts</code>
+                        </li>
+                        <li>
+                          <code>eslint.config.js</code>
+                        </li>
+                        <li>
+                          <code>global.d.ts</code>
+                        </li>
+                        <li>
+                          <code>index.html</code>
+                        </li>
+                        <li>
+                          <code>src/vite-env.d.ts</code>
+                        </li>
+                        <li>
+                          <code>vite.config.ts</code>
+                        </li>
+                        <li>
+                          <code>tsconfig.app.json</code>
+                        </li>
+                        <li>
+                          <code>tsconfig.node.json</code>
+                        </li>
                       </ul>
                     </li>
                     <li>
                       In vite <code>~</code> is not supported SCSS files. You
-                      need to update the import paths to use relative or
+                      need to update all the import paths to use relative or
                       absolute paths instead, like the examples below
                     </li>
                     <PhoenixLiveEditor
-                      code={`@import '~bootstrap/scss/functions'\n//to \n@import '../../../node_modules/bootstrap/scss/functions'`}
+                      code={`@import '~bootstrap/scss/functions'\n//to \n@import '../../../node_modules/bootstrap/scss/functions'\n\nReview the files listed below and any other files where the ~ symbol is used to import from node_modules:\nsrc/assets/scss/theme.scss, \nsrc/assets/scss/_bootstrap.scss, \nsrc/assets/scss/user.scss`}
                     />
                   </ul>
-
-                  <h5 className="mt-3">
-                    5. Update <code>vite.config.ts</code>
-                  </h5>
-                  <h5 className="mt-3">6. Update environment variables</h5>
+                  <h5 className="mt-3">5. Update environment variables</h5>
                   <ul>
                     <li>
                       Rename all <code>REACT_APP_</code> variables ➝{' '}
@@ -199,7 +150,7 @@ h6>
                     />
                   </ul>
                   <h5 className="mt-3 mb-2">
-                    7. Update <code>package.json</code> scripts
+                    6. Update <code>package.json</code> scripts
                   </h5>
                   <PhoenixLiveEditor
                     code={`"scripts": {\n "dev": "vite",\n "build": "vite build",\n "preview": "vite preview",\n}`}
