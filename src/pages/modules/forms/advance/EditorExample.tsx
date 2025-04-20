@@ -25,7 +25,7 @@ const EditorExample = () => {
       <DocPageHeader
         title="Editor"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses Tinymce React for rich text editor. TinyMCE React component integrates TinyMCE into React projects.`}
         link={{
           text: 'Documentation for React Tinymce',
@@ -85,12 +85,11 @@ const EditorExample = () => {
                 Tiny Cloud
               </a>
               . And collect your api key and paste it in the .env file variable
-              <code> REACT_APP_TINYMCE_APIKEY</code>. Then add the apiKey in
-              editor.
+              <code> VITE_TINYMCE_APIKEY</code>. Then add the apiKey in editor.
             </p>
 
             <PhoenixLiveEditor
-              code={`REACT_APP_TINYMCE_APIKEY= your_api_key_here`}
+              code={`VITE_TINYMCE_APIKEY= your_api_key_here`}
             />
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body>
@@ -98,7 +97,7 @@ const EditorExample = () => {
               code={`
               <Editor 
                 . . .
-                apiKey={import.meta.env.REACT_APP_TINYMCE_APIKEY} // your tinymce api key
+                apiKey={import.meta.env.VITE_TINYMCE_APIKEY} // your tinymce api key
               />
                 
               `}

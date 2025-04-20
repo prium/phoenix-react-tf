@@ -222,7 +222,7 @@ const BootstrapCarousel = () => {
         link={{
           text: 'Carousels on react-bootstrap',
           url: `${
-            import.meta.env.REACT_APP_RB_URL_PREFIX || ''
+            import.meta.env.VITE_RB_URL_PREFIX || ''
           }/components/carousel/`
         }}
       />

@@ -22,9 +22,8 @@ const Migrations = () => {
               <div className="ms-3 flex-1">
                 <h4 className="alert-heading">Before you update!</h4>
                 Backup your files and read the changelog before updating{' '}
-                {import.meta.env.REACT_APP_TITLE}-React on your project. If you
-                come across with any problems with{' '}
-                {import.meta.env.REACT_APP_TITLE}
+                {import.meta.env.VITE_TITLE}-React on your project. If you come
+                across with any problems with {import.meta.env.VITE_TITLE}
                 -React template during the update, feel free to contact us at{' '}
                 <a href="mailto:support@themewagon.com">
                   support@themewagon.com
@@ -138,7 +137,7 @@ const Migrations = () => {
                   <h5 className="mt-3">5. Update environment variables</h5>
                   <ul>
                     <li>
-                      Rename all <code>REACT_APP_</code> variables ➝{' '}
+                      Rename all <code>VITE_</code> variables ➝{' '}
                       <code>VITE_</code>{' '}
                     </li>
                     <li>
@@ -146,7 +145,7 @@ const Migrations = () => {
                       <code>import.meta</code> like the examples below
                     </li>
                     <PhoenixLiveEditor
-                      code={`process.env.REACT_APP_API_URL \n//with \nimport.meta.env.VITE_API_URL`}
+                      code={`process.env.VITE_API_URL \n//with \nimport.meta.env.VITE_API_URL`}
                     />
                   </ul>
                   <h5 className="mt-3 mb-2">

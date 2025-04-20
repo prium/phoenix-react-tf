@@ -10,7 +10,7 @@ import { useAppContext } from 'providers/AppProvider';
 import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker?worker';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-mapboxgl.accessToken = import.meta.env.VITE_APP_MAPBOX_ACCESS_TOKEN || '';
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '';
 // @ts-ignore
 mapboxgl.workerClass = MapboxWorker;
 

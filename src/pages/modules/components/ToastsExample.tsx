@@ -210,9 +210,7 @@ const ToastsExample = () => {
         description="Push notifications to your visitors with a toast, a lightweight and easily customizable alert message."
         link={{
           text: 'Toasts on react-bootstrap',
-          url: `${
-            import.meta.env.VITE_APP_RB_URL_PREFIX || ''
-          }/components/toasts/`
+          url: `${import.meta.env.VITE_RB_URL_PREFIX || ''}/components/toasts/`
         }}
       />
 

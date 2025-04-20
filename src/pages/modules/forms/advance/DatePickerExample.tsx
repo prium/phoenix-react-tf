@@ -99,7 +99,7 @@ const DatePickerExample = () => {
       <DocPageHeader
         title="React Flatpickr"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses React Flatpickr as datepicker. React Flatpickr is a simple and reusable Datepicker component for React.`}
         link={{
           text: 'React Flatpickr Documentation',

@@ -9,7 +9,7 @@ export default ({ mode }) => {
   process.env = { ...process.env, ...env };
 
   // Set default port if not specified
-  const port = parseInt(env.VITE_APP_PORT || '5001', 10);
+  const port = parseInt(env.VITE_PORT || '5001', 10);
   console.log('Server will run on port:', port);
 
   return defineConfig({

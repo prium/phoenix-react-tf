@@ -49,7 +49,7 @@ interface Destination2 {
 }
 
 SwiperCore.use([Autoplay]);
-mapboxgl.accessToken = import.meta.env.VITE_APP_MAPBOX_ACCESS_TOKEN || '';
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN || '';
 // @ts-ignore
 mapboxgl.workerClass = MapboxWorker;
 

@@ -36,7 +36,7 @@ const EmojiButtonExample = () => {
       <DocPageHeader
         title="Emoji button"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses Picmo as a emoji picker component. It displays a panel of emojis where one can be selected. What is done with the selected emoji is up to you.`}
         link={{
           text: 'Documentation for Picmo',

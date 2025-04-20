@@ -29,7 +29,7 @@ const FileUploaderExample = () => {
       <DocPageHeader
         title="File Uploader"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses React Dropzone for file-uploader. React Dropzone provides a simple react hook to create a HTML5-compliant drag'n'drop zone for files.`}
         link={{
           text: 'React Dropzone Documentation',

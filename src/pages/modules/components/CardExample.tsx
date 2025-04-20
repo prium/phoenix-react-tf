@@ -166,9 +166,7 @@ const CardExample = () => {
         description="Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options."
         link={{
           text: 'Cards on react-bootstrap',
-          url: `${
-            import.meta.env.VITE_APP_RB_URL_PREFIX || ''
-          }/components/cards/`
+          url: `${import.meta.env.VITE_RB_URL_PREFIX || ''}/components/cards/`
         }}
       />
 

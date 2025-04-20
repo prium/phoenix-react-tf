@@ -52,7 +52,7 @@ const AccordionExample = () => {
         link={{
           text: 'Accordion on react-bootstrap',
           url: `${
-            import.meta.env.VITE_APP_RB_URL_PREFIX || ''
+            import.meta.env.VITE_RB_URL_PREFIX || ''
           }/components/accordion/`
         }}
       />

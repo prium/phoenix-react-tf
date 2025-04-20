@@ -35,7 +35,7 @@ const CalendarExample = () => {
       <DocPageHeader
         title="Calendar"
         description={`${
-          import.meta.env.VITE_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses FullCalendar for calendar component. FullCalendar seamlessly integrates with the React JavaScript framework. It provides a component that exactly matches the functionality of FullCalendar’s standard API.`}
         link={{
           text: 'FullCalendar Documentation',

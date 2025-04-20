@@ -96,7 +96,7 @@ const LightboxExample = () => {
       <DocPageHeader
         title="Lightbox"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         }-React uses FsLightbox-react for lightbox. React FsLightbox is a flexible lightbox component for displaying images in a React project.`}
         link={{
           text: 'FsLightbox-react Documentation',
@@ -110,10 +110,10 @@ const LightboxExample = () => {
             <div>
               <p className="mb-2">
                 The <code>useLightbox</code> custom hook is used to implement
-                FsLightbox feature within {import.meta.env.REACT_APP_TITLE}{' '}
-                React. The <code>useLightbox</code> hook simplifies the code
-                needed for this functionality, promoting better code
-                organization and maintainability.
+                FsLightbox feature within {import.meta.env.VITE_TITLE} React.
+                The <code>useLightbox</code> hook simplifies the code needed for
+                this functionality, promoting better code organization and
+                maintainability.
               </p>
               <h5 className="mb-2">How to use :</h5>
               <p className="mb-2">

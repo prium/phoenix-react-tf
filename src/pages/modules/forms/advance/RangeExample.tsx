@@ -118,7 +118,7 @@ const ReactRangeExample = () => {
       <DocPageHeader
         title="Range Slider"
         description={`${
-          import.meta.env.REACT_APP_TITLE
+          import.meta.env.VITE_TITLE
         } using React-range for advanced input with a slider which allows bring your own styles and markup.`}
         link={{
           text: 'React-range Documentation',
