@@ -75,10 +75,10 @@ const Migrations = () => {
                   </p>
                   <h5 className="mb-2">1. Install Required packages</h5>
                   <PhoenixLiveEditor
-                    code={`npm install vite vite-tsconfig-paths chokidar rtlcss @vitejs/plugin-react @types/rtlcss`}
+                    code={`npm install vite vite-tsconfig-paths rtlcss @vitejs/plugin-react @types/rtlcss`}
                   />
                   <h5 className="mt-3 mb-2">
-                    2. Uninstall CRA-Related Packages
+                    2. Uninstall CRA & webpack Related Packages
                   </h5>
                   <PhoenixLiveEditor
                     code={`npm uninstall react-scripts clean-webpack-plugin css-loader file-loader mini-css-extract-plugin sass-loader webp-converter webpack webpack-cli webpack-fix-style-only-entries @automattic/webpack-rtl-plugin @craco/craco @craco/types`}
@@ -87,17 +87,18 @@ const Migrations = () => {
                   <ul>
                     <li>
                       Rename <code>index.tsx</code> to <code>main.tsx</code> and
-                      update the changes.
+                      update the changes from this latest version.
                     </li>
                   </ul>
                   <h5 className="mt-3">4. Move and Add Files</h5>
                   <ul>
                     <li>
-                      Move <code>index.html</code> from <code>src</code> to{' '}
-                      <code>root</code> folder and update the changes.
+                      Move <code>index.html</code> from <code>src</code> to root
+                      folder and update the changes.
                     </li>
                     <li>
-                      Make Sure you add these files
+                      Make sure you add the files listed below from this latest
+                      version.
                       <ul>
                         <li>
                           <code>compile-scss.ts</code>
@@ -125,6 +126,9 @@ const Migrations = () => {
                         </li>
                       </ul>
                     </li>
+                  </ul>
+                  <h5 className="mt-3">5. Update SCSS imports</h5>
+                  <ul>
                     <li>
                       In vite <code>~</code> is not supported SCSS files. You
                       need to update all the import paths to use relative or
@@ -134,26 +138,33 @@ const Migrations = () => {
                       code={`@import '~bootstrap/scss/functions'\n//to \n@import '../../../node_modules/bootstrap/scss/functions'\n\nReview the files listed below and any other files where the ~ symbol is used to import from node_modules:\nsrc/assets/scss/theme.scss, \nsrc/assets/scss/_bootstrap.scss, \nsrc/assets/scss/user.scss`}
                     />
                   </ul>
-                  <h5 className="mt-3">5. Update environment variables</h5>
+
+                  <h5 className="mt-3">6. Update environment variables</h5>
                   <ul>
-                    <li>
-                      Rename all <code>VITE_</code> variables ➝{' '}
-                      <code>VITE_</code>{' '}
+                    <li className="mt-2">
+                      Rename all <code>REACT_APP_</code> prefix ➝ to{' '}
+                      <code>VITE_</code>, following the example below.
                     </li>
-                    <li>
-                      Replace <code>process.env</code> with{' '}
+                    <PhoenixLiveEditor
+                      code={`VITE_PUBLIC_URL=\nVITE_PORT=\nVITE_NAME=\nVITE_TITLE=\nVITE_VERSION=\nVITE_BS_VERSION=\nVITE_TINYMCE_APIKEY=\nVITE_MAPBOX_ACCESS_TOKEN=\nVITE_RB_URL_PREFIX=\nVITE_PURCHASE_LINK=`}
+                    />
+                    <li className="mt-2">
+                      Replace all <code>process.env</code> with{' '}
                       <code>import.meta</code> like the examples below
                     </li>
                     <PhoenixLiveEditor
-                      code={`process.env.VITE_API_URL \n//with \nimport.meta.env.VITE_API_URL`}
+                      code={`process.env.REACT_APP_API_URL \n//with \nimport.meta.env.VITE_API_URL`}
                     />
                   </ul>
                   <h5 className="mt-3 mb-2">
-                    6. Update <code>package.json</code> scripts
+                    7. Update the following scripts in <code>package.json</code>
+                    .
                   </h5>
                   <PhoenixLiveEditor
                     code={`"scripts": {\n "dev": "vite",\n "build": "vite build",\n "preview": "vite preview",\n}`}
                   />
+                  <h5 className="mt-3 mb-2">8. Run the server</h5>
+                  <PhoenixLiveEditor code={`npm run dev`} />
                 </div>
               </>
             )}

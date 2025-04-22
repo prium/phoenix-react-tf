@@ -23434,7 +23434,7 @@ span.flatpickr-weekday,
 }
 
 .picmo__picker.picmo__picker {
-  width: 300px;
+  min-width: 330px;
   --background-color: #f5f7fa;
   --border-color: var(--phoenix-gray-300);
   --category-tab-active-color: var(--phoenix-gray-300);
@@ -23498,6 +23498,11 @@ span.flatpickr-weekday,
   background: unset;
   color: #3874ff;
   --category-tab-active-background-color: var(--phoenix-secondary-bg);
+}
+
+html[dir=rtl] .picmo__picker.picmo__picker .picmo__searchAccessory {
+  left: 1em !important;
+  right: unset !important;
 }
 
 .react-select-container {

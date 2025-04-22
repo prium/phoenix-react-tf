@@ -5,12 +5,10 @@ export default [
     version: '1.9.0',
     title: 'Helios',
     alertText:
-      'This is a major update. Please backup your project before upgrading to the latest version',
-    publishDate: '20 April, 2025',
+      'This is a major update. Please backup your project before upgrading to the latest version. See the migration guide for details.',
+    publishDate: '22 April, 2025',
     logs: {
-      update: [
-        'Migrated from Create React App (CRA) to Vite. See the migration guide.'
-      ]
+      update: ['Migrated from Create React App (CRA) to Vite.']
     }
   },
   {
