@@ -47,7 +47,16 @@ const ChangeLog = () => {
                   icon={faCircleInfo}
                   className="text-warning fs-5 me-3"
                 />
-                {changelog.alertText}
+                {changelog.alertText}{' '}
+                {changelog.alertLink && (
+                  <span>
+                    {changelog.alertLink.prefix || ''}{' '}
+                    <Link to={changelog.alertLink.link || ''}>
+                      {changelog.alertLink.linkText || ''}
+                    </Link>{' '}
+                    {changelog.alertLink.suffix || ''}
+                  </span>
+                )}
               </Alert>
             )}
 

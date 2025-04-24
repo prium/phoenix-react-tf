@@ -5,7 +5,13 @@ export default [
     version: '1.9.0',
     title: 'Helios',
     alertText:
-      'This is a major update. Please backup your project before upgrading to the latest version. See the migration guide for details.',
+      'This is a major update. Please backup your project before upgrading to the latest version.',
+    alertLink: {
+      prefix: 'See the',
+      linkText: 'migration',
+      link: '/migrations/#v1.9.0',
+      suffix: 'for details.'
+    },
     publishDate: '24 April, 2025',
     logs: {
       update: [
