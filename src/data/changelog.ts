@@ -10,6 +10,8 @@ export default [
     logs: {
       update: [
         'Migrated from <b> Create React App (CRA) to Vite.</b>',
+        'PACKAGE: Bootstrap to 5.3.5',
+        'PACKAGE: React Bootstrap to 2.10.9',
         'PACKAGE: Removed <code>react-visibility-sensor</code>'
       ],
       new: ['PACKAGE: <code>react-intersection-observer</code>'],
