@@ -6,9 +6,14 @@ export default [
     title: 'Helios',
     alertText:
       'This is a major update. Please backup your project before upgrading to the latest version. See the migration guide for details.',
-    publishDate: '22 April, 2025',
+    publishDate: '24 April, 2025',
     logs: {
-      update: ['Migrated from Create React App (CRA) to Vite.']
+      update: [
+        'Migrated from <b> Create React App (CRA) to Vite.</b>',
+        'PACKAGE: Removed <code>react-visibility-sensor</code>'
+      ],
+      new: ['PACKAGE: <code>react-intersection-observer</code>'],
+      fix: ['Console warnings', 'Minor bugs']
     }
   },
   {
@@ -20,7 +25,7 @@ export default [
         'PAGE: <code>apps/file-manager/grid-view</code>',
         'PAGE: <code>apps/file-manager/list-view</code>'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -45,7 +50,7 @@ export default [
         'PACKAGE : <code>swiper 11.0.3 to 11.1.15</code>',
         'PACKAGE : Removed <code>react-beautiful-dnd</code>'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -70,7 +75,7 @@ export default [
         'Horizontal nav scrollbar issue in firefox',
         'Multiple file select issue',
         'Mapbox full screen issue',
-        'Minor Bugs'
+        'Minor bugs'
       ]
     }
   },
@@ -91,7 +96,7 @@ export default [
         'DOC : <code>React Range Documentation</code>'
       ],
       update: ['PACKAGE: React Bootstrap to 2.10.4'],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -111,7 +116,7 @@ export default [
         'PACKAGE: React Bootstrap to 2.10.2',
         'DOC: Tinymce documentation'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -138,7 +143,7 @@ export default [
         'HTML: <code>text-{themeColor}-{variant}</code> classes replaced with <code>text-{themeColor}-light/lighter/dark/darker</code>',
         'HTML: <code>z-index-bg-{themeColor}-{variant}</code> classes replaced with <code>bg-{themeColor}-light/lighter/dark/darker</code>'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -175,7 +180,7 @@ export default [
         'PACKAGE: eslint-plugin-prettier to v5.0.1',
         'PACKAGE: prettier to v3.0.3'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   },
   {
@@ -216,7 +221,7 @@ export default [
         'Added <code>footerProps</code> in <code>AdvanceTable</code> columns definition.',
         'Example added for all <code>Icon</code> sets.'
       ],
-      fix: ['Minor Bugs']
+      fix: ['Minor bugs']
     }
   }
 ];

@@ -33,7 +33,6 @@ const compileSCSS = () => ({
 
     scssWatcher.on('change', file => {
       if (file.endsWith('.scss')) {
-        console.log(`🔁 SCSS file changed: ${file}`);
         scssFiles.map(file => {
           compileSCSSToCSS(file);
         });
@@ -48,11 +47,12 @@ const compileSCSS = () => ({
     });
   },
   handleHotUpdate({ file, server }) {
-    console.log(file);
-    server.ws.send({
-      type: 'full-reload',
-      path: '*'
-    });
+    if (file.endsWith('.scss')) {
+      server.ws.send({
+        type: 'full-reload',
+        path: '*'
+      });
+    }
   }
 });
 
