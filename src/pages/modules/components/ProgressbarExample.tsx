@@ -105,15 +105,6 @@ const ProgressbarExample = () => {
         </PhoenixDocCard>
 
         <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Stacked">
-            <p className="mb-0">
-              Nest <code>&lt;ProgressBar /&gt;</code>s to stack them.
-            </p>
-          </PhoenixDocCard.Header>
-          <PhoenixDocCard.Body code={stripedCode} />
-        </PhoenixDocCard>
-
-        <PhoenixDocCard className="mb-4">
           <PhoenixDocCard.Header title="Animated">
             <p className="mb-0">
               Add <code>animated</code> prop to animate the stripes right to
