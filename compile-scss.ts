@@ -36,23 +36,15 @@ const compileSCSS = () => ({
         scssFiles.map(file => {
           compileSCSSToCSS(file);
         });
-        // server.ws.send({
-        //   type: 'full-reload'
-        // })
+        server.hot.send({
+          type: 'full-reload'
+        });
       }
     });
 
     scssFiles.map(file => {
       compileSCSSToCSS(file);
     });
-  },
-  handleHotUpdate({ file, server }) {
-    if (file.endsWith('.scss')) {
-      server.ws.send({
-        type: 'full-reload',
-        path: '*'
-      });
-    }
   }
 });
 

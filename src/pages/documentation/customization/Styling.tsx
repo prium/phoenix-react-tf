@@ -254,31 +254,6 @@ const Styling = () => {
             <PhoenixLiveEditor code={usingCssVariablesCode} />
           </PhoenixDocCard.Body>
         </PhoenixDocCard>
-
-        <PhoenixDocCard className="mb-4">
-          <PhoenixDocCard.Header title="Compiling SCSS" />
-          <PhoenixDocCard.Body>
-            <p>
-              Run <code>npm run build:css</code> command in your project
-              directory to compile scss. This will compile all the SCSS files
-              from <code>src/assets/scss/</code> directory and generate{' '}
-              <code> theme.min.css </code>,<code> theme-rtl.min.css </code>,{' '}
-              <code> user.min.css </code> <code> user-rtl.min.css </code>files
-              in <code>public/css/</code> directory. Reload your browser to see
-              the changes.
-            </p>
-            <p>
-              <strong>
-                You can also use the SCSS watcher to automatically compile and
-                reload your browser every time you save your SCSS files by
-                running the command
-              </strong>
-              <code> npm run watch:css </code>
-              <strong> in a separate terminal window while running</strong>{' '}
-              <code>npm start</code> <strong> in another.</strong>
-            </p>
-          </PhoenixDocCard.Body>
-        </PhoenixDocCard>
       </DocPagesLayout>
     </div>
   );

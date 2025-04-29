@@ -4,8 +4,8 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import DocPagesLayout from 'layouts/DocPagesLayout';
 
 const serveCode = `
-  npm install -g serve
-  serve -s build
+  npm run build
+  npm run preview
 `;
 
 const GettingStarted = () => {
@@ -37,11 +37,11 @@ const GettingStarted = () => {
             <p>
               This project is scaffolded using{' '}
               <a
-                href="https://create-react-app.dev"
+                href="https://vite.dev/guide/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Create React App
+                vite
               </a>
               .
             </p>
@@ -70,8 +70,8 @@ const GettingStarted = () => {
                 directory.
               </li>
               <li>
-                Run <code>npm start</code>. A local web server will start at{' '}
-                <code>http://localhost:3000</code>
+                Run <code>npm run dev</code>. A local web server will start at{' '}
+                <code>http://localhost:5001</code>
               </li>
             </ol>
           </PhoenixDocCard.Body>
@@ -88,11 +88,11 @@ const GettingStarted = () => {
               Edit <code>homapage</code> in your <code>package.json</code> file
               to change asset files relative paths. For more information visit{' '}
               <a
-                href="https://create-react-app.dev/docs/deployment/#building-for-relative-paths"
+                href="https://vite.dev/guide/static-deploy.html"
                 target="_blank"
                 rel="noreferrer"
               >
-                Create React App Doc.
+                Vite Doc.
               </a>{' '}
               Then Run <code>npm run build</code> command in your project
               directory to make the Production build.
@@ -100,7 +100,7 @@ const GettingStarted = () => {
             <p>
               This will create an optimized production build by compililing,
               merging and minifying all the source files as necessary and will
-              put them in the <code>build/</code> folder.
+              put them in the <code>dist/</code> folder.
             </p>
             <p>
               To run the production build locally run the following commands:
