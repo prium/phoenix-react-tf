@@ -23563,7 +23563,8 @@ html[dir=rtl] .picmo__picker.picmo__picker .picmo__searchAccessory {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-size: 0.64rem;
+  font-size: 1rem;
+  color: var(--phoenix-body-color);
 }
 .react-select__control .react-select__value-container.react-select__value-container--has-value {
   padding-top: 4px;

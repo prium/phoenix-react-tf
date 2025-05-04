@@ -12,7 +12,7 @@ export default [
       link: '/migrations/#v1.9.0',
       suffix: 'for details.'
     },
-    publishDate: '30 April, 2025',
+    publishDate: '4 May, 2025',
     logs: {
       update: [
         'Migrated from <b> Create React App (CRA) to Vite.</b>',

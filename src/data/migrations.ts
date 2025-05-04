@@ -22,6 +22,7 @@ export default [
       'src/assets/scss/theme/_ecommerce.scss',
       'src/assets/scss/theme/_offcanvas.scss',
       'src/assets/scss/theme/plugins/_picmo.scss',
+      'src/assets/scss/theme/plugins/_react-select.scss',
       'src/assets/scss/user.scss',
       'src/components/base/MapBox.tsx',
       'src/components/base/MapBoxCluster.tsx',
