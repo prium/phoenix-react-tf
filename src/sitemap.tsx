@@ -78,6 +78,14 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'stock',
+            path: '/dashboard/stock',
+            pathName: 'stock',
+            topNavIcon: 'dollar-sign',
+            active: true,
+            new: true
+          },
+          {
             name: 'social-feed',
             path: '/apps/social/feed',
             pathName: 'social-feed',
@@ -455,6 +463,20 @@ export const routes: RouteItems[] = [
                 pathName: 'checkout'
               }
             ]
+          }
+        ]
+      },
+      {
+        name: 'stock',
+        icon: 'dollar-sign',
+        new: true,
+        active: true,
+        pages: [
+          {
+            name: 'stock-details',
+            path: '/apps/stock/stock-details',
+            pathName: 'stock-details',
+            active: true
           }
         ]
       },

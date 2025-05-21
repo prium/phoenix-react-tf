@@ -154,3 +154,48 @@ export const TopCouponChartTooltip = (
 
   return obj;
 };
+
+export const stockShareReportTooltipFormatter = params => {
+  return `<div class="fs-9 text-body-secondary">
+          <table class="mb-2">
+            <tbody>
+              <tr>
+                <th class="fw-bold" style="width: 72px">Price</th>
+                <th class="text-center px-2 fw-semibold">:</th>
+                <th class="fw-semibold">${params[0].value[6]} USD</th>
+              </tr>
+            </tbody>
+          </table>
+          <div class="border-top pt-2">
+            <table>
+              <tbody>
+                <tr>
+                  <th class="fw-bold" style="width: 72px">Open</th>
+                  <th class="text-center px-2 fw-semibold">:</th>
+                  <th class="fw-semibold">${params[0].value[1]} USD</th>
+                </tr>
+                <tr>
+                  <th class="fw-bold" style="width: 72px">Close</th>
+                  <th class="text-center px-2 fw-semibold">:</th>
+                  <th class="fw-semibold">${params[0].value[2]} USD</th>
+                </tr>
+                <tr>
+                  <th class="fw-bold" style="width: 72px">High</th>
+                  <th class="text-center px-2 fw-semibold">:</th>
+                  <th class="fw-semibold">${params[0].value[4]} USD</th>
+                </tr>
+                <tr>
+                  <th class="fw-bold" style="width: 72px">Low</th>
+                  <th class="text-center px-2 fw-semibold">:</th>
+                  <th class="fw-semibold">${params[0].value[3]} USD</th>
+                </tr>
+                <tr>
+                  <th class="fw-bold" style="width: 72px">Volume</th>
+                  <th class="text-center px-2 fw-semibold">:</th>
+                  <th class="fw-semibold">${params[0].value[5]}k</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>`;
+};

@@ -1,9 +1,10 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ReactElement } from 'react';
+import { forwardRef, ReactElement } from 'react';
 import Select, {
   ClearIndicatorProps,
   DropdownIndicatorProps,
+  SelectInstance,
   components
 } from 'react-select';
 import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager';
@@ -31,22 +32,28 @@ const DropdownIndicator = (props: DropdownIndicatorProps) => {
   );
 };
 
-const ReactSelect = ({ icon, ...rest }: ReactSelectProps) => {
-  return (
-    <div className="react-select-container">
-      <Select
-        closeMenuOnSelect={false}
-        components={{ ClearIndicator, DropdownIndicator }}
-        classNamePrefix="react-select"
-        classNames={{
-          control: () => (icon ? 'ps-5' : ''),
-          placeholder: () => (icon ? 'ps-2' : '')
-        }}
-        {...rest}
-      />
-      {icon}
-    </div>
-  );
-};
+const ReactSelect = forwardRef<SelectInstance, ReactSelectProps>(
+  ({ icon, ...rest }, ref) => {
+    return (
+      <div className="react-select-container">
+        <Select
+          closeMenuOnSelect={false}
+          openMenuOnFocus
+          ref={ref}
+          components={{ ClearIndicator, DropdownIndicator }}
+          classNamePrefix="react-select"
+          classNames={{
+            control: () => (icon ? 'ps-5' : ''),
+            placeholder: () => (icon ? 'ps-2' : '')
+          }}
+          {...rest}
+        />
+        {icon}
+      </div>
+    );
+  }
+);
+
+ReactSelect.displayName = 'ReactSelect';
 
 export default ReactSelect;
