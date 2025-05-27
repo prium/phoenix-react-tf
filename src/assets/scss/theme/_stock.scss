@@ -192,6 +192,15 @@ html[dir='rtl']{
   }
 }
 
+.stock-details-pagination{
+  .disabled {
+    .page-link {
+      background-color: transparent;
+      color: var(--#{$prefix}quaternary-bg);
+    }
+  }
+}
+
 .watchlist-collapsible[aria-expanded='true']+.summery-statistics{
   display: none;
 }

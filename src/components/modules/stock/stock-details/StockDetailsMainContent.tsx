@@ -8,8 +8,12 @@ import EventsTabContent from './tab/EventsTabContent';
 import CompanyProfileTabContent from './tab/CompanyProfileTabContent';
 import classNames from 'classnames';
 import { dividendContent } from 'data/stock/dividend';
-import { forecastDataItems } from 'data/stock/Forecast';
-
+import { forecastDataItems } from 'data/stock/forecast';
+import {
+  newsItems,
+  eventList,
+  companyProfileItems
+} from 'data/stock/stockDetails';
 export interface StockDetailsTabItem {
   id: string;
   name: string;
@@ -46,19 +50,21 @@ const stockDetailsTabItems: StockDetailsTabItem[] = [
   {
     id: 'news',
     name: 'News',
-    content: <NewsTabContent />,
+    content: <NewsTabContent newsItems={newsItems} />,
     className: 'px-3'
   },
   {
     id: 'events',
     name: 'Events',
-    content: <EventsTabContent />,
+    content: <EventsTabContent eventLists={eventList} />,
     className: 'px-3'
   },
   {
     id: 'company-profile',
     name: 'Company Profile',
-    content: <CompanyProfileTabContent />,
+    content: (
+      <CompanyProfileTabContent companyProfileItems={companyProfileItems} />
+    ),
     className: 'px-3'
   },
   {

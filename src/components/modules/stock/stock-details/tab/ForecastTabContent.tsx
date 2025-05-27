@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ForecastDataItem } from 'data/stock/Forecast';
+import { ForecastDataItem } from 'data/stock/forecast';
 import { Col, Row, Form, Card } from 'react-bootstrap';
 import { currencyFormat, numberFormat } from 'helpers/utils';
 import Badge from 'components/base/Badge';

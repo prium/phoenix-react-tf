@@ -7,7 +7,7 @@ import Rating from 'components/base/Rating';
 import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
 import MostAdvanceTableFooter from 'components/modules/stock/stock-details/tab/MostRecentForcastTableFooter';
-import { MostRecentForecastTableRowItem } from 'data/stock/Forecast';
+import { MostRecentForecastTableRowItem } from 'data/stock/forecast';
 import { currencyFormat, numberFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';
