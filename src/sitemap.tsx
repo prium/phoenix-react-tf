@@ -1,5 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHourglassHalf } from '@fortawesome/free-regular-svg-icons';
+import { faChartGantt } from '@fortawesome/free-solid-svg-icons';
 import {
   Icon,
   UilChartPie,
@@ -533,6 +534,15 @@ export const routes: RouteItems[] = [
             active: true
           }
         ]
+      },
+      {
+        name: 'gantt-chart',
+        iconSet: 'font-awesome',
+        icon: faChartGantt,
+        path: 'apps/gantt-chart',
+        pathName: 'app-gantt-chart',
+        active: true,
+        new: true
       },
       {
         name: 'social',
