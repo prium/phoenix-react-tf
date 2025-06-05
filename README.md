@@ -9,7 +9,7 @@ This project is scaffolded using Create React App.
 - Install Node.js if you do not already have it installed on your machine.
 - Open the “phoenix-react-{version}” directory with your cmd or terminal and run npm i
 - This command will download all the necessary dependencies for phoenix in the node_modules directory.
-- Run npm start. A local web server will start at http://localhost:3000.
+- Run npm run dev. A local web server will start at http://localhost:5001.
 
 ## Creating a Production Build
 
@@ -23,11 +23,10 @@ This will create an optimized production build by compiling, merging, and minify
 To run the production build locally, run the following commands:
 
 ```shell
- npm install -g serve
- serve -s build
+ npm run preview
 ```
 
 ### Design File
 
 Get the figma design file here:
-[https://www.figma.com/design/s2oA3ZYWiYRG6yfXewBSlw/Phoenix-React-Distributed-(v1.9.0)](<https://www.figma.com/design/s2oA3ZYWiYRG6yfXewBSlw/Phoenix-React-Distributed-(v1.9.0)
+[https://www.figma.com/design/cK2EwasWLD3OCGoGz5M0VK/Phoenix-React--Distributed_v1.10.0-?node-id=1248-35561&p=f&t=wxW9NWajvbasOf1D-0](<https://www.figma.com/design/cK2EwasWLD3OCGoGz5M0VK/Phoenix-React--Distributed_v1.10.0-?node-id=1248-35561&p=f&t=wxW9NWajvbasOf1D-0

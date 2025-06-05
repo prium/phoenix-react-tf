@@ -78,6 +78,14 @@ export const routes: RouteItems[] = [
             active: true
           },
           {
+            name: 'stock',
+            path: '/dashboard/stock',
+            pathName: 'stock',
+            topNavIcon: 'dollar-sign',
+            active: true,
+            new: true
+          },
+          {
             name: 'social-feed',
             path: '/apps/social/feed',
             pathName: 'social-feed',
@@ -319,7 +327,6 @@ export const routes: RouteItems[] = [
       },
       {
         name: 'travel-agency',
-        hasNew: true,
         icon: 'briefcase',
         active: true,
         pages: [
@@ -434,7 +441,6 @@ export const routes: RouteItems[] = [
           {
             name: 'trip',
             active: true,
-            new: true,
             pages: [
               {
                 name: 'homepage',
@@ -455,6 +461,32 @@ export const routes: RouteItems[] = [
                 pathName: 'checkout'
               }
             ]
+          }
+        ]
+      },
+      {
+        name: 'stock',
+        icon: 'dollar-sign',
+        new: true,
+        active: true,
+        pages: [
+          {
+            name: 'stock-details',
+            path: '/apps/stock/stock-details',
+            pathName: 'stock-details',
+            active: true
+          },
+          {
+            name: 'portfolio',
+            path: '/apps/stock/portfolio',
+            pathName: 'stock-portfolio',
+            active: true
+          },
+          {
+            name: 'watchlist',
+            path: '/apps/stock/watchlist',
+            pathName: 'stock-watchlist',
+            active: true
           }
         ]
       },
@@ -557,7 +589,6 @@ export const routes: RouteItems[] = [
         name: 'File manager',
         icon: 'folder',
         active: true,
-        new: true,
         pages: [
           {
             name: 'Grid view',

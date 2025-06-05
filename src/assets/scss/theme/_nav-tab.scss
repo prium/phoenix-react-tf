@@ -153,3 +153,24 @@
   background-color: var(--#{$prefix}body-bg);
   z-index: 1;
 }
+
+.optionChainTableHeader{
+  &.nav-underline{
+    .nav-link:not(.active){
+      border-color:  var(--#{$prefix}border-color-translucent);
+    }
+  }
+}
+
+.tabDetailsOptionChainTab{
+  .nav-link{
+    font-weight: $font-weight-semibold;
+    &.active{
+      color: var(--#{$prefix}emphasis-color);
+      font-weight: $font-weight-bold;
+    }
+    &:hover{
+      color: var(--#{$prefix}emphasis-color);
+    }
+  }
+}

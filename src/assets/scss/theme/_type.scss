@@ -30,7 +30,7 @@ h3,
 |   Line Clamp
 -----------------------------------------------*/
 
-@for $i from 1 through 3 {
+@for $i from 1 through 4 {
   .line-clamp-#{$i} {
     display: -webkit-box;
     -webkit-line-clamp: #{$i};

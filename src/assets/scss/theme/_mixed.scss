@@ -418,6 +418,11 @@
 .row-span-2 {
   grid-row: span 2 / span 2;
 }
+.row-span-xxl-1 {
+  @include media-breakpoint-up(xxl){
+    grid-row: span 1 / span 1 ;
+  }
+}
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
@@ -429,6 +434,14 @@
 }
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+
+.col-span-sm-6 {
+  @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(sm) {
+      grid-column: span 6 / span 6;
+    }
+  }
 }
 .col-span-md-6 {
   @include media-breakpoint-up(md) {
@@ -460,7 +473,16 @@
     grid-column: span 3 / span 3;
   }
 }
-
+.col-span-xxl-6 {
+  @include media-breakpoint-up(xxl){
+    grid-column: span 6 / span 6;
+  }
+}
+.col-span-xxl-4 {
+  @include media-breakpoint-up(xxl){
+    grid-column: span 4 / span 4;
+  }
+}
 .row-span-md-2 {
   @include media-breakpoint-up(md) {
     grid-row: span 2 / span 2;
@@ -470,6 +492,8 @@
 .row-start-2 {
   grid-row-start: 2;
 }
+
+
 
 .row-start-md-auto {
   @include media-breakpoint-up(md) {

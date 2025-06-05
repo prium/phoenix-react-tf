@@ -194,6 +194,7 @@ const LightboxExample = lazy(
 const ProjectManagement = lazy(
   () => import('pages/dashboard/ProjectManagement')
 );
+const StockDashboard = lazy(() => import('pages/dashboard/Stock'));
 const Crm = lazy(() => import('pages/dashboard/Crm'));
 const Analytics = lazy(() => import('pages/apps/crm/Analytics'));
 const Kanban = lazy(() => import('pages/apps/kanban/Kanban'));
@@ -201,6 +202,10 @@ const Default = lazy(() => import('pages/pages/landing/Default'));
 const Alternate = lazy(() => import('pages/pages/landing/Alternate'));
 const GridView = lazy(() => import('pages/apps/file-manager/GridView'));
 const ListView = lazy(() => import('pages/apps/file-manager/ListView'));
+
+const StockDetails = lazy(() => import('pages/apps/stock/StockDetails'));
+const Portfolio = lazy(() => import('pages/apps/stock/Portfolio'));
+const Watchlist = lazy(() => import('pages/apps/stock/Watchlist'));
 
 import Color from './pages/documentation/customization/Color';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
@@ -271,6 +276,14 @@ const routes: RouteObject[] = [
                 element: (
                   <Suspense fallback={<PhoenixLoader />}>
                     <TravelAgency />
+                  </Suspense>
+                )
+              },
+              {
+                path: 'stock',
+                element: (
+                  <Suspense fallback={<PhoenixLoader />}>
+                    <StockDashboard />
                   </Suspense>
                 )
               }
@@ -518,6 +531,35 @@ const routes: RouteObject[] = [
                           <ListView />
                         </Suspense>
                       </FileManagerProvider>
+                    )
+                  }
+                ]
+              },
+              {
+                path: 'stock',
+                children: [
+                  {
+                    path: 'stock-details',
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <StockDetails />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'portfolio',
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <Portfolio />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'watchlist',
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <Watchlist />
+                      </Suspense>
                     )
                   }
                 ]
