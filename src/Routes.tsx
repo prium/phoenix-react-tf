@@ -204,6 +204,8 @@ const GridView = lazy(() => import('pages/apps/file-manager/GridView'));
 const ListView = lazy(() => import('pages/apps/file-manager/ListView'));
 
 const StockDetails = lazy(() => import('pages/apps/stock/StockDetails'));
+const Portfolio = lazy(() => import('pages/apps/stock/Portfolio'));
+const Watchlist = lazy(() => import('pages/apps/stock/Watchlist'));
 
 import Color from './pages/documentation/customization/Color';
 import TravelLanding from 'pages/apps/travel-agency/landing/Landing';
@@ -541,6 +543,22 @@ const routes: RouteObject[] = [
                     element: (
                       <Suspense fallback={<PhoenixLoader />}>
                         <StockDetails />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'portfolio',
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <Portfolio />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'watchlist',
+                    element: (
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <Watchlist />
                       </Suspense>
                     )
                   }

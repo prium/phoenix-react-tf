@@ -18,7 +18,7 @@ const NewsTabContent = ({ newsItems }: NewsTabContentProps) => {
       </Col>
       <Col xs="auto">
         <div className="d-flex align-items-center gap-2">
-          <Form.Select size="sm" style={{ maxWidth: 140 }}>
+          <Form.Select style={{ maxWidth: 140 }}>
             <option value="all">All News</option>
             <option value="orcl">Orcl News</option>
             <option value="aapl">AAPL News</option>

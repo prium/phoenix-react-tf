@@ -18,7 +18,7 @@ interface MostAdvanceTableFooterProps {
   tableInfo?: string;
 }
 
-const MostAdvanceTableFooter = ({
+const MostRecentForecastTableFooter = ({
   className,
   showViewAllBtn = true,
   viewAllBtnClass,
@@ -127,8 +127,7 @@ const MostAdvanceTableFooter = ({
           <Pagination.Next
             disabled={!getCanNextPage()}
             onClick={() => setPageIndex(pageIndex + 1)}
-            className="m-0"
-            linkClassName="pe-0"
+            className="me-sm-n2"
           >
             <FontAwesomeIcon icon={faChevronRight} />
           </Pagination.Next>
@@ -138,4 +137,4 @@ const MostAdvanceTableFooter = ({
   );
 };
 
-export default MostAdvanceTableFooter;
+export default MostRecentForecastTableFooter;

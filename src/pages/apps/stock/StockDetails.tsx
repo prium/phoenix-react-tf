@@ -24,7 +24,7 @@ const StockDetails = () => {
             NASDAQ: AAPL · Real-Time Price · USD
           </h6>
           <StockDetailsMainContent />
-          <Row className="g-0 gap-3 flex-between-center mx-n4 mx-lg-n6 mt-4 px-4 py-3 px-lg-6 bg-body-secondary border-y position-sticky bottom-0 z-2 d-xl-none stock-details-footer">
+          <Row className="g-0 gap-3 flex-between-center mx-n4 mx-lg-n6 mt-4 px-4 py-3 px-lg-6 bg-body-secondary border-y position-sticky bottom-0 z-3 d-xl-none stock-details-footer">
             <Col xs="auto">
               <div className="d-flex align-items-center gap-2">
                 <h3 className="mb-0 text-body">
@@ -52,7 +52,7 @@ const StockDetails = () => {
               <div className="d-flex flex-wrap gap-2">
                 <Button
                   variant="primary"
-                  className="flex-1"
+                  className="flex-1 h-100"
                   onClick={() => setOpenOffcanvas(true)}
                 >
                   Buy Share

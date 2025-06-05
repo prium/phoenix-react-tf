@@ -52,13 +52,13 @@ const StockDetailsPagination = ({
           View {isAllVisible ? 'less' : 'all'}
         </Button>
       </Col>
-      <Col xs="auto">
-        <Pagination className="mb-0 justify-content-center">
-          <Pagination.Prev disabled={currentPage === 1} className="">
+      <Col xs="auto" className="me-sm-n2">
+        <Pagination className="mb-0 justify-content-center align-items-center">
+          <Pagination.Prev disabled={currentPage === 1} className="m-0">
             <FontAwesomeIcon icon={faChevronLeft} />
           </Pagination.Prev>
           {children}
-          <Pagination.Next linkClassName="pe-0">
+          <Pagination.Next className="m-0">
             <FontAwesomeIcon icon={faChevronRight} />
           </Pagination.Next>
         </Pagination>

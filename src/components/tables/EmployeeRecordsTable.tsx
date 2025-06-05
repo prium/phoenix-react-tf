@@ -118,7 +118,7 @@ const EmployeeRecordsTable = ({
       <AdvanceTableFooter
         pagination
         className="py-2 pagination-subtle fs-9"
-        nextPageLinkClassName="pe-0"
+        nextPageLinkClassName="me-sm-n2"
       />
     </AdvanceTableProvider>
   );

@@ -72,7 +72,7 @@ const stockDetailsTabItems: StockDetailsTabItem[] = [
     name: '',
     content: null,
     className: 'disabled h-100 px-3',
-    navItemClassName: 'flex-1 d-none d-md-inline d-xl-none d-xxl-inline'
+    navItemClassName: 'flex-1 d-none d-md-inline'
   }
 ];
 const StockDetailsMainContent = () => {

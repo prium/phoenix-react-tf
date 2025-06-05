@@ -127,7 +127,7 @@ const EventOffcanvas = ({ open, setOpen }: EventOffcanvasProps) => {
               <div>
                 <h4>Richard Dawkins</h4>
                 <p className="text-body-tertiary fs-9">
-                  Senior Strategies, Phoenix
+                  Senior Strategist, Phoenix
                 </p>
               </div>
             </div>

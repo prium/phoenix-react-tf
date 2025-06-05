@@ -12,7 +12,13 @@ const NewsCardBody = ({ news }: { news: NewsItem }) => {
       </p>
       <div className="d-flex flex-wrap align-items-center gap-2 mb-3 text-body-quaternary">
         <div className="d-flex">
-          <UilCalendarAlt size={10.8} />
+          <UilCalendarAlt
+            style={{
+              width: 10.25,
+              height: 15.23,
+              transform: 'translateY(-1px)'
+            }}
+          />
           <p className="mb-0 fs-10 ms-1">{news.postTime}</p>
         </div>
         <ul className="fs-10 ps-3 mb-0">
@@ -53,7 +59,13 @@ const StockDetailsNewsCard = ({ newsItem }: { newsItem: NewsItem }) => {
               </p>
               <div className="d-flex flex-wrap align-items-center gap-2 mb-3">
                 <div className="d-flex">
-                  <UilCalendarAlt size={10.8} />
+                  <UilCalendarAlt
+                    style={{
+                      width: 10.25,
+                      height: 15.23,
+                      transform: 'translateY(-1px)'
+                    }}
+                  />
                   <p className="mb-0 fs-10 ms-1">{newsItem.postTime}</p>
                 </div>
                 <ul className="fs-10 ps-3 mb-0">
@@ -83,7 +95,7 @@ const StockDetailsNewsCard = ({ newsItem }: { newsItem: NewsItem }) => {
             <img
               src={newsItem.image}
               alt=""
-              className="h-100 w-100 rounded-start-0 rounded-top rounded-top-sm-0 rounded-start-sm"
+              className="h-100 w-100 rounded-top rounded-top-sm-0 rounded-start-sm"
             />
           </Col>
           <Col xs={12} sm={8}>

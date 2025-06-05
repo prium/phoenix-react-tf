@@ -61,13 +61,22 @@ const StockOverViewSlider = ({ overviewItems }: StockOverViewSliderProps) => {
                   </h4>
                 </div>
                 {item.chartType === 'inverted' && (
-                  <StockOverviewInvertedChart data={item.echartsData} />
+                  <StockOverviewInvertedChart
+                    data={item.echartsData}
+                    className="overview-echart"
+                  />
                 )}
                 {item.chartType === 'mixed' && (
-                  <StockOverviewMixedChart data={item.echartsData} />
+                  <StockOverviewMixedChart
+                    data={item.echartsData}
+                    className="overview-echart"
+                  />
                 )}
                 {item.chartType === 'default' && (
-                  <StockOverviewChart data={item.echartsData} />
+                  <StockOverviewChart
+                    data={item.echartsData}
+                    className="overview-echart"
+                  />
                 )}
               </div>
             </Card.Body>

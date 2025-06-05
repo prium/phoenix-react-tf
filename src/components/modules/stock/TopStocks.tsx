@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Row, Col, Nav, Tab, Card } from 'react-bootstrap';
 import SearchBox from 'components/common/SearchBox';
 import { topStockItems } from 'data/stock/dashboardTopStocks';
-import TopStocksSidebarCard from './TopStocksSidebarCard';
+import TopStocksSidebarCard from 'components/cards/TopStocksSidebarCard';
 import TopStockMainContent from './TopStockMainContent';
 
 const TopStocks = () => {
@@ -12,10 +12,6 @@ const TopStocks = () => {
     if (key) {
       setActiveKey(key);
     }
-  };
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e);
   };
 
   return (
@@ -29,9 +25,8 @@ const TopStocks = () => {
         <Row className="gx-5">
           <Col xl={5} xxl={4} className="mb-4 mb-xl-0 top-stock-card-container">
             <SearchBox
-              placeholder="Enter Company or Symbol Name"
+              placeholder="Enter Company or Symbol name"
               className="w-100 mb-3 pe-xl-3"
-              onChange={handleSearchChange}
             />
             <div className="">
               <Nav className="text-nowrap gap-3 gap-xl-2 flex-nowrap flex-xl-column top-stock-tab w-100 pe-xl-3 scrollbar">

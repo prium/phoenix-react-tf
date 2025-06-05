@@ -19,7 +19,7 @@ export const getColumn = (tableType: string) => {
       accessorKey: 'symbol',
       header: 'Symbol',
       meta: {
-        headerProps: { style: { width: '8rem' }, className: 'ps-4' },
+        headerProps: { style: { minWidth: '8rem' }, className: 'ps-4' },
         cellProps: {
           className: 'fs-9 text-body fw-semibold white-space-nowrap ps-4'
         }
@@ -29,9 +29,12 @@ export const getColumn = (tableType: string) => {
       accessorKey: 'name',
       header: 'Name',
       meta: {
-        headerProps: { style: { width: '10rem' }, className: 'pe-6' },
+        headerProps: {
+          style: { minWidth: '10rem' },
+          className: 'pe-6 align-middle'
+        },
         cellProps: {
-          className: 'text-body white-space-nowrap pe-6'
+          className: 'text-body white-space-nowrap'
         }
       }
     },
@@ -43,9 +46,9 @@ export const getColumn = (tableType: string) => {
         return currencyFormat(price, { minimumFractionDigits: 2 });
       },
       meta: {
-        headerProps: { style: { width: '9.5rem' }, className: 'text-end' },
+        headerProps: { style: { minWidth: '9.5rem' }, className: 'text-end' },
         cellProps: {
-          className: 'text-body fw-semibold white-space-nowrap text-end'
+          className: 'text-body white-space-nowrap text-end'
         }
       }
     },
@@ -65,7 +68,10 @@ export const getColumn = (tableType: string) => {
         return formatter;
       },
       meta: {
-        headerProps: { style: { width: '8rem' }, className: 'px-4 text-end' },
+        headerProps: {
+          style: { minWidth: '8rem' },
+          className: 'px-4 text-end'
+        },
         cellProps: {
           className: classNames(
             'fs-9 fw-semibold white-space-nowrap text-end px-4',
@@ -105,7 +111,8 @@ const StockDashboardTopListTable = ({
       />
       <AdvanceTableFooter
         pagination
-        className="pt-2 pe-0 fs-9 pagination-subtle"
+        className="pt-2 pe-0 pb-0 fs-9 pagination-subtle"
+        nextPageLinkClassName="pe-0 me-0"
       />
     </AdvanceTableProvider>
   );

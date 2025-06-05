@@ -47,7 +47,12 @@ export const dividendContent: DividendContent = {
   dividendCardItems: [
     {
       id: 1,
-      icon: <UilUsdCircle size={16} className="text-success-darker" />,
+      icon: (
+        <UilUsdCircle
+          style={{ width: 16, height: 23.828 }}
+          className="text-success-darker"
+        />
+      ),
       title: 'Dividend Yield',
       content: '2.80%',
       iconClassName: 'border-success-light bg-success-subtle',
@@ -55,7 +60,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 2,
-      icon: <UilDollarSign size={16} className="text-warning-darker" />,
+      icon: (
+        <UilDollarSign
+          style={{ width: 16, height: 23.828 }}
+          className="text-warning-darker"
+        />
+      ),
       title: 'Annual Dividend',
       content: '$1.00',
       iconClassName: 'border-warning-light bg-warning-subtle',
@@ -63,7 +73,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 3,
-      icon: <UilDollarAlt size={16} className="text-danger-darker" />,
+      icon: (
+        <UilDollarAlt
+          style={{ width: 16, height: 23.828 }}
+          className="text-danger-darker"
+        />
+      ),
       title: 'Ex-Dividend Date',
       content: 'Aug 12, 2024',
       iconClassName: 'border-danger-light bg-danger-subtle',
@@ -71,7 +86,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 4,
-      icon: <UilBill size={16} className="text-primary-darker" />,
+      icon: (
+        <UilBill
+          style={{ width: 16, height: 23.828 }}
+          className="text-primary-darker"
+        />
+      ),
       title: 'Payout Frequency',
       content: 'Quarterly',
       iconClassName: 'border-primary-light bg-primary-subtle',
@@ -79,7 +99,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 5,
-      icon: <UilInvoice size={16} className="text-info-darker" />,
+      icon: (
+        <UilInvoice
+          style={{ width: 16, height: 23.828 }}
+          className="text-info-darker"
+        />
+      ),
       title: 'Payout Ratio',
       content: '15.23%',
       iconClassName: 'border-info-light bg-info-subtle',
@@ -88,7 +113,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 6,
-      icon: <UilArrowGrowth size={16} className="text-success-darker" />,
+      icon: (
+        <UilArrowGrowth
+          style={{ width: 16, height: 23.828 }}
+          className="text-success-darker"
+        />
+      ),
       title: 'Dividend Growth',
       content: '4.26%',
       iconClassName: 'border-success-light bg-success-subtle',
@@ -97,7 +127,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 7,
-      icon: <UilProcess size={16} className="text-primary-darker" />,
+      icon: (
+        <UilProcess
+          style={{ width: 16, height: 23.828 }}
+          className="text-primary-darker"
+        />
+      ),
       title: 'Buyback Yield',
       content: '2.57%',
       iconClassName: 'border-primary-light bg-primary-subtle',
@@ -105,7 +140,12 @@ export const dividendContent: DividendContent = {
     },
     {
       id: 8,
-      icon: <UilChartLine size={16} className="text-warning-darker" />,
+      icon: (
+        <UilChartLine
+          style={{ width: 16, height: 23.828 }}
+          className="text-warning-darker"
+        />
+      ),
       title: 'Shareholder Yield',
       content: '3.00%',
       iconClassName: 'border-warning-light bg-warning-subtle',
@@ -288,7 +328,7 @@ export const dividendContent: DividendContent = {
         title: 'canceled',
         badgeBg: 'danger'
       },
-      recordDate: 'Jun 14, 2022',
+      recordDate: 'Jun 14, 2020',
       paymentDate: 'N/A'
     },
     {

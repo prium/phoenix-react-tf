@@ -228,7 +228,10 @@ const columns: ColumnDef<OptionTableRow>[] = [
           });
         },
         meta: {
-          headerProps: { className: 'fs-10', style: { minWidth: '6.688rem' } },
+          headerProps: {
+            className: 'fs-10 pe-0',
+            style: { minWidth: '6.688rem' }
+          },
           cellProps: {
             className: 'lh-sm'
           }
@@ -236,7 +239,7 @@ const columns: ColumnDef<OptionTableRow>[] = [
       }
     ],
     meta: {
-      headerProps: { className: 'text-capitalize' }
+      headerProps: { className: 'text-capitalize pe-0' }
     }
   }
 ];

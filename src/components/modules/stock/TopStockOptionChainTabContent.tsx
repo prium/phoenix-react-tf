@@ -29,6 +29,14 @@ const TopStockOptionChainTabContent = ({
         variant="underline"
         className="optionChainTableHeader swiper-theme-container gap-0"
       >
+        <div className="swiper-nav">
+          <button className="swiper-button-next" ref={navigationNextRef}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+          <button className="swiper-button-prev" ref={navigationPrevRef}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+        </div>
         <Swiper
           loop={true}
           slidesPerView={5}
@@ -56,8 +64,7 @@ const TopStockOptionChainTabContent = ({
           modules={[Navigation]}
           navigation={{
             prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
-            disabledClass: 'swiper-button-disabled'
+            nextEl: navigationNextRef.current
           }}
           onBeforeInit={swiper => {
             if (swiper.params.navigation) {
@@ -84,14 +91,6 @@ const TopStockOptionChainTabContent = ({
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-nav">
-          <button className="swiper-button-next" ref={navigationNextRef}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-          <button className="swiper-button-prev" ref={navigationPrevRef}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-        </div>
       </Nav>
       <OptionChainTable data={topStockItem.tableData} />
     </>

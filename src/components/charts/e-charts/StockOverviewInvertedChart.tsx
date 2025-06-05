@@ -1,19 +1,22 @@
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
-import { getDates, rgbaColor } from 'helpers/utils';
+import { rgbaColor } from 'helpers/utils';
 import dayjs from 'dayjs';
 import { useAppContext } from 'providers/AppProvider';
 import { TooltipComponent } from 'echarts/components';
 import { LineChart } from 'echarts/charts';
-import { tooltipFormatterList } from 'helpers/echart-utils';
+import {
+  tooltipFormatterList,
+  generateXAxisLabels
+} from 'helpers/echart-utils';
+import { CSSProperties } from 'react';
 
+interface StockOverviewInvertedChartProps {
+  data: number[];
+  className?: string;
+  style?: CSSProperties;
+}
 echarts.use([TooltipComponent, LineChart]);
-
-const dates = getDates(
-  new Date('8/1/2022'),
-  new Date('8/20/2022'),
-  1000 * 60 * 60 * 24
-);
 
 const getDefaultOptions = (
   getThemeColor: (name: string) => string,
@@ -36,11 +39,11 @@ const getDefaultOptions = (
   },
   xAxis: {
     type: 'category',
-    data: dates,
+    data: generateXAxisLabels('11/1/2023', data.length),
     show: true,
     axisLabel: {
       formatter: (value: Date) => dayjs(value).format('DD MMM'),
-      interval: 13,
+      interval: 5,
       showMinLabel: true,
       showMaxLabel: false,
       color: getThemeColor('secondary-color'),
@@ -67,7 +70,7 @@ const getDefaultOptions = (
   },
   yAxis: {
     show: false,
-    value: data,
+    type: 'value',
     boundaryGap: false
   },
   series: [
@@ -78,6 +81,7 @@ const getDefaultOptions = (
       symbol: 'circle',
       smooth: false,
       hoverAnimation: true,
+      animation: false,
       itemStyle: {
         color: getThemeColor('body-highlight-bg'),
         borderColor: getThemeColor('danger'),
@@ -97,11 +101,11 @@ const getDefaultOptions = (
           colorStops: [
             {
               offset: 0,
-              color: rgbaColor(getThemeColor('danger'), 0.5)
+              color: rgbaColor(getThemeColor('danger'), 0.05)
             },
             {
               offset: 1,
-              color: rgbaColor(getThemeColor('danger'), 0.05)
+              color: rgbaColor(getThemeColor('danger'), 0.5)
             }
           ]
         }
@@ -116,14 +120,19 @@ const getDefaultOptions = (
   }
 });
 
-const StockOverviewInvertedChart = ({ data }: { data: number[] }) => {
+const StockOverviewInvertedChart = ({
+  data,
+  className,
+  style
+}: StockOverviewInvertedChartProps) => {
   const { getThemeColor } = useAppContext();
 
   return (
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, data)}
-      className="overview-echart"
+      className={className}
+      style={style}
     />
   );
 };

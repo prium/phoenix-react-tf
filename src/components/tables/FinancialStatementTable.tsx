@@ -89,7 +89,6 @@ const FinancialStatementTable = () => {
                   <FontAwesomeIcon
                     icon={faAngleDown}
                     className="toggle-icon text-body-secondary"
-                    transform="down-1"
                   />
                 </div>
               </Button>
@@ -105,7 +104,7 @@ const FinancialStatementTable = () => {
             <td colSpan={6} className="py-0 border-bottom-0">
               <Collapse in={openOperating}>
                 <div id="collapseOperating">
-                  <Table bordered className="mb-0">
+                  <Table className="mb-0">
                     <tbody>
                       <tr className="bg-primary-subtle">
                         <td

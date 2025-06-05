@@ -14,11 +14,11 @@ const ChartTabContent = () => {
         <Col xs="auto">
           <h4>Share Report</h4>
           <p className="text-body-tertiary mb-0">
-            Updated Inventory according to the sales report.
+            Updated inventory according to the sales report.
           </p>
         </Col>
         <Col xs="auto" className="d-flex gap-2">
-          <Form.Select size="sm">
+          <Form.Select size="sm" style={{ width: 107 }}>
             <option value="daily">Daily</option>
             <option value="weekly">Weekly</option>
             <option value="yearly">Yearly</option>

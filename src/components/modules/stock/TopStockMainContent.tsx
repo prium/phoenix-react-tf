@@ -45,7 +45,10 @@ const TopStockMainContent = ({ topStockItem }: TopStockMainContentProps) => {
         </Col>
         <Col xs="auto">
           <div className="d-flex align-items-center gap-2">
-            <Link to={'#'} className="btn btn-sm btn-phoenix-primary">
+            <Link
+              to={'/apps/stock/stock-details'}
+              className="btn btn-sm btn-phoenix-primary"
+            >
               View full stock details
               <FontAwesomeIcon icon={faUpRightFromSquare} className="ms-2" />
             </Link>

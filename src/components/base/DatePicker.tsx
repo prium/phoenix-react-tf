@@ -7,18 +7,20 @@ import classNames from 'classnames';
 interface DatePickerProps extends DateTimePickerProps {
   icon?: ReactElement;
   hideIcon?: boolean;
+  className?: string;
 }
 
 const DatePicker = ({
   icon,
   hideIcon = false,
+  className,
   options,
   ...rest
 }: DatePickerProps) => {
   return (
     <div className="flatpickr-input-container">
       <Flatpickr
-        className={classNames('form-control', {
+        className={classNames('form-control', className, {
           'ps-6': !hideIcon
         })}
         options={{

@@ -196,7 +196,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 2,
     image: Img1,
-    title: `Here's How Investing $100 a Month Plus Your Tax refers....`,
+    title: `Here's How Investing $100 a Month Plus Your Tax refers`,
     description: `Here's How Investing $100 a Month Plus Your Tax refers to a financial strategy that involves regularly investing $100 per month along with any tax refunds or deductions to maximize long-term growth through compound interest and market returns.`,
     postTime: '2 hours ago',
     type: 'The Economic Time',
@@ -213,7 +213,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 3,
     image: Img2,
-    title: `According to FT, Arm's semiconductor technology refers....`,
+    title: `According to FT, Arm's semiconductor technology refers`,
     description: `According to FT, Arm's Semiconductor Technology refers to a report or analysis by the Financial Times (FT) regarding Arm's advancements, market impact, and strategic developments in the semiconductor industry.`,
     postTime: '3 hours ago',
     type: 'The Business Standard',
@@ -751,7 +751,7 @@ export const companyProfileItems: CompanyProfileItems = {
       title: 'Industry',
       icon: faCity,
       content: 'Consumer Electronics',
-      className: 'mb-3 mb-sm-0 mb-md-3 mb-lg-0 mb-xl-3 mb-xxl-0'
+      className: 'mb-3'
     },
     {
       id: 107,
@@ -823,7 +823,7 @@ export const companyProfileItems: CompanyProfileItems = {
       title: 'CIK Code',
       icon: faCodeCompare,
       content: '0000320193',
-      className: 'mb-3 mb-sm-0 mb-md-3 mb-lg-0 mb-xl-3 mb-xxl-0'
+      className: 'mb-3'
     },
     {
       id: 117,

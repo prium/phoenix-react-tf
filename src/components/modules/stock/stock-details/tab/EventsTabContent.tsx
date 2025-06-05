@@ -41,7 +41,8 @@ const EventsTabContent = ({ eventLists }: { eventLists: EventLists }) => {
         <Col xs={6} className="d-flex flex-end-center">
           <DatePicker
             placeholder="dd/mm/yyyy"
-            style={{ width: 180, height: 33.06 }}
+            className="form-control-sm pe-5"
+            style={{ maxWidth: 180 }}
           />
         </Col>
       </Row>

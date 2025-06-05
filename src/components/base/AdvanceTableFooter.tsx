@@ -121,7 +121,7 @@ const AdvanceTableFooter = ({
       )}
       {pagination && (
         <Col xs="auto">
-          <Pagination className="mb-0 justify-content-center">
+          <Pagination className="mb-0 justify-content-center align-items-center">
             <Pagination.Prev
               disabled={!getCanPreviousPage()}
               onClick={() => setPageIndex(pageIndex - 1)}

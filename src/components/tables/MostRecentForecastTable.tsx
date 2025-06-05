@@ -6,7 +6,7 @@ import Badge from 'components/base/Badge';
 import Rating from 'components/base/Rating';
 import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import MostAdvanceTableFooter from 'components/modules/stock/stock-details/tab/MostRecentForcastTableFooter';
+import MostRecentForecastTableFooter from 'components/modules/stock/stock-details/tab/MostRecentForecastTableFooter';
 import { MostRecentForecastTableRowItem } from 'data/stock/forecast';
 import { currencyFormat, numberFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
@@ -19,12 +19,17 @@ const columns: ColumnDef<MostRecentForecastTableRowItem>[] = [
     header: 'Analyst',
     cell: ({ row: { original } }) => {
       const {
-        customer: { name, avatar }
+        customer: { name, avatar, placeholder }
       } = original;
       return (
         <Link to="#!" className="d-flex align-items-center text-body">
           {avatar ? (
-            <Avatar src={avatar} size="m" rounded="circle" />
+            <Avatar
+              src={avatar}
+              size="m"
+              rounded="circle"
+              placeholder={placeholder && placeholder}
+            />
           ) : (
             <Avatar variant="name" rounded="circle" size="m">
               {name.charAt(0).toUpperCase()}
@@ -49,7 +54,7 @@ const columns: ColumnDef<MostRecentForecastTableRowItem>[] = [
     header: 'Rating',
     cell: ({ row: { original } }) => {
       const { rating } = original;
-      return <Rating readonly initialValue={rating} />;
+      return <Rating readonly initialValue={rating} emptyIconColor="warning" />;
     },
     meta: {
       headerProps: {
@@ -156,7 +161,9 @@ const columns: ColumnDef<MostRecentForecastTableRowItem>[] = [
       const { date } = original;
       return (
         <div className="d-flex align-items-center justify-content-end gap-2">
-          <UilCalender size={16} />
+          <UilCalender
+            style={{ width: 16, height: 23.828, transform: 'translateY(-2px)' }}
+          />
           <h6 className="fw-semibold mb-0">{date}</h6>
         </div>
       );
@@ -218,7 +225,7 @@ const MostRecentForecastTable = ({
         }}
         headerClassName="text-uppercase"
       />
-      <MostAdvanceTableFooter className="pagination-subtle fs-9 flex-end-center" />
+      <MostRecentForecastTableFooter className="pagination-subtle fs-9 flex-end-center" />
     </AdvanceTableProvider>
   );
 };

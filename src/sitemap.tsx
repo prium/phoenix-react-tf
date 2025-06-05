@@ -327,7 +327,6 @@ export const routes: RouteItems[] = [
       },
       {
         name: 'travel-agency',
-        hasNew: true,
         icon: 'briefcase',
         active: true,
         pages: [
@@ -442,7 +441,6 @@ export const routes: RouteItems[] = [
           {
             name: 'trip',
             active: true,
-            new: true,
             pages: [
               {
                 name: 'homepage',
@@ -476,6 +474,18 @@ export const routes: RouteItems[] = [
             name: 'stock-details',
             path: '/apps/stock/stock-details',
             pathName: 'stock-details',
+            active: true
+          },
+          {
+            name: 'portfolio',
+            path: '/apps/stock/portfolio',
+            pathName: 'stock-portfolio',
+            active: true
+          },
+          {
+            name: 'watchlist',
+            path: '/apps/stock/watchlist',
+            pathName: 'stock-watchlist',
             active: true
           }
         ]
@@ -579,7 +589,6 @@ export const routes: RouteItems[] = [
         name: 'File manager',
         icon: 'folder',
         active: true,
-        new: true,
         pages: [
           {
             name: 'Grid view',

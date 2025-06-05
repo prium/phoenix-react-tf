@@ -52,6 +52,7 @@ export interface MostRecentForecastTableRowItem {
   customer: {
     name: string;
     avatar: string;
+    placeholder?: boolean;
   };
   rating: number;
   status: {
@@ -155,7 +156,7 @@ export const forecastDataItems: ForecastDataItem = {
         )
       },
       chart: <EpsNextYearChart />,
-      className: 'ps-sm-4 pt-4 pe-sm-4 pt-xxl-0'
+      className: 'ps-sm-4 pt-4 pe-sm-4  pe-xl-3 pe-xxl-4 pt-xxl-0'
     }
   ],
   economicPredicationTableRow: [
@@ -361,7 +362,8 @@ export const forecastDataItems: ForecastDataItem = {
       id: 13,
       customer: {
         name: 'Emma Brown',
-        avatar: Img6
+        avatar: Img6,
+        placeholder: true
       },
       rating: 2,
       status: {
@@ -392,7 +394,8 @@ export const forecastDataItems: ForecastDataItem = {
       priceTarget: 58,
       upside: {
         label: 2.2,
-        badgeBg: 'secondary'
+        badgeBg: 'secondary',
+        prefix: '+'
       },
       date: 'Nov 06, 2022'
     }

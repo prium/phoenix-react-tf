@@ -27,7 +27,10 @@ const UpcomingCollapsibleContainer = ({
         variant=""
         className={classNames(
           'px-4 py-3 d-flex flex-between-center collapse-indicator bg-body-highlight w-100',
-          className
+          className,
+          {
+            collapsed: open
+          }
         )}
         aria-controls={id}
         onClick={() => setOpen(!open)}

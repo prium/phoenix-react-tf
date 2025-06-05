@@ -48,26 +48,31 @@ const CompanyProfileTotalItemsCard = ({
                 <Col md={5}>
                   <div className="d-flex justify-content-md-between align-items-center gap-2">
                     <p className="mb-0 text-body-secondary">{item.growth}</p>
-                    <OverlayTrigger
-                      overlay={
-                        <Tooltip id={`total-items-${item.id}`}>
-                          From{' '}
-                          {numberFormat(item.tooltipContent, 'standard', {
-                            minimumFractionDigits: 2,
-                            notation: 'compact',
-                            compactDisplay: 'short'
-                          })}
-                        </Tooltip>
-                      }
-                    >
-                      <Badge
-                        variant="phoenix"
-                        bg={item.badge.badgeBg}
-                        className="fs-10"
+                    <div>
+                      <OverlayTrigger
+                        placement="top"
+                        overlay={
+                          <Tooltip id={`total-items-${item.id}`}>
+                            From{' '}
+                            {numberFormat(item.tooltipContent, 'standard', {
+                              minimumFractionDigits: 2,
+                              notation: 'compact',
+                              compactDisplay: 'short'
+                            }).toLowerCase()}
+                          </Tooltip>
+                        }
                       >
-                        {item.badge.title}%
-                      </Badge>
-                    </OverlayTrigger>
+                        <span>
+                          <Badge
+                            variant="phoenix"
+                            bg={item.badge.badgeBg}
+                            className="fs-10"
+                          >
+                            {item.badge.title}%
+                          </Badge>
+                        </span>
+                      </OverlayTrigger>
+                    </div>
                   </div>
                 </Col>
               </Row>

@@ -25,6 +25,20 @@ const StockDetailsOptionChain = () => {
   return (
     <>
       <Nav className="swiper-theme-container tabDetailsOptionChainTab">
+        <div className="swiper-nav">
+          <button
+            className="swiper-button-next nav-icon"
+            ref={navigationNextRef}
+          >
+            <FontAwesomeIcon icon={faChevronRight} transform="up-1 shrink-2" />
+          </button>
+          <button
+            className="swiper-button-prev nav-icon"
+            ref={navigationPrevRef}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} transform="up-1 shrink-2" />
+          </button>
+        </div>
         <Swiper
           loop={true}
           slidesPerView={3}
@@ -43,8 +57,7 @@ const StockDetailsOptionChain = () => {
           modules={[Navigation]}
           navigation={{
             prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
-            disabledClass: 'swiper-button-disabled'
+            nextEl: navigationNextRef.current
           }}
           onBeforeInit={swiper => {
             if (swiper.params.navigation) {
@@ -68,20 +81,6 @@ const StockDetailsOptionChain = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="swiper-nav">
-          <button
-            className="swiper-button-next nav-icon"
-            ref={navigationNextRef}
-          >
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-          <button
-            className="swiper-button-prev nav-icon"
-            ref={navigationPrevRef}
-          >
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-        </div>
       </Nav>
       <StockDetailsOptionChainTable data={stockDetailOptionChainTableData} />
       <Link to="#!">

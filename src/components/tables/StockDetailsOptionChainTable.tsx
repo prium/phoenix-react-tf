@@ -119,7 +119,7 @@ const columns: ColumnDef<StockDetailsOptionChainRow>[] = [
           });
         },
         meta: {
-          headerProps: { className: 'fs-10' },
+          headerProps: { className: 'fs-10 pe-0' },
           cellProps: {
             className: 'text-info-dark'
           }
@@ -127,7 +127,7 @@ const columns: ColumnDef<StockDetailsOptionChainRow>[] = [
       }
     ],
     meta: {
-      headerProps: { className: 'fs-9' }
+      headerProps: { className: 'fs-9 pe-0' }
     }
   }
 ];

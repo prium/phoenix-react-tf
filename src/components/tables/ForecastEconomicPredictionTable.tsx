@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import AdvanceTable from 'components/base/AdvanceTable';
 import RevealDropdown from 'components/base/RevealDropdown';
 import ActionDropdownItems from 'components/common/ActionDropdownItems';
-import { EconomicPredictionTableRowItem } from 'data/stock/Forecast';
+import { EconomicPredictionTableRowItem } from 'data/stock/forecast';
 import { currencyFormat, numberFormat } from 'helpers/utils';
 import useAdvanceTable from 'hooks/useAdvanceTable';
 import AdvanceTableProvider from 'providers/AdvanceTableProvider';

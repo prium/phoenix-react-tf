@@ -199,3 +199,16 @@ export const stockShareReportTooltipFormatter = params => {
           </div>
         </div>`;
 };
+
+export const generateXAxisLabels = (startDate: string, count: number) => {
+  const labels = [];
+  const start = new Date(startDate);
+
+  Array.from({ length: count }).map((_, i) =>
+    labels.push(
+      dayjs(start)
+        .add(i + 1, 'day')
+        .format('DD MMM')
+    )
+  );
+};

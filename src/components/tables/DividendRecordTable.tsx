@@ -178,6 +178,7 @@ const DividendRecordTable = ({
       <AdvanceTableFooter
         pagination
         className="py-2 pe-0 fs-9 pagination-subtle"
+        nextPageLinkClassName="me-sm-n2"
       />
     </AdvanceTableProvider>
   );

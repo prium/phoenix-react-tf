@@ -38,11 +38,11 @@ const DividendsTabContent = ({ dividendContent }: DividendsTabContentProps) => {
                 <div className="d-flex flex-column flex-sm-row flex-xxl-column gap-3">
                   <div
                     className={classNames(
-                      'icon-item border p-2 d-flex flex-center rounded',
+                      'icon-item border align-items-end p-2 d-flex rounded fw-normal',
                       item.iconClassName
                     )}
                   >
-                    {item.icon}
+                    <span>{item.icon}</span>
                   </div>
                   <div className="text-nowrap">
                     <h5 className="fs-9 fs-sm-8 text-body-highlight lh-sm">

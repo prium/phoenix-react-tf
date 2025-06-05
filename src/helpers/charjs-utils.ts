@@ -96,7 +96,7 @@ export const externalTooltipHandler = (
               <tr>
                 <th class="fw-bold" style="width: 72px;">Date</th>
                 <th class="text-center px-2 fw-semibold">:</th>
-                <th class="fw-semibold">${dayjs(data.date, 'YYYY-MM-DD').format(
+                <th class="fw-semibold">${dayjs(data.date, 'YYYY/MM/DD').format(
                   'D MMM'
                 )}</th>
               </tr>
@@ -188,7 +188,6 @@ export const borderXPlugin = (isDark: boolean): Plugin<'line'> => ({
       ctx,
       chartArea: { top, bottom, left, right }
     } = chart;
-
     ctx.save();
     ctx.lineWidth = 1;
     ctx.strokeStyle = isDark ? 'rgba(55, 62, 83, 0.78)' : '#E3E6ED';

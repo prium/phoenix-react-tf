@@ -2,6 +2,23 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '1.10.0',
+    title: 'Emberon',
+    publishDate: '4 Jun, 2025',
+    logs: {
+      new: [
+        'DASHBOARD: <code>stock</code> ',
+        'PAGE: <code>stock/stock-details</code>',
+        'PAGE: <code>stock/portfolio</code>',
+        'PAGE: <code>stock/watchlist</code>',
+        'PACKAGE: <code>chart.js</code>',
+        'PACKAGE: <code>react-chartjs-2</code>'
+      ],
+      update: ['PACKAGE: <code>Bootstrap to v5.3.6</code>'],
+      fix: ['Minor bugs']
+    }
+  },
+  {
     version: '1.9.0',
     title: 'Helios',
     alertText:

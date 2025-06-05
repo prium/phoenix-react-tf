@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -45,6 +45,8 @@ const TopStockLineChart = ({
     getThemeColor
   } = useAppContext();
   const { breakpoints } = useBreakpoints();
+
+  const chartKey = isDark ? 'dark' : 'light';
 
   const chartRef = useRef<ChartJS<'line'> | null>(null);
 
@@ -111,6 +113,9 @@ const TopStockLineChart = ({
     scales: {
       x: {
         type: 'category',
+        offset: false,
+        alignToPixels: true,
+        title: {},
         ticks: {
           color: getThemeColor('body-color'),
           maxTicksLimit: breakpoints.down('sm')
@@ -144,13 +149,19 @@ const TopStockLineChart = ({
     }
   }, [chartData]);
 
+  const plugins = useMemo(
+    () => [verticalLinePlugin(isDark), borderXPlugin(isDark)],
+    [isDark]
+  );
+
   return (
     <Line
+      key={chartKey}
       id={id}
       ref={chartRef}
       data={data}
       options={chartOptions}
-      plugins={[verticalLinePlugin(isDark), borderXPlugin(isDark)]}
+      plugins={plugins}
       style={{
         minHeight: '36.5rem',
         maxHeight: '36.5rem'

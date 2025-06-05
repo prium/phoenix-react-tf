@@ -114,7 +114,7 @@ const UpcomingEventCard = ({
                       <li>
                         {numberFormat(upcomingEventItem.interested, 'compact', {
                           compactDisplay: 'short'
-                        })}{' '}
+                        }).toLowerCase()}{' '}
                         people interested
                       </li>
                     </ul>

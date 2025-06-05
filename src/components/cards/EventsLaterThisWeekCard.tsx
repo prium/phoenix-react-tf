@@ -36,7 +36,7 @@ const EventsLaterThisWeekCard = ({
         <Card.Body className="position-relative">
           <div className="d-sm-flex gap-3">
             <div className="custom-calendar-container">
-              <div className="position-relative custom-calender border rounded d-flex flex-column flex-center mb-4 mb-sm-0">
+              <div className="position-relative custom-calender border rounded d-flex flex-column flex-center mb-3 mb-sm-0">
                 <h5 className="fw-bolder lh-sm text-body-tertiary">
                   {startDate.format('DD')}
                   {endDate && `-${endDate.format('DD')}`}
@@ -47,10 +47,7 @@ const EventsLaterThisWeekCard = ({
               </div>
             </div>
             <div className="flex-1">
-              <h5
-                className="mb-2 mb-xxl-0 cursor-pointer"
-                onClick={() => setOpen(true)}
-              >
+              <h5 className="mb-2 cursor-pointer" onClick={() => setOpen(true)}>
                 {eventsLaterThisWeek.title}
               </h5>
               <div className="d-sm-flex mb-3 align-items-center">
@@ -94,7 +91,7 @@ const EventsLaterThisWeekCard = ({
                   <li>
                     {numberFormat(eventsLaterThisWeek.interested, 'compact', {
                       compactDisplay: 'short'
-                    })}{' '}
+                    }).toLowerCase()}{' '}
                     people interested
                   </li>
                 </ul>

@@ -20,7 +20,7 @@ const StockDetailsSideBarContent = ({
   setOpen
 }: StockDetailsSideBarContentProps) => {
   return (
-    <Card>
+    <Card className="border-0 border-xl border-gray-300">
       <Card.Body>
         <Row className="g-0 flex-between-center mb-4">
           <Col xs="auto">
@@ -47,7 +47,7 @@ const StockDetailsSideBarContent = ({
               })}
               <Badge variant="phoenix" bg="success" className="fs-10">
                 +
-                {numberFormat(0.6, 'standard', {
+                {numberFormat(0.62, 'standard', {
                   minimumFractionDigits: 2
                 })}{' '}
                 (
@@ -102,7 +102,7 @@ const StockDetailsSideBarContent = ({
           </Tab.Content>
         </Tab.Container>
         <div className="d-flex flex-between-center border-y py-3 mb-4">
-          <h5 className="text-boy mb-0">Stock available</h5>
+          <h5 className="text-body mb-0">Stock available</h5>
           <Link
             to="#!"
             className="d-flex align-items-center gap-2 link-primary fw-bold"
