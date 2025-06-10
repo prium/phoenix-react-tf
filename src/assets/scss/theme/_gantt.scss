@@ -242,7 +242,7 @@
 }
 
 .gantt-offcanvas{
-  .offcanvas{
+  &.offcanvas{
     width: 100%;
     max-width: 630px;
   }
