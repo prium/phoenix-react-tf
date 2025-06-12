@@ -25,12 +25,14 @@ const GanttChartActions = ({ setCurrentView }) => {
   const [taskStart, setTaskStart] = useState<Date | null>(
     new Date('May 20, 2024')
   );
+  const [parentTask, setParentTask] = useState<string | null>(null);
   const [taskDuration, setTaskDuration] = useState(2);
 
   const resetForm = () => {
     setTaskName('New Task');
     setTaskStart(new Date('May 20, 2024'));
     setTaskDuration(2);
+    setParentTask(null);
   };
 
   const handleCreateTask = () => {
@@ -50,7 +52,8 @@ const GanttChartActions = ({ setCurrentView }) => {
         text: taskName,
         start_date: taskStart,
         end_date: taskEnd,
-        duration
+        duration,
+        parent: parentTask
       };
 
       gantt.addTask(newTask);
@@ -75,6 +78,30 @@ const GanttChartActions = ({ setCurrentView }) => {
     });
 
     return () => gantt.detachEvent(id);
+  }, []);
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('[data-gantt-add-subtask]').forEach(item => {
+        item.addEventListener('click', () => {
+          const parentId = item.getAttribute('id');
+          setParentTask(parentId);
+
+          gantt.createTask({
+            text: '',
+            duration: 3,
+            parent: item.getAttribute('id')
+          });
+        });
+      });
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (

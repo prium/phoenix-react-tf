@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ganttData as tasks } from './ganttData';
 import { ganttConfigColumnsData } from './layoutConfig';
 import { getItemFromStore } from 'helpers/utils';
+import GanttOffcanvas from './GanttOffcanvas';
 
 const weekScaleTemplate = date => {
   const dateToStr = gantt.date.date_to_str('%M %d');
@@ -141,6 +142,7 @@ const GanttChart = () => {
           style={{ width: '100%', height: '100%' }}
         />
       </div>
+      <GanttOffcanvas />
     </>
   );
 };
