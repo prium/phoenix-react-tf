@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react';
 import L, { LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
+import MarkerClusterGroup from "react-leaflet-markercluster";
 import 'leaflet.tilelayer.colorfilter';
 import 'leaflet/dist/leaflet.css';
-import '@changey/react-leaflet-markercluster/dist/styles.min.css';
+import 'react-leaflet-markercluster/styles';
 import { MapMarkerPoints } from 'data/mapMarkerPoints';
 import { AppContext } from 'providers/AppProvider';
 

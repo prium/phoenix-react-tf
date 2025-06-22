@@ -15,7 +15,7 @@ interface EcomCartTableProps {
 
 const EcomCartTable = ({ products }: EcomCartTableProps) => {
   return (
-    <Scrollbar autoHeight autoHeightMax="100%" className="table-scrollbar">
+    <Scrollbar style={{ maxHeight: '100%'}} className="table-scrollbar">
       <Table className="phoenix-table fs-9 mb-0 border-top border-translucent">
         <thead>
           <tr>

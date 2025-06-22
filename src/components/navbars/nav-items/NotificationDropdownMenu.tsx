@@ -29,7 +29,7 @@ const NotificationDropdownMenu = ({ className }: { className?: string }) => {
           </div>
         </Card.Header>
         <Card.Body className="p-0" style={{ height: '27rem' }}>
-          <Scrollbar>
+          <Scrollbar style={{maxHeight: '27rem'}}>
             {notifications.map((notification, index) => (
               <NotificationItem
                 notification={notification}

@@ -77,7 +77,11 @@ const TopNavLooper = ({ page }: { page: Route }) => {
             'text-body-quaternary': !page.active
           })}
         >
-          <UilAngleRight className="lh-1 dropdown-indicator-icon" size={16} />
+          <UilAngleRight
+            fill="currentColor"
+            className="lh-1 dropdown-indicator-icon"
+            size={16}
+          />
           <span>
             {page.icon && (
               <FeatherIcon icon={page.icon} size={16} className="me-2" />

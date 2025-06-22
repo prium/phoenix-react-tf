@@ -56,7 +56,7 @@ const ProfileDropdownMenu = ({ className }: { className?: string }) => {
             />
           </div>
           <div style={{ height: '10rem' }}>
-            <Scrollbar>
+            <Scrollbar style={{ maxHeight: '10rem' }}>
               <Nav className="nav flex-column mb-2 pb-1">
                 {navItems.map(item => (
                   <Nav.Item key={item.label}>

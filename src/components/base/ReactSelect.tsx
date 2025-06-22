@@ -1,16 +1,17 @@
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { forwardRef, ReactElement } from 'react';
+import {  ReactElement } from 'react';
 import Select, {
   ClearIndicatorProps,
   DropdownIndicatorProps,
   SelectInstance,
   components
 } from 'react-select';
-import { StateManagerProps } from 'react-select/dist/declarations/src/useStateManager';
+import { Props } from 'react-select';
 
-interface ReactSelectProps extends StateManagerProps {
+interface ReactSelectProps extends Props {
   icon?: ReactElement;
+  ref?: React.Ref<SelectInstance>;
 }
 
 const ClearIndicator = (props: ClearIndicatorProps) => {
@@ -32,27 +33,25 @@ const DropdownIndicator = (props: DropdownIndicatorProps) => {
   );
 };
 
-const ReactSelect = forwardRef<SelectInstance, ReactSelectProps>(
-  ({ icon, ...rest }, ref) => {
-    return (
-      <div className="react-select-container">
-        <Select
-          closeMenuOnSelect={false}
-          openMenuOnFocus
-          ref={ref}
-          components={{ ClearIndicator, DropdownIndicator }}
-          classNamePrefix="react-select"
-          classNames={{
-            control: () => (icon ? 'ps-5' : ''),
-            placeholder: () => (icon ? 'ps-2' : '')
-          }}
-          {...rest}
-        />
-        {icon}
-      </div>
-    );
-  }
-);
+const ReactSelect = ({ icon, ref, ...rest }: ReactSelectProps) => {
+  return (
+    <div className="react-select-container">
+      <Select
+        closeMenuOnSelect={false}
+        openMenuOnFocus
+        ref={ref}
+        components={{ ClearIndicator, DropdownIndicator }}
+        classNamePrefix="react-select"
+        classNames={{
+          control: () => (icon ? 'ps-5' : ''),
+          placeholder: () => (icon ? 'ps-2' : '')
+        }}
+        {...rest}
+      />
+      {icon}
+    </div>
+  );
+};
 
 ReactSelect.displayName = 'ReactSelect';
 

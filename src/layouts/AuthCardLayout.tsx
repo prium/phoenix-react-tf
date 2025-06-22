@@ -56,6 +56,7 @@ const AuthCardLayout = ({
                     <ul className="list-unstyled mb-0 w-max-content w-md-auto mx-auto">
                       <li className="d-flex align-items-center gap-2">
                         <Unicon
+                          fill='currentColor'
                           icon={UilCheckCircle}
                           className="text-success"
                           size={16}
@@ -66,6 +67,7 @@ const AuthCardLayout = ({
                       </li>
                       <li className="d-flex align-items-center gap-2">
                         <Unicon
+                          fill='currentColor'
                           icon={UilCheckCircle}
                           className="text-success"
                           size={16}
@@ -76,6 +78,7 @@ const AuthCardLayout = ({
                       </li>
                       <li className="d-flex align-items-center gap-2">
                         <Unicon
+                          fill='currentColor'
                           icon={UilCheckCircle}
                           className="text-success"
                           size={16}

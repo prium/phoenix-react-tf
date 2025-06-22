@@ -1,6 +1,26 @@
 /*-----------------------------------------------
 |   Scrollbar style for windows
 -----------------------------------------------*/
+.simplebar-scrollbar {
+  &::before {
+    background-color: var(--#{$prefix}gray-400);
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.simplebar-scrollbar.simplebar-visible {
+  &:before {
+    opacity: 0.55;
+  }
+}
+
+.scrollbar-overlay {
+  overflow: hidden !important;
+}
+.simplebar-content{
+  height: 100% !important;
+}
 
 .scrollbar,
 .scrollbar-overlay {
@@ -70,11 +90,13 @@
   }
 }
 
-.track-vertical {
+.simplebar-vertical {
   right: 2px !important;
+  border-radius: var(--#{$prefix}border-radius) !important;
   > {
     div {
       background-color: $scrollbar-bg !important;
+      border-radius: inherit !important;
     }
   }
 }
@@ -90,7 +112,7 @@
             margin-left: 0px !important;
           }
         }
-        .track-vertical {
+        .simplebar-vertical {
           right: 19px !important;
         }
       }

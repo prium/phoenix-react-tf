@@ -59,7 +59,7 @@ const NavbarTopNavItem = ({ route }: { route: RouteItems }) => {
         className="nav-link lh-1 d-flex align-items-center cursor-pointer"
         // onClick={handleClick}
       >
-        <Icon className="me-2" size={16} />
+        <Icon fill='currentColor' className="me-2" size={16} />
         <span>
           {capitalize(
             route.horizontalNavLabel ? route.horizontalNavLabel : route.label

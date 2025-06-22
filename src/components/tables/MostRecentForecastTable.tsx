@@ -1,4 +1,4 @@
-import { UilCalender } from '@iconscout/react-unicons';
+import { UilCalendar } from '@iconscout/react-unicons';
 import { ColumnDef } from '@tanstack/react-table';
 import AdvanceTable from 'components/base/AdvanceTable';
 import Avatar from 'components/base/Avatar';
@@ -161,7 +161,8 @@ const columns: ColumnDef<MostRecentForecastTableRowItem>[] = [
       const { date } = original;
       return (
         <div className="d-flex align-items-center justify-content-end gap-2">
-          <UilCalender
+          <UilCalendar
+            fill='currentColor'
             style={{ width: 16, height: 23.828, transform: 'translateY(-2px)' }}
           />
           <h6 className="fw-semibold mb-0">{date}</h6>

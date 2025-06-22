@@ -59,7 +59,7 @@ const SearchResult = ({ searchValue = '' }: { searchValue?: string }) => {
   );
 
   return (
-    <Scrollbar autoHeight autoHeightMax={'30rem'}>
+    <Scrollbar style={{ maxHeight: '30rem'}}>
       <h6 className="text-body-highlight fs-10 py-2 mb-0 px-3">
         {results.length} <span className="text-body-quaternary">Results</span>{' '}
       </h6>

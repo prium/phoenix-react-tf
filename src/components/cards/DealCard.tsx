@@ -120,13 +120,13 @@ const DealCard = ({ deal, columnId, cursor }: DealCardProps) => {
             })}
           >
             <div className="d-flex align-items-center">
-              <UilUser className="me-2" size={16} />
+              <UilUser fill='currentColor' className="me-2" size={16} />
               <p className="text-body-secondary fw-bold fs-9 mb-0">
                 {deal.company}
               </p>
             </div>
             <div className="d-flex align-items-center">
-              <UilHeadphones className="me-2" size={16} />
+              <UilHeadphones fill='currentColor' className="me-2" size={16} />
               <p className="text-body-secondary fw-bold fs-9 mb-0">
                 {deal.agent}
               </p>

@@ -19,6 +19,7 @@ const HelpCenter = () => {
         <div className="d-flex flex-column flex-md-row gap-2 align-items-center">
           <div className="icon-wrapper shadow-info">
             <UilPhone
+              fill='currentColor'
               size={40}
               className="text-primary fs-4 z-1 ms-2"
               data-bs-theme="light"
@@ -33,6 +34,7 @@ const HelpCenter = () => {
         <div className="d-flex flex-column flex-md-row gap-2 align-items-center">
           <div className="icon-wrapper shadow-info">
             <UilEnvelope
+              fill='currentColor'
               size={40}
               className="text-primary z-1 ms-2"
               data-bs-theme="light"
@@ -50,6 +52,7 @@ const HelpCenter = () => {
         <div className="mb-6 d-flex flex-column flex-md-row gap-2 align-items-center">
           <div className="icon-wrapper shadow-info">
             <UilMapMarker
+              fill='currentColor'
               size={40}
               className="text-primary z-1 ms-2"
               data-bs-theme="light"
