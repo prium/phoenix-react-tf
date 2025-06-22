@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import FeatherIcon from 'feather-icons-react';
 import Avatar from 'components/base/Avatar';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { numberFormat } from 'helpers/utils';
 import Button from 'components/base/Button';
 import classNames from 'classnames';

@@ -10,7 +10,7 @@ import { Card, Collapse, Form, ProgressBar, Table } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import { UilHeadphones, UilUser } from '@iconscout/react-unicons';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Badge, { BadgeBg } from 'components/base/Badge';
 import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 import { useDealsContext } from 'providers/CrmDealsProvider';

@@ -13,7 +13,7 @@ import {
   UilWrench
 } from '@iconscout/react-unicons';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 type Category = {
   label: string;

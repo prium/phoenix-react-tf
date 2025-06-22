@@ -6,7 +6,7 @@ import bg38 from 'assets/img/bg/38.png';
 import authIllustrations from 'assets/img/spot-illustrations/auth.png';
 import authIllustrationsDark from 'assets/img/spot-illustrations/auth-dark.png';
 import { PropsWithChildren } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Logo from 'components/common/Logo';
 import classNames from 'classnames';
 

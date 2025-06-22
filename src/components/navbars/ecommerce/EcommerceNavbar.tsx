@@ -10,7 +10,7 @@ import {
   Navbar,
   Row
 } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import FeatherIcon from 'feather-icons-react';
 import Scrollbar from 'components/base/Scrollbar';
 import classNames from 'classnames';

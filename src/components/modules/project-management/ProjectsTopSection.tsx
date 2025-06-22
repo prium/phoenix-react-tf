@@ -9,7 +9,7 @@ import { Project } from 'data/project-management/projects';
 import { useAdvanceTableContext } from 'providers/AdvanceTableProvider';
 import { ChangeEvent, useMemo } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 interface ProjectsTopSectionInterface {
   activeView: 'list' | 'board' | 'card';

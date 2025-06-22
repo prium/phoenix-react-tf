@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useLayoutEffect, useRef } from 'react';
 import { Container, Dropdown, Nav, NavItem, Navbar } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import classNames from 'classnames';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { ResizableNav } from 'data/travel-agency/resizableNav';

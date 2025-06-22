@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Card, Col, Dropdown, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import behance from 'assets/img/nav-icons/behance.webp';
 import googleCloud from 'assets/img/nav-icons/google-cloud.webp';
 import slack from 'assets/img/nav-icons/slack.webp';

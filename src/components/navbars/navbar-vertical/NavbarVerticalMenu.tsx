@@ -5,7 +5,7 @@ import FeatherIcon from 'feather-icons-react';
 import { Route } from 'sitemap';
 import { capitalize } from 'helpers/utils';
 import classNames from 'classnames';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavbarVerticalCollapse } from './NavbarVerticalCollapseProvider';

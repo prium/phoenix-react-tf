@@ -7,7 +7,7 @@ import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import migrations from 'data/migrations';
 import { Alert, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const Migrations = () => {
   return (

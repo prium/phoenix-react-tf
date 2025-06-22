@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import illustration31 from 'assets/img/spot-illustrations/31.png';
 import Button from 'components/base/Button';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { importantApplications } from 'data/showcase';
 import bg29 from 'assets/img/bg/29.png';
 import bg28 from 'assets/img/bg/28.png';

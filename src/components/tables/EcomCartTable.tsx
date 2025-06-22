@@ -7,7 +7,7 @@ import { CartItemType } from 'data/e-commerce/products';
 import { currencyFormat } from 'helpers/utils';
 import { useMemo, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 interface EcomCartTableProps {
   products: CartItemType[];

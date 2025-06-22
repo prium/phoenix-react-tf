@@ -1,5 +1,5 @@
 import { Card, Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Scrollbar from 'components/base/Scrollbar';
 import Button from 'components/base/Button';
 import { notifications as notificationData } from 'data/notifications';

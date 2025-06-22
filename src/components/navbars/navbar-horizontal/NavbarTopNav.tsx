@@ -5,7 +5,7 @@ import { RouteItems, routes } from 'sitemap';
 import TopNavMegaMenu from './TopNavMegaMenu';
 import TopNavItem from './TopNavItem';
 import { useBreakpoints } from 'providers/BreakpointsProvider';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 const NavbarTopNav = () => {
   return (

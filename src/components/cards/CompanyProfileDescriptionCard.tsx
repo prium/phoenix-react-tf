@@ -1,6 +1,6 @@
 import { Col } from 'react-bootstrap';
 import { Card, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { CompanyProfileDescriptionItem } from 'data/stock/stockDetails';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

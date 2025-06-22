@@ -16,7 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import StockDetailsOptionChainTable from 'components/tables/StockDetailsOptionChainTable';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Button from 'components/base/Button';
 
 const StockDetailsOptionChain = () => {

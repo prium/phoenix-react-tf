@@ -7,7 +7,7 @@ import EventTicketPricing from 'components/forms/EventTicketPricing';
 import EventsSchedule from 'components/forms/EventsSchedule';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const CreateAnEvent = () => {
   return (

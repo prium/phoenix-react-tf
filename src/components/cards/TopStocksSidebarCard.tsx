@@ -9,7 +9,7 @@ interface TopStocksSidebarProps {
 
 const TopStocksSidebarCard = ({ topStocksItem }: TopStocksSidebarProps) => {
   return (
-    <Card.Body className="p-0">
+    <Card.Body className="p-0 cursor-pointer">
       <div className="d-flex gap-3 gap-xl-2 gap-xxl-3 align-items-center">
         {topStocksItem.darkImage ? (
           <>

@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import FeatherIcon from 'feather-icons-react';
 import Avatar from 'components/base/Avatar';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { numberFormat } from 'helpers/utils';
 import EventOffcanvas from 'components/modules/stock/stock-details/tab/EventOffcanvas';
 import { RevealDropdownTrigger } from 'components/base/RevealDropdown';

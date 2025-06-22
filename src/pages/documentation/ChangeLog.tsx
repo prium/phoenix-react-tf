@@ -7,7 +7,7 @@ import Button from 'components/base/Button';
 import PhoenixDocCard from 'components/base/PhoenixDocCard';
 import changelogs from 'data/changelog';
 import { Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const ChangeLog = () => {
   return (

@@ -8,7 +8,7 @@ import NavbarVertical from 'components/navbars/navbar-vertical/NavbarVertical';
 import { useAppContext } from 'providers/AppProvider';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { Container } from 'react-bootstrap';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 
 const MainLayout = () => {
   const {

@@ -1,7 +1,7 @@
 import ReactSelect from 'components/base/ReactSelect';
 import React from 'react';
 import { Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 interface ProductVariantProps {  
   title: string;

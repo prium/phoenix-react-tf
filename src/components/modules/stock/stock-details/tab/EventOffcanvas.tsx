@@ -11,7 +11,7 @@ import { Card, Col, Offcanvas, Row } from 'react-bootstrap';
 import OffcanvasImage from 'assets/img/stock/offcanvas-image.jpeg';
 import { UilClock, UilMapMarker } from '@iconscout/react-unicons';
 import UpcomingCollapsibleContainer from './UpcomingCollapseContainer';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Avatar from 'components/base/Avatar';
 import Img from 'assets/img/team/30.webp';
 

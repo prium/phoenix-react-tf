@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { UilEnvelope, UilMapMarker, UilPhone } from '@iconscout/react-unicons';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const HelpCenter = () => {
   return (

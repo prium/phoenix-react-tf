@@ -19,7 +19,7 @@ import module15 from 'assets/img/sections/module-15.png';
 import module16 from 'assets/img/sections/module-16.png';
 import { BadgeBg } from 'components/base/Badge';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 interface Badge {
   label: string;

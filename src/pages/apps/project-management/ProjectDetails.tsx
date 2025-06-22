@@ -18,7 +18,7 @@ import { attachments } from 'data/project-management/todoListData';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect } from 'react';
 import { Col, Dropdown, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const ProjectDetails = () => {
   const { setContentClass } = useMainLayoutContext();

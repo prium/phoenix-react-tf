@@ -4,7 +4,7 @@ import Button from 'components/base/Button';
 import DatePicker from 'components/base/DatePicker';
 import { FormEvent } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { useEffect } from 'react';
 import { getRandomNumber } from 'helpers/utils';
 import { useCalendarContext } from 'providers/CalendarProvider';

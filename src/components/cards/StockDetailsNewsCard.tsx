@@ -1,7 +1,7 @@
 import { UilCalendarAlt } from '@iconscout/react-unicons';
 import { NewsItem } from 'data/stock/stockDetails';
 import { Card, Col, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const NewsCardBody = ({ news }: { news: NewsItem }) => {
   return (

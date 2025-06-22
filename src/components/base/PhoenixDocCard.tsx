@@ -6,7 +6,7 @@ import FeatherIcon from 'feather-icons-react';
 import { LiveEditor, LiveError, LivePreview } from 'react-live';
 import classNames from 'classnames';
 import { snakeCase } from 'helpers/utils';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import PhoenixDocProvider, {
   usePhoenixDocContext
 } from 'providers/PhoenixDocProvider';

@@ -1,5 +1,5 @@
 import { Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const OrganizeFormCard = ({ className }: { className?: string }) => {
   return (

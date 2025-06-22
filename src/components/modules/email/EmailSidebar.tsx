@@ -10,7 +10,7 @@ import {
   mailboxItems
 } from 'data/email';
 import { Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 const EmailSidebarItem = ({ item }: { item: SidebarItem }) => {
   return (

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, Dropdown, Form, Nav } from 'react-bootstrap';
 import avatar from 'assets/img/team/72x72/57.webp';
 import FeatherIcon from 'feather-icons-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Scrollbar from 'components/base/Scrollbar';
 import classNames from 'classnames';
 

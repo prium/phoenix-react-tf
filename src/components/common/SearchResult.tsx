@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { getFileIcon } from 'helpers/utils';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Avatar, { Status } from 'components/base/Avatar';
