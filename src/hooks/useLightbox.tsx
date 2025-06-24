@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type JSX } from 'react';
 
 const useLightbox = (sources: Array<string | JSX.Element>) => {
   const [open, setOpen] = useState(false);

@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import { BadgeBg } from 'components/base/Badge';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';

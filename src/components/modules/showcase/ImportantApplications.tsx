@@ -24,7 +24,9 @@ const ImportantApplications = () => {
           backgroundPosition: 'left 10%',
           backgroundSize: '15%'
         }}
-        ref={el => parallaxElRef.current?.push(el)}
+        ref={el => {
+          parallaxElRef.current?.push(el)
+        }}
         data-parallax={JSON.stringify({ y: '40%' })}
       />
 
@@ -35,7 +37,9 @@ const ImportantApplications = () => {
           backgroundPosition: 'right 10%',
           backgroundSize: '15%'
         }}
-        ref={el => parallaxElRef.current?.push(el)}
+        ref={el => {
+          parallaxElRef.current?.push(el)
+        }}
         data-parallax={JSON.stringify({ y: '50%' })}
       />
 

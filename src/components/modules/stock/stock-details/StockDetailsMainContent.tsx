@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import { Tab, Nav } from 'react-bootstrap';
 import ChartTabContent from './tab/ChartTabContent';
 import DividendsTabContent from './tab/DividendsTabContent';

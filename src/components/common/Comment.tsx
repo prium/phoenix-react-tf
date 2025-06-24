@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import { Comment as CommentType } from 'data/project-management/comments';
-import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router';
 
