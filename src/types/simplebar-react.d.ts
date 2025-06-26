@@ -4,7 +4,6 @@ declare module 'simplebar-react' {
   interface SimpleBarProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
     style?: React.CSSProperties;
-    autoHide?: boolean;
     children?: React.ReactNode;
   }
 

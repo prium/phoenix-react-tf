@@ -8,6 +8,7 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import migrations from 'data/migrations';
 import { Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router';
+import MigrationToNineteen from './migrationToNineteen';
 
 const Migrations = () => {
   return (
@@ -53,6 +54,9 @@ const Migrations = () => {
             </div>
           </PhoenixDocCard.Header>
           <PhoenixDocCard.Body>
+            {migration.to === 'v2.0.0' && (
+              <MigrationToNineteen />
+            )}
             {migration.to === 'v1.9.0' && (
               <>
                 <div className="bg-body-highlight p-3 py-5 mb-5">

@@ -1,0 +1,235 @@
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
+import { Alert } from 'react-bootstrap';
+import {
+  ecomTopRegionsMap,
+  forawardRefCode,
+  providerCode,
+  scrollbarCode,
+  scrollbarCodeType,
+  scrollbarHelperCode,
+  useContextReplaceCode
+} from 'data/migrations';
+
+const MigrationToNineteen = () => {
+  return (
+    <>
+      <div className="bg-body-highlight p-3 py-5 mb-5">
+        <Alert variant={'subtle-warning'} className="d-flex align-items-center">
+          <FontAwesomeIcon
+            icon={faCircleInfo}
+            className="text-warning fs-5 me-3"
+          />
+          <p>
+            This is a major update. Please backup your project before upgrading
+            to the latest version. This version is purely focused on updating
+            the react version. See the{' '}
+            <a
+              href="https://react.dev/blog/2024/04/25/react-19-upgrade-guide"
+              target="_blank"
+            >
+              migration guide
+            </a>
+          </p>
+        </Alert>
+        <p>
+          In this version, we have migrated our project from{' '}
+          <code>React 18.2.0</code> to <code>React 19.1.0</code> and all the
+          dependencies that are compatible with <code>react 19</code>. If you're
+          upgrading from <code>v1.10.0</code> to <code>v1.11.0</code>, please
+          follow the steps outlined below.
+        </p>
+        <h5 className="mt-3 mb-2">
+          1. Checking the latest versions of the packages using
+          npm-check-updates.
+        </h5>
+        <p>
+          To update the react version from 18.2.0 to 19.1.0 and all the
+          dependencies that can be updated. Run the below command to see the
+          latest versions of the packages.
+        </p>
+        <PhoenixLiveEditor code={`npx npm-check-updates -u`} />
+        <h5 className="mt-3 mb-2">
+          2. Updating the <code>package.json</code> file.
+        </h5>
+        <p>
+          Now copy the <code>package.json</code> file from the template and
+          replace the <code>package.json</code> file
+        </p>
+        <h5 className="mt-3 mb-2">
+          3. Remove the <code>package-lock.js</code> and{' '}
+          <code>node_modules</code>.
+        </h5>
+        <p>
+          After replacing the <code>package.json</code> remove the existing{' '}
+          <code>package-lock.json</code> and <code>node_modules</code>. Then run
+          the install command to add the dependencies
+        </p>
+        <PhoenixLiveEditor
+          code={`rm -rf package-lock.json node_modules && npm install`}
+        />
+        <h5 className="mt-3 mb-2">
+          4. Updating the <code>react-router-dom</code> to{' '}
+          <code>react-router</code>
+        </h5>
+        <p>
+          As <code>react-router-dom</code> update their package from{' '}
+          <code>react-router-dom</code> to <code>react-router</code> . We have
+          replaced all the occurrences of <code>react-router-dom</code> to{' '}
+          <code>react-router</code>. So we have to update the imports in the
+          components as such.
+        </p>
+        <h5 className="mt-3 mb-2">
+          5. Updating the <code>Suspense</code> in <code>Route.tsx</code>
+        </h5>
+        <p>
+          In the <code>Routes.tsx</code> where we have used suspense we have to
+          key property. so that it helps with the better transition of the page
+          that avoid hiding already visible content.
+        </p>
+        <PhoenixLiveEditor
+          code={`<Suspense key={location.pathname} fallback={'Loading..'}>`}
+        />
+        <h5 className="mt-3 mb-2">
+          6. Updating the <code>forwardRef</code> to <code>ref</code>
+        </h5>
+        <p>
+          Previously in react to provide <code>refs</code> as a props from one
+          component to another. We had to use <code>forwardRef</code> to
+          forwarding the ref. In the current version of react we can use{' '}
+          <code>ref</code> directly in the component. So we have to update the
+          components that use <code>forwardRef</code> to <code>ref</code>.
+        </p>
+        <PhoenixLiveEditor code={forawardRefCode} />
+        <h5 className="mt-3 mb-2">
+          7. Switch from <code>useContext</code> to the new <code>use()</code>{' '}
+          API hook
+        </h5>
+        <p>
+          React 19 brings <code>use()</code> API Hook, which is useful for
+          grabbing context or async data. Now look for all the occurrence for{' '}
+          <code>useContext</code> and replace with <code>use()</code> hook.
+        </p>
+        <PhoenixLiveEditor code={useContextReplaceCode} />
+        <h5 className="mt-3 mb-2">
+          8. Use the shorthand <code>Provider</code> Syntax
+        </h5>
+        <p>
+          In React 19, you can render <code>Context</code> as a provider instead
+          of <code>{`<Context.Provider>`}</code>. So replace all the occurrences
+          of <code>{`<Context.Provider>`}</code> with the shorthand
+          <code>{`<Context>`}</code> syntax.
+        </p>
+        <PhoenixLiveEditor code={providerCode} />
+        <h5 className="mt-3 mb-2">
+          9. Check more updating guides using <code>Codemods</code> (optional)
+        </h5>
+        <p>
+          Codemons help with upgrading the react 19. It list all the changes can
+          be made from react 18 to react 19 and changes them into react 19. It
+          also supports typescript support. You can change the code following
+          the list
+        </p>
+        <PhoenixLiveEditor
+          code={`
+            npx codemod@latest react/19/migration-recipe // for JavaScript
+            npx types-react-codemod@latest preset-19 . // for TypeScript
+          `}
+        />
+        <h5 className="mt-3 mb-2">
+          10. Update the <code>Scrollbar</code> Component in{' '}
+          <code>components/base</code> and its types.
+        </h5>
+        <p>
+          Though we migrated our scrollbar from{' '}
+          <code>react-custom-scrollbars-2</code> to <code>simplebar-react</code>
+          . We have to update our <code>Scrollbar</code> base component as such
+        </p>
+        <PhoenixLiveEditor code={scrollbarCode} />
+        <p className="mt-2">
+          Also we need to decare the types for the <code>simplebar-react</code>.
+          Though it doesn't provide the types default. To write the types create
+          a file in the <code>src/types</code> named
+          <code>simplebar-react.d.ts</code> and add the following code.
+        </p>
+        <PhoenixLiveEditor code={scrollbarCodeType} />
+        <p className="mt-2">
+          After fixing the scrollbar. We have to fix all the occurrences of
+          Scrollbar. Though Scrollbar take the height its own. It will create
+          design inconsistencies. So that we have to update the height as its
+          design needs.
+        </p>
+        <PhoenixLiveEditor code={scrollbarHelperCode} />
+
+        <h5 className="mt-3 mb-2">
+          11. Updating the <code>EcomTopRegionsMap</code>
+        </h5>
+        <p>
+          Previously we had used{' '}
+          <code>@changey/react-leaflet-markercluster</code> to marking the
+          cluster in the leaflet map. In this version we have removed this
+          package due to incompatible with <code>react 19</code>. We have used{' '}
+          <code>react-leaflet-markercluster</code>. So we have to update the
+          <code>EcomTopRegionsMap</code> component as such.
+        </p>
+        <PhoenixLiveEditor code={ecomTopRegionsMap} />
+
+        <h5 className="mt-3 mb-2">
+          12. Updating the <code>Unicons</code> and <code>FontAwesome</code>{' '}
+          icons.
+        </h5>
+        <p>
+          In the current version of <code>@iconscout/react-unicons</code> and{' '}
+          <code>font-awesome</code>. Some of the icons removed. so we have to
+          update the icons in the corresponding components. The icons that
+          removed are:
+        </p>
+        <strong>
+          Unicons icon in (<code>react-unicons.d.ts</code> and{' '}
+          <code>src/data/icons/uniconList.ts</code>)
+        </strong>
+        <ul className="list-inside">
+          <li>UilArrowGrowth</li>
+          <li>UilBabyCarriage</li>
+          <li>UilBed</li>
+          <li>UilBrowser</li>
+          <li>UilCalender to UilCalendar</li>
+          <li>UilCornerUpLeftAlt</li>
+        </ul>
+        <strong>
+          Font-awesome icon (<code>src/data/icons/faSolidIconList.ts</code>)
+        </strong>
+        <ul className="list-inside">
+          <li>FaArrowTurnRight</li>
+        </ul>
+        <p>
+          Though Unicons now doesn't provide auto fill color. Icon's now doesn't
+          automatically apply the color. So we have to explicitly add the{' '}
+          <code>fill="currentColor"</code> in all the unicons icons occurrences.
+        </p>
+        
+        <h5 className="mt-3 mb-2">
+          13. Updating the <code>PhoenixLiveProvider</code>.
+        </h5>
+        <p>
+          In the <code>PhoenixLiveProvider</code> file. Though{' '}
+          <code>prism-react-renderer</code> does not provide the{' '}
+          <code>defaultProps</code> anymore. So we have to remove the{' '}
+          <code>defaultProps</code> and its type from the file. Update the{' '}
+          <code>PhoenixLiveProvider</code>.
+        </p>
+        <h5 className="mt-3 mb-2">
+          14. Run the project.
+        </h5>
+        <p>
+          After updating all the changes. Run the project to see if everything
+          works as expected.
+        </p>
+        <PhoenixLiveEditor code='npm run dev' />
+      </div>
+    </>
+  );
+};
+
+export default MigrationToNineteen;

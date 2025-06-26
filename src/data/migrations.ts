@@ -1,5 +1,25 @@
 export default [
   {
+    from: 'v1.10.0',
+    to: 'v2.0.0',
+    new: [
+      'types/simplebar-react.d.ts',
+    ],
+    update: [
+      'package.json',
+      'src/Routes.tsx',
+      'src/sitemap.tsx',
+      'src/assets/scss/theme/plugins/_full-calendar.scss',
+      'src/assets/scss/theme/_alert.scss',
+      'src/assets/scss/theme/_gantt_chart.scss',
+      'src/assets/scss/theme/_nav-tab.scss',
+      'src/assets/scss/theme/_scrollbar.scss',
+      'src/components/base/Scrollbar.tsx',
+      'src/pages/modules/AlertsExample.tsx',
+      'src/components/base/ReactSelect.tsx',
+    ]
+  },
+  {
     from: 'v1.9.0',
     to: 'v1.10.0',
     new: [
@@ -2032,3 +2052,130 @@ export default [
     ]
   }
 ];
+
+export const scrollbarCode = `
+import classNames from 'classnames';
+import { PropsWithChildren } from 'react';
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
+
+interface ScrollbarProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const Scrollbar = ({
+  children,
+  className,
+  style,
+  ...rest
+}: PropsWithChildren<ScrollbarProps>) => {
+  return (
+    <SimpleBar
+      className={classNames('custom-scrollbar', className)}
+      style={style}
+      {...rest}
+    >
+      {children}
+    </SimpleBar>
+  );
+};
+
+export default Scrollbar;
+`
+
+export const scrollbarCodeType = `
+declare module 'simplebar-react' {
+  import * as React from 'react';
+
+  interface SimpleBarProps extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    style?: React.CSSProperties;
+    children?: React.ReactNode;
+  }
+
+  export default class SimpleBar extends React.Component<SimpleBarProps> {}
+}
+`
+
+export const scrollbarHelperCode = `
+  Import Scrollbar from 'components/base/Scrollbar';
+
+  // Your code
+  
+  return (
+    <Scrollbar
+      className="my-custom-scrollbar"
+      style={{ 
+        maxHeight: '400px' // Optional: Set a max height for the scrollable area if needed
+        height: '100%' // Optional: Set height to 100% to fill the parent container if needed
+      }}
+    >
+      {/* Your scrollable content here */}
+    </Scrollbar>
+  )
+
+`
+
+export const ecomTopRegionsMap = `
+  import { use, useEffect } from 'react';
+  import L, { LatLngExpression } from 'leaflet';
+  import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+  import MarkerClusterGroup from "react-leaflet-markercluster";
+  import 'leaflet.tilelayer.colorfilter';
+  import 'leaflet/dist/leaflet.css';
+  import 'react-leaflet-markercluster/styles'; // styles for marker clustering. It have to be imported after leaflet.css
+  import { MapMarkerPoints } from 'data/mapMarkerPoints';
+  import { AppContext } from 'providers/AppProvider';
+
+  // Rest of the code remains the same
+`
+
+export const forawardRefCode = `
+  const MyComponent = ({ ref, ...props }) => {
+    return (
+      <div ref={ref} {...props}>
+        {/* Your component content */}
+      </div>
+    );
+  };
+
+  // Usage 
+  const App = () => {
+    const myRef = useRef(null);
+    return (
+      <MyComponent ref={myRef} />
+    );
+  };
+`
+
+export const useContextReplaceCode = `
+  import { use } from 'react';
+  import { AppContext } from 'providers/AppProvider';
+
+  const MyComponent = () => {
+    - const { config } = useContext(AppContext);
+    + const { config } = use(AppContext);
+    const { theme } = config;
+    return (
+      <div>
+        {/* Use config or other context values */}
+        <p>Current theme: {theme}</p>
+      </div>
+    );
+  };
+`
+
+export const providerCode = `
+  const themeContext = createContext('');
+
+  const App = ({children}) => {
+    return (
+      - <themeContext.Provider value="dark">
+      +  <themeContext value="dark">
+          {children}
+      + </themeContext>
+      - </themeContext.Provider>
+      )
+  }
+`
