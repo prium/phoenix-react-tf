@@ -1,108 +1,63 @@
-import {
-  Row,
-  Col,
-  Button,
-  FormCheck,
-  FormSelect,
-  Modal,
-  Form
-} from 'react-bootstrap';
+import { Row, Col, Button, FormCheck, FormSelect } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faFilter, faGear } from '@fortawesome/free-solid-svg-icons';
 import {
-  faPlus,
-  faFilter,
-  faGear,
-  faClock,
-  faTimes
-} from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
-import { gantt } from 'dhtmlx-gantt';
-import DatePicker from 'components/base/DatePicker';
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState
+} from 'react';
+import { gantt, Task } from 'dhtmlx-gantt';
+import GanttFilterModal from '../../../components/modules/gantt/GanttFilterModal';
+import GanttOptionsModal from '../../../components/modules/gantt/GanttOptionsModal';
+import SearchBox from 'components/common/SearchBox';
+import GanttAddTaskModal from 'components/modules/gantt/GanttAddTaskModal';
 
-const GanttChartActions = ({ setCurrentView }) => {
-  const [show, setShow] = useState(false);
-  const [taskName, setTaskName] = useState('New Task');
-  const [taskStart, setTaskStart] = useState<Date | null>(
-    new Date('May 20, 2024')
-  );
-  const [parentTask, setParentTask] = useState<string | null>(null);
-  const [taskDuration, setTaskDuration] = useState(2);
+const GanttChartActions = ({
+  setCurrentView
+}: {
+  setCurrentView: Dispatch<SetStateAction<string>>;
+}) => {
+  const [showAddTask, setShowAddTask] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
 
-  const resetForm = () => {
-    setTaskName('New Task');
-    setTaskStart(new Date('May 20, 2024'));
-    setTaskDuration(2);
-    setParentTask(null);
+  const [filterValue, setFilterValue] = useState<string>('');
+
+  const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setFilterValue(e.target.value || '');
   };
+  const filterLogic = (task: Task, match = false): boolean => {
+    gantt.eachTask(child => {
+      if (filterLogic(child)) {
+        match = true;
+      }
+    }, task.id);
 
-  const handleCreateTask = () => {
-    const duration = parseInt(taskDuration, 10);
-    console.log({ taskName });
-    console.log({ taskStart });
-    console.log({ duration });
-
-    if (taskName && taskStart instanceof Date && !isNaN(duration)) {
-      const taskEnd = gantt.calculateEndDate({
-        start_date: taskStart,
-        duration,
-        task: {}
-      });
-
-      const newTask = {
-        text: taskName,
-        start_date: taskStart,
-        end_date: taskEnd,
-        duration,
-        parent: parentTask
-      };
-
-      gantt.addTask(newTask);
-      setShow(false);
-      resetForm();
-    } else {
-      console.warn('Invalid task input');
+    // Check if current task text matches filter
+    if (
+      filterValue &&
+      task.text?.toLowerCase().includes(filterValue.toLowerCase())
+    ) {
+      match = true;
     }
+    return match;
   };
 
   useEffect(() => {
-    const id = gantt.attachEvent('onTaskCreated', task => {
-      setShow(true);
-      if (task.text) setTaskName(task.text);
-      if (task.start_date)
-        setTaskStart(
-          task.start_date instanceof Date
-            ? task.start_date
-            : new Date(task.start_date)
-        );
-      return false; // prevent auto creation
+    const eventId = gantt.attachEvent('onBeforeTaskDisplay', (id, task) => {
+      if (!filterValue) {
+        return true;
+      }
+      return filterLogic(task);
     });
 
-    return () => gantt.detachEvent(id);
-  }, []);
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('[data-gantt-add-subtask]').forEach(item => {
-        item.addEventListener('click', () => {
-          const parentId = item.getAttribute('id');
-          setParentTask(parentId);
-
-          gantt.createTask({
-            text: '',
-            duration: 3,
-            parent: item.getAttribute('id')
-          });
-        });
-      });
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    return () => observer.disconnect();
-  }, []);
+    gantt.render();
+    return () => {
+      gantt.detachEvent(eventId);
+    };
+  }, [filterValue]);
 
   return (
     <>
@@ -113,7 +68,7 @@ const GanttChartActions = ({ setCurrentView }) => {
             <Button
               className="btn-sm ms-auto ms-md-3"
               variant="primary"
-              onClick={() => setShow(true)}
+              onClick={() => setShowAddTask(true)}
             >
               <FontAwesomeIcon icon={faPlus} />
               <span className="ms-2 d-md-none d-xl-inline">Add Task</span>
@@ -123,9 +78,11 @@ const GanttChartActions = ({ setCurrentView }) => {
           <Col md="auto">
             <Row className="align-items-center gy-3 gx-0">
               <Col sm="auto">
-                <div className="gantt-search-box">
-                  {/* Search box placeholder */}
-                </div>
+                <SearchBox
+                  placeholder="Search by name"
+                  className="me-2 gantt-search-box"
+                  onChange={handleSearchInputChange}
+                />
               </Col>
 
               <Col className="d-flex align-items-center ms-sm-auto" xs="auto">
@@ -174,8 +131,7 @@ const GanttChartActions = ({ setCurrentView }) => {
                   variant="link"
                   size="sm"
                   className="text-body px-0 text-nowrap ms-n1"
-                  data-bs-toggle="modal"
-                  data-bs-target="#ganttTaskFilterModal"
+                  onClick={() => setShowFilter(true)}
                 >
                   <FontAwesomeIcon icon={faFilter} className="fs-9" />
                   <span className="d-none d-xl-inline ms-2">Filter</span>
@@ -184,8 +140,7 @@ const GanttChartActions = ({ setCurrentView }) => {
                   variant="link"
                   size="sm"
                   className="text-body px-0 text-nowrap ms-3"
-                  data-bs-toggle="modal"
-                  data-bs-target="#ganttOptionsModal"
+                  onClick={() => setShowOptions(true)}
                 >
                   <FontAwesomeIcon icon={faGear} className="fs-9" />
                   <span className="d-none d-xl-inline ms-2">Options</span>
@@ -195,80 +150,9 @@ const GanttChartActions = ({ setCurrentView }) => {
           </Col>
         </Row>
       </div>
-
-      <Modal show={show} centered aria-labelledby="addTaskModalLabel">
-        <Modal.Header className="p-4 pb-3 align-items-start border-0 bg-body-highlight">
-          <h3 className="mb-0 text-body-highlight">Create New Task</h3>
-          <button onClick={() => setShow(false)} className="btn p-1 ms-auto">
-            <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
-          </button>
-        </Modal.Header>
-
-        <Modal.Body className="px-4 bg-body-highlight">
-          <Form id="addTaskForm">
-            <Form.Group controlId="createTaskName" className="mb-4">
-              <Form.Label className="form-label-header mb-2">
-                Task name
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter task name"
-                value={taskName}
-                onChange={e => setTaskName(e.target.value)}
-              />
-            </Form.Group>
-
-            <Row className="g-3">
-              <Col xs={7} sm={8}>
-                <Form.Group controlId="createTaskStartDate">
-                  <Form.Label className="form-label-header mb-2">
-                    Start Time
-                  </Form.Label>
-                  <DatePicker
-                    id="createTaskStartDate"
-                    onChange={date => {
-                      setTaskStart(Array.isArray(date) ? date[0] : date);
-                    }}
-                    options={{
-                      defaultDate: taskStart || new Date('May 20, 2024')
-                    }}
-                  />
-                </Form.Group>
-              </Col>
-
-              <Col xs={5} sm={4}>
-                <Form.Group controlId="createTaskDuration" className="mb-4">
-                  <Form.Label className="form-label-header mb-2">
-                    Time Duration
-                  </Form.Label>
-                  <div className="form-icon-container">
-                    <Form.Control
-                      type="number"
-                      placeholder="Days"
-                      className="form-icon-input"
-                      value={taskDuration}
-                      onChange={e => setTaskDuration(e.target.value)}
-                    />
-                    <FontAwesomeIcon
-                      icon={faClock}
-                      className="fs-9 form-icon text-body-tertiary"
-                    />
-                  </div>
-                </Form.Group>
-              </Col>
-            </Row>
-          </Form>
-        </Modal.Body>
-
-        <Modal.Footer className="border-0 px-4 pb-3 bg-body-highlight">
-          <Button variant="phoenix-secondary" onClick={() => setShow(false)}>
-            Cancel
-          </Button>
-          <Button onClick={handleCreateTask} variant="primary">
-            Create New Task
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <GanttAddTaskModal show={showAddTask} setShow={setShowAddTask} />
+      <GanttFilterModal show={showFilter} setShow={setShowFilter} />
+      <GanttOptionsModal show={showOptions} setShow={setShowOptions} />
     </>
   );
 };

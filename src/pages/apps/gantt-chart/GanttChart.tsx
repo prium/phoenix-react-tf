@@ -3,12 +3,14 @@ import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
 import GanttChartActions from './GanttActions';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect, useRef, useState } from 'react';
-import { ganttData as tasks } from './ganttData';
-import { ganttConfigColumnsData } from './layoutConfig';
-import { getItemFromStore } from 'helpers/utils';
+import { ganttData as tasks } from '../../../data/ganttData';
+import { ganttConfigColumnsData, taskTextHandler } from './layoutConfig';
 import GanttOffcanvas from './GanttOffcanvas';
+import GanttDeleteLinkModal from '../../../components/modules/gantt/GanttDeleteLinkModal';
+import GanttResponsive from './GanttResponsive';
+import { useAppContext } from 'providers/AppProvider';
 
-const weekScaleTemplate = date => {
+const weekScaleTemplate = (date: Date): string => {
   const dateToStr = gantt.date.date_to_str('%M %d');
   const endDate = gantt.date.add(date, 7 - date.getDay(), 'day');
   return `${dateToStr(date)} - ${dateToStr(endDate)}`;
@@ -19,15 +21,22 @@ const Views = {
   MONTHS: 'months',
   YEARS: 'years'
 };
+export type ViewType = (typeof Views)[keyof typeof Views]; // 'days' | 'weeks' | 'months' | 'years'
+export type ViewKey = keyof typeof Views; // 'DAYS' | 'WEEKS' | 'MONTHS' | 'YEARS'
 
-const scales = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const scales: Record<ViewType, any> = {
   days: [
     { unit: 'week', step: 1, format: '%W' },
     { unit: 'day', step: 1, format: '%d %M' }
   ],
   weeks: [
     { unit: 'month', step: 1, format: '%F' },
-    { unit: 'week', step: 1, format: weekScaleTemplate }
+    {
+      unit: 'week',
+      step: 1,
+      format: weekScaleTemplate
+    }
   ],
   months: [
     { unit: 'year', step: 1, format: '%Y' },
@@ -37,7 +46,7 @@ const scales = {
     {
       unit: 'year',
       step: 3,
-      format(date) {
+      format: (date: Date) => {
         const dateToStr = gantt.date.date_to_str('%Y');
         const endDate = gantt.date.add(date, 3, 'year');
         return `${dateToStr(date)} - ${dateToStr(endDate)}`;
@@ -49,8 +58,11 @@ const scales = {
 
 const GanttChart = () => {
   const { setContentClass } = useMainLayoutContext();
+  const {
+    config: { isRTL }
+  } = useAppContext();
   const containerRef = useRef(null);
-  const [currentView, setCurrentView] = useState(Views.MONTHS);
+  const [currentView, setCurrentView] = useState<ViewType>(Views.MONTHS);
 
   useEffect(() => {
     setContentClass('gantt-content');
@@ -62,7 +74,6 @@ const GanttChart = () => {
   useEffect(() => {
     if (containerRef.current) {
       gantt.plugins({});
-
       gantt.config.scales = scales[currentView];
       gantt.config.row_height = 48; // Adjust task row height
       gantt.config.scale_height = 70;
@@ -71,6 +82,8 @@ const GanttChart = () => {
       gantt.config.grid_resizer = true;
       gantt.config.min_column_width = 130; // Increase the minimum width of each cell
       gantt.config.columns = ganttConfigColumnsData;
+      gantt.config.rtl = false;
+
       const gridWidth = 518;
 
       // --------- configure layout start ----------
@@ -102,16 +115,16 @@ const GanttChart = () => {
         cols: [gridConfig, resizerConfig, timelineConfig, scrollbarConfig]
       };
 
-      // ---- Rtl
-      const isRtl = getItemFromStore('phoenixIsRTL');
-      if (isRtl) {
+      if (isRTL) {
         gantt.config.rtl = true;
         gantt.config.layout = {
           css: 'gantt_container',
           cols: [scrollbarConfig, timelineConfig, resizerConfig, gridConfig]
         };
       }
+
       // --------- configure layout end ----------
+      taskTextHandler(isRTL);
       gantt.config.scroll_size = 7;
       gantt.init(containerRef.current);
       gantt.parse(tasks);
@@ -143,6 +156,8 @@ const GanttChart = () => {
         />
       </div>
       <GanttOffcanvas />
+      <GanttDeleteLinkModal />
+      <GanttResponsive />
     </>
   );
 };

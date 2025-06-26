@@ -3,8 +3,18 @@ import team2 from 'assets/img/team/2.webp';
 import team3 from 'assets/img/team/3.webp';
 import team4 from 'assets/img/team/4.webp';
 import team9 from 'assets/img/team/9.webp';
+import { Task } from 'dhtmlx-gantt';
+interface Data {
+  tasks: Task[];
+  links: {
+    id: number;
+    source: number;
+    target: number;
+    type: string;
+  }[];
+}
 
-export const ganttData = {
+export const ganttData: Data = {
   tasks: [
     {
       id: 11,
@@ -38,7 +48,7 @@ export const ganttData = {
     {
       id: 12,
       text: 'Research',
-      start_date: '03-04-2023',
+      start_date: new Date('03-04-2023'),
       duration: 55,
       parent: 11,
       progress: 1,
@@ -84,7 +94,7 @@ export const ganttData = {
     {
       id: 14,
       text: 'Design',
-      start_date: '25-04-2023',
+      start_date: new Date('04-25-2023'),
       duration: 40,
       parent: 11,
       progress: 0.8,
@@ -108,7 +118,7 @@ export const ganttData = {
     {
       id: 15,
       text: 'Development',
-      start_date: '10-05-2023',
+      start_date: new Date('05-10-2023'),
       duration: 40,
       parent: 11,
       progress: 0.8,
@@ -124,7 +134,7 @@ export const ganttData = {
     {
       id: 16,
       text: 'Testing',
-      start_date: '05-06-2023',
+      start_date: new Date('05-06-2023'),
       duration: 23,
       type: 'milestone',
       parent: 11,
@@ -153,7 +163,7 @@ export const ganttData = {
     {
       id: 17,
       text: 'Deployment',
-      start_date: '03-04-2023',
+      start_date: new Date('03-04-2023'),
       duration: 52,
       parent: 13,
       progress: 1,
@@ -210,7 +220,7 @@ export const ganttData = {
     {
       id: 25,
       text: 'Update figma file for phoenix',
-      start_date: '04-04-2023',
+      start_date: new Date('04-04-2023'),
       duration: 55,
       progress: 0,
       open: true,
@@ -241,7 +251,7 @@ export const ganttData = {
     {
       id: 26,
       text: 'Falcon figma file update',
-      start_date: '10-04-2023',
+      start_date: new Date('04-10-2023'),
       duration: 47,
       progress: 0,
       open: true,
@@ -264,7 +274,7 @@ export const ganttData = {
     {
       id: 27,
       text: 'Gantt chart design',
-      start_date: '15-04-2023',
+      start_date: new Date('04-15-2023'),
       duration: 45,
       progress: 0,
       open: true,
@@ -291,7 +301,7 @@ export const ganttData = {
     {
       id: 28,
       text: 'Design for new dashboard aurora',
-      start_date: '25-06-2023',
+      start_date: new Date('05-25-2023'),
       duration: 112,
       progress: 0,
       open: true,
@@ -310,7 +320,7 @@ export const ganttData = {
     {
       id: 29,
       text: 'Research for new module',
-      start_date: '28-04-2023',
+      start_date: new Date('04-28-2023'),
       duration: 57,
       progress: 0,
       open: true,
@@ -333,7 +343,7 @@ export const ganttData = {
     {
       id: 30,
       text: 'Research',
-      start_date: '04-04-2023',
+      start_date: new Date('04-04-2023'),
       duration: 60,
       progress: 0,
       open: true,
@@ -353,7 +363,7 @@ export const ganttData = {
     {
       id: 31,
       text: 'Development',
-      start_date: '16-04-2023',
+      start_date: new Date('04-16-2023'),
       duration: 68,
       progress: 0,
       parent: 24,
@@ -381,7 +391,7 @@ export const ganttData = {
     {
       id: 33,
       text: 'Deployment',
-      start_date: '27-05-2023',
+      start_date: new Date('05-27-2023'),
       duration: 32,
       progress: 0,
       parent: 24,
@@ -400,20 +410,20 @@ export const ganttData = {
     }
   ],
   links: [
-    { id: 10, source: 11, target: 12, type: 1 },
-    { id: 11, source: 11, target: 13, type: 1 },
-    { id: 12, source: 11, target: 14, type: 1 },
-    { id: 13, source: 11, target: 15, type: 1 },
-    { id: 14, source: 23, target: 16, type: 0 },
-    { id: 15, source: 13, target: 17, type: 1 },
-    { id: 16, source: 17, target: 18, type: 0 },
-    { id: 17, source: 18, target: 19, type: 0 },
-    { id: 18, source: 19, target: 20, type: 0 },
-    { id: 19, source: 15, target: 21, type: 2 },
-    { id: 20, source: 15, target: 22, type: 2 },
-    { id: 21, source: 15, target: 23, type: 0 },
-    { id: 29, source: 24, target: 30, type: 1 },
-    { id: 30, source: 24, target: 31, type: 1 },
-    { id: 33, source: 24, target: 31, type: 1 }
+    { id: 10, source: 11, target: 12, type: '1' },
+    { id: 11, source: 11, target: 13, type: '1' },
+    { id: 12, source: 11, target: 14, type: '1' },
+    { id: 13, source: 11, target: 15, type: '1' },
+    { id: 14, source: 23, target: 16, type: '0' },
+    { id: 15, source: 13, target: 17, type: '1' },
+    { id: 16, source: 17, target: 18, type: '0' },
+    { id: 17, source: 18, target: 19, type: '0' },
+    { id: 18, source: 19, target: 20, type: '0' },
+    { id: 19, source: 15, target: 21, type: '2' },
+    { id: 20, source: 15, target: 22, type: '2' },
+    { id: 21, source: 15, target: 23, type: '0' },
+    { id: 29, source: 24, target: 30, type: '1' },
+    { id: 30, source: 24, target: 31, type: '1' },
+    { id: 33, source: 24, target: 31, type: '1' }
   ]
 };

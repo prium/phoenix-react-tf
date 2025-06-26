@@ -7,7 +7,8 @@ import {
   faPlus,
   faThumbsUp,
   faXmark,
-  faPencil
+  faPencil,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'components/base/Button';
@@ -15,74 +16,11 @@ import DatePicker from 'components/base/DatePicker';
 import Dropzone from 'components/base/Dropzone';
 import AvatarDropdown from 'components/common/AvatarDropdown';
 import { members } from 'data/users';
-import { gantt } from 'dhtmlx-gantt';
+import { gantt, Task } from 'dhtmlx-gantt';
 import { useEffect, useState } from 'react';
-import { Form, Offcanvas, Row, Col, Card } from 'react-bootstrap';
+import { Form, Offcanvas, Row, Col, Card, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-declare type DateOption = Date | string | number;
-
-export interface TaskInterface {
-  id: string | number;
-  start_date?: Date;
-  end_date?: Date;
-  duration?: number;
-  auto_scheduling?: boolean;
-  bar_height?: number;
-  baselines?: any;
-  calendar_id?: number | string;
-  color?: string;
-  constraint_date?: Date;
-  constraint_type?: string;
-  deadline?: Date;
-  editable?: boolean;
-  group_id?: string | number;
-  hide_bar?: boolean;
-  key?: string | number;
-  label?: string;
-  open?: boolean;
-  parent?: number | string;
-  progress?: number;
-  progressColor?: string;
-  readonly?: boolean;
-  render?: string;
-  resource?: Array<string>;
-  rollup?: boolean;
-  row_height?: number;
-  target?: string;
-  text?: any;
-  textColor?: string;
-  type?: string;
-  unscheduled?: boolean;
-  $auto_end_date?: Date;
-  $auto_start_date?: Date;
-  $calculate_duration?: boolean;
-  $custom_data?: object;
-  $dataprocessor_class?: string;
-  $drop_target?: string;
-  $effective_calendar?: string;
-  $expanded_branch?: boolean;
-  $has_child?: boolean;
-  $index?: number;
-  $level?: number;
-  $local_index?: number;
-  $new?: boolean;
-  $no_end?: boolean;
-  $no_start?: boolean;
-  $open?: boolean;
-  $raw?: object;
-  $rendered_at?: string | number;
-  $rendered_parent?: number | string;
-  $rendered_type?: string;
-  $resourceAssignments?: Array<any>;
-  $rollup?: Array<string | number>;
-  $source?: Array<string | number>;
-  $split_subtask?: boolean;
-  $target?: Array<string | number>;
-  $transparent?: boolean;
-  $virtual?: boolean;
-  $wbs?: string;
-  [customProperty: string]: any;
-}
+// declare type DateOption = Date | string | number;
 
 const Subtasks = () => (
   <>
@@ -130,7 +68,8 @@ const Subtasks = () => (
 
 const GanttOffcanvas = () => {
   const [show, setShow] = useState(false);
-  const [task, setTask] = useState<TaskInterface>();
+  const [showModal, setShowModal] = useState(false);
+  const [task, setTask] = useState<Task>();
   const [taskTitle, setTaskTitle] = useState('title');
   const [taskStart, setTaskStart] = useState<Date | undefined>(
     new Date('May 20, 2024')
@@ -140,6 +79,7 @@ const GanttOffcanvas = () => {
   );
   const [taskDuration, setTaskDuration] = useState<number | undefined>(2);
   const handleClose = () => setShow(false);
+  const handleCloseModal = () => setShowModal(false);
 
   const handleTaskUpdate = () => {
     if (task) {
@@ -148,7 +88,7 @@ const GanttOffcanvas = () => {
       task.duration = taskDuration;
       console.log(taskDuration);
 
-      const endDate = new Date(taskStart);
+      const endDate = new Date(taskStart || '');
       endDate.setDate(endDate.getDate() + Number(taskDuration));
 
       task.end_date = endDate;
@@ -156,6 +96,12 @@ const GanttOffcanvas = () => {
       console.log(taskStart);
       setShow(false);
     }
+  };
+  const handleTaskDelete = () => {
+    if (task) {
+      gantt.deleteTask(task.id);
+    }
+    setShowModal(false);
   };
 
   useEffect(() => {
@@ -177,7 +123,7 @@ const GanttOffcanvas = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <Offcanvas
         className="gantt-offcanvas"
         show={show}
@@ -287,7 +233,7 @@ const GanttOffcanvas = () => {
                       placeholder="Days"
                       className="form-icon-input"
                       value={taskDuration}
-                      onChange={e => setTaskDuration(e.target.value)}
+                      onChange={e => setTaskDuration(parseInt(e.target.value))}
                     />
                     <FontAwesomeIcon
                       icon={faClock}
@@ -473,6 +419,12 @@ const GanttOffcanvas = () => {
                 id="ganttDeleteTask"
                 className="ms-auto"
                 variant="phoenix-danger"
+                onClick={() => {
+                  setShow(false);
+                  setTimeout(() => {
+                    setShowModal(true);
+                  }, 350);
+                }}
               >
                 Delete Task
               </Button>
@@ -488,7 +440,43 @@ const GanttOffcanvas = () => {
           </Form>
         </Offcanvas.Body>
       </Offcanvas>
-    </div>
+      <Modal
+        show={showModal}
+        onHide={handleCloseModal}
+        centered
+        aria-labelledby="deleteTaskModal"
+      >
+        <Modal.Header className="p-4 pb-3 align-items-start">
+          <h3 className="mb-2 text-body-highlight">Delete Task</h3>
+          <button
+            onClick={() => setShowModal(false)}
+            className="btn p-1 ms-auto"
+          >
+            <FontAwesomeIcon icon={faTimes} className="btn-close" />
+          </button>
+        </Modal.Header>
+
+        <Modal.Body className="px-4">
+          <p>
+            Are you sure you want to delete this task permanently? Once deleted,
+            it cannot be recovered or undone.
+          </p>
+        </Modal.Body>
+
+        <Modal.Footer className="px-4 pb-3">
+          <Button
+            id="ganttConfirmDeleteTask"
+            variant="subtle-danger"
+            onClick={handleTaskDelete}
+          >
+            Delete task
+          </Button>
+          <Button variant="phoenix-secondary" onClick={handleCloseModal}>
+            Cancel
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 

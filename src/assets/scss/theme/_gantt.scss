@@ -204,13 +204,13 @@
       margin-top: 0;
     }
   }
-
-  //-- react gantt
-
+  .avatar.dropdown-toggle:hover + .dropdown-menu {
+    top: 40px;
+    display: block;
+  }
 }
 
-
-// ---- gantt layout ----------
+// ---- gantt layout ----
 .gantt-content {
   position: fixed;
   padding-top: $navbar-top-height;
