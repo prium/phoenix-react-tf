@@ -41,37 +41,21 @@ const MigrationToNineteen = () => {
           follow the steps outlined below.
         </p>
         <h5 className="mt-3 mb-2">
-          1. Checking the latest versions of the packages using
-          npm-check-updates.
+          1. Update the <code>package.json</code> file.
         </h5>
         <p>
-          To update the react version from 18.2.0 to 19.1.0 and all the
-          dependencies that can be updated. Run the below command to see the
-          latest versions of the packages.
+          All Phoenix React packages are compatible with React 19. Please update
+          all dependencies and devDependencies in your <code>package.json</code>{' '}
+          to the latest versions from Phoenix React.
         </p>
-        <PhoenixLiveEditor code={`npx npm-check-updates -u`} />
+
         <h5 className="mt-3 mb-2">
-          2. Updating the <code>package.json</code> file.
-        </h5>
-        <p>
-          Now copy the <code>package.json</code> file from the template and
-          replace the <code>package.json</code> file
-        </p>
-        <h5 className="mt-3 mb-2">
-          3. Remove the <code>package-lock.js</code> and{' '}
-          <code>node_modules</code>.
-        </h5>
-        <p>
-          After replacing the <code>package.json</code> remove the existing{' '}
-          <code>package-lock.json</code> and <code>node_modules</code>. Then run
-          the install command to add the dependencies
-        </p>
-        <PhoenixLiveEditor
-          code={`rm -rf package-lock.json node_modules && npm install`}
-        />
-        <h5 className="mt-3 mb-2">
-          4. Updating the <code>react-router-dom</code> to{' '}
-          <code>react-router</code>
+          2. Updating the <code>react-router-dom</code> to{' '}
+          <code>react-router</code>. See the{' '}
+          <a href="https://reactrouter.com/upgrading/v6#upgrade-to-v7">
+            migration
+          </a>{' '}
+          guide For more details.
         </h5>
         <p>
           As <code>react-router-dom</code> update their package from{' '}
@@ -81,7 +65,7 @@ const MigrationToNineteen = () => {
           components as such.
         </p>
         <h5 className="mt-3 mb-2">
-          5. Updating the <code>Suspense</code> in <code>Route.tsx</code>
+          3. Updating the <code>Suspense</code> in <code>Route.tsx</code>
         </h5>
         <p>
           In the <code>Routes.tsx</code> where we have used suspense we have to
@@ -92,7 +76,7 @@ const MigrationToNineteen = () => {
           code={`<Suspense key={location.pathname} fallback={'Loading..'}>`}
         />
         <h5 className="mt-3 mb-2">
-          6. Updating the <code>forwardRef</code> to <code>ref</code>
+          4. Updating the <code>forwardRef</code> to <code>ref</code>
         </h5>
         <p>
           Previously in react to provide <code>refs</code> as a props from one
@@ -103,7 +87,7 @@ const MigrationToNineteen = () => {
         </p>
         <PhoenixLiveEditor code={forawardRefCode} />
         <h5 className="mt-3 mb-2">
-          7. Switch from <code>useContext</code> to the new <code>use()</code>{' '}
+          5. Switch from <code>useContext</code> to the new <code>use()</code>{' '}
           API hook
         </h5>
         <p>
@@ -113,7 +97,7 @@ const MigrationToNineteen = () => {
         </p>
         <PhoenixLiveEditor code={useContextReplaceCode} />
         <h5 className="mt-3 mb-2">
-          8. Use the shorthand <code>Provider</code> Syntax
+          6. Use the shorthand <code>Provider</code> Syntax
         </h5>
         <p>
           In React 19, you can render <code>Context</code> as a provider instead
@@ -123,7 +107,7 @@ const MigrationToNineteen = () => {
         </p>
         <PhoenixLiveEditor code={providerCode} />
         <h5 className="mt-3 mb-2">
-          9. Check more updating guides using <code>Codemods</code> (optional)
+          7. Check more updating guides using <code>Codemods</code>
         </h5>
         <p>
           Codemons help with upgrading the react 19. It list all the changes can
@@ -133,20 +117,19 @@ const MigrationToNineteen = () => {
         </p>
         <PhoenixLiveEditor
           code={`
-            npx codemod@latest react/19/migration-recipe // for JavaScript
             npx types-react-codemod@latest preset-19 . // for TypeScript
           `}
         />
         <h5 className="mt-3 mb-2">
-          10. Update the <code>Scrollbar</code> Component in{' '}
+          8. Update the <code>Scrollbar</code> Component in{' '}
           <code>components/base</code> and its types.
         </h5>
         <p>
           Though we migrated our scrollbar from{' '}
           <code>react-custom-scrollbars-2</code> to <code>simplebar-react</code>
-          . We have to update our <code>Scrollbar</code> base component as such
+          . We have to update our <code>Scrollbar</code> base component in{' '}
+          <code>src/component/base/Scrollbar.tsx</code> as such.
         </p>
-        <PhoenixLiveEditor code={scrollbarCode} />
         <p className="mt-2">
           Also we need to decare the types for the <code>simplebar-react</code>.
           Though it doesn't provide the types default. To write the types create
@@ -163,7 +146,7 @@ const MigrationToNineteen = () => {
         <PhoenixLiveEditor code={scrollbarHelperCode} />
 
         <h5 className="mt-3 mb-2">
-          11. Updating the <code>EcomTopRegionsMap</code>
+          9. Updating the <code>EcomTopRegionsMap</code>
         </h5>
         <p>
           Previously we had used{' '}
@@ -176,7 +159,7 @@ const MigrationToNineteen = () => {
         <PhoenixLiveEditor code={ecomTopRegionsMap} />
 
         <h5 className="mt-3 mb-2">
-          12. Updating the <code>Unicons</code> and <code>FontAwesome</code>{' '}
+          10. Updating the <code>Unicons</code> and <code>FontAwesome</code>{' '}
           icons.
         </h5>
         <p>
@@ -208,9 +191,9 @@ const MigrationToNineteen = () => {
           automatically apply the color. So we have to explicitly add the{' '}
           <code>fill="currentColor"</code> in all the unicons icons occurrences.
         </p>
-        
+
         <h5 className="mt-3 mb-2">
-          13. Updating the <code>PhoenixLiveProvider</code>.
+          11. Updating the <code>PhoenixLiveProvider</code>.
         </h5>
         <p>
           In the <code>PhoenixLiveProvider</code> file. Though{' '}
@@ -220,13 +203,23 @@ const MigrationToNineteen = () => {
           <code>PhoenixLiveProvider</code>.
         </p>
         <h5 className="mt-3 mb-2">
-          14. Run the project.
+          12. Remove the <code>package-lock.js</code> and{' '}
+          <code>node_modules</code>.
         </h5>
+        <p>
+          After replacing the <code>package.json</code> remove the existing{' '}
+          <code>package-lock.json</code> and <code>node_modules</code>. Then run
+          the install command to add the dependencies
+        </p>
+        <PhoenixLiveEditor
+          code={`rm -rf package-lock.json node_modules && npm install`}
+        />
+        <h5 className="mt-3 mb-2">13. Run the project.</h5>
         <p>
           After updating all the changes. Run the project to see if everything
           works as expected.
         </p>
-        <PhoenixLiveEditor code='npm run dev' />
+        <PhoenixLiveEditor code="npm run dev" />
       </div>
     </>
   );
