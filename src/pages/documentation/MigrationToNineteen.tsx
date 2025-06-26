@@ -37,7 +37,7 @@ const MigrationToNineteen = () => {
           In this version, we have migrated our project from{' '}
           <code>React 18.2.0</code> to <code>React 19.1.0</code> and all the
           dependencies that are compatible with <code>react 19</code>. If you're
-          upgrading from <code>v1.10.0</code> to <code>v1.11.0</code>, please
+          upgrading from <code>v1.10.0</code> to <code>v2.0.0</code>, please
           follow the steps outlined below.
         </p>
         <h5 className="mt-3 mb-2">
