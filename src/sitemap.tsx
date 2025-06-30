@@ -23,6 +23,7 @@ export interface Route {
   new?: boolean;
   hasNew?: boolean;
   isNext?: boolean;
+  isTargetBlank?: boolean;
 }
 
 export interface RouteItems {
@@ -897,67 +898,77 @@ export const routes: RouteItems[] = [
             name: 'vertical-sidenav',
             path: '/pages/demo/vertical-sidenav',
             pathName: 'demo-vertical-sidenav',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'dark-mode',
             path: '/pages/demo/dark-mode',
             pathName: 'demo-dark-mode',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'sidenav-collapse',
             path: '/pages/demo/sidenav-collapse',
             pathName: 'demo-sidenav-collapse',
-            active: true
+            active: true,
           },
           {
             name: 'darknav',
             path: '/pages/demo/darknav',
             pathName: 'demo-darknav',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'topnav-slim',
             path: '/pages/demo/topnav-slim',
             pathName: 'demo-topnav-slim',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'navbar-top-slim',
             path: '/pages/demo/navbar-top-slim',
             pathName: 'demo-navbar-top-slim',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'navbar-top',
             path: '/pages/demo/navbar-top',
             pathName: 'demo-navbar-top',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'horizontal-slim',
             path: '/pages/demo/horizontal-slim',
             pathName: 'demo-horizontal-slim',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'combo-nav',
             path: '/pages/demo/combo-nav',
             pathName: 'demo-combo-nav',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'combo-nav-slim',
             path: '/pages/demo/combo-nav-slim',
             pathName: 'demo-combo-nav-slim',
-            active: true
+            active: true,
+            isTargetBlank: true
           },
           {
             name: 'dual-nav',
             path: '/pages/demo/dual-nav',
             pathName: 'demo-dual-nav',
-            active: true
+            active: true,
+            isTargetBlank: true
           }
         ]
       }

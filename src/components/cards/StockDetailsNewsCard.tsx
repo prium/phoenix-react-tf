@@ -13,7 +13,7 @@ const NewsCardBody = ({ news }: { news: NewsItem }) => {
       <div className="d-flex flex-wrap align-items-center gap-2 mb-3 text-body-quaternary">
         <div className="d-flex">
           <UilCalendarAlt
-            fill='currentColor'
+            fill="currentColor"
             style={{
               width: 10.25,
               height: 15.23,
@@ -61,7 +61,7 @@ const StockDetailsNewsCard = ({ newsItem }: { newsItem: NewsItem }) => {
               <div className="d-flex flex-wrap align-items-center gap-2 mb-3">
                 <div className="d-flex">
                   <UilCalendarAlt
-                    fill='currentColor'
+                    fill="currentColor"
                     style={{
                       width: 10.25,
                       height: 15.23,

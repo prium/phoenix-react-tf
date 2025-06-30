@@ -18,7 +18,7 @@
 .scrollbar-overlay {
   overflow: hidden !important;
 }
-.simplebar-content{
+.simplebar-content {
   height: 100% !important;
 }
 
@@ -144,4 +144,12 @@
 }
 .widgets-scrollspy {
   scroll-margin-top: 150px;
+}
+
+.navbar-top-search-box {
+  .simplebar-track {
+    &.simplebar-vertical {
+      width: 8px;
+    }
+  }
 }

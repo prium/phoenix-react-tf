@@ -164,3 +164,20 @@
     }
   }
 }
+
+.ipad {
+  .swiper-theme-container {
+    .swiper-nav {
+      &.swiper-nav-inside{
+        .swiper-button-next, .swiper-button-prev {
+          width: 2.5rem;
+          height: 2.5rem;
+          svg{
+            width: 80%;
+            height: 80%;
+          }
+        }
+      }
+    }
+  }
+}

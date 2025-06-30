@@ -21,6 +21,7 @@ const useToggleStyle = () => {
     if (is.firefox()) HTMLClassList.add('firefox');
     if (is.safari()) HTMLClassList.add('safari');
     if (is.mac()) HTMLClassList.add('osx');
+    if (is.ipad()) HTMLClassList.add('ipad')
   }, []);
 
   useEffect(() => {

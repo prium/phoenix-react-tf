@@ -8,6 +8,7 @@ import bg28 from 'assets/img/bg/28.png';
 import { useRef } from 'react';
 import useParallaxHooks from 'hooks/useParallaxHooks';
 import classNames from 'classnames';
+import Badge from 'components/base/Badge';
 
 const ImportantApplications = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -25,7 +26,7 @@ const ImportantApplications = () => {
           backgroundSize: '15%'
         }}
         ref={el => {
-          parallaxElRef.current?.push(el)
+          parallaxElRef.current?.push(el);
         }}
         data-parallax={JSON.stringify({ y: '40%' })}
       />
@@ -38,7 +39,7 @@ const ImportantApplications = () => {
           backgroundSize: '15%'
         }}
         ref={el => {
-          parallaxElRef.current?.push(el)
+          parallaxElRef.current?.push(el);
         }}
         data-parallax={JSON.stringify({ y: '50%' })}
       />
@@ -63,7 +64,7 @@ const ImportantApplications = () => {
         </Row>
         <Row>
           <Col xxl={8} className="mx-auto">
-            <Row className="justify-content-center mt-11">
+            <Row className="justify-content-center mt-7 mt-lg-11">
               {importantApplications.map(application => (
                 <Col
                   xs={12}
@@ -73,7 +74,7 @@ const ImportantApplications = () => {
                 >
                   <div className="text-center">
                     <div
-                      className="mx-auto mb-7 mw-100"
+                      className="mx-auto mb-5 mb-lg-7 mw-100"
                       style={{ width: '550px' }}
                     >
                       <div className="position-relative overflow-hidden">
@@ -84,10 +85,17 @@ const ImportantApplications = () => {
                         />
                       </div>
                     </div>
-                    <h4 className="text-body-highlight mb-3">
-                      {application.title}
-                    </h4>
-                    <p className="text-body-tertiary lh-sm pb-4">
+                    <div className="d-flex flex-center mb-3">
+                      <h4 className="text-body-highlight mb-0">
+                        {application.title}
+                      </h4>
+                      {application.badge && (
+                        <Badge variant="phoenix" bg={application.badge.bg} className='ms-2 fs-10'>
+                          {application.badge.label}
+                        </Badge>
+                      )}
+                    </div>
+                    <p className="text-body-tertiary lh-sm pb-2 pb-lg-4">
                       {application.details}
                     </p>
                     <Button

@@ -112,6 +112,7 @@ const TopNavDropdownItem = ({ page }: { page: Route }) => {
       <Dropdown.Item
         as={Link}
         to={page.path || '#!'}
+        target={page.isTargetBlank ? "_blank": undefined}
         className={classNames({
           'text-body-quaternary': !page.active,
           active: pathname === page.path

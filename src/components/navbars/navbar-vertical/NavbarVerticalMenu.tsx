@@ -31,6 +31,7 @@ const NavItem = ({ route, level }: NavItemProps) => {
     <Nav.Item as="li">
       <NavLink
         to={route.path ? route.path : '#!'}
+        target={route.isTargetBlank ? '_blank': undefined}
         className={({ isActive }) =>
           classNames('nav-link', {
             'label-1': level === 1,

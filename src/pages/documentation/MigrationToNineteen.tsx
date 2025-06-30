@@ -6,7 +6,6 @@ import {
   ecomTopRegionsMap,
   forawardRefCode,
   providerCode,
-  scrollbarCode,
   scrollbarCodeType,
   scrollbarHelperCode,
   useContextReplaceCode
@@ -55,12 +54,12 @@ const MigrationToNineteen = () => {
           <a href="https://reactrouter.com/upgrading/v6#upgrade-to-v7">
             migration
           </a>{' '}
-          guide For more details.
+          guide for more details.
         </h5>
         <p>
-          As <code>react-router-dom</code> update their package from{' '}
-          <code>react-router-dom</code> to <code>react-router</code> . We have
-          replaced all the occurrences of <code>react-router-dom</code> to{' '}
+          As <code>react-router-dom</code> updates their package from{' '}
+          <code>react-router-dom</code> to <code>react-router</code>. We have
+          replaced all the occurrences of <code>react-router-dom</code> with{' '}
           <code>react-router</code>. So we have to update the imports in the
           components as such.
         </p>
@@ -68,9 +67,9 @@ const MigrationToNineteen = () => {
           3. Updating the <code>Suspense</code> in <code>Route.tsx</code>
         </h5>
         <p>
-          In the <code>Routes.tsx</code> where we have used suspense we have to
-          key property. so that it helps with the better transition of the page
-          that avoid hiding already visible content.
+          In the <code>Routes.tsx</code> where we have used suspense, we have to
+          use the key property. So that it helps with the better transition of
+          the page that avoid hiding already visible content.
         </p>
         <PhoenixLiveEditor
           code={`<Suspense key={location.pathname} fallback={'Loading..'}>`}
@@ -79,11 +78,10 @@ const MigrationToNineteen = () => {
           4. Updating the <code>forwardRef</code> to <code>ref</code>
         </h5>
         <p>
-          Previously in react to provide <code>refs</code> as a props from one
-          component to another. We had to use <code>forwardRef</code> to
-          forwarding the ref. In the current version of react we can use{' '}
-          <code>ref</code> directly in the component. So we have to update the
-          components that use <code>forwardRef</code> to <code>ref</code>.
+          Previously, we used <code>forwardRef</code> to forward the{' '}
+          <code>ref</code>, just as React used to do. In the current version of
+          react, we can use <code>ref</code> directly in the component. We need to update the
+          components that use <code>forwardRef</code> to reference.
         </p>
         <PhoenixLiveEditor code={forawardRefCode} />
         <h5 className="mt-3 mb-2">
@@ -91,13 +89,13 @@ const MigrationToNineteen = () => {
           API hook
         </h5>
         <p>
-          React 19 brings <code>use()</code> API Hook, which is useful for
-          grabbing context or async data. Now look for all the occurrence for{' '}
-          <code>useContext</code> and replace with <code>use()</code> hook.
+          React 19 introduces <code>use()</code> API Hook, which is useful for
+          retrieving Context or async data. Now look for all occurrence of{' '}
+          <code>useContext</code> and replace them with <code>use()</code> hook.
         </p>
         <PhoenixLiveEditor code={useContextReplaceCode} />
         <h5 className="mt-3 mb-2">
-          6. Use the shorthand <code>Provider</code> Syntax
+          6. Use the shorthand <code>Provider</code> syntax
         </h5>
         <p>
           In React 19, you can render <code>Context</code> as a provider instead
@@ -110,10 +108,10 @@ const MigrationToNineteen = () => {
           7. Check more updating guides using <code>Codemods</code>
         </h5>
         <p>
-          Codemons help with upgrading the react 19. It list all the changes can
+          Codemons help with upgrading the react 19. It list all the changes that can
           be made from react 18 to react 19 and changes them into react 19. It
           also supports typescript support. You can change the code following
-          the list
+          the list:
         </p>
         <PhoenixLiveEditor
           code={`
@@ -131,15 +129,15 @@ const MigrationToNineteen = () => {
           <code>src/component/base/Scrollbar.tsx</code> as such.
         </p>
         <p className="mt-2">
-          Also we need to decare the types for the <code>simplebar-react</code>.
-          Though it doesn't provide the types default. To write the types create
-          a file in the <code>src/types</code> named
+          Also we need to declare the types for the <code>simplebar-react</code>.
+          Though it doesn't provide the types default. To write the types, create
+          a file in the <code>src/types</code> named{' '}
           <code>simplebar-react.d.ts</code> and add the following code.
         </p>
         <PhoenixLiveEditor code={scrollbarCodeType} />
         <p className="mt-2">
           After fixing the scrollbar. We have to fix all the occurrences of
-          Scrollbar. Though Scrollbar take the height its own. It will create
+          Scrollbar. Though Scrollbar takes its own height. It will create
           design inconsistencies. So that we have to update the height as its
           design needs.
         </p>
@@ -150,11 +148,11 @@ const MigrationToNineteen = () => {
         </h5>
         <p>
           Previously we had used{' '}
-          <code>@changey/react-leaflet-markercluster</code> to marking the
-          cluster in the leaflet map. In this version we have removed this
-          package due to incompatible with <code>react 19</code>. We have used{' '}
+          <code>@changey/react-leaflet-markercluster</code> to mark the
+          cluster in the Leaflet map. In this version we have removed this
+          package because it is incompatible with <code>react 19</code>. We have used{' '}
           <code>react-leaflet-markercluster</code>. So we have to update the
-          <code>EcomTopRegionsMap</code> component as such.
+          <code>EcomTopRegionsMap</code> component accordingly.
         </p>
         <PhoenixLiveEditor code={ecomTopRegionsMap} />
 
@@ -164,7 +162,7 @@ const MigrationToNineteen = () => {
         </h5>
         <p>
           In the current version of <code>@iconscout/react-unicons</code> and{' '}
-          <code>font-awesome</code>. Some of the icons removed. so we have to
+          <code>font-awesome</code>. Some of the icons were removed. So, we have to
           update the icons in the corresponding components. The icons that
           removed are:
         </p>
@@ -187,19 +185,19 @@ const MigrationToNineteen = () => {
           <li>FaArrowTurnRight</li>
         </ul>
         <p>
-          Though Unicons now doesn't provide auto fill color. Icon's now doesn't
+          Although Unicons no longer provide auto-fill color. Icons no longer 
           automatically apply the color. So we have to explicitly add the{' '}
-          <code>fill="currentColor"</code> in all the unicons icons occurrences.
+          <code>fill="currentColor"</code> attribute in all the Unicons icons occurrences.
         </p>
 
         <h5 className="mt-3 mb-2">
           11. Updating the <code>PhoenixLiveProvider</code>.
         </h5>
         <p>
-          In the <code>PhoenixLiveProvider</code> file. Though{' '}
-          <code>prism-react-renderer</code> does not provide the{' '}
-          <code>defaultProps</code> anymore. So we have to remove the{' '}
-          <code>defaultProps</code> and its type from the file. Update the{' '}
+          In the <code>PhoenixLiveProvider</code> file. However,{' '}
+          <code>prism-react-renderer</code> no longer provides the{' '}
+          <code>defaultProps</code>. Therefore, we have to remove the{' '}
+          <code>defaultProps</code> and their type from the file. Update the{' '}
           <code>PhoenixLiveProvider</code>.
         </p>
         <h5 className="mt-3 mb-2">
@@ -207,7 +205,7 @@ const MigrationToNineteen = () => {
           <code>node_modules</code>.
         </h5>
         <p>
-          After replacing the <code>package.json</code> remove the existing{' '}
+          After replacing the <code>package.json</code> file, remove the existing{' '}
           <code>package-lock.json</code> and <code>node_modules</code>. Then run
           the install command to add the dependencies
         </p>
