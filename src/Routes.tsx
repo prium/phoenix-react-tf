@@ -181,7 +181,9 @@ const AdvanceTableExample = lazy(
 const Ecommerce = lazy(() => import('pages/dashboard/ecommerce'));
 const TravelAgency = lazy(() => import('pages/dashboard/TravelAgency'));
 const Chat = lazy(() => import('pages/apps/chat/Chat'));
-const GanttChart = lazy(() => import('pages/modules/charts/GanttChart'));
+const GanttChartExample = lazy(
+  () => import('pages/modules/charts/GanttChartExample')
+);
 const EmojiButtonExample = lazy(
   () => import('pages/modules/forms/advance/EmojiButtonExample')
 );
@@ -231,6 +233,7 @@ import TripDetails from 'pages/apps/travel-agency/trip/TripDetails';
 import TripCheckout from 'pages/apps/travel-agency/trip/Checkout';
 import TripLayout from 'layouts/TripLayout';
 import FileManagerProvider from 'providers/FileManagerProvider';
+import GanttChart from 'pages/apps/gantt-chart/GanttChart';
 
 const routes: RouteObject[] = [
   {
@@ -428,6 +431,10 @@ const routes: RouteObject[] = [
                     element: <CreateBoard />
                   }
                 ]
+              },
+              {
+                path: 'gantt-chart',
+                element: <GanttChart />
               },
               {
                 path: 'chat',
@@ -700,8 +707,8 @@ const routes: RouteObject[] = [
                   {
                     path: 'gantt-chart',
                     element: (
-                      <Suspense key="gantt-chart" fallback={<PhoenixLoader />}>
-                        <GanttChart />
+                      <Suspense fallback={<PhoenixLoader />}>
+                        <GanttChartExample />
                       </Suspense>
                     )
                   }

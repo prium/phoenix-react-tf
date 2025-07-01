@@ -84,6 +84,7 @@ const ZeroRoadMapChart = ({
 
   useEffect(() => {
     if (containerRef.current) {
+      gantt.clearAll();
       gantt.plugins({
         tooltip: true
       });
