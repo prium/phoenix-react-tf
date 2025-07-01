@@ -15,12 +15,14 @@ const weekScaleTemplate = (date: Date): string => {
   const endDate = gantt.date.add(date, 7 - date.getDay(), 'day');
   return `${dateToStr(date)} - ${dateToStr(endDate)}`;
 };
+
 const Views = {
   DAYS: 'days',
   WEEKS: 'weeks',
   MONTHS: 'months',
   YEARS: 'years'
 };
+
 export type ViewType = (typeof Views)[keyof typeof Views]; // 'days' | 'weeks' | 'months' | 'years'
 export type ViewKey = keyof typeof Views; // 'DAYS' | 'WEEKS' | 'MONTHS' | 'YEARS'
 
@@ -73,6 +75,7 @@ const GanttChart = () => {
 
   useEffect(() => {
     if (containerRef.current) {
+      gantt.clearAll();
       gantt.plugins({});
       gantt.config.scales = scales[currentView];
       gantt.config.row_height = 48; // Adjust task row height
@@ -137,10 +140,12 @@ const GanttChart = () => {
         return '';
       };
     }
+    return () => {
+      gantt.clearAll(); // Clear tasks and links
+    };
   }, []);
 
   useEffect(() => {
-    // console.log({ currentView });
     gantt.config.scales = scales[currentView];
     gantt.render();
   }, [currentView]);

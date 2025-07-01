@@ -14,12 +14,12 @@ const assigneeTemplate = (task: Task): string => {
     .map((assignee, idx) => {
       if (owners.length > 4 && idx === 3) {
         return `
-          <a href="#!" class="dropdown-toggle dropdown-caret-none avatar avatar-s" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+          <a href="#!" class="dropdown-toggle avatar avatar-s">
             <div class="avatar-name rounded-circle border border-translucent">
               <span>+${owners.length - 3}</span>
             </div>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end py-2">
+          <ul class="dropdown-menu py-2">
             ${owners
               .map(
                 owner => `
@@ -42,12 +42,12 @@ const assigneeTemplate = (task: Task): string => {
 
       if (idx <= 3) {
         return `
-          <div class="avatar avatar-s dropdown-toggle dropdown-caret-none" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+          <div class="avatar avatar-s dropdown-toggle">
             <img class="rounded-circle" src="${assignee.img}" alt="${
               assignee.name || 'assignee'
             }" />
           </div>
-          <ul class="dropdown-menu dropdown-menu-end py-0">
+          <ul class="dropdown-menu py-0">
             <div class="dropdown-item py-0 px-3 d-flex gap-3 align-items-center">
               <div class="avatar avatar-s">
                 <img class="rounded-circle" src="${assignee.img}" alt="${

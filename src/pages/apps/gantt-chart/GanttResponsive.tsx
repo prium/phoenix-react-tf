@@ -18,9 +18,8 @@ const GanttResponsive = () => {
       gantt.$root.style.width = '100%';
 
       const { cols } = gantt.config.layout;
-      // const gridBox = cols.find(item => item.rows?.[0]?.view === 'grid') || {};
       const gridBox =
-        cols.find(
+        cols?.find(
           (item: { rows?: { view?: string }[] }) =>
             item.rows?.[0]?.view === 'grid'
         ) || {};
