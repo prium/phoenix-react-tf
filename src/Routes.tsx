@@ -261,7 +261,10 @@ const routes: RouteObject[] = [
               {
                 path: 'project-management',
                 element: (
-                  <Suspense key="project-management" fallback={<PhoenixLoader />}>
+                  <Suspense
+                    key="project-management"
+                    fallback={<PhoenixLoader />}
+                  >
                     <ProjectManagement />
                   </Suspense>
                 )
@@ -434,7 +437,11 @@ const routes: RouteObject[] = [
               },
               {
                 path: 'gantt-chart',
-                element: <GanttChart />
+                element: (
+                  <Suspense fallback={<PhoenixLoader />}>
+                    <GanttChart />
+                  </Suspense>
+                )
               },
               {
                 path: 'chat',
@@ -686,7 +693,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'advance-tables',
                     element: (
-                      <Suspense key="advanceTables" fallback={<PhoenixLoader />}>
+                      <Suspense
+                        key="advanceTables"
+                        fallback={<PhoenixLoader />}
+                      >
                         <AdvanceTableExample />
                       </Suspense>
                     )
@@ -1129,7 +1139,10 @@ const routes: RouteObject[] = [
           {
             path: 'default',
             element: (
-              <Suspense key="landingDefault" fallback={<PhoenixLoader fullPage />}>
+              <Suspense
+                key="landingDefault"
+                fallback={<PhoenixLoader fullPage />}
+              >
                 <Default />
               </Suspense>
             )
@@ -1137,7 +1150,10 @@ const routes: RouteObject[] = [
           {
             path: 'alternate',
             element: (
-              <Suspense key="landingALternate" fallback={<PhoenixLoader fullPage />}>
+              <Suspense
+                key="landingALternate"
+                fallback={<PhoenixLoader fullPage />}
+              >
                 <Alternate />
               </Suspense>
             )

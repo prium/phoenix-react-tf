@@ -139,6 +139,9 @@ const GanttChart = () => {
         }
         return '';
       };
+      setTimeout(() => {
+        gantt.render();
+      }, 0);
     }
     return () => {
       gantt.clearAll(); // Clear tasks and links
@@ -153,7 +156,7 @@ const GanttChart = () => {
   return (
     <>
       <GanttChartActions setCurrentView={setCurrentView} />
-      <div className="gantt-app-container scrollbar">
+      <div className="gantt-app-container">
         <div
           id="gantt-app"
           ref={containerRef}

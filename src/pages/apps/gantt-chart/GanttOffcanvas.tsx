@@ -19,7 +19,7 @@ import { members } from 'data/users';
 import { gantt, Task } from 'dhtmlx-gantt';
 import { useEffect, useState } from 'react';
 import { Form, Offcanvas, Row, Col, Card, Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 // declare type DateOption = Date | string | number;
 
 const Subtasks = () => (
