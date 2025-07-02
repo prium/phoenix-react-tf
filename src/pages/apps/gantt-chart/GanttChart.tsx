@@ -157,7 +157,7 @@ const GanttChart = () => {
         <div
           id="gantt-app"
           ref={containerRef}
-          style={{ width: '100%', minHeight: '100%' }}
+          style={{ width: '100%' }}
         />
       </div>
       <GanttOffcanvas />
