@@ -1,13 +1,13 @@
 import { gantt } from 'dhtmlx-gantt';
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
-import GanttChartActions from './GanttActions';
+import GanttChartActions from 'components/modules/gantt/GanttActions';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect, useRef, useState } from 'react';
-import { ganttData as tasks } from '../../../data/ganttData';
-import { ganttConfigColumnsData, taskTextHandler } from './layoutConfig';
-import GanttOffcanvas from './GanttOffcanvas';
-import GanttDeleteLinkModal from '../../../components/modules/gantt/GanttDeleteLinkModal';
-import GanttResponsive from './GanttResponsive';
+import { ganttData as tasks } from 'data/ganttData';
+import { ganttConfigColumnsData, taskTextHandler } from 'components/modules/gantt/layoutConfig';
+import GanttOffcanvas from 'components/modules/gantt/GanttOffcanvas';
+import GanttDeleteLinkModal from 'components/modules/gantt/GanttDeleteLinkModal';
+import GanttResponsive from 'components/modules/gantt/GanttResponsive';
 import { useAppContext } from 'providers/AppProvider';
 
 const weekScaleTemplate = (date: Date): string => {
@@ -139,9 +139,6 @@ const GanttChart = () => {
         }
         return '';
       };
-      setTimeout(() => {
-        gantt.render();
-      }, 0);
     }
     return () => {
       gantt.clearAll(); // Clear tasks and links
@@ -160,7 +157,7 @@ const GanttChart = () => {
         <div
           id="gantt-app"
           ref={containerRef}
-          style={{ width: '100%', height: '100%' }}
+          style={{ width: '100%', minHeight: '100%' }}
         />
       </div>
       <GanttOffcanvas />

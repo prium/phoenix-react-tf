@@ -12,13 +12,14 @@ export default [
       link: '/migrations/#v2.0.0',
       suffix: 'for details.'
     },
-    publishDate: '26 Jun, 2025',
+    publishDate: '2 Jul, 2025',
     logs: {
       new: [
         'PACKAGE: <code>echarts</code>',
         'PACKAGE: <code>react-leaflet-markercluster</code>',
         'PACKAGE: <code>simplebar</code>',
         'PACKAGE: <code>simplebar-react</code>',
+        'PAGE: <code>gantt-chart</code>'
       ],
       update: [
         'PACKAGE: Added <code>React 19.1.0</code>.',

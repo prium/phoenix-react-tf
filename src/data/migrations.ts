@@ -4,6 +4,16 @@ export default [
     to: 'v2.0.0',
     new: [
       'types/simplebar-react.d.ts',
+      'src/components/modules/gantt/GanttActions.tsx',
+      'src/components/modules/gantt/GanttAddTaskModal.tsx',
+      'src/components/modules/gantt/GanttDeleteLinkModal.tsx',
+      'src/components/modules/gantt/GanttFilterModal.tsx',
+      'src/components/moudles/gantt/GanttOffcanvas.tsx',
+      'src/components/modules/gantt/GanttOptionsModal.tsx',
+      'src/components/modules/gantt/GanttResponsive.tsx',
+      'src/components/modules/gantt/layoutConfig.tsx',
+      'src/data/ganttData.ts',
+      'src/pages/gantt-chart/GanttChart.tsx'
     ],
     update: [
       'package.json',

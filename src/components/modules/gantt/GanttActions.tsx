@@ -9,10 +9,10 @@ import {
   useState
 } from 'react';
 import { gantt, Task } from 'dhtmlx-gantt';
-import GanttFilterModal from '../../../components/modules/gantt/GanttFilterModal';
-import GanttOptionsModal from '../../../components/modules/gantt/GanttOptionsModal';
+import GanttFilterModal from './GanttFilterModal';
+import GanttOptionsModal from './GanttOptionsModal';
 import SearchBox from 'components/common/SearchBox';
-import GanttAddTaskModal from 'components/modules/gantt/GanttAddTaskModal';
+import GanttAddTaskModal from './GanttAddTaskModal';
 
 const GanttChartActions = ({
   setCurrentView

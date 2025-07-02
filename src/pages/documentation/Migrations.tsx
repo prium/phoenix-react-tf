@@ -8,7 +8,7 @@ import PhoenixLiveEditor from 'components/docs/PhoenixLiveEditor';
 import migrations from 'data/migrations';
 import { Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router';
-import MigrationToNineteen from './migrationToNineteen';
+import MigrationToNineteen from './MigrationToNineteen';
 
 const Migrations = () => {
   return (
