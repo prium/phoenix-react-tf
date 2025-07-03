@@ -4,7 +4,10 @@ import GanttChartActions from 'components/modules/gantt/GanttActions';
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect, useRef, useState } from 'react';
 import { ganttData as tasks } from 'data/ganttData';
-import { ganttConfigColumnsData, taskTextHandler } from 'components/modules/gantt/layoutConfig';
+import {
+  ganttConfigColumnsData,
+  taskTextHandler
+} from 'components/modules/gantt/layoutConfig';
 import GanttOffcanvas from 'components/modules/gantt/GanttOffcanvas';
 import GanttDeleteLinkModal from 'components/modules/gantt/GanttDeleteLinkModal';
 import GanttResponsive from 'components/modules/gantt/GanttResponsive';
@@ -154,11 +157,7 @@ const GanttChart = () => {
     <>
       <GanttChartActions setCurrentView={setCurrentView} />
       <div className="gantt-app-container">
-        <div
-          id="gantt-app"
-          ref={containerRef}
-          style={{ width: '100%' }}
-        />
+        <div id="gantt-app" ref={containerRef} style={{ width: '100%' }} />
       </div>
       <GanttOffcanvas />
       <GanttDeleteLinkModal />

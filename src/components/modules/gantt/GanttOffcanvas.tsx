@@ -59,7 +59,7 @@ const Subtasks = () => (
       </div>
     ))}
 
-    <Button variant="link" href="#!" className="fw-bold fs-9 ps-0">
+    <Button variant="link" href="#!" className="fw-bold fs-9 p-0">
       <FontAwesomeIcon icon={faPlus} className="me-1" />
       Add subtask
     </Button>
@@ -132,8 +132,8 @@ const GanttOffcanvas = () => {
       >
         <Offcanvas.Header className="border-bottom">
           <div className="d-flex justify-content-between w-100">
-            <Button variant="phoenix-success" className="me-2">
-              <FontAwesomeIcon icon={faCheck} className="me-1" />
+            <Button variant="phoenix-success" className="me-1 mb-1">
+              <FontAwesomeIcon icon={faCheck} className="me-2" transform="shrink-3" />
               Mark Complete
             </Button>
 
@@ -168,13 +168,14 @@ const GanttOffcanvas = () => {
                 value={taskTitle}
                 onChange={e => setTaskTitle(e.target.value)}
                 placeholder="Task title"
+                className="fs-8"
               />
             </Form.Group>
             <div className="mb-3">
               <h5 className="mb-3">Assignee</h5>
               <div className="d-flex">
                 {members.slice(0, 5).map(member => (
-                  <AvatarDropdown key={member.id} user={member} size="m" />
+                  <AvatarDropdown key={member.id} user={member} size="m" className="me-2 border border-light-subtle rounded-pill" />
                 ))}
                 <Link
                   to="#!"
@@ -225,7 +226,8 @@ const GanttOffcanvas = () => {
               <Col xs={6} sm={4}>
                 <Form.Group controlId="createTaskDuration">
                   <Form.Label className="form-label-header mb-2">
-                    Time Duration
+                    Duration{' '}
+                    <span className="text-body-quaternary fw-normal">(Days)</span>
                   </Form.Label>
                   <div className="form-icon-container">
                     <Form.Control
@@ -299,9 +301,9 @@ const GanttOffcanvas = () => {
                   <Row className="gy-3">
                     <Col sm={8}>
                       <Form.Group controlId="Dependency1">
-                        <Form.Label className="form-label-header mb-2">
+                        <h5 className="mb-3">
                           Dependency type
-                        </Form.Label>
+                        </h5>
                         <div className="d-sm-flex gap-3">
                           <Form.Select aria-label="Dependency type 1">
                             <option defaultValue="selected">Blocked by</option>
@@ -325,9 +327,9 @@ const GanttOffcanvas = () => {
 
                     <Col sm={4}>
                       <Form.Group controlId="selectTask1">
-                        <Form.Label className="form-label-header mb-2">
+                        <h5 className="mb-3">
                           Select task
-                        </Form.Label>
+                        </h5>
                         <Form.Select aria-label="Select task">
                           <option defaultValue="selected">Select Task</option>
                           <option value="1">One</option>
@@ -344,9 +346,9 @@ const GanttOffcanvas = () => {
                   <Row className="gy-3">
                     <Col sm={8}>
                       <Form.Group controlId="dependency3">
-                        <Form.Label className="form-label-header mb-2">
+                        <h5 className="mb-3">
                           Dependency type
-                        </Form.Label>
+                        </h5>
                         <div className="d-sm-flex gap-3">
                           <Form.Select aria-label="Dependency type 3">
                             <option defaultValue="selected">Blocking</option>
@@ -370,9 +372,9 @@ const GanttOffcanvas = () => {
 
                     <Col sm={4}>
                       <Form.Group controlId="selectTask6">
-                        <Form.Label className="form-label-header mb-2">
+                        <h5 className="mb-3">
                           Select task
-                        </Form.Label>
+                        </h5>
                         <Form.Select aria-label="Select task">
                           <option defaultValue="selected">Select task</option>
                           <option value="1">One</option>
@@ -403,7 +405,7 @@ const GanttOffcanvas = () => {
               previewWidth={140}
               multiple
               size="sm"
-              className="d-block border-0 ps-0"
+              className="d-block border-0 ps-0 pb-2"
             >
               <div
                 className="dz-message text-body-tertiary text-opacity-85 d-flex justify-content-center align-items-center"

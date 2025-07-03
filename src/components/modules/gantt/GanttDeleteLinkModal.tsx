@@ -39,8 +39,8 @@ const GanttDeleteLinkModal = () => {
         <Modal.Header className="p-4 pb-3 align-items-start">
           <h3 className="mb-2 text-body-highlight">Delete Link</h3>
           <button onClick={() => setShow(false)} className="btn p-1 ms-auto">
-            <FontAwesomeIcon icon={faTimes} className="btn-close" />
-          </button>
+          <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
+        </button>
         </Modal.Header>
 
         <Modal.Body className="px-4">

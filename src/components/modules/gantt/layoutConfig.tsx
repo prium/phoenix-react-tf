@@ -42,23 +42,25 @@ const assigneeTemplate = (task: Task): string => {
 
       if (idx <= 3) {
         return `
-          <div class="avatar avatar-s dropdown-toggle">
-            <img class="rounded-circle" src="${assignee.img}" alt="${
-              assignee.name || 'assignee'
-            }" />
-          </div>
-          <ul class="dropdown-menu py-0">
-            <div class="dropdown-item py-0 px-3 d-flex gap-3 align-items-center">
-              <div class="avatar avatar-s">
-                <img class="rounded-circle" src="${assignee.img}" alt="${
-                  assignee.name || 'assignee'
-                }" />
-              </div>
-              <a href="#" class="fw-bold text-body text-decoration-none lh-1 py-3">${
-                assignee.name
-              }</a>
+          <div class="assignee-dropdown-container">
+            <div class="avatar avatar-s">
+              <img class="rounded-circle" src="${assignee.img}" alt="${
+                assignee.name || 'assignee'
+              }" onerror="this.style.display='none'"/>
             </div>
-          </ul>
+            <ul class="dropdown-menu py-0">
+              <li class="dropdown-item py-0 px-3 d-flex gap-3 align-items-center">
+                <div class="avatar avatar-s">
+                  <img class="rounded-circle" src="${assignee.img}" alt="${
+                    assignee.name || 'assignee'
+                  }" onerror="this.style.display='none'"/>
+                </div>
+                <span class="fw-bold text-body text-decoration-none lh-1 py-3">${
+                  assignee.name
+                }</span>
+              </li>
+            </ul>
+          </div>
         `;
       }
 

@@ -29,7 +29,7 @@ const GanttFilterModal = ({
           Filter
         </h3>
         <button onClick={handleClose} className="btn p-1 ms-auto">
-          <FontAwesomeIcon icon={faTimes} className="btn-close" />
+          <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
         </button>
       </Modal.Header>
 

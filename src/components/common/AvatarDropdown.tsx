@@ -19,13 +19,14 @@ import {
 interface AvatarDropdownInterface {
   user: Member;
   size: Size;
+  className?: string
 }
 
-const AvatarDropdown = ({ user, size }: AvatarDropdownInterface) => {
+const AvatarDropdown = ({ user, size, className }: AvatarDropdownInterface) => {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="" className="dropdown-caret-none p-0">
-        <Avatar src={user.avatar} size={size} />
+        <Avatar src={user.avatar} size={size} className={className} />
       </Dropdown.Toggle>
 
       <Dropdown.Menu

@@ -79,8 +79,9 @@ const GanttChartActions = ({
             <Row className="align-items-center gy-3 gx-0">
               <Col sm="auto">
                 <SearchBox
-                  placeholder="Search by name"
-                  className="me-2 gantt-search-box"
+                  placeholder="Search..."
+                  className="gantt-search-box"
+                  inputClassName='form-control-sm'
                   onChange={handleSearchInputChange}
                 />
               </Col>
@@ -100,6 +101,7 @@ const GanttChartActions = ({
                       const view = e.target.checked ? 'months' : 'days';
                       setCurrentView(view);
                     }}
+                    defaultChecked
                   />
                   <FormCheck.Label className="text-nowrap">
                     Auto Fit

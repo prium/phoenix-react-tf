@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Dispatch, SetStateAction } from 'react';
 import DatePicker from 'components/base/DatePicker';
+import classNames from 'classnames';
 
 const GanttOptionsModal = ({
   show,
@@ -35,9 +36,10 @@ const GanttOptionsModal = ({
   return (
     <Modal
       id="ganttOptionsModal"
+      size="lg"
       show={show}
       onHide={handleClose}
-      size="lg"
+      dialogClassName="modal-39w"
       centered
       aria-labelledby="OptionsModal"
     >
@@ -45,8 +47,8 @@ const GanttOptionsModal = ({
         <h3 className="mb-2 text-body-highlight" id="OptionsModal">
           Options
         </h3>
-        <button onClick={handleClose} className="btn p-1 ms-auto">
-          <FontAwesomeIcon icon={faTimes} className="btn-close" />
+        <button onClick={() => setShow(false)} className="btn p-1 ms-auto">
+          <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
         </button>
       </Modal.Header>
 
@@ -57,11 +59,11 @@ const GanttOptionsModal = ({
               <div className="d-flex align-items-center justify-content-between">
                 <Form.Label
                   htmlFor="taskOptionSelect"
-                  className="form-label-header mb-0"
+                  className="form-label-header"
                 >
                   Color task by
                 </Form.Label>
-                <Button variant="link" className="pe-0 p-0">
+                <Button variant="link" className="pe-0">
                   Add new
                 </Button>
               </div>
@@ -112,7 +114,7 @@ const GanttOptionsModal = ({
             </Col>
 
             <Col xs={12}>
-              <div className="d-flex justify-content-between align-items-center">
+              <div className="d-flex justify-content-between align-items-center mt-2">
                 <div>
                   <h4>Auto-schedule tasks</h4>
                   <p className="mb-0 fs-9">
@@ -140,7 +142,13 @@ const GanttOptionsModal = ({
                   />
                   <div className="bg-primary-subtle rounded-3 p-4">
                     {dependencies.map((item, index) => (
-                      <div key={index} className="mb-4">
+                      <div
+                        key={index}
+                        className={classNames({
+                          'mb-0': dependencies.length - 1 === index,
+                          'mb-4': dependencies.length - 1 !== index
+                        })}
+                      >
                         <div className="d-flex align-items-center">
                           <Form.Check type="checkbox" className="mb-0 me-2" />
                           <h5 className="mb-0">{item.title}</h5>

@@ -225,7 +225,6 @@
     top: 40px;
     display: block;
   }
-  
 }
 
 // ---- gantt layout ----
@@ -306,5 +305,31 @@
     overflow: auto !important;
     scrollbar-color: rgba(var(--#{$prefix}gray-400-rgb), 0.6);
     scrollbar-width: thin;
+  }
+}
+.assignee-dropdown-container {
+  position: relative; /* Crucial for positioning the absolute dropdown */
+}
+.assignee-dropdown-container .dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  margin-top: 4px;
+}
+.assignee-dropdown-container:hover .dropdown-menu {
+  display: block;
+  z-index: 1030 !important;
+}
+.gantt_cell[data-column-name='assignee'] {
+  overflow: visible !important;
+
+  .gantt_tree_content{
+    overflow: visible;
+    .avatar-group{
+      .assignee-dropdown-container:not(:first-child){
+        margin-left: -0.5rem !important;
+      }
+    }
   }
 }

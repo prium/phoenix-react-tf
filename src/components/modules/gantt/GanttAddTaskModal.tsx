@@ -82,7 +82,13 @@ const GanttAddTaskModal = ({
   }, []);
 
   return (
-    <Modal show={show} centered aria-labelledby="addTaskModalLabel">
+    <Modal
+      show={show}
+      onHide={() => setShow(false)}
+      centered
+      aria-labelledby="addTaskModalLabel"
+      backdrop={true}
+    >
       <Modal.Header className="p-4 pb-3 align-items-start border-0 bg-body-highlight">
         <h3 className="mb-0 text-body-highlight">Create New Task</h3>
         <button onClick={() => setShow(false)} className="btn p-1 ms-auto">
