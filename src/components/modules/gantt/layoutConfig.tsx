@@ -14,29 +14,31 @@ const assigneeTemplate = (task: Task): string => {
     .map((assignee, idx) => {
       if (owners.length > 4 && idx === 3) {
         return `
-          <a href="#!" class="dropdown-toggle avatar avatar-s">
-            <div class="avatar-name rounded-circle border border-translucent">
-              <span>+${owners.length - 3}</span>
-            </div>
-          </a>
-          <ul class="dropdown-menu py-2">
-            ${owners
-              .map(
-                owner => `
-              <div class="dropdown-item py-2 px-3 d-flex gap-2 align-items-center">
-                <div class="avatar avatar-s">
-                  <img class="rounded-circle" src="${owner.img}" alt="${
-                    owner.name || 'assignee'
-                  }" />
-                </div>
-                <a href="#" class="fw-bold text-body text-decoration-none lh-1">${
-                  owner.name
-                }</a>
+          <div class="assignee-dropdown-container">
+            <a href="#!" class="avatar avatar-s">
+              <div class="avatar-name rounded-circle border border-translucent">
+                <span>+${owners.length - 3}</span>
               </div>
-            `
-              )
-              .join('')}
-          </ul>
+            </a>
+            <ul class="dropdown-menu py-2">
+              ${owners
+                .map(
+                  owner => `
+                <div class="dropdown-item py-2 px-3 d-flex gap-2 align-items-center">
+                  <div class="avatar avatar-s">
+                    <img class="rounded-circle" src="${owner.img}" alt="${
+                      owner.name || 'assignee'
+                    }" />
+                  </div>
+                  <a href="#" class="fw-bold text-body text-decoration-none lh-1">${
+                    owner.name
+                  }</a>
+                </div>
+              `
+                )
+                .join('')}
+            </ul>
+          </div>
         `;
       }
 
