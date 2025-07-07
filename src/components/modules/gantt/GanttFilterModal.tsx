@@ -43,7 +43,7 @@ const GanttFilterModal = ({
               <DatePicker
                 id="filterStartDate"
                 options={{
-                  defaultDate: new Date('May 20, 2024')
+                  defaultDate: new Date(2024, 4, 20)
                 }}
               />
             </Form.Group>

@@ -12,7 +12,7 @@ export default [
       link: '/migrations/#v2.0.0',
       suffix: 'for details.'
     },
-    publishDate: '2 Jul, 2025',
+    publishDate: '7 Jul, 2025',
     logs: {
       new: [
         'PACKAGE: <code>echarts</code>',

@@ -48,7 +48,7 @@ export const ganttData: Data = {
     {
       id: 12,
       text: 'Research',
-      start_date: new Date('03-04-2023'),
+      start_date: new Date(2023, 3, 3),
       duration: 55,
       parent: 11,
       progress: 1,
@@ -94,7 +94,7 @@ export const ganttData: Data = {
     {
       id: 14,
       text: 'Design',
-      start_date: new Date('04-25-2023'),
+      start_date: new Date(2023, 3, 25),
       duration: 40,
       parent: 11,
       progress: 0.8,
@@ -118,7 +118,7 @@ export const ganttData: Data = {
     {
       id: 15,
       text: 'Development',
-      start_date: new Date('05-10-2023'),
+      start_date: new Date(2023, 5, 19),
       duration: 40,
       parent: 11,
       progress: 0.8,
@@ -134,7 +134,7 @@ export const ganttData: Data = {
     {
       id: 16,
       text: 'Testing',
-      start_date: new Date('05-06-2023'),
+      start_date: new Date(2023, 4, 6),
       duration: 23,
       type: 'milestone',
       parent: 11,
@@ -163,7 +163,7 @@ export const ganttData: Data = {
     {
       id: 17,
       text: 'Deployment',
-      start_date: new Date('03-04-2023'),
+      start_date: new Date(2023, 2, 4),
       duration: 52,
       parent: 13,
       progress: 1,
@@ -220,7 +220,7 @@ export const ganttData: Data = {
     {
       id: 25,
       text: 'Update figma file for phoenix',
-      start_date: new Date('04-04-2023'),
+      start_date: new Date(2023, 3, 4),
       duration: 55,
       progress: 0,
       open: true,
@@ -251,7 +251,7 @@ export const ganttData: Data = {
     {
       id: 26,
       text: 'Falcon figma file update',
-      start_date: new Date('04-10-2023'),
+      start_date: new Date(2023, 3, 10),
       duration: 47,
       progress: 0,
       open: true,
@@ -274,7 +274,7 @@ export const ganttData: Data = {
     {
       id: 27,
       text: 'Gantt chart design',
-      start_date: new Date('04-15-2023'),
+      start_date: new Date(2023, 3, 15),
       duration: 45,
       progress: 0,
       open: true,
@@ -301,7 +301,7 @@ export const ganttData: Data = {
     {
       id: 28,
       text: 'Design for new dashboard aurora',
-      start_date: new Date('05-25-2023'),
+      start_date: new Date(2023, 4, 25),
       duration: 112,
       progress: 0,
       open: true,
@@ -320,7 +320,7 @@ export const ganttData: Data = {
     {
       id: 29,
       text: 'Research for new module',
-      start_date: new Date('04-28-2023'),
+      start_date: new Date(2023, 3, 28),
       duration: 57,
       progress: 0,
       open: true,
@@ -343,7 +343,7 @@ export const ganttData: Data = {
     {
       id: 30,
       text: 'Research',
-      start_date: new Date('04-04-2023'),
+      start_date: new Date(2023, 3, 4),
       duration: 60,
       progress: 0,
       open: true,
@@ -363,7 +363,7 @@ export const ganttData: Data = {
     {
       id: 31,
       text: 'Development',
-      start_date: new Date('04-16-2023'),
+      start_date: new Date(2023, 3, 16),
       duration: 68,
       progress: 0,
       parent: 24,
@@ -391,7 +391,7 @@ export const ganttData: Data = {
     {
       id: 33,
       text: 'Deployment',
-      start_date: new Date('05-27-2023'),
+      start_date: new Date(2023, 4, 27),
       duration: 32,
       progress: 0,
       parent: 24,

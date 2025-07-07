@@ -72,10 +72,10 @@ const GanttOffcanvas = () => {
   const [task, setTask] = useState<Task>();
   const [taskTitle, setTaskTitle] = useState('title');
   const [taskStart, setTaskStart] = useState<Date | undefined>(
-    new Date('May 20, 2024')
+    new Date(2024, 4, 20)
   );
   const [taskEnd, setTaskEnd] = useState<Date | undefined>(
-    new Date('May 20, 2024')
+    new Date(2024, 4, 20)
   );
   const [taskDuration, setTaskDuration] = useState<number | undefined>(2);
   const handleClose = () => setShow(false);
@@ -86,14 +86,12 @@ const GanttOffcanvas = () => {
       task.text = taskTitle;
       task.start_date = taskStart;
       task.duration = taskDuration;
-      console.log(taskDuration);
 
       const endDate = new Date(taskStart || '');
       endDate.setDate(endDate.getDate() + Number(taskDuration));
 
       task.end_date = endDate;
       gantt.updateTask(task.id, task);
-      console.log(taskStart);
       setShow(false);
     }
   };

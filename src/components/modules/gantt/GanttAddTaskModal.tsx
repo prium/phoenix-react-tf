@@ -13,18 +13,27 @@ const GanttAddTaskModal = ({
   show: boolean;
   setShow: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const defaultStartDate = new Date(2024, 4, 20); // May 20, 2024
+
   const [taskName, setTaskName] = useState('New Task');
-  const [taskStart, setTaskStart] = useState<Date>(new Date('May 20, 2024'));
+  const [taskStart, setTaskStart] = useState<Date>(defaultStartDate);
   const [parentTask, setParentTask] = useState<string | null>(null);
   const [taskDuration, setTaskDuration] = useState(2);
+
   const resetForm = () => {
     setTaskName('New Task');
-    setTaskStart(new Date('May 20, 2024'));
+    setTaskStart(defaultStartDate);
     setTaskDuration(2);
     setParentTask(null);
   };
+
   const handleCreateTask = () => {
-    if (taskName && taskStart instanceof Date && !isNaN(taskDuration)) {
+    if (
+      taskName &&
+      taskStart instanceof Date &&
+      !isNaN(taskStart.getTime()) &&
+      !isNaN(taskDuration)
+    ) {
       const taskEnd = gantt.calculateEndDate({
         start_date: taskStart,
         duration: taskDuration
@@ -42,7 +51,7 @@ const GanttAddTaskModal = ({
       setShow(false);
       resetForm();
     } else {
-      console.warn('Invalid task input');
+      console.warn('Invalid task input', { taskStart, taskDuration });
     }
   };
 
@@ -56,7 +65,7 @@ const GanttAddTaskModal = ({
           gantt.createTask({
             text: '',
             duration: 3,
-            parent: item.getAttribute('id')
+            parent: parentId
           });
         });
       });
@@ -74,7 +83,14 @@ const GanttAddTaskModal = ({
     const id = gantt.attachEvent('onTaskCreated', task => {
       setShow(true);
       if (task.text) setTaskName(task.text);
-      if (task.start_date) setTaskStart(task.start_date);
+      if (
+        task.start_date instanceof Date &&
+        !isNaN(task.start_date.getTime())
+      ) {
+        setTaskStart(task.start_date);
+      } else {
+        setTaskStart(defaultStartDate);
+      }
       return false;
     });
 
@@ -105,6 +121,7 @@ const GanttAddTaskModal = ({
             <Form.Control
               type="text"
               placeholder="Enter task name"
+              value={taskName}
               onChange={e => setTaskName(e.target.value)}
             />
           </Form.Group>
@@ -118,10 +135,18 @@ const GanttAddTaskModal = ({
                 <DatePicker
                   id="createTaskStartDate"
                   onChange={date => {
-                    setTaskStart(date[0]);
+                    if (
+                      Array.isArray(date) &&
+                      date[0] instanceof Date &&
+                      !isNaN(date[0].getTime())
+                    ) {
+                      setTaskStart(date[0]);
+                    } else {
+                      setTaskStart(defaultStartDate);
+                    }
                   }}
                   options={{
-                    defaultDate: taskStart || new Date('May 20, 2024')
+                    defaultDate: taskStart
                   }}
                 />
               </Form.Group>
@@ -138,7 +163,10 @@ const GanttAddTaskModal = ({
                     placeholder="Days"
                     className="form-icon-input"
                     value={taskDuration}
-                    onChange={e => setTaskDuration(parseInt(e.target.value))}
+                    onChange={e => {
+                      const val = parseInt(e.target.value);
+                      setTaskDuration(!isNaN(val) ? val : 0);
+                    }}
                   />
                   <FontAwesomeIcon
                     icon={faClock}
