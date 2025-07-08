@@ -134,6 +134,8 @@ const GanttChart = () => {
       gantt.config.scroll_size = 7;
       gantt.init(containerRef.current);
       gantt.parse(tasks);
+      gantt.render()
+      gantt.scrollTo(0, null);
 
       // ---------- add a custom class to header ------------------
       gantt.templates.grid_header_class = columnName => {

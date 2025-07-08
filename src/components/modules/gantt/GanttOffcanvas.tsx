@@ -131,7 +131,11 @@ const GanttOffcanvas = () => {
         <Offcanvas.Header className="border-bottom">
           <div className="d-flex justify-content-between w-100">
             <Button variant="phoenix-success" className="me-1 mb-1">
-              <FontAwesomeIcon icon={faCheck} className="me-2" transform="shrink-3" />
+              <FontAwesomeIcon
+                icon={faCheck}
+                className="me-2"
+                transform="shrink-3"
+              />
               Mark Complete
             </Button>
 
@@ -173,7 +177,13 @@ const GanttOffcanvas = () => {
               <h5 className="mb-3">Assignee</h5>
               <div className="d-flex">
                 {members.slice(0, 5).map(member => (
-                  <AvatarDropdown key={member.id} user={member} size="m" className="me-2 border border-light-subtle rounded-pill" />
+                  <AvatarDropdown
+                    key={member.id}
+                    user={member}
+                    size="m"
+                    dropdownClass="d-inline-block border-0"
+                    className="me-2 rounded-pill border border-light-subtle"
+                  />
                 ))}
                 <Link
                   to="#!"
@@ -225,19 +235,21 @@ const GanttOffcanvas = () => {
                 <Form.Group controlId="createTaskDuration">
                   <Form.Label className="form-label-header mb-2">
                     Duration{' '}
-                    <span className="text-body-quaternary fw-normal">(Days)</span>
+                    <span className="text-body-quaternary fw-normal">
+                      (Days)
+                    </span>
                   </Form.Label>
                   <div className="form-icon-container">
                     <Form.Control
                       type="number"
                       placeholder="Days"
-                      className="form-icon-input"
+                      className="form-icon-input ps-6"
                       value={taskDuration}
                       onChange={e => setTaskDuration(parseInt(e.target.value))}
                     />
                     <FontAwesomeIcon
                       icon={faClock}
-                      className="fs-9 form-icon text-body-tertiary"
+                      className="fs-9 form-icon text-body"
                     />
                   </div>
                 </Form.Group>
@@ -299,9 +311,7 @@ const GanttOffcanvas = () => {
                   <Row className="gy-3">
                     <Col sm={8}>
                       <Form.Group controlId="Dependency1">
-                        <h5 className="mb-3">
-                          Dependency type
-                        </h5>
+                        <h5 className="mb-3">Dependency type</h5>
                         <div className="d-sm-flex gap-3">
                           <Form.Select aria-label="Dependency type 1">
                             <option defaultValue="selected">Blocked by</option>
@@ -325,9 +335,7 @@ const GanttOffcanvas = () => {
 
                     <Col sm={4}>
                       <Form.Group controlId="selectTask1">
-                        <h5 className="mb-3">
-                          Select task
-                        </h5>
+                        <h5 className="mb-3">Select task</h5>
                         <Form.Select aria-label="Select task">
                           <option defaultValue="selected">Select Task</option>
                           <option value="1">One</option>
@@ -344,9 +352,7 @@ const GanttOffcanvas = () => {
                   <Row className="gy-3">
                     <Col sm={8}>
                       <Form.Group controlId="dependency3">
-                        <h5 className="mb-3">
-                          Dependency type
-                        </h5>
+                        <h5 className="mb-3">Dependency type</h5>
                         <div className="d-sm-flex gap-3">
                           <Form.Select aria-label="Dependency type 3">
                             <option defaultValue="selected">Blocking</option>
@@ -370,9 +376,7 @@ const GanttOffcanvas = () => {
 
                     <Col sm={4}>
                       <Form.Group controlId="selectTask6">
-                        <h5 className="mb-3">
-                          Select task
-                        </h5>
+                        <h5 className="mb-3">Select task</h5>
                         <Form.Select aria-label="Select task">
                           <option defaultValue="selected">Select task</option>
                           <option value="1">One</option>

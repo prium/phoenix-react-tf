@@ -15,17 +15,27 @@ import {
   faUserPlus,
   faVideo
 } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
 
 interface AvatarDropdownInterface {
   user: Member;
   size: Size;
-  className?: string
+  className?: string;
+  dropdownClass?: string;
 }
 
-const AvatarDropdown = ({ user, size, className }: AvatarDropdownInterface) => {
+const AvatarDropdown = ({
+  user,
+  size,
+  className,
+  dropdownClass
+}: AvatarDropdownInterface) => {
   return (
     <Dropdown>
-      <Dropdown.Toggle variant="" className="dropdown-caret-none p-0">
+      <Dropdown.Toggle
+        variant=""
+        className={classNames('dropdown-caret-none p-0', dropdownClass)}
+      >
         <Avatar src={user.avatar} size={size} className={className} />
       </Dropdown.Toggle>
 

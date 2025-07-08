@@ -91,11 +91,12 @@
 }
 
 .simplebar-vertical {
+  width: 11px !important;
   right: 2px !important;
   border-radius: var(--#{$prefix}border-radius) !important;
   > {
     div {
-      background-color: $scrollbar-bg !important;
+      background-color: transparent !important;
       border-radius: inherit !important;
     }
   }
@@ -149,7 +150,7 @@
 .navbar-top-search-box {
   .simplebar-track {
     &.simplebar-vertical {
-      width: 8px;
+      width: 11px;
     }
   }
 }

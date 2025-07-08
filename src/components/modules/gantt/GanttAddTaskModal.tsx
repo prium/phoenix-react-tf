@@ -116,7 +116,7 @@ const GanttAddTaskModal = ({
         <Form id="addTaskForm">
           <Form.Group controlId="createTaskName" className="mb-4">
             <Form.Label className="form-label-header mb-2">
-              Task name
+              Task Name
             </Form.Label>
             <Form.Control
               type="text"
@@ -130,7 +130,7 @@ const GanttAddTaskModal = ({
             <Col xs={7} sm={8}>
               <Form.Group controlId="createTaskStartDate">
                 <Form.Label className="form-label-header mb-2">
-                  Start Time
+                  Start Date
                 </Form.Label>
                 <DatePicker
                   id="createTaskStartDate"
@@ -153,7 +153,7 @@ const GanttAddTaskModal = ({
             </Col>
 
             <Col xs={5} sm={4}>
-              <Form.Group controlId="createTaskDuration" className="mb-4">
+              <Form.Group controlId="createTaskDuration" className="">
                 <Form.Label className="form-label-header mb-2">
                   Time Duration
                 </Form.Label>

@@ -154,7 +154,7 @@ export const ganttConfigColumnsData = [
     width: 160,
     template(task: Task) {
       return `
-         <span class='uil uil-calendar-alt text-body-quaternary fs-8 me-1'></span> ${formatDate(
+         <span class='far fa-calendar-alt text-body-quaternary fs-8 me-1'></span> ${formatDate(
            task.start_date
          )} 
       `;
@@ -167,7 +167,7 @@ export const ganttConfigColumnsData = [
     width: 160,
     template(task: Task) {
       return `
-       <span class='uil uil-calendar-alt text-body-quaternary fs-8 me-1'></span> ${formatDate(
+       <span class='far fa-calendar-alt text-body-quaternary fs-8 me-1'></span> ${formatDate(
          task.end_date
        )} 
     `;
@@ -180,7 +180,7 @@ export const ganttConfigColumnsData = [
     width: 160,
     template(task: Task) {
       return `
-        <span class='uil uil-clock me-1 fs-8 text-quaternary'></span>
+        <span class='far fa-clock me-1 fs-8 text-quaternary'></span>
         ${task.duration} days 
     `;
     }

@@ -44,15 +44,15 @@ const GanttOptionsModal = ({
       aria-labelledby="OptionsModal"
     >
       <Modal.Header className="p-4 pb-3 align-items-start">
-        <h3 className="mb-2 text-body-highlight" id="OptionsModal">
+        <h4 className="text-body-highlight mb-0" id="OptionsModal">
           Options
-        </h3>
-        <button onClick={() => setShow(false)} className="btn p-1 ms-auto">
-          <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
+        </h4>
+        <button onClick={() => setShow(false)} className="btn p-0 ms-auto">
+          <FontAwesomeIcon icon={faTimes} className="btn-close" />
         </button>
       </Modal.Header>
 
-      <Modal.Body className="px-4">
+      <Modal.Body className="p-4">
         <Form id="ganttOptionsForm">
           <Row className="g-3">
             <Col xs={12}>
@@ -95,20 +95,26 @@ const GanttOptionsModal = ({
               <div className="d-flex align-items-center justify-content-between mt-2">
                 <h4 className="mb-0">Show baseline</h4>
                 <div className="d-flex align-items-center">
-                  <Form.Check
-                    type="radio"
-                    id="hideBaseline"
-                    label="No"
-                    name="showBaseline"
-                    defaultChecked
-                    className="me-3"
-                  />
-                  <Form.Check
-                    type="radio"
-                    id="showBaseline"
-                    label="Yes"
-                    name="showBaseline"
-                  />
+                  <Form.Check type="radio" className="me-3 form-check">
+                    <Form.Check.Input
+                      id="hideBaseline"
+                      name="showBaseline"
+                      type="radio"
+                      defaultChecked
+                      className=""
+                    />
+                    <label htmlFor="hideBaseLine">No</label>
+                  </Form.Check>
+
+                  <Form.Check type="radio" className="form-check">
+                    <Form.Check.Input
+                      id="showBaseline"
+                      name="showBaseline"
+                      type="radio"
+                      className=""
+                    />
+                    <label htmlFor="showBaseline">Yes</label>
+                  </Form.Check>
                 </div>
               </div>
             </Col>
@@ -124,13 +130,12 @@ const GanttOptionsModal = ({
                 <Form.Check
                   type="switch"
                   id="isAutoScheduleTask"
-                  className="mb-0 fs-6"
-                  label=""
+                  className="mb-0 fs-6 form-check"
                 />
               </div>
             </Col>
 
-            <Col xs={12}>
+            <Col xs={12} className="mt-0">
               <hr />
               <div className="card">
                 <div className="card-body p-3">
@@ -167,8 +172,8 @@ const GanttOptionsModal = ({
               </div>
             </Col>
 
-            <Col xs={12}>
-              <div className="d-flex justify-content-between align-items-center mt-2">
+            <Col xs={12} className="mt-4">
+              <div className="d-flex justify-content-between align-items-center">
                 <div>
                   <h4>Weekend awareness</h4>
                   <p className="mb-0 fs-9">
@@ -188,7 +193,7 @@ const GanttOptionsModal = ({
         </Form>
       </Modal.Body>
 
-      <Modal.Footer className="px-4 pb-3 border-0">
+      <Modal.Footer className="p-4">
         <Button
           id="optionModal"
           variant="subtle-danger"

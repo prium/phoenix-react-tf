@@ -28,8 +28,8 @@ const GanttFilterModal = ({
         <h3 id="ganttFilterModalLabel" className="mb-2 text-body-highlight">
           Filter
         </h3>
-        <button onClick={handleClose} className="btn p-1 ms-auto">
-          <FontAwesomeIcon icon={faTimes} className="fs-10 btn-close" />
+        <button onClick={handleClose} className="btn p-0 ms-auto">
+          <FontAwesomeIcon icon={faTimes} className="btn-close" />
         </button>
       </Modal.Header>
 
@@ -43,7 +43,7 @@ const GanttFilterModal = ({
               <DatePicker
                 id="filterStartDate"
                 options={{
-                  defaultDate: new Date(2024, 4, 20)
+                  defaultDate: new Date(2022, 2, 2)
                 }}
               />
             </Form.Group>

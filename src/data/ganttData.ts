@@ -118,7 +118,7 @@ export const ganttData: Data = {
     {
       id: 15,
       text: 'Development',
-      start_date: new Date(2023, 5, 19),
+      start_date: new Date(2023, 4, 10),
       duration: 40,
       parent: 11,
       progress: 0.8,
@@ -134,7 +134,7 @@ export const ganttData: Data = {
     {
       id: 16,
       text: 'Testing',
-      start_date: new Date(2023, 4, 6),
+      start_date: new Date(2023, 5, 5),
       duration: 23,
       type: 'milestone',
       parent: 11,
@@ -163,7 +163,7 @@ export const ganttData: Data = {
     {
       id: 17,
       text: 'Deployment',
-      start_date: new Date(2023, 2, 4),
+      start_date: new Date(2023, 3, 3),
       duration: 52,
       parent: 13,
       progress: 1,
@@ -301,7 +301,7 @@ export const ganttData: Data = {
     {
       id: 28,
       text: 'Design for new dashboard aurora',
-      start_date: new Date(2023, 4, 25),
+      start_date: new Date(2023, 5, 25),
       duration: 112,
       progress: 0,
       open: true,

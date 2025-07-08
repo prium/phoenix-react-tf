@@ -8,7 +8,7 @@ const breakpoints = {
   xl: 1200
 };
 
-const gridWidth = 500;
+const gridWidth = 518;
 
 const GanttResponsive = () => {
   useEffect(() => {
