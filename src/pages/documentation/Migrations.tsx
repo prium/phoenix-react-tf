@@ -9,8 +9,19 @@ import migrations from 'data/migrations';
 import { Alert, Card } from 'react-bootstrap';
 import { Link } from 'react-router';
 import MigrationToNineteen from './MigrationToNineteen';
+import { useLocation } from 'react-router';
+import { useEffect } from 'react';
 
 const Migrations = () => {
+  const location = useLocation();
+  useEffect(() => {
+    if(location.hash){
+      const el = document.getElementById(location.hash.replace('#', ''));
+      if(el) {
+        el.scrollIntoView({behavior: 'smooth'})
+      }
+    }
+  }, [location])
   return (
     <div>
       <h2 className="mb-4 lh-sm">Migrations</h2>
@@ -39,7 +50,7 @@ const Migrations = () => {
       {migrations.map(migration => (
         <PhoenixDocCard className="mb-4" key={migration.from}>
           <PhoenixDocCard.Header noPreview>
-            <div className="d-flex align-items-center">
+            <div className="d-flex align-items-center" id={migration.to}>
               <p className="text-body text-nowrap mb-0">
                 <code className="fs-7 opacity-50">{migration.from}</code>
                 <span className="mx-3">to</span>

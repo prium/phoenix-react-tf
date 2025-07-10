@@ -6,12 +6,6 @@ export default [
     title: 'Astraea',
     alertText:
       'This is a major update. Please backup your project before upgrading to the latest version.',
-    alertLink: {
-      prefix: 'See the',
-      linkText: 'migration',
-      link: '/migrations/#v2.0.0',
-      suffix: 'for details.'
-    },
     publishDate: '10 Jul, 2025',
     logs: {
       new: [

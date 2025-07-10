@@ -28,7 +28,7 @@ const ChangeLog = () => {
               <Button
                 as={Link}
                 variant="link"
-                to={`/migrations/#${changelog.version}`}
+                to={`/migrations/#v${changelog.version}`}
                 endIcon={
                   <FontAwesomeIcon icon={faChevronRight} className="fs-10" />
                 }
