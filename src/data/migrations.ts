@@ -10,8 +10,8 @@ export default [
       'src/components/modules/gantt/GanttFilterModal.tsx',
       'src/components/moudles/gantt/GanttOffcanvas.tsx',
       'src/components/modules/gantt/GanttOptionsModal.tsx',
-      'src/components/modules/gantt/GanttResponsive.tsx',
       'src/components/modules/gantt/layoutConfig.tsx',
+      'src/hooks/useGanttChartGridWidth.tsx',
       'src/data/ganttData.ts',
       'src/pages/gantt-chart/GanttChart.tsx'
     ],

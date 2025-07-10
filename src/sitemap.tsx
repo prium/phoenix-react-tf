@@ -84,8 +84,7 @@ export const routes: RouteItems[] = [
             path: '/dashboard/stock',
             pathName: 'stock',
             topNavIcon: 'dollar-sign',
-            active: true,
-            new: true
+            active: true
           },
           {
             name: 'social-feed',
@@ -469,7 +468,6 @@ export const routes: RouteItems[] = [
       {
         name: 'stock',
         icon: 'dollar-sign',
-        new: true,
         active: true,
         pages: [
           {

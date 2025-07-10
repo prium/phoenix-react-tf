@@ -12,17 +12,17 @@ export default [
       link: '/migrations/#v2.0.0',
       suffix: 'for details.'
     },
-    publishDate: '7 Jul, 2025',
+    publishDate: '10 Jul, 2025',
     logs: {
       new: [
+        'PAGE: <code>gantt-chart</code>',
         'PACKAGE: <code>echarts</code>',
         'PACKAGE: <code>react-leaflet-markercluster</code>',
         'PACKAGE: <code>simplebar</code>',
         'PACKAGE: <code>simplebar-react</code>',
-        'PAGE: <code>gantt-chart</code>'
       ],
       update: [
-        'PACKAGE: Added <code>React 19.1.0</code>.',
+        'PACKAGE: React Updated to <code>v19</code>.',
         'PACKAGE: Upgraded to <code>React Router v7</code>: <a href="https://reactrouter.com/upgrading/v6#upgrade-to-v7">See Migration Guide</a>',
         'Removed <code>forwardRef</code> and added the types support.',
         'Refactored Suspense boundaries to align React Router v7 best practices.',

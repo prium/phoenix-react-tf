@@ -65,7 +65,7 @@
     font-weight: $font-weight-bold;
   }
   .gantt_tree_content {
-    color: $gray-500;
+    color: var(--#{$prefix}quaternary-color);
     display: flex;
     align-items: center;
   }

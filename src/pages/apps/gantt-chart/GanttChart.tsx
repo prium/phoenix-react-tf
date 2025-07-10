@@ -1,17 +1,17 @@
 import { gantt } from 'dhtmlx-gantt';
 import 'dhtmlx-gantt/codebase/dhtmlxgantt.css';
-import GanttChartActions from 'components/modules/gantt/GanttActions';
-import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useEffect, useRef, useState } from 'react';
+import GanttChartActions from 'components/modules/gantt/GanttActions';
+import GanttOffcanvas from 'components/modules/gantt/GanttOffcanvas';
+import GanttDeleteLinkModal from 'components/modules/gantt/GanttDeleteLinkModal';
 import { ganttData as tasks } from 'data/ganttData';
 import {
   ganttConfigColumnsData,
   taskTextHandler
 } from 'components/modules/gantt/layoutConfig';
-import GanttOffcanvas from 'components/modules/gantt/GanttOffcanvas';
-import GanttDeleteLinkModal from 'components/modules/gantt/GanttDeleteLinkModal';
-import GanttResponsive from 'components/modules/gantt/GanttResponsive';
+import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useAppContext } from 'providers/AppProvider';
+import { useGanttChartGridWidth } from 'hooks/useGanttChartGridWidth';
 
 const weekScaleTemplate = (date: Date): string => {
   const dateToStr = gantt.date.date_to_str('%M %d');
@@ -26,10 +26,9 @@ const Views = {
   YEARS: 'years'
 };
 
-export type ViewType = (typeof Views)[keyof typeof Views]; // 'days' | 'weeks' | 'months' | 'years'
-export type ViewKey = keyof typeof Views; // 'DAYS' | 'WEEKS' | 'MONTHS' | 'YEARS'
+export type ViewType = (typeof Views)[keyof typeof Views];
+export type ViewKey = keyof typeof Views;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const scales: Record<ViewType, any> = {
   days: [
     { unit: 'week', step: 1, format: '%W' },
@@ -37,11 +36,7 @@ const scales: Record<ViewType, any> = {
   ],
   weeks: [
     { unit: 'month', step: 1, format: '%F' },
-    {
-      unit: 'week',
-      step: 1,
-      format: weekScaleTemplate
-    }
+    { unit: 'week', step: 1, format: weekScaleTemplate }
   ],
   months: [
     { unit: 'year', step: 1, format: '%Y' },
@@ -62,12 +57,13 @@ const scales: Record<ViewType, any> = {
 };
 
 const GanttChart = () => {
+  const containerRef = useRef(null);
+  const [currentView, setCurrentView] = useState<ViewType>(Views.MONTHS);
   const { setContentClass } = useMainLayoutContext();
+  const ganttWidth = useGanttChartGridWidth();
   const {
     config: { isRTL }
   } = useAppContext();
-  const containerRef = useRef(null);
-  const [currentView, setCurrentView] = useState<ViewType>(Views.MONTHS);
 
   useEffect(() => {
     setContentClass('gantt-content');
@@ -81,20 +77,17 @@ const GanttChart = () => {
       gantt.clearAll();
       gantt.plugins({});
       gantt.config.scales = scales[currentView];
-      gantt.config.row_height = 48; // Adjust task row height
+      gantt.config.row_height = 48;
       gantt.config.scale_height = 70;
       gantt.config.bar_height = 16;
       gantt.config.sort = true;
       gantt.config.grid_resizer = true;
-      gantt.config.min_column_width = 130; // Increase the minimum width of each cell
+      gantt.config.min_column_width = 130;
       gantt.config.columns = ganttConfigColumnsData;
       gantt.config.rtl = false;
 
-      const gridWidth = 518;
-
-      // --------- configure layout start ----------
       const gridConfig = {
-        width: gridWidth,
+        width: ganttWidth,
         rows: [
           {
             view: 'grid',
@@ -129,31 +122,36 @@ const GanttChart = () => {
         };
       }
 
-      // --------- configure layout end ----------
       taskTextHandler(isRTL);
       gantt.config.scroll_size = 7;
       gantt.init(containerRef.current);
+
       gantt.parse(tasks);
-      gantt.render()
+      gantt.render();
+
       gantt.scrollTo(0, null);
 
-      // ---------- add a custom class to header ------------------
-      gantt.templates.grid_header_class = columnName => {
-        if (columnName === 'assignee') {
-          return 'sort-btn-none';
-        }
-        return '';
-      };
+      gantt.templates.grid_header_class = columnName =>
+        columnName === 'assignee' ? 'sort-btn-none' : '';
     }
+
     return () => {
-      gantt.clearAll(); // Clear tasks and links
+      gantt.clearAll();
     };
-  }, []);
+  }, [ganttWidth]);
 
   useEffect(() => {
     gantt.config.scales = scales[currentView];
     gantt.render();
   }, [currentView]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      gantt.render();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
@@ -163,7 +161,6 @@ const GanttChart = () => {
       </div>
       <GanttOffcanvas />
       <GanttDeleteLinkModal />
-      <GanttResponsive />
     </>
   );
 };
