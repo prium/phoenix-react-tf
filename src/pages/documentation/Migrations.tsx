@@ -18,7 +18,9 @@ const Migrations = () => {
     if(location.hash){
       const el = document.getElementById(location.hash.replace('#', ''));
       if(el) {
-        el.scrollIntoView({behavior: 'smooth'})
+        setTimeout(() => {
+          el.scrollIntoView({behavior: 'smooth'})
+        }, 0)
       }
     }
   }, [location])
