@@ -47,6 +47,13 @@
         100vh - $navbar-top-height - $footer-height - 66px
       ) !important;
     }
+
+    @include media-breakpoint-up(lg) {
+      width: calc(100vw - 15.875rem) !important;
+      html.navbar-vertical-collapsed & {
+        width: calc(100vw - 4rem) !important;
+      }
+    }
   }
   .gridScroll_cell {
     background-color: var(--#{$prefix}body-bg);
@@ -308,7 +315,7 @@
   }
 }
 .assignee-dropdown-container {
-  position: relative; /* Crucial for positioning the absolute dropdown */
+  position: relative;
 }
 .assignee-dropdown-container .dropdown-menu {
   display: none;
@@ -325,10 +332,10 @@
 .gantt_cell[data-column-name='assignee'] {
   overflow: visible !important;
 
-  .gantt_tree_content{
+  .gantt_tree_content {
     overflow: visible;
-    .avatar-group{
-      .assignee-dropdown-container:not(:first-child){
+    .avatar-group {
+      .assignee-dropdown-container:not(:first-child) {
         margin-left: -0.5rem !important;
       }
     }

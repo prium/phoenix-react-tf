@@ -87,8 +87,7 @@ export const ganttConfigColumnsData = [
     name: 'text',
     label: 'PROJECT NAME',
     tree: true,
-    width: 410,
-    min_width: 80,
+    min_width: 410,
     template(task: Task) {
       const subTasks = gantt.getChildren(task.id).length;
       return `<div class='gantt-task-title-wrapper'> 
@@ -107,7 +106,7 @@ export const ganttConfigColumnsData = [
   {
     name: 'assignee',
     label: 'ASSIGNEE',
-    width: 160,
+    min_width: 160,
     template: assigneeTemplate,
     sort: false
   },
@@ -115,8 +114,7 @@ export const ganttConfigColumnsData = [
   {
     name: 'Priority',
     label: 'PRIORITY',
-    width: 160,
-    min_width: 50,
+    min_width: 160,
     template(task: Task) {
       const label = task.priority?.toLowerCase();
       let color;
@@ -151,7 +149,7 @@ export const ganttConfigColumnsData = [
     name: 'start_date',
     label: 'START DATE',
     align: 'start',
-    width: 160,
+    min_width: 160,
     template(task: Task) {
       return `
          <span class='far fa-calendar text-body-quaternary fs-8 me-1'></span> ${formatDate(
@@ -164,7 +162,7 @@ export const ganttConfigColumnsData = [
     name: 'end_date',
     label: 'END DATE',
     align: 'start',
-    width: 160,
+    min_width: 160,
     template(task: Task) {
       return `
        <span class='far fa-calendar text-body-quaternary fs-8 me-1'></span> ${formatDate(
@@ -177,7 +175,7 @@ export const ganttConfigColumnsData = [
     name: 'duration',
     label: 'DURATION',
     align: 'start',
-    width: 160,
+    min_width: 160,
     template(task: Task) {
       return `
         <span class='far fa-clock me-1 fs-8 text-quaternary'></span>

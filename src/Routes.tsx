@@ -438,7 +438,7 @@ const routes: RouteObject[] = [
               {
                 path: 'gantt-chart',
                 element: (
-                  <Suspense key={'gantt_chart'} fallback={<PhoenixLoader />}>
+                  <Suspense key='gantt_chart' fallback={<PhoenixLoader />}>
                     <GanttChart />
                   </Suspense>
                 )

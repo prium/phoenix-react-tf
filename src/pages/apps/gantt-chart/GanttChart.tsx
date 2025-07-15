@@ -12,6 +12,7 @@ import {
 import { useMainLayoutContext } from 'providers/MainLayoutProvider';
 import { useAppContext } from 'providers/AppProvider';
 import { useGanttChartGridWidth } from 'hooks/useGanttChartGridWidth';
+import { resetGanttConfig } from 'components/charts/dhtmlx/resetGanttConfig';
 
 const weekScaleTemplate = (date: Date): string => {
   const dateToStr = gantt.date.date_to_str('%M %d');
@@ -73,70 +74,69 @@ const GanttChart = () => {
   }, [setContentClass]);
 
   useEffect(() => {
-    if (containerRef.current) {
-      gantt.clearAll();
-      gantt.plugins({});
-      gantt.config.scales = scales[currentView];
-      gantt.config.row_height = 48;
-      gantt.config.scale_height = 70;
-      gantt.config.bar_height = 16;
-      gantt.config.sort = true;
-      gantt.config.grid_resizer = true;
-      gantt.config.min_column_width = 130;
-      gantt.config.columns = ganttConfigColumnsData;
-      gantt.config.rtl = false;
+    if (!containerRef.current || !ganttWidth) return;
+    resetGanttConfig()
+    gantt.plugins({});
+    gantt.config.scales = scales[currentView];
+    gantt.config.row_height = 48;
+    gantt.config.scale_height = 70;
+    gantt.config.bar_height = 16;
+    gantt.config.sort = true;
+    gantt.config.grid_resizer = true;
+    gantt.config.min_column_width = 130;
+    gantt.config.columns = ganttConfigColumnsData;
+    gantt.config.rtl = false;
+    gantt.config.scroll_size = 7;
 
-      const gridConfig = {
-        width: ganttWidth,
-        rows: [
-          {
-            view: 'grid',
-            scrollX: 'gridScroll',
-            scrollable: true,
-            scrollY: 'scrollVer'
-          },
-          { view: 'scrollbar', id: 'gridScroll' }
-        ]
-      };
+    const gridConfig = {
+      width: ganttWidth,
+      rows: [
+        {
+          view: 'grid',
+          scrollX: 'gridScroll',
+          scrollable: true,
+          scrollY: 'scrollVer'
+        },
+        { view: 'scrollbar', id: 'gridScroll' }
+      ]
+    };
+    const timelineConfig = {
+      rows: [
+        { view: 'timeline', scrollX: 'scrollHor', scrollY: 'scrollVer' },
+        { view: 'scrollbar', id: 'scrollHor' }
+      ]
+    };
 
-      const timelineConfig = {
-        rows: [
-          { view: 'timeline', scrollX: 'scrollHor', scrollY: 'scrollVer' },
-          { view: 'scrollbar', id: 'scrollHor' }
-        ]
-      };
+    const scrollbarConfig = { view: 'scrollbar', id: 'scrollVer' };
+    const resizerConfig = { resizer: true, width: 1 };
 
-      const scrollbarConfig = { view: 'scrollbar', id: 'scrollVer' };
-      const resizerConfig = { resizer: true, width: 1 };
+    gantt.config.layout = {
+      css: 'gantt_container',
+      cols: [gridConfig, resizerConfig, timelineConfig, scrollbarConfig]
+    };
 
+    if (isRTL) {
+      gantt.config.rtl = true;
       gantt.config.layout = {
         css: 'gantt_container',
-        cols: [gridConfig, resizerConfig, timelineConfig, scrollbarConfig]
+        cols: [scrollbarConfig, timelineConfig, resizerConfig, gridConfig]
       };
-
-      if (isRTL) {
-        gantt.config.rtl = true;
-        gantt.config.layout = {
-          css: 'gantt_container',
-          cols: [scrollbarConfig, timelineConfig, resizerConfig, gridConfig]
-        };
-      }
-
-      taskTextHandler(isRTL);
-      gantt.config.scroll_size = 7;
-      gantt.init(containerRef.current);
-
-      gantt.parse(tasks);
-      gantt.render();
-
-      gantt.scrollTo(0, null);
-
-      gantt.templates.grid_header_class = columnName =>
-        columnName === 'assignee' ? 'sort-btn-none' : '';
     }
 
+    taskTextHandler(isRTL);
+    gantt.scrollTo(0);
+    gantt.parse(tasks);
+    gantt.render();
+    gantt.init(containerRef?.current);
+
+    gantt.templates.grid_header_class = columnName =>
+      columnName === 'assignee' ? 'sort-btn-none' : '';
+    gantt.resetLayout();
     return () => {
       gantt.clearAll();
+      gantt.resetLayout();
+      gantt.resetSkin();
+      gantt._events = [];
     };
   }, [ganttWidth]);
 

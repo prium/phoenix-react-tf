@@ -6,7 +6,7 @@ export default [
     title: 'Astraea',
     alertText:
       'This is a major update. Please backup your project before upgrading to the latest version.',
-    publishDate: '10 Jul, 2025',
+    publishDate: '15 Jul, 2025',
     logs: {
       new: [
         'PAGE: <code>gantt-chart</code>',

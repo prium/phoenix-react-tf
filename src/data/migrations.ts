@@ -4,6 +4,7 @@ export default [
     to: 'v2.0.0',
     new: [
       'types/simplebar-react.d.ts',
+      'src/components/charts/dhtmlx/resetGanttConfig.ts',
       'src/components/modules/gantt/GanttActions.tsx',
       'src/components/modules/gantt/GanttAddTaskModal.tsx',
       'src/components/modules/gantt/GanttDeleteLinkModal.tsx',
