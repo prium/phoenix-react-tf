@@ -1,7 +1,5 @@
 import {
   CSSProperties,
-  MutableRefObject,
-  forwardRef,
   useCallback,
   useEffect,
   useMemo
@@ -17,18 +15,21 @@ import { CallbackDataParams } from 'echarts/types/dist/shared';
 import { FinancialActivitiesData } from 'data/travel-agency/travelAgency';
 echarts.use([TooltipComponent, BarChart]);
 
-const FinancialActivitiesChart = forwardRef<
-  EChartsReactCore | null,
-  {
-    style?: CSSProperties;
-  }
->(({ style }, ref) => {
+interface FinancialActivitiesChartProps {
+  style?: CSSProperties;
+  ref?: React.RefObject<EChartsReactCore | null>;
+}
+
+const FinancialActivitiesChart = ({
+  style,
+  ref
+}: FinancialActivitiesChartProps) => {
   const {
     getThemeColor,
     config: { isDark }
   } = useAppContext();
 
-  const chartRef = ref as MutableRefObject<EChartsReactCore | null>;
+  const chartRef = ref as React.RefObject<EChartsReactCore | null>;
 
   const getDefaultOptions = useMemo(
     () => ({
@@ -221,6 +222,6 @@ const FinancialActivitiesChart = forwardRef<
       className="echart-financial-Activities"
     />
   );
-});
+};
 
 export default FinancialActivitiesChart;

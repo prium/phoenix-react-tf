@@ -11,7 +11,7 @@ import { Card, Col, Offcanvas, Row } from 'react-bootstrap';
 import OffcanvasImage from 'assets/img/stock/offcanvas-image.jpeg';
 import { UilClock, UilMapMarker } from '@iconscout/react-unicons';
 import UpcomingCollapsibleContainer from './UpcomingCollapseContainer';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Avatar from 'components/base/Avatar';
 import Img from 'assets/img/team/30.webp';
 
@@ -67,6 +67,7 @@ const EventOffcanvas = ({ open, setOpen }: EventOffcanvasProps) => {
                 <div className="d-flex gap-2 align-items-center mb-2">
                   <div className="bg-info-subtle px-2 py-1 rounded">
                     <UilMapMarker
+                      fill='currentColor'
                       size={20}
                       className="text-info"
                       style={{ width: 20, height: 29.797 }}
@@ -82,6 +83,7 @@ const EventOffcanvas = ({ open, setOpen }: EventOffcanvasProps) => {
                 <div className="d-flex gap-2 align-items-center mb-2">
                   <div className="bg-primary-subtle px-2 py-1 rounded">
                     <UilClock
+                      fill='currentColor'
                       size={20}
                       className="text-primary"
                       style={{ width: 20, height: 29.797 }}

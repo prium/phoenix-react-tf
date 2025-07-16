@@ -1,6 +1,6 @@
 import MainLayout from 'layouts/MainLayout';
 import Starter from 'pages/pages/Starter';
-import { RouteObject, createBrowserRouter } from 'react-router-dom';
+import { RouteObject, createBrowserRouter } from 'react-router';
 import ButtonExample from 'pages/modules/components/ButtonExample';
 import AccordionExample from 'pages/modules/components/AccordionExample';
 import AvatarExample from 'pages/modules/components/AvatarExample';
@@ -181,7 +181,9 @@ const AdvanceTableExample = lazy(
 const Ecommerce = lazy(() => import('pages/dashboard/ecommerce'));
 const TravelAgency = lazy(() => import('pages/dashboard/TravelAgency'));
 const Chat = lazy(() => import('pages/apps/chat/Chat'));
-const GanttChart = lazy(() => import('pages/modules/charts/GanttChart'));
+const GanttChartExample = lazy(
+  () => import('pages/modules/charts/GanttChartExample')
+);
 const EmojiButtonExample = lazy(
   () => import('pages/modules/forms/advance/EmojiButtonExample')
 );
@@ -231,6 +233,7 @@ import TripDetails from 'pages/apps/travel-agency/trip/TripDetails';
 import TripCheckout from 'pages/apps/travel-agency/trip/Checkout';
 import TripLayout from 'layouts/TripLayout';
 import FileManagerProvider from 'providers/FileManagerProvider';
+import GanttChart from 'pages/apps/gantt-chart/GanttChart';
 
 const routes: RouteObject[] = [
   {
@@ -247,7 +250,7 @@ const routes: RouteObject[] = [
           {
             index: true,
             element: (
-              <Suspense fallback={<PhoenixLoader />}>
+              <Suspense key="index" fallback={<PhoenixLoader />}>
                 <Ecommerce />
               </Suspense>
             )
@@ -258,7 +261,10 @@ const routes: RouteObject[] = [
               {
                 path: 'project-management',
                 element: (
-                  <Suspense fallback={<PhoenixLoader />}>
+                  <Suspense
+                    key="project-management"
+                    fallback={<PhoenixLoader />}
+                  >
                     <ProjectManagement />
                   </Suspense>
                 )
@@ -266,7 +272,7 @@ const routes: RouteObject[] = [
               {
                 path: 'crm',
                 element: (
-                  <Suspense fallback={<PhoenixLoader />}>
+                  <Suspense key="crm" fallback={<PhoenixLoader />}>
                     <Crm />
                   </Suspense>
                 )
@@ -274,7 +280,7 @@ const routes: RouteObject[] = [
               {
                 path: 'travel-agency',
                 element: (
-                  <Suspense fallback={<PhoenixLoader />}>
+                  <Suspense key="travel-agency" fallback={<PhoenixLoader />}>
                     <TravelAgency />
                   </Suspense>
                 )
@@ -282,7 +288,7 @@ const routes: RouteObject[] = [
               {
                 path: 'stock',
                 element: (
-                  <Suspense fallback={<PhoenixLoader />}>
+                  <Suspense key="stock" fallback={<PhoenixLoader />}>
                     <StockDashboard />
                   </Suspense>
                 )
@@ -331,7 +337,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'analytics',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="analytics" fallback={<PhoenixLoader />}>
                         <Analytics />
                       </Suspense>
                     )
@@ -414,7 +420,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'kanban',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="kanban" fallback={<PhoenixLoader />}>
                         <Kanban />
                       </Suspense>
                     )
@@ -428,6 +434,14 @@ const routes: RouteObject[] = [
                     element: <CreateBoard />
                   }
                 ]
+              },
+              {
+                path: 'gantt-chart',
+                element: (
+                  <Suspense key='gantt_chart' fallback={<PhoenixLoader />}>
+                    <GanttChart />
+                  </Suspense>
+                )
               },
               {
                 path: 'chat',
@@ -467,7 +481,7 @@ const routes: RouteObject[] = [
               {
                 path: 'calendar',
                 element: (
-                  <Suspense fallback={<PhoenixLoader />}>
+                  <Suspense key="calendar" fallback={<PhoenixLoader />}>
                     <Calendar />
                   </Suspense>
                 )
@@ -517,7 +531,7 @@ const routes: RouteObject[] = [
                     path: 'grid-view',
                     element: (
                       <FileManagerProvider>
-                        <Suspense fallback={<PhoenixLoader />}>
+                        <Suspense key="gridView" fallback={<PhoenixLoader />}>
                           <GridView />
                         </Suspense>
                       </FileManagerProvider>
@@ -527,7 +541,7 @@ const routes: RouteObject[] = [
                     path: 'list-view',
                     element: (
                       <FileManagerProvider>
-                        <Suspense fallback={<PhoenixLoader />}>
+                        <Suspense key="listView" fallback={<PhoenixLoader />}>
                           <ListView />
                         </Suspense>
                       </FileManagerProvider>
@@ -541,7 +555,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'stock-details',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="stockDetails" fallback={<PhoenixLoader />}>
                         <StockDetails />
                       </Suspense>
                     )
@@ -549,7 +563,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'portfolio',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="portfolio" fallback={<PhoenixLoader />}>
                         <Portfolio />
                       </Suspense>
                     )
@@ -557,7 +571,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'watchlist',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="watchlist" fallback={<PhoenixLoader />}>
                         <Watchlist />
                       </Suspense>
                     )
@@ -679,7 +693,10 @@ const routes: RouteObject[] = [
                   {
                     path: 'advance-tables',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense
+                        key="advanceTables"
+                        fallback={<PhoenixLoader />}
+                      >
                         <AdvanceTableExample />
                       </Suspense>
                     )
@@ -692,7 +709,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'e-charts',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="e-charts" fallback={<PhoenixLoader />}>
                         <ECharts />
                       </Suspense>
                     )
@@ -701,7 +718,7 @@ const routes: RouteObject[] = [
                     path: 'gantt-chart',
                     element: (
                       <Suspense fallback={<PhoenixLoader />}>
-                        <GanttChart />
+                        <GanttChartExample />
                       </Suspense>
                     )
                   }
@@ -713,7 +730,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'font-awesome',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="font-awesome" fallback={<PhoenixLoader />}>
                         <FontAwesomeExample />
                       </Suspense>
                     )
@@ -721,7 +738,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'feather',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="feather" fallback={<PhoenixLoader />}>
                         <FeatherIconsExample />
                       </Suspense>
                     )
@@ -729,7 +746,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'unicons',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="unicons" fallback={<PhoenixLoader />}>
                         <UniconsExample />
                       </Suspense>
                     )
@@ -834,7 +851,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'calendar',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="calendar" fallback={<PhoenixLoader />}>
                         <CalendarExample />
                       </Suspense>
                     )
@@ -854,7 +871,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'pictures/lightbox',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="lightbox" fallback={<PhoenixLoader />}>
                         <LightboxExample />
                       </Suspense>
                     )
@@ -907,7 +924,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'emoji-button',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="emoji-button" fallback={<PhoenixLoader />}>
                         <EmojiButtonExample />
                       </Suspense>
                     )
@@ -919,7 +936,7 @@ const routes: RouteObject[] = [
                   {
                     path: 'advance/range',
                     element: (
-                      <Suspense fallback={<PhoenixLoader />}>
+                      <Suspense key="range" fallback={<PhoenixLoader />}>
                         <ReactRangeExample />
                       </Suspense>
                     )
@@ -1122,7 +1139,10 @@ const routes: RouteObject[] = [
           {
             path: 'default',
             element: (
-              <Suspense fallback={<PhoenixLoader fullPage />}>
+              <Suspense
+                key="landingDefault"
+                fallback={<PhoenixLoader fullPage />}
+              >
                 <Default />
               </Suspense>
             )
@@ -1130,7 +1150,10 @@ const routes: RouteObject[] = [
           {
             path: 'alternate',
             element: (
-              <Suspense fallback={<PhoenixLoader fullPage />}>
+              <Suspense
+                key="landingALternate"
+                fallback={<PhoenixLoader fullPage />}
+              >
                 <Alternate />
               </Suspense>
             )

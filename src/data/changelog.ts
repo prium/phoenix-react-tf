@@ -2,6 +2,33 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '2.0.0',
+    title: 'Astraea',
+    alertText:
+      'This is a major update. Please backup your project before upgrading to the latest version.',
+    publishDate: '15 Jul, 2025',
+    logs: {
+      new: [
+        'PAGE: <code>gantt-chart</code>',
+        'PACKAGE: <code>echarts</code>',
+        'PACKAGE: <code>react-leaflet-markercluster</code>',
+        'PACKAGE: <code>simplebar</code>',
+        'PACKAGE: <code>simplebar-react</code>',
+      ],
+      update: [
+        'PACKAGE: React Updated to <code>v19</code>.',
+        'PACKAGE: Upgraded to <code>React Router v7</code>: <a href="https://reactrouter.com/upgrading/v6#upgrade-to-v7">See Migration Guide</a>',
+        'Removed <code>forwardRef</code> and added the types support.',
+        'Refactored Suspense boundaries to align React Router v7 best practices.',
+        'All dependencies are updated to the latest version supported for <code>react 19</code>.',
+        'PAGE: <code>modules/components/alerts</code>',
+        'PAGE: <code>modules/forms/advance/advance-select</code>',
+        'PACKAGE: Removed <code>@changey/react-leaflet-markercluster</code>',
+        'PACKAGE: Removed <code>react-custom-scrollbars-2</code>'
+      ]
+    }
+  },
+  {
     version: '1.10.0',
     title: 'Emberon',
     publishDate: '4 Jun, 2025',

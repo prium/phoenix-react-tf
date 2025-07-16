@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { currencyFormat, numberFormat } from 'helpers/utils';
 import StockDetailsBuyAndSellForm from './StockDetailsBuyAndSellForm';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import StockDetailsOptionChain from './StockDetailsOptionChain';
 
 interface StockDetailsSideBarContentProps {

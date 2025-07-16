@@ -10,7 +10,7 @@ import {
   faEye,
   faUpRightFromSquare
 } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Button from 'components/base/Button';
 import TopStockOptionChainTabContent from './TopStockOptionChainTabContent';
 import TopStockLineChart from 'components/charts/chartjs/TopStockLineChart';

@@ -108,6 +108,18 @@
   }
 }
 
+.project-tab{
+  .nav-link {
+    color: var(--#{$prefix}body-color);
+    &:hover{
+      color: var(--#{$prefix}body-color);
+    }
+    &.active{
+      color: var(--#{$prefix}primary);
+    }
+  }
+}
+
 // FAQ
 .faq-category-tab {
   position: sticky;

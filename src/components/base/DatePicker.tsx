@@ -49,6 +49,7 @@ const DatePicker = ({
       ) : (
         !hideIcon && (
           <UilCalendarAlt
+            fill='currentColor'
             className="flatpickr-icon text-body-tertiary"
             size={16}
           />

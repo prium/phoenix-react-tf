@@ -82,7 +82,6 @@ const getDefaultOptions = (
       symbol: 'circle',
       smooth: false,
       hoverAnimation: true,
-      animation: false,
       itemStyle: {
         borderWidth: 2
       },

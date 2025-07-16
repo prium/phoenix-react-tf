@@ -1,14 +1,16 @@
+import { JSX } from 'react';
 import {
   UilUsdCircle,
   UilDollarSign,
   UilDollarAlt,
   UilBill,
   UilInvoice,
-  UilArrowGrowth,
   UilProcess,
   UilChartLine
 } from '@iconscout/react-unicons';
 import { BadgeBg } from 'components/base/Badge';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons';
 
 interface DividendCardItem {
   id: number;
@@ -49,6 +51,7 @@ export const dividendContent: DividendContent = {
       id: 1,
       icon: (
         <UilUsdCircle
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-success-darker"
         />
@@ -62,6 +65,7 @@ export const dividendContent: DividendContent = {
       id: 2,
       icon: (
         <UilDollarSign
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-warning-darker"
         />
@@ -75,6 +79,7 @@ export const dividendContent: DividendContent = {
       id: 3,
       icon: (
         <UilDollarAlt
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-danger-darker"
         />
@@ -88,6 +93,7 @@ export const dividendContent: DividendContent = {
       id: 4,
       icon: (
         <UilBill
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-primary-darker"
         />
@@ -101,6 +107,7 @@ export const dividendContent: DividendContent = {
       id: 5,
       icon: (
         <UilInvoice
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-info-darker"
         />
@@ -114,9 +121,10 @@ export const dividendContent: DividendContent = {
     {
       id: 6,
       icon: (
-        <UilArrowGrowth
-          style={{ width: 16, height: 23.828 }}
+        <FontAwesomeIcon
+          icon={faArrowTrendUp}
           className="text-success-darker"
+          fontSize={12}
         />
       ),
       title: 'Dividend Growth',
@@ -129,6 +137,7 @@ export const dividendContent: DividendContent = {
       id: 7,
       icon: (
         <UilProcess
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-primary-darker"
         />
@@ -142,6 +151,7 @@ export const dividendContent: DividendContent = {
       id: 8,
       icon: (
         <UilChartLine
+          fill='currentColor'
           style={{ width: 16, height: 23.828 }}
           className="text-warning-darker"
         />
