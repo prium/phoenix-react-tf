@@ -15,7 +15,7 @@ const DesignFile = () => {
               <FontAwesomeIcon icon={faExclamationCircle} className="fs-6" />
               <div className='flex-1 ms-3'>
                 <p className="mb-0">
-                  Figma file is only available for
+                  Figma file is only available for{' '}
                   <strong>Standard Plus</strong> &amp;{' '}
                   <strong>Extended Plus</strong> license
                 </p>
