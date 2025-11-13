@@ -62,7 +62,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -70,7 +70,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -94,21 +94,24 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       itemStyle: {
         color: getThemeColor('primary-light'),
-        barBorderRadius: [3, 3, 0, 0]
+        borderRadius: [3, 3, 0, 0]
       },
       barWidth: 24,
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: false
+      emphasis: {
+        scale: false
+      }
     }
   ],
   grid: {
-    top: '10%',
-    bottom: 10,
+    top: '8%',
+    bottom: 11,
     left: 5,
-    right: 7,
-    containLabel: true
+    right: 4,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
@@ -119,6 +122,7 @@ const GrowthInRevenueChart = () => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
+      style={{ width: '100%', height: 300 }}
     />
   );
 };

@@ -102,7 +102,8 @@ const getDefaultOptions = (
   ],
   grid: {
     top: 10,
-    left: 0
+    left: 0,
+    outerBoundsMode: 'none'
   }
 });
 

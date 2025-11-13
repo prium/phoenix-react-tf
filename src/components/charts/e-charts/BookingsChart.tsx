@@ -30,6 +30,7 @@ const getDefaultOptions = (
     icon: 'circle',
     itemGap: 32,
     left: 0,
+    top: 0,
     inactiveColor: getThemeColor('quaternary-color'),
     textStyle: {
       color: getThemeColor('secondary-color'),
@@ -108,7 +109,14 @@ const getDefaultOptions = (
       }
     }
   ],
-  grid: { left: 0, right: 8, top: 52, bottom: 0, containLabel: true }
+  grid: { 
+    left: 0,
+    right: 8,
+    top: 52,
+    bottom: 0,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel' 
+  }
 });
 
 const BookingsChart = ({ style, ref }: BookingsChartProps) => {

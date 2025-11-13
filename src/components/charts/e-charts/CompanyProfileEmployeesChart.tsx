@@ -76,7 +76,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -84,7 +84,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -92,7 +92,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -109,7 +109,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -132,7 +132,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('info-light') },
           itemStyle: {
             color: getThemeColor('info-light'),
-            barBorderRadius: [0, 0, 3, 3]
+            borderRadius: [0, 0, 3, 3]
           }
         },
         {
@@ -189,13 +189,13 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       itemStyle: {
         color: getThemeColor('primary-light'),
-        barBorderRadius: [3, 3, 0, 0]
+        borderRadius: [3, 3, 0, 0]
       },
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: true,
       emphasis: {
+        scale: true,
         itemStyle: {
           shadowBlur: 10,
           shadowColor: rgbaColor(getThemeColor('light-text-emphasis'), 0.3)
@@ -204,11 +204,12 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     }
   ],
   grid: {
-    top: '8%',
-    bottom: 10,
-    left: 15,
-    right: 7,
-    containLabel: true
+    top: '6%',
+    bottom: 12,
+    left: 4,
+    right: 4,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
@@ -220,6 +221,7 @@ const CompanyProfileEmployeesChart = () => {
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
       className="mb-5"
+      style={{ width: '100%', height: 300 }}
     />
   );
 };

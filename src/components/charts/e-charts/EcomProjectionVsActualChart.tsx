@@ -55,7 +55,6 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   xAxis: {
     type: 'category',
-    // boundaryGap: false,
     axisLabel: {
       color: getThemeColor('secondary-color'),
       formatter: (value: Date) => dayjs(value).format('MMM DD'),
@@ -74,7 +73,6 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   yAxis: {
     axisPointer: { type: 'none' },
-    // boundaryGap: false,
     axisTick: 'none',
     splitLine: {
       interval: 5,
@@ -125,7 +123,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     left: 3,
     bottom: 0,
     top: '15%',
-    containLabel: true
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   },
   animation: false
 });

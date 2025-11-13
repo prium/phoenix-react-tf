@@ -134,7 +134,8 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     left: 6,
     bottom: 0,
     top: '5%',
-    containLabel: true
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   },
   animation: false
 });

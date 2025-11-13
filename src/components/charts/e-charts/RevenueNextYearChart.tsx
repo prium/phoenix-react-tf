@@ -48,7 +48,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   yAxis: {
     type: 'value',
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLabel: {
       show: false,
       color: getThemeColor('quaternary-color')
@@ -74,14 +74,16 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       barSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: true,
+      emphasis: {
+        scale: true
+      },
       data: [
         {
           value: 1200,
           lineStyle: { color: getThemeColor('primary-lighter') },
           itemStyle: {
             color: getThemeColor('primary-lighter'),
-            barBorderRadius: [3, 3, 0, 0]
+            borderRadius: [3, 3, 0, 0]
           }
         },
         {
@@ -89,7 +91,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
           lineStyle: { color: getThemeColor('primary-light') },
           itemStyle: {
             color: getThemeColor('primary-light'),
-            barBorderRadius: [3, 3, 0, 0]
+            borderRadius: [3, 3, 0, 0]
           }
         }
       ]

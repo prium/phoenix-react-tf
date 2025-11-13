@@ -1,7 +1,7 @@
 import { use, useEffect } from 'react';
 import L, { LatLngExpression } from 'leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import MarkerClusterGroup from "react-leaflet-markercluster";
+import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'leaflet.tilelayer.colorfilter';
 import 'leaflet/dist/leaflet.css';
 import 'react-leaflet-markercluster/styles';
@@ -35,16 +35,14 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
   useEffect(() => {
     if (map) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (L.tileLayer as any)
-        .colorFilter(
-          'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-          {
-            attribution: null,
-            transparent: true,
-            filter: filter
-          }
-        )
-        .addTo(map);
+      (L.tileLayer as any)(
+        'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        {
+          attribution: null,
+          transparent: true,
+          filter: filter
+        }
+      ).addTo(map);
     }
   }, [theme]);
 

@@ -79,7 +79,7 @@ const getDefaultOptions = (
   yAxis: {
     type: 'value',
     position: 'right',
-    boundaryGap: true,
+    boundaryGap: 1,
     axisLabel: {
       show: true,
       color: getThemeColor('body-color'),
@@ -109,7 +109,7 @@ const getDefaultOptions = (
       data: data.map(item => item[1]),
       itemStyle: {
         color: getThemeColor('primary-light'),
-        barBorderRadius: [3, 3, 0, 0]
+        borderRadius: [3, 3, 0, 0]
       },
       lineStyle: {
         color: getThemeColor('primary-light')
@@ -118,16 +118,19 @@ const getDefaultOptions = (
       symbol: 'circle',
       symbolSize: 10,
       smooth: false,
-      hoverAnimation: true,
+      emphasis: {
+        scale: true
+      },
       barWidth: 16
     }
   ],
   grid: {
-    right: 5,
+    right: 2,
     left: 8,
     bottom: 5,
-    top: 10,
-    containLabel: true
+    top: 4,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 

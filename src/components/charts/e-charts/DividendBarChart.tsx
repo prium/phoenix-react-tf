@@ -46,7 +46,7 @@ const getDefaultOptions = (
   },
   yAxis: {
     type: 'value',
-    boundaryGap: true,
+    boundaryGap: 0,
     axisLabel: {
       show: true,
       color: getThemeColor('body-color'),
@@ -78,21 +78,24 @@ const getDefaultOptions = (
       },
       itemStyle: {
         color: getThemeColor('info-lighter'),
-        barBorderRadius: [4, 4, 0, 0]
+        borderRadius: [4, 4, 0, 0]
       },
       barMaxWidth: 24,
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: false
+      emphasis: {
+        scale: false
+      }
     }
   ],
   grid: {
     right: 10,
-    left: 5,
+    left: 0,
     bottom: 5,
-    top: 8,
-    containLabel: true
+    top: 4,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
