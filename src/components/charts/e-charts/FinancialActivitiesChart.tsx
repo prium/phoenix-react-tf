@@ -148,7 +148,7 @@ const FinancialActivitiesChart = ({
         }
       ],
       grid: {
-        right: 0,
+        right: 3,
         left: -10,
         bottom: 0,
         top: 16,
@@ -202,7 +202,7 @@ const FinancialActivitiesChart = ({
           }
         },
         grid: {
-          left: 15
+          left: -2,
         }
       });
     } else {
@@ -213,7 +213,7 @@ const FinancialActivitiesChart = ({
           }
         },
         grid: {
-          left: 3
+          left: 0
         }
       });
     }

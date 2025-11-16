@@ -5,7 +5,7 @@ import DatePicker from 'components/base/DatePicker';
 import { FormEvent } from 'react';
 import { FloatingLabel, Form, Modal } from 'react-bootstrap';
 import { Link } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { getRandomNumber } from 'helpers/utils';
 import { useCalendarContext } from 'providers/CalendarProvider';
 import { ADD_NEW_EVENT, SET_CALENDAR_STATE } from 'reducers/CalendarReducer';
@@ -42,6 +42,8 @@ const CalendarAddNewEventModal = () => {
       }
     });
   };
+
+  const modalBodyRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setFormData({
@@ -91,7 +93,7 @@ const CalendarAddNewEventModal = () => {
             </Button>
           </div>
         </Modal.Header>
-        <Modal.Body className="p-card py-0">
+        <Modal.Body className="p-card py-0" ref={modalBodyRef}>
           <FloatingLabel controlId="event-title" label="Title" className="mb-3">
             <input
               className="form-control"
@@ -117,6 +119,7 @@ const CalendarAddNewEventModal = () => {
               enableTime: true,
               dateFormat: 'Y-m-d H:i',
               defaultDate: selectedStartDate,
+              appendTo: modalBodyRef.current ?? undefined
             }}
             onChange={([date]) => {
               setFormData({
