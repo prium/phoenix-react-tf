@@ -221,7 +221,7 @@ const CompanyProfileEmployeesChart = () => {
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
       className="mb-5"
-      style={{ width: '100%', height: 300 }}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

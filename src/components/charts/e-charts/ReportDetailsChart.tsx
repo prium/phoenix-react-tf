@@ -7,7 +7,6 @@ import { BarChart } from 'echarts/charts';
 import { sellersReportData } from 'data/crm/reportsData';
 import { tooltipFormatterDefault } from 'helpers/echart-utils';
 import { CallbackDataParams } from 'echarts/types/dist/shared';
-
 echarts.use([TooltipComponent, BarChart]);
 
 const getDefaultOptions = (

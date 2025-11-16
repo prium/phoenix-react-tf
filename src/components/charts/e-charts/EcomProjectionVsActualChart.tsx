@@ -120,9 +120,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   ],
   grid: {
     right: 0,
-    left: 3,
+    left: 0,
     bottom: 0,
-    top: '15%',
+    top: '10.4%',
     outerBoundsMode: 'same',
     outerBoundsContain: 'axisLabel'
   },

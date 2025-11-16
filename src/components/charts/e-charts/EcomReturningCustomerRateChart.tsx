@@ -73,7 +73,6 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       show: false
     },
     axisLabel: {
-      // interval: 1,
       showMinLabel: false,
       showMaxLabel: false,
       color: getThemeColor('secondary-color'),
@@ -171,9 +170,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
     }
   ],
   grid: {
-    left: 0,
+    left: -3,
     right: 8,
-    top: '14%',
+    top: '12%',
     bottom: 0,
     outerBoundsMode: 'same',
     outerBoundsContain: 'axisLabel' 

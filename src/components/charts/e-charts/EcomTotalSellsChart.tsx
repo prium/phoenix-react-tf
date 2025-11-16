@@ -151,10 +151,10 @@ const getDefaultOptions = (
     }
   ],
   grid: {
-    right: 0,
+    right: -1,
     left: 2,
-    bottom: 0,
-    top: '3%',
+    bottom: -1,
+    top: '2%',
     outerBoundsMode: 'same',
     outerBoundsContain: 'axisLabel'
   },

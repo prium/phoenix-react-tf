@@ -148,8 +148,8 @@ const FinancialActivitiesChart = ({
         }
       ],
       grid: {
-        right: 20,
-        left: 3,
+        right: 0,
+        left: -10,
         bottom: 0,
         top: 16,
         outerBoundsMode: 'same',

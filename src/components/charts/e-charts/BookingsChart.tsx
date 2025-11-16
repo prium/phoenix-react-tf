@@ -110,9 +110,9 @@ const getDefaultOptions = (
     }
   ],
   grid: { 
-    left: 0,
+    left: -3,
     right: 8,
-    top: 52,
+    top: 46,
     bottom: 0,
     outerBoundsMode: 'same',
     outerBoundsContain: 'axisLabel' 

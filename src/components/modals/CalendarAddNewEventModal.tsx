@@ -56,6 +56,7 @@ const CalendarAddNewEventModal = () => {
       show={openNewEventModal}
       contentClassName="border-translucent"
       onHide={handleClose}
+      enforceFocus={false}
     >
       <Form onSubmit={handleSubmit}>
         <Modal.Header className="px-card border-0">
@@ -115,7 +116,7 @@ const CalendarAddNewEventModal = () => {
             options={{
               enableTime: true,
               dateFormat: 'Y-m-d H:i',
-              defaultDate: selectedStartDate
+              defaultDate: selectedStartDate,
             }}
             onChange={([date]) => {
               setFormData({

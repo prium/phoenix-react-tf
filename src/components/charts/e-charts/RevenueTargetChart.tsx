@@ -123,7 +123,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   ],
   grid: {
     right: 0,
-    left: 0,
+    left: -3,
     bottom: 8,
     top: 0,
     outerBoundsMode: 'same',

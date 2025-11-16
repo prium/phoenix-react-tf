@@ -122,7 +122,7 @@ const GrowthInRevenueChart = () => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
-      style={{ width: '100%', height: 300 }}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

@@ -91,9 +91,9 @@ const getDefaultOptions = (
   ],
   grid: {
     right: 10,
-    left: 0,
+    left: 2,
     bottom: 5,
-    top: 4,
+    top: 2,
     outerBoundsMode: 'same',
     outerBoundsContain: 'axisLabel'
   }
@@ -106,6 +106,7 @@ const DividendBarChart = ({ data }: { data: DividendChartData[] }) => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, data)}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

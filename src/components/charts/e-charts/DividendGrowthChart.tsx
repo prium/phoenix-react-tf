@@ -121,6 +121,7 @@ const DividendGrowthChart = ({ data }: { data: DividendChartData[] }) => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, data)}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

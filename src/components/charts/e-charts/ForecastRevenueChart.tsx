@@ -110,6 +110,7 @@ const ForecastRevenueChart = () => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
+      style={{width: '100%', height: '300px'}}
     />
   );
 };
