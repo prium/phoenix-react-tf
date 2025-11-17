@@ -4,7 +4,7 @@ export default [
   {
     version: '2.1.0',
     title: 'Ignis',
-    publishDate: '16 Nov 2025',
+    publishDate: '17 Nov 2025',
     logs: {
       new: [
         'PACKAGE: <code>emoji-picker-react</code>', 
