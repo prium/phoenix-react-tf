@@ -43,6 +43,7 @@ const getDefaultOptions = (
     data: generateXAxisLabels('11/1/2023', data.length),
     show: true,
     axisLabel: {
+      show: false,
       formatter: (value: Date) => dayjs(value).format('DD MMM'),
       interval: 5,
       showMinLabel: true,
@@ -67,12 +68,12 @@ const getDefaultOptions = (
     splitLine: {
       show: false
     },
-    boundaryGap: false
+    boundaryGap: 0
   },
   yAxis: {
     show: false,
     type: 'value',
-    boundaryGap: false
+    boundaryGap: 0
   },
   series: [
     {
@@ -81,7 +82,9 @@ const getDefaultOptions = (
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: true,
+      emphasis: {
+        scale: true
+      },
       itemStyle: {
         color: getThemeColor('body-highlight-bg'),
         borderColor: getThemeColor('success')

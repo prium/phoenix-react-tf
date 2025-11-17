@@ -25,7 +25,9 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       type: 'pie',
       radius: ['100%', '70%'],
       avoidLabelOverlap: false,
-      hoverAnimation: false,
+      emphasis: {
+        scale: true
+      },
       label: {
         show: false
       },

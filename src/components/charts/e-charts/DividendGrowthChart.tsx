@@ -36,7 +36,7 @@ const getDefaultOptions = (
   xAxis: {
     type: 'category',
     data: data.map(item => item.year),
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLine: {
       lineStyle: {
         color: getThemeColor('tertiary-bg'),
@@ -56,7 +56,7 @@ const getDefaultOptions = (
   },
   yAxis: {
     type: 'value',
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLabel: {
       show: true,
       color: getThemeColor('body-color'),
@@ -99,15 +99,18 @@ const getDefaultOptions = (
       symbol: 'circle',
       symbolSize: 10,
       smooth: false,
-      hoverAnimation: false
+      emphasis: {
+        scale: false
+      }
     }
   ],
   grid: {
-    right: 15,
-    left: 5,
+    right: -2,
+    left: 2,
     bottom: 5,
-    top: 8,
-    containLabel: true
+    top: 2,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
@@ -118,6 +121,7 @@ const DividendGrowthChart = ({ data }: { data: DividendChartData[] }) => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, data)}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

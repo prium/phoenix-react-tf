@@ -4,7 +4,7 @@ Welcome to the ReactJS version of the original Phoenix theme. This document will
 
 ## Running in Local Environment
 
-This project is scaffolded using Create React App.
+This project is scaffolded using Vite.
 
 - Install Node.js if you do not already have it installed on your machine.
 - Open the “phoenix-react-{version}” directory with your cmd or terminal and run npm i
@@ -15,7 +15,7 @@ This project is scaffolded using Create React App.
 
 After you've done your customization and are ready to build, follow these steps:
 
-- Edit homepage in your package.json file to change asset files relative paths. For more information, visit Create React App Doc.
+- Edit homepage in your package.json file to change asset files relative paths. For more information, visit Vite Doc.
 - Then Run npm run build command in your project directory to make the Production build.
 
 This will create an optimized production build by compiling, merging, and minifying all the source files as necessary and will put them in the build/ folder.
@@ -25,8 +25,3 @@ To run the production build locally, run the following commands:
 ```shell
  npm run preview
 ```
-
-### Design File
-
-Get the figma design file here:
-[https://www.figma.com/design/ql85ylrecVLJCL2sR9NGOi/Phoenix-React-Distributed--v2.0.0-?node-id=1248-35561&p=f](<https://www.figma.com/design/ql85ylrecVLJCL2sR9NGOi/Phoenix-React-Distributed--v2.0.0-?node-id=1248-35561&p=f

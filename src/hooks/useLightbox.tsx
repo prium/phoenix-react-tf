@@ -9,7 +9,11 @@ const useLightbox = (sources: Array<string | JSX.Element>) => {
     setSlide(slideIndex);
   };
   return {
-    lightboxProps: { toggler: open, sources: sources, slide: slide },
+    lightboxProps: {
+      toggler: open,
+      sources: Array.isArray(sources) ? sources : [],
+      slide: slide
+    },
     openLightbox
   };
 };

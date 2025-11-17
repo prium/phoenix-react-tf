@@ -86,7 +86,7 @@ const getDefaultOptions = (
   xAxis: {
     type: 'category',
     data: data.map(item => item[0]),
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLine: {
       lineStyle: {
         color: getThemeColor('border-color-translucent')
@@ -112,7 +112,7 @@ const getDefaultOptions = (
   yAxis: {
     type: 'value',
     position: 'right',
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLabel: {
       show: true,
       color: getThemeColor('body-color'),
@@ -170,15 +170,18 @@ const getDefaultOptions = (
       showSymbol: false,
       symbol: 'circle',
       symbolSize: 10,
-      hoverAnimation: true
+      emphasis: {
+        scale: true
+      }
     }
   ],
   grid: {
-    right: 3,
-    left: 20,
+    right: 0,
+    left: 7,
     bottom: 10,
-    top: 5,
-    containLabel: true
+    top: -1,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   },
   animationDurationUpdate: 200,
   animationEasingUpdate: 'cubicOut'

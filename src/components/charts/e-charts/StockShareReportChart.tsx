@@ -148,12 +148,12 @@ const getDefaultOptions = (
         color: getThemeColor('border-color-translucent')
       }
     },
-    boundaryGap: false,
+    boundaryGap: 0,
     min: 'dataMin'
   },
   yAxis: {
     scale: true,
-    boundaryGap: true,
+    boundaryGap: 0,
     axisPointer: {
       show: true,
       lineStyle: {
@@ -213,11 +213,12 @@ const getDefaultOptions = (
     }
   ],
   grid: {
-    right: 5,
-    left: 5,
+    right: -10,
+    left: 0,
     bottom: '7%',
-    top: 5,
-    containLabel: true
+    top: 0,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 

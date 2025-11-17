@@ -25,7 +25,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   xAxis: {
     type: 'value',
-    boundaryGap: false,
+    boundaryGap: 0,
     axisLine: {
       show: true,
       lineStyle: {
@@ -52,7 +52,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   yAxis: {
     type: 'category',
     data: months,
-    boundaryGap: true,
+    boundaryGap: 1,
     axisLabel: {
       color: getThemeColor('body-color'),
       margin: 20
@@ -83,20 +83,23 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       },
       itemStyle: {
         color: getThemeColor('info-lighter'),
-        barBorderRadius: [0, 3, 3, 0]
+        borderRadius: [0, 3, 3, 0]
       },
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: true
+      emphasis: {
+        scale: true
+      }
     }
   ],
   grid: {
-    right: 15,
-    left: 5,
+    right: -2,
+    left: 2,
     bottom: 5,
     top: 24,
-    containLabel: true
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
@@ -107,6 +110,7 @@ const ForecastRevenueChart = () => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor)}
+      style={{width: '100%', height: '300px'}}
     />
   );
 };

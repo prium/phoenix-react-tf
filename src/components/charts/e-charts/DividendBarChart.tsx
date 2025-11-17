@@ -46,7 +46,7 @@ const getDefaultOptions = (
   },
   yAxis: {
     type: 'value',
-    boundaryGap: true,
+    boundaryGap: 0,
     axisLabel: {
       show: true,
       color: getThemeColor('body-color'),
@@ -78,21 +78,24 @@ const getDefaultOptions = (
       },
       itemStyle: {
         color: getThemeColor('info-lighter'),
-        barBorderRadius: [4, 4, 0, 0]
+        borderRadius: [4, 4, 0, 0]
       },
       barMaxWidth: 24,
       showSymbol: false,
       symbol: 'circle',
       smooth: false,
-      hoverAnimation: false
+      emphasis: {
+        scale: false
+      }
     }
   ],
   grid: {
     right: 10,
-    left: 5,
+    left: 2,
     bottom: 5,
-    top: 8,
-    containLabel: true
+    top: 2,
+    outerBoundsMode: 'same',
+    outerBoundsContain: 'axisLabel'
   }
 });
 
@@ -103,6 +106,7 @@ const DividendBarChart = ({ data }: { data: DividendChartData[] }) => {
     <ReactEChartsCore
       echarts={echarts}
       option={getDefaultOptions(getThemeColor, data)}
+      style={{ width: '100%', height: '300px' }}
     />
   );
 };

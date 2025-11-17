@@ -22,14 +22,17 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
   },
   series: [
     {
+      radius: '75%',
       type: 'pie',
       avoidLabelOverlap: false,
-      hoverAnimation: false,
       label: {
         show: false
       },
       labelLine: {
         show: false
+      },
+      emphasis: {
+        scale: false
       },
       data: [
         {

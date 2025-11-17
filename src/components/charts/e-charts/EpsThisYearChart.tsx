@@ -80,7 +80,7 @@ const getDefaultOptions = (getThemeColor: (name: string) => string) => ({
       lineStyle: { color: getThemeColor('success-light') },
       itemStyle: {
         color: getThemeColor('success-light'),
-        barBorderRadius: [3, 3, 0, 0]
+        borderRadius: [3, 3, 0, 0]
       }
     }
   ],
