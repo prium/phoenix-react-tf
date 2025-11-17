@@ -119,7 +119,7 @@ const CalendarAddNewEventModal = () => {
               enableTime: true,
               dateFormat: 'Y-m-d H:i',
               defaultDate: selectedStartDate,
-              appendTo: modalBodyRef.current ?? undefined
+              appendTo: document.body
             }}
             onChange={([date]) => {
               setFormData({
