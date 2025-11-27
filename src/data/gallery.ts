@@ -473,7 +473,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Nature',
     type: 'Photography',
-    className: 'pb-5 ps-sm-4 ps-md-0 pe-md-4 border-end-md border-end-xl-0 pe-xl-0 ps-xl-4'
+    className: 'pb-5 ps-sm-4 ps-md-0 pe-md-4 pe-xl-0 ps-xl-4'
   },
   {
     id: 59,
@@ -481,7 +481,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '3'],
     title: 'Mockup',
     type: 'Project Management',
-    className: 'pe-sm-4 pb-5 border-end-sm ps-md-4 ps-xl-0 border-end-xl-0'
+    className: 'pe-sm-4 pb-5 ps-md-4 ps-xl-0'
   },
   {
     id: 60,
@@ -489,7 +489,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Mountain Sunset',
     type: 'Photography',
-    className: 'ps-sm-4 pb-5 pe-xl-4 border-start-xl border-end-xl'
+    className: 'ps-sm-4 pb-5 pe-xl-4'
   },
   {
     id: 61,
@@ -497,7 +497,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '3'],
     title: 'Ear Buds',
     type: 'Project Management',
-    className: 'pe-sm-4 pb-5 border-end-sm ps-xl-4'
+    className: 'pe-sm-4 pb-5 ps-xl-4'
   },
   {
     id: 62,
@@ -505,7 +505,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Basketball Shoes',
     type: 'Ecommerce',
-    className: 'ps-sm-4 pb-5 pe-md-4 border-end-md pe-xl-0'
+    className: 'ps-sm-4 pb-5 pe-md-4 pe-xl-0'
   },
   {
     id: 63,
@@ -513,7 +513,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Pixel Watch',
     type: 'Photography',
-    className: 'pe-sm-4 pb-5 border-end-sm ps-md-4 border-end-md-0 pe-md-0 border-start-md border-start-xl-0 ps-xl-0 pe-xl-4'
+    className: 'pe-sm-4 pb-5 ps-md-4 pe-md-0 ps-xl-0 pe-xl-4'
   },
   {
     id: 64,
@@ -521,7 +521,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Plant During Daytime',
     type: 'Ecommerce',
-    className: 'ps-sm-4 ps-md-0 pe-md-4 pb-5 border-end-sm ps-xl-4 pb-xl-0 border-start-xl'
+    className: 'ps-sm-4 ps-md-0 pe-md-4 pb-5 ps-xl-4 pb-xl-0'
   },
   {
     id: 65,
