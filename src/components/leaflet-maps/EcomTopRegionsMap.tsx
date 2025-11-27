@@ -40,7 +40,7 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
         {
           attribution: null,
           transparent: true,
-          filter: filter
+          colorFilter: filter
         }
       ).addTo(map);
     }
