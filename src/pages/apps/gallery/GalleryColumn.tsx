@@ -6,13 +6,11 @@ import { useState } from 'react';
 const GalleryColumn = () => {
     const [currentItems, setCurrentItems] = useState(columnItems)
     const [selectedCategory, setSelectedCategory] = useState('1');
-  
+
     const handleNavItemSelect = (category: string | null) => {
       setSelectedCategory(category || '1');
       setCurrentItems(
-        columnItems.filter(item =>
-          category ? item.category.includes(category) : true
-        )
+        columnItems.filter(item =>item.category.includes(category ?? '1'))
       );
     };
   return (

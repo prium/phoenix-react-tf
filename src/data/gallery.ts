@@ -449,7 +449,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Pixel 4a',
     type: 'Ecommerce',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-1'
+    className: 'pe-sm-4 border-end-sm pb-5 border-end-xl-0'
   },
   {
     id: 56,
@@ -457,7 +457,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '3'],
     title: 'Wooden Beetle',
     type: 'Project Management',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-2'
+    className: 'pb-5 border-end-md ps-sm-4 px-md-4'
   },
   {
     id: 57,
@@ -465,7 +465,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Sunset',
     type: 'Photography',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-3'
+    className: 'pb-5 ps-md-4 pe-4 pe-md-0 pe-xl-4'
   },
   {
     id: 58,
@@ -473,7 +473,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Nature',
     type: 'Photography',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-1'
+    className: 'pb-5 ps-sm-4 ps-md-0 pe-md-4 border-end-md border-end-xl-0 pe-xl-0 ps-xl-4'
   },
   {
     id: 59,
@@ -481,7 +481,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '3'],
     title: 'Mockup',
     type: 'Project Management',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-2'
+    className: 'pe-sm-4 pb-5 border-end-sm ps-md-4 ps-xl-0 border-end-xl-0'
   },
   {
     id: 60,
@@ -489,7 +489,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Mountain Sunset',
     type: 'Photography',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-3'
+    className: 'ps-sm-4 pb-5 pe-xl-4 border-start-xl border-end-xl'
   },
   {
     id: 61,
@@ -497,7 +497,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '3'],
     title: 'Ear Buds',
     type: 'Project Management',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-1'
+    className: 'pe-sm-4 pb-5 border-end-sm ps-xl-4'
   },
   {
     id: 62,
@@ -505,7 +505,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Basketball Shoes',
     type: 'Ecommerce',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-2'
+    className: 'ps-sm-4 pb-5 pe-md-4 border-end-md pe-xl-0'
   },
   {
     id: 63,
@@ -513,7 +513,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Pixel Watch',
     type: 'Photography',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-3'
+    className: 'pe-sm-4 pb-5 border-end-sm ps-md-4 border-end-md-0 pe-md-0 border-start-md border-start-xl-0 ps-xl-0 pe-xl-4'
   },
   {
     id: 64,
@@ -521,7 +521,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Plant During Daytime',
     type: 'Ecommerce',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-3'
+    className: 'ps-sm-4 ps-md-0 pe-md-4 pb-5 border-end-sm ps-xl-4 pb-xl-0 border-start-xl'
   },
   {
     id: 65,
@@ -529,7 +529,7 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '4'],
     title: 'Dog Sitting',
     type: 'Photography',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-2'
+    className: 'pb-5 pb-sm-5 pe-sm-4 ps-md-4 border-end-sm border-end-md-0'
   },
   {
     id: 66,
@@ -537,6 +537,6 @@ export const columnItems: GalleryColumnItemType[] = [
     category: ['1', '2'],
     title: 'Pixel 4a 5g',
     type: 'Ecommerce',
-    className: 'col-span-12 col-span-sm-6 col-span-md-4 col-span-xl-3 row-span-1'
+    className: ' ps-sm-4 border-start-md'
   }
 ]

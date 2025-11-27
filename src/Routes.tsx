@@ -235,6 +235,9 @@ import TripLayout from 'layouts/TripLayout';
 import FileManagerProvider from 'providers/FileManagerProvider';
 import GanttChart from 'pages/apps/gantt-chart/GanttChart';
 
+const Album = lazy(() => import('pages/apps/gallery/Album'));
+const GalleryColumn = lazy(() => import('pages/apps/gallery/GalleryColumn'));
+
 const routes: RouteObject[] = [
   {
     element: <App />,
@@ -475,6 +478,27 @@ const routes: RouteObject[] = [
                   {
                     path: 'feed',
                     element: <Feed />
+                  }
+                ]
+              },
+              {
+                path: 'gallery',
+                children: [
+                  {
+                    path: 'album',
+                    element: (
+                      <Suspense key="album" fallback={<PhoenixLoader />}>
+                        <Album />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'gallery-column',
+                    element: (
+                      <Suspense key="galleryColumn" fallback={<PhoenixLoader />}>
+                        <GalleryColumn />
+                      </Suspense>
+                    )
                   }
                 ]
               },

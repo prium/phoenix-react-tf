@@ -54,12 +54,11 @@ const GalleryLayout = ({
           {gridLayouts && (
             <GridLayout view={view} gridClassNames={gridClassName} />
           )}
-          <Scrollbar>
+          <Scrollbar style={{ minWidth: 400 }}>
             <Nav
               className={classNames(navClassName)}
               defaultActiveKey={defaultActiveKey || navItems[0].eventKey}
               onSelect={onSelect}
-              style={{ minWidth: 400 }}
             >
               {navItems.map((navItem: IsotopeNavItem) => (
                 <Nav.Item key={navItem.eventKey}>
