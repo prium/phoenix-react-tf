@@ -1,17 +1,17 @@
-import GalleryColumnItems from 'components/modules/gallery/GalleryColumnItems';
+import GalleryGridWithTitleItems from 'components/modules/gallery/GalleryGridWithTitleItems';
 import GalleryLayout from 'components/modules/gallery/GalleryLayout';
-import { defaultIsotopeNavItems, columnItems } from 'data/gallery';
+import { defaultIsotopeNavItems, gridItems } from 'data/gallery';
 import { useGalleryItems } from 'hooks/useGalleryItems';
 
-const GalleryColumn = () => {
+const GalleryGrid = () => {
   const { filteredItems, setSelectedCategory, setQuery } =
-    useGalleryItems(columnItems);
+    useGalleryItems(gridItems);
 
   return (
     <GalleryLayout
       title="Gallery"
       defaultActiveKey="1"
-      view="column"
+      view="grid-title"
       gridLayouts={true}
       navClassName="gap-md-5 nav-underline"
       navItems={defaultIsotopeNavItems}
@@ -19,7 +19,7 @@ const GalleryColumn = () => {
       onSearch={str => setQuery(str)}
     >
       {filteredItems.length > 0 ? (
-        <GalleryColumnItems columnItems={filteredItems} />
+        <GalleryGridWithTitleItems gridItems={filteredItems} />
       ) : (
         <div className="min-vh-50 d-flex justify-content-center align-items-center">
           <p className="mb-0">No Items Found!</p>
@@ -29,4 +29,4 @@ const GalleryColumn = () => {
   );
 };
 
-export default GalleryColumn;
+export default GalleryGrid;

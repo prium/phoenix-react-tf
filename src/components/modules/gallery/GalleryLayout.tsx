@@ -19,6 +19,7 @@ interface GalleryLayoutProps extends NavProps {
   view: string;
   navClassName?: string;
   gridClassName?: string;
+  onSearch?: (value: string) => void;
 }
 
 const GalleryLayout = ({
@@ -30,6 +31,7 @@ const GalleryLayout = ({
   gridClassName,
   view,
   onSelect,
+  onSearch,
   children
 }: PropsWithChildren<GalleryLayoutProps>) => {
   return (
@@ -48,17 +50,21 @@ const GalleryLayout = ({
               Export
             </Button>
           </div>
-          <SearchBox placeholder="Search by name" />
+          <SearchBox
+            placeholder="Search by name"
+            onChange={e => onSearch?.(e.target.value)}
+          />
         </div>
         <div className="d-md-flex d-lg-block d-xl-flex justify-content-between gap-4 my-4">
           {gridLayouts && (
             <GridLayout view={view} gridClassNames={gridClassName} />
           )}
-          <Scrollbar style={{ minWidth: 400 }}>
+          <Scrollbar>
             <Nav
               className={classNames(navClassName)}
               defaultActiveKey={defaultActiveKey || navItems[0].eventKey}
               onSelect={onSelect}
+              style={{ minWidth: 400 }}
             >
               {navItems.map((navItem: IsotopeNavItem) => (
                 <Nav.Item key={navItem.eventKey}>

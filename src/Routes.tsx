@@ -237,6 +237,12 @@ import GanttChart from 'pages/apps/gantt-chart/GanttChart';
 
 const Album = lazy(() => import('pages/apps/gallery/Album'));
 const GalleryColumn = lazy(() => import('pages/apps/gallery/GalleryColumn'));
+const GalleryGrid = lazy(() => import('pages/apps/gallery/GalleryGrid'));
+const GalleryGridWithTitle = lazy(
+  () => import('pages/apps/gallery/GalleryGridWithTitle')
+);
+const GalleryMasonry = lazy(() => import('pages/apps/gallery/GalleryMasonry'));
+const GallerySlider = lazy(() => import('pages/apps/gallery/GallerySlider'));
 
 const routes: RouteObject[] = [
   {
@@ -441,7 +447,7 @@ const routes: RouteObject[] = [
               {
                 path: 'gantt-chart',
                 element: (
-                  <Suspense key='gantt_chart' fallback={<PhoenixLoader />}>
+                  <Suspense key="gantt_chart" fallback={<PhoenixLoader />}>
                     <GanttChart />
                   </Suspense>
                 )
@@ -495,10 +501,44 @@ const routes: RouteObject[] = [
                   {
                     path: 'gallery-column',
                     element: (
-                      <Suspense key="galleryColumn" fallback={<PhoenixLoader />}>
+                      <Suspense
+                        key="galleryColumn"
+                        fallback={<PhoenixLoader />}
+                      >
                         <GalleryColumn />
                       </Suspense>
                     )
+                  },
+                  {
+                    path: 'gallery-grid',
+                    element: (
+                      <Suspense key="galleryGrid" fallback={<PhoenixLoader />}>
+                        <GalleryGrid />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'grid-with-title',
+                    element: (
+                      <Suspense
+                        key="gridWithTitle"
+                        fallback={<PhoenixLoader />}
+                      >
+                        <GalleryGridWithTitle />
+                      </Suspense>
+                    )
+                  },
+                  {
+                    path: 'gallery-masonry',
+                    element: <Suspense key="galleryMasonry" fallback={<PhoenixLoader />}>
+                      <GalleryMasonry />
+                    </Suspense>
+                  },
+                  {
+                    path: 'gallery-slider',
+                    element: <Suspense key="gallerySlider" fallback={<PhoenixLoader />}>
+                      <GallerySlider />
+                    </Suspense>
                   }
                 ]
               },

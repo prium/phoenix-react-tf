@@ -610,6 +610,30 @@ export const routes: RouteItems[] = [
             path: '/apps/gallery/gallery-column',
             pathName: 'gallery-column',
             active: true
+          },
+          {
+            name: 'gallery-grid',
+            path: '/apps/gallery/gallery-grid',
+            pathName: 'gallery-grid',
+            active: true
+          },
+          {
+            name: 'grid-with-title',
+            path: '/apps/gallery/grid-with-title',
+            pathName: 'grid-with-title',
+            active: true
+          },
+          {
+            name: 'gallery-masonry',
+            path: '/apps/gallery/gallery-masonry',
+            pathName: 'gallery-masonry',
+            active: true
+          },
+          {
+            name: 'gallery-slider',
+            path: '/apps/gallery/gallery-slider',
+            pathName: 'gallery-slider',
+            active: true
           }
         ]
       },

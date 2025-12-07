@@ -238,7 +238,6 @@
   align-items: center;
 }
 
-
 .card-form-check-input {
   &:checked {
     + {
@@ -419,8 +418,8 @@
   grid-row: span 2 / span 2;
 }
 .row-span-xxl-1 {
-  @include media-breakpoint-up(xxl){
-    grid-row: span 1 / span 1 ;
+  @include media-breakpoint-up(xxl) {
+    grid-row: span 1 / span 1;
   }
 }
 .col-span-6 {
@@ -436,11 +435,26 @@
   grid-column: span 3 / span 3;
 }
 
+.col-span-sm-3 {
+  @include media-breakpoint-up(sm){
+    grid-column: span 3 / span 3;
+  }
+}
+
+.col-span-sm-4{
+  @include media-breakpoint-up(sm){
+    grid-column: span 4 / span 4;
+  }
+}
+
 .col-span-sm-6 {
   @include media-breakpoint-up(sm) {
-    @include media-breakpoint-up(sm) {
-      grid-column: span 6 / span 6;
-    }
+    grid-column: span 6 / span 6;
+  }
+}
+.col-span-sm-8{
+  @include media-breakpoint-up(sm){
+    grid-column: span 8 / span 8;
   }
 }
 .col-span-md-6 {
@@ -458,6 +472,12 @@
     grid-column: span 3 / span 3;
   }
 }
+
+.col-span-md-8{
+  @include media-breakpoint-up(md) {
+    grid-column: span 8 / span 8;
+  }
+}
 .col-span-lg-6 {
   @include media-breakpoint-up(lg) {
     grid-column: span 6 / span 6;
@@ -473,13 +493,32 @@
     grid-column: span 3 / span 3;
   }
 }
+
+.col-span-xl-2 {
+  @include media-breakpoint-up(xl){
+    grid-column: span 2 / span 2;
+  }
+}
+
+.col-span-xl-3 {
+  @include media-breakpoint-up(xl){
+    grid-column: span 3 / span 3;
+  }
+}
+
+.col-span-xl-4 {
+  @include media-breakpoint-up(xl){
+    grid-column: span 4 / span 4;
+  }
+}
+
 .col-span-xxl-6 {
-  @include media-breakpoint-up(xxl){
+  @include media-breakpoint-up(xxl) {
     grid-column: span 6 / span 6;
   }
 }
 .col-span-xxl-4 {
-  @include media-breakpoint-up(xxl){
+  @include media-breakpoint-up(xxl) {
     grid-column: span 4 / span 4;
   }
 }
@@ -493,12 +532,17 @@
   grid-row-start: 2;
 }
 
-
-
 .row-start-md-auto {
   @include media-breakpoint-up(md) {
     grid-row-start: auto;
   }
+}
+
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: masonry;
+  gap: 16px;
 }
 
 /* ---------------------------------- btn-x --------------------------------- */
@@ -655,7 +699,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .btn-wish {
   width: 2rem;
@@ -929,6 +972,17 @@
     }
     .dropdown-toggle {
       background-color: var(--#{$prefix}emphasis-bg);
+    }
+  }
+}
+
+.masonry-items {
+  > div {
+    row-gap: 32px !important;
+    @include media-breakpoint-up(sm) {
+      &:not(:first-child) {
+        border-left: 1px solid var(--#{$prefix}border-color-translucent);
+      }
     }
   }
 }

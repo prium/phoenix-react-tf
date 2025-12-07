@@ -13,7 +13,7 @@ const ColumnItem = ({ galleryItem, onClick }: ColumnItemProps) => {
   return (
     <div
       className={classNames(
-        'img-zoom-hover cursor-pointer border-translucent',
+        'img-zoom-hover cursor-pointer',
         galleryItem.className
       )}
       onClick={onClick}
@@ -48,7 +48,8 @@ const GalleryColumnItems = ({
             media: [575, 767, 1199, 1200],
             useBalancedLayout: true
           }}
-          render={item => {
+          className="masonry-items row gx-7"
+          render={(item, index) => {
             const realIndex = columnItems.findIndex(i => i.id === item.id);
 
             return (

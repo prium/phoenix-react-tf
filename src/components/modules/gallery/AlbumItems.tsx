@@ -1,10 +1,11 @@
 import { useState, useRef } from 'react';
-import { albumItems, MediaItem } from 'data/gallery';
-import { Col, Dropdown, Nav, Row } from 'react-bootstrap';
+import { AlbumItem, MediaItem } from 'data/gallery';
+import { Dropdown, Nav } from 'react-bootstrap';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH, faVideo } from '@fortawesome/free-solid-svg-icons';
+import { Masonry } from 'react-plock';
 
 const navItems = [
   {
@@ -24,17 +25,16 @@ const navItems = [
   }
 ];
 
-const AlbumItems = () => {
-  const [images, setImages] = useState(albumItems);
+const AlbumItems = ({ albumItems }: { albumItems: AlbumItem[] }) => {
   const [selectedCategory, setSelectedCategory] = useState('1');
+
+  const filteredImages =
+    selectedCategory === '1'
+      ? albumItems
+      : albumItems.filter(item => item.category.includes(selectedCategory));
 
   const handleNavItemSelect = (category: string | null) => {
     setSelectedCategory(category || '1');
-    setImages(
-      albumItems.filter(item =>
-        category ? item.category.includes(category) : true
-      )
-    );
   };
 
   return (
@@ -55,11 +55,21 @@ const AlbumItems = () => {
           </Nav.Item>
         ))}
       </Nav>
-      <Row className="g-4">
-        {images.map(album => (
-          <Col sm={6} md={4} xl={3} key={album.id}>
+      <Masonry
+        items={filteredImages}
+        config={{
+          columns: [1, 2, 3, 4],
+          gap: [24, 24, 24, 24],
+          media: [575, 767, 1199, 1200],
+          useBalancedLayout: true,
+        }}
+        render={album => {
+          return (
             <div className="album-item position-relative overflow-hidden">
-              <Link to="#!" className="text-decoration-none">
+              <Link
+                to="/apps/gallery/gallery-grid"
+                className="text-decoration-none"
+              >
                 <div className="photo-stack">
                   {album.media.map(item => (
                     <Media item={item} key={item.id} />
@@ -83,9 +93,9 @@ const AlbumItems = () => {
                 </Dropdown.Menu>
               </Dropdown>
             </div>
-          </Col>
-        ))}
-      </Row>
+          );
+        }}
+      />
     </>
   );
 };
@@ -97,14 +107,14 @@ interface MediaProps {
 }
 
 const Media = ({ item }: MediaProps) => {
-  const videoRefs = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
   const handleMouseEnter = () => {
-    videoRefs.current?.play();
+    videoRef.current?.play();
   };
 
   const handleMouseOut = () => {
-    videoRefs.current?.pause();
+    videoRef.current?.pause();
   };
   return (
     <div
@@ -115,7 +125,7 @@ const Media = ({ item }: MediaProps) => {
         <div className="video-container">
           <video
             muted
-            ref={videoRefs}
+            ref={videoRef}
             onMouseEnter={handleMouseEnter}
             onMouseOut={handleMouseOut}
             className="video d-block h-100 w-100 overflow-hidden rounded-2"
