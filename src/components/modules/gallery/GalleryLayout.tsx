@@ -59,7 +59,7 @@ const GalleryLayout = ({
           {gridLayouts && (
             <GridLayout view={view} gridClassNames={gridClassName} />
           )}
-          <Scrollbar>
+          <Scrollbar style={{ maxWidth: 400, width: '100%' }}>
             <Nav
               className={classNames(navClassName)}
               defaultActiveKey={defaultActiveKey || navItems[0].eventKey}

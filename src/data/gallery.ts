@@ -121,6 +121,10 @@ export interface GalleryMasonryItem {
   className?: string;
 }
 
+export interface GallerySliderItem extends GalleryMasonryItem {
+  subtitle?: string;
+}
+
 export interface GridLayoutItem {
   id: number;
   tooltipTitle: string;
@@ -787,7 +791,7 @@ export const masonryItems: GalleryMasonryItem[] = [
   },
 ];
 
-export const sliderItems: GalleryMasonryItem[] = [
+export const sliderItems: GallerySliderItem[] = [
   {
     id: 1,
     image: Img100,
@@ -795,6 +799,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '2'],
     categoryTitle: 'Ecommerce',
     title: 'Nature',
+    subtitle: 'Beautiful natural scene.',
     srcType: 'img'
   },
   {
@@ -804,6 +809,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '4'],
     categoryTitle: 'Photography',
     title: 'Pixel 4',
+    subtitle: 'Modern tech capture.',
     srcType: 'img'
   },
   {
@@ -813,6 +819,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '2'],
     categoryTitle: 'Ecommerce',
     title: 'Sunset',
+    subtitle: 'Golden hour moment.',
     srcType: 'img'
   },
   {
@@ -822,6 +829,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '3'],
     categoryTitle: 'Project management',
     title: 'Ear Buds',
+    subtitle: 'Premium audio gear.',
     srcType: 'img'
   },
   {
@@ -831,6 +839,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     categoryTitle: '',
     category: ['1', '2', '4'],
     title: 'Sunset Horizon',
+    subtitle: 'Calm evening horizon.',
     srcType: 'img'
   },
   {
@@ -840,6 +849,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     categoryTitle: '',
     category: ['1', '3', '4'],
     title: 'Sunset',
+    subtitle: 'Warm sunset portrait.',
     srcType: 'img'
   },
   {
@@ -848,7 +858,9 @@ export const sliderItems: GalleryMasonryItem[] = [
     className: 'landscape',
     category: ['1', '4'],
     categoryTitle: 'Portrait',
-    title: 'Ear Buds'
+    title: 'Ear Buds',
+    subtitle: 'Stylish sound design.',
+    srcType: 'img'
   },
   {
     id: 8,
@@ -858,6 +870,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     categoryTitle: '',
     className: 'square',
     title: 'Bike Ride',
+    subtitle: 'Adventure on wheels.',
     srcType: 'video'
   },
   {
@@ -868,6 +881,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '3'],
     categoryTitle: '',
     title: 'Mountain Sunset',
+    subtitle: 'Sunset over mountains.',
     srcType: 'video'
   },
   {
@@ -877,6 +891,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '3'],
     categoryTitle: 'Project management',
     title: 'Desert Photography',
+    subtitle: 'Capturing desert beauty.',
     srcType: 'img'
   },
   {
@@ -886,6 +901,7 @@ export const sliderItems: GalleryMasonryItem[] = [
     category: ['1', '3'],
     categoryTitle: 'Project management',
     title: 'London',
+    subtitle: 'Iconic city vibes.',
     srcType: 'img'
   }
 ]

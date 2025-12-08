@@ -4,22 +4,22 @@ import { faEllipsisH, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Swiper from 'components/base/Swiper';
-import { GalleryMasonryItem } from 'data/gallery';
+import { GallerySliderItem } from 'data/gallery';
 import useLightbox from 'hooks/useLightbox';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { SwiperClass, SwiperSlide } from 'swiper/react';
 import Lightbox from 'components/base/LightBox';
 
 interface GallerySliderItemsProps {
-  galleryItems: GalleryMasonryItem[];
+  galleryItems: GallerySliderItem[];
 }
 
 const GallerySliderItems = ({ galleryItems }: GallerySliderItemsProps) => {
-  const [items, setItems] = useState<GalleryMasonryItem[]>([]);
+  const [items, setItems] = useState<GallerySliderItem[]>([]);
 
   const { lightboxProps, openLightbox } = useLightbox(
     items
-      .map((el: GalleryMasonryItem) =>
+      .map((el: GallerySliderItem) =>
         el.srcType === 'video' ? el.video : el.image
       )
       .filter((item): item is string => !!item)
@@ -97,7 +97,7 @@ const GallerySliderItems = ({ galleryItems }: GallerySliderItemsProps) => {
 export default GallerySliderItems;
 
 interface GalleryItemsProps {
-  item: GalleryMasonryItem;
+  item: GallerySliderItem;
   onClick: () => void;
 }
 
@@ -138,7 +138,7 @@ const GalleryItems = ({ item, onClick }: GalleryItemsProps) => {
       <div className="backdrop-faded d-flex justify-content-between p-5">
         <div>
           <h3 className="text-white mb-2">{item.title}</h3>
-          <p className="mb-0 text-secondary-light">Description text</p>
+          <p className="mb-0 text-secondary-light">{item.subtitle}</p>
         </div>
         <Dropdown
           onClick={e => {
