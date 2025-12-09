@@ -7,6 +7,7 @@ import SearchBox from 'components/common/SearchBox';
 import AlbumItems from 'components/modules/gallery/AlbumItems';
 import { defaultBreadcrumbItems } from 'data/commonData';
 import { albumItems } from 'data/gallery';
+import FileNotFound from 'components/modules/gallery/FileNotFound';
 
 const Album = () => {
   const [items, setItems] = useState(albumItems);
@@ -47,8 +48,8 @@ const Album = () => {
         {items.length > 0 ? (
           <AlbumItems albumItems={items} />
         ) : (
-          <div className="min-vh-50 d-flex justify-content-center align-items-center">
-            <p className="mb-0">No Items Found!</p>
+          <div className="min-vh-50 d-flex justify-content-center align-items-center mt-4">
+            <FileNotFound />
           </div>
         )}
       </div>

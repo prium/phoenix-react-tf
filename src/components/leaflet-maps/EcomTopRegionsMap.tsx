@@ -1,6 +1,6 @@
 import { use, useEffect } from 'react';
 import L, { LatLngExpression } from 'leaflet';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, Marker, Popup, useMap } from 'react-leaflet';
 import MarkerClusterGroup from 'react-leaflet-markercluster';
 import 'leaflet.tilelayer.colorfilter';
 import 'leaflet/dist/leaflet.css';
@@ -40,7 +40,7 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
         {
           attribution: null,
           transparent: true,
-          colorFilter: filter
+          colorFilter: filter,
         }
       ).addTo(map);
     }
@@ -48,9 +48,6 @@ const LayerComponent = ({ data }: { data: MapMarkerPoints[] }) => {
 
   return (
     <>
-      <TileLayer
-        url={'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'}
-      />
       <MarkerClusterGroup chunkedLoading={true} spiderfyOnMaxZoom={false}>
         {data.map(marker => (
           <Marker
@@ -81,6 +78,7 @@ const EcomTopRegionsMap = ({ data, ...rest }: { data: MapMarkerPoints[] }) => {
     <MapContainer
       zoom={isRTL ? 1.8 : 1.5}
       minZoom={isRTL ? 1.8 : 1.3}
+      maxZoom={18}
       zoomSnap={0.5}
       center={position}
       {...rest}

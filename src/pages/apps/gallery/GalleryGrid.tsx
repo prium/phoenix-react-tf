@@ -1,3 +1,4 @@
+import FileNotFound from 'components/modules/gallery/FileNotFound';
 import GalleryGridItems from 'components/modules/gallery/GalleryGridItems';
 import GalleryLayout from 'components/modules/gallery/GalleryLayout';
 import { defaultIsotopeNavItems, gridItems } from 'data/gallery';
@@ -23,7 +24,7 @@ const GalleryGrid = () => {
         <GalleryGridItems gridItems={filteredItems} />
       ) : (
         <div className="min-vh-50 d-flex justify-content-center align-items-center">
-          <p className="mb-0">No Items Found!</p>
+          <FileNotFound />
         </div>
       )}
     </GalleryLayout>

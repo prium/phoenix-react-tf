@@ -869,8 +869,8 @@ export const sliderItems: GallerySliderItem[] = [
     category: ['1', '2', '4'],
     categoryTitle: '',
     className: 'square',
-    title: 'Bike Ride',
-    subtitle: 'Adventure on wheels.',
+    title: 'Mountain Sunset',
+    subtitle: 'Sunset over mountains.',
     srcType: 'video'
   },
   {
@@ -880,8 +880,8 @@ export const sliderItems: GallerySliderItem[] = [
     className: 'landscape',
     category: ['1', '3'],
     categoryTitle: '',
-    title: 'Mountain Sunset',
-    subtitle: 'Sunset over mountains.',
+    title: 'Mountain river view',
+    subtitle: 'Calm river through mountains.',
     srcType: 'video'
   },
   {

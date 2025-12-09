@@ -4,7 +4,7 @@ export default [
   {
     version: '2.2.0',
     title: 'Solara',
-    publishDate: '8 Dec 2025',
+    publishDate: '9 Dec 2025',
     logs: {
       new: [
         'PACKAGE: <code>react-plock</code>',
