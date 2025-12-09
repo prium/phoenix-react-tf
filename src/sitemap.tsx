@@ -573,7 +573,6 @@ export const routes: RouteItems[] = [
         path: 'apps/gantt-chart',
         pathName: 'app-gantt-chart',
         active: true,
-        new: true
       },
       {
         name: 'social',
@@ -590,6 +589,50 @@ export const routes: RouteItems[] = [
             name: 'settings',
             path: '/apps/social/settings',
             pathName: 'settings',
+            active: true
+          }
+        ]
+      },
+      {
+        name: 'gallery',
+        icon: 'image',
+        active: true,
+        new: true,
+        pages: [
+          {
+            name: 'album',
+            path: '/apps/gallery/album',
+            pathName: 'gallery-album',
+            active: true
+          },
+          {
+            name: 'gallery-column',
+            path: '/apps/gallery/gallery-column',
+            pathName: 'gallery-column',
+            active: true
+          },
+          {
+            name: 'gallery-grid',
+            path: '/apps/gallery/gallery-grid',
+            pathName: 'gallery-grid',
+            active: true
+          },
+          {
+            name: 'grid-with-title',
+            path: '/apps/gallery/grid-with-title',
+            pathName: 'grid-with-title',
+            active: true
+          },
+          {
+            name: 'gallery-masonry',
+            path: '/apps/gallery/gallery-masonry',
+            pathName: 'gallery-masonry',
+            active: true
+          },
+          {
+            name: 'gallery-slider',
+            path: '/apps/gallery/gallery-slider',
+            pathName: 'gallery-slider',
             active: true
           }
         ]

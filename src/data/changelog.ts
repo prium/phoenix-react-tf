@@ -2,6 +2,27 @@ import changelogListElips from './changelogList';
 
 export default [
   {
+    version: '2.2.0',
+    title: 'Solara',
+    publishDate: '9 Dec 2025',
+    logs: {
+      new: [
+        'PACKAGE: <code>react-plock</code>',
+        'PAGE: <code>apps/gallery/album</code>',
+        'PAGE: <code>apps/gallery/gallery-column</code>',
+        'PAGE: <code>apps/gallery/gallery-grid</code>',
+        'PAGE: <code>apps/gallery/grid-with-title</code>',
+        'PAGE: <code>apps/gallery/gallery-masonry</code>',
+        'PAGE: <code>apps/gallery/gallery-slider</code>'
+      ],
+      update: [
+        'SCSS: <code>src/assets/scss/theme/plugins/_swiper.scss</code>',
+        'SCSS: <code>src/assets/scss/theme/_landing.scss</code>',
+        'SCSS: <code>src/assets/scss/theme/_mixed.scss</code>',
+      ]
+    }
+  },
+  {
     version: '2.1.0',
     title: 'Ignis',
     publishDate: '17 Nov 2025',
