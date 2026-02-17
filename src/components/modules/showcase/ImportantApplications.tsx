@@ -69,7 +69,7 @@ const ImportantApplications = () => {
                 <Col
                   xs={12}
                   lg={6}
-                  className="mb-7 mb-lg-10 ms-auto"
+                  className="mb-7 mb-lg-11 ms-auto"
                   key={application.title}
                 >
                   <div className="text-center">
@@ -90,7 +90,11 @@ const ImportantApplications = () => {
                         {application.title}
                       </h4>
                       {application.badge && (
-                        <Badge variant="phoenix" bg={application.badge.bg} className='ms-2 fs-10'>
+                        <Badge
+                          variant="phoenix"
+                          bg={application.badge.bg}
+                          className="ms-2 fs-10"
+                        >
                           {application.badge.label}
                         </Badge>
                       )}
@@ -98,14 +102,23 @@ const ImportantApplications = () => {
                     <p className="text-body-tertiary lh-sm pb-2 pb-lg-4">
                       {application.details}
                     </p>
-                    <Button
-                      as={Link}
-                      target="_blank"
-                      to={application.link}
-                      variant="primary"
-                    >
-                      {application.btnLabel}
-                    </Button>
+                    <div className="d-flex justify-content-center gap-2">
+                      <Link
+                        className="btn btn-secondary btn-sm"
+                        target="_blank"
+                        to={application.htmlLink || '#!'}
+                        style={{ minWidth: '5rem' }}
+                      >
+                        HTML
+                      </Link>
+                      <Link
+                        className="btn btn-secondary btn-sm"
+                        to={application.link || '#!'}
+                        style={{ minWidth: '5rem' }}
+                      >
+                        React
+                      </Link>
+                    </div>
                   </div>
                 </Col>
               ))}

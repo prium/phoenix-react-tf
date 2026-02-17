@@ -38,12 +38,32 @@ const Demos = () => {
                       />
                     </div>
                   </div>
-                  <h5 className="py-4 text-body-highlight">
-                    {demo.variantName}
-                  </h5>
+                  <Row className="g-0 flex-between-center py-4">
+                    <Col xs="auto">
+                      <h5 className="text-body-highlight">
+                        {demo.variantName}
+                      </h5>
+                    </Col>
+                    <Col xs="auto">
+                      <Link
+                        className="btn btn-secondary me-2 btn-sm"
+                        target="_blank"
+                        to={demo.htmlLink}
+                        style={{ minWidth: '5rem' }}
+                      >
+                        HTML
+                      </Link>
+                      <Link
+                        className="btn btn-secondary btn-sm"
+                        to={demo.link}
+                        style={{ minWidth: '5rem' }}
+                      >
+                        React
+                      </Link>
+                    </Col>
+                  </Row>
                 </div>
               </div>
-              <Link to={demo.link} target="_blank" className="stretched-link" />
             </Col>
           ))}
         </Row>

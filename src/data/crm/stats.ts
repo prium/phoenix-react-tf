@@ -20,7 +20,7 @@ export const stats: StatType[] = [
     id: 1,
     icon: UilEnvelope,
     iconColor: 'primary',
-    emailCount: '28,00',
+    emailCount: '2,800',
     title: 'Total Emails'
   },
   {

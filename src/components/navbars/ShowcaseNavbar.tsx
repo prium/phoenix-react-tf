@@ -25,7 +25,7 @@ const ShowcaseNavbar = () => {
               <Nav.Link
                 as={Link}
                 to="/documentation/getting-started"
-                className="fs-9 fw-bold pe-3 active"
+                className="fs-9 fw-bold pe-3"
                 aria-current="page"
               >
                 Documentation

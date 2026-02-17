@@ -1,4 +1,3 @@
-import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import illustration31 from 'assets/img/spot-illustrations/31.png';
 import { necessaryPages } from 'data/showcase';
@@ -48,14 +47,32 @@ const NecessaryPages = () => {
                       className="img-fluid page-thumb rounded z-2"
                     />
                   </div>
-                  <h5 className="py-4 text-body-highlight">{page.pageName}</h5>
+                  <Row className="flex-between-center py-4">
+                    <Col xs="auto">
+                      <h5 className="text-body-highlight page-title">{page.pageName}</h5>
+                    </Col>
+                    <Col xs="auto">
+                      <div className='d-flex gap-2'>
+                        <Link
+                          className="btn btn-secondary btn-sm"
+                          target="_blank"
+                          to={page.htmlLink || '#!'}
+                          style={{ minWidth: '5rem' }}
+                        >
+                          HTML
+                        </Link>
+                        <Link
+                          className="btn btn-secondary btn-sm"
+                          to={page.pageLink || '#!'}
+                          style={{ minWidth: '5rem' }}
+                        >
+                          React
+                        </Link>
+                      </div>
+                    </Col>
+                  </Row>
                 </div>
               </div>
-              <Link
-                className="stretched-link"
-                target="_blank"
-                to={page.pageLink}
-              />
             </Col>
           ))}
         </Row>

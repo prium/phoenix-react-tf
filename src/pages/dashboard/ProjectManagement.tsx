@@ -1,6 +1,6 @@
 import DatePicker from 'components/base/DatePicker';
 import EarlyBirdCard from 'components/cards/EarlyBirdCard';
-import ZeroRoadMap from 'components/modules/project-management/dashboard/ZeroRoadMap';
+import TaskPerformance from 'components/modules/project-management/dashboard/TaskPerformance';
 import IssuesDiscovered from 'components/modules/project-management/dashboard/IssuesDiscovered';
 import { Col, Row } from 'react-bootstrap';
 import TodoList from 'components/modules/project-management/todo-list/TodoList';
@@ -47,7 +47,7 @@ const ProjectManagement = () => {
           </Row>
         </Col>
         <Col xs={12} xl={6} xxl={5}>
-          <ZeroRoadMap />
+          <TaskPerformance />
         </Col>
         <Col xs={12} xl={6} xxl={5}>
           <EarlyBirdCard />

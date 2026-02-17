@@ -38,38 +38,50 @@ interface Module {
   images: string[];
   badge?: Badge;
   path?: string;
+  htmlLink?: string;
 }
 
 const modules: Module[] = [
   {
     name: 'E commerce',
     images: [module4, module3, module2, module1],
-    path: '/apps/e-commerce/admin/add-product'
+    path: '/apps/e-commerce/admin/add-product',
+    htmlLink: 'https://prium.github.io/phoenix/themeforest/v1.24.0/index.html'
   },
   {
     name: 'Project Management',
     images: [module8, module7, module6, module5],
-    path: '/apps/project-management/create-new'
+    path: '/apps/project-management/create-new',
+    htmlLink:
+      'https://prium.github.io/phoenix/themeforest/v1.24.0/dashboard/project-management.html'
   },
   {
     name: 'CRM',
     images: [module12, module11, module10, module9],
-    path: '/apps/crm/analytics'
+    path: '/apps/crm/analytics',
+    htmlLink:
+      'https://prium.github.io/phoenix/themeforest/v1.24.0/dashboard/crm.html'
   },
   {
     name: 'Booking',
     images: [module16, module15, module14, module13],
-    path: '/apps/travel-agency/hotel/customer/homepage'
+    path: '/apps/travel-agency/hotel/customer/homepage',
+    htmlLink:
+      'https://prium.github.io/phoenix/themeforest/v1.24.0/dashboard/travel-agency.html'
   },
   {
     name: 'Social',
     images: [module24, module23, module22, module21],
-    path: '/apps/social/feed'
+    path: '/apps/social/feed',
+    htmlLink:
+      'https://prium.github.io/phoenix/themeforest/v1.24.0/apps/social/feed.html'
   },
   {
     name: 'Stock',
     images: [module20, module19, module18, module17],
     path: '/dashboard/stock',
+    htmlLink:
+      'https://prium.github.io/phoenix/themeforest/v1.24.0/dashboard/stock.html',
     badge: {
       label: 'New',
       bg: 'warning'
@@ -86,6 +98,25 @@ const ModulesItem = ({ item }: { item: Module }) => (
   >
     {item.badge && <h1 className="module-badge">{item.badge.label}</h1>}
     <h2 className="module-title position-relative">{item.name}</h2>
+    <div className="hover-reveal-trigger position-lg-absolute mt-3 mt-lg-0 ">
+      <div className="d-flex gap-2">
+        <Link
+          className="btn btn-secondary btn-sm"
+          target="_blank"
+          to={item.htmlLink || '#!'}
+          style={{ minWidth: '5rem' }}
+        >
+          HTML
+        </Link>
+        <Link
+          className="btn btn-secondary btn-sm"
+          to={item.path || '#!'}
+          style={{ minWidth: '5rem' }}
+        >
+          React
+        </Link>
+      </div>
+    </div>
     <Link to={item.path || '#!'} className="stretched-link" />
     <div className="image-container cursor-pointer">
       {item.images.map((image, idx) => (

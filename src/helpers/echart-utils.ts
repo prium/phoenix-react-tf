@@ -212,3 +212,43 @@ export const generateXAxisLabels = (startDate: string, count: number) => {
     )
   );
 };
+
+export const taskPerformanceTooltipFormatter = (
+  params: CallbackDataParams,
+  range: 'week' | 'month' | 'year'
+) => {
+  if (!params || !params.value) return '';
+  
+  let dateFormat = '';
+  if (range.toLowerCase() === 'week') {
+    dateFormat += `<p class="text-white fs-10 fw-bold mb-1">
+    ${params.value[0]}, ${dayjs(params.value[2]).format('DD MMM, YYYY')}
+    </p>`;
+  } else if (range.toLowerCase() === 'month') {
+    dateFormat += `<p class="text-white fs-10 fw-bold mb-1">
+     ${dayjs(params.value[0]).format('DD MMM, YYYY')}
+    </p>`;
+  } else {
+    dateFormat += `<p class="text-white fs-10 fw-bold mb-1">
+     ${dayjs(params.value[0]).format('MMM, YYYY')}
+    </p>`;
+  }
+  return `
+    <div style="min-width: 140px;">
+      ${dateFormat}
+      <table class="mb-0 w-100" style="vertical-align: middle;">
+        <tr>
+          <td style="width: 16px;">
+            <div style="width: 10px; height: 10px; background-color: ${params.color} "></div>
+          </td>
+          <td style="min-width: 78px">
+            <h6 class="text-white mb-0">${params.seriesName}</h6>
+          </td>
+          <td style="min-width: 16px;">
+            <h6 class="text-white mb-0">${params.value[1]}</h6>
+          </td>
+        </tr>
+      </table>
+    </div>
+  `;
+};

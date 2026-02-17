@@ -2,12 +2,14 @@ import { Col, Container, Row } from 'react-bootstrap';
 import illustrations31 from 'assets/img/spot-illustrations/31.png';
 import illustration11 from 'assets/img/icons/illustrations/11.png';
 import illustration12 from 'assets/img/icons/illustrations/12.png';
-import illustration1 from 'assets/img/icons/illustrations/1.png';
+import illustration1 from 'assets/img/icons/illustrations/29.png';
+import illustration13 from 'assets/img/icons/illustrations/13.png';
 import illustration14 from 'assets/img/icons/illustrations/14.png';
 import illustration15 from 'assets/img/icons/illustrations/15.png';
 import illustration16 from 'assets/img/icons/illustrations/16.png';
-import illustration2 from 'assets/img/icons/illustrations/2.png';
+import illustration17 from 'assets/img/icons/illustrations/17.png';
 import illustration19 from 'assets/img/icons/illustrations/19.png';
+import illustration20 from 'assets/img/icons/illustrations/20.png';
 import illustration21 from 'assets/img/icons/illustrations/21.png';
 import illustration22 from 'assets/img/icons/illustrations/22.png';
 import illustration23 from 'assets/img/icons/illustrations/23.png';
@@ -15,6 +17,7 @@ import illustration24 from 'assets/img/icons/illustrations/24.png';
 import illustration25 from 'assets/img/icons/illustrations/25.png';
 import illustration26 from 'assets/img/icons/illustrations/26.png';
 import illustration27 from 'assets/img/icons/illustrations/27.png';
+import illustration28 from 'assets/img/icons/illustrations/28.png';
 import classNames from 'classnames';
 
 export const featureItems = [
@@ -30,55 +33,54 @@ export const featureItems = [
     )
   },
   {
+    id: 13,
+    icon: illustration1,
+    border: 'border-end-sm',
+    title: (
+      <>
+        Developed with{' '}
+        <span className="text-react fw-bold">Reactjs</span>
+      </>
+    )
+  },
+  {
+    id: 27,
+    icon: illustration13,
+    border: '',
+    title: (
+      <>
+        Semantic code with{' '}
+        <span className="text-html5 me-1 fw-bold">HTML5</span>
+      </>
+    )
+  },
+  {
     id: 12,
     icon: illustration12,
     border: 'border-end-0 border-end-sm',
     title: (
       <>
-        Styled with <span className="text-css3 ms-1 fw-bold">CSS3</span>
+        Styled with <span className="text-css3 fw-bold">CSS3</span>
+      </>
+    )
+  },
+  {
+    id: 18,
+    icon: illustration27,
+    border: 'border-end-0 border-end-sm',
+    title: (
+      <>
+        Build on <span className="text-info fw-bold">TypeScript</span>
       </>
     )
   },
   {
     id: 13,
-    icon: illustration1,
+    icon: illustration17,
     border: 'border-end-0 border-end-sm border-end-lg-0',
     title: (
       <>
-        Developed with{' '}
-        <span className="text-info-light me-1 fw-bold">ReactJs</span>
-      </>
-    )
-  },
-  {
-    id: 17,
-    icon: illustration2,
-    border: 'border-end',
-    title: (
-      <>
-        Built with{' '}
-        <span className="text-info-light me-1 fw-bold">React Bootstrap</span>
-      </>
-    )
-  },
-  {
-    id: 15,
-    icon: illustration15,
-    border: 'border-end-0',
-    title: (
-      <>
-        <span className="text-sass ms-1 fw-bold">SASS</span> Supported
-      </>
-    )
-  },
-
-  {
-    id: 18,
-    icon: illustration27,
-    border: 'border-end-0 border-end-sm border-end-lg-0',
-    title: (
-      <>
-        Built on <span className="text-info fw-bold">Typescript</span>
+        <span className="text-gulp fw-bold">Gulp</span> based workflow
       </>
     )
   },
@@ -88,7 +90,7 @@ export const featureItems = [
     border: 'border-end-0 border-end-sm',
     title: (
       <>
-        <span className="text-info fw-bold">Clean </span> design
+        Clean and <span className="text-info fw-bold">minimal design </span>
       </>
     )
   },
@@ -103,6 +105,26 @@ export const featureItems = [
     )
   },
   {
+    id: 15,
+    icon: illustration15,
+    border: 'border-end-0',
+    title: (
+      <>
+        <span className="text-sass ms-1 fw-bold">SASS</span> Supported
+      </>
+    )
+  },
+  {
+    id: 28,
+    icon: illustration28,
+    border: 'border-end-0 border-end-sm',
+    title: (
+      <>
+        Build on <span className="text-vite fw-bold">Vite</span>
+      </>
+    )
+  },
+  {
     id: 19,
     icon: illustration19,
     border: 'border-end',
@@ -112,15 +134,24 @@ export const featureItems = [
       </>
     )
   },
-
+  {
+    id: 29,
+    icon: illustration20,
+    border: 'border-end-0',
+    title: (
+      <>
+        Collection of <span className="text-info fw-bold">pages</span>
+      </>
+    )
+  },
   {
     id: 22,
     icon: illustration22,
     border: 'border-end',
     title: (
       <>
-        <span className="text-warning ms-1 fw-bold">Echarts </span>
-        &amp; DHtmlx Gantt
+        <span className="text-warning ms-1 fw-bold">Chart JS & </span>
+        , ECharts &amp; Maps
       </>
     )
   },
@@ -198,7 +229,7 @@ const EssentialFeatures = () => {
                 <Col xs={12} sm={4} className="px-0" key={item.id}>
                   <div
                     className={classNames(
-                      'mb-10 text-center border-translucent',
+                      'mb-10 text-center',
                       item.border
                     )}
                   >

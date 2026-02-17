@@ -12,7 +12,7 @@ import ContactsBySource from '../crm/ContactsBySource';
 import EcomProjectionVsActual from '../e-commerce/dashboard/EcomProjectionVsActual';
 import EcomReturningCustomerRate from '../e-commerce/dashboard/EcomReturningCustomerRate';
 import EcomTotalSells from '../e-commerce/dashboard/EcomTotalSells';
-import ZeroRoadMap from '../project-management/dashboard/ZeroRoadMap';
+import TaskPerformance from '../project-management/dashboard/TaskPerformance';
 import IssuesDiscovered from '../project-management/dashboard/IssuesDiscovered';
 import ProjectElevenProgress from '../project-management/dashboard/ProjectElevenProgress';
 import LeadConversion from '../crm/LeadConversion';
@@ -29,7 +29,7 @@ const WidgetStats = () => {
         title="Number Stats & Charts"
         subtitle="You can easily show your stats content by using these cards."
         icon={faPercentage}
-        className="my-5"
+        className="mb-5 pt-8"
       />
       <div className="px-3 mb-5">
         <AnalyticsStats stats={stats} />
@@ -71,7 +71,7 @@ const WidgetStats = () => {
           <EcomTotalSells />
         </Col>
         <Col xxl={6}>
-          <ZeroRoadMap />
+          <TaskPerformance />
         </Col>
       </Row>
       <div className="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis pt-6 pb-3 mt-6">
@@ -79,7 +79,7 @@ const WidgetStats = () => {
           <Col xl={7} xxl={6}>
             <IssuesDiscovered />
           </Col>
-          <Col xl={7} xxl={6}>
+          <Col xl={5} xxl={6}>
             <ProjectElevenProgress />
           </Col>
         </Row>
