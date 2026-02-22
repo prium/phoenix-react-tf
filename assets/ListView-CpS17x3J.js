@@ -1,0 +1,1 @@
+import{Zx as a,QI as r,PA as e}from"./index-C2Vvp97v.js";import{F as i,a as o}from"./FileManagerLayout-CUuJOcPa.js";import"./47_dark-BFmHPLnE.js";const c=()=>{const{setIsGridView:s,setCheckedFileIds:t}=a();return r.useEffect(()=>{s(!1),t([])},[]),e.jsx(i,{children:e.jsx(o,{})})};export{c as default};
